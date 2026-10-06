@@ -331,8 +331,8 @@ sealed class _Calendar extends StatefulWidget {
   /// leaving their places empty. Choosing one turns the page.
   final bool showOutsideDays;
 
-  /// How many months show side by side. In a width too narrow for their
-  /// day numbers side by side, they stack one under the other.
+  /// How many months show side by side. In a width too narrow for them
+  /// side by side at full size, they stack one under the other.
   final int months;
 
   /// The focus node of the days. The days are one Tab stop with a node
