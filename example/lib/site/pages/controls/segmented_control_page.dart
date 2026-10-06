@@ -37,9 +37,11 @@ class SegmentedControlPage extends StatelessWidget {
         children: [
           DocText(
             'Every segment is as wide as the widest one, so the control '
-            'looks even. In a narrower space the segments share what there '
-            'is and labels ellipsize; screen readers still get the whole '
-            'label. The selected label turns semibold, and every segment '
+            'looks even. In a narrower space each takes its own width and a '
+            'share of the rest; narrower still, labels wrap between words, '
+            'and when even their longest words do not fit (a phone with '
+            'large text) the segments stack one under the other. No label '
+            'is cut. The selected label turns semibold, and every segment '
             'reserves that width, so moving the selection never resizes the '
             'control.',
           ),

@@ -53,10 +53,13 @@ class DsSegment<T> {
 ///
 /// Segments share the width of the widest one. In a narrower space each
 /// takes its own width plus an equal share of the rest, so labels are not
-/// cut while all of them fit; only narrower still do they shrink and
-/// ellipsize (screen readers still get the whole label). The selected label is semibold; every segment reserves
-/// that width, so moving the selection never resizes the control. A [value] that matches no
-/// segment selects none. The control is one tab stop:
+/// cut while all of them fit. Narrower still (a phone with large text),
+/// labels wrap between words; and when even their longest words do not
+/// fit side by side, the segments stack one under the other, each the
+/// full width, the thumb sliding between them. No label is cut. The
+/// selected label is semibold; every segment reserves that width, so
+/// moving the selection never resizes the control. A [value] that matches
+/// no segment selects none. The control is one tab stop:
 /// arrow keys (mirrored in RTL), Home and End move the selection, as in the
 /// WAI-ARIA radio group pattern.
 ///
@@ -299,8 +302,8 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
             onTapCancel: () => setState(() => _pressed = null),
             onTapUp: (_) => setState(() => _pressed = null),
             onTap: interactive ? () => _select(i, touch: true) : null,
-            // A minimum height grows with large text; the label
-            // ellipsizes in a narrow control (B14, ux V5).
+            // A minimum height grows with large text; in a narrow control
+            // the label wraps between words (B14, ux V5).
             child: Container(
               constraints: BoxConstraints(minHeight: height),
               padding: s.itemPadding,
@@ -315,9 +318,7 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
                     style: (s.textStyle ?? const TextStyle()).copyWith(
                       color: color,
                     ),
-                    maxLines: 1,
-                    softWrap: false,
-                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       spacing: DsSpace.s6,
@@ -426,10 +427,62 @@ class _ReservedWidth extends StatelessWidget {
     )..layout();
     final width = painter.width;
     painter.dispose();
-    return ConstrainedBox(
-      constraints: BoxConstraints(minWidth: width),
+    return _MinWidth(
+      width: width,
       child: Align(widthFactor: 1, child: label),
     );
+  }
+}
+
+/// Lays its child out at least [width] wide (when the parent allows), as a
+/// `ConstrainedBox` with a minimum width would, but reports the child's
+/// own minimum intrinsic width: a label may still wrap down to its
+/// longest word.
+class _MinWidth extends SingleChildRenderObjectWidget {
+  const _MinWidth({required this.width, super.child});
+
+  final double width;
+
+  @override
+  RenderObject createRenderObject(BuildContext context) =>
+      _RenderMinWidth(width);
+
+  @override
+  void updateRenderObject(BuildContext context, RenderObject renderObject) =>
+      (renderObject as _RenderMinWidth).width = width;
+}
+
+class _RenderMinWidth extends RenderProxyBox {
+  _RenderMinWidth(this._width);
+
+  double _width;
+  set width(double v) {
+    if (v == _width) return;
+    _width = v;
+    markNeedsLayout();
+  }
+
+  BoxConstraints _inner(BoxConstraints c) =>
+      c.copyWith(minWidth: c.constrainWidth(_width));
+
+  @override
+  double computeMaxIntrinsicWidth(double height) {
+    final w = super.computeMaxIntrinsicWidth(height);
+    return w > _width ? w : _width;
+  }
+
+  @override
+  Size computeDryLayout(covariant BoxConstraints constraints) =>
+      child?.getDryLayout(_inner(constraints)) ?? constraints.smallest;
+
+  @override
+  void performLayout() {
+    if (child == null) {
+      size = constraints.smallest;
+      return;
+    }
+    child!.layout(_inner(constraints), parentUsesSize: true);
+    size = constraints.constrain(child!.size);
   }
 }
 
@@ -438,8 +491,10 @@ class _ReservedWidth extends StatelessWidget {
 /// Segments share the widest one's width when that fits. When it does not
 /// but their own widths do, each takes its own width and an equal share of
 /// what is left, so no label is cut while there is room for all of them.
-/// Only when even that does not fit do they shrink, in proportion, and
-/// labels ellipsize.
+/// When even that does not fit but their longest words do, each gets its
+/// longest word's width and a share of the rest in proportion to what it
+/// lacks, and labels wrap between words. Narrower still, the segments
+/// stack one under the other, each the full width.
 ///
 /// The thumb sits under the segment at [position], sliding and resizing
 /// between neighbors at fractional values; null hides it.
@@ -497,8 +552,12 @@ class _RenderSegmentRow extends RenderBox
     markNeedsLayout();
   }
 
-  // Each segment's start offset and width, start to end.
+  // Each segment's start offset and extent along the run, start to end:
+  // across the row, or down when the segments are stacked.
   List<(double, double)> _slots = const [];
+
+  /// Whether the last layout stacked the segments.
+  bool _stacked = false;
 
   @override
   void setupParentData(RenderBox child) {
@@ -531,18 +590,35 @@ class _RenderSegmentRow extends RenderBox
     return widest * segments.length + _gaps(segments.length);
   }
 
+  // Stacked, the control is as narrow as its widest segment allows.
   @override
-  double computeMinIntrinsicWidth(double height) =>
-      _equalWidth((s) => s.getMinIntrinsicWidth(height));
+  double computeMinIntrinsicWidth(double height) {
+    var widest = 0.0;
+    for (final s in _segments) {
+      final w = s.getMinIntrinsicWidth(height);
+      if (w > widest) widest = w;
+    }
+    return widest;
+  }
 
   @override
   double computeMaxIntrinsicWidth(double height) =>
       _equalWidth((s) => s.getMaxIntrinsicWidth(height));
 
-  double _tallest(double Function(RenderBox) measure) {
+  double _height(double width, double Function(RenderBox, double) measure) {
+    final segments = _segments;
+    if (segments.isEmpty) return 0;
+    final widths = _widths(0, width);
+    if (widths == null) {
+      var total = _gaps(segments.length);
+      for (final s in segments) {
+        total += measure(s, width);
+      }
+      return total;
+    }
     var tallest = 0.0;
-    for (final s in _segments) {
-      final h = measure(s);
+    for (var i = 0; i < segments.length; i++) {
+      final h = measure(segments[i], widths[i]);
       if (h > tallest) tallest = h;
     }
     return tallest;
@@ -550,15 +626,15 @@ class _RenderSegmentRow extends RenderBox
 
   @override
   double computeMinIntrinsicHeight(double width) =>
-      _tallest((s) => s.getMinIntrinsicHeight(double.infinity));
+      _height(width, (s, w) => s.getMinIntrinsicHeight(w));
 
   @override
   double computeMaxIntrinsicHeight(double width) =>
-      _tallest((s) => s.getMaxIntrinsicHeight(double.infinity));
+      _height(width, (s, w) => s.getMaxIntrinsicHeight(w));
 
   // Segment widths for a row at most [maxWidth] wide (and at least
-  // [minWidth]).
-  List<double> _widths(double minWidth, double maxWidth) {
+  // [minWidth]), or null when the segments must stack.
+  List<double>? _widths(double minWidth, double maxWidth) {
     final segments = _segments;
     final n = segments.length;
     if (n == 0) return const [];
@@ -577,12 +653,25 @@ class _RenderSegmentRow extends RenderBox
       final extra = (room - total) / n;
       return [for (final w in own) w + extra];
     }
-    final scale = total == 0 ? 0.0 : (room > 0 ? room : 0.0) / total;
-    return [for (final w in own) w * scale];
+    // Each label's longest word, and what it lacks of a single line.
+    final least = [
+      for (var i = 0; i < n; i++)
+        segments[i].getMinIntrinsicWidth(double.infinity).clamp(0.0, own[i]),
+    ];
+    final floor = least.fold(0.0, (a, b) => a + b);
+    if (floor > room) return null;
+    final lack = total - floor;
+    final spare = room - floor;
+    return [
+      for (var i = 0; i < n; i++)
+        least[i] + (lack == 0 ? spare / n : spare * (own[i] - least[i]) / lack),
+    ];
   }
 
   Size _layout(BoxConstraints constraints, {required bool dry}) {
     final widths = _widths(constraints.minWidth, constraints.maxWidth);
+    if (widths == null) return _stack(constraints, dry: dry);
+    if (!dry) _stacked = false;
     final segments = _segments;
     var height = 0.0;
     for (var i = 0; i < segments.length; i++) {
@@ -618,6 +707,33 @@ class _RenderSegmentRow extends RenderBox
     return Size(width, height);
   }
 
+  /// The segments one under the other, each the full width.
+  Size _stack(BoxConstraints constraints, {required bool dry}) {
+    final segments = _segments;
+    final width = constraints.maxWidth;
+    final c = BoxConstraints.tightFor(width: width);
+    final slots = <(double, double)>[];
+    var top = 0.0;
+    for (final s in segments) {
+      final h = dry
+          ? s.getDryLayout(c).height
+          : (s..layout(c, parentUsesSize: true)).size.height;
+      if (!dry) {
+        (s.parentData! as _SegmentRowParentData).offset = Offset(0, top);
+      }
+      slots.add((top, h));
+      top += h + _gap;
+    }
+    final size = constraints.constrain(
+      Size(width, top - (segments.isEmpty ? 0 : _gap)),
+    );
+    if (!dry) {
+      _slots = slots;
+      _stacked = true;
+    }
+    return size;
+  }
+
   // The left edge of a slot at [start] from the start edge.
   double _x(double start, double width, double total) =>
       _textDirection == TextDirection.rtl ? total - start - width : start;
@@ -643,9 +759,14 @@ class _RenderSegmentRow extends RenderBox
     final b = _slots[v.ceil()];
     final f = v - v.floor();
     final start = a.$1 + (b.$1 - a.$1) * f;
-    final width = a.$2 + (b.$2 - a.$2) * f;
-    _thumb.layout(BoxConstraints.tightFor(width: width, height: size.height));
-    thumbData.offset = Offset(_x(start, width, size.width), 0);
+    final extent = a.$2 + (b.$2 - a.$2) * f;
+    if (_stacked) {
+      _thumb.layout(BoxConstraints.tightFor(width: size.width, height: extent));
+      thumbData.offset = Offset(0, start);
+      return;
+    }
+    _thumb.layout(BoxConstraints.tightFor(width: extent, height: size.height));
+    thumbData.offset = Offset(_x(start, extent, size.width), 0);
   }
 
   @override

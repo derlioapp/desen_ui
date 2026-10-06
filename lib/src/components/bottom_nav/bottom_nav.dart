@@ -14,6 +14,7 @@ import '../../theme/haptics.dart';
 import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
+import '../tooltip/tooltip.dart';
 import 'bottom_nav_item_style.dart';
 import 'bottom_nav_style.dart';
 
@@ -62,7 +63,12 @@ class DsBottomNavItem<T> {
 ///
 /// Items of the floating bar are [DsBottomNavItemStyle.width] wide and
 /// share the width evenly when that does not fit (five items on a 375pt
-/// phone); labels then ellipsize. Items grow taller with large text.
+/// phone). Items grow taller with large text. A label wider than its item
+/// wraps onto a second line between words, and every item then keeps
+/// room for two lines, so the bar stays even. A label that still does not
+/// fit (a long word, very large text) ellipsizes, and the item shows the
+/// whole label in a tooltip on a long press, on hover and on keyboard
+/// focus; screen readers always get the whole label.
 ///
 /// ```dart
 /// DsBottomNav<String>(
@@ -222,6 +228,47 @@ class DsBottomNav<T> extends StatefulWidget {
       : Flexible(child: item);
 }
 
+/// How a destination's label fits the [width] it gets: on one line, on two
+/// lines broken between words, or [cut] (one line, ellipsized). [height]
+/// is the label's height as laid out.
+typedef _LabelFit = ({int lines, bool cut, double height});
+
+/// Measures [label] in [style] (the selected one, the widest) for [width].
+/// Null when it cannot be measured (not a plain [Text], or no width
+/// limit): the label then keeps to one line, as given.
+_LabelFit? _fitLabel(
+  BuildContext context,
+  Widget label,
+  TextStyle? style,
+  double width,
+) {
+  if (label is! Text || label.data == null) return null;
+  if (!width.isFinite || width <= 0) return null;
+  final painter = TextPainter(
+    text: TextSpan(
+      text: label.data,
+      style: DefaultTextStyle.of(context).style.merge(style).merge(label.style),
+    ),
+    textDirection: Directionality.of(context),
+    textScaler: label.textScaler ?? MediaQuery.textScalerOf(context),
+    locale: label.locale ?? Localizations.maybeLocaleOf(context),
+    maxLines: 2,
+  )..layout(maxWidth: width);
+  // A word wider than the line would break inside: keep to one line.
+  if (painter.minIntrinsicWidth > width) {
+    painter
+      ..maxLines = 1
+      ..layout(maxWidth: width);
+  }
+  final fit = (
+    lines: painter.computeLineMetrics().length.clamp(1, 2),
+    cut: painter.didExceedMaxLines,
+    height: painter.height,
+  );
+  painter.dispose();
+  return fit;
+}
+
 class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
   /// One node per destination, by position.
   final _nodes = <FocusNode>[];
@@ -345,33 +392,65 @@ class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
       _nodeAt(i).skipTraversal = i != tabStop;
     }
     final l10n = DsLocalizations.of(context);
+    // The selected label is the widest (bolder); it sizes the fit.
+    final widest = DsBottomNavItemStyle.resolveLayers(itemLayers, const {
+      WidgetState.selected,
+    });
     // The full-width bar shares its width; the floating one sizes to its
     // items, which may shrink to share a narrow width (B11, visual H2).
     final row = LayoutBuilder(
-      builder: (context, c) => Row(
-        mainAxisSize: bar ? MainAxisSize.max : MainAxisSize.min,
-        spacing: s.gap ?? 0,
-        children: [
-          for (var i = 0; i < items.length; i++)
-            DsBottomNav._wrap(
-              bar,
-              c.hasBoundedWidth,
-              _Item(
-                item: items[i],
-                selected: items[i].value == value,
-                onPressed: _enabledAt(i)
-                    ? () => onChanged!(items[i].value)
-                    : null,
-                // On the web the tab role tells the position.
-                position: kIsWeb ? null : l10n.tabOf(i + 1, items.length),
-                focusNode: _nodeAt(i),
-                layers: itemLayers,
-                barCorners: bar ? null : corners,
-                inset: padding.top,
-              ),
+      builder: (context, c) {
+        final gaps = (s.gap ?? 0) * (items.length - 1);
+        final share = c.hasBoundedWidth
+            ? (c.maxWidth - gaps) / items.length
+            : double.infinity;
+        final itemWidth = switch (widest.width) {
+          final w? when w < share => w,
+          _ => share,
+        };
+        final fits = [
+          for (final item in items)
+            _fitLabel(
+              context,
+              item.label,
+              widest.labelStyle,
+              itemWidth - 2 * _Item.padding,
             ),
-        ],
-      ),
+        ];
+        // When one label takes two lines, every item keeps room for them,
+        // so the items and their fills stay one height.
+        final twoLines = fits.any((f) => f != null && f.lines > 1);
+        final labelHeight = twoLines
+            ? fits.fold(0.0, (h, f) => f != null && f.height > h ? f.height : h)
+            : null;
+        return Row(
+          mainAxisSize: bar ? MainAxisSize.max : MainAxisSize.min,
+          spacing: s.gap ?? 0,
+          children: [
+            for (var i = 0; i < items.length; i++)
+              DsBottomNav._wrap(
+                bar,
+                c.hasBoundedWidth,
+                _Item(
+                  item: items[i],
+                  selected: items[i].value == value,
+                  onPressed: _enabledAt(i)
+                      ? () => onChanged!(items[i].value)
+                      : null,
+                  // On the web the tab role tells the position.
+                  position: kIsWeb ? null : l10n.tabOf(i + 1, items.length),
+                  focusNode: _nodeAt(i),
+                  layers: itemLayers,
+                  barCorners: bar ? null : corners,
+                  inset: padding.top,
+                  labelLines: fits[i]?.lines ?? 1,
+                  labelHeight: labelHeight,
+                  cut: fits[i]?.cut ?? false,
+                ),
+              ),
+          ],
+        );
+      },
     );
     return Semantics(
       container: true,
@@ -425,7 +504,14 @@ class _Item extends StatefulWidget {
     required this.layers,
     required this.barCorners,
     required this.inset,
+    required this.labelLines,
+    required this.labelHeight,
+    required this.cut,
   });
+
+  /// Space on each side of the item's content: a long label wraps or
+  /// ellipsizes before it meets the fill's edge.
+  static const padding = DsSpace.s4;
 
   final DsBottomNavItem<Object?> item;
   final bool selected;
@@ -442,6 +528,16 @@ class _Item extends StatefulWidget {
   final BorderRadiusGeometry? barCorners;
   final double inset;
 
+  /// Lines the label may take: two when it wraps between words.
+  final int labelLines;
+
+  /// Height every item keeps for its label, so the items stay even when
+  /// one label wraps; null to fit the label.
+  final double? labelHeight;
+
+  /// Whether the label is cut: the whole label then shows in a tooltip.
+  final bool cut;
+
   @override
   State<_Item> createState() => _ItemState();
 }
@@ -451,6 +547,22 @@ class _ItemState extends State<_Item> {
 
   @override
   Widget build(BuildContext context) {
+    final item = _item(context);
+    final label = widget.item.label;
+    // A cut label shows whole in a tooltip: on a long press on touch
+    // screens, on hover and on keyboard focus. Screen readers already read
+    // the whole label, so the tooltip is not announced again.
+    if (widget.cut && label is Text && label.data != null) {
+      return DsTooltip(
+        message: label.data!,
+        excludeFromSemantics: true,
+        child: item,
+      );
+    }
+    return item;
+  }
+
+  Widget _item(BuildContext context) {
     final t = dsThemeOf(context);
     return DsPressable(
       onPressed: widget.onPressed,
@@ -524,8 +636,7 @@ class _ItemState extends State<_Item> {
             maxWidth: s.width ?? double.infinity,
             minHeight: s.height ?? 0,
           ),
-          // A long label ellipsizes before it meets the fill's edge.
-          padding: const EdgeInsets.symmetric(horizontal: DsSpace.s4),
+          padding: const EdgeInsets.symmetric(horizontal: _Item.padding),
           decoration: capsule == null
               ? DsBoxDecoration(
                   color: s.background,
@@ -542,11 +653,14 @@ class _ItemState extends State<_Item> {
               Stack(
                 alignment: Alignment.center,
                 children: [
+                  if (widget.labelHeight case final height?)
+                    SizedBox(height: height),
                   DefaultTextStyle.merge(
                     style: (s.labelStyle ?? const TextStyle()).copyWith(
                       color: fg,
                     ),
-                    maxLines: 1,
+                    textAlign: TextAlign.center,
+                    maxLines: widget.labelLines,
                     overflow: TextOverflow.ellipsis,
                     child: widget.item.label,
                   ),

@@ -48,13 +48,314 @@ Future<List<Object>> _pump(
   return errors;
 }
 
+DsThemeData compact() => DsThemeData(density: DsDensity.compact);
+
 /// Whether the text [label] is shown in full: not ellipsized or cut.
 bool _fullyShown(WidgetTester tester, String label) {
   final p = tester.renderObject<RenderParagraph>(find.text(label).first);
   return !p.didExceedMaxLines;
 }
 
+RenderParagraph _paragraph(WidgetTester tester, String label) =>
+    tester.renderObject<RenderParagraph>(find.text(label).first);
+
+/// How many lines [label] takes.
+int _lines(WidgetTester tester, String label) {
+  final p = _paragraph(tester, label);
+  return p
+      .getBoxesForSelection(
+        TextSelection(baseOffset: 0, extentOffset: p.text.toPlainText().length),
+      )
+      .map((b) => b.top.round())
+      .toSet()
+      .length;
+}
+
+/// Whether a line of [label] ends inside a word.
+bool _breaksInsideWord(WidgetTester tester, String label) {
+  final p = _paragraph(tester, label);
+  final text = p.text.toPlainText();
+  double? top(int i) => p
+      .getBoxesForSelection(TextSelection(baseOffset: i, extentOffset: i + 1))
+      .firstOrNull
+      ?.top;
+  for (var i = 0; i + 1 < text.length; i++) {
+    final a = top(i), b = top(i + 1);
+    if (a != null && b != null && b > a + 1) {
+      if (text[i] != ' ' && text[i + 1] != ' ') return true;
+    }
+  }
+  return false;
+}
+
 void main() {
+  group('segmented control', () {
+    Widget control(List<String> labels) => DsSegmentedControl<int>(
+      value: 0,
+      onChanged: (_) {},
+      segments: [
+        for (final (i, l) in labels.indexed)
+          DsSegment(value: i, label: Text(l)),
+      ],
+    );
+    final compact = DsThemeData(density: DsDensity.compact);
+
+    testWidgets('labels that fit stay on one row, unchanged', (tester) async {
+      await _pump(
+        tester,
+        Align(
+          alignment: Alignment.topLeft,
+          child: control(['Daily', 'Weekly', 'Monthly']),
+        ),
+        width: 400,
+        theme: compact,
+      );
+      final daily = tester.getRect(find.text('Daily'));
+      expect(tester.getRect(find.text('Monthly')).top, daily.top);
+      for (final l in ['Daily', 'Weekly', 'Monthly']) {
+        expect(_lines(tester, l), 1, reason: l);
+      }
+    });
+
+    testWidgets('labels wrap between words before they are cut', (
+      tester,
+    ) async {
+      const labels = ['Last seven days', 'This month', 'All time'];
+      final errors = await _pump(tester, control(labels), width: 240);
+      expect(errors, isEmpty);
+      for (final l in labels) {
+        expect(_fullyShown(tester, l), isTrue, reason: l);
+        expect(_breaksInsideWord(tester, l), isFalse, reason: l);
+      }
+    });
+
+    for (final width in [288.0, 200.0]) {
+      testWidgets('at 2x text in ${width}px the segments stack, no label cut', (
+        tester,
+      ) async {
+        const labels = ['Daily', 'Weekly', 'Monthly'];
+        final errors = await _pump(
+          tester,
+          control(labels),
+          width: width,
+          textScale: 2,
+        );
+        expect(errors, isEmpty);
+        for (final l in labels) {
+          expect(_lines(tester, l), 1, reason: l);
+        }
+        // One under the other.
+        expect(
+          tester.getRect(find.text('Weekly')).top,
+          greaterThan(tester.getRect(find.text('Daily')).bottom),
+        );
+        expect(
+          tester.getSize(find.byType(DsSegmentedControl<int>)).width,
+          lessThanOrEqualTo(width),
+        );
+      });
+    }
+
+    testWidgets('stacked, the thumb and the keys follow the selection', (
+      tester,
+    ) async {
+      var value = 0;
+      final node = FocusNode();
+      addTearDown(node.dispose);
+      await _pump(
+        tester,
+        StatefulBuilder(
+          builder: (context, setState) => DsSegmentedControl<int>(
+            value: value,
+            focusNode: node,
+            onChanged: (v) => setState(() => value = v),
+            segments: const [
+              DsSegment(value: 0, label: Text('Daily')),
+              DsSegment(value: 1, label: Text('Weekly')),
+              DsSegment(value: 2, label: Text('Monthly')),
+            ],
+          ),
+        ),
+        width: 200,
+        textScale: 2,
+      );
+      node.requestFocus();
+      await tester.pump();
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      await tester.pumpAndSettle();
+      expect(value, 1);
+      await tester.tap(find.text('Monthly'));
+      await tester.pumpAndSettle();
+      expect(value, 2);
+      // The thumb (the first box in the channel) sits under "Monthly".
+      final thumb = tester.getRect(
+        find
+            .descendant(
+              of: find.byType(DsSegmentedControl<int>),
+              matching: find.byType(DecoratedBox),
+            )
+            .at(1),
+      );
+      final monthly = tester.getRect(find.text('Monthly'));
+      expect(thumb.top, lessThanOrEqualTo(monthly.top));
+      expect(thumb.bottom, greaterThanOrEqualTo(monthly.bottom));
+    });
+  });
+
+  group('bottom nav', () {
+    final compact = DsThemeData(density: DsDensity.compact);
+    List<DsBottomNavItem<int>> items(List<String> labels) => [
+      for (final (i, l) in labels.indexed)
+        DsBottomNavItem(
+          value: i,
+          icon: const DsIcon(DsIcons.inbox),
+          label: Text(l),
+        ),
+    ];
+    double itemHeight(WidgetTester tester, String label) => tester
+        .getSize(
+          find
+              .ancestor(
+                of: find.text(label),
+                matching: find.byType(AnimatedContainer),
+              )
+              .first,
+        )
+        .height;
+
+    testWidgets('labels that fit keep one line and the default height', (
+      tester,
+    ) async {
+      await _pump(
+        tester,
+        Center(
+          child: DsBottomNav<int>(
+            value: 0,
+            onChanged: (_) {},
+            items: items(['Home', 'Search', 'Profile']),
+          ),
+        ),
+        width: 390,
+        theme: compact,
+      );
+      expect(_lines(tester, 'Search'), 1);
+      expect(
+        itemHeight(tester, 'Search'),
+        DsBottomNav.defaultItemStyle(
+          compact,
+          variant: DsBottomNavVariant.floating,
+        ).height,
+      );
+      expect(find.byType(DsTooltip), findsNothing);
+    });
+
+    testWidgets('a label wraps between words at 2x, and the items stay even', (
+      tester,
+    ) async {
+      final errors = await _pump(
+        tester,
+        Center(
+          child: DsBottomNav<int>(
+            value: 0,
+            onChanged: (_) {},
+            items: items(['My files', 'Map', 'Me']),
+          ),
+        ),
+        width: 390,
+        textScale: 2,
+        theme: compact,
+      );
+      expect(errors, isEmpty);
+      expect(_lines(tester, 'My files'), 2);
+      expect(_fullyShown(tester, 'My files'), isTrue);
+      expect(_breaksInsideWord(tester, 'My files'), isFalse);
+      expect(itemHeight(tester, 'Map'), itemHeight(tester, 'My files'));
+    });
+
+    testWidgets('a label that cannot fit shows whole in a tooltip', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      final errors = await _pump(
+        tester,
+        Center(
+          child: DsBottomNav<int>(
+            value: 0,
+            onChanged: (_) {},
+            items: items(['Inbox', 'Notifications', 'Calendar', 'Settings']),
+          ),
+        ),
+        width: 320,
+        textScale: 2,
+        theme: compact,
+      );
+      expect(errors, isEmpty);
+      expect(_fullyShown(tester, 'Notifications'), isFalse);
+      // No word is broken in two; the label ellipsizes on one line.
+      expect(_lines(tester, 'Notifications'), 1);
+      expect(
+        find.ancestor(
+          of: find.text('Notifications'),
+          matching: find.byWidgetPredicate(
+            (w) => w is DsTooltip && w.message == 'Notifications',
+          ),
+        ),
+        findsOneWidget,
+      );
+      // Screen readers read the whole label, once.
+      expect(
+        tester.getSemantics(find.text('Notifications')).label,
+        contains('Notifications'),
+      );
+      // A long press shows it.
+      await tester.longPress(find.text('Notifications'));
+      await tester.pump(const Duration(milliseconds: 300));
+      expect(find.text('Notifications'), findsNWidgets(2));
+      await tester.pumpAndSettle(const Duration(seconds: 5));
+      handle.dispose();
+    });
+  });
+
+  group('table at large text', () {
+    Widget table() => SizedBox(
+      height: 300,
+      child: DsTable<int>(
+        rows: const [1, 2],
+        rowKey: (r) => r,
+        semanticLabel: 'Customers',
+        columns: [
+          DsTableColumn<int>(
+            id: 'name',
+            label: 'Customer',
+            value: (r) => r == 1 ? 'Acme Corporation' : 'Beta',
+          ),
+          DsTableColumn<int>(
+            id: 'amount',
+            label: 'Amount',
+            value: (r) => r * 1000,
+            numeric: true,
+          ),
+        ],
+      ),
+    );
+
+    testWidgets('a cell that shows whole at 1x stays whole at 2x', (
+      tester,
+    ) async {
+      await _pump(tester, table(), width: 360, theme: compact());
+      expect(_fullyShown(tester, 'Acme Corporation'), isTrue);
+      final errors = await _pump(
+        tester,
+        table(),
+        width: 360,
+        textScale: 2,
+        theme: compact(),
+      );
+      expect(errors, isEmpty);
+      expect(_fullyShown(tester, 'Acme Corporation'), isTrue);
+    });
+  });
+
   group('multi-select tags', () {
     final options = [
       for (var i = 0; i < 30; i++)

@@ -125,20 +125,6 @@ class ToolbarPage extends StatelessWidget {
   );
 }
 
-/// Lets a bar scroll sideways when a phone is too narrow for it.
-class _Fit extends StatelessWidget {
-  const _Fit({required this.child});
-
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) => SingleChildScrollView(
-    scrollDirection: Axis.horizontal,
-    clipBehavior: Clip.none,
-    child: child,
-  );
-}
-
 class _EditorDemo extends StatefulWidget {
   const _EditorDemo();
 
@@ -152,7 +138,7 @@ class _EditorDemoState extends State<_EditorDemo> {
   bool _underline = false;
 
   @override
-  Widget build(BuildContext context) => _Fit(
+  Widget build(BuildContext context) => Center(
     // #region toolbar-overview
     child: DsToolbar(
       semanticLabel: 'Formatting',
@@ -206,7 +192,7 @@ class _ViewDemoState extends State<_ViewDemo> {
   String _view = 'list';
 
   @override
-  Widget build(BuildContext context) => _Fit(
+  Widget build(BuildContext context) => Center(
     // #region toolbar-toggles
     child: DsToolbar(
       semanticLabel: 'View',
@@ -241,7 +227,7 @@ class _SelectionDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = DsTheme.of(context);
-    return _Fit(
+    return Center(
       // #region toolbar-selection
       child: DsToolbar(
         semanticLabel: 'Selected tasks',
@@ -304,7 +290,7 @@ class _CustomDemoState extends State<_CustomDemo> {
   String _tool = 'Inbox';
 
   @override
-  Widget build(BuildContext context) => _Fit(
+  Widget build(BuildContext context) => Center(
     // #region toolbar-custom
     child: DsToolbar(
       semanticLabel: 'Tools',

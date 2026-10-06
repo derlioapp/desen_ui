@@ -107,8 +107,11 @@ enum _WidthKind { fixed, flex, intrinsic }
 ///
 /// Widths are logical pixels at 1.0 text scale and grow with the text
 /// scale, like CSS `em`: a column that holds "12.480,00 ₺" at 1.0 still
-/// holds it at 2.0. When the minimums do not fit, the table scrolls
-/// sideways instead of squeezing.
+/// holds it at 2.0. A flex column under large text likewise keeps the
+/// text it showed at 1.0: it is at least as wide as its header and the
+/// sampled cell texts need, up to its 1.0 width grown by the scale. When
+/// the minimums do not fit, the table scrolls sideways instead of
+/// squeezing.
 @immutable
 class DsTableColumnWidth {
   /// Exactly [width].

@@ -59,7 +59,9 @@ class CalendarPage extends StatelessWidget {
             '`months: 2` shows two months side by side. Their titles, '
             'weekday rows and grids line up exactly, with mouse or touch '
             'sizes; only the last month has the previous and next buttons. '
-            'This example shows two months when there is room for them.',
+            'Where their days would get too narrow side by side, the months '
+            'stack one under the other instead. This example shows two months '
+            'when there is room for them.',
           ),
           Example(snippet: 'calendar-range', child: _RangeDemo()),
         ],

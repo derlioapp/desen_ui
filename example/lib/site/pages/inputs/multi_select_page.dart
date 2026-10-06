@@ -79,7 +79,8 @@ class _MultiSelectPageState extends State<MultiSelectPage> {
           ),
           DocText(
             'Each value is a small neutral tag with a remove button. Tags '
-            'wrap onto more lines and the field grows. The text follows the '
+            'wrap onto more lines and the field grows; a label wider than the '
+            'field wraps inside its tag. The text follows the '
             'last tag on its line and moves to a line of its own only when '
             'typed text runs out of room. With `clearable` (the default) a '
             'button at the end removes every value.',

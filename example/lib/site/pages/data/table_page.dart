@@ -46,7 +46,9 @@ class TablePage extends StatelessWidget {
             'the column sorts by; `text` is what the cell says, such as a '
             'formatted amount; `cell` builds any widget, such as a badge. '
             'Without `cell` or `text`, the cell shows the value as a string '
-            'on one line, cut with an ellipsis.',
+            'on one line, cut with an ellipsis. With large text, a column '
+            'keeps the text it showed at normal size and the table scrolls '
+            'sideways instead.',
           ),
           DocText(
             '`numeric: true` sets tabular figures and aligns the column to '
