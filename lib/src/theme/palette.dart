@@ -481,7 +481,7 @@ class _Engine {
   /// 10% a range nearly vanished). Cool brands keep their color; a warm
   /// one's light tint mixes with the dark gray into olive, brown or dusty
   /// mauve, so it washes in gray and the accent text and filled ends carry
-  /// the brand (as the dark soft selection does, K-161).
+  /// the brand (as the dark soft selection does).
   Color _darkTint() => neutral || _coolSelection
       ? o(.72, math.min(c * .9, .12), .18)
       : oN(.72, math.min(cn * .05, .008), .18);
