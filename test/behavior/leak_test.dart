@@ -40,6 +40,7 @@ class _HarnessState extends State<_Harness> {
   DsTime? time;
   num? number = 1;
   double slider = .3;
+  DsRangeValues range = const DsRangeValues(start: .2, end: .7);
   bool sw = false;
   bool? cb = false;
   String tab = 'a';
@@ -79,6 +80,11 @@ class _HarnessState extends State<_Harness> {
           value: slider,
           semanticLabel: 'slider',
           onChanged: (v) => setState(() => slider = v),
+        ),
+        DsRangeSlider(
+          values: range,
+          semanticLabel: 'range',
+          onChanged: (v) => setState(() => range = v),
         ),
         DsSwitch(value: sw, onChanged: (v) => setState(() => sw = v)),
         DsCheckbox(value: cb, onChanged: (v) => setState(() => cb = v)),

@@ -131,6 +131,8 @@ void main() {
         ('textTooShort', l.textTooShort(3), en.textTooShort(3)),
         ('textTooLong', l.textTooLong(3), en.textTooLong(3)),
         ('invalidEmail', l.invalidEmail, en.invalidEmail),
+        ('rangeMinimum', l.rangeMinimum, en.rangeMinimum),
+        ('rangeMaximum', l.rangeMaximum, en.rangeMaximum),
         (
           'numberAmbiguous',
           l.numberAmbiguous('1.234,000', '1,234'),
@@ -140,6 +142,11 @@ void main() {
         // Words that are the same in English and French.
         if (code == 'fr' &&
             {'page', 'pagination', 'notification'}.contains(name)) {
+          continue;
+        }
+        // Minimum and Maximum are also German and French words.
+        if ((code == 'de' || code == 'fr') &&
+            {'rangeMinimum', 'rangeMaximum'}.contains(name)) {
           continue;
         }
         expect(value, isNot(english), reason: '$code.$name is untranslated');
@@ -201,6 +208,8 @@ void main() {
     'textTooShort': l.textTooShort(3),
     'textTooLong': l.textTooLong(3),
     'invalidEmail': l.invalidEmail,
+    'rangeMinimum': l.rangeMinimum,
+    'rangeMaximum': l.rangeMaximum,
   };
 
   group('regional locales', () {

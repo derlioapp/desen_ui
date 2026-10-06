@@ -429,4 +429,10 @@ class DsLocalizationsTr extends DsLocalizationsEn {
 
   @override
   String get noSpellingSuggestions => 'Değiştirme bulunamadı';
+
+  @override
+  String get rangeMinimum => 'En düşük';
+
+  @override
+  String get rangeMaximum => 'En yüksek';
 }

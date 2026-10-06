@@ -417,4 +417,10 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String get noSpellingSuggestions => '未找到替换项';
+
+  @override
+  String get rangeMinimum => '最小值';
+
+  @override
+  String get rangeMaximum => '最大值';
 }

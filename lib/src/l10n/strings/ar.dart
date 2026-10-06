@@ -428,4 +428,10 @@ class DsLocalizationsAr extends DsLocalizationsEn {
 
   @override
   String get noSpellingSuggestions => 'لم يتم العثور على بدائل';
+
+  @override
+  String get rangeMinimum => 'الحد الأدنى';
+
+  @override
+  String get rangeMaximum => 'الحد الأقصى';
 }

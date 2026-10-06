@@ -433,4 +433,10 @@ class DsLocalizationsFr extends DsLocalizationsEn {
 
   @override
   String get noSpellingSuggestions => 'Aucun remplacement trouvé';
+
+  @override
+  String get rangeMinimum => 'Minimum';
+
+  @override
+  String get rangeMaximum => 'Maximum';
 }

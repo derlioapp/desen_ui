@@ -417,4 +417,10 @@ class DsLocalizationsJa extends DsLocalizationsEn {
 
   @override
   String get noSpellingSuggestions => '置き換え候補が見つかりません';
+
+  @override
+  String get rangeMinimum => '最小値';
+
+  @override
+  String get rangeMaximum => '最大値';
 }

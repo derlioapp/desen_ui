@@ -99,6 +99,7 @@ export 'src/components/sidebar/sidebar_item_style.dart';
 export 'src/components/sidebar/sidebar_style.dart';
 export 'src/components/skeleton/skeleton.dart';
 export 'src/components/skeleton/skeleton_style.dart';
+export 'src/components/slider/range_slider.dart';
 export 'src/components/slider/slider.dart';
 export 'src/components/slider/slider_style.dart';
 export 'src/components/spinner/spinner.dart';

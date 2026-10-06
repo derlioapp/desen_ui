@@ -417,4 +417,10 @@ class DsLocalizationsKo extends DsLocalizationsEn {
 
   @override
   String get noSpellingSuggestions => '대치 항목 없음';
+
+  @override
+  String get rangeMinimum => '최솟값';
+
+  @override
+  String get rangeMaximum => '최댓값';
 }

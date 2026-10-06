@@ -22,6 +22,8 @@ Every component follows the model proven on DsButton:
 - `defaults` (optional) are widget parameters the theme data can default,
   such as a size or variant: `(name, type, doc)`, nullable on the theme
   data, laid over like any other value (an inner theme's wins).
+- `subject` (optional) names the widgets in the theme data's doc when one
+  style serves several, such as `DsSlider` and `DsRangeSlider`.
 
 Usage: python3 tool/gen_styles.py   (writes every spec below)
 """
@@ -163,7 +165,8 @@ SPECS = [
     ),
     dict(
         name='Slider', dir='slider', file='slider_style.dart',
-        doc='The look of a `DsSlider`.',
+        doc='The look of a `DsSlider` or a `DsRangeSlider`. A range slider resolves each thumb for its own states (hovered, pressed, focused) and the track for the slider as a whole.',
+        subject='`DsSlider` and `DsRangeSlider`',
         states=['focused', 'hovered', 'pressed', 'disabled'],
         fields=[
             ('width', 'double', 'Width when the parent leaves it unbounded (e.g. in a Row); otherwise the slider fills the width.'),
@@ -1291,7 +1294,8 @@ def gen(spec):
     w('}')
     w('')
     # Theme data
-    w(f'/// Defaults for every `Ds{name}` in a subtree; see [{TW}].')
+    subject = spec.get('subject', f'`Ds{name}`')
+    w(f'/// Defaults for every {subject} in a subtree; see [{TW}].')
     w(f'class {TD} extends DsComponentThemeData<{TD}> {{')
     w('  /// Creates defaults.')
     params = ''.join(f'this.{d}, ' for d, _, _ in defaults) + 'this.style'

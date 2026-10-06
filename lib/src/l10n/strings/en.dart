@@ -452,4 +452,10 @@ class DsLocalizationsEn extends DsLocalizations {
 
   @override
   String get noSpellingSuggestions => 'No replacements found';
+
+  @override
+  String get rangeMinimum => 'Minimum';
+
+  @override
+  String get rangeMaximum => 'Maximum';
 }

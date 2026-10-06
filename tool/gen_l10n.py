@@ -1517,6 +1517,32 @@ VARIANTS['zh_Hant']['values'].update(
 VARIANTS['pt_PT']['values'].update(
     spellingSuggestions='Sugestões ortográficas')
 
+# The two thumbs of a range slider, each its own adjustable node, read
+# after the slider's name ("Price, Minimum").
+KEYS.update({
+    'rangeMinimum': ('Names the lower thumb of a range slider.', 'Minimum'),
+    'rangeMaximum': ('Names the upper thumb of a range slider.', 'Maximum'),
+})
+RANGE = {
+    'ar': dict(rangeMinimum='الحد الأدنى', rangeMaximum='الحد الأقصى'),
+    'de': dict(rangeMinimum='Minimum', rangeMaximum='Maximum'),
+    'es': dict(rangeMinimum='Mínimo', rangeMaximum='Máximo'),
+    'fr': dict(rangeMinimum='Minimum', rangeMaximum='Maximum'),
+    'hi': dict(rangeMinimum='न्यूनतम', rangeMaximum='अधिकतम'),
+    'it': dict(rangeMinimum='Minimo', rangeMaximum='Massimo'),
+    'ja': dict(rangeMinimum='最小値', rangeMaximum='最大値'),
+    'ko': dict(rangeMinimum='최솟값', rangeMaximum='최댓값'),
+    'pt': dict(rangeMinimum='Mínimo', rangeMaximum='Máximo'),
+    'ru': dict(rangeMinimum='Минимум', rangeMaximum='Максимум'),
+    'tr': dict(rangeMinimum='En düşük', rangeMaximum='En yüksek'),
+    'zh': dict(rangeMinimum='最小值', rangeMaximum='最大值'),
+}
+for _lang, _values in RANGE.items():
+    LANGS[_lang].update(_values)
+# Written the same in Traditional Chinese. European Portuguese inherits
+# the Brazilian words.
+VARIANTS['zh_Hant']['values'].update(rangeMinimum='最小值', rangeMaximum='最大值')
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

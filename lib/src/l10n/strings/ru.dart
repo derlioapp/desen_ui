@@ -441,4 +441,10 @@ class DsLocalizationsRu extends DsLocalizationsEn {
 
   @override
   String get noSpellingSuggestions => 'Замены не найдены';
+
+  @override
+  String get rangeMinimum => 'Минимум';
+
+  @override
+  String get rangeMaximum => 'Максимум';
 }

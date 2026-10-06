@@ -390,4 +390,10 @@ mixin _DsStrings {
 
   /// Spell check: the checker has no replacement for a misspelled word.
   String get noSpellingSuggestions;
+
+  /// Names the lower thumb of a range slider.
+  String get rangeMinimum;
+
+  /// Names the upper thumb of a range slider.
+  String get rangeMaximum;
 }
