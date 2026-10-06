@@ -1,3 +1,10 @@
+## Unreleased
+
+- Skeleton blocks are easier to see: new color roles `skeleton` and
+  `skeletonStrong` (about 1.27:1 on the card, the page and the sidebar in
+  light mode). In dark mode a strong skeleton line no longer vanishes on a
+  floating layer.
+
 ## 0.1.0-alpha.2
 
 - LICENSE holds the MIT License alone, so pub.dev recognizes it. The
