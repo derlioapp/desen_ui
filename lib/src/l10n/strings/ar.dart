@@ -397,4 +397,8 @@ class DsLocalizationsAr extends DsLocalizationsEn {
 
   @override
   String get navigation => 'التنقل';
+
+  @override
+  String numberAmbiguous(String grouped, String decimal) =>
+      'أدخل $grouped أو $decimal.';
 }

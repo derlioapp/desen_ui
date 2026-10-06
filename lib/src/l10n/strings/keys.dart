@@ -360,4 +360,7 @@ mixin _DsStrings {
 
   /// Names a navigation bar, e.g. the bottom navigation.
   String get navigation;
+
+  /// A typed number reads two ways; grouped and decimal are both readings, already formatted.
+  String numberAmbiguous(String grouped, String decimal);
 }

@@ -410,4 +410,8 @@ class DsLocalizationsRu extends DsLocalizationsEn {
 
   @override
   String get navigation => 'Навигация';
+
+  @override
+  String numberAmbiguous(String grouped, String decimal) =>
+      'Введите $grouped или $decimal.';
 }

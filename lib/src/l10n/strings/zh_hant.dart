@@ -255,4 +255,8 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
 
   @override
   String get navigation => '導覽';
+
+  @override
+  String numberAmbiguous(String grouped, String decimal) =>
+      '請輸入 $grouped 或 $decimal。';
 }

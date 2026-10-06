@@ -131,6 +131,11 @@ void main() {
         ('textTooShort', l.textTooShort(3), en.textTooShort(3)),
         ('textTooLong', l.textTooLong(3), en.textTooLong(3)),
         ('invalidEmail', l.invalidEmail, en.invalidEmail),
+        (
+          'numberAmbiguous',
+          l.numberAmbiguous('1.234,000', '1,234'),
+          en.numberAmbiguous('1.234,000', '1,234'),
+        ),
       ]) {
         // Words that are the same in English and French.
         if (code == 'fr' &&

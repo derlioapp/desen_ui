@@ -52,7 +52,10 @@ export 'number_format.dart';
 /// within what can become a number ([DsNumberFormat.inputFormatter]): a
 /// minus sign (when [min] allows negatives), digits and the locale's
 /// decimal separator (`,` in Turkish and German; `.` or `,` typed are both
-/// taken as it). [onChanged] follows the typing with each number that is
+/// taken as it, and where `.` also groups thousands, a typed `.` is read
+/// by where it stands: [DsNumberFormat.readings]). A grouped number pasted
+/// into an ungrouped field ("1.234,56") drops its group separators.
+/// [onChanged] follows the typing with each number that is
 /// in range, and with null while the text is empty, not yet a number
 /// ("-") or out of range. On Enter or when focus leaves, the number is
 /// rounded to the format's fraction digits, then kept in [min]–[max] at a
@@ -60,9 +63,14 @@ export 'number_format.dart';
 /// and shown in the format (`12,5` → `12,50`). Nothing is reported without
 /// an edit. Text that is not a number is kept with the error look (2px
 /// danger edge and icon, invalid for screen readers) and the value is
-/// null, so it can be fixed rather than retyped. While typing, a number
-/// that more digits cannot bring back into range (over [max], or under a
-/// negative [min]) shows the error look at once.
+/// null, so it can be fixed rather than retyped. So is text that reads
+/// two ways ("1.234" in a German field with three fraction digits: a
+/// thousand or a decimal), with a message offering both, and a number the
+/// field cannot hold exactly: past ±9007199254740991 (2^53 − 1) without
+/// fraction digits, a hundredth of that with two, and so on, where a
+/// double would change it. While typing, a number that more digits cannot
+/// bring back into range (over [max] or that limit, or under a negative
+/// [min]) shows the error look at once.
 ///
 /// **Invalid input.** [onInputIssueChanged] tells what is wrong ("Enter a
 /// number.", "Enter 10 or less.") and null once it is fixed or the field is
@@ -330,7 +338,7 @@ class _DsNumberFieldState extends State<DsNumberField>
   /// (a [double] past ±2^53, where an int would not hold what is shown),
   /// never negative zero.
   num _round(num v) {
-    final decimals = _fmt.decimals;
+    final decimals = _decimals;
     if (decimals == 0) {
       return v.abs() < _exactInts ? v.round() : v.roundToDouble();
     }
@@ -344,8 +352,30 @@ class _DsNumberFieldState extends State<DsNumberField>
   num _roundTo(num v, {required bool up}) {
     final r = _round(v);
     if (up ? r >= v : r <= v) return r;
-    final unit = math.pow(10, -_fmt.decimals);
+    final unit = math.pow(10, -_decimals);
     return _round(up ? r + unit : r - unit);
+  }
+
+  /// The format's fraction digits, as many as it shows.
+  int get _decimals => math.min(_fmt.decimals, DsNumberFormat.maxDecimals);
+
+  /// The largest magnitude typing can give: past it a double no longer
+  /// holds every number the format shows (2^53 − 1 without fraction
+  /// digits, a hundredth of that with two), so the number would change.
+  num get _exactLimit => (_exactInts - 1) / math.pow(10, _decimals);
+
+  /// [DsNumberField.max], or [_exactLimit] when that is lower or none is
+  /// set.
+  num get _typedMax {
+    final max = widget.max;
+    return max == null || max > _exactLimit ? _exactLimit : max;
+  }
+
+  /// [DsNumberField.min], or -[_exactLimit] when that is higher or none is
+  /// set.
+  num get _typedMin {
+    final min = widget.min;
+    return min == null || min < -_exactLimit ? -_exactLimit : min;
   }
 
   /// [v] as reported: rounded first, then kept in [min]–[max] at a number
@@ -365,17 +395,17 @@ class _DsNumberFieldState extends State<DsNumberField>
 
   /// Why [v] is out of range for good: over [max] (more digits only grow
   /// it), or under a negative [min]; null when more typing can still bring
-  /// it in.
+  /// it in. Past [_exactLimit] counts as out of range too.
   DsInputIssue? _beyondReach(num v) {
     final l10n = DsLocalizations.of(context);
-    final min = widget.min, max = widget.max;
-    if (max != null && v > max && v >= 0) {
+    final min = _typedMin, max = _typedMax;
+    if (v > max && v >= 0) {
       return DsInputIssue(
         DsInputIssueKind.aboveMax,
         l10n.numberTooLarge(_fmt.format(_roundTo(max, up: false))),
       );
     }
-    if (min != null && v < min && v < 0) {
+    if (v < min && v < 0) {
       return DsInputIssue(
         DsInputIssueKind.belowMin,
         l10n.numberTooSmall(_fmt.format(_roundTo(min, up: true))),
@@ -388,7 +418,8 @@ class _DsNumberFieldState extends State<DsNumberField>
   num? get _current => _fmt.tryParse(controller.text);
 
   /// While typing: each number in range, null otherwise; a number more
-  /// digits cannot bring back into range is an issue at once.
+  /// digits cannot bring back into range is an issue at once. Text that
+  /// reads two ways waits for more typing.
   @override
   DsTypedRead<num> readTyping(String text) {
     final v = _fmt.tryParse(text);
@@ -397,21 +428,36 @@ class _DsNumberFieldState extends State<DsNumberField>
     return (value: _inRange(v) ? _settle(v) : null, issue: null);
   }
 
-  /// On commit: rounded and kept in range; text that is not a number is an
-  /// issue.
+  /// On commit: rounded and kept in range. Text that is not a number,
+  /// that reads two ways, or whose number would change past
+  /// [_exactLimit] is an issue.
   @override
   DsTypedRead<num> readCommit(String text) {
-    final v = _fmt.tryParse(text);
-    if (v == null) {
+    final l10n = DsLocalizations.of(context);
+    final invalid = DsInputIssue(DsInputIssueKind.invalid, l10n.invalidNumber);
+    final readings = _fmt.readings(text);
+    if (readings.length == 2) {
+      // "1.234" in German with three fraction digits: a thousand or a
+      // decimal. Both are offered, written so they read one way.
       return (
         value: null,
         issue: DsInputIssue(
           DsInputIssueKind.invalid,
-          DsLocalizations.of(context).invalidNumber,
+          l10n.numberAmbiguous(
+            _fmt.format(readings.first),
+            _fmt.format(readings.last),
+          ),
         ),
       );
     }
-    return (value: _settle(v), issue: null);
+    if (readings.isEmpty) return (value: null, issue: invalid);
+    final v = readings.single;
+    final settled = _settle(v);
+    // Kept in range, it is exact; past the limit it would change silently.
+    if (settled.abs() > _exactLimit) {
+      return (value: null, issue: _beyondReach(v) ?? invalid);
+    }
+    return (value: settled, issue: null);
   }
 
   void _onSubmitted(String _) {

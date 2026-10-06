@@ -395,4 +395,8 @@ class DsLocalizationsIt extends DsLocalizationsEn {
 
   @override
   String get navigation => 'Navigazione';
+
+  @override
+  String numberAmbiguous(String grouped, String decimal) =>
+      'Inserisci $grouped o $decimal.';
 }

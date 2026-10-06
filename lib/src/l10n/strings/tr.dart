@@ -398,4 +398,8 @@ class DsLocalizationsTr extends DsLocalizationsEn {
 
   @override
   String get navigation => 'Gezinme';
+
+  @override
+  String numberAmbiguous(String grouped, String decimal) =>
+      '$grouped ya da $decimal girin.';
 }

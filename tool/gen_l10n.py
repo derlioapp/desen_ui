@@ -1385,6 +1385,34 @@ for _lang, _values in NAVIGATION.items():
     LANGS[_lang].update(_values)
 VARIANTS['zh_Hant']['values'].update(navigation='導覽')
 
+# A number field's text that reads two ways: "1.234" in German with three
+# fraction digits is a thousand or a decimal. `grouped` and `decimal` are
+# the two readings, written in the field's format so each reads one way
+# ("1.234,000", "1,234").
+KEYS.update({
+    'numberAmbiguous(String grouped, String decimal)': (
+        'A typed number reads two ways; grouped and decimal are both readings, already formatted.',
+        "'Enter $grouped or $decimal.'"),
+})
+NUMBER_AMBIGUOUS = {
+    'ar': "'أدخل $grouped أو $decimal.'",
+    'de': "'Geben Sie $grouped oder $decimal ein.'",
+    'es': "'Introduce $grouped o $decimal.'",
+    'fr': "'Saisissez $grouped ou $decimal.'",
+    'hi': "'$grouped या $decimal दर्ज करें।'",
+    'it': "'Inserisci $grouped o $decimal.'",
+    'ja': "'$grouped または $decimal と入力してください。'",
+    'ko': "'$grouped 또는 $decimal 중 하나를 입력하세요.'",
+    'pt': "'Digite $grouped ou $decimal.'",
+    'ru': "'Введите $grouped или $decimal.'",
+    'tr': "'$grouped ya da $decimal girin.'",
+    'zh': "'请输入 $grouped 或 $decimal。'",
+}
+for _lang, _value in NUMBER_AMBIGUOUS.items():
+    LANGS[_lang].update(numberAmbiguous=_value)
+VARIANTS['zh_Hant']['values'].update(numberAmbiguous="'請輸入 $grouped 或 $decimal。'")
+VARIANTS['pt_PT']['values'].update(numberAmbiguous="'Introduza $grouped ou $decimal.'")
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

@@ -386,4 +386,8 @@ class DsLocalizationsKo extends DsLocalizationsEn {
 
   @override
   String get navigation => '탐색';
+
+  @override
+  String numberAmbiguous(String grouped, String decimal) =>
+      '$grouped 또는 $decimal 중 하나를 입력하세요.';
 }

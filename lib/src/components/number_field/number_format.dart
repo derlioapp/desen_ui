@@ -22,14 +22,20 @@ class DsNumberFormat {
     this.grouping = false,
     this.decimalSeparator,
     this.groupSeparator,
-  }) : assert(decimals >= 0);
+  }) : assert(decimals >= 0 && decimals <= maxDecimals);
+
+  /// The most fraction digits a format shows: 20, the most a double's
+  /// fixed notation writes. A format asking for more shows 20 (and fails an
+  /// assertion in debug builds).
+  static const int maxDecimals = 20;
 
   /// Fraction digits: always shown, and the most that can be typed. 0 makes
-  /// whole numbers.
+  /// whole numbers; at most [maxDecimals].
   final int decimals;
 
   /// Whether thousands are grouped (`12.500`). Typed group separators are
-  /// accepted and ignored.
+  /// accepted where they group thousands ([readings] tells how a typed `.`
+  /// or `,` is read).
   final bool grouping;
 
   /// Separates the fraction; null takes the locale's.
@@ -52,9 +58,19 @@ class DsNumberFormat {
   String get _decimal => decimalSeparator ?? '.';
   String get _group => groupSeparator ?? ',';
 
+  /// [decimals], held to 0–[maxDecimals].
+  int get _digits => decimals.clamp(0, maxDecimals);
+
+  /// Whether the group separator is a key a keypad offers for the decimal
+  /// point, so a typed one may mean either.
+  bool get _keypadGroup => grouping && (_group == '.' || _group == ',');
+
   /// [value] rounded to [decimals] fraction digits, e.g. `-12.500,50`.
-  /// Negative zero is shown as zero.
+  /// Negative zero is shown as zero, an infinity as `∞` or `-∞`, and NaN
+  /// as an empty string.
   String format(num value) {
+    if (value.isNaN) return '';
+    if (value.isInfinite) return value.isNegative ? '-∞' : '∞';
     var fixed = _fixed(value);
     var negative = fixed.startsWith('-');
     if (negative) fixed = fixed.substring(1);
@@ -80,35 +96,97 @@ class DsNumberFormat {
   /// [value] with [decimals] fraction digits, in plain digits even past
   /// 1e21 (where `toStringAsFixed` writes an exponent).
   String _fixed(num value) {
+    final digits = _digits;
     if (value is double && value.isFinite && value.abs() >= 1e21) {
       final whole = BigInt.from(value).toString();
-      return decimals == 0 ? whole : '$whole.${'0' * decimals}';
+      return digits == 0 ? whole : '$whole.${'0' * digits}';
     }
-    return value.toStringAsFixed(decimals);
+    return value.toStringAsFixed(digits);
   }
 
-  /// The number [text] holds, or null when it is empty or not a number
-  /// ("-", ","). Group separators are skipped; other scripts' digits
-  /// (Arabic-Indic, full-width) and the minus sign (−) are read too.
+  /// The number [text] holds, or null when it is empty, not a number
+  /// ("-", ",") or could be read two ways ([readings]). Group separators
+  /// are skipped; other scripts' digits (Arabic-Indic, full-width) and the
+  /// minus sign (−) are read too.
   double? tryParse(String text) {
+    final all = readings(text);
+    return all.length == 1 ? all.single : null;
+  }
+
+  /// Every number [text] can be read as: none when it is empty or not a
+  /// number, one, or two when it is ambiguous. [tryParse] takes the one.
+  ///
+  /// With [grouping], a group separator that is `.` or `,` (the keys a
+  /// keypad offers for the decimal point, whatever the locale) is read by
+  /// where it stands:
+  /// - It groups thousands where it can: the first group one to three
+  ///   digits without a leading zero, every later one three
+  ///   (`1.234.567`, `12.500,75` in German).
+  /// - It is the decimal point where it can be: with [decimals] above 0,
+  ///   alone, without a decimal separator, and followed by no more than
+  ///   [decimals] digits (`12.5` and `12.` in German).
+  /// - Where it can be either (`1.234` in German with three or more
+  ///   [decimals]), both readings are returned, the grouped one first, so
+  ///   the magnitude is never guessed. Where it can be neither (`1.23.4`,
+  ///   `12.5,3`), none is.
+  ///
+  /// Other group separators (spaces, `’`) are skipped wherever they stand.
+  List<double> readings(String text) {
     var s = _normalize(text).trim();
+    if (_keypadGroup) {
+      final sign = s.startsWith('-') ? '-' : '';
+      final parts = s.substring(sign.length).split(_decimal);
+      if (parts.length > 2) return const [];
+      final fraction = parts.length == 2 ? '.${parts[1]}' : '';
+      final groups = parts.first.split(_group);
+      if (groups.length == 1) return _plain('$sign${parts.first}$fraction');
+      final first = groups.first;
+      final grouped =
+          first.isNotEmpty &&
+          first.length <= 3 &&
+          !first.startsWith('0') &&
+          groups.skip(1).every((g) => g.length == 3);
+      final point =
+          _digits > 0 &&
+          groups.length == 2 &&
+          fraction.isEmpty &&
+          groups.last.length <= _digits;
+      // A grouped reading is 1000 or more, a decimal one under 1000: two
+      // readings always differ.
+      return [
+        if (grouped) ..._plain('$sign${groups.join()}$fraction'),
+        if (point) ..._plain('$sign$first.${groups.last}'),
+      ];
+    }
     if (grouping) {
       s = s.replaceAll(_group, '');
       if (_isSpace(_group)) s = s.replaceAll(_spaces, '');
     }
-    s = s.replaceAll(_decimal, '.');
-    if (!_number.hasMatch(s)) return null;
+    return _plain(s.replaceAll(_decimal, '.'));
+  }
+
+  /// The number [s] (digits, "-" and "." for the decimal point) is, as a
+  /// list of one; empty when it is not a finite number.
+  static List<double> _plain(String s) {
+    if (!_number.hasMatch(s)) return const [];
     final v = double.tryParse(s);
-    return v == null || !v.isFinite ? null : v;
+    return v == null || !v.isFinite ? const [] : [v];
   }
 
   /// A formatter for a text field that lets through only what can become
   /// a number in this format: digits, one leading minus when [signed], one
   /// decimal separator when [decimals] > 0 (and no more fraction digits
-  /// than that), and group separators when [grouping]. Either `.` or `,`
-  /// typed where a decimal separator can go becomes this format's one, so
-  /// a keypad's key works in every locale; so do other scripts' digits.
-  /// Anything else (a letter, a pasted sentence) leaves the text as it was.
+  /// than that), and group separators when [grouping].
+  ///
+  /// Either `.` or `,` typed where a decimal separator can go becomes this
+  /// format's one, so a keypad's key works in every locale; so do other
+  /// scripts' digits. The one exception is the group separator of a
+  /// grouped format (`.` in German): it stays as typed, and [readings]
+  /// tells a group from a decimal point by where it stands. A number
+  /// grouped the locale's way and pasted into an ungrouped format
+  /// ("1.234,56" in German) is kept without its group separators
+  /// ("1234,56"). Anything else (a letter, a pasted sentence) leaves the
+  /// text as it was.
   TextInputFormatter inputFormatter({bool signed = true}) =>
       _NumberInputFormatter(this, signed: signed);
 
@@ -127,10 +205,30 @@ class DsNumberFormat {
     return out.toString();
   }
 
+  /// [text], a number grouped the way this format's locale groups
+  /// ("1.234,56" in German), without its group separators; null when this
+  /// format groups itself or [text] is not such a number.
+  String? _ungrouped(String text) {
+    if (grouping) return null;
+    final grouped = DsNumberFormat(
+      decimals: _digits,
+      grouping: true,
+      decimalSeparator: _decimal,
+      groupSeparator: _group,
+    );
+    final read = grouped.readings(text);
+    if (read.length != 1) return null;
+    var out = text.replaceAll(_group, '');
+    if (_isSpace(_group)) out = out.replaceAll(_spaces, '');
+    final again = grouped.readings(out);
+    return again.length == 1 && again.single == read.single ? out : null;
+  }
+
   bool _canBecomeNumber(String text, {required bool signed}) {
     final group = grouping ? RegExp.escape(_group) : '';
-    final fraction = decimals > 0
-        ? '(?:${RegExp.escape(_decimal)}[0-9]{0,$decimals})?'
+    final digits = _digits;
+    final fraction = digits > 0
+        ? '(?:${RegExp.escape(_decimal)}[0-9]{0,$digits})?'
         : '';
     return RegExp('^${signed ? '-?' : ''}[0-9$group]*$fraction\$')
         .hasMatch(text);
@@ -192,10 +290,19 @@ class _NumberInputFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    final text = format._mapSeparators(_normalize(newValue.text));
+    final normalized = _normalize(newValue.text);
+    var text = format._mapSeparators(normalized);
     // Mapping is one character for one only when no character was outside
     // the basic plane; otherwise the selection is placed at the end.
-    if (!format._canBecomeNumber(text, signed: signed)) return oldValue;
+    if (!format._canBecomeNumber(text, signed: signed)) {
+      // A number grouped the locale's way, pasted: kept without its groups.
+      final ungrouped = format._ungrouped(normalized);
+      if (ungrouped == null ||
+          !format._canBecomeNumber(ungrouped, signed: signed)) {
+        return oldValue;
+      }
+      text = ungrouped;
+    }
     if (text == newValue.text) return newValue;
     final same = text.length == newValue.text.length;
     return newValue.copyWith(
