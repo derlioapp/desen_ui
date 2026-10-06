@@ -173,7 +173,7 @@ class _DsCheckboxState extends State<DsCheckbox> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     // A surrounding DsField with an error marks the control too (K-71).
     final error =
         widget.error || (DsFieldScope.maybeOf(context)?.hasError ?? false);

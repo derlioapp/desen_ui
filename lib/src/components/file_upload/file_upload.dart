@@ -254,7 +254,7 @@ class _DsFileUploadState extends State<DsFileUpload> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final field = DsFieldScope.maybeOf(context);
     _report(field?.hooks);
@@ -605,7 +605,7 @@ class _DsFileItemState extends State<DsFileItem> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final locale = Localizations.maybeLocaleOf(context) ?? const Locale('en');
     final status = widget.status;

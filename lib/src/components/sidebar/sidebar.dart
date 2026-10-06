@@ -126,7 +126,7 @@ class DsSidebar<T extends Object> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsSidebarStyle.resolveLayers([
       defaultStyle(t),
       DsSidebarTheme.of(context).style,
@@ -241,7 +241,7 @@ class DsSidebarSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsSidebarStyle.resolveLayers([
       DsSidebar.defaultStyle(t),
       DsSidebarTheme.of(context).style,
@@ -394,7 +394,7 @@ class _DsSidebarItemState<T extends Object> extends State<DsSidebarItem<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final scope = _DsSidebarScope.maybeOf(context);
     final collapsed = scope?.collapsed ?? false;
     final value = widget.value;

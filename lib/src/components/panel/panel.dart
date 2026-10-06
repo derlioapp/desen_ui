@@ -88,7 +88,7 @@ class DsPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsPanelStyle.resolveLayers([
       defaultStyle(t),
       DsPanelTheme.of(context).style,
@@ -205,7 +205,7 @@ class _PanelFrameState extends State<_PanelFrame> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsPanelStyle.resolveLayers([
       DsPanel.defaultStyle(t),
       DsPanelTheme.of(context).style,

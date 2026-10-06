@@ -123,7 +123,7 @@ class DsBreadcrumb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final layers = [
       defaultStyle(t),
@@ -388,7 +388,7 @@ class _LevelState extends State<_Level> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = widget.layers;
     return DsPressable(
       onPressed: widget.onPressed,

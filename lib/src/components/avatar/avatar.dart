@@ -205,7 +205,7 @@ class DsAvatar extends StatelessWidget {
   ) {
     final theme = DsAvatarTheme.of(context);
     return DsAvatarStyle.resolveLayers([
-      defaultStyle(DsTheme.of(context), size: size),
+      defaultStyle(dsThemeOf(context), size: size),
       theme.style,
       theme.sizes[size],
       style,
@@ -366,7 +366,7 @@ class DsAvatarGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final theme = DsAvatarGroupTheme.of(context);
     final size = this.size ?? theme.size ?? DsSize.sm;
     final s = DsAvatarGroupStyle.resolveLayers([

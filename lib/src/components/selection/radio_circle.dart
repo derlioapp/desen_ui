@@ -34,7 +34,7 @@ class RadioCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = style;
     final size = s.size!;
     final dot = s.dotSize!;

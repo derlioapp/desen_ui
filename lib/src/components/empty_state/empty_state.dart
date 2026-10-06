@@ -69,7 +69,7 @@ class DsEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsEmptyStateStyle.resolveLayers([
       defaultStyle(t),
       DsEmptyStateTheme.of(context).style,

@@ -86,7 +86,7 @@ class DsScrollbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final theme = DsScrollbarTheme.of(context);
     return _DsRawScrollbar(
       controller: controller,

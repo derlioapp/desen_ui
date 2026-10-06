@@ -188,7 +188,7 @@ class _DsImageState extends State<DsImage> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsImageStyle.resolveLayers([
       DsImage.defaultStyle(t),
       DsImageTheme.of(context).style,

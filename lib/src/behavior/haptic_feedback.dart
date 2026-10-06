@@ -36,7 +36,7 @@ abstract final class DsHapticFeedback {
     // callbacks, and must not make the caller rebuild on theme changes.
     final theme =
         context.getInheritedWidgetOfExactType<DsTheme>()?.data ??
-        DsTheme.of(context);
+        dsThemeOf(context);
     if (!isTouchPlatform(theme.platform)) return;
     if (!theme.effectiveHaptics.plays(event)) return;
     final Future<void> done = switch (event) {

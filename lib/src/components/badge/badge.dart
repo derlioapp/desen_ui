@@ -72,7 +72,7 @@ class DsBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final theme = DsBadgeTheme.of(context);
     final s = DsBadgeStyle.resolveLayers([
       defaultStyle(t, status: status),
@@ -214,7 +214,7 @@ class DsCount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final theme = DsCountTheme.of(context);
     final s = DsCountStyle.resolveLayers([
       defaultStyle(t, tone: tone),
@@ -331,7 +331,7 @@ class DsStatusDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final theme = DsStatusDotTheme.of(context);
     final s = DsStatusDotStyle.resolveLayers([
       defaultStyle(t, status: status),

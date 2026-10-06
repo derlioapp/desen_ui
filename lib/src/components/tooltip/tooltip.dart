@@ -219,7 +219,7 @@ class _DsTooltipState extends State<DsTooltip> {
       focusOnOpen: false,
       onDismissed: _hide,
       overlayBuilder: (context) {
-        final t = DsTheme.of(context);
+        final t = dsThemeOf(context);
         final s = DsTooltipStyle.resolveLayers([
           DsTooltip.defaultStyle(t),
           DsTooltipTheme.of(context).style,

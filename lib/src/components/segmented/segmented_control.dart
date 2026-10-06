@@ -225,7 +225,7 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       DsSegmentedControl.defaultStyle(t),
       DsSegmentedControlTheme.of(context).style,

@@ -194,7 +194,7 @@ class _DsFieldState extends State<DsField> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final error = _error;
     final hasError = error != null;

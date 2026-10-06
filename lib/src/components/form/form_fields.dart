@@ -844,7 +844,7 @@ class _RequiredLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = DsFieldStyle.resolveLayers([
-      DsField.defaultStyle(DsTheme.of(context)),
+      DsField.defaultStyle(dsThemeOf(context)),
       DsFieldTheme.of(context).style,
       style,
     ], const {});

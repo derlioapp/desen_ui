@@ -1242,7 +1242,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final scope = DsFieldScope.maybeOf(context);
     final enabled = _enabled;
@@ -1533,7 +1533,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     DsAutocompleteStyle a,
     DsLocalizations l10n,
   ) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final panel = DsMenuStyle.resolveLayers([
       DsMenu.defaultStyle(t),
       DsMenuTheme.of(context).style,
@@ -1717,7 +1717,7 @@ class _OptionRowState<T> extends State<_OptionRow<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final o = widget.option;
     final states = {
       if (widget.active) WidgetState.hovered,
@@ -1813,7 +1813,7 @@ class _CustomRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsMenuItemStyle.resolveLayers(layers, const {
       WidgetState.hovered,
     });

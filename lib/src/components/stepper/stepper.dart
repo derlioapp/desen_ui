@@ -274,7 +274,7 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final strings = DsLocalizations.of(context);
     _format = (widget.format ?? DsNumberFormat(decimals: _impliedDigits))
         .forLocale(dsConventionsLocale(context, strings));

@@ -353,7 +353,7 @@ class _DsTimePickerState extends State<DsTimePicker>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final locale = _locale!;
     final l10n = locale.strings;
     final scope = DsFieldScope.maybeOf(context);
@@ -744,7 +744,7 @@ class _TimeColumnState extends State<_TimeColumn> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = widget.style;
     final data = widget.data;
     final itemHeight = widget.itemHeight;

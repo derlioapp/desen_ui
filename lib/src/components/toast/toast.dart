@@ -113,7 +113,7 @@ class DsToast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final k = t.colors;
     final l10n = DsLocalizations.of(context);
     final s = DsToastStyle.resolveLayers([

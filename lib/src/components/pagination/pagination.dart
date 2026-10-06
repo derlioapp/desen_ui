@@ -120,7 +120,7 @@ class DsPagination extends StatefulWidget {
 
   /// Builds the control with the stops' [nodes].
   Widget _build(BuildContext context, _Nodes nodes) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       defaultStyle(t),
       DsPaginationTheme.of(context).style,
@@ -357,7 +357,7 @@ class _PageState extends State<_Page> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     return DsPressable(
       onPressed: widget.selected ? () {} : widget.onPressed,

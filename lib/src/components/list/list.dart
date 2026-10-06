@@ -69,7 +69,7 @@ class DsListSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsListSectionStyle.resolveLayers([
       defaultStyle(t),
       DsListSectionTheme.of(context).style,
@@ -276,7 +276,7 @@ class _DsListRowState extends State<DsListRow> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       DsListRow.defaultStyle(t, destructive: widget.destructive),
       DsListRowTheme.of(context).style,

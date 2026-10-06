@@ -276,7 +276,7 @@ class _DsSliderState extends State<DsSlider> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final states = <WidgetState>{
       if (!_enabled) WidgetState.disabled,
       if (_hovered) WidgetState.hovered,

@@ -55,7 +55,7 @@ class DsPaneHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsPaneHeaderStyle.resolveLayers([
       defaultStyle(t),
       DsPaneHeaderTheme.of(context).style,

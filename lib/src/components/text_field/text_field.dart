@@ -916,7 +916,7 @@ class _DsTextFieldState extends State<DsTextField>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final scope = DsFieldScope.maybeOf(context);
     final enabled = widget.enabled;

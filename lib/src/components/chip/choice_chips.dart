@@ -258,7 +258,7 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       DsChip.defaultStyle(t),
       DsChipTheme.of(context).style,

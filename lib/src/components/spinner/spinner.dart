@@ -66,7 +66,7 @@ class _DsSpinnerState extends State<DsSpinner>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsSpinnerStyle.resolveLayers([
       DsSpinner.defaultStyle(t),
       DsSpinnerTheme.of(context).style,

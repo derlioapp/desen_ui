@@ -76,7 +76,7 @@ class DsToolbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsToolbarStyle.resolveLayers([
       defaultStyle(t),
       DsToolbarTheme.of(context).style,
@@ -206,7 +206,7 @@ class DsToolbarDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsToolbarStyle.resolveLayers([
       DsToolbar.defaultStyle(t),
       DsToolbarTheme.of(context).style,
@@ -302,7 +302,7 @@ class _DsToolbarToggleState extends State<DsToolbarToggle> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       DsToolbarToggle.defaultStyle(t),
       DsToolbarToggleTheme.of(context).style,

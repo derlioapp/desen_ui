@@ -367,7 +367,7 @@ class DsModalRoute<T> extends PopupRoute<T> {
   ) => _context(
     Builder(
       builder: (context) {
-        final t = DsTheme.of(context);
+        final t = dsThemeOf(context);
         return DefaultTextStyle(
           style: t.typography.body.copyWith(color: t.colors.text),
           child: IconTheme(
