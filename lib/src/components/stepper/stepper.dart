@@ -23,7 +23,9 @@ import 'stepper_style.dart';
 ///
 /// The value slot is as wide as the wider of [min] and [max] as shown (at
 /// least [DsStepperStyle.valueWidth]), so the control never jumps and long
-/// values are not cut; the button at a limit turns inactive. Keyboard
+/// values are not cut; the button at a limit turns inactive. Where the
+/// stepper has less room than that (a narrow parent, large text), the
+/// number scales down to fit. Keyboard
 /// (WAI-ARIA spinbutton): the stepper is one Tab stop; Up and Down step,
 /// Left and Right step too and mirror in RTL like the buttons, Home and End
 /// jump to [min] and [max]. Screen readers announce the value as shown and
@@ -86,13 +88,16 @@ class DsStepper<T extends num> extends StatefulWidget {
   /// Called with the new value. Null disables the stepper.
   final ValueChanged<T>? onChanged;
 
-  /// Smallest value; whole for an `int` stepper.
+  /// Smallest value; whole for an `int` stepper. `double.negativeInfinity`
+  /// sets none: Home then does nothing.
   final num min;
 
-  /// Largest value; whole for an `int` stepper.
+  /// Largest value; whole for an `int` stepper. `double.infinity` sets
+  /// none: End then does nothing, and the value slot grows with the value.
   final num max;
 
-  /// Amount added or removed per step; whole for an `int` stepper.
+  /// Amount added or removed per step; whole for an `int` stepper, where a
+  /// fractional step is rounded to a whole one of at least 1.
   final num step;
 
   /// How the value is shown and announced: fraction digits, grouping and
@@ -191,23 +196,36 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
   }
 
   bool get _enabled => widget.onChanged != null;
-  // Against the limits as reported, which a step can actually reach.
-  bool get _canDec => _enabled && widget.value > _settle(widget.min);
-  bool get _canInc => _enabled && widget.value < _settle(widget.max);
+  // Against the limits as reported, which a step can actually reach; an
+  // unbounded side always takes another step.
+  bool get _canDec =>
+      _enabled &&
+      (!widget.min.isFinite || widget.value > _settle(widget.min));
+  bool get _canInc =>
+      _enabled &&
+      (!widget.max.isFinite || widget.value < _settle(widget.max));
+
+  /// [DsStepper.step], whole and at least 1 for an `int` stepper, where a
+  /// fractional step would round back to where it started.
+  num get _step => T == int ? math.max(1, widget.step.round()) : widget.step;
 
   /// The format in use, with the locale's separators; set in [build].
   late DsNumberFormat _format;
 
   /// Fraction digits a value is rounded to: the format's, or more when the
   /// step or the lower limit needs them, so a step is never lost.
-  int get _digits => math.max(_format.decimals, _impliedDigits);
+  int get _digits => math.min(
+    math.max(_format.decimals, _impliedDigits),
+    DsNumberFormat.maxDecimals,
+  );
 
   /// The fraction digits [DsStepper.step] and [DsStepper.min] are written
-  /// with (0.25 → 2), up to six.
+  /// with (0.25 → 2), up to six; none for an unbounded [DsStepper.min].
   int get _impliedDigits =>
       math.max(_fractionDigits(widget.step), _fractionDigits(widget.min));
 
   static int _fractionDigits(num v) {
+    if (!v.isFinite) return 0;
     var scaled = v.abs().toDouble();
     for (var d = 0; d < 6; d++) {
       // A millionth of the last digit is float dust, not a digit.
@@ -221,11 +239,15 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
   /// [DsStepper.min]–[DsStepper.max] at a number that is shown (a limit
   /// with more digits rounds inward). An int for an int stepper, or for a
   /// num one without fraction digits; a double otherwise, never negative
-  /// zero.
+  /// zero. [v] is finite; an unbounded limit holds nothing back.
   T _settle(num v) {
     final digits = _digits;
+    final min = widget.min, max = widget.max;
     if (T == int || (T == num && digits == 0)) {
-      return v.round().clamp(widget.min.ceil(), widget.max.floor()) as T;
+      var r = v.round();
+      if (max.isFinite && r > max) r = max.floor();
+      if (min.isFinite && r < min) r = min.ceil();
+      return r as T;
     }
     final scale = math.pow(10, digits);
     double fix(num x) => double.parse(x.toStringAsFixed(digits));
@@ -259,12 +281,12 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
         ? LogicalKeyboardKey.arrowRight
         : LogicalKeyboardKey.arrowLeft;
     if (key == LogicalKeyboardKey.arrowUp || key == forward) {
-      _set(widget.value + widget.step);
+      _set(widget.value + _step);
     } else if (key == LogicalKeyboardKey.arrowDown || key == back) {
-      _set(widget.value - widget.step);
-    } else if (key == LogicalKeyboardKey.home) {
+      _set(widget.value - _step);
+    } else if (key == LogicalKeyboardKey.home && widget.min.isFinite) {
       _set(widget.min);
-    } else if (key == LogicalKeyboardKey.end) {
+    } else if (key == LogicalKeyboardKey.end && widget.max.isFinite) {
       _set(widget.max);
     } else {
       return KeyEventResult.ignored;
@@ -350,9 +372,11 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
     final number = Stack(
       alignment: Alignment.center,
       children: [
-        // Hold the width of the wider limit as shown (B29).
+        // Hold the width of the wider limit as shown (B29); an unbounded
+        // one has no width to hold.
         for (final limit in [widget.min, widget.max])
-          ExcludeSemantics(
+          if (limit.isFinite)
+            ExcludeSemantics(
             child: Opacity(
               opacity: 0,
               child: Text(
@@ -387,10 +411,10 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
       container: true,
       label: widget.semanticLabel,
       value: spoken(shown),
-      increasedValue: _canInc ? spoken(stepped(widget.step)) : null,
-      decreasedValue: _canDec ? spoken(stepped(-widget.step)) : null,
-      onIncrease: _canInc ? () => _set(value + widget.step) : null,
-      onDecrease: _canDec ? () => _set(value - widget.step) : null,
+      increasedValue: _canInc ? spoken(stepped(_step)) : null,
+      decreasedValue: _canDec ? spoken(stepped(-_step)) : null,
+      onIncrease: _canInc ? () => _set(value + _step) : null,
+      onDecrease: _canDec ? () => _set(value - _step) : null,
       enabled: _enabled,
       child: Focus(
         canRequestFocus: false,
@@ -416,16 +440,25 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                button(DsIcons.minus, _canDec, -widget.step, _decNode),
+                button(DsIcons.minus, _canDec, -_step, _decNode),
                 // Announced once, as the value, not again inside the label.
-                ConstrainedBox(
-                  constraints: BoxConstraints(minWidth: s.valueWidth!),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: DsSpace.s4),
-                    child: slot,
+                // Short of room (a narrow parent, large text), the number
+                // scales down to fit, whole, rather than overflow or cut.
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(minWidth: s.valueWidth!),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: DsSpace.s4,
+                        ),
+                        child: slot,
+                      ),
+                    ),
                   ),
                 ),
-                button(DsIcons.plus, _canInc, widget.step, _incNode),
+                button(DsIcons.plus, _canInc, _step, _incNode),
               ],
             ),
           ),
