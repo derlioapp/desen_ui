@@ -331,6 +331,18 @@ class DsLocalizationsKo extends DsLocalizationsEn {
   String numberTooLarge(String max) => '$max 이하의 숫자를 입력하세요.';
 
   @override
+  String get seconds => '초';
+
+  @override
+  String get unavailable => '선택 불가';
+
+  @override
+  String timeTooEarly(String time) => '$time 이후의 시간을 입력하세요.';
+
+  @override
+  String timeTooLate(String time) => '$time 이전의 시간을 입력하세요.';
+
+  @override
   String get fieldRequired => '필수 항목입니다.';
 
   @override

@@ -335,6 +335,18 @@ class DsLocalizationsIt extends DsLocalizationsEn {
   String numberTooLarge(String max) => 'Inserisci $max o meno.';
 
   @override
+  String get seconds => 'Secondi';
+
+  @override
+  String get unavailable => 'Non disponibile';
+
+  @override
+  String timeTooEarly(String time) => 'Inserisci $time o un orario successivo.';
+
+  @override
+  String timeTooLate(String time) => 'Inserisci $time o un orario precedente.';
+
+  @override
   String get fieldRequired => 'Questo campo è obbligatorio.';
 
   @override

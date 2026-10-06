@@ -1087,8 +1087,8 @@ SPECS = [
     ),
     dict(
         name='TimePicker', dir='time', file='time_picker_style.dart',
-        doc='The look of a `DsTimePicker`: the field, its clock button and the popup columns. States resolve per column item; `focused` is the keyboard-focused column\'s chosen item. Field, button and panel styles lay over their themes; column fields are read unresolved.',
-        states=['focused', 'hovered', 'pressed', 'selected'],
+        doc='The look of a `DsTimePicker`: the field, its clock button and the popup columns. States resolve per column item; `focused` is the keyboard-focused column\'s chosen item, `disabled` an item outside `firstTime` and `lastTime` that cannot be chosen. Field, button and panel styles lay over their themes; column fields are read unresolved.',
+        states=['focused', 'hovered', 'pressed', 'selected', 'disabled'],
         fields=[
             ('fieldStyle', 'DsTextFieldStyle', 'The text field, laid over its own defaults and theme: a default width.'),
             ('buttonStyle', 'DsButtonStyle', 'The clock button, laid over a ghost extra-small icon button.'),

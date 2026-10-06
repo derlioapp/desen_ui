@@ -9,7 +9,7 @@ import '../button/button_style.dart';
 import '../popover/popover_style.dart';
 import '../text_field/text_field_style.dart';
 
-/// The look of a `DsTimePicker`: the field, its clock button and the popup columns. States resolve per column item; `focused` is the keyboard-focused column's chosen item. Field, button and panel styles lay over their themes; column fields are read unresolved.
+/// The look of a `DsTimePicker`: the field, its clock button and the popup columns. States resolve per column item; `focused` is the keyboard-focused column's chosen item, `disabled` an item outside `firstTime` and `lastTime` that cannot be chosen. Field, button and panel styles lay over their themes; column fields are read unresolved.
 ///
 /// Every field is optional; null means "keep the layer below". To remove
 /// something, pass an empty value (`const []`, a transparent color).
@@ -42,6 +42,7 @@ class DsTimePickerStyle with Diagnosticable {
     this.hovered,
     this.pressed,
     this.selected,
+    this.disabled,
   });
 
   /// The text field, laid over its own defaults and theme: a default width.
@@ -104,6 +105,9 @@ class DsTimePickerStyle with Diagnosticable {
   /// Laid over the base while selected.
   final DsTimePickerStyle? selected;
 
+  /// Laid over the base while disabled.
+  final DsTimePickerStyle? disabled;
+
   /// Lays [other] over this: its set fields win; state styles merge.
   DsTimePickerStyle merge(DsTimePickerStyle? other) {
     if (other == null) return this;
@@ -131,6 +135,9 @@ class DsTimePickerStyle with Diagnosticable {
       selected: selected == null
           ? other.selected
           : selected!.merge(other.selected),
+      disabled: disabled == null
+          ? other.disabled
+          : disabled!.merge(other.disabled),
     );
   }
 
@@ -167,6 +174,9 @@ class DsTimePickerStyle with Diagnosticable {
     }
     if (states.contains(WidgetState.selected) && selected != null) {
       s = s.merge(selected!.resolve({...states}..remove(WidgetState.selected)));
+    }
+    if (states.contains(WidgetState.disabled) && disabled != null) {
+      s = s.merge(disabled!.resolve({...states}..remove(WidgetState.disabled)));
     }
     return s;
   }
@@ -205,6 +215,7 @@ class DsTimePickerStyle with Diagnosticable {
     hovered,
     pressed,
     selected,
+    disabled,
   ];
 
   @override
@@ -273,6 +284,9 @@ class DsTimePickerStyle with Diagnosticable {
     properties.add(DiagnosticsProperty('pressed', pressed, defaultValue: null));
     properties.add(
       DiagnosticsProperty('selected', selected, defaultValue: null),
+    );
+    properties.add(
+      DiagnosticsProperty('disabled', disabled, defaultValue: null),
     );
   }
 }

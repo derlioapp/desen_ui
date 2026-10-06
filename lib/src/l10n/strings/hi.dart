@@ -338,6 +338,18 @@ class DsLocalizationsHi extends DsLocalizationsEn {
   String numberTooLarge(String max) => '$max या उससे कम दर्ज करें।';
 
   @override
+  String get seconds => 'सेकंड';
+
+  @override
+  String get unavailable => 'उपलब्ध नहीं';
+
+  @override
+  String timeTooEarly(String time) => '$time या उसके बाद का समय दर्ज करें।';
+
+  @override
+  String timeTooLate(String time) => '$time या उससे पहले का समय दर्ज करें।';
+
+  @override
   String get fieldRequired => 'यह फ़ील्ड आवश्यक है।';
 
   @override

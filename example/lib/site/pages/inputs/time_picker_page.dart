@@ -19,14 +19,18 @@ class _TimePickerPageState extends State<TimePickerPage> {
   DsTime? _slot = const DsTime(10, 0);
   DsTime? _alarm;
   DsTime? _standup = const DsTime(9, 15);
+  DsTime? _meeting = const DsTime(10, 0);
+  DsTime? _pickup;
+  DsTime? _lap = const DsTime(0, 4, 30);
 
   @override
   Widget build(BuildContext context) => DocPage(
     eyebrow: 'Inputs',
     title: 'Time picker',
     lead:
-        'A time field with a popup of hour and minute columns. People can '
-        'type the time or pick it. Pair it with a '
+        'A time field with a popup of hour and minute columns (and seconds '
+        'when you need them). People can type the time or pick it. Pair it '
+        'with a '
         '[Date picker](/components/date-picker) for a date and time.',
     sections: [
       DocSection(
@@ -145,6 +149,88 @@ class _TimePickerPageState extends State<TimePickerPage> {
                   value: _slot,
                   minuteStep: 30,
                   onChanged: (t) => setState(() => _slot = t),
+                ),
+              ),
+              // #endregion
+            ),
+          ),
+        ],
+      ),
+      DocSection(
+        title: 'Earliest and latest time',
+        children: [
+          const DocText(
+            '`firstTime` and `lastTime` bound the times that can be chosen '
+            'or typed, as `firstDate` and `lastDate` do on the date picker: '
+            'office hours, or "not before now". Hours and minutes outside '
+            'them are struck through and cannot be chosen, and the columns '
+            'stop at the edge of the range instead of wrapping into it. '
+            'Choosing an hour moves the time into range: 9 on 10:15 in '
+            '09:30 to 18:00 gives 09:30. A typed time outside the range '
+            'keeps the error look with a message such as "Enter a time at '
+            'or after 9:00 AM."',
+          ),
+          Example(
+            snippet: 'time-picker-limits',
+            child: Wrap(
+              spacing: 16,
+              runSpacing: 16,
+              alignment: WrapAlignment.center,
+              children: [
+                // #region time-picker-limits
+                SizedBox(
+                  width: 160,
+                  child: DsField(
+                    label: const Text('Meeting'),
+                    description: const Text('Office hours, 9 to 6.'),
+                    child: DsTimePicker(
+                      value: _meeting,
+                      minuteStep: 15,
+                      firstTime: const DsTime(9, 0),
+                      lastTime: const DsTime(18, 0),
+                      onChanged: (t) => setState(() => _meeting = t),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 160,
+                  child: DsField(
+                    label: const Text('Pickup today'),
+                    description: const Text('Not before now.'),
+                    child: DsTimePicker(
+                      value: _pickup,
+                      firstTime: DsTime.fromDateTime(DateTime.now()),
+                      onChanged: (t) => setState(() => _pickup = t),
+                    ),
+                  ),
+                ),
+                // #endregion
+              ],
+            ),
+          ),
+        ],
+      ),
+      DocSection(
+        title: 'Seconds',
+        children: [
+          const DocText(
+            '`showSeconds` adds a seconds column, and the field shows and '
+            'reads seconds (`00:04:30`), for durations, timers and log '
+            'times. `secondStep` sets the seconds the column lists, 1 by '
+            'default. Without it the picker works to the minute.',
+          ),
+          Example(
+            snippet: 'time-picker-seconds',
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 200),
+              // #region time-picker-seconds
+              child: DsField(
+                label: const Text('Lap time'),
+                child: DsTimePicker(
+                  value: _lap,
+                  use24HourClock: true,
+                  showSeconds: true,
+                  onChanged: (t) => setState(() => _lap = t),
                 ),
               ),
               // #endregion
@@ -275,11 +361,18 @@ class _TimePickerPageState extends State<TimePickerPage> {
           DocHeading('Columns'),
           DocText(
             'The columns open with the hour column focused. Moving in a '
-            'column changes the time at once.',
+            'column changes the time at once. The hour, minute and second '
+            'columns wrap like a wheel: Down on 23 gives 00, and Down on '
+            'minute 55 gives 00 in the same hour. On a 12-hour clock, Down '
+            'on 11 AM gives 12 PM.',
           ),
           KeyboardTable([
-            ('Up / Down', 'Previous or next item: an earlier or later time.'),
-            ('Home / End', 'First or last item.'),
+            (
+              'Up / Down',
+              'Previous or next item: an earlier or later time, wrapping '
+                  'unless that leaves the range.',
+            ),
+            ('Home / End', 'First or last item that can be chosen.'),
             (
               'Left / Right',
               'Previous or next column (mirrored right to left).',
@@ -300,7 +393,11 @@ class _TimePickerPageState extends State<TimePickerPage> {
                 'the clock button is its own node, "Choose time".',
             'Each column is one adjustable node, such as "Hours, 14"; '
                 'screen reader users swipe up or down to change it. Increase '
-                'gives the later time, as Down does.',
+                'gives the later time, as Down does, and wraps as the keys '
+                'do.',
+            'Times outside `firstTime` and `lastTime` are never offered as '
+                'the next value; a chosen value outside them reads as '
+                '"08, Unavailable".',
             'The column digits are tabular, so they line up as they change.',
             'Invalid text is announced as an invalid state, and inside a '
                 '`DsField` the reason is shown as text.',
@@ -330,6 +427,22 @@ class _TimePickerPageState extends State<TimePickerPage> {
                   '1 to 30.',
             ),
             (
+              'firstTime / lastTime',
+              'DsTime?',
+              'The earliest and latest time that can be chosen or typed.',
+            ),
+            (
+              'showSeconds',
+              'bool',
+              'Adds a seconds column; the field shows and reads seconds.',
+            ),
+            (
+              'secondStep',
+              'int',
+              'Seconds between items of the seconds column. 1 by default, '
+                  '1 to 30.',
+            ),
+            (
               'use24HourClock',
               'bool?',
               'Forces a 24-hour (true) or 12-hour (false) clock; null '
@@ -351,7 +464,8 @@ class _TimePickerPageState extends State<TimePickerPage> {
           DocHeading('DsTime'),
           DocText(
             'A time of day without a date: `DsTime(14, 30)`, with `hour` '
-            '(0 to 23) and `minute`. It compares with `compareTo`.',
+            '(0 to 23), `minute` and an optional `second` '
+            '(`DsTime(0, 4, 30)`). It compares with `compareTo`.',
           ),
         ],
       ),
