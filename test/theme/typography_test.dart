@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 /// platform (San Francisco in iOS and macOS apps), an explicit family
 /// wins, and a display family sets the titles.
 void main() {
-  const bundled = 'packages/desen_ui_fonts/SchibstedGrotesk';
+  const bundled = 'packages/desen_ui/SchibstedGrotesk';
 
   /// (size, weight, tracking in em, line height) of [s].
   (double, int, double, double?) spec(TextStyle s) => (
@@ -216,7 +216,7 @@ void main() {
         expect(y.title.fontFamily, 'CupertinoSystemDisplay');
         expect(y.display.fontFamily, 'CupertinoSystemDisplay');
         // Code keeps the bundled mono.
-        expect(y.mono(y.body).fontFamily, 'packages/desen_ui_fonts/GeistMono');
+        expect(y.mono(y.body).fontFamily, 'packages/desen_ui/GeistMono');
         // A theme built in the app carries it.
         expect(
           on(platform, () => DsThemeData().typography.family),
@@ -268,7 +268,7 @@ void main() {
       test('${platform.name}: the bundled family', () {
         final y = on(platform, DsTypography.new);
         expect(y.family, 'SchibstedGrotesk');
-        expect(y.package, 'desen_ui_fonts');
+        expect(y.package, 'desen_ui');
         expect(y.displayFamily, 'SchibstedGrotesk');
         expect(y.body.fontFamily, bundled);
         expect(y.title.fontFamily, bundled);
@@ -361,8 +361,8 @@ void main() {
       expect(y.body.fontFamily, 'Inter');
       expect(y.title.fontFamily, 'Inter');
       // The bundled mono face keeps its package.
-      expect(y.monoPackage, 'desen_ui_fonts');
-      expect(y.mono(y.body).fontFamily, 'packages/desen_ui_fonts/GeistMono');
+      expect(y.monoPackage, 'desen_ui');
+      expect(y.mono(y.body).fontFamily, 'packages/desen_ui/GeistMono');
     });
 
     test('an app mono family without a package is used as is', () {
@@ -377,7 +377,7 @@ void main() {
       final y = offApple(() => DsTypography(family: 'Inter'));
       const packaged = TextStyle(
         fontFamily: 'SchibstedGrotesk',
-        package: DsTypography.fontsPackage,
+        package: 'desen_ui',
         fontSize: 13,
       );
       final numeric = y.numeric(packaged);
@@ -398,10 +398,10 @@ void main() {
       expect(y.mono(y.body).fontFamily, 'packages/code_fonts/Code');
     });
 
-    test('the bundled faces keep the fonts package by default', () {
+    test('the bundled faces keep this package by default', () {
       final y = offApple(() => DsTypography(family: 'SchibstedGrotesk'));
       expect(y.body.fontFamily, bundled);
-      expect(y.package, DsTypography.fontsPackage);
+      expect(y.package, 'desen_ui');
     });
 
     test('package: null declares even the bundled faces in the app', () {

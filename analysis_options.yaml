@@ -7,7 +7,6 @@ analyzer:
     strict-raw-types: true
   exclude:
     - concept/**
-    - desen_ui_fonts/**
     - build/**
 
 linter:

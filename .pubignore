@@ -1,10 +1,6 @@
 # A .pubignore replaces .gitignore for `dart pub publish`, so the ignore
 # rules that matter for the archive are repeated here.
 
-# Published separately, from a copy (tool/publish_fonts.sh): pub applies
-# this file to the nested package too.
-desen_ui_fonts/
-
 # Development only.
 concept/
 docs/

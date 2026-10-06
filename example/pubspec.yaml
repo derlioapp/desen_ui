@@ -10,8 +10,6 @@ dependencies:
     sdk: flutter
   desen_ui:
     path: ../
-  desen_ui_fonts:
-    path: ../desen_ui_fonts
 
 
 dev_dependencies:

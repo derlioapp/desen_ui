@@ -4,8 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 /// Component text styles built with `dsTextStyle` name the theme's font
 /// package, as `DsTypography` does: without it a family bundled in a
-/// package (the default `desen_ui_fonts`) is not found and the text falls
-/// back to the platform font.
+/// package (Desen's own faces, in `desen_ui`) is not found and the text
+/// falls back to the platform font.
 void main() {
   test('every dsTextStyle call in a component passes package', () {
     final missing = <String>[];

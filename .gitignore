@@ -33,7 +33,6 @@ migrate_working_dir/
 # Golden test failure output
 test/golden/failures/
 **/failures/*.png
-/desen_ui_fonts/pubspec.lock
 
 .claude/**
 .claude

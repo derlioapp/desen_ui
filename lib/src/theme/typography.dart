@@ -95,19 +95,15 @@ class DsTypography {
   /// A [family] given here is used on every platform, Apple's included.
   ///
   /// **Fonts.** Schibsted Grotesk and the default [monoFamily], Geist
-  /// Mono, ship in the optional `desen_ui_fonts` package, which this
-  /// package deliberately does not depend on: add it to your app to get
-  /// them. Without it, Flutter cannot find the family and text falls back
-  /// to the platform font, silently; the small tracking values (−0.02 to
-  /// +0.08 em) suit system fonts too.
+  /// Mono, are bundled with this package (under the SIL Open Font License
+  /// 1.1), so they need no setup.
   ///
   /// Pass other [family] / [monoFamily] names to use your own fonts, with
   /// [package] / [monoPackage] set to the package that bundles each, or
-  /// null for fonts declared in your app. The `desen_ui_fonts` package
-  /// (the default of both) only applies to the two faces it bundles: a
-  /// family of your own with the default package, e.g.
-  /// `DsTypography(family: 'Inter')`, is looked up in your app, as
-  /// `'Inter'`, not in `desen_ui_fonts`.
+  /// null for fonts declared in your app. Their default, `'desen_ui'`,
+  /// applies only to the two faces bundled here: a family of your own
+  /// with the default package, e.g. `DsTypography(family: 'Inter')`, is
+  /// looked up in your app, as `'Inter'`, not in `desen_ui`.
   ///
   /// **Display family.** [displayFamily] (with [displayPackage], null for
   /// app fonts) sets [display] and [title] in another face, e.g. a serif
@@ -115,8 +111,8 @@ class DsTypography {
   factory DsTypography({
     String? family,
     String monoFamily = _bundledMonoFamily,
-    String? package = fontsPackage,
-    String? monoPackage = fontsPackage,
+    String? package = 'desen_ui',
+    String? monoPackage = 'desen_ui',
     String? displayFamily,
     String? displayPackage,
     DsDensity density = DsDensity.compact,
@@ -149,18 +145,18 @@ class DsTypography {
   /// family.
   static const systemDisplayFamily = 'CupertinoSystemDisplay';
 
-  /// The optional package that bundles Desen's faces, Schibsted Grotesk
-  /// and Geist Mono.
-  static const fontsPackage = 'desen_ui_fonts';
+  /// This package, which bundles Desen's faces, Schibsted Grotesk and
+  /// Geist Mono: the default `package` and `monoPackage`.
+  static const _package = 'desen_ui';
 
   static const _bundledFamily = 'SchibstedGrotesk';
   static const _bundledMonoFamily = 'GeistMono';
 
   /// The package to look [family] up in: [package], except that
-  /// [fontsPackage] only holds the faces it bundles. Another family with it
-  /// is an app font.
+  /// [_package] only holds the faces it bundles. Another family with it is
+  /// an app font.
   static String? _packageOf(String family, String? package) =>
-      package == fontsPackage &&
+      package == _package &&
           family != _bundledFamily &&
           family != _bundledMonoFamily
       ? null
