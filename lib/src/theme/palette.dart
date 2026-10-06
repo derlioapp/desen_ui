@@ -241,7 +241,8 @@ class _Engine {
   /// (yellow, orange, sky, mint, lime) that cannot carry a white label but
   /// carries a dark one well. The accent fill then keeps the seed and its
   /// label turns dark; [l] still holds the darkened lightness, which the
-  /// unlabeled roles (indicator, focus, accent text) keep using.
+  /// unlabeled roles (indicator, focus, accent text) keep using, the marks
+  /// cleaned of mud by [_mark].
   late final bool bright;
 
   /// Lightness of the accent fill: the seed's own for a bright seed (see
@@ -342,6 +343,149 @@ class _Engine {
       math.min(math.min(c * .6, .12), _drawnChroma(o(.32, c * .75)) + .001);
 
   static double _drawnChroma(Color color) => DsOklch.fromColor(color).c;
+
+  /// The warm hues whose deep tones read as mud: orange-brown through
+  /// mustard and olive to yellow-green.
+  static const double _mudFrom = 50, _mudTo = 125;
+
+  /// Lemon yellow: a muddy tone below it turns toward orange, one above
+  /// it toward green.
+  static const double _lemon = 105;
+
+  /// How far below its hue's most vivid lightness ([_cuspL]) a warm tone
+  /// may sit and still read as its hue rather than as brown or olive.
+  static const double _mudDepth = .12;
+
+  /// The least chroma of a turned mark: vivid, like iOS's system colors
+  /// (at 0.125 a deep orange still read as sienna).
+  static const double _markChroma = .15;
+
+  static final _cusps = <int, double>{};
+
+  /// The lightness at which [hue] reaches its highest chroma in sRGB:
+  /// about 0.68 for orange, 0.89 for yellow.
+  static double _cuspL(double hue) => _cusps.putIfAbsent(hue.round() % 360, () {
+    final h = (hue.round() % 360).toDouble();
+    var best = .5, bestC = 0.0;
+    for (var i = 30; i < 100; i++) {
+      var lo = 0.0, hi = .4;
+      for (var j = 0; j < 16; j++) {
+        final mid = (lo + hi) / 2;
+        if (DsOklch(i / 100, mid, h).inGamut) {
+          lo = mid;
+        } else {
+          hi = mid;
+        }
+      }
+      if (lo > bestC) {
+        bestC = lo;
+        best = i / 100;
+      }
+    }
+    return best;
+  });
+
+  /// Whether [v] reads as olive, mustard or brown: a warm hue (50–125°)
+  /// well below the lightness where that hue is vivid. A dark yellow is
+  /// olive and a dark amber mustard whatever their chroma; a dark blue or
+  /// green is still blue or green.
+  static bool _muddy(DsOklch v) =>
+      v.c >= .015 &&
+      v.h >= _mudFrom &&
+      v.h <= _mudTo &&
+      v.l < _cuspL(v.h) - _mudDepth;
+
+  /// The fitted tone of [hue] and [chroma] with the highest lightness
+  /// whose luminance stays at most [luminance].
+  static DsOklch _atLuminance(double hue, double chroma, double luminance) {
+    var lo = 0.0, hi = 1.0;
+    for (var i = 0; i < 24; i++) {
+      final mid = (lo + hi) / 2;
+      final y = DsColorUtils.luminance(
+        DsOklch(mid, chroma, hue).fitted().toColor(),
+      );
+      if (y > luminance) {
+        hi = mid;
+      } else {
+        lo = mid;
+      }
+    }
+    return DsOklch(lo, chroma, hue).fitted();
+  }
+
+  /// A light-mode mark with no label on it (progress and slider fill, tab
+  /// underline, caret, focus outline), at [lightness] on
+  /// the seed hue: `o(lightness, c)`, unless that tone is muddy (a yellow
+  /// or amber darkened to stand 3:1 or read 4.5:1 turns olive or
+  /// mustard). Then the hue turns, away from lemon yellow, to the nearest
+  /// one that is clean at the same luminance, so every contrast it met
+  /// still holds: a yellow or amber brand marks in a vivid deep orange
+  /// (about 49°, iOS's accessible yellow), a lemon one in a deep lime.
+  /// Chroma is the seed's, at least [_markChroma], as far as sRGB allows.
+  Color _mark(double lightness) {
+    final plain = o(lightness, c);
+    if (neutral) return plain;
+    final drawn = DsOklch.fromColor(plain);
+    if (!_muddy(drawn)) return plain;
+    final y = DsColorUtils.luminance(plain);
+    final chroma = math.max(c, _markChroma);
+    final step = drawn.h < _lemon ? -1.0 : 1.0;
+    var hue = drawn.h;
+    Color tone;
+    do {
+      hue = (hue + step) % 360;
+      tone = _atLuminance(hue, chroma, y).toColor();
+      // Judged as drawn: 8-bit rounding moves a hue by a few tenths.
+    } while (_muddy(DsOklch.fromColor(tone)));
+    return tone;
+  }
+
+  /// The dark-mode [DsColors.indicator]: the accent hue at 0.68, lighter
+  /// than the button fill like iOS's dark blue. A warm hue that is muddy
+  /// there (a yellow or amber at 0.68 is mustard) rises close to the
+  /// lightness where it is vivid, as iOS's dark yellow does; so does an
+  /// amber that only borders on ochre.
+  Color _darkIndicator() {
+    final base = DsOklch(.68, _darkIndicatorChroma, hu).fitted();
+    if (neutral || hu < _mudFrom || hu > _mudTo) return base.toColor();
+    return DsOklch(
+      math.max(.68, _cuspL(hu) - _mudDepth / 2),
+      _darkIndicatorChroma,
+      hu,
+    ).fitted().toColor();
+  }
+
+  /// The light-mode [DsColors.accentTint]: the label-safe accent at 9%,
+  /// unless that accent is muddy (a darkened yellow at 9% is linen-beige):
+  /// then the fill itself for a bright seed, or the clean [_mark] tone,
+  /// at the opacity that keeps the same lightness on a card.
+  Color _lightTint(Color fill, Color mark) {
+    final ink = o(l, c, .09);
+    if (neutral || !_muddy(DsOklch.fromColor(o(l, c)))) return ink;
+    final source = bright ? fill : mark;
+    final target = DsColorUtils.luminance(DsColorUtils.flatten(ink, white()));
+    var alpha = .09;
+    int byte(double channel) => (channel * 255).round();
+    Color at(double a) =>
+        Color.fromARGB(byte(a), byte(source.r), byte(source.g), byte(source.b));
+    while (alpha < .4 &&
+        DsColorUtils.luminance(DsColorUtils.flatten(at(alpha), white())) >
+            target) {
+      alpha = _r(alpha + .01);
+    }
+    return at(alpha);
+  }
+
+  /// The dark-mode [DsColors.accentTint] (date range band, icon box), at
+  /// 18% so it reads as a band on a card and a floating layer (1.3:1; at
+  /// 10% a range nearly vanished). Cool brands keep their color; a warm
+  /// one's light tint mixes with the dark gray into olive, brown or dusty
+  /// mauve, so it washes in gray and the accent text and filled ends carry
+  /// the brand (as the dark soft selection does, K-161).
+  Color _darkTint() => neutral || _coolSelection
+      ? o(.72, math.min(c * .9, .12), .18)
+      : oN(.72, math.min(cn * .05, .008), .18);
+
   late final bool neutral, clash;
   late final double dHf, dH, sH, iH, selHue;
 
@@ -590,8 +734,10 @@ class _Engine {
   }
 
   DsColors _lightColors() {
-    // The darkened accent: everything without a label on it.
+    // The darkened accent; marks without a label on it use its clean tone
+    // ([_mark]), which is the same color unless the darkened hue is muddy.
     final ink = o(l, c);
+    final mark = _mark(l);
     // A bright fill is the seed itself, chroma unrounded.
     final acc = bright ? _color(DsOklch(fl, c, hu)) : ink;
     final onAcc = bright ? _brightInk() : white();
@@ -639,8 +785,8 @@ class _Engine {
       onAccent: onAcc,
       // Set in [build] from the finished fills ([_accentEdge]).
       accentEdge: _clear,
-      indicator: ink,
-      accentTint: o(l, c, .09),
+      indicator: mark,
+      accentTint: _lightTint(acc, mark),
       accentText: accentInk,
       link: clash ? o(.36, c * .8) : accentInk,
       // A vivid seed's tint is capped and fitted to sRGB rather than
@@ -676,7 +822,7 @@ class _Engine {
           ? o(.30, c * .3)
           : clash
           ? o(.34, c * .75)
-          : ink,
+          : mark,
       // Soft: as faint as iOS draws them.
       border: oN(.30, nt, v(.11, soft: .10)),
       borderControl: oN(.25, nt, v(.15, soft: .11)),
@@ -838,10 +984,8 @@ class _Engine {
       accentEdge: _clear,
       // No label on it: lighter than the button fill, like iOS's dark blue,
       // and as vivid (fitted to sRGB so the hue holds).
-      indicator: DsOklch(.68, _darkIndicatorChroma, hu).fitted().toColor(),
-      // Strong enough to read as a band on a card and a floating layer
-      // (1.3:1): at 0.1 a date range nearly vanished (1.18:1).
-      accentTint: o(.72, math.min(c * .9, .12), .18),
+      indicator: _darkIndicator(),
+      accentTint: _darkTint(),
       accentText: accentInk,
       link: accentInk,
       // Lighter than every layer it sits on, the floating one included

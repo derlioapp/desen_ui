@@ -122,20 +122,31 @@ class DsAvatar extends StatelessWidget {
   }
 
   /// The background and foreground of tone [index] under [colors]: the
-  /// selection pair with its hue turned by the golden angle per step.
-  /// Lightness stays, so contrast stays AA; chroma gets a floor so neutral
-  /// seeds still tell tones apart.
+  /// selection pair with its hue turned by the golden angle per step,
+  /// skipping the hues that read as mud at the tone's lightness. Yellow to
+  /// yellow-green (about 50–140°) turns khaki, sage and olive at any
+  /// avatar lightness; on a dark tone, orange and red (about 350–50°) turn
+  /// brown and maroon too. Lightness stays, so contrast stays AA; chroma gets a floor
+  /// so neutral seeds still tell tones apart.
   static (Color, Color) toneColors(DsColors colors, int index) {
     final step = index % toneCount;
     if (step == 0) return (colors.selection, colors.onSelection);
+    final base = DsOklch.fromColor(colors.selection);
+    final dark = base.l < .6;
+    // A margin on both sides: sRGB clipping moves a drawn hue a few
+    // degrees.
+    bool clean(double hue) =>
+        !(hue >= 50 && hue < 140) && !(dark && (hue >= 350 || hue < 50));
+    // The step-th clean hue of the golden-angle sequence from the
+    // selection's hue.
+    var hue = base.h;
+    for (var found = 0; found < step;) {
+      hue = (hue + 137.5) % 360;
+      if (clean(hue)) found++;
+    }
     DsOklch turn(Color c, double minChroma, double maxChroma) {
       final o = DsOklch.fromColor(c);
-      return DsOklch(
-        o.l,
-        o.c.clamp(minChroma, maxChroma),
-        o.h + step * 137.5,
-        o.alpha,
-      );
+      return DsOklch(o.l, o.c.clamp(minChroma, maxChroma), hue, o.alpha);
     }
 
     final bg = turn(colors.selection, .035, .08).toColor();

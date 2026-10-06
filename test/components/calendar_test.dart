@@ -702,15 +702,15 @@ void main() {
             ),
           ),
         );
-        expect(box(tester, '12').color, k.selectionStrong);
-        expect(ink(tester, '12'), k.onSelectionStrong);
-        // Hover takes the strong hover step (K-61).
+        expect(box(tester, '12').color, k.accent);
+        expect(ink(tester, '12'), k.onAccent);
+        // Hover takes the accent hover step, as on a checked box.
         final mouse = await tester.createGesture(kind: PointerDeviceKind.mouse);
         addTearDown(mouse.removePointer);
         await mouse.addPointer(location: Offset.zero);
         await mouse.moveTo(tester.getCenter(find.text('12')));
         await tester.pumpAndSettle();
-        expect(box(tester, '12').color, k.selectionStrongHover);
+        expect(box(tester, '12').color, k.accentHover);
       });
 
       testWidgets('both range ends are solid under ${selection.name}', (
@@ -732,8 +732,8 @@ void main() {
           ),
         );
         for (final end in ['12', '18']) {
-          expect(box(tester, end).color, k.selectionStrong, reason: end);
-          expect(ink(tester, end), k.onSelectionStrong, reason: end);
+          expect(box(tester, end).color, k.accent, reason: end);
+          expect(ink(tester, end), k.onAccent, reason: end);
         }
         // The days between stay on the band, unfilled.
         expect(box(tester, '15').color!.a, 0);
@@ -761,9 +761,35 @@ void main() {
         ),
       );
       for (final end in ['12', '18']) {
-        expect(box(tester, end).color, k.selectionStrong);
+        expect(box(tester, end).color, k.accent);
         expect(ink(tester, end), k.onAccent);
         expect(rings(box(tester, end)), [k.accentEdge]);
+      }
+    });
+
+    testWidgets('a near-status seed chooses in its accent, not the deep '
+        'strong selection', (tester) async {
+      for (final brightness in Brightness.values) {
+        final theme = DsThemeData(
+          seed: DsSeed.oxblood,
+          brightness: brightness,
+          selectionStyle: DsSelectionStyle.strong,
+        );
+        final k = theme.colors;
+        // The strong selection is the brand's deep ink here.
+        expect(k.selectionStrong, isNot(k.accent));
+        await tester.pumpWidget(
+          _localized(
+            theme: theme,
+            DsCalendar(
+              value: DateTime(2026, 10, 12),
+              currentDate: _today,
+              onChanged: (_) {},
+            ),
+          ),
+        );
+        expect(box(tester, '12').color, k.accent, reason: brightness.name);
+        expect(ink(tester, '12'), k.onAccent, reason: brightness.name);
       }
     });
 
@@ -809,8 +835,8 @@ void main() {
           DsCalendar(value: _today, currentDate: _today, onChanged: (_) {}),
         ),
       );
-      expect(box(tester, '5').color, k.selectionStrong);
-      expect(ink(tester, '5'), k.onSelectionStrong);
+      expect(box(tester, '5').color, k.accent);
+      expect(ink(tester, '5'), k.onAccent);
       expect(rings(box(tester, '5')), isEmpty);
     });
 

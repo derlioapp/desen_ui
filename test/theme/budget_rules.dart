@@ -648,6 +648,81 @@ List<String> signalChroma(DsColors k) => [
             '$signalChromaMin–$signalChromaMax',
 ];
 
+final _cusps = <int, double>{};
+
+/// The lightness at which [hue] reaches its highest chroma in sRGB.
+double cuspLightness(double hue) => _cusps.putIfAbsent(hue.round() % 360, () {
+  final h = (hue.round() % 360).toDouble();
+  var best = .5, bestC = 0.0;
+  for (var i = 30; i < 100; i++) {
+    var lo = 0.0, hi = .4;
+    for (var j = 0; j < 16; j++) {
+      final mid = (lo + hi) / 2;
+      if (DsOklch(i / 100, mid, h).inGamut) {
+        lo = mid;
+      } else {
+        hi = mid;
+      }
+    }
+    if (lo > bestC) {
+      bestC = lo;
+      best = i / 100;
+    }
+  }
+  return best;
+});
+
+/// Olive, mustard, khaki or brown (K-161, "çamurumsu görüntü kesinlikle
+/// istemiyorum"): a warm hue, orange to yellow-green (50–125°), more than
+/// 0.12 below the lightness where that hue is most vivid. A dark yellow is
+/// olive and a dark amber mustard whatever their chroma; a deep blue,
+/// green or red keeps its hue. Below 0.015 chroma a color is a gray.
+bool isMuddy(Color color) {
+  final v = DsOklch.fromColor(color);
+  return v.c >= .015 &&
+      v.h >= 50 &&
+      v.h <= 125 &&
+      v.l < cuspLightness(v.h) - .12;
+}
+
+/// Marks with no label on them stay clean in every seed (K-213): the
+/// progress, slider and tab mark (`indicator`, both modes; a neutral
+/// seed's is its own gray), the light focus outline where it is the
+/// indicator, the date range band and icon box
+/// (`accentTint` on a card and a floating layer), and every avatar tone.
+/// Avatar tones past the first (the selection pair) also keep off the
+/// hues that read as khaki, sage or olive at their lightness (55–135°),
+/// and on a dark tone off those that read as brown or maroon (355–55°).
+List<String> markFailures(DsColors k, {required bool dark}) => [
+  // A neutral seed's indicator is the brand's own gray (K-159).
+  if (chroma(k.indicator) >= .03) ...[
+    if (isMuddy(k.indicator)) 'indicator is muddy (${_hex(k.indicator)})',
+    if (!dark && k.focus == k.indicator && isMuddy(k.focus)) 'focus is muddy',
+  ],
+  for (final (name, bg) in [('surface', k.surface), ('overlay', k.overlay)])
+    if (DsColorUtils.flatten(k.accentTint, bg) case final band
+        when isMuddy(band))
+      'accentTint on $name is muddy (${_hex(band)})',
+  for (var tone = 0; tone < DsAvatar.toneCount; tone++)
+    if (DsAvatar.toneColors(k, tone).$1 case final bg) ...[
+      // Tone 0 is the selection pair; a near-neutral seed's is its own
+      // gray (K-159), warm or not.
+      if ((tone > 0 || chroma(bg) >= .03) &&
+          isMuddy(DsColorUtils.flatten(bg, k.surface)))
+        'avatar tone $tone is muddy (${_hex(bg)})',
+      if (tone > 0 && _muddyAvatarHue(DsOklch.fromColor(bg), dark: dark))
+        'avatar tone $tone hue ${DsOklch.fromColor(bg).h.round()} reads as '
+            'mud',
+    ],
+];
+
+bool _muddyAvatarHue(DsOklch v, {required bool dark}) =>
+    v.c >= .015 &&
+    ((v.h >= 55 && v.h < 135) || (dark && (v.h >= 355 || v.h < 55)));
+
+String _hex(Color c) =>
+    '#${(c.toARGB32() & 0xFFFFFF).toRadixString(16).padLeft(6, '0')}';
+
 /// An accent edge only where the fill needs one: when every accent fill
 /// (and the strong selection drawn in it) already stands 3:1 off every
 /// layer, it draws none. (This replaces "no edge on a white-labeled
@@ -943,6 +1018,7 @@ List<String> budgetFailures(
   ...pressBeyondHover(p.colors),
   ...accentEdgeOnlyWhereNeeded(p.colors),
   ...signalChroma(p.colors),
+  ...markFailures(p.colors, dark: dark),
 ];
 
 /// Soft contrast only relaxes boundaries: every text role is exactly
