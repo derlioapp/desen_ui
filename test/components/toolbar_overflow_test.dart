@@ -86,7 +86,8 @@ void main() {
     DsThemeData? theme,
     Locale? locale,
     List<Widget>? children,
-    DsToolbarOverflow overflow = DsToolbarOverflow.menu,
+    // Null leaves the toolbar's default, so every test checks it.
+    DsToolbarOverflow? overflow,
   }) => DsApp(
     theme: theme ?? desktop,
     locale: locale,
@@ -104,11 +105,16 @@ void main() {
         padding: const EdgeInsets.only(top: 40),
         child: ConstrainedBox(
           constraints: BoxConstraints(maxWidth: maxWidth),
-          child: DsToolbar(
-            semanticLabel: 'Formatting',
-            overflow: overflow,
-            children: children ?? items(),
-          ),
+          child: overflow == null
+              ? DsToolbar(
+                  semanticLabel: 'Formatting',
+                  children: children ?? items(),
+                )
+              : DsToolbar(
+                  semanticLabel: 'Formatting',
+                  overflow: overflow,
+                  children: children ?? items(),
+                ),
         ),
       ),
     ),
@@ -203,6 +209,10 @@ void main() {
     await tester.tap(more);
     await tester.pumpAndSettle();
   }
+
+  test('the menu is the default', () {
+    expect(const DsToolbar(children: []).overflow, DsToolbarOverflow.menu);
+  });
 
   group('which items overflow', () {
     testWidgets('with room for all, every item shows and there is no ⋯', (
