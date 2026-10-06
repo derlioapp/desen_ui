@@ -84,7 +84,9 @@ typedef DsSizesAdjuster = DsSizes Function(DsSizes sizes, DsDensity density);
 ///
 /// Without a [density] the theme follows the platform, as Apple's do: phones
 /// and tablets (iOS, Android, their browsers included) get
-/// [DsDensity.touch], desktop and desktop browsers [DsDensity.compact]. The
+/// [DsDensity.touch], desktop and desktop browsers [DsDensity.compact]. It
+/// keeps following it: `copyWith(platform:)` derives the density again
+/// ([densityFollowsPlatform]), while a density that was given stays. The
 /// [density] also picks the type ramp ([typography]): body text 14 at
 /// [DsDensity.compact], 16 at [DsDensity.touch]. The default font follows
 /// the app the code runs in, not [platform], since a font is only there
@@ -139,6 +141,7 @@ class DsThemeData with Diagnosticable {
       contrast: contrast,
       cornerStyle: cornerStyle,
       density: resolvedDensity,
+      densityFollowsPlatform: density == null,
       platform: resolvedPlatform,
       selectionStyle: selectionStyle,
       autoClashRule: autoClashRule,
@@ -205,6 +208,7 @@ class DsThemeData with Diagnosticable {
     this.haptics,
     this.warningOverride,
     this.extensions = const {},
+    this.densityFollowsPlatform = false,
     this.adjustColors,
     this.adjustShadows,
     this.adjustRadii,
@@ -226,8 +230,17 @@ class DsThemeData with Diagnosticable {
   final DsCornerStyle cornerStyle;
 
   /// Density (end user). When the theme was created without one, the
-  /// platform's ([DsDensity.forPlatform]).
+  /// platform's ([DsDensity.forPlatform]); see [densityFollowsPlatform].
   final DsDensity density;
+
+  /// Whether [density] was derived from [platform] rather than given: the
+  /// theme was created without a density. Such a theme derives it again
+  /// when [copyWith] changes the platform, so
+  /// `DsThemeData(platform: TargetPlatform.macOS).copyWith(platform:
+  /// TargetPlatform.iOS)` equals `DsThemeData(platform: TargetPlatform.iOS)`.
+  /// A density given to the constructor or to [copyWith] stays on every
+  /// platform.
+  final bool densityFollowsPlatform;
 
   /// The platform whose conventions the sizes follow: iOS and Android get
   /// 44px tap areas at [DsDensity.compact] (see [DsSizes.forDensity]).
@@ -343,6 +356,7 @@ class DsThemeData with Diagnosticable {
   /// A copy that keeps every setting, hook and token, with the given
   /// non-generating values replaced.
   DsThemeData _keepTokens({
+    bool? densityFollowsPlatform,
     DsSelectionStyle? selectionStyle,
     DsTypography? typography,
     DsMotion? motion,
@@ -354,6 +368,8 @@ class DsThemeData with Diagnosticable {
     contrast: contrast,
     cornerStyle: cornerStyle,
     density: density,
+    densityFollowsPlatform:
+        densityFollowsPlatform ?? this.densityFollowsPlatform,
     platform: platform,
     selectionStyle: selectionStyle ?? this.selectionStyle,
     autoClashRule: autoClashRule,
@@ -429,6 +445,10 @@ class DsThemeData with Diagnosticable {
   /// feed generation: changing one regenerates colors, shadows, radii and
   /// sizes, reapplies the hooks and resolves the extensions again.
   ///
+  /// A new [platform] also brings that platform's density when the theme
+  /// follows the platform ([densityFollowsPlatform]); a [density] passed
+  /// here is kept on every platform from then on.
+  ///
   /// A hand-built theme ([DsThemeData.raw] with tokens other than its
   /// settings generate) cannot express such a change without losing its
   /// tokens, so changing one of those settings on it asserts in debug
@@ -478,6 +498,7 @@ class DsThemeData with Diagnosticable {
         : this.adjustShadows;
     final nextRadii = adjustRadii != null ? adjustRadii() : this.adjustRadii;
     final nextSizes = adjustSizes != null ? adjustSizes() : this.adjustSizes;
+    final followsPlatform = density == null && densityFollowsPlatform;
     // The generation inputs that change, by name.
     final changed = [
       if (brightness != null && brightness != this.brightness) 'brightness',
@@ -499,6 +520,7 @@ class DsThemeData with Diagnosticable {
     if (changed.isEmpty) {
       // Nothing that feeds generation changes: keep every token.
       final kept = _keepTokens(
+        densityFollowsPlatform: followsPlatform,
         selectionStyle: selectionStyle,
         typography: typography?.forDensity(this.density),
         motion: motion,
@@ -520,7 +542,8 @@ class DsThemeData with Diagnosticable {
       seed: seed ?? this.seed,
       contrast: contrast ?? this.contrast,
       cornerStyle: cornerStyle ?? this.cornerStyle,
-      density: density ?? this.density,
+      // Null derives the density from the (new) platform again.
+      density: followsPlatform ? null : density ?? this.density,
       platform: platform ?? this.platform,
       selectionStyle: selectionStyle ?? this.selectionStyle,
       autoClashRule: autoClashRule ?? this.autoClashRule,
@@ -547,7 +570,7 @@ class DsThemeData with Diagnosticable {
         seed: seed,
         contrast: contrast,
         cornerStyle: cornerStyle,
-        density: density,
+        density: densityFollowsPlatform ? null : density,
         platform: platform,
         selectionStyle: selectionStyle,
         autoClashRule: autoClashRule,
@@ -577,6 +600,7 @@ class DsThemeData with Diagnosticable {
       contrast: p.contrast,
       cornerStyle: p.cornerStyle,
       density: p.density,
+      densityFollowsPlatform: p.densityFollowsPlatform,
       platform: p.platform,
       selectionStyle: p.selectionStyle,
       autoClashRule: p.autoClashRule,
@@ -635,6 +659,7 @@ class DsThemeData with Diagnosticable {
       other.contrast == contrast &&
       other.cornerStyle == cornerStyle &&
       other.density == density &&
+      other.densityFollowsPlatform == densityFollowsPlatform &&
       other.platform == platform &&
       other.selectionStyle == selectionStyle &&
       other.autoClashRule == autoClashRule &&
@@ -657,7 +682,7 @@ class DsThemeData with Diagnosticable {
     seed,
     contrast,
     cornerStyle,
-    density,
+    (density, densityFollowsPlatform),
     platform,
     selectionStyle,
     autoClashRule,
@@ -687,6 +712,13 @@ class DsThemeData with Diagnosticable {
       ..add(EnumProperty('contrast', contrast))
       ..add(EnumProperty('cornerStyle', cornerStyle))
       ..add(EnumProperty('density', density))
+      ..add(
+        FlagProperty(
+          'densityFollowsPlatform',
+          value: densityFollowsPlatform,
+          ifTrue: 'density follows platform',
+        ),
+      )
       ..add(EnumProperty('platform', platform))
       ..add(EnumProperty('selectionStyle', selectionStyle))
       ..add(EnumProperty('haptics', haptics, defaultValue: null))
