@@ -212,6 +212,15 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
   String numberTooLarge(String max) => '請輸入不大於 $max 的數字。';
 
   @override
+  String get unavailable => '不可選';
+
+  @override
+  String timeTooEarly(String time) => '請輸入 $time 或之後的時間。';
+
+  @override
+  String timeTooLate(String time) => '請輸入 $time 或之前的時間。';
+
+  @override
   String get fieldRequired => '此欄位為必填。';
 
   @override

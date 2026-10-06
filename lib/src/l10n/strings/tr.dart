@@ -343,6 +343,18 @@ class DsLocalizationsTr extends DsLocalizationsEn {
   String numberTooLarge(String max) => '$max ya da daha küçük bir sayı girin.';
 
   @override
+  String get seconds => 'Saniye';
+
+  @override
+  String get unavailable => 'Seçilemez';
+
+  @override
+  String timeTooEarly(String time) => '$time ya da sonraki bir saat girin.';
+
+  @override
+  String timeTooLate(String time) => '$time ya da önceki bir saat girin.';
+
+  @override
   String get fieldRequired => 'Bu alan zorunludur.';
 
   @override

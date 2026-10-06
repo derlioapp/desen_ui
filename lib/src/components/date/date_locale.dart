@@ -151,11 +151,21 @@ class DsDateLocale {
   /// A time of day: `14:30`, or `2:30 PM` on a 12-hour clock.
   DsDateFormat get time => timeFormat(use24HourClock: uses24HourClock);
 
-  /// A time of day on the given clock.
-  DsDateFormat timeFormat({required bool use24HourClock}) => DsDateFormat(
-    use24HourClock ? 'HH:mm' : strings.timePattern12,
-    strings: strings,
-  );
+  /// A time of day on the given clock, with [seconds] (`14:30:05`,
+  /// `2:30:05 PM`) or without.
+  ///
+  /// Every bundled language writes the seconds after the minutes with a
+  /// colon (CLDR's medium time), so they are added to the short pattern.
+  DsDateFormat timeFormat({
+    required bool use24HourClock,
+    bool seconds = false,
+  }) {
+    final pattern = use24HourClock ? 'HH:mm' : strings.timePattern12;
+    return DsDateFormat(
+      seconds ? pattern.replaceFirst('mm', 'mm:ss') : pattern,
+      strings: strings,
+    );
+  }
 
   /// The weekdays in calendar column order, from [firstDayOfWeek].
   List<int> get weekdays => [

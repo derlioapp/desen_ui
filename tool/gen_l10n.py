@@ -1095,6 +1095,71 @@ VARIANTS['pt_PT']['values'].update(
     numberTooSmall="'Introduza $min ou mais.'",
     numberTooLarge="'Introduza $max ou menos.'")
 
+# Time picker: the seconds column, a column item outside the picker's
+# `firstTime`–`lastTime` (announced after its value, "08, Unavailable"),
+# and the messages of a typed time outside them. `time` is already
+# formatted in the field's clock ("9:00 AM", "09:00").
+KEYS.update({
+    'seconds': ('Names the seconds column of a time picker.', 'Seconds'),
+    'unavailable': (
+        'Follows a value that cannot be chosen, e.g. a time outside a picker\'s limits.',
+        'Unavailable'),
+    'timeTooEarly(String time)': (
+        'A typed time is before the first one that can be chosen.',
+        "'Enter a time at or after $time.'"),
+    'timeTooLate(String time)': (
+        'A typed time is after the last one that can be chosen.',
+        "'Enter a time at or before $time.'"),
+})
+TIME_LIMITS = {
+    'ar': dict(seconds='الثواني', unavailable='غير متاح',
+               timeTooEarly="'أدخل الوقت $time أو وقتًا بعده.'",
+               timeTooLate="'أدخل الوقت $time أو وقتًا قبله.'"),
+    'de': dict(seconds='Sekunden', unavailable='Nicht verfügbar',
+               timeTooEarly="'Geben Sie $time oder eine spätere Uhrzeit ein.'",
+               timeTooLate="'Geben Sie $time oder eine frühere Uhrzeit ein.'"),
+    'es': dict(seconds='Segundos', unavailable='No disponible',
+               timeTooEarly="'Introduce $time o una hora posterior.'",
+               timeTooLate="'Introduce $time o una hora anterior.'"),
+    'fr': dict(seconds='Secondes', unavailable='Indisponible',
+               timeTooEarly="'Saisissez $time ou une heure ultérieure.'",
+               timeTooLate="'Saisissez $time ou une heure antérieure.'"),
+    'hi': dict(seconds='सेकंड', unavailable='उपलब्ध नहीं',
+               timeTooEarly="'$time या उसके बाद का समय दर्ज करें।'",
+               timeTooLate="'$time या उससे पहले का समय दर्ज करें।'"),
+    'it': dict(seconds='Secondi', unavailable='Non disponibile',
+               timeTooEarly="'Inserisci $time o un orario successivo.'",
+               timeTooLate="'Inserisci $time o un orario precedente.'"),
+    'ja': dict(seconds='秒', unavailable='選択不可',
+               timeTooEarly="'$time 以降の時刻を入力してください。'",
+               timeTooLate="'$time 以前の時刻を入力してください。'"),
+    'ko': dict(seconds='초', unavailable='선택 불가',
+               timeTooEarly="'$time 이후의 시간을 입력하세요.'",
+               timeTooLate="'$time 이전의 시간을 입력하세요.'"),
+    'pt': dict(seconds='Segundos', unavailable='Indisponível',
+               timeTooEarly="'Digite $time ou um horário posterior.'",
+               timeTooLate="'Digite $time ou um horário anterior.'"),
+    'ru': dict(seconds='Секунды', unavailable='Недоступно',
+               timeTooEarly="'Введите время не раньше $time.'",
+               timeTooLate="'Введите время не позже $time.'"),
+    'tr': dict(seconds='Saniye', unavailable='Seçilemez',
+               timeTooEarly="'$time ya da sonraki bir saat girin.'",
+               timeTooLate="'$time ya da önceki bir saat girin.'"),
+    'zh': dict(seconds='秒', unavailable='不可选',
+               timeTooEarly="'请输入 $time 或之后的时间。'",
+               timeTooLate="'请输入 $time 或之前的时间。'"),
+}
+for _lang, _values in TIME_LIMITS.items():
+    LANGS[_lang].update(_values)
+VARIANTS['zh_Hant']['values'].update(
+    seconds='秒', unavailable='不可選',
+    timeTooEarly="'請輸入 $time 或之後的時間。'",
+    timeTooLate="'請輸入 $time 或之前的時間。'")
+# European Portuguese: "introduza", and "hora" for a time of day.
+VARIANTS['pt_PT']['values'].update(
+    timeTooEarly="'Introduza $time ou uma hora posterior.'",
+    timeTooLate="'Introduza $time ou uma hora anterior.'")
+
 # Forms: the messages of DsValidators (DsFormField). They say how to fix
 # the value (WCAG 3.3.3), as the typed field messages do. Counts are
 # characters as people count them (grapheme clusters); languages without

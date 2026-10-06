@@ -122,7 +122,7 @@ setUp(() => DsFocusVisibility.debugReset(keyboard: true));
 ## Known limitations
 
 - `DsToolbar` has no "⋯" overflow menu: items that don't fit scroll with a faded edge. The touch text selection toolbar pages its actions with arrows, as iOS does.
-- The time picker's hour column doesn't wrap from 23 to 00, and has no seconds or minimum and maximum time.
+- The time picker's limits (`firstTime`, `lastTime`) bound one stretch of a day; a range across midnight, such as a night shift from 22:00 to 06:00, isn't supported.
 - Screen readers aren't told which menu item opens a submenu (needs a role Flutter doesn't expose yet).
 - Screen readers announce the select as a button with its expanded state, and the number field as an adjustable text field: Flutter doesn't support the combobox and spin button roles yet.
 - Plain `FormState.validate()` announces errors through Flutter's own unnamed announcement. `formKey.currentState!.validateAndFocus()` (from `DsFormValidation`) focuses the first invalid field and announces it once, with its name.

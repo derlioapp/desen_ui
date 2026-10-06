@@ -352,6 +352,18 @@ class DsLocalizationsRu extends DsLocalizationsEn {
   String numberTooLarge(String max) => 'Введите число не больше $max.';
 
   @override
+  String get seconds => 'Секунды';
+
+  @override
+  String get unavailable => 'Недоступно';
+
+  @override
+  String timeTooEarly(String time) => 'Введите время не раньше $time.';
+
+  @override
+  String timeTooLate(String time) => 'Введите время не позже $time.';
+
+  @override
   String get fieldRequired => 'Это поле обязательно.';
 
   @override

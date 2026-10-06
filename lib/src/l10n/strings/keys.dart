@@ -301,6 +301,18 @@ mixin _DsStrings {
   /// A typed number is over the maximum.
   String numberTooLarge(String max);
 
+  /// Names the seconds column of a time picker.
+  String get seconds;
+
+  /// Follows a value that cannot be chosen, e.g. a time outside a picker's limits.
+  String get unavailable;
+
+  /// A typed time is before the first one that can be chosen.
+  String timeTooEarly(String time);
+
+  /// A typed time is after the last one that can be chosen.
+  String timeTooLate(String time);
+
   /// A required form field is empty (DsValidators.required).
   String get fieldRequired;
 

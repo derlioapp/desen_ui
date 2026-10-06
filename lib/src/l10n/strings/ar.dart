@@ -342,6 +342,18 @@ class DsLocalizationsAr extends DsLocalizationsEn {
   String numberTooLarge(String max) => 'أدخل $max أو أقل.';
 
   @override
+  String get seconds => 'الثواني';
+
+  @override
+  String get unavailable => 'غير متاح';
+
+  @override
+  String timeTooEarly(String time) => 'أدخل الوقت $time أو وقتًا بعده.';
+
+  @override
+  String timeTooLate(String time) => 'أدخل الوقت $time أو وقتًا قبله.';
+
+  @override
   String get fieldRequired => 'هذا الحقل مطلوب.';
 
   @override

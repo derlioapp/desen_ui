@@ -331,6 +331,18 @@ class DsLocalizationsZh extends DsLocalizationsEn {
   String numberTooLarge(String max) => '请输入不大于 $max 的数字。';
 
   @override
+  String get seconds => '秒';
+
+  @override
+  String get unavailable => '不可选';
+
+  @override
+  String timeTooEarly(String time) => '请输入 $time 或之后的时间。';
+
+  @override
+  String timeTooLate(String time) => '请输入 $time 或之前的时间。';
+
+  @override
   String get fieldRequired => '此字段为必填项。';
 
   @override

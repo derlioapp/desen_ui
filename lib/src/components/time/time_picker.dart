@@ -35,8 +35,8 @@ export 'time_of_day.dart';
 export 'time_picker_style.dart';
 
 /// A time field with a popup of columns: type the time,
-/// or open hour and minute columns (and AM/PM on a 12-hour clock) with the
-/// button at the end of the field.
+/// or open hour and minute columns (and AM/PM on a 12-hour clock, seconds
+/// with [showSeconds]) with the button at the end of the field.
 ///
 /// ```dart
 /// DsField(
@@ -49,6 +49,23 @@ export 'time_picker_style.dart';
 /// )
 /// ```
 ///
+/// Office hours, and a duration to the second:
+///
+/// ```dart
+/// DsTimePicker(
+///   value: meeting,
+///   firstTime: const DsTime(9, 0),
+///   lastTime: const DsTime(18, 0),
+///   onChanged: (t) => setState(() => meeting = t),
+/// )
+/// DsTimePicker(
+///   value: lap,
+///   use24HourClock: true,
+///   showSeconds: true,
+///   onChanged: (t) => setState(() => lap = t),
+/// )
+/// ```
+///
 /// **Clock.** 24-hour (`14:30`) or 12-hour (`2:30 PM`, `ÖS 2:30`) as the locale
 /// reads time ([dsUses24HourClock], by language and region: 12-hour in US and
 /// Canadian English, Korean, Hindi, Egyptian Arabic; 24-hour in Turkish,
@@ -56,24 +73,44 @@ export 'time_picker_style.dart';
 /// says. The columns set their digits in tabular figures.
 ///
 /// **Typing.** Lenient ([DsDateFormat.tryParseTime]): `14:30`, `14.30`, `1430`,
-/// `2:30 pm`, `2p`. [onChanged] follows the typing once the minutes are typed;
-/// on Enter or when focus leaves the text is shown in the clock's pattern
-/// again, and text that is not a time keeps the error look with a null value.
-/// Nothing is reported without an edit. [onInputIssueChanged] tells why the
-/// text holds no time ("Enter a time such as 14:30."), and null once it does or
-/// is empty again; inside a [DsField] without an error of its own the field
-/// shows that message (WCAG 3.3.1).
+/// `2:30 pm`, `2p`; with [showSeconds] also `14:30:05` and `143005`.
+/// [onChanged] follows the typing once the minutes are typed (and the
+/// seconds, once a second separator is typed); on Enter or when focus
+/// leaves the text is shown in the clock's pattern again, and text that is
+/// not a time, or a time outside [firstTime]–[lastTime], keeps the error
+/// look with a null value. Nothing is reported without an edit.
+/// [onInputIssueChanged] tells why the text holds no time ("Enter a time
+/// such as 14:30.", "Enter a time at or after 09:00."), and null once it
+/// does or is empty again; inside a [DsField] without an error of its own
+/// the field shows that message (WCAG 3.3.1).
 ///
 /// **Columns.** The button at the end ("Choose time") or Alt+Down opens
 /// the columns; each scrolls, shows its chosen item in the selection style
-/// and scrolls it into view. Minutes go in [minuteStep]s (a typed minute
-/// off the steps is listed too). Choosing an item changes the time at
-/// once and keeps the columns open.
+/// and scrolls it into view. Minutes go in [minuteStep]s and seconds in
+/// [secondStep]s (a typed value off the steps is listed too). Choosing an
+/// item changes the time at once and keeps the columns open.
+///
+/// The hour, minute and second columns wrap, like the time wheels of iOS
+/// and Android: Down on 23 gives 00, Down on minute 55 gives 00, and a
+/// column longer than it shows scrolls round without an end. A wrapping
+/// minute or second does not carry into the hour (59 to 00 stays in the
+/// same hour), as on iOS. On a 12-hour clock the hours step through the
+/// day: Down on 11 AM gives 12 PM.
+///
+/// **Limits.** [firstTime] and [lastTime] bound the times that can be
+/// chosen or typed, such as office hours or "not before now". Items with
+/// no time in range show as unavailable (muted and struck through, the
+/// [DsTimePickerStyle.disabled] look) and cannot be chosen; a column stops
+/// at the last item in range instead of wrapping into the unavailable
+/// ones, and a column whose first or last item is out of range has ends
+/// instead of scrolling round. An hour or AM/PM that holds a time in range can be chosen, and
+/// the time moves to the nearest one in range (choosing 9 on 10:15 in
+/// 09:30–18:00 gives 09:30).
 ///
 /// | Key | Action |
 /// |---|---|
-/// | Up / Down | Previous / next item in the column (an earlier / later time, as the list reads top to bottom) |
-/// | Home / End | First / last item |
+/// | Up / Down | Previous / next item in the column (an earlier / later time, as the list reads top to bottom), wrapping |
+/// | Home / End | First / last item that can be chosen |
 /// | Left / Right | Previous / next column (mirrored right to left) |
 /// | Enter | Closes the columns, keeping the time |
 /// | Escape | Closes the columns, restoring the time they opened with |
@@ -82,7 +119,10 @@ export 'time_picker_style.dart';
 /// swipe up or down to change it), the field and the button their own.
 /// Increase gives the next item, the later time, as Down does: the
 /// columns read as lists, like the time lists of Android, Windows and
-/// browsers, not as spin buttons.
+/// browsers, not as spin buttons. Increase and decrease wrap as the keys
+/// do and are not offered toward an item out of range; a chosen item out
+/// of range (a [value] given outside the limits) reads as "08,
+/// Unavailable".
 ///
 /// **Field.** Inside a [DsField] the label names the field and the
 /// field's error and required state apply. Null [onChanged] disables it;
@@ -90,7 +130,7 @@ export 'time_picker_style.dart';
 /// text field's read-only look, without the clock button.
 ///
 /// Anatomy: text field (well, time, error icon), clock button; popup panel
-/// with hour, minute and AM/PM columns.
+/// with hour, minute, optional seconds and AM/PM columns.
 ///
 /// Needs an [Overlay] for the popup; the field types without one.
 class DsTimePicker extends StatefulWidget {
@@ -101,6 +141,10 @@ class DsTimePicker extends StatefulWidget {
     required this.onChanged,
     this.onInputIssueChanged,
     this.minuteStep = 5,
+    this.firstTime,
+    this.lastTime,
+    this.showSeconds = false,
+    this.secondStep = 1,
     this.use24HourClock,
     this.placeholder,
     this.focusNode,
@@ -109,7 +153,8 @@ class DsTimePicker extends StatefulWidget {
     this.error = false,
     this.readOnly = false,
     this.style,
-  }) : assert(minuteStep > 0 && minuteStep <= 30);
+  }) : assert(minuteStep > 0 && minuteStep <= 30),
+       assert(secondStep > 0 && secondStep <= 30);
 
   /// The chosen time, or null.
   final DsTime? value;
@@ -124,6 +169,27 @@ class DsTimePicker extends StatefulWidget {
 
   /// Minutes between items of the minute column.
   final int minuteStep;
+
+  /// The earliest time that can be chosen or typed, or null for none.
+  ///
+  /// With [lastTime] it bounds one stretch of the day (at most
+  /// [lastTime]); a range across midnight is not supported. Without
+  /// [showSeconds] its seconds are ignored. For "not before now":
+  /// `firstTime: DsTime.fromDateTime(DateTime.now())`.
+  final DsTime? firstTime;
+
+  /// The latest time that can be chosen or typed, or null for none.
+  ///
+  /// Without [showSeconds] its seconds are ignored.
+  final DsTime? lastTime;
+
+  /// Whether the time has seconds: a seconds column, and the field shows
+  /// and reads them (`14:30:05`, `2:30:05 PM`), for durations and logs.
+  /// Off, the picker works to the minute and reports times on the minute.
+  final bool showSeconds;
+
+  /// Seconds between items of the seconds column, with [showSeconds].
+  final int secondStep;
 
   /// Forces the 24-hour (true) or 12-hour (false) clock; null follows the
   /// region.
@@ -207,6 +273,16 @@ class DsTimePicker extends StatefulWidget {
         hovered: DsTimePickerStyle(itemBackground: theme.selectedHoverFill),
         pressed: DsTimePickerStyle(itemBackground: theme.selectedHoverFill),
       ),
+      // As the calendar's days out of range: muted and struck through,
+      // not by color alone. A chosen item out of range keeps its fill.
+      disabled: DsTimePickerStyle(
+        itemForeground: k.onDisabled,
+        itemTextStyle: TextStyle(
+          decoration: TextDecoration.lineThrough,
+          decorationColor: k.onDisabled,
+        ),
+        cursor: SystemMouseCursors.basic,
+      ),
     );
   }
 
@@ -219,6 +295,10 @@ class DsTimePicker extends StatefulWidget {
     properties
       ..add(DiagnosticsProperty('value', value))
       ..add(IntProperty('minuteStep', minuteStep, defaultValue: 5))
+      ..add(DiagnosticsProperty('firstTime', firstTime, defaultValue: null))
+      ..add(DiagnosticsProperty('lastTime', lastTime, defaultValue: null))
+      ..add(FlagProperty('showSeconds', value: showSeconds, ifTrue: 'seconds'))
+      ..add(IntProperty('secondStep', secondStep, defaultValue: 1))
       ..add(
         FlagProperty(
           'use24HourClock',
@@ -246,7 +326,7 @@ class _DsTimePickerState extends State<DsTimePicker>
   DsDateLocale? _locale;
   DsDateFormat? _format;
 
-  final _columns = [FocusNode(), FocusNode(), FocusNode()];
+  final _columns = [FocusNode(), FocusNode(), FocusNode(), FocusNode()];
 
   bool get _enabled => widget.onChanged != null;
 
@@ -286,7 +366,10 @@ class _DsTimePickerState extends State<DsTimePicker>
   }
 
   void _resolveFormat() {
-    final next = _locale!.timeFormat(use24HourClock: _uses24);
+    final next = _locale!.timeFormat(
+      use24HourClock: _uses24,
+      seconds: widget.showSeconds,
+    );
     if (next == _format) return;
     final first = _format == null;
     _format = next;
@@ -297,7 +380,10 @@ class _DsTimePickerState extends State<DsTimePicker>
   void didUpdateWidget(DsTimePicker oldWidget) {
     super.didUpdateWidget(oldWidget);
     updateFocusNode(oldWidget.focusNode);
-    if (widget.use24HourClock != oldWidget.use24HourClock) _resolveFormat();
+    if (widget.use24HourClock != oldWidget.use24HourClock ||
+        widget.showSeconds != oldWidget.showSeconds) {
+      _resolveFormat();
+    }
     if (widget.value != reported) showValue(widget.value);
     if (!_canEdit) _popup.close();
   }
@@ -315,27 +401,81 @@ class _DsTimePickerState extends State<DsTimePicker>
   @override
   String show(DsTime? time) => time == null ? '' : _format!.formatTime(time);
 
-  /// While typing: the time once the minutes are typed, null while empty.
+  /// While typing: the time once the minutes (and seconds begun) are
+  /// typed, null while empty or out of range. An issue waits for the
+  /// commit.
   @override
   DsTypedRead<DsTime>? readTyping(String text) {
     if (text.trim().isEmpty) return (value: null, issue: null);
     if (!_minutesTyped.hasMatch(text)) return null;
-    return (value: _format!.tryParseTime(text), issue: null);
+    if (widget.showSeconds && _secondsPending.hasMatch(text)) return null;
+    return (value: readCommit(text).value, issue: null);
   }
 
   @override
   DsTypedRead<DsTime> readCommit(String text) {
-    if (_format!.tryParseTime(text) case final time?) {
-      return (value: time, issue: null);
+    final time = _format!.tryParseTime(text);
+    if (time == null) {
+      return (
+        value: null,
+        issue: DsInputIssue(
+          DsInputIssueKind.invalid,
+          _locale!.strings.invalidTime(
+            _format!.formatTime(const DsTime(14, 30)),
+          ),
+        ),
+      );
     }
-    return (
-      value: null,
-      issue: DsInputIssue(
-        DsInputIssueKind.invalid,
-        _locale!.strings.invalidTime(_format!.formatTime(const DsTime(14, 30))),
-      ),
-    );
+    final l10n = _locale!.strings;
+    if (time.inSeconds < _lo) {
+      return (
+        value: null,
+        issue: DsInputIssue(
+          DsInputIssueKind.belowMin,
+          l10n.timeTooEarly(_format!.formatTime(DsTime.fromSeconds(_lo))),
+        ),
+      );
+    }
+    if (time.inSeconds > _hi) {
+      return (
+        value: null,
+        issue: DsInputIssue(
+          DsInputIssueKind.aboveMax,
+          l10n.timeTooLate(_format!.formatTime(DsTime.fromSeconds(_hi))),
+        ),
+      );
+    }
+    return (value: time, issue: null);
   }
+
+  /// The finest step of the time: a second, or a minute without seconds.
+  int get _unit => widget.showSeconds ? 1 : 60;
+
+  /// The seconds of [time] since midnight, to the [_unit].
+  int _toUnit(DsTime time) => time.inSeconds - time.inSeconds % _unit;
+
+  /// The first time in range, in seconds since midnight.
+  int get _lo => switch (widget.firstTime) {
+    final first? => _toUnit(first),
+    null => 0,
+  };
+
+  /// The last time in range, in seconds since midnight.
+  int get _hi => switch (widget.lastTime) {
+    final last? => _toUnit(last),
+    null => 24 * 3600 - _unit,
+  };
+
+  /// Whether a time in range starts in the [length] seconds from [from].
+  bool _holds(int from, int length) => from <= _hi && from + length > _lo;
+
+  /// [time] to the [_unit], moved into range.
+  DsTime _inRange(DsTime time) =>
+      DsTime.fromSeconds(_toUnit(time).clamp(_lo, math.max(_lo, _hi)));
+
+  /// Chooses [time], moved into range: an hour chosen on 10:15 in
+  /// 09:30–18:00 gives 09:30.
+  void _pick(DsTime time) => choose(_inRange(time));
 
   void _onPopup() {
     if (_popup.isOpen) {
@@ -351,11 +491,18 @@ class _DsTimePickerState extends State<DsTimePicker>
     return KeyEventResult.handled;
   }
 
-  /// The time the columns start from when none is chosen: now's hour.
-  DsTime get _base => reported ?? DsTime(DateTime.now().hour, 0);
+  /// The time the columns start from when none is chosen: now's hour,
+  /// moved into range.
+  DsTime get _base => reported ?? _inRange(DsTime(DateTime.now().hour, 0));
 
   @override
   Widget build(BuildContext context) {
+    assert(
+      widget.firstTime == null ||
+          widget.lastTime == null ||
+          widget.firstTime!.compareTo(widget.lastTime!) <= 0,
+      'firstTime must not be after lastTime.',
+    );
     final t = dsThemeOf(context);
     final locale = _locale!;
     final l10n = locale.strings;
@@ -428,37 +575,115 @@ class _DsTimePickerState extends State<DsTimePicker>
     final current = issue != null ? null : reported;
     final base = _base;
     String two(int v) => v.toString().padLeft(2, '0');
+    String hourLabel(int h) => uses24 ? two(h) : '${h % 12 == 0 ? 12 : h % 12}';
+    final pm = base.isPm ? 12 : 0;
+
+    // Hours step through the day on either clock: on a 12-hour clock 11 AM
+    // then 12 PM, as the AM/PM wheel turns with the hour on iOS and
+    // Android; 23 wraps to 00.
+    _Step? stepHour(int delta) {
+      final h = (base.hour + delta) % 24;
+      if (!_holds(h * 3600, 3600)) return null;
+      return (label: hourLabel(h), go: () => _pick(base.copyWith(hour: h)));
+    }
 
     final hours = _ColumnData(
       label: l10n.hours,
       items: [
         for (var h = 0; h < (uses24 ? 24 : 12); h++)
-          (uses24 ? two(h) : '${h == 0 ? 12 : h}', h),
+          (
+            label: uses24 ? two(h) : '${h == 0 ? 12 : h}',
+            value: h,
+            available: _holds((uses24 ? h : h + pm) * 3600, 3600),
+          ),
       ],
       selected: current == null
           ? null
           : (uses24 ? current.hour : current.hour % 12),
       start: uses24 ? base.hour : base.hour % 12,
-      onSelect: (h) =>
-          choose(base.copyWith(hour: uses24 ? h : h + (base.isPm ? 12 : 0))),
+      onSelect: (h) => _pick(base.copyWith(hour: uses24 ? h : h + pm)),
+      step: stepHour,
+      wraps: true,
     );
-    final minuteValues = {
-      for (var m = 0; m < 60; m += widget.minuteStep) m,
-      ?current?.minute,
-    }.toList()..sort();
-    final minutes = _ColumnData(
+
+    // A column of sorted values, wrapping within its own unit: minute 55
+    // steps to 00 of the same hour, not into the next.
+    _ColumnData listColumn({
+      required String label,
+      required List<int> values,
+      required int? selected,
+      required int start,
+      required bool Function(int value) available,
+      required DsTime Function(int value) at,
+    }) {
+      final items = [
+        for (final v in values)
+          (label: two(v), value: v, available: available(v)),
+      ];
+      final from = math.max(0, values.lastIndexWhere((v) => v <= start));
+      _Step? step(int delta) {
+        final to = items[(from + delta) % items.length];
+        if (!to.available) return null;
+        return (label: to.label, go: () => _pick(at(to.value)));
+      }
+
+      return _ColumnData(
+        label: label,
+        items: items,
+        selected: selected,
+        start: start,
+        onSelect: (v) => _pick(at(v)),
+        step: step,
+        wraps: true,
+      );
+    }
+
+    final minutes = listColumn(
       label: l10n.minutes,
-      items: [for (final m in minuteValues) (two(m), m)],
+      values: {
+        for (var m = 0; m < 60; m += widget.minuteStep) m,
+        base.minute,
+      }.toList()..sort(),
       selected: current?.minute,
       start: base.minute,
-      onSelect: (m) => choose(base.copyWith(minute: m)),
+      available: (m) => _holds(base.hour * 3600 + m * 60, 60),
+      at: (m) => base.copyWith(minute: m),
     );
+    final seconds = widget.showSeconds
+        ? listColumn(
+            label: l10n.seconds,
+            values: {
+              for (var s = 0; s < 60; s += widget.secondStep) s,
+              base.second,
+            }.toList()..sort(),
+            selected: current?.second,
+            start: base.second,
+            available: (s) => _holds(base.inMinutes * 60 + s, 1),
+            at: (s) => base.copyWith(second: s),
+          )
+        : null;
+
+    DsTime inPeriod(int p) => base.copyWith(hour: base.hour % 12 + p * 12);
+    bool periodOpen(int p) => _holds(p * 12 * 3600, 12 * 3600);
     final period = _ColumnData(
       label: l10n.dayPeriod,
-      items: [(l10n.am, 0), (l10n.pm, 1)],
+      items: [
+        (label: l10n.am, value: 0, available: periodOpen(0)),
+        (label: l10n.pm, value: 1, available: periodOpen(1)),
+      ],
       selected: current == null ? null : (current.isPm ? 1 : 0),
       start: base.isPm ? 1 : 0,
-      onSelect: (p) => choose(base.copyWith(hour: base.hour % 12 + p * 12)),
+      onSelect: (p) => _pick(inPeriod(p)),
+      // Two items: no wrap; Down gives PM.
+      step: (delta) {
+        final p = (base.isPm ? 1 : 0) + delta;
+        if (p < 0 || p > 1 || !periodOpen(p)) return null;
+        return (
+          label: p == 0 ? l10n.am : l10n.pm,
+          go: () => _pick(inPeriod(p)),
+        );
+      },
+      wraps: false,
     );
     final periodFirst =
         !uses24 && l10n.timePattern12.trimLeft().startsWith('a');
@@ -466,6 +691,7 @@ class _DsTimePickerState extends State<DsTimePicker>
       if (!uses24 && periodFirst) period,
       hours,
       minutes,
+      ?seconds,
       if (!uses24 && !periodFirst) period,
     ];
 
@@ -507,6 +733,7 @@ class _DsTimePickerState extends State<DsTimePicker>
           itemHeight: itemHeight,
           maxHeight: height,
           enabled: _canEdit,
+          unavailableLabel: l10n.unavailable,
           onMove: (delta) => move(i, delta),
           onCommit: _popup.close,
           onRevert: () => choose(_opened),
@@ -524,6 +751,16 @@ class _DsTimePickerState extends State<DsTimePicker>
 /// Minutes typed: a separator then two digits, or three or four digits.
 final _minutesTyped = RegExp(r'\d\D+\d{2}(?!\d)|\d{3,4}');
 
+/// Seconds begun but not yet two digits: `14:30:`, `14:30:1`.
+final _secondsPending = RegExp(r'\d\D+\d{2}\s*[:.]\s*\d?\s*$');
+
+/// An item of a column: its text, its value, and whether a time in range
+/// can be chosen through it.
+typedef _Item = ({String label, int value, bool available});
+
+/// One step in a column: the next item's text, and choosing it.
+typedef _Step = ({String label, VoidCallback go});
+
 class _ColumnData {
   const _ColumnData({
     required this.label,
@@ -531,13 +768,15 @@ class _ColumnData {
     required this.selected,
     required this.start,
     required this.onSelect,
+    required this.step,
+    required this.wraps,
   });
 
   /// Names the column for screen readers.
   final String label;
 
-  /// Shown text and value of each item.
-  final List<(String, int)> items;
+  /// Shown text, value and availability of each item.
+  final List<_Item> items;
 
   /// The chosen value, or null.
   final int? selected;
@@ -546,6 +785,14 @@ class _ColumnData {
   final int start;
 
   final ValueChanged<int> onSelect;
+
+  /// The step by delta items from the chosen one (or [start]): wrapping
+  /// as the column does, null when the item there is unavailable or
+  /// there is none.
+  final _Step? Function(int delta) step;
+
+  /// Whether the column wraps, so a column that scrolls goes round.
+  final bool wraps;
 }
 
 /// A scrolling column of choices: one Tab stop, Up and Down choose, one
@@ -560,6 +807,7 @@ class _TimeColumn extends StatefulWidget {
     required this.itemHeight,
     required this.maxHeight,
     required this.enabled,
+    required this.unavailableLabel,
     required this.onMove,
     required this.onCommit,
     required this.onRevert,
@@ -573,6 +821,9 @@ class _TimeColumn extends StatefulWidget {
   final double itemHeight;
   final double maxHeight;
   final bool enabled;
+
+  /// Follows the value of a chosen item out of range.
+  final String unavailableLabel;
   final ValueChanged<int> onMove;
   final VoidCallback onCommit;
   final VoidCallback onRevert;
@@ -588,12 +839,38 @@ class _TimeColumnState extends State<_TimeColumn> {
   double _extent = 0;
   double _viewport = 0;
 
+  /// Whether the column goes round: it wraps, both its ends can be
+  /// chosen (so the wrap is open) and it has more items than it shows. Its
+  /// list then repeats the items [_cycles] times and starts in the middle
+  /// copy.
+  bool _loops = false;
+
+  /// The item count the scroll controller was made for.
+  int _laidCount = 0;
+
+  static const _loopCycles = 200;
+
+  int get _cycles => _loops ? _loopCycles : 1;
+
+  int get _count => widget.data.items.length;
+
   @override
   void initState() {
     super.initState();
     widget.focusNode.addListener(_onFocus);
     FocusManager.instance.addHighlightModeListener(_onHighlight);
     DsFocusVisibility.keyboard.addListener(_onModality);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _settle());
+  }
+
+  /// After the first layout, when the room the popup gave is known: an
+  /// item at the end of the list rests at the very end, not cut by a
+  /// window too short for whole rows.
+  void _settle() {
+    final scroll = _scroll;
+    if (!mounted || scroll == null || !scroll.hasClients) return;
+    final want = _centered(_position(_index));
+    if ((want - scroll.offset).abs() > 0.5) scroll.jumpTo(want);
   }
 
   @override
@@ -624,12 +901,12 @@ class _TimeColumnState extends State<_TimeColumn> {
   int get _index {
     final data = widget.data;
     final value = data.selected ?? data.start;
-    final i = data.items.indexWhere((item) => item.$2 == value);
+    final i = data.items.indexWhere((item) => item.value == value);
     if (i >= 0) return i;
     // The nearest item before the value.
     var best = 0;
     for (var j = 0; j < data.items.length; j++) {
-      if (data.items[j].$2 <= value) best = j;
+      if (data.items[j].value <= value) best = j;
     }
     return best;
   }
@@ -638,14 +915,36 @@ class _TimeColumnState extends State<_TimeColumn> {
   int get _rows =>
       math.max(1, ((_viewport + widget.style.itemGap!) / _extent).round());
 
-  /// The offset that shows [index] in the middle row, on whole rows (no
-  /// row cut by an edge).
-  double _centered(int index, int count) {
-    final first = (index - (_rows - 1) ~/ 2).clamp(
-      0,
-      math.max(0, count - _rows),
-    );
+  /// The offset that shows list position [index] in the middle row, on
+  /// whole rows (no row cut by an edge); near the end of the list, the
+  /// end itself.
+  double _centered(int index) {
+    final last = math.max(0, _count * _cycles - _rows);
+    final first = (index - (_rows - 1) ~/ 2).clamp(0, last);
+    if (first == last && first > 0) return _end;
     return first * _extent;
+  }
+
+  /// The offset at the end of the list: the scroll end once laid out (the
+  /// popup may give less room than the rows asked for), else what the
+  /// rows ask for.
+  double get _end {
+    final scroll = _scroll;
+    if (scroll != null && scroll.hasClients) {
+      return scroll.position.maxScrollExtent;
+    }
+    return math.max(0, _count * _cycles * _extent - _viewport);
+  }
+
+  /// The list position of item [index]: in a column that goes round, the
+  /// copy nearest the middle of the view (or of the list, before layout).
+  int _position(int index) {
+    if (!_loops) return index;
+    final scroll = _scroll;
+    final middle = scroll != null && scroll.hasClients
+        ? scroll.offset / _extent + (_rows - 1) / 2
+        : (_cycles ~/ 2 * _count + index).toDouble();
+    return index + _count * ((middle - index) / _count).round();
   }
 
   /// Scrolls so the chosen item shows, clear of the faded edge rows: by
@@ -654,30 +953,37 @@ class _TimeColumnState extends State<_TimeColumn> {
   void _reveal() {
     final scroll = _scroll;
     if (!mounted || scroll == null || !scroll.hasClients) return;
-    final count = widget.data.items.length;
-    final index = _index;
+    if (_loops) {
+      // Far from the middle copy after long scrolling: jump back by whole
+      // copies, which looks the same.
+      final copy = _extent * _count;
+      final away = (scroll.offset / copy).floor() - _cycles ~/ 2;
+      if (away.abs() > 2) scroll.jumpTo(scroll.offset - away * copy);
+    }
+    final index = _position(_index);
     final top = index * _extent;
     final offset = scroll.offset;
     final max = scroll.position.maxScrollExtent;
+    final view = scroll.position.viewportDimension;
+    final gap = widget.style.itemGap!;
     final band = _fadeBand;
-    final fadeTop = offset > 0 ? band : 0.0;
-    final fadeBottom = offset < max ? band : 0.0;
-    final shown = top >= offset && top + _extent <= offset + _viewport;
+    // As the edge fade decides: an end fades with an item beyond it.
+    final fadeTop = offset > 0.5 ? band : 0.0;
+    final fadeBottom = offset < max - gap - 0.5 ? band : 0.0;
+    final shown = top >= offset && top + _extent - gap <= offset + view;
     if (shown &&
         top >= offset + fadeTop &&
-        top + _extent - widget.style.itemGap! <=
-            offset + _viewport - fadeBottom) {
+        top + _extent - gap <= offset + view - fadeBottom) {
       return;
     }
     final margin = _rows >= 3 ? 1 : 0;
-    final double target;
-    if (!shown) {
-      target = _centered(index, count);
-    } else if (top < offset + fadeTop) {
-      target = (index - margin) * _extent;
-    } else {
-      target = (index - (_rows - 1 - margin)) * _extent;
-    }
+    var target = !shown
+        ? _centered(index)
+        : top < offset + fadeTop
+        ? (index - margin) * _extent
+        : (index - (_rows - 1 - margin)) * _extent;
+    // Among the last rows: the end, so the last item is not cut.
+    if (target >= (_count * _cycles - _rows) * _extent) target = max;
     final clamped = target.clamp(0.0, max);
     if (clamped == offset) return;
     final motion = DsTheme.motionOf(context);
@@ -696,12 +1002,6 @@ class _TimeColumnState extends State<_TimeColumn> {
   /// the edge row, so it never reaches a row clear of the edge.
   double get _fadeBand => _extent / 2;
 
-  void _choose(int index) {
-    final items = widget.data.items;
-    final i = index.clamp(0, items.length - 1);
-    _select(items[i].$2);
-  }
-
   /// Reports [value]. A [touch] (a tap) on a new value ticks; keys and
   /// assistive actions are silent, as on iOS.
   void _select(int value, {bool touch = false}) {
@@ -709,6 +1009,25 @@ class _TimeColumnState extends State<_TimeColumn> {
       DsHapticFeedback.play(context, DsHapticEvent.selection);
     }
     widget.data.onSelect(value);
+  }
+
+  /// Up or Down: the start item when nothing is chosen, else the next
+  /// item that way, wrapping, unless it is out of range.
+  void _step(int delta) {
+    final data = widget.data;
+    if (data.selected == null) {
+      final item = data.items[_index];
+      if (item.available) _select(item.value);
+      return;
+    }
+    data.step(delta)?.go();
+  }
+
+  /// Home or End: the first or last item that can be chosen.
+  void _edge({required bool first}) {
+    final open = widget.data.items.where((item) => item.available);
+    if (open.isEmpty) return;
+    _select((first ? open.first : open.last).value);
   }
 
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {
@@ -723,15 +1042,14 @@ class _TimeColumnState extends State<_TimeColumn> {
     }
     if (!widget.enabled) return KeyEventResult.ignored;
     final rtl = Directionality.of(context) == TextDirection.rtl;
-    final selected = widget.data.selected != null;
     if (key == LogicalKeyboardKey.arrowUp) {
-      _choose(selected ? _index - 1 : _index);
+      _step(-1);
     } else if (key == LogicalKeyboardKey.arrowDown) {
-      _choose(selected ? _index + 1 : _index);
+      _step(1);
     } else if (key == LogicalKeyboardKey.home) {
-      _choose(0);
+      _edge(first: true);
     } else if (key == LogicalKeyboardKey.end) {
-      _choose(widget.data.items.length - 1);
+      _edge(first: false);
     } else if (key == LogicalKeyboardKey.arrowLeft) {
       widget.onMove(rtl ? 1 : -1);
     } else if (key == LogicalKeyboardKey.arrowRight) {
@@ -753,27 +1071,55 @@ class _TimeColumnState extends State<_TimeColumn> {
     final itemHeight = widget.itemHeight;
     final gap = s.itemGap!;
     _extent = itemHeight + gap;
-    final count = data.items.length;
+    final count = _count;
     _viewport = math.min(widget.maxHeight, count * _extent - gap);
+    final scrolls = count * _extent - gap > _viewport + 0.5;
+    final loops =
+        data.wraps &&
+        scrolls &&
+        data.items.first.available &&
+        data.items.last.available;
+    if (_scroll != null && (loops != _loops || count != _laidCount)) {
+      // The positions moved (the column starts or stops going round, or a
+      // typed minute off the steps joined it): a new controller shows the
+      // chosen item in the middle again. The list lets go of the old one
+      // in this frame.
+      final old = _scroll!;
+      WidgetsBinding.instance.addPostFrameCallback((_) => old.dispose());
+      _scroll = null;
+    }
+    _loops = loops;
+    _laidCount = count;
     final width = math.max(
       s.columnWidth!,
       DsTheme.sizesOf(context).minTapTarget,
     );
     final index = _index;
-    _scroll ??= ScrollController(initialScrollOffset: _centered(index, count));
+    _scroll ??= ScrollController(
+      // Always from the chosen item, never a stored offset.
+      keepScrollOffset: false,
+      initialScrollOffset: _centered(
+        _loops ? _cycles ~/ 2 * count + index : index,
+      ),
+    );
     final focusVisible =
         widget.focusNode.hasPrimaryFocus &&
         FocusManager.instance.highlightMode == FocusHighlightMode.traditional &&
         DsFocusVisibility.keyboard.value;
 
+    // [i] is the list position; a column that goes round repeats its
+    // items.
     Widget item(int i) {
-      final (label, value) = data.items[i];
+      final k = i % count;
+      final (:label, :value, :available) = data.items[k];
       final selected = data.selected == value;
+      final live = widget.enabled && available;
       final states = <WidgetState>{
-        if (_hovered == i && widget.enabled) WidgetState.hovered,
-        if (_pressed == i && widget.enabled) WidgetState.pressed,
+        if (_hovered == i && live) WidgetState.hovered,
+        if (_pressed == i && live) WidgetState.pressed,
         if (selected) WidgetState.selected,
-        if (focusVisible && i == index) WidgetState.focused,
+        if (focusVisible && k == index) WidgetState.focused,
+        if (!available) WidgetState.disabled,
       };
       final d = DsTimePickerStyle.resolveLayers(widget.layers, states);
       final border = d.itemBorderColor ?? const Color(0x00000000);
@@ -785,11 +1131,9 @@ class _TimeColumnState extends State<_TimeColumn> {
         },
         child: GestureDetector(
           behavior: HitTestBehavior.opaque,
-          onTapDown: widget.enabled
-              ? (_) => setState(() => _pressed = i)
-              : null,
+          onTapDown: live ? (_) => setState(() => _pressed = i) : null,
           onTapCancel: () => setState(() => _pressed = null),
-          onTap: widget.enabled
+          onTap: live
               ? () {
                   setState(() => _pressed = null);
                   _select(value, touch: true);
@@ -822,20 +1166,24 @@ class _TimeColumnState extends State<_TimeColumn> {
       );
     }
 
-    final i = index;
-    final value = data.selected == null ? null : data.items[i].$1;
+    final chosen = data.selected == null ? null : data.items[index];
+    final value = chosen == null
+        ? null
+        : chosen.available
+        ? chosen.label
+        : '${chosen.label}, ${widget.unavailableLabel}';
+    // Next and previous values only beside a value (a column with
+    // nothing chosen still takes the actions), and only in range.
+    final next = widget.enabled ? data.step(1) : null;
+    final previous = widget.enabled ? data.step(-1) : null;
     return Semantics(
       container: true,
       label: data.label,
       value: value,
-      // Next and previous values only beside a value (a column with
-      // nothing chosen still takes the actions).
-      increasedValue: value != null && i + 1 < count
-          ? data.items[i + 1].$1
-          : null,
-      decreasedValue: value != null && i > 0 ? data.items[i - 1].$1 : null,
-      onIncrease: widget.enabled && i + 1 < count ? () => _choose(i + 1) : null,
-      onDecrease: widget.enabled && i > 0 ? () => _choose(i - 1) : null,
+      increasedValue: value == null ? null : next?.label,
+      decreasedValue: value == null ? null : previous?.label,
+      onIncrease: next?.go,
+      onDecrease: previous?.go,
       child: Focus(
         focusNode: widget.focusNode,
         autofocus: widget.autofocus,
@@ -853,11 +1201,12 @@ class _TimeColumnState extends State<_TimeColumn> {
               child: _EdgeFade(
                 scroll: _scroll!,
                 band: _fadeBand,
-                enabled: count * _extent - gap > _viewport + 0.5,
+                trailing: gap,
+                enabled: scrolls,
                 child: ListView.builder(
                   controller: _scroll,
                   padding: EdgeInsets.zero,
-                  itemCount: count,
+                  itemCount: count * _cycles,
                   itemExtent: _extent,
                   itemBuilder: (context, i) =>
                       Align(alignment: Alignment.topCenter, child: item(i)),
@@ -872,51 +1221,83 @@ class _TimeColumnState extends State<_TimeColumn> {
 }
 
 /// Fades the ends of a scrolling column where more items lie beyond.
-class _EdgeFade extends StatelessWidget {
+///
+/// Whether an end fades is read from the list's scroll position, which
+/// is only known once the list is laid out: the fade is decided again on
+/// every scroll and every change of the scroll metrics, the first layout
+/// included.
+class _EdgeFade extends StatefulWidget {
   const _EdgeFade({
     required this.scroll,
     required this.band,
+    required this.trailing,
     required this.enabled,
     required this.child,
   });
 
   final ScrollController scroll;
   final double band;
+
+  /// Space after the last item that holds nothing (the gap after it): at
+  /// most this much left to scroll is no item beyond the bottom edge.
+  final double trailing;
   final bool enabled;
   final Widget child;
 
   @override
+  State<_EdgeFade> createState() => _EdgeFadeState();
+}
+
+class _EdgeFadeState extends State<_EdgeFade> {
+  bool _onMetrics(ScrollMetricsNotification notification) {
+    if (notification.depth == 0) setState(() {});
+    return false;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (!enabled) return child;
-    return ListenableBuilder(
-      listenable: scroll,
-      child: child,
-      builder: (context, child) {
-        final position = scroll.hasClients ? scroll.position : null;
-        final more = position != null && position.hasContentDimensions;
-        final top = more && position.pixels > position.minScrollExtent;
-        final bottom = !more || position.pixels < position.maxScrollExtent;
-        return ShaderMask(
-          blendMode: BlendMode.dstIn,
-          shaderCallback: (rect) {
-            final edge = rect.height <= 0
-                ? 0.0
-                : (band / rect.height).clamp(0.0, .5);
-            return LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                top ? _clear : _opaque,
-                _opaque,
-                _opaque,
-                bottom ? _clear : _opaque,
-              ],
-              stops: [0, edge, 1 - edge, 1],
-            ).createShader(rect);
-          },
-          child: child,
-        );
-      },
+    if (!widget.enabled) return widget.child;
+    return NotificationListener<ScrollMetricsNotification>(
+      onNotification: _onMetrics,
+      child: ListenableBuilder(
+        listenable: widget.scroll,
+        child: widget.child,
+        builder: (context, child) {
+          final position = widget.scroll.hasClients
+              ? widget.scroll.position
+              : null;
+          final known = position != null && position.hasContentDimensions;
+          // An end fades only with part of an item beyond it. Before the
+          // first layout neither is known; the metrics notification after
+          // it decides.
+          final top = known && position.pixels > position.minScrollExtent + 0.5;
+          final bottom =
+              known &&
+              position.pixels <
+                  position.maxScrollExtent - widget.trailing - 0.5;
+          final band = widget.band;
+          return ShaderMask(
+            blendMode: BlendMode.dstIn,
+            shaderCallback: (rect) {
+              final edge = rect.height <= 0
+                  ? 0.0
+                  : (band / rect.height).clamp(0.0, .5);
+              return LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  top ? _clear : _opaque,
+                  _opaque,
+                  _opaque,
+                  bottom ? _clear : _opaque,
+                ],
+                stops: [0, edge, 1 - edge, 1],
+              ).createShader(rect);
+            },
+            child: child,
+          );
+        },
+      ),
     );
   }
 }

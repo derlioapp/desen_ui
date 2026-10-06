@@ -24,6 +24,7 @@ import 'date_math.dart';
 /// | `H`, `HH` | Hour, 0–23 | 9, 09 |
 /// | `h` | Hour, 1–12 | 9 |
 /// | `m`, `mm` | Minute | 5, 05 |
+/// | `s`, `ss` | Second | 7, 07 |
 /// | `a` | AM or PM, as the language writes it | ÖS, PM |
 /// | `'text'` | Literal text; `''` is a quote | |
 ///
@@ -65,7 +66,7 @@ class DsDateFormat {
   /// [time] in this format (its time fields; a date field shows 1 January
   /// 2000).
   String formatTime(DsTime time) =>
-      format(DateTime(2000, 1, 1, time.hour, time.minute));
+      format(DateTime(2000, 1, 1, time.hour, time.minute, time.second));
 
   String _field(String letter, int count, DateTime d) {
     String pad(int v, int width) => v.toString().padLeft(width, '0');
@@ -86,6 +87,7 @@ class DsDateFormat {
       'H' => pad(d.hour, count),
       'h' => pad(d.hour % 12 == 0 ? 12 : d.hour % 12, count),
       'm' => pad(d.minute, count),
+      's' => pad(d.second, count),
       'a' => d.hour < 12 ? strings.am : strings.pm,
       _ => letter * count,
     };
@@ -194,6 +196,10 @@ class DsDateFormat {
   /// `2:30 pm`, `2pm`, `ÖS 2:30`. The language's AM/PM marks are read
   /// (case, dots and spaces ignored), and so are `am`, `pm`, `a` and `p`.
   /// Without a mark the hour is 0–23; with one, 1–12.
+  ///
+  /// A pattern with seconds (`HH:mm:ss`) also reads them: `14:30:05`,
+  /// `143005`; a time typed without them is on the minute. A pattern
+  /// without seconds reads hours and minutes only.
   DsTime? tryParseTime(String text) {
     final normalized = _normalize(text);
     final numbers = [
@@ -214,7 +220,8 @@ class DsDateFormat {
         return null;
       }
     }
-    int? hour, minute;
+    final seconds = _hasSeconds;
+    int? hour, minute, second = 0;
     if (numbers.length == 1) {
       final n = numbers.single;
       if (n.length <= 2) {
@@ -223,21 +230,33 @@ class DsDateFormat {
       } else if (n.length <= 4) {
         hour = _small(n.substring(0, n.length - 2));
         minute = _small(n.substring(n.length - 2));
+      } else if (seconds && n.length <= 6) {
+        hour = _small(n.substring(0, n.length - 4));
+        minute = _small(n.substring(n.length - 4, n.length - 2));
+        second = _small(n.substring(n.length - 2));
       }
     } else if (numbers.length == 2) {
       hour = _small(numbers[0]);
       minute = _small(numbers[1]);
+    } else if (seconds && numbers.length == 3) {
+      hour = _small(numbers[0]);
+      minute = _small(numbers[1]);
+      second = _small(numbers[2]);
     }
-    if (hour == null || minute == null) return null;
-    if (minute > 59) return null;
+    if (hour == null || minute == null || second == null) return null;
+    if (minute > 59 || second > 59) return null;
     if (pm != null) {
       if (hour < 1 || hour > 12) return null;
       hour = hour % 12 + (pm ? 12 : 0);
     } else if (hour > 23) {
       return null;
     }
-    return DsTime(hour, minute);
+    return DsTime(hour, minute, second);
   }
+
+  /// Whether the pattern shows seconds.
+  bool get _hasSeconds =>
+      _tokens(pattern).any((token) => token is _Field && token.letter == 's');
 
   @override
   bool operator ==(Object other) =>
@@ -308,12 +327,12 @@ List<_Token> _tokens(String pattern) => _tokenCache[pattern] ??= () {
   return List<_Token>.unmodifiable(out);
 }();
 
-const _patternLetters = 'yMLdEHhma';
+const _patternLetters = 'yMLdEHhmsa';
 
 final _digits = RegExp(r'\d+');
 
-/// [text] as a number of at most two digits (a day, month, hour or
-/// minute), or null: longer text is never a valid field, and reading it
+/// [text] as a number of at most two digits (a day, month, hour, minute
+/// or second), or null: longer text is never a valid field, and reading it
 /// could overflow.
 int? _small(String? text) =>
     text == null || text.isEmpty || text.length > 2 ? null : int.parse(text);
