@@ -116,6 +116,10 @@
   one; in too little room the value scales down instead of overflowing.
 - `DsProgressBar`, `DsAlert` and `DsAccordion` no longer throw under an
   unbounded width; the dialog's actions support dry layout.
+- Dialogs, confirms, panels and sheets opened by a click give focus back to
+  the control that opened them when they close, without a focus ring; a
+  click does not focus a Desen control, so focus went to the page or to a
+  control focused earlier.
 
 ## Unreleased · Parity with the old library
 

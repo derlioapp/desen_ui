@@ -8,6 +8,7 @@ import '../l10n/localizations.dart';
 import '../theme/haptics.dart';
 import '../theme/theme.dart';
 import 'focus_visibility.dart';
+import 'focus_visibility_state.dart' show notePressed;
 import 'haptic_feedback.dart';
 import 'min_tap_target.dart';
 
@@ -31,7 +32,8 @@ typedef DsStatesWidgetBuilder = Widget Function(
 /// - [WidgetState.focused]: it has focus **and** the user is navigating with
 ///   a keyboard, the equivalent of CSS `:focus-visible` (see
 ///   [DsFocusVisibility]). A click or tap never shows focus, and pressing
-///   does not take focus, as in Safari and macOS.
+///   does not take focus, as in Safari and macOS. A modal it opens still
+///   gives focus back to it on close (`DsModalRoute`).
 /// - [WidgetState.pressed]: a pointer is down on it.
 /// - [WidgetState.disabled]: both [onPressed] and [onLongPress] are null.
 ///
@@ -353,6 +355,8 @@ class _DsPressableState extends State<DsPressable> {
     // the feedback belongs to the touch that caused it.
     final haptic = widget.haptic;
     if (pointer && haptic != null) DsHapticFeedback.play(context, haptic);
+    // A click does not focus, so a modal this opens learns its opener here.
+    notePressed(_focusNode);
     onPressed();
   }
 
@@ -360,6 +364,7 @@ class _DsPressableState extends State<DsPressable> {
 
   void _longPress() {
     if (!_active) return;
+    notePressed(_focusNode);
     widget.onLongPress?.call();
   }
 

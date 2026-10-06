@@ -1,11 +1,12 @@
-/// The input tracking behind `DsFocusVisibility`. Not exported: the
-/// package's public surface is `DsFocusVisibility.keyboard`.
+/// The input tracking behind `DsFocusVisibility`, and the control last
+/// pressed ([lastPressed]). Not exported: the package's public surface is
+/// `DsFocusVisibility.keyboard`.
 library;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart' show FocusManager;
+import 'package:flutter/widgets.dart' show FocusManager, FocusNode;
 
 /// Whether focus shows before any input on [platform]. On desktop and the
 /// web, true: focus placed first (e.g. autofocus) is visible, as in a
@@ -35,6 +36,7 @@ ValueListenable<bool> keyboardFocusVisible() {
   if (!identical(_keysFor, FocusManager.instance)) {
     _listen();
     _keyboard.value = focusVisibleInitially(defaultTargetPlatform);
+    _pressed = null;
   }
   return _keyboard;
 }
@@ -44,7 +46,25 @@ ValueListenable<bool> keyboardFocusVisible() {
 void resetFocusVisibility({bool? keyboard}) {
   _listen();
   _keyboard.value = keyboard ?? focusVisibleInitially(defaultTargetPlatform);
+  _pressed = null;
 }
+
+/// The focus node of the control activated last, until the next pointer
+/// down or key press (other than a lone modifier).
+WeakReference<FocusNode>? _pressed;
+
+/// Notes that the control with [node] was just activated (by a click, a
+/// tap, the keyboard or assistive technology). A click does not focus a
+/// Desen control, so this is how a layer it opens finds its way back.
+void notePressed(FocusNode node) {
+  keyboardFocusVisible(); // Listening, so the next input clears it.
+  _pressed = WeakReference(node);
+}
+
+/// The control activated last, while no other input has come since: the
+/// focus a click would have given it in a browser. Null after any pointer
+/// down or key press.
+FocusNode? lastPressed() => _pressed?.target;
 
 void _listen() {
   // The handler may or may not still be registered: remove it first, so it
@@ -60,12 +80,16 @@ void _listen() {
 }
 
 void _onPointer(PointerEvent event) {
-  if (event is PointerDownEvent) _keyboard.value = false;
+  if (event is PointerDownEvent) {
+    _keyboard.value = false;
+    _pressed = null;
+  }
 }
 
 bool _onKey(KeyEvent event) {
   if (event is KeyDownEvent && !_modifiers.contains(event.logicalKey)) {
     _keyboard.value = true;
+    _pressed = null;
   }
   return false;
 }

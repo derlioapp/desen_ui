@@ -205,6 +205,177 @@ void main() {
     expect(find.text('Bekle'), findsNothing);
   });
 
+  group('focus returns to the opener (WAI-ARIA dialog pattern)', () {
+    late FocusNode opener;
+    late WidgetStatesController states;
+    late ValueNotifier<String> where;
+    setUp(() {
+      opener = FocusNode(debugLabel: 'opener');
+      states = WidgetStatesController();
+      where = ValueNotifier('here');
+    });
+    tearDown(() {
+      opener.dispose();
+      states.dispose();
+      where.dispose();
+    });
+
+    /// A page with a button before the opener ("Önce") and the opener
+    /// ("Aç"), which runs [open]. `where` puts the opener in its place
+    /// ('here'), moves it to another parent ('moved'), removes it ('gone')
+    /// or disables it ('disabled').
+    Widget page(void Function(BuildContext context) open) {
+      final key = GlobalKey();
+      return DsApp(
+        home: Builder(
+          builder: (context) => ValueListenableBuilder<String>(
+            valueListenable: where,
+            builder: (_, where, _) {
+              final button = DsButton(
+                key: key,
+                focusNode: opener,
+                statesController: states,
+                onPressed: where == 'disabled' ? null : () => open(context),
+                child: const Text('Aç'),
+              );
+              return Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    DsButton(onPressed: () {}, child: const Text('Önce')),
+                    if (where == 'here' || where == 'disabled') button,
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: where == 'moved' ? button : const SizedBox(),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      );
+    }
+
+    void dialog(BuildContext context) => showDsDialog<void>(
+      context: context,
+      builder: (context) => DsDialog(
+        title: const Text('Ayarlar'),
+        actions: [
+          DsButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Vazgeç'),
+          ),
+        ],
+      ),
+    );
+
+    /// Each modal surface, opened from a context and closed by a click.
+    final surfaces =
+        <
+          String,
+          (
+            void Function(BuildContext context),
+            Future<void> Function(WidgetTester tester),
+          )
+        >{
+          'dialog': (dialog, (tester) => tester.tap(find.text('Vazgeç'))),
+          'confirm': (
+            (context) => showDsConfirm(context: context, title: 'Emin misin?'),
+            (tester) => tester.tap(find.text('Cancel')),
+          ),
+          'panel': (
+            (context) => showDsPanel<void>(
+              context: context,
+              builder: (_) => const DsPanel(
+                title: Text('Ayrıntılar'),
+                child: Text('İçerik'),
+              ),
+            ),
+            (tester) => tester.tapAt(const Offset(10, 10)),
+          ),
+        };
+
+    for (final MapEntry(key: name, value: (open, close)) in surfaces.entries) {
+      testWidgets('a click-opened $name gives focus back to its opener, '
+          'with no focus ring', (tester) async {
+        await tester.pumpWidget(page(open));
+        await tester.tap(find.text('Aç'));
+        await tester.pumpAndSettle();
+        expect(opener.hasFocus, isFalse, reason: 'focus is in the modal');
+        await close(tester);
+        await tester.pumpAndSettle();
+        expect(opener.hasPrimaryFocus, isTrue);
+        expect(DsFocusVisibility.keyboard.value, isFalse);
+        expect(states.value, isNot(contains(WidgetState.focused)));
+      });
+    }
+
+    testWidgets('the clicked opener wins over a control focused before', (
+      tester,
+    ) async {
+      await tester.pumpWidget(page(dialog));
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      expect(opener.hasFocus, isFalse, reason: '"Önce" has focus');
+      await tester.tap(find.text('Aç'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Vazgeç'));
+      await tester.pumpAndSettle();
+      expect(opener.hasPrimaryFocus, isTrue);
+      expect(states.value, isNot(contains(WidgetState.focused)));
+    });
+
+    testWidgets('an opener moved while the dialog is open gets focus back; '
+        'one removed or disabled gets none', (tester) async {
+      await tester.pumpWidget(page(dialog));
+      Future<void> openThen(String change) async {
+        where.value = 'here';
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Aç'));
+        await tester.pumpAndSettle();
+        where.value = change;
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Vazgeç'));
+        await tester.pumpAndSettle();
+      }
+
+      await openThen('moved');
+      expect(opener.hasPrimaryFocus, isTrue, reason: 'still in the tree');
+
+      await openThen('gone');
+      expect(tester.takeException(), isNull);
+      expect(opener.hasFocus, isFalse);
+      expect(find.text('Aç'), findsNothing);
+      where.value = 'here';
+      await tester.pumpAndSettle();
+      expect(
+        opener.hasFocus,
+        isFalse,
+        reason: 'no focus request waits for it to come back',
+      );
+
+      await openThen('disabled');
+      expect(tester.takeException(), isNull);
+      expect(opener.hasFocus, isFalse);
+    });
+
+    testWidgets('a keyboard-opened dialog gives focus back to its opener, '
+        'with the ring', (tester) async {
+      await tester.pumpWidget(page(dialog));
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      expect(opener.hasPrimaryFocus, isTrue);
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pumpAndSettle();
+      expect(find.text('Ayarlar'), findsOneWidget);
+      expect(opener.hasFocus, isFalse, reason: 'focus is in the dialog');
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pumpAndSettle();
+      expect(opener.hasPrimaryFocus, isTrue);
+      expect(states.value, contains(WidgetState.focused));
+    });
+  });
+
   group('dialog layout and name (eng M3, bugs B13, ux V5, ux V3)', () {
     Future<void> open(
       WidgetTester tester, {

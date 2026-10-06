@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 
+import '../behavior/focus_visibility_state.dart' show lastPressed;
 import '../foundation/component_theme.dart';
 import '../l10n/localizations.dart';
 import '../theme/motion.dart';
@@ -212,11 +215,28 @@ enum DsScrim {
 
 /// A modal layer over a scrim: dialogs, side panels and bottom sheets.
 ///
-/// As a route it traps focus while open and gives focus back to the
-/// opener when it closes; Escape, a tap on the scrim and system back close
-/// it when [barrierDismissible]. On open, focus goes to the control that
-/// asks for it (`autofocus: true`), else to the first control inside in
-/// Tab order, so the keyboard and screen readers start in the modal.
+/// As a route it traps focus while open; Escape, a tap on the scrim and
+/// system back close it when [barrierDismissible]. On open, focus goes to
+/// the control that asks for it (`autofocus: true`), else to the first
+/// control inside in Tab order, so the keyboard and screen readers start
+/// in the modal.
+///
+/// **Focus on close.** When the modal closes with focus inside it, focus
+/// goes back to its opener (WAI-ARIA dialog pattern):
+/// - If a control built on `DsPressable` (buttons, menu rows, list items)
+///   was activated and no pointer went down and no key was pressed between
+///   that and the modal opening, that control is the opener. It gets focus
+///   back whether it was clicked, tapped or used from the keyboard or a
+///   screen reader: also when a click left it unfocused, as Desen controls
+///   do, and also when another control held focus at the time.
+/// - Otherwise, or when that control has left the tree or can no longer
+///   take focus (disabled, or under `ExcludeFocus`), the route gives focus
+///   back as any route does: to the control that held it when the modal
+///   opened, else to the page itself.
+///
+/// Whether the opener then shows its focus ring follows the last input
+/// (see `DsFocusVisibility`): closed by a click or tap, it shows none;
+/// closed with Escape or another key, it does, as in a browser.
 ///
 /// **Context.** The modal inherits the theme above its navigator live, so
 /// a theme switch while it is open (dark mode, contrast, reduce
@@ -274,6 +294,44 @@ class DsModalRoute<T> extends PopupRoute<T> {
   final String? semanticBarrierLabel;
 
   final bool _dismissible;
+
+  /// The control whose press opened the modal, if one did ([install]).
+  WeakReference<FocusNode>? _opener;
+
+  /// Notes the control whose press is opening the modal. A click does not
+  /// focus a Desen control, so the focus the route would give back does
+  /// not know it.
+  @override
+  void install() {
+    super.install();
+    if (lastPressed() case final pressed?) _opener = WeakReference(pressed);
+  }
+
+  @override
+  bool didPop(T? result) {
+    final popped = super.didPop(result);
+    if (popped) _returnFocus();
+    return popped;
+  }
+
+  /// Gives focus back to the pressed opener when focus is in the modal and
+  /// the opener can still take it; else leaves it to the navigator, which
+  /// gives the page back the focus it had.
+  void _returnFocus() {
+    final opener = _opener?.target;
+    _opener = null;
+    final inside = subtreeContext;
+    if (opener == null || inside == null) return;
+    if (!FocusScope.of(inside, createDependency: false).hasFocus) return;
+    // In this same pop the navigator hands focus back to the page; a
+    // microtask runs after that request and before it applies, so this
+    // one is applied in its place.
+    scheduleMicrotask(() {
+      if ((opener.context?.mounted ?? false) && opener.canRequestFocus) {
+        opener.requestFocus();
+      }
+    });
+  }
 
   /// Wraps [child] in the captured and pinned context.
   Widget _context(Widget child) {
