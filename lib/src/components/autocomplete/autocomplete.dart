@@ -1379,6 +1379,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
               removeLabel: l10n.remove(labels[i]),
               focusNode: _removeFocus,
               wrapButton: _button,
+              wrap: !collapsed,
             ),
           // One "+N" per possible count; the flow measures and shows one.
           if (collapsed)
@@ -1899,6 +1900,11 @@ class _Message extends StatelessWidget {
 
 /// A chosen value inside a [DsMultiSelect]: a soft tag with a remove
 /// button.
+///
+/// A label wider than the line wraps onto more lines (large text, a narrow
+/// field), so no tag loses its text; collapsed tags keep to one line and
+/// ellipsize instead. In a field narrower than the tag's padding and
+/// remove button, the tag is clipped at the field's edge.
 class _Tag extends StatelessWidget {
   const _Tag({
     required this.label,
@@ -1908,6 +1914,7 @@ class _Tag extends StatelessWidget {
     required this.removeLabel,
     required this.focusNode,
     required this.wrapButton,
+    required this.wrap,
   });
 
   final String label;
@@ -1919,6 +1926,9 @@ class _Tag extends StatelessWidget {
   final String removeLabel;
   final FocusNode focusNode;
   final Widget Function(Widget) wrapButton;
+
+  /// Whether a label wider than the line wraps; else it ellipsizes.
+  final bool wrap;
 
   @override
   Widget build(BuildContext context) {
@@ -1945,45 +1955,58 @@ class _Tag extends StatelessWidget {
           ? padding.copyWith(right: padding.left)
           : padding.copyWith(left: padding.right);
     }
+    // The narrowest the tag lays out: its padding and remove button, the
+    // label at no width. A narrower line clips the tag instead of
+    // overflowing it.
+    final floor =
+        padding.horizontal +
+        (onRemove == null ? 0.0 : s.tagGapInside! + remove.height!);
     return Semantics(
       container: true,
-      child: Container(
-        constraints: BoxConstraints(minHeight: s.tagHeight!),
-        padding: padding,
-        decoration: DsBoxDecoration(
-          color: s.tagBackground,
-          borderRadius: corners,
-          shadows: [if (border.a > 0) DsShadow.innerRing(border)],
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          spacing: s.tagGapInside!,
-          children: [
-            Flexible(
-              child: Text(
-                label,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: (s.tagTextStyle ?? const TextStyle()).copyWith(
-                  color: fg,
-                ),
-              ),
-            ),
-            if (onRemove != null)
-              wrapButton(
-                ActionTapArea(
-                  visual: remove.height!,
-                  child: DsButton.icon(
-                    size: DsSize.xs,
-                    focusNode: focusNode,
-                    style: remove,
-                    semanticLabel: removeLabel,
-                    onPressed: onRemove,
-                    icon: const DsIcon(DsIcons.x),
+      child: ConstraintsTransformBox(
+        alignment: AlignmentDirectional.centerStart,
+        clipBehavior: Clip.hardEdge,
+        constraintsTransform: (c) => c.maxWidth >= floor
+            ? c
+            : c.copyWith(minWidth: floor, maxWidth: floor),
+        child: Container(
+          constraints: BoxConstraints(minHeight: s.tagHeight!),
+          padding: padding,
+          decoration: DsBoxDecoration(
+            color: s.tagBackground,
+            borderRadius: corners,
+            shadows: [if (border.a > 0) DsShadow.innerRing(border)],
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            spacing: s.tagGapInside!,
+            children: [
+              Flexible(
+                child: Text(
+                  label,
+                  maxLines: wrap ? null : 1,
+                  overflow: wrap ? null : TextOverflow.ellipsis,
+                  style: (s.tagTextStyle ?? const TextStyle()).copyWith(
+                    color: fg,
                   ),
                 ),
               ),
-          ],
+              if (onRemove != null)
+                wrapButton(
+                  ActionTapArea(
+                    visual: remove.height!,
+                    child: DsButton.icon(
+                      size: DsSize.xs,
+                      focusNode: focusNode,
+                      style: remove,
+                      semanticLabel: removeLabel,
+                      onPressed: onRemove,
+                      icon: const DsIcon(DsIcons.x),
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
