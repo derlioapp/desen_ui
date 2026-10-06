@@ -1,6 +1,7 @@
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -178,5 +179,61 @@ void main() {
         .getSemantics(find.byType(DsSlider).last)
         .getSemanticsData();
     expect(data.hasAction(SemanticsAction.increase), isFalse);
+  });
+
+  group('divisions report grid values without float dust', () {
+    Future<List<double>> stepRight(
+      WidgetTester tester, {
+      required double min,
+      required double max,
+      required int divisions,
+    }) async {
+      final seen = <double>[];
+      final node = FocusNode();
+      addTearDown(node.dispose);
+      var value = min;
+      await tester.pumpWidget(
+        host(
+          SizedBox(
+            width: 200,
+            child: StatefulBuilder(
+              builder: (context, set) => DsSlider(
+                value: value,
+                min: min,
+                max: max,
+                divisions: divisions,
+                focusNode: node,
+                onChanged: (v) => set(() {
+                  value = v;
+                  seen.add(v);
+                }),
+              ),
+            ),
+          ),
+        ),
+      );
+      node.requestFocus();
+      await tester.pump();
+      for (var i = 0; i < divisions; i++) {
+        await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
+        await tester.pump();
+      }
+      return seen;
+    }
+
+    testWidgets('0 to 1 in tenths', (tester) async {
+      final seen = await stepRight(tester, min: 0, max: 1, divisions: 10);
+      expect(seen, [.1, .2, .3, .4, .5, .6, .7, .8, .9, 1.0]);
+    });
+
+    testWidgets('an offset range: 0.1 to 0.7 in six steps', (tester) async {
+      final seen = await stepRight(tester, min: .1, max: .7, divisions: 6);
+      expect(seen, [.2, .3, .4, .5, .6, .7]);
+    });
+
+    testWidgets('whole steps stay whole', (tester) async {
+      final seen = await stepRight(tester, min: -3, max: 3, divisions: 6);
+      expect(seen, [-2.0, -1.0, 0.0, 1.0, 2.0, 3.0]);
+    });
   });
 }

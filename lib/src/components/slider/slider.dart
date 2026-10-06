@@ -66,7 +66,9 @@ class DsSlider extends StatefulWidget {
   /// Highest value.
   final double max;
 
-  /// Number of equal steps; null for continuous.
+  /// Number of equal steps; null for continuous. Reported values are the
+  /// grid points as written (0.3 of 0–1 in tenths, not
+  /// 0.30000000000000004), the ends exactly [min] and [max].
   final int? divisions;
 
   /// Name for screen readers.
@@ -181,12 +183,25 @@ class _DsSliderState extends State<DsSlider> {
     super.dispose();
   }
 
+  /// [v] in the range and, with divisions, on the nearest grid point,
+  /// without float dust: 3 of 10 steps from 0 to 1 is 0.3, not
+  /// 0.30000000000000004, and the ends are exactly [DsSlider.min] and
+  /// [DsSlider.max].
   double _snap(double v) {
     v = v.clamp(widget.min, widget.max);
     final d = widget.divisions;
-    if (d == null) return v;
-    final step = (widget.max - widget.min) / d;
-    return widget.min + ((v - widget.min) / step).round() * step;
+    final range = widget.max - widget.min;
+    if (d == null || range <= 0) return v;
+    final k = ((v - widget.min) / range * d).round();
+    if (k <= 0) return widget.min;
+    if (k >= d) return widget.max;
+    final point = widget.min + range * k / d;
+    // Rounded to a millionth of the step's decade: a point's own digits
+    // stay, the last-bit error of the sum goes.
+    final digits = 6 - (math.log(range / d) / math.ln10).floor();
+    if (digits <= 0 || digits > 20) return point;
+    return double.parse(point.toStringAsFixed(digits))
+        .clamp(widget.min, widget.max);
   }
 
   /// Reports [v], snapped. A [touch] (tap or drag) on a stepped slider
