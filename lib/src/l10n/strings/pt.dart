@@ -396,4 +396,25 @@ class DsLocalizationsPt extends DsLocalizationsEn {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       'Digite $grouped ou $decimal.';
+
+  @override
+  String get keyCommand => 'Comando';
+
+  @override
+  String get keyOption => 'Opção';
+
+  @override
+  String get keyShift => 'Shift';
+
+  @override
+  String get keyControl => 'Control';
+
+  @override
+  String get keyBackspace => 'Backspace';
+
+  @override
+  String get keyEnter => 'Enter';
+
+  @override
+  String positionOf(int index, int count) => '$index de $count';
 }

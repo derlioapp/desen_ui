@@ -121,8 +121,9 @@ class DsCheckbox extends StatefulWidget {
         background: k.controlHover,
         borderColor: k.textSubtle,
       ),
-      // A bright accent melts into the card; its edge keeps the box's
-      // shape (transparent for other seeds; denetim-2).
+      // A fill under 3:1 off its layer (a bright accent on a light card,
+      // a white-labeled fill on a dark floating layer) keeps the box's
+      // shape with its edge; transparent when the fill stands alone.
       selected: DsCheckboxStyle(
         background: k.accent,
         borderColor: k.accentEdge,

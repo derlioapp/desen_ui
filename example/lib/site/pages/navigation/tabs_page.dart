@@ -152,6 +152,12 @@ class TabsPage extends StatelessWidget {
             ('value', 'T', 'The value this tab selects.'),
             ('label', 'Widget', 'A short `Text`.'),
             ('count', 'int?', 'A neutral number after the label.'),
+            (
+              'countSemanticLabel',
+              'String?',
+              'What screen readers hear for the count ("12 members"); the '
+                  'number when null.',
+            ),
             ('enabled', 'bool', 'Whether the tab can be selected.'),
             (
               'semanticLabel',

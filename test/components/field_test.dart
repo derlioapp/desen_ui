@@ -60,9 +60,11 @@ void main() {
       await tester.pumpWidget(host(select(required: true)));
       final node = tester.getSemantics(find.byType(DsSelect<String>));
       final data = node.getSemanticsData();
-      // One node: the label, the required word, the control, the hint.
+      // One node: the label, the required word, the control; the
+      // description is the hint, read after the name and the state.
       expect(data.label, startsWith('Project\nRequired'));
-      expect(data.label, contains('Reports link to it.'));
+      expect(data.label, isNot(contains('Reports link to it.')));
+      expect(data.hint, endsWith('Reports link to it.'));
       expect(data.label, isNot(contains('*')));
       expect(data.flagsCollection.isButton, isTrue);
       expect(data.hasAction(SemanticsAction.tap), isTrue);
@@ -112,9 +114,9 @@ void main() {
       final data = tester
           .getSemantics(find.byType(DsSelect<String>))
           .getSemanticsData();
-      expect(data.label, contains('Error'));
-      expect(data.label, contains('Choose a project.'));
-      expect(data.label, isNot(contains('Reports link to it.')));
+      expect(data.hint, endsWith('Error\nChoose a project.'));
+      expect(data.label, isNot(contains('Choose a project.')));
+      expect(data.hint, isNot(contains('Reports link to it.')));
       expect(data.validationResult, SemanticsValidationResult.invalid);
       expect(find.text('Reports link to it.'), findsNothing);
       handle.dispose();

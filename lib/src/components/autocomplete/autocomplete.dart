@@ -1306,6 +1306,8 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       isRequired: scope?.isRequired ?? false,
       isLabelled: scope?.isLabelled ?? false,
       labelText: scope?.labelText,
+      // With the buttons apart the text carries the field's message.
+      messageText: separate ? scope?.messageText : null,
       child: DsTextField(
         controller: _text,
         focusNode: _focus,

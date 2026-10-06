@@ -939,6 +939,96 @@ void main() {
       expect(said.map((a) => a.message), ['First.']);
     });
 
+    testWidgets('validateAndFocus: heard once, on the field, with its name', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      final form = GlobalKey<FormState>();
+      final messages = <Map<Object?, Object?>>[];
+      tester.binding.defaultBinaryMessenger
+          .setMockDecodedMessageHandler<Object?>(SystemChannels.accessibility, (
+            message,
+          ) async {
+            messages.add(message! as Map<Object?, Object?>);
+            return null;
+          });
+      addTearDown(
+        () => tester.binding.defaultBinaryMessenger
+            .setMockDecodedMessageHandler<Object?>(
+              SystemChannels.accessibility,
+              null,
+            ),
+      );
+      await tester.pumpWidget(
+        app(
+          form: form,
+          Builder(
+            builder: (context) => DsTextFormField(
+              key: const Key('name'),
+              label: const Text('Full name'),
+              validator: DsValidators.required(context),
+            ),
+          ),
+        ),
+      );
+      messages.clear();
+      expect(form.currentState!.validateAndFocus(), isFalse);
+      await tester.pumpAndSettle();
+      // No bare "This field is required." from the form.
+      expect(messages.where((m) => m['type'] == 'announce'), isEmpty);
+      // The screen reader is moved to the focused field instead, which
+      // reads its name, its state and the error.
+      final focus = messages.where((m) => m['type'] == 'focus').toList();
+      expect(focus, hasLength(1));
+      final node = tester.getSemantics(editable(const Key('name')));
+      expect(focus.single['nodeId'], node.id);
+      final data = node.getSemanticsData();
+      expect(data.label, 'Full name');
+      expect(data.validationResult, SemanticsValidationResult.invalid);
+      expect(data.hint, endsWith('${en.error}\n${en.fieldRequired}'));
+      // The field's text still shows the message, unchanged.
+      expect(message(en.fieldRequired), findsOneWidget);
+      expect(
+        tester
+            .state<DsFormFieldState<String>>(find.byType(DsTextFormField))
+            .errorText,
+        en.fieldRequired,
+      );
+      handle.dispose();
+    });
+
+    testWidgets('validateAndFocus with nothing focusable announces the '
+        'first error once, with the field name', (tester) async {
+      final form = GlobalKey<FormState>();
+      await tester.pumpWidget(
+        app(
+          form: form,
+          Builder(
+            builder: (context) => Column(
+              children: [
+                DsTextFormField(
+                  label: const Text('Full name'),
+                  enabled: false,
+                  validator: DsValidators.required(context),
+                ),
+                DsTextFormField(
+                  label: const Text('Email'),
+                  enabled: false,
+                  validator: DsValidators.required(context),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+      tester.takeAnnouncements();
+      form.currentState!.validateAndFocus();
+      await tester.pumpAndSettle();
+      expect(tester.takeAnnouncements().map((a) => a.message), [
+        'Full name\n${en.error}\n${en.fieldRequired}',
+      ]);
+    });
+
     testWidgets('a field validating on its own announces its error', (
       tester,
     ) async {

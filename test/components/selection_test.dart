@@ -1,3 +1,5 @@
+import 'dart:ui' show CheckedState, Tristate;
+
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/semantics.dart';
@@ -235,7 +237,7 @@ void main() {
   });
 
   group('DsChip', () {
-    testWidgets('toggles and announces selected', (tester) async {
+    testWidgets('toggles and announces checked', (tester) async {
       final semantics = tester.ensureSemantics();
       var on = false;
       await tester.pumpWidget(
@@ -254,8 +256,36 @@ void main() {
       expect(on, isTrue);
       expect(
         tester.getSemantics(find.byType(DsChip)),
-        isSemantics(isSelected: true, label: 'Tasarım'),
+        isSemantics(hasCheckedState: true, isChecked: true, label: 'Tasarım'),
       );
+      semantics.dispose();
+    });
+
+    testWidgets('a checkbox, not a selected button (the web reads that as '
+        'the current item)', (tester) async {
+      final semantics = tester.ensureSemantics();
+      for (final on in [false, true]) {
+        await tester.pumpWidget(
+          host(
+            DsChip(
+              label: const Text('Tasarım'),
+              selected: on,
+              onChanged: (_) {},
+            ),
+          ),
+        );
+        final flags = tester
+            .getSemantics(find.byType(DsChip))
+            .getSemanticsData()
+            .flagsCollection;
+        expect(
+          flags.isChecked,
+          on ? CheckedState.isTrue : CheckedState.isFalse,
+        );
+        expect(flags.isSelected, Tristate.none);
+        expect(flags.isButton, isFalse);
+        expect(flags.isToggled, Tristate.none);
+      }
       semantics.dispose();
     });
   });

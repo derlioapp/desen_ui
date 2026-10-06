@@ -259,4 +259,16 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       '請輸入 $grouped 或 $decimal。';
+
+  @override
+  String get keyOption => '選項';
+
+  @override
+  String get keyShift => 'Shift';
+
+  @override
+  String get keyEnter => '輸入';
+
+  @override
+  String positionOf(int index, int count) => '第 $index 個，共 $count 個';
 }

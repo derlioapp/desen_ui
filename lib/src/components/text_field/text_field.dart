@@ -1230,12 +1230,6 @@ class _DsTextFieldState extends State<DsTextField>
     // A key hint means nothing on a phone or tablet: no keyboard to press.
     final shortcut = isTouchPlatform(t.platform) ? null : widget._shortcut;
 
-    // The field's own node: name, hint (placeholder, counter), value and
-    // states, merged with the editable's. The buttons stay outside it.
-    final hint = [
-      if (empty) ?widget.placeholder,
-      if (maxLength != null) l10n.characterCountLabel(count, maxLength),
-    ];
     final canEdit = !widget.readOnly && enabled;
     final clearable = widget.clearable && canEdit;
     final revealable = widget.revealable && widget.obscureText && enabled;
@@ -1248,6 +1242,15 @@ class _DsTextFieldState extends State<DsTextField>
             widget.revealable ||
             widget.trailing != null ||
             endAction != null);
+    // The field's own node: name, hint (placeholder, counter, and the
+    // field's message when the field does not merge it: buttons apart, or
+    // a scope without a field), value and states, merged with the
+    // editable's. The buttons stay outside it.
+    final hint = [
+      if (empty) ?widget.placeholder,
+      if (maxLength != null) l10n.characterCountLabel(count, maxLength),
+      if (separate || scope?.hooks == null) ?scope?.messageText,
+    ];
     // A clear button that gave way leaves its action on the field.
     final clearHidden = clearable && !empty && _yielded >= FieldYield.clear;
     final semanticLabel = [

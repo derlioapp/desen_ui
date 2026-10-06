@@ -390,4 +390,25 @@ class DsLocalizationsJa extends DsLocalizationsEn {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       '$grouped または $decimal と入力してください。';
+
+  @override
+  String get keyCommand => 'コマンド';
+
+  @override
+  String get keyOption => 'オプション';
+
+  @override
+  String get keyShift => 'シフト';
+
+  @override
+  String get keyControl => 'コントロール';
+
+  @override
+  String get keyBackspace => 'バックスペース';
+
+  @override
+  String get keyEnter => 'エンター';
+
+  @override
+  String positionOf(int index, int count) => '$index/$count';
 }

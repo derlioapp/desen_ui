@@ -321,8 +321,10 @@ class _DsFileUploadState extends State<DsFileUpload> {
                   );
         return Semantics(
           // Merged into the zone's node: the field label, the prompt and
-          // the description, read once (the visuals are excluded).
+          // the description, read once (the visuals are excluded); the
+          // field's message (its error or description) as the hint.
           label: label,
+          hint: field?.messageText,
           isRequired: (field?.isRequired ?? false) ? true : null,
           child: ExcludeSemantics(
             child: AnimatedContainer(

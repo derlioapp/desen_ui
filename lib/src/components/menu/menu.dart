@@ -548,6 +548,18 @@ class DsMenuDivider extends StatelessWidget {
   }
 }
 
+/// How screen readers announce a [DsMenuItem] that can be checked
+/// ([DsMenuItem.checked] not null).
+enum DsMenuCheckRole {
+  /// One choice of a set, of which one is checked (a sort order, a
+  /// select's options): a radio menu item.
+  radio,
+
+  /// A setting that turns on or off on its own ("Show grid"), or one of
+  /// several that can be checked together: a checkbox menu item.
+  checkbox,
+}
+
 /// An item of a [DsMenu]. Choosing it runs [onPressed] and closes the
 /// menu. Hover and keyboard focus share one highlight; when the theme
 /// shows focus rings (the default), the keyboard-focused item also draws
@@ -565,6 +577,7 @@ class DsMenuItem extends StatefulWidget {
     this.trailing,
     this.destructive = false,
     this.checked,
+    this.checkRole = DsMenuCheckRole.radio,
     this.focusNode,
     this.autofocus = false,
     this.semanticLabel,
@@ -606,6 +619,7 @@ class DsMenuItem extends StatefulWidget {
        trailing = null,
        destructive = false,
        checked = null,
+       checkRole = DsMenuCheckRole.radio,
        autofocus = false,
        _submenuEnabled = enabled;
 
@@ -628,14 +642,31 @@ class DsMenuItem extends StatefulWidget {
   /// Colors the item as a dangerous action ("Sil").
   final bool destructive;
 
-  /// Makes the item one choice of a single-choice menu (selects): it is
-  /// announced as a radio item, checked or not, and when checked it shows
-  /// a check before the label and is bold. Every item of a menu with
-  /// choices keeps the check column, so the labels line up; it comes
+  /// Makes the item one that can be checked: by default one choice of a
+  /// single-choice menu (selects), announced as a radio item, checked or
+  /// not; [checkRole] makes it an on/off setting instead. When checked it
+  /// shows a check before the label and is bold. Every item of a menu with
+  /// such items keeps the check column, so the labels line up; it comes
   /// before the icon column. Choosing it plays the selection haptic
   /// (`DsHapticEvent.selection`), where a plain item plays a command.
   /// Null for a plain item.
   final bool? checked;
+
+  /// How a checkable item ([checked] not null) is announced:
+  /// [DsMenuCheckRole.radio] (the default) for one choice of a set,
+  /// [DsMenuCheckRole.checkbox] for a setting that turns on or off on its
+  /// own, or one of several that can be checked together. The look is the
+  /// same.
+  ///
+  /// ```dart
+  /// DsMenuItem(
+  ///   label: const Text('Show grid'),
+  ///   checked: showGrid,
+  ///   checkRole: .checkbox,
+  ///   onPressed: () => setState(() => showGrid = !showGrid),
+  /// )
+  /// ```
+  final DsMenuCheckRole checkRole;
 
   /// Focus node; one is created when null.
   final FocusNode? focusNode;
@@ -1033,9 +1064,11 @@ class _DsMenuItemState extends State<DsMenuItem> {
             ? DsHapticEvent.command
             : DsHapticEvent.selection,
         isButton: false,
-        role: widget.checked == null
-            ? SemanticsRole.menuItem
-            : SemanticsRole.menuItemRadio,
+        role: switch ((widget.checked, widget.checkRole)) {
+          (null, _) => SemanticsRole.menuItem,
+          (_, DsMenuCheckRole.radio) => SemanticsRole.menuItemRadio,
+          (_, DsMenuCheckRole.checkbox) => SemanticsRole.menuItemCheckbox,
+        },
         checked: widget.checked,
         expanded: submenu ? _subOpen : null,
         minTapTarget: 0,

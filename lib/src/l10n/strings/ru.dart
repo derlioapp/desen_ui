@@ -414,4 +414,25 @@ class DsLocalizationsRu extends DsLocalizationsEn {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       'Введите $grouped или $decimal.';
+
+  @override
+  String get keyCommand => 'Command';
+
+  @override
+  String get keyOption => 'Option';
+
+  @override
+  String get keyShift => 'Shift';
+
+  @override
+  String get keyControl => 'Control';
+
+  @override
+  String get keyBackspace => 'Backspace';
+
+  @override
+  String get keyEnter => 'Ввод';
+
+  @override
+  String positionOf(int index, int count) => '$index из $count';
 }

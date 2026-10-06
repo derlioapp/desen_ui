@@ -16,6 +16,7 @@ import '../../theme/theme_data.dart';
 import '../field/field.dart';
 import 'error_edge.dart';
 import 'first_line.dart';
+import 'selection_text.dart';
 import 'switch_style.dart';
 
 /// An on/off switch, optionally in a settings row with a title and
@@ -256,7 +257,11 @@ class _DsSwitchState extends State<DsSwitch> {
                 style: s.descriptionStyle!.copyWith(
                   color: enabled ? k.textMuted : k.onDisabled,
                 ),
-                child: widget.description!,
+                // Under a label: read after the name and state, as the
+                // hint. Alone it names the switch.
+                child: widget.label == null
+                    ? widget.description!
+                    : descriptionAsHint(widget.description!),
               ),
           ],
         );

@@ -309,6 +309,7 @@ class DsSidebarItem<T extends Object> extends StatefulWidget {
     this.value,
     this.leading,
     this.count,
+    this.countSemanticLabel,
     this.selected = false,
     this.onPressed,
     this.style,
@@ -329,8 +330,15 @@ class DsSidebarItem<T extends Object> extends StatefulWidget {
 
   /// A count on the end side (e.g. unread items). Above 99 it shows and
   /// announces "99+", like every count in the library ([DsCount.text]).
-  /// A collapsed sidebar shows a dot for it.
+  /// A collapsed sidebar shows a dot for it. Screen readers hear it after
+  /// the label, as the number ("Inbox, 4"), unless [countSemanticLabel]
+  /// says what it counts.
   final int? count;
+
+  /// What screen readers hear for [count] instead of the bare number,
+  /// e.g. "4 unread"; the app words it, since only it knows what is
+  /// counted. Null reads the number.
+  final String? countSemanticLabel;
 
   /// Whether this is the current page, besides matching [DsSidebar.value].
   final bool selected;
@@ -496,6 +504,7 @@ class _DsSidebarItemState<T extends Object> extends State<DsSidebarItem<T>> {
                             DsCount.text(context, widget.count!),
                             style: s.countStyle,
                           ),
+                          semanticsLabel: widget.countSemanticLabel,
                         ),
                     ],
                   ),
@@ -528,7 +537,7 @@ class _DsSidebarItemState<T extends Object> extends State<DsSidebarItem<T>> {
             top: -dot / 2,
             end: -dot / 2,
             child: Semantics(
-              label: DsCount.text(context, count),
+              label: widget.countSemanticLabel ?? DsCount.text(context, count),
               child: Container(
                 width: dot,
                 height: dot,

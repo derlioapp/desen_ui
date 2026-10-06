@@ -412,9 +412,10 @@ class DsThemeData with Diagnosticable {
       fillsSelection ? colors.selectionStrongHover : colors.selectionHover;
 
   /// Edge of a selected item, or null for none. Only a filled selection in
-  /// a bright accent needs one: it melts into a light card, so it wears
-  /// [DsColors.accentEdge] (at every contrast level). A soft tint draws no
-  /// edge.
+  /// an accent fill that stands under 3:1 off its layer needs one (a bright
+  /// accent on a light card, a white-labeled fill on a dark floating
+  /// layer): it wears [DsColors.accentEdge] (at every contrast level). A
+  /// soft tint draws no edge.
   Color? get selectedEdge =>
       fillsSelection &&
           colors.accentEdge.a > 0 &&

@@ -169,9 +169,10 @@ class ChipPage extends StatelessWidget {
         title: 'Accessibility',
         children: [
           DocList([
-            'A chip is announced as a button with its label, selected or '
-                'not. In `DsChoiceChips` each chip is a radio, checked or '
-                'not, in a radio group named by `semanticLabel`.',
+            'A chip turns on and off on its own: it is announced as a '
+                'checkbox with its label, checked or not. In '
+                '`DsChoiceChips` each chip is a radio, checked or not, in a '
+                'radio group named by `semanticLabel`.',
             'A label that does not fit ellipsizes; screen readers still get '
                 'all of it.',
             '`semanticLabel` replaces the label, e.g. for an abbreviation.',

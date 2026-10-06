@@ -1,7 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../l10n/localizations.dart';
+import '../../overlay/plain_text.dart';
 import '../field/field.dart';
 import '../field/field_style.dart';
 import '../text_field/input_issue.dart';
@@ -68,9 +73,13 @@ typedef DsFormFieldBuilder<T> = Widget Function(DsFormFieldState<T> field);
 ///
 /// **Screen readers.** When a [Form] validates, Flutter's [FormState]
 /// announces the first error; the fields do not add announcements of their
-/// own for that validation (one announcement, not one per field). An error
-/// that appears otherwise (autovalidation of this field, an invalid typed
-/// text) is announced by the field as a [DsField] does.
+/// own for that validation (one announcement, not one per field).
+/// [DsFormValidation.validateAndFocus] instead moves focus, and the screen
+/// reader, to the first invalid field, which is read with its name, state
+/// and error; Flutter's announcement (the bare message, without the name)
+/// is left out so the error is heard once. An error that appears otherwise
+/// (autovalidation of this field, an invalid typed text) is announced by
+/// the field as a [DsField] does.
 ///
 /// Works without `DsScope` or `DsApp`; needs a [Form] only to be
 /// validated together with other fields.
@@ -165,6 +174,11 @@ class DsFormFieldState<T> extends FormFieldState<T> {
   /// frame.
   bool _quiet = false;
 
+  /// Whether [errorText] reads empty to the [Form] validating it, so it
+  /// does not announce the bare message ([DsFormValidation.validateAndFocus]
+  /// moves focus to the field instead).
+  bool _muted = false;
+
   DsFormField<T> get _field => widget as DsFormField<T>;
 
   /// Why the control's typed text holds no value, or null.
@@ -180,10 +194,12 @@ class DsFormFieldState<T> extends FormFieldState<T> {
   /// The validator's message (or the forced one), else the typed-text
   /// issue's message.
   @override
-  String? get errorText => super.errorText ?? _issue?.message;
+  String? get errorText => _muted ? '' : _message;
+
+  String? get _message => super.errorText ?? _issue?.message;
 
   @override
-  bool get hasError => errorText != null;
+  bool get hasError => _message != null;
 
   @override
   bool get isValid => _issue == null && super.isValid;
@@ -198,7 +214,12 @@ class DsFormFieldState<T> extends FormFieldState<T> {
       _quiet = true;
       SchedulerBinding.instance.addPostFrameCallback((_) => _quiet = false);
     }
-    return dsWithTypedIssue(_issue != null, super.validate);
+    final valid = dsWithTypedIssue(_issue != null, super.validate);
+    if (!valid && _focusPass) {
+      _muted = true;
+      _mutedFields.add(this);
+    }
+    return valid;
   }
 
   /// Autovalidation runs the validator while building: it sees the issue
@@ -301,7 +322,7 @@ class DsFormFieldState<T> extends FormFieldState<T> {
           child: DsField(
             label: f.label,
             description: f.description,
-            errorText: errorText,
+            errorText: _message,
             required: f.required,
             group: f.group,
             style: f.fieldStyle,
@@ -329,6 +350,12 @@ extension DsFormValidation on FormState {
   /// lazy list), the fields' order in the widget tree is used instead.
   /// Returns whether the form is valid.
   ///
+  /// Screen readers hear the error once, with the field's name: the screen
+  /// reader moves to the focused control, which reads its name, state and
+  /// error, and Flutter's own announcement of the bare message is left
+  /// out. When no invalid field can take focus (disabled controls), the
+  /// first error is announced with its field's name instead.
+  ///
   /// ```dart
   /// DsButton(
   ///   onPressed: () {
@@ -340,7 +367,17 @@ extension DsFormValidation on FormState {
   /// )
   /// ```
   bool validateAndFocus() {
-    final invalid = validateGranularly();
+    final Set<FormFieldState<Object?>> invalid;
+    _focusPass = true;
+    try {
+      invalid = validateGranularly();
+    } finally {
+      _focusPass = false;
+      for (final f in _mutedFields) {
+        f._muted = false;
+      }
+      _mutedFields.clear();
+    }
     if (invalid.isEmpty) return true;
     final rtl = Directionality.maybeOf(context) == TextDirection.rtl;
     final fields = [
@@ -374,9 +411,53 @@ extension DsFormValidation on FormState {
       fields.sort((a, b) => rank(a.$1).compareTo(rank(b.$1)));
     }
     for (final (field, _) in fields) {
-      if (field.focus()) break;
+      if (field.focus()) {
+        field._revealToScreenReader();
+        return false;
+      }
     }
+    // Nothing took focus (disabled controls): the first error is
+    // announced once, with its field's name.
+    if (fields.firstOrNull case (final field, _)) field._announceError();
     return false;
+  }
+}
+
+/// Whether [DsFormValidation.validateAndFocus] is validating: the fields
+/// that fail keep their message from the [Form]'s own announcement.
+bool _focusPass = false;
+
+/// The fields muted during this [DsFormValidation.validateAndFocus].
+final _mutedFields = <DsFormFieldState<Object?>>{};
+
+extension on DsFormFieldState<Object?> {
+  /// After the frame that shows the error, moves the screen reader to the
+  /// focused control, which then reads its name, state and error.
+  void _revealToScreenReader() {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final focused = FocusManager.instance.primaryFocus?.context;
+      final target = focused?.findRenderObject() ?? context.findRenderObject();
+      target?.sendSemanticsEvent(const FocusSemanticEvent());
+    });
+  }
+
+  /// Announces the error with the field's name, as one announcement.
+  void _announceError() {
+    final message = _message;
+    if (message == null || !MediaQuery.supportsAnnounceOf(context)) return;
+    final label = switch (_field.label) {
+      final Widget label? => plainTextOf(label),
+      null => null,
+    };
+    unawaited(
+      SemanticsService.sendAnnouncement(
+        View.of(context),
+        [?label, DsLocalizations.of(context).error, message].join('\n'),
+        Directionality.of(context),
+        assertiveness: Assertiveness.assertive,
+      ),
+    );
   }
 }
 

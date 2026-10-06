@@ -678,8 +678,16 @@ void main() {
                 isEmpty,
                 reason: '$variant $seed $brightness $contrast',
               );
+              // Only under a bright accent (a dark label): a white-labeled
+              // fill keeps its buttons flat even where its checked
+              // controls wear an edge (dark mode).
+              final bright =
+                  DsColorUtils.luminance(k.onAccent) <
+                  DsColorUtils.luminance(k.accent);
               final edge =
-                  variant == DsButtonVariant.primary && k.accentEdge.a > 0;
+                  variant == DsButtonVariant.primary &&
+                  bright &&
+                  k.accentEdge.a > 0;
               expect(
                 shadows,
                 edge

@@ -361,7 +361,8 @@ void main() {
           .map((i) => i.icon)
           .toList();
       expect(icons, [DsIcons.shift, DsIcons.command, DsIcons.backspace]);
-      expect(find.bySemanticsLabel('⇧⌘⌫'), findsOneWidget);
+      // Read by name, not as symbols.
+      expect(find.bySemanticsLabel('Shift Command Backspace'), findsOneWidget);
       await tester.pumpWidget(
         const DsApp(home: Center(child: DsShortcut('⌘E'))),
       );

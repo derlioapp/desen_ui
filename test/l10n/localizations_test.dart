@@ -379,6 +379,25 @@ void main() {
     });
   });
 
+  test('shortcut key names and positions are translated', () {
+    const en = DsLocalizationsEn();
+    for (final MapEntry(key: code, value: l)
+        in dsBundledLocalizations.entries) {
+      if (code == 'en') continue;
+      final translated = [
+        l.keyCommand != en.keyCommand,
+        l.keyOption != en.keyOption,
+        l.keyControl != en.keyControl,
+        l.positionOf(2, 4) != en.positionOf(2, 4),
+      ];
+      // Some languages keep a key's English name (Shift, Option, Control
+      // in Russian); at least one of these differs everywhere.
+      expect(translated, contains(true), reason: code);
+    }
+    expect(const DsLocalizationsDe().keyShift, 'Umschalt');
+    expect(const DsLocalizationsFr().keyCommand, 'Commande');
+  });
+
   test('percentages follow local typography', () {
     expect(const DsLocalizationsEn().percent(40), '40%');
     expect(const DsLocalizationsTr().percent(40), '%40');
@@ -397,6 +416,9 @@ void main() {
     expect(tr.pageOf(3, 10), '3. sayfa, toplam 10');
     expect(en.tabOf(2, 4), 'Tab 2 of 4');
     expect(tr.tabOf(2, 4), '2. sekme, toplam 4');
+    // A neutral position, for what is not a tab (bottom navigation).
+    expect(en.positionOf(2, 4), '2 of 4');
+    expect(tr.positionOf(2, 4), '2, toplam 4');
     expect(en.navigation, 'Navigation');
     expect(tr.navigation, 'Gezinme');
   });

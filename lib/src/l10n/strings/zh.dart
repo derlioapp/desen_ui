@@ -390,4 +390,25 @@ class DsLocalizationsZh extends DsLocalizationsEn {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       '请输入 $grouped 或 $decimal。';
+
+  @override
+  String get keyCommand => '命令';
+
+  @override
+  String get keyOption => '选项';
+
+  @override
+  String get keyShift => '上档';
+
+  @override
+  String get keyControl => '控制';
+
+  @override
+  String get keyBackspace => '退格';
+
+  @override
+  String get keyEnter => '回车';
+
+  @override
+  String positionOf(int index, int count) => '第 $index 个，共 $count 个';
 }

@@ -390,4 +390,25 @@ class DsLocalizationsKo extends DsLocalizationsEn {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       '$grouped 또는 $decimal 중 하나를 입력하세요.';
+
+  @override
+  String get keyCommand => '커맨드';
+
+  @override
+  String get keyOption => '옵션';
+
+  @override
+  String get keyShift => '시프트';
+
+  @override
+  String get keyControl => '컨트롤';
+
+  @override
+  String get keyBackspace => '백스페이스';
+
+  @override
+  String get keyEnter => '엔터';
+
+  @override
+  String positionOf(int index, int count) => '$count개 중 $index번째';
 }

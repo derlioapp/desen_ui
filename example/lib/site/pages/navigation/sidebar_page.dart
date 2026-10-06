@@ -201,6 +201,12 @@ class SidebarPage extends StatelessWidget {
             ('leading', 'Widget?', 'Before the label, usually a `DsIcon`.'),
             ('count', 'int?', 'A number on the end side; "99+" above 99.'),
             (
+              'countSemanticLabel',
+              'String?',
+              'What screen readers hear for the count ("4 unread"); the '
+                  'number when null.',
+            ),
+            (
               'selected',
               'bool',
               'Whether this is the current page, besides matching `value`.',

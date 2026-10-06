@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import '../../behavior/haptic_feedback.dart';
 import '../../foundation/color_utils.dart';
 import '../../behavior/spring_value.dart';
+import '../../behavior/tap_band.dart';
 import '../../behavior/focus_visibility.dart';
 import '../../painting/decoration.dart';
 import '../../painting/shadow.dart';
@@ -66,6 +67,13 @@ class DsSegment<T> {
 /// The indicator follows the theme's selection style: a raised thumb for
 /// [DsSelectionStyle.soft], the strong selection fill for
 /// [DsSelectionStyle.strong].
+///
+/// On touch the segments are shorter than the smallest tap target
+/// ([DsSizes.minTapTarget], 44): taps within it above and below the
+/// control, and on the channel's rim, reach the segment beside them,
+/// without growing the layout. Like any band it reaches only as far as
+/// the parent's bounds, so in a box exactly as tall as the control it
+/// stops at the control's edge.
 class DsSegmentedControl<T> extends StatefulWidget {
   /// Creates a segmented control.
   const DsSegmentedControl({
@@ -348,45 +356,58 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
       ],
     );
 
-    return Semantics(
-      container: true,
-      role: SemanticsRole.radioGroup,
-      label: widget.semanticLabel,
-      explicitChildNodes: true,
-      child: Focus(
-        // Key events travel up from the focused node, so the handler sits
-        // above the detector that owns focus.
-        canRequestFocus: false,
-        skipTraversal: true,
-        onKeyEvent: _onKey,
-        child: FocusableActionDetector(
-          focusNode: _node,
-          autofocus: widget.autofocus,
-          enabled: _enabled,
-          // Focus semantics sit on the selected segment instead.
-          includeFocusSemantics: false,
-          onFocusChange: (_) => setState(() {}),
-          onShowFocusHighlight: (v) => setState(() => _highlight = v),
-          child: DecoratedBox(
-            decoration: DsBoxDecoration(
-              color: base.trackColor,
-              borderRadius: corners,
-              shadows: base.trackShadows ?? const <DsShadow>[],
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(inset),
-              child: DsSpringValue(
-                value: selected < 0 ? 0 : selected.toDouble(),
-                spring: t.motion.moveSpringOrNull,
-                builder: (context, v, _) => _SegmentRow(
-                  gap: gap,
-                  // No matching value: no thumb.
-                  position: selected < 0 ? null : v,
-                  textDirection: Directionality.of(context),
-                  children: [
-                    DecoratedBox(decoration: thumb),
-                    for (var i = 0; i < n; i++) item(i),
-                  ],
+    // The segments are shorter than a touch target: taps up to the theme's
+    // smallest target around the control, and on the channel's rim, reach
+    // the segment beside them, without growing the layout. The outer band
+    // sits outermost, so its parent asks it directly.
+    return TapBand(
+      size: DsTheme.sizesOf(context).minTapTarget,
+      followTap: true,
+      child: Semantics(
+        container: true,
+        role: SemanticsRole.radioGroup,
+        label: widget.semanticLabel,
+        explicitChildNodes: true,
+        child: Focus(
+          // Key events travel up from the focused node, so the handler sits
+          // above the detector that owns focus.
+          canRequestFocus: false,
+          skipTraversal: true,
+          onKeyEvent: _onKey,
+          child: FocusableActionDetector(
+            focusNode: _node,
+            autofocus: widget.autofocus,
+            enabled: _enabled,
+            // Focus semantics sit on the selected segment instead.
+            includeFocusSemantics: false,
+            onFocusChange: (_) => setState(() {}),
+            onShowFocusHighlight: (v) => setState(() => _highlight = v),
+            child: DecoratedBox(
+              decoration: DsBoxDecoration(
+                color: base.trackColor,
+                borderRadius: corners,
+                shadows: base.trackShadows ?? const <DsShadow>[],
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(inset),
+                child: TapBand(
+                  size: 0,
+                  outset: EdgeInsets.all(inset),
+                  followTap: true,
+                  child: DsSpringValue(
+                    value: selected < 0 ? 0 : selected.toDouble(),
+                    spring: t.motion.moveSpringOrNull,
+                    builder: (context, v, _) => _SegmentRow(
+                      gap: gap,
+                      // No matching value: no thumb.
+                      position: selected < 0 ? null : v,
+                      textDirection: Directionality.of(context),
+                      children: [
+                        DecoratedBox(decoration: thumb),
+                        for (var i = 0; i < n; i++) item(i),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),

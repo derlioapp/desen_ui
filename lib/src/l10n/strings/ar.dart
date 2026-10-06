@@ -401,4 +401,25 @@ class DsLocalizationsAr extends DsLocalizationsEn {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       'أدخل $grouped أو $decimal.';
+
+  @override
+  String get keyCommand => 'الأوامر';
+
+  @override
+  String get keyOption => 'الخيارات';
+
+  @override
+  String get keyShift => 'العالي';
+
+  @override
+  String get keyControl => 'التحكم';
+
+  @override
+  String get keyBackspace => 'مسافة للخلف';
+
+  @override
+  String get keyEnter => 'إدخال';
+
+  @override
+  String positionOf(int index, int count) => '$index من $count';
 }

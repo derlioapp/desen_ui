@@ -64,10 +64,17 @@ class MenuPage extends StatelessWidget {
             'check.',
           ),
           DocText(
+            'For a setting that turns on or off on its own ("Show grid"), '
+            'or several that can be checked together, add '
+            '`checkRole: .checkbox`: the item looks the same, and screen '
+            'readers hear a checkbox item instead of one choice of a set. '
+            '[Multi-select](/components/multi-select) options are checkbox '
+            'items.',
+          ),
+          DocText(
             'Set `checked` on every item of the group, `false` on the others, '
-            'so they all keep the column. Menus have no checkbox items; for '
-            'several on/off settings, put switches in a '
-            '[Popover](/components/popover).',
+            'so they all keep the column. For many on/off settings at once, '
+            'switches in a [Popover](/components/popover) may read better.',
           ),
           Example(snippet: 'menu-choice', child: _ChoiceDemo()),
         ],
@@ -157,7 +164,8 @@ class MenuPage extends StatelessWidget {
         children: [
           DocList([
             'The menu is named by `semanticLabel`; items are menu items, '
-                'and `checked` items are radio items with their state.',
+                '`checked` items are radio items with their state, or '
+                'checkbox items with `checkRole: .checkbox`.',
             'A `DsButton` trigger is announced as expanded or collapsed '
                 'without any wiring. Another kind of trigger needs '
                 '`Semantics(expanded: controller.isOpen)`.',
@@ -166,7 +174,8 @@ class MenuPage extends StatelessWidget {
             'Hover and keyboard focus share one highlight. The keyboard '
                 'item also draws an inset ring, so the active item is never '
                 'shown by color alone.',
-            'Screen readers read shortcut hints as written.',
+            'Screen readers read shortcut hints by key name in the app\'s '
+                'language: "⇧⌘E" is "Shift Command E".',
           ]),
         ],
       ),
@@ -214,6 +223,12 @@ class MenuPage extends StatelessWidget {
               'bool?',
               'Makes the item one choice of several (a radio item). When '
                   'true, a check shows before the label.',
+            ),
+            (
+              'checkRole',
+              'DsMenuCheckRole',
+              '`radio` (default) for one choice of a set, `checkbox` for an '
+                  'on/off setting; how a `checked` item is announced.',
             ),
             ('autofocus', 'bool', 'Takes focus when the menu opens.'),
             (

@@ -406,4 +406,25 @@ class DsLocalizationsFr extends DsLocalizationsEn {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       'Saisissez $grouped ou $decimal.';
+
+  @override
+  String get keyCommand => 'Commande';
+
+  @override
+  String get keyOption => 'Option';
+
+  @override
+  String get keyShift => 'Maj';
+
+  @override
+  String get keyControl => 'Contrôle';
+
+  @override
+  String get keyBackspace => 'Retour arrière';
+
+  @override
+  String get keyEnter => 'Entrée';
+
+  @override
+  String positionOf(int index, int count) => '$index sur $count';
 }

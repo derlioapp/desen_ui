@@ -351,32 +351,36 @@ List<Rule> rules(
     // A fill stands off the card at least like a decorative edge, so a
     // bright accent never melts into white.
     Rule('accent on surface', k.accent, k.surface, min: 1.2),
-    // A bright accent fill (checked box and radio, on switch, filled
-    // selection) is outlined by `accentEdge`: the edge, blended over the
-    // fill, stands 3:1 off every layer, resting, hovered and pressed
-    // (WCAG 1.4.11; denetim-2).
-    if (isBright(k))
-      for (final (fillName, fill) in [
-        ('accent', k.accent),
-        ('accentHover', k.accentHover),
-        ('accentPress', k.accentPress),
-        // The strong selection when it is the bright fill (not a near-status
-        // seed's own dark one).
-        if (k.onSelectionStrong == k.onAccent) ...[
-          ('selectionStrong', k.selectionStrong),
-          ('selectionStrongHover', k.selectionStrongHover),
-        ],
-      ])
-        for (final MapEntry(key: name, value: bg) in {
-          ...backgrounds,
-          'sidebar': k.sidebar,
-        }.entries)
-          Rule(
-            '$fillName edge on $name',
-            Color.alphaBlend(k.accentEdge, fill),
-            bg,
-            min: 3,
-          ),
+    // A checked control (checked box and radio, on switch, filled
+    // selection) stands 3:1 off the page layers a form sits on (page,
+    // card, sidebar), resting, hovered and pressed (WCAG 1.4.11): its
+    // accent fill alone, or blended with `accentEdge` where the fill needs
+    // an edge (a bright accent on a light card; a deep red on a dark
+    // card). Not on the dark floating layer, where a rim on every checked
+    // control would draw lines everywhere; the check mark carries the
+    // state there. Every seed, both modes, both contrast levels.
+    for (final (fillName, fill) in [
+      ('accent', k.accent),
+      ('accentHover', k.accentHover),
+      ('accentPress', k.accentPress),
+      // The strong selection when the accent label is on it (not a
+      // near-status seed's own fill under another label).
+      if (k.onSelectionStrong == k.onAccent) ...[
+        ('selectionStrong', k.selectionStrong),
+        ('selectionStrongHover', k.selectionStrongHover),
+      ],
+    ])
+      for (final MapEntry(key: name, value: bg) in {
+        'canvas': k.canvas,
+        'surface': k.surface,
+        'sidebar': k.sidebar,
+      }.entries)
+        Rule(
+          'checked $fillName (with its edge) on $name',
+          Color.alphaBlend(k.accentEdge, fill),
+          bg,
+          min: 3,
+        ),
     // Unlabeled accent marks (tab underline, caret) use the indicator,
     // which stays 3:1 under a bright accent.
     Rule(
@@ -644,11 +648,35 @@ List<String> signalChroma(DsColors k) => [
             '$signalChromaMin–$signalChromaMax',
 ];
 
-/// An accent edge only where the fill needs one: a white-labeled fill
-/// draws none.
-List<String> accentEdgeOnlyWhenBright(DsColors k) => [
-  if (!isBright(k) && k.accentEdge.a > 0) 'accentEdge on a white-label fill',
-];
+/// An accent edge only where the fill needs one: when every accent fill
+/// (and the strong selection drawn in it) already stands 3:1 off every
+/// layer, it draws none. (This replaces "no edge on a white-labeled
+/// fill": in dark mode a deep red white-labeled fill sits under 3:1 on
+/// the card and wears a faint light edge.)
+List<String> accentEdgeOnlyWhereNeeded(DsColors k) {
+  if (k.accentEdge.a == 0) return const [];
+  final fills = [
+    k.accent,
+    k.accentHover,
+    k.accentPress,
+    if (k.onSelectionStrong == k.onAccent) ...[
+      k.selectionStrong,
+      k.selectionStrongHover,
+    ],
+  ];
+  final grounds = [
+    k.canvas,
+    k.surface,
+    k.sidebar,
+    DsColorUtils.flatten(k.field, k.surface),
+  ];
+  final needed = fills.any(
+    (fill) => grounds.any(
+      (ground) => DsColorUtils.contrastRatio(fill, ground) < 3.05,
+    ),
+  );
+  return [if (!needed) 'accentEdge on a fill that stands on its own'];
+}
 
 /// Pairs that come from component styles, checked over every seed like the
 /// palette rules (§2.1; they used to run on three presets in component
@@ -913,7 +941,7 @@ List<String> budgetFailures(
   if (level == DsContrast.soft) ...softCues(p.shadows, p.colors),
   ...hoverRaisesContrast(p.colors),
   ...pressBeyondHover(p.colors),
-  ...accentEdgeOnlyWhenBright(p.colors),
+  ...accentEdgeOnlyWhereNeeded(p.colors),
   ...signalChroma(p.colors),
 ];
 
