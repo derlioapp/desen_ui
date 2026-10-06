@@ -8,7 +8,7 @@ import 'package:flutter/widgets.dart';
 /// It sizes to its child under an unbounded width (in a Row), and its
 /// [padding] scrolls with the child, so focus rings that reach into the
 /// padding are not clipped.
-class EdgeFadeScrollView extends StatefulWidget {
+class EdgeFadeScrollView extends StatelessWidget {
   /// Creates the scroll view.
   const EdgeFadeScrollView({
     super.key,
@@ -26,32 +26,69 @@ class EdgeFadeScrollView extends StatefulWidget {
   /// Controls the scroll position; one is created when null.
   final ScrollController? controller;
 
-  /// How far the fade reaches in from an edge that hides items.
-  static const fadeWidth = 24.0;
-
   @override
-  State<EdgeFadeScrollView> createState() => _EdgeFadeScrollViewState();
+  Widget build(BuildContext context) => EdgeFade(
+    child: SingleChildScrollView(
+      controller: controller,
+      scrollDirection: Axis.horizontal,
+      padding: padding,
+      child: child,
+    ),
+  );
 }
 
-class _EdgeFadeScrollViewState extends State<EdgeFadeScrollView> {
-  /// Keeps the scroll view, and its position, when the fade turns on or
+/// Fades the edges of the horizontal scrollable directly inside [child]
+/// (a scroll view, a single-line text editor) where they hide content, so
+/// the cut reads as more to scroll rather than a sliced glyph. Nothing
+/// fades while everything shows, or while [enabled] is false.
+class EdgeFade extends StatefulWidget {
+  /// Fades [child]'s edges.
+  const EdgeFade({
+    super.key,
+    required this.child,
+    this.width = defaultWidth,
+    this.enabled = true,
+  });
+
+  /// Holds the horizontal scrollable.
+  final Widget child;
+
+  /// How far the fade reaches in from an edge that hides content.
+  final double width;
+
+  /// Whether the edges fade; false shows a plain cut.
+  final bool enabled;
+
+  /// The fade of a row of items.
+  static const defaultWidth = 24.0;
+
+  @override
+  State<EdgeFade> createState() => _EdgeFadeState();
+}
+
+class _EdgeFadeState extends State<EdgeFade> {
+  /// Keeps the child, and its scroll position, when the fade turns on or
   /// off.
   final _key = GlobalKey();
 
-  /// Whether items are hidden past the start or the end.
-  bool _before = false, _after = false;
+  /// Whether content is hidden past the left or the right edge.
+  bool _left = false, _right = false;
 
   bool _onMetrics(ScrollMetrics m) {
-    // Past the start edge in reading order: the right one in RTL, where
-    // the pixels count from the right.
+    if (m.axis != Axis.horizontal) return false;
+    // The pixels count from the left, or from the right in a scroll view
+    // laid out right to left.
+    final reversed = m.axisDirection == AxisDirection.left;
     final before = m.extentBefore > 0.5;
     final after = m.extentAfter > 0.5;
-    if (before != _before || after != _after) {
+    final left = reversed ? after : before;
+    final right = reversed ? before : after;
+    if (left != _left || right != _right) {
       void apply() {
         if (!mounted) return;
         setState(() {
-          _before = before;
-          _after = after;
+          _left = left;
+          _right = right;
         });
       }
 
@@ -68,41 +105,32 @@ class _EdgeFadeScrollViewState extends State<EdgeFadeScrollView> {
 
   @override
   Widget build(BuildContext context) {
-    final scroller = NotificationListener<ScrollMetricsNotification>(
+    final listened = NotificationListener<ScrollMetricsNotification>(
       key: _key,
       onNotification: (n) => n.depth == 0 && _onMetrics(n.metrics),
       child: NotificationListener<ScrollNotification>(
         onNotification: (n) => n.depth == 0 && _onMetrics(n.metrics),
-        child: SingleChildScrollView(
-          controller: widget.controller,
-          scrollDirection: Axis.horizontal,
-          padding: widget.padding,
-          child: widget.child,
-        ),
+        child: widget.child,
       ),
     );
-    if (!_before && !_after) return scroller;
+    if (!widget.enabled || (!_left && !_right)) return listened;
     const opaque = Color(0xFF000000); // ds-raw: a mask, only alpha counts
     const clear = Color(0x00000000);
     return ShaderMask(
       blendMode: BlendMode.dstIn,
       shaderCallback: (rect) {
-        final edge = rect.width <= 0
-            ? 0.0
-            : (EdgeFadeScrollView.fadeWidth / rect.width);
+        final edge = rect.width <= 0 ? 0.0 : (widget.width / rect.width);
         return LinearGradient(
-          begin: AlignmentDirectional.centerStart,
-          end: AlignmentDirectional.centerEnd,
           colors: [
-            _before ? clear : opaque,
+            _left ? clear : opaque,
             opaque,
             opaque,
-            _after ? clear : opaque,
+            _right ? clear : opaque,
           ],
           stops: [0, edge.clamp(0, .5), 1 - edge.clamp(0, .5), 1],
-        ).createShader(rect, textDirection: Directionality.of(context));
+        ).createShader(rect);
       },
-      child: scroller,
+      child: listened,
     );
   }
 }

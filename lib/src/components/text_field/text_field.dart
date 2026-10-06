@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/edge_fade_scroll.dart';
 import '../../foundation/platform.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
@@ -1150,6 +1151,16 @@ class _DsTextFieldState extends State<DsTextField>
       onSelectionChanged: _onSelectionChanged,
       onSelectionHandleTapped: _onHandleTapped,
     );
+    // A single line too long for the field fades out at the edge that
+    // hides text while the field is not being edited, instead of slicing
+    // a glyph in two; editing shows the plain edge the caret moves along.
+    if (!_multiline) {
+      editable = EdgeFade(
+        width: DsSpace.s12,
+        enabled: !focused,
+        child: editable,
+      );
+    }
 
     // Text in the slots is an affix of the value; trailing text follows
     // the value on a single line.

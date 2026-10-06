@@ -595,4 +595,51 @@ void main() {
       expect(tester.getRect(button).right, lessThanOrEqualTo(bar.right + 0.5));
     });
   });
+
+  group('narrow text field', () {
+    Finder mask() => find.descendant(
+      of: find.byType(DsTextField),
+      matching: find.byType(ShaderMask),
+    );
+
+    testWidgets('a value too long fades at the edge that hides it', (
+      tester,
+    ) async {
+      final errors = await _pump(
+        tester,
+        const DsTextField(initialValue: 'A value far too long for the field'),
+        width: 120,
+      );
+      expect(errors, isEmpty);
+      expect(mask(), findsOneWidget);
+      // While editing, the plain edge the caret moves along.
+      await tester.tap(find.byType(EditableText));
+      await tester.pump();
+      expect(mask(), findsNothing);
+      // Leaving the field brings the fade back.
+      FocusManager.instance.primaryFocus?.unfocus();
+      await tester.pump();
+      await tester.pump();
+      expect(mask(), findsOneWidget);
+    });
+
+    testWidgets('a value that fits, or several lines, do not fade', (
+      tester,
+    ) async {
+      await _pump(
+        tester,
+        const Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            DsTextField(initialValue: 'Short'),
+            DsTextField.multiline(
+              initialValue: 'A value far too long for one line of the field',
+            ),
+          ],
+        ),
+        width: 160,
+      );
+      expect(mask(), findsNothing);
+    });
+  });
 }
