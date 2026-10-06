@@ -642,4 +642,107 @@ void main() {
       expect(mask(), findsNothing);
     });
   });
+
+  group('text selection toolbar', () {
+    const labels = ['Cut', 'Copy', 'Paste', 'Select all', 'Look up', 'Share'];
+
+    Future<void> pumpToolbar(WidgetTester tester, double width) async {
+      tester.view
+        ..physicalSize = Size(width, 600)
+        ..devicePixelRatio = 1;
+      addTearDown(tester.view.reset);
+      await tester.pumpWidget(
+        DsApp(
+          locale: const Locale('en', 'US'),
+          home: DsTextSelectionToolbar(
+            anchors: TextSelectionToolbarAnchors(
+              primaryAnchor: Offset(width / 2, 300),
+            ),
+            buttonItems: [
+              ContextMenuButtonItem(
+                type: ContextMenuButtonType.cut,
+                onPressed: () {},
+              ),
+              ContextMenuButtonItem(
+                type: ContextMenuButtonType.copy,
+                onPressed: () {},
+              ),
+              ContextMenuButtonItem(
+                type: ContextMenuButtonType.paste,
+                onPressed: () {},
+              ),
+              ContextMenuButtonItem(
+                type: ContextMenuButtonType.selectAll,
+                onPressed: () {},
+              ),
+              ContextMenuButtonItem(
+                type: ContextMenuButtonType.lookUp,
+                onPressed: () {},
+              ),
+              ContextMenuButtonItem(
+                type: ContextMenuButtonType.share,
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    /// The labels on the page shown, each checked to show whole inside the
+    /// toolbar.
+    List<String> shown(WidgetTester tester) {
+      final bar = tester.getRect(
+        find.descendant(
+          of: find.byType(DsTextSelectionToolbar),
+          matching: find.byType(DsSurface),
+        ),
+      );
+      final out = <String>[];
+      for (final label in labels) {
+        final f = find.text(label);
+        if (f.evaluate().isEmpty) continue;
+        final rect = tester.getRect(f);
+        expect(rect.left, greaterThanOrEqualTo(bar.left), reason: label);
+        expect(rect.right, lessThanOrEqualTo(bar.right), reason: label);
+        expect(_fullyShown(tester, label), isTrue, reason: label);
+        out.add(label);
+      }
+      return out;
+    }
+
+    testWidgets('every action fits a wide window on one page', (tester) async {
+      await pumpToolbar(tester, 800);
+      expect(shown(tester), labels);
+      expect(find.bySemanticsLabel('Next page'), findsNothing);
+    });
+
+    testWidgets('a narrow window splits the actions into pages', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      await pumpToolbar(tester, 320);
+      expect(tester.takeException(), isNull);
+      final seen = <String>[...shown(tester)];
+      expect(seen, isNotEmpty);
+      expect(seen.length, lessThan(labels.length));
+      expect(find.bySemanticsLabel('Previous page'), findsNothing);
+      // Page through to the end: every action shows whole on some page.
+      for (var i = 0; i < labels.length; i++) {
+        final next = find.bySemanticsLabel('Next page');
+        if (next.evaluate().isEmpty) break;
+        await tester.tap(next);
+        await tester.pumpAndSettle();
+        expect(find.bySemanticsLabel('Previous page'), findsOneWidget);
+        seen.addAll(shown(tester));
+      }
+      expect(seen, labels);
+      // And back to the first page.
+      await tester.tap(find.bySemanticsLabel('Previous page'));
+      await tester.pumpAndSettle();
+      expect(shown(tester).first, 'Cut');
+      handle.dispose();
+    });
+  });
 }

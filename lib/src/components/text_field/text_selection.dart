@@ -5,7 +5,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/edge_fade_scroll.dart';
 import '../../behavior/pressable.dart';
+import '../../icons/icon.dart';
+import '../../icons/icons.dart';
 import '../../l10n/localizations.dart';
 import '../../painting/decoration.dart';
 import '../../painting/line.dart';
@@ -234,8 +237,10 @@ String dsContextMenuLabel(DsLocalizations l10n, ContextMenuButtonItem item) =>
 /// touch screen on desktop. [anchors] and [buttonItems] usually come from
 /// the [EditableTextState] (`contextMenuAnchors`, `contextMenuButtonItems`)
 /// in a `contextMenuBuilder`, so the actions match the platform. Buttons
-/// are [style]d `height` tall, the tap height (44 by default); the
-/// row scrolls sideways when the window is too narrow for every action.
+/// are [style]d `height` tall, the tap height (44 by default). When the
+/// window is too narrow for every action, they split into pages, as on
+/// iOS: a chevron at the end shows the next page, one at the start the
+/// previous, and no action is cut.
 class DsTextSelectionToolbar extends StatelessWidget {
   /// Creates the toolbar.
   const DsTextSelectionToolbar({
@@ -299,24 +304,9 @@ class DsTextSelectionToolbar extends StatelessWidget {
     final fitsAbove = height + margin <= above.dy - paddingAbove;
     final local = Offset(margin, paddingAbove);
 
-    final children = <Widget>[];
-    for (final (i, item) in buttonItems.indexed) {
-      if (i > 0) {
-        children.add(
-          SizedBox(
-            height: height / 2,
-            child: DsLine(color: s.dividerColor!, axis: Axis.vertical),
-          ),
-        );
-      }
-      children.add(
-        _ToolbarButton(
-          label: dsContextMenuLabel(l10n, item),
-          onPressed: item.onPressed,
-          layers: layers,
-        ),
-      );
-    }
+    final labels = [
+      for (final item in buttonItems) dsContextMenuLabel(l10n, item),
+    ];
 
     return Padding(
       padding: EdgeInsets.fromLTRB(margin, paddingAbove, margin, margin),
@@ -338,9 +328,10 @@ class DsTextSelectionToolbar extends StatelessWidget {
             backdropFilter: s.backdropFilter,
             child: Padding(
               padding: s.padding ?? EdgeInsets.zero,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(mainAxisSize: MainAxisSize.min, children: children),
+              child: _ToolbarPages(
+                labels: labels,
+                actions: [for (final item in buttonItems) item.onPressed],
+                layers: layers,
               ),
             ),
           ),
@@ -350,20 +341,166 @@ class DsTextSelectionToolbar extends StatelessWidget {
   }
 }
 
+/// The toolbar's buttons, split into pages when the width does not hold
+/// them all: each page but the last ends in a chevron to the next, each
+/// but the first starts with one back.
+class _ToolbarPages extends StatefulWidget {
+  const _ToolbarPages({
+    required this.labels,
+    required this.actions,
+    required this.layers,
+  });
+
+  final List<String> labels;
+  final List<VoidCallback?> actions;
+  final List<DsTextSelectionToolbarStyle?> layers;
+
+  @override
+  State<_ToolbarPages> createState() => _ToolbarPagesState();
+}
+
+class _ToolbarPagesState extends State<_ToolbarPages> {
+  int _page = 0;
+
+  @override
+  void didUpdateWidget(_ToolbarPages oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // New actions start over on the first page.
+    if (!listEquals(oldWidget.labels, widget.labels)) _page = 0;
+  }
+
+  /// The first item of each page, for [widths] in [room], with [chevron]
+  /// wide page buttons and [divider] wide lines between buttons.
+  static List<int> _pageStarts(
+    List<double> widths,
+    double room,
+    double chevron,
+    double divider,
+  ) {
+    final n = widths.length;
+    double run(int from, int to) {
+      var w = 0.0;
+      for (var i = from; i < to; i++) {
+        w += widths[i] + (i > from ? divider : 0);
+      }
+      return w;
+    }
+
+    if (!room.isFinite || run(0, n) <= room) return const [0];
+    final starts = <int>[];
+    var i = 0;
+    while (i < n) {
+      starts.add(i);
+      final back = starts.length > 1 ? chevron + divider : 0.0;
+      // The rest fits without a next button: the last page.
+      if (back + run(i, n) <= room) break;
+      var end = i + 1; // at least one action a page
+      while (end < n && back + run(i, end + 1) + divider + chevron <= room) {
+        end++;
+      }
+      i = end;
+    }
+    return starts;
+  }
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, constraints) {
+      final s = DsTextSelectionToolbarStyle.resolveLayers(
+        widget.layers,
+        const {},
+      );
+      final l10n = DsLocalizations.of(context);
+      final scaler = MediaQuery.textScalerOf(context);
+      final textStyle = DefaultTextStyle.of(context).style.merge(s.textStyle);
+      final padding = (s.itemPadding ?? EdgeInsets.zero).horizontal;
+      double measure(String label) {
+        final painter = TextPainter(
+          text: TextSpan(text: label, style: textStyle),
+          textDirection: Directionality.of(context),
+          textScaler: scaler,
+          maxLines: 1,
+        )..layout();
+        final width = painter.width.ceilToDouble();
+        painter.dispose();
+        return width + padding;
+      }
+
+      // A chevron is as tall as the text.
+      final chevronSize = scaler.scale(
+        textStyle.fontSize ?? dsThemeOf(context).typography.body.fontSize!,
+      );
+      final widths = [for (final label in widget.labels) measure(label)];
+      // ds-raw: a divider is one logical pixel wide (DsLine)
+      const divider = 1.0;
+      final starts = _pageStarts(
+        widths,
+        constraints.maxWidth,
+        chevronSize + padding,
+        divider,
+      );
+      final page = _page.clamp(0, starts.length - 1);
+      final from = starts[page];
+      final to = page + 1 < starts.length
+          ? starts[page + 1]
+          : widget.labels.length;
+      final rtl = Directionality.of(context) == TextDirection.rtl;
+
+      Widget line() => SizedBox(
+        height: s.height! / 2,
+        child: DsLine(color: s.dividerColor!, axis: Axis.vertical),
+      );
+      Widget chevron({required bool next}) => _ToolbarButton(
+        icon: DsIcon(
+          next == rtl ? DsIcons.chevronLeft : DsIcons.chevronRight,
+          size: chevronSize,
+        ),
+        label: next ? l10n.nextPage : l10n.previousPage,
+        onPressed: () => setState(() => _page = page + (next ? 1 : -1)),
+        layers: widget.layers,
+      );
+
+      final children = <Widget>[
+        if (page > 0) ...[chevron(next: false), line()],
+        for (var i = from; i < to; i++) ...[
+          if (i > from) line(),
+          _ToolbarButton(
+            label: widget.labels[i],
+            onPressed: widget.actions[i],
+            layers: widget.layers,
+          ),
+        ],
+        if (page + 1 < starts.length) ...[line(), chevron(next: true)],
+      ];
+      // A single action wider than the window still scrolls rather than
+      // overflow.
+      return EdgeFadeScrollView(
+        child: Row(mainAxisSize: MainAxisSize.min, children: children),
+      );
+    },
+  );
+}
+
 class _ToolbarButton extends StatelessWidget {
   const _ToolbarButton({
     required this.label,
     required this.onPressed,
     required this.layers,
+    this.icon,
   });
 
+  /// The button's text, or with [icon] its name for screen readers.
   final String label;
   final VoidCallback? onPressed;
   final List<DsTextSelectionToolbarStyle?> layers;
 
+  /// Shown instead of the label.
+  final Widget? icon;
+
   @override
   Widget build(BuildContext context) => DsPressable(
     onPressed: onPressed,
+    semanticLabel: icon == null ? null : label,
     // The button is the tap height itself.
     minTapTarget: 0,
     builder: (context, states, _) {
@@ -381,13 +518,19 @@ class _ToolbarButton extends StatelessWidget {
         child: Center(
           widthFactor: 1,
           heightFactor: 1,
-          child: Text(
-            label,
-            maxLines: 1,
-            style: (s.textStyle ?? const TextStyle()).copyWith(
-              color: s.foreground,
+          child: switch (icon) {
+            final icon? => IconTheme.merge(
+              data: IconThemeData(color: s.foreground),
+              child: ExcludeSemantics(child: icon),
             ),
-          ),
+            null => Text(
+              label,
+              maxLines: 1,
+              style: (s.textStyle ?? const TextStyle()).copyWith(
+                color: s.foreground,
+              ),
+            ),
+          },
         ),
       );
     },
