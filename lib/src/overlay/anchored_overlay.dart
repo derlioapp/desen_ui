@@ -447,7 +447,9 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
     FocusNode? target;
     if (widget.focusOnOpen && _scope.hasFocus) {
       final back = _returnFocus;
-      if (back != null && back.context != null) {
+      // A node whose widget left the tree keeps its context; focusing it
+      // would wait and fire when it comes back.
+      if (back != null && (back.context?.mounted ?? false)) {
         back.requestFocus();
         target = back;
       }
@@ -467,7 +469,7 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
   void _leave({required bool forward, bool toTrigger = false}) {
     final back = _returnFocus;
     _dismiss();
-    if (toTrigger || back == null || back.context == null) return;
+    if (toTrigger || back == null || !(back.context?.mounted ?? false)) return;
     // Traversal moves from the scope's focused child, so move on once
     // focus is back on the trigger (focus changes apply in a microtask).
     scheduleMicrotask(() {

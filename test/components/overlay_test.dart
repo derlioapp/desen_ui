@@ -146,6 +146,52 @@ void main() {
       expect(trigger, isNotNull);
     });
 
+    testWidgets(
+      'a focus node that left the tree is not focused when it comes back',
+      (tester) async {
+        // Focus was on a caller's node outside a trigger with nothing
+        // focusable; that widget leaves while the popover is open. Closing
+        // must not leave a focus request that fires when it comes back.
+        final node = FocusNode(debugLabel: 'outside');
+        addTearDown(node.dispose);
+        final show = ValueNotifier(true);
+        addTearDown(show.dispose);
+        await tester.pumpWidget(
+          DsApp(
+            home: Column(
+              children: [
+                ValueListenableBuilder(
+                  valueListenable: show,
+                  builder: (_, on, _) => on
+                      ? Focus(focusNode: node, child: const Text('Dışarıda'))
+                      : const SizedBox(),
+                ),
+                DsPopover(
+                  controller: controller,
+                  contentBuilder: (context) =>
+                      DsButton(onPressed: () {}, child: const Text('İçeride')),
+                  child: const Text('Tetik'),
+                ),
+              ],
+            ),
+          ),
+        );
+        node.requestFocus();
+        await tester.pump();
+        controller.open();
+        await tester.pumpAndSettle();
+        expect(node.hasFocus, isFalse, reason: 'focus moved into the layer');
+        show.value = false;
+        await tester.pump();
+        await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+        await tester.pumpAndSettle();
+        expect(controller.isOpen, isFalse);
+        show.value = true;
+        await tester.pumpAndSettle();
+        expect(node.hasFocus, isFalse);
+      },
+    );
+
     testWidgets('a tap outside closes it and still reaches its target', (
       tester,
     ) async {
