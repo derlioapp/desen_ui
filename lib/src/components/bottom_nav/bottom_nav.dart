@@ -84,10 +84,12 @@ class DsBottomNavItem<T> {
 /// does, and focusing it (or [autofocus]) focuses the current destination.
 ///
 /// **Screen readers:** the bar is a navigation landmark named by
-/// [semanticLabel] (the localized "Navigation" by default), holding a tab
-/// bar. Each destination is a tab, announced with its label, whether it is
-/// selected and, on iOS and Android, its position ("Tab 2 of 4",
-/// localized); on the web the tab role tells the position.
+/// [semanticLabel] (the localized "Navigation" by default). Each
+/// destination is a button that swaps the screen, as links in a web
+/// navigation do (not a tab: tabs switch panels within a page), announced
+/// with its label, whether it is the current one (selected; the current
+/// item on the web) and its position ("2 of 4", localized) on every
+/// platform, since a button does not tell it.
 ///
 /// A tap plays the selection haptic, or the command one on the current
 /// destination (e.g. back to the top); the keyboard plays none.
@@ -362,8 +364,9 @@ class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
                 onPressed: _enabledAt(i)
                     ? () => onChanged!(items[i].value)
                     : null,
-                // On the web the tab role tells the position.
-                position: kIsWeb ? null : l10n.tabOf(i + 1, items.length),
+                // A button does not tell its place: read it after the
+                // label, on every platform.
+                position: l10n.positionOf(i + 1, items.length),
                 focusNode: _nodeAt(i),
                 layers: itemLayers,
                 barCorners: bar ? null : corners,
@@ -400,13 +403,7 @@ class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
               canRequestFocus: false,
               skipTraversal: true,
               onKeyEvent: _onKey,
-              // The destinations are its tabs, its direct children.
-              child: Semantics(
-                container: true,
-                role: SemanticsRole.tabBar,
-                explicitChildNodes: true,
-                child: row,
-              ),
+              child: row,
             ),
           ),
         ),
@@ -431,9 +428,8 @@ class _Item extends StatefulWidget {
   final bool selected;
   final VoidCallback? onPressed;
 
-  /// The position phrase ("Tab 2 of 4") read after the label; null where
-  /// the tab role tells it.
-  final String? position;
+  /// The position phrase ("2 of 4") read after the label.
+  final String position;
   final FocusNode focusNode;
   final List<DsBottomNavItemStyle?> layers;
 
@@ -458,13 +454,14 @@ class _ItemState extends State<_Item> {
       // is a command (e.g. back to the top).
       haptic: widget.selected ? DsHapticEvent.command : DsHapticEvent.selection,
       focusNode: widget.focusNode,
+      // A button with the current destination selected (the current item
+      // on the web), in the navigation landmark.
       selected: widget.selected,
-      role: SemanticsRole.tab,
       // A label set for screen readers replaces the text inside, so the
       // position goes with it.
-      semanticLabel: switch ((widget.item.semanticLabel, widget.position)) {
-        (final label?, final position?) => '$label\n$position',
-        (final label, _) => label,
+      semanticLabel: switch (widget.item.semanticLabel) {
+        final label? => '$label\n${widget.position}',
+        null => null,
       },
       mouseCursor: WidgetStateMouseCursor.resolveWith(
         (states) =>
@@ -551,9 +548,8 @@ class _ItemState extends State<_Item> {
                     child: widget.item.label,
                   ),
                   // Read after the label, which it follows in the tree.
-                  if (widget.position case final position?
-                      when widget.item.semanticLabel == null)
-                    Semantics(label: position),
+                  if (widget.item.semanticLabel == null)
+                    Semantics(label: widget.position),
                 ],
               ),
             ],

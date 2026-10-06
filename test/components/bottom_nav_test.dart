@@ -299,27 +299,34 @@ void main() {
   });
 
   group('screen readers', () {
-    testWidgets('a tab bar of tabs, each with its position', (tester) async {
+    testWidgets('buttons in the navigation landmark, the current one '
+        'selected, each with its position', (tester) async {
       final handle = tester.ensureSemantics();
       await tester.pumpWidget(host(nav(initial: 1)));
       for (var i = 0; i < labels.length; i++) {
         final data = semanticsOf(tester, labels[i]);
-        expect(data.role, SemanticsRole.tab, reason: labels[i]);
-        expect(data.label, '${labels[i]}\nTab ${i + 1} of 4');
+        // Not a tab: tabs switch panels within a page; a destination swaps
+        // the screen, as a link in a web navigation does.
+        expect(data.role, isNot(SemanticsRole.tab), reason: labels[i]);
+        expect(data.flagsCollection.isButton, isTrue, reason: labels[i]);
+        expect(data.label, '${labels[i]}\n${i + 1} of 4');
         expect(
           data.flagsCollection.isSelected,
           i == 1 ? Tristate.isTrue : Tristate.isFalse,
           reason: labels[i],
         );
       }
-      final tab = tester.getSemantics(find.text('Ana'));
-      var parent = tab.parent;
-      while (parent != null &&
-          parent.getSemanticsData().role != SemanticsRole.tabBar) {
-        parent = parent.parent;
+      // No tab bar anywhere above them; the landmark holds the buttons.
+      SemanticsNode? node = tester.getSemantics(find.text('Ana'));
+      SemanticsNode? landmark;
+      while (node != null) {
+        final role = node.getSemanticsData().role;
+        expect(role, isNot(SemanticsRole.tabBar));
+        if (role == SemanticsRole.navigation) landmark = node;
+        node = node.parent;
       }
-      expect(parent, isNotNull, reason: 'the tabs sit in a tab bar');
-      expect(parent!.childrenCount, labels.length);
+      expect(landmark, isNotNull);
+      expect(landmark!.childrenCount, labels.length);
       handle.dispose();
     });
 
@@ -387,7 +394,7 @@ void main() {
           ),
         ),
       );
-      expect(find.bySemanticsLabel('Ana sayfa\nTab 1 of 2'), findsOneWidget);
+      expect(find.bySemanticsLabel('Ana sayfa\n1 of 2'), findsOneWidget);
       handle.dispose();
     });
 
@@ -400,17 +407,19 @@ void main() {
           child: host(nav()),
         ),
       );
-      expect(semanticsOf(tester, 'Gelen').label, 'Gelen\n2. sekme, toplam 4');
+      expect(semanticsOf(tester, 'Gelen').label, 'Gelen\n2, toplam 4');
       handle.dispose();
     });
 
-    testWidgets('the full-width bar is a tab bar too', (tester) async {
+    testWidgets('the full-width bar holds buttons too', (tester) async {
       final handle = tester.ensureSemantics();
       await tester.pumpWidget(
         host(SizedBox(width: 360, child: nav(variant: DsBottomNavVariant.bar))),
       );
-      expect(semanticsOf(tester, 'Profil').role, SemanticsRole.tab);
-      expect(semanticsOf(tester, 'Profil').label, 'Profil\nTab 4 of 4');
+      final data = semanticsOf(tester, 'Profil');
+      expect(data.role, isNot(SemanticsRole.tab));
+      expect(data.flagsCollection.isButton, isTrue);
+      expect(data.label, 'Profil\n4 of 4');
       handle.dispose();
     });
   });

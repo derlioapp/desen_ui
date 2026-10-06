@@ -129,12 +129,14 @@ class BottomNavPage extends StatelessWidget {
         children: [
           DocList([
             'The bar is a navigation landmark named by `semanticLabel`, or '
-                'the localized "Navigation" by default, holding a tab bar.',
-            'Each destination is a tab, announced with its label and, on '
-                'iOS and Android, its position ("Tab 2 of 4", localized); on '
-                'the web the tab role tells the position. The current one is '
-                'announced as selected and a disabled one as disabled. '
-                '`semanticLabel` on an item overrides its label.',
+                'the localized "Navigation" by default.',
+            'Each destination is a button, as links in a web navigation '
+                'are: it swaps the screen, where a tab would switch a panel '
+                'within the page. It is announced with its label and its '
+                'position ("2 of 4", localized) on every platform. The '
+                'current one is announced as selected (the current item on '
+                'the web) and a disabled one as disabled. `semanticLabel` on '
+                'an item overrides its label; the position stays.',
             'A tap plays the selection haptic, or the command one on the '
                 'current destination; the keyboard plays none.',
             'The selected destination is marked by a fill and a semibold '

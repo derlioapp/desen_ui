@@ -1335,8 +1335,9 @@ for _lang, _values in IMAGE.items():
 VARIANTS['zh_Hant']['values'].update(imageUnavailable='圖片無法載入')
 
 # A tab's place among its siblings, announced after its name on iOS and
-# Android, where nothing else says it (on the web the tab role does):
-# bottom navigation destinations.
+# Android, where nothing else says it (on the web the tab role does): the
+# tabs of a tab bar. Bottom navigation destinations are buttons and use
+# the neutral positionOf instead.
 KEYS.update({
     'tabOf(int index, int count)': (
         'A tab\'s position, announced after its name ("Home, Tab 2 of 4"); index counts from 1.',
