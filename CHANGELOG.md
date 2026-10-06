@@ -73,9 +73,21 @@
   touch text selection toolbar pages its actions with chevrons.
 - Dark mode: the date range band (`accentTint`) stands 1.3:1 or more off
   the card. A checked control whose accent fill stands under 3:1 off the
-  page or card (a deep red) wears a faint light `accentEdge`; on the
-  floating layer the check mark carries the state, so no rim is drawn
-  there.
+  page or card at rest (a deep red) wears a faint light `accentEdge`,
+  strong enough for its hovered and pressed states too; in a field well and
+  on the floating layer the check mark carries the state, so no rim is
+  drawn there. Dark accent text (`accentText`, `link`, `focus`) is a touch
+  lighter, so today's number reads 4.5:1 on the range band.
+- Warm and bright brand colors no longer produce muddy marks. In light mode
+  a yellow or amber brand's progress and slider fill, tab underline, caret
+  and focus outline turn to a vivid deep orange at the same contrast,
+  instead of mustard or olive; in dark mode they stay a clear yellow. The
+  date range band is a pale butter in light mode and a neutral wash in dark
+  mode for warm brands. Avatar tones skip olive, khaki and brown hues.
+- Calendar: the chosen day and range ends use a checked control's accent
+  colors (`accent`, `onAccent`, `accentHover`, `accentPress`,
+  `accentEdge`) instead of `selectionStrong`; pressed now steps to
+  `accentPress`.
 - Table Shift range selection keeps its anchor, so moving back shrinks it.
 
 ### Fixed
