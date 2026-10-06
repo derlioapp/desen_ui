@@ -8,8 +8,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for a menu with an open submenu (S-28), light and
-/// dark (K-24): the item keeps its highlight, the chevron points to the
+/// Visual regression for a menu with an open submenu, light and
+/// dark: the item keeps its highlight, the chevron points to the
 /// submenu, whose first item lines up with it and has keyboard focus.
 void main() {
   for (final MapEntry(key: mode, value: theme) in themesFor(

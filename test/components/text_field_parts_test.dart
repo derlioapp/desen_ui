@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// DsTextField part 2 (KALITE Faz 7a): slots, the clear and show-password
+/// DsTextField part 2: slots, the clear and show-password
 /// buttons, the counter, the multi-line form, DsSearchField and the link
 /// to DsField.
 void main() {
@@ -800,9 +800,7 @@ void main() {
   });
 
   group('look', () {
-    testWidgets('disabled keeps its shape: a faint edge (K-66)', (
-      tester,
-    ) async {
+    testWidgets('disabled keeps its shape: a faint edge', (tester) async {
       final theme = DsThemeData();
       await tester.pumpWidget(
         app(
@@ -873,7 +871,7 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('works without DsApp or DsScope (R3)', (tester) async {
+    testWidgets('works without DsApp or DsScope', (tester) async {
       final changes = <String>[];
       await tester.pumpWidget(
         host(

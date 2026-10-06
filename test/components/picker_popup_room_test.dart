@@ -1,4 +1,4 @@
-// Denetim-2: the pickers' popups fit small windows (800×600, a landscape
+// The pickers' popups fit small windows (800×600, a landscape
 // phone, a 320px touch phone), and the time columns fade only where more
 // items lie beyond, never over the chosen one.
 import 'package:desen_ui/desen_ui.dart';

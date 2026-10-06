@@ -9,7 +9,7 @@ import 'budget_rules.dart';
 import 'contrast_budget_test.dart' show seeds;
 import 'seed_fuzz_test.dart' show brands;
 
-/// The calendar's day marks against the contrast budget (§2.1), over the
+/// The calendar's day marks against the contrast budget, over the
 /// presets, the brand colors and a random sweep, both modes and both
 /// contrasts: today's ring (a non-text indicator, 3:1) and the chosen
 /// day's solid fill, which is the accent pair of a checked control

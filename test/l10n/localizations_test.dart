@@ -9,7 +9,7 @@ class _Greek extends DsLocalizationsEn {
   String get close => 'Κλείσιμο';
 }
 
-/// KALITE K-51: localized strings.
+/// Localized strings.
 void main() {
   Future<DsLocalizations> resolve(
     WidgetTester tester, {
@@ -423,7 +423,7 @@ void main() {
     expect(tr.navigation, 'Gezinme');
   });
 
-  // F-15, S-14: announced values come from the app language.
+  // Announced values come from the app language.
   testWidgets('progress, slider, avatar group and count speak the language', (
     tester,
   ) async {

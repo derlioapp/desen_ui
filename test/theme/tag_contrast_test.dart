@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'budget_rules.dart';
 
-/// KALITE.md §2.1 for the multi-select tags (K-85), read from the
+/// The contrast budget for the multi-select tags, read from the
 /// component's own default style in every preset and a set of hard brand
 /// colors, both modes and both contrasts:
 ///

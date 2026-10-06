@@ -10,7 +10,7 @@ import 'golden_harness.dart';
 /// Visual regression for a validated form in its error state (DsFormField
 /// and the typed form fields): validator messages, a typed number's own
 /// message, a required checkbox with its mark, and a valid field with its
-/// description, light and dark (KALITE K-24).
+/// description, light and dark.
 void main() {
   Widget form(GlobalKey<FormState> key) => DsLocalizationScope(
     localizations: const DsLocalizationsTr(),

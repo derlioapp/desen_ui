@@ -69,7 +69,7 @@ final _columns = [
   ),
 ];
 
-/// Visual regression for DsTable (concept card 28), light and dark (K-24):
+/// Visual regression for DsTable, light and dark:
 /// a column sorted descending with a selected row; RTL; loading (first
 /// load and "loading more"); the compact empty state.
 void main() {
@@ -172,7 +172,7 @@ void main() {
       await expectGolden(tester, 'goldens/table_states_$mode.png');
     });
 
-    // D2: the card layout of a narrow table, with a selected card (its
+    // The card layout of a narrow table, with a selected card (its
     // badge keeps its own color) and the loading cards.
     testWidgets('table cards $mode', (tester) async {
       Widget cards({List<_Invoice> rows = _rows, bool loading = false}) =>

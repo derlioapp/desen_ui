@@ -9,7 +9,7 @@ import 'golden_harness.dart';
 
 /// Visual regression for DsField: label, required mark, description and
 /// error around a select, a checkbox group and a radio group, light and
-/// dark (KALITE K-24).
+/// dark.
 void main() {
   const options = [
     DsSelectOption(value: 'web', label: 'Derlio Web'),

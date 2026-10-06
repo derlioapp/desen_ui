@@ -7,8 +7,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Widgets made of several Tab stops keep them together in the Tab order
-/// instead of interleaving them with what sits beside them (ux H1), and
-/// the sidebar is a navigation landmark (ux M5).
+/// instead of interleaving them with what sits beside them, and
+/// the sidebar is a navigation landmark.
 void main() {
   /// The label of [labels] whose text sits in the focused node's box.
   String? focused(WidgetTester tester, List<String> labels) {

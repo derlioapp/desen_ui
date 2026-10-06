@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Denetim-2: the combobox's typed text (K-83), input methods and Escape
-/// in a dialog (probes from the blind audit, kept as regression tests).
+/// The combobox's typed text, input methods and Escape
+/// in a dialog (regression tests).
 void main() {
   const cities = [
     DsSelectOption(value: 'ank', label: 'Ankara'),
@@ -24,7 +24,7 @@ void main() {
   EditableText editable(WidgetTester tester) =>
       tester.widget<EditableText>(find.byType(EditableText));
 
-  group('an option typed out in full is that option (bugs M1, M2)', () {
+  group('an option typed out in full is that option', () {
     testWidgets('autocomplete with onCreate: Enter chooses it', (tester) async {
       final custom = <String>[];
       String? value;
@@ -151,7 +151,7 @@ void main() {
     });
   });
 
-  group('input method composing (bugs M3)', () {
+  group('input method composing', () {
     const kana = [
       DsSelectOption(value: 'kan', label: 'かんじ'),
       DsSelectOption(value: 'kat', label: 'かたかな'),
@@ -232,7 +232,7 @@ void main() {
     });
   });
 
-  group('Escape in a dialog (ux M8, K-83)', () {
+  group('Escape in a dialog', () {
     Future<void> openDialog(
       WidgetTester tester,
       Widget Function(StateSetter setState) field,

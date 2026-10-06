@@ -11,7 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// DsAutocomplete and DsMultiSelect (KALITE Faz 7b, concept 27, S-29).
+/// DsAutocomplete and DsMultiSelect.
 void main() {
   const cities = [
     DsSelectOption(value: 'ist', label: 'İstanbul'),
@@ -243,7 +243,7 @@ void main() {
       expect(bold, ['mir']);
     });
 
-    testWidgets('keyboard: Down, Up, Enter, Escape (K-83)', (tester) async {
+    testWidgets('keyboard: Down, Up, Enter, Escape', (tester) async {
       String? chosen;
       await tester.pumpWidget(app(single(onChanged: (v) => chosen = v)));
       await tester.tap(editable());
@@ -358,8 +358,9 @@ void main() {
       expect(textFocused(tester), isTrue, reason: 'focus stays in the text');
     });
 
-    testWidgets('the keyboard-active row is a highlight, with no ring '
-        '(K-54, K-82)', (tester) async {
+    testWidgets('the keyboard-active row is a highlight, with no ring', (
+      tester,
+    ) async {
       DsBoxDecoration activeRow() =>
           tester
                   .widget<AnimatedContainer>(
@@ -626,7 +627,7 @@ void main() {
       expect(listed(tester), isNotEmpty);
     });
 
-    testWidgets('R3: works with only an Overlay (K-52)', (tester) async {
+    testWidgets('works with only an Overlay', (tester) async {
       String? chosen;
       await tester.pumpWidget(
         host(
@@ -839,7 +840,7 @@ void main() {
     });
   });
 
-  testWidgets('the popup takes the menu style\'s backdropFilter (K-154)', (
+  testWidgets('the popup takes the menu style\'s backdropFilter', (
     tester,
   ) async {
     final blur = ImageFilter.blur(sigmaX: 20, sigmaY: 20);
@@ -1138,7 +1139,7 @@ void main() {
     });
   });
 
-  group('collapsed tags (S-40)', () {
+  group('collapsed tags', () {
     const all = ['ist', 'izm', 'isp', 'ank', 'sir', 'esk'];
     final labels = [
       for (final v in all) cities.firstWhere((o) => o.value == v).label,

@@ -55,7 +55,7 @@ void main() {
       expect(pinned, isNot(DsThemeData(platform: TargetPlatform.macOS)));
     });
 
-    // K-43 (S-32): phones keep the compact visuals and get 44px tap areas;
+    // Phones keep the compact visuals and get 44px tap areas;
     // rows are their own tap surface and keep their heights.
     test('iOS and Android get 44px tap areas around compact controls', () {
       for (final platform in [TargetPlatform.iOS, TargetPlatform.android]) {
@@ -102,7 +102,7 @@ void main() {
       );
     });
 
-    test('adjust hooks survive every regeneration (S-02)', () {
+    test('adjust hooks survive every regeneration', () {
       const lightLink = Color(0xFF123456), darkLink = Color(0xFFABCDEF);
       final t = DsThemeData(
         adjustColors: (k, b) =>
@@ -121,7 +121,7 @@ void main() {
       );
       expect(changed.colors.link, darkLink, reason: 'hook sees brightness');
       expect(changed.radii.card, 21 + 4, reason: 'soft card 21, +4');
-      expect(changed.sizes.md, 40 + 2, reason: 'touch md 40 (K-43), +2');
+      expect(changed.sizes.md, 40 + 2, reason: 'touch md 40, +2');
     });
 
     test('adjustSizes reaches icon sizes', () {
@@ -195,7 +195,7 @@ void main() {
   });
 
   group('DsSizes', () {
-    // §2 / F-05: every touch target reaches 44px, visually or by tap area.
+    // Every touch target reaches 44px, visually or by tap area.
     test('touch density meets 44px everywhere', () {
       const t = DsSizes.touch;
       expect(t.minTapTarget, greaterThanOrEqualTo(44));
@@ -204,7 +204,7 @@ void main() {
       // A calendar day draws smaller and takes the min tap area instead.
       expect(t.day, lessThanOrEqualTo(t.minTapTarget));
       for (final size in DsSize.values) {
-        expect(t.height(size), lessThanOrEqualTo(48), reason: 'K-43');
+        expect(t.height(size), lessThanOrEqualTo(48));
       }
     });
   });
@@ -331,7 +331,7 @@ void main() {
       );
     }
 
-    // B3: platform accessibility settings change one setting, not the
+    // Platform accessibility settings change one setting, not the
     // app's hand-set tokens.
     testWidgets('keeps a raw theme\'s tokens under reduce motion', (
       tester,
@@ -425,7 +425,7 @@ void main() {
       });
     }
 
-    // eng L3: theme equality ignores hooks (K-31), so the scope's cache
+    // Theme equality ignores hooks, so the scope's cache
     // must not hand back a dark theme derived from an old hook.
     testWidgets('a changed hook reaches the derived dark theme', (
       tester,
@@ -540,7 +540,7 @@ void main() {
       return (key, route);
     }
 
-    // F-02, eng L5: no raw durations or curves; the theme's springs.
+    // No raw durations or curves; the theme's springs.
     testWidgets('times its transition with the theme motion', (tester) async {
       final (_, route) = await push(tester);
       const motion = DsMotion();
@@ -575,7 +575,7 @@ void main() {
       await tester.pumpAndSettle();
     });
 
-    // eng L4: the curved animations are made once per route and disposed
+    // The curved animations are made once per route and disposed
     // with it, not allocated on every transition frame.
     testWidgets('disposes the curved animations it creates', (tester) async {
       final live = <Object>{};

@@ -15,7 +15,7 @@ class Counter extends CustomPainter {
   bool shouldRepaint(Counter old) => false;
 }
 
-/// Denetim-2 eng P6: always-running loading animations repaint only
+/// Always-running loading animations repaint only
 /// themselves, not their surroundings (a sibling used to repaint every
 /// frame next to the indeterminate bar and the shimmer).
 void main() {

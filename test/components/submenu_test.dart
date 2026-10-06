@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Submenus (S-28): `DsMenuItem.submenu`, WAI-ARIA menu keys, hover delay
+/// Submenus: `DsMenuItem.submenu`, WAI-ARIA menu keys, hover delay
 /// and the safe triangle, placement, RTL.
 void main() {
   late DsOverlayController controller;
@@ -469,9 +469,7 @@ void main() {
     expect(find.text('Düzenle'), findsNothing);
   });
 
-  testWidgets('needs only an Overlay, no app or DsScope (R3, K-52)', (
-    tester,
-  ) async {
+  testWidgets('needs only an Overlay, no app or DsScope', (tester) async {
     await tester.pumpWidget(
       Directionality(
         textDirection: TextDirection.ltr,

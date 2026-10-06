@@ -8,14 +8,13 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for DsAutocomplete and DsMultiSelect (concept card
-/// 27), light and dark (K-24): closed with a value, tags that wrap, error
+/// Visual regression for DsAutocomplete and DsMultiSelect, light and dark: closed with a value, tags that wrap, error
 /// and disabled; the open popup with the typed letters in bold and the
-/// keyboard-active row (hover fill + inset ring, K-54); "No results";
+/// keyboard-active row (hover fill + inset ring); "No results";
 /// free text offered as "Use “Ardahan”";
 /// and the tags at both contrasts: neutral, the arrow keys' active one in
 /// the accent, disabled ones filled in the disabled colors; collapsed tags
-/// with their "+N" (editable, read-only, disabled; S-40).
+/// with their "+N" (editable; read-only; disabled).
 void main() {
   DsSelectOption<String> person(String id, String name, String role) =>
       DsSelectOption(

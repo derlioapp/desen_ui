@@ -1,4 +1,4 @@
-// Denetim-2: numeric date conventions come from the locale's region and
+// Numeric date conventions come from the locale's region and
 // language (CLDR), whatever strings are bundled; formats round-trip.
 import 'dart:math';
 

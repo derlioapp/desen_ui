@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// eng L6: unfocused group controls ignore keyboard/pointer modality
+/// Unfocused group controls ignore keyboard/pointer modality
 /// flips instead of rebuilding on every input event in the app.
 void main() {
   final controls = <String, Widget>{

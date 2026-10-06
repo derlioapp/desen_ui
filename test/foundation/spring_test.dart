@@ -2,7 +2,7 @@ import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// KALITE K-46: every animation is a spring.
+/// Every animation is a spring.
 void main() {
   group('DsSpring', () {
     const tone = DsMotion();
@@ -89,7 +89,7 @@ void main() {
     });
   });
 
-  test('settle durations stay right past the cache bound (eng L6)', () {
+  test('settle durations stay right past the cache bound', () {
     const probe = DsSpring(duration: Duration(milliseconds: 200));
     final expected = probe.settleDuration;
     for (var ms = 100; ms < 300; ms++) {

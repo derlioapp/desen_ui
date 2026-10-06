@@ -7,9 +7,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// S-24: accent surfaces under real brand colors, light and dark. Light
+/// Accent surfaces under real brand colors, light and dark. Light
 /// brands (yellow, orange, sky blue, green, mint) keep their own fill with a
-/// dark label in both modes (the bright accent, K-38 revised); progress,
+/// dark label in both modes (the bright accent); progress,
 /// link and focus use the darkened color, and the switch knob takes a dark
 /// edge. Mid-tone brands that carry neither label well (Coca-Cola, Figma)
 /// are darkened for a white label.

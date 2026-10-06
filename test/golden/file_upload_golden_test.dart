@@ -7,9 +7,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for the file upload (concept 34): the drop zone idle,
-/// dragged over and in error, and a file row in each state, light and dark
-/// (K-24). Turkish strings and sizes, as in the concept.
+/// Visual regression for the file upload: the drop zone idle,
+/// dragged over and in error, and a file row in each state, light and dark.
+/// Turkish strings and sizes, with a comma as the decimal separator.
 void main() {
   Widget zones() => SizedBox(
     width: 380,

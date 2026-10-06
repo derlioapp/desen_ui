@@ -1,4 +1,4 @@
-// Denetim-2 regressions: the table's sort cache, the order of mixed
+// Regression tests: the table's sort cache, the order of mixed
 // values and selection changes made within one frame.
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/services.dart';

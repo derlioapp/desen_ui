@@ -7,14 +7,12 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Regressions from the blind audit (phase B): DsAccordion.
+/// Regression tests for DsAccordion.
 void main() {
   DsAccordionItem<String> item(String v) =>
       DsAccordionItem(value: v, title: Text(v), child: Text('$v body'));
 
-  testWidgets('open state follows the item, not the index (eng M6)', (
-    tester,
-  ) async {
+  testWidgets('open state follows the item, not the index', (tester) async {
     Widget tree(List<String> order) => host(
       DsAccordion<String>(
         initialValue: const {'b'},
@@ -57,9 +55,7 @@ void main() {
     expect(reported, {'b'});
   });
 
-  testWidgets('each header is a heading around the button (ux V23)', (
-    tester,
-  ) async {
+  testWidgets('each header is a heading around the button', (tester) async {
     final handle = tester.ensureSemantics();
     await tester.pumpWidget(host(DsAccordion<String>(items: [item('a')])));
     final button = tester.getSemantics(find.text('a'));
@@ -73,9 +69,7 @@ void main() {
     handle.dispose();
   });
 
-  testWidgets('the focus ring is drawn inside the header (ux V23)', (
-    tester,
-  ) async {
+  testWidgets('the focus ring is drawn inside the header', (tester) async {
     final theme = DsThemeData();
     final style = DsAccordion.defaultStyle(theme);
     expect(style.focusShadows, isNotEmpty);

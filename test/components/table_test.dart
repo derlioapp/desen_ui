@@ -178,7 +178,7 @@ Widget app(Widget child, {DsThemeData? theme}) => DsApp(
 );
 
 void main() {
-  testWidgets('renders header and rows without a wrapper (R3)', (tester) async {
+  testWidgets('renders header and rows without a wrapper', (tester) async {
     await tester.pumpWidget(host(const Harness()));
     expect(find.text('Müşteri'), findsOneWidget);
     expect(find.text('Kuzey Lojistik'), findsOneWidget);
@@ -561,7 +561,7 @@ void main() {
       await tester.pumpWidget(app(Harness(onRowPressed: (_) {})));
       await tester.tap(find.text('Mavi Tasarım'));
       await tester.pump();
-      expect(hasFocus(tester, 'Mavi Tasarım'), isFalse); // K-42
+      expect(hasFocus(tester, 'Mavi Tasarım'), isFalse);
       await tabToRows(tester);
       expect(hasFocus(tester, 'Mavi Tasarım'), isTrue);
     });
@@ -598,7 +598,7 @@ void main() {
       expect(rowFill(tester, 'Ege Gıda'), isNot(theme.colors.hover));
     });
 
-    testWidgets('a selected row hovers one step deeper (K-61)', (tester) async {
+    testWidgets('a selected row hovers one step deeper', (tester) async {
       final theme = DsThemeData(platform: TargetPlatform.macOS);
       useTraditionalHighlights();
       await tester.pumpWidget(host(const Harness(), theme: theme));

@@ -250,7 +250,7 @@ void main() {
     });
   });
 
-  testWidgets('works without DsScope or DsApp (R3)', (tester) async {
+  testWidgets('works without DsScope or DsApp', (tester) async {
     DateTime? chosen;
     await tester.pumpWidget(
       host(
@@ -366,7 +366,7 @@ void main() {
       await _key(tester, LogicalKeyboardKey.enter);
       expect(chosen, [DateTime(2026, 10, 15)]);
       await _key(tester, LogicalKeyboardKey.arrowRight);
-      // Space chooses on release (K-39).
+      // Space chooses on release.
       await tester.sendKeyDownEvent(LogicalKeyboardKey.space);
       await tester.pump();
       expect(chosen, hasLength(1));
@@ -741,7 +741,7 @@ void main() {
       });
     }
 
-    testWidgets('a bright accent: dark label and the accent edge (K-130)', (
+    testWidgets('a bright accent: dark label and the accent edge', (
       tester,
     ) async {
       final theme = DsThemeData(seed: DsSeed.color(const Color(0xFFFFC72C)));

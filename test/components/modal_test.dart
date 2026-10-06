@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Faz 6b: confirm dialog, panel, toast and select.
+/// Confirm dialog, panel, toast and select.
 void main() {
   /// An app with one button that runs [onPressed] with its context.
   Widget app(
@@ -104,8 +104,9 @@ void main() {
       expect(focused(), 'Aç', reason: 'focus returns to the opener');
     });
 
-    testWidgets('a dialog with no autofocus puts focus on its first control '
-        '(ux M4)', (tester) async {
+    testWidgets('a dialog with no autofocus puts focus on its first control', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         app(
           (context) => showDsDialog<void>(
@@ -173,7 +174,7 @@ void main() {
   });
 
   testWidgets('a non-dismissible dialog ignores Escape, the scrim and '
-      'system back; its own action closes it (K-55)', (tester) async {
+      'system back; its own action closes it', (tester) async {
     await tester.pumpWidget(
       app(
         (context) => showDsDialog<void>(
@@ -376,7 +377,7 @@ void main() {
     });
   });
 
-  group('dialog layout and name (eng M3, bugs B13, ux V5, ux V3)', () {
+  group('dialog layout and name', () {
     Future<void> open(
       WidgetTester tester, {
       required Size size,
@@ -493,7 +494,7 @@ void main() {
     });
   });
 
-  group('modal context (bugs B19, eng H2, eng L4)', () {
+  group('modal context', () {
     testWidgets('an open dialog and its scrim follow a theme switch', (
       tester,
     ) async {
@@ -688,7 +689,7 @@ void main() {
     }
 
     testWidgets('a non-dismissible sheet ignores drag, fling and Escape and '
-        'has no close button (bugs B4, ux V18)', (tester) async {
+        'has no close button', (tester) async {
       await openSheet(tester, dismissible: false);
       expect(
         find.byWidgetPredicate((w) => w is DsIcon && w.icon == DsIcons.x),
@@ -704,7 +705,7 @@ void main() {
     });
 
     testWidgets('a non-dismissible sheet ignores system back; a '
-        'dismissible one closes (K-55)', (tester) async {
+        'dismissible one closes', (tester) async {
       await openSheet(tester, dismissible: false);
       await tester.binding.handlePopRoute();
       await tester.pumpAndSettle();
@@ -717,7 +718,7 @@ void main() {
       expect(find.text('İçerik'), findsNothing);
     });
 
-    testWidgets('a panel opens with focus on its first control (ux M4)', (
+    testWidgets('a panel opens with focus on its first control', (
       tester,
     ) async {
       await tester.pumpWidget(
@@ -767,8 +768,9 @@ void main() {
       expect(find.text('İçerik'), findsNothing);
     });
 
-    testWidgets('a slow drag past a third of the sheet height dismisses '
-        '(bugs B31)', (tester) async {
+    testWidgets('a slow drag past a third of the sheet height dismisses', (
+      tester,
+    ) async {
       await openSheet(tester);
       final height = tester.getSize(find.byType(DsPanel)).height;
       final gesture = await tester.startGesture(
@@ -784,9 +786,7 @@ void main() {
       expect(find.text('İçerik'), findsNothing);
     });
 
-    testWidgets('a sheet stays above the on-screen keyboard (ux V17)', (
-      tester,
-    ) async {
+    testWidgets('a sheet stays above the on-screen keyboard', (tester) async {
       await openSheet(tester, insets: const EdgeInsets.only(bottom: 300));
       expect(
         tester.getRect(find.byType(DsPanel)).bottom,
@@ -794,9 +794,7 @@ void main() {
       );
     });
 
-    testWidgets('a panel is a dialog named by its title (ux V3)', (
-      tester,
-    ) async {
+    testWidgets('a panel is a dialog named by its title', (tester) async {
       final semantics = tester.ensureSemantics();
       await openSheet(tester);
       final node = tester.getSemantics(
@@ -1049,7 +1047,7 @@ void main() {
     });
 
     testWidgets('an error is announced and shown with an icon, not color '
-        'alone (ux V8, V9)', (tester) async {
+        'alone', (tester) async {
       final semantics = tester.ensureSemantics();
       await tester.pumpWidget(
         DsApp(
@@ -1080,7 +1078,7 @@ void main() {
       semantics.dispose();
     });
 
-    testWidgets('an emptied fieldError shadow list does not crash (eng M1)', (
+    testWidgets('an emptied fieldError shadow list does not crash', (
       tester,
     ) async {
       final theme = DsThemeData(
@@ -1109,8 +1107,9 @@ void main() {
       );
     });
 
-    testWidgets('works in an unbounded width, as wide as its longest option '
-        '(eng M2)', (tester) async {
+    testWidgets('works in an unbounded width, as wide as its longest option', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         DsApp(
           home: Center(
@@ -1136,8 +1135,9 @@ void main() {
       expect(width, lessThan(400));
     });
 
-    testWidgets('type-ahead with nothing chosen can pick the first option '
-        '(bugs B17)', (tester) async {
+    testWidgets('type-ahead with nothing chosen can pick the first option', (
+      tester,
+    ) async {
       String? value;
       await tester.pumpWidget(
         StatefulBuilder(
@@ -1168,9 +1168,7 @@ void main() {
       expect(value, 'avocado');
     });
 
-    testWidgets('disabled while open, its menu closes (bugs B32)', (
-      tester,
-    ) async {
+    testWidgets('disabled while open, its menu closes', (tester) async {
       var enabled = true;
       late StateSetter set;
       await tester.pumpWidget(
@@ -1190,8 +1188,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('options without an icon line up with those that have one '
-        '(visual L5)', (tester) async {
+    testWidgets('options without an icon line up with those that have one', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         DsApp(
           home: Center(

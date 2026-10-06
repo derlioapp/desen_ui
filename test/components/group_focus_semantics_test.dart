@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Denetim-2 ux H1: tabs and the segmented control are one Tab stop, but a
+/// Tabs and the segmented control are one Tab stop, but a
 /// screen reader must hear the selected item ("Tab, Paid, selected"), not an
 /// unnamed focused group.
 void main() {
@@ -126,7 +126,7 @@ void main() {
   });
 
   testWidgets('tabs: with nothing selected, the first tab stands for focus '
-      'and ArrowRight selects it (bugs L6)', (tester) async {
+      'and ArrowRight selects it', (tester) async {
     final handle = tester.ensureSemantics();
     final node = FocusNode();
     addTearDown(node.dispose);

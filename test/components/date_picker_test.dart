@@ -488,7 +488,7 @@ void main() {
     });
   });
 
-  testWidgets('works without DsScope or DsApp (R3): typing', (tester) async {
+  testWidgets('works without DsScope or DsApp: typing', (tester) async {
     DateTime? value;
     await tester.pumpWidget(
       MediaQuery(

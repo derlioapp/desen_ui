@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Regressions from the blind audit (phase B): DsSlider.
+/// Regression tests for DsSlider.
 void main() {
   Widget slider({
     required double value,
@@ -40,9 +40,7 @@ void main() {
     }
   });
 
-  testWidgets('takes its style width under an unbounded width (B5)', (
-    tester,
-  ) async {
+  testWidgets('takes its style width under an unbounded width', (tester) async {
     await tester.pumpWidget(
       host(
         Row(
@@ -55,7 +53,7 @@ void main() {
     expect(tester.getSize(find.byType(DsSlider)).width, 160);
   });
 
-  testWidgets('a quick click reports the new value to onChangeEnd (B6)', (
+  testWidgets('a quick click reports the new value to onChangeEnd', (
     tester,
   ) async {
     var value = 0.0;
@@ -83,9 +81,7 @@ void main() {
     expect(ends.single, closeTo(.75, .03));
   });
 
-  testWidgets('press, hold, then drag: one start, one end (B7)', (
-    tester,
-  ) async {
+  testWidgets('press, hold, then drag: one start, one end', (tester) async {
     var value = .5;
     var starts = 0, ends = 0;
     await tester.pumpWidget(
@@ -117,7 +113,7 @@ void main() {
     expect((starts, ends), (1, 1));
   });
 
-  testWidgets('disabled mid-drag does not stay grabbing (B8)', (tester) async {
+  testWidgets('disabled mid-drag does not stay grabbing', (tester) async {
     var value = .5;
     var enabled = true;
     late StateSetter setOuter;
@@ -159,7 +155,7 @@ void main() {
     await mouse.removePointer();
   });
 
-  testWidgets('NaN and an empty range do not crash (B9)', (tester) async {
+  testWidgets('NaN and an empty range do not crash', (tester) async {
     await tester.pumpWidget(
       host(
         SizedBox(

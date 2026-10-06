@@ -5,11 +5,11 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Faz 5a: behavior of the display components (KALITE §3 B–H).
+/// Behavior of the display components.
 void main() {
   final light = DsThemeData();
 
-  testWidgets('every display component works without any scope (R3)', (
+  testWidgets('every display component works without any scope', (
     tester,
   ) async {
     await tester.pumpWidget(
@@ -312,7 +312,7 @@ void main() {
       );
       expect(
         tester.getSemantics(find.byType(DsAlert)),
-        // The status icon names the status first (ux V25).
+        // The status icon names the status first.
         isSemantics(isLiveRegion: true, label: 'Information\nKaydedildi'),
       );
       semantics.dispose();

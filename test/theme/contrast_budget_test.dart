@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'budget_rules.dart';
 
-/// KALITE.md §2.1: every preset seed fits the contrast budget.
+/// Every preset seed fits the contrast budget.
 
 const seeds = {
   'blue': DsSeed.blue,
@@ -22,7 +22,7 @@ const seeds = {
 /// the surface at standard contrast. In dark mode textMuted stays under
 /// [darkMutedMax]: it used to sit at 9.2:1, reading almost as loud as
 /// text (12.7:1). textSubtle steps a clear notch below textMuted in both
-/// modes (S-47): on a highlighted row in a floating layer, where it would
+/// modes: on a highlighted row in a floating layer, where it would
 /// fall under 4.5:1, components use textMuted.
 const darkMutedMax = 8.7;
 
@@ -107,7 +107,7 @@ void main() {
     }
   }
 
-  // The levels share the page (K-169): layers, controls, the accent family
+  // The levels share the page: layers, controls, the accent family
   // and the strong selection are the same at both, so soft never turns the
   // page gray or muddy. Only lines and control boundaries (the switch's off
   // track, the slider track) move.

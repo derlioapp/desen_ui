@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
-/// KALITE R2, checked mechanically (S-25): library code reads colors,
+/// No raw values, checked mechanically: library code reads colors,
 /// sizes, durations, curves and shadows from the theme or from the
 /// component's `defaultStyle`.
 ///
@@ -144,7 +144,7 @@ void main() {
     expect(_namedSize.hasMatch('Text(x, maxLines: 1)'), isFalse);
     expect(_namedSize.hasMatch('Align(widthFactor: 1)'), isFalse);
     expect(_namedSize.hasMatch('Tween(begin: .35, end: 1)'), isFalse);
-    // camelCase sizes and ternaries (denetim-2 rules F-25)
+    // camelCase sizes and ternaries
     expect(_namedSize.hasMatch('iconSize: 20,'), isTrue);
     expect(_namedSize.hasMatch('trackHeight: 6,'), isTrue);
     expect(_namedSize.hasMatch('width: thick ? 2 : 1,'), isTrue);
@@ -280,7 +280,7 @@ final _fontWeight = RegExp(r'\bFontWeight\.w\d00\b');
 /// The start of a component's `static ... default*Style(` method.
 final _defaultStyle = RegExp(r'\bstatic\s+\w+\s+default\w*Style\(');
 
-/// Lines the widened check (denetim-2 rules F-25) found in files another
+/// Lines the widened check found in files another
 /// change owns: font weights written in build code. Move them into the
 /// component's style (or mark them `ds-raw`) and drop the entry.
 const _pending = {

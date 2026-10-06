@@ -4,8 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Denetim-2: menu and select options (probes from the blind audit, kept as
-/// regression tests).
+/// Menu and select options (regression tests).
 void main() {
   const long =
       'Internationalisation configuration settings for the organisation';
@@ -164,7 +163,7 @@ void main() {
     });
   });
 
-  group('long option labels wrap once, then end in an ellipsis (ux M3)', () {
+  group('long option labels wrap once, then end in an ellipsis', () {
     for (final scale in [1.0, 2.0]) {
       testWidgets('select at 320px, text scale $scale', (tester) async {
         await phone(tester);
@@ -220,7 +219,7 @@ void main() {
     }
   });
 
-  testWidgets('a lone icon does not push its label out of line (visual M4)', (
+  testWidgets('a lone icon does not push its label out of line', (
     tester,
   ) async {
     final c = DsOverlayController();
@@ -252,7 +251,7 @@ void main() {
   });
 
   testWidgets('a submenu meets the parent edge and leaves the item\'s '
-      'highlight whole (visual M4)', (tester) async {
+      'highlight whole', (tester) async {
     final c = DsOverlayController();
     addTearDown(c.dispose);
     await tester.pumpWidget(
@@ -286,7 +285,7 @@ void main() {
     expect(parent.right - sub.left, lessThanOrEqualTo(4));
   });
 
-  testWidgets('an empty select says it has no options (ux L4)', (tester) async {
+  testWidgets('an empty select says it has no options', (tester) async {
     await tester.pumpWidget(
       app(
         SizedBox(

@@ -79,7 +79,7 @@ void main() {
     ]);
   });
 
-  group('collation keys (D2)', () {
+  group('collation keys', () {
     // Letters that exercise every rule: Turkish letters, I/İ/ı, accents,
     // ligatures, case, a combining dot, non-Latin and an emoji.
     const alphabet = [

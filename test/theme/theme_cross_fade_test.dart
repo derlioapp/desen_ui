@@ -91,7 +91,7 @@ void main() {
   setUp(_builds.clear);
 
   testWidgets('a dark switch rebuilds each theme reader at most once, and '
-      'readers of sizes or radii not at all (denetim-2 P3)', (tester) async {
+      'readers of sizes or radii not at all', (tester) async {
     final host = await _pump(
       tester,
       Wrap(
@@ -116,7 +116,7 @@ void main() {
   });
 
   testWidgets('the fade blends finished pixels: no frame leaves the range '
-      'between the light and the dark canvas (K-58)', (tester) async {
+      'between the light and the dark canvas', (tester) async {
     tester.view
       ..physicalSize = const Size(40, 40)
       ..devicePixelRatio = 1;

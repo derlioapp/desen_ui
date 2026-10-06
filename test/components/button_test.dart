@@ -45,7 +45,7 @@ void main() {
       expect(text.style.color, light.colors.onDisabled);
     });
 
-    testWidgets('variants follow the concept colors', (tester) async {
+    testWidgets('variants take their theme colors', (tester) async {
       final k = light.colors;
       final expected = {
         DsButtonVariant.primary: k.accent,
@@ -456,7 +456,7 @@ void main() {
     });
   });
 
-  group('DsButton audit fixes', () {
+  group('DsButton regressions', () {
     testWidgets('loading keeps keyboard focus and announces loading', (
       tester,
     ) async {
@@ -475,7 +475,7 @@ void main() {
       node.requestFocus();
       await tester.pump();
       await tester.pumpWidget(tree(true));
-      expect(node.hasFocus, isTrue, reason: 'B16 / eng M5 / ux V12');
+      expect(node.hasFocus, isTrue, reason: 'loading keeps focus');
       final data = tester
           .getSemantics(find.byType(DsPressable))
           .getSemanticsData();
@@ -486,9 +486,7 @@ void main() {
       expect(node.hasFocus, isTrue);
     });
 
-    testWidgets('loading does not change the width (visual M2)', (
-      tester,
-    ) async {
+    testWidgets('loading does not change the width', (tester) async {
       Widget tree(bool loading, {Widget? leading}) => host(
         DsButton(
           loading: loading,
@@ -584,9 +582,7 @@ void main() {
       }
     });
 
-    testWidgets('pressed goes one step beyond hovered (visual M2, K-68)', (
-      tester,
-    ) async {
+    testWidgets('pressed goes one step beyond hovered', (tester) async {
       final k = light.colors;
       for (final (variant, press) in [
         (DsButtonVariant.primary, k.accentPress),
@@ -614,7 +610,7 @@ void main() {
       }
     });
 
-    test('lerp blends in premultiplied alpha (rules F-09, K-58)', () {
+    test('lerp blends in premultiplied alpha', () {
       const white = Color(0xFFFFFFFF);
       final mid = DsButtonStyle.lerp(
         const DsButtonStyle(background: Color(0x00000000)),
@@ -625,7 +621,7 @@ void main() {
       expect(mid.background, white.withValues(alpha: .5));
     });
 
-    testWidgets('the border ring keeps its slot (eng L8)', (tester) async {
+    testWidgets('the border ring keeps its slot', (tester) async {
       final states = WidgetStatesController();
       addTearDown(states.dispose);
       await tester.pumpWidget(
@@ -653,7 +649,7 @@ void main() {
     });
 
     test('filled buttons are flat: no glow or lift; a bright accent keeps '
-        'an inner hairline (denetim-2, decision 7)', () {
+        'an inner hairline', () {
       const yellow = DsSeed.oklch(0.86, 0.17, 95);
       for (final seed in [DsSeed.blue, DsSeed.graphite, yellow]) {
         for (final brightness in Brightness.values) {
@@ -738,7 +734,7 @@ void main() {
       );
     });
 
-    testWidgets('a long-press-only button works (eng L2)', (tester) async {
+    testWidgets('a long-press-only button works', (tester) async {
       var long = 0;
       await tester.pumpWidget(
         host(
@@ -755,9 +751,7 @@ void main() {
       expect(buttonDecoration(tester).color, light.colors.accent);
     });
 
-    testWidgets('a zero-duration spring does not crash (bugs B32)', (
-      tester,
-    ) async {
+    testWidgets('a zero-duration spring does not crash', (tester) async {
       final theme = DsThemeData(
         motion: const DsMotion(
           toneSpring: DsSpring(duration: Duration.zero),

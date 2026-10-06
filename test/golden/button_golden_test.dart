@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for DsButton (KALITE §3 A/H, K-24: light and dark).
+/// Visual regression for DsButton, light and dark.
 void main() {
   // States forced through a controller so every cell is deterministic.
   final controllers = <WidgetStatesController>[];
@@ -225,7 +225,7 @@ void main() {
     });
   }
 
-  testWidgets('corner styles (S-15)', (tester) async {
+  testWidgets('corner styles', (tester) async {
     Widget row(DsCornerStyle style) => DsTheme(
       data: DsThemeData(cornerStyle: style, platform: goldenPlatform),
       child: Row(

@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Faz 6a: the overlay engine, popover, tooltip and menu.
+/// The overlay engine, popover, tooltip and menu.
 void main() {
   group('dsPlace', () {
     const viewport = Size(400, 600);
@@ -348,9 +348,7 @@ void main() {
       expect(find.text('Bağlantıyı kopyala'), findsOneWidget);
     });
 
-    testWidgets('the trigger\'s own node carries the tooltip (ux V14)', (
-      tester,
-    ) async {
+    testWidgets('the trigger\'s own node carries the tooltip', (tester) async {
       final semantics = tester.ensureSemantics();
       await tester.pumpWidget(
         DsApp(
@@ -395,9 +393,7 @@ void main() {
       semantics.dispose();
     });
 
-    testWidgets('draws shortcut key symbols as icons (visual M4)', (
-      tester,
-    ) async {
+    testWidgets('draws shortcut key symbols as icons', (tester) async {
       final semantics = tester.ensureSemantics();
       await tester.pumpWidget(
         const DsApp(home: Center(child: DsShortcut('⇧⌘⌫'))),
@@ -466,8 +462,9 @@ void main() {
       child: DsButton(onPressed: controller.toggle, child: const Text('Aç')),
     );
 
-    testWidgets('Tab in a menu closes it and moves on; Shift+Tab moves back '
-        '(ux V7, bugs B24)', (tester) async {
+    testWidgets('Tab in a menu closes it and moves on; Shift+Tab moves back', (
+      tester,
+    ) async {
       await tester.pumpWidget(page(layer: menu()));
       await tester.sendKeyEvent(LogicalKeyboardKey.tab);
       await tester.sendKeyEvent(LogicalKeyboardKey.tab);
@@ -501,7 +498,7 @@ void main() {
       await tester.sendKeyEvent(LogicalKeyboardKey.tab);
       await tester.sendKeyEvent(LogicalKeyboardKey.enter);
       await tester.pumpAndSettle();
-      // Opening puts focus on the first control (ux M4).
+      // Opening puts focus on the first control.
       expect(focusedText(), 'P1');
       await tester.sendKeyEvent(LogicalKeyboardKey.tab);
       expect(focusedText(), 'P2');
@@ -523,7 +520,7 @@ void main() {
     });
 
     testWidgets('a popover keeps the control that asks for focus; one with '
-        'no control keeps focus on itself (ux M4)', (tester) async {
+        'no control keeps focus on itself', (tester) async {
       final second = FocusNode();
       addTearDown(second.dispose);
       await tester.pumpWidget(
@@ -577,7 +574,7 @@ void main() {
       expect(controller.isOpen, isFalse, reason: 'Escape still lands');
     });
 
-    testWidgets('focus returns to the trigger after a pointer open (ux V24)', (
+    testWidgets('focus returns to the trigger after a pointer open', (
       tester,
     ) async {
       await tester.pumpWidget(page(layer: menu()));
@@ -590,7 +587,7 @@ void main() {
       expect(focusedText(), 'Menü');
     });
 
-    testWidgets('a closing layer takes no taps (eng L7)', (tester) async {
+    testWidgets('a closing layer takes no taps', (tester) async {
       var under = 0, inside = 0;
       await tester.pumpWidget(
         DsApp(
@@ -631,8 +628,9 @@ void main() {
       expect(under, 1);
     });
 
-    testWidgets('mid-reveal, hit tests and positions follow the paint '
-        '(eng L7)', (tester) async {
+    testWidgets('mid-reveal, hit tests and positions follow the paint', (
+      tester,
+    ) async {
       var inside = 0;
       await tester.pumpWidget(
         DsApp(
@@ -667,9 +665,7 @@ void main() {
       await tester.pumpAndSettle();
     });
 
-    testWidgets('keeps clear of the on-screen keyboard (eng M4)', (
-      tester,
-    ) async {
+    testWidgets('keeps clear of the on-screen keyboard', (tester) async {
       tester.view.physicalSize = const Size(400, 800);
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.reset);
@@ -703,8 +699,9 @@ void main() {
       );
     });
 
-    testWidgets('closes when its trigger is scrolled out of view '
-        '(ux S3, denetim-2 M7)', (tester) async {
+    testWidgets('closes when its trigger is scrolled out of view', (
+      tester,
+    ) async {
       final scroll = ScrollController();
       addTearDown(scroll.dispose);
       final trigger = FocusNode();
@@ -873,7 +870,7 @@ void main() {
     });
 
     testWidgets('Shift+F10 and the context menu key open a context menu at '
-        'the focused control (ux V4)', (tester) async {
+        'the focused control', (tester) async {
       await tester.pumpWidget(
         DsApp(
           home: Align(
@@ -909,9 +906,7 @@ void main() {
       expect(find.text('Yenile'), findsOneWidget);
     });
 
-    testWidgets('order and type-ahead follow changed items (bugs B18)', (
-      tester,
-    ) async {
+    testWidgets('order and type-ahead follow changed items', (tester) async {
       var bravoEnabled = false;
       var third = 'Cherry';
       late StateSetter setItems;
@@ -950,7 +945,7 @@ void main() {
       expect(focusedLabel(), 'Banana', reason: 'the current label');
     });
 
-    test('the shortcut reads at 4.5:1 on the highlight (ux V10)', () {
+    test('the shortcut reads at 4.5:1 on the highlight', () {
       for (final brightness in Brightness.values) {
         for (final seed in [DsSeed.blue, DsSeed.graphite, DsSeed.forest]) {
           final theme = DsThemeData(brightness: brightness, seed: seed);
@@ -976,7 +971,7 @@ void main() {
     });
 
     testWidgets('in the default ring mode the keyboard-focused item also '
-        'draws an inset ring; in subtle mode only the highlight (ux V2)', (
+        'draws an inset ring; in subtle mode only the highlight', (
       tester,
     ) async {
       Future<List<DsShadow>> focusedShadows(DsThemeData theme) async {
@@ -1031,7 +1026,7 @@ void main() {
       }
     });
 
-    testWidgets('choice items are radio items (ux V8)', (tester) async {
+    testWidgets('choice items are radio items', (tester) async {
       final semantics = tester.ensureSemantics();
       await tester.pumpWidget(
         DsApp(

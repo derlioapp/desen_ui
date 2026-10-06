@@ -10,8 +10,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'helpers.dart';
 import 'selection_test.dart' show focusInside;
 
-/// Faz 5c: behavior of the button-based components. Every test runs
-/// without DsScope (R3) unless it passes a theme.
+/// Behavior of the button-based components. Every test runs
+/// without DsScope unless it passes a theme.
 void main() {
   group('DsTabs', () {
     Widget tabs(int value, ValueChanged<int> onChanged) => DsTabs<int>(

@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Regressions from the blind audit (phase B): toolbar keys, edges on soft
+/// Regression tests: toolbar keys, edges on soft
 /// fills, status semantics, reduced motion.
 void main() {
   DsBoxDecoration decoOf(WidgetTester tester, Finder of) =>
@@ -16,9 +16,7 @@ void main() {
               .decoration!
           as DsBoxDecoration;
 
-  testWidgets('toolbar arrows, Home and End move focus (ux V21, S-27)', (
-    tester,
-  ) async {
+  testWidgets('toolbar arrows, Home and End move focus', (tester) async {
     useTraditionalHighlights();
     final nodes = [for (var i = 0; i < 3; i++) FocusNode()];
     addTearDown(() {
@@ -57,7 +55,7 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.home);
     await tester.pump();
     expect(nodes[0].hasFocus, isTrue);
-    // Every item stays its own Tab stop (K-50).
+    // Every item stays its own Tab stop.
     for (final n in nodes) {
       expect(n.canRequestFocus && !n.skipTraversal, isTrue);
     }
@@ -81,9 +79,7 @@ void main() {
     expect(decoOf(tester, find.byType(DsBadge)).shadows, isEmpty);
   });
 
-  testWidgets('an alert names its status for screen readers (ux V25)', (
-    tester,
-  ) async {
+  testWidgets('an alert names its status for screen readers', (tester) async {
     final handle = tester.ensureSemantics();
     await tester.pumpWidget(
       host(
@@ -97,7 +93,7 @@ void main() {
     handle.dispose();
   });
 
-  testWidgets('the status dot is read by its label (F-16, R5)', (tester) async {
+  testWidgets('the status dot is read by its label', (tester) async {
     final handle = tester.ensureSemantics();
     await tester.pumpWidget(host(const DsStatusDot(label: Text('Çevrimiçi'))));
     expect(find.bySemanticsLabel('Çevrimiçi'), findsOneWidget);
@@ -105,9 +101,7 @@ void main() {
   });
 
   for (final kind in ['spinner', 'ring']) {
-    testWidgets('$kind does not turn under reduced motion (ux V20)', (
-      tester,
-    ) async {
+    testWidgets('$kind does not turn under reduced motion', (tester) async {
       final reduced = DsThemeData(motion: const DsMotion(reduced: true));
       await tester.pumpWidget(
         host(

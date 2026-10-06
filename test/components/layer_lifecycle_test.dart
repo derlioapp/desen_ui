@@ -8,15 +8,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Denetim-2: layers and their trigger, the page, the keyboard and the app
-/// root (probes from the blind audit, kept as regression tests).
+/// Layers and their trigger, the page, the keyboard and the app
+/// root (regression tests).
 void main() {
   const fruit = [
     DsSelectOption(value: 'a', label: 'Apple'),
     DsSelectOption(value: 'b', label: 'Banana'),
   ];
 
-  group('anchor leaves the window (bugs M7, K-53)', () {
+  group('anchor leaves the window', () {
     testWidgets('an open select closes; keys no longer choose from it', (
       tester,
     ) async {
@@ -72,7 +72,7 @@ void main() {
     });
   });
 
-  group('trigger kept alive off screen in a lazy list (bugs H1)', () {
+  group('trigger kept alive off screen in a lazy list', () {
     // A kept-alive child that is not visible gets a zeroed paint transform,
     // so its rect is NaN; NaN "overlaps" every rect.
     Widget list(ScrollController scroll, Widget trigger) => DsApp(
@@ -229,7 +229,7 @@ void main() {
     });
   });
 
-  group('trigger removed while open (eng L8)', () {
+  group('trigger removed while open', () {
     testWidgets('the controller closes and the layer does not come back', (
       tester,
     ) async {
@@ -308,7 +308,7 @@ void main() {
     });
   });
 
-  group('system back (eng L7)', () {
+  group('system back', () {
     Future<GlobalKey<NavigatorState>> pushPage(
       WidgetTester tester,
       Widget page,
@@ -455,7 +455,7 @@ void main() {
     });
   });
 
-  group('Escape and tooltips (eng L2)', () {
+  group('Escape and tooltips', () {
     Future<TestGesture> hover(WidgetTester tester, Finder target) async {
       final g = await tester.createGesture(kind: PointerDeviceKind.mouse);
       await g.addPointer(location: Offset.zero);
@@ -547,7 +547,7 @@ void main() {
     });
 
     testWidgets('Escape hides the tooltip while the pointer rests on the '
-        'tooltip itself (ux L1)', (tester) async {
+        'tooltip itself', (tester) async {
       await tester.pumpWidget(
         DsApp(
           home: Center(
@@ -576,7 +576,7 @@ void main() {
     });
   });
 
-  group('tooltip on touch (bugs M1)', () {
+  group('tooltip on touch', () {
     testWidgets('a scroll that starts on the trigger shows no tooltip', (
       tester,
     ) async {
@@ -683,7 +683,7 @@ void main() {
     }
   });
 
-  group('no Overlay above (eng L4, K-52)', () {
+  group('no Overlay above', () {
     Widget bare(Widget child) => Builder(
       builder: (context) => MediaQuery(
         data: MediaQueryData.fromView(View.of(context)),
@@ -742,7 +742,7 @@ void main() {
         ),
       ),
     ]) {
-      testWidgets('a $name says what is missing (K-52)', (tester) async {
+      testWidgets('a $name says what is missing', (tester) async {
         await tester.pumpWidget(bare(widget));
         expect(tester.takeException(), isNull, reason: 'builds closed');
         await tester.tap(find.byWidget(widget));
@@ -758,7 +758,7 @@ void main() {
   });
 
   group('toast', () {
-    testWidgets('its overlay entry is disposed once it is gone (eng L9)', (
+    testWidgets('its overlay entry is disposed once it is gone', (
       tester,
     ) async {
       var created = 0, disposed = 0;
@@ -792,9 +792,7 @@ void main() {
       expect(disposed, 1);
     }, skip: !kFlutterMemoryAllocationsEnabled);
 
-    testWidgets('a long action at 2x text fits a 375px phone (bugs L9)', (
-      tester,
-    ) async {
+    testWidgets('a long action at 2x text fits a 375px phone', (tester) async {
       tester.view.physicalSize = const Size(375, 700);
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.reset);
@@ -823,7 +821,7 @@ void main() {
       );
     });
 
-    testWidgets('a finger resting on it keeps it (ux L5)', (tester) async {
+    testWidgets('a finger resting on it keeps it', (tester) async {
       late BuildContext ctx;
       await tester.pumpWidget(
         DsApp(
@@ -853,7 +851,7 @@ void main() {
       expect(find.byType(DsToast), findsNothing, reason: 'then it goes');
     });
 
-    testWidgets('at 2x text on a small phone it stays on screen (ux M4)', (
+    testWidgets('at 2x text on a small phone it stays on screen', (
       tester,
     ) async {
       tester.view.physicalSize = const Size(320, 640);
@@ -897,7 +895,7 @@ void main() {
     });
   });
 
-  group('DsScope below the navigator: open layers follow it (eng L3)', () {
+  group('DsScope below the navigator: open layers follow it', () {
     PageRoute<T> route<T>(RouteSettings s, WidgetBuilder b) =>
         PageRouteBuilder<T>(settings: s, pageBuilder: (c, _, _) => b(c));
 
@@ -1015,7 +1013,7 @@ void main() {
     });
   });
 
-  group('held up in the audit, kept as guards', () {
+  group('behavior that already held, kept as guards', () {
     testWidgets('a menu item that opens a dialog leaves focus in the dialog', (
       tester,
     ) async {
@@ -1177,7 +1175,7 @@ void main() {
     });
   });
 
-  group('triggers announce expanded (ux M1, eng V8)', () {
+  group('triggers announce expanded', () {
     Tristate expandedOf(WidgetTester tester, String label) => tester
         .getSemantics(find.widgetWithText(DsButton, label))
         .getSemanticsData()

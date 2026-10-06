@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// File upload (concept 34): `DsFileUpload`, `DsFileItem`,
+/// File upload: `DsFileUpload`, `DsFileItem`,
 /// `dsFormatFileSize`.
 void main() {
   /// A host with a locale (for size formatting) and announcement support.
@@ -74,7 +74,7 @@ void main() {
   });
 
   group('DsFileUpload', () {
-    testWidgets('works without DsScope (R3); shows the localized prompt', (
+    testWidgets('works without DsScope; shows the localized prompt', (
       tester,
     ) async {
       await tester.pumpWidget(

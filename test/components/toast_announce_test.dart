@@ -3,7 +3,7 @@ import 'package:flutter/semantics.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// S-34: danger toasts interrupt; the others stay a polite live region.
+/// Danger toasts interrupt; the others stay a polite live region.
 void main() {
   Widget app(
     void Function(BuildContext context) onPressed, {

@@ -11,10 +11,9 @@ import 'package:flutter_test/flutter_test.dart';
 /// - Loads the real bundled fonts, so goldens and text metrics match what
 ///   users see (flutter_test otherwise draws every glyph as a box).
 /// - Installs a golden comparator that tolerates a hair of anti-aliasing
-///   noise but fails on any visible change. Goldens are generated on macOS
-///   (KALITE §2, S-18); on any other OS font rasterization differs, so
-///   golden comparisons are skipped with a message while every behavior
-///   test still runs.
+///   noise but fails on any visible change. Goldens are generated on macOS;
+///   on any other OS font rasterization differs, so golden comparisons
+///   are skipped with a message while every behavior test still runs.
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   TestWidgetsFlutterBinding.ensureInitialized();
   await _loadFonts();
@@ -83,7 +82,7 @@ class MacOnlyGoldenComparator extends GoldenFileComparator {
 
   static String _message(Uri golden) =>
       'Golden "$golden" skipped: goldens are generated and compared on '
-      'macOS only (KALITE S-18). Behavior tests still run.';
+      'macOS only. Behavior tests still run.';
 
   @override
   Future<bool> compare(Uint8List imageBytes, Uri golden) async {

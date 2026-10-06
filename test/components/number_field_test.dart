@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// DsNumberField (concept card 39): typing and parsing per locale, commit
+/// DsNumberField: typing and parsing per locale, commit
 /// on blur and Enter, the WAI-ARIA spinbutton keys, the buttons with press
 /// and hold, semantics, DsField, RTL and large text.
 void main() {
@@ -630,7 +630,7 @@ void main() {
   });
 
   group('edges', () {
-    testWidgets('works without DsScope or DsApp (R3)', (tester) async {
+    testWidgets('works without DsScope or DsApp', (tester) async {
       num? value = 2;
       await tester.pumpWidget(
         host(

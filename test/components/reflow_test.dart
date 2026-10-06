@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Denetim-2 ux M3 and visual H3, at 320px and 2.0x text: list rows wrap
+/// Reflow at 320px and 2.0x text: list rows wrap
 /// before they cut, choice labels break only between words, and labels
 /// that ellipsize keep their whole text for screen readers.
 void main() {

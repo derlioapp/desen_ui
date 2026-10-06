@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for Faz 6b, light and dark (K-24).
+/// Visual regression for the dialog, panel, toast and select, light and dark.
 void main() {
   for (final MapEntry(key: mode, value: theme) in themesFor(
     DsSeed.blue,
@@ -170,7 +170,7 @@ void main() {
                     for (final o in options)
                       DsMenuItem(
                         label: Text(o.label),
-                        // The select keeps an icon column (visual L5)
+                        // The select keeps an icon column
                         // after the menu's check column.
                         leading: o.leading ?? const SizedBox(width: 16),
                         checked: o.value == 'web',
