@@ -291,6 +291,65 @@ class TextFieldPage extends StatelessWidget {
         ],
       ),
       DocSection(
+        title: 'Spell check',
+        children: [
+          const DocText(
+            'On iOS and Android a misspelled word gets the platform\'s '
+            'underline in the danger color: dotted on iOS, wavy on Android. '
+            'Tapping the word opens a toolbar like the edit menu with up to '
+            'three replacements. Choosing one replaces the word and puts the '
+            'caret after it.',
+          ),
+          const DocList([
+            '**iOS:** the tapped word is selected on a danger tint. A word '
+                'the checker has no replacement for shows a disabled "No '
+                'replacements found".',
+            '**Android:** the caret goes into the word, and a Delete action '
+                'after the suggestions removes it.',
+            '**Desktop and the web:** off. Flutter has a spell checker on '
+                'iOS and Android only; on the web the browser\'s own menu '
+                'stays, so these examples show no underline.',
+          ]),
+          const DocText(
+            'It is on by default for prose: plain and multi-line text. It '
+            'is off where the text must stay as typed or is not prose: '
+            'email, URL, password, number, phone, date, name and address '
+            'fields, search fields, and any field with `autocorrect: '
+            'false`. `spellCheck` sets it either way.',
+          ),
+          Example(
+            snippet: 'text-field-spell-check',
+            child: _Narrow(
+              child: Column(
+                spacing: 16,
+                children: [
+                  // #region text-field-spell-check
+                  DsField(
+                    label: const Text('Release notes'),
+                    // Prose: spell check is on by default on phones.
+                    child: DsTextField.multiline(minLines: 2),
+                  ),
+                  DsField(
+                    label: const Text('Project code'),
+                    // Not a word: no underline, no suggestions.
+                    child: DsTextField(spellCheck: false),
+                  ),
+                  // #endregion
+                ],
+              ),
+            ),
+          ),
+          const DocText(
+            'The underline is `misspelledStyle` in `DsTextFieldStyle`, and '
+            'the iOS highlight `misspelledSelectionColor`. The toolbar is '
+            '`DsSpellCheckSuggestionsToolbar` and follows '
+            '`DsTextSelectionToolbarTheme`. Screen readers hear it as '
+            '"Spelling suggestions" with a button per suggestion; Escape or '
+            'a tap outside closes it.',
+          ),
+        ],
+      ),
+      DocSection(
         title: 'Customizing',
         children: [
           const DocText(
@@ -436,6 +495,12 @@ class TextFieldPage extends StatelessWidget {
               'autofillHints',
               'Iterable<String>?',
               'What the field holds, for the platform\'s autofill.',
+            ),
+            (
+              'spellCheck',
+              'bool?',
+              'Underlines misspelled words and offers replacements; null is '
+                  'on for prose on iOS and Android.',
             ),
             (
               'inputFormatters',

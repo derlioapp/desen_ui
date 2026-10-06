@@ -427,4 +427,10 @@ class DsLocalizationsFr extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$index sur $count';
+
+  @override
+  String get spellingSuggestions => 'Suggestions d\'orthographe';
+
+  @override
+  String get noSpellingSuggestions => 'Aucun remplacement trouvé';
 }

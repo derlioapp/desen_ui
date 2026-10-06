@@ -418,4 +418,10 @@ class DsLocalizationsHi extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$count में से $index';
+
+  @override
+  String get spellingSuggestions => 'वर्तनी सुझाव';
+
+  @override
+  String get noSpellingSuggestions => 'कोई विकल्प नहीं मिला';
 }

@@ -46,6 +46,8 @@ class DsTextFieldStyle with Diagnosticable {
     this.handleColor,
     this.handleSize,
     this.composingStyle,
+    this.misspelledStyle,
+    this.misspelledSelectionColor,
     this.shadows,
     this.counterStyle,
     this.counterOverStyle,
@@ -128,6 +130,12 @@ class DsTextFieldStyle with Diagnosticable {
   /// Text an input method (IME) is still composing, merged: an underline.
   final TextStyle? composingStyle;
 
+  /// A word the spell checker flags, merged: a dotted underline on Apple platforms, a wavy one elsewhere.
+  final TextStyle? misspelledStyle;
+
+  /// Highlight behind a flagged word while its spelling suggestions show (iOS selects the word).
+  final Color? misspelledSelectionColor;
+
   /// Elevation around the edge, e.g. a search field drawn as a control.
   final List<DsShadow>? shadows;
 
@@ -205,6 +213,11 @@ class DsTextFieldStyle with Diagnosticable {
       handleSize: other.handleSize ?? handleSize,
       composingStyle:
           composingStyle?.merge(other.composingStyle) ?? other.composingStyle,
+      misspelledStyle:
+          misspelledStyle?.merge(other.misspelledStyle) ??
+          other.misspelledStyle,
+      misspelledSelectionColor:
+          other.misspelledSelectionColor ?? misspelledSelectionColor,
       shadows: other.shadows ?? shadows,
       counterStyle:
           counterStyle?.merge(other.counterStyle) ?? other.counterStyle,
@@ -255,6 +268,8 @@ class DsTextFieldStyle with Diagnosticable {
     handleColor: handleColor,
     handleSize: handleSize,
     composingStyle: composingStyle,
+    misspelledStyle: misspelledStyle,
+    misspelledSelectionColor: misspelledSelectionColor,
     shadows: shadows,
     counterStyle: counterStyle,
     counterOverStyle: counterOverStyle,
@@ -338,6 +353,8 @@ class DsTextFieldStyle with Diagnosticable {
     handleColor,
     handleSize,
     composingStyle,
+    misspelledStyle,
+    misspelledSelectionColor,
     shadows,
     counterStyle,
     counterOverStyle,
@@ -418,6 +435,20 @@ class DsTextFieldStyle with Diagnosticable {
     );
     properties.add(
       DiagnosticsProperty('composingStyle', composingStyle, defaultValue: null),
+    );
+    properties.add(
+      DiagnosticsProperty(
+        'misspelledStyle',
+        misspelledStyle,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      ColorProperty(
+        'misspelledSelectionColor',
+        misspelledSelectionColor,
+        defaultValue: null,
+      ),
     );
     properties.add(DiagnosticsProperty('shadows', shadows, defaultValue: null));
     properties.add(

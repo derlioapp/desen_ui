@@ -401,6 +401,31 @@ List<Rule> rules(
       backdrop: k.surface,
       min: 3,
     ),
+    // Spell check: the underline under a misspelled word is a mark with
+    // no text on it, so it stands 3:1 off the field. On iOS the word is
+    // selected on the strongest danger tint while its suggestions show:
+    // the text stays AA on it, and it stands off the field as the
+    // selection does.
+    Rule(
+      'danger.signal on field (misspelled underline)',
+      k.danger.signal,
+      k.field,
+      backdrop: k.surface,
+      min: 3,
+    ),
+    Rule(
+      'text on danger.tintPress (misspelled word selected)',
+      k.text,
+      k.danger.tintPress,
+      backdrop: k.field,
+      min: 4.5,
+    ),
+    Rule(
+      'danger.tintPress on field (misspelled word selected)',
+      k.danger.tintPress,
+      DsColorUtils.flatten(k.field, k.surface),
+      min: 1.2,
+    ),
     // Text selection in fields and selectable text: the soft
     // selection fill behind unchanged text. The text stays AA on it and
     // the highlight stands off the field.

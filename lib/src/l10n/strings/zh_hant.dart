@@ -271,4 +271,10 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
 
   @override
   String positionOf(int index, int count) => '第 $index 個，共 $count 個';
+
+  @override
+  String get spellingSuggestions => '拼字建議';
+
+  @override
+  String get noSpellingSuggestions => '找不到替代字詞';
 }

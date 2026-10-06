@@ -248,6 +248,7 @@ class DsTextSelectionToolbar extends StatelessWidget {
     required this.anchors,
     required this.buttonItems,
     this.style,
+    this.semanticLabel,
   });
 
   /// Where the selection is: the toolbar goes above the primary anchor,
@@ -259,6 +260,10 @@ class DsTextSelectionToolbar extends StatelessWidget {
 
   /// Style laid over the theme and defaults.
   final DsTextSelectionToolbarStyle? style;
+
+  /// Names the toolbar for screen readers, e.g. "Spelling suggestions";
+  /// none by default, where the buttons say what it is.
+  final String? semanticLabel;
 
   /// Desen's default toolbar style under [theme].
   static DsTextSelectionToolbarStyle defaultStyle(DsThemeData theme) {
@@ -319,6 +324,7 @@ class DsTextSelectionToolbar extends StatelessWidget {
         child: Semantics(
           container: true,
           explicitChildNodes: true,
+          label: semanticLabel,
           child: DsSurface(
             decoration: DsBoxDecoration(
               color: s.background,
@@ -535,6 +541,155 @@ class _ToolbarButton extends StatelessWidget {
       );
     },
   );
+}
+
+/// The replacements for a misspelled word, shown when the user taps a word
+/// the spell checker flagged: up to [maxSuggestions] suggestions in
+/// Desen's touch toolbar ([DsTextSelectionToolbar]), so it looks like the
+/// edit menu.
+///
+/// Choosing a suggestion replaces the word, puts the caret after it and
+/// closes the toolbar. The actions follow the platform: on iOS (and
+/// macOS) a word without suggestions shows a disabled "No replacements
+/// found"; elsewhere a Delete action follows the suggestions and removes
+/// the word, as on Android.
+///
+/// Screen readers hear the toolbar named "Spelling suggestions" and each
+/// suggestion as a button. The suggestions take keyboard focus (Enter or
+/// Space picks one) while the field keeps its own, so the toolbar stays
+/// open. Escape, or a tap outside the field and the toolbar, closes it;
+/// focus goes back to the field.
+///
+/// [DsTextField] shows it by itself. For an [EditableText] of your own,
+/// return it from the `spellCheckSuggestionsToolbarBuilder` of its
+/// [SpellCheckConfiguration].
+class DsSpellCheckSuggestionsToolbar extends StatelessWidget {
+  /// Creates the toolbar for the misspelled word at the selection of
+  /// [editableTextState].
+  const DsSpellCheckSuggestionsToolbar({
+    super.key,
+    required this.editableTextState,
+    this.style,
+  });
+
+  /// The most suggestions shown, as on iOS and Android.
+  static const maxSuggestions = 3;
+
+  /// The field whose word is replaced; its spell check results give the
+  /// suggestions and its context menu anchors place the toolbar.
+  final EditableTextState editableTextState;
+
+  /// Style laid over the toolbar theme and defaults.
+  final DsTextSelectionToolbarStyle? style;
+
+  static bool get _apple => switch (defaultTargetPlatform) {
+    TargetPlatform.iOS || TargetPlatform.macOS => true,
+    _ => false,
+  };
+
+  /// The actions for the flagged word at the selection, or null when the
+  /// selection is not on one.
+  List<ContextMenuButtonItem>? _items(DsLocalizations l10n) {
+    final state = editableTextState;
+    final span = state.findSuggestionSpanAtCursorIndex(
+      state.currentTextEditingValue.selection.baseOffset,
+    );
+    if (span == null) return null;
+    final suggestions = span.suggestions.take(maxSuggestions).toList();
+    return [
+      for (final suggestion in suggestions)
+        ContextMenuButtonItem(
+          label: suggestion,
+          onPressed: () => _replace(span.range, suggestion),
+        ),
+      if (_apple && suggestions.isEmpty)
+        ContextMenuButtonItem(
+          label: l10n.noSpellingSuggestions,
+          onPressed: null,
+        ),
+      if (!_apple)
+        ContextMenuButtonItem(
+          type: ContextMenuButtonType.delete,
+          onPressed: () => _replace(span.range, ''),
+        ),
+    ];
+  }
+
+  /// Gives focus back to the field when the toolbar holds it, so it does
+  /// not fall to the root as the toolbar goes away.
+  void _refocusField() {
+    final node = editableTextState.widget.focusNode;
+    if (!node.hasPrimaryFocus) node.requestFocus();
+  }
+
+  void _close() {
+    if (!editableTextState.mounted) return;
+    _refocusField();
+    editableTextState.hideToolbar(false);
+  }
+
+  /// Puts [text] in place of [range] with the caret after it, as the
+  /// user's own edit (so `onChanged` hears it), and closes the toolbar.
+  void _replace(TextRange range, String text) {
+    final state = editableTextState;
+    if (!state.mounted) return;
+    _refocusField();
+    final value = state.textEditingValue
+        .replaced(range, text)
+        .copyWith(
+          selection: TextSelection.collapsed(offset: range.start + text.length),
+        );
+    state.userUpdateTextEditingValue(value, SelectionChangedCause.toolbar);
+    // The renderer has the new text after the next layout.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (state.mounted) {
+        state.bringIntoView(state.textEditingValue.selection.extent);
+      }
+    });
+    state.hideToolbar();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = DsLocalizations.of(context);
+    final items = _items(l10n);
+    if (items == null || items.isEmpty) return const SizedBox.shrink();
+    return TapRegion(
+      // Taps on the field are its own (another word, the caret); only a
+      // tap outside both closes the toolbar.
+      groupId: EditableText,
+      onTapOutside: (_) => _close(),
+      child: Focus(
+        // The suggestions' focus sits under the field's, so focusing one
+        // keeps the field focused and the toolbar open.
+        parentNode: editableTextState.widget.focusNode,
+        canRequestFocus: false,
+        skipTraversal: true,
+        onKeyEvent: (node, event) {
+          if (event is KeyDownEvent &&
+              event.logicalKey == LogicalKeyboardKey.escape) {
+            _close();
+            return KeyEventResult.handled;
+          }
+          return KeyEventResult.ignored;
+        },
+        child: FocusTraversalGroup(
+          child: DsTextSelectionToolbar(
+            anchors: editableTextState.contextMenuAnchors,
+            buttonItems: items,
+            style: style,
+            semanticLabel: l10n.spellingSuggestions,
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('style', style, defaultValue: null));
+  }
 }
 
 /// The keyboard shortcut hint of a standard edit action on the current

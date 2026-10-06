@@ -411,4 +411,10 @@ class DsLocalizationsKo extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$count개 중 $index번째';
+
+  @override
+  String get spellingSuggestions => '맞춤법 제안';
+
+  @override
+  String get noSpellingSuggestions => '대치 항목 없음';
 }

@@ -384,4 +384,10 @@ mixin _DsStrings {
 
   /// An item's position among its siblings, read after its name ("Home, 2 of 4"); index counts from 1.
   String positionOf(int index, int count);
+
+  /// Names the toolbar of replacements for a misspelled word.
+  String get spellingSuggestions;
+
+  /// Spell check: the checker has no replacement for a misspelled word.
+  String get noSpellingSuggestions;
 }

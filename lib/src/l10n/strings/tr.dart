@@ -423,4 +423,10 @@ class DsLocalizationsTr extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$index, toplam $count';
+
+  @override
+  String get spellingSuggestions => 'Yazım önerileri';
+
+  @override
+  String get noSpellingSuggestions => 'Değiştirme bulunamadı';
 }

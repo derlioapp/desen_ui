@@ -122,7 +122,6 @@ setUp(() => DsFocusVisibility.debugReset(keyboard: true));
 ## Known limitations
 
 - `DsToolbar` has no "⋯" overflow menu: items that don't fit scroll with a faded edge. The touch text selection toolbar pages its actions with arrows, as iOS does.
-- Spell-check suggestions are not wired to text fields.
 - The time picker's hour column doesn't wrap from 23 to 00, and has no seconds or minimum and maximum time.
 - No range (two-thumb) slider.
 - Screen readers aren't told which menu item opens a submenu (needs a role Flutter doesn't expose yet).

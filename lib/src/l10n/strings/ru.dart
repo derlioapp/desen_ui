@@ -435,4 +435,10 @@ class DsLocalizationsRu extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$index из $count';
+
+  @override
+  String get spellingSuggestions => 'Варианты правописания';
+
+  @override
+  String get noSpellingSuggestions => 'Замены не найдены';
 }

@@ -1319,6 +1319,8 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
         onChanged: _onTextChanged,
         onSubmitted: (_) => _commitEnter(),
         textInputAction: TextInputAction.done,
+        // Typing filters the options; a spelling toolbar would cover them.
+        spellCheck: false,
         style: (a.fieldStyle ?? const DsTextFieldStyle()).merge(_bare),
       ),
     );

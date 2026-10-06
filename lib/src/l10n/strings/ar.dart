@@ -422,4 +422,10 @@ class DsLocalizationsAr extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$index من $count';
+
+  @override
+  String get spellingSuggestions => 'اقتراحات الإملاء';
+
+  @override
+  String get noSpellingSuggestions => 'لم يتم العثور على بدائل';
 }

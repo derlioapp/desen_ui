@@ -73,6 +73,14 @@ part 'search_field.dart';
 /// Desen's instead. Menus, handles and the loupe need an [Overlay]; without
 /// one the field still types, selects and copies with the keyboard.
 ///
+/// **Spell check.** On iOS and Android a misspelled word gets the
+/// platform's underline in the danger color (dotted on iOS, wavy on
+/// Android), and tapping it offers up to three replacements in Desen's
+/// toolbar ([DsSpellCheckSuggestionsToolbar]). The platform's own spell
+/// checker does the checking, so it is on where one exists and off on
+/// desktop and the web (where the browser checks spelling in its own
+/// menu). See [spellCheck].
+///
 /// **Focus.** The field shows focus whenever it has it, also after a click
 /// or tap: the edge turns 2px in the focus color, drawn inside the box so
 /// nothing moves. That one line is the whole focus look, with no ring
@@ -158,6 +166,7 @@ class DsTextField extends StatefulWidget {
     this.autofillHints,
     this.autocorrect,
     this.enableSuggestions,
+    this.spellCheck,
     this.textCapitalization = TextCapitalization.none,
     this.textAlign = TextAlign.start,
     this.maxLength,
@@ -200,6 +209,7 @@ class DsTextField extends StatefulWidget {
     this.autofillHints,
     this.autocorrect,
     this.enableSuggestions,
+    this.spellCheck,
     this.textCapitalization = TextCapitalization.none,
     this.textAlign = TextAlign.start,
     this.minLines = 3,
@@ -257,6 +267,7 @@ class DsTextField extends StatefulWidget {
        autofillHints = null,
        autocorrect = null,
        enableSuggestions = null,
+       spellCheck = null,
        textCapitalization = TextCapitalization.none,
        textAlign = TextAlign.start,
        maxLines = 1,
@@ -345,6 +356,24 @@ class DsTextField extends StatefulWidget {
   /// Null decides as for [autocorrect]: off for text that must stay
   /// exactly as typed, on for other text.
   final bool? enableSuggestions;
+
+  /// Whether misspelled words are underlined, with replacements offered
+  /// when the user taps one ([DsSpellCheckSuggestionsToolbar]).
+  ///
+  /// Spelling is checked by the platform's own service, which Flutter has
+  /// on iOS and Android only; where there is none, the field never checks
+  /// spelling, true or not.
+  ///
+  /// Null decides by what the field holds: on for prose (a plain text
+  /// field, a multi-line one) on iOS and Android; off on desktop and the
+  /// web, off for text that must stay exactly as typed (see
+  /// [autocorrect]: email addresses, URLs, passwords, codes), for a
+  /// [keyboardType] other than text or multi-line text (numbers, phone
+  /// numbers, dates, names, addresses), for a search field, and whenever
+  /// [autocorrect] is false. True turns it on for any field where the
+  /// platform has a service (a password field stays off: Flutter never
+  /// checks one); false turns it off.
+  final bool? spellCheck;
 
   /// Whether the on-screen keyboard starts words or sentences with a
   /// capital letter. [TextCapitalization.none] by default; names suit
@@ -448,6 +477,19 @@ class DsTextField extends StatefulWidget {
         decorationColor: k.indicator,
         decorationThickness: 2,
       ),
+      // The platform's mark: iOS dots, Android waves, in the vivid danger
+      // color that stands 3:1 off the field. On iOS the word is selected
+      // while its suggestions show, on the strongest danger tint: the
+      // weaker ones hardly stand off the field.
+      misspelledStyle: TextStyle(
+        decoration: TextDecoration.underline,
+        decorationColor: k.danger.signal,
+        decorationStyle: apple
+            ? TextDecorationStyle.dotted
+            : TextDecorationStyle.wavy,
+        decorationThickness: apple ? 2 : 1,
+      ),
+      misspelledSelectionColor: k.danger.tintPress,
       shadows: const [],
       counterStyle: theme.typography
           .numeric(theme.typography.caption)
@@ -597,6 +639,7 @@ class DsTextField extends StatefulWidget {
           defaultValue: null,
         ),
       )
+      ..add(DiagnosticsProperty('spellCheck', spellCheck, defaultValue: null))
       ..add(
         EnumProperty(
           'textCapitalization',
@@ -944,6 +987,43 @@ class _DsTextFieldState extends State<DsTextField>
     AutofillHints.oneTimeCode,
   };
 
+  /// Whether the platform has a spell checker for Flutter to use: iOS and
+  /// Android do, desktop and the web do not.
+  static bool get _hasSpellCheckService =>
+      !kIsWeb &&
+      WidgetsBinding.instance.platformDispatcher.nativeSpellCheckServiceDefined;
+
+  /// Whether misspelled words are flagged: see [DsTextField.spellCheck].
+  bool get _spellCheck {
+    if (widget.spellCheck == false || !_hasSpellCheckService) return false;
+    // The checker is asked in the app's locale; outside a WidgetsApp
+    // there may be none, and Flutter would fail.
+    if (Localizations.maybeLocaleOf(context) == null) return false;
+    if (widget.spellCheck == true) return true;
+    final mobile = switch (defaultTargetPlatform) {
+      TargetPlatform.iOS || TargetPlatform.android => true,
+      _ => false,
+    };
+    if (!mobile || widget._variant == DsTextFieldVariant.search) return false;
+    if (_literal || widget.autocorrect == false) return false;
+    final type = widget.keyboardType;
+    return type == null ||
+        type == TextInputType.text ||
+        type == TextInputType.multiline;
+  }
+
+  /// Spell check for the resolved style, or disabled. The toolbar builder
+  /// is a method, so the configuration stays equal from build to build
+  /// and Flutter does not check the text again.
+  SpellCheckConfiguration _spellCheckConfiguration(DsTextFieldStyle s) =>
+      _spellCheck
+      ? SpellCheckConfiguration(
+          misspelledTextStyle: s.misspelledStyle ?? const TextStyle(),
+          misspelledSelectionColor: s.misspelledSelectionColor,
+          spellCheckSuggestionsToolbarBuilder: _buildSpellCheckToolbar,
+        )
+      : const SpellCheckConfiguration.disabled();
+
   void _onHandleTapped() {
     if (_controller.selection.isCollapsed) _editable?.toggleToolbar();
   }
@@ -985,19 +1065,27 @@ class _DsTextFieldState extends State<DsTextField>
         SystemContextMenu.isSupported(context)) {
       return SystemContextMenu.editableText(editableTextState: editable);
     }
-    // The toolbar lives in the root overlay; carry over the theme,
-    // direction and strings between the field and it.
-    final captured = DsCapturedThemes.capture(
-      from: this.context,
-      to: Overlay.maybeOf(this.context, rootOverlay: true)?.context,
-    );
-    return captured.wrap(
+    return _inRootOverlay(
       DsTextSelectionToolbar(
         anchors: editable.contextMenuAnchors,
         buttonItems: editable.contextMenuButtonItems,
       ),
     );
   }
+
+  Widget _buildSpellCheckToolbar(
+    BuildContext context,
+    EditableTextState editable,
+  ) => _inRootOverlay(
+    DsSpellCheckSuggestionsToolbar(editableTextState: editable),
+  );
+
+  /// A toolbar lives in the root overlay; carries over the theme,
+  /// direction and strings between the field and it.
+  Widget _inRootOverlay(Widget toolbar) => DsCapturedThemes.capture(
+    from: context,
+    to: Overlay.maybeOf(context, rootOverlay: true)?.context,
+  ).wrap(toolbar);
 
   /// The selection handles for the resolved style, reused while it holds.
   DsTextSelectionControls _controlsFor(DsTextFieldStyle s) {
@@ -1118,6 +1206,7 @@ class _DsTextFieldState extends State<DsTextField>
       enableSuggestions: widget.enableSuggestions ?? !literal,
       smartDashesType: literal ? SmartDashesType.disabled : null,
       smartQuotesType: literal ? SmartQuotesType.disabled : null,
+      spellCheckConfiguration: _spellCheckConfiguration(s),
       textCapitalization: widget.textCapitalization,
       textAlign: widget.textAlign,
       maxLines: widget.maxLines,

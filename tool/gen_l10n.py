@@ -1483,6 +1483,40 @@ for _lang, _values in POSITION.items():
     LANGS[_lang].update(_values)
 VARIANTS['zh_Hant']['values'].update(positionOf="'第 $index 個，共 $count 個'")
 
+# The spell check toolbar of a text field: its name for screen readers,
+# and the disabled item iOS shows when the checker has no replacement for
+# a flagged word, worded as Apple does in each language.
+KEYS.update({
+    'spellingSuggestions': (
+        'Names the toolbar of replacements for a misspelled word.',
+        'Spelling suggestions',
+    ),
+    'noSpellingSuggestions': (
+        'Spell check: the checker has no replacement for a misspelled word.',
+        'No replacements found',
+    ),
+})
+SPELLING = {
+    'ar': dict(spellingSuggestions='اقتراحات الإملاء', noSpellingSuggestions='لم يتم العثور على بدائل'),
+    'de': dict(spellingSuggestions='Rechtschreibvorschläge', noSpellingSuggestions='Keine Ersetzungen gefunden'),
+    'es': dict(spellingSuggestions='Sugerencias ortográficas', noSpellingSuggestions='No se han encontrado sustituciones'),
+    'fr': dict(spellingSuggestions="Suggestions d'orthographe", noSpellingSuggestions='Aucun remplacement trouvé'),
+    'hi': dict(spellingSuggestions='वर्तनी सुझाव', noSpellingSuggestions='कोई विकल्प नहीं मिला'),
+    'it': dict(spellingSuggestions='Suggerimenti ortografici', noSpellingSuggestions='Nessuna sostituzione trovata'),
+    'ja': dict(spellingSuggestions='スペルの候補', noSpellingSuggestions='置き換え候補が見つかりません'),
+    'ko': dict(spellingSuggestions='맞춤법 제안', noSpellingSuggestions='대치 항목 없음'),
+    'pt': dict(spellingSuggestions='Sugestões de ortografia', noSpellingSuggestions='Nenhuma substituição encontrada'),
+    'ru': dict(spellingSuggestions='Варианты правописания', noSpellingSuggestions='Замены не найдены'),
+    'tr': dict(spellingSuggestions='Yazım önerileri', noSpellingSuggestions='Değiştirme bulunamadı'),
+    'zh': dict(spellingSuggestions='拼写建议', noSpellingSuggestions='未找到替换项'),
+}
+for _lang, _values in SPELLING.items():
+    LANGS[_lang].update(_values)
+VARIANTS['zh_Hant']['values'].update(
+    spellingSuggestions='拼字建議', noSpellingSuggestions='找不到替代字詞')
+VARIANTS['pt_PT']['values'].update(
+    spellingSuggestions='Sugestões ortográficas')
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

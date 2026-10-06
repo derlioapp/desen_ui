@@ -411,4 +411,10 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '第 $index 个，共 $count 个';
+
+  @override
+  String get spellingSuggestions => '拼写建议';
+
+  @override
+  String get noSpellingSuggestions => '未找到替换项';
 }
