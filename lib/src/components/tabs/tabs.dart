@@ -185,10 +185,13 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
       if (!mounted) return;
       final i = _index;
       if (i < 0 || i >= _tabKeys.length) return;
-      final tab = _tabKeys[i].currentContext;
-      if (tab == null) return;
+      final tab = _tabKeys[i].currentContext?.findRenderObject();
+      if (tab == null || !_scroll.hasClients) return;
       final motion = DsTheme.motionOf(context);
-      Scrollable.ensureVisible(
+      // The strip's own position only: `Scrollable.ensureVisible` would
+      // also scroll every scrollable around the tabs, so a page opened on
+      // a selected tab jumped to it.
+      _scroll.position.ensureVisible(
         tab,
         alignment: .5,
         duration: animate && !motion.reduced
