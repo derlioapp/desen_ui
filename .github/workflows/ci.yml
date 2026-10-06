@@ -1,8 +1,9 @@
 # Checks every push and pull request against the pinned Flutter stable.
 #
-# Goldens are generated on macOS (test/flutter_test_config.dart): on any
-# other OS they are skipped, so behavior tests run on Linux and the
-# `golden`-tagged tests on macOS.
+# Goldens are not checked here: they are generated and compared on the
+# maintainer's Mac before every commit (another macOS version rasterizes
+# text differently, so a CI runner would only report noise). On Linux the
+# golden comparator skips them; behavior tests run in full.
 name: CI
 
 on:
@@ -73,26 +74,6 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze lib test
       - run: flutter test --exclude-tags golden
-
-  golden:
-    name: Tests (goldens, macOS)
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          cache: true
-      - run: flutter pub get
-      - run: flutter test --tags golden
-      - name: Upload golden diffs
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: golden-failures
-          path: test/golden/failures/
-          if-no-files-found: ignore
 
   example:
     name: Example tests and web build
