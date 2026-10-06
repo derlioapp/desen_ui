@@ -17,8 +17,9 @@ import 'chip_style.dart';
 /// A label that does not fit ellipsizes; screen readers still get all of
 /// it.
 ///
-/// Each chip is a Tab stop, announced as a button with its selected state;
-/// Space or Enter toggles it.
+/// Each chip is a Tab stop; Space or Enter toggles it. A chip turns on and
+/// off on its own, so screen readers hear a checkbox, checked or not (not
+/// a "selected" button, which the web reads as the current item).
 ///
 /// ```dart
 /// DsChip(
@@ -131,7 +132,9 @@ class _DsChipState extends State<DsChip> {
       haptic: DsHapticEvent.selection,
       focusNode: widget.focusNode,
       autofocus: widget.autofocus,
-      selected: widget.selected,
+      // On or off on its own: a checkbox, as a filter chip is.
+      isButton: false,
+      checked: widget.selected,
       semanticLabel: widget.semanticLabel,
       mouseCursor: WidgetStateMouseCursor.resolveWith(
         (states) =>

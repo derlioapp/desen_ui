@@ -51,7 +51,11 @@ void main() {
       expect(on, isTrue);
       expect(
         tester.getSemantics(find.byType(DsChip)),
-        isSemantics(isSelected: true, label: 'User experience'),
+        isSemantics(
+          hasCheckedState: true,
+          isChecked: true,
+          label: 'User experience',
+        ),
       );
       semantics.dispose();
     });
