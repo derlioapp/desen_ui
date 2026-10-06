@@ -20,8 +20,7 @@ String _percent(double v) => '${(v.clamp(0, 1) * 100).round()}%';
 
 /// [v] as shown: null (indeterminate) for null or NaN, otherwise held to
 /// 0–1, an infinity at its end.
-double? _progress(double? v) =>
-    v == null || v.isNaN ? null : v.clamp(0.0, 1.0);
+double? _progress(double? v) => v == null || v.isNaN ? null : v.clamp(0.0, 1.0);
 
 /// A linear progress bar: an accent fill on a recessed track, the fill
 /// 3:1 off the track.
@@ -62,6 +61,7 @@ class DsProgressBar extends StatefulWidget {
   /// Desen's default progress bar style under [theme].
   static DsProgressBarStyle defaultStyle(DsThemeData theme) {
     return DsProgressBarStyle(
+      width: 160,
       height: 6,
       trackColor: theme.colors.channelStrong,
       trackShadows: theme.shadows.channel,
@@ -174,20 +174,27 @@ class _DsProgressBarState extends State<DsProgressBar>
       value: _value == null ? null : _percent(_value!),
       minValue: _value == null ? null : '0',
       maxValue: _value == null ? null : '100',
-      // Its own layer: the indeterminate sweep repaints every frame and
-      // must not repaint what is around it (denetim-2 eng P6).
-      child: RepaintBoundary(
-        child: DsShapeClip(
-          borderRadius: radius,
-          child: Container(
-            height: s.height,
-            // The fill paints over any inner line the track draws.
-            decoration: DsBoxDecoration(
-              color: s.trackColor,
-              borderRadius: radius,
-              shadows: s.trackShadows ?? const [],
+      // Fills the width it is given, under any parent: in a loose one (a
+      // centered column) the track still spans it, and an unbounded one (a
+      // Row) gets the style's width instead of an infinite bar.
+      child: LimitedBox(
+        maxWidth: s.width ?? double.infinity,
+        // Its own layer: the indeterminate sweep repaints every frame and
+        // must not repaint what is around it (denetim-2 eng P6).
+        child: RepaintBoundary(
+          child: DsShapeClip(
+            borderRadius: radius,
+            child: Container(
+              width: double.infinity,
+              height: s.height,
+              // The fill paints over any inner line the track draws.
+              decoration: DsBoxDecoration(
+                color: s.trackColor,
+                borderRadius: radius,
+                shadows: s.trackShadows ?? const [],
+              ),
+              child: bar,
             ),
-            child: bar,
           ),
         ),
       ),

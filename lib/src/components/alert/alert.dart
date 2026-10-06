@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../../foundation/color_utils.dart';
+import '../../foundation/shrink_wrap.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../painting/decoration.dart';
@@ -117,52 +118,56 @@ class DsAlert extends StatelessWidget {
     return Semantics(
       container: true,
       liveRegion: announce,
-      child: Container(
-        padding: s.padding,
-        decoration: DsBoxDecoration(
-          color: s.background,
-          borderRadius: s.borderRadius ?? BorderRadius.zero,
-          shadows: [
-            if (s.borderColor case final edge? when edge.a > 0)
-              DsShadow.innerRing(edge),
-          ],
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: s.gap ?? DsSpace.s12,
-          children: [
-            // The icon names the status for screen readers ("Warning"), so
-            // it does not rest on the title wording (ux V25).
-            Semantics(
-              label: _statusLabel(DsLocalizations.of(context), status),
-              child: Padding(
-                // ds-raw: optical nudge onto the title's first line
-                padding: const EdgeInsets.only(top: 1),
-                child: IconTheme.merge(
-                  data: IconThemeData(color: s.iconColor, size: s.iconSize),
-                  child: icon ?? DsIcon(_defaultIcon(status)),
+      // Under an unbounded width (in a Row) the alert takes its content's
+      // width instead of throwing.
+      child: ShrinkWrapUnboundedWidth(
+        child: Container(
+          padding: s.padding,
+          decoration: DsBoxDecoration(
+            color: s.background,
+            borderRadius: s.borderRadius ?? BorderRadius.zero,
+            shadows: [
+              if (s.borderColor case final edge? when edge.a > 0)
+                DsShadow.innerRing(edge),
+            ],
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: s.gap ?? DsSpace.s12,
+            children: [
+              // The icon names the status for screen readers ("Warning"), so
+              // it does not rest on the title wording (ux V25).
+              Semantics(
+                label: _statusLabel(DsLocalizations.of(context), status),
+                child: Padding(
+                  // ds-raw: optical nudge onto the title's first line
+                  padding: const EdgeInsets.only(top: 1),
+                  child: IconTheme.merge(
+                    data: IconThemeData(color: s.iconColor, size: s.iconSize),
+                    child: icon ?? DsIcon(_defaultIcon(status)),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: s.textGap!,
-                children: [
-                  DefaultTextStyle(
-                    style: s.titleStyle ?? const TextStyle(),
-                    child: title,
-                  ),
-                  if (description != null)
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: s.textGap!,
+                  children: [
                     DefaultTextStyle(
-                      style: s.descriptionStyle ?? const TextStyle(),
-                      child: description!,
+                      style: s.titleStyle ?? const TextStyle(),
+                      child: title,
                     ),
-                ],
+                    if (description != null)
+                      DefaultTextStyle(
+                        style: s.descriptionStyle ?? const TextStyle(),
+                        child: description!,
+                      ),
+                  ],
+                ),
               ),
-            ),
-            ?action,
-          ],
+              ?action,
+            ],
+          ),
         ),
       ),
     );

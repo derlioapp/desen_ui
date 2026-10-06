@@ -14,12 +14,16 @@ import '../../painting/shadow.dart';
 class DsProgressBarStyle with Diagnosticable {
   /// Creates a style.
   const DsProgressBarStyle({
+    this.width,
     this.height,
     this.trackColor,
     this.trackShadows,
     this.fillColor,
     this.borderRadius,
   });
+
+  /// Width when the parent leaves it unbounded (e.g. in a Row); otherwise the bar fills the width.
+  final double? width;
 
   /// Track thickness.
   final double? height;
@@ -40,6 +44,7 @@ class DsProgressBarStyle with Diagnosticable {
   DsProgressBarStyle merge(DsProgressBarStyle? other) {
     if (other == null) return this;
     return DsProgressBarStyle(
+      width: other.width ?? width,
       height: other.height ?? height,
       trackColor: other.trackColor ?? trackColor,
       trackShadows: other.trackShadows ?? trackShadows,
@@ -65,6 +70,7 @@ class DsProgressBarStyle with Diagnosticable {
   }
 
   List<Object?> get _fields => [
+    width,
     height,
     trackColor,
     trackShadows,
@@ -91,6 +97,7 @@ class DsProgressBarStyle with Diagnosticable {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
+    properties.add(DoubleProperty('width', width, defaultValue: null));
     properties.add(DoubleProperty('height', height, defaultValue: null));
     properties.add(ColorProperty('trackColor', trackColor, defaultValue: null));
     properties.add(
