@@ -200,4 +200,98 @@ void main() {
       expect(find.text('October 2026'), findsOneWidget);
     });
   });
+
+  group('toolbar', () {
+    Widget toolbar() => DsToolbar(
+      children: [
+        DsToolbarToggle(
+          icon: const DsIcon(DsIcons.bold),
+          semanticLabel: 'Bold',
+          selected: true,
+          onChanged: (_) {},
+        ),
+        const DsToolbarDivider(),
+        DsToolbarToggle(
+          icon: const DsIcon(DsIcons.italic),
+          semanticLabel: 'Italic',
+          selected: false,
+          onChanged: (_) {},
+        ),
+        DsButton(onPressed: () {}, child: const Text('Publish changes')),
+      ],
+    );
+
+    for (final (width, scale) in [(200.0, 1.0), (200.0, 3.0), (360.0, 3.0)]) {
+      testWidgets(
+        'scrolls instead of overflowing at ${width}px and ${scale}x text',
+        (tester) async {
+          final errors = await _pump(
+            tester,
+            Align(alignment: Alignment.topLeft, child: toolbar()),
+            width: width,
+            textScale: scale,
+          );
+          expect(errors, isEmpty);
+          expect(
+            tester.getSize(find.byType(DsToolbar)).width,
+            lessThanOrEqualTo(width),
+          );
+          // The end that hides items fades, so the bar reads as scrollable.
+          expect(
+            find.descendant(
+              of: find.byType(DsToolbar),
+              matching: find.byType(ShaderMask),
+            ),
+            findsOneWidget,
+          );
+        },
+        variant: const TargetPlatformVariant({
+          TargetPlatform.iOS,
+          TargetPlatform.macOS,
+        }),
+      );
+    }
+
+    testWidgets('fits without a fade where there is room', (tester) async {
+      final errors = await _pump(
+        tester,
+        Align(alignment: Alignment.topLeft, child: toolbar()),
+        width: 600,
+      );
+      expect(errors, isEmpty);
+      expect(
+        find.descendant(
+          of: find.byType(DsToolbar),
+          matching: find.byType(ShaderMask),
+        ),
+        findsNothing,
+      );
+    });
+
+    testWidgets('lays out in a Row', (tester) async {
+      final errors = await _pump(
+        tester,
+        Row(children: [toolbar()]),
+        width: 600,
+      );
+      expect(errors, isEmpty);
+    });
+
+    testWidgets('End brings the last item into view', (tester) async {
+      await _pump(
+        tester,
+        Align(alignment: Alignment.topLeft, child: toolbar()),
+        width: 160,
+      );
+      final bar = tester.getRect(find.byType(DsToolbar));
+      final button = find.widgetWithText(DsButton, 'Publish changes');
+      expect(tester.getRect(button).right, greaterThan(bar.right));
+      // Focus the first item from the keyboard, then jump to the last.
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pump();
+      await tester.sendKeyEvent(LogicalKeyboardKey.end);
+      await tester.pumpAndSettle();
+      expect(tester.getRect(button).right, lessThanOrEqualTo(bar.right + 0.5));
+    });
+  });
 }

@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/edge_fade_scroll.dart';
 import '../../behavior/focus_forward.dart';
 import '../../behavior/pressable.dart';
 import '../../painting/decoration.dart';
@@ -113,7 +114,10 @@ class DsToolbar extends StatelessWidget {
           shadows: s.shadows ?? const [],
         ),
         backdropFilter: s.backdropFilter,
-        child: Padding(
+        // Items that do not fit (a narrow window, large text) scroll, the
+        // edge that hides them faded. The padding scrolls along, so the
+        // items' focus rings in it are not clipped.
+        child: EdgeFadeScrollView(
           padding: _padding(padding, reach),
           child: DsToolbarTheme(
             data: DsToolbarThemeData(style: s),
@@ -200,6 +204,15 @@ KeyEventResult _onKey(FocusNode toolbar, KeyEvent event) {
     _ => (i - 1 + items.length) % items.length,
   };
   items[next].requestFocus();
+  // An item scrolled out of a bar too narrow for them comes into view.
+  if (items[next].context case final item?) {
+    Scrollable.ensureVisible(
+      item,
+      alignmentPolicy: next > i
+          ? ScrollPositionAlignmentPolicy.keepVisibleAtEnd
+          : ScrollPositionAlignmentPolicy.keepVisibleAtStart,
+    );
+  }
   return KeyEventResult.handled;
 }
 
