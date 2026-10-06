@@ -386,4 +386,8 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String get navigation => '导航';
+
+  @override
+  String numberAmbiguous(String grouped, String decimal) =>
+      '请输入 $grouped 或 $decimal。';
 }

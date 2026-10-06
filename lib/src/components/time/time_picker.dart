@@ -72,7 +72,7 @@ export 'time_picker_style.dart';
 ///
 /// | Key | Action |
 /// |---|---|
-/// | Up / Down | Previous / next item in the column |
+/// | Up / Down | Previous / next item in the column (an earlier / later time, as the list reads top to bottom) |
 /// | Home / End | First / last item |
 /// | Left / Right | Previous / next column (mirrored right to left) |
 /// | Enter | Closes the columns, keeping the time |
@@ -80,6 +80,9 @@ export 'time_picker_style.dart';
 ///
 /// **Screen readers.** Each column is one adjustable node ("Saat, 14";
 /// swipe up or down to change it), the field and the button their own.
+/// Increase gives the next item, the later time, as Down does: the
+/// columns read as lists, like the time lists of Android, Windows and
+/// browsers, not as spin buttons.
 ///
 /// **Field.** Inside a [DsField] the label names the field and the
 /// field's error and required state apply. Null [onChanged] disables it;

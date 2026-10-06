@@ -278,7 +278,7 @@ class _TimePickerPageState extends State<TimePickerPage> {
             'column changes the time at once.',
           ),
           KeyboardTable([
-            ('Up / Down', 'Previous or next item in the column.'),
+            ('Up / Down', 'Previous or next item: an earlier or later time.'),
             ('Home / End', 'First or last item.'),
             (
               'Left / Right',
@@ -299,7 +299,8 @@ class _TimePickerPageState extends State<TimePickerPage> {
             'The field is named by the `DsField` label or `semanticLabel`; '
                 'the clock button is its own node, "Choose time".',
             'Each column is one adjustable node, such as "Hours, 14"; '
-                'screen reader users swipe up or down to change it.',
+                'screen reader users swipe up or down to change it. Increase '
+                'gives the later time, as Down does.',
             'The column digits are tabular, so they line up as they change.',
             'Invalid text is announced as an invalid state, and inside a '
                 '`DsField` the reason is shown as text.',

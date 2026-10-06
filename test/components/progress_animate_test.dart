@@ -93,6 +93,61 @@ void main() {
     semantics.dispose();
   });
 
+  testWidgets('NaN (0 / 0) is indeterminate, never shown or read as done', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    await tester.pumpWidget(
+      host(
+        const Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(width: 200, child: DsProgressBar(value: double.nan)),
+            DsProgressRing(value: double.nan),
+          ],
+        ),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+    expect(tester.takeException(), isNull);
+    // No determinate fill: the sweep runs instead.
+    expect(
+      find.descendant(
+        of: find.byType(DsProgressBar),
+        matching: find.byType(FractionallySizedBox),
+      ),
+      findsNothing,
+    );
+    expect(tester.hasRunningAnimations, isTrue);
+    for (final type in [DsProgressBar, DsProgressRing]) {
+      final data = tester.getSemantics(find.byType(type)).getSemanticsData();
+      expect(data.value, isEmpty, reason: '$type has no value to report');
+      expect(data.label, 'Loading', reason: '$type');
+    }
+    semantics.dispose();
+  });
+
+  testWidgets('infinities and negatives are held to the nearer end', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    await tester.pumpWidget(host(bar(double.infinity, animate: false)));
+    expect(fillFactor(tester), 1);
+    expect(
+      tester.getSemantics(find.byType(DsProgressBar)),
+      isSemantics(value: '100%'),
+    );
+    await tester.pumpWidget(host(bar(double.negativeInfinity, animate: false)));
+    expect(fillFactor(tester), 0);
+    await tester.pumpWidget(host(bar(-.5, animate: false)));
+    expect(fillFactor(tester), 0);
+    expect(
+      tester.getSemantics(find.byType(DsProgressBar)),
+      isSemantics(value: '0%'),
+    );
+    semantics.dispose();
+  });
+
   testWidgets('the indeterminate sweep ignores animate', (tester) async {
     await tester.pumpWidget(
       host(const SizedBox(width: 200, child: DsProgressBar(animate: false))),

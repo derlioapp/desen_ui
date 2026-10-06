@@ -127,4 +127,8 @@ class DsLocalizationsPtPt extends DsLocalizationsPt {
 
   @override
   String tabOf(int index, int count) => 'Separador $index de $count';
+
+  @override
+  String numberAmbiguous(String grouped, String decimal) =>
+      'Introduza $grouped ou $decimal.';
 }
