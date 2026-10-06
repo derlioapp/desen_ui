@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:desen_ui/src/behavior/focus_visibility_state.dart';
+import 'package:desen_ui/desen_ui.dart' show DsFocusVisibility;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -24,8 +24,9 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
         ? TolerantGoldenComparator(base.resolve('_'))
         : MacOnlyGoldenComparator();
   }
-  // Keyboard modality is global; each test starts as a browser would.
-  setUp(resetFocusVisibility);
+  // Keyboard modality is global; each test starts as a desktop browser
+  // would (focus visible), whatever the test platform.
+  setUp(() => DsFocusVisibility.debugReset(keyboard: true));
   await testMain();
 }
 

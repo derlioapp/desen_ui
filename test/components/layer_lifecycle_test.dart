@@ -617,6 +617,7 @@ void main() {
       await g.up();
       await tester.pumpAndSettle();
       expect(find.text('Tip 3'), findsNothing);
+      debugDefaultTargetPlatformOverride = null;
     });
 
     testWidgets('a still long press still shows it', (tester) async {
@@ -643,6 +644,7 @@ void main() {
       expect(find.text('Tip'), findsOneWidget);
       await g.up();
       await tester.pumpAndSettle();
+      debugDefaultTargetPlatformOverride = null;
     });
   });
 

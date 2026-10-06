@@ -5,6 +5,7 @@ library;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart' show FocusManager;
 
 /// Whether focus shows before any input on [platform]. On desktop and the
 /// web, true: focus placed first (e.g. autofocus) is visible, as in a
@@ -20,33 +21,42 @@ bool focusVisibleInitially(TargetPlatform platform) =>
 final ValueNotifier<bool> _keyboard = ValueNotifier(
   focusVisibleInitially(defaultTargetPlatform),
 );
-bool _listening = false;
+
+/// The focus manager the key handler was registered under. A new one means
+/// the bindings were reset (the test binding does this after each test,
+/// clearing every keyboard handler with it), so the handler is gone.
+FocusManager? _keysFor;
+bool _pointerListening = false;
 
 /// True while the user is navigating with the keyboard; starts listening
-/// to input on first use.
+/// to input on first use, and again after the bindings are reset (a new
+/// test), from the initial state.
 ValueListenable<bool> keyboardFocusVisible() {
-  _listen();
+  if (!identical(_keysFor, FocusManager.instance)) {
+    _listen();
+    _keyboard.value = focusVisibleInitially(defaultTargetPlatform);
+  }
   return _keyboard;
 }
 
-/// Back to the desktop initial state (focus visible), between tests. The
-/// test binding clears keyboard handlers after each test, so listening
-/// restarts.
-void resetFocusVisibility() {
-  if (_listening) {
-    GestureBinding.instance.pointerRouter.removeGlobalRoute(_onPointer);
-    HardwareKeyboard.instance.removeHandler(_onKey);
-    _listening = false;
-  }
+/// Back to the state before any input: listening afresh, focus visible as
+/// [keyboard] says, else as the platform starts ([focusVisibleInitially]).
+void resetFocusVisibility({bool? keyboard}) {
   _listen();
-  _keyboard.value = true;
+  _keyboard.value = keyboard ?? focusVisibleInitially(defaultTargetPlatform);
 }
 
 void _listen() {
-  if (_listening) return;
-  _listening = true;
+  // The handler may or may not still be registered: remove it first, so it
+  // is never there twice.
+  HardwareKeyboard.instance
+    ..removeHandler(_onKey)
+    ..addHandler(_onKey);
+  _keysFor = FocusManager.instance;
+  // The pointer router outlives a binding reset.
+  if (_pointerListening) return;
+  _pointerListening = true;
   GestureBinding.instance.pointerRouter.addGlobalRoute(_onPointer);
-  HardwareKeyboard.instance.addHandler(_onKey);
 }
 
 void _onPointer(PointerEvent event) {
