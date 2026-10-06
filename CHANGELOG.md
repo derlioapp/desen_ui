@@ -11,6 +11,11 @@
   corners were up to 7% and 11% off. The outline is now measured along a
   flattened copy, and the dashes are built once per size and shape rather
   than on every repaint.
+- The dark-mode warning tint (`colors.warning.tint`, with its hover and
+  press) is a deep orange instead of a brown: amber this dark reads as
+  brown or olive. Its hue turns to the nearest clean one at the same
+  luminance, so the warning text on it keeps its contrast (about 7.7:1).
+  The other status tints were clean already and are unchanged.
 
 ## 0.1.0-alpha.2
 
