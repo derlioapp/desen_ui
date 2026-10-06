@@ -324,10 +324,44 @@ class _RenderDialogActions extends RenderBox
         _gap * (children.length - 1);
   }
 
+  /// The width the actions take: all of a bounded width; under an
+  /// unbounded one, side by side at the widest action's width.
+  double _widthFor(BoxConstraints constraints) => constraints.hasBoundedWidth
+      ? constraints.maxWidth
+      : constraints.constrainWidth(computeMaxIntrinsicWidth(double.infinity));
+
+  @override
+  Size computeDryLayout(covariant BoxConstraints constraints) {
+    final children = _children;
+    if (children.isEmpty) return constraints.smallest;
+    final width = _widthFor(constraints);
+    if (_fitsInRow(width)) {
+      final share = (width - _gap * (children.length - 1)) / children.length;
+      var height = 0.0;
+      for (final c in children) {
+        final h = c.getDryLayout(BoxConstraints.tightFor(width: share)).height;
+        if (h > height) height = h;
+      }
+      return constraints.constrain(Size(width, height));
+    }
+    var y = 0.0;
+    for (final c in children) {
+      y += c.getDryLayout(BoxConstraints.tightFor(width: width)).height + _gap;
+    }
+    return constraints.constrain(Size(width, y - _gap));
+  }
+
+  // Like its live layout, which reports no baseline.
+  @override
+  double? computeDryBaseline(
+    covariant BoxConstraints constraints,
+    TextBaseline baseline,
+  ) => null;
+
   @override
   void performLayout() {
     final children = _children;
-    final width = constraints.maxWidth;
+    final width = _widthFor(constraints);
     if (children.isEmpty) {
       size = constraints.smallest;
       return;

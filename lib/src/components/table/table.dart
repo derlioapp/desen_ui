@@ -80,7 +80,10 @@ const _measureSample = 200;
 /// **Selection.** Controlled by [selected] (row keys, see [rowKey]) and
 /// [onSelectionChanged]. Selection follows the item, not its position, so
 /// it survives sorting and new data. "Select all" covers [rows] and keeps
-/// keys of rows not in them (other pages). Shift-click selects a range.
+/// keys of rows not in them (other pages). Shift-click selects a range
+/// from the row last clicked or toggled with Space, its anchor; Shift with
+/// the arrow keys does too, and moving back toward the anchor shrinks the
+/// range, as in a file list.
 ///
 /// **Size.** In a bounded height the header stays put while the rows scroll
 /// under it, and rows are built lazily, so 10,000 rows scroll smoothly. In
@@ -111,7 +114,7 @@ const _measureSample = 200;
 /// | Key | Action |
 /// |---|---|
 /// | Tab | Sort buttons and "select all", then one stop for the rows (the last active row), then the active row's own buttons |
-/// | ↑ / ↓ | Previous / next row; with Shift, also selects it |
+/// | ↑ / ↓ | Previous / next row; with Shift, extends the range from the anchor row to it (back toward the anchor, shrinks it) |
 /// | Home / End | First / last row |
 /// | Page Up / Page Down | A screenful up / down |
 /// | Space | Selects or deselects the row |
@@ -335,8 +338,13 @@ class _DsTableState<T> extends State<DsTable<T>> {
   /// The row that holds the table's one Tab stop.
   Object? _active;
 
-  /// Where a Shift-click range starts.
+  /// Where a Shift range starts: the row last clicked or toggled.
   Object? _anchor;
+
+  /// Where the last Shift range from [_anchor] ended. The next one from
+  /// the same anchor replaces it, so moving back toward the anchor
+  /// shrinks the range.
+  Object? _rangeEnd;
 
   /// Built rows by key.
   final _rows = <Object, _TableRowState>{};
@@ -588,23 +596,33 @@ class _DsTableState<T> extends State<DsTable<T>> {
   void _toggle(Object key) {
     if (!_selectable) return;
     _anchor = key;
+    _rangeEnd = null;
     final next = {..._selection};
     if (!next.remove(key)) next.add(key);
     _setSelection(next);
   }
 
   /// Selects (or, when the anchor row is not selected, deselects) every row
-  /// from the anchor to [key], like a file list.
-  void _selectRange(Object key) {
+  /// from the anchor to [key], like a file list. A range selected before
+  /// from the same anchor gives way to the new one: rows it held past [key]
+  /// are deselected. [select] decides instead of the anchor row's state.
+  void _selectRange(Object key, {bool? select}) {
     final from = _indexOf[_anchor];
     final to = _indexOf[key];
     if (from == null || to == null) return _toggle(key);
     final selection = _selection;
-    final on = selection.contains(_anchor);
+    final on = select ?? selection.contains(_anchor);
     final next = {...selection};
+    final end = on ? _indexOf[_rangeEnd] : null;
+    if (end != null) {
+      for (var i = math.min(from, end); i <= math.max(from, end); i++) {
+        next.remove(_keys[i]);
+      }
+    }
     for (var i = math.min(from, to); i <= math.max(from, to); i++) {
       on ? next.add(_keys[i]) : next.remove(_keys[i]);
     }
+    _rangeEnd = key;
     _setSelection(next);
   }
 
@@ -700,13 +718,13 @@ class _DsTableState<T> extends State<DsTable<T>> {
     if (target != null) {
       target = target.clamp(0, last);
       if (shift && _selectable && target != index) {
-        final next = {..._selection};
-        final step = target > index ? 1 : -1;
-        for (var i = index; i != target + step; i += step) {
-          next.add(_keys[i]);
+        // The range runs from the anchor to the row focus lands on, and
+        // selects; without an anchor it starts at the focused row.
+        if (_indexOf[_anchor] == null) {
+          _anchor = key;
+          _rangeEnd = null;
         }
-        _anchor = key;
-        _setSelection(next);
+        _selectRange(_keys[target], select: true);
       }
       _moveTo(target, down: target >= index);
       return KeyEventResult.handled;
@@ -858,37 +876,85 @@ class _DsTableState<T> extends State<DsTable<T>> {
       _measuredFor = measureKey;
       _measured.clear();
     }
-    double minOf(DsTableColumnWidth w) =>
-        scaler.scale(w.min ?? s.minColumnWidth ?? 0);
+    double minAt100(DsTableColumnWidth w) => w.min ?? s.minColumnWidth ?? 0;
+
+    // The measured width of column i's header and sampled cells.
+    double measured(int i) {
+      final c = columns[i];
+      final signature = (c.label, c.numeric, c.sortable, c.width);
+      final cached = _measured[c.id];
+      final width = cached != null && cached.$1 == signature
+          ? cached.$2
+          : _measure(c, s, cellStyle, scaler);
+      _measured[c.id] = (signature, width);
+      return width;
+    }
 
     final widths = List<double>.filled(columns.length, 0);
     final flexible = <int>[];
     for (var i = 0; i < columns.length; i++) {
-      final c = columns[i];
-      final w = c.width;
+      final w = columns[i].width;
       if (w.isFixed) {
         widths[i] = scaler.scale(w.width!);
       } else if (w.isFlex) {
         flexible.add(i);
       } else {
-        final signature = (c.label, c.numeric, c.sortable, w);
-        final cached = _measured[c.id];
-        widths[i] = cached != null && cached.$1 == signature
-            ? cached.$2
-            : _measure(c, s, cellStyle, scaler);
-        _measured[c.id] = (signature, widths[i]);
+        widths[i] = measured(i);
       }
     }
-    var space = available.isFinite
-        ? available - chrome - widths.fold(0.0, (a, b) => a + b)
-        : 0.0;
+    final others = widths.fold(0.0, (a, b) => a + b);
+
+    // Large text never cuts a flex column's text that shows whole at 100%:
+    // the column keeps the width its sampled text needs, up to its width
+    // at 100% grown by the text scale. When that does not fit, the table
+    // scrolls sideways, as a page zoomed in a browser does (WCAG 1.4.4).
+    final fontSize = cellStyle.fontSize;
+    final factor = fontSize == null
+        ? scaler.scale(1)
+        : scaler.scale(fontSize) / fontSize;
+    final keep = <int, double>{};
+    if (available.isFinite && factor > 1 && flexible.isNotEmpty) {
+      // The 100% layout, near enough: the other columns at their width
+      // over the factor.
+      final at100 = _flexWidths(
+        flexible,
+        available - chrome - others / factor,
+        minAt100,
+      );
+      for (final i in flexible) {
+        keep[i] = math.min(measured(i), at100[i]! * factor);
+      }
+    }
+    // An unbounded table gives its flex columns their minimum.
+    final flex = _flexWidths(
+      flexible,
+      available.isFinite ? available - chrome - others : 0.0,
+      (w) => scaler.scale(minAt100(w)),
+      floor: keep,
+    );
+    for (final i in flexible) {
+      widths[i] = flex[i]!;
+    }
+    return widths;
+  }
+
+  /// Shares [space] among the [flexible] columns (indices) by their flex,
+  /// none narrower than [minOf] its width or its [floor].
+  Map<int, double> _flexWidths(
+    List<int> flexible,
+    double space,
+    double Function(DsTableColumnWidth) minOf, {
+    Map<int, double> floor = const {},
+  }) {
+    final columns = widget.columns;
+    double least(int i) => math.max(minOf(columns[i].width), floor[i] ?? 0);
+    final widths = <int, double>{};
     var pending = [...flexible];
     while (pending.isNotEmpty) {
       final total = pending.fold(0.0, (a, i) => a + columns[i].width.flex!);
       final under = [
         for (final i in pending)
-          if (space * columns[i].width.flex! / total < minOf(columns[i].width))
-            i,
+          if (space * columns[i].width.flex! / total < least(i)) i,
       ];
       if (under.isEmpty) {
         for (final i in pending) {
@@ -897,8 +963,8 @@ class _DsTableState<T> extends State<DsTable<T>> {
         break;
       }
       for (final i in under) {
-        widths[i] = minOf(columns[i].width);
-        space -= widths[i];
+        widths[i] = least(i);
+        space -= widths[i]!;
       }
       pending = [
         for (final i in pending)

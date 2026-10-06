@@ -330,7 +330,8 @@ sealed class _Calendar extends StatefulWidget {
   /// leaving their places empty. Choosing one turns the page.
   final bool showOutsideDays;
 
-  /// How many months show side by side.
+  /// How many months show side by side. In a width too narrow for their
+  /// day numbers side by side, they stack one under the other.
   final int months;
 
   /// The focus node of the days. The days are one Tab stop with a node
@@ -785,74 +786,7 @@ class _CalendarState extends State<_Calendar>
     final s = style;
     final pitch = metrics.pitch;
 
-    Widget months(DateTime first, {required bool live}) => Row(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: s.monthGap!,
-      children: [
-        for (var i = 0; i < widget.months; i++)
-          _monthGrid(
-            DsDateUtils.addMonths(first, i),
-            locale: locale,
-            layers: layers,
-            style: s,
-            metrics: metrics,
-            live: live,
-          ),
-      ],
-    );
-
-    Widget grids = months(_month, live: true);
-    final outgoing = _outgoing;
-    if (outgoing != null) {
-      final motion = t.motion;
-      final dir = Directionality.of(context) == TextDirection.rtl
-          ? -_direction
-          : _direction;
-      final travel = motion.reduced ? 0.0 : s.slideOffset!;
-      grids = AnimatedBuilder(
-        animation: _slide,
-        child: grids,
-        builder: (context, incoming) {
-          final p = _slide.value;
-          final fade = p.clamp(0.0, 1.0);
-          return ClipRect(
-            child: Stack(
-              children: [
-                Positioned.fill(
-                  child: IgnorePointer(
-                    child: ExcludeSemantics(
-                      child: ExcludeFocus(
-                        child: Opacity(
-                          opacity: 1 - fade,
-                          child: Transform.translate(
-                            offset: Offset(-dir * travel * p, 0),
-                            child: OverflowBox(
-                              alignment: AlignmentDirectional.topStart,
-                              maxWidth: double.infinity,
-                              maxHeight: double.infinity,
-                              child: months(outgoing, live: false),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Opacity(
-                  opacity: fade,
-                  child: Transform.translate(
-                    offset: Offset(dir * travel * (1 - p), 0),
-                    child: incoming,
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      );
-    }
-
+    final stacked = metrics.stacked;
     final weekdays = locale.weekdays;
     final weekdayRow = ExcludeSemantics(
       child: Row(
@@ -873,9 +807,11 @@ class _CalendarState extends State<_Calendar>
       ),
     );
 
-    Widget header(int index) {
-      final month = DsDateUtils.addMonths(_month, index);
-      final last = index == widget.months - 1;
+    Widget header(int index, {DateTime? first}) {
+      final month = DsDateUtils.addMonths(first ?? _month, index);
+      // The buttons go on the last title side by side, on the first one
+      // stacked: either way the title next to them stays put.
+      final last = stacked ? index == 0 : index == widget.months - 1;
       final canPrev =
           _enabled &&
           (_first == null || _month.isAfter(DsDateUtils.monthOf(_first!)));
@@ -946,15 +882,111 @@ class _CalendarState extends State<_Calendar>
     }
 
     final width = pitch.width * 7;
-    Widget column(int index) => SizedBox(
+    Widget column(int index, {DateTime? first}) => SizedBox(
       width: width,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         spacing: s.gap!,
-        children: [header(index), weekdayRow],
+        children: [
+          header(index, first: first),
+          weekdayRow,
+        ],
       ),
     );
+
+    Widget grid(DateTime first, int i, {required bool live}) => _monthGrid(
+      DsDateUtils.addMonths(first, i),
+      locale: locale,
+      layers: layers,
+      style: s,
+      metrics: metrics,
+      live: live,
+    );
+
+    // Side by side, the titles sit in one row above the grids. Stacked,
+    // each later month brings its title and weekdays along with its grid.
+    Widget months(DateTime first, {required bool live}) => stacked
+        ? Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: s.monthGap!,
+            children: [
+              for (var i = 0; i < widget.months; i++)
+                if (i == 0)
+                  grid(first, i, live: live)
+                else
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: s.gap!,
+                    children: [
+                      column(i, first: first),
+                      grid(first, i, live: live),
+                    ],
+                  ),
+            ],
+          )
+        : Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: s.monthGap!,
+            children: [
+              for (var i = 0; i < widget.months; i++)
+                grid(first, i, live: live),
+            ],
+          );
+
+    Widget grids = months(_month, live: true);
+    final outgoing = _outgoing;
+    if (outgoing != null) {
+      final motion = t.motion;
+      final dir = Directionality.of(context) == TextDirection.rtl
+          ? -_direction
+          : _direction;
+      final travel = motion.reduced ? 0.0 : s.slideOffset!;
+      grids = AnimatedBuilder(
+        animation: _slide,
+        child: grids,
+        builder: (context, incoming) {
+          final p = _slide.value;
+          final fade = p.clamp(0.0, 1.0);
+          return ClipRect(
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: IgnorePointer(
+                    child: ExcludeSemantics(
+                      child: ExcludeFocus(
+                        child: Opacity(
+                          opacity: 1 - fade,
+                          child: Transform.translate(
+                            offset: Offset(-dir * travel * p, 0),
+                            child: OverflowBox(
+                              alignment: AlignmentDirectional.topStart,
+                              maxWidth: double.infinity,
+                              maxHeight: double.infinity,
+                              child: months(outgoing, live: false),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Opacity(
+                  opacity: fade,
+                  child: Transform.translate(
+                    offset: Offset(dir * travel * (1 - p), 0),
+                    child: incoming,
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      );
+    }
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _pruneNodes();
@@ -977,7 +1009,9 @@ class _CalendarState extends State<_Calendar>
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: s.monthGap!,
-            children: [for (var i = 0; i < widget.months; i++) column(i)],
+            children: [
+              for (var i = 0; i < (stacked ? 1 : widget.months); i++) column(i),
+            ],
           ),
           Focus(
             focusNode: _gridNode,

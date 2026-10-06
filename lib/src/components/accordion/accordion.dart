@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import '../../behavior/focus_forward.dart';
 import '../../behavior/pressable.dart';
 import '../../behavior/spring_value.dart';
+import '../../foundation/shrink_wrap.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../painting/decoration.dart';
@@ -274,6 +275,9 @@ class _DsAccordionState<T> extends State<DsAccordion<T>> {
         ),
       ),
     );
+    // Under an unbounded width (in a Row) the accordion takes its
+    // content's width instead of throwing.
+    accordion = ShrinkWrapUnboundedWidth(child: accordion);
     accordion = FocusForward(
       focusNode: widget.focusNode,
       autofocus: widget.autofocus,

@@ -323,6 +323,7 @@ SPECS = [
         doc='The look of a `DsProgressBar`.',
         states=[],
         fields=[
+            ('width', 'double', 'Width when the parent leaves it unbounded (e.g. in a Row); otherwise the bar fills the width.'),
             ('height', 'double', 'Track thickness.'),
             ('trackColor', 'Color', 'Unfilled track.'),
             ('trackShadows', 'List<DsShadow>', 'Track edge, e.g. an inner line (`DsShadows.channel`, empty by default). The fill covers it.'),

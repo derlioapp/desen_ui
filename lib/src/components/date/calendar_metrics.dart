@@ -20,6 +20,10 @@ class CalendarMetrics {
   /// narrow (whole pixels) and the days with them, so the calendar fits a
   /// 320px phone. Rows keep [tap]: the tap areas tile the grid, so a
   /// narrower column still leaves no gap between targets.
+  ///
+  /// Several months that would narrow below the room their day numbers
+  /// need (half again the scaled number) are [stacked] instead, one under
+  /// the other, each sized as a single month in [maxWidth].
   factory CalendarMetrics({
     required DsCalendarStyle style,
     required TextScaler scaler,
@@ -31,19 +35,24 @@ class CalendarMetrics {
     var day = math.max(style.daySize!, scaler.scale(fontSize) * 1.5);
     var column = math.max(day + style.columnGap!, tap);
     final row = math.max(day + style.rowGap!, tap);
+    final number = scaler.scale(fontSize) * 1.5;
     final gaps = (months - 1) * style.monthGap!;
     final preferred = months * 7 * column + gaps;
+    var stacked = false;
     if (maxWidth.isFinite && preferred > maxWidth) {
-      column = math.max(
-        1.0,
-        ((maxWidth - gaps) / (7 * months)).floorToDouble(),
-      );
+      var fit = ((maxWidth - gaps) / (7 * months)).floorToDouble();
+      if (months > 1 && fit < number) {
+        stacked = true;
+        fit = (maxWidth / 7).floorToDouble();
+      }
+      column = math.max(1.0, math.min(column, fit));
       day = math.min(day, column);
     }
     return CalendarMetrics._(
       day: day,
       pitch: Size(column, row),
       preferredWidth: preferred,
+      stacked: stacked,
     );
   }
 
@@ -51,6 +60,7 @@ class CalendarMetrics {
     required this.day,
     required this.pitch,
     required this.preferredWidth,
+    required this.stacked,
   });
 
   /// Drawn size of a day.
@@ -59,6 +69,11 @@ class CalendarMetrics {
   /// The space each day takes: its tap area.
   final Size pitch;
 
-  /// The width the months take at their full size, before narrowing.
+  /// The width the months take side by side at their full size, before
+  /// narrowing.
   final double preferredWidth;
+
+  /// Whether the months show one under the other: side by side, their
+  /// days would be too narrow for the numbers.
+  final bool stacked;
 }

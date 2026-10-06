@@ -52,9 +52,12 @@ class BottomNavPage extends StatelessWidget {
         children: [
           DocText(
             'Floating items are 72px wide. When five do not fit, as on a '
-            '375px phone, they share the width evenly and long labels '
-            'ellipsize. Keep labels to one short word. With large text, the '
-            'items grow taller.',
+            '375px phone, they share the width evenly. A long label wraps '
+            'onto a second line between words, and every item keeps room for '
+            'two lines so the bar stays even; a word that still does not fit '
+            'ellipsizes, and the item then shows its whole label in a tooltip '
+            'on a long press. Keep labels to one short word. With large text, '
+            'the items grow taller.',
           ),
           Example(
             snippet: 'bottom-nav-five',
