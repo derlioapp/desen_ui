@@ -33,6 +33,8 @@ Map<String, Color> neutralRoles(DsColors k) => {
   'borderChip': k.borderChip,
   'channel': k.channel,
   'channelStrong': k.channelStrong,
+  'skeleton': k.skeleton,
+  'skeletonStrong': k.skeletonStrong,
   'rail': k.rail,
   'hover': k.hover,
   'press': k.press,
