@@ -26,7 +26,7 @@ import 'file_item_style.dart';
 import 'file_size.dart';
 import 'file_upload_style.dart';
 
-/// A file drop zone with the files being uploaded below it (concept 34).
+/// A file drop zone with the files being uploaded below it.
 ///
 /// ```dart
 /// DsField(
@@ -71,7 +71,7 @@ import 'file_upload_style.dart';
 /// Flutter 3.47's widgets layer has no drop target of its own, so there is
 /// no built-in hook to switch on.
 ///
-/// **Anatomy.** A dashed edge (concept "E", 1.5px) around an upload icon,
+/// **Anatomy.** A dashed edge (1.5px) around an upload icon,
 /// the prompt with the "browse" word as a link, and an optional
 /// [description] (types, size limit). While [dragging], the edge takes the
 /// accent and the zone a tint, and the prompt says to drop. [files]
@@ -254,7 +254,7 @@ class _DsFileUploadState extends State<DsFileUpload> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final field = DsFieldScope.maybeOf(context);
     _report(field?.hooks);
@@ -438,8 +438,7 @@ enum DsFileStatus {
   error,
 }
 
-/// One file of a [DsFileUpload] (concept 34): its name, size and upload
-/// state.
+/// One file of a [DsFileUpload]: its name, size and upload state.
 ///
 /// - [DsFileStatus.uploading]: a file icon, the progress bar (the accent
 ///   `indicator`), how much is sent and the percentage; [onCancel] adds a
@@ -605,7 +604,7 @@ class _DsFileItemState extends State<DsFileItem> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final locale = Localizations.maybeLocaleOf(context) ?? const Locale('en');
     final status = widget.status;

@@ -30,9 +30,14 @@ class DsApp extends StatelessWidget {
     this.theme,
     this.darkTheme,
     this.themeMode = DsThemeMode.system,
+    this.followPlatformContrast = true,
+    this.animateChanges = true,
+    this.scrollBehavior,
     this.locale,
     this.localizationsDelegates,
     this.supportedLocales,
+    this.localeResolutionCallback,
+    this.localeListResolutionCallback,
     this.shortcuts,
     this.actions,
     this.restorationScopeId,
@@ -49,9 +54,14 @@ class DsApp extends StatelessWidget {
     this.theme,
     this.darkTheme,
     this.themeMode = DsThemeMode.system,
+    this.followPlatformContrast = true,
+    this.animateChanges = true,
+    this.scrollBehavior,
     this.locale,
     this.localizationsDelegates,
     this.supportedLocales,
+    this.localeResolutionCallback,
+    this.localeListResolutionCallback,
     this.shortcuts,
     this.actions,
     this.restorationScopeId,
@@ -107,6 +117,16 @@ class DsApp extends StatelessWidget {
   /// See [DsScope.themeMode].
   final DsThemeMode themeMode;
 
+  /// See [DsScope.followPlatformContrast].
+  final bool followPlatformContrast;
+
+  /// See [DsScope.animateChanges].
+  final bool animateChanges;
+
+  /// The scroll behavior of the whole app. Defaults to [DsScrollBehavior]:
+  /// Desen's scrollbars, drag with every pointer, no overscroll glow.
+  final ScrollBehavior? scrollBehavior;
+
   /// See [WidgetsApp.locale].
   final Locale? locale;
 
@@ -118,6 +138,12 @@ class DsApp extends StatelessWidget {
   /// strings for ([DsLocalizations.supportedLocales]), so setting [locale]
   /// alone is enough.
   final Iterable<Locale>? supportedLocales;
+
+  /// See [WidgetsApp.localeResolutionCallback].
+  final LocaleResolutionCallback? localeResolutionCallback;
+
+  /// See [WidgetsApp.localeListResolutionCallback].
+  final LocaleListResolutionCallback? localeListResolutionCallback;
 
   /// See [WidgetsApp.shortcuts].
   final Map<ShortcutActivator, Intent>? shortcuts;
@@ -142,9 +168,11 @@ class DsApp extends StatelessWidget {
     theme: theme,
     darkTheme: darkTheme,
     themeMode: themeMode,
+    followPlatformContrast: followPlatformContrast,
+    animateChanges: animateChanges,
     child: Builder(
       builder: (context) => ScrollConfiguration(
-        behavior: const DsScrollBehavior(),
+        behavior: scrollBehavior ?? const DsScrollBehavior(),
         child: ColoredBox(
           color: DsTheme.colorsOf(context).canvas,
           child: builder?.call(context, child) ?? child ?? const SizedBox(),
@@ -166,6 +194,8 @@ class DsApp extends StatelessWidget {
         locale: locale,
         localizationsDelegates: _delegates,
         supportedLocales: supportedLocales ?? DsLocalizations.supportedLocales,
+        localeResolutionCallback: localeResolutionCallback,
+        localeListResolutionCallback: localeListResolutionCallback,
         shortcuts: shortcuts,
         actions: actions,
         restorationScopeId: restorationScopeId,
@@ -189,6 +219,8 @@ class DsApp extends StatelessWidget {
       locale: locale,
       localizationsDelegates: _delegates,
       supportedLocales: supportedLocales ?? DsLocalizations.supportedLocales,
+      localeResolutionCallback: localeResolutionCallback,
+      localeListResolutionCallback: localeListResolutionCallback,
       shortcuts: shortcuts,
       actions: actions,
       restorationScopeId: restorationScopeId,
@@ -201,6 +233,20 @@ class DsApp extends StatelessWidget {
     super.debugFillProperties(properties);
     properties
       ..add(StringProperty('title', title))
-      ..add(EnumProperty('themeMode', themeMode));
+      ..add(EnumProperty('themeMode', themeMode))
+      ..add(
+        FlagProperty(
+          'followPlatformContrast',
+          value: followPlatformContrast,
+          ifFalse: 'ignores platform contrast',
+        ),
+      )
+      ..add(
+        FlagProperty(
+          'animateChanges',
+          value: animateChanges,
+          ifFalse: 'theme changes at once',
+        ),
+      );
   }
 }

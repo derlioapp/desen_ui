@@ -99,7 +99,7 @@ class _DsFieldSurfaceState extends State<DsFieldSurface> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final given = widget.states;
     final focused = given.contains(WidgetState.focused);
     final disabled = given.contains(WidgetState.disabled);

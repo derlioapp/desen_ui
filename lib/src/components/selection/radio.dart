@@ -330,7 +330,7 @@ class _DsRadioState<T> extends State<DsRadio<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final group = RadioGroupScope.maybeOf(context);
     // A surrounding DsField or group with an error marks the control too
     // (K-71).

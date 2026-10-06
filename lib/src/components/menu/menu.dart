@@ -461,7 +461,7 @@ class _DsMenuState extends State<DsMenu> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsMenuStyle.resolveLayers([
       DsMenu.defaultStyle(t),
       DsMenuTheme.of(context).style,
@@ -534,7 +534,7 @@ class DsMenuDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsMenuStyle.resolveLayers([
       DsMenu.defaultStyle(t),
       DsMenuTheme.of(context).style,
@@ -967,7 +967,7 @@ class _DsMenuItemState extends State<DsMenuItem> {
 
   Widget _buildSubmenu(BuildContext context) {
     final parent = _menu;
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsMenuStyle.resolveLayers([
       DsMenu.defaultStyle(t),
       DsMenuTheme.of(context).style,
@@ -999,7 +999,7 @@ class _DsMenuItemState extends State<DsMenuItem> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       DsMenuItem.defaultStyle(t, destructive: widget.destructive),
       DsMenuItemTheme.of(context).style,
@@ -1528,7 +1528,7 @@ class _LazyModel {
     required double gap,
     _LazyModel? previous,
   }) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final itemTheme = DsMenuItemTheme.of(context).style;
     final menuTheme = DsMenuTheme.of(context).style;
     final text = DefaultTextStyle.of(context).style;
@@ -1675,7 +1675,7 @@ class _MenuRowMeasure extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsMenuItemStyle.resolveLayers([
       DsMenuItem.defaultStyle(t, destructive: item.destructive),
       DsMenuItemTheme.of(context).style,

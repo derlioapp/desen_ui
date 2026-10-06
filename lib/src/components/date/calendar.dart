@@ -744,7 +744,7 @@ class _CalendarState extends State<_Calendar>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final locale = DsDateLocale.of(context);
     final layers = [
       DsCalendar.defaultStyle(t),
@@ -780,7 +780,7 @@ class _CalendarState extends State<_Calendar>
     required DsCalendarStyle style,
     required CalendarMetrics metrics,
   }) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = locale.strings;
     final s = style;
     final pitch = metrics.pitch;
@@ -1092,7 +1092,7 @@ class _CalendarState extends State<_Calendar>
       if (selected) WidgetState.selected,
       if (!enabled) WidgetState.disabled,
     };
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final d = DsCalendarStyle.resolveLayers(layers, states);
     final corners = t.radii.controlCorners(d.dayRadius, d.daySize!);
     var foreground = d.dayForeground;

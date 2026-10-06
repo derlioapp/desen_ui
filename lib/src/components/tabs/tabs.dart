@@ -273,7 +273,7 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       DsTabs.defaultStyle(t),
       DsTabsTheme.of(context).style,

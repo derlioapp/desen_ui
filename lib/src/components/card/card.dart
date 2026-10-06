@@ -110,7 +110,7 @@ class _DsCardState extends State<DsCard> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       DsCard.defaultStyle(t),
       DsCardTheme.of(context).style,

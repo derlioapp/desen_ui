@@ -17,6 +17,13 @@ abstract class DsComponentThemeData<T extends DsComponentThemeData<T>>
   /// Wraps [child] so these defaults apply to it.
   Widget wrap(Widget child) =>
       DsComponentTheme<T>(data: this as T, child: child);
+
+  /// The type these defaults are looked up by: [T].
+  Type get _type => T;
+
+  /// These defaults laid over [outer], defaults of the same type.
+  DsComponentThemeData<T> _over(DsComponentThemeData<dynamic>? outer) =>
+      outer == null ? this : (outer as T).merge(this as T);
 }
 
 /// Applies component defaults ([data]) to a subtree.
@@ -24,6 +31,10 @@ abstract class DsComponentThemeData<T extends DsComponentThemeData<T>>
 /// Nested themes of the same type merge: an inner theme overrides only what
 /// it sets. Put one above the app for global defaults, or around a section
 /// to change only that section.
+///
+/// Component themes are inherited themes (`InheritedTheme`): a route or
+/// overlay that captures the opener's themes, Flutter's own dialogs
+/// included, carries them into its layer.
 class DsComponentTheme<T extends DsComponentThemeData<T>>
     extends StatelessWidget {
   /// Applies [data] to [child], merged over any outer theme of type [T].
@@ -36,26 +47,18 @@ class DsComponentTheme<T extends DsComponentThemeData<T>>
   final Widget child;
 
   /// The merged defaults of type [T] for [context], or null.
+  ///
+  /// Rebuilds the caller only when the defaults of type [T] change.
   static T? maybeOf<T extends DsComponentThemeData<T>>(BuildContext context) =>
-      context
-          .dependOnInheritedWidgetOfExactType<_InheritedComponentTheme<T>>()
-          ?.data;
+      InheritedModel.inheritFrom<_ComponentThemeScope>(
+            context,
+            aspect: T,
+          )?.themes[T]
+          as T?;
 
   @override
-  Widget build(BuildContext context) => _InheritedComponentTheme<T>(
-    data: maybeOf<T>(context)?.merge(data) ?? data,
-    child: child,
-  );
-}
-
-class _InheritedComponentTheme<T extends DsComponentThemeData<T>>
-    extends InheritedWidget {
-  const _InheritedComponentTheme({required this.data, required super.child});
-
-  final T data;
-
-  @override
-  bool updateShouldNotify(_InheritedComponentTheme<T> old) => data != old.data;
+  Widget build(BuildContext context) =>
+      _ComponentThemeScope.over(context, [data], child);
 }
 
 /// Applies several component themes at once.
@@ -69,6 +72,11 @@ class _InheritedComponentTheme<T extends DsComponentThemeData<T>>
 ///   child: app,
 /// )
 /// ```
+///
+/// Each theme merges over an outer theme of its type, like a
+/// [DsComponentTheme]; a later theme of the same type in [themes] merges
+/// over an earlier one. Adding, removing or reordering themes keeps the
+/// state of [child]: the subtree's structure does not depend on the list.
 class DsComponentThemes extends StatelessWidget {
   /// Applies every theme in [themes] to [child].
   const DsComponentThemes({
@@ -84,11 +92,47 @@ class DsComponentThemes extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {
-    var result = child;
-    for (final t in themes.reversed) {
-      result = t.wrap(result);
+  Widget build(BuildContext context) =>
+      _ComponentThemeScope.over(context, themes, child);
+}
+
+/// Every component theme in effect, merged and keyed by type. A dependent
+/// depends on one type (its aspect) and rebuilds only when that one
+/// changes.
+class _ComponentThemeScope extends InheritedModel<Type>
+    implements InheritedTheme {
+  const _ComponentThemeScope({required this.themes, required super.child});
+
+  /// The outer scope's themes with [themes] merged over them, around
+  /// [child].
+  static Widget over(
+    BuildContext context,
+    Iterable<DsComponentThemeData<dynamic>> themes,
+    Widget child,
+  ) {
+    final outer = context
+        .dependOnInheritedWidgetOfExactType<_ComponentThemeScope>()
+        ?.themes;
+    final merged = <Type, DsComponentThemeData<dynamic>>{...?outer};
+    for (final theme in themes) {
+      merged[theme._type] = theme._over(merged[theme._type]);
     }
-    return result;
+    return _ComponentThemeScope(themes: merged, child: child);
   }
+
+  final Map<Type, DsComponentThemeData<dynamic>> themes;
+
+  @override
+  Widget wrap(BuildContext context, Widget child) =>
+      _ComponentThemeScope(themes: themes, child: child);
+
+  @override
+  bool updateShouldNotify(_ComponentThemeScope oldWidget) =>
+      !mapEquals(themes, oldWidget.themes);
+
+  @override
+  bool updateShouldNotifyDependent(
+    _ComponentThemeScope oldWidget,
+    Set<Type> dependencies,
+  ) => dependencies.any((type) => themes[type] != oldWidget.themes[type]);
 }

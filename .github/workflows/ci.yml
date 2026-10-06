@@ -15,8 +15,15 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+# Read-only token: no job writes to the repository.
+permissions:
+  contents: read
+
 env:
   FLUTTER_VERSION: 3.47.6
+  # The lowest Flutter the packages support: keep in step with
+  # `environment: flutter:` in both pubspec.yaml files.
+  MIN_FLUTTER_VERSION: 3.47.0
 
 jobs:
   checks:
@@ -36,7 +43,7 @@ jobs:
         working-directory: example
       # Covers lib/, test/, tool/ and example/ (one analysis root).
       - run: flutter analyze
-      - run: dart format --output=none --set-exit-if-changed lib test example/lib example/test desen_ui_fonts/lib
+      - run: dart format --output=none --set-exit-if-changed lib test example/lib example/test desen_ui_fonts/lib desen_ui_fonts/test
       - name: Code snippets match the example pages
         run: python3 tool/gen_snippets.py --check
       # Both packages are `publish_to: none` until there is a repository,
@@ -61,6 +68,38 @@ jobs:
           cache: true
       - run: flutter pub get
       - run: flutter test --exclude-tags golden
+
+  min-sdk:
+    name: Minimum supported Flutter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.MIN_FLUTTER_VERSION }}
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze lib test
+      - run: flutter test --exclude-tags golden
+
+  fonts:
+    name: Fonts package
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: desen_ui_fonts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - run: flutter pub get
+      # The root analysis excludes this package; it has its own.
+      - run: flutter analyze
+      - run: flutter test
 
   golden:
     name: Tests (goldens, macOS)

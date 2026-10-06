@@ -49,6 +49,23 @@ enum DsThemeAspect {
 
   /// [DsThemeData.extensions].
   extensions,
+
+  /// Everything that is not a token group: brightness, contrast, density,
+  /// platform, selection style, haptics and the other settings.
+  settings,
+}
+
+/// The theme for a Desen component: like [DsTheme.of], but a change of
+/// the theme's extensions alone does not rebuild the caller. Desen's
+/// components never read extensions.
+DsThemeData dsThemeOf(BuildContext context) {
+  final element = context.getElementForInheritedWidgetOfExactType<DsTheme>();
+  if (element == null) return DsTheme._fallbackFor(context);
+  for (final aspect in DsThemeAspect.values) {
+    if (aspect == DsThemeAspect.extensions) continue;
+    context.dependOnInheritedElement(element, aspect: aspect);
+  }
+  return (element.widget as DsTheme).data;
 }
 
 /// Makes a [DsThemeData] available to descendants.
@@ -59,19 +76,28 @@ enum DsThemeAspect {
 ///
 /// Reading a single token group (e.g. [colorsOf]) only rebuilds the reader
 /// when that group changes.
-class DsTheme extends InheritedModel<DsThemeAspect> {
+///
+/// It is an inherited theme (`InheritedTheme`): a route or overlay that
+/// captures the opener's themes, Flutter's own dialogs included, shows its
+/// layer in the opener's [DsTheme] even when that sits below the
+/// navigator.
+class DsTheme extends InheritedModel<DsThemeAspect> implements InheritedTheme {
   /// Provides [data] to [child].
   const DsTheme({super.key, required this.data, required super.child});
 
   /// The theme.
   final DsThemeData data;
 
-  static final Map<(Brightness, TargetPlatform), DsThemeData> _fallback = {};
+  static final Map<(Brightness, TargetPlatform, bool), DsThemeData> _fallback =
+      {};
 
   /// The nearest theme, or a default one when there is no [DsTheme] above.
   ///
   /// Components keep working without any setup: the fallback follows the
-  /// platform brightness and [defaultTargetPlatform].
+  /// platform's brightness and reduce-motion setting
+  /// (`MediaQueryData.disableAnimations`) and [defaultTargetPlatform], as
+  /// [DsScope] does. It is at [DsContrast.standard], the strongest level,
+  /// so a request for more contrast has nothing to lift.
   static DsThemeData of(BuildContext context) => _of(context, null);
 
   /// The nearest theme, or null when there is none.
@@ -111,12 +137,45 @@ class DsTheme extends InheritedModel<DsThemeAspect> {
   static DsThemeData _of(BuildContext context, DsThemeAspect? aspect) {
     final theme = InheritedModel.inheritFrom<DsTheme>(context, aspect: aspect);
     if (theme != null) return theme.data;
+    return _fallbackFor(context);
+  }
+
+  /// The theme without a [DsTheme] above: the platform's brightness and
+  /// reduce-motion setting, which [context] then depends on.
+  static DsThemeData _fallbackFor(BuildContext context) {
     final brightness =
         MediaQuery.maybePlatformBrightnessOf(context) ?? Brightness.light;
-    return _fallback[(brightness, defaultTargetPlatform)] ??= DsThemeData(
+    final reduced = MediaQuery.maybeDisableAnimationsOf(context) ?? false;
+    return _fallback[(
+      brightness,
+      defaultTargetPlatform,
+      reduced,
+    )] ??= DsThemeData(
       brightness: brightness,
+      motion: DsMotion(reduced: reduced),
     );
   }
+
+  /// Whether [a] and [b] agree on everything that is not a token group.
+  static bool _sameSettings(DsThemeData a, DsThemeData b) =>
+      a.brightness == b.brightness &&
+      a.seed == b.seed &&
+      a.contrast == b.contrast &&
+      a.cornerStyle == b.cornerStyle &&
+      a.density == b.density &&
+      a.densityFollowsPlatform == b.densityFollowsPlatform &&
+      a.platform == b.platform &&
+      a.selectionStyle == b.selectionStyle &&
+      a.autoClashRule == b.autoClashRule &&
+      a.dangerOverride == b.dangerOverride &&
+      a.successOverride == b.successOverride &&
+      a.warningOverride == b.warningOverride &&
+      a.seedRole == b.seedRole &&
+      a.haptics == b.haptics;
+
+  @override
+  Widget wrap(BuildContext context, Widget child) =>
+      DsTheme(data: data, child: child);
 
   @override
   bool updateShouldNotify(DsTheme oldWidget) => data != oldWidget.data;
@@ -136,6 +195,7 @@ class DsTheme extends InheritedModel<DsThemeAspect> {
         DsThemeAspect.typography => a.typography != b.typography,
         DsThemeAspect.motion => a.motion != b.motion,
         DsThemeAspect.extensions => !mapEquals(a.extensions, b.extensions),
+        DsThemeAspect.settings => !_sameSettings(a, b),
       },
     );
   }
@@ -361,7 +421,7 @@ class _DsScopeState extends State<DsScope> {
         seed: d.seed,
         contrast: d.contrast,
         cornerStyle: d.cornerStyle,
-        density: d.density,
+        density: d.densityFollowsPlatform ? null : d.density,
         platform: d.platform,
         selectionStyle: d.selectionStyle,
         autoClashRule: d.autoClashRule,
@@ -391,6 +451,7 @@ class _DsScopeState extends State<DsScope> {
     contrast: contrast ?? d.contrast,
     cornerStyle: d.cornerStyle,
     density: d.density,
+    densityFollowsPlatform: d.densityFollowsPlatform,
     platform: d.platform,
     selectionStyle: d.selectionStyle,
     autoClashRule: d.autoClashRule,

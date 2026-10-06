@@ -10,6 +10,7 @@ import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../l10n/localizations.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../painting/shadow.dart';
 import '../../theme/haptics.dart';
 import '../../theme/sizes.dart';
@@ -120,7 +121,7 @@ class DsPagination extends StatefulWidget {
 
   /// Builds the control with the stops' [nodes].
   Widget _build(BuildContext context, _Nodes nodes) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       defaultStyle(t),
       DsPaginationTheme.of(context).style,
@@ -204,11 +205,13 @@ class DsPagination extends StatefulWidget {
                       padding: const EdgeInsets.symmetric(
                         horizontal: DsSpace.s4,
                       ),
-                      child: Text(
-                        l10n.pageCounter(page, count),
+                      child: Text.rich(
+                        numericSpan(
+                          l10n.pageCounter(page, count),
+                          style: textStyle.copyWith(color: s.foreground),
+                        ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: textStyle.copyWith(color: s.foreground),
                       ),
                     ),
                   ),
@@ -357,7 +360,7 @@ class _PageState extends State<_Page> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     return DsPressable(
       onPressed: widget.selected ? () {} : widget.onPressed,

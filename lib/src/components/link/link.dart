@@ -94,7 +94,7 @@ class DsLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [defaultStyle(t), DsLinkTheme.of(context).style, style];
     return _EnterOnly(
       focusNode: focusNode,

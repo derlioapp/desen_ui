@@ -78,7 +78,7 @@ class DsSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = DsSkeletonStyle.resolveLayers([
-      defaultStyle(DsTheme.of(context)),
+      defaultStyle(dsThemeOf(context)),
       DsSkeletonTheme.of(context).style,
       style,
     ], const {});
@@ -154,7 +154,7 @@ class _DsShimmerState extends State<DsShimmer>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final glow = t.colors.shimmer;
     final clear = glow.withValues(alpha: 0);
     final content = ExcludeSemantics(child: widget.child);

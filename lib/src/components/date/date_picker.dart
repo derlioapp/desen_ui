@@ -587,7 +587,7 @@ class _DatePickerState extends State<StatefulWidget>
     final above = anchor.top - margin.top - gap;
     final below = window.height - margin.bottom - anchor.bottom - gap;
     final panel = DsPopoverStyle.resolveLayers([
-      DsPopover.defaultStyle(DsTheme.of(overlayContext)),
+      DsPopover.defaultStyle(dsThemeOf(overlayContext)),
       DsPopoverTheme.of(overlayContext).style,
       ps.panelStyle,
     ], const {});
@@ -597,7 +597,7 @@ class _DatePickerState extends State<StatefulWidget>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final locale = _locale!;
     final l10n = locale.strings;
     final scope = DsFieldScope.maybeOf(context);

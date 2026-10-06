@@ -105,7 +105,7 @@ class DsAlert extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final theme = DsAlertTheme.of(context);
     final s = DsAlertStyle.resolveLayers([
       defaultStyle(t, status: status),

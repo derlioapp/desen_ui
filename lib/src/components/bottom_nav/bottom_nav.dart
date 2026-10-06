@@ -311,7 +311,7 @@ class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
       :itemStyle,
       :semanticLabel,
     ) = widget;
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final theme = DsBottomNavTheme.of(context);
     final itemTheme = DsBottomNavItemTheme.of(context);
     final variant =
@@ -451,7 +451,7 @@ class _ItemState extends State<_Item> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     return DsPressable(
       onPressed: widget.onPressed,
       // Moving to another destination ticks; pressing the current one again

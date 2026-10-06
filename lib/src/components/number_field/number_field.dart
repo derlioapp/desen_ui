@@ -597,7 +597,7 @@ class _DsNumberFieldState extends State<DsNumberField>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final scope = DsFieldScope.maybeOf(context);
     tellField(scope);
     final dir = Directionality.of(context);

@@ -13,6 +13,7 @@ abstract final class DsFonts {
   /// Text family: Schibsted Grotesk, weights 400–800.
   static const text = 'SchibstedGrotesk';
 
-  /// Number family: Geist Mono, weights 400–600. Use with tabular figures.
+  /// Code family: Geist Mono, weights 400–600, for code-like content only.
+  /// Numbers are set in [text] with tabular figures.
   static const mono = 'GeistMono';
 }

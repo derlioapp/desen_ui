@@ -151,7 +151,7 @@ export 'src/theme/radii.dart';
 export 'src/theme/shadows.dart';
 export 'src/theme/sizes.dart';
 export 'src/theme/status.dart';
-export 'src/theme/theme.dart' hide DsThemeAspect;
+export 'src/theme/theme.dart' hide DsThemeAspect, dsThemeOf;
 export 'src/theme/theme_data.dart';
 export 'src/theme/theme_extension.dart';
 export 'src/theme/typography.dart';

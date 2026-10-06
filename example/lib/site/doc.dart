@@ -265,12 +265,15 @@ class DocText extends StatelessWidget {
     final k = t.colors;
     final base =
         style ?? t.typography.body.copyWith(color: k.text, height: 1.65);
+    // Inline code: a padded, rounded chip on the text's baseline, a size
+    // smaller than the prose, like web docs. A background on the span
+    // itself filled the whole line height edge to edge.
     final code = t.typography
         .mono(base)
         .copyWith(
-          fontSize: (base.fontSize ?? 14) - 1,
+          fontSize: (base.fontSize ?? 14) * .9,
+          height: 1.3,
           color: k.text,
-          backgroundColor: k.neutral.tint,
         );
     final spans = <InlineSpan>[];
     var last = 0;
@@ -279,7 +282,21 @@ class DocText extends StatelessWidget {
         spans.add(TextSpan(text: text.substring(last, m.start)));
       }
       if (m[1] != null) {
-        spans.add(TextSpan(text: m[1], style: code));
+        spans.add(
+          WidgetSpan(
+            alignment: PlaceholderAlignment.baseline,
+            baseline: TextBaseline.alphabetic,
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 1),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+              decoration: DsBoxDecoration(
+                color: k.neutral.tint,
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Text(m[1]!, style: code),
+            ),
+          ),
+        );
       } else if (m[2] != null) {
         spans.add(
           TextSpan(

@@ -99,29 +99,36 @@ class DsTypography {
   /// package deliberately does not depend on: add it to your app to get
   /// them. Without it, Flutter cannot find the family and text falls back
   /// to the platform font, silently; the small tracking values (−0.02 to
-  /// +0.08 em) suit system fonts too. Pass other [family] / [monoFamily]
-  /// names to use your own fonts, with [package] set to the package that
-  /// bundles them, or null for fonts declared in your app.
+  /// +0.08 em) suit system fonts too.
+  ///
+  /// Pass other [family] / [monoFamily] names to use your own fonts, with
+  /// [package] / [monoPackage] set to the package that bundles each, or
+  /// null for fonts declared in your app. The `desen_ui_fonts` package
+  /// (the default of both) only applies to the two faces it bundles: a
+  /// family of your own with the default package, e.g.
+  /// `DsTypography(family: 'Inter')`, is looked up in your app, as
+  /// `'Inter'`, not in `desen_ui_fonts`.
   ///
   /// **Display family.** [displayFamily] (with [displayPackage], null for
   /// app fonts) sets [display] and [title] in another face, e.g. a serif
   /// for headings. Without it they use the text family.
   factory DsTypography({
     String? family,
-    String monoFamily = 'GeistMono',
-    String? package = 'desen_ui_fonts',
+    String monoFamily = _bundledMonoFamily,
+    String? package = fontsPackage,
+    String? monoPackage = fontsPackage,
     String? displayFamily,
     String? displayPackage,
     DsDensity density = DsDensity.compact,
   }) {
     final system = family == null && _appleApp;
     final text = system ? systemFamily : family ?? _bundledFamily;
-    final textPackage = system ? null : package;
+    final textPackage = system ? null : _packageOf(text, package);
     return _build(
       family: text,
       package: textPackage,
       monoFamily: monoFamily,
-      monoPackage: package,
+      monoPackage: _packageOf(monoFamily, monoPackage),
       displayFamily: displayFamily ?? (system ? systemDisplayFamily : text),
       displayPackage: displayFamily != null ? displayPackage : textPackage,
       density: density,
@@ -142,7 +149,22 @@ class DsTypography {
   /// family.
   static const systemDisplayFamily = 'CupertinoSystemDisplay';
 
+  /// The optional package that bundles Desen's faces, Schibsted Grotesk
+  /// and Geist Mono.
+  static const fontsPackage = 'desen_ui_fonts';
+
   static const _bundledFamily = 'SchibstedGrotesk';
+  static const _bundledMonoFamily = 'GeistMono';
+
+  /// The package to look [family] up in: [package], except that
+  /// [fontsPackage] only holds the faces it bundles. Another family with it
+  /// is an app font.
+  static String? _packageOf(String family, String? package) =>
+      package == fontsPackage &&
+          family != _bundledFamily &&
+          family != _bundledMonoFamily
+      ? null
+      : package;
 
   /// Whether this is an iOS or macOS app, where the system font is San
   /// Francisco. Not on the web: a browser on a Mac draws the bundled
@@ -335,9 +357,12 @@ class DsTypography {
   /// takes the same width, so columns align and a changing value does not
   /// shift, while the figures keep the face of the surrounding text.
   ///
-  /// Not for text people type or read inline (a date or amount in a field,
-  /// a file size): in Schibsted Grotesk `tnum` also widens `.`, `,` and `:`
-  /// to a digit's width.
+  /// In Schibsted Grotesk `tnum` also widens `.`, `,`, `:` and `/` to a
+  /// digit's width, so "12.480,00" would read like a typewriter. Desen's
+  /// components therefore keep the figures tabular on the digits only and
+  /// set the separators between them with the face's own spacing; the
+  /// digits still line up. Not for text people type or read inline (a date
+  /// or amount in a field, a file size), which stays proportional.
   TextStyle numeric(TextStyle style) {
     final inDisplay =
         displayFamily != family &&
@@ -356,8 +381,7 @@ class DsTypography {
   /// content only: code, and keycaps such as a search field's "⌘K" hint.
   ///
   /// Not for numbers: use [numeric]. A mono face makes dates, amounts and
-  /// counters read like a console, and its slashed zero like "Ø"
-  /// (decision 1).
+  /// counters read like a console, and its slashed zero like "Ø".
   TextStyle mono(TextStyle style) => style.copyWith(
     fontFamily: monoFamily,
     package: monoPackage,

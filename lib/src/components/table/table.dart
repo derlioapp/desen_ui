@@ -15,6 +15,7 @@ import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../l10n/localizations.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../painting/shadow.dart';
 import '../../painting/shape.dart';
 import '../../theme/sizes.dart';
@@ -810,7 +811,8 @@ class _DsTableState<T> extends State<DsTable<T>> {
   double _textWidth(String text, TextStyle style, TextScaler scaler) {
     if (text.isEmpty) return 0;
     final painter = TextPainter(
-      text: TextSpan(text: text, style: style),
+      // Laid out as the cell shows it (see [_cell]).
+      text: numericSpan(text, style: style),
       textDirection: Directionality.of(context),
       textScaler: scaler,
       maxLines: 1,
@@ -937,7 +939,7 @@ class _DsTableState<T> extends State<DsTable<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final layers = _layers(t);
     final s = DsTableStyle.resolveLayers(layers, const {});
@@ -1557,9 +1559,9 @@ class _DsTableState<T> extends State<DsTable<T>> {
         ),
       );
     }
-    return Text(
-      c.textOf(item),
-      style: style,
+    // Tabular digits, proportional separators: "12.480,00".
+    return Text.rich(
+      numericSpan(c.textOf(item), style: style),
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
       textAlign: card ? TextAlign.start : _textAlign(c),
@@ -1988,7 +1990,7 @@ class _SortButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final s = style;
     final size = s.sortIconSize!;
@@ -2203,7 +2205,7 @@ class _TableRowState extends State<_TableRow>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     node.skipTraversal = !widget.active;
     final focused = _highlight && DsFocusVisibility.keyboard.value;
     final states = <WidgetState>{

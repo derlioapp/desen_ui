@@ -49,7 +49,7 @@ class _ChipFaceState extends State<ChipFace> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final states = widget.states;
     final s = DsChipStyle.resolveLayers(widget.layers, states);
     final animate = _lastStates != null && !setEquals(_lastStates, states);

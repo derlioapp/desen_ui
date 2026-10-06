@@ -384,7 +384,7 @@ class _DsButtonState extends State<DsButton> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = DsTheme.of(context);
+    final theme = dsThemeOf(context);
     final buttonTheme = DsButtonTheme.of(context);
     final variant =
         widget.variant ??

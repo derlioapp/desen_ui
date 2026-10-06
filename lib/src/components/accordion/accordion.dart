@@ -219,7 +219,7 @@ class _DsAccordionState<T> extends State<DsAccordion<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final layers = [
       DsAccordion.defaultStyle(t),
       DsAccordionTheme.of(context).style,
@@ -319,7 +319,7 @@ class _SectionState<T> extends State<_Section<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final base = DsAccordionStyle.resolveLayers(widget.layers, const {});
     final header = DsPressable(
       onPressed: widget.onToggle,

@@ -397,7 +397,7 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final layers = [
       DsSelect.defaultStyle(t),
@@ -621,7 +621,7 @@ class _NoOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsMenuItem.defaultStyle(t)
         .merge(DsMenuItemTheme.of(context).style);
     return Container(

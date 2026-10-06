@@ -94,7 +94,7 @@ class DsDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsDialogStyle.resolveLayers([
       defaultStyle(t, destructive: destructive),
       DsDialogTheme.of(context).style,

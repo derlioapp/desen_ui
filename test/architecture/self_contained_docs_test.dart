@@ -24,6 +24,40 @@ void main() {
     expect(offenders, isEmpty, reason: offenders.join('\n'));
   });
 
+  test('doc comments cite no design concept or decision numbers', () {
+    // "concept 34", "concept card 20", "concept "E"", the concept file, the
+    // concept's own look, "(decision 7)". Doc blocks are joined, so a
+    // reference broken across lines is caught too.
+    final internal = RegExp(
+      r'\bconcept\s+(cards?\s+)?(\d+|"[A-Z]")|\bconcept/|\bthe concept\b'
+      r'|\(decision \d+\)',
+      caseSensitive: false,
+    );
+    final offenders = <String>[];
+    for (final f in Directory(
+      'lib',
+    ).listSync(recursive: true).whereType<File>()) {
+      if (!f.path.endsWith('.dart')) continue;
+      final lines = f.readAsLinesSync();
+      var start = -1;
+      final block = StringBuffer();
+      for (final (i, line) in [...lines, ''].indexed) {
+        final t = line.trimLeft();
+        if (t.startsWith('///')) {
+          if (start < 0) start = i;
+          block.write(' ${t.substring(3)}');
+          continue;
+        }
+        if (start >= 0 && internal.hasMatch(block.toString())) {
+          offenders.add('${f.path}:${start + 1}');
+        }
+        start = -1;
+        block.clear();
+      }
+    }
+    expect(offenders, isEmpty, reason: offenders.join('\n'));
+  });
+
   test('doc comments describe no high contrast level', () {
     // There are two levels, soft and standard. The platform's own setting
     // ("Increase contrast", high-contrast text) may still be named. Doc

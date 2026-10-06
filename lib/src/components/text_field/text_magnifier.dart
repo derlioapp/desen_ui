@@ -158,7 +158,7 @@ class _DsTextMagnifierState extends State<DsTextMagnifier>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsTextMagnifierStyle.resolveLayers([
       DsTextMagnifier.defaultStyle(t),
       DsTextMagnifierTheme.of(context).style,

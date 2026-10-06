@@ -10,6 +10,7 @@ import '../../behavior/pressable.dart';
 import '../../l10n/localizations.dart';
 import '../../overlay/placement.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../painting/line.dart';
 import '../../painting/shadow.dart';
 import '../../theme/haptics.dart';
@@ -134,7 +135,7 @@ class DsSidebar<T extends Object> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsSidebarStyle.resolveLayers([
       defaultStyle(t),
       DsSidebarTheme.of(context).style,
@@ -254,7 +255,7 @@ class DsSidebarSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsSidebarStyle.resolveLayers([
       DsSidebar.defaultStyle(t),
       DsSidebarTheme.of(context).style,
@@ -407,7 +408,7 @@ class _DsSidebarItemState<T extends Object> extends State<DsSidebarItem<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final scope = _DsSidebarScope.maybeOf(context);
     final collapsed = scope?.collapsed ?? false;
     final value = widget.value;
@@ -490,9 +491,11 @@ class _DsSidebarItemState<T extends Object> extends State<DsSidebarItem<T>> {
                         ),
                       ),
                       if (widget.count != null)
-                        Text(
-                          DsCount.text(context, widget.count!),
-                          style: s.countStyle,
+                        Text.rich(
+                          numericSpan(
+                            DsCount.text(context, widget.count!),
+                            style: s.countStyle,
+                          ),
                         ),
                     ],
                   ),

@@ -111,7 +111,7 @@ class _DsPopoverState extends State<DsPopover> {
     align: widget.align,
     expandsTrigger: true,
     overlayBuilder: (context) {
-      final t = DsTheme.of(context);
+      final t = dsThemeOf(context);
       final s = DsPopoverStyle.resolveLayers([
         DsPopover.defaultStyle(t),
         DsPopoverTheme.of(context).style,

@@ -70,7 +70,7 @@ class DsDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = DsTheme.of(context);
+    final theme = dsThemeOf(context);
     final s = DsDividerStyle.resolveLayers([
       DsDivider.defaultStyle(theme),
       DsDividerTheme.of(context).style,

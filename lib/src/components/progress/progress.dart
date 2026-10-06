@@ -108,7 +108,7 @@ class _DsProgressBarState extends State<DsProgressBar>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsProgressBarStyle.resolveLayers([
       DsProgressBar.defaultStyle(t),
       DsProgressBarTheme.of(context).style,
@@ -287,7 +287,7 @@ class _DsProgressRingState extends State<DsProgressRing>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final s = DsProgressRingStyle.resolveLayers([
       DsProgressRing.defaultStyle(t),
       DsProgressRingTheme.of(context).style,

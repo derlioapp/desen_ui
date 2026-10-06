@@ -1,6 +1,8 @@
 import 'dart:ui' show Brightness, Color;
 
 import 'package:desen_ui/desen_ui.dart';
+// The accessor Desen's components read the theme with.
+import 'package:desen_ui/src/theme/theme.dart' show dsThemeOf;
 import 'package:flutter/widgets.dart' hide Color;
 import 'package:flutter_test/flutter_test.dart';
 
@@ -210,6 +212,70 @@ void main() {
       ),
     );
     expect(builds, 1);
+    await tester.pumpWidget(
+      DsTheme(
+        data: theme.copyWith(extensions: const [Brand(gap: 12)]),
+        child: reader,
+      ),
+    );
+    expect(builds, 2);
+  });
+
+  testWidgets('the component accessor ignores a change of extensions', (
+    tester,
+  ) async {
+    var builds = 0;
+    final reader = Builder(
+      builder: (context) {
+        dsThemeOf(context);
+        builds++;
+        return const SizedBox();
+      },
+    );
+    final theme = DsThemeData(extensions: const [Brand()]);
+    await tester.pumpWidget(DsTheme(data: theme, child: reader));
+    expect(builds, 1);
+    await tester.pumpWidget(
+      DsTheme(
+        data: theme.copyWith(extensions: const [Brand(gap: 12)]),
+        child: reader,
+      ),
+    );
+    expect(builds, 1, reason: 'only the extensions changed');
+    // A token group still rebuilds it…
+    await tester.pumpWidget(
+      DsTheme(
+        data: theme.copyWith(motion: const DsMotion(reduced: true)),
+        child: reader,
+      ),
+    );
+    expect(builds, 2);
+    // …and so does a setting that is not a token group.
+    await tester.pumpWidget(
+      DsTheme(
+        data: theme.copyWith(
+          motion: const DsMotion(reduced: true),
+          selectionStyle: DsSelectionStyle.strong,
+        ),
+        child: reader,
+      ),
+    );
+    expect(builds, 3);
+  });
+
+  testWidgets('DsTheme.of still follows a change of extensions', (
+    tester,
+  ) async {
+    var builds = 0;
+    final reader = Builder(
+      builder: (context) {
+        DsTheme.of(context);
+        builds++;
+        return const SizedBox();
+      },
+    );
+    final theme = DsThemeData(extensions: const [Brand()]);
+    await tester.pumpWidget(DsTheme(data: theme, child: reader));
     await tester.pumpWidget(
       DsTheme(
         data: theme.copyWith(extensions: const [Brand(gap: 12)]),

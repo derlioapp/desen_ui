@@ -11,6 +11,7 @@ import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../l10n/localizations.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../theme/haptics.dart';
 import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
@@ -296,7 +297,7 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final strings = DsLocalizations.of(context);
     _format = (widget.format ?? DsNumberFormat(decimals: _impliedDigits))
         .forLocale(dsConventionsLocale(context, strings));
@@ -379,19 +380,18 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
             ExcludeSemantics(
             child: Opacity(
               opacity: 0,
-              child: Text(
-                _format.format(limit),
+              child: Text.rich(
+                numericSpan(_format.format(limit), style: valueStyle),
                 maxLines: 1,
-                style: valueStyle,
               ),
             ),
           ),
-        Text(
+        // Tabular digits, proportional separators ("2.5").
+        Text.rich(
+          numericSpan(shown, style: valueStyle),
           semanticsLabel: '',
-          shown,
           textAlign: TextAlign.center,
           maxLines: 1,
-          style: valueStyle,
         ),
       ],
     );

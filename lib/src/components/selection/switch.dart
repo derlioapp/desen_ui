@@ -30,8 +30,8 @@ import 'switch_style.dart';
 /// )
 /// ```
 ///
-/// The off track meets 3:1 against surfaces, unlike the
-/// concept's lighter track. Space or Enter toggles.
+/// At the standard contrast level the off track meets 3:1 against
+/// surfaces. Space or Enter toggles.
 class DsSwitch extends StatefulWidget {
   /// Creates a switch.
   const DsSwitch({
@@ -162,7 +162,7 @@ class _DsSwitchState extends State<DsSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     // A surrounding DsField with an error marks the control too (K-71).
     final error =
         widget.error || (DsFieldScope.maybeOf(context)?.hasError ?? false);

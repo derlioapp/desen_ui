@@ -13,6 +13,7 @@ import '../../l10n/localizations.dart';
 import '../../overlay/anchored_overlay.dart';
 import '../../overlay/modal_route.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
@@ -152,7 +153,12 @@ class DsTextField extends StatefulWidget {
     this.clearable = false,
     this.keyboardType,
     this.textInputAction,
+    this.onEditingComplete,
     this.autofillHints,
+    this.autocorrect,
+    this.enableSuggestions,
+    this.textCapitalization = TextCapitalization.none,
+    this.textAlign = TextAlign.start,
     this.maxLength,
     this.maxLengthEnforcement,
     this.inputFormatters,
@@ -191,6 +197,10 @@ class DsTextField extends StatefulWidget {
     this.keyboardType,
     this.textInputAction,
     this.autofillHints,
+    this.autocorrect,
+    this.enableSuggestions,
+    this.textCapitalization = TextCapitalization.none,
+    this.textAlign = TextAlign.start,
     this.minLines = 3,
     this.maxLines = 8,
     this.maxLength,
@@ -201,6 +211,7 @@ class DsTextField extends StatefulWidget {
     this.error = false,
     this.style,
   }) : onSubmitted = null,
+       onEditingComplete = null,
        obscureText = false,
        revealable = false,
        clearable = false,
@@ -241,7 +252,12 @@ class DsTextField extends StatefulWidget {
        clearable = true,
        keyboardType = TextInputType.text,
        textInputAction = TextInputAction.search,
+       onEditingComplete = null,
        autofillHints = null,
+       autocorrect = null,
+       enableSuggestions = null,
+       textCapitalization = TextCapitalization.none,
+       textAlign = TextAlign.start,
        maxLines = 1,
        minLines = null,
        maxLength = null,
@@ -299,9 +315,44 @@ class DsTextField extends StatefulWidget {
   /// The on-screen keyboard's action key.
   final TextInputAction? textInputAction;
 
+  /// Called when the user finishes editing (Enter, or the keyboard's
+  /// action key), before [onSubmitted].
+  ///
+  /// Given, it replaces what the field does by itself at that point:
+  /// moving focus for [TextInputAction.next] and
+  /// [TextInputAction.previous], closing the on-screen keyboard on a
+  /// phone. As in Flutter's own text fields.
+  final VoidCallback? onEditingComplete;
+
   /// What the field holds, for the platform's autofill (an
   /// [AutofillGroup] collects related fields).
   final Iterable<String>? autofillHints;
+
+  /// Whether the platform corrects spelling as the user types.
+  ///
+  /// Null decides by what the field holds, as browsers and the platforms'
+  /// own fields do: off for text that must stay exactly as typed (an
+  /// [obscureText] field, the [TextInputType.emailAddress],
+  /// [TextInputType.url] and [TextInputType.visiblePassword] keyboards,
+  /// or, without a [keyboardType], an email, URL, user name, password or
+  /// one-time code in [autofillHints]); on for other text. Such literal
+  /// text also gets no smart dashes or quotes.
+  final bool? autocorrect;
+
+  /// Whether the on-screen keyboard offers word suggestions.
+  ///
+  /// Null decides as for [autocorrect]: off for text that must stay
+  /// exactly as typed, on for other text.
+  final bool? enableSuggestions;
+
+  /// Whether the on-screen keyboard starts words or sentences with a
+  /// capital letter. [TextCapitalization.none] by default; names suit
+  /// [TextCapitalization.words], prose [TextCapitalization.sentences].
+  final TextCapitalization textCapitalization;
+
+  /// How the text lines up in the field, the placeholder with it.
+  /// [TextAlign.start] by default; [TextAlign.end] suits amounts.
+  final TextAlign textAlign;
 
   /// Most lines shown before the field scrolls; null grows without limit.
   /// 1 for a single-line field; see [DsTextField.multiline].
@@ -537,6 +588,22 @@ class DsTextField extends StatefulWidget {
         ),
       )
       ..add(StringProperty('placeholder', placeholder, defaultValue: null))
+      ..add(DiagnosticsProperty('autocorrect', autocorrect, defaultValue: null))
+      ..add(
+        DiagnosticsProperty(
+          'enableSuggestions',
+          enableSuggestions,
+          defaultValue: null,
+        ),
+      )
+      ..add(
+        EnumProperty(
+          'textCapitalization',
+          textCapitalization,
+          defaultValue: TextCapitalization.none,
+        ),
+      )
+      ..add(EnumProperty('textAlign', textAlign, defaultValue: TextAlign.start))
       ..add(FlagProperty('error', value: error, ifTrue: 'error'))
       ..add(DiagnosticsProperty('style', style, defaultValue: null));
   }
@@ -853,6 +920,29 @@ class _DsTextFieldState extends State<DsTextField>
     return _controller.text.isNotEmpty;
   }
 
+  /// Whether the text must stay exactly as typed (an address, a password,
+  /// a code), so the platform neither corrects nor suggests: see
+  /// [DsTextField.autocorrect].
+  bool get _literal {
+    if (widget.obscureText) return true;
+    if (widget.keyboardType case final type?) {
+      return type == TextInputType.emailAddress ||
+          type == TextInputType.url ||
+          type == TextInputType.visiblePassword;
+    }
+    return widget.autofillHints?.any(_literalHints.contains) ?? false;
+  }
+
+  static const _literalHints = {
+    AutofillHints.email,
+    AutofillHints.url,
+    AutofillHints.username,
+    AutofillHints.newUsername,
+    AutofillHints.password,
+    AutofillHints.newPassword,
+    AutofillHints.oneTimeCode,
+  };
+
   void _onHandleTapped() {
     if (_controller.selection.isCollapsed) _editable?.toggleToolbar();
   }
@@ -862,6 +952,10 @@ class _DsTextFieldState extends State<DsTextField>
   /// focus.
   void _onEditingComplete() {
     _controller.clearComposing();
+    if (widget.onEditingComplete case final callback?) {
+      callback();
+      return;
+    }
     final action =
         widget.textInputAction ??
         (_multiline ? TextInputAction.newline : TextInputAction.done);
@@ -916,7 +1010,7 @@ class _DsTextFieldState extends State<DsTextField>
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final scope = DsFieldScope.maybeOf(context);
     final enabled = widget.enabled;
@@ -1007,6 +1101,7 @@ class _DsTextFieldState extends State<DsTextField>
         ),
     ];
     final obscured = widget.obscureText && !_revealed;
+    final literal = _literal;
 
     Widget editable = EditableText(
       key: editableTextKey,
@@ -1018,6 +1113,12 @@ class _DsTextFieldState extends State<DsTextField>
       keyboardType: widget.keyboardType,
       textInputAction: widget.textInputAction,
       autofillHints: enabled ? widget.autofillHints : null,
+      autocorrect: widget.autocorrect ?? (literal ? false : null),
+      enableSuggestions: widget.enableSuggestions ?? !literal,
+      smartDashesType: literal ? SmartDashesType.disabled : null,
+      smartQuotesType: literal ? SmartQuotesType.disabled : null,
+      textCapitalization: widget.textCapitalization,
+      textAlign: widget.textAlign,
       maxLines: widget.maxLines,
       minLines: widget.minLines,
       inputFormatters: formatters,
@@ -1062,6 +1163,7 @@ class _DsTextFieldState extends State<DsTextField>
             placeholder,
             maxLines: widget.maxLines,
             overflow: TextOverflow.ellipsis,
+            textAlign: widget.textAlign,
             style: textStyle.copyWith(color: s.placeholderColor),
           ),
         ),
@@ -1470,10 +1572,12 @@ class _Counter extends StatelessWidget {
         builder: (context, value, _) {
           final count = value.text.characters.length;
           final over = count > maxLength;
-          return Text(
-            l10n.characterCount(count, maxLength),
+          return Text.rich(
+            numericSpan(
+              l10n.characterCount(count, maxLength),
+              style: over ? style?.merge(overStyle) ?? overStyle : style,
+            ),
             maxLines: 1,
-            style: over ? style?.merge(overStyle) ?? overStyle : style,
           );
         },
       ),

@@ -229,7 +229,7 @@ class _DsRadioCardState<T> extends State<DsRadioCard<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final group = RadioGroupScope.maybeOf(context);
     // A surrounding DsField or group with an error marks the card too.
     final error =

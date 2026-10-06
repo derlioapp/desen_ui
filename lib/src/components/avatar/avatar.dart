@@ -7,6 +7,7 @@ import '../../foundation/oklch.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../painting/shadow.dart';
 import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
@@ -22,8 +23,8 @@ import 'cover_image.dart';
 /// A round avatar: an image, initials, or a person icon.
 ///
 /// Initials sit on soft brand-derived colors that meet AA in every seed and
-/// mode (the concept's solid avatars had white initials as low
-/// as 2.7:1). [toneIndex] picks one of several hues so neighbors stay
+/// mode (solid fills under white initials fell as low as 2.7:1).
+/// [toneIndex] picks one of several hues so neighbors stay
 /// apart; use [DsAvatar.toneFor] to give each person a stable color.
 class DsAvatar extends StatelessWidget {
   /// Creates an avatar. Shows [image] when given, else [initials], else a
@@ -205,7 +206,7 @@ class DsAvatar extends StatelessWidget {
   ) {
     final theme = DsAvatarTheme.of(context);
     return DsAvatarStyle.resolveLayers([
-      defaultStyle(DsTheme.of(context), size: size),
+      defaultStyle(dsThemeOf(context), size: size),
       theme.style,
       theme.sizes[size],
       style,
@@ -366,7 +367,7 @@ class DsAvatarGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final theme = DsAvatarGroupTheme.of(context);
     final size = this.size ?? theme.size ?? DsSize.sm;
     final s = DsAvatarGroupStyle.resolveLayers([
@@ -434,13 +435,15 @@ class DsAvatarGroup extends StatelessWidget {
                 color: s.overflowBackground,
                 borderRadius: BorderRadius.circular(d / 2),
               ),
-              child: Text(
-                DsLocalizations.of(context).overflowCount(hidden),
-                semanticsLabel: DsLocalizations.of(context).moreCount(hidden),
-                style: (s.overflowTextStyle ?? const TextStyle()).copyWith(
-                  color: s.overflowForeground,
-                  height: 1, // ds-raw: a line box of one em centers it
+              child: Text.rich(
+                numericSpan(
+                  DsLocalizations.of(context).overflowCount(hidden),
+                  style: (s.overflowTextStyle ?? const TextStyle()).copyWith(
+                    color: s.overflowForeground,
+                    height: 1, // ds-raw: a line box of one em centers it
+                  ),
                 ),
+                semanticsLabel: DsLocalizations.of(context).moreCount(hidden),
               ),
             ),
           ),

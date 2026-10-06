@@ -282,7 +282,7 @@ class DsTextSelectionToolbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (buttonItems.isEmpty) return const SizedBox.shrink();
-    final t = DsTheme.of(context);
+    final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     final layers = [
       defaultStyle(t),
