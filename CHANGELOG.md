@@ -128,7 +128,7 @@
   motion is reduced) instead of vanishing.
 - `DsDensity.forPlatform`, the density a theme takes when none is given.
 - `DsRadii.controlCorners` and `DsRadii.nestedCorners`.
-- `docs/SEMVER.md`: what counts as breaking, the pre-1.0 rules, deprecation,
+- `VERSIONING.md`: what counts as breaking, the pre-1.0 rules, deprecation,
   and how `desen_ui_fonts` is versioned.
 - A CI workflow (`.github/workflows/ci.yml`), and a corner benchmark in the
   example (`--dart-define=DS_BENCH=true`, `tool/corner_bench.sh`);

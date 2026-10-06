@@ -2,7 +2,7 @@
 
 Web-grade UI components for Flutter, built on the widgets layer only. No Material, no Cupertino.
 
-> Status: early development (0.1.0-dev). Foundation, overlay engine, localization (13 languages) and 49 components plus form fields are in place: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`). Quality gates and reports: `docs/kalite/` (repository only).
+> Status: early development (0.1.0-dev). Foundation, overlay engine, localization (13 languages) and 49 components plus form fields are in place: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
 
 ## Principles
 
@@ -121,10 +121,8 @@ The optional `desen_ui_fonts` package bundles [Schibsted Grotesk](https://github
 | `lib/src/overlay/` | Anchored layers (`DsAnchoredOverlay`, placement), modal route |
 | `lib/src/l10n/` | `DsLocalizations` (13 languages, generated) |
 | `lib/src/components/` | Styled components |
-| `docs/kalite/` | Quality standard (KALITE.md) and phase gate reports |
 | `desen_ui_fonts/` | Optional font package |
-| `concept/` | Visual specification (HTML concept, handoff notes, token fixture) |
-| `docs/arastirma/` | Research notes |
+| `VERSIONING.md` | What counts as a breaking change, pre-1.0 rules, deprecation |
 | `example/` | The docs site (`example/lib/site/`, English, built with Desen): every component with live examples and code, foundations, guides and app examples |
 
 ## Development
