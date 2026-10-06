@@ -1,5 +1,6 @@
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -123,6 +124,80 @@ void main() {
         find.text('A label far too long for the one line it gets here'),
       );
       expect(text.maxLines, 1);
+    });
+  });
+
+  group('calendar with two months', () {
+    Widget calendar() => DsCalendar(
+      value: DateTime(2026, 10, 6),
+      currentDate: DateTime(2026, 10, 6),
+      months: 2,
+      onChanged: (_) {},
+    );
+
+    for (final (width, scale) in [
+      (200.0, 1.0),
+      (200.0, 2.0),
+      (200.0, 3.0),
+      (280.0, 1.0),
+      (320.0, 2.0),
+      (320.0, 3.0),
+    ]) {
+      testWidgets('stacks at ${width}px and ${scale}x text', (tester) async {
+        final errors = await _pump(
+          tester,
+          calendar(),
+          width: width,
+          textScale: scale,
+        );
+        expect(errors, isEmpty);
+        final october = tester.getRect(find.text('October 2026'));
+        final november = tester.getRect(find.text('November 2026'));
+        // One under the other, the later month below the first's days.
+        expect(november.top, greaterThan(october.bottom));
+        expect(
+          november.top,
+          greaterThan(tester.getRect(find.text('31').first).top),
+        );
+        // Still one pair of month buttons.
+        expect(find.bySemanticsLabel('Next month'), findsOneWidget);
+        expect(
+          tester.getSize(find.byType(DsCalendar)).width,
+          lessThanOrEqualTo(width),
+        );
+      });
+    }
+
+    testWidgets('stays side by side where the days fit', (tester) async {
+      final errors = await _pump(tester, calendar(), width: 700);
+      expect(errors, isEmpty);
+      expect(
+        tester.getRect(find.text('November 2026')).top,
+        tester.getRect(find.text('October 2026')).top,
+      );
+    });
+
+    testWidgets('stacked months keep the keyboard moving across them', (
+      tester,
+    ) async {
+      DateTime? chosen;
+      await _pump(
+        tester,
+        DsCalendar(
+          value: DateTime(2026, 10, 30),
+          currentDate: DateTime(2026, 10, 6),
+          months: 2,
+          autofocus: true,
+          onChanged: (d) => chosen = d,
+        ),
+        width: 200,
+      );
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pump();
+      expect(chosen, DateTime(2026, 11, 6));
+      // November is still shown, below October: no page turn.
+      expect(find.text('October 2026'), findsOneWidget);
     });
   });
 }
