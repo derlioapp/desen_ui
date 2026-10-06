@@ -113,10 +113,15 @@ class _HarnessState extends State<_Harness> {
 void main() {
   LeakTesting.enable();
 
-  // Creates the app-wide notifiers before tracking starts.
-  testWidgets('warm up', (tester) async {
-    await tester.pumpWidget(_app(const SizedBox()));
-  });
+  // Creates the app-wide notifiers before tracking starts: untracked, as
+  // LeakTesting.enable() tracks every test that does not opt out.
+  testWidgets(
+    'warm up',
+    experimentalLeakTesting: LeakTesting.settings.withIgnoredAll(),
+    (tester) async {
+      await tester.pumpWidget(_app(const SizedBox()));
+    },
+  );
 
   testWidgets('components do not leak', experimentalLeakTesting: _leaks, (
     tester,
