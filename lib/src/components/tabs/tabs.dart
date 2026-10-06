@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui' show SemanticsRole;
 
 import 'package:flutter/scheduler.dart';
@@ -10,6 +11,7 @@ import '../../foundation/color_utils.dart';
 import '../../behavior/focus_visibility.dart';
 import '../../behavior/pressable.dart';
 import '../../behavior/spring_value.dart';
+import '../../behavior/tap_band.dart';
 import '../../l10n/localizations.dart';
 import '../../painting/decoration.dart';
 import '../../painting/shadow.dart';
@@ -72,6 +74,12 @@ class DsTab<T> {
 ///
 /// Tabs that do not fit scroll; the edge that hides tabs fades out, and a
 /// newly selected tab scrolls into view.
+///
+/// A tab answers taps across its whole cell: its label and half the gap
+/// on each side, so the gaps between tabs are never dead and a short
+/// label ("Me") is still easy to hit. Where the gap alone leaves a cell
+/// narrower than the theme's [DsSizes.minTapTarget] (44 on iOS and
+/// Android), a short tab is widened to make up the difference.
 ///
 /// ```dart
 /// DsTabs<String>(
@@ -298,6 +306,13 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
       _tabKeys.add(GlobalKey());
     }
     final l10n = DsLocalizations.of(context);
+    final gap = base.gap ?? DsSpace.s20;
+    // Each tab takes half the gap on either side; a tab too short for the
+    // smallest tap target with that is widened (its label stays centered).
+    final halfGap = gap / 2;
+    final reach = EdgeInsets.symmetric(horizontal: halfGap);
+    final minTap = DsTheme.sizesOf(context).minTapTarget;
+    final minWidth = math.max(0.0, minTap - gap);
 
     Widget tab(int i) {
       final tab = widget.tabs[i];
@@ -333,80 +348,89 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
           ),
         ),
       );
-      return Semantics(
-        key: _tabKeys[i],
-        container: true,
-        role: SemanticsRole.tab,
-        selected: i == selected,
-        enabled: interactive,
-        label: tab.semanticLabel,
-        onTap: interactive ? () => _select(i) : null,
-        // The bar holds one focus node (one Tab stop, K-50); its focus is
-        // reported on the selected tab, so a screen reader announces the
-        // tab, not an unnamed group (denetim-2 ux H1).
-        focusable: _enabled && i == focusTarget ? true : null,
-        focused: _enabled && i == focusTarget ? _node.hasPrimaryFocus : null,
-        onFocus: _enabled && i == focusTarget && _semanticFocusAction
-            ? _node.requestFocus
-            : null,
-        child: MouseRegion(
-          cursor: interactive
-              ? s.cursor ?? DsPressable.defaultCursor.resolve(const {})
-              : DsPressable.defaultCursor.resolve(const {WidgetState.disabled}),
-          onEnter: (_) => setState(() => _hovered = i),
-          onExit: (_) => setState(() => _hovered = null),
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            excludeFromSemantics: true,
-            onTap: interactive ? () => _select(i, touch: true) : null,
-            child: SizedBox(
-              height: s.height!,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  DecoratedBox(
-                    decoration: DsBoxDecoration(
-                      // The ring hugs the label, a line of text about 20
-                      // tall: rounded as a control of that height.
-                      borderRadius: BorderRadius.circular(t.radii.control(20)),
-                      shadows: [
-                        if (states.contains(WidgetState.focused))
-                          ...?s.focusShadows,
-                      ],
-                    ),
-                    child: label,
-                  ),
-                  // The position, read after the label; on the web the tab
-                  // role tells it.
-                  if (!kIsWeb)
-                    Semantics(label: l10n.tabOf(i + 1, widget.tabs.length)),
-                  // The underline grows from the center when selected.
-                  PositionedDirectional(
-                    start: 0,
-                    end: 0,
-                    bottom: 0,
-                    child: DsSpringValue(
-                      value: i == selected ? 1 : 0,
-                      spring: t.motion.moveSpringOrNull,
-                      builder: (context, v, child) => Transform.scale(
-                        // Grows in; never wider than its tab (no spill flash).
-                        scaleX: v.clamp(0, 1).toDouble(),
-                        child: child,
+      return TapBand(
+        size: minTap,
+        outset: reach,
+        child: Semantics(
+          key: _tabKeys[i],
+          container: true,
+          role: SemanticsRole.tab,
+          selected: i == selected,
+          enabled: interactive,
+          label: tab.semanticLabel,
+          onTap: interactive ? () => _select(i) : null,
+          // The bar holds one focus node (one Tab stop, K-50); its focus is
+          // reported on the selected tab, so a screen reader announces the
+          // tab, not an unnamed group (denetim-2 ux H1).
+          focusable: _enabled && i == focusTarget ? true : null,
+          focused: _enabled && i == focusTarget ? _node.hasPrimaryFocus : null,
+          onFocus: _enabled && i == focusTarget && _semanticFocusAction
+              ? _node.requestFocus
+              : null,
+          child: MouseRegion(
+            cursor: interactive
+                ? s.cursor ?? DsPressable.defaultCursor.resolve(const {})
+                : DsPressable.defaultCursor.resolve(const {
+                    WidgetState.disabled,
+                  }),
+            onEnter: (_) => setState(() => _hovered = i),
+            onExit: (_) => setState(() => _hovered = null),
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              excludeFromSemantics: true,
+              onTap: interactive ? () => _select(i, touch: true) : null,
+              child: Container(
+                height: s.height!,
+                constraints: BoxConstraints(minWidth: minWidth),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    DecoratedBox(
+                      decoration: DsBoxDecoration(
+                        // The ring hugs the label, a line of text about 20
+                        // tall: rounded as a control of that height.
+                        borderRadius: BorderRadius.circular(
+                          t.radii.control(20),
+                        ),
+                        shadows: [
+                          if (states.contains(WidgetState.focused))
+                            ...?s.focusShadows,
+                        ],
                       ),
-                      child: AnimatedContainer(
-                        duration: t.motion.toneDuration,
-                        curve: t.motion.toneCurve,
-                        height: s.indicatorHeight!,
-                        decoration: BoxDecoration(
-                          color: s.indicatorColor,
-                          borderRadius: BorderRadius.circular(
-                            s.indicatorHeight!,
+                      child: label,
+                    ),
+                    // The position, read after the label; on the web the tab
+                    // role tells it.
+                    if (!kIsWeb)
+                      Semantics(label: l10n.tabOf(i + 1, widget.tabs.length)),
+                    // The underline grows from the center when selected.
+                    PositionedDirectional(
+                      start: 0,
+                      end: 0,
+                      bottom: 0,
+                      child: DsSpringValue(
+                        value: i == selected ? 1 : 0,
+                        spring: t.motion.moveSpringOrNull,
+                        builder: (context, v, child) => Transform.scale(
+                          // Grows in; never wider than its tab (no spill flash).
+                          scaleX: v.clamp(0, 1).toDouble(),
+                          child: child,
+                        ),
+                        child: AnimatedContainer(
+                          duration: t.motion.toneDuration,
+                          curve: t.motion.toneCurve,
+                          height: s.indicatorHeight!,
+                          decoration: BoxDecoration(
+                            color: s.indicatorColor,
+                            borderRadius: BorderRadius.circular(
+                              s.indicatorHeight!,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -452,7 +476,7 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
                   explicitChildNodes: true,
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
-                    spacing: base.gap ?? DsSpace.s20,
+                    spacing: gap,
                     children: [
                       for (var i = 0; i < widget.tabs.length; i++) tab(i),
                     ],
