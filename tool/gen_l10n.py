@@ -1608,6 +1608,33 @@ for _lang, _values in RANGE.items():
 # the Brazilian words.
 VARIANTS['zh_Hant']['values'].update(rangeMinimum='最小值', rangeMaximum='最大值')
 
+# The button at the end of a toolbar that opens a menu of the items that
+# do not fit.
+KEYS.update({
+    'moreActions': (
+        'Names the button that opens a menu of the actions that do not fit, e.g. at the end of a toolbar.',
+        'More actions',
+    ),
+})
+MORE_ACTIONS = {
+    'ar': 'مزيد من الإجراءات',
+    'de': 'Weitere Aktionen',
+    'es': 'Más acciones',
+    'fr': 'Plus d’actions',
+    'hi': 'और कार्रवाइयाँ',
+    'it': 'Altre azioni',
+    'ja': 'その他の操作',
+    'ko': '추가 작업',
+    'pt': 'Mais ações',
+    'ru': 'Другие действия',
+    'tr': 'Diğer işlemler',
+    'zh': '更多操作',
+}
+for _lang, _value in MORE_ACTIONS.items():
+    LANGS[_lang].update(moreActions=_value)
+VARIANTS['zh_Hant']['values'].update(moreActions='更多操作')
+VARIANTS['pt_PT']['values'].update(moreActions='Mais ações')
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

@@ -525,32 +525,76 @@ void main() {
   });
 
   group('toolbar', () {
-    Widget toolbar() => DsToolbar(
-      children: [
-        DsToolbarToggle(
-          icon: const DsIcon(DsIcons.bold),
-          semanticLabel: 'Bold',
-          selected: true,
-          onChanged: (_) {},
-        ),
-        const DsToolbarDivider(),
-        DsToolbarToggle(
-          icon: const DsIcon(DsIcons.italic),
-          semanticLabel: 'Italic',
-          selected: false,
-          onChanged: (_) {},
-        ),
-        DsButton(onPressed: () {}, child: const Text('Publish changes')),
-      ],
-    );
+    Widget toolbar({DsToolbarOverflow overflow = DsToolbarOverflow.menu}) =>
+        DsToolbar(
+          overflow: overflow,
+          children: [
+            DsToolbarToggle(
+              icon: const DsIcon(DsIcons.bold),
+              semanticLabel: 'Bold',
+              selected: true,
+              onChanged: (_) {},
+            ),
+            const DsToolbarDivider(),
+            DsToolbarToggle(
+              icon: const DsIcon(DsIcons.italic),
+              semanticLabel: 'Italic',
+              selected: false,
+              onChanged: (_) {},
+            ),
+            DsButton(onPressed: () {}, child: const Text('Publish changes')),
+          ],
+        );
 
     for (final (width, scale) in [(200.0, 1.0), (200.0, 3.0), (360.0, 3.0)]) {
+      testWidgets(
+        'collapses into a menu instead of overflowing at ${width}px and '
+        '${scale}x text',
+        (tester) async {
+          final errors = await _pump(
+            tester,
+            Align(alignment: Alignment.topLeft, child: toolbar()),
+            width: width,
+            textScale: scale,
+          );
+          expect(errors, isEmpty);
+          expect(
+            tester.getSize(find.byType(DsToolbar)).width,
+            lessThanOrEqualTo(width),
+          );
+          // Nothing scrolls or fades: the items that do not fit are in the
+          // menu, and the "More actions" button can be hit.
+          expect(
+            find.descendant(
+              of: find.byType(DsToolbar),
+              matching: find.byType(Scrollable),
+            ),
+            findsNothing,
+          );
+          expect(
+            find
+                .byWidgetPredicate(
+                  (w) => w is DsButton && w.semanticLabel == 'More actions',
+                )
+                .hitTestable(),
+            findsOneWidget,
+          );
+        },
+        variant: const TargetPlatformVariant({
+          TargetPlatform.iOS,
+          TargetPlatform.macOS,
+        }),
+      );
+
       testWidgets(
         'scrolls instead of overflowing at ${width}px and ${scale}x text',
         (tester) async {
           final errors = await _pump(
             tester,
-            Align(alignment: Alignment.topLeft, child: toolbar()),
+            Align(
+              alignment: Alignment.topLeft,
+              child: toolbar(overflow: DsToolbarOverflow.scroll),
+            ),
             width: width,
             textScale: scale,
           );
@@ -600,10 +644,15 @@ void main() {
       expect(errors, isEmpty);
     });
 
-    testWidgets('End brings the last item into view', (tester) async {
+    testWidgets('scrolling, End brings the last item into view', (
+      tester,
+    ) async {
       await _pump(
         tester,
-        Align(alignment: Alignment.topLeft, child: toolbar()),
+        Align(
+          alignment: Alignment.topLeft,
+          child: toolbar(overflow: DsToolbarOverflow.scroll),
+        ),
         width: 160,
       );
       final bar = tester.getRect(find.byType(DsToolbar));

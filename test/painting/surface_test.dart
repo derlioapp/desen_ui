@@ -16,7 +16,9 @@ void main() {
       DsApp(
         home: Column(
           children: [
-            const DsToolbar(children: [Text('Araç')]),
+            const DsToolbar(
+              children: [DsToolbarItem(menuItems: [], child: Text('Araç'))],
+            ),
             DsPopover(
               controller: controller,
               contentBuilder: (_) => const Text('İçerik'),
@@ -49,7 +51,9 @@ void main() {
           ],
           child: Column(
             children: [
-              const DsToolbar(children: [Text('Araç')]),
+              const DsToolbar(
+                children: [DsToolbarItem(menuItems: [], child: Text('Araç'))],
+              ),
               DsPopover(
                 controller: controller,
                 contentBuilder: (_) => const Text('İçerik'),

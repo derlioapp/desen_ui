@@ -45,6 +45,31 @@ class ToolbarPage extends StatelessWidget {
         ],
       ),
       DocSection(
+        title: 'Overflow',
+        children: [
+          DocText(
+            'Items that do not fit move, from the end, into a menu that a '
+            '"More actions" (⋯) button at the end of the bar opens, and they '
+            'come back when there is room. Drag the slider to narrow the bar. '
+            'A toggle becomes an item that is checked while it is on, a '
+            'button an item named by its text or `semanticLabel`, and a '
+            'tooltip\'s `shortcut` shows beside the item. A divider is never '
+            'left at the end of the bar or at either end of the menu.',
+          ),
+          Example(snippet: 'toolbar-overflow', child: _OverflowDemo()),
+          DocText(
+            'Any other item needs a `DsToolbarItem` that gives its menu '
+            'items, or an empty list for an item that only shows something, '
+            'like the "3 selected" label above. A bar with a child that has '
+            'no menu form scrolls instead, so nothing disappears: wrap custom '
+            'children in `DsToolbarItem` to let them collapse. It also gives a '
+            'toggle or button a menu form of its own. Set `overflow: .scroll` '
+            'to keep every item in the bar and scroll the row sideways '
+            'instead.',
+          ),
+        ],
+      ),
+      DocSection(
         title: 'Customizing',
         children: [
           DocText(
@@ -67,7 +92,20 @@ class ToolbarPage extends StatelessWidget {
                   'Mirrored in right-to-left layouts.',
             ),
             ('Home / End', 'Moves to the first or last item.'),
-            ('Enter / Space', 'Turns the focused toggle on or off.'),
+            (
+              'Enter / Space',
+              'Turns the focused toggle on or off. On the More actions '
+                  'button, opens its menu and focuses the first item.',
+            ),
+            (
+              'Up / Down',
+              'In the More actions menu, moves between its items. Home and '
+                  'End jump to the first and last, Enter or Space chooses.',
+            ),
+            (
+              'Escape',
+              'Closes the More actions menu. Focus returns to its button.',
+            ),
           ]),
           DocText(
             'The WAI-ARIA toolbar pattern uses a single Tab stop. Desen keeps '
@@ -85,6 +123,12 @@ class ToolbarPage extends StatelessWidget {
                 'their required `semanticLabel`.',
             'On phones each item gets a 44px tap area. The bar keeps its '
                 'height and the items spread out instead.',
+            'The More actions button is named in the app\'s language and '
+                'announced as collapsed or expanded, like every menu button. '
+                'Toggles in its menu are announced as checkbox items, checked '
+                'or not.',
+            'At large text sizes, items that grow past the bar move into the '
+                'menu instead of being cut off.',
           ]),
         ],
       ),
@@ -96,6 +140,23 @@ class ToolbarPage extends StatelessWidget {
             ('children', 'List<Widget>', 'The items, start to end.'),
             ('semanticLabel', 'String?', 'Names the bar for screen readers.'),
             ('style', 'DsToolbarStyle?', 'Laid over the theme and defaults.'),
+            (
+              'overflow',
+              'DsToolbarOverflow',
+              'Items that do not fit move into a More actions menu '
+                  '(`.menu`, the default) or the row scrolls (`.scroll`).',
+            ),
+          ]),
+          DocHeading('DsToolbarItem'),
+          ApiTable([
+            ('child', 'Widget', 'The item in the bar.'),
+            (
+              'menuItems',
+              'List<Widget>',
+              '`DsMenuItem`s and `DsMenuDivider`s the item stands for in the '
+                  'overflow menu. Empty for an item that only shows '
+                  'something.',
+            ),
           ]),
           DocHeading('DsToolbarToggle'),
           ApiTable([
@@ -232,11 +293,15 @@ class _SelectionDemo extends StatelessWidget {
       child: DsToolbar(
         semanticLabel: 'Selected tasks',
         children: [
-          Padding(
-            padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-            child: Text(
-              '3 selected',
-              style: t.typography.label.copyWith(color: t.colors.text),
+          // A label has nothing to do in the overflow menu.
+          DsToolbarItem(
+            menuItems: const [],
+            child: Padding(
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+              child: Text(
+                '3 selected',
+                style: t.typography.label.copyWith(color: t.colors.text),
+              ),
             ),
           ),
           const DsToolbarDivider(),
@@ -277,6 +342,87 @@ class _SelectionDemo extends StatelessWidget {
       // #endregion
     );
   }
+}
+
+class _OverflowDemo extends StatefulWidget {
+  const _OverflowDemo();
+
+  @override
+  State<_OverflowDemo> createState() => _OverflowDemoState();
+}
+
+class _OverflowDemoState extends State<_OverflowDemo> {
+  double _width = 220;
+  bool _bold = true;
+  bool _italic = false;
+  bool _underline = false;
+
+  @override
+  Widget build(BuildContext context) => Column(
+    mainAxisSize: MainAxisSize.min,
+    spacing: 24,
+    children: [
+      SizedBox(
+        width: 280,
+        child: DsSlider(
+          value: _width,
+          min: 120,
+          max: 420,
+          semanticLabel: 'Toolbar width',
+          onChanged: (v) => setState(() => _width = v),
+        ),
+      ),
+      ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: _width),
+        // #region toolbar-overflow
+        child: DsToolbar(
+          semanticLabel: 'Formatting',
+          children: [
+            DsToolbarToggle(
+              icon: const DsIcon(DsIcons.bold),
+              semanticLabel: 'Bold',
+              selected: _bold,
+              onChanged: (v) => setState(() => _bold = v),
+            ),
+            DsToolbarToggle(
+              icon: const DsIcon(DsIcons.italic),
+              semanticLabel: 'Italic',
+              selected: _italic,
+              onChanged: (v) => setState(() => _italic = v),
+            ),
+            DsToolbarToggle(
+              icon: const DsIcon(DsIcons.underline),
+              semanticLabel: 'Underline',
+              selected: _underline,
+              onChanged: (v) => setState(() => _underline = v),
+            ),
+            const DsToolbarDivider(),
+            DsTooltip(
+              message: 'Add link',
+              shortcut: '⌘K',
+              child: DsButton.icon(
+                variant: .ghost,
+                size: .sm,
+                icon: const DsIcon(DsIcons.link),
+                semanticLabel: 'Add link',
+                onPressed: () {},
+              ),
+            ),
+            DsButton.icon(
+              variant: .ghost,
+              size: .sm,
+              icon: const DsIcon(DsIcons.copy),
+              semanticLabel: 'Duplicate',
+              onPressed: () {},
+            ),
+            const DsToolbarDivider(),
+            DsButton(size: .sm, onPressed: () {}, child: const Text('Comment')),
+          ],
+        ),
+        // #endregion
+      ),
+    ],
+  );
 }
 
 class _CustomDemo extends StatefulWidget {

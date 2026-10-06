@@ -448,11 +448,19 @@ void main() {
                 selected: false,
                 onChanged: (_) {},
               ),
-              Builder(
-                builder: (c) {
-                  seen = DsButtonTheme.of(c).style;
-                  return DsButton(onPressed: () {}, child: const Text('Share'));
-                },
+              DsToolbarItem(
+                menuItems: [
+                  DsMenuItem(label: const Text('Share'), onPressed: () {}),
+                ],
+                child: Builder(
+                  builder: (c) {
+                    seen = DsButtonTheme.of(c).style;
+                    return DsButton(
+                      onPressed: () {},
+                      child: const Text('Share'),
+                    );
+                  },
+                ),
               ),
             ],
           ),

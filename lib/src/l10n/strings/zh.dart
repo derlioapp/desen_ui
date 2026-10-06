@@ -435,4 +435,7 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String get rangeMaximum => '最大值';
+
+  @override
+  String get moreActions => '更多操作';
 }

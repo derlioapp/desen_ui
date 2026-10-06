@@ -435,4 +435,7 @@ class DsLocalizationsKo extends DsLocalizationsEn {
 
   @override
   String get rangeMaximum => '최댓값';
+
+  @override
+  String get moreActions => '추가 작업';
 }

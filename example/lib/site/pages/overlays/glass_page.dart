@@ -226,6 +226,9 @@ class _GlassDemoState extends State<_GlassDemo> {
             clipBehavior: Clip.none,
             child: DsToolbar(
               semanticLabel: 'Formatting',
+              // The stage scrolls the bar, so its items always show; the
+              // menu and the popover they open have no form in a menu.
+              overflow: .scroll,
               children: [
                 DsToolbarToggle(
                   icon: const DsIcon(DsIcons.bold),
