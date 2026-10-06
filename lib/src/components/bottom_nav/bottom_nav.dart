@@ -446,6 +446,8 @@ class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
                   layers: itemLayers,
                   barCorners: bar ? null : corners,
                   inset: padding.top,
+                  // An unmeasured label keeps to one line.
+                  // ds-raw: a line count, not a size.
                   labelLines: fits[i]?.lines ?? 1,
                   labelHeight: labelHeight,
                   cut: fits[i]?.cut ?? false,
@@ -481,6 +483,9 @@ class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
             child: Focus(
               canRequestFocus: false,
               skipTraversal: true,
+              // Only the arrow keys: no node of its own, so the
+              // destinations stay the landmark's direct children.
+              includeSemantics: false,
               onKeyEvent: _onKey,
               child: row,
             ),
