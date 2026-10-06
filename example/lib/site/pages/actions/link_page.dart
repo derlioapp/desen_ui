@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../doc.dart';
 
-/// Text links: inline, standalone and external.
+/// Text links: in running text, standalone and external.
 class LinkPage extends StatelessWidget {
   const LinkPage({super.key});
 
@@ -30,15 +30,59 @@ class LinkPage extends StatelessWidget {
         ],
       ),
       DocSection(
-        title: 'Inline and standalone',
+        title: 'Links in running text',
         children: [
           const DocText(
-            'Inside running text, put the link in a `WidgetSpan` with '
-            '`PlaceholderAlignment.baseline` and set `inline: true`, as '
-            'above. The link then sits on the line like a word, and its hit '
-            'area stays the text, so the paragraph keeps its line height. On '
-            'its own, a link is a plain widget: under a form, at the end of '
-            'a card, in a footer. There its hit area grows to the minimum '
+            'Inside a sentence, write the text as a `DsParagraph` and each '
+            'link as a `DsLinkSpan`, as above. The label is part of the '
+            'paragraph\'s text, so a long one wraps with the sentence, as an '
+            '`<a>` in a `<p>` does on the web: the first words end one line '
+            'and the rest start the next. Each link keeps what a `DsLink` '
+            'has: the hover style, Tab and Enter, a focus ring around each '
+            'line of the label, and link semantics.',
+          ),
+          Example(
+            snippet: 'link-inline',
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 280),
+              child: Builder(
+                builder: (context) {
+                  final t = DsTheme.of(context);
+                  return DefaultTextStyle.merge(
+                    style: t.typography.body.copyWith(color: t.colors.text),
+                    // #region link-inline
+                    child: DsParagraph(
+                      children: [
+                        const TextSpan(text: 'Before you upgrade, read the '),
+                        DsLinkSpan(
+                          label: 'migration guide for version 2',
+                          url: Uri.parse('https://example.com/migrate'),
+                          onPressed: () {},
+                        ),
+                        const TextSpan(text: ' and back up your data.'),
+                      ],
+                    ),
+                    // #endregion
+                  );
+                },
+              ),
+            ),
+          ),
+          const DocText(
+            'A `DsParagraph` holds text and links only, not other widgets. '
+            'For a link that leaves the app, with its arrow, put a `DsLink` '
+            'with `external: true` and `inline: true` in a `WidgetSpan` '
+            'aligned to the baseline. It sits on the line like a word, but '
+            'wraps inside its own box, so keep its label short.',
+          ),
+        ],
+      ),
+      DocSection(
+        title: 'Standalone',
+        children: [
+          const DocText(
+            'On its own, a link is a plain widget: under a form, at the end '
+            'of a card, in a footer. There its hit area grows to the minimum '
             'tap target.',
           ),
           Example(
@@ -111,10 +155,10 @@ class LinkPage extends StatelessWidget {
         children: [
           const DocText(
             'A label longer than the room wraps inside the link, underlined '
-            'line by line, with the external arrow after the last word. The '
-            'link wraps as one block: it does not flow on with the paragraph '
-            'around it, so keep inline labels short. A null `onPressed` '
-            'disables the link.',
+            'line by line, with the external arrow after the last word. A '
+            '`DsLink` wraps as one block; in running text, use a '
+            '`DsLinkSpan` so the label flows with the sentence. A null '
+            '`onPressed` disables either.',
           ),
           Example(
             snippet: 'link-states',
@@ -216,8 +260,12 @@ class LinkPage extends StatelessWidget {
                 'overlays such as menus and popovers, in both modes and every '
                 'contrast level.',
             'A standalone link grows its hit area to the minimum tap target. '
-                'An `inline` link keeps the text as its hit area; WCAG 2.5.8 '
-                'exempts targets inside a sentence.',
+                'A link in running text keeps the text as its hit area; WCAG '
+                '2.5.8 exempts targets inside a sentence.',
+            'In a `DsParagraph`, the text around the links is read as text '
+                'and each link as a link, in reading order. Each enabled link '
+                'is focusable, so screen readers and the keyboard reach it as '
+                'they reach a `DsLink`.',
           ]),
         ],
       ),
@@ -253,6 +301,42 @@ class LinkPage extends StatelessWidget {
           ]),
         ],
       ),
+      const DocSection(
+        title: 'DsLinkSpan API',
+        children: [
+          DocText(
+            'A link inside a `DsParagraph`. The paragraph takes `children` '
+            '(`TextSpan`s and `DsLinkSpan`s, nested at any depth), an '
+            'optional `style` laid over the surrounding text style, and '
+            '`textAlign`.',
+          ),
+          ApiTable([
+            ('label', 'String', 'The link text. Must not be empty.'),
+            (
+              'onPressed',
+              'VoidCallback?',
+              'Called on activation. Null disables the link.',
+            ),
+            ('url', 'Uri?', 'The address, for link semantics.'),
+            (
+              'semanticLabel',
+              'String?',
+              'Replaces the label for screen readers.',
+            ),
+            (
+              'linkStyle',
+              'DsLinkStyle?',
+              'Laid over the theme and defaults; the line height stays the '
+                  'paragraph\'s.',
+            ),
+            (
+              'focusNode',
+              'FocusNode?',
+              'Focus node; the paragraph creates one when null.',
+            ),
+          ]),
+        ],
+      ),
     ],
   );
 }
@@ -266,32 +350,14 @@ class _TrialNotice extends StatelessWidget {
     return DefaultTextStyle.merge(
       style: t.typography.body.copyWith(color: t.colors.text, height: 1.6),
       // #region link-overview
-      child: Text.rich(
-        TextSpan(
-          text: 'Your trial ends in 3 days. ',
-          children: [
-            WidgetSpan(
-              alignment: PlaceholderAlignment.baseline,
-              baseline: TextBaseline.alphabetic,
-              child: DsLink(
-                label: 'Choose a plan',
-                inline: true,
-                onPressed: () {},
-              ),
-            ),
-            const TextSpan(text: ' to keep your projects, or '),
-            WidgetSpan(
-              alignment: PlaceholderAlignment.baseline,
-              baseline: TextBaseline.alphabetic,
-              child: DsLink(
-                label: 'export your data',
-                inline: true,
-                onPressed: () {},
-              ),
-            ),
-            const TextSpan(text: '.'),
-          ],
-        ),
+      child: DsParagraph(
+        children: [
+          const TextSpan(text: 'Your trial ends in 3 days. '),
+          DsLinkSpan(label: 'Choose a plan', onPressed: () {}),
+          const TextSpan(text: ' to keep your projects, or '),
+          DsLinkSpan(label: 'export your data', onPressed: () {}),
+          const TextSpan(text: '.'),
+        ],
       ),
       // #endregion
     );

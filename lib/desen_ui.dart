@@ -61,6 +61,7 @@ export 'src/components/link/breadcrumb.dart';
 export 'src/components/link/breadcrumb_style.dart';
 export 'src/components/link/link.dart';
 export 'src/components/link/link_style.dart';
+export 'src/components/link/paragraph.dart';
 export 'src/components/list/list.dart';
 export 'src/components/list/list_row_style.dart';
 export 'src/components/list/list_section_style.dart';

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:desen_ui/desen_ui.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -188,6 +189,42 @@ void main() {
     await tester.pumpWidget(const SizedBox());
     await tester.pumpAndSettle();
   });
+
+  testWidgets(
+    'a paragraph with links does not leak',
+    experimentalLeakTesting: _leaks,
+    (tester) async {
+      // Each link owns a tap recognizer and a focus node; links that go
+      // away, and the paragraph itself, dispose theirs.
+      Widget paragraph(int links) => _app(
+        SizedBox(
+          width: 200,
+          child: DsParagraph(
+            children: [
+              for (var i = 0; i < links; i++) ...[
+                TextSpan(text: 'Item $i, '),
+                DsLinkSpan(label: 'open item $i', onPressed: () {}),
+              ],
+            ],
+          ),
+        ),
+      );
+      await tester.pumpWidget(paragraph(3));
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      final mouse = await tester.createGesture(kind: PointerDeviceKind.mouse);
+      await mouse.addPointer(
+        location: tester.getTopLeft(find.byType(DsParagraph)),
+      );
+      await mouse.moveBy(const Offset(4, 4));
+      await tester.pump();
+      await tester.pumpWidget(paragraph(1));
+      await tester.pumpWidget(paragraph(2));
+      await tester.pumpWidget(const SizedBox());
+      await mouse.removePointer();
+      await tester.pumpAndSettle();
+    },
+  );
 
   testWidgets(
     'theme cross-fade does not leak',
