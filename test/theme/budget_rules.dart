@@ -532,6 +532,10 @@ List<Rule> rules(
           min: 1.2,
         ),
       Rule('surface on canvas', k.surface, k.canvas, min: 1.2),
+      // A date range band reads as a band on a card and in a floating
+      // calendar, not as a stray hover (it was 1.18:1).
+      for (final (name, bg) in [('surface', k.surface), ('overlay', k.overlay)])
+        Rule('range band on $name', k.accentTint, bg, min: 1.3),
       Rule('control on surface', k.control, k.surface, min: 1.2),
       Rule('overlay on surface', k.overlay, k.surface, min: 1.2),
       // The raised thumb stands off its channel on every layer, a floating

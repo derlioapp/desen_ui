@@ -841,7 +841,9 @@ class _Engine {
       // No label on it: lighter than the button fill, like iOS's dark blue,
       // and as vivid (fitted to sRGB so the hue holds).
       indicator: DsOklch(.68, _darkIndicatorChroma, hu).fitted().toColor(),
-      accentTint: o(.72, math.min(c * .9, .12), .1),
+      // Strong enough to read as a band on a card and a floating layer
+      // (1.3:1): at 0.1 a date range nearly vanished (1.18:1).
+      accentTint: o(.72, math.min(c * .9, .12), .18),
       accentText: accentInk,
       link: accentInk,
       // Lighter than every layer it sits on, the floating one included
