@@ -120,6 +120,9 @@
   the control that opened them when they close, without a focus ring; a
   click does not focus a Desen control, so focus went to the page or to a
   control focused earlier.
+- Closing a popover or menu no longer leaves a pending focus request on a
+  focus node whose widget left the tree while it was open; that request
+  stole focus when the widget came back.
 
 ## Unreleased · Parity with the old library
 
