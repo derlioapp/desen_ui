@@ -545,6 +545,105 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('Dlg'), findsNothing);
     });
+
+    testWidgets('Escape hides the tooltip while the pointer rests on the '
+        'tooltip itself (ux L1)', (tester) async {
+      await tester.pumpWidget(
+        DsApp(
+          home: Center(
+            child: DsTooltip(
+              message: 'A fairly long tooltip message',
+              child: DsButton(onPressed: () {}, child: const Text('Hover me')),
+            ),
+          ),
+        ),
+      );
+      final g = await hover(tester, find.text('Hover me'));
+      final tip = find.text('A fairly long tooltip message');
+      expect(tip, findsOneWidget);
+      // Onto the tooltip in small steps, inside the hover grace.
+      final from = tester.getCenter(find.text('Hover me'));
+      final to = tester.getCenter(tip);
+      for (var i = 1; i <= 10; i++) {
+        await g.moveTo(Offset.lerp(from, to, i / 10)!);
+        await tester.pump(const Duration(milliseconds: 30));
+      }
+      await tester.pumpAndSettle();
+      expect(tip, findsOneWidget, reason: 'hoverable: it stays');
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pumpAndSettle();
+      expect(tip, findsNothing);
+    });
+  });
+
+  group('tooltip on touch (bugs M1)', () {
+    testWidgets('a scroll that starts on the trigger shows no tooltip', (
+      tester,
+    ) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
+      await tester.pumpWidget(
+        DsApp(
+          home: ListView(
+            children: [
+              for (var i = 0; i < 30; i++)
+                Padding(
+                  padding: const EdgeInsets.all(DsSpace.s8),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: DsTooltip(
+                      message: 'Tip $i',
+                      child: DsButton(
+                        onPressed: () {},
+                        child: Text('Button $i'),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      );
+      final g = await tester.startGesture(
+        tester.getCenter(find.text('Button 3')),
+        kind: PointerDeviceKind.touch,
+      );
+      // Longer than a long press, moving all the while.
+      for (var k = 0; k < 12; k++) {
+        await g.moveBy(const Offset(0, -15));
+        await tester.pump(const Duration(milliseconds: 60));
+      }
+      expect(find.text('Tip 3'), findsNothing);
+      await g.up();
+      await tester.pumpAndSettle();
+      expect(find.text('Tip 3'), findsNothing);
+    });
+
+    testWidgets('a still long press still shows it', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
+      await tester.pumpWidget(
+        DsApp(
+          home: Center(
+            child: DsTooltip(
+              message: 'Tip',
+              child: DsButton(onPressed: () {}, child: const Text('Button')),
+            ),
+          ),
+        ),
+      );
+      final g = await tester.startGesture(
+        tester.getCenter(find.text('Button')),
+        kind: PointerDeviceKind.touch,
+      );
+      // A tremor under the slop does not cancel it.
+      await g.moveBy(const Offset(2, 2));
+      await tester.pump(kLongPressTimeout + const Duration(milliseconds: 50));
+      await tester.pump(const Duration(milliseconds: 300));
+      expect(find.text('Tip'), findsOneWidget);
+      await g.up();
+      await tester.pumpAndSettle();
+    });
   });
 
   testWidgets('a menu trigger with a tooltip: the keyboard round trip leaves '
