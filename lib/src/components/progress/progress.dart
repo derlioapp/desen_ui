@@ -18,6 +18,11 @@ import 'progress_ring_style.dart';
 /// with the 0–100 range.
 String _percent(double v) => '${(v.clamp(0, 1) * 100).round()}%';
 
+/// [v] as shown: null (indeterminate) for null or NaN, otherwise held to
+/// 0–1, an infinity at its end.
+double? _progress(double? v) =>
+    v == null || v.isNaN ? null : v.clamp(0.0, 1.0);
+
 /// A linear progress bar: an accent fill on a recessed track, the fill
 /// 3:1 off the track.
 ///
@@ -33,7 +38,9 @@ class DsProgressBar extends StatefulWidget {
     this.style,
   });
 
-  /// Progress, 0–1. Null means indeterminate.
+  /// Progress, 0–1. Null means indeterminate, and so does NaN (`0 / 0`
+  /// before a total is known): it is never shown or announced as done.
+  /// Values outside 0–1, infinities included, are held to the nearer end.
   final double? value;
 
   /// Whether a change of [value] moves briefly into place. True by default,
@@ -71,6 +78,8 @@ class _DsProgressBarState extends State<DsProgressBar>
     with SingleTickerProviderStateMixin {
   late final AnimationController _sweep = AnimationController(vsync: this);
 
+  double? get _value => _progress(widget.value);
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -86,7 +95,7 @@ class _DsProgressBarState extends State<DsProgressBar>
   void _syncSweep() {
     final motion = DsTheme.motionOf(context);
     _sweep.duration = motion.indeterminate;
-    final run = widget.value == null && !motion.reduced;
+    final run = _value == null && !motion.reduced;
     if (run && !_sweep.isAnimating) _sweep.repeat();
     if (!run && _sweep.isAnimating) _sweep.stop();
   }
@@ -118,11 +127,11 @@ class _DsProgressBarState extends State<DsProgressBar>
     );
 
     Widget bar;
-    if (widget.value case final value? when !widget.animate) {
-      bar = filled(value.clamp(0, 1));
-    } else if (widget.value case final value?) {
+    if (_value case final value? when !widget.animate) {
+      bar = filled(value);
+    } else if (_value case final value?) {
       bar = TweenAnimationBuilder<double>(
-        tween: Tween(end: value.clamp(0, 1)),
+        tween: Tween(end: value),
         duration: t.motion.toneDuration,
         curve: t.motion.toneCurve,
         builder: (context, v, _) => filled(v),
@@ -155,16 +164,16 @@ class _DsProgressBarState extends State<DsProgressBar>
     return Semantics(
       // Determinate: a progress bar with a 0–100 range. Indeterminate: a
       // loading indicator, which has no value to report.
-      role: widget.value == null
+      role: _value == null
           ? SemanticsRole.loadingSpinner
           : SemanticsRole.progressBar,
       // Indeterminate progress says it is loading (S-14).
       label:
           widget.semanticLabel ??
-          (widget.value == null ? DsLocalizations.of(context).loading : null),
-      value: widget.value == null ? null : _percent(widget.value!),
-      minValue: widget.value == null ? null : '0',
-      maxValue: widget.value == null ? null : '100',
+          (_value == null ? DsLocalizations.of(context).loading : null),
+      value: _value == null ? null : _percent(_value!),
+      minValue: _value == null ? null : '0',
+      maxValue: _value == null ? null : '100',
       // Its own layer: the indeterminate sweep repaints every frame and
       // must not repaint what is around it (denetim-2 eng P6).
       child: RepaintBoundary(
@@ -202,7 +211,8 @@ class DsProgressRing extends StatefulWidget {
     this.style,
   });
 
-  /// Progress, 0–1. Null means indeterminate.
+  /// Progress, 0–1. Null and NaN mean indeterminate, as on
+  /// [DsProgressBar.value]; values outside 0–1 are held to the nearer end.
   final double? value;
 
   /// Whether a change of [value] moves briefly into place. True by default.
@@ -240,6 +250,8 @@ class _DsProgressRingState extends State<DsProgressRing>
     with SingleTickerProviderStateMixin {
   late final AnimationController _spin = AnimationController(vsync: this);
 
+  double? get _value => _progress(widget.value);
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -261,10 +273,10 @@ class _DsProgressRingState extends State<DsProgressRing>
     final changed = reduced != _reduced || _spin.duration != period;
     _reduced = reduced;
     _spin.duration = period;
-    if (widget.value == null && (changed || !_spin.isAnimating)) {
+    if (_value == null && (changed || !_spin.isAnimating)) {
       _spin.repeat(reverse: reduced);
     }
-    if (widget.value != null && _spin.isAnimating) _spin.stop();
+    if (_value != null && _spin.isAnimating) _spin.stop();
   }
 
   @override
@@ -295,15 +307,15 @@ class _DsProgressRingState extends State<DsProgressRing>
       ),
     );
 
-    final Widget painted = widget.value != null
+    final Widget painted = _value != null
         ? widget.animate
               ? TweenAnimationBuilder<double>(
-                  tween: Tween(end: widget.value!.clamp(0, 1)),
+                  tween: Tween(end: _value!),
                   duration: t.motion.toneDuration,
                   curve: t.motion.toneCurve,
                   builder: (context, v, _) => ring(v, 0),
                 )
-              : ring(widget.value!.clamp(0, 1), 0)
+              : ring(_value!, 0)
         : RepaintBoundary(
             child: AnimatedBuilder(
               animation: _spin,
@@ -321,16 +333,16 @@ class _DsProgressRingState extends State<DsProgressRing>
     return Semantics(
       // Determinate: a progress bar with a 0–100 range. Indeterminate: a
       // loading indicator, which has no value to report.
-      role: widget.value == null
+      role: _value == null
           ? SemanticsRole.loadingSpinner
           : SemanticsRole.progressBar,
       // Indeterminate progress says it is loading (S-14).
       label:
           widget.semanticLabel ??
-          (widget.value == null ? DsLocalizations.of(context).loading : null),
-      value: widget.value == null ? null : _percent(widget.value!),
-      minValue: widget.value == null ? null : '0',
-      maxValue: widget.value == null ? null : '100',
+          (_value == null ? DsLocalizations.of(context).loading : null),
+      value: _value == null ? null : _percent(_value!),
+      minValue: _value == null ? null : '0',
+      maxValue: _value == null ? null : '100',
       child: SizedBox.square(
         dimension: size,
         child: Stack(
