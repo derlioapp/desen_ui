@@ -145,9 +145,7 @@ void main() {
   });
 
   for (final scale in [1.0, 2.0, 3.0]) {
-    testWidgets('200px wide at text scale $scale: no overflow', (
-      tester,
-    ) async {
+    testWidgets('200px wide at text scale $scale: no overflow', (tester) async {
       await tester.pumpWidget(
         host(
           textScale: scale,

@@ -200,11 +200,9 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
   // Against the limits as reported, which a step can actually reach; an
   // unbounded side always takes another step.
   bool get _canDec =>
-      _enabled &&
-      (!widget.min.isFinite || widget.value > _settle(widget.min));
+      _enabled && (!widget.min.isFinite || widget.value > _settle(widget.min));
   bool get _canInc =>
-      _enabled &&
-      (!widget.max.isFinite || widget.value < _settle(widget.max));
+      _enabled && (!widget.max.isFinite || widget.value < _settle(widget.max));
 
   /// [DsStepper.step], whole and at least 1 for an `int` stepper, where a
   /// fractional step would round back to where it started.
@@ -378,14 +376,14 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
         for (final limit in [widget.min, widget.max])
           if (limit.isFinite)
             ExcludeSemantics(
-            child: Opacity(
-              opacity: 0,
-              child: Text.rich(
-                numericSpan(_format.format(limit), style: valueStyle),
-                maxLines: 1,
+              child: Opacity(
+                opacity: 0,
+                child: Text.rich(
+                  numericSpan(_format.format(limit), style: valueStyle),
+                  maxLines: 1,
+                ),
               ),
             ),
-          ),
         // Tabular digits, proportional separators ("2.5").
         Text.rich(
           numericSpan(shown, style: valueStyle),

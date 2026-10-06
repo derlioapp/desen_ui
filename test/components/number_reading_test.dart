@@ -264,9 +264,7 @@ void main() {
       expect(text(tester), '1234.56');
     });
 
-    testWidgets('an integer past 2^53 is flagged, not changed', (
-      tester,
-    ) async {
+    testWidgets('an integer past 2^53 is flagged, not changed', (tester) async {
       final values = <num?>[];
       final issues = <DsInputIssue?>[];
       await pumpField(
@@ -316,9 +314,7 @@ void main() {
       expect(issues.last?.kind, DsInputIssueKind.belowMin);
     });
 
-    testWidgets('a max under the limit still clamps on commit', (
-      tester,
-    ) async {
+    testWidgets('a max under the limit still clamps on commit', (tester) async {
       final values = <num?>[];
       await pumpField(
         tester,
