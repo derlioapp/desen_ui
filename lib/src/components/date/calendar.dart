@@ -75,8 +75,8 @@ class DsDateRange {
 /// )
 /// ```
 ///
-/// **Days.** The chosen day is a solid accent fill (the strong selection
-/// pair, whatever the theme's [DsSelectionStyle]): it is the most
+/// **Days.** The chosen day is a solid accent fill, like a checked box or
+/// radio (whatever the theme's [DsSelectionStyle]): it is the most
 /// prominent day in the grid. Today is
 /// bold in the accent text color inside a thin ring of the same color, so
 /// it is not told by color alone; a chosen today is only filled.
@@ -157,11 +157,11 @@ class DsCalendar extends _Calendar {
     final k = theme.colors;
     final type = theme.typography;
     const clear = Color(0x00000000);
-    // The chosen day is filled whatever the selection style: the strong
-    // pair, with the hairline a bright accent needs off the card (K-130).
-    final strong = theme.selectionStyle == DsSelectionStyle.strong
-        ? theme
-        : theme.copyWith(selectionStyle: DsSelectionStyle.strong);
+    // The chosen day is a checked choice, filled whatever the selection
+    // style: the accent pair of a checked box, with the edge a fill needs
+    // where it stands under 3:1 off its layer (K-130). (The strong
+    // selection pair of a near-status seed is a deep ink, a maroon or brown
+    // day next to the accent controls.)
     return DsCalendarStyle(
       daySize: theme.sizes.day,
       // No day radius: the corners follow the resolved day size.
@@ -199,12 +199,13 @@ class DsCalendar extends _Calendar {
       hovered: DsCalendarStyle(dayBackground: k.hover),
       pressed: DsCalendarStyle(dayBackground: k.press),
       selected: DsCalendarStyle(
-        dayBackground: strong.selectedFill,
-        dayForeground: strong.onSelectedFill,
-        dayBorderColor: strong.selectedEdge ?? clear,
+        dayBackground: k.accent,
+        dayForeground: k.onAccent,
+        dayBorderColor: k.accentEdge,
         dayTextStyle: const TextStyle(fontWeight: FontWeight.w600),
-        hovered: DsCalendarStyle(dayBackground: strong.selectedHoverFill),
-        pressed: DsCalendarStyle(dayBackground: strong.selectedHoverFill),
+        hovered: DsCalendarStyle(dayBackground: k.accentHover),
+        // One step beyond hover (K-68).
+        pressed: DsCalendarStyle(dayBackground: k.accentPress),
       ),
       disabled: DsCalendarStyle(
         dayBackground: clear,

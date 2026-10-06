@@ -54,7 +54,7 @@ double deltaE(DsOklch a, DsOklch b) {
 /// fill with a dark label. In light mode the accent is the seed itself
 /// (lowered only where it would melt into a white card); in dark mode the
 /// same lightness at the K-44 chroma cap. The unlabeled roles (indicator,
-/// focus) stay darkened.
+/// focus) stay darkened (and clean, K-213).
 List<String> brightFailures(DsSeed seed) {
   final v = seed.value;
   if (!v.inGamut) return const [];
@@ -125,6 +125,23 @@ List<String> fidelityFailures(DsSeed seed) {
           'status hue ${status.round()}',
         );
       }
+    }
+    // Marks with no label (progress, slider, tab underline) keep the
+    // brand's family and stay vivid (K-213): the seed hue, or for a
+    // yellow or amber whose deep tone is olive or mustard, the nearest
+    // clean hue (a deep orange or lime), never more than 65° away.
+    final mark = DsOklch.fromColor(k.indicator);
+    if (DsOklch.hueDistance(mark.h, v.h) > 65) {
+      failures.add(
+        '${brightness.name}: indicator hue ${mark.h.round()} strays from '
+        'seed ${v.h.round()}',
+      );
+    }
+    if (mark.c < math.min(v.c, .12) * .5) {
+      failures.add(
+        '${brightness.name}: indicator chroma ${mark.c.toStringAsFixed(3)} '
+        'is dusty',
+      );
     }
   }
   return failures;
@@ -246,11 +263,20 @@ void main() {
     }
     final light = DsPalette.fromSeed(seed).colors;
     expect(light.accent, seed.value.toColor());
-    // Unlabeled roles stay darkened, hue kept (H3).
+    // Unlabeled roles stay darkened. The amber's own deep tone is mustard
+    // (#976E00), so they turn to a vivid deep orange instead, like iOS's
+    // accessible yellow (K-213).
     final ink = DsOklch.fromColor(light.indicator);
     expect(ink.l, lessThan(seed.l - .2));
-    expect(DsOklch.hueDistance(ink.h, seed.h), lessThan(8));
+    expect(ink.h, inInclusiveRange(40, 55));
+    expect(ink.c, greaterThan(.14));
+    expect(isMuddy(light.indicator), isFalse);
     expect(light.focus, light.indicator);
+    // In dark mode the mark is a clear amber near the fill, not mustard.
+    final dark = DsPalette.fromSeed(seed, brightness: Brightness.dark).colors;
+    final darkMark = DsOklch.fromColor(dark.indicator);
+    expect(DsOklch.hueDistance(darkMark.h, seed.h), lessThan(8));
+    expect(darkMark.l, greaterThan(.75));
   });
 
   test('a seed that carries neither label well is darkened', () {

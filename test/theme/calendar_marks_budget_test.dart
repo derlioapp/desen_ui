@@ -12,7 +12,8 @@ import 'seed_fuzz_test.dart' show brands;
 /// The calendar's day marks against the contrast budget (§2.1), over the
 /// presets, the brand colors and a random sweep, both modes and both
 /// contrasts: today's ring (a non-text indicator, 3:1) and the chosen
-/// day's solid fill, which is the strong pair whatever the selection style.
+/// day's solid fill, which is the accent pair of a checked control
+/// whatever the selection style.
 List<String> calendarMarkFailures(DsThemeData t) {
   final k = t.colors;
   final style = DsCalendar.defaultStyle(t);
@@ -27,10 +28,10 @@ List<String> calendarMarkFailures(DsThemeData t) {
   final ring = style.todayBorderColor!;
   final band = DsColorUtils.flatten(k.accentTint, k.overlay);
   return [
-    if (selected.dayBackground != k.selectionStrong)
-      'selected day is not the strong fill (${t.selectionStyle.name})',
-    if (selectedHover.dayBackground != k.selectionStrongHover)
-      'selected day hover is not the strong hover (${t.selectionStyle.name})',
+    if (selected.dayBackground != k.accent)
+      'selected day is not the accent fill (${t.selectionStyle.name})',
+    if (selectedHover.dayBackground != k.accentHover)
+      'selected day hover is not the accent hover (${t.selectionStyle.name})',
     for (final r in [
       for (final (name, bg) in [
         ('overlay', k.overlay),
