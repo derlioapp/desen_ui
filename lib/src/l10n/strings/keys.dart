@@ -360,4 +360,25 @@ mixin _DsStrings {
 
   /// Names a navigation bar, e.g. the bottom navigation.
   String get navigation;
+
+  /// A shortcut's ⌘ key, as screen readers hear it.
+  String get keyCommand;
+
+  /// A shortcut's ⌥ key, as screen readers hear it.
+  String get keyOption;
+
+  /// A shortcut's ⇧ key, as screen readers hear it.
+  String get keyShift;
+
+  /// A shortcut's ⌃ key, as screen readers hear it.
+  String get keyControl;
+
+  /// A shortcut's ⌫ key, as screen readers hear it.
+  String get keyBackspace;
+
+  /// A shortcut's ⏎ key, as screen readers hear it.
+  String get keyEnter;
+
+  /// An item's position among its siblings, read after its name ("Home, 2 of 4"); index counts from 1.
+  String positionOf(int index, int count);
 }

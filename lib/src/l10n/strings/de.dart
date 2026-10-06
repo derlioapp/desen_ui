@@ -396,4 +396,25 @@ class DsLocalizationsDe extends DsLocalizationsEn {
 
   @override
   String get navigation => 'Navigation';
+
+  @override
+  String get keyCommand => 'Befehl';
+
+  @override
+  String get keyOption => 'Wahl';
+
+  @override
+  String get keyShift => 'Umschalt';
+
+  @override
+  String get keyControl => 'Steuerung';
+
+  @override
+  String get keyBackspace => 'Rücktaste';
+
+  @override
+  String get keyEnter => 'Eingabe';
+
+  @override
+  String positionOf(int index, int count) => '$index von $count';
 }

@@ -393,4 +393,25 @@ class DsLocalizationsHi extends DsLocalizationsEn {
 
   @override
   String get navigation => 'नेविगेशन';
+
+  @override
+  String get keyCommand => 'कमांड';
+
+  @override
+  String get keyOption => 'ऑप्शन';
+
+  @override
+  String get keyShift => 'शिफ़्ट';
+
+  @override
+  String get keyControl => 'कंट्रोल';
+
+  @override
+  String get keyBackspace => 'बैकस्पेस';
+
+  @override
+  String get keyEnter => 'एंटर';
+
+  @override
+  String positionOf(int index, int count) => '$count में से $index';
 }

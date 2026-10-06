@@ -446,7 +446,9 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
                 DsMenuItem(
                   label: Text(o.label),
                   leading: o.leading,
+                  // One value of a set: radio items.
                   checked: o.value == widget.value,
+                  checkRole: DsMenuCheckRole.radio,
                   autofocus: o.value == widget.value,
                   onPressed: o.enabled ? () => _choose(o) : null,
                   trailing: o.detail == null

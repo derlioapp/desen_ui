@@ -255,4 +255,16 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
 
   @override
   String get navigation => '導覽';
+
+  @override
+  String get keyOption => '選項';
+
+  @override
+  String get keyShift => 'Shift';
+
+  @override
+  String get keyEnter => '輸入';
+
+  @override
+  String positionOf(int index, int count) => '第 $index 個，共 $count 個';
 }

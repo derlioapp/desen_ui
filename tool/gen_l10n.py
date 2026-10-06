@@ -1385,6 +1385,74 @@ for _lang, _values in NAVIGATION.items():
     LANGS[_lang].update(_values)
 VARIANTS['zh_Hant']['values'].update(navigation='導覽')
 
+# Key names for shortcut hints ("⌘E" is read "Command E"): the symbols
+# a hint draws as icons, plus ⌃.
+KEYS.update({
+    'keyCommand': ('A shortcut\'s ⌘ key, as screen readers hear it.', 'Command'),
+    'keyOption': ('A shortcut\'s ⌥ key, as screen readers hear it.', 'Option'),
+    'keyShift': ('A shortcut\'s ⇧ key, as screen readers hear it.', 'Shift'),
+    'keyControl': ('A shortcut\'s ⌃ key, as screen readers hear it.', 'Control'),
+    'keyBackspace': ('A shortcut\'s ⌫ key, as screen readers hear it.', 'Backspace'),
+    'keyEnter': ('A shortcut\'s ⏎ key, as screen readers hear it.', 'Enter'),
+})
+SHORTCUT_KEYS = {
+    'ar': dict(keyCommand='الأوامر', keyOption='الخيارات', keyShift='العالي',
+               keyControl='التحكم', keyBackspace='مسافة للخلف', keyEnter='إدخال'),
+    'de': dict(keyCommand='Befehl', keyOption='Wahl', keyShift='Umschalt',
+               keyControl='Steuerung', keyBackspace='Rücktaste', keyEnter='Eingabe'),
+    'es': dict(keyCommand='Comando', keyOption='Opción', keyShift='Mayúsculas',
+               keyControl='Control', keyBackspace='Retroceso', keyEnter='Intro'),
+    'fr': dict(keyCommand='Commande', keyOption='Option', keyShift='Maj',
+               keyControl='Contrôle', keyBackspace='Retour arrière', keyEnter='Entrée'),
+    'hi': dict(keyCommand='कमांड', keyOption='ऑप्शन', keyShift='शिफ़्ट',
+               keyControl='कंट्रोल', keyBackspace='बैकस्पेस', keyEnter='एंटर'),
+    'it': dict(keyCommand='Comando', keyOption='Opzione', keyShift='Maiuscole',
+               keyControl='Controllo', keyBackspace='Backspace', keyEnter='Invio'),
+    'ja': dict(keyCommand='コマンド', keyOption='オプション', keyShift='シフト',
+               keyControl='コントロール', keyBackspace='バックスペース', keyEnter='エンター'),
+    'ko': dict(keyCommand='커맨드', keyOption='옵션', keyShift='시프트',
+               keyControl='컨트롤', keyBackspace='백스페이스', keyEnter='엔터'),
+    'pt': dict(keyCommand='Comando', keyOption='Opção', keyShift='Shift',
+               keyControl='Control', keyBackspace='Backspace', keyEnter='Enter'),
+    'ru': dict(keyCommand='Command', keyOption='Option', keyShift='Shift',
+               keyControl='Control', keyBackspace='Backspace', keyEnter='Ввод'),
+    'tr': dict(keyCommand='Komut', keyOption='Seçenek', keyShift='Üst Karakter',
+               keyControl='Kontrol', keyBackspace='Geri Silme', keyEnter='Enter'),
+    'zh': dict(keyCommand='命令', keyOption='选项', keyShift='上档',
+               keyControl='控制', keyBackspace='退格', keyEnter='回车'),
+}
+for _lang, _values in SHORTCUT_KEYS.items():
+    LANGS[_lang].update(_values)
+VARIANTS['zh_Hant']['values'].update(
+    keyCommand='命令', keyOption='選項', keyShift='Shift', keyControl='控制',
+    keyBackspace='退格', keyEnter='輸入')
+
+# A place among siblings where no role says it, read after the name: a
+# bottom navigation destination (a button, not a tab).
+KEYS.update({
+    'positionOf(int index, int count)': (
+        'An item\'s position among its siblings, read after its name ("Home, 2 of 4"); index counts from 1.',
+        "'$index of $count'",
+    ),
+})
+POSITION = {
+    'ar': dict(positionOf="'$index من $count'"),
+    'de': dict(positionOf="'$index von $count'"),
+    'es': dict(positionOf="'$index de $count'"),
+    'fr': dict(positionOf="'$index sur $count'"),
+    'hi': dict(positionOf="'$count में से $index'"),
+    'it': dict(positionOf="'$index di $count'"),
+    'ja': dict(positionOf="'$index/$count'"),
+    'ko': dict(positionOf="'$count개 중 $index번째'"),
+    'pt': dict(positionOf="'$index de $count'"),
+    'ru': dict(positionOf="'$index из $count'"),
+    'tr': dict(positionOf="'$index, toplam $count'"),
+    'zh': dict(positionOf="'第 $index 个，共 $count 个'"),
+}
+for _lang, _values in POSITION.items():
+    LANGS[_lang].update(_values)
+VARIANTS['zh_Hant']['values'].update(positionOf="'第 $index 個，共 $count 個'")
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

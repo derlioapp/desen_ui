@@ -398,4 +398,25 @@ class DsLocalizationsTr extends DsLocalizationsEn {
 
   @override
   String get navigation => 'Gezinme';
+
+  @override
+  String get keyCommand => 'Komut';
+
+  @override
+  String get keyOption => 'Seçenek';
+
+  @override
+  String get keyShift => 'Üst Karakter';
+
+  @override
+  String get keyControl => 'Kontrol';
+
+  @override
+  String get keyBackspace => 'Geri Silme';
+
+  @override
+  String get keyEnter => 'Enter';
+
+  @override
+  String positionOf(int index, int count) => '$index, toplam $count';
 }

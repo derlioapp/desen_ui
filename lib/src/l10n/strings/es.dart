@@ -406,4 +406,25 @@ class DsLocalizationsEs extends DsLocalizationsEn {
 
   @override
   String get navigation => 'Navegación';
+
+  @override
+  String get keyCommand => 'Comando';
+
+  @override
+  String get keyOption => 'Opción';
+
+  @override
+  String get keyShift => 'Mayúsculas';
+
+  @override
+  String get keyControl => 'Control';
+
+  @override
+  String get keyBackspace => 'Retroceso';
+
+  @override
+  String get keyEnter => 'Intro';
+
+  @override
+  String positionOf(int index, int count) => '$index de $count';
 }
