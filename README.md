@@ -2,6 +2,8 @@
 
 Web-grade UI components for Flutter, built on the widgets layer only. No Material, no Cupertino.
 
+**Docs and live examples:** https://derlioapp.github.io/desen_ui/
+
 > Status: alpha (`0.1.0-alpha.1`). The API may still change before 1.0 ([VERSIONING.md](VERSIONING.md)). Requires Dart 3.13 and Flutter 3.47 or later.
 >
 > Foundation, overlay engine, localization (13 languages, plus Portuguese (Portugal) and Traditional Chinese) and 49 components plus form fields: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
