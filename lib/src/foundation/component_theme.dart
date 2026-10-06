@@ -22,7 +22,11 @@ abstract class DsComponentThemeData<T extends DsComponentThemeData<T>>
   Type get _type => T;
 
   /// These defaults laid over [outer], defaults of the same type.
-  DsComponentThemeData<T> _over(DsComponentThemeData<dynamic>? outer) =>
+  ///
+  /// [outer] is typed `Object?`: the compiler reads
+  /// `DsComponentThemeData<dynamic>` inside this F-bounded class as
+  /// `DsComponentThemeData<DsComponentThemeData<dynamic>>`.
+  DsComponentThemeData<T> _over(Object? outer) =>
       outer == null ? this : (outer as T).merge(this as T);
 }
 
@@ -113,14 +117,14 @@ class _ComponentThemeScope extends InheritedModel<Type>
     final outer = context
         .dependOnInheritedWidgetOfExactType<_ComponentThemeScope>()
         ?.themes;
-    final merged = <Type, DsComponentThemeData<dynamic>>{...?outer};
+    final merged = <Type, Object>{...?outer};
     for (final theme in themes) {
       merged[theme._type] = theme._over(merged[theme._type]);
     }
     return _ComponentThemeScope(themes: merged, child: child);
   }
 
-  final Map<Type, DsComponentThemeData<dynamic>> themes;
+  final Map<Type, Object> themes;
 
   @override
   Widget wrap(BuildContext context, Widget child) =>
