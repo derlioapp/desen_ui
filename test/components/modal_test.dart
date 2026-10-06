@@ -123,7 +123,10 @@ void main() {
           ),
         ),
       );
-      await tester.tap(find.text('Aç'));
+      // Opened from the keyboard: a click does not focus the opener, and a
+      // modal route gives focus back to the control that had it.
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
       await tester.pumpAndSettle();
       String? focused() =>
           (FocusManager.instance.primaryFocus?.context
