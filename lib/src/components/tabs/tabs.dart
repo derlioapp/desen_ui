@@ -28,6 +28,7 @@ class DsTab<T> {
     required this.value,
     required this.label,
     this.count,
+    this.countSemanticLabel,
     this.enabled = true,
     this.semanticLabel,
   });
@@ -38,8 +39,15 @@ class DsTab<T> {
   /// The label, usually a short [Text].
   final Widget label;
 
-  /// A neutral count after the label (e.g. members).
+  /// A neutral count after the label (e.g. members). Screen readers hear
+  /// it after the label, as the number ("Members, 12"), unless
+  /// [countSemanticLabel] says what it counts.
   final int? count;
+
+  /// What screen readers hear for [count] instead of the bare number,
+  /// e.g. "12 members"; the app words it, since only it knows what is
+  /// counted. Null reads the number ("99+" above 99).
+  final String? countSemanticLabel;
 
   /// Whether the tab can be selected.
   final bool enabled;
@@ -316,7 +324,11 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
             children: [
               tab.label,
               if (tab.count != null)
-                DsCount(tab.count!, tone: DsCountTone.neutral),
+                DsCount(
+                  tab.count!,
+                  tone: DsCountTone.neutral,
+                  semanticLabel: tab.countSemanticLabel,
+                ),
             ],
           ),
         ),
