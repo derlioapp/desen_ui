@@ -70,6 +70,18 @@
   kept from wrapping by its limits) no longer fades over a last item when
   nothing lies beyond it, and that item now rests whole at the end in a
   short window.
+- Dashed outlines (`DsDashedBorder`, a dashed `DsCard`, the
+  `DsFileUpload` drop zone) space their dashes evenly on continuous
+  corners too. Dashes were laid out with the engine's path measure, which
+  runs unevenly along a superellipse curve, so dashes and gaps on the
+  corners were up to 7% and 11% off. The outline is now measured along a
+  flattened copy, and the dashes are built once per size and shape rather
+  than on every repaint.
+- The dark-mode warning tint (`colors.warning.tint`, with its hover and
+  press) is a deep orange instead of a brown: amber this dark reads as
+  brown or olive. Its hue turns to the nearest clean one at the same
+  luminance, so the warning text on it keeps its contrast (about 7.7:1).
+  The other status tints were clean already and are unchanged.
 
 ## 0.1.0-alpha.2
 

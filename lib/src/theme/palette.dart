@@ -425,10 +425,17 @@ class _Engine {
   Color _mark(double lightness) {
     final plain = o(lightness, c);
     if (neutral) return plain;
-    final drawn = DsOklch.fromColor(plain);
-    if (!_muddy(drawn)) return plain;
-    final y = DsColorUtils.luminance(plain);
-    final chroma = math.max(c, _markChroma);
+    return _clean(plain, math.max(c, _markChroma));
+  }
+
+  /// [color], or when it is muddy the nearest clean tone at the same
+  /// luminance, so every contrast it met still holds: its hue turns away
+  /// from lemon yellow (toward orange below it, toward green above), one
+  /// degree at a time, at [chroma] as far as sRGB allows.
+  static Color _clean(Color color, double chroma) {
+    final drawn = DsOklch.fromColor(color);
+    if (!_muddy(drawn)) return color;
+    final y = DsColorUtils.luminance(color);
     final step = drawn.h < _lemon ? -1.0 : 1.0;
     var hue = drawn.h;
     Color tone;
@@ -959,8 +966,13 @@ class _Engine {
     // the status hue rather than brown or maroon; the vivid status text on
     // them carries the color. Hover and press step lighter, staying under
     // the text at 4.5:1. Alerts do not use them (a neutral block instead).
-    Color deepTint(double hue, double chroma, [int step = 0]) =>
-        DsOklch(.34 + step * .02, chroma, hue).fitted().toColor();
+    // A hue whose deep tone is muddy (warning's amber reads as brown this
+    // dark) turns to the nearest clean one at the same luminance, like the
+    // marks: amber becomes a deep orange.
+    Color deepTint(double hue, double chroma, [int step = 0]) => _clean(
+      DsOklch(.34 + step * .02, chroma, hue).fitted().toColor(),
+      chroma,
+    );
     final softWhite = oN(.93, n * .3);
     // As much brand chroma as keeps secondary text 4.5:1 on a menu
     // highlight (select details, shortcuts): chroma darkens a blue or

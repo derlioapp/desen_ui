@@ -663,8 +663,8 @@ List<String> darkKeepsVivid(DsColors light, DsColors dark) {
   ];
 }
 
-/// The dark accent family is never more saturated than in light mode
-/// (`açık moddakini de aşmaz`): the accent fill and its hover and press
+/// The dark accent family is never more saturated than in light mode:
+/// the accent fill and its hover and press
 /// against the light accent fill, the strong selection and its hover
 /// against the light strong selection.
 List<String> darkNotMoreChromatic(DsColors light, DsColors dark) => [
@@ -740,7 +740,19 @@ bool isMuddy(Color color) {
 /// Avatar tones past the first (the selection pair) also keep off the
 /// hues that read as khaki, sage or olive at their lightness (55–135°),
 /// and on a dark tone off those that read as brown or maroon (355–55°).
+/// Every status tint, with its hover and press, is clean too, in both
+/// modes: apps read them from the palette even where no component draws
+/// them.
 List<String> markFailures(DsColors k, {required bool dark}) => [
+  for (final (name, status) in statuses(k))
+    for (final (role, tint) in [
+      ('tint', status.tint),
+      ('tintHover', status.tintHover),
+      ('tintPress', status.tintPress),
+    ])
+      if (DsColorUtils.flatten(tint, k.surface) case final drawn
+          when isMuddy(drawn))
+        '$name.$role is muddy (${_hex(drawn)})',
   // A neutral seed's indicator is the brand's own gray.
   if (chroma(k.indicator) >= .03) ...[
     if (isMuddy(k.indicator)) 'indicator is muddy (${_hex(k.indicator)})',
