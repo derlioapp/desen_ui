@@ -177,6 +177,32 @@ void main() {
       handle.dispose();
     });
 
+    testWidgets('file upload: the error is the drop zone\'s hint', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(
+          DsField(
+            label: const Text('Attachments'),
+            errorText: 'Add at least one file.',
+            child: DsFileUpload(
+              onBrowse: () {},
+              files: [DsFileItem(name: 'a.pdf', size: 1000, onRemove: () {})],
+            ),
+          ),
+        ),
+      );
+      await tester.pump();
+      final zone = tester
+          .getSemantics(find.byType(DsDashedBorder))
+          .getSemanticsData();
+      expect(zone.label, startsWith('Attachments'));
+      expect(zone.hint, 'Error\nAdd at least one file.');
+      expect(find.bySemanticsLabel(RegExp('Add at least one')), findsNothing);
+      handle.dispose();
+    });
+
     testWidgets('without announcements the error stays a live region too', (
       tester,
     ) async {
