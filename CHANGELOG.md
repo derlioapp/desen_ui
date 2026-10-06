@@ -95,12 +95,12 @@
   - **Behavior change:** this is the new default,
     `overflow: DsToolbarOverflow.menu`. Pass `DsToolbarOverflow.scroll` to
     keep the sideways scrolling.
-  - **Breaking (debug builds):** a toolbar child the bar cannot show in
-    the menu (anything but a toggle, a button, a divider or a tooltip
-    around a toggle or button) now asserts. Wrap it in the new
-    `DsToolbarItem`, whose `menuItems` give its menu form, or an empty
-    list for an item that only shows something, such as a "3 selected"
-    label.
+  - A bar with a child that has no menu form (anything but a toggle, a
+    button, a divider or a tooltip around a toggle or button) keeps
+    scrolling as before, with every child in it. Wrap custom children in
+    the new `DsToolbarItem` to let them collapse: its `menuItems` give the
+    child's menu form, or an empty list for an item that only shows
+    something, such as a "3 selected" label.
 
 ## 0.1.0-alpha.2
 

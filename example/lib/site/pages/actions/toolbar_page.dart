@@ -60,7 +60,9 @@ class ToolbarPage extends StatelessWidget {
           DocText(
             'Any other item needs a `DsToolbarItem` that gives its menu '
             'items, or an empty list for an item that only shows something, '
-            'like the "3 selected" label above. `DsToolbarItem` also gives a '
+            'like the "3 selected" label above. A bar with a child that has '
+            'no menu form scrolls instead, so nothing disappears: wrap custom '
+            'children in `DsToolbarItem` to let them collapse. It also gives a '
             'toggle or button a menu form of its own. Set `overflow: .scroll` '
             'to keep every item in the bar and scroll the row sideways '
             'instead.',
