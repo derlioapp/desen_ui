@@ -3,6 +3,8 @@ import 'package:desen_ui/src/painting/numeric_span.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../components/helpers.dart';
+
 /// Numeric text keeps tabular figures on its digits only: in Schibsted
 /// Grotesk `tnum` also widens `.`, `,`, `:` and `/` to a digit's width,
 /// so "12.480,00" read like a typewriter. Digits still line up in a
@@ -91,19 +93,22 @@ void main() {
   testWidgets('a table amount sets its separators proportionally, and the '
       'digits still line up', (tester) async {
     await tester.pumpWidget(
-      Directionality(
-        textDirection: TextDirection.ltr,
-        child: DsTable<String>(
-          rows: const ['12.480,00', '2.175,50'],
-          rowKey: (v) => v,
-          columns: [
-            DsTableColumn<String>(
-              id: 'amount',
-              label: 'Amount',
-              text: (v) => v,
-              numeric: true,
-            ),
-          ],
+      host(
+        SizedBox(
+          width: 400,
+          height: 300,
+          child: DsTable<String>(
+            rows: const ['12.480,00', '2.175,50'],
+            rowKey: (v) => v,
+            columns: [
+              DsTableColumn<String>(
+                id: 'amount',
+                label: 'Amount',
+                text: (v) => v,
+                numeric: true,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -117,5 +122,19 @@ void main() {
         epsilon: 0.5,
       ),
     );
+  });
+
+  testWidgets('a stepper shows a decimal value with tabular digits only', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      host(DsStepper(value: 2.5, max: 10, step: .5, onChanged: (_) {})),
+    );
+    final shown = tester.widget<Text>(find.text('2.5').last);
+    expect(runs(shown.textSpan! as TextSpan), [
+      ('2', true),
+      ('.', false),
+      ('5', true),
+    ]);
   });
 }
