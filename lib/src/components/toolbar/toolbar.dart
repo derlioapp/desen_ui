@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/focus_forward.dart';
 import '../../behavior/pressable.dart';
 import '../../painting/decoration.dart';
 import '../../painting/line.dart';
@@ -35,7 +36,8 @@ import 'toolbar_toggle_style.dart';
 ///
 /// **Keyboard:** every item is its own Tab stop, and Left and
 /// Right (mirrored in RTL), Home and End also move focus between the items,
-/// as in the WAI-ARIA toolbar pattern. The pattern's single Tab stop is not
+/// as in the WAI-ARIA toolbar pattern. Tab goes through all the items
+/// before it moves on to what is beside the toolbar. The pattern's single Tab stop is not
 /// used: Flutter has no toolbar semantics role, so screen-reader users
 /// would not be told that the other items are reached with arrows.
 class DsToolbar extends StatelessWidget {
@@ -130,14 +132,16 @@ class DsToolbar extends StatelessWidget {
                   style: DsButtonStyle(borderRadius: nested)
                       .merge(DsButtonTheme.of(context).style),
                 ),
-                child: Focus(
-                  canRequestFocus: false,
-                  skipTraversal: true,
-                  onKeyEvent: _onKey,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    spacing: s.gap!,
-                    children: children,
+                child: FocusStops(
+                  child: Focus(
+                    canRequestFocus: false,
+                    skipTraversal: true,
+                    onKeyEvent: _onKey,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      spacing: s.gap!,
+                      children: children,
+                    ),
                   ),
                 ),
               ),

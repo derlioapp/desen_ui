@@ -1,10 +1,13 @@
 import 'dart:math' as math;
+import 'dart:ui' show SemanticsRole;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart' show OverflowBoxFit;
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/focus_forward.dart';
 import '../../behavior/pressable.dart';
+import '../../l10n/localizations.dart';
 import '../../overlay/placement.dart';
 import '../../painting/decoration.dart';
 import '../../painting/line.dart';
@@ -43,6 +46,10 @@ import 'sidebar_style.dart';
 ///   ],
 /// )
 /// ```
+///
+/// Screen readers hear a navigation landmark named by [semanticLabel].
+/// Tab goes through the sidebar's items before it moves on to the page
+/// beside it.
 ///
 /// **Collapsed** ([collapsed]), the sidebar narrows to a rail of icons:
 /// each item shows its icon alone and its label as a tooltip on hover and
@@ -85,7 +92,8 @@ class DsSidebar<T extends Object> extends StatelessWidget {
   /// Style laid over the theme and defaults.
   final DsSidebarStyle? style;
 
-  /// Names the navigation for screen readers.
+  /// Names the navigation for screen readers; the localized "Navigation"
+  /// when null.
   final String? semanticLabel;
 
   /// Whether the nearest [DsSidebar] around [context] is collapsed; false
@@ -136,7 +144,9 @@ class DsSidebar<T extends Object> extends StatelessWidget {
     final onChanged = this.onChanged;
     return Semantics(
       container: true,
-      label: semanticLabel,
+      // A navigation landmark (`<nav>` on the web).
+      role: SemanticsRole.navigation,
+      label: semanticLabel ?? DsLocalizations.of(context).navigation,
       explicitChildNodes: true,
       child: _DsSidebarScope(
         collapsed: collapsed,
@@ -174,15 +184,18 @@ class DsSidebar<T extends Object> extends StatelessWidget {
               ),
             );
           },
+          // Tab goes through the whole sidebar before the page beside it.
           child: DsSidebarTheme(
             data: DsSidebarThemeData(style: s),
-            child: SingleChildScrollView(
-              padding: s.padding,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                spacing: s.gap!,
-                children: [?header, ...children],
+            child: FocusStops(
+              child: SingleChildScrollView(
+                padding: s.padding,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  spacing: s.gap!,
+                  children: [?header, ...children],
+                ),
               ),
             ),
           ),
