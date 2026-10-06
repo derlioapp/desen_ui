@@ -1611,10 +1611,17 @@ class _DsTableState<T> extends State<DsTable<T>> {
             child: Semantics(
               container: true,
               role: cellRole,
-              child: Padding(
-                padding: g.vertical,
-                child: Align(alignment: _align(columns[i]), child: cells[i]),
-              ),
+              // A sort button takes the cell's padding inside it, so the
+              // whole header height answers its taps.
+              child: cells[i] is _SortButton
+                  ? Align(alignment: _align(columns[i]), child: cells[i])
+                  : Padding(
+                      padding: g.vertical,
+                      child: Align(
+                        alignment: _align(columns[i]),
+                        child: cells[i],
+                      ),
+                    ),
             ),
           ),
         ],
@@ -1703,17 +1710,20 @@ class _DsTableState<T> extends State<DsTable<T>> {
     );
   }
 
-  Widget _sortButton(DsTableStyle s, DsTableColumn<T> c, {bool card = false}) =>
-      _SortButton(
-        label: c.label,
-        alignment: card ? AlignmentDirectional.centerStart : _align(c),
-        textAlign: card ? TextAlign.start : _textAlign(c),
-        direction: widget.sort?.columnId == c.id
-            ? widget.sort!.direction
-            : null,
-        style: s,
-        onPressed: () => widget.onSortChanged!(_nextSort(c)),
-      );
+  Widget _sortButton(
+    DsTableStyle s,
+    DsTableColumn<T> c, {
+    bool card = false,
+    EdgeInsetsGeometry padding = EdgeInsets.zero,
+  }) => _SortButton(
+    label: c.label,
+    padding: padding,
+    alignment: card ? AlignmentDirectional.centerStart : _align(c),
+    textAlign: card ? TextAlign.start : _textAlign(c),
+    direction: widget.sort?.columnId == c.id ? widget.sort!.direction : null,
+    style: s,
+    onPressed: () => widget.onSortChanged!(_nextSort(c)),
+  );
 
   Widget _header(
     DsThemeData t,
@@ -1748,7 +1758,7 @@ class _DsTableState<T> extends State<DsTable<T>> {
             cells: [
               for (final c in widget.columns)
                 sortable && c.sortable
-                    ? _sortButton(s, c)
+                    ? _sortButton(s, c, padding: g.vertical)
                     : Text(c.label, textAlign: _textAlign(c)),
             ],
           ),
@@ -1968,10 +1978,14 @@ class _CardGeometry {
 TextDirection _flip(TextDirection d) =>
     d == TextDirection.ltr ? TextDirection.rtl : TextDirection.ltr;
 
-/// A sortable column header: a button with an arrow.
+/// A sortable column header: a button with an arrow. It spans the header
+/// row's height, the cell's [padding] inside it, so the whole row answers
+/// taps (a touch target) while the label and the focus ring stay where
+/// the padding puts them.
 class _SortButton extends StatelessWidget {
   const _SortButton({
     required this.label,
+    required this.padding,
     required this.alignment,
     required this.textAlign,
     required this.direction,
@@ -1980,6 +1994,7 @@ class _SortButton extends StatelessWidget {
   });
 
   final String label;
+  final EdgeInsetsGeometry padding;
   final AlignmentDirectional alignment;
   final TextAlign textAlign;
   final DsTableSortDirection? direction;
@@ -1994,7 +2009,7 @@ class _SortButton extends StatelessWidget {
     final size = s.sortIconSize!;
     return DsPressable(
       onPressed: onPressed,
-      // The header row is tall enough to hit (K-49).
+      // The button spans the header row, tall enough to hit.
       minTapTarget: 0,
       mouseCursor: s.cursor,
       builder: (context, states, _) {
@@ -2014,44 +2029,47 @@ class _SortButton extends StatelessWidget {
             DsTableSortDirection.descending => l10n.sortedDescending,
             null => null,
           },
-          child: DecoratedBox(
-            decoration: DsBoxDecoration(
-              // The ring spans the header row: a control of its height.
-              borderRadius: BorderRadius.circular(
-                t.radii.control(s.headerHeight!),
-              ),
-              shadows: [
-                if (states.contains(WidgetState.focused)) ...?s.focusShadows,
-              ],
-            ),
-            child: Align(
-              alignment: alignment,
-              widthFactor: 1,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                spacing: DsSpace.s4,
-                // In an end-aligned (numeric) column the arrow goes before
-                // the label, so the label's end lines up with the values,
-                // as in most data grids.
-                textDirection: alignment == AlignmentDirectional.centerEnd
-                    ? _flip(Directionality.of(context))
-                    : null,
-                children: [
-                  Flexible(
-                    child: Text(
-                      label,
-                      textAlign: textAlign,
-                      style: TextStyle(color: color),
-                    ),
-                  ),
-                  // The arrow's place is kept, so the label never shifts.
-                  ExcludeSemantics(
-                    child: Opacity(
-                      opacity: active ? 1 : 0,
-                      child: DsIcon(icon, size: size, color: color),
-                    ),
-                  ),
+          child: Padding(
+            padding: padding,
+            child: DecoratedBox(
+              decoration: DsBoxDecoration(
+                // The ring spans the header row: a control of its height.
+                borderRadius: BorderRadius.circular(
+                  t.radii.control(s.headerHeight!),
+                ),
+                shadows: [
+                  if (states.contains(WidgetState.focused)) ...?s.focusShadows,
                 ],
+              ),
+              child: Align(
+                alignment: alignment,
+                widthFactor: 1,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  spacing: DsSpace.s4,
+                  // In an end-aligned (numeric) column the arrow goes before
+                  // the label, so the label's end lines up with the values,
+                  // as in most data grids.
+                  textDirection: alignment == AlignmentDirectional.centerEnd
+                      ? _flip(Directionality.of(context))
+                      : null,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        label,
+                        textAlign: textAlign,
+                        style: TextStyle(color: color),
+                      ),
+                    ),
+                    // The arrow's place is kept, so the label never shifts.
+                    ExcludeSemantics(
+                      child: Opacity(
+                        opacity: active ? 1 : 0,
+                        child: DsIcon(icon, size: size, color: color),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

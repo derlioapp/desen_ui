@@ -85,6 +85,12 @@ class DsSelectOption<T> {
 /// In a bounded width the trigger fills it, like a field; in an unbounded
 /// one (a toolbar [Row]) it is as wide as its longest option.
 ///
+/// On touch the trigger keeps a text field's height (40), so a select and
+/// a text field line up in a row; taps up to the theme's smallest tap
+/// target ([DsSizes.minTapTarget], 44) around it still open it, without
+/// growing the layout. The band reaches as far as the parent's bounds: in
+/// a form column, into the space around the select.
+///
 /// ```dart
 /// DsSelect<String>(
 ///   value: project,
