@@ -586,36 +586,50 @@ void main() {
     });
 
     testWidgets('20 digits: the value and the text agree', (tester) async {
-      final key = await _pump<num?>(
-        tester,
-        null,
-        (v, set, invalid) => DsNumberField(value: v, onChanged: set),
-      );
-      await tester.tap(_editable);
-      await _type(tester, '99999999999999999999');
-      await _enter(tester);
-      expect(key.currentState!.value, 1e20);
-      expect(_text(tester), '100000000000000000000');
-    });
-
-    testWidgets('22 digits: no exponent, still steppable', (tester) async {
+      // Past 2^53 - 1 a double would change the number, so since b26a803
+      // the typed text is kept and flagged instead of reported as 1e20.
       final key = await _pump<num?>(
         tester,
         null,
         (v, set, invalid) => DsNumberField(
           value: v,
-          format: const DsNumberFormat(decimals: 1),
           onChanged: set,
+          onInputIssueChanged: invalid,
         ),
       );
       await tester.tap(_editable);
-      await _type(tester, '1000000000000000000000');
+      await _type(tester, '99999999999999999999');
       await _enter(tester);
-      expect(_text(tester), isNot(contains('e')));
+      expect(key.currentState!.value, isNull);
+      expect(key.currentState!.log.where((v) => v != null), isEmpty);
+      expect(_text(tester), '99999999999999999999');
+      expect(key.currentState!.issues.last?.kind, DsInputIssueKind.aboveMax);
+    });
+
+    testWidgets('22 digits: no exponent, still steppable', (tester) async {
+      // Typing 22 digits is flagged past the exact limit (b26a803); a value
+      // that large from outside still shows in plain digits and steps.
+      final key = await _pump<num?>(
+        tester,
+        1e21,
+        (v, set, invalid) => DsNumberField(
+          value: v,
+          format: const DsNumberFormat(decimals: 1),
+          onChanged: set,
+          onInputIssueChanged: invalid,
+        ),
+      );
       expect(_text(tester), '1000000000000000000000.0');
+      await tester.tap(_editable);
+      await tester.pump();
       await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
       await tester.pump();
       expect(key.currentState!.value, greaterThanOrEqualTo(1e21));
+      expect(_text(tester), isNot(contains('e')));
+      await _type(tester, '1000000000000000000000');
+      await _enter(tester);
+      expect(_text(tester), '1000000000000000000000');
+      expect(key.currentState!.issues.last?.kind, DsInputIssueKind.aboveMax);
     });
 
     testWidgets('a NaN value shows an empty field', (tester) async {
