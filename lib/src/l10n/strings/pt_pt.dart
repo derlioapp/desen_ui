@@ -131,4 +131,7 @@ class DsLocalizationsPtPt extends DsLocalizationsPt {
   @override
   String numberAmbiguous(String grouped, String decimal) =>
       'Introduza $grouped ou $decimal.';
+
+  @override
+  String get spellingSuggestions => 'Sugestões ortográficas';
 }

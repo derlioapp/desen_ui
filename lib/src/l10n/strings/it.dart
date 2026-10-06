@@ -420,4 +420,10 @@ class DsLocalizationsIt extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$index di $count';
+
+  @override
+  String get spellingSuggestions => 'Suggerimenti ortografici';
+
+  @override
+  String get noSpellingSuggestions => 'Nessuna sostituzione trovata';
 }

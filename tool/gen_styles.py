@@ -874,6 +874,8 @@ SPECS = [
             ('handleColor', 'Color', 'Selection handles on touch screens.'),
             ('handleSize', 'double', "Diameter of a selection handle's knob."),
             ('composingStyle', 'TextStyle', 'Text an input method (IME) is still composing, merged: an underline.'),
+            ('misspelledStyle', 'TextStyle', 'A word the spell checker flags, merged: a dotted underline on Apple platforms, a wavy one elsewhere.'),
+            ('misspelledSelectionColor', 'Color', 'Highlight behind a flagged word while its spelling suggestions show (iOS selects the word).'),
             ('shadows', 'List<DsShadow>', 'Elevation around the edge, e.g. a search field drawn as a control.'),
             ('counterStyle', 'TextStyle', 'Character counter ("12 / 100") style, merged.'),
             ('counterOverStyle', 'TextStyle', 'Laid over the counter style while the text is over the limit.'),

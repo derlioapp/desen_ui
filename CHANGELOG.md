@@ -1,3 +1,20 @@
+## Unreleased
+
+- Text fields check spelling on iOS and Android with the platform's spell
+  checker. A misspelled word gets a danger-colored underline (dotted on
+  iOS, wavy on Android), and tapping it opens
+  `DsSpellCheckSuggestionsToolbar`, built from the touch edit toolbar, with
+  up to three replacements; Android adds Delete, and iOS shows "No
+  replacements found" when there are none. `DsTextField.spellCheck`
+  (also on `DsTextFormField`) is on by default for plain and multi-line
+  text, and off for email, URL, password, number, phone, date, name and
+  address fields, search fields, autocompletes and fields with
+  `autocorrect: false`; desktop and the web have no checker. The look is
+  `DsTextFieldStyle.misspelledStyle` and `misspelledSelectionColor`. New
+  strings: `spellingSuggestions`, `noSpellingSuggestions`.
+- `DsTextSelectionToolbar.semanticLabel` names the toolbar for screen
+  readers.
+
 ## 0.1.0-alpha.2
 
 - LICENSE holds the MIT License alone, so pub.dev recognizes it. The
