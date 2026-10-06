@@ -512,6 +512,9 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
       controller: _portal,
       overlayChildBuilder: (context, info) {
         final point = widget.anchorPoint;
+        // A trigger kept alive off screen in a lazy list (focused, or the
+        // table's active row) has a zeroed paint transform, so its rect
+        // comes out NaN: that is a trigger that left the window.
         final anchor = MatrixUtils.transformRect(
           info.childPaintTransform,
           point == null ? Offset.zero & info.childSize : point & Size.zero,
@@ -551,7 +554,9 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
           reveal: _reveal,
           travel: motion.reduced ? 0 : motion.overlayOffset,
           startScale: motion.reduced ? 1 : motion.overlayScale,
-          minWidth: widget.matchAnchorWidth ? anchor.width : 0,
+          minWidth: widget.matchAnchorWidth && anchor.isFinite
+              ? anchor.width
+              : 0,
           interactive: widget.controller.isOpen,
           onAnchorLost: _onAnchorLost,
           child: layer,
@@ -767,6 +772,9 @@ class _RenderPlaced extends RenderShiftedBox {
     size = constraints.biggest;
     final child = this.child;
     if (child == null) return;
+    // A NaN anchor (a trigger kept alive off screen) "overlaps" every rect,
+    // since each comparison with NaN is false: test it first.
+    final visible = _anchor.isFinite && _anchor.overlaps(Offset.zero & size);
     final room = Size(
       (size.width - _margin.horizontal).clamp(0, double.infinity),
       (size.height - _margin.vertical).clamp(0, double.infinity),
@@ -780,6 +788,12 @@ class _RenderPlaced extends RenderShiftedBox {
       ),
       parentUsesSize: true,
     );
+    if (!_anchor.isFinite) {
+      // Nothing to place against: keep the last place (the layer is hidden
+      // and closing) instead of laying it out at NaN.
+      _reportLost(visible);
+      return;
+    }
     DsPlacement place() => dsPlace(
       anchor: _anchor,
       size: child.size,
@@ -807,14 +821,19 @@ class _RenderPlaced extends RenderShiftedBox {
       placement = place();
     }
     _placedSide = placement.side;
-    final visible = _anchor.overlaps(Offset.zero & size);
+    _reportLost(visible);
+    (child.parentData! as BoxParentData).offset = placement.offset;
+  }
+
+  /// Records whether the anchor is on screen; an open layer whose anchor
+  /// left hears [onAnchorLost] after the frame.
+  void _reportLost(bool visible) {
     if (!visible && interactive && onAnchorLost != null) {
       // Not during layout: closing rebuilds and moves focus.
       final lost = onAnchorLost!;
       WidgetsBinding.instance.addPostFrameCallback((_) => lost());
     }
     _anchorVisible = visible;
-    (child.parentData! as BoxParentData).offset = placement.offset;
   }
 
   /// The reveal: a scale and short travel from the edge facing the anchor,
