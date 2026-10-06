@@ -367,26 +367,65 @@ class DsTypography {
     final inDisplay =
         displayFamily != family &&
         style.fontFamily == _qualified(displayFamily, displayPackage);
-    return style.copyWith(
-      fontFamily: inDisplay ? displayFamily : family,
-      package: inDisplay ? displayPackage : package,
-      fontFeatures: const [FontFeature.tabularFigures()],
+    return _inFamily(
+      style,
+      inDisplay ? displayFamily : family,
+      inDisplay ? displayPackage : package,
     );
   }
 
   static String _qualified(String family, String? package) =>
       package == null ? family : 'packages/$package/$family';
 
+  /// [style] in [family] from [package] (null for an app font), with
+  /// tabular figures. [TextStyle.copyWith] keeps the style's own package
+  /// when given none, which would look an app font up in the package of
+  /// the face it replaces; the style is rebuilt without one instead.
+  static TextStyle _inFamily(TextStyle style, String family, String? package) {
+    const tabular = [FontFeature.tabularFigures()];
+    if (package != null) {
+      return style.copyWith(
+        fontFamily: family,
+        package: package,
+        fontFeatures: tabular,
+      );
+    }
+    return TextStyle(
+      inherit: style.inherit,
+      color: style.color,
+      backgroundColor: style.backgroundColor,
+      fontSize: style.fontSize,
+      fontWeight: style.fontWeight,
+      fontStyle: style.fontStyle,
+      letterSpacing: style.letterSpacing,
+      wordSpacing: style.wordSpacing,
+      textBaseline: style.textBaseline,
+      height: style.height,
+      leadingDistribution: style.leadingDistribution,
+      locale: style.locale,
+      foreground: style.foreground,
+      background: style.background,
+      shadows: style.shadows,
+      fontFeatures: tabular,
+      fontVariations: style.fontVariations,
+      decoration: style.decoration,
+      decorationColor: style.decorationColor,
+      decorationStyle: style.decorationStyle,
+      decorationThickness: style.decorationThickness,
+      debugLabel: style.debugLabel,
+      fontFamily: family,
+      // Already qualified with the style's package, if it had one.
+      fontFamilyFallback: style.fontFamilyFallback,
+      overflow: style.overflow,
+    );
+  }
+
   /// [style] in the mono family with tabular figures, for code-like
   /// content only: code, and keycaps such as a search field's "⌘K" hint.
   ///
   /// Not for numbers: use [numeric]. A mono face makes dates, amounts and
   /// counters read like a console, and its slashed zero like "Ø".
-  TextStyle mono(TextStyle style) => style.copyWith(
-    fontFamily: monoFamily,
-    package: monoPackage,
-    fontFeatures: const [FontFeature.tabularFigures()],
-  );
+  TextStyle mono(TextStyle style) => _inFamily(style, monoFamily, monoPackage);
 
   /// This scale for [density], in the same fonts.
   ///
