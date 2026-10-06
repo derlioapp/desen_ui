@@ -41,9 +41,10 @@ class IntroductionPage extends StatelessWidget {
             '**One seed, every role.** Colors are generated in OKLCH from one '
                 'brand color, with rules that keep selection apart from danger '
                 'and success and keep every label readable.',
-            '**AA, never harsh.** Text and controls meet WCAG AA in every '
-                'tone and both modes; a soft level draws control edges as '
-                'faintly as iOS.',
+            '**AA, never harsh.** At the default `standard` contrast, text '
+                'and controls meet WCAG AA in every tone and both modes; the '
+                '`soft` level keeps text at AA and knowingly draws control '
+                'edges as faintly as iOS.',
             '**Keyboard first.** Every component follows the WAI-ARIA '
                 'pattern for its keys; focus shows only for keyboard users.',
             '**Built for the web, at home on phones.** Desktop density with '

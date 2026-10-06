@@ -45,11 +45,12 @@ class SpacingPage extends StatelessWidget {
           const DocText(
             'Rows have their own heights: `row` for menu and sidebar rows, '
             '`listRow` for settings-style list rows, `day` for a calendar '
-            'day. Read them from `DsTheme.sizesOf(context)`. "Phone" is '
-            'compact density on iOS and Android.',
+            'day. Read them from `DsTheme.sizesOf(context)`. Phones default '
+            'to touch density; "Compact on a phone" is compact density '
+            'chosen explicitly on iOS or Android.',
           ),
           DocTable(
-            columns: const ['Token', 'Compact', 'Touch', 'Phone'],
+            columns: const ['Token', 'Compact', 'Touch', 'Compact on a phone'],
             flex: const [3, 2, 2, 3],
             rows: [
               for (final (name, pick) in _tokens)
