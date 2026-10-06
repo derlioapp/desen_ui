@@ -1,58 +1,87 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
-/// API docs stand on their own: a reader of the package cannot look up the
-/// repository's internal rule, audit or concept numbers, so doc comments
-/// give the reason in words instead. Plain `//` comments may still cite
-/// them for maintainers.
-void main() {
-  test('doc comments in lib/ cite no internal rule numbers', () {
-    final internal = RegExp(
-      r'\b[KSF]-\d+\b|KALITE|denetim-\d|TESLIM|concept cards? \d|\bFaz \d'
-      r'|Concept key|\b(eng|ux|visual|bugs|rules) [A-Z]\d|\([RDBHVMLP]\d{1,2}\)',
-    );
-    final offenders = <String>[
-      for (final f in Directory(
-        'lib',
-      ).listSync(recursive: true).whereType<File>())
-        if (f.path.endsWith('.dart'))
-          for (final (i, line) in f.readAsLinesSync().indexed)
-            if (line.trimLeft().startsWith('///') && internal.hasMatch(line))
-              '${f.path}:${i + 1} ${line.trim()}',
-    ];
-    expect(offenders, isEmpty, reason: offenders.join('\n'));
-  });
+/// Public files stand on their own. The maintainers' working notes (a
+/// rulebook, audit reports, an old HTML design concept) are not in the
+/// repository, so a reader cannot look up a rule number, an audit finding
+/// code or "the concept". Code, tests, tools and docs give the reason in
+/// words instead.
+///
+/// The patterns live here and only here; this file is the one exception.
+final _internalReferences = <RegExp>[
+  // The rulebook, the audits and the delivery notes, by name.
+  RegExp(r'KALITE|TESLIM|[Dd]enetim|[Aa]ra[sş]t[ıi]rma'),
+  // Rule and issue numbers: K-46, S-18, R-2, F-25.
+  RegExp(r'\b[KSRF]-\d{1,3}\b'),
+  // Phase names: "Faz 5a", "Phase 7b", "phase B".
+  RegExp(r'\bFaz \d|\b[Pp]hase (\d+[a-z]?|[A-Z])\b'),
+  // Section numbers of the rulebook: "§2.1".
+  RegExp('§'),
+  // The old design concept: "concept card 24", "concept/", "the concept".
+  RegExp(r'\bconcept\b', caseSensitive: false),
+  // Audit decisions and finding codes: "decision 7", "ux H1", "(R3)",
+  // "V2: ".
+  RegExp(r'\bdecision \d+\b', caseSensitive: false),
+  RegExp(r'\b([Ee]ng|[Uu]x|[Vv]isual|[Bb]ugs|[Rr]ules) [A-Z]\d'),
+  RegExp(r'\b[BDHLMPRSV]\d{1,2}:\s'),
+  RegExp(r'\([BDHLMPRSV]\d{1,2}\)'),
+  RegExp(r'\b(blind|the) audit\b(?! log)', caseSensitive: false),
+];
 
-  test('doc comments cite no design concept or decision numbers', () {
-    // "concept 34", "concept card 20", "concept "E"", the concept file, the
-    // concept's own look, "(decision 7)". Doc blocks are joined, so a
-    // reference broken across lines is caught too.
-    final internal = RegExp(
-      r'\bconcept\s+(cards?\s+)?(\d+|"[A-Z]")|\bconcept/|\bthe concept\b'
-      r'|\(decision \d+\)',
-      caseSensitive: false,
-    );
+/// The tracked (or new, not ignored) files a reader of the package or the
+/// repository sees.
+const _publicPaths = [
+  'lib',
+  'test',
+  'tool',
+  'example/lib',
+  'example/test',
+  '.github',
+  ':(glob)*.md',
+  ':(glob)*.yaml',
+  '.pubignore',
+  '.gitignore',
+];
+
+const _self = 'test/architecture/self_contained_docs_test.dart';
+
+/// A line with its leading comment marker removed, so a reference broken
+/// across two comment lines is joined back.
+String _unmarked(String line) =>
+    line.trimLeft().replaceFirst(RegExp(r'^(///|//|#|/?\*+)\s?'), '');
+
+void main() {
+  test('public files cite no internal notes', () {
+    final listed = Process.runSync('git', [
+      'ls-files',
+      '--cached',
+      '--others',
+      '--exclude-standard',
+      '-z',
+      '--',
+      ..._publicPaths,
+    ]);
+    expect(listed.exitCode, 0, reason: '${listed.stderr}');
+    final paths = (listed.stdout as String)
+        .split('\u0000')
+        .where((p) => p.isNotEmpty && p != _self)
+        .toList();
+    expect(paths, isNotEmpty);
+    bool hit(String text) => _internalReferences.any((r) => r.hasMatch(text));
     final offenders = <String>[];
-    for (final f in Directory(
-      'lib',
-    ).listSync(recursive: true).whereType<File>()) {
-      if (!f.path.endsWith('.dart')) continue;
-      final lines = f.readAsLinesSync();
-      var start = -1;
-      final block = StringBuffer();
-      for (final (i, line) in [...lines, ''].indexed) {
-        final t = line.trimLeft();
-        if (t.startsWith('///')) {
-          if (start < 0) start = i;
-          block.write(' ${t.substring(3)}');
-          continue;
+    for (final path in paths) {
+      final file = File(path);
+      if (!file.existsSync()) continue; // deleted, not yet staged
+      final bytes = file.readAsBytesSync();
+      if (bytes.contains(0)) continue; // binary
+      final lines = utf8.decode(bytes, allowMalformed: true).split('\n');
+      for (final (i, line) in lines.indexed) {
+        final next = i + 1 < lines.length ? _unmarked(lines[i + 1]) : '';
+        if (hit(line) || (hit('$line $next') && !hit(next))) {
+          offenders.add('$path:${i + 1} ${line.trim()}');
         }
-        if (start >= 0 && internal.hasMatch(block.toString())) {
-          offenders.add('${f.path}:${start + 1}');
-        }
-        start = -1;
-        block.clear();
       }
     }
     expect(offenders, isEmpty, reason: offenders.join('\n'));

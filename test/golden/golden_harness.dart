@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Shared setup for golden tests (KALITE §8, Faz 3).
+/// Shared setup for golden tests.
 ///
 /// Goldens are generated on macOS with the real bundled fonts (see
 /// test/flutter_test_config.dart). Regenerate after an intended visual
@@ -16,7 +16,7 @@ import 'package:flutter_test/flutter_test.dart';
 /// and review every changed PNG before accepting it.
 
 /// The platform every golden theme is generated for. `flutter test` runs as
-/// Android, where themes default to 44px tap areas (K-43); goldens pin a
+/// Android, where themes default to 44px tap areas; goldens pin a
 /// desktop platform so they keep the compact 24px layout they were drawn
 /// with. Phone layouts get their own golden with `TargetPlatform.iOS`.
 const goldenPlatform = TargetPlatform.macOS;

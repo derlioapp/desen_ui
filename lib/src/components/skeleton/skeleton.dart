@@ -166,7 +166,7 @@ class _DsShimmerState extends State<DsShimmer>
               children: [
                 content,
                 // Only the sweep repaints each frame, on its own layer; the
-                // shapes and what is around them stay (denetim-2 eng P6).
+                // shapes and what is around them stay.
                 Positioned.fill(
                   child: IgnorePointer(
                     child: RepaintBoundary(

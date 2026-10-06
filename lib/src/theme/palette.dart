@@ -641,7 +641,7 @@ class _Engine {
     if (warningOverride != null) {
       final w = warningOverride;
       // The generated warning is a light fill with a dark label, and its
-      // hover and press lighten, away from the label (K-29, K-68). A fill
+      // hover and press lighten, away from the label. A fill
       // on which white reads better takes a white label and steps like
       // danger.
       final label = colors.warning.onFill;
@@ -764,9 +764,9 @@ class _Engine {
       hue,
     ).fitted().toColor();
     final dangerC = clash ? .025 : .035, successC = clash ? .03 : .045;
-    // Stands off the page as well as the card (M3; was 1.03:1 on canvas).
-    // Translucent like the channel (K-160): light on a card, still 1.2:1 on
-    // it and 1.15:1 on the page (K-161).
+    // Stands off the page as well as the card (was 1.03:1 on canvas).
+    // Translucent like the channel: light on a card, still 1.2:1 on
+    // it and 1.15:1 on the page.
     final neutralTint = oN(.30, nt, .10);
     final accentInk = o(math.min(l, .45), c);
     return DsColors(
@@ -775,7 +775,7 @@ class _Engine {
       sidebar: oN(.984, clash ? cn * .012 : cn * .025),
       control: white(),
       controlHover: oN(.975, cn * .03),
-      // Pressed goes one step beyond hover (K-68).
+      // Pressed goes one step beyond hover.
       controlPress: oN(.95, cn * .03),
       overlay: white(),
       // White at every level: a gray, iOS-like filled well read as
@@ -783,11 +783,11 @@ class _Engine {
       field: white(),
       text: oN(.22, nt),
       textMuted: oN(.485, nt * .8),
-      // 4.5:1 on a selected row too (select hints, V10).
+      // 4.5:1 on a selected row too (select hints).
       textSubtle: oN(.535, nt * .7),
       accent: acc,
-      // Darkens under the white label (K-29) and presses one step further
-      // (K-68); a near-black fill cannot, so it lightens instead (the label
+      // Darkens under the white label and presses one step further;
+      // a near-black fill cannot, so it lightens instead (the label
       // stays far above AA).
       accentHover: bright
           ? o(_brightStep(1), c)
@@ -823,7 +823,7 @@ class _Engine {
           ? oS(.32, c * .55)
           : o(math.min(l, .38), c),
       selectionStrong: clash ? o(.32, c * .75) : acc,
-      // Darkens under the white label (K-29); a near-black fill cannot, so
+      // Darkens under the white label; a near-black fill cannot, so
       // it lightens instead (the label stays far above AA).
       selectionStrongHover: clash
           ? o(.27, c * .75)
@@ -839,8 +839,8 @@ class _Engine {
       // Soft: as faint as iOS draws them.
       border: oN(.30, nt, v(.11, soft: .10)),
       borderControl: oN(.25, nt, v(.15, soft: .11)),
-      // Standard: 3:1 against field and surface (WCAG 1.4.11; the concept
-      // had 1.44:1). Soft: a light edge, about 1.5:1.
+      // Standard: 3:1 against field and surface (WCAG 1.4.11). Soft: a
+      // light edge, about 1.5:1.
       borderField: oN(.25, nt, v(.52, soft: .24)),
       borderChip: oN(.30, nt, v(.10, soft: .08)),
       // Translucent like iOS's fill: light on a white card (#EEEFEF), still
@@ -858,11 +858,11 @@ class _Engine {
       hover: oN(.30, nt, .045),
       press: oN(.30, nt, .08),
       // Disabled reads as inactive but stays legible (3–4.5:1) and stands
-      // off the page (concept: 1.02:1 and 2.35:1).
+      // off the page.
       disabled: oN(.30, nt, .065),
       onDisabled: oN(.60, cn * .05),
       // Dims the page like Apple, Radix and Primer; a light veil washed it
-      // out instead (M1).
+      // out instead.
       scrim: oN(.22, nt, .32),
       tooltip: oN(.24, nt),
       onTooltip: white(),
@@ -902,7 +902,7 @@ class _Engine {
       ),
       warning: DsStatusColors(
         fill: st(.70, .15, 75),
-        // Dark label: hover and press lighten (K-29, K-68).
+        // Dark label: hover and press lighten.
         fillHover: st(.75, .15, 75),
         fillPress: st(.80, .14, 75),
         onFill: st(.25, .06, 70),
@@ -949,7 +949,7 @@ class _Engine {
         ? o(.82, math.min(c * .45, .10))
         : _darkAccentInk(textAccC, overlay: oN(.335, n));
     // Deep, opaque status tints (a light color at low opacity mixed with
-    // the dark gray into olive and brown, K-161). As saturated as sRGB
+    // the dark gray into olive and brown). As saturated as sRGB
     // allows this dark and a little lighter than before, so they read as
     // the status hue rather than brown or maroon; the vivid status text on
     // them carries the color. Hover and press step lighter, staying under
@@ -980,7 +980,7 @@ class _Engine {
       sidebar: oN(.22, n),
       control: oN(.32, n),
       controlHover: oN(.35, n),
-      // Pressed goes one step beyond hover (K-68).
+      // Pressed goes one step beyond hover.
       controlPress: oN(.38, n),
       overlay: oN(.335, n),
       field: oN(.30, n),
@@ -992,7 +992,7 @@ class _Engine {
       textMuted: muted,
       textSubtle: oN(.72, n * .5),
       accent: acc,
-      // White label: hover darkens (K-29); a dark label lightens.
+      // White label: hover darkens; a dark label lightens.
       accentHover: o(bright ? _brightStep(1) : _r(dl - .04), accC),
       accentPress: o(bright ? _brightStep(2) : _r(dl - .08), accC),
       onAccent: onAcc,
@@ -1004,10 +1004,10 @@ class _Engine {
       accentText: accentInk,
       link: accentInk,
       // Lighter than every layer it sits on, the floating one included
-      // (V2: at 0.33 a menu highlight vanished on the 0.335 overlay).
+      // (at 0.33 a menu highlight vanished on the 0.335 overlay).
       // Cool brands keep their color, with more chroma than before; warm
       // ones (red, orange, yellow, green) turn brown or olive this dark,
-      // so they select in gray with the brand in the text (K-161).
+      // so they select in gray with the brand in the text.
       selection: neutral
           ? o(selL + .005, c)
           : _coolSelection
@@ -1082,7 +1082,7 @@ class _Engine {
         signal: _clear,
       ),
       success: DsStatusColors(
-        // White label like the accent (K-44); hover darkens (K-29).
+        // White label like the accent; hover darkens.
         fill: st(.55, .13, sH),
         fillHover: st(.51, .13, sH),
         fillPress: st(.47, .13, sH),
@@ -1176,7 +1176,7 @@ class _Engine {
         if (bright) DsShadow.ring(_knobEdge(k)) else knobEdge,
         DsShadow(color: oN(.25, nt, .2), offset: down1, blur: 3),
       ],
-      // Concept: 0 6px 16px -6px rgba(0,0,0,.35).
+      // As CSS: 0 6px 16px -6px rgba(0,0,0,.35).
       tooltip: [
         DsShadow(
           color: black(.35),
@@ -1211,7 +1211,7 @@ class _Engine {
       control: [DsShadow.ring(k.borderControl), ...lift],
       controlLift: lift,
       // danger.fill is ~2.96:1 on dark surfaces; danger.text clears the
-      // 3:1 WCAG 1.4.11 bar for control boundaries (KALITE S-01).
+      // 3:1 WCAG 1.4.11 bar for control boundaries.
       fieldError: [DsShadow.innerRing(k.danger.text)],
       accent: _filledEdge(k),
       danger: const [],
@@ -1342,9 +1342,9 @@ class _Engine {
     return _alpha(k.onAccent, math.min(alpha, 1));
   }
 
-  // A solid 2px ring 2px away from the control, on a transparent gap
-  // (KALITE S-13). The concept's translucent halo alone reached only
-  // 1.4–2.2:1 against the page; WCAG wants 3:1 for focus indicators.
+  // A solid 2px ring 2px away from the control, on a transparent gap.
+  // A translucent halo alone would reach only 1.4–2.2:1 against the
+  // page; WCAG wants 3:1 for focus indicators.
   static List<DsShadow> _focusOffset(DsColors k) => [
     DsShadow.outline(k.focus, width: 2, gap: 2),
   ];

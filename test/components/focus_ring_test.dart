@@ -2,8 +2,8 @@ import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// The default focus look is the ring, shown only for keyboard navigation
-/// (K-42). Full-bleed rows draw it inside their edge, so a rounded or
+/// The default focus look is the ring, shown only for keyboard navigation.
+/// Full-bleed rows draw it inside their edge, so a rounded or
 /// clipped container never cuts it, and it stays visible on every fill.
 void main() {
   const focused = {WidgetState.focused};

@@ -7,9 +7,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for DsTimePicker (concept card 35): the open columns
+/// Visual regression for DsTimePicker: the open columns
 /// on a 24-hour clock (Turkish) and on a 12-hour clock with the AM/PM
-/// column (US English); light and dark (KALITE K-24).
+/// column (US English); light and dark.
 void main() {
   Widget picker(DsTime value, {required bool tr}) {
     Widget child = Align(

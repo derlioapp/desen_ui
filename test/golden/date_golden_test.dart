@@ -7,9 +7,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for the calendar (concept cards 24 and 39): one
+/// Visual regression for the calendar: one
 /// chosen day with today, a range with its band, Monday-first Turkish next
-/// to Sunday-first US English; light and dark (KALITE K-24).
+/// to Sunday-first US English; light and dark.
 void main() {
   final today = DateTime(2026, 10, 5);
 
@@ -249,7 +249,7 @@ void main() {
     });
   }
 
-  // A bright accent (K-130): the filled day and range ends wear the dark
+  // A bright accent: the filled day and range ends wear the dark
   // label and the accent edge; today's ring stands off the card and the
   // band; a chosen today is only filled.
   for (final MapEntry(key: mode, value: theme) in themesFor(

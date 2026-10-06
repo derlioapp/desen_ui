@@ -26,8 +26,8 @@ import 'switch_style.dart';
 /// DsSwitch(
 ///   value: push,
 ///   onChanged: (v) => setState(() => push = v),
-///   label: const Text('Anlık bildirimler'),
-///   description: const Text('Mobil ve masaüstü'),
+///   label: const Text('Push notifications'),
+///   description: const Text('Mobile and desktop'),
 /// )
 /// ```
 ///
@@ -100,8 +100,8 @@ class DsSwitch extends StatefulWidget {
       textGap: 2,
       focusShadows: theme.focusShadows,
       hovered: DsSwitchStyle(trackColor: offHover(theme)),
-      // Over a bright accent the white knob takes a dark edge (K-35), and
-      // the track its own, so it does not melt into the card (denetim-2).
+      // Over a bright accent the white knob takes a dark edge, and
+      // the track its own, so it does not melt into the card.
       selected: DsSwitchStyle(
         trackColor: k.accent,
         trackShadows: [
@@ -164,7 +164,7 @@ class _DsSwitchState extends State<DsSwitch> {
   @override
   Widget build(BuildContext context) {
     final t = dsThemeOf(context);
-    // A surrounding DsField with an error marks the control too (K-71).
+    // A surrounding DsField with an error marks the control too.
     final error =
         widget.error || (DsFieldScope.maybeOf(context)?.hasError ?? false);
     final layers = [
@@ -267,7 +267,7 @@ class _DsSwitchState extends State<DsSwitch> {
         );
         // A settings row puts the switch at the end of the width it gets;
         // under an unbounded width (in a Row) it shrink-wraps instead of
-        // throwing (B10).
+        // throwing.
         return LayoutBuilder(
           // The track sits on the first line (web alignment), not between
           // the label and the description.

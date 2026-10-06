@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Denetim 1, phase A: the toast host, timing, keyboard and context.
+/// The toast host, timing, keyboard and context.
 void main() {
   /// An app with one button that runs [onPressed] with its context.
   Widget app(
@@ -28,7 +28,7 @@ void main() {
     ),
   );
 
-  group('one at a time (bugs B1, eng H3, ux V6)', () {
+  group('one at a time', () {
     testWidgets('two toasts in one frame: the first leaves', (tester) async {
       final controllers = <DsToastController>[];
       await tester.pumpWidget(
@@ -80,7 +80,7 @@ void main() {
     });
   });
 
-  group('timing (ux V15, WCAG 2.2.1)', () {
+  group('timing (WCAG 2.2.1)', () {
     testWidgets('with a screen reader on, a toast with an action stays', (
       tester,
     ) async {
@@ -164,9 +164,7 @@ void main() {
     });
   });
 
-  testWidgets('stays above the on-screen keyboard (eng M4, ux V17)', (
-    tester,
-  ) async {
+  testWidgets('stays above the on-screen keyboard', (tester) async {
     const media = MediaQueryData(
       size: Size(390, 844),
       viewInsets: EdgeInsets.only(bottom: 320),
@@ -185,7 +183,7 @@ void main() {
     );
   });
 
-  group('context (bugs B19, eng H2)', () {
+  group('context', () {
     testWidgets('follows a theme switch while it shows', (tester) async {
       late StateSetter setMode;
       var mode = DsThemeMode.light;

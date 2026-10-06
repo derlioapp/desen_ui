@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// K-43 (S-32): on iOS and Android the default theme puts an invisible
+/// On iOS and Android the default theme puts an invisible
 /// 44px tap area around every small control; what is painted does not
 /// change. Desktop keeps 24px.
 void main() {

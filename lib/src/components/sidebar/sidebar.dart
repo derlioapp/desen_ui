@@ -40,10 +40,10 @@ import 'sidebar_style.dart';
 ///   collapsed: narrow,
 ///   children: const [
 ///     DsSidebarItem(value: 'inbox', leading: DsIcon(DsIcons.inbox),
-///         label: Text('Gelen'), count: 4),
-///     DsSidebarSection(label: Text('EKİPLER')),
+///         label: Text('Inbox'), count: 4),
+///     DsSidebarSection(label: Text('TEAMS')),
 ///     DsSidebarItem(value: 'design', leading: DsIcon(DsIcons.folder),
-///         label: Text('Tasarım')),
+///         label: Text('Design')),
 ///   ],
 /// )
 /// ```
@@ -241,7 +241,7 @@ String? _plainText(Widget label) => switch (label) {
   _ => null,
 };
 
-/// A section label inside a [DsSidebar] ("EKİPLER"). Shown as given.
+/// A section label inside a [DsSidebar] ("TEAMS"). Shown as given.
 ///
 /// In a collapsed sidebar it becomes a short line in the label's place,
 /// so the items below do not move; screen readers still hear the label as
@@ -396,7 +396,7 @@ class DsSidebarItem<T extends Object> extends StatefulWidget {
         focusShadows: theme.fillsSelection
             ? [DsShadow.innerRing(theme.onSelectedFill, width: 2)]
             : null,
-        // Hover stays visible on a selected item (K-61).
+        // Hover stays visible on a selected item.
         hovered: DsSidebarItemStyle(background: theme.selectedHoverFill),
       ),
       disabled: DsSidebarItemStyle(foreground: k.onDisabled),

@@ -6,11 +6,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Regressions from the blind audit (phase B): avatar, card, list row.
+/// Regression tests for the avatar, card and list row.
 void main() {
-  testWidgets('a failed avatar image falls back to initials (B21, M14)', (
-    tester,
-  ) async {
+  testWidgets('a failed avatar image falls back to initials', (tester) async {
     await tester.pumpWidget(
       host(
         DsAvatar(
@@ -27,7 +25,7 @@ void main() {
     expect(find.text('AB'), findsOneWidget);
   });
 
-  testWidgets('an avatar group keeps names and status (B26)', (tester) async {
+  testWidgets('an avatar group keeps names and status', (tester) async {
     final handle = tester.ensureSemantics();
     await tester.pumpWidget(
       host(
@@ -56,7 +54,7 @@ void main() {
     handle.dispose();
   });
 
-  testWidgets('max: 0 shows only the overflow bubble (B27)', (tester) async {
+  testWidgets('max: 0 shows only the overflow bubble', (tester) async {
     await tester.pumpWidget(
       host(
         const DsAvatarGroup(
@@ -73,9 +71,7 @@ void main() {
   });
 
   for (final kind in ['card', 'list row']) {
-    testWidgets('making a $kind interactive keeps its content (B25)', (
-      tester,
-    ) async {
+    testWidgets('making a $kind interactive keeps its content', (tester) async {
       var inits = 0;
       late StateSetter setOuter;
       VoidCallback? onPressed;

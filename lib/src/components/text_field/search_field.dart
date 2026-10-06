@@ -6,7 +6,7 @@ part of 'text_field.dart';
 ///
 /// ```dart
 /// DsSearchField(
-///   placeholder: 'Görev, kişi veya dosya ara',
+///   placeholder: 'Search tasks, people or files',
 ///   shortcut: '⌘K',
 ///   onChanged: filter,
 ///   onSubmitted: search,

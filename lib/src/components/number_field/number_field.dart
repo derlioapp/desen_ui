@@ -35,7 +35,7 @@ export 'number_format.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Ağırlık'),
+///   label: const Text('Weight'),
 ///   child: DsNumberField(
 ///     value: weight,
 ///     min: 0,
@@ -205,9 +205,9 @@ class DsNumberField extends StatefulWidget {
         // Proportional figures, as in a browser's input: in the text
         // family, tabular figures make the period, comma and colon
         // digit-wide, so a typed "12.10.2026" or "12.500,00" would read
-        // spaced out like a console (denetim-2, decision 1).
+        // spaced out like a console.
       ),
-      // The concept's unit: 13px in the field's subtle color (ink3).
+      // The unit: 13px, in the field's subtle text color.
       unitStyle: theme.typography.small,
       buttonWidth: 32,
       buttonColor: clear,
@@ -647,7 +647,7 @@ class _DsNumberFieldState extends State<DsNumberField>
     final scaler = MediaQuery.textScalerOf(context);
     final padding = (tf.padding ?? EdgeInsets.zero).resolve(dir);
     final textStyle = DefaultTextStyle.of(context).style.merge(tf.textStyle);
-    // The step buttons give way after the unit (S-46, FieldYield.action):
+    // The step buttons give way after the unit (FieldYield.action):
     // they stay while the text and the prefix keep their room beside
     // them. The arrow keys and the increase and decrease actions remain.
     double prefixWidth() {
@@ -789,7 +789,7 @@ class _DsNumberFieldState extends State<DsNumberField>
       child: field,
     );
     // Outside an app root the field brings the text editing keys itself;
-    // they must sit above the step keys (R3).
+    // they must sit above the step keys.
     if (context.findAncestorWidgetOfExactType<DefaultTextEditingShortcuts>() ==
         null) {
       field = DefaultTextEditingShortcuts(child: field);

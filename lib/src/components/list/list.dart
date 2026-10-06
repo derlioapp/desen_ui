@@ -19,11 +19,11 @@ import 'list_section_style.dart';
 ///
 /// ```dart
 /// DsListSection(
-///   header: const Text('TERCİHLER'),
+///   header: const Text('PREFERENCES'),
 ///   children: [
-///     DsListRow(leading: const DsIcon(DsIcons.bell), title: const Text('Bildirimler'),
-///         detail: const Text('Açık'), showChevron: true, onPressed: openNotifications),
-///     DsListRow(leading: const DsIcon(DsIcons.logOut), title: const Text('Oturumu kapat'),
+///     DsListRow(leading: const DsIcon(DsIcons.bell), title: const Text('Notifications'),
+///         detail: const Text('On'), showChevron: true, onPressed: openNotifications),
+///     DsListRow(leading: const DsIcon(DsIcons.logOut), title: const Text('Sign out'),
 ///         destructive: true, onPressed: signOut),
 ///   ],
 /// )
@@ -138,7 +138,7 @@ class DsListSection extends StatelessWidget {
 /// A settings-style row: icon, title, detail and chevron.
 ///
 /// With [onPressed] the row is a button with a hover fill; without it, a static
-/// row. [destructive] colors it as a danger action ("Oturumu kapat").
+/// row. [destructive] colors it as a danger action ("Sign out").
 ///
 /// In a master-detail list (mail, files), [selected] marks the row whose
 /// detail is open: it takes the theme's selection style, still answers
@@ -177,7 +177,7 @@ class DsListRow extends StatefulWidget {
   final Widget? leading;
 
   /// A detail shown muted on the end side, such as the current setting
-  /// ("Açık").
+  /// ("On").
   final Widget? detail;
 
   /// A widget on the end side, e.g. a [DsSwitch] or a [DsBadge].
@@ -230,7 +230,7 @@ class DsListRow extends StatefulWidget {
           : theme.typography.body,
       detailStyle: theme.typography.small.copyWith(color: k.textSubtle),
       // Wraps before it cuts: a long title at 320px or 2x text stays
-      // readable (denetim-2 ux M3; it was cut to one line even at 1x).
+      // readable (it was cut to one line even at 1x).
       maxLines: 2,
       chevronColor: k.textSubtle,
       gap: DsSpace.s12,
@@ -253,7 +253,7 @@ class DsListRow extends StatefulWidget {
         focusShadows: theme.fillsSelection
             ? [DsShadow.innerRing(theme.onSelectedFill, width: 2)]
             : null,
-        // Hover stays visible on a selected row (K-61).
+        // Hover stays visible on a selected row.
         hovered: DsListRowStyle(background: theme.selectedHoverFill),
       ),
       disabled: DsListRowStyle(
@@ -301,7 +301,7 @@ class _DsListRowState extends State<DsListRow> {
           ],
         ),
         // A long detail wraps, then ellipsizes, and leaves the title at least
-        // half the row (B22).
+        // half the row.
         child: LayoutBuilder(
           builder: (context, c) => Row(
             spacing: s.gap ?? DsSpace.s12,

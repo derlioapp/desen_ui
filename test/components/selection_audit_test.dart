@@ -6,8 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Regressions from the blind audit (phase B): checkbox, radio, switch,
-/// chip.
+/// Regression tests for the checkbox, radio, switch and chip.
 void main() {
   final light = DsThemeData();
 
@@ -24,9 +23,7 @@ void main() {
               .decoration!
           as DsBoxDecoration;
 
-  testWidgets('an empty fieldError does not crash a checkbox (eng M1)', (
-    tester,
-  ) async {
+  testWidgets('an empty fieldError does not crash a checkbox', (tester) async {
     final theme = DsThemeData(
       adjustShadows: (s, c, b) => s.copyWith(fieldError: const []),
     );
@@ -52,7 +49,7 @@ void main() {
     );
   });
 
-  testWidgets('errors are announced as invalid (ux V9, F-16)', (tester) async {
+  testWidgets('errors are announced as invalid', (tester) async {
     final handle = tester.ensureSemantics();
     await tester.pumpWidget(
       host(
@@ -85,7 +82,7 @@ void main() {
     handle.dispose();
   });
 
-  testWidgets('error edge is 2px; checked + error turns danger (visual M6)', (
+  testWidgets('error edge is 2px; checked + error turns danger', (
     tester,
   ) async {
     await tester.pumpWidget(
@@ -106,7 +103,7 @@ void main() {
     expect(on.shadows.where((s) => s.color.a > 0), isEmpty);
   });
 
-  testWidgets('disabled keeps the shape (visual M7)', (tester) async {
+  testWidgets('disabled keeps the shape', (tester) async {
     await tester.pumpWidget(
       host(
         const Column(
@@ -132,7 +129,7 @@ void main() {
     );
   });
 
-  testWidgets('a labelled switch works inside a Row (B10)', (tester) async {
+  testWidgets('a labelled switch works inside a Row', (tester) async {
     await tester.pumpWidget(
       host(
         Row(

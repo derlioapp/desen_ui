@@ -7,10 +7,12 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for the Faz 5c components, light and dark (K-24).
+/// Visual regression for the button-based components (tabs, toolbar,
+/// sidebar, bottom navigation, list rows, stepper, pagination), light and
+/// dark.
 void main() {
-  // A card with the component on top and placeholder content below, as in
-  // the concept (the divider separates the two).
+  // A card with the component on top and placeholder content below (the
+  // divider separates the two).
   Widget card(Widget child, {double width = 380}) => SizedBox(
     width: width,
     child: DsCard(

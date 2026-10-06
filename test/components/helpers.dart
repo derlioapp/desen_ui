@@ -73,7 +73,7 @@ Future<TestGesture> hover(WidgetTester tester, Finder finder) async {
 }
 
 /// The shadows of [d] that paint: a button keeps a transparent ring slot
-/// first so its transitions pair shadows by role (eng L8).
+/// first so its transitions pair shadows by role.
 List<DsShadow> visibleShadows(DsBoxDecoration d) => [
   for (final s in d.shadows)
     if (s.color.a > 0) s,

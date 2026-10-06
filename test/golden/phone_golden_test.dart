@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// K-43 (S-32): the same compact controls on a desktop and on a phone. On
+/// The same compact controls on a desktop and on a phone. On
 /// the phone each small control sits in an invisible 44px tap area, shown
 /// here with a faint tint; what is painted is identical in both columns.
 void main() {

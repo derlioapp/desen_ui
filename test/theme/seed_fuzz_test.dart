@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'budget_rules.dart';
 import 'contrast_budget_test.dart' show tierSpreadFailures;
 
-/// S-24: any brand color, not just the presets, fits the contrast budget.
+/// Any brand color, not just the presets, fits the contrast budget.
 ///
 /// Real brand colors cover the hard cases (light yellows, oranges, sky
 /// blues and greens); a fixed-seed random sweep covers the rest of the
@@ -50,11 +50,11 @@ double deltaE(DsOklch a, DsOklch b) {
   );
 }
 
-/// The bright-accent branch (K-38 revised): a light brand keeps its own
+/// The bright-accent branch: a light brand keeps its own
 /// fill with a dark label. In light mode the accent is the seed itself
 /// (lowered only where it would melt into a white card); in dark mode the
-/// same lightness at the K-44 chroma cap. The unlabeled roles (indicator,
-/// focus) stay darkened (and clean, K-213).
+/// same lightness at the dark mode chroma cap. The unlabeled roles (indicator,
+/// focus) stay darkened and clean.
 List<String> brightFailures(DsSeed seed) {
   final v = seed.value;
   if (!v.inGamut) return const [];
@@ -77,7 +77,7 @@ List<String> brightFailures(DsSeed seed) {
       failures.add('light: accent lighter than the seed');
     }
     // Light mode: the unlabeled roles keep the darkened color. (Dark mode's
-    // indicator is its own lighter role already, K-44.)
+    // indicator is its own lighter role already.)
     if (!dark &&
         DsColorUtils.luminance(k.indicator) >=
             DsColorUtils.luminance(k.accent)) {
@@ -87,7 +87,7 @@ List<String> brightFailures(DsSeed seed) {
   return failures;
 }
 
-/// Brand fidelity (H3): the accent keeps the seed's hue (within the few
+/// Brand fidelity: the accent keeps the seed's hue (within the few
 /// degrees CSS gamut mapping allows) even when it has to be darkened for its
 /// label, and a near-status seed's selection stays in
 /// the brand's family while keeping clear of that status.
@@ -106,7 +106,7 @@ List<String> fidelityFailures(DsSeed seed) {
         'seed ${v.h.round()}',
       );
     }
-    // In dark mode a warm brand selects in gray (K-161): no hue to check.
+    // In dark mode a warm brand selects in gray: no hue to check.
     final graySelection = DsOklch.fromColor(k.selection).c < .02;
     if (p.role == DsSeedRole.nearStatus && !graySelection) {
       final sel = hue(k.selection);
@@ -127,7 +127,7 @@ List<String> fidelityFailures(DsSeed seed) {
       }
     }
     // Marks with no label (progress, slider, tab underline) keep the
-    // brand's family and stay vivid (K-213): the seed hue, or for a
+    // brand's family and stay vivid: the seed hue, or for a
     // yellow or amber whose deep tone is olive or mustard, the nearest
     // clean hue (a deep orange or lime), never more than 65° away.
     final mark = DsOklch.fromColor(k.indicator);
@@ -245,7 +245,7 @@ void main() {
       final label = DsOklch.fromColor(k.onAccent);
       expect(label.l, lessThan(.3));
       expect(DsOklch.hueDistance(label.h, seed.h), lessThan(8));
-      // Hover and press lighten under a dark label (K-29, K-68).
+      // Hover and press lighten under a dark label.
       expect(
         DsColorUtils.luminance(k.accentHover),
         greaterThan(DsColorUtils.luminance(k.accent)),
@@ -265,7 +265,7 @@ void main() {
     expect(light.accent, seed.value.toColor());
     // Unlabeled roles stay darkened. The amber's own deep tone is mustard
     // (#976E00), so they turn to a vivid deep orange instead, like iOS's
-    // accessible yellow (K-213).
+    // accessible yellow.
     final ink = DsOklch.fromColor(light.indicator);
     expect(ink.l, lessThan(seed.l - .2));
     expect(ink.h, inInclusiveRange(40, 55));
@@ -323,8 +323,7 @@ void main() {
         DsSeed.color(const Color(0xFFF40009)),
         DsSeed.oxblood,
       ]) {
-        // Dark mode selects a warm brand in gray, the brand in the text
-        // (K-161).
+        // Dark mode selects a warm brand in gray, the brand in the text.
         final dark = DsPalette.fromSeed(seed, brightness: Brightness.dark);
         expect(DsOklch.fromColor(dark.colors.selection).c, lessThan(.02));
         expect(

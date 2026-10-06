@@ -86,8 +86,8 @@ class DsTab<T> {
 ///   value: tab,
 ///   onChanged: (v) => setState(() => tab = v),
 ///   tabs: const [
-///     DsTab(value: 'general', label: Text('Genel')),
-///     DsTab(value: 'members', label: Text('Üyeler'), count: 12),
+///     DsTab(value: 'general', label: Text('General')),
+///     DsTab(value: 'members', label: Text('Members'), count: 12),
 ///   ],
 /// )
 /// ```
@@ -162,7 +162,7 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
   bool get _focusVisible => _highlight && DsFocusVisibility.keyboard.value;
   int? _hovered;
   // Input modality only changes how focus looks: rebuild only while
-  // focused, not on every pointer or key event in the app (eng L6).
+  // focused, not on every pointer or key event in the app.
   void _onModality() {
     if (_highlight) setState(() {});
   }
@@ -256,7 +256,7 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
   void _move(int step) {
     final n = widget.tabs.length;
     // From no selection, forward starts at the first, back at the last
-    // (bugs L6: forward used to skip the first tab).
+    // (forward used to skip the first tab).
     var i = _index < 0 ? (step > 0 ? -1 : n) : _index;
     for (var tries = 0; tries < n; tries++) {
       i = (i + step) % n;
@@ -359,9 +359,9 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
           enabled: interactive,
           label: tab.semanticLabel,
           onTap: interactive ? () => _select(i) : null,
-          // The bar holds one focus node (one Tab stop, K-50); its focus is
+          // The bar holds one focus node (one Tab stop); its focus is
           // reported on the selected tab, so a screen reader announces the
-          // tab, not an unnamed group (denetim-2 ux H1).
+          // tab, not an unnamed group.
           focusable: _enabled && i == focusTarget ? true : null,
           focused: _enabled && i == focusTarget ? _node.hasPrimaryFocus : null,
           onFocus: _enabled && i == focusTarget && _semanticFocusAction

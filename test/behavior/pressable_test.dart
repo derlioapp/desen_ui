@@ -8,7 +8,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import '../components/helpers.dart';
 
-/// S-22 (keyboard activation) and S-23 (minimum tap target).
+/// DsPressable: keyboard activation, the minimum tap target, focus and
+/// semantics.
 void main() {
   group('keyboard activation', () {
     late FocusNode node;
@@ -111,7 +112,7 @@ void main() {
       return taps;
     }
 
-    // K-43: phones get 44px tap areas at either density; desktop 24 at
+    // Phones get 44px tap areas at either density; desktop 24 at
     // compact. Visuals never grow.
     for (final (density, platform, size) in [
       (DsDensity.compact, TargetPlatform.macOS, 24.0),
@@ -186,7 +187,7 @@ void main() {
     });
   });
 
-  // eng L6: phones start without visible focus (no keyboard yet); desktop
+  // Phones start without visible focus (no keyboard yet); desktop
   // starts with it, as a browser does.
   test('focus visibility starts by platform', () {
     expect(focusVisibleInitially(TargetPlatform.iOS), isFalse);
@@ -197,9 +198,7 @@ void main() {
   });
 
   group('state contract', () {
-    testWidgets('selected going back to null clears the state (eng L1)', (
-      tester,
-    ) async {
+    testWidgets('selected going back to null clears the state', (tester) async {
       final states = WidgetStatesController();
       addTearDown(states.dispose);
       Widget tree(bool? selected) => host(
@@ -216,9 +215,7 @@ void main() {
       expect(states.value, isNot(contains(WidgetState.selected)));
     });
 
-    testWidgets('a long-press-only pressable is enabled (eng L2)', (
-      tester,
-    ) async {
+    testWidgets('a long-press-only pressable is enabled', (tester) async {
       var long = 0;
       final states = WidgetStatesController();
       addTearDown(states.dispose);
@@ -257,7 +254,7 @@ void main() {
       node.requestFocus();
       await tester.pump();
       await tester.pumpWidget(tree(true));
-      expect(node.hasFocus, isTrue, reason: 'focus survives busy (B16)');
+      expect(node.hasFocus, isTrue, reason: 'focus survives busy');
       await tester.sendKeyEvent(LogicalKeyboardKey.enter);
       await tester.tap(find.byType(DsPressable));
       expect(taps, 0);

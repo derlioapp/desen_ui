@@ -20,9 +20,9 @@ import 'field_style.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Proje'),
-///   description: const Text('Raporlar bu projeye bağlanır.'),
-///   errorText: project == null ? 'Bir proje seçin.' : null,
+///   label: const Text('Project'),
+///   description: const Text('Reports are linked to this project.'),
+///   errorText: project == null ? 'Choose a project.' : null,
 ///   required: true,
 ///   child: DsSelect<String>(
 ///     value: project,
@@ -279,7 +279,7 @@ class _DsFieldState extends State<DsField> {
     final motion = t.motion;
     // The description and the error swap with a fade while the area
     // resizes on the tone spring: no overshoot that would shake the
-    // content below (K-46, as the accordion).
+    // content below (as the accordion).
     final switcher = AnimatedSwitcher(
       duration: motion.toneDuration,
       switchInCurve: motion.toneCurve,

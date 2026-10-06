@@ -1,4 +1,4 @@
-// Denetim-2 regressions: badges on selected rows, and the card layout for
+// Regression tests: badges on selected rows, and the card layout for
 // narrow tables.
 import 'package:desen_ui/desen_ui.dart';
 

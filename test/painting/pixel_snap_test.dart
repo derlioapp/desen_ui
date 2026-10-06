@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// KALITE S-04: a box at a fractional position must still draw its 1px
+/// A box at a fractional position must still draw its 1px
 /// ring on whole device pixels, without a gray smear.
 Future<List<int>> leftEdgeRow(WidgetTester tester, double dpr) async {
   tester.view

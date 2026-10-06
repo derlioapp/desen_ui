@@ -1,4 +1,4 @@
-// Denetim-2 regressions: row checkbox names and announced table states.
+// Regression tests: row checkbox names and announced table states.
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';

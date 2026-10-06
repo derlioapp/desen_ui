@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Denetim-2 P4: long menus and selects build only the rows that show,
+/// Long menus and selects build only the rows that show,
 /// and still navigate, type ahead, open on their value and announce
 /// "k of n".
 void main() {

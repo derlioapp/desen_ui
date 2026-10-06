@@ -4,11 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// S-46: a field too narrow for its buttons never overflows. Extras give
+/// A field too narrow for its buttons never overflows. Extras give
 /// way in order (clear, error icon, unit, picker and step buttons, show
 /// password) while the text keeps about three characters; the keys and
-/// semantics actions stay. Ported from the denetim-2 narrow-field and
-/// layout-stress probes.
+/// semantics actions stay.
 
 Widget _app(
   Widget child, {

@@ -79,7 +79,7 @@ class _DsSpinnerState extends State<DsSpinner>
       size: Size.square(size),
       painter: _RingPainter(color, s.strokeWidth ?? 0),
     );
-    // Its own layer: the animation repaints the spinner only (eng M13).
+    // Its own layer: the animation repaints the spinner only.
     Widget spinner = RepaintBoundary(
       child: _reduced
           ? FadeTransition(opacity: _pulse, child: ring)

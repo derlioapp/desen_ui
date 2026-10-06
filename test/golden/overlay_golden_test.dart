@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for Faz 6a layers, light and dark (K-24).
+/// Visual regression for the popover, tooltip and menu, light and dark.
 void main() {
   for (final MapEntry(key: mode, value: theme) in themesFor(
     DsSeed.blue,

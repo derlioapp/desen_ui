@@ -163,7 +163,7 @@ class DsBreadcrumb extends StatelessWidget {
       final s = DsBreadcrumbStyle.resolveLayers(layers, const {
         WidgetState.selected,
       });
-      // The current page says so (aria-current, ux V22).
+      // The current page says so (aria-current).
       return Semantics(
         container: true,
         label: item.label,

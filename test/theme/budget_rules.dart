@@ -5,7 +5,7 @@ import 'package:desen_ui/desen_ui.dart';
 import 'package:desen_ui/src/theme/palette.dart' show DsPalette;
 import 'package:flutter/widgets.dart' show WidgetState;
 
-/// KALITE.md §2.1: the contrast budget, shared by the preset test and the
+/// The contrast budget, shared by the preset test and the
 /// seed fuzz test. Lower bounds are WCAG AA; upper bounds keep both levels
 /// calm ("AA, not harsh").
 ///
@@ -65,7 +65,7 @@ Color knobEdge(DsColors k, DsShadows s, Color track) {
 }
 
 /// Whether the palette took the bright-accent branch: a dark label on the
-/// accent (K-38 revised).
+/// accent.
 bool isBright(DsColors k) =>
     DsColorUtils.luminance(k.onAccent) < DsColorUtils.luminance(k.accent);
 
@@ -149,7 +149,7 @@ List<Rule> rules(
     ),
     // Secondary text on highlighted rows in floating layers: select
     // details on the highlighted option, menu shortcuts. Components use
-    // textMuted there; textSubtle is for resting rows (S-47).
+    // textMuted there; textSubtle is for resting rows.
     Rule(
       'textMuted on selection (overlay)',
       k.textMuted,
@@ -159,7 +159,7 @@ List<Rule> rules(
     ),
     // A destructive menu row's highlight is its danger tint in light mode
     // and the neutral tint in dark mode: the shortcut keeps textMuted there
-    // too (§2.1).
+    // too.
     Rule(
       'textMuted on destructive highlight (overlay, menu shortcut)',
       k.textMuted,
@@ -255,7 +255,7 @@ List<Rule> rules(
         backdrop: k.surface,
         min: 3,
       ),
-      // A pressed soft button keeps its label legible (K-68).
+      // A pressed soft button keeps its label legible.
       for (final (state, tint) in [
         ('tintHover', st.tintHover),
         ('tintPress', st.tintPress),
@@ -298,7 +298,7 @@ List<Rule> rules(
       max: 4.5,
     ),
     Rule('disabled on canvas', k.disabled, k.canvas, min: 1.1),
-    // Form control boundaries (K-27) and focus
+    // Form control boundaries and focus
     Rule(
       'borderField on field',
       k.borderField,
@@ -327,7 +327,7 @@ List<Rule> rules(
     Rule('rail on canvas', k.rail, k.canvas, min: soft ? softRailMin : 3),
     // Switch knob against both track states. On the accent the knob or its
     // edge stands off the track (`knobOn`): a bright accent (dark label)
-    // gives the white knob a dark edge, resting and hovered (K-35). At soft
+    // gives the white knob a dark edge, resting and hovered. At soft
     // contrast the light off track carries a white knob by its shadow, as
     // on iOS ([softCues]).
     Rule(
@@ -401,7 +401,7 @@ List<Rule> rules(
       backdrop: k.surface,
       min: 3,
     ),
-    // Text selection in fields and selectable text (K-75): the soft
+    // Text selection in fields and selectable text: the soft
     // selection fill behind unchanged text. The text stays AA on it and
     // the highlight stands off the field.
     Rule(
@@ -412,7 +412,7 @@ List<Rule> rules(
       min: 4.5,
     ),
     // A focused text field's edge turns to the focus color, also with
-    // the subtle indicator (K-69 note for text fields).
+    // the subtle indicator.
     Rule(
       'focus edge on field (focused text field)',
       k.focus,
@@ -449,7 +449,7 @@ List<Rule> rules(
         backgrounds[bg]!,
         min: 3,
       ),
-    // The ring is the default focus look (K-41 revised). Rows draw it inside
+    // The ring is the default focus look. Rows draw it inside
     // their edge, over their highlight: a menu row on the overlay, a
     // selected sidebar item on the sidebar.
     Rule(
@@ -511,7 +511,7 @@ List<Rule> rules(
       max: 1.8,
     ),
     // Selected items: hover (and keyboard focus in the opt-in subtle mode)
-    // steps visibly from the plain selected look (B2, K-61).
+    // steps visibly from the plain selected look.
     Rule(
       'selectionHover vs selection',
       k.selectionHover,
@@ -524,12 +524,12 @@ List<Rule> rules(
       DsColorUtils.flatten(k.selectionStrong, k.surface),
       min: 1.1,
     ),
-    // A soft badge or count stands off the card and the page (M3).
+    // A soft badge or count stands off the card and the page.
     Rule('neutral.tint on surface', k.neutral.tint, k.surface, min: 1.2),
     Rule('neutral.tint on canvas', k.neutral.tint, k.canvas, min: 1.15),
     // Dark elevation and channels
     if (dark) ...[
-      // The selection is lighter than every layer it sits on (V2).
+      // The selection is lighter than every layer it sits on.
       for (final MapEntry(key: name, value: bg) in {
         ...backgrounds,
         'sidebar': k.sidebar,
@@ -561,7 +561,7 @@ List<Rule> rules(
         ),
     ],
     // Channels (segment, skeleton) stand off the card and the page in both
-    // modes (K-160).
+    // modes.
     Rule('channel on surface', k.channel, k.surface, min: 1.15),
     Rule('channel on canvas', k.channel, k.canvas, min: 1.15),
   ];
@@ -621,7 +621,7 @@ List<String> darkKeepsVivid(DsColors light, DsColors dark) {
   ];
 }
 
-/// K-44: the dark accent family is never more saturated than in light mode
+/// The dark accent family is never more saturated than in light mode
 /// (`açık moddakini de aşmaz`): the accent fill and its hover and press
 /// against the light accent fill, the strong selection and its hover
 /// against the light strong selection.
@@ -677,8 +677,8 @@ double cuspLightness(double hue) => _cusps.putIfAbsent(hue.round() % 360, () {
   return best;
 });
 
-/// Olive, mustard, khaki or brown (K-161, "çamurumsu görüntü kesinlikle
-/// istemiyorum"): a warm hue, orange to yellow-green (50–125°), more than
+/// Olive, mustard, khaki or brown, a muddy look the palette must never
+/// produce: a warm hue, orange to yellow-green (50–125°), more than
 /// 0.12 below the lightness where that hue is most vivid. A dark yellow is
 /// olive and a dark amber mustard whatever their chroma; a deep blue,
 /// green or red keeps its hue. Below 0.015 chroma a color is a gray.
@@ -690,7 +690,7 @@ bool isMuddy(Color color) {
       v.l < cuspLightness(v.h) - .12;
 }
 
-/// Marks with no label on them stay clean in every seed (K-213): the
+/// Marks with no label on them stay clean in every seed: the
 /// progress, slider and tab mark (`indicator`, both modes; a neutral
 /// seed's is its own gray), the light focus outline where it is the
 /// indicator, the date range band and icon box
@@ -699,7 +699,7 @@ bool isMuddy(Color color) {
 /// hues that read as khaki, sage or olive at their lightness (55–135°),
 /// and on a dark tone off those that read as brown or maroon (355–55°).
 List<String> markFailures(DsColors k, {required bool dark}) => [
-  // A neutral seed's indicator is the brand's own gray (K-159).
+  // A neutral seed's indicator is the brand's own gray.
   if (chroma(k.indicator) >= .03) ...[
     if (isMuddy(k.indicator)) 'indicator is muddy (${_hex(k.indicator)})',
     if (!dark && k.focus == k.indicator && isMuddy(k.focus)) 'focus is muddy',
@@ -711,7 +711,7 @@ List<String> markFailures(DsColors k, {required bool dark}) => [
   for (var tone = 0; tone < DsAvatar.toneCount; tone++)
     if (DsAvatar.toneColors(k, tone).$1 case final bg) ...[
       // Tone 0 is the selection pair; a near-neutral seed's is its own
-      // gray (K-159), warm or not.
+      // gray, warm or not.
       if ((tone > 0 || chroma(bg) >= .03) &&
           isMuddy(DsColorUtils.flatten(bg, k.surface)))
         'avatar tone $tone is muddy (${_hex(bg)})',
@@ -750,8 +750,7 @@ List<String> accentEdgeOnlyWhereNeeded(DsColors k) {
 }
 
 /// Pairs that come from component styles, checked over every seed like the
-/// palette rules (§2.1; they used to run on three presets in component
-/// tests).
+/// palette rules (they used to run on three presets in component tests).
 List<String> componentFailures(DsThemeData t) {
   final k = t.colors;
   final slider = DsSlider.defaultStyle(t);
@@ -794,7 +793,7 @@ List<String> componentFailures(DsThemeData t) {
           ),
       // The neutral button: the inverse ink on the ink, resting, hovered
       // and pressed. Hover and press move the fill toward the label, which
-      // the budget allows only while the label stays at 7:1 (K-29).
+      // the budget allows only while the label stays at 7:1.
       for (final (state, s) in shades(neutral))
         for (final (name, bg) in [
           ('canvas', k.canvas),
@@ -817,7 +816,7 @@ List<String> componentFailures(DsThemeData t) {
         Rule('neutral button fill on $name', neutral.background!, bg, min: 3),
       // The inverse button on the accent ground it is made for: its accent
       // label at 4.5:1, resting, hovered and pressed, and hover and press
-      // never weaker than rest below 7:1 (K-29).
+      // never weaker than rest below 7:1.
       for (final (state, s) in shades(inverse))
         Rule(
           'inverse button label $state on accent',
@@ -882,7 +881,7 @@ List<String> componentFailures(DsThemeData t) {
         backdrop: k.surface,
         min: 3,
       ),
-      // The switch knob over the hovered off track (K-35), and the hover a
+      // The switch knob over the hovered off track, and the hover a
       // visible step from the rest.
       if (t.contrast != DsContrast.soft)
         Rule(
@@ -902,7 +901,7 @@ List<String> componentFailures(DsThemeData t) {
       // The chosen option's check on the popup and on the highlighted row.
       Rule('option check on overlay', k.accentText, k.overlay, min: 3),
       Rule('option check on highlight', k.accentText, k.selection, min: 3),
-      // Date range band (K-93): days and today on the band. No line runs
+      // Date range band: days and today on the band. No line runs
       // along it at any level.
       for (final (name, ink) in [
         ('text', k.text),
@@ -933,7 +932,7 @@ List<String> componentFailures(DsThemeData t) {
   ];
 }
 
-/// Hover never lowers label contrast (K-29), unless the label stays at 7:1
+/// Hover never lowers label contrast, unless the label stays at 7:1
 /// (a near-black fill cannot darken, so it lightens).
 List<String> hoverRaisesContrast(DsColors k) => [
   for (final (name, label, fill, hover) in [
@@ -952,9 +951,9 @@ List<String> hoverRaisesContrast(DsColors k) => [
       '$name hover lowers label contrast',
 ];
 
-/// Pressed goes one step beyond hover (K-68): further from the resting
+/// Pressed goes one step beyond hover: further from the resting
 /// fill than hover is, so a press never looks lighter than a hover; and on
-/// a labeled fill, further from the label too (K-29), unless the label
+/// a labeled fill, further from the label too, unless the label
 /// stays at 7:1.
 List<String> pressBeyondHover(DsColors k) {
   double cr(Color a, Color b) => DsColorUtils.contrastRatio(
@@ -1050,7 +1049,7 @@ List<String> softKeepsText(DsPalette std, DsPalette soft) {
   ];
 }
 
-/// The multi-select tags (K-85), read from the component's default style:
+/// The multi-select tags, read from the component's default style:
 /// labels 4.5:1 and the remove cross 3:1 on resting and active tags, the
 /// active tag apart from the rest. No tag draws an edge its fill does not
 /// need, at any level.

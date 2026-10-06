@@ -15,8 +15,8 @@ import 'link_style.dart';
 /// A text link: link color, medium weight, a 1px underline.
 ///
 /// ```dart
-/// DsLink(label: 'kullanım kılavuzuna', onPressed: openGuide)
-/// DsLink(label: 'destek ekibine yazın', external: true, url: supportUri, onPressed: …)
+/// DsLink(label: 'the user guide', onPressed: openGuide)
+/// DsLink(label: 'Contact support', external: true, url: supportUri, onPressed: …)
 /// ```
 ///
 /// Inline in running text, place it in a `WidgetSpan` with

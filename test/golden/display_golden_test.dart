@@ -7,8 +7,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for the Faz 5a display components, light and dark
-/// (KALITE K-24).
+/// Visual regression for the display components (avatar, status, count,
+/// skeleton, progress, link, breadcrumb, card), light and dark.
 void main() {
   // Freeze endless animations (shimmer, indeterminate progress).
   Map<String, DsThemeData> frozen(DsSeed seed) => {

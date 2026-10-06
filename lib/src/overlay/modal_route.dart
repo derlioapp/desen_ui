@@ -444,7 +444,7 @@ class DsModalRoute<T> extends PopupRoute<T> {
   );
 
   // The curved animations live as long as the route, not one build: they
-  // listen to the route's animation and must be disposed (eng L4).
+  // listen to the route's animation and must be disposed.
   Animation<double>? _parent;
   DsMotion? _curvesMotion;
   CurvedAnimation? _fade, _move;

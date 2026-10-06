@@ -30,12 +30,12 @@ import 'file_upload_style.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Ekler'),
-///   errorText: tooBig ? 'Dosya 10 MB\'tan büyük.' : null,
+///   label: const Text('Attachments'),
+///   errorText: tooBig ? 'The file is larger than 10 MB.' : null,
 ///   child: DsFileUpload(
 ///     onBrowse: pickFiles,
 ///     dragging: isDragging,
-///     description: const Text('PDF, PNG · en fazla 10 MB'),
+///     description: const Text('PDF, PNG · up to 10 MB'),
 ///     files: [
 ///       for (final f in uploads)
 ///         DsFileItem(
@@ -148,7 +148,7 @@ class DsFileUpload extends StatefulWidget {
     final type = theme.typography;
     // Proportional figures: the description is prose ("PDF, PNG · up to 10 MB").
     // Tabular figures in the text family also make the comma and period
-    // digit-wide, which tears "PDF, PNG" apart (denetim-2, decision 1).
+    // digit-wide, which tears "PDF, PNG" apart.
     // The scale's smallest size, the overline's (11, touch 12).
     final description = type.caption.copyWith(fontSize: type.overline.fontSize);
     return DsFileUploadStyle(
@@ -185,9 +185,9 @@ class DsFileUpload extends StatefulWidget {
         borderColor: k.indicator,
         iconColor: k.accentText,
       ),
-      // Thicker, so the error is not told by hue alone (K-67).
+      // Thicker, so the error is not told by hue alone.
       error: DsFileUploadStyle(borderColor: dsErrorEdge(theme), borderWidth: 2),
-      // Keeps its shape (K-66): the disabled fill, a faint edge.
+      // Keeps its shape: the disabled fill, a faint edge.
       disabled: DsFileUploadStyle(
         background: k.disabled,
         borderColor: k.border,
@@ -452,8 +452,8 @@ enum DsFileStatus {
 ///   buttons.
 ///
 /// Sizes are formatted the local way ([dsFormatFileSize]: "2,4 MB" in
-/// Turkish). Screen readers hear the file name with its state ("kapak.png
-/// yüklendi, 840 KB"), the progress bar's value and the buttons, each
+/// Turkish). Screen readers hear the file name with its state ("cover.png
+/// uploaded, 840 KB"), the progress bar's value and the buttons, each
 /// named with the file. When the state changes to done or failed it is
 /// announced politely (a polite live region where the platform has no
 /// announcements's rule).
@@ -510,7 +510,7 @@ class DsFileItem extends StatefulWidget {
     final k = theme.colors;
     final type = theme.typography;
     // A status icon takes the vivid signal when that reads at 3:1 on the
-    // row (it does on the surface), else the status text color (K-33).
+    // row (it does on the surface), else the status text color.
     Color readable(Color signal, Color text) =>
         DsColorUtils.contrastRatio(signal, k.surface) >= 3 ? signal : text;
     return DsFileItemStyle(
@@ -548,8 +548,8 @@ class DsFileItem extends StatefulWidget {
         height: 28,
         textStyle: type.caption.copyWith(fontWeight: FontWeight.w600),
       ),
-      // Thicker than the content edge, in the error ink (K-67); the icon
-      // and the message say it too (R5).
+      // Thicker than the content edge, in the error ink; the icon
+      // and the message say it too.
       error: DsFileItemStyle(
         shadows: [DsShadow.innerRing(dsErrorEdge(theme), width: 2)],
       ),
@@ -593,8 +593,8 @@ class _DsFileItemState extends State<DsFileItem> {
     );
   }
 
-  /// The state in words: "kapak.png yüklendi", "rapor.xlsx yüklenemedi\n
-  /// Desteklenmeyen dosya türü".
+  /// The state in words: "cover.png uploaded", "report.xlsx could not be
+  /// uploaded\nUnsupported file type".
   String _statusText(DsLocalizations l10n) => switch (widget.status) {
     DsFileStatus.uploading => '${widget.name}\n${l10n.uploading}',
     DsFileStatus.done => l10n.uploaded(widget.name),

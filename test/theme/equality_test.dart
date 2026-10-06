@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import '../components/helpers.dart';
 
-/// Every token class compares every field (B20: `DsShadows ==` used to
+/// Every token class compares every field (`DsShadows ==` used to
 /// skip `surfaceRaised`, so a theme change to the hovered-card shadow was
 /// missed). Each field is changed alone through `copyWith`; the copy must
 /// differ, and the hash too.
@@ -189,7 +189,7 @@ void main() {
     });
   });
 
-  // K-31: hooks are compared by what they produce, not by identity.
+  // Hooks are compared by what they produce, not by identity.
   test('DsThemeData compares hook results, not hook identity', () {
     DsThemeData make(double card) =>
         DsThemeData(adjustRadii: (r, _) => r.copyWith(card: card));

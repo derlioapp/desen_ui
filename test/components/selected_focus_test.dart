@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// B2 / V11 / visual C1 / K-61: a selected item used to override the hover
+/// A selected item used to override the hover
 /// look, so hovering a selected chip, sidebar item, current page, "on"
 /// toolbar toggle or bottom-nav item showed nothing; a selected list row
 /// follows the same rule. Selected items have their own hover step

@@ -6,8 +6,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// DsFormField and the typed form fields: Flutter's Form validates, saves
-/// and resets them; the error flows into DsField (K-67, WCAG 3.3.1).
-/// No DsApp or DsScope anywhere (R3): a MediaQuery, a Directionality and
+/// and resets them; the error flows into DsField (WCAG 3.3.1).
+/// No DsApp or DsScope anywhere: a MediaQuery, a Directionality and
 /// an Overlay for the popups.
 void main() {
   const en = DsLocalizationsEn();
@@ -755,7 +755,7 @@ void main() {
     });
 
     testWidgets('an invalid field kept alive off screen in a lazy list '
-        'takes focus without an error (bugs H2)', (tester) async {
+        'takes focus without an error', (tester) async {
       final form = GlobalKey<FormState>();
       final scroll = ScrollController();
       addTearDown(scroll.dispose);

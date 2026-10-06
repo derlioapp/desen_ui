@@ -244,7 +244,7 @@ void main() {
     expect(tester.getSize(item).height, greaterThan(32));
   });
 
-  testWidgets('works without DsScope or DsApp (R3): typing', (tester) async {
+  testWidgets('works without DsScope or DsApp: typing', (tester) async {
     DsTime? value;
     await tester.pumpWidget(
       MediaQuery(

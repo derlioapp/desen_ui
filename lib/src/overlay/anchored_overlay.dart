@@ -293,7 +293,7 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
   void dispose() {
     widget.controller.removeListener(_sync);
     // The trigger is gone: its layer closes for good instead of coming
-    // back open with it (eng L8).
+    // back open with it.
     widget.controller._closeDetached();
     _forget();
     _back.canPopNotifier.dispose();
@@ -308,7 +308,7 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
     widget.controller.isOpen ? _show() : _hide();
   }
 
-  // System back: an open layer takes it before its page (K-53).
+  // System back: an open layer takes it before its page.
 
   void _remember() {
     if (_openLayers.contains(this)) return;

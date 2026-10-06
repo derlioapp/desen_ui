@@ -2,7 +2,6 @@
 # rules that matter for the archive are repeated here.
 
 # Development only.
-concept/
 docs/
 tool/
 

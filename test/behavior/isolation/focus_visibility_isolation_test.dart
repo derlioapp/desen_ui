@@ -5,8 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Keyboard modality is global. The test binding clears every keyboard
-/// handler after each test; an app's suite must not become order-dependent
-/// (eng H2). The tests run in order and depend on it on purpose.
+/// handler after each test; an app's suite must not become order-dependent.
+/// The tests run in order and depend on it on purpose.
 void main() {
   Widget app(String label) => DsApp(
     theme: DsThemeData(platform: TargetPlatform.macOS),

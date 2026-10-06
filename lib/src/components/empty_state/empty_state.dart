@@ -12,11 +12,11 @@ import 'empty_state_style.dart';
 /// ```dart
 /// DsEmptyState(
 ///   icon: const DsIcon(DsIcons.inbox),
-///   title: const Text('Henüz görev yok'),
-///   description: const Text('İlk görevi ekleyin ya da bir şablonla başlayın.'),
+///   title: const Text('No tasks yet'),
+///   description: const Text('Add your first task or start from a template.'),
 ///   actions: [
-///     DsButton(variant: .primary, size: .sm, onPressed: add, child: const Text('Görev ekle')),
-///     DsButton(variant: .ghost, size: .sm, onPressed: templates, child: const Text('Şablonlar')),
+///     DsButton(variant: .primary, size: .sm, onPressed: add, child: const Text('Add task')),
+///     DsButton(variant: .ghost, size: .sm, onPressed: templates, child: const Text('Templates')),
 ///   ],
 /// )
 /// ```
@@ -34,7 +34,7 @@ class DsEmptyState extends StatelessWidget {
   /// Shown in the tone disk, usually a [DsIcon].
   final Widget? icon;
 
-  /// What is empty, as an invitation ("Henüz görev yok").
+  /// What is empty, as an invitation ("No tasks yet").
   final Widget title;
 
   /// One or two sentences on what to do next.

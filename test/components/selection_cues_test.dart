@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Denetim-2: selection that does not rest on a faint fill or hue alone.
+/// Selection that does not rest on a faint fill or hue alone.
 /// A bright accent fill gets an edge, a selected chip a check, a selected
 /// segment a heavier label; channels draw no line.
 void main() {

@@ -41,14 +41,14 @@ part 'search_field.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('E-posta'),
-///   errorText: invalid ? 'Geçerli bir adres girin.' : null,
+///   label: const Text('Email'),
+///   errorText: invalid ? 'Enter a valid address.' : null,
 ///   required: true,
 ///   child: DsTextField(
 ///     controller: email,
 ///     keyboardType: TextInputType.emailAddress,
 ///     autofillHints: const [AutofillHints.email],
-///     placeholder: 'ad@ornek.com',
+///     placeholder: 'name@example.com',
 ///   ),
 /// )
 /// ```
@@ -432,7 +432,7 @@ class DsTextField extends StatefulWidget {
       iconColor: k.textMuted,
       iconSize: 16,
       textStyle: theme.typography.body,
-      // As the concept's icon-to-text space and the select's.
+      // The select's icon-to-text space.
       gap: DsSpace.s12,
       // About a space of the body text: a unit or "https://" reads with
       // the value ("72 kg"), not as a separate part.
@@ -452,13 +452,13 @@ class DsTextField extends StatefulWidget {
       counterStyle: theme.typography
           .numeric(theme.typography.caption)
           .copyWith(color: k.textSubtle),
-      // Over the limit: the danger text color, bolder (concept 26).
+      // Over the limit: the danger text color, bolder.
       counterOverStyle: TextStyle(
         color: k.danger.text,
         fontWeight: FontWeight.w600,
       ),
       counterGap: DsSpace.s6,
-      // A small filled circle, as in the concept; the cross darkens under
+      // A small filled circle; the cross darkens under
       // the pointer.
       clearStyle: DsButtonStyle(
         height: 22,
@@ -501,7 +501,7 @@ class DsTextField extends StatefulWidget {
         borderWidth: 2,
         iconColor: k.focus,
       ),
-      // Thicker, so the error is not told by hue alone (K-67).
+      // Thicker, so the error is not told by hue alone.
       // The error icon takes the edge's color; slot icons keep theirs.
       // Focused, the edge shows focus; the icon and the message keep
       // telling the error.
@@ -521,8 +521,8 @@ class DsTextField extends StatefulWidget {
         shadows: const [],
         focused: DsTextFieldStyle(borderColor: k.focus, borderWidth: 2),
       ),
-      // Disabled keeps the shape: a faint edge on the disabled fill
-      // (K-66), as the select.
+      // Disabled keeps the shape: a faint edge on the disabled fill,
+      // as the select.
       disabled: DsTextFieldStyle(
         background: k.disabled,
         borderColor: k.border,
@@ -536,14 +536,14 @@ class DsTextField extends StatefulWidget {
     );
     final form = switch (variant) {
       DsTextFieldVariant.singleLine => null,
-      // The concept's text area: 12 all around, airy lines.
+      // The text area: 12 all around, airy lines.
       DsTextFieldVariant.multiline => const DsTextFieldStyle(
         padding: EdgeInsetsDirectional.all(DsSpace.s12),
         textStyle: TextStyle(height: 1.5),
       ),
-      // The concept draws search as a control, like a secondary button:
+      // Search is drawn as a control, like a secondary button:
       // control fill, soft edge and lift; the magnifier and the
-      // placeholder tell it is a field (K-27).
+      // placeholder tell it is a field.
       DsTextFieldVariant.search => DsTextFieldStyle(
         padding: const EdgeInsetsDirectional.fromSTEB(
           DsSpace.s16,
@@ -1207,7 +1207,7 @@ class _DsTextFieldState extends State<DsTextField>
       child: editable,
     );
     // Text editing keys come from WidgetsApp; outside one, the field
-    // brings them itself (R3), without overriding an app's own.
+    // brings them itself, without overriding an app's own.
     if (context.findAncestorWidgetOfExactType<DefaultTextEditingShortcuts>() ==
         null) {
       editable = DefaultTextEditingShortcuts(child: editable);
@@ -1272,7 +1272,7 @@ class _DsTextFieldState extends State<DsTextField>
           ? {CustomSemanticsAction(label: l10n.clear): _clear}
           : null,
       // Too narrow for every part, the extras give way in order and the
-      // text keeps its room (S-46).
+      // text keeps its room.
       child: FieldFitRow(
         crossAxisAlignment: crossAxis,
         spacing: s.gap!,

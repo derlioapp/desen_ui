@@ -259,7 +259,7 @@ void main() {
       expect(calls, isEmpty);
     });
 
-    testWidgets('works without a theme above (R3)', (tester) async {
+    testWidgets('works without a theme above', (tester) async {
       final calls = _recordHaptics(tester);
       await tester.pumpWidget(
         host(

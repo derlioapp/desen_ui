@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// S-30: the iOS back swipe and Android's predictive back on DsPageRoute.
+/// The iOS back swipe and Android's predictive back on DsPageRoute.
 void main() {
   final ios = TargetPlatformVariant.only(TargetPlatform.iOS);
   final android = TargetPlatformVariant.only(TargetPlatform.android);

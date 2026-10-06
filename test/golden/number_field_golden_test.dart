@@ -9,10 +9,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for DsNumberField (concept card 39): rest, focused,
+/// Visual regression for DsNumberField: rest, focused,
 /// a hovered button, with a unit, a Turkish currency with grouping, error,
-/// disabled, read-only and RTL with the buttons mirrored, light and dark
-/// (KALITE K-24).
+/// disabled, read-only and RTL with the buttons mirrored, light and dark.
 void main() {
   for (final MapEntry(key: mode, value: theme) in themesFor(
     DsSeed.blue,

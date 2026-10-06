@@ -1122,7 +1122,7 @@ class _DsMenuItemState extends State<DsMenuItem> {
       child: item,
     );
     // The submenu meets the parent menu's edge, overlapping it by a hair,
-    // and never covers this item's highlight (visual M4).
+    // and never covers this item's highlight.
     final parentPadding =
         (DsMenuStyle.resolveLayers([
                   DsMenu.defaultStyle(t),
@@ -1150,10 +1150,10 @@ class _DsMenuItemState extends State<DsMenuItem> {
 ///
 /// ```dart
 /// DsMenuAnchor(
-///   items: [DsMenuItem(label: const Text('Düzenle'), onPressed: edit)],
+///   items: [DsMenuItem(label: const Text('Edit'), onPressed: edit)],
 ///   builder: (context, controller, _) => DsButton.icon(
 ///     icon: const DsIcon(DsIcons.ellipsis),
-///     semanticLabel: 'Diğer',
+///     semanticLabel: 'More',
 ///     onPressed: controller.toggle,
 ///   ),
 /// )
@@ -1399,7 +1399,7 @@ Widget _itemRow(
                 ? FontWeight.w500
                 : null,
           ),
-          // A long label wraps once, then ends in an ellipsis (ux M3);
+          // A long label wraps once, then ends in an ellipsis;
           // screen readers get it whole.
           maxLines: maxLines,
           overflow: TextOverflow.ellipsis,
@@ -1423,7 +1423,7 @@ String? _plainText(Widget? widget) => switch (widget) {
   _ => null,
 };
 
-// Long menus (denetim-2 P4). A menu with more entries than [_lazyAbove]
+// Long menus. A menu with more entries than [_lazyAbove]
 // builds only the rows that show: its arrow keys, type-ahead and the item
 // it opens on work from a model of its entries, not from the element tree,
 // its rows have heights known up front, and its width is the widest of a

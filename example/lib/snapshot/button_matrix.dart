@@ -9,8 +9,8 @@ class ButtonMatrix extends StatelessWidget {
   static const _columns = <(String, Set<WidgetState>)>[
     ('Normal', {}),
     ('Hover', {WidgetState.hovered}),
-    ('Odak', {WidgetState.focused}),
-    ('Basılı', {WidgetState.pressed}),
+    ('Focus', {WidgetState.focused}),
+    ('Pressed', {WidgetState.pressed}),
   ];
 
   @override
@@ -30,8 +30,8 @@ class ButtonMatrix extends StatelessWidget {
             const SizedBox(width: 96),
             for (final (label, _) in _columns)
               cell(Text(label, style: caption)),
-            cell(Text('Pasif', style: caption)),
-            cell(Text('Yükleniyor', style: caption)),
+            cell(Text('Disabled', style: caption)),
+            cell(Text('Loading', style: caption)),
           ],
         ),
         for (final variant in DsButtonVariant.values)
@@ -44,14 +44,14 @@ class ButtonMatrix extends StatelessWidget {
                     variant: variant,
                     statesController: WidgetStatesController(states),
                     onPressed: () {},
-                    child: const Text('Kaydet'),
+                    child: const Text('Save'),
                   ),
                 ),
               cell(
                 DsButton(
                   variant: variant,
                   onPressed: null,
-                  child: const Text('Kaydet'),
+                  child: const Text('Save'),
                 ),
               ),
               cell(
@@ -59,7 +59,7 @@ class ButtonMatrix extends StatelessWidget {
                   variant: variant,
                   loading: true,
                   onPressed: () {},
-                  child: const Text('Kaydet'),
+                  child: const Text('Save'),
                 ),
               ),
             ],

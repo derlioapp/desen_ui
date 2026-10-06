@@ -309,7 +309,7 @@ class _DsRadioState<T> extends State<DsRadio<T>> {
   }
 
   // Input modality only changes how focus looks: rebuild only while
-  // focused, not on every pointer or key event in the app (eng L6).
+  // focused, not on every pointer or key event in the app.
   void _onModality() {
     if (_node.hasFocus) setState(() {});
   }
@@ -332,8 +332,7 @@ class _DsRadioState<T> extends State<DsRadio<T>> {
   Widget build(BuildContext context) {
     final t = dsThemeOf(context);
     final group = RadioGroupScope.maybeOf(context);
-    // A surrounding DsField or group with an error marks the control too
-    // (K-71).
+    // A surrounding DsField or group with an error marks the control too.
     final error =
         widget.error ||
         (group?.error ?? false) ||

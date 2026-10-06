@@ -47,7 +47,7 @@ class DsSelectOption<T> {
   /// An icon before the label.
   final Widget? leading;
 
-  /// A short muted note on the end side ("salt okunur").
+  /// A short muted note on the end side ("read-only").
   final String? detail;
 
   /// Whether the option can be chosen.
@@ -95,11 +95,11 @@ class DsSelectOption<T> {
 /// DsSelect<String>(
 ///   value: project,
 ///   onChanged: (v) => setState(() => project = v),
-///   semanticLabel: 'Proje',
+///   semanticLabel: 'Project',
 ///   options: const [
 ///     DsSelectOption(value: 'web', label: 'Derlio Web'),
-///     DsSelectOption(value: 'mobile', label: 'Derlio Mobil'),
-///     DsSelectOption(value: 'archive', label: 'Arşiv', detail: 'salt okunur', enabled: false),
+///     DsSelectOption(value: 'mobile', label: 'Derlio Mobile'),
+///     DsSelectOption(value: 'archive', label: 'Archive', detail: 'read-only', enabled: false),
 ///   ],
 /// )
 /// ```
@@ -140,7 +140,7 @@ class DsSelect<T> extends StatefulWidget {
   /// An icon before the value, e.g. what the select chooses.
   final Widget? leading;
 
-  /// What the select chooses, for screen readers ("Proje").
+  /// What the select chooses, for screen readers ("Project").
   final String? semanticLabel;
 
   /// Shows the error look (from a form's validation): the error border,
@@ -190,7 +190,7 @@ class DsSelect<T> extends StatefulWidget {
       focusShadows: const [],
       focused: DsSelectStyle(borderColor: k.focus, borderWidth: 2),
       hovered: DsSelectStyle(background: k.controlHover),
-      // Thicker, so the error is not told by hue alone (K-67), as on the
+      // Thicker, so the error is not told by hue alone, as on the
       // text field. Focused, the edge shows focus; the icon keeps the
       // error.
       error: DsSelectStyle(
@@ -207,7 +207,7 @@ class DsSelect<T> extends StatefulWidget {
         focused: DsSelectStyle(borderColor: k.focus, borderWidth: 2),
       ),
       // Disabled keeps the field's shape: a faint edge on the disabled
-      // fill (K-66), as the text field.
+      // fill, as the text field.
       disabled: DsSelectStyle(
         background: k.disabled,
         borderColor: k.border,
@@ -257,7 +257,7 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
   @override
   void didUpdateWidget(DsSelect<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // Disabled (or read-only) while open: the menu goes too (bugs B32).
+    // Disabled (or read-only) while open: the menu goes too.
     if (!_canEdit && _menu.isOpen) _menu.close();
   }
 
@@ -321,7 +321,7 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
     if (event.character case final c? when c.trim().isNotEmpty) {
       final options = widget.options;
       // With nothing chosen the search starts before the first option, so
-      // the first one can match (bugs B17).
+      // the first one can match.
       final current = options.indexWhere((o) => o.value == widget.value);
       final wanted = dsFoldCase(c);
       for (var step = 1; step <= options.length; step++) {
@@ -442,11 +442,11 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
             onDone: _menu.close,
             semanticLabel: widget.semanticLabel,
             children: [
-              // Nothing to choose: say so instead of an empty box (ux L4).
+              // Nothing to choose: say so instead of an empty box.
               if (widget.options.isEmpty)
                 _NoOptions(text: l10n.selectNoResults),
-              // Options without an icon line up with those that have one
-              // (visual L5): the menu keeps the icon column for all. The
+              // Options without an icon line up with those that have one:
+              // the menu keeps the icon column for all. The
               // chosen one takes the menu's check before its label.
               for (final o in widget.options)
                 DsMenuItem(
@@ -513,7 +513,7 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
                 style: textStyle,
               );
               // The name, the chosen value and the validation state of a form
-              // field (ux V8, V9); the visuals below are not read.
+              // field; the visuals below are not read.
               final visual = FieldWell(
                 duration: animate ? t.motion.toneDuration : Duration.zero,
                 curve: t.motion.toneCurve,

@@ -9,8 +9,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Faz 5b: selection controls (KALITE §3 B–H) and the generalized style
-/// model (§4, K-05).
+/// Selection controls and the generalized style
+/// model.
 void main() {
   final light = DsThemeData();
 
@@ -146,7 +146,7 @@ void main() {
       expect(value, 'c');
     });
 
-    testWidgets('works without Localizations on macOS (R3)', (tester) async {
+    testWidgets('works without Localizations on macOS', (tester) async {
       debugDefaultTargetPlatformOverride = TargetPlatform.macOS;
       addTearDown(() => debugDefaultTargetPlatformOverride = null);
       await tester.pumpWidget(
@@ -634,7 +634,7 @@ void main() {
     });
   });
 
-  group('style model (K-05) across components', () {
+  group('style model across components', () {
     test('structural styles resolve nested states: selected+hovered wins', () {
       const plainHover = Color(0xFF111111), selectedHover = Color(0xFF222222);
       const s = DsCheckboxStyle(
@@ -790,7 +790,7 @@ void main() {
     });
   });
 
-  testWidgets('selection controls work without a scope and at 2x text (R3)', (
+  testWidgets('selection controls work without a scope and at 2x text', (
     tester,
   ) async {
     await tester.pumpWidget(

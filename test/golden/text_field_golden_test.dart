@@ -9,11 +9,11 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// Visual regression for DsTextField (concept cards 05, 26, 41): rest,
+/// Visual regression for DsTextField: rest,
 /// hover, focused with a selection, filled, error, read-only, disabled and a
-/// multi-line field, light and dark (KALITE K-24). The second golden holds
+/// multi-line field, light and dark. The second golden holds
 /// part 2: slots, clear, password, counters (normal and over the limit),
-/// the text area and the search field (card 06).
+/// the text area and the search field.
 void main() {
   for (final MapEntry(key: mode, value: theme) in themesFor(
     DsSeed.blue,

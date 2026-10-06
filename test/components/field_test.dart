@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'helpers.dart';
 
 /// DsField: label, description, error and required around a control
-/// (K-67, WCAG 3.3.1).
+/// (WCAG 3.3.1).
 void main() {
   const options = [
     DsSelectOption(value: 'web', label: 'Derlio Web'),
@@ -374,7 +374,7 @@ void main() {
     });
   });
 
-  testWidgets('works without a scope (R3)', (tester) async {
+  testWidgets('works without a scope', (tester) async {
     await tester.pumpWidget(host(select(error: 'Choose a project.')));
     await tester.pumpAndSettle();
     expect(find.text('Project'), findsOneWidget);
@@ -382,7 +382,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  group('customization (§4)', () {
+  group('customization', () {
     testWidgets('Ö1: one field\'s style', (tester) async {
       const ink = Color(0xFF0050AA);
       await tester.pumpWidget(
@@ -484,7 +484,7 @@ void main() {
     expect(seen[2], isNull);
   });
 
-  group('controls read the field (K-71)', () {
+  group('controls read the field', () {
     DsBoxDecoration selectBox(WidgetTester tester) =>
         tester
                 .widget<AnimatedContainer>(
@@ -524,7 +524,7 @@ void main() {
           .getSemantics(find.byType(DsSelect<String>))
           .getSemanticsData();
       expect(data.validationResult, SemanticsValidationResult.invalid);
-      // The 2px error edge and the error icon, not color alone (K-67).
+      // The 2px error edge and the error icon, not color alone.
       final ring = selectBox(tester).shadows.first;
       expect(ring.color, theme.shadows.fieldError.first.color);
       expect(ring.spread, 2);
@@ -645,7 +645,7 @@ void main() {
       handle.dispose();
     });
 
-    testWidgets('a disabled select keeps a faint edge (K-66)', (tester) async {
+    testWidgets('a disabled select keeps a faint edge', (tester) async {
       final theme = DsThemeData();
       await tester.pumpWidget(
         host(

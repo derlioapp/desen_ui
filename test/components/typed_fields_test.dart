@@ -1,4 +1,4 @@
-// Denetim-2 regressions for the typed fields (date, range, time, number):
+// Regression tests for the typed fields (date, range, time, number):
 // parsing never throws, years round-trip, no phantom changes, invalid
 // input has text, numbers round before they clamp.
 import 'dart:ui' show Tristate;

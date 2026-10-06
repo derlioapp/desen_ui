@@ -10,8 +10,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// DsTextField and the text editing core (KALITE Faz 7a): gestures,
-/// handles, edit menus, caret, selection, semantics and R3.
+/// DsTextField and the text editing core: gestures,
+/// handles, edit menus, caret, selection, semantics, and working without
+/// DsApp or DsScope.
 void main() {
   /// A full app: Overlay, Navigator and the text editing shortcuts.
   Widget app(
@@ -107,7 +108,7 @@ void main() {
     });
 
     testWidgets(
-      'works without DsApp, DsScope or an Overlay (R3)',
+      'works without DsApp, DsScope or an Overlay',
       variant: TargetPlatformVariant.only(TargetPlatform.macOS),
       (tester) async {
         final controller = TextEditingController();
@@ -432,7 +433,7 @@ void main() {
       expect(b.hasFocus, isTrue);
     });
 
-    testWidgets('disabled keeps its edge in the disabled colors (K-66)', (
+    testWidgets('disabled keeps its edge in the disabled colors', (
       tester,
     ) async {
       final theme = DsThemeData();
@@ -492,7 +493,7 @@ void main() {
         expect(find.byType(DsTextSelectionToolbar), findsOneWidget);
         expect(find.text('Cut'), findsOneWidget);
         expect(find.text('Copy'), findsOneWidget);
-        // Each handle takes at least a 44 point touch target (K-40).
+        // Each handle takes at least a 44 point touch target.
         for (final handle in painted('_TeardropPainter').evaluate()) {
           final area = tester.getSize(
             find

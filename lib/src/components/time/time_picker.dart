@@ -40,7 +40,7 @@ export 'time_picker_style.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Başlangıç'),
+///   label: const Text('Start'),
 ///   child: DsTimePicker(
 ///     value: start,
 ///     minuteStep: 15,
@@ -78,7 +78,7 @@ export 'time_picker_style.dart';
 /// | Enter | Closes the columns, keeping the time |
 /// | Escape | Closes the columns, restoring the time they opened with |
 ///
-/// **Screen readers.** Each column is one adjustable node ("Saat, 14";
+/// **Screen readers.** Each column is one adjustable node ("Hours, 14";
 /// swipe up or down to change it), the field and the button their own.
 /// Increase gives the next item, the later time, as Down does: the
 /// columns read as lists, like the time lists of Android, Windows and
@@ -163,9 +163,9 @@ class DsTimePicker extends StatefulWidget {
         // Proportional figures, as in a browser's input: in the text
         // family, tabular figures make the period, comma and colon
         // digit-wide, so a typed "12.10.2026" or "12.500,00" would read
-        // spaced out like a console (denetim-2, decision 1).
+        // spaced out like a console.
       ),
-      // The field's own buttons' look (K-80).
+      // The field's own buttons' look.
       buttonStyle: DsButtonStyle(
         height: 22,
         borderRadius: BorderRadius.circular(11),
@@ -202,7 +202,7 @@ class DsTimePicker extends StatefulWidget {
         itemBorderColor: theme.selectedEdge ?? clear,
         itemTextStyle: const TextStyle(fontWeight: FontWeight.w600),
         // Inside the full-width item, in the item's ink on a filled
-        // selection (K-69).
+        // selection.
         focusShadows: [DsShadow.innerRing(ring, width: 2)],
         hovered: DsTimePickerStyle(itemBackground: theme.selectedHoverFill),
         pressed: DsTimePickerStyle(itemBackground: theme.selectedHoverFill),
@@ -476,7 +476,7 @@ class _DsTimePickerState extends State<DsTimePicker>
     }
 
     // Every column is as tall as the longest needs, up to the visible
-    // items; items grow with large text (K-34).
+    // items; items grow with large text.
     final scaler = MediaQuery.textScalerOf(context);
     final fontSize = ps.itemTextStyle?.fontSize ?? 0;
     final itemHeight = math.max(ps.itemHeight!, scaler.scale(fontSize) * 2);

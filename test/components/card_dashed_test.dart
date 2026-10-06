@@ -46,7 +46,7 @@ void main() {
     expect(find.byType(DsDashedBorder), findsNothing);
   });
 
-  testWidgets('works without any scope (R3)', (tester) async {
+  testWidgets('works without any scope', (tester) async {
     await tester.pumpWidget(
       host(DsCard(dashed: true, onPressed: () {}, child: const Text('Ekle'))),
     );

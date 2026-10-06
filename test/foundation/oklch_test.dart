@@ -4,7 +4,7 @@ import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('navy seed converts to the concept accent', () {
+  test('the navy seed converts to its sRGB accent', () {
     expect(const DsOklch(0.43, 0.11, 262).toColor(), const Color(0xFF2D4D8B));
   });
 
@@ -47,7 +47,7 @@ void main() {
     expect(mixed.l, lessThan(red.l));
   });
 
-  test('fitted keeps the hue where clipping would shift it (H3)', () {
+  test('fitted keeps the hue where clipping would shift it', () {
     // A dark yellow is far outside sRGB at this chroma.
     const dark = DsOklch(.566, .165, 86.5);
     expect(dark.inGamut, isFalse);

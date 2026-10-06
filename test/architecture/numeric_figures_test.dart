@@ -6,8 +6,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 /// Numbers are set in the text family with tabular figures
 /// (`DsTypography.numeric`), not in mono: a mono face made dates, amounts
-/// and counters read like a console, and its slashed zero like "Ø"
-/// (denetim-2, decision 1). Mono is kept for code-like content only.
+/// and counters read like a console, and its slashed zero like "Ø".
+/// Mono is kept for code-like content only.
 void main() {
   test('numeric is the text family with tabular figures', () {
     final y = DsTypography();

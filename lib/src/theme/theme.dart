@@ -327,7 +327,7 @@ class DsScope extends StatefulWidget {
 class _DsScopeState extends State<DsScope> {
   // Regenerating a palette is cheap but not free; cache derived themes so
   // rebuilds with unchanged inputs reuse the same instance. Theme equality
-  // ignores the adjust hooks (K-31), so the key also holds the hooks: a
+  // ignores the adjust hooks, so the key also holds the hooks: a
   // changed hook can change the derived dark or standard-contrast theme even
   // when the theme it hangs on compares equal.
   final Map<Object, DsThemeData> _cache = {};
@@ -707,7 +707,7 @@ class _DsDefaults extends StatelessWidget {
           // 3:1 on the field even under a bright accent (yellow caret).
           cursorColor: colors.indicator,
           // The soft selection fill: text stays AA on it and it stands off
-          // the field (K-75), here for SelectableRegion and SelectableText.
+          // the field, here for SelectableRegion and SelectableText.
           selectionColor: colors.selection,
           child: child,
         ),

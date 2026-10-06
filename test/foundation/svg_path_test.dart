@@ -80,7 +80,7 @@ void main() {
     expect(() => dsParseSvgPath('12 12'), throwsFormatException);
   });
 
-  // Visual M4: shortcut hints can draw modifier keys as icons instead of
+  // Shortcut hints can draw modifier keys as icons instead of
   // ⌘ ⌥ ⇧ ⌫ ⏎ glyphs the bundled fonts lack.
   test('keyboard key icons fit their 24px box', () {
     for (final icon in [

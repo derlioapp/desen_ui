@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// Regressions from the blind audit (phase B): DsTabs overflow.
+/// Regression tests for DsTabs overflow.
 void main() {
   Widget bar(int value, ValueChanged<int> onChanged, FocusNode node) =>
       SizedBox(
@@ -21,9 +21,7 @@ void main() {
         ),
       );
 
-  testWidgets('End scrolls the selected tab into view (B15, ux V13)', (
-    tester,
-  ) async {
+  testWidgets('End scrolls the selected tab into view', (tester) async {
     useTraditionalHighlights();
     final node = FocusNode();
     addTearDown(node.dispose);
@@ -50,9 +48,7 @@ void main() {
     );
   });
 
-  testWidgets('a clipped bar fades the hidden edge (visual H2)', (
-    tester,
-  ) async {
+  testWidgets('a clipped bar fades the hidden edge', (tester) async {
     final node = FocusNode();
     addTearDown(node.dispose);
     await tester.pumpWidget(host(bar(0, (_) {}, node)));

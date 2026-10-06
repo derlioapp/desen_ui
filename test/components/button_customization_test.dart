@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'helpers.dart';
 
-/// KALITE.md §4: every customization scenario must have one obvious way,
+/// Every customization scenario must have one obvious way,
 /// in a few lines. These tests are the proof for DsButton.
 void main() {
   final t = DsThemeData();

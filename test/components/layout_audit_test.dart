@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/// Regressions from the blind audit (phase B): phone widths, large text,
+/// Regression tests: phone widths, large text,
 /// narrow containers and navigation semantics.
 void main() {
   Future<void> pumpIn(
@@ -60,9 +60,7 @@ void main() {
   ];
 
   group('DsBottomNav', () {
-    testWidgets('five floating items fit a 358pt column (B11, H2)', (
-      tester,
-    ) async {
+    testWidgets('five floating items fit a 358pt column', (tester) async {
       await pumpIn(
         tester,
         Align(
@@ -105,7 +103,7 @@ void main() {
     });
 
     for (final variant in DsBottomNavVariant.values) {
-      testWidgets('$variant grows with 200% text (B12)', (tester) async {
+      testWidgets('$variant grows with 200% text', (tester) async {
         await pumpIn(
           tester,
           Align(
@@ -157,9 +155,7 @@ void main() {
   });
 
   group('DsSegmentedControl', () {
-    testWidgets('ellipsizes in a narrow container (B14, ux V5)', (
-      tester,
-    ) async {
+    testWidgets('ellipsizes in a narrow container', (tester) async {
       await pumpIn(
         tester,
         Center(
@@ -261,9 +257,7 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('a value matching no segment checks none (B30)', (
-      tester,
-    ) async {
+    testWidgets('a value matching no segment checks none', (tester) async {
       final handle = tester.ensureSemantics();
       int? changed;
       final node = FocusNode();
@@ -302,9 +296,7 @@ void main() {
   });
 
   group('DsPagination', () {
-    testWidgets('collapses at phone width in touch density (visual H2)', (
-      tester,
-    ) async {
+    testWidgets('collapses at phone width in touch density', (tester) async {
       await pumpIn(
         tester,
         Center(
@@ -332,9 +324,7 @@ void main() {
       expect(find.text('24'), findsOneWidget);
     });
 
-    testWidgets('zero pages renders inactive arrows (B32, eng L9)', (
-      tester,
-    ) async {
+    testWidgets('zero pages renders inactive arrows', (tester) async {
       await pumpIn(
         tester,
         Center(child: DsPagination(page: 1, pageCount: 0, onChanged: (_) {})),
@@ -346,9 +336,7 @@ void main() {
       }
     });
 
-    testWidgets('names pages and marks the current one (ux V22)', (
-      tester,
-    ) async {
+    testWidgets('names pages and marks the current one', (tester) async {
       final handle = tester.ensureSemantics();
       await pumpIn(
         tester,
@@ -364,9 +352,7 @@ void main() {
     });
   });
 
-  testWidgets('breadcrumb is a navigation with a current page (ux V22)', (
-    tester,
-  ) async {
+  testWidgets('breadcrumb is a navigation with a current page', (tester) async {
     final handle = tester.ensureSemantics();
     await pumpIn(
       tester,
@@ -390,7 +376,7 @@ void main() {
     handle.dispose();
   });
 
-  testWidgets('a list row with a long value ellipsizes (B22)', (tester) async {
+  testWidgets('a list row with a long value ellipsizes', (tester) async {
     await pumpIn(
       tester,
       Center(
@@ -414,7 +400,7 @@ void main() {
     expect(find.text('E-posta'), findsOneWidget);
   });
 
-  testWidgets('a long external link wraps (B23, eng L13)', (tester) async {
+  testWidgets('a long external link wraps', (tester) async {
     await pumpIn(
       tester,
       Center(
@@ -437,7 +423,7 @@ void main() {
   });
 
   group('DsStepper', () {
-    testWidgets('wide values are not cut (B29)', (tester) async {
+    testWidgets('wide values are not cut', (tester) async {
       await pumpIn(
         tester,
         Center(child: DsStepper(value: 12345, max: 99999, onChanged: (_) {})),
@@ -465,7 +451,7 @@ void main() {
       expect(await widthAt(5), await widthAt(1000));
     });
 
-    testWidgets('announces the clamped next value (B28)', (tester) async {
+    testWidgets('announces the clamped next value', (tester) async {
       final handle = tester.ensureSemantics();
       await pumpIn(
         tester,
@@ -484,7 +470,7 @@ void main() {
       handle.dispose();
     });
 
-    testWidgets('Left and Right mirror in RTL (ux V25)', (tester) async {
+    testWidgets('Left and Right mirror in RTL', (tester) async {
       var value = 5;
       final node = FocusNode();
       addTearDown(node.dispose);

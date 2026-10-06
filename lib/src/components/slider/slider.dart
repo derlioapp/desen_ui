@@ -153,7 +153,7 @@ class _DsSliderState extends State<DsSlider> {
   bool _highlight = false;
   bool get _focusVisible => _highlight && DsFocusVisibility.keyboard.value;
   // Input modality only changes how focus looks: rebuild only while
-  // focused, not on every pointer or key event in the app (eng L6).
+  // focused, not on every pointer or key event in the app.
   void _onModality() {
     if (_highlight) setState(() {});
   }
@@ -169,7 +169,7 @@ class _DsSliderState extends State<DsSlider> {
     super.didUpdateWidget(oldWidget);
     _latest = _value;
     if (!_enabled) {
-      // Disabled mid-gesture: no stale grabbing or pressed state (B8).
+      // Disabled mid-gesture: no stale grabbing or pressed state.
       _active = false;
       _dragging = false;
       _hovered = false;
@@ -309,7 +309,7 @@ class _DsSliderState extends State<DsSlider> {
     final v = _t;
     final border = s.thumbBorderColor ?? const Color(0x00000000);
 
-    // Fill the width; take the style's width when there is no bound (B5).
+    // Fill the width; take the style's width when there is no bound.
     double widthOf(BoxConstraints c) =>
         c.hasBoundedWidth ? c.maxWidth : math.max(s.width!, thumb);
 

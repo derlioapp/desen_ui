@@ -7,10 +7,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'golden_harness.dart';
 
-/// S-46: fields too narrow for their buttons. Each row is one field at
+/// Fields too narrow for their buttons. Each row is one field at
 /// 64, 96, 120, 160 and 240px: the extras give way in order (clear, error
 /// icon, unit, picker and step buttons, show password) and the text keeps
-/// about three characters; light and dark (KALITE K-24).
+/// about three characters; light and dark.
 void main() {
   for (final MapEntry(key: mode, value: theme) in themesFor(
     DsSeed.blue,
