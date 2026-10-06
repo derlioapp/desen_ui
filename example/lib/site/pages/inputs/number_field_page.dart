@@ -83,8 +83,12 @@ class NumberFieldPage extends StatelessWidget {
             '`12 500,50` in French. Change the examples\' language in the '
             'settings at the top to see the first field follow it. Either '
             '`.` or `,` typed where the decimal separator goes becomes the '
-            'right one, so a keypad works in every locale. Digits of other '
-            'scripts are read too.',
+            'right one, so a keypad works in every locale. Where `.` also '
+            'groups thousands, as in German, it is read by where it stands: '
+            '`12.500` is twelve thousand five hundred, `12.5` twelve and a '
+            'half. Text that could be either is marked as an error with both '
+            'readings offered, never guessed. Digits of other scripts are '
+            'read too.',
           ),
           Example(snippet: 'number-field-locale', child: _Demo(_Part.locale)),
           DocText(
