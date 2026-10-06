@@ -185,6 +185,11 @@ void main() {
         WidgetsApp(
           navigatorKey: navigator,
           color: const Color(0xFF000000),
+          // A home needs a page route.
+          pageRouteBuilder: <T>(settings, builder) => PageRouteBuilder<T>(
+            settings: settings,
+            pageBuilder: (context, _, _) => builder(context),
+          ),
           builder: (context, child) => child!,
           home: DsTheme(
             data: theme,
