@@ -84,6 +84,29 @@ class _FocusForwardState extends State<FocusForward> {
     // Not a stop of its own: Tab moves between the stops inside.
     skipTraversal: true,
     includeSemantics: false,
-    child: widget.child,
+    child: FocusStops(child: widget.child),
+  );
+}
+
+/// Keeps the Tab stops of a widget made of several (a sidebar, a toolbar,
+/// a table) together in the Tab order: Tab goes through all of them before
+/// it moves on, instead of interleaving them with whatever sits beside
+/// the widget in reading order. Inside, the stops follow the traversal
+/// policy around the widget (reading order by default).
+///
+/// Library-internal.
+class FocusStops extends StatelessWidget {
+  /// Groups the Tab stops in [child].
+  const FocusStops({super.key, required this.child});
+
+  /// The stops.
+  final Widget child;
+
+  static final _readingOrder = ReadingOrderTraversalPolicy();
+
+  @override
+  Widget build(BuildContext context) => FocusTraversalGroup(
+    policy: FocusTraversalGroup.maybeOf(context) ?? _readingOrder,
+    child: child,
   );
 }

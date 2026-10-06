@@ -576,6 +576,9 @@ class _DatePickerState extends State<StatefulWidget>
       return double.infinity;
     }
     final anchor = box.localToGlobal(Offset.zero) & box.size;
+    // A field kept alive off screen in a lazy list has no place (NaN): its
+    // popup is closing, so leave the content uncapped.
+    if (!anchor.isFinite) return double.infinity;
     final margin =
         MediaQuery.paddingOf(overlayContext) +
         MediaQuery.viewInsetsOf(overlayContext) +

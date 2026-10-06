@@ -70,8 +70,10 @@ class PopoverPage extends StatelessWidget {
                 'from inside another keeps the outer one open. Dialogs and '
                 'panels close on a tap on the dimmed page.',
             '**Focus** moves into popovers, menus, dialogs and panels when '
-                'they open, and back to the trigger when they close, also '
-                'after a mouse click. Dialogs and panels keep Tab inside; '
+                'they open (popovers, dialogs and panels: to the control with '
+                '`autofocus`, else the first one), and back to the trigger '
+                'when they close, also after a mouse click. Dialogs and '
+                'panels keep Tab inside; '
                 'popovers let it move on, and menus close on it. Tooltips '
                 'and toasts never take focus by themselves.',
             '**System back** (the Android back button or gesture) closes the '
@@ -104,7 +106,8 @@ class PopoverPage extends StatelessWidget {
           KeyboardTable([
             (
               'Enter / Space',
-              'On the trigger, opens the popover and moves focus into it.',
+              'On the trigger, opens the popover and moves focus to its '
+                  'first control.',
             ),
             (
               'Tab / Shift+Tab',

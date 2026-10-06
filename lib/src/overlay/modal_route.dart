@@ -6,6 +6,7 @@ import '../theme/motion.dart';
 import '../theme/sizes.dart';
 import '../theme/theme.dart';
 import '../theme/theme_data.dart';
+import 'initial_focus.dart';
 
 /// The Desen context an opener has and a layer shown elsewhere in the tree
 /// would miss: the [DsTheme], [Directionality], [DsLocalizationScope] and
@@ -204,7 +205,9 @@ enum DsScrim {
 ///
 /// As a route it traps focus while open and gives focus back to the
 /// opener when it closes; Escape, a tap on the scrim and system back close
-/// it when [barrierDismissible].
+/// it when [barrierDismissible]. On open, focus goes to the control that
+/// asks for it (`autofocus: true`), else to the first control inside in
+/// Tab order, so the keyboard and screen readers start in the modal.
 ///
 /// **Context.** The modal inherits the theme above its navigator live, so
 /// a theme switch while it is open (dark mode, contrast, reduce
@@ -366,7 +369,7 @@ class DsModalRoute<T> extends PopupRoute<T> {
               color: t.colors.text,
               size: t.sizes.iconSize(DsSize.md),
             ),
-            child: Builder(builder: builder),
+            child: FocusFirstOnOpen(child: Builder(builder: builder)),
           ),
         );
       },

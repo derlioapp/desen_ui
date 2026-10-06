@@ -72,6 +72,163 @@ void main() {
     });
   });
 
+  group('trigger kept alive off screen in a lazy list (bugs H1)', () {
+    // A kept-alive child that is not visible gets a zeroed paint transform,
+    // so its rect is NaN; NaN "overlaps" every rect.
+    Widget list(ScrollController scroll, Widget trigger) => DsApp(
+      home: Align(
+        alignment: Alignment.topLeft,
+        child: SizedBox(
+          width: 400,
+          height: 400,
+          child: ListView(
+            controller: scroll,
+            children: [
+              trigger,
+              for (var i = 0; i < 40; i++)
+                SizedBox(height: 60, child: Text('Filler $i')),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    testWidgets('an autocomplete popup closes without a NaN paint', (
+      tester,
+    ) async {
+      final scroll = ScrollController();
+      addTearDown(scroll.dispose);
+      await tester.pumpWidget(
+        list(
+          scroll,
+          DsAutocomplete<String>(
+            value: null,
+            onChanged: (_) {},
+            options: fruit,
+          ),
+        ),
+      );
+      await tester.tap(find.byType(EditableText));
+      await tester.enterText(find.byType(EditableText), 'a');
+      await tester.pumpAndSettle();
+      expect(find.text('Banana'), findsOneWidget);
+      // Focus keeps the field's item alive while it scrolls away.
+      scroll.jumpTo(2000);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 16));
+      expect(tester.takeException(), isNull);
+      await tester.pumpAndSettle();
+      expect(find.text('Banana'), findsNothing, reason: 'the popup closed');
+    });
+
+    testWidgets('a date picker popup closes without a NaN height', (
+      tester,
+    ) async {
+      final scroll = ScrollController();
+      addTearDown(scroll.dispose);
+      await tester.pumpWidget(
+        list(
+          scroll,
+          DsDatePicker(value: DateTime(2026, 10, 6), onChanged: (_) {}),
+        ),
+      );
+      await tester.tap(find.byType(EditableText));
+      await tester.pump();
+      await tester.tap(find.byType(DsButton).first);
+      await tester.pumpAndSettle();
+      expect(find.byType(DsCalendar), findsOneWidget);
+      scroll.jumpTo(2000);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 16));
+      expect(tester.takeException(), isNull);
+      await tester.pumpAndSettle();
+      expect(find.byType(DsCalendar), findsNothing, reason: 'the popup closed');
+    });
+
+    var deleted = 0;
+    setUp(() => deleted = 0);
+
+    Widget table(ScrollController scroll, {DsTableSort? sort}) => DsApp(
+      home: Align(
+        alignment: Alignment.topLeft,
+        child: SizedBox(
+          width: 400,
+          height: 300,
+          child: DsTable<int>(
+            scrollController: scroll,
+            columns: [
+              DsTableColumn<int>(
+                id: 'n',
+                label: 'Num',
+                value: (r) => r,
+                sortable: true,
+                numeric: true,
+              ),
+              DsTableColumn<int>(
+                id: 't',
+                label: 'Text',
+                value: (r) => 'Row $r',
+              ),
+            ],
+            rows: List.generate(60, (r) => r),
+            rowKey: (r) => r,
+            sort: sort,
+            onSortChanged: (_) {},
+            onRowPressed: (_) {},
+            rowMenuBuilder: (context, r) => [
+              DsMenuItem(label: Text('Delete $r'), onPressed: () => deleted++),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    testWidgets('a table row menu closes when its active row scrolls away; '
+        'focus leaves the hidden menu', (tester) async {
+      final scroll = ScrollController();
+      addTearDown(scroll.dispose);
+      await tester.pumpWidget(table(scroll));
+      // The active row is kept alive off screen.
+      await tester.tap(find.text('Row 1'));
+      await tester.pump();
+      await tester.longPress(find.text('Row 1'));
+      await tester.pumpAndSettle();
+      expect(find.text('Delete 1'), findsOneWidget);
+      scroll.jumpTo(scroll.position.maxScrollExtent);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 16));
+      expect(tester.takeException(), isNull);
+      await tester.pumpAndSettle();
+      expect(find.text('Delete 1'), findsNothing, reason: 'the menu closed');
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pumpAndSettle();
+      expect(deleted, 0, reason: 'no key acts on a menu nobody sees');
+    });
+
+    testWidgets('a closing row menu whose row a sort moves away', (
+      tester,
+    ) async {
+      final scroll = ScrollController();
+      addTearDown(scroll.dispose);
+      await tester.pumpWidget(table(scroll));
+      await tester.tap(find.text('Row 1'));
+      await tester.pump();
+      await tester.longPress(find.text('Row 1'));
+      await tester.pumpAndSettle();
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pump(const Duration(milliseconds: 16));
+      await tester.pumpWidget(
+        table(
+          scroll,
+          sort: const DsTableSort('n', DsTableSortDirection.descending),
+        ),
+      );
+      await tester.pump(const Duration(milliseconds: 16));
+      expect(tester.takeException(), isNull);
+      await tester.pumpAndSettle();
+    });
+  });
+
   group('trigger removed while open (eng L8)', () {
     testWidgets('the controller closes and the layer does not come back', (
       tester,
@@ -387,6 +544,107 @@ void main() {
       await tester.sendKeyEvent(LogicalKeyboardKey.escape);
       await tester.pumpAndSettle();
       expect(find.text('Dlg'), findsNothing);
+    });
+
+    testWidgets('Escape hides the tooltip while the pointer rests on the '
+        'tooltip itself (ux L1)', (tester) async {
+      await tester.pumpWidget(
+        DsApp(
+          home: Center(
+            child: DsTooltip(
+              message: 'A fairly long tooltip message',
+              child: DsButton(onPressed: () {}, child: const Text('Hover me')),
+            ),
+          ),
+        ),
+      );
+      final g = await hover(tester, find.text('Hover me'));
+      final tip = find.text('A fairly long tooltip message');
+      expect(tip, findsOneWidget);
+      // Onto the tooltip in small steps, inside the hover grace.
+      final from = tester.getCenter(find.text('Hover me'));
+      final to = tester.getCenter(tip);
+      for (var i = 1; i <= 10; i++) {
+        await g.moveTo(Offset.lerp(from, to, i / 10)!);
+        await tester.pump(const Duration(milliseconds: 30));
+      }
+      await tester.pumpAndSettle();
+      expect(tip, findsOneWidget, reason: 'hoverable: it stays');
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pumpAndSettle();
+      expect(tip, findsNothing);
+    });
+  });
+
+  group('tooltip on touch (bugs M1)', () {
+    testWidgets('a scroll that starts on the trigger shows no tooltip', (
+      tester,
+    ) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
+      await tester.pumpWidget(
+        DsApp(
+          home: ListView(
+            children: [
+              for (var i = 0; i < 30; i++)
+                Padding(
+                  padding: const EdgeInsets.all(DsSpace.s8),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: DsTooltip(
+                      message: 'Tip $i',
+                      child: DsButton(
+                        onPressed: () {},
+                        child: Text('Button $i'),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      );
+      final g = await tester.startGesture(
+        tester.getCenter(find.text('Button 3')),
+        kind: PointerDeviceKind.touch,
+      );
+      // Longer than a long press, moving all the while.
+      for (var k = 0; k < 12; k++) {
+        await g.moveBy(const Offset(0, -15));
+        await tester.pump(const Duration(milliseconds: 60));
+      }
+      expect(find.text('Tip 3'), findsNothing);
+      await g.up();
+      await tester.pumpAndSettle();
+      expect(find.text('Tip 3'), findsNothing);
+      debugDefaultTargetPlatformOverride = null;
+    });
+
+    testWidgets('a still long press still shows it', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
+      await tester.pumpWidget(
+        DsApp(
+          home: Center(
+            child: DsTooltip(
+              message: 'Tip',
+              child: DsButton(onPressed: () {}, child: const Text('Button')),
+            ),
+          ),
+        ),
+      );
+      final g = await tester.startGesture(
+        tester.getCenter(find.text('Button')),
+        kind: PointerDeviceKind.touch,
+      );
+      // A tremor under the slop does not cancel it.
+      await g.moveBy(const Offset(2, 2));
+      await tester.pump(kLongPressTimeout + const Duration(milliseconds: 50));
+      await tester.pump(const Duration(milliseconds: 300));
+      expect(find.text('Tip'), findsOneWidget);
+      await g.up();
+      await tester.pumpAndSettle();
+      debugDefaultTargetPlatformOverride = null;
     });
   });
 

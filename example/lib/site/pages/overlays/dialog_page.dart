@@ -106,8 +106,8 @@ class DialogPage extends StatelessWidget {
             'Announced as a dialog named by its title; `alert: true` (always '
                 'on for `showDsConfirm`) announces an alert dialog that needs '
                 'an answer.',
-            'Focus starts on the control with `autofocus`; give it to the '
-                'safe choice.',
+            'Focus starts on the control with `autofocus`, else on the '
+                'first control; put the safe choice first.',
             'On Android, iOS and macOS, screen readers hear the dimmed '
                 'page as "Close" when the dialog can be dismissed.',
             'At 200% text on a small phone, the actions stack and the text '

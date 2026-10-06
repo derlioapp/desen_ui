@@ -104,6 +104,41 @@ void main() {
       expect(focused(), 'Aç', reason: 'focus returns to the opener');
     });
 
+    testWidgets('a dialog with no autofocus puts focus on its first control '
+        '(ux M4)', (tester) async {
+      await tester.pumpWidget(
+        app(
+          (context) => showDsDialog<void>(
+            context: context,
+            builder: (context) => DsDialog(
+              title: const Text('Ayarlar'),
+              actions: [
+                DsButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('Vazgeç'),
+                ),
+                DsButton(onPressed: () {}, child: const Text('Tamam')),
+              ],
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Aç'));
+      await tester.pumpAndSettle();
+      String? focused() =>
+          (FocusManager.instance.primaryFocus?.context
+                      ?.findAncestorWidgetOfExactType<DsButton>()
+                      ?.child
+                  as Text?)
+              ?.data;
+      expect(focused(), 'Vazgeç');
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      expect(focused(), 'Tamam');
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pumpAndSettle();
+      expect(focused(), 'Aç', reason: 'focus returns to the opener');
+    });
+
     testWidgets('announced as an alert dialog; carries the opener theme', (
       tester,
     ) async {
@@ -506,6 +541,29 @@ void main() {
       await tester.binding.handlePopRoute();
       await tester.pumpAndSettle();
       expect(find.text('İçerik'), findsNothing);
+    });
+
+    testWidgets('a panel opens with focus on its first control (ux M4)', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        app(
+          (context) => showDsPanel<void>(
+            context: context,
+            presentation: DsPanelPresentation.side,
+            builder: (_) => DsPanel(
+              title: const Text('Ayrıntılar'),
+              showClose: false,
+              child: DsButton(onPressed: () {}, child: const Text('Kaydet')),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Aç'));
+      await tester.pumpAndSettle();
+      final button = FocusManager.instance.primaryFocus?.context
+          ?.findAncestorWidgetOfExactType<DsButton>();
+      expect((button?.child as Text?)?.data, 'Kaydet');
     });
 
     testWidgets('an explicit close button closes a non-dismissible panel', (

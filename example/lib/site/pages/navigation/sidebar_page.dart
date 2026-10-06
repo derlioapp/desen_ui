@@ -127,7 +127,8 @@ class SidebarPage extends StatelessWidget {
             (
               'Tab',
               'Moves focus to the next item; every enabled item is a Tab '
-                  'stop.',
+                  'stop, and Tab goes through the whole sidebar before the '
+                  'page beside it.',
             ),
             ('Enter / Space', 'Opens the focused item.'),
             (
@@ -141,8 +142,9 @@ class SidebarPage extends StatelessWidget {
         title: 'Accessibility',
         children: [
           DocList([
-            'The sidebar is a container named by `semanticLabel`; name it, '
-                'e.g. "Main".',
+            'The sidebar is a navigation landmark (`<nav>` on the web), '
+                'named by `semanticLabel` or the localized "Navigation"; '
+                'name it, e.g. "Main".',
             'Items are announced as buttons with their label and count; the '
                 'current page is announced as selected.',
             'Section labels are announced as headings, so screen reader '
@@ -179,7 +181,11 @@ class SidebarPage extends StatelessWidget {
               'bool',
               'Narrows the sidebar to a rail of icons, labels as tooltips.',
             ),
-            ('semanticLabel', 'String?', 'Names the navigation.'),
+            (
+              'semanticLabel',
+              'String?',
+              'Names the navigation; "Navigation" (localized) when null.',
+            ),
             ('style', 'DsSidebarStyle?', 'Laid over the theme and defaults.'),
           ]),
           DocHeading('DsSidebarSection'),

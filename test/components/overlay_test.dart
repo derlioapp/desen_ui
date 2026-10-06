@@ -454,7 +454,7 @@ void main() {
       await tester.sendKeyEvent(LogicalKeyboardKey.tab);
       await tester.sendKeyEvent(LogicalKeyboardKey.enter);
       await tester.pumpAndSettle();
-      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      // Opening puts focus on the first control (ux M4).
       expect(focusedText(), 'P1');
       await tester.sendKeyEvent(LogicalKeyboardKey.tab);
       expect(focusedText(), 'P2');
@@ -466,7 +466,6 @@ void main() {
       // Shift+Tab before the first control goes back to the trigger.
       controller.open();
       await tester.pumpAndSettle();
-      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
       expect(focusedText(), 'P1');
       await tester.sendKeyDownEvent(LogicalKeyboardKey.shiftLeft);
       await tester.sendKeyEvent(LogicalKeyboardKey.tab);
@@ -474,6 +473,61 @@ void main() {
       await tester.pumpAndSettle();
       expect(controller.isOpen, isFalse);
       expect(focusedText(), 'Aç');
+    });
+
+    testWidgets('a popover keeps the control that asks for focus; one with '
+        'no control keeps focus on itself (ux M4)', (tester) async {
+      final second = FocusNode();
+      addTearDown(second.dispose);
+      await tester.pumpWidget(
+        page(
+          layer: DsPopover(
+            controller: controller,
+            contentBuilder: (_) => Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                DsButton(onPressed: () {}, child: const Text('P1')),
+                DsButton(
+                  focusNode: second,
+                  autofocus: true,
+                  onPressed: () {},
+                  child: const Text('P2'),
+                ),
+              ],
+            ),
+            child: DsButton(
+              onPressed: controller.toggle,
+              child: const Text('Aç'),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Aç'));
+      await tester.pumpAndSettle();
+      expect(second.hasPrimaryFocus, isTrue);
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pumpAndSettle();
+      expect(controller.isOpen, isFalse);
+
+      await tester.pumpWidget(
+        page(
+          layer: DsPopover(
+            controller: controller,
+            contentBuilder: (_) => const Text('Just text'),
+            child: DsButton(
+              onPressed: controller.toggle,
+              child: const Text('Aç'),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Aç'));
+      await tester.pumpAndSettle();
+      final primary = FocusManager.instance.primaryFocus;
+      expect(primary, isA<FocusScopeNode>(), reason: 'the layer itself');
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pumpAndSettle();
+      expect(controller.isOpen, isFalse, reason: 'Escape still lands');
     });
 
     testWidgets('focus returns to the trigger after a pointer open (ux V24)', (

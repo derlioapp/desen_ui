@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 
 import '../theme/sizes.dart';
 import '../theme/theme.dart';
+import 'initial_focus.dart';
 import 'placement.dart';
 
 /// Opens and closes a [DsAnchoredOverlay] (and the components built on it).
@@ -109,7 +110,9 @@ class _Lineage extends InheritedWidget {
 ///   the outer one open.
 /// - **Focus:** with [focusOnOpen], focus moves into the layer when it
 ///   opens and returns to the trigger when it closes (to where it was when
-///   the trigger has nothing focusable). [tab] says how Tab leaves it.
+///   the trigger has nothing focusable). In a [DsOverlayTab.flow] layer it
+///   lands on the control that asks for it (`autofocus: true`), else on
+///   the first control inside. [tab] says how Tab leaves it.
 /// - **Keyboard and anchor:** the layer keeps clear of the on-screen
 ///   keyboard. When its trigger leaves the window (scrolled away, or its
 ///   page slides out) the layer closes and focus goes back to the
@@ -387,7 +390,16 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
     if (widget.focusOnOpen) {
       _returnFocus = _returnTarget();
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted && widget.controller.isOpen) _scope.requestFocus();
+        if (!mounted || !widget.controller.isOpen) return;
+        _scope.requestFocus();
+        if (widget.tab != DsOverlayTab.flow) return;
+        // A panel (popover) puts focus on its first control unless one
+        // asked for it: that request and any autofocus apply in a
+        // microtask already queued, this one runs after them. Menus and
+        // selects place focus themselves.
+        scheduleMicrotask(() {
+          if (mounted && widget.controller.isOpen) focusFirstControl(_scope);
+        });
       });
     }
     setState(() {});
@@ -512,6 +524,9 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
       controller: _portal,
       overlayChildBuilder: (context, info) {
         final point = widget.anchorPoint;
+        // A trigger kept alive off screen in a lazy list (focused, or the
+        // table's active row) has a zeroed paint transform, so its rect
+        // comes out NaN: that is a trigger that left the window.
         final anchor = MatrixUtils.transformRect(
           info.childPaintTransform,
           point == null ? Offset.zero & info.childSize : point & Size.zero,
@@ -551,7 +566,9 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
           reveal: _reveal,
           travel: motion.reduced ? 0 : motion.overlayOffset,
           startScale: motion.reduced ? 1 : motion.overlayScale,
-          minWidth: widget.matchAnchorWidth ? anchor.width : 0,
+          minWidth: widget.matchAnchorWidth && anchor.isFinite
+              ? anchor.width
+              : 0,
           interactive: widget.controller.isOpen,
           onAnchorLost: _onAnchorLost,
           child: layer,
@@ -767,6 +784,9 @@ class _RenderPlaced extends RenderShiftedBox {
     size = constraints.biggest;
     final child = this.child;
     if (child == null) return;
+    // A NaN anchor (a trigger kept alive off screen) "overlaps" every rect,
+    // since each comparison with NaN is false: test it first.
+    final visible = _anchor.isFinite && _anchor.overlaps(Offset.zero & size);
     final room = Size(
       (size.width - _margin.horizontal).clamp(0, double.infinity),
       (size.height - _margin.vertical).clamp(0, double.infinity),
@@ -780,6 +800,12 @@ class _RenderPlaced extends RenderShiftedBox {
       ),
       parentUsesSize: true,
     );
+    if (!_anchor.isFinite) {
+      // Nothing to place against: keep the last place (the layer is hidden
+      // and closing) instead of laying it out at NaN.
+      _reportLost(visible);
+      return;
+    }
     DsPlacement place() => dsPlace(
       anchor: _anchor,
       size: child.size,
@@ -807,14 +833,19 @@ class _RenderPlaced extends RenderShiftedBox {
       placement = place();
     }
     _placedSide = placement.side;
-    final visible = _anchor.overlaps(Offset.zero & size);
+    _reportLost(visible);
+    (child.parentData! as BoxParentData).offset = placement.offset;
+  }
+
+  /// Records whether the anchor is on screen; an open layer whose anchor
+  /// left hears [onAnchorLost] after the frame.
+  void _reportLost(bool visible) {
     if (!visible && interactive && onAnchorLost != null) {
       // Not during layout: closing rebuilds and moves focus.
       final lost = onAnchorLost!;
       WidgetsBinding.instance.addPostFrameCallback((_) => lost());
     }
     _anchorVisible = visible;
-    (child.parentData! as BoxParentData).offset = placement.offset;
   }
 
   /// The reveal: a scale and short travel from the edge facing the anchor,

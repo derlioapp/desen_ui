@@ -47,7 +47,8 @@ class DsDialog extends StatelessWidget {
 
   /// Buttons, laid out side by side with equal widths, or stacked at full
   /// width when one would not fit its share (narrow windows, long labels,
-  /// large text). Put the safe choice first and give it `autofocus: true`.
+  /// large text). Put the safe choice first: with no `autofocus: true`
+  /// inside the dialog, the first control takes focus when it opens.
   final List<Widget> actions;
 
   /// Uses the danger tone for the disk.
