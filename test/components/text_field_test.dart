@@ -690,7 +690,7 @@ void main() {
       final data = node.getSemanticsData();
       expect(data.flagsCollection.isTextField, isTrue);
       expect(data.label, startsWith('E-mail'));
-      expect(data.label, contains('Enter a valid address.'));
+      expect(data.hint, endsWith('Error\nEnter a valid address.'));
       expect(data.flagsCollection.isRequired, Tristate.isTrue);
       expect(data.validationResult, SemanticsValidationResult.invalid);
       expect(tester.getSemantics(find.text('E-mail')), same(node));

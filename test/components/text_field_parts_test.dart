@@ -757,10 +757,12 @@ void main() {
       expect(reveal.label, 'Show password');
       expect(reveal.flagsCollection.isButton, isTrue);
       expect(reveal.hasAction(SemanticsAction.tap), isTrue);
-      // The message is its own node, read after.
+      // The message is the field's hint, heard on the field itself, and
+      // not a node of its own after the button.
+      expect(field.hint, 'Error\nEn az 8 karakter olmalı.');
       expect(
         find.bySemanticsLabel(RegExp('En az 8 karakter olmalı')),
-        findsOneWidget,
+        findsNothing,
       );
       // The label is not read twice.
       expect(find.bySemanticsLabel('Parola'), findsOneWidget);

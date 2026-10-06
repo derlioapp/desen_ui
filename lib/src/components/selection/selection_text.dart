@@ -1,8 +1,28 @@
 import 'package:flutter/widgets.dart';
 
+import '../../overlay/plain_text.dart';
+
+/// [description] as a control's hint for screen readers: a [Text] is read
+/// after the control's name and state (not joined into the name), its own
+/// text node left out. Another widget is read as it is. Internal to the
+/// library.
+Widget descriptionAsHint(Widget description) {
+  final text = switch (description) {
+    Text(:final semanticsLabel?) => semanticsLabel,
+    _ => plainTextOf(description),
+  };
+  if (text == null) return description;
+  return Semantics(
+    hint: text,
+    child: ExcludeSemantics(child: description),
+  );
+}
+
 /// The text beside a checkbox or radio: the [label], and a [description]
 /// under it, [gap] apart. Each is merged over the ambient text style with
-/// its own style. A label alone is laid out as before, without a column.
+/// its own style; under a label the description is the control's hint
+/// ([descriptionAsHint]), alone it names the control. A label alone is
+/// laid out as before, without a column.
 class SelectionText extends StatelessWidget {
   /// Lays out a label and an optional description.
   const SelectionText({
@@ -41,7 +61,10 @@ class SelectionText extends StatelessWidget {
       spacing: gap,
       children: [
         ?label,
-        DefaultTextStyle.merge(style: descriptionStyle, child: description!),
+        DefaultTextStyle.merge(
+          style: descriptionStyle,
+          child: label == null ? description! : descriptionAsHint(description!),
+        ),
       ],
     );
   }

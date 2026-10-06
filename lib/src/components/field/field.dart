@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../l10n/localizations.dart';
+import '../../overlay/plain_text.dart';
 import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
@@ -39,21 +40,28 @@ import 'field_style.dart';
 /// area grows and shrinks on the tone spring, which does not overshoot, so
 /// the content below does not bounce.
 ///
-/// **Screen readers.** By default the field and its control are one node:
-/// the label names the control, followed by the control's own label and
-/// value, then the description or the error; the node is marked required
-/// and, with an error, invalid. A [group] keeps the controls as separate
-/// nodes (a group of checkboxes or radios): the label, then the controls,
-/// then the message, each read in order. When an error appears or changes
-/// it is announced politely: as an announcement where the platform
-/// supports them ([MediaQueryData.supportsAnnounce]), else (Android) as a
-/// polite live region, never both. The required mark is read as the
-/// localized "Required", not as an asterisk.
+/// **Screen readers.** By default the field and its control are one node: the
+/// label names the control, followed by the control's own label and value; the
+/// node is marked required and, with an error, invalid. The description or the
+/// error ("Error", then the message) is the node's hint, read after the name
+/// and the state. A [group] keeps the controls as separate nodes (a group of
+/// checkboxes or radios): the label, then the controls, then the message, each
+/// read in order. When an error appears or changes it is announced politely: as
+/// an announcement where the platform supports them
+/// ([MediaQueryData.supportsAnnounce]), else (Android) as a polite live region,
+/// never both; a live region speaks when its label changes, so there the error
+/// is part of the node's label instead of its hint. The required mark is read
+/// as the localized "Required", not as an asterisk.
 ///
 /// A control with buttons of its own (a text field's clear or show
 /// password button) asks the field, through [DsFieldHooks], to keep them
 /// as separate nodes: the control's node is then named by the label's
-/// text (a [Text] label) and the message follows as its own node.
+/// text (a [Text] label) and carries the description or the error as its
+/// hint ([DsFieldScope.messageText]), so the message is heard on the
+/// control itself, not only after its buttons. The message is then not a
+/// node of its own, except as the live region of an error where the
+/// platform does not announce. A description that is not a [Text] keeps
+/// its own node after the buttons.
 ///
 /// **Input issues.** A date, time or number field that holds text which
 /// is not a value tells the field how to fix it
@@ -232,11 +240,9 @@ class _DsFieldState extends State<DsField> {
     Widget? message;
     if (error != null) {
       final iconSize = MediaQuery.textScalerOf(context).scale(s.iconSize!);
-      // Read as "Error, <message>": the status first, as the icon shows it
-      // (a placeholder's own node would be read after the text).
-      message = Semantics(
-        label: [l10n.error, error].join('\n'),
-        excludeSemantics: true,
+      // Read through [messageText] ("Error, <message>"), not from the
+      // icon and text here.
+      message = ExcludeSemantics(
         child: Text.rich(
           TextSpan(
             children: [
@@ -309,12 +315,22 @@ class _DsFieldState extends State<DsField> {
       final Text text => text.data ?? text.textSpan?.toPlainText(),
       _ => null,
     };
+    // The message as read: "Error, <message>" (the status first, as the
+    // icon shows it), else a [Text] description's text.
+    final messageText = error != null
+        ? [l10n.error, error].join('\n')
+        : switch (widget.description) {
+            Text(:final semanticsLabel?) => semanticsLabel,
+            final Widget description? => plainTextOf(description),
+            null => null,
+          };
     final scope = DsFieldScope(
       // The app's error: a control's own issue marks only that control.
       hasError: widget.errorText != null,
       isRequired: widget.required,
       isLabelled: !widget.group && widget.label != null,
       labelText: widget.group ? null : labelText,
+      messageText: widget.group ? null : messageText,
       hooks: _hooks,
       child: widget.child,
     );
@@ -353,14 +369,20 @@ class _DsFieldState extends State<DsField> {
                 child: Semantics(container: true, child: label),
               ),
             scope,
-            Semantics(container: true, liveRegion: live, child: messageRow),
+            Semantics(
+              container: true,
+              liveRegion: live,
+              label: messageText,
+              excludeSemantics: messageText != null,
+              child: messageRow,
+            ),
           ],
         ),
       );
     }
     // One node, unless the control keeps its own buttons apart; then the
-    // control is named by the label's text and the message is its own
-    // node (live on Android, as in a group).
+    // control is named by the label's text and carries the message (which
+    // stays its own node only as Android's live region).
     return _FieldSemantics(
       hooks: _hooks,
       isRequired: widget.required,
@@ -381,9 +403,10 @@ class _DsFieldState extends State<DsField> {
               ),
             ),
           scope,
-          _FieldPartSemantics(
+          _FieldMessageSemantics(
             hooks: _hooks,
-            liveWhenSeparate: live,
+            text: messageText,
+            live: live,
             child: messageRow,
           ),
         ],
@@ -424,6 +447,7 @@ class DsFieldScope extends InheritedWidget {
     required this.isRequired,
     required this.isLabelled,
     this.labelText,
+    this.messageText,
     this.hooks,
     required super.child,
   });
@@ -443,6 +467,14 @@ class DsFieldScope extends InheritedWidget {
   /// its node with it.
   final String? labelText;
 
+  /// The field's message as screen readers hear it: the error ("Error",
+  /// then the message), else the description's text when it is a [Text];
+  /// null when there is neither. A control that keeps its own buttons apart
+  /// ([DsFieldHooks.separateNodes]) reads it as its node's hint, so the
+  /// message is heard on the control itself; a scope built by hand
+  /// (without [hooks]) passes it to the control the same way.
+  final String? messageText;
+
   /// What the control can tell the field; null for a scope built by hand.
   final DsFieldHooks? hooks;
 
@@ -456,6 +488,7 @@ class DsFieldScope extends InheritedWidget {
       isRequired != oldWidget.isRequired ||
       isLabelled != oldWidget.isLabelled ||
       labelText != oldWidget.labelText ||
+      messageText != oldWidget.messageText ||
       hooks != oldWidget.hooks;
 }
 
@@ -508,7 +541,9 @@ final class DsFieldHooks {
 
   /// Keeps the control's own buttons as separate semantics nodes instead of
   /// merging the field into one node: the control names itself with
-  /// [DsFieldScope.labelText] and the message follows as its own node.
+  /// [DsFieldScope.labelText] and takes [DsFieldScope.messageText] as its
+  /// hint; the field then leaves that message out of the tree, except as a
+  /// live region for an error where the platform does not announce.
   set separateNodes(bool value) {
     if (value == _separate) return;
     _separate = value;
@@ -647,26 +682,21 @@ class _RenderFieldSemantics extends RenderProxyBox with _HooksSemantics {
   }
 }
 
-/// The label or the message of a field whose control keeps its buttons
-/// apart: the label is left out when the control took its text, the
-/// message becomes its own node.
+/// The label of a field whose control keeps its buttons apart: left out
+/// when the control took its text.
 class _FieldPartSemantics extends SingleChildRenderObjectWidget {
   const _FieldPartSemantics({
     required this.hooks,
     this.excludeWhenSeparate = false,
-    this.liveWhenSeparate = false,
     super.child,
   });
 
   final DsFieldHooks hooks;
   final bool excludeWhenSeparate;
-  final bool liveWhenSeparate;
 
   @override
   _RenderFieldPartSemantics createRenderObject(BuildContext context) =>
-      _RenderFieldPartSemantics(hooks)
-        ..exclude = excludeWhenSeparate
-        ..live = liveWhenSeparate;
+      _RenderFieldPartSemantics(hooks)..exclude = excludeWhenSeparate;
 
   @override
   void updateRenderObject(
@@ -674,8 +704,7 @@ class _FieldPartSemantics extends SingleChildRenderObjectWidget {
     _RenderFieldPartSemantics renderObject,
   ) => renderObject
     ..hooks = hooks
-    ..exclude = excludeWhenSeparate
-    ..live = liveWhenSeparate;
+    ..exclude = excludeWhenSeparate;
 }
 
 class _RenderFieldPartSemantics extends RenderProxyBox with _HooksSemantics {
@@ -691,6 +720,67 @@ class _RenderFieldPartSemantics extends RenderProxyBox with _HooksSemantics {
     markNeedsSemanticsUpdate();
   }
 
+  @override
+  void visitChildrenForSemantics(RenderObjectVisitor visitor) {
+    if (_exclude && _hooks.separateNodes) return;
+    super.visitChildrenForSemantics(visitor);
+  }
+}
+
+/// The field's message row. With [text] (the message as read) the row's
+/// own widgets are not read; [text] is:
+/// - merged into the field's node as its hint, after the control's own
+///   parts (a node of its own, merged up, so it follows the control's
+///   label and hint rather than coming first), or as part of its label
+///   when [live] (a live region speaks when its label changes);
+/// - left out when the control keeps its buttons apart and took [text]
+///   as its hint, unless [live]: then it stays a live region of its own.
+///
+/// Without [text] (a description that is not a [Text]) the row's widgets
+/// are read as they are.
+class _FieldMessageSemantics extends SingleChildRenderObjectWidget {
+  const _FieldMessageSemantics({
+    required this.hooks,
+    required this.text,
+    required this.live,
+    super.child,
+  });
+
+  final DsFieldHooks hooks;
+  final String? text;
+  final bool live;
+
+  @override
+  _RenderFieldMessageSemantics createRenderObject(BuildContext context) =>
+      _RenderFieldMessageSemantics(hooks)
+        ..text = text
+        ..live = live
+        ..textDirection = Directionality.maybeOf(context);
+
+  @override
+  void updateRenderObject(
+    BuildContext context,
+    _RenderFieldMessageSemantics renderObject,
+  ) => renderObject
+    ..hooks = hooks
+    ..text = text
+    ..live = live
+    ..textDirection = Directionality.maybeOf(context);
+}
+
+class _RenderFieldMessageSemantics extends RenderProxyBox with _HooksSemantics {
+  _RenderFieldMessageSemantics(this._hooks);
+
+  @override
+  DsFieldHooks _hooks;
+
+  String? _text;
+  set text(String? value) {
+    if (value == _text) return;
+    _text = value;
+    markNeedsSemanticsUpdate();
+  }
+
   bool _live = false;
   set live(bool value) {
     if (value == _live) return;
@@ -698,17 +788,43 @@ class _RenderFieldPartSemantics extends RenderProxyBox with _HooksSemantics {
     markNeedsSemanticsUpdate();
   }
 
+  TextDirection? _textDirection;
+  set textDirection(TextDirection? value) {
+    if (value == _textDirection) return;
+    _textDirection = value;
+    markNeedsSemanticsUpdate();
+  }
+
+  /// Whether the control took the message, so it is not read here.
+  bool get _taken => _hooks.separateNodes && _text != null && !_live;
+
   @override
   void visitChildrenForSemantics(RenderObjectVisitor visitor) {
-    if (_exclude && _hooks.separateNodes) return;
+    if (_text != null) return;
     super.visitChildrenForSemantics(visitor);
   }
 
   @override
   void describeSemanticsConfiguration(SemanticsConfiguration config) {
     super.describeSemanticsConfiguration(config);
-    if (!_hooks.separateNodes || _exclude) return;
+    if (_taken) return;
     config.isSemanticBoundary = true;
-    if (_live) config.liveRegion = true;
+    final text = _text;
+    if (_hooks.separateNodes) {
+      if (_live) config.liveRegion = true;
+      if (text != null) {
+        config
+          ..label = text
+          ..textDirection = _textDirection;
+      }
+      return;
+    }
+    if (text == null) return;
+    if (_live) {
+      config.label = text;
+    } else {
+      config.hint = text;
+    }
+    config.textDirection = _textDirection;
   }
 }

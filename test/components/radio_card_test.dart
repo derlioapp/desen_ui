@@ -205,7 +205,9 @@ void main() {
     expect(data.flagsCollection.isChecked, CheckedState.isTrue);
     expect(data.flagsCollection.isInMutuallyExclusiveGroup, isTrue);
     expect(data.label, contains('Pro'));
-    expect(data.label, contains('For teams up to 20'));
+    // The description is read after the name and state, as the hint.
+    expect(data.label, isNot(contains('For teams up to 20')));
+    expect(data.hint, 'For teams up to 20');
     final free = tester.getSemantics(find.text('Free')).getSemanticsData();
     expect(free.flagsCollection.isChecked, CheckedState.isFalse);
     handle.dispose();
