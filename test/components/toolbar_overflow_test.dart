@@ -527,19 +527,49 @@ void main() {
       expect(bar.right - bold.right, moreCloseTo(bold.left - bar.left));
     });
 
-    testWidgets('an item with no known menu form asserts', (tester) async {
-      await tester.pumpWidget(
-        app(children: [const SizedBox(width: 40, height: 20)]),
+    testWidgets('a child with no menu form makes the bar scroll, keeping '
+        'every child', (tester) async {
+      final custom = [
+        ...items(),
+        const SizedBox(key: ValueKey('custom'), width: 60, height: 20),
+      ];
+      await tester.pumpWidget(app(maxWidth: 160, children: custom));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      // No menu: every child is in the bar, which scrolls.
+      expect(more, findsNothing);
+      for (final key in [...keys, const ValueKey('custom')]) {
+        expect(find.byKey(key), findsOneWidget, reason: '$key');
+      }
+      final scrollable = find.descendant(
+        of: find.byType(DsToolbar),
+        matching: find.byType(Scrollable),
       );
-      expect(tester.takeException(), isAssertionError);
-      // Scrolling bars need no menu form.
+      expect(scrollable, findsOneWidget);
+      expect(
+        tester.state<ScrollableState>(scrollable).position.maxScrollExtent,
+        greaterThan(0),
+      );
+      expect(
+        tester.getSize(find.byType(DsToolbar)).width,
+        lessThanOrEqualTo(160),
+      );
+      // Wrapped in a DsToolbarItem, the same child lets the bar collapse.
       await tester.pumpWidget(
         app(
-          overflow: DsToolbarOverflow.scroll,
-          children: [const SizedBox(width: 40, height: 20)],
+          maxWidth: 160,
+          children: [
+            ...items(),
+            const DsToolbarItem(
+              menuItems: [],
+              child: SizedBox(key: ValueKey('custom'), width: 60, height: 20),
+            ),
+          ],
         ),
       );
-      expect(tester.takeException(), isNull);
+      await tester.pumpAndSettle();
+      expect(scrollable, findsNothing);
+      expect(moreShown(tester), isTrue);
     });
   });
 

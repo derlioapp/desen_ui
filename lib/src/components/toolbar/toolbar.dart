@@ -78,9 +78,11 @@ enum DsToolbarOverflow {
 ///   the end of the bar, at either end of the menu, or doubled.
 ///
 /// Any other item needs a [DsToolbarItem] that gives its menu form, or
-/// says it has none (a "3 selected" label); debug builds assert that every
-/// item has one. [DsToolbarOverflow.scroll] keeps every item in the bar
-/// and scrolls the row sideways instead.
+/// says it has none (a "3 selected" label). A bar with a child that has no
+/// menu form scrolls as with [DsToolbarOverflow.scroll], so no item ever
+/// disappears: wrap custom children in [DsToolbarItem] to let them
+/// collapse. [DsToolbarOverflow.scroll] keeps every item in the bar and
+/// scrolls the row sideways.
 ///
 /// **Keyboard:** every item is its own Tab stop, and Left and
 /// Right (mirrored in RTL), Home and End also move focus between the items,
@@ -116,6 +118,11 @@ class DsToolbar extends StatefulWidget {
   /// What happens to the items that do not fit: they move into a "More
   /// actions" menu (the default), or the row scrolls. See
   /// [DsToolbarOverflow].
+  ///
+  /// The menu needs a menu form for every child (see [DsToolbar]). When a
+  /// child has none, such as a custom widget not wrapped in a
+  /// [DsToolbarItem], the bar scrolls instead, keeping every child: wrap
+  /// custom children in [DsToolbarItem] to let them collapse.
   final DsToolbarOverflow overflow;
 
   /// Desen's default toolbar style under [theme].
@@ -216,7 +223,12 @@ class _DsToolbarState extends State<DsToolbar> {
     // their inset; the items nest in it.
     final corners = t.radii.controlCorners(s.borderRadius, item + 2 * inset);
     final nested = t.radii.nestedCorners(null, corners, inset);
-    final menu = widget.overflow == DsToolbarOverflow.menu;
+    // Each child's menu form; with one that has none, the bar scrolls, so
+    // that child never disappears.
+    final forms = widget.overflow == DsToolbarOverflow.menu
+        ? [for (final child in widget.children) _mapItem(child)]
+        : null;
+    final menu = forms != null && !forms.contains(null);
     final content = DsToolbarTheme(
       data: DsToolbarThemeData(style: s),
       // Toggles nest in the bar: its concentric corner, under any
@@ -240,7 +252,9 @@ class _DsToolbarState extends State<DsToolbar> {
               skipTraversal: true,
               onKeyEvent: _onKey,
               child: menu
-                  ? _overflowRow(context, s.gap!, item)
+                  ? _overflowRow(context, s.gap!, item, [
+                      for (final f in forms) f!,
+                    ])
                   : Row(
                       mainAxisSize: MainAxisSize.min,
                       spacing: s.gap!,
@@ -277,11 +291,15 @@ class _DsToolbarState extends State<DsToolbar> {
 
   /// The items, those that do not fit left out from the end, and the ⋯
   /// button that opens a menu of them; the button is as tall as the
-  /// toggles ([item]).
-  Widget _overflowRow(BuildContext context, double gap, double item) {
+  /// toggles ([item]). [forms] are the items' menu forms.
+  Widget _overflowRow(
+    BuildContext context,
+    double gap,
+    double item,
+    List<List<Widget>> forms,
+  ) {
     final children = widget.children;
     final n = children.length;
-    final forms = [for (final child in children) _menuForm(child)];
     final hiddenFrom = math.min(_hiddenFrom ?? n, n);
     final label = DsLocalizations.of(context).moreActions;
     return _OverflowRow(
@@ -347,19 +365,8 @@ List<Widget> _menuItems(List<List<Widget>> forms, int from) {
   return result;
 }
 
-/// The entries [child] stands for in the overflow menu; see [DsToolbar].
-List<Widget> _menuForm(Widget child) {
-  final form = _mapItem(child);
-  assert(
-    form != null,
-    'DsToolbar cannot show a ${child.runtimeType} in its overflow menu. '
-    'Wrap it in a DsToolbarItem that gives its menu items (an empty list '
-    'for an item that only shows something), or set overflow: '
-    'DsToolbarOverflow.scroll.',
-  );
-  return form ?? const [];
-}
-
+/// The entries [child] stands for in the overflow menu (see [DsToolbar]),
+/// or null when it has no menu form.
 List<Widget>? _mapItem(Widget child, {String? shortcut}) => switch (child) {
   DsToolbarItem(:final menuItems) => menuItems,
   DsToolbarDivider() => const [DsMenuDivider()],
@@ -405,8 +412,11 @@ List<Widget>? _buttonForm(DsButton button, String? shortcut) {
 ///
 /// The toolbar knows the menu form of its toggles, buttons and dividers
 /// (see [DsToolbar]); any other item needs one, or an empty [menuItems]
-/// to say it has none. A toggle or button can take a form of its own here
-/// too, e.g. view toggles that are one choice of a set:
+/// to say it has none. Wrap custom children in [DsToolbarItem] to let them
+/// collapse: a bar with a child that has no menu form scrolls instead
+/// ([DsToolbarOverflow.scroll]), so that child never disappears. A toggle
+/// or button can take a form of its own here too, e.g. view toggles that
+/// are one choice of a set:
 ///
 /// ```dart
 /// DsToolbarItem(
