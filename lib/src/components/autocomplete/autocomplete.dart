@@ -691,7 +691,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       ];
     }
     // The query is folded once per keystroke, each label once per option
-    // (denetim-2: not both once per option on every keystroke).
+    // (not both once per option on every keystroke).
     final wanted = dsFoldCase(query);
     return [
       for (final o in widget.options)
@@ -974,8 +974,8 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       return true;
     }
     final text = _text.text.trim();
-    // An option's label typed out in full is that option, not free text
-    // (bugs M1), as when leaving the field.
+    // An option's label typed out in full is that option, not free text,
+    // as when leaving the field.
     if (_text.text != _committedText) {
       if (_exact(text) case final o?) {
         _takeExact(o);
@@ -1008,7 +1008,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     }
     final folded = text.trim();
     // An exact label chooses its option, in a multi-select too: it is
-    // never reported as free text (bugs M2).
+    // never reported as free text.
     if (_exact(folded) case final o?) {
       _takeExact(o);
       if (widget.multiple) _setText('');
@@ -1051,7 +1051,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     }
     // While an input method composes (CJK, Korean), its keys are its own:
     // arrows pick a candidate, Enter confirms it, Escape cancels it,
-    // Backspace edits it (bugs M3; as the number field, K-86).
+    // Backspace edits it (as the number field).
     final composing = _text.value.composing;
     if (composing.isValid && !composing.isCollapsed) {
       return KeyEventResult.ignored;
@@ -1098,7 +1098,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
         return KeyEventResult.handled;
       }
       // Nothing to undo: Escape is the page's (a dialog closes). It never
-      // clears a chosen value; that is the clear button's job (K-83).
+      // clears a chosen value; that is the clear button's job.
       return KeyEventResult.ignored;
     }
     if (key == LogicalKeyboardKey.tab) {
@@ -1336,7 +1336,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     );
     // Without an app, the text field would bring the text editing keys
     // inside this key handler, and arrow keys would move the caret
-    // instead of the active option (R3). Bring them here, above it.
+    // instead of the active option. Bring them here, above it.
     if (context.findAncestorWidgetOfExactType<DefaultTextEditingShortcuts>() ==
         null) {
       input = DefaultTextEditingShortcuts(child: input);
@@ -1396,7 +1396,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
         ],
       );
       if (!t.motion.reduced) {
-        // Wrapping tags grow the field on the tone spring (K-46).
+        // Wrapping tags grow the field on the tone spring.
         content = AnimatedSize(
           duration: t.motion.toneDuration,
           curve: t.motion.toneCurve,
@@ -1639,7 +1639,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
         child: MatchWidth(
           minWidth: panel.minWidth ?? 0,
           // Drawn like every floating layer, so a glass menu style
-          // (translucent fill and backdropFilter) frosts it too (K-154).
+          // (translucent fill and backdropFilter) frosts it too.
           child: DsSurface(
             padding: panel.padding,
             decoration: DsBoxDecoration(
@@ -1762,7 +1762,7 @@ class _OptionRowState<T> extends State<_OptionRow<T>> {
                   style: textStyle,
                   match: widget.style.matchStyle,
                 ),
-                // As menu options: wraps once, then an ellipsis (ux M3).
+                // As menu options: wraps once, then an ellipsis.
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),

@@ -291,7 +291,7 @@ class DsTable<T> extends StatefulWidget {
       // The checkbox's tap area fits: 44 on touch.
       selectionColumnWidth: math.max(36, theme.sizes.minTapTarget),
       dividerColor: k.border,
-      // The concept's compact state: a small icon without the tone disk.
+      // The compact empty state: a small icon without the tone disk.
       emptyStateStyle: DsEmptyStateStyle(
         padding: const EdgeInsets.all(DsSpace.s20),
         iconBoxSize: 20,
@@ -307,8 +307,8 @@ class DsTable<T> extends StatefulWidget {
       hovered: DsTableStyle(rowBackground: k.hover),
       pressed: DsTableStyle(rowBackground: k.press),
       // Always the soft pair, whatever the theme's selection style: a
-      // strong fill would recolor every cell and badge (like K-85 tags).
-      // Hover and keyboard focus take one visible step (K-61). The row's
+      // strong fill would recolor every cell and badge (as the multi-select's tags).
+      // Hover and keyboard focus take one visible step. The row's
       // checkbox carries the state too.
       selected: DsTableStyle(
         rowBackground: k.selection,
@@ -1859,8 +1859,7 @@ class _DsTableState<T> extends State<DsTable<T>> {
       container: true,
       role: card ? null : SemanticsRole.cell,
       label: label,
-      // Said when it shows, politely: "Loading", "No results", the error
-      // (D2).
+      // Said when it shows, politely: "Loading", "No results", the error.
       liveRegion: true,
       child: child,
     ),
@@ -1942,7 +1941,7 @@ class _DsTableState<T> extends State<DsTable<T>> {
                 lead: null,
                 cells: [
                   for (final c in columns)
-                    // ds-raw: a line covers most of the cell, as in the concept
+                    // ds-raw: a line covers most of the cell
                     line(_align(c), 0.6),
                 ],
               ),

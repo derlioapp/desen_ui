@@ -955,7 +955,7 @@ SPECS = [
             ('gap', 'double', 'Space between the label and the required mark, and between the error icon and the message.'),
         ],
     ),
-    # 8c: file upload (concept 34).
+    # File upload.
     dict(
         name='FileUpload', dir='file_upload', file='file_upload_style.dart',
         doc='The look of a `DsFileUpload` drop zone. `selected` styles it while files are dragged over it (`DsFileUpload.dragging`); `error` while it shows an error.',

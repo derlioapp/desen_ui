@@ -148,7 +148,7 @@ class DsFileUpload extends StatefulWidget {
     final type = theme.typography;
     // Proportional figures: the description is prose ("PDF, PNG · up to 10 MB").
     // Tabular figures in the text family also make the comma and period
-    // digit-wide, which tears "PDF, PNG" apart (denetim-2, decision 1).
+    // digit-wide, which tears "PDF, PNG" apart.
     // The scale's smallest size, the overline's (11, touch 12).
     final description = type.caption.copyWith(fontSize: type.overline.fontSize);
     return DsFileUploadStyle(
@@ -185,9 +185,9 @@ class DsFileUpload extends StatefulWidget {
         borderColor: k.indicator,
         iconColor: k.accentText,
       ),
-      // Thicker, so the error is not told by hue alone (K-67).
+      // Thicker, so the error is not told by hue alone.
       error: DsFileUploadStyle(borderColor: dsErrorEdge(theme), borderWidth: 2),
-      // Keeps its shape (K-66): the disabled fill, a faint edge.
+      // Keeps its shape: the disabled fill, a faint edge.
       disabled: DsFileUploadStyle(
         background: k.disabled,
         borderColor: k.border,
@@ -510,7 +510,7 @@ class DsFileItem extends StatefulWidget {
     final k = theme.colors;
     final type = theme.typography;
     // A status icon takes the vivid signal when that reads at 3:1 on the
-    // row (it does on the surface), else the status text color (K-33).
+    // row (it does on the surface), else the status text color.
     Color readable(Color signal, Color text) =>
         DsColorUtils.contrastRatio(signal, k.surface) >= 3 ? signal : text;
     return DsFileItemStyle(
@@ -548,8 +548,8 @@ class DsFileItem extends StatefulWidget {
         height: 28,
         textStyle: type.caption.copyWith(fontWeight: FontWeight.w600),
       ),
-      // Thicker than the content edge, in the error ink (K-67); the icon
-      // and the message say it too (R5).
+      // Thicker than the content edge, in the error ink; the icon
+      // and the message say it too.
       error: DsFileItemStyle(
         shadows: [DsShadow.innerRing(dsErrorEdge(theme), width: 2)],
       ),

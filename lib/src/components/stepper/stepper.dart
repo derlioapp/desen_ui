@@ -176,7 +176,7 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
   bool _highlight = false;
   bool get _focusVisible => _highlight && DsFocusVisibility.keyboard.value;
   // Input modality only changes how focus looks: rebuild only while
-  // focused, not on every pointer or key event in the app (eng L6).
+  // focused, not on every pointer or key event in the app.
   void _onModality() {
     if (_highlight) setState(() {});
   }
@@ -354,7 +354,7 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
     }
 
     final value = widget.value;
-    // What a step will actually give: clamped to the range (B28).
+    // What a step will actually give: clamped to the range.
     String stepped(num delta) => _format.format(_settle(value + delta));
     final valueStyle = (s.valueStyle ?? const TextStyle()).copyWith(
       color: s.foreground,
@@ -371,7 +371,7 @@ class _DsStepperState<T extends num> extends State<DsStepper<T>> {
     final number = Stack(
       alignment: Alignment.center,
       children: [
-        // Hold the width of the wider limit as shown (B29); an unbounded
+        // Hold the width of the wider limit as shown; an unbounded
         // one has no width to hold.
         for (final limit in [widget.min, widget.max])
           if (limit.isFinite)

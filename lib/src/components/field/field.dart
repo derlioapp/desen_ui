@@ -279,7 +279,7 @@ class _DsFieldState extends State<DsField> {
     final motion = t.motion;
     // The description and the error swap with a fade while the area
     // resizes on the tone spring: no overshoot that would shake the
-    // content below (K-46, as the accordion).
+    // content below (as the accordion).
     final switcher = AnimatedSwitcher(
       duration: motion.toneDuration,
       switchInCurve: motion.toneCurve,

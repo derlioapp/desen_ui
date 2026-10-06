@@ -69,7 +69,7 @@ icons = {
   'eye': ('Visible: shows hidden text, e.g. a password.', ["M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0", circle(12,12,3)]),
   'eyeOff': ('Hidden: hides revealed text again.', ["M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49", "M14.084 14.158a3 3 0 0 1-4.242-4.242", "M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143", "m2 2 20 20"]),
   # Keyboard keys, for shortcut hints: the bundled fonts have no ⌘ ⌥ ⇧ ⌫ ⏎
-  # glyphs, and platform fallback is not guaranteed (visual M4).
+  # glyphs, and platform fallback is not guaranteed.
   'command': ('Command key (⌘).', ["M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"]),
   'option': ('Option key (⌥).', ["M3 3h6l6 18h6", "M14 3h7"]),
   'shift': ('Shift key (⇧).', ["M9 18v-6H5l7-7 7 7h-4v6H9z"]),

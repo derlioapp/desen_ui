@@ -127,7 +127,7 @@ class DsToast extends StatelessWidget {
       final c = k.status(st);
       // The vivid signal when it reads at 3:1 on the toast (it does on the
       // default floating layer), else the status text color (as in
-      // DsAlert, K-33).
+      // DsAlert).
       iconColor =
           DsColorUtils.contrastRatio(c.signal, bg, backdrop: k.surface) >= 3
           ? c.signal
@@ -177,7 +177,7 @@ class DsToast extends StatelessWidget {
             ),
             if (actionLabel != null)
               // A long action on a narrow screen shortens instead of pushing
-              // the toast past its edge (bugs L9).
+              // the toast past its edge.
               // At most two fifths of the toast; its label then ends in an
               // ellipsis (screen readers get it whole).
               ConstrainedBox(
@@ -325,7 +325,7 @@ class _ToastHostState {
         // toast away, whether it is the current one or not.
         onDismiss: () => _dismiss(request),
         onGone: () {
-          // Removed and disposed: an entry is the host's to free (eng L9).
+          // Removed and disposed: an entry is the host's to free.
           request.entry
             ?..remove()
             ..dispose();
@@ -405,7 +405,7 @@ class _ToastViewState extends State<_ToastView>
       _started = true;
       if (widget.request.urgent case (final message, final direction)
           when MediaQuery.supportsAnnounceOf(context)) {
-        // Danger interrupts (S-34). Once, when it shows; a toast replaced
+        // Danger interrupts. Once, when it shows; a toast replaced
         // before its first frame never shows and is not announced.
         _assertive = true;
         unawaited(
@@ -516,7 +516,7 @@ class _ToastViewState extends State<_ToastView>
     // Above the home indicator and the on-screen keyboard.
     final bottom = media.viewInsets.bottom + media.padding.bottom + DsSpace.s16;
     // Below the status bar: a long toast at large text scrolls its text
-    // instead of growing off the top of the screen (ux M4).
+    // instead of growing off the top of the screen.
     final room = media.size.height - bottom - media.padding.top - DsSpace.s16;
     return Positioned(
       left: 0,
@@ -529,7 +529,7 @@ class _ToastViewState extends State<_ToastView>
             constraints: BoxConstraints(maxHeight: math.max(0, room)),
             child: Semantics(
               container: true,
-              // Not both: a danger toast already announced itself (S-34).
+              // Not both: a danger toast already announced itself.
               liveRegion: !_assertive,
               child: MouseRegion(
                 onEnter: (_) {
@@ -551,7 +551,7 @@ class _ToastViewState extends State<_ToastView>
                   },
                   child: Listener(
                     // A finger resting on the toast pauses it too, as the
-                    // pointer does (WCAG 2.2.1; ux L5).
+                    // pointer does (WCAG 2.2.1).
                     onPointerDown: (_) {
                       _held = true;
                       _restart();

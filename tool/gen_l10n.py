@@ -1,5 +1,5 @@
 """Generates lib/src/l10n/strings/*.dart: every string Desen shows or
-announces, in 13 languages and their regional variants (KALITE K-51).
+announces, in 13 languages and their regional variants.
 
 English is the complete base; every other language extends it, so a key a
 language does not translate falls back to English instead of failing.
@@ -140,7 +140,7 @@ KEYS = {
         'Table: how many rows it holds, also those scrolled out of view.',
         "count == 1 ? '1 row' : '$count rows'",
     ),
-    # D2 table
+    # Table row names
     'selectRowNamed(String name)': (
         'Table: the checkbox that selects one row, named by the row\'s first cell ("Select Kuzey Lojistik").',
         "'Select $name'",
@@ -210,7 +210,8 @@ LANGS = {
                selectResultCount="'$count 个结果'"),
 }
 
-# Added in the phase T fixes (F-15, S-14). Dart expressions for keys with
+# Status names, loading, paging and other announced texts. Dart
+# expressions for keys with
 # parameters, plain text otherwise.
 NEW = {
     'ar': dict(loading='جارٍ التحميل', percent="'$value٪'",
@@ -339,7 +340,7 @@ NEW = {
 for _lang, _values in NEW.items():
     LANGS[_lang].update(_values)
 
-# Phase 7a: the edit menu and the text field. The visible counter
+# The edit menu and the text field. The visible counter
 # ("12 / 100") is the same everywhere and inherited from English.
 EDITING = {
     'ar': dict(cut='قص', copy='نسخ', paste='لصق', selectAll='تحديد الكل',
@@ -435,7 +436,7 @@ EDITING = {
 for _lang, _values in EDITING.items():
     LANGS[_lang].update(_values)
 
-# Phase 7b: tags of a multi-select (DsMultiSelect).
+# Tags of a multi-select (DsMultiSelect).
 TAGS = {
     'ar': dict(remove="'إزالة $label'", removed="'تمت إزالة $label'"),
     'de': dict(remove="'$label entfernen'", removed="'$label entfernt'"),
@@ -457,7 +458,7 @@ for _lang, _values in TAGS.items():
 # Each extends `base` and overrides only what differs from it. A `complete`
 # variant must list every key its base translates (the generator checks), so
 # a missed key can never show the base's wording; e.g. Traditional Chinese
-# must not fall back to Simplified characters. Lookup order: KALITE K-51,
+# must not fall back to Simplified characters. Lookup order: see
 # DsLocalizations.resolve.
 VARIANTS = {
     # Traditional Chinese, Taiwan usage (also chosen for zh_TW, zh_HK and
@@ -501,7 +502,7 @@ VARIANTS = {
                     charactersOver="count == 1 ? '1 caráter a mais' : '$count carateres a mais'")),
 }
 
-# 8c file/submenu: the file upload (concept 34). The progress text
+# The file upload. The progress text
 # ("2,4 / 3,1 MB") is inherited from English everywhere.
 FILES = {
     'ar': dict(fileUploadPrompt="'أفلت الملفات هنا أو $browse'",
@@ -927,7 +928,7 @@ VARIANTS['pt_PT']['values'].update(dict(
     nextMonth='Mês seguinte', chooseTime='Escolher hora',
     rangeEnd='Data de fim'))
 
-# D2 table: a row checkbox named by its first cell, and the card layout's
+# Table: a row checkbox named by its first cell, and the card layout's
 # sort label. The name cannot be inflected, so languages with cases put it
 # after a colon or as a compound ("… satırını seç").
 D2_TABLE = {
@@ -950,7 +951,7 @@ VARIANTS['zh_Hant']['values'].update(
     selectRowNamed="'選取 $name'", sortBy='排序方式')
 
 
-# D2 fields: the messages of a date, time or number field whose typed text
+# Typed fields: the messages of a date, time or number field whose typed text
 # is not a value (DsInputIssue; WCAG 3.3.1 and 3.3.3). `format` is the
 # field's hint ("DD.MM.YYYY"), `example` a time in the field's clock
 # ("14:30", "2:30 PM"), `date`, `min` and `max` are already formatted.
@@ -1095,7 +1096,7 @@ VARIANTS['pt_PT']['values'].update(
     numberTooLarge="'Introduza $max ou menos.'")
 
 # Forms: the messages of DsValidators (DsFormField). They say how to fix
-# the value (WCAG 3.3.3), as the D2 field messages do. Counts are
+# the value (WCAG 3.3.3), as the typed field messages do. Counts are
 # characters as people count them (grapheme clusters); languages without
 # a plural form, or with cases (ar, ru), avoid inflecting the noun or
 # pick the genitive the phrase needs.

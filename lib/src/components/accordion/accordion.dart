@@ -144,7 +144,7 @@ class DsAccordion<T> extends StatefulWidget {
       ),
       bodyStyle: theme.typography.body.copyWith(color: k.textMuted),
       // Inside the header: the container's rounded clip would cut an
-      // outside ring (ux V23).
+      // outside ring.
       focusShadows: [DsShadow.innerRing(k.focus, width: 2)],
       hovered: DsAccordionStyle(headerBackground: k.hover),
       pressed: DsAccordionStyle(headerBackground: k.press),
@@ -397,10 +397,10 @@ class _SectionState<T> extends State<_Section<T>> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // A button inside a heading (WAI-ARIA accordion, ux V23).
+          // A button inside a heading (WAI-ARIA accordion).
           Semantics(container: true, header: true, child: header),
-          // A size change that pushes the content below does not bounce
-          // (K-46): the tone spring, which never overshoots. Reduced motion
+          // A size change that pushes the content below does not bounce:
+          // the tone spring, which never overshoots. Reduced motion
           // jumps: AnimatedSize throws during layout with a zero duration.
           if (t.motion.reduced)
             body

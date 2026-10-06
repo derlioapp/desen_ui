@@ -396,7 +396,7 @@ class DsSidebarItem<T extends Object> extends StatefulWidget {
         focusShadows: theme.fillsSelection
             ? [DsShadow.innerRing(theme.onSelectedFill, width: 2)]
             : null,
-        // Hover stays visible on a selected item (K-61).
+        // Hover stays visible on a selected item.
         hovered: DsSidebarItemStyle(background: theme.selectedHoverFill),
       ),
       disabled: DsSidebarItemStyle(foreground: k.onDisabled),

@@ -159,7 +159,7 @@ class DsCalendar extends _Calendar {
     const clear = Color(0x00000000);
     // The chosen day is a checked choice, filled whatever the selection
     // style: the accent pair of a checked box, with the edge a fill needs
-    // where it stands under 3:1 off its layer (K-130). (The strong
+    // where it stands under 3:1 off its layer. (The strong
     // selection pair of a near-status seed is a deep ink, a maroon or brown
     // day next to the accent controls.)
     return DsCalendarStyle(
@@ -204,7 +204,7 @@ class DsCalendar extends _Calendar {
         dayBorderColor: k.accentEdge,
         dayTextStyle: const TextStyle(fontWeight: FontWeight.w600),
         hovered: DsCalendarStyle(dayBackground: k.accentHover),
-        // One step beyond hover (K-68).
+        // One step beyond hover.
         pressed: DsCalendarStyle(dayBackground: k.accentPress),
       ),
       disabled: DsCalendarStyle(
@@ -671,7 +671,7 @@ class _CalendarState extends State<_Calendar>
     final isEnter =
         key == LogicalKeyboardKey.enter ||
         key == LogicalKeyboardKey.numpadEnter;
-    // Space shows the press while held and chooses on release (K-39).
+    // Space shows the press while held and chooses on release.
     if (event is KeyUpEvent) {
       if (isSpace && _pressed != null) {
         final day = _pressed!;
@@ -756,7 +756,7 @@ class _CalendarState extends State<_Calendar>
     final s = DsCalendarStyle.resolveLayers(layers, const {});
     final scaler = MediaQuery.textScalerOf(context);
     final tap = DsTheme.sizesOf(context).minTapTarget;
-    // Days grow with large text (K-34) and narrow to fit the width, e.g. a
+    // Days grow with large text and narrow to fit the width, e.g. a
     // 320px phone or a popup.
     return LayoutBuilder(
       builder: (context, constraints) => _layout(

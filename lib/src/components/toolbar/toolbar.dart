@@ -303,7 +303,7 @@ class DsToolbarToggle extends StatefulWidget {
           if (theme.selectedEdge case final edge?) DsShadow.innerRing(edge),
         ],
         foreground: theme.onSelectedFill,
-        // Hover stays visible on a selected item (K-61).
+        // Hover stays visible on a selected item.
         hovered: DsToolbarToggleStyle(background: theme.selectedHoverFill),
       ),
       disabled: DsToolbarToggleStyle(foreground: k.onDisabled),

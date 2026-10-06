@@ -167,7 +167,7 @@ class _DsProgressBarState extends State<DsProgressBar>
       role: _value == null
           ? SemanticsRole.loadingSpinner
           : SemanticsRole.progressBar,
-      // Indeterminate progress says it is loading (S-14).
+      // Indeterminate progress says it is loading.
       label:
           widget.semanticLabel ??
           (_value == null ? DsLocalizations.of(context).loading : null),
@@ -180,7 +180,7 @@ class _DsProgressBarState extends State<DsProgressBar>
       child: LimitedBox(
         maxWidth: s.width ?? double.infinity,
         // Its own layer: the indeterminate sweep repaints every frame and
-        // must not repaint what is around it (denetim-2 eng P6).
+        // must not repaint what is around it.
         child: RepaintBoundary(
           child: DsShapeClip(
             borderRadius: radius,
@@ -343,7 +343,7 @@ class _DsProgressRingState extends State<DsProgressRing>
       role: _value == null
           ? SemanticsRole.loadingSpinner
           : SemanticsRole.progressBar,
-      // Indeterminate progress says it is loading (S-14).
+      // Indeterminate progress says it is loading.
       label:
           widget.semanticLabel ??
           (_value == null ? DsLocalizations.of(context).loading : null),

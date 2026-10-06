@@ -184,7 +184,7 @@ class DsButton extends StatefulWidget {
           : theme.motion.pressScale,
       // The type scale's control label for the size, one weight (600)
       // for every variant and size, so a row of mixed buttons reads as one
-      // set (denetim-2, decision 7).
+      // set.
       textStyle: theme.typography.controlLabel(size),
       disabled: DsButtonStyle(
         background: ghost ? _clear : k.disabled,
@@ -194,7 +194,7 @@ class DsButton extends StatefulWidget {
         focusShadows: const [],
       ),
     );
-    // Pressed goes one step beyond hovered, never lighter (K-68): a touch
+    // Pressed goes one step beyond hovered, never lighter: a touch
     // press, which has no hover, still reads as deeper than rest.
     DsButtonStyle shade(Color hover, Color press) => DsButtonStyle(
       hovered: DsButtonStyle(background: hover),
@@ -208,7 +208,7 @@ class DsButton extends StatefulWidget {
       ).merge(shade(k.accentHover, k.accentPress)),
       DsButtonVariant.secondary => DsButtonStyle(
         background: k.control,
-        // Icon-only secondary buttons use muted ink, as in the concept.
+        // Icon-only secondary buttons use muted ink.
         foreground: iconOnly ? k.textMuted : k.text,
         borderColor: k.borderControl,
         shadows: theme.shadows.controlLift,
@@ -260,7 +260,7 @@ class DsButton extends StatefulWidget {
       // soft white under the page's ink in dark mode. A near-black fill
       // cannot darken and a near-white one should not glare, so hover and
       // press mix the label's tone into the fill instead (lighter in light
-      // mode, dimmer in dark mode); the label stays above 7:1 (K-29).
+      // mode, dimmer in dark mode); the label stays above 7:1.
       // Flat, like the primary button.
       DsButtonVariant.neutral => () {
         final label = theme.isDark ? k.canvas : k.surface;
@@ -273,7 +273,7 @@ class DsButton extends StatefulWidget {
       // The primary button turned inside out, for an accent ground: the
       // accent's label color as the fill, the accent as the label. Hover
       // and press mix a little accent into the fill while the label deepens
-      // to the accent's own hover and press steps (K-68). The ring is in
+      // to the accent's own hover and press steps. The ring is in
       // the fill color: the theme's focus color is the accent's ink, which
       // vanishes on the accent. Disabled, it fades to a wash of the label
       // color with the label color on it, which still reads on the accent.
@@ -415,7 +415,7 @@ class _DsButtonState extends State<DsButton> {
     return DsPressable(
       onPressed: widget.onPressed,
       onLongPress: widget.onLongPress,
-      // Loading keeps focus and announces itself (B16, M5, V12, S-14).
+      // Loading keeps focus and announces itself.
       busy: loading,
       focusNode: widget.focusNode,
       autofocus: widget.autofocus,
@@ -456,7 +456,7 @@ class _DsButtonState extends State<DsButton> {
             (true, true, _) => spinner,
             // No icon to replace: the spinner covers the label, which keeps
             // its width (and its text for screen readers), so the button
-            // does not grow and push its neighbors (visual M2).
+            // does not grow and push its neighbors.
             (true, false, null) => Stack(
               alignment: Alignment.center,
               children: [
@@ -511,7 +511,7 @@ class _ButtonVisual extends StatelessWidget {
     final borderColor = s.borderColor ?? _clear;
     // The ring is always the first entry, transparent when there is no
     // edge, so state changes interpolate shadow for shadow instead of
-    // shifting every pair by one (eng L8). Transparent shadows are not
+    // shifting every pair by one. Transparent shadows are not
     // painted.
     final width = s.borderWidth!;
     final shadows = <DsShadow>[

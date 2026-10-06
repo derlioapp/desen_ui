@@ -166,7 +166,7 @@ class _DsTooltipState extends State<DsTooltip> {
 
   // Escape dismisses the tooltip even when focus is elsewhere (hover).
   // It runs before the focused widgets and stops there: the Escape that
-  // hides a tooltip does not also close the dialog behind it (eng L2).
+  // hides a tooltip does not also close the dialog behind it.
   void _listenEscape() {
     if (_keyboardListening) return;
     _keyboardListening = true;
@@ -222,7 +222,7 @@ class _DsTooltipState extends State<DsTooltip> {
 
   @override
   Widget build(BuildContext context) {
-    // The trigger's own node carries the tooltip (ux V14): a plain
+    // The trigger's own node carries the tooltip: a plain
     // Semantics around a control that is its own node would hand it to
     // an ancestor instead.
     Widget trigger(Widget child) => widget.excludeFromSemantics
@@ -231,7 +231,7 @@ class _DsTooltipState extends State<DsTooltip> {
             child: Semantics(tooltip: widget.message, child: child),
           );
     // No Overlay to float in (no app root): the control alone, still
-    // described for screen readers (K-52).
+    // described for screen readers.
     if (Overlay.maybeOf(context) == null) return trigger(widget.child);
     return DsAnchoredOverlay(
       controller: _controller,

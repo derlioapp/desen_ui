@@ -205,7 +205,7 @@ class DsBottomNav<T> extends StatefulWidget {
         borderColor: theme.selectedEdge,
         foreground: theme.onSelectedFill,
         labelStyle: const TextStyle(fontWeight: FontWeight.w600),
-        // Hover stays visible on a selected item (K-61).
+        // Hover stays visible on a selected item.
         hovered: DsBottomNavItemStyle(background: theme.selectedHoverFill),
       ),
       // The disabled ink; the current destination of a disabled bar keeps
@@ -399,7 +399,7 @@ class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
       WidgetState.selected,
     });
     // The full-width bar shares its width; the floating one sizes to its
-    // items, which may shrink to share a narrow width (B11, visual H2).
+    // items, which may shrink to share a narrow width.
     final row = LayoutBuilder(
       builder: (context, c) {
         final gaps = (s.gap ?? 0) * (items.length - 1);
@@ -629,7 +629,7 @@ class _ItemState extends State<_Item> {
           );
         }
         // A fixed width that a narrow bar may shrink, and a minimum height
-        // that grows with large text (B12).
+        // that grows with large text.
         return AnimatedContainer(
           duration: duration,
           curve: t.motion.toneCurve,

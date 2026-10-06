@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Renders the example's button scenes with the native macOS engine (Impeller)
-# and copies the PNG to the given directory (KALITE S-05).
+# and copies the PNG to the given directory.
 # Usage: tool/native_snapshot.sh <out-dir> [light|dark]
 set -euo pipefail
 out=$1; mode=${2:-light}

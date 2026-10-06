@@ -131,7 +131,7 @@ class DsCheckbox extends StatefulWidget {
         hovered: DsCheckboxStyle(background: k.accentHover),
       ),
       // A thicker edge, so the error is not told by hue alone; a checked
-      // box turns danger instead of wearing a red line on blue (visual M6).
+      // box turns danger instead of wearing a red line on blue.
       error: DsCheckboxStyle(
         borderColor: dsErrorEdge(theme),
         borderWidth: 2,
@@ -143,7 +143,7 @@ class DsCheckbox extends StatefulWidget {
         ),
       ),
       // Disabled keeps the shape: an unchecked box keeps an edge, a checked
-      // one its fill (visual M7).
+      // one its fill.
       disabled: DsCheckboxStyle(
         background: k.disabled,
         borderColor: k.border,
@@ -175,7 +175,7 @@ class _DsCheckboxState extends State<DsCheckbox> {
   @override
   Widget build(BuildContext context) {
     final t = dsThemeOf(context);
-    // A surrounding DsField with an error marks the control too (K-71).
+    // A surrounding DsField with an error marks the control too.
     final error =
         widget.error || (DsFieldScope.maybeOf(context)?.hasError ?? false);
     final layers = [

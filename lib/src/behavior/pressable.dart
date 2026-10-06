@@ -278,7 +278,7 @@ class _DsPressableState extends State<DsPressable> {
     if (widget.selected != null) {
       _sync(WidgetState.selected, widget.selected!);
     } else if (oldWidget.selected != null) {
-      // Going back to "not announced" must not leave the state set (eng L1).
+      // Going back to "not announced" must not leave the state set.
       _sync(WidgetState.selected, false);
     }
   }

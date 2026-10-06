@@ -126,7 +126,7 @@ class DsSegmentedControl<T> extends StatefulWidget {
       thumbShadows: [
         // Its own edge.
         if (soft) ...theme.shadows.channelThumb,
-        // A bright filled thumb keeps its shape on the channel (denetim-2).
+        // A bright filled thumb keeps its shape on the channel.
         if (!soft)
           if (theme.selectedEdge case final edge?) DsShadow.innerRing(edge),
       ],
@@ -142,7 +142,7 @@ class DsSegmentedControl<T> extends StatefulWidget {
       hovered: DsSegmentedControlStyle(foreground: k.text),
       // The selected label also turns semibold, like iOS: the soft thumb
       // stands only ~1.3:1 off the channel, so the choice must not rest on
-      // that and on ink alone (WCAG 1.4.1; denetim-2 ux M6). Every segment
+      // that and on ink alone (WCAG 1.4.1). Every segment
       // reserves the semibold width, so nothing shifts.
       selected: DsSegmentedControlStyle(
         foreground: soft ? k.text : k.onSelectionStrong,
@@ -171,7 +171,7 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
   bool _highlight = false;
   bool get _focusVisible => _highlight && DsFocusVisibility.keyboard.value;
   // Input modality only changes how focus looks: rebuild only while
-  // focused, not on every pointer or key event in the app (eng L6).
+  // focused, not on every pointer or key event in the app.
   void _onModality() {
     if (_highlight) setState(() {});
   }
@@ -280,15 +280,15 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
       }).textStyle;
       return Semantics(
         // A radio: checked in a mutually exclusive group, no button
-        // flag (denetim-2 ux H1).
+        // flag.
         inMutuallyExclusiveGroup: true,
         checked: i == selected,
         enabled: interactive,
         label: seg.semanticLabel,
         onTap: interactive ? () => _select(i) : null,
-        // The group holds one focus node (one Tab stop, K-37); its focus
+        // The group holds one focus node (one Tab stop); its focus
         // is reported on the selected segment, so a screen reader
-        // announces it, not an unnamed node (denetim-2 ux H1).
+        // announces it, not an unnamed node.
         focusable: _enabled && i == focusTarget ? true : null,
         focused: _enabled && i == focusTarget ? _node.hasPrimaryFocus : null,
         onFocus:
@@ -311,7 +311,7 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
             onTapUp: (_) => setState(() => _pressed = null),
             onTap: interactive ? () => _select(i, touch: true) : null,
             // A minimum height grows with large text; in a narrow control
-            // the label wraps between words (B14, ux V5).
+            // the label wraps between words.
             child: Container(
               constraints: BoxConstraints(minHeight: height),
               padding: s.itemPadding,

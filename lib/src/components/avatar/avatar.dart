@@ -279,7 +279,7 @@ class DsAvatar extends StatelessWidget {
           : DsIcon(DsIcons.user, size: s.iconSize, color: fg),
     );
     // A photo that fails to load shows the initials (or the icon) instead
-    // of an error (B21, eng M14).
+    // of an error.
     Widget face = image == null
         ? fallback
         : ClipOval(
@@ -313,7 +313,7 @@ class DsAvatar extends StatelessWidget {
       );
     }
 
-    // The status is not told by color alone (KALITE R5): it is read after
+    // The status is not told by color alone: it is read after
     // the name.
     final name = semanticLabel ?? initials;
     final presence = status == null
@@ -389,7 +389,7 @@ class DsAvatarGroup extends StatelessWidget {
     final d = DsAvatar._resolve(context, size, null).diameter!;
     final overlap = d * (s.overlap ?? 0);
     final ringWidth = s.ringWidth ?? 0;
-    // max: 0 used to throw (B27).
+    // max: 0 used to throw.
     final shown = avatars.length > max
         ? avatars.take(math.max(0, max - 1)).toList()
         : avatars;
@@ -420,7 +420,7 @@ class DsAvatarGroup extends StatelessWidget {
             contentInsetEnd: i < shown.length - 1 || hidden > 0
                 ? overlap + ringWidth
                 : 0,
-            // Kept from the caller's avatar (B26).
+            // Kept from the caller's avatar.
             semanticLabel: a.semanticLabel,
             status: a.status,
             statusLabel: a.statusLabel,

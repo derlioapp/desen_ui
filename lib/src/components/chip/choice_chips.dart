@@ -129,7 +129,7 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
   bool _highlight = false;
   bool get _focusVisible => _highlight && DsFocusVisibility.keyboard.value;
   // Input modality only changes how focus looks: rebuild only while
-  // focused, not on every pointer or key event in the app (eng L6).
+  // focused, not on every pointer or key event in the app.
   void _onModality() {
     if (_highlight) setState(() {});
   }

@@ -136,7 +136,7 @@ class DsAlert extends StatelessWidget {
             spacing: s.gap ?? DsSpace.s12,
             children: [
               // The icon names the status for screen readers ("Warning"), so
-              // it does not rest on the title wording (ux V25).
+              // it does not rest on the title wording.
               Semantics(
                 label: _statusLabel(DsLocalizations.of(context), status),
                 child: Padding(

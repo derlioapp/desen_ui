@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Every page of the docs site opens at phone, tablet, laptop and desktop
-/// widths, in light and dark, without an overflow or an error (KALITE 9a).
+/// widths, in light and dark, without an overflow or an error.
 void main() {
   const widths = [390.0, 768.0, 1280.0, 1600.0];
   final paths = [

@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'button_matrix.dart';
 import 'save_stub.dart' if (dart.library.io) 'save_io.dart';
 
-/// Native render check (KALITE S-05): renders the button scenes with the
+/// Native render check: renders the button scenes with the
 /// platform's own engine (Impeller on macOS), saves a PNG of exactly what
 /// was drawn and exits. No screen capture permission needed.
 ///

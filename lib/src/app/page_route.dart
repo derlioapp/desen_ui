@@ -100,7 +100,7 @@ class DsPageRoute<T> extends PageRoute<T> {
   );
 
   // The curved animations live as long as the route, not one build: they
-  // listen to the route's animation and must be disposed (eng L4).
+  // listen to the route's animation and must be disposed.
   Animation<double>? _parent;
   DsMotion? _curvesMotion;
   CurvedAnimation? _fade, _move;
@@ -211,7 +211,7 @@ class DsPageRoute<T> extends PageRoute<T> {
     final nav = navigator!;
     final motion = _motion;
     // No bounce: an overshooting page would uncover the screen edge
-    // (K-46, like the accordion's height). Reduce motion: a fade on the
+    // (like the accordion's height). Reduce motion: a fade on the
     // tone spring.
     final spring = motion.reduced
         ? motion.toneSpring

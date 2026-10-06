@@ -159,10 +159,10 @@ class DsDatePicker extends StatefulWidget {
         // Proportional figures, as in a browser's input: in the text
         // family, tabular figures make the period, comma and colon
         // digit-wide, so a typed "12.10.2026" or "12.500,00" would read
-        // spaced out like a console (denetim-2, decision 1).
+        // spaced out like a console.
       ),
       rangeWidth: 280,
-      // The field's own buttons' look (K-80).
+      // The field's own buttons' look.
       buttonStyle: DsButtonStyle(
         height: 22,
         borderRadius: BorderRadius.circular(11),

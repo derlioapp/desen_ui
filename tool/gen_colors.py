@@ -1,74 +1,74 @@
-# Generates lib/src/theme/colors.dart. Each field: (name, type, doc, concept key)
+# Generates lib/src/theme/colors.dart. Each field: (name, type, doc)
 groups = [
  ("Surfaces", [
-  ("canvas","Color","Page background, the lowest layer.","wall"),
-  ("surface","Color","Cards, list groups, tables.","surf"),
-  ("sidebar","Color","Side navigation background.","side"),
-  ("control","Color","Secondary buttons and other raised controls.","sec"),
-  ("controlHover","Color","[control] while hovered.","secHover"),
-  ("controlPress","Color","[control] while pressed: one step beyond [controlHover].","— (Desen)"),
-  ("overlay","Color","Floating layers: menus, popovers, toasts, dialogs.","float"),
-  ("field","Color","Text field and checkbox well.","well"),
+  ("canvas","Color","Page background, the lowest layer."),
+  ("surface","Color","Cards, list groups, tables."),
+  ("sidebar","Color","Side navigation background."),
+  ("control","Color","Secondary buttons and other raised controls."),
+  ("controlHover","Color","[control] while hovered."),
+  ("controlPress","Color","[control] while pressed: one step beyond [controlHover]."),
+  ("overlay","Color","Floating layers: menus, popovers, toasts, dialogs."),
+  ("field","Color","Text field and checkbox well."),
  ]),
  ("Text", [
-  ("text","Color","Primary text.","ink"),
-  ("textMuted","Color","Secondary text, field labels.","ink2"),
-  ("textSubtle","Color","Tertiary text, placeholders, meta.","ink3"),
+  ("text","Color","Primary text."),
+  ("textMuted","Color","Secondary text, field labels."),
+  ("textSubtle","Color","Tertiary text, placeholders, meta."),
  ]),
  ("Accent", [
-  ("accent","Color","Brand fill: primary button, checked controls, switch track. Usually labeled white; a light brand (yellow, orange, sky) keeps its own bright fill with a dark [onAccent] instead.","acc"),
-  ("accentHover","Color","[accent] while hovered: a step away from [onAccent].","btnHover"),
-  ("accentPress","Color","[accent] while pressed: one step beyond [accentHover], further from [onAccent].","— (Desen)"),
-  ("onAccent","Color","Text and icons on [accent]: white, or a dark ink tinted toward the seed on a bright accent.","onAcc"),
-  ("accentEdge","Color","1px edge of an [accent] fill that stands under 3:1 off the layers it sits on: a bright accent (dark [onAccent]) on a light card, or a white-labeled fill in dark mode, held dark by its label, on the lighter floating layer. Checked checkboxes and radios, the switch's on track and filled selections draw it inside their fill, so their shape does not melt into the layer (WCAG 1.4.11). The [onAccent] label at the lowest opacity that brings the edge to 3:1 on every layer, hover and press included; transparent when the fill stands on its own. Labeled buttons do not draw it.","— (Desen)"),
-  ("indicator","Color","Accent marks with no label on them: progress and slider fill, tab underline, text caret. [accent] in light mode (darkened under a bright accent), a lighter accent in dark mode. Stands 3:1 off [channelStrong], the surface and the field. Never olive, mustard or brown: where the accent hue's deep tone would be (a yellow or amber in light mode), it turns to the nearest clean hue at the same contrast, a deep orange or lime; in dark mode a warm hue rises toward the lightness where it is vivid.","— (Desen)"),
-  ("accentTint","Color","Translucent accent wash: date range band, icon boxes. In light mode a bright accent's wash comes from its fill (a pale butter, not a beige); in dark mode a warm brand's is a neutral wash, since a warm tint on dark gray reads olive or brown.","accSoft"),
-  ("accentText","Color","Accent used as text, e.g. today in a calendar.","accText"),
-  ("link","Color","Links and text buttons.","linkInk"),
+  ("accent","Color","Brand fill: primary button, checked controls, switch track. Usually labeled white; a light brand (yellow, orange, sky) keeps its own bright fill with a dark [onAccent] instead."),
+  ("accentHover","Color","[accent] while hovered: a step away from [onAccent]."),
+  ("accentPress","Color","[accent] while pressed: one step beyond [accentHover], further from [onAccent]."),
+  ("onAccent","Color","Text and icons on [accent]: white, or a dark ink tinted toward the seed on a bright accent."),
+  ("accentEdge","Color","1px edge of an [accent] fill that stands under 3:1 off the layers it sits on: a bright accent (dark [onAccent]) on a light card, or a white-labeled fill in dark mode, held dark by its label, on the lighter floating layer. Checked checkboxes and radios, the switch's on track and filled selections draw it inside their fill, so their shape does not melt into the layer (WCAG 1.4.11). The [onAccent] label at the lowest opacity that brings the edge to 3:1 on every layer, hover and press included; transparent when the fill stands on its own. Labeled buttons do not draw it."),
+  ("indicator","Color","Accent marks with no label on them: progress and slider fill, tab underline, text caret. [accent] in light mode (darkened under a bright accent), a lighter accent in dark mode. Stands 3:1 off [channelStrong], the surface and the field. Never olive, mustard or brown: where the accent hue's deep tone would be (a yellow or amber in light mode), it turns to the nearest clean hue at the same contrast, a deep orange or lime; in dark mode a warm hue rises toward the lightness where it is vivid."),
+  ("accentTint","Color","Translucent accent wash: date range band, icon boxes. In light mode a bright accent's wash comes from its fill (a pale butter, not a beige); in dark mode a warm brand's is a neutral wash, since a warm tint on dark gray reads olive or brown."),
+  ("accentText","Color","Accent used as text, e.g. today in a calendar."),
+  ("link","Color","Links and text buttons."),
  ]),
  ("Selection", [
-  ("selection","Color","Soft selection background (chips, menu rows, nav items).","soft"),
-  ("selectionHover","Color","[selection] while hovered or keyboard focused: a stronger tint, so focus stays visible on a selected item.","— (Desen)"),
-  ("onSelection","Color","Text on [selection] and [selectionHover].","softInk"),
-  ("selectionStrong","Color","Filled selection background.","fillSel"),
-  ("selectionStrongHover","Color","[selectionStrong] while hovered or keyboard focused; darkens under its light label.","— (Desen)"),
-  ("onSelectionStrong","Color","Text on [selectionStrong] and [selectionStrongHover].","onFill"),
+  ("selection","Color","Soft selection background (chips, menu rows, nav items)."),
+  ("selectionHover","Color","[selection] while hovered or keyboard focused: a stronger tint, so focus stays visible on a selected item."),
+  ("onSelection","Color","Text on [selection] and [selectionHover]."),
+  ("selectionStrong","Color","Filled selection background."),
+  ("selectionStrongHover","Color","[selectionStrong] while hovered or keyboard focused; darkens under its light label."),
+  ("onSelectionStrong","Color","Text on [selectionStrong] and [selectionStrongHover]."),
  ]),
  ("Focus", [
-  ("focus","Color","Keyboard focus outline. Stands 3:1 off the page and the surfaces.","focusC"),
+  ("focus","Color","Keyboard focus outline. Stands 3:1 off the page and the surfaces."),
  ]),
  ("Lines", [
-  ("border","Color","Dividers and container outlines.","line"),
-  ("borderControl","Color","Edge of raised controls.","E"),
-  ("borderField","Color","Inner outline of text fields and checkboxes: 3:1 at standard contrast; a light edge (about 1.5:1) at soft contrast.","wellFx"),
-  ("borderChip","Color","Outline of unselected chips.","chipLine"),
+  ("border","Color","Dividers and container outlines."),
+  ("borderControl","Color","Edge of raised controls."),
+  ("borderField","Color","Inner outline of text fields and checkboxes: 3:1 at standard contrast; a light edge (about 1.5:1) at soft contrast."),
+  ("borderChip","Color","Outline of unselected chips."),
  ]),
  ("Channels and rails", [
-  ("channel","Color","Recessed channel of segmented controls and steppers; skeleton blocks. May be translucent; layer it on a surface.","track"),
-  ("channelStrong","Color","A step stronger than [channel]: the unfilled part of slider and progress tracks, strong skeleton lines, and small neutral fills such as the sheet grabber.","track2"),
-  ("rail","Color","The switch's track while off. Meets 3:1 against surfaces (WCAG 1.4.11) at standard contrast, unlike the decorative channels; a light, iOS-like fill at soft contrast.","— (Desen)"),
-  ("channelThumb","Color","The raised piece in a [channel]: the selected segment of a soft segmented control, stepper buttons.","thumb"),
-  ("knob","Color","Switch knob and slider thumb.","knob"),
-  ("shimmer","Color","Highlight swept across skeletons while loading.","shimmer overlay"),
+  ("channel","Color","Recessed channel of segmented controls and steppers; skeleton blocks. May be translucent; layer it on a surface."),
+  ("channelStrong","Color","A step stronger than [channel]: the unfilled part of slider and progress tracks, strong skeleton lines, and small neutral fills such as the sheet grabber."),
+  ("rail","Color","The switch's track while off. Meets 3:1 against surfaces (WCAG 1.4.11) at standard contrast, unlike the decorative channels; a light, iOS-like fill at soft contrast."),
+  ("channelThumb","Color","The raised piece in a [channel]: the selected segment of a soft segmented control, stepper buttons."),
+  ("knob","Color","Switch knob and slider thumb."),
+  ("shimmer","Color","Highlight swept across skeletons while loading."),
  ]),
  ("Interaction", [
-  ("hover","Color","Translucent hover layer.","hover"),
-  ("press","Color","Translucent pressed layer.","press"),
-  ("disabled","Color","Disabled control background.","disBg"),
-  ("onDisabled","Color","Disabled text and icons.","disInk"),
-  ("scrim","Color","Modal barrier.","scrim"),
+  ("hover","Color","Translucent hover layer."),
+  ("press","Color","Translucent pressed layer."),
+  ("disabled","Color","Disabled control background."),
+  ("onDisabled","Color","Disabled text and icons."),
+  ("scrim","Color","Modal barrier."),
  ]),
  ("Tooltip", [
-  ("tooltip","Color","Tooltip background.","tipBg"),
-  ("onTooltip","Color","Tooltip text.","tipInk"),
-  ("onTooltipMuted","Color","Secondary tooltip text, e.g. shortcuts.","tipSub"),
+  ("tooltip","Color","Tooltip background."),
+  ("onTooltip","Color","Tooltip text."),
+  ("onTooltipMuted","Color","Secondary tooltip text, e.g. shortcuts."),
  ]),
  ("Status", [
-  ("neutral","DsStatusColors","Neutral badges.","neuBg/neuInk"),
-  ("danger","DsStatusColors","Errors and destructive actions.","danger*"),
-  ("success","DsStatusColors","Success.","success/suc*"),
-  ("warning","DsStatusColors","Warnings.","warn/war*"),
-  ("info","DsStatusColors","Information.","info*"),
+  ("neutral","DsStatusColors","Neutral badges."),
+  ("danger","DsStatusColors","Errors and destructive actions."),
+  ("success","DsStatusColors","Success."),
+  ("warning","DsStatusColors","Warnings."),
+  ("info","DsStatusColors","Information."),
  ]),
 ]
 fields=[f for _,g in groups for f in g]
@@ -219,34 +219,34 @@ class DsColors {
   /// customize colors, use `DsThemeData(adjustColors: …)` with [copyWith]
   /// on the generated set (`DsThemeData(seed: …).colors`).
   const DsColors({""")
-for n,t,d,k in fields: w(f"    required this.{n},")
+for n,t,d in fields: w(f"    required this.{n},")
 w("""  });
 """)
 for gname,g in groups:
     w(f"  // {gname}\n")
-    for n,t,d,k in g:
+    for n,t,d in g:
         w(f"  /// {d}\n  final {t} {n};\n")
 w("  /// Returns a copy with the given roles replaced.\n  DsColors copyWith({")
-for n,t,d,k in fields: w(f"    {t}? {n},")
+for n,t,d in fields: w(f"    {t}? {n},")
 w("  }) =>\n      DsColors(")
-for n,t,d,k in fields: w(f"        {n}: {n} ?? this.{n},")
+for n,t,d in fields: w(f"        {n}: {n} ?? this.{n},")
 w("      );\n")
 w("  /// Every role as a flat map, status sets expanded (`danger.fill`, …).\n  /// Keys are the field names; useful for export, debugging and snapshots.\n  Map<String, Color> toMap() => {")
-for n,t,d,k in fields:
+for n,t,d in fields:
     if t=="Color": w(f"    '{n}': {n},")
     else:
         for sub in ["fill","fillHover","fillPress","onFill","tint","tintHover","tintPress","text","signal"]:
             w(f"    '{n}.{sub}': {n}.{sub},")
 w("  };\n")
 w("  /// Linearly interpolates between two color sets.\n  static DsColors lerp(DsColors a, DsColors b, double t) {\n    if (identical(a, b)) return a;\n    return DsColors(")
-for n,t,d,k in fields:
+for n,t,d in fields:
     if t=="Color": w(f"      {n}: DsColorUtils.lerp(a.{n}, b.{n}, t)!,")
     else: w(f"      {n}: DsStatusColors.lerp(a.{n}, b.{n}, t),")
 w("    );\n  }\n")
 w("  @override\n  bool operator ==(Object other) =>\n      other is DsColors &&")
-w(" &&\n".join(f"      other.{n} == {n}" for n,_,_,_ in fields)+";\n")
+w(" &&\n".join(f"      other.{n} == {n}" for n,_,_ in fields)+";\n")
 w("  @override\n  int get hashCode => Object.hashAll([")
-for n,t,d,k in fields: w(f"        {n},")
+for n,t,d in fields: w(f"        {n},")
 w("      ]);\n}")
 import sys
 open(sys.argv[1],"w").write("\n".join(o)+"\n")

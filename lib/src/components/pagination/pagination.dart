@@ -109,7 +109,7 @@ class DsPagination extends StatefulWidget {
         borderColor: theme.selectedEdge,
         foreground: theme.onSelectedFill,
         textStyle: const TextStyle(fontWeight: FontWeight.w600),
-        // Hover stays visible on a selected item (K-61).
+        // Hover stays visible on a selected item.
         hovered: DsPaginationStyle(background: theme.selectedHoverFill),
       ),
       disabled: DsPaginationStyle(foreground: k.onDisabled),
@@ -190,7 +190,7 @@ class DsPagination extends StatefulWidget {
       child: LayoutBuilder(
         builder: (context, c) {
           // Too narrow for every page (a phone, touch density, large
-          // text): "‹ 6 / 24 ›" (visual H2, B11 family).
+          // text): "‹ 6 / 24 ›".
           if (count > 0 && c.hasBoundedWidth && fullWidth() > c.maxWidth) {
             return Row(
               mainAxisSize: MainAxisSize.min,
@@ -385,7 +385,7 @@ class _PageState extends State<_Page> {
         final size = s.itemSize!;
         // The drawn button keeps its own size in a taller row or cell: the
         // number is centered by an Align that hugs it, never by filling the
-        // parent. Only the invisible tap area grows (K-72).
+        // parent. Only the invisible tap area grows.
         return AnimatedContainer(
           duration: animate ? t.motion.toneDuration : Duration.zero,
           curve: t.motion.toneCurve,
@@ -400,7 +400,7 @@ class _PageState extends State<_Page> {
               if (states.contains(WidgetState.focused)) ...?s.focusShadows,
             ],
           ),
-          // "Page 4", and the current page says so (ux V22).
+          // "Page 4", and the current page says so.
           child: Align(
             widthFactor: 1,
             heightFactor: 1,

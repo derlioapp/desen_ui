@@ -4,7 +4,7 @@ Usage:
   python3 tool/side_by_side.py out.png a.png:x,y,w,h b.png:x,y,w,h [...]
 
 Coordinates are in image pixels. Each crop is labeled with its file name.
-Used for concept-vs-Flutter comparisons (KALITE §8).
+Used to compare a design reference with the Flutter rendering.
 """
 import os
 import sys

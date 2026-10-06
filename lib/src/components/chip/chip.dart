@@ -97,11 +97,11 @@ class DsChip extends StatefulWidget {
         borderColor: theme.selectedEdge ?? clear,
         // Filled: the gapped ring, which reads against the fill.
         focusShadows: theme.focusShadows,
-        // Hover stays visible on a selected item (K-61).
+        // Hover stays visible on a selected item.
         hovered: DsChipStyle(background: theme.selectedHoverFill),
       ),
       // Disabled keeps the shape: an unselected chip its outline, a
-      // selected one its fill and no outline, as when enabled (visual M7).
+      // selected one its fill and no outline, as when enabled.
       disabled: DsChipStyle(
         background: clear,
         foreground: k.onDisabled,
