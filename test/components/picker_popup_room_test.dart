@@ -1,6 +1,8 @@
 // The pickers' popups fit small windows (800×600, a landscape
 // phone, a 320px touch phone), and the time columns fade only where more
-// items lie beyond, never over the chosen one.
+// items lie beyond, never over the chosen one. A column that wraps goes
+// round, so both its ends always have more beyond; one kept from wrapping
+// by firstTime or lastTime has ends.
 import 'dart:ui' as ui;
 
 import 'package:desen_ui/desen_ui.dart';
@@ -299,12 +301,92 @@ void main() {
         expect(alphas[y], 255, reason: 'opaque inside the edge bands');
       }
 
-      // At the first hour nothing lies above: only the bottom fades.
+      // The hours go round: at 00, 23 lies above, so the top still fades.
       await tester.sendKeyEvent(LogicalKeyboardKey.home);
       await tester.pumpAndSettle();
       final first = (await _edgeMask(tester, '01')).alphas;
-      expect(first.first, 255);
+      expect(first.first, lessThan(16));
       expect(first.last, lessThan(16));
+    });
+
+    testWidgets('a column with ends fades only where items lie beyond', (
+      tester,
+    ) async {
+      // 23 cannot be chosen, so the hours do not wrap and have ends.
+      await _open(
+        tester,
+        const Size(800, 600),
+        DsTimePicker(
+          value: const DsTime(14, 30),
+          lastTime: const DsTime(22, 59),
+          use24HourClock: true,
+          onChanged: (_) {},
+        ),
+      );
+      await tester.sendKeyEvent(LogicalKeyboardKey.home);
+      await tester.pumpAndSettle();
+      final first = (await _edgeMask(tester, '01')).alphas;
+      expect(first.first, 255, reason: 'nothing above 00');
+      expect(first.last, lessThan(16));
+    });
+
+    testWidgets('the chosen last hour is not faded: nothing lies below it', (
+      tester,
+    ) async {
+      // 00 cannot be chosen, so the hours do not wrap and have ends.
+      await _open(
+        tester,
+        const Size(800, 600),
+        DsTimePicker(
+          value: const DsTime(14, 30),
+          firstTime: const DsTime(1, 0),
+          use24HourClock: true,
+          onChanged: (_) {},
+        ),
+      );
+      await tester.sendKeyEvent(LogicalKeyboardKey.end);
+      await tester.pumpAndSettle();
+      final last = (await _edgeMask(tester, '22')).alphas;
+      expect(last.first, lessThan(16));
+      expect(last.last, 255, reason: 'nothing below 23');
+    });
+
+    testWidgets('the minute column fades at both ends as soon as it opens', (
+      tester,
+    ) async {
+      // The hour column is focused when the columns open, which rebuilds
+      // it; the minute column has to get its fade from its own layout.
+      await _open(
+        tester,
+        const Size(800, 600),
+        DsTimePicker(
+          value: const DsTime(14, 30),
+          use24HourClock: true,
+          onChanged: (_) {},
+        ),
+      );
+      final minutes = (await _edgeMask(tester, '30')).alphas;
+      expect(minutes.first, lessThan(16), reason: 'top edge clear');
+      expect(minutes.last, lessThan(16), reason: 'bottom edge clear');
+    });
+
+    testWidgets('a minute column with ends fades at its top when it opens '
+        'scrolled', (tester) async {
+      // Minutes before 09:30 cannot be chosen: no wrap, so the column has
+      // ends, and it opens scrolled to 30, away from its top.
+      await _open(
+        tester,
+        const Size(800, 600),
+        DsTimePicker(
+          value: const DsTime(9, 50),
+          firstTime: const DsTime(9, 30),
+          use24HourClock: true,
+          onChanged: (_) {},
+        ),
+      );
+      final minutes = (await _edgeMask(tester, '50')).alphas;
+      expect(minutes.first, lessThan(16), reason: 'top edge clear');
+      expect(minutes.last, 255, reason: 'nothing below 55');
     });
 
     testWidgets('rows rest whole; the chosen hour is clear of the faded '
@@ -341,10 +423,17 @@ void main() {
         await tester.pumpAndSettle();
       }
       expect(clear('18'), isTrue);
-      // To the first hour: the top no longer fades.
+      // To the first hour, the way round: 00 rests clear of the fades.
       await tester.sendKeyEvent(LogicalKeyboardKey.home);
       await tester.pumpAndSettle();
-      expect(scroll.position.pixels, 0);
+      expect(scroll.position.pixels % 1, 0);
+      final midnight = find.descendant(
+        of: find.byWidget(scroll.widget),
+        matching: find.text('00'),
+      );
+      final r = tester.getRect(midnight);
+      expect(r.top, greaterThanOrEqualTo(top + extent / 2));
+      expect(r.bottom, lessThanOrEqualTo(bottom - extent / 2));
     });
   });
 }

@@ -4,6 +4,41 @@
   `skeletonStrong` (about 1.27:1 on the card, the page and the sidebar in
   light mode). In dark mode a strong skeleton line no longer vanishes on a
   floating layer.
+- Time picker: the hour, minute and second columns wrap like the iOS and
+  Android wheels. Down on 23 gives 00 (keys, screen reader increase and
+  decrease), and a column longer than it shows scrolls round. A wrapping
+  minute stays in its hour. On a 12-hour clock the hours step through the
+  day, so Down on 11 AM gives 12 PM.
+- Time picker: `firstTime` and `lastTime` bound the times that can be
+  chosen or typed, like the date picker's `firstDate` and `lastDate`:
+
+  ```dart
+  DsTimePicker(
+    value: meeting,
+    firstTime: const DsTime(9, 0),
+    lastTime: const DsTime(18, 0),
+    onChanged: (t) => setState(() => meeting = t),
+  )
+  ```
+
+  Hours and minutes out of range are struck through (the new
+  `DsTimePickerStyle.disabled` look) and can't be chosen. The columns stop
+  at the edge of the range instead of wrapping, and a chosen value out of
+  range reads as "Unavailable". A typed time out of range gets the field
+  error ("Enter a time at or after 9:00 AM.", `DsInputIssueKind.belowMin`
+  and `aboveMax`).
+- Time picker: `showSeconds` adds a seconds column (`secondStep` sets its
+  steps), and the field shows and reads seconds (`14:30:05`). `DsTime`
+  takes an optional `second` (`DsTime(0, 4, 30)`), with `inSeconds` and
+  `DsTime.fromSeconds`. `DsDateFormat` reads and writes seconds (`s`,
+  `ss`), and `DsDateLocale.timeFormat` takes `seconds: true`.
+- New strings in every language: `seconds`, `unavailable`,
+  `timeTooEarly`, `timeTooLate`.
+- Fixed: a time column that opened scrolled had no fade at its top until
+  it was focused (the minute column always did). A column that ends (one
+  kept from wrapping by its limits) no longer fades over a last item when
+  nothing lies beyond it, and that item now rests whole at the end in a
+  short window.
 
 ## 0.1.0-alpha.2
 

@@ -102,7 +102,8 @@ export 'time_picker_style.dart';
 /// no time in range show as unavailable (muted and struck through, the
 /// [DsTimePickerStyle.disabled] look) and cannot be chosen; a column stops
 /// at the last item in range instead of wrapping into the unavailable
-/// ones. An hour or AM/PM that holds a time in range can be chosen, and
+/// ones, and a column whose first or last item is out of range has ends
+/// instead of scrolling round. An hour or AM/PM that holds a time in range can be chosen, and
 /// the time moves to the nearest one in range (choosing 9 on 10:15 in
 /// 09:30–18:00 gives 09:30).
 ///
@@ -838,10 +839,14 @@ class _TimeColumnState extends State<_TimeColumn> {
   double _extent = 0;
   double _viewport = 0;
 
-  /// Whether the column goes round: it wraps and has more items than it
-  /// shows. Its list then repeats the items [_cycles] times and starts in
-  /// the middle copy.
+  /// Whether the column goes round: it wraps, both its ends can be
+  /// chosen (so the wrap is open) and it has more items than it shows. Its
+  /// list then repeats the items [_cycles] times and starts in the middle
+  /// copy.
   bool _loops = false;
+
+  /// The item count the scroll controller was made for.
+  int _laidCount = 0;
 
   static const _loopCycles = 200;
 
@@ -855,6 +860,17 @@ class _TimeColumnState extends State<_TimeColumn> {
     widget.focusNode.addListener(_onFocus);
     FocusManager.instance.addHighlightModeListener(_onHighlight);
     DsFocusVisibility.keyboard.addListener(_onModality);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _settle());
+  }
+
+  /// After the first layout, when the room the popup gave is known: an
+  /// item at the end of the list rests at the very end, not cut by a
+  /// window too short for whole rows.
+  void _settle() {
+    final scroll = _scroll;
+    if (!mounted || scroll == null || !scroll.hasClients) return;
+    final want = _centered(_position(_index));
+    if ((want - scroll.offset).abs() > 0.5) scroll.jumpTo(want);
   }
 
   @override
@@ -864,11 +880,7 @@ class _TimeColumnState extends State<_TimeColumn> {
       oldWidget.focusNode.removeListener(_onFocus);
       widget.focusNode.addListener(_onFocus);
     }
-    if (oldWidget.data.items.length != _count) {
-      // The positions moved (a typed minute off the steps joined the
-      // list): show the chosen item in the middle again.
-      WidgetsBinding.instance.addPostFrameCallback((_) => _recenter());
-    } else if (oldWidget.data.selected != widget.data.selected) {
+    if (oldWidget.data.selected != widget.data.selected) {
       WidgetsBinding.instance.addPostFrameCallback((_) => _reveal());
     }
   }
@@ -904,13 +916,24 @@ class _TimeColumnState extends State<_TimeColumn> {
       math.max(1, ((_viewport + widget.style.itemGap!) / _extent).round());
 
   /// The offset that shows list position [index] in the middle row, on
-  /// whole rows (no row cut by an edge).
+  /// whole rows (no row cut by an edge); near the end of the list, the
+  /// end itself.
   double _centered(int index) {
-    final first = (index - (_rows - 1) ~/ 2).clamp(
-      0,
-      math.max(0, _count * _cycles - _rows),
-    );
+    final last = math.max(0, _count * _cycles - _rows);
+    final first = (index - (_rows - 1) ~/ 2).clamp(0, last);
+    if (first == last && first > 0) return _end;
     return first * _extent;
+  }
+
+  /// The offset at the end of the list: the scroll end once laid out (the
+  /// popup may give less room than the rows asked for), else what the
+  /// rows ask for.
+  double get _end {
+    final scroll = _scroll;
+    if (scroll != null && scroll.hasClients) {
+      return scroll.position.maxScrollExtent;
+    }
+    return math.max(0, _count * _cycles * _extent - _viewport);
   }
 
   /// The list position of item [index]: in a column that goes round, the
@@ -922,14 +945,6 @@ class _TimeColumnState extends State<_TimeColumn> {
         ? scroll.offset / _extent + (_rows - 1) / 2
         : (_cycles ~/ 2 * _count + index).toDouble();
     return index + _count * ((middle - index) / _count).round();
-  }
-
-  /// Jumps to the chosen item in the middle copy, centered.
-  void _recenter() {
-    final scroll = _scroll;
-    if (!mounted || scroll == null || !scroll.hasClients) return;
-    final index = _loops ? _cycles ~/ 2 * _count + _index : _index;
-    scroll.jumpTo(_centered(index).clamp(0.0, scroll.position.maxScrollExtent));
   }
 
   /// Scrolls so the chosen item shows, clear of the faded edge rows: by
@@ -949,25 +964,26 @@ class _TimeColumnState extends State<_TimeColumn> {
     final top = index * _extent;
     final offset = scroll.offset;
     final max = scroll.position.maxScrollExtent;
+    final view = scroll.position.viewportDimension;
+    final gap = widget.style.itemGap!;
     final band = _fadeBand;
-    final fadeTop = offset > 0 ? band : 0.0;
-    final fadeBottom = offset < max ? band : 0.0;
-    final shown = top >= offset && top + _extent <= offset + _viewport;
+    // As the edge fade decides: an end fades with an item beyond it.
+    final fadeTop = offset > 0.5 ? band : 0.0;
+    final fadeBottom = offset < max - gap - 0.5 ? band : 0.0;
+    final shown = top >= offset && top + _extent - gap <= offset + view;
     if (shown &&
         top >= offset + fadeTop &&
-        top + _extent - widget.style.itemGap! <=
-            offset + _viewport - fadeBottom) {
+        top + _extent - gap <= offset + view - fadeBottom) {
       return;
     }
     final margin = _rows >= 3 ? 1 : 0;
-    final double target;
-    if (!shown) {
-      target = _centered(index);
-    } else if (top < offset + fadeTop) {
-      target = (index - margin) * _extent;
-    } else {
-      target = (index - (_rows - 1 - margin)) * _extent;
-    }
+    var target = !shown
+        ? _centered(index)
+        : top < offset + fadeTop
+        ? (index - margin) * _extent
+        : (index - (_rows - 1 - margin)) * _extent;
+    // Among the last rows: the end, so the last item is not cut.
+    if (target >= (_count * _cycles - _rows) * _extent) target = max;
     final clamped = target.clamp(0.0, max);
     if (clamped == offset) return;
     final motion = DsTheme.motionOf(context);
@@ -1058,13 +1074,30 @@ class _TimeColumnState extends State<_TimeColumn> {
     final count = _count;
     _viewport = math.min(widget.maxHeight, count * _extent - gap);
     final scrolls = count * _extent - gap > _viewport + 0.5;
-    _loops = data.wraps && scrolls;
+    final loops =
+        data.wraps &&
+        scrolls &&
+        data.items.first.available &&
+        data.items.last.available;
+    if (_scroll != null && (loops != _loops || count != _laidCount)) {
+      // The positions moved (the column starts or stops going round, or a
+      // typed minute off the steps joined it): a new controller shows the
+      // chosen item in the middle again. The list lets go of the old one
+      // in this frame.
+      final old = _scroll!;
+      WidgetsBinding.instance.addPostFrameCallback((_) => old.dispose());
+      _scroll = null;
+    }
+    _loops = loops;
+    _laidCount = count;
     final width = math.max(
       s.columnWidth!,
       DsTheme.sizesOf(context).minTapTarget,
     );
     final index = _index;
     _scroll ??= ScrollController(
+      // Always from the chosen item, never a stored offset.
+      keepScrollOffset: false,
       initialScrollOffset: _centered(
         _loops ? _cycles ~/ 2 * count + index : index,
       ),
@@ -1168,6 +1201,7 @@ class _TimeColumnState extends State<_TimeColumn> {
               child: _EdgeFade(
                 scroll: _scroll!,
                 band: _fadeBand,
+                trailing: gap,
                 enabled: scrolls,
                 child: ListView.builder(
                   controller: _scroll,
@@ -1187,51 +1221,83 @@ class _TimeColumnState extends State<_TimeColumn> {
 }
 
 /// Fades the ends of a scrolling column where more items lie beyond.
-class _EdgeFade extends StatelessWidget {
+///
+/// Whether an end fades is read from the list's scroll position, which
+/// is only known once the list is laid out: the fade is decided again on
+/// every scroll and every change of the scroll metrics, the first layout
+/// included.
+class _EdgeFade extends StatefulWidget {
   const _EdgeFade({
     required this.scroll,
     required this.band,
+    required this.trailing,
     required this.enabled,
     required this.child,
   });
 
   final ScrollController scroll;
   final double band;
+
+  /// Space after the last item that holds nothing (the gap after it): at
+  /// most this much left to scroll is no item beyond the bottom edge.
+  final double trailing;
   final bool enabled;
   final Widget child;
 
   @override
+  State<_EdgeFade> createState() => _EdgeFadeState();
+}
+
+class _EdgeFadeState extends State<_EdgeFade> {
+  bool _onMetrics(ScrollMetricsNotification notification) {
+    if (notification.depth == 0) setState(() {});
+    return false;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (!enabled) return child;
-    return ListenableBuilder(
-      listenable: scroll,
-      child: child,
-      builder: (context, child) {
-        final position = scroll.hasClients ? scroll.position : null;
-        final more = position != null && position.hasContentDimensions;
-        final top = more && position.pixels > position.minScrollExtent;
-        final bottom = !more || position.pixels < position.maxScrollExtent;
-        return ShaderMask(
-          blendMode: BlendMode.dstIn,
-          shaderCallback: (rect) {
-            final edge = rect.height <= 0
-                ? 0.0
-                : (band / rect.height).clamp(0.0, .5);
-            return LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                top ? _clear : _opaque,
-                _opaque,
-                _opaque,
-                bottom ? _clear : _opaque,
-              ],
-              stops: [0, edge, 1 - edge, 1],
-            ).createShader(rect);
-          },
-          child: child,
-        );
-      },
+    if (!widget.enabled) return widget.child;
+    return NotificationListener<ScrollMetricsNotification>(
+      onNotification: _onMetrics,
+      child: ListenableBuilder(
+        listenable: widget.scroll,
+        child: widget.child,
+        builder: (context, child) {
+          final position = widget.scroll.hasClients
+              ? widget.scroll.position
+              : null;
+          final known = position != null && position.hasContentDimensions;
+          // An end fades only with part of an item beyond it. Before the
+          // first layout neither is known; the metrics notification after
+          // it decides.
+          final top = known && position.pixels > position.minScrollExtent + 0.5;
+          final bottom =
+              known &&
+              position.pixels <
+                  position.maxScrollExtent - widget.trailing - 0.5;
+          final band = widget.band;
+          return ShaderMask(
+            blendMode: BlendMode.dstIn,
+            shaderCallback: (rect) {
+              final edge = rect.height <= 0
+                  ? 0.0
+                  : (band / rect.height).clamp(0.0, .5);
+              return LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  top ? _clear : _opaque,
+                  _opaque,
+                  _opaque,
+                  bottom ? _clear : _opaque,
+                ],
+                stops: [0, edge, 1 - edge, 1],
+              ).createShader(rect);
+            },
+            child: child,
+          );
+        },
+      ),
     );
   }
 }
