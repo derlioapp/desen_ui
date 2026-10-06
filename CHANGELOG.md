@@ -26,6 +26,15 @@
   one. Each thumb is its own focus stop and its own slider for screen
   readers, named "Minimum" or "Maximum" in all 13 languages (new
   `DsLocalizations.rangeMinimum` and `rangeMaximum`).
+- `DsParagraph` and `DsLinkSpan`: links inside running text. The label is
+  part of the paragraph's text, so a long one wraps with the sentence, as
+  an `<a>` in a `<p>` does on the web, where a `DsLink` in a `WidgetSpan`
+  wraps inside its own box. Each link keeps what `DsLink` offers: the
+  theme's link color and underline, hover and pressed styles, Tab and
+  Enter with a focus ring around each line of the label for keyboard users
+  only, and link semantics (label, address, enabled and focus state,
+  activation). The paragraph owns each link's tap recognizer and focus
+  node and disposes them.
 
 ## 0.1.0-alpha.2
 

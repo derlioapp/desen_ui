@@ -19,12 +19,15 @@ import 'link_style.dart';
 /// DsLink(label: 'Contact support', external: true, url: supportUri, onPressed: …)
 /// ```
 ///
-/// Inline in running text, place it in a `WidgetSpan` with
-/// `PlaceholderAlignment.baseline` and set [inline], so it keeps the
-/// paragraph's line height. A label longer than the width wraps
-/// inside the link, underlined line by line, with the external arrow after
-/// the last word; it does not flow with the surrounding
-/// paragraph.
+/// For a link inside running text, use a `DsLinkSpan` in a `DsParagraph`:
+/// its label flows and wraps with the sentence.
+///
+/// A [DsLink] can also sit in running text, in a `WidgetSpan` with
+/// `PlaceholderAlignment.baseline` and [inline] set, so it keeps the
+/// paragraph's line height; that is the way to show the external arrow
+/// there. A label longer than the width wraps inside the link, underlined
+/// line by line, with the external arrow after the last word; it does not
+/// flow with the surrounding paragraph.
 ///
 /// Give [url] when the link has a real address: on the web, screen readers
 /// and the browser then treat it as a genuine `<a href>`.
