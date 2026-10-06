@@ -48,12 +48,14 @@ void main() {
       ..physicalSize = const Size(390, 900)
       ..devicePixelRatio = 1;
     addTearDown(tester.view.reset);
+    // On the site the dashboard sits in a scrolling page and takes its own
+    // height; a fixed 900px box would overflow the phone layout.
     await tester.pumpWidget(
       DsApp(
         home: SiteLinks(
           path: '/',
           go: (_) {},
-          child: const NorthwindDashboard(),
+          child: const SingleChildScrollView(child: NorthwindDashboard()),
         ),
       ),
     );
