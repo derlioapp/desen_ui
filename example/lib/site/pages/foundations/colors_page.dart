@@ -182,7 +182,10 @@ class ColorsPage extends StatelessWidget {
             'focus outline and accent text. A fill that melts into a white '
             'card gets a 1px `accentEdge`, and the switch knob gets a dark '
             'edge on the bright track. Mid-light seeds such as a light blue '
-            'or magenta keep a white label and are darkened instead.',
+            'or magenta keep a white label and are darkened instead. In dark '
+            'mode a white-labeled fill, held dark by its label, gives checked '
+            'controls a faint light `accentEdge`, so they stand 3:1 off the '
+            'floating layers too.',
           ),
         ],
       ),
@@ -351,7 +354,8 @@ List<_Group> _groups(BuildContext context) {
           'or a dark ink on a bright brand color. `indicator` draws accent '
           'marks with no label (progress and slider fill, tab underline, '
           'caret). `accentTint` is a translucent wash such as a date range '
-          'band, and `accentEdge` the 1px edge only a bright fill needs.',
+          'band, and `accentEdge` the 1px edge a checked control wears where '
+          'its fill stands under 3:1 off a layer.',
       [
         _Swatch(
           'accent',
