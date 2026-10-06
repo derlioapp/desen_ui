@@ -805,13 +805,7 @@ KeyEventResult _onKey(FocusNode toolbar, KeyEvent event) {
   };
   final focused = FocusManager.instance.primaryFocus;
   if (!keys.contains(key) || focused == null) return KeyEventResult.ignored;
-  // A layer opened from an item (the overflow menu) keeps its own keys:
-  // its items are not the bar's.
-  final scope = toolbar.enclosingScope;
-  if (focused.enclosingScope != scope) return KeyEventResult.ignored;
-  final items = toolbar.traversalDescendants
-      .where((n) => n.enclosingScope == scope)
-      .toList();
+  final items = toolbar.traversalDescendants.toList();
   if (items.isEmpty) return KeyEventResult.ignored;
   final context = toolbar.context;
   final rtl =
