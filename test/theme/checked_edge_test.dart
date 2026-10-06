@@ -6,7 +6,8 @@ import 'budget_rules.dart';
 
 /// A checked control (checked checkbox and radio, on switch, filled
 /// selection) stands 3:1 off the page layers a form sits on (page, card,
-/// sidebar), in both modes and at both contrast levels (WCAG 1.4.11). The
+/// sidebar) at rest, in both modes and at both contrast levels (WCAG
+/// 1.4.11); where a rim is drawn, hovered and pressed too. The
 /// oxblood preset in dark mode used to rest at 2.94:1 on the surface. The
 /// dark floating layer is left out on purpose: a rim on every checked
 /// control there would draw lines everywhere, and the check mark carries
@@ -21,10 +22,14 @@ void main() {
     'indigo': DsSeed.indigo,
   };
 
+  // At rest always; hovered and pressed too wherever a rim is drawn.
   double worst(DsColors k) {
     final grounds = [k.canvas, k.surface, k.sidebar];
     var min = double.infinity;
-    for (final fill in [k.accent, k.accentHover, k.accentPress]) {
+    for (final fill in [
+      k.accent,
+      if (k.accentEdge.a > 0) ...[k.accentHover, k.accentPress],
+    ]) {
       for (final ground in grounds) {
         final r = DsColorUtils.contrastRatio(
           Color.alphaBlend(k.accentEdge, fill),

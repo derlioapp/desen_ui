@@ -486,6 +486,19 @@ class _Engine {
       ? o(.72, math.min(c * .9, .12), .18)
       : oN(.72, math.min(cn * .05, .008), .18);
 
+  /// The dark-mode accent text: from 0.80 a step lighter until it reads
+  /// 4.5:1 on the date range band in a floating calendar (the band is 18%
+  /// so it stands 1.3:1 off that layer; a pink stood at 4.48:1).
+  Color _darkAccentInk(double chroma, {required Color overlay}) {
+    final band = DsColorUtils.flatten(_darkTint(), overlay);
+    var lightness = .80;
+    while (lightness < .86 &&
+        DsColorUtils.contrastRatio(o(lightness, chroma), band) < 4.55) {
+      lightness = _r(lightness + .005);
+    }
+    return o(lightness, chroma);
+  }
+
   late final bool neutral, clash;
   late final double dHf, dH, sH, iH, selHue;
 
@@ -932,7 +945,9 @@ class _Engine {
     final textAccC = math.min(c * .7, .105);
     final acc = o(bright ? fl : dl, accC);
     final onAcc = bright ? _brightInk() : white();
-    final accentInk = clash ? o(.82, math.min(c * .45, .10)) : o(.78, textAccC);
+    final accentInk = clash
+        ? o(.82, math.min(c * .45, .10))
+        : _darkAccentInk(textAccC, overlay: oN(.335, n));
     // Deep, opaque status tints (a light color at low opacity mixed with
     // the dark gray into olive and brown, K-161). As saturated as sRGB
     // allows this dark and a little lighter than before, so they read as
@@ -1272,7 +1287,8 @@ class _Engine {
   /// The edge of an accent fill that does not stand 3:1 off every layer a
   /// checked control sits on (WCAG 1.4.11): the label color at the lowest
   /// opacity whose blend over the fill, resting, hovered and pressed,
-  /// stands 3:1 off each of them; transparent when the fill does so alone.
+  /// stands 3:1 off each of them; transparent when the resting fill does
+  /// so alone.
   ///
   /// - A bright accent stands only 1.07–1.9:1 off white, so a checked box
   ///   or an on switch lost its outline: its dark label draws the edge,
@@ -1283,20 +1299,15 @@ class _Engine {
   ///   and a faint light rim (the white label, from 10%) keeps its checked
   ///   shape apart.
   ///
-  /// The grounds are the page layers a form sits on (page, card, sidebar,
-  /// field). On the lighter floating layer of dark mode every white-labeled
-  /// fill stands only ~2.2–2.6:1, but a rim on every checked control there
-  /// would draw lines everywhere; its check mark (≥ 4.5:1 on the fill)
-  /// carries the state. The same rule for every seed, in both modes and at
+  /// The grounds are the page layers a form sits on (page, card, sidebar).
+  /// On the lighter layers of dark mode, a floating layer or a field well,
+  /// every white-labeled fill stands only ~2.2–2.9:1, but a rim on every
+  /// checked control there would draw lines everywhere; its check mark
+  /// (≥ 4.5:1 on the fill) carries the state. The same rule for every seed, in both modes and at
   /// both contrast levels; a filled selection drawn in the accent wears it
   /// too.
   Color _accentEdge(DsColors k) {
-    final grounds = [
-      k.canvas,
-      k.surface,
-      k.sidebar,
-      DsColorUtils.flatten(k.field, k.surface),
-    ];
+    final grounds = [k.canvas, k.surface, k.sidebar];
     final fills = [
       k.accent,
       k.accentHover,
@@ -1307,14 +1318,23 @@ class _Engine {
         k.selectionStrongHover,
       ],
     ];
-    bool stands(Color edge) => fills.every(
+    bool stands(Color edge, [Iterable<Color>? only]) => (only ?? fills).every(
       (fill) => grounds.every(
         (ground) =>
             DsColorUtils.contrastRatio(Color.alphaBlend(edge, fill), ground) >=
             3.05,
       ),
     );
-    if (stands(_clear)) return _clear;
+    // The resting fills decide whether a rim is drawn: hover and press are
+    // momentary, and a dark white-labeled fill darkens on them (a rim on
+    // every dark checked control drew lines everywhere). Once a rim is
+    // drawn it is strong enough for every state.
+    if (stands(_clear, [
+      k.accent,
+      if (k.onSelectionStrong == k.onAccent) k.selectionStrong,
+    ])) {
+      return _clear;
+    }
     var alpha = bright ? .3 : .1;
     while (alpha < 1 && !stands(_alpha(k.onAccent, alpha))) {
       alpha = _r(alpha + .05);

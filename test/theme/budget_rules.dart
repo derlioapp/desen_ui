@@ -353,21 +353,26 @@ List<Rule> rules(
     Rule('accent on surface', k.accent, k.surface, min: 1.2),
     // A checked control (checked box and radio, on switch, filled
     // selection) stands 3:1 off the page layers a form sits on (page,
-    // card, sidebar), resting, hovered and pressed (WCAG 1.4.11): its
-    // accent fill alone, or blended with `accentEdge` where the fill needs
-    // an edge (a bright accent on a light card; a deep red on a dark
-    // card). Not on the dark floating layer, where a rim on every checked
-    // control would draw lines everywhere; the check mark carries the
-    // state there. Every seed, both modes, both contrast levels.
+    // card, sidebar) at rest (WCAG 1.4.11): its accent fill alone, or
+    // blended with `accentEdge` where the fill needs an edge (a bright
+    // accent on a light card; a deep red on a dark card). Hovered and
+    // pressed only where an edge is drawn: they are momentary, and a dark
+    // white-labeled fill darkens on them, so holding them would put a rim
+    // on every dark checked control. Not on the dark floating layer or a
+    // field well, where a rim would draw lines everywhere; the check mark
+    // carries the state there. Every seed, both modes, both levels.
     for (final (fillName, fill) in [
       ('accent', k.accent),
-      ('accentHover', k.accentHover),
-      ('accentPress', k.accentPress),
+      if (k.accentEdge.a > 0) ...[
+        ('accentHover', k.accentHover),
+        ('accentPress', k.accentPress),
+      ],
       // The strong selection when the accent label is on it (not a
       // near-status seed's own fill under another label).
       if (k.onSelectionStrong == k.onAccent) ...[
         ('selectionStrong', k.selectionStrong),
-        ('selectionStrongHover', k.selectionStrongHover),
+        if (k.accentEdge.a > 0)
+          ('selectionStrongHover', k.selectionStrongHover),
       ],
     ])
       for (final MapEntry(key: name, value: bg) in {
@@ -730,21 +735,12 @@ String _hex(Color c) =>
 /// the card and wears a faint light edge.)
 List<String> accentEdgeOnlyWhereNeeded(DsColors k) {
   if (k.accentEdge.a == 0) return const [];
+  // The resting fills decide whether a rim is needed.
   final fills = [
     k.accent,
-    k.accentHover,
-    k.accentPress,
-    if (k.onSelectionStrong == k.onAccent) ...[
-      k.selectionStrong,
-      k.selectionStrongHover,
-    ],
+    if (k.onSelectionStrong == k.onAccent) k.selectionStrong,
   ];
-  final grounds = [
-    k.canvas,
-    k.surface,
-    k.sidebar,
-    DsColorUtils.flatten(k.field, k.surface),
-  ];
+  final grounds = [k.canvas, k.surface, k.sidebar];
   final needed = fills.any(
     (fill) => grounds.any(
       (ground) => DsColorUtils.contrastRatio(fill, ground) < 3.05,
