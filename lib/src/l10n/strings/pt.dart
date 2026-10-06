@@ -441,4 +441,7 @@ class DsLocalizationsPt extends DsLocalizationsEn {
 
   @override
   String get rangeMaximum => 'Máximo';
+
+  @override
+  String get moreActions => 'Mais ações';
 }

@@ -408,4 +408,7 @@ mixin _DsStrings {
 
   /// Names the upper thumb of a range slider.
   String get rangeMaximum;
+
+  /// Names the button that opens a menu of the actions that do not fit, e.g. at the end of a toolbar.
+  String get moreActions;
 }

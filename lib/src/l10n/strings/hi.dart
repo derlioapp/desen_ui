@@ -442,4 +442,7 @@ class DsLocalizationsHi extends DsLocalizationsEn {
 
   @override
   String get rangeMaximum => 'अधिकतम';
+
+  @override
+  String get moreActions => 'और कार्रवाइयाँ';
 }
