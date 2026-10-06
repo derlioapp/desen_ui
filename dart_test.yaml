@@ -1,0 +1,3 @@
+tags:
+  golden:
+    description: Pixel comparisons against test/golden/goldens (generated on macOS).

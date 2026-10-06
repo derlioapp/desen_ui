@@ -1,0 +1,115 @@
+# Checks every push and pull request against the pinned Flutter stable.
+#
+# Goldens are generated on macOS (test/flutter_test_config.dart): on any
+# other OS they are skipped, so behavior tests run on Linux and the
+# `golden`-tagged tests on macOS.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FLUTTER_VERSION: 3.47.6
+
+jobs:
+  checks:
+    name: Analyze, format, snippets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - run: flutter pub get
+      - run: flutter pub get
+        working-directory: desen_ui_fonts
+      - run: flutter pub get
+        working-directory: example
+      # Covers lib/, test/, tool/ and example/ (one analysis root).
+      - run: flutter analyze
+      - run: dart format --output=none --set-exit-if-changed lib test example/lib example/test desen_ui_fonts/lib
+      - name: Code snippets match the example pages
+        run: python3 tool/gen_snippets.py --check
+      # Both packages are `publish_to: none` until there is a repository,
+      # so this reports what pub would say without failing the build.
+      - name: Publish dry run (desen_ui)
+        run: dart pub publish --dry-run
+        continue-on-error: true
+      - name: Publish dry run (desen_ui_fonts)
+        run: dart pub publish --dry-run
+        working-directory: desen_ui_fonts
+        continue-on-error: true
+
+  test:
+    name: Tests (behavior)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - run: flutter pub get
+      - run: flutter test --exclude-tags golden
+
+  golden:
+    name: Tests (goldens, macOS)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - run: flutter pub get
+      - run: flutter test --tags golden
+      - name: Upload golden diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-failures
+          path: test/golden/failures/
+          if-no-files-found: ignore
+
+  example:
+    name: Example tests and web build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: example
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter build web --release
+
+  beta:
+    name: Flutter beta (early warning)
+    runs-on: ubuntu-latest
+    # The next stable may break us; this says so early without blocking.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze lib test
+      - run: flutter test --exclude-tags golden

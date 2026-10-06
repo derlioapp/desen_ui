@@ -1,0 +1,28 @@
+# A .pubignore replaces .gitignore for `dart pub publish`, so the ignore
+# rules that matter for the archive are repeated here.
+
+# Published separately.
+desen_ui_fonts/
+
+# Development only.
+concept/
+docs/
+tool/
+
+# Build output and tool state (also inside example/).
+.dart_tool/
+build/
+.flutter-plugins-dependencies
+pubspec.lock
+coverage/
+doc/api/
+.idea/
+*.iml
+.DS_Store
+
+# Golden test failure output.
+test/golden/failures/
+**/failures/*.png
+
+# Golden reference images (several MB; only needed in the repository).
+test/golden/goldens/

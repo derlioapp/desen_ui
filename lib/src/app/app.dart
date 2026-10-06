@@ -1,0 +1,206 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
+
+import '../l10n/direction.dart';
+import '../l10n/localizations.dart';
+import '../theme/theme.dart';
+import '../theme/theme_data.dart';
+import 'page_route.dart';
+import 'scroll_behavior.dart';
+
+/// A convenience app root: a [WidgetsApp] with [DsScope], [DsScrollBehavior]
+/// and [DsPageRoute] wired in.
+///
+/// Optional. Desen components work under any app root; to use them inside an
+/// existing `MaterialApp`, wrap the subtree in [DsScope] instead.
+class DsApp extends StatelessWidget {
+  /// Creates an app driven by a [Navigator].
+  const DsApp({
+    super.key,
+    this.navigatorKey,
+    this.home,
+    this.routes = const <String, WidgetBuilder>{},
+    this.initialRoute,
+    this.onGenerateRoute,
+    this.onUnknownRoute,
+    this.navigatorObservers = const <NavigatorObserver>[],
+    this.builder,
+    this.title = '',
+    this.onGenerateTitle,
+    this.theme,
+    this.darkTheme,
+    this.themeMode = DsThemeMode.system,
+    this.locale,
+    this.localizationsDelegates,
+    this.supportedLocales,
+    this.shortcuts,
+    this.actions,
+    this.restorationScopeId,
+    this.debugShowCheckedModeBanner = true,
+  }) : routerConfig = null;
+
+  /// Creates an app driven by a [Router], e.g. with go_router.
+  const DsApp.router({
+    super.key,
+    required RouterConfig<Object> this.routerConfig,
+    this.builder,
+    this.title = '',
+    this.onGenerateTitle,
+    this.theme,
+    this.darkTheme,
+    this.themeMode = DsThemeMode.system,
+    this.locale,
+    this.localizationsDelegates,
+    this.supportedLocales,
+    this.shortcuts,
+    this.actions,
+    this.restorationScopeId,
+    this.debugShowCheckedModeBanner = true,
+  }) : navigatorKey = null,
+       home = null,
+       routes = const <String, WidgetBuilder>{},
+       initialRoute = null,
+       onGenerateRoute = null,
+       onUnknownRoute = null,
+       navigatorObservers = const <NavigatorObserver>[];
+
+  /// See [WidgetsApp.navigatorKey].
+  final GlobalKey<NavigatorState>? navigatorKey;
+
+  /// See [WidgetsApp.home].
+  final Widget? home;
+
+  /// See [WidgetsApp.routes].
+  final Map<String, WidgetBuilder> routes;
+
+  /// See [WidgetsApp.initialRoute].
+  final String? initialRoute;
+
+  /// See [WidgetsApp.onGenerateRoute].
+  final RouteFactory? onGenerateRoute;
+
+  /// See [WidgetsApp.onUnknownRoute].
+  final RouteFactory? onUnknownRoute;
+
+  /// See [WidgetsApp.navigatorObservers].
+  final List<NavigatorObserver> navigatorObservers;
+
+  /// See [WidgetsApp.routerConfig].
+  final RouterConfig<Object>? routerConfig;
+
+  /// See [WidgetsApp.builder]. Runs inside [DsScope], so it can read the
+  /// theme.
+  final TransitionBuilder? builder;
+
+  /// See [WidgetsApp.title].
+  final String title;
+
+  /// See [WidgetsApp.onGenerateTitle].
+  final GenerateAppTitle? onGenerateTitle;
+
+  /// See [DsScope.theme].
+  final DsThemeData? theme;
+
+  /// See [DsScope.darkTheme].
+  final DsThemeData? darkTheme;
+
+  /// See [DsScope.themeMode].
+  final DsThemeMode themeMode;
+
+  /// See [WidgetsApp.locale].
+  final Locale? locale;
+
+  /// See [WidgetsApp.localizationsDelegates]. Desen adds
+  /// [DsWidgetsLocalizations.delegate] after these, for the text direction.
+  final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
+
+  /// See [WidgetsApp.supportedLocales]. Defaults to every locale Desen has
+  /// strings for ([DsLocalizations.supportedLocales]), so setting [locale]
+  /// alone is enough.
+  final Iterable<Locale>? supportedLocales;
+
+  /// See [WidgetsApp.shortcuts].
+  final Map<ShortcutActivator, Intent>? shortcuts;
+
+  /// See [WidgetsApp.actions].
+  final Map<Type, Action<Intent>>? actions;
+
+  /// See [WidgetsApp.restorationScopeId].
+  final String? restorationScopeId;
+
+  /// See [WidgetsApp.debugShowCheckedModeBanner].
+  final bool debugShowCheckedModeBanner;
+
+  // Yours first: the first delegate of each type wins, so a
+  // `GlobalWidgetsLocalizations.delegate` you pass replaces Desen's.
+  Iterable<LocalizationsDelegate<dynamic>> get _delegates => [
+    ...?localizationsDelegates,
+    DsWidgetsLocalizations.delegate,
+  ];
+
+  Widget _builder(BuildContext context, Widget? child) => DsScope(
+    theme: theme,
+    darkTheme: darkTheme,
+    themeMode: themeMode,
+    child: Builder(
+      builder: (context) => ScrollConfiguration(
+        behavior: const DsScrollBehavior(),
+        child: ColoredBox(
+          color: DsTheme.colorsOf(context).canvas,
+          child: builder?.call(context, child) ?? child ?? const SizedBox(),
+        ),
+      ),
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    final color = (theme ?? DsThemeData()).colors.accent;
+    if (routerConfig != null) {
+      return WidgetsApp.router(
+        routerConfig: routerConfig,
+        builder: _builder,
+        title: title,
+        onGenerateTitle: onGenerateTitle,
+        color: color,
+        locale: locale,
+        localizationsDelegates: _delegates,
+        supportedLocales: supportedLocales ?? DsLocalizations.supportedLocales,
+        shortcuts: shortcuts,
+        actions: actions,
+        restorationScopeId: restorationScopeId,
+        debugShowCheckedModeBanner: debugShowCheckedModeBanner,
+      );
+    }
+    return WidgetsApp(
+      navigatorKey: navigatorKey,
+      home: home,
+      routes: routes,
+      initialRoute: initialRoute,
+      onGenerateRoute: onGenerateRoute,
+      onUnknownRoute: onUnknownRoute,
+      navigatorObservers: navigatorObservers,
+      pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) =>
+          DsPageRoute<T>(settings: settings, builder: builder),
+      builder: _builder,
+      title: title,
+      onGenerateTitle: onGenerateTitle,
+      color: color,
+      locale: locale,
+      localizationsDelegates: _delegates,
+      supportedLocales: supportedLocales ?? DsLocalizations.supportedLocales,
+      shortcuts: shortcuts,
+      actions: actions,
+      restorationScopeId: restorationScopeId,
+      debugShowCheckedModeBanner: debugShowCheckedModeBanner,
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(StringProperty('title', title))
+      ..add(EnumProperty('themeMode', themeMode));
+  }
+}
