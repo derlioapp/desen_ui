@@ -176,8 +176,8 @@ class DsCalendar extends _Calendar {
       todayBorderColor: k.accentText,
       outsideForeground: k.textSubtle,
       rangeColor: k.accentTint,
-      // No line along the band: its filled ends mark the range, and high
-      // contrast deepens the band itself.
+      // No line along the band, at any contrast level: its filled ends
+      // mark the range.
       rangeEdgeColor: clear,
       columnGap: DsSpace.s4,
       rowGap: 2,

@@ -11,9 +11,8 @@ import 'chip_style.dart';
 /// A selectable filter chip. Unselected: transparent with a faint edge.
 /// Selected: the theme's selection style and a check before the label (in
 /// place of [leading]), so the state does not rest on a faint tint and hue
-/// alone (WCAG 1.4.1; turn it off with [DsChipStyle.showCheck]). At high
-/// contrast the selected chip is filled whatever the selection style. No
-/// edge, except around a bright accent fill.
+/// alone (WCAG 1.4.1; turn it off with [DsChipStyle.showCheck]). No edge,
+/// except around a bright accent fill.
 ///
 /// A label that does not fit ellipsizes; screen readers still get all of
 /// it.

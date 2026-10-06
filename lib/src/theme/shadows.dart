@@ -74,8 +74,8 @@ class DsShadows {
   final List<DsShadow> sidebarEdge;
 
   /// Inner outline of channels and tracks: segmented control, stepper,
-  /// slider, progress bar. Empty by default at every contrast level (high
-  /// contrast deepens the channel's fill instead of outlining it).
+  /// slider, progress bar. Empty by default at every contrast level: the
+  /// channel's fill sets it off.
   final List<DsShadow> channel;
 
   /// The raised piece in a channel: the selected segment of a soft

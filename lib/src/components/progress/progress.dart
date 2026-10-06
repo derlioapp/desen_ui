@@ -18,8 +18,8 @@ import 'progress_ring_style.dart';
 /// with the 0–100 range.
 String _percent(double v) => '${(v.clamp(0, 1) * 100).round()}%';
 
-/// A linear progress bar: an accent fill on a recessed track. At high
-/// contrast the track gets an inner line, 3:1 off the surface.
+/// A linear progress bar: an accent fill on a recessed track, the fill
+/// 3:1 off the track.
 ///
 /// A null [value] shows an indeterminate sweep (a static partial bar when
 /// the platform asks to reduce motion).
@@ -186,8 +186,8 @@ class _DsProgressBarState extends State<DsProgressBar>
   }
 }
 
-/// A circular progress ring with an optional centered label. At high
-/// contrast the track is edged on both sides, 3:1 off the surface.
+/// A circular progress ring with an optional centered label: an accent
+/// arc on a recessed track, the arc 3:1 off the track.
 ///
 /// A null [value] turns a quarter arc continuously; with reduced motion
 /// the arc stays still and slowly pulses instead.
