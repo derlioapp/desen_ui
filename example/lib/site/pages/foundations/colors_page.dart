@@ -454,10 +454,12 @@ List<_Group> _groups(BuildContext context) {
           'the track of a switch that is off) reach 3:1 because they show '
           'where to act; at soft contrast they are as faint as iOS draws '
           'them (about 1.5:1 and 1.3:1). `channel`, '
-          'the recess of segmented controls and steppers (and skeleton '
-          'blocks), is translucent in both modes: light on a white card, and '
-          'still 1.15:1 off the page. `channelStrong` is a step stronger: the '
-          'unfilled part of slider and progress tracks.',
+          'the recess of segmented controls and steppers, is translucent in '
+          'both modes: light on a white card, and still 1.15:1 off the page. '
+          '`channelStrong` is a step stronger: the unfilled part of slider '
+          'and progress tracks. `skeleton` fills loading placeholders, about '
+          '1.25:1 on the card, the page and the sidebar alike; '
+          '`skeletonStrong` is its title line.',
       [
         _Swatch(
           'border',
@@ -493,6 +495,16 @@ List<_Group> _groups(BuildContext context) {
           'channelStrong',
           k.channelStrong,
           check: _Check('on surface', k.channelStrong, k.surface, min: 1.15),
+        ),
+        _Swatch(
+          'skeleton',
+          k.skeleton,
+          check: _Check('on surface', k.skeleton, k.surface, min: 1.15),
+        ),
+        _Swatch(
+          'skeletonStrong',
+          k.skeletonStrong,
+          check: _Check('on surface', k.skeletonStrong, k.surface, min: 1.3),
         ),
       ],
     ),

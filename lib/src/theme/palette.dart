@@ -854,6 +854,11 @@ class _Engine {
       rail: oN(v(.62, soft: .895), nt),
       channelThumb: white(),
       knob: white(),
+      // Translucent, so it reads the same on the card, the page and the
+      // sidebar: about 1.25:1, like iOS's placeholder fill. The channel
+      // (1.15:1) nearly vanished on a white card.
+      skeleton: oN(.30, nt, .13),
+      skeletonStrong: oN(.30, nt, .18),
       shimmer: white(.7),
       hover: oN(.30, nt, .045),
       press: oN(.30, nt, .08),
@@ -1048,6 +1053,10 @@ class _Engine {
       // A small element: brighter than text so it reads 3:1 on both
       // switch tracks (rail and accent).
       knob: oN(.97, n),
+      // The channel's tone, about 1.2:1 on every layer. The strong line
+      // stays translucent too: an opaque one vanished on a floating layer.
+      skeleton: white(.07),
+      skeletonStrong: white(.12),
       shimmer: white(.13),
       hover: white(.065),
       press: white(.11),

@@ -560,10 +560,27 @@ List<Rule> rules(
           min: 1.4,
         ),
     ],
-    // Channels (segment, skeleton) stand off the card and the page in both
+    // Channels (segment, stepper) stand off the card and the page in both
     // modes.
     Rule('channel on surface', k.channel, k.surface, min: 1.15),
     Rule('channel on canvas', k.channel, k.canvas, min: 1.15),
+    // Skeletons read wherever content loads: the card, the page, the
+    // sidebar and a floating layer. Light mode matches iOS's placeholder
+    // fill (about 1.25:1) and stays calm; a strong line is a clear step
+    // stronger.
+    for (final MapEntry(key: name, value: bg) in {
+      ...backgrounds,
+      'sidebar': k.sidebar,
+    }.entries) ...[
+      Rule(
+        'skeleton on $name',
+        k.skeleton,
+        bg,
+        min: dark ? 1.15 : 1.22,
+        max: 1.4,
+      ),
+      Rule('skeletonStrong on $name', k.skeletonStrong, bg, min: 1.35),
+    ],
   ];
 }
 
