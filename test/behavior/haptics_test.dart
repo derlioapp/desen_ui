@@ -458,6 +458,44 @@ void main() {
       expect(calls, isEmpty);
     });
 
+    testWidgets('a stepped range slider ticks per step of the dragged thumb', (
+      tester,
+    ) async {
+      final calls = _recordHaptics(tester);
+      Widget slider({int? divisions}) => host(
+        SizedBox(
+          width: 400,
+          child: _stateful<DsRangeValues>(
+            const DsRangeValues(start: 0, end: 1),
+            (values, set) => DsRangeSlider(
+              values: values,
+              divisions: divisions,
+              onChanged: set,
+            ),
+          ),
+        ),
+        theme: _iOS,
+      );
+
+      await tester.pumpWidget(slider(divisions: 4));
+      final rect = tester.getRect(find.byType(DsRangeSlider));
+      final gesture = await tester.startGesture(rect.centerLeft);
+      for (var x = 0.0; x <= rect.width / 2; x += 20) {
+        await gesture.moveTo(rect.centerLeft + Offset(x, 0));
+        await tester.pump();
+      }
+      await gesture.up();
+      // The start thumb crosses two steps on its way to the middle.
+      expect(calls, List.filled(2, _tick));
+
+      calls.clear();
+      await tester.pumpWidget(const SizedBox());
+      await tester.pumpWidget(slider());
+      await tester.dragFrom(rect.centerLeft, const Offset(200, 0));
+      await tester.pump();
+      expect(calls, isEmpty);
+    });
+
     testWidgets('a stepper ticks when the value changes', (tester) async {
       final calls = _recordHaptics(tester);
       Finder icon(DsIconData data) =>

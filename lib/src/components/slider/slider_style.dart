@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import '../../foundation/component_theme.dart';
 import '../../painting/shadow.dart';
 
-/// The look of a `DsSlider`.
+/// The look of a `DsSlider` or a `DsRangeSlider`. A range slider resolves each thumb for its own states (hovered, pressed, focused) and the track for the slider as a whole.
 ///
 /// Every field is optional; null means "keep the layer below". To remove
 /// something, pass an empty value (`const []`, a transparent color).
@@ -251,7 +251,7 @@ class DsSliderStyle with Diagnosticable {
   }
 }
 
-/// Defaults for every `DsSlider` in a subtree; see [DsSliderTheme].
+/// Defaults for every `DsSlider` and `DsRangeSlider` in a subtree; see [DsSliderTheme].
 class DsSliderThemeData extends DsComponentThemeData<DsSliderThemeData> {
   /// Creates defaults.
   const DsSliderThemeData({this.style});

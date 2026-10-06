@@ -15,7 +15,8 @@ class SliderPage extends StatelessWidget {
         'matters more than the exact number: volume, zoom, density. When '
         'people need an exact number, use a '
         '[Number field](/components/number-field) or a '
-        '[Stepper](/components/stepper).',
+        '[Stepper](/components/stepper). For a range with two thumbs, use '
+        'the [Range slider](/components/range-slider).',
     sections: [
       const DocSection(
         title: 'Overview',

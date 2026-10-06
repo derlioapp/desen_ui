@@ -2,6 +2,7 @@ import '../../registry.dart';
 import 'checkbox_page.dart';
 import 'chip_page.dart';
 import 'radio_page.dart';
+import 'range_slider_page.dart';
 import 'segmented_control_page.dart';
 import 'slider_page.dart';
 import 'stepper_page.dart';
@@ -42,8 +43,23 @@ final controlPages = <SitePage>[
     path: '/components/slider',
     title: 'Slider',
     builder: (_) => const SliderPage(),
-    keywords: ['DsSlider', 'range', 'volume', 'track'],
+    keywords: ['DsSlider', 'volume', 'track'],
     summary: 'Picks a value by dragging along a track.',
+  ),
+  SitePage(
+    path: '/components/range-slider',
+    title: 'Range slider',
+    builder: (_) => const RangeSliderPage(),
+    keywords: [
+      'DsRangeSlider',
+      'DsRangeValues',
+      'range',
+      'two thumbs',
+      'price',
+      'filter',
+      'min max',
+    ],
+    summary: 'Picks a range with two thumbs on one track.',
   ),
   SitePage(
     path: '/components/segmented-control',

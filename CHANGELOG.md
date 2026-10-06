@@ -1,3 +1,14 @@
+## Unreleased
+
+- `DsRangeSlider` picks a range with two thumbs, such as a price filter,
+  with `DsRangeValues` for its start and end. It shares `DsSlider`'s
+  track, thumbs, step marks, `DsSliderStyle` and `DsSliderTheme`. The
+  thumbs never cross and can keep a `minDistance`; pressing the track
+  moves the nearer thumb, and on a shared spot the drag direction picks
+  one. Each thumb is its own focus stop and its own slider for screen
+  readers, named "Minimum" or "Maximum" in all 13 languages (new
+  `DsLocalizations.rangeMinimum` and `rangeMaximum`).
+
 ## 0.1.0-alpha.2
 
 - LICENSE holds the MIT License alone, so pub.dev recognizes it. The

@@ -411,4 +411,10 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '第 $index 个，共 $count 个';
+
+  @override
+  String get rangeMinimum => '最小值';
+
+  @override
+  String get rangeMaximum => '最大值';
 }

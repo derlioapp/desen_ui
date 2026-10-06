@@ -6,7 +6,7 @@ Web-grade UI components for Flutter, built on the widgets layer only. No Materia
 
 > Status: alpha (`0.1.0-alpha.2`). The API may still change before 1.0 ([VERSIONING.md](VERSIONING.md)). Requires Dart 3.13 and Flutter 3.47 or later.
 >
-> Foundation, overlay engine, localization (13 languages, plus Portuguese (Portugal) and Traditional Chinese) and 49 components plus form fields: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
+> Foundation, overlay engine, localization (13 languages, plus Portuguese (Portugal) and Traditional Chinese) and 50 components plus form fields: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, range slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
 
 ## Principles
 
@@ -124,7 +124,6 @@ setUp(() => DsFocusVisibility.debugReset(keyboard: true));
 - `DsToolbar` has no "⋯" overflow menu: items that don't fit scroll with a faded edge. The touch text selection toolbar pages its actions with arrows, as iOS does.
 - Spell-check suggestions are not wired to text fields.
 - The time picker's hour column doesn't wrap from 23 to 00, and has no seconds or minimum and maximum time.
-- No range (two-thumb) slider.
 - Screen readers aren't told which menu item opens a submenu (needs a role Flutter doesn't expose yet).
 - Screen readers announce the select as a button with its expanded state, and the number field as an adjustable text field: Flutter doesn't support the combobox and spin button roles yet.
 - Plain `FormState.validate()` announces errors through Flutter's own unnamed announcement. `formKey.currentState!.validateAndFocus()` (from `DsFormValidation`) focuses the first invalid field and announces it once, with its name.

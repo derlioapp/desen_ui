@@ -384,4 +384,10 @@ mixin _DsStrings {
 
   /// An item's position among its siblings, read after its name ("Home, 2 of 4"); index counts from 1.
   String positionOf(int index, int count);
+
+  /// Names the lower thumb of a range slider.
+  String get rangeMinimum;
+
+  /// Names the upper thumb of a range slider.
+  String get rangeMaximum;
 }

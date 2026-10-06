@@ -427,4 +427,10 @@ class DsLocalizationsFr extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$index sur $count';
+
+  @override
+  String get rangeMinimum => 'Minimum';
+
+  @override
+  String get rangeMaximum => 'Maximum';
 }

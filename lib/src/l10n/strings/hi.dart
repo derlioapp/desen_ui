@@ -418,4 +418,10 @@ class DsLocalizationsHi extends DsLocalizationsEn {
 
   @override
   String positionOf(int index, int count) => '$count में से $index';
+
+  @override
+  String get rangeMinimum => 'न्यूनतम';
+
+  @override
+  String get rangeMaximum => 'अधिकतम';
 }
