@@ -1,6 +1,8 @@
 // The pickers' popups fit small windows (800×600, a landscape
 // phone, a 320px touch phone), and the time columns fade only where more
 // items lie beyond, never over the chosen one.
+import 'dart:ui' as ui;
+
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter/services.dart';
@@ -36,6 +38,47 @@ Future<void> _open(
   );
   await tester.tap(find.byType(DsButton).first);
   await tester.pumpAndSettle();
+}
+
+/// The edge mask over the time column showing [item]: its alpha down the
+/// middle of the column, one value per pixel row (the window is at a device
+/// pixel ratio of 1), and the band the column fades over at an edge, half
+/// a row.
+Future<({List<int> alphas, double band})> _edgeMask(
+  WidgetTester tester,
+  String item,
+) async {
+  final finder = find
+      .ancestor(of: find.text(item), matching: find.byType(ShaderMask))
+      .first;
+  final mask = tester.widget<ShaderMask>(finder);
+  // The mask keeps the column where it is opaque and clears it where it is
+  // clear.
+  expect(mask.blendMode, BlendMode.dstIn);
+  final size = tester.getSize(finder);
+  final rect = Offset.zero & size;
+  final w = size.width.round(), h = size.height.round();
+  final recorder = ui.PictureRecorder();
+  Canvas(recorder).drawRect(rect, Paint()..shader = mask.shaderCallback(rect));
+  final picture = recorder.endRecording();
+  final bytes = await tester.runAsync(() async {
+    final image = await picture.toImage(w, h);
+    final data = await image.toByteData(format: ui.ImageByteFormat.rawRgba);
+    image.dispose();
+    return data!;
+  });
+  picture.dispose();
+  final extent = tester
+      .widget<ListView>(
+        find.ancestor(of: find.text(item), matching: find.byType(ListView)),
+      )
+      .itemExtent!;
+  return (
+    alphas: [
+      for (var y = 0; y < h; y++) bytes!.getUint8((y * w + w ~/ 2) * 4 + 3),
+    ],
+    band: extent / 2,
+  );
 }
 
 /// Whether [finder] lies inside the window.
@@ -224,6 +267,44 @@ void main() {
       expect(maskOf(tester, 'PM'), isNull);
       expect(maskOf(tester, '45'), isNull);
       expect(maskOf(tester, '2'), isNotNull);
+    });
+
+    // The ends of a column with more items beyond fade out: the mask is
+    // clear at the very edge, rises gradually over the outer half of the
+    // edge row and is fully opaque from there inward. An end with nothing
+    // beyond does not fade.
+    testWidgets('a scrolling column fades out at each end with more items '
+        'beyond', (tester) async {
+      await _open(
+        tester,
+        const Size(800, 600),
+        DsTimePicker(
+          value: const DsTime(14, 30),
+          use24HourClock: true,
+          onChanged: (_) {},
+        ),
+      );
+      // The hour column, scrolled to the middle: both ends fade.
+      final (:alphas, :band) = await _edgeMask(tester, '14');
+      final h = alphas.length, b = band.floor();
+      expect(alphas.first, lessThan(16), reason: 'top edge clear');
+      expect(alphas.last, lessThan(16), reason: 'bottom edge clear');
+      expect(alphas[b ~/ 2], inInclusiveRange(64, 192), reason: 'gradual');
+      expect(alphas[h - 1 - b ~/ 2], inInclusiveRange(64, 192));
+      for (var y = 1; y <= b; y++) {
+        expect(alphas[y], greaterThanOrEqualTo(alphas[y - 1]));
+        expect(alphas[h - 1 - y], greaterThanOrEqualTo(alphas[h - y]));
+      }
+      for (var y = b + 1; y < h - b - 1; y++) {
+        expect(alphas[y], 255, reason: 'opaque inside the edge bands');
+      }
+
+      // At the first hour nothing lies above: only the bottom fades.
+      await tester.sendKeyEvent(LogicalKeyboardKey.home);
+      await tester.pumpAndSettle();
+      final first = (await _edgeMask(tester, '01')).alphas;
+      expect(first.first, 255);
+      expect(first.last, lessThan(16));
     });
 
     testWidgets('rows rest whole; the chosen hour is clear of the faded '
