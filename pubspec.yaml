@@ -2,8 +2,15 @@ name: desen_ui
 description: >-
   Web-grade UI components for Flutter, built on the widgets layer only.
   No Material or Cupertino dependency.
-version: 0.1.0-dev.1
-publish_to: none
+version: 0.1.0-alpha.1
+repository: https://github.com/derlioapp/desen_ui
+issue_tracker: https://github.com/derlioapp/desen_ui/issues
+topics:
+  - ui
+  - design-system
+  - widgets
+  - accessibility
+  - components
 
 environment:
   sdk: ^3.13.0

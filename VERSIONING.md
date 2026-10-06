@@ -39,13 +39,13 @@ Notes:
 
 ## Before 1.0 (now)
 
-Desen is in alpha (`0.x`, pre-release tags like `0.1.0-dev.1`). Until 1.0:
+Desen is in alpha (`0.x`, pre-release tags like `0.1.0-alpha.1`). Until 1.0:
 
 - **Breaking changes may land in a minor bump** (`0.1` → `0.2`), never in a
   patch bump. Every one is listed under *Breaking* in the changelog with a
   before/after table (the migration note); no deprecation period is needed.
-- `-dev.N` pre-releases may break anything between them; they exist for
-  early adopters who read the changelog.
+- `-alpha.N` and `-beta.N` pre-releases may break anything between them;
+  they exist for early adopters who read the changelog.
 - `fix_data.yaml` (`dart fix` migrations) is optional before 1.0.
 
 ## From 1.0 on
@@ -75,8 +75,8 @@ two packages are versioned **independently**:
   the minimum `desen_ui_fonts` version, and the README's install snippet is
   updated. Without the fonts package (or with an older one) Desen falls back
   to the platform font, so a mismatch degrades the look, never the build.
-- Both packages start in lockstep at `0.1.0-dev.1`; they are not expected to
-  stay in step.
+- Both packages start in lockstep at `0.1.0-alpha.1`; they are not expected
+  to stay in step.
 
 ## Flutter versions
 

@@ -2,7 +2,9 @@
 
 Web-grade UI components for Flutter, built on the widgets layer only. No Material, no Cupertino.
 
-> Status: early development (0.1.0-dev). Foundation, overlay engine, localization (13 languages) and 49 components plus form fields are in place: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
+> Status: alpha (`0.1.0-alpha.1`). The API may still change before 1.0 ([VERSIONING.md](VERSIONING.md)). Requires Dart 3.13 and Flutter 3.47 or later.
+>
+> Foundation, overlay engine, localization (15 languages) and 49 components plus form fields: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
 
 ## Principles
 
@@ -17,8 +19,8 @@ Web-grade UI components for Flutter, built on the widgets layer only. No Materia
 
 ```yaml
 dependencies:
-  desen_ui: ...
-  desen_ui_fonts: ...   # optional: Desen's typefaces (Schibsted Grotesk, Geist Mono)
+  desen_ui: ^0.1.0-alpha.1
+  desen_ui_fonts: ^0.1.0-alpha.1   # optional: Desen's typefaces (Schibsted Grotesk, Geist Mono)
 ```
 
 ```dart
@@ -44,9 +46,9 @@ DsScope(
 Buttons:
 
 ```dart
-DsButton(onPressed: save, child: const Text('Kaydet'))
-DsButton(variant: .secondary, size: .sm, leading: const DsIcon(DsIcons.plus), onPressed: add, child: const Text('Yeni görev'))
-DsButton.icon(icon: const DsIcon(DsIcons.ellipsis), semanticLabel: 'Daha fazla', onPressed: openMenu)
+DsButton(onPressed: save, child: const Text('Save'))
+DsButton(variant: .secondary, size: .sm, leading: const DsIcon(DsIcons.plus), onPressed: add, child: const Text('New task'))
+DsButton.icon(icon: const DsIcon(DsIcons.ellipsis), semanticLabel: 'More', onPressed: openMenu)
 
 // Customize one instance, a subtree, or build a new look on the same behavior:
 DsButton(style: const DsButtonStyle(borderColor: brand), …)
@@ -108,6 +110,25 @@ final t = DsTheme.of(context);            // everything
 
 The optional `desen_ui_fonts` package bundles [Schibsted Grotesk](https://github.com/schibsted/schibsted-grotesk) and [Geist Mono](https://github.com/vercel/geist-font), both under the SIL Open Font License 1.1 (see `desen_ui_fonts/fonts/OFL-*.txt`). Without it, text uses the platform font. iOS and macOS apps set text in the system font (San Francisco) by default either way; pass a `family` to `DsTypography` to use another face there too. Built-in icons (`DsIcons`) are drawn from [Lucide](https://lucide.dev) shapes (ISC). Components take icons as widgets, so any icon set works.
 
+## Testing your app
+
+Keyboard focus visibility is global state, like the browser's `:focus-visible`. Desen resets it when the test binding resets between tests; to pin the starting value (for example, to test focus rings as a desktop user sees them first), call:
+
+```dart
+setUp(() => DsFocusVisibility.debugReset(keyboard: true));
+```
+
+## Known limitations
+
+- `DsToolbar` has no "⋯" overflow menu: items that don't fit scroll with a faded edge. The touch text selection toolbar pages its actions with arrows, as iOS does.
+- Spell-check suggestions are not wired to text fields.
+- The time picker's hour column doesn't wrap from 23 to 00, and has no seconds or minimum and maximum time.
+- No range (two-thumb) slider.
+- Screen readers aren't told which menu item opens a submenu (needs a role Flutter doesn't expose yet).
+- Plain `FormState.validate()` announces errors through Flutter's own unnamed announcement. `formKey.currentState!.validateAndFocus()` (from `DsFormValidation`) focuses the first invalid field and announces it once, with its name.
+- VoiceOver users who turned hints off don't hear a field's description or error, which are attached as hints.
+- Visual references (golden images) are rendered on macOS and checked by hand on the web and macOS; iOS and Android have not yet been checked on physical devices.
+
 ## Layout
 
 | Path | Contents |
@@ -119,13 +140,15 @@ The optional `desen_ui_fonts` package bundles [Schibsted Grotesk](https://github
 | `lib/src/app/` | `DsApp`, `DsPageRoute`, `DsScrollBehavior` |
 | `lib/src/behavior/` | Headless behavior (`DsPressable`, `DsMinTapTarget`, `DsFocusVisibility`) |
 | `lib/src/overlay/` | Anchored layers (`DsAnchoredOverlay`, placement), modal route |
-| `lib/src/l10n/` | `DsLocalizations` (13 languages, generated) |
+| `lib/src/l10n/` | `DsLocalizations` (15 languages, generated) |
 | `lib/src/components/` | Styled components |
 | `desen_ui_fonts/` | Optional font package |
 | `VERSIONING.md` | What counts as a breaking change, pre-1.0 rules, deprecation |
 | `example/` | The docs site (`example/lib/site/`, English, built with Desen): every component with live examples and code, foundations, guides and app examples |
 
 ## Development
+
+Main stays green: `flutter analyze`, the format check and the full `flutter test` run before every commit (about 40 seconds). A new test must fail without its fix. Goldens are re-baselined only after reviewing the diff images, in a commit of their own.
 
 ```sh
 flutter test                                  # everything
@@ -136,4 +159,5 @@ python3 tool/gen_colors.py lib/src/theme/colors.dart  # regenerate DsColors
 python3 tool/gen_icons.py lib/src/icons/icons.dart     # regenerate DsIcons
 python3 tool/gen_styles.py                            # regenerate component styles/themes
 python3 tool/gen_l10n.py                              # regenerate DsLocalizations
+tool/publish_fonts.sh --dry-run                       # check (or publish) desen_ui_fonts from a clean copy
 ```

@@ -2,8 +2,12 @@ name: desen_ui_fonts
 description: >-
   The typefaces of Desen UI: Schibsted Grotesk (text and numbers) and
   Geist Mono (code). Optional; add it for Desen's default look.
-version: 0.1.0-dev.1
-publish_to: none
+version: 0.1.0-alpha.1
+repository: https://github.com/derlioapp/desen_ui/tree/main/desen_ui_fonts
+issue_tracker: https://github.com/derlioapp/desen_ui/issues
+topics:
+  - fonts
+  - ui
 
 environment:
   sdk: ^3.13.0

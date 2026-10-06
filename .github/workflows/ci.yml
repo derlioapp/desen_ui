@@ -46,15 +46,12 @@ jobs:
       - run: dart format --output=none --set-exit-if-changed lib test example/lib example/test desen_ui_fonts/lib desen_ui_fonts/test
       - name: Code snippets match the example pages
         run: python3 tool/gen_snippets.py --check
-      # Both packages are `publish_to: none` until there is a repository,
-      # so this reports what pub would say without failing the build.
       - name: Publish dry run (desen_ui)
         run: dart pub publish --dry-run
-        continue-on-error: true
+      # From a copy outside the repository: the root .pubignore, which keeps
+      # the fonts out of desen_ui's archive, would hide the nested package.
       - name: Publish dry run (desen_ui_fonts)
-        run: dart pub publish --dry-run
-        working-directory: desen_ui_fonts
-        continue-on-error: true
+        run: tool/publish_fonts.sh --dry-run
 
   test:
     name: Tests (behavior)
