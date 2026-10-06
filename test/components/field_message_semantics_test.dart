@@ -16,18 +16,17 @@ void main() {
 
   /// A root with an overlay; [announce] is whether the platform supports
   /// announcements (Android does not: errors are live regions there).
+  /// Pumping another [child] updates the tree in place ([Overlay.wrap]
+  /// rebuilds its entry; an [Overlay]'s initial entries would keep the
+  /// first child).
   Widget app(Widget child, {bool announce = true}) => Builder(
     builder: (context) => MediaQuery(
       data: MediaQueryData.fromView(View.of(context))
           .copyWith(supportsAnnounce: announce),
       child: Directionality(
         textDirection: TextDirection.ltr,
-        child: Overlay(
-          initialEntries: [
-            OverlayEntry(
-              builder: (_) => Center(child: SizedBox(width: 320, child: child)),
-            ),
-          ],
+        child: Overlay.wrap(
+          child: Center(child: SizedBox(width: 320, child: child)),
         ),
       ),
     ),
