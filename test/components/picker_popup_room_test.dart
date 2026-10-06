@@ -2,6 +2,7 @@
 // phone, a 320px touch phone), and the time columns fade only where more
 // items lie beyond, never over the chosen one.
 import 'package:desen_ui/desen_ui.dart';
+import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -142,7 +143,10 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('two months at 320px narrow instead of overflowing', (
+  // Two months that do not fit side by side at full size stack (since
+  // 7e2fd89): narrowed side by side, their titles were cut. Stacked, they
+  // are taller than the window, so the page scrolls (WCAG 1.4.10).
+  testWidgets('two months at 320px stack instead of overflowing', (
     tester,
   ) async {
     tester.view
@@ -152,16 +156,34 @@ void main() {
     await tester.pumpWidget(
       Directionality(
         textDirection: TextDirection.ltr,
-        child: Center(
-          child: DsCalendar(
-            value: DateTime(2026, 10, 5),
-            months: 2,
-            onChanged: (_) {},
+        child: SingleChildScrollView(
+          child: Center(
+            child: DsCalendar(
+              value: DateTime(2026, 10, 5),
+              months: 2,
+              onChanged: (_) {},
+            ),
           ),
         ),
       ),
     );
     expect(tester.takeException(), isNull);
+    expect(
+      tester.getSize(find.byType(DsCalendar)).width,
+      lessThanOrEqualTo(320),
+    );
+    final october = find.text('October 2026');
+    final november = find.text('November 2026');
+    expect(
+      tester.getRect(november).top,
+      greaterThan(tester.getRect(october).bottom),
+    );
+    for (final title in [october, november]) {
+      expect(
+        tester.renderObject<RenderParagraph>(title).didExceedMaxLines,
+        isFalse,
+      );
+    }
   });
 
   testWidgets('time picker at text scale 3 on a 320px phone', (tester) async {

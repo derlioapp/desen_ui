@@ -67,7 +67,8 @@
   label that still doesn't fit shows whole in a tooltip; table flex columns
   keep the text they showed at 1.0 and the table scrolls sideways.
 - `DsToolbar` scrolls its items with a faded edge when they don't fit;
-  `DsCalendar(months: n)` stacks its months when they are too narrow;
+  `DsCalendar(months: n)` stacks its months when they don't fit side by
+  side at full size (narrowed, their titles were cut);
   multi-select tags wrap long labels; a single-line text field fades the
   edge that hides an overflowing value while it is not being edited; the
   touch text selection toolbar pages its actions with chevrons.

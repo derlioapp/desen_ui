@@ -16,14 +16,16 @@ class CalendarMetrics {
   ///
   /// A day is [DsCalendarStyle.daySize], or half again the scaled number
   /// when that is larger. Each column takes the day and its gap, at
-  /// least [tap] wide; when the months do not fit [maxWidth], the columns
-  /// narrow (whole pixels) and the days with them, so the calendar fits a
-  /// 320px phone. Rows keep [tap]: the tap areas tile the grid, so a
-  /// narrower column still leaves no gap between targets.
+  /// least [tap] wide.
   ///
-  /// Several months that would narrow below the room their day numbers
-  /// need (half again the scaled number) are [stacked] instead, one under
-  /// the other, each sized as a single month in [maxWidth].
+  /// Several months that do not fit [maxWidth] side by side at that size
+  /// are [stacked], one under the other: narrowed side by side, their
+  /// titles would be cut (the month buttons keep their width) well before
+  /// their days ran out of room. A month that does not fit [maxWidth] on
+  /// its own, stacked or alone, narrows its columns (whole pixels) and the
+  /// days with them, so the calendar fits a 320px phone. Rows keep [tap]:
+  /// the tap areas tile the grid, so a narrower column still leaves no gap
+  /// between targets.
   factory CalendarMetrics({
     required DsCalendarStyle style,
     required TextScaler scaler,
@@ -35,17 +37,13 @@ class CalendarMetrics {
     var day = math.max(style.daySize!, scaler.scale(fontSize) * 1.5);
     var column = math.max(day + style.columnGap!, tap);
     final row = math.max(day + style.rowGap!, tap);
-    final number = scaler.scale(fontSize) * 1.5;
     final gaps = (months - 1) * style.monthGap!;
     final preferred = months * 7 * column + gaps;
-    var stacked = false;
-    if (maxWidth.isFinite && preferred > maxWidth) {
-      var fit = ((maxWidth - gaps) / (7 * months)).floorToDouble();
-      if (months > 1 && fit < number) {
-        stacked = true;
-        fit = (maxWidth / 7).floorToDouble();
-      }
-      column = math.max(1.0, math.min(column, fit));
+    final stacked = months > 1 && preferred > maxWidth;
+    // Stacked or alone, one month spans the width.
+    final fit = (maxWidth / 7).floorToDouble();
+    if (fit < column) {
+      column = math.max(1.0, fit);
       day = math.min(day, column);
     }
     return CalendarMetrics._(
@@ -73,7 +71,7 @@ class CalendarMetrics {
   /// narrowing.
   final double preferredWidth;
 
-  /// Whether the months show one under the other: side by side, their
-  /// days would be too narrow for the numbers.
+  /// Whether the months show one under the other: they do not fit side
+  /// by side at their full size.
   final bool stacked;
 }

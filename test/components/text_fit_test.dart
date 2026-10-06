@@ -445,9 +445,12 @@ void main() {
       (320.0, 3.0),
     ]) {
       testWidgets('stacks at ${width}px and ${scale}x text', (tester) async {
+        // Two months stacked are taller than the 600px test window: the
+        // page scrolls down to them (reflow, WCAG 1.4.10, scrolls in one
+        // direction), as an app's would.
         final errors = await _pump(
           tester,
-          calendar(),
+          SingleChildScrollView(child: calendar()),
           width: width,
           textScale: scale,
         );
@@ -466,6 +469,25 @@ void main() {
           tester.getSize(find.byType(DsCalendar)).width,
           lessThanOrEqualTo(width),
         );
+      });
+    }
+
+    // Narrowed side by side, the months' titles were cut at phone widths
+    // where the days still fit; they stack instead.
+    for (final width in [375.0, 414.0]) {
+      testWidgets('stacks with whole titles at ${width}px', (tester) async {
+        final errors = await _pump(
+          tester,
+          SingleChildScrollView(child: calendar()),
+          width: width,
+        );
+        expect(errors, isEmpty);
+        expect(
+          tester.getRect(find.text('November 2026')).top,
+          greaterThan(tester.getRect(find.text('October 2026')).bottom),
+        );
+        expect(_fullyShown(tester, 'October 2026'), isTrue);
+        expect(_fullyShown(tester, 'November 2026'), isTrue);
       });
     }
 
