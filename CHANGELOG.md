@@ -82,6 +82,25 @@
   brown or olive. Its hue turns to the nearest clean one at the same
   luminance, so the warning text on it keeps its contrast (about 7.7:1).
   The other status tints were clean already and are unchanged.
+- `DsToolbar` items that do not fit no longer scroll out of reach: from
+  the end, they move into a menu that a "More actions" (⋯) button at the
+  bar's end opens, and they come back when there is room (also at large
+  text sizes and in right-to-left layouts). Toggles become checkbox items,
+  buttons items named by their text or `semanticLabel`, a tooltip's
+  `shortcut` shows beside the item, and dividers at the cut are dropped.
+  The button is a Tab stop like the other items, its menu has the
+  `DsMenu` keyboard, and focus returns to it when the menu closes. Its
+  label is the new `DsLocalizations.moreActions`, in every bundled
+  language.
+  - **Behavior change:** this is the new default,
+    `overflow: DsToolbarOverflow.menu`. Pass `DsToolbarOverflow.scroll` to
+    keep the sideways scrolling.
+  - **Breaking (debug builds):** a toolbar child the bar cannot show in
+    the menu (anything but a toggle, a button, a divider or a tooltip
+    around a toggle or button) now asserts. Wrap it in the new
+    `DsToolbarItem`, whose `menuItems` give its menu form, or an empty
+    list for an item that only shows something, such as a "3 selected"
+    label.
 
 ## 0.1.0-alpha.2
 
