@@ -4,7 +4,7 @@ Web-grade UI components for Flutter, built on the widgets layer only. No Materia
 
 **Docs and live examples:** https://derlioapp.github.io/desen_ui/
 
-> Status: alpha (`0.1.0-alpha.1`). The API may still change before 1.0 ([VERSIONING.md](VERSIONING.md)). Requires Dart 3.13 and Flutter 3.47 or later.
+> Status: alpha (`0.1.0-alpha.2`). The API may still change before 1.0 ([VERSIONING.md](VERSIONING.md)). Requires Dart 3.13 and Flutter 3.47 or later.
 >
 > Foundation, overlay engine, localization (13 languages, plus Portuguese (Portugal) and Traditional Chinese) and 49 components plus form fields: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
 
@@ -21,7 +21,7 @@ Web-grade UI components for Flutter, built on the widgets layer only. No Materia
 
 ```yaml
 dependencies:
-  desen_ui: ^0.1.0-alpha.1
+  desen_ui: ^0.1.0-alpha.2
 ```
 
 ```dart
@@ -164,9 +164,9 @@ python3 tool/gen_l10n.py                              # regenerate DsLocalizatio
 
 ## License
 
-The code is under the MIT License ([LICENSE](LICENSE)). The font files in `fonts/` are not: they are under the SIL Open Font License 1.1, which allows bundling and embedding them in any app, free or commercial. Its text is in `fonts/` and, for your app's license notices, in [LICENSE](LICENSE) too.
+The code is under the MIT License ([LICENSE](LICENSE)). The font files in `fonts/` are not: they are under the SIL Open Font License 1.1, which allows bundling and embedding them in any app, free or commercial. Its text is in `fonts/` and in [NOTICES](NOTICES), which Flutter adds to your app's license page (`showLicensePage`, `LicenseRegistry`) on its own.
 
 - Schibsted Grotesk: Copyright 2023 The Schibsted-Grotesk Project Authors; license text in `fonts/OFL-SchibstedGrotesk.txt`.
 - Geist Mono: Copyright 2024 The Geist Project Authors; license text in `fonts/OFL-GeistMono.txt`.
 
-The icon shapes are from [Lucide](https://lucide.dev) (ISC License, included in [LICENSE](LICENSE)).
+The icon shapes are from [Lucide](https://lucide.dev) (ISC License, included in [NOTICES](NOTICES)).

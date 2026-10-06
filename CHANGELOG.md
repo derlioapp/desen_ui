@@ -1,3 +1,10 @@
+## 0.1.0-alpha.2
+
+- LICENSE holds the MIT License alone, so pub.dev recognizes it. The
+  licenses of the bundled fonts (SIL OFL 1.1) and the Lucide icon shapes
+  (ISC) move to NOTICES, which Flutter adds to an app's license page.
+- The package links to its docs site: https://derlioapp.github.io/desen_ui/
+
 ## 0.1.0-alpha.1
 
 First public pre-release. The API may still change before 1.0; see
