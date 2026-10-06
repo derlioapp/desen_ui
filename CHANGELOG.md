@@ -61,10 +61,10 @@ text magnifier; `Form` integration (`DsFormField`, typed form fields,
   component.
 - Large text up to 200% without clipped labels, 44px touch targets on
   phones, reduced motion, haptics on touch platforms.
-- Strings for 15 languages (Arabic, Chinese (Simplified and Traditional),
-  English, French, German, Hindi, Italian, Japanese, Korean, Portuguese
-  (Brazil and Portugal), Russian, Spanish, Turkish), with right-to-left
-  layout.
+- Strings for 13 languages (Arabic, Chinese, English, French, German,
+  Hindi, Italian, Japanese, Korean, Portuguese, Russian, Spanish, Turkish)
+  and 2 regional variants (Portuguese (Portugal), Traditional Chinese),
+  with right-to-left layout.
 
 ### Known limitations
 

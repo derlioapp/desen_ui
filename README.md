@@ -4,7 +4,7 @@ Web-grade UI components for Flutter, built on the widgets layer only. No Materia
 
 > Status: alpha (`0.1.0-alpha.1`). The API may still change before 1.0 ([VERSIONING.md](VERSIONING.md)). Requires Dart 3.13 and Flutter 3.47 or later.
 >
-> Foundation, overlay engine, localization (15 languages) and 49 components plus form fields: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
+> Foundation, overlay engine, localization (13 languages, plus Portuguese (Portugal) and Traditional Chinese) and 49 components plus form fields: button, badge, count, status dot, avatar, image, card, divider, alert, progress, spinner, skeleton, link, breadcrumb, checkbox, radio, radio card, switch, segmented control, slider, chip, choice chips, tabs, accordion, stepper, list, sidebar, bottom navigation, pane header, empty state, pagination, toolbar, popover, tooltip, menu and context menu, dialog, panel and sheet, toast, select, form field, text field (single and multi-line), search field, autocomplete, multi-select, number field, table, scrollbar, calendar, date and date range picker, time picker, file upload, submenu, text magnifier; `Form` integration (`DsFormField` and typed form fields, `DsValidators`).
 
 ## Principles
 
@@ -139,7 +139,7 @@ setUp(() => DsFocusVisibility.debugReset(keyboard: true));
 | `lib/src/app/` | `DsApp`, `DsPageRoute`, `DsScrollBehavior` |
 | `lib/src/behavior/` | Headless behavior (`DsPressable`, `DsMinTapTarget`, `DsFocusVisibility`) |
 | `lib/src/overlay/` | Anchored layers (`DsAnchoredOverlay`, placement), modal route |
-| `lib/src/l10n/` | `DsLocalizations` (15 languages, generated) |
+| `lib/src/l10n/` | `DsLocalizations` (13 languages and 2 regional variants, generated) |
 | `lib/src/components/` | Styled components |
 | `fonts/` | Schibsted Grotesk and Geist Mono, with their licenses (SIL OFL 1.1) |
 | `VERSIONING.md` | What counts as a breaking change, pre-1.0 rules, deprecation |
