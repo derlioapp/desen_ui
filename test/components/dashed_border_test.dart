@@ -91,11 +91,14 @@ void main() {
     expectEven(tester, tolerance: .001);
   });
 
-  // Continuous (superellipse) corners: the engine's path measure is not
-  // exactly even along that outline, so dashes and gaps vary by up to
-  // about 7% and 11% of their length. A cut dash, or a seam gap that takes
-  // the rounding remainder, is off by far more.
-  const continuousCorners = .12;
+  // Continuous (superellipse) corners. Dashes are measured along the
+  // outline, so every dash is the same length; a gap on a corner is read
+  // here as a straight line across the curve, a little shorter than its
+  // length along it (about 0.5% on these corners). Dashes laid out by the
+  // engine's path measure, which runs unevenly along this curve, vary by up
+  // to about 7% and gaps by 11%; a cut dash, or a seam gap that takes the
+  // rounding remainder, is off by far more.
+  const continuousCorners = .01;
 
   testWidgets('a dashed card spreads its dashes evenly around the corners', (
     tester,
@@ -123,5 +126,47 @@ void main() {
       ),
     );
     expectEven(tester, tolerance: continuousCorners);
+  });
+
+  testWidgets('a repaint in a new color, as on hover, reuses the dashes '
+      'built for the same outline', (tester) async {
+    Future<Path> dashesIn(Color color, {double width = 241}) async {
+      await tester.pumpWidget(
+        host(
+          SizedBox(
+            width: width,
+            height: 113,
+            child: DsDashedBorder(
+              color: color,
+              width: 1.5,
+              dashLength: 6,
+              dashGap: 4,
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+        ),
+      );
+      final paint = find.descendant(
+        of: find.byType(DsDashedBorder),
+        matching: find.byType(CustomPaint),
+      );
+      final canvas = TestRecordingCanvas();
+      tester
+          .widget<CustomPaint>(paint)
+          .foregroundPainter!
+          .paint(canvas, tester.getSize(paint));
+      return canvas.invocations
+              .singleWhere((call) => call.invocation.memberName == #drawPath)
+              .invocation
+              .positionalArguments
+              .first
+          as Path;
+    }
+
+    final rest = await dashesIn(const Color(0xFF000000));
+    final hovered = await dashesIn(const Color(0xFF3366FF));
+    expect(identical(rest, hovered), isTrue);
+    final wider = await dashesIn(const Color(0xFF3366FF), width: 260);
+    expect(identical(rest, wider), isFalse);
   });
 }
