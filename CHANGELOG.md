@@ -1,3 +1,109 @@
+## Unreleased · Independent audit fixes
+
+### Breaking
+
+- `DsTypography`'s default `desen_ui_fonts` package applies only to the
+  faces it bundles; a family of your own is looked up in your app (it was
+  silently looked up in the fonts package). New `monoPackage` and
+  `DsTypography.fontsPackage`.
+- `DsBottomNav` destinations are buttons, the current one selected, with
+  their position ("2 of 4", new `DsLocalizations.positionOf`) read on every
+  platform; they were tabs in a tab bar, which misused the role inside a
+  navigation landmark.
+- `DsChip` is announced as a checkbox, checked or not (it was a selected
+  button, which the web read as "current").
+- `DsNumberFormat.tryParse` returns a number only when the text reads one
+  way; misplaced or ambiguous grouping now returns null instead of being
+  stripped.
+
+### Added
+
+- `DsTextField`, `.multiline` and `DsTextFormField`: `autocorrect`,
+  `enableSuggestions`, `textCapitalization`, `textAlign`,
+  `onEditingComplete`. Email, URL and password fields no longer autocorrect
+  or suggest by default.
+- `DsApp` and `DsApp.router`: `localeResolutionCallback`,
+  `localeListResolutionCallback`, `scrollBehavior`,
+  `followPlatformContrast`, `animateChanges`.
+- `DsThemeData.densityFollowsPlatform`: a theme without an explicit density
+  derives it again on `copyWith(platform:)`.
+- `DsFocusVisibility.debugReset({bool? keyboard})` for widget tests.
+- `DsMenuItem.checkRole` (`DsMenuCheckRole.radio` or `.checkbox`).
+- `DsShortcut.spokenLabel`: shortcut hints are read by localized key name
+  ("Command E"). New strings `keyCommand`, `keyOption`, `keyShift`,
+  `keyControl`, `keyBackspace`, `keyEnter`.
+- `DsTab.countSemanticLabel` and `DsSidebarItem.countSemanticLabel` say what
+  a count counts ("4 unread").
+- `DsNumberFormat.readings` and `DsNumberFormat.maxDecimals` (20); new
+  string `numberAmbiguous`.
+- `DsProgressBarStyle.width` (default 160) under an unbounded width.
+
+### Changed
+
+- Dialogs, panels and popovers opened without an `autofocus` control move
+  focus to their first control (WAI-ARIA dialog pattern).
+- Tab no longer interleaves a sidebar, toolbar, pagination, breadcrumb,
+  accordion or table with the content beside it; `DsSidebar` is a
+  navigation landmark named by `semanticLabel` or the localized
+  "Navigation".
+- Fields with their own buttons (clear, show password, date and time
+  pickers, autocomplete, multi-select, file upload) carry their description
+  or error on the input for screen readers; every field reads its message
+  after its name and state, and checkbox, radio, radio card and switch
+  descriptions are read as hints. `validateAndFocus` is heard once, on the
+  focused field with its name.
+- `DsTheme` and component themes are `InheritedTheme`s (carried into
+  Flutter's own dialogs and third-party sheets); `DsComponentThemes` keeps
+  its subtree's state when its list changes; a change to theme extensions
+  alone no longer rebuilds components; without `DsScope` or `DsApp` the
+  fallback theme follows reduce motion.
+- Numeric text keeps tabular figures on digits only; separators keep the
+  face's own spacing, so "12.480,00" no longer reads like a typewriter.
+- Tabs answer taps across their cell, up to half the gap on each side; on
+  touch, short tabs are widened to a 44px cell, and the segmented control
+  and table sort headers answer taps across 44px without growing.
+- Large text: segmented-control labels wrap between words, then the
+  segments stack; bottom-nav labels wrap to two lines between words, and a
+  label that still doesn't fit shows whole in a tooltip; table flex columns
+  keep the text they showed at 1.0 and the table scrolls sideways.
+- `DsToolbar` scrolls its items with a faded edge when they don't fit;
+  `DsCalendar(months: n)` stacks its months when they are too narrow;
+  multi-select tags wrap long labels; a single-line text field fades the
+  edge that hides an overflowing value while it is not being edited; the
+  touch text selection toolbar pages its actions with chevrons.
+- Dark mode: the date range band (`accentTint`) stands 1.3:1 or more off
+  the card. A checked control whose accent fill stands under 3:1 off the
+  page or card (a deep red) wears a faint light `accentEdge`; on the
+  floating layer the check mark carries the state, so no rim is drawn
+  there.
+- Table Shift range selection keeps its anchor, so moving back shrinks it.
+
+### Fixed
+
+- Floating layers whose trigger is kept alive off screen in a lazy list
+  (a focused field, a table's active row) close and return focus instead
+  of painting at a NaN position and staying open; `validateAndFocus()` no
+  longer throws in that case.
+- `DsTabs` revealing its selected tab scrolled the whole page; only the
+  strip scrolls now.
+- `DsTooltip` no longer pops up during a touch scroll that starts on its
+  trigger.
+- Keyboard focus visibility no longer leaks between an app's widget tests.
+- A keypad "." in a locale where "." groups thousands is the decimal point
+  where it can't be a group ("12.5" is 12.5, not 125); text that reads two
+  ways is flagged instead of guessed. A grouped paste into an ungrouped
+  field keeps its digits; typed integers past what a double holds exactly
+  are flagged instead of changed. `format` shows infinities as ∞ and NaN as
+  empty text.
+- Slider divisions report exact grid values (0.3, not 0.30000000000000004).
+- Progress bar and ring: NaN is indeterminate (it was drawn and announced
+  as 100%).
+- `DsStepper`: `max: double.infinity` means no limit (the int stepper threw
+  in build); a fractional `step` on an int stepper is rounded to a whole
+  one; in too little room the value scales down instead of overflowing.
+- `DsProgressBar`, `DsAlert` and `DsAccordion` no longer throw under an
+  unbounded width; the dialog's actions support dry layout.
+
 ## Unreleased · Parity with the old library
 
 ### Breaking
