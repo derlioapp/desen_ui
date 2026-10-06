@@ -150,15 +150,15 @@ class TypographyPage extends StatelessWidget {
           ),
           DocText(
             'To use your own families, declare them in your app and pass '
-            'their names. `package: null` means the fonts are declared in '
-            'your app rather than in a package.',
+            'their names. Set `package` (and `monoPackage` for the code '
+            'face) only when a font comes from another package; the '
+            '`desen_ui_fonts` default applies to its own two faces only.',
           ),
           CodeBlock(
             'DsThemeData(\n'
             '  typography: DsTypography(\n'
             "    family: 'Inter',\n"
             "    monoFamily: 'JetBrains Mono',\n"
-            '    package: null,\n'
             '  ),\n'
             ')',
           ),

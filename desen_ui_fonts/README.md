@@ -10,6 +10,6 @@ dependencies:
   desen_ui_fonts: ...
 ```
 
-Without it, Desen falls back to the platform font, or to your own families via `DsTypography(family: …, monoFamily: …, package: null)`.
+Without it, Desen falls back to the platform font, or to your own families via `DsTypography(family: …, monoFamily: …)` (families declared in your app need no `package`).
 
 Licenses: both fonts are under the SIL Open Font License 1.1 (`fonts/OFL-*.txt`).

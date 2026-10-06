@@ -349,4 +349,52 @@ void main() {
       expect(y.title.letterSpacing, closeTo(-0.02 * 22, 1e-9));
     });
   });
+
+  group('font packages', () {
+    // Off Apple platforms, where the default text family is the bundled
+    // one.
+    T offApple<T>(T Function() body) => on(TargetPlatform.android, body);
+
+    test('an app family without a package is used as is', () {
+      final y = offApple(() => DsTypography(family: 'Inter'));
+      expect(y.package, isNull);
+      expect(y.body.fontFamily, 'Inter');
+      expect(y.title.fontFamily, 'Inter');
+      // The bundled mono face keeps its package.
+      expect(y.monoPackage, 'desen_ui_fonts');
+      expect(y.mono(y.body).fontFamily, 'packages/desen_ui_fonts/GeistMono');
+    });
+
+    test('an app mono family without a package is used as is', () {
+      final y = offApple(() => DsTypography(monoFamily: 'JetBrains Mono'));
+      expect(y.monoPackage, isNull);
+      expect(y.mono(y.body).fontFamily, 'JetBrains Mono');
+      expect(y.body.fontFamily, bundled);
+    });
+
+    test('a family from another package is qualified with it', () {
+      final y = offApple(
+        () => DsTypography(
+          family: 'Inter',
+          package: 'brand_fonts',
+          monoFamily: 'Code',
+          monoPackage: 'code_fonts',
+        ),
+      );
+      expect(y.body.fontFamily, 'packages/brand_fonts/Inter');
+      expect(y.mono(y.body).fontFamily, 'packages/code_fonts/Code');
+    });
+
+    test('the bundled faces keep the fonts package by default', () {
+      final y = offApple(() => DsTypography(family: 'SchibstedGrotesk'));
+      expect(y.body.fontFamily, bundled);
+      expect(y.package, DsTypography.fontsPackage);
+    });
+
+    test('package: null declares even the bundled faces in the app', () {
+      final y = offApple(() => DsTypography(package: null, monoPackage: null));
+      expect(y.body.fontFamily, 'SchibstedGrotesk');
+      expect(y.mono(y.body).fontFamily, 'GeistMono');
+    });
+  });
 }
