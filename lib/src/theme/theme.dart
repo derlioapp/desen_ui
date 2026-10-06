@@ -59,7 +59,12 @@ enum DsThemeAspect {
 ///
 /// Reading a single token group (e.g. [colorsOf]) only rebuilds the reader
 /// when that group changes.
-class DsTheme extends InheritedModel<DsThemeAspect> {
+///
+/// It is an inherited theme (`InheritedTheme`): a route or overlay that
+/// captures the opener's themes, Flutter's own dialogs included, shows its
+/// layer in the opener's [DsTheme] even when that sits below the
+/// navigator.
+class DsTheme extends InheritedModel<DsThemeAspect> implements InheritedTheme {
   /// Provides [data] to [child].
   const DsTheme({super.key, required this.data, required super.child});
 
@@ -117,6 +122,10 @@ class DsTheme extends InheritedModel<DsThemeAspect> {
       brightness: brightness,
     );
   }
+
+  @override
+  Widget wrap(BuildContext context, Widget child) =>
+      DsTheme(data: data, child: child);
 
   @override
   bool updateShouldNotify(DsTheme oldWidget) => data != oldWidget.data;

@@ -9,8 +9,9 @@ import '../theme/theme_data.dart';
 
 /// The Desen context an opener has and a layer shown elsewhere in the tree
 /// would miss: the [DsTheme], [Directionality], [DsLocalizationScope] and
-/// component themes ([DsComponentTheme]) that sit between the opener and
-/// the layer's host (a [Navigator] or an [Overlay]).
+/// component themes ([DsComponentTheme], [DsComponentThemes]) that sit
+/// between the opener and the layer's host (a [Navigator] or an
+/// [Overlay]).
 ///
 /// Anything above the host the layer inherits as usual. What sits between
 /// the opener and the host is linked, not copied: the layer follows it
@@ -39,7 +40,7 @@ class DsCapturedThemes {
     _Link<DsTheme>? theme;
     _Link<Directionality>? direction;
     _Link<DsLocalizationScope>? localizations;
-    final components = <_Link<DsComponentTheme<dynamic>>>[];
+    final components = <_Link<Widget>>[];
     from.visitAncestorElements((element) {
       if (identical(element, to)) return false;
       switch (element.widget) {
@@ -50,6 +51,8 @@ class DsCapturedThemes {
         case final DsLocalizationScope w:
           localizations ??= _Link(element, w);
         case final DsComponentTheme<dynamic> w:
+          components.add(_Link(element, w));
+        case final DsComponentThemes w:
           components.add(_Link(element, w));
       }
       return true;
@@ -69,7 +72,9 @@ class DsCapturedThemes {
   final _Link<DsTheme>? _theme;
   final _Link<Directionality>? _direction;
   final _Link<DsLocalizationScope>? _localizations;
-  final List<_Link<DsComponentTheme<dynamic>>> _componentThemes;
+
+  /// [DsComponentTheme] and [DsComponentThemes] links, outermost first.
+  final List<_Link<Widget>> _componentThemes;
 
   List<_Link<Widget>> get _links => [
     ?_theme,
@@ -97,9 +102,13 @@ class DsCapturedThemes {
   Widget _wrapNow(Widget child) {
     var result = child;
     for (final link in _componentThemes.reversed) {
-      final data = link.current.data as Object?;
-      if (data is DsComponentThemeData<DsComponentThemeData<dynamic>>) {
-        result = data.wrap(result);
+      switch (link.current) {
+        case DsComponentTheme<dynamic>(:final Object? data):
+          if (data is DsComponentThemeData<DsComponentThemeData<dynamic>>) {
+            result = data.wrap(result);
+          }
+        case DsComponentThemes(:final themes):
+          result = DsComponentThemes(themes: themes, child: result);
       }
     }
     if (textDirection case final d?) {
