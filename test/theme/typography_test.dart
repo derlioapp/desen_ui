@@ -372,6 +372,19 @@ void main() {
       expect(y.body.fontFamily, bundled);
     });
 
+    test('numeric() drops the package of a bundled style for an app '
+        'family', () {
+      final y = offApple(() => DsTypography(family: 'Inter'));
+      const packaged = TextStyle(
+        fontFamily: 'SchibstedGrotesk',
+        package: DsTypography.fontsPackage,
+        fontSize: 13,
+      );
+      final numeric = y.numeric(packaged);
+      expect(numeric.fontFamily, 'Inter');
+      expect(numeric.fontSize, 13);
+    });
+
     test('a family from another package is qualified with it', () {
       final y = offApple(
         () => DsTypography(
