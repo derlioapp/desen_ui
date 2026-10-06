@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 
 import '../theme/sizes.dart';
 import '../theme/theme.dart';
+import 'initial_focus.dart';
 import 'placement.dart';
 
 /// Opens and closes a [DsAnchoredOverlay] (and the components built on it).
@@ -109,7 +110,9 @@ class _Lineage extends InheritedWidget {
 ///   the outer one open.
 /// - **Focus:** with [focusOnOpen], focus moves into the layer when it
 ///   opens and returns to the trigger when it closes (to where it was when
-///   the trigger has nothing focusable). [tab] says how Tab leaves it.
+///   the trigger has nothing focusable). In a [DsOverlayTab.flow] layer it
+///   lands on the control that asks for it (`autofocus: true`), else on
+///   the first control inside. [tab] says how Tab leaves it.
 /// - **Keyboard and anchor:** the layer keeps clear of the on-screen
 ///   keyboard. When its trigger leaves the window (scrolled away, or its
 ///   page slides out) the layer closes and focus goes back to the
@@ -387,7 +390,16 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
     if (widget.focusOnOpen) {
       _returnFocus = _returnTarget();
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted && widget.controller.isOpen) _scope.requestFocus();
+        if (!mounted || !widget.controller.isOpen) return;
+        _scope.requestFocus();
+        if (widget.tab != DsOverlayTab.flow) return;
+        // A panel (popover) puts focus on its first control unless one
+        // asked for it: that request and any autofocus apply in a
+        // microtask already queued, this one runs after them. Menus and
+        // selects place focus themselves.
+        scheduleMicrotask(() {
+          if (mounted && widget.controller.isOpen) focusFirstControl(_scope);
+        });
       });
     }
     setState(() {});
