@@ -25,17 +25,17 @@ const _clear = Color(0x00000000);
 /// A button.
 ///
 /// ```dart
-/// DsButton(onPressed: save, child: const Text('Kaydet'))
+/// DsButton(onPressed: save, child: const Text('Save'))
 /// DsButton(
 ///   variant: .secondary,
 ///   size: .sm,
 ///   leading: const DsIcon(DsIcons.plus),
 ///   onPressed: add,
-///   child: const Text('Yeni görev'),
+///   child: const Text('New task'),
 /// )
 /// DsButton.icon(
 ///   icon: const DsIcon(DsIcons.ellipsis),
-///   semanticLabel: 'Daha fazla',
+///   semanticLabel: 'More',
 ///   onPressed: openMenu,
 /// )
 /// ```

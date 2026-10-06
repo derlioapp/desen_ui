@@ -75,8 +75,8 @@ class DsBottomNavItem<T> {
 ///   value: tab,
 ///   onChanged: (v) => setState(() => tab = v),
 ///   items: const [
-///     DsBottomNavItem(value: 'home', icon: DsIcon(DsIcons.house), label: Text('Ana sayfa')),
-///     DsBottomNavItem(value: 'inbox', icon: DsIcon(DsIcons.inbox), label: Text('Gelen')),
+///     DsBottomNavItem(value: 'home', icon: DsIcon(DsIcons.house), label: Text('Home')),
+///     DsBottomNavItem(value: 'inbox', icon: DsIcon(DsIcons.inbox), label: Text('Inbox')),
 ///   ],
 /// )
 /// ```

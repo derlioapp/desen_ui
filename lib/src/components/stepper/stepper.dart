@@ -50,7 +50,7 @@ import 'stepper_style.dart';
 ///   value: guests,
 ///   min: 0,
 ///   max: 12,
-///   semanticLabel: 'Misafir',
+///   semanticLabel: 'Guests',
 ///   onChanged: (v) => setState(() => guests = v),
 /// )
 ///
@@ -60,7 +60,7 @@ import 'stepper_style.dart';
 ///   max: 5,
 ///   step: 0.5,
 ///   unit: 'kg',
-///   semanticLabel: 'Ağırlık',
+///   semanticLabel: 'Weight',
 ///   onChanged: (v) => setState(() => weight = v),
 /// )
 /// ```
@@ -113,7 +113,7 @@ class DsStepper<T extends num> extends StatefulWidget {
   /// value ("%50").
   final String? prefix;
 
-  /// What the number counts, for screen readers ("Misafir").
+  /// What the number counts, for screen readers ("Guests").
   final String? semanticLabel;
 
   /// Style laid over the theme and defaults.

@@ -35,7 +35,7 @@ export 'number_format.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Ağırlık'),
+///   label: const Text('Weight'),
 ///   child: DsNumberField(
 ///     value: weight,
 ///     min: 0,

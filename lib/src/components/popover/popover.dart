@@ -31,11 +31,11 @@ import 'popover_style.dart';
 /// ```dart
 /// DsPopover(
 ///   align: DsAlign.end,
-///   semanticLabel: 'Paylaş',
+///   semanticLabel: 'Share',
 ///   contentBuilder: (context) => const ShareForm(),
 ///   builder: (context, controller, _) => DsButton(
 ///     onPressed: controller.toggle,
-///     child: const Text('Paylaş'),
+///     child: const Text('Share'),
 ///   ),
 /// )
 /// ```

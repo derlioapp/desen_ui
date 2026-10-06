@@ -23,7 +23,7 @@ import 'chip_style.dart';
 ///
 /// ```dart
 /// DsChip(
-///   label: const Text('Tasarım'),
+///   label: const Text('Design'),
 ///   selected: filters.contains('design'),
 ///   onChanged: (on) => toggle('design', on),
 /// )

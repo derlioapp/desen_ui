@@ -9,7 +9,7 @@ import 'form_link.dart';
 ///
 /// ```dart
 /// DsTextFormField(
-///   label: const Text('E-posta'),
+///   label: const Text('Email'),
 ///   required: true,
 ///   validator: DsValidators.all([
 ///     DsValidators.required(context),
@@ -71,7 +71,7 @@ abstract final class DsValidators {
   }
 
   /// Fails for text that is not an email address: one `@`, no spaces, and
-  /// a domain with a dot ("ad@alan.com"; spaces around are ignored). It
+  /// a domain with a dot ("name@example.com"; spaces around are ignored). It
   /// checks the shape only, not that the address exists. "Enter an email
   /// address such as name@example.com."
   static FormFieldValidator<String> email(

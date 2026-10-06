@@ -26,8 +26,8 @@ import 'error_edge.dart';
 /// DsCheckbox(
 ///   value: weekly,
 ///   onChanged: (v) => setState(() => weekly = v!),
-///   label: const Text('Haftalık özet e-postası'),
-///   description: const Text('Her pazartesi sabahı'),
+///   label: const Text('Weekly summary email'),
+///   description: const Text('Every Monday morning'),
 /// )
 /// ```
 ///

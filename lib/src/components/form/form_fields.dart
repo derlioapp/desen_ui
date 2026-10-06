@@ -25,7 +25,7 @@ import 'form_field.dart';
 ///
 /// ```dart
 /// DsTextFormField(
-///   label: const Text('Ad soyad'),
+///   label: const Text('Full name'),
 ///   required: true,
 ///   validator: DsValidators.required(context),
 ///   onSaved: (v) => name = v!,

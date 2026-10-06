@@ -26,8 +26,8 @@ import 'switch_style.dart';
 /// DsSwitch(
 ///   value: push,
 ///   onChanged: (v) => setState(() => push = v),
-///   label: const Text('Anlık bildirimler'),
-///   description: const Text('Mobil ve masaüstü'),
+///   label: const Text('Push notifications'),
+///   description: const Text('Mobile and desktop'),
 /// )
 /// ```
 ///

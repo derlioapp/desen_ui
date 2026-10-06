@@ -47,13 +47,13 @@ const _measureSample = 200;
 ///
 /// ```dart
 /// DsTable<Invoice>(
-///   semanticLabel: 'Faturalar',
+///   semanticLabel: 'Invoices',
 ///   rows: invoices,
 ///   rowKey: (i) => i.id,
 ///   columns: [
-///     DsTableColumn(id: 'customer', label: 'Müşteri', value: (i) => i.customer, sortable: true),
-///     DsTableColumn(id: 'status', label: 'Durum', cell: (_, i) => StatusBadge(i.status)),
-///     DsTableColumn(id: 'amount', label: 'Tutar', value: (i) => i.amount,
+///     DsTableColumn(id: 'customer', label: 'Customer', value: (i) => i.customer, sortable: true),
+///     DsTableColumn(id: 'status', label: 'Status', cell: (_, i) => StatusBadge(i.status)),
+///     DsTableColumn(id: 'amount', label: 'Amount', value: (i) => i.amount,
 ///         text: (i) => money(i.amount), numeric: true, sortable: true),
 ///   ],
 ///   sort: sort,
@@ -245,7 +245,7 @@ class DsTable<T> extends StatefulWidget {
   /// with a retry action. Non-null puts the table in the error state.
   final Widget? errorView;
 
-  /// Names the table for screen readers ("Faturalar").
+  /// Names the table for screen readers ("Invoices").
   final String? semanticLabel;
 
   /// Focus node for the table; one is created when null. It is not a Tab

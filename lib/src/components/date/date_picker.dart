@@ -32,7 +32,7 @@ export 'date_picker_style.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Doğum tarihi'),
+///   label: const Text('Date of birth'),
 ///   child: DsDatePicker(
 ///     value: birthday,
 ///     lastDate: DateTime.now(),

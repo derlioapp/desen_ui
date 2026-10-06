@@ -47,7 +47,7 @@ class DsSelectOption<T> {
   /// An icon before the label.
   final Widget? leading;
 
-  /// A short muted note on the end side ("salt okunur").
+  /// A short muted note on the end side ("read-only").
   final String? detail;
 
   /// Whether the option can be chosen.
@@ -95,11 +95,11 @@ class DsSelectOption<T> {
 /// DsSelect<String>(
 ///   value: project,
 ///   onChanged: (v) => setState(() => project = v),
-///   semanticLabel: 'Proje',
+///   semanticLabel: 'Project',
 ///   options: const [
 ///     DsSelectOption(value: 'web', label: 'Derlio Web'),
-///     DsSelectOption(value: 'mobile', label: 'Derlio Mobil'),
-///     DsSelectOption(value: 'archive', label: 'Arşiv', detail: 'salt okunur', enabled: false),
+///     DsSelectOption(value: 'mobile', label: 'Derlio Mobile'),
+///     DsSelectOption(value: 'archive', label: 'Archive', detail: 'read-only', enabled: false),
 ///   ],
 /// )
 /// ```
@@ -140,7 +140,7 @@ class DsSelect<T> extends StatefulWidget {
   /// An icon before the value, e.g. what the select chooses.
   final Widget? leading;
 
-  /// What the select chooses, for screen readers ("Proje").
+  /// What the select chooses, for screen readers ("Project").
   final String? semanticLabel;
 
   /// Shows the error look (from a form's validation): the error border,

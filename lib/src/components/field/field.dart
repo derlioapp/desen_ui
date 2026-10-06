@@ -20,9 +20,9 @@ import 'field_style.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Proje'),
-///   description: const Text('Raporlar bu projeye bağlanır.'),
-///   errorText: project == null ? 'Bir proje seçin.' : null,
+///   label: const Text('Project'),
+///   description: const Text('Reports are linked to this project.'),
+///   errorText: project == null ? 'Choose a project.' : null,
 ///   required: true,
 ///   child: DsSelect<String>(
 ///     value: project,

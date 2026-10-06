@@ -1150,10 +1150,10 @@ class _DsMenuItemState extends State<DsMenuItem> {
 ///
 /// ```dart
 /// DsMenuAnchor(
-///   items: [DsMenuItem(label: const Text('Düzenle'), onPressed: edit)],
+///   items: [DsMenuItem(label: const Text('Edit'), onPressed: edit)],
 ///   builder: (context, controller, _) => DsButton.icon(
 ///     icon: const DsIcon(DsIcons.ellipsis),
-///     semanticLabel: 'Diğer',
+///     semanticLabel: 'More',
 ///     onPressed: controller.toggle,
 ///   ),
 /// )

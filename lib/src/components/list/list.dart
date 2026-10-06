@@ -19,11 +19,11 @@ import 'list_section_style.dart';
 ///
 /// ```dart
 /// DsListSection(
-///   header: const Text('TERCİHLER'),
+///   header: const Text('PREFERENCES'),
 ///   children: [
-///     DsListRow(leading: const DsIcon(DsIcons.bell), title: const Text('Bildirimler'),
-///         detail: const Text('Açık'), showChevron: true, onPressed: openNotifications),
-///     DsListRow(leading: const DsIcon(DsIcons.logOut), title: const Text('Oturumu kapat'),
+///     DsListRow(leading: const DsIcon(DsIcons.bell), title: const Text('Notifications'),
+///         detail: const Text('On'), showChevron: true, onPressed: openNotifications),
+///     DsListRow(leading: const DsIcon(DsIcons.logOut), title: const Text('Sign out'),
 ///         destructive: true, onPressed: signOut),
 ///   ],
 /// )
@@ -138,7 +138,7 @@ class DsListSection extends StatelessWidget {
 /// A settings-style row: icon, title, detail and chevron.
 ///
 /// With [onPressed] the row is a button with a hover fill; without it, a static
-/// row. [destructive] colors it as a danger action ("Oturumu kapat").
+/// row. [destructive] colors it as a danger action ("Sign out").
 ///
 /// In a master-detail list (mail, files), [selected] marks the row whose
 /// detail is open: it takes the theme's selection style, still answers
@@ -177,7 +177,7 @@ class DsListRow extends StatefulWidget {
   final Widget? leading;
 
   /// A detail shown muted on the end side, such as the current setting
-  /// ("Açık").
+  /// ("On").
   final Widget? detail;
 
   /// A widget on the end side, e.g. a [DsSwitch] or a [DsBadge].

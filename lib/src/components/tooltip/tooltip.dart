@@ -41,10 +41,10 @@ import 'tooltip_style.dart';
 ///
 /// ```dart
 /// DsTooltip(
-///   message: 'Bağlantıyı kopyala',
+///   message: 'Copy link',
 ///   shortcut: '⌘C',
 ///   child: DsButton.icon(icon: const DsIcon(DsIcons.link),
-///       semanticLabel: 'Kopyala', onPressed: copy),
+///       semanticLabel: 'Copy', onPressed: copy),
 /// )
 /// ```
 class DsTooltip extends StatefulWidget {

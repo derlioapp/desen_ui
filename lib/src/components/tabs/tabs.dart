@@ -86,8 +86,8 @@ class DsTab<T> {
 ///   value: tab,
 ///   onChanged: (v) => setState(() => tab = v),
 ///   tabs: const [
-///     DsTab(value: 'general', label: Text('Genel')),
-///     DsTab(value: 'members', label: Text('Üyeler'), count: 12),
+///     DsTab(value: 'general', label: Text('General')),
+///     DsTab(value: 'members', label: Text('Members'), count: 12),
 ///   ],
 /// )
 /// ```

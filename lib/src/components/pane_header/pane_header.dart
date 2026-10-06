@@ -15,8 +15,8 @@ import 'pane_header_style.dart';
 /// DsPaneHeader(
 ///   title: DsBreadcrumb(items: [...]),
 ///   actions: [
-///     DsButton.icon(icon: const DsIcon(DsIcons.share), semanticLabel: 'Paylaş', onPressed: share),
-///     DsButton(variant: .primary, size: .sm, onPressed: publish, child: const Text('Yayınla')),
+///     DsButton.icon(icon: const DsIcon(DsIcons.share), semanticLabel: 'Share', onPressed: share),
+///     DsButton(variant: .primary, size: .sm, onPressed: publish, child: const Text('Publish')),
 ///   ],
 /// )
 /// ```

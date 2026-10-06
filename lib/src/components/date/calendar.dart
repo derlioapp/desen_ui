@@ -113,7 +113,8 @@ class DsDateRange {
 /// the movement spring; under reduced motion it only fades.
 ///
 /// **Screen readers.** Each day is a button named by its full date in the
-/// language ("5 Ekim 2026 Pazartesi"), with today said after it; the
+/// language ("Monday, October 5, 2026"; "5 Ekim 2026 Pazartesi" in
+/// Turkish), with today said after it; the
 /// chosen day is selected. The month title is a live region, so turning
 /// the page is announced.
 ///

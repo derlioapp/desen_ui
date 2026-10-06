@@ -40,7 +40,7 @@ export 'time_picker_style.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Başlangıç'),
+///   label: const Text('Start'),
 ///   child: DsTimePicker(
 ///     value: start,
 ///     minuteStep: 15,
@@ -78,7 +78,7 @@ export 'time_picker_style.dart';
 /// | Enter | Closes the columns, keeping the time |
 /// | Escape | Closes the columns, restoring the time they opened with |
 ///
-/// **Screen readers.** Each column is one adjustable node ("Saat, 14";
+/// **Screen readers.** Each column is one adjustable node ("Hours, 14";
 /// swipe up or down to change it), the field and the button their own.
 /// Increase gives the next item, the later time, as Down does: the
 /// columns read as lists, like the time lists of Android, Windows and

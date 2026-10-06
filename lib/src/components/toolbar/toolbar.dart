@@ -27,10 +27,10 @@ import 'toolbar_toggle_style.dart';
 /// ```dart
 /// DsToolbar(
 ///   children: [
-///     DsToolbarToggle(icon: const DsIcon(DsIcons.bold), semanticLabel: 'Kalın',
+///     DsToolbarToggle(icon: const DsIcon(DsIcons.bold), semanticLabel: 'Bold',
 ///         selected: bold, onChanged: (v) => setState(() => bold = v)),
 ///     const DsToolbarDivider(),
-///     DsButton(variant: .primary, size: .sm, onPressed: send, child: const Text('Gönder')),
+///     DsButton(variant: .primary, size: .sm, onPressed: send, child: const Text('Send')),
 ///   ],
 /// )
 /// ```
@@ -260,7 +260,7 @@ class DsToolbarToggle extends StatefulWidget {
   /// Usually a [DsIcon].
   final Widget icon;
 
-  /// What the toggle does ("Kalın"); icon-only controls need a name.
+  /// What the toggle does ("Bold"); icon-only controls need a name.
   final String semanticLabel;
 
   /// Whether the toggle is on.

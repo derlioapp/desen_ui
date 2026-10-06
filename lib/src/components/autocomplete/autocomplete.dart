@@ -60,7 +60,7 @@ const _announceDelay = Duration(milliseconds: 600);
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Şehir'),
+///   label: const Text('City'),
 ///   child: DsAutocomplete<String>(
 ///     value: city,
 ///     onChanged: (v) => setState(() => city = v),
@@ -113,7 +113,7 @@ const _announceDelay = Duration(milliseconds: 600);
 /// text. The popup is a menu of radio items (Flutter 3.47 has no listbox
 /// role either); the chosen one is checked. Where the platform supports
 /// announcements, the active option is announced as it moves, and the
-/// number of results ("5 sonuç") politely once typing pauses; "No results"
+/// number of results ("5 results") politely once typing pauses; "No results"
 /// is also a live region.
 ///
 /// Anatomy: well (fill + inner edge), text, clear button, error icon,
@@ -329,7 +329,7 @@ class DsAutocomplete<T> extends StatelessWidget {
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Atanan kişiler'),
+///   label: const Text('Assignees'),
 ///   child: DsMultiSelect<String>(
 ///     value: people,
 ///     onChanged: (v) => setState(() => people = v),

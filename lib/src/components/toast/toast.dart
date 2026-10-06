@@ -50,17 +50,17 @@ class DsToast extends StatelessWidget {
     this.style,
   });
 
-  /// What happened ("Değişiklikler kaydedildi").
+  /// What happened ("Changes saved").
   final String title;
 
-  /// Context in a few words ("Derlio Web · az önce").
+  /// Context in a few words ("Derlio Web · just now").
   final String? description;
 
   /// Adds a status icon; the shape tells the status, not only the color.
   /// Screen readers hear the status by name ("Error").
   final DsStatus? status;
 
-  /// A short action, e.g. undo ("Geri al").
+  /// A short action, e.g. undo ("Undo").
   final String? actionLabel;
 
   /// Runs the action.

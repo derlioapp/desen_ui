@@ -40,10 +40,10 @@ import 'sidebar_style.dart';
 ///   collapsed: narrow,
 ///   children: const [
 ///     DsSidebarItem(value: 'inbox', leading: DsIcon(DsIcons.inbox),
-///         label: Text('Gelen'), count: 4),
-///     DsSidebarSection(label: Text('EKİPLER')),
+///         label: Text('Inbox'), count: 4),
+///     DsSidebarSection(label: Text('TEAMS')),
 ///     DsSidebarItem(value: 'design', leading: DsIcon(DsIcons.folder),
-///         label: Text('Tasarım')),
+///         label: Text('Design')),
 ///   ],
 /// )
 /// ```
@@ -241,7 +241,7 @@ String? _plainText(Widget label) => switch (label) {
   _ => null,
 };
 
-/// A section label inside a [DsSidebar] ("EKİPLER"). Shown as given.
+/// A section label inside a [DsSidebar] ("TEAMS"). Shown as given.
 ///
 /// In a collapsed sidebar it becomes a short line in the label's place,
 /// so the items below do not move; screen readers still hear the label as

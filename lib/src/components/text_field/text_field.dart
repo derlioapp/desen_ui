@@ -41,14 +41,14 @@ part 'search_field.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('E-posta'),
-///   errorText: invalid ? 'Geçerli bir adres girin.' : null,
+///   label: const Text('Email'),
+///   errorText: invalid ? 'Enter a valid address.' : null,
 ///   required: true,
 ///   child: DsTextField(
 ///     controller: email,
 ///     keyboardType: TextInputType.emailAddress,
 ///     autofillHints: const [AutofillHints.email],
-///     placeholder: 'ad@ornek.com',
+///     placeholder: 'name@example.com',
 ///   ),
 /// )
 /// ```

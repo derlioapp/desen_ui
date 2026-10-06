@@ -17,7 +17,7 @@ import 'status_dot_style.dart';
 /// A status pill: soft tint, colored text and a dot.
 ///
 /// ```dart
-/// const DsBadge(status: .success, label: Text('Yayında'))
+/// const DsBadge(status: .success, label: Text('Live'))
 /// ```
 ///
 /// The dot is always there by default, so status is never told by color

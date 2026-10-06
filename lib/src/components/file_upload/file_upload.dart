@@ -30,12 +30,12 @@ import 'file_upload_style.dart';
 ///
 /// ```dart
 /// DsField(
-///   label: const Text('Ekler'),
-///   errorText: tooBig ? 'Dosya 10 MB\'tan büyük.' : null,
+///   label: const Text('Attachments'),
+///   errorText: tooBig ? 'The file is larger than 10 MB.' : null,
 ///   child: DsFileUpload(
 ///     onBrowse: pickFiles,
 ///     dragging: isDragging,
-///     description: const Text('PDF, PNG · en fazla 10 MB'),
+///     description: const Text('PDF, PNG · up to 10 MB'),
 ///     files: [
 ///       for (final f in uploads)
 ///         DsFileItem(
@@ -452,8 +452,8 @@ enum DsFileStatus {
 ///   buttons.
 ///
 /// Sizes are formatted the local way ([dsFormatFileSize]: "2,4 MB" in
-/// Turkish). Screen readers hear the file name with its state ("kapak.png
-/// yüklendi, 840 KB"), the progress bar's value and the buttons, each
+/// Turkish). Screen readers hear the file name with its state ("cover.png
+/// uploaded, 840 KB"), the progress bar's value and the buttons, each
 /// named with the file. When the state changes to done or failed it is
 /// announced politely (a polite live region where the platform has no
 /// announcements's rule).
@@ -593,8 +593,8 @@ class _DsFileItemState extends State<DsFileItem> {
     );
   }
 
-  /// The state in words: "kapak.png yüklendi", "rapor.xlsx yüklenemedi\n
-  /// Desteklenmeyen dosya türü".
+  /// The state in words: "cover.png uploaded", "report.xlsx could not be
+  /// uploaded\nUnsupported file type".
   String _statusText(DsLocalizations l10n) => switch (widget.status) {
     DsFileStatus.uploading => '${widget.name}\n${l10n.uploading}',
     DsFileStatus.done => l10n.uploaded(widget.name),

@@ -61,8 +61,8 @@ class DsAccordionItem<T> {
 /// DsAccordion<String>(
 ///   initialValue: const {'billing'},
 ///   items: const [
-///     DsAccordionItem(value: 'billing', title: Text('Fatura'), child: …),
-///     DsAccordionItem(value: 'team', title: Text('Ekip'), child: …),
+///     DsAccordionItem(value: 'billing', title: Text('Billing'), child: …),
+///     DsAccordionItem(value: 'team', title: Text('Team'), child: …),
 ///   ],
 /// )
 /// ```

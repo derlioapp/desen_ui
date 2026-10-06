@@ -433,9 +433,9 @@ Future<T?> showDsDialog<T>({
 /// ```dart
 /// final delete = await showDsConfirm(
 ///   context: context,
-///   title: 'Projeyi sil?',
-///   description: 'Derlio Web ve 48 görev kalıcı olarak silinir.',
-///   confirmLabel: 'Sil',
+///   title: 'Delete project?',
+///   description: 'Derlio Web and its 48 tasks will be deleted permanently.',
+///   confirmLabel: 'Delete',
 ///   destructive: true,
 ///   icon: const DsIcon(DsIcons.trash),
 /// );

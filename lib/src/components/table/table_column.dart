@@ -182,7 +182,7 @@ class DsTableColumnWidth {
 /// ```dart
 /// DsTableColumn<Invoice>(
 ///   id: 'amount',
-///   label: 'Tutar',
+///   label: 'Amount',
 ///   value: (i) => i.amount,          // sorts by the number
 ///   text: (i) => money.format(i.amount), // shows "12.480,00"
 ///   numeric: true,                    // tabular figures, end-aligned

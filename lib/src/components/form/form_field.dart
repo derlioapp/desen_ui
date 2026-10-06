@@ -24,7 +24,7 @@ typedef DsFormFieldBuilder<T> = Widget Function(DsFormFieldState<T> field);
 /// Form(
 ///   key: formKey,
 ///   child: DsFormField<String>(
-///     label: const Text('Proje'),
+///     label: const Text('Project'),
 ///     required: true,
 ///     validator: DsValidators.required(context),
 ///     builder: (field) => DsSelect<String>(
@@ -363,7 +363,7 @@ extension DsFormValidation on FormState {
   ///       formKey.currentState!.save();
   ///     }
   ///   },
-  ///   child: const Text('Kaydet'),
+  ///   child: const Text('Save'),
   /// )
   /// ```
   bool validateAndFocus() {
