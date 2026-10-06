@@ -182,6 +182,7 @@ class ButtonPage extends StatelessWidget {
               spacing: 12,
               runSpacing: 12,
               alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 // #region button-tinted
                 DsButton(

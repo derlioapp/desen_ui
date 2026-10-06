@@ -819,14 +819,15 @@ extension on _NorthwindDashboardState {
                           status: task.status.tone,
                           label: Text(task.status.label),
                         ),
+                        // The due date leads, so a narrow phone cuts the
+                        // task key rather than the date.
                         Flexible(
                           child: Text.rich(
                             TextSpan(
                               children: [
-                                TextSpan(text: task.key),
-                                if (task.due case final due?)
+                                if (task.due case final due?) ...[
                                   TextSpan(
-                                    text: ' · ${shortDate(due)}',
+                                    text: shortDate(due),
                                     style: task.isOverdue
                                         ? TextStyle(
                                             color: k.danger.text,
@@ -834,6 +835,9 @@ extension on _NorthwindDashboardState {
                                           )
                                         : null,
                                   ),
+                                  const TextSpan(text: ' · '),
+                                ],
+                                TextSpan(text: task.key),
                               ],
                             ),
                             maxLines: 1,
