@@ -17,7 +17,7 @@ const seeds = {
   'indigo': DsSeed.indigo,
 };
 
-/// The text tiers step down evenly enough to tell apart (cila): text,
+/// The text tiers step down evenly enough to tell apart: text,
 /// then textMuted a clear step below, then textSubtle below that, all on
 /// the surface at standard contrast. In dark mode textMuted stays under
 /// [darkMutedMax]: it used to sit at 9.2:1, reading almost as loud as
