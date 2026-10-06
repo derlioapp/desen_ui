@@ -253,8 +253,8 @@ class DsRadio<T> extends StatefulWidget {
         background: k.controlHover,
         borderColor: k.textSubtle,
       ),
-      // A bright accent melts into the card; its edge keeps the circle
-      // (transparent for other seeds; denetim-2).
+      // A fill under 3:1 off its layer keeps the circle with its edge
+      // (transparent when the fill stands alone).
       selected: DsRadioStyle(
         background: k.accent,
         borderColor: k.accentEdge,

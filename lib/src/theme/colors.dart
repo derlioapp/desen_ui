@@ -245,7 +245,7 @@ class DsColors {
   /// Text and icons on [accent]: white, or a dark ink tinted toward the seed on a bright accent.
   final Color onAccent;
 
-  /// 1px edge of an [accent] fill that stands under 3:1 off the surfaces it sits on: a bright accent (dark [onAccent]). Checked checkboxes and radios, the switch's on track and filled selections draw it inside their fill, so their shape does not melt into a white card (WCAG 1.4.11). The dark label at the lowest opacity that brings the edge to 3:1, hover and press included; transparent when the fill stands on its own.
+  /// 1px edge of an [accent] fill that stands under 3:1 off the layers it sits on: a bright accent (dark [onAccent]) on a light card, or a white-labeled fill in dark mode, held dark by its label, on the lighter floating layer. Checked checkboxes and radios, the switch's on track and filled selections draw it inside their fill, so their shape does not melt into the layer (WCAG 1.4.11). The [onAccent] label at the lowest opacity that brings the edge to 3:1 on every layer, hover and press included; transparent when the fill stands on its own. Labeled buttons do not draw it.
   final Color accentEdge;
 
   /// Accent marks with no label on them: progress and slider fill, tab underline, text caret. [accent] in light mode (darkened under a bright accent), a lighter accent in dark mode. Stands 3:1 off [channelStrong], the surface and the field.

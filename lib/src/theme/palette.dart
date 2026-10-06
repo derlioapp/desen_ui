@@ -1099,14 +1099,16 @@ class _Engine {
   }
 
   /// A filled button is flat, like Geist and shadcn: no glow, no lift
-  /// (decision 7). Only a bright accent, which melts into a
-  /// light card (the case [DsColors.accentEdge] exists for), keeps a
-  /// hairline inside the fill: its dark label at 20%. A hairline and not
-  /// the 3:1 `accentEdge` itself, because the button's label, not its
-  /// outline, says what it is (WCAG 1.4.11 asks 3:1 of a checkbox's edge,
-  /// which carries its state, not of a labeled button's).
-  static List<DsShadow> _filledEdge(DsColors k) => [
-    if (k.accentEdge.a > 0) DsShadow.innerRing(_alpha(k.onAccent, .2)),
+  /// (decision 7). Only a bright accent, which melts into a light card,
+  /// keeps a hairline inside the fill: its dark label at 20%. A hairline
+  /// and not the 3:1 [DsColors.accentEdge] itself, because the button's
+  /// label, not its outline, says what it is (WCAG 1.4.11 asks 3:1 of a
+  /// checkbox's edge, which carries its state, not of a labeled
+  /// button's); for the same reason a white-labeled fill, which may wear
+  /// an edge on its checked controls in dark mode, keeps its buttons flat.
+  List<DsShadow> _filledEdge(DsColors k) => [
+    if (bright && k.accentEdge.a > 0)
+      DsShadow.innerRing(_alpha(k.onAccent, .2)),
   ];
 
   /// The knob's edge over a bright on track: the dark label at the lowest
@@ -1123,18 +1125,23 @@ class _Engine {
     return _alpha(k.onAccent, math.min(alpha, 1));
   }
 
-  /// The edge of an accent fill that melts into the card:
-  /// a bright accent stands only 1.07–1.9:1 off white, so a checked box or an
-  /// on switch lost its outline. The dark label at the lowest opacity whose
-  /// blend over the fill, resting, hovered and pressed, stands 3:1 off every
-  /// layer the control sits on.
+  /// The edge of an accent fill that does not stand 3:1 off every layer a
+  /// checked control sits on (WCAG 1.4.11): the label color at the lowest
+  /// opacity whose blend over the fill, resting, hovered and pressed,
+  /// stands 3:1 off each of them; transparent when the fill does so alone.
   ///
-  /// Transparent for a white-labeled fill: in light mode it stands ≥ 4.5:1
-  /// off the card by construction; in dark mode it rests about 2.5:1 off the
-  /// dark layers like iOS's own fills, and its mark (≥ 4.5:1 on the fill)
-  /// carries the state. A lighter halo there would only add noise.
+  /// - A bright accent stands only 1.07–1.9:1 off white, so a checked box
+  ///   or an on switch lost its outline: its dark label draws the edge,
+  ///   from 30%.
+  /// - A white-labeled fill stands ≥ 4.5:1 off the card in light mode by
+  ///   construction: no edge. In dark mode its white label holds it dark
+  ///   (4.5:1 under white), about 2.2–2.6:1 off the lighter floating layer
+  ///   and, for a deep red, under 3:1 off the surface too: a faint light
+  ///   rim (the white label, from 10%) keeps the checked shape apart.
+  ///
+  /// The same rule for every seed, in both modes and at both contrast
+  /// levels; a filled selection drawn in the accent wears it too.
   Color _accentEdge(DsColors k) {
-    if (!bright) return _clear;
     final grounds = [
       k.canvas,
       k.surface,
@@ -1161,7 +1168,7 @@ class _Engine {
       ),
     );
     if (stands(_clear)) return _clear;
-    var alpha = .3;
+    var alpha = bright ? .3 : .1;
     while (alpha < 1 && !stands(_alpha(k.onAccent, alpha))) {
       alpha = _r(alpha + .05);
     }

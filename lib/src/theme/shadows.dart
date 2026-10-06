@@ -58,8 +58,7 @@ class DsShadows {
 
   /// Accent-filled (primary) button, drawn over [DsColors.accent]. Flat:
   /// empty, except an inner hairline in the dark label color under a bright
-  /// accent (when [DsColors.accentEdge] is set), which would otherwise melt
-  /// into a light card. Add a lift or glow here through `adjustShadows` if
+  /// accent, which would otherwise melt into a light card. Add a lift or glow here through `adjustShadows` if
   /// a design wants one.
   final List<DsShadow> accent;
 
