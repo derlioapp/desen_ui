@@ -58,8 +58,8 @@ class DsShadows {
 
   /// Accent-filled (primary) button, drawn over [DsColors.accent]. Flat:
   /// empty, except an inner hairline in the dark label color under a bright
-  /// accent, which would otherwise melt into a light card. Add a lift or glow here through `adjustShadows` if
-  /// a design wants one.
+  /// accent, which would otherwise melt into a light card. Add a lift or
+  /// glow here through `adjustShadows` if a design wants one.
   final List<DsShadow> accent;
 
   /// Filled destructive button. Flat: empty by default; its fill stands

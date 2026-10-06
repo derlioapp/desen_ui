@@ -412,7 +412,8 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
                         value: i == selected ? 1 : 0,
                         spring: t.motion.moveSpringOrNull,
                         builder: (context, v, child) => Transform.scale(
-                          // Grows in; never wider than its tab (no spill flash).
+                          // Grows in; never wider than its tab (no spill
+                          // flash).
                           scaleX: v.clamp(0, 1).toDouble(),
                           child: child,
                         ),
