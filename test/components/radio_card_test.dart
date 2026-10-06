@@ -359,7 +359,7 @@ void main() {
     const title = 'Weekly summary';
     const detail = 'Every Monday morning';
 
-    testWidgets('checkbox: the description toggles, reads with the label '
+    testWidgets('checkbox: the description toggles, reads as the hint '
         'and is muted', (tester) async {
       final handle = tester.ensureSemantics();
       final theme = DsThemeData();
@@ -380,12 +380,12 @@ void main() {
       await tester.tap(find.text(detail));
       await tester.pump();
       expect(on, isTrue);
-      final label = tester
+      // Read after the name and state, as the hint (9edf266).
+      final data = tester
           .getSemantics(find.byType(DsCheckbox))
-          .getSemanticsData()
-          .label;
-      expect(label, contains(title));
-      expect(label, contains(detail));
+          .getSemanticsData();
+      expect(data.label, title);
+      expect(data.hint, detail);
       expect(
         tester
             .widget<RichText>(
@@ -439,7 +439,7 @@ void main() {
       );
     });
 
-    testWidgets('radio: the description selects and reads with the label', (
+    testWidgets('radio: the description selects and reads as the hint', (
       tester,
     ) async {
       final handle = tester.ensureSemantics();
@@ -467,12 +467,12 @@ void main() {
       await tester.tap(find.text(detail));
       await tester.pump();
       expect(value, 'express');
-      final label = tester
+      // Read after the name and state, as the hint (9edf266).
+      final data = tester
           .getSemantics(find.byType(DsRadio<String>))
-          .getSemanticsData()
-          .label;
-      expect(label, contains(title));
-      expect(label, contains(detail));
+          .getSemanticsData();
+      expect(data.label, title);
+      expect(data.hint, detail);
       handle.dispose();
     });
 
