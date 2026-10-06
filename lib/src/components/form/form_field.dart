@@ -325,7 +325,9 @@ extension DsFormValidation on FormState {
   /// Validates every field ([FormState.validateGranularly]) and, when one
   /// fails, moves focus to the first invalid [DsFormField] in reading
   /// order (top to bottom, then from the start side) and scrolls it into
-  /// view. Returns whether the form is valid.
+  /// view. When a field has no place on screen (kept alive off screen in a
+  /// lazy list), the fields' order in the widget tree is used instead.
+  /// Returns whether the form is valid.
   ///
   /// ```dart
   /// DsButton(
@@ -348,12 +350,29 @@ extension DsFormValidation on FormState {
               when box.hasSize)
             (f, box.localToGlobal(Offset.zero)),
     ];
-    fields.sort((a, b) {
-      final dy = a.$2.dy - b.$2.dy;
-      if (dy.abs() >= 1) return dy.sign.toInt();
-      final dx = a.$2.dx - b.$2.dx;
-      return (rtl ? -dx : dx).sign.toInt();
-    });
+    if (fields.every((f) => f.$2.isFinite)) {
+      fields.sort((a, b) {
+        final dy = a.$2.dy - b.$2.dy;
+        if (dy.abs() >= 1) return dy.sign.toInt();
+        final dx = a.$2.dx - b.$2.dx;
+        return (rtl ? -dx : dx).sign.toInt();
+      });
+    } else {
+      // A field kept alive off screen in a lazy list (focused, then
+      // scrolled away) has no position on screen (NaN). The widget tree
+      // keeps the list's order, so tree order stands in for reading order.
+      final order = <State, int>{};
+      void visit(Element element) {
+        if (element is StatefulElement && element.state is DsFormFieldState) {
+          order[element.state] = order.length;
+        }
+        element.visitChildren(visit);
+      }
+
+      context.visitChildElements(visit);
+      int rank(State f) => order[f] ?? order.length;
+      fields.sort((a, b) => rank(a.$1).compareTo(rank(b.$1)));
+    }
     for (final (field, _) in fields) {
       if (field.focus()) break;
     }

@@ -753,6 +753,61 @@ void main() {
       expect(box.hasFocus, isTrue);
       expect(scroll.offset, 0);
     });
+
+    testWidgets('an invalid field kept alive off screen in a lazy list '
+        'takes focus without an error (bugs H2)', (tester) async {
+      final form = GlobalKey<FormState>();
+      final scroll = ScrollController();
+      addTearDown(scroll.dispose);
+      final first = FocusNode(), last = FocusNode();
+      addTearDown(first.dispose);
+      addTearDown(last.dispose);
+      bool? valid;
+      await tester.pumpWidget(
+        app(
+          form: form,
+          SizedBox(
+            height: 400,
+            child: Builder(
+              builder: (context) => ListView(
+                controller: scroll,
+                children: [
+                  DsTextFormField(
+                    label: const Text('First'),
+                    focusNode: first,
+                    validator: DsValidators.required(context),
+                  ),
+                  for (var i = 0; i < 20; i++)
+                    SizedBox(height: 80, child: Text('Filler $i')),
+                  DsTextFormField(
+                    label: const Text('Last'),
+                    focusNode: last,
+                    validator: DsValidators.required(context),
+                  ),
+                  GestureDetector(
+                    onTap: () => valid = form.currentState!.validateAndFocus(),
+                    child: const Text('Submit'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+      // Focus keeps the first field's item alive while the list scrolls to
+      // the end (its paint transform is zeroed, its position NaN).
+      first.requestFocus();
+      await tester.pump();
+      scroll.jumpTo(scroll.position.maxScrollExtent);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Submit'));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      expect(valid, isFalse);
+      expect(first.hasFocus, isTrue, reason: 'the first in reading order');
+      expect(last.hasFocus, isFalse);
+      expect(scroll.offset, 0, reason: 'scrolled back to it');
+    });
   });
 
   group('restoration', () {
