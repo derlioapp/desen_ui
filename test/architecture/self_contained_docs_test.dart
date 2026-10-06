@@ -3,26 +3,23 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
-/// Public files stand on their own. The maintainers' working notes (a
-/// rulebook, audit reports, an old HTML design concept) are not in the
-/// repository, so a reader cannot look up a rule number, an audit finding
-/// code or "the concept". Code, tests, tools and docs give the reason in
-/// words instead.
+/// Public files stand on their own: a comment, a test name or a doc gives
+/// its reason in words, never a pointer to a document or a numbered rule
+/// that a reader of the package cannot open.
 ///
 /// The patterns live here and only here; this file is the one exception.
 final _internalReferences = <RegExp>[
-  // The rulebook, the audits and the delivery notes, by name.
+  // Document names.
   RegExp(r'KALITE|TESLIM|[Dd]enetim|[Aa]ra[sş]t[ıi]rma'),
-  // Rule and issue numbers: K-46, S-18, R-2, F-25.
+  // Numbered rules and items.
   RegExp(r'\b[KSRF]-\d{1,3}\b'),
-  // Phase names: "Faz 5a", "Phase 7b", "phase B".
+  // Work phases.
   RegExp(r'\bFaz \d|\b[Pp]hase (\d+[a-z]?|[A-Z])\b'),
-  // Section numbers of the rulebook: "§2.1".
+  // Section numbers.
   RegExp('§'),
-  // The old design concept: "concept card 24", "concept/", "the concept".
+  // An external design file.
   RegExp(r'\bconcept\b', caseSensitive: false),
-  // Audit decisions and finding codes: "decision 7", "ux H1", "(R3)",
-  // "V2: ".
+  // Review decisions and finding codes.
   RegExp(r'\bdecision \d+\b', caseSensitive: false),
   RegExp(r'\b([Ee]ng|[Uu]x|[Vv]isual|[Bb]ugs|[Rr]ules) [A-Z]\d'),
   RegExp(r'\b[BDHLMPRSV]\d{1,2}:\s'),

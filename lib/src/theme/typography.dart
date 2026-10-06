@@ -316,8 +316,9 @@ class DsTypography {
   /// Field label above an input: 12 / 600 (touch: 13).
   final TextStyle fieldLabel;
 
-  /// Section header in a sidebar: 11 / 600 / +0.08em (touch: 12), shown
-  /// uppercase.
+  /// Section header in a sidebar: 11 / 600 / +0.08em (touch: 12). Pass the
+  /// text already in capitals if you want them: Desen never changes a text's
+  /// case, since `toUpperCase` doesn't know the language (Turkish `i` → `İ`).
   final TextStyle overline;
 
   /// The label of a control of [size], weight 600: [fieldLabel],

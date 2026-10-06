@@ -126,6 +126,7 @@ setUp(() => DsFocusVisibility.debugReset(keyboard: true));
 - The time picker's hour column doesn't wrap from 23 to 00, and has no seconds or minimum and maximum time.
 - No range (two-thumb) slider.
 - Screen readers aren't told which menu item opens a submenu (needs a role Flutter doesn't expose yet).
+- Screen readers announce the select as a button with its expanded state, and the number field as an adjustable text field: Flutter doesn't support the combobox and spin button roles yet.
 - Plain `FormState.validate()` announces errors through Flutter's own unnamed announcement. `formKey.currentState!.validateAndFocus()` (from `DsFormValidation`) focuses the first invalid field and announces it once, with its name.
 - VoiceOver users who turned hints off don't hear a field's description or error, which are attached as hints.
 - Visual references (golden images) are rendered on macOS and checked by hand on the web and macOS; iOS and Android have not yet been checked on physical devices.
