@@ -170,10 +170,8 @@ class DsPalette {
   int get hashCode => Object.hash(role, colors, shadows);
 }
 
-/// The palette engine. It started as a port of the concept's `mk()`
-/// (concept/Desen UI.dc.html) and has since been tuned to the contrast
-/// budget; test/fixtures/palette_snapshot.json
-/// is the regression baseline.
+/// The palette engine, tuned to the contrast budget;
+/// test/fixtures/palette_snapshot.json is the regression baseline.
 class _Engine {
   _Engine(
     DsOklch seed, {
@@ -771,7 +769,7 @@ class _Engine {
 
   /// Dark mode, tuned to the contrast budget.
   ///
-  /// Departures from the concept, following iOS 27's dark-mode habits:
+  /// Choices that follow iOS 27's dark-mode habits:
   /// - Accent fills keep the light fill's chroma (capped at 0.21; a bright
   ///   fill at 0.148) and get only a little lighter; text accents are
   ///   capped at 0.105.
@@ -1100,8 +1098,8 @@ class _Engine {
     );
   }
 
-  /// A filled button is flat, like Geist and shadcn: no glow, no lift
-  /// (decision 7). Only a bright accent, which melts into a
+  /// A filled button is flat, like Geist and shadcn: no glow, no lift.
+  /// Only a bright accent, which melts into a
   /// light card (the case [DsColors.accentEdge] exists for), keeps a
   /// hairline inside the fill: its dark label at 20%. A hairline and not
   /// the 3:1 `accentEdge` itself, because the button's label, not its

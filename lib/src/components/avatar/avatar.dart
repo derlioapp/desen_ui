@@ -23,8 +23,8 @@ import 'cover_image.dart';
 /// A round avatar: an image, initials, or a person icon.
 ///
 /// Initials sit on soft brand-derived colors that meet AA in every seed and
-/// mode (the concept's solid avatars had white initials as low
-/// as 2.7:1). [toneIndex] picks one of several hues so neighbors stay
+/// mode (solid fills under white initials fell as low as 2.7:1).
+/// [toneIndex] picks one of several hues so neighbors stay
 /// apart; use [DsAvatar.toneFor] to give each person a stable color.
 class DsAvatar extends StatelessWidget {
   /// Creates an avatar. Shows [image] when given, else [initials], else a

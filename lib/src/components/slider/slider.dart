@@ -21,8 +21,8 @@ import 'slider_style.dart';
 /// Page Up/Down move a tenth, Home/End jump to the ends. Screen readers get
 /// a slider with increase/decrease actions.
 ///
-/// The thumb has a form-control outline, so it stays visible
-/// on light surfaces where the concept's white thumb disappeared.
+/// The thumb has a form-control outline, so it stays visible on light
+/// surfaces, where a plain white thumb would disappear.
 ///
 /// It fills the available width; under an unbounded width (in a [Row])
 /// it takes [DsSliderStyle.width]. [onChangeStart] and [onChangeEnd] come

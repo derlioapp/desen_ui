@@ -381,8 +381,7 @@ class DsTypography {
   /// content only: code, and keycaps such as a search field's "⌘K" hint.
   ///
   /// Not for numbers: use [numeric]. A mono face makes dates, amounts and
-  /// counters read like a console, and its slashed zero like "Ø"
-  /// (decision 1).
+  /// counters read like a console, and its slashed zero like "Ø".
   TextStyle mono(TextStyle style) => style.copyWith(
     fontFamily: monoFamily,
     package: monoPackage,

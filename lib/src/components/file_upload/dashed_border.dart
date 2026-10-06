@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import '../../painting/shape.dart';
 
 /// A dashed outline drawn inside its child's box, e.g. a file drop zone's
-/// edge (concept 34).
+/// edge.
 ///
 /// The dashes are spread evenly over the whole outline, so the pattern
 /// closes without a long or a cut dash where it starts, also around

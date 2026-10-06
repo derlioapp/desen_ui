@@ -16,8 +16,8 @@ import '../../theme/theme_data.dart';
 import '../menu/shortcut.dart';
 import 'tooltip_style.dart';
 
-/// A small dark label for a control, with an optional shortcut (concept
-/// card 20). Meets WCAG 1.4.13:
+/// A small dark label for a control, with an optional shortcut. Meets WCAG
+/// 1.4.13:
 ///
 /// - **shows** after the pointer rests on the trigger ([DsMotion.hoverDelay];
 ///   at once when another tooltip just closed), on keyboard focus, or on a
