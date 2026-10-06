@@ -432,7 +432,8 @@ void main() {
       await tester.enterText(editableFinder(), 'Merhaba dünya');
       await tester.pump();
       expect(find.text('13 / 100'), findsOneWidget);
-      final style = tester.widget<Text>(find.text('13 / 100')).style!;
+      // The counter is a span: tabular digits, a proportional slash.
+      final style = tester.widget<Text>(find.text('13 / 100')).textSpan!.style!;
       expect(style.fontFamily, contains(theme.typography.family));
       expect(style.fontFeatures, [const FontFeature.tabularFigures()]);
       expect(style.color, theme.colors.textSubtle);
@@ -468,7 +469,7 @@ void main() {
       await tester.enterText(editableFinder(), 'abcdefgh');
       await tester.pump();
       expect(editable(tester).widget.controller.text, 'abcdefgh');
-      final counter = tester.widget<Text>(find.text('8 / 5')).style!;
+      final counter = tester.widget<Text>(find.text('8 / 5')).textSpan!.style!;
       expect(counter.color, theme.colors.danger.text);
       expect(counter.fontWeight, FontWeight.w600);
       expect(decoration(tester).shadows.first.spread, 2);

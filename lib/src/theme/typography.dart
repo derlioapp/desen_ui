@@ -357,9 +357,12 @@ class DsTypography {
   /// takes the same width, so columns align and a changing value does not
   /// shift, while the figures keep the face of the surrounding text.
   ///
-  /// Not for text people type or read inline (a date or amount in a field,
-  /// a file size): in Schibsted Grotesk `tnum` also widens `.`, `,` and `:`
-  /// to a digit's width.
+  /// In Schibsted Grotesk `tnum` also widens `.`, `,`, `:` and `/` to a
+  /// digit's width, so "12.480,00" would read like a typewriter. Desen's
+  /// components therefore keep the figures tabular on the digits only and
+  /// set the separators between them with the face's own spacing; the
+  /// digits still line up. Not for text people type or read inline (a date
+  /// or amount in a field, a file size), which stays proportional.
   TextStyle numeric(TextStyle style) {
     final inDisplay =
         displayFamily != family &&

@@ -7,6 +7,7 @@ import '../../foundation/oklch.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../painting/shadow.dart';
 import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
@@ -434,13 +435,15 @@ class DsAvatarGroup extends StatelessWidget {
                 color: s.overflowBackground,
                 borderRadius: BorderRadius.circular(d / 2),
               ),
-              child: Text(
-                DsLocalizations.of(context).overflowCount(hidden),
-                semanticsLabel: DsLocalizations.of(context).moreCount(hidden),
-                style: (s.overflowTextStyle ?? const TextStyle()).copyWith(
-                  color: s.overflowForeground,
-                  height: 1, // ds-raw: a line box of one em centers it
+              child: Text.rich(
+                numericSpan(
+                  DsLocalizations.of(context).overflowCount(hidden),
+                  style: (s.overflowTextStyle ?? const TextStyle()).copyWith(
+                    color: s.overflowForeground,
+                    height: 1, // ds-raw: a line box of one em centers it
+                  ),
                 ),
+                semanticsLabel: DsLocalizations.of(context).moreCount(hidden),
               ),
             ),
           ),

@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import '../../behavior/pressable.dart';
 import '../../overlay/placement.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../painting/line.dart';
 import '../../painting/shadow.dart';
 import '../../theme/haptics.dart';
@@ -477,9 +478,11 @@ class _DsSidebarItemState<T extends Object> extends State<DsSidebarItem<T>> {
                         ),
                       ),
                       if (widget.count != null)
-                        Text(
-                          DsCount.text(context, widget.count!),
-                          style: s.countStyle,
+                        Text.rich(
+                          numericSpan(
+                            DsCount.text(context, widget.count!),
+                            style: s.countStyle,
+                          ),
                         ),
                     ],
                   ),

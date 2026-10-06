@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../painting/shadow.dart';
 import '../../theme/radii.dart';
 import '../../theme/sizes.dart';
@@ -245,12 +246,14 @@ class DsCount extends StatelessWidget {
         child: Align(
           widthFactor: 1,
           heightFactor: 1,
-          child: Text(
-            text,
+          child: Text.rich(
+            numericSpan(
+              text,
+              style: (s.textStyle ?? const TextStyle())
+                  // ds-raw: a line box of one em centers the figures
+                  .copyWith(color: s.foreground, height: 1),
+            ),
             maxLines: 1,
-            style: (s.textStyle ?? const TextStyle())
-                // ds-raw: a line box of one em centers the figures
-                .copyWith(color: s.foreground, height: 1),
           ),
         ),
       ),

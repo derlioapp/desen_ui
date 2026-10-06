@@ -13,6 +13,7 @@ import '../../l10n/localizations.dart';
 import '../../overlay/anchored_overlay.dart';
 import '../../overlay/modal_route.dart';
 import '../../painting/decoration.dart';
+import '../../painting/numeric_span.dart';
 import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
@@ -1571,10 +1572,12 @@ class _Counter extends StatelessWidget {
         builder: (context, value, _) {
           final count = value.text.characters.length;
           final over = count > maxLength;
-          return Text(
-            l10n.characterCount(count, maxLength),
+          return Text.rich(
+            numericSpan(
+              l10n.characterCount(count, maxLength),
+              style: over ? style?.merge(overStyle) ?? overStyle : style,
+            ),
             maxLines: 1,
-            style: over ? style?.merge(overStyle) ?? overStyle : style,
           );
         },
       ),

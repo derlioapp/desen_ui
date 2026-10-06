@@ -771,7 +771,7 @@ void main() {
       expect(amount.right, moreOrLessEquals(small.right, epsilon: 0.5));
       final style = DefaultTextStyle.of(tester.element(find.text('12480')))
           .style
-          .merge(tester.widget<Text>(find.text('12480')).style);
+          .merge(tester.widget<Text>(find.text('12480')).textSpan!.style);
       expect(style.fontFamily, contains(theme.typography.family));
       expect(style.fontFeatures, [const FontFeature.tabularFigures()]);
     });
