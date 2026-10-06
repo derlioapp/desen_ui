@@ -560,10 +560,27 @@ List<Rule> rules(
           min: 1.4,
         ),
     ],
-    // Channels (segment, skeleton) stand off the card and the page in both
+    // Channels (segment, stepper) stand off the card and the page in both
     // modes.
     Rule('channel on surface', k.channel, k.surface, min: 1.15),
     Rule('channel on canvas', k.channel, k.canvas, min: 1.15),
+    // Skeletons read wherever content loads: the card, the page, the
+    // sidebar and a floating layer. Light mode matches iOS's placeholder
+    // fill (about 1.25:1) and stays calm; a strong line is a clear step
+    // stronger.
+    for (final MapEntry(key: name, value: bg) in {
+      ...backgrounds,
+      'sidebar': k.sidebar,
+    }.entries) ...[
+      Rule(
+        'skeleton on $name',
+        k.skeleton,
+        bg,
+        min: dark ? 1.15 : 1.22,
+        max: 1.4,
+      ),
+      Rule('skeletonStrong on $name', k.skeletonStrong, bg, min: 1.35),
+    ],
   ];
 }
 
@@ -979,6 +996,76 @@ List<String> pressBeyondHover(DsColors k) {
   ];
 }
 
+/// The modal scrim, in both modes, over every layer a modal can open on
+/// (the page, a card, another floating layer):
+/// - it dims, never washes out: the covered layer keeps 35–60% of its
+///   luminance, so the page clearly steps back without going black;
+/// - the context stays legible: body text keeps 4.5:1 under it;
+/// - the dialog (a floating layer) stands 1.4:1 off the dimmed page.
+List<String> scrimFailures(DsColors k) {
+  String f(double v) => v.toStringAsFixed(2);
+  return [
+    for (final (name, layer) in [
+      ('canvas', k.canvas),
+      ('surface', k.surface),
+      ('overlay', k.overlay),
+    ])
+      if (DsColorUtils.flatten(k.scrim, layer) case final dimmed) ...[
+        if (DsColorUtils.luminance(dimmed) / DsColorUtils.luminance(layer)
+            case final kept when kept < .35 || kept > .6)
+          'scrim keeps ${f(kept * 100)}% of the $name luminance, not 35–60%',
+        if (DsColorUtils.contrastRatio(
+              DsColorUtils.flatten(
+                k.scrim,
+                DsColorUtils.flatten(k.text, layer),
+              ),
+              dimmed,
+            )
+            case final r when r < 4.5)
+          'text under the scrim on $name: ${f(r)} < 4.5',
+        if (name != 'overlay')
+          if (DsColorUtils.contrastRatio(k.overlay, dimmed) case final r
+              when r < 1.4)
+            'overlay on the dimmed $name: ${f(r)} < 1.4',
+      ],
+  ];
+}
+
+/// Light mode status tints (alert, badge, soft danger button, destructive
+/// menu row): opaque, so they read the same on the page and on a card; a
+/// light wash of their status color, never gray; standing off the white
+/// card; and the alert's muted description stays legible on them. The
+/// status text on them is in [rules]. The neutral tint is translucent by
+/// design and has its own rules there.
+List<String> lightTintFailures(DsColors k) {
+  String f(double v) => v.toStringAsFixed(3);
+  return [
+    for (final (name, st) in statuses(k))
+      if (name != 'neutral') ...[
+        for (final (step, tint) in [
+          ('tint', st.tint),
+          ('tintHover', st.tintHover),
+          ('tintPress', st.tintPress),
+        ])
+          if (tint.a < 1) '$name.$step is translucent',
+        if (DsOklch.fromColor(st.tint) case final v) ...[
+          if (v.l < .93) '$name.tint lightness ${f(v.l)} < 0.93',
+          if (v.c < .02) '$name.tint chroma ${f(v.c)} < 0.02: reads gray',
+          if (DsOklch.hueDistance(v.h, DsOklch.fromColor(st.text).h) > 20)
+            '$name.tint hue strays more than 20° from its text',
+        ],
+        if (DsOklch.fromColor(st.tintPress).l case final l when l < .88)
+          '$name.tintPress lightness ${f(l)} < 0.88',
+        if (DsColorUtils.contrastRatio(st.tint, k.surface) case final r
+            when r < 1.12)
+          '$name.tint on surface: ${f(r)} < 1.12',
+        if (DsColorUtils.contrastRatio(k.textMuted, st.tint) case final r
+            when r < 4.5)
+          'textMuted on $name.tint: ${f(r)} < 4.5',
+      ],
+  ];
+}
+
 /// Soft contrast's floor for a form control's boundary (field, checkbox
 /// and radio edge): iOS-faint, never gone.
 const softBoundaryMin = 1.3;
@@ -1008,6 +1095,8 @@ List<String> budgetFailures(
   for (final r in rules(p.colors, p.shadows, dark: dark, level: level))
     ?r.check(withMax: true),
   if (dark) ...darkChroma(p.colors),
+  ...scrimFailures(p.colors),
+  if (!dark) ...lightTintFailures(p.colors),
   if (level == DsContrast.soft) ...softCues(p.shadows, p.colors),
   ...hoverRaisesContrast(p.colors),
   ...pressBeyondHover(p.colors),

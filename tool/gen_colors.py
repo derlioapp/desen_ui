@@ -44,12 +44,14 @@ groups = [
   ("borderChip","Color","Outline of unselected chips."),
  ]),
  ("Channels and rails", [
-  ("channel","Color","Recessed channel of segmented controls and steppers; skeleton blocks. May be translucent; layer it on a surface."),
-  ("channelStrong","Color","A step stronger than [channel]: the unfilled part of slider and progress tracks, strong skeleton lines, and small neutral fills such as the sheet grabber."),
+  ("channel","Color","Recessed channel of segmented controls and steppers. May be translucent; layer it on a surface."),
+  ("channelStrong","Color","A step stronger than [channel]: the unfilled part of slider and progress tracks, and small neutral fills such as the sheet grabber."),
   ("rail","Color","The switch's track while off. Meets 3:1 against surfaces (WCAG 1.4.11) at standard contrast, unlike the decorative channels; a light, iOS-like fill at soft contrast."),
   ("channelThumb","Color","The raised piece in a [channel]: the selected segment of a soft segmented control, stepper buttons."),
   ("knob","Color","Switch knob and slider thumb."),
-  ("shimmer","Color","Highlight swept across skeletons while loading."),
+  ("skeleton","Color","Skeleton blocks and lines: a neutral fill that stands about 1.25:1 off a white card, like iOS's placeholder fill, and as much off the page and the sidebar. Translucent; layer it on a surface."),
+  ("skeletonStrong","Color","A step stronger than [skeleton]: strong skeleton lines, such as a title."),
+  ("shimmer","Color","Highlight swept across [skeleton] fills while loading."),
  ]),
  ("Interaction", [
   ("hover","Color","Translucent hover layer."),

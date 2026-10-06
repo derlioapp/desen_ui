@@ -178,6 +178,8 @@ class DsColors {
     required this.rail,
     required this.channelThumb,
     required this.knob,
+    required this.skeleton,
+    required this.skeletonStrong,
     required this.shimmer,
     required this.hover,
     required this.press,
@@ -301,10 +303,10 @@ class DsColors {
 
   // Channels and rails
 
-  /// Recessed channel of segmented controls and steppers; skeleton blocks. May be translucent; layer it on a surface.
+  /// Recessed channel of segmented controls and steppers. May be translucent; layer it on a surface.
   final Color channel;
 
-  /// A step stronger than [channel]: the unfilled part of slider and progress tracks, strong skeleton lines, and small neutral fills such as the sheet grabber.
+  /// A step stronger than [channel]: the unfilled part of slider and progress tracks, and small neutral fills such as the sheet grabber.
   final Color channelStrong;
 
   /// The switch's track while off. Meets 3:1 against surfaces (WCAG 1.4.11) at standard contrast, unlike the decorative channels; a light, iOS-like fill at soft contrast.
@@ -316,7 +318,13 @@ class DsColors {
   /// Switch knob and slider thumb.
   final Color knob;
 
-  /// Highlight swept across skeletons while loading.
+  /// Skeleton blocks and lines: a neutral fill that stands about 1.25:1 off a white card, like iOS's placeholder fill, and as much off the page and the sidebar. Translucent; layer it on a surface.
+  final Color skeleton;
+
+  /// A step stronger than [skeleton]: strong skeleton lines, such as a title.
+  final Color skeletonStrong;
+
+  /// Highlight swept across [skeleton] fills while loading.
   final Color shimmer;
 
   // Interaction
@@ -402,6 +410,8 @@ class DsColors {
     Color? rail,
     Color? channelThumb,
     Color? knob,
+    Color? skeleton,
+    Color? skeletonStrong,
     Color? shimmer,
     Color? hover,
     Color? press,
@@ -453,6 +463,8 @@ class DsColors {
     rail: rail ?? this.rail,
     channelThumb: channelThumb ?? this.channelThumb,
     knob: knob ?? this.knob,
+    skeleton: skeleton ?? this.skeleton,
+    skeletonStrong: skeletonStrong ?? this.skeletonStrong,
     shimmer: shimmer ?? this.shimmer,
     hover: hover ?? this.hover,
     press: press ?? this.press,
@@ -508,6 +520,8 @@ class DsColors {
     'rail': rail,
     'channelThumb': channelThumb,
     'knob': knob,
+    'skeleton': skeleton,
+    'skeletonStrong': skeletonStrong,
     'shimmer': shimmer,
     'hover': hover,
     'press': press,
@@ -616,6 +630,8 @@ class DsColors {
       rail: DsColorUtils.lerp(a.rail, b.rail, t)!,
       channelThumb: DsColorUtils.lerp(a.channelThumb, b.channelThumb, t)!,
       knob: DsColorUtils.lerp(a.knob, b.knob, t)!,
+      skeleton: DsColorUtils.lerp(a.skeleton, b.skeleton, t)!,
+      skeletonStrong: DsColorUtils.lerp(a.skeletonStrong, b.skeletonStrong, t)!,
       shimmer: DsColorUtils.lerp(a.shimmer, b.shimmer, t)!,
       hover: DsColorUtils.lerp(a.hover, b.hover, t)!,
       press: DsColorUtils.lerp(a.press, b.press, t)!,
@@ -672,6 +688,8 @@ class DsColors {
       other.rail == rail &&
       other.channelThumb == channelThumb &&
       other.knob == knob &&
+      other.skeleton == skeleton &&
+      other.skeletonStrong == skeletonStrong &&
       other.shimmer == shimmer &&
       other.hover == hover &&
       other.press == press &&
@@ -725,6 +743,8 @@ class DsColors {
     rail,
     channelThumb,
     knob,
+    skeleton,
+    skeletonStrong,
     shimmer,
     hover,
     press,

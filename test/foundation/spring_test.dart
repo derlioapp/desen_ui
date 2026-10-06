@@ -18,12 +18,13 @@ void main() {
       }
     });
 
-    test('a movement spring overshoots a little and settles', () {
+    // The movement spring overshoots its target by about 4%: enough to
+    // feel alive, not enough to look like a cartoon bounce.
+    test('a movement spring overshoots about 4% and settles', () {
       final curve = tone.moveCurve;
       final peak = [for (var i = 0; i <= 200; i++) curve.transform(i / 200)]
           .reduce((a, b) => a > b ? a : b);
-      expect(peak, greaterThan(1.0));
-      expect(peak, lessThan(1.1), reason: 'slight, not cartoonish');
+      expect(peak, inInclusiveRange(1.03, 1.05));
       expect(curve.transform(1), 1);
     });
 

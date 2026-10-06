@@ -9,8 +9,8 @@ import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
 import 'skeleton_style.dart';
 
-/// A placeholder shape that mimics content while it loads: channel-toned,
-/// no edge. Wrap a group of them in [DsShimmer] for the light sweep.
+/// A placeholder shape that mimics content while it loads: a flat
+/// `skeleton` fill, no edge. Wrap a group of them in [DsShimmer] for the light sweep.
 ///
 /// Its [width] and [height] are the shape of the content it stands in for;
 /// the look (tones, default height) comes from [DsSkeletonStyle].
@@ -62,7 +62,7 @@ class DsSkeleton extends StatelessWidget {
   /// Height; null uses [DsSkeletonStyle.height].
   final double? height;
 
-  /// Use the stronger channel tone, e.g. for a title line.
+  /// Use the stronger tone (`skeletonStrong`), e.g. for a title line.
   final bool strong;
 
   /// Style laid over the theme and defaults.
@@ -71,8 +71,8 @@ class DsSkeleton extends StatelessWidget {
   /// Desen's default skeleton style under [theme].
   static DsSkeletonStyle defaultStyle(DsThemeData theme) => DsSkeletonStyle(
     height: 8,
-    color: theme.colors.channel,
-    strongColor: theme.colors.channelStrong,
+    color: theme.colors.skeleton,
+    strongColor: theme.colors.skeletonStrong,
   );
 
   @override
