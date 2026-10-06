@@ -137,22 +137,14 @@ class TypographyPage extends StatelessWidget {
             'platforms included.',
           ),
           DocText(
-            'The two typefaces ship in the optional `desen_ui_fonts` package, '
-            'under the SIL Open Font License. Add it for Desen\'s look. '
-            'Without it, text falls back to the platform font; the small '
-            'tracking values suit system fonts too.',
-          ),
-          CodeBlock(
-            'dependencies:\n'
-            '  desen_ui_fonts:\n'
-            '    path: ../desen_ui/desen_ui_fonts',
-            language: 'yaml',
+            'Both typefaces ship with `desen_ui`, under the SIL Open Font '
+            'License, so there is nothing to set up.',
           ),
           DocText(
             'To use your own families, declare them in your app and pass '
             'their names. Set `package` (and `monoPackage` for the code '
             'face) only when a font comes from another package; the '
-            '`desen_ui_fonts` default applies to its own two faces only.',
+            '`desen_ui` default applies to its own two faces only.',
           ),
           CodeBlock(
             'DsThemeData(\n'

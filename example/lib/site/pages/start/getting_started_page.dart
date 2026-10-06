@@ -20,16 +20,13 @@ class GettingStartedPage extends StatelessWidget {
         children: [
           DocText(
             'Desen is not on pub.dev yet; depend on it from a local path or '
-            'a git checkout. The fonts package is optional: iOS and macOS '
-            'apps set text in the system font either way, and elsewhere text '
-            'falls back to the platform font without it.',
+            'a git checkout. Its typefaces, Schibsted Grotesk and Geist '
+            'Mono, come with it.',
           ),
           CodeBlock(
             'dependencies:\n'
             '  desen_ui:\n'
-            '    path: ../desen_ui\n'
-            '  desen_ui_fonts:            # optional: Schibsted Grotesk, Geist Mono\n'
-            '    path: ../desen_ui/desen_ui_fonts',
+            '    path: ../desen_ui',
             language: 'yaml',
           ),
         ],

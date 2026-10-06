@@ -6,6 +6,22 @@ First public pre-release. The API may still change before 1.0; see
 Requires Dart 3.13 and Flutter 3.47 or later. Built on the widgets layer
 only: no Material or Cupertino dependency.
 
+### Breaking
+
+- The fonts are part of `desen_ui`: the separate `desen_ui_fonts` package
+  is gone, and nothing needs to be added for Desen's typefaces.
+  `DsTypography`'s `package` and `monoPackage` default to `'desen_ui'`
+  (still applied only to Schibsted Grotesk and Geist Mono). The unused
+  Schibsted Grotesk ExtraBold (800) is no longer shipped.
+
+  | Before | After |
+  |---|---|
+  | `desen_ui_fonts` in the app's `pubspec.yaml` | Remove it |
+  | `DsTypography.fontsPackage`, `DsFonts.package` | `'desen_ui'` |
+  | `DsFonts.text`, `DsFonts.mono` | `'SchibstedGrotesk'`, `'GeistMono'` |
+  | `fontFamily: 'packages/desen_ui_fonts/…'` | `'packages/desen_ui/…'` |
+  | `FontWeight.w800` in Schibsted Grotesk | `FontWeight.w700` |
+
 ### Theme
 
 - One brand color (`DsSeed`) generates every color role in OKLCH, in light
@@ -15,9 +31,9 @@ only: no Material or Cupertino dependency.
 - End-user settings: light, dark or system; contrast `soft` (iOS-like) or
   `standard`; corner style (sharp, standard, soft, pill) with continuous
   corners; density `compact` or `touch`, following the platform unless set.
-- Typography: Schibsted Grotesk and Geist Mono through the optional
-  `desen_ui_fonts` package, the system font (San Francisco) in iOS and
-  macOS apps, tabular figures on numbers.
+- Typography: Schibsted Grotesk and Geist Mono bundled in the package
+  (SIL Open Font License 1.1, see `fonts/`), the system font (San
+  Francisco) in iOS and macOS apps, tabular figures on numbers.
 - Customization at every level: adjust generated tokens (`adjustColors`,
   `adjustRadii`, …), component defaults for an app or a section
   (`DsComponentThemes`), per-instance styles, theme extensions, and

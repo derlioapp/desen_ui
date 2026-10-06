@@ -60,23 +60,13 @@ Desen is in alpha (`0.x`, pre-release tags like `0.1.0-alpha.1`). Until 1.0:
 - Deprecations are listed under *Deprecated* in the changelog of the release
   that introduces them, and again under *Breaking* when they are removed.
 
-## `desen_ui_fonts`
+## Fonts
 
-`desen_ui_fonts` ships only the typefaces (Schibsted Grotesk, Geist Mono).
-`desen_ui` refers to them by family name and weight, not by import, so the
-two packages are versioned **independently**:
-
-- `desen_ui` never depends on `desen_ui_fonts`; the app adds both.
-- `desen_ui_fonts` changes **major** only if a family name or a weight that
-  `desen_ui` uses is removed or renamed, and **minor** when a font file is
-  updated (glyphs, metrics) or a weight is added. A metrics update moves
-  text in goldens, so it is listed under *Changed*.
-- If a `desen_ui` release needs a new family or weight, its changelog names
-  the minimum `desen_ui_fonts` version, and the README's install snippet is
-  updated. Without the fonts package (or with an older one) Desen falls back
-  to the platform font, so a mismatch degrades the look, never the build.
-- Both packages start in lockstep at `0.1.0-alpha.1`; they are not expected
-  to stay in step.
+The font files (Schibsted Grotesk, Geist Mono) are part of the package, in
+`fonts/`, and are versioned with it. Updating a font file changes glyphs or
+metrics and moves text in goldens, so it is listed under *Changed*.
+Removing or renaming a family or a weight is a breaking change: apps may
+name them in their own text styles.
 
 ## Flutter versions
 

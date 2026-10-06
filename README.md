@@ -20,7 +20,6 @@ Web-grade UI components for Flutter, built on the widgets layer only. No Materia
 ```yaml
 dependencies:
   desen_ui: ^0.1.0-alpha.1
-  desen_ui_fonts: ^0.1.0-alpha.1   # optional: Desen's typefaces (Schibsted Grotesk, Geist Mono)
 ```
 
 ```dart
@@ -108,7 +107,7 @@ final t = DsTheme.of(context);            // everything
 
 ## Fonts and icons
 
-The optional `desen_ui_fonts` package bundles [Schibsted Grotesk](https://github.com/schibsted/schibsted-grotesk) and [Geist Mono](https://github.com/vercel/geist-font), both under the SIL Open Font License 1.1 (see `desen_ui_fonts/fonts/OFL-*.txt`). Without it, text uses the platform font. iOS and macOS apps set text in the system font (San Francisco) by default either way; pass a `family` to `DsTypography` to use another face there too. Built-in icons (`DsIcons`) are drawn from [Lucide](https://lucide.dev) shapes (ISC). Components take icons as widgets, so any icon set works.
+Desen bundles [Schibsted Grotesk](https://github.com/schibsted/schibsted-grotesk) for text and [Geist Mono](https://github.com/vercel/geist-font) for code, so they need no setup (SIL Open Font License 1.1, see [License](#license)). iOS and macOS apps set text in the system font (San Francisco) by default; pass a `family` to `DsTypography` to use another face there too. Built-in icons (`DsIcons`) are drawn from [Lucide](https://lucide.dev) shapes (ISC). Components take icons as widgets, so any icon set works.
 
 ## Testing your app
 
@@ -142,7 +141,7 @@ setUp(() => DsFocusVisibility.debugReset(keyboard: true));
 | `lib/src/overlay/` | Anchored layers (`DsAnchoredOverlay`, placement), modal route |
 | `lib/src/l10n/` | `DsLocalizations` (15 languages, generated) |
 | `lib/src/components/` | Styled components |
-| `desen_ui_fonts/` | Optional font package |
+| `fonts/` | Schibsted Grotesk and Geist Mono, with their licenses (SIL OFL 1.1) |
 | `VERSIONING.md` | What counts as a breaking change, pre-1.0 rules, deprecation |
 | `example/` | The docs site (`example/lib/site/`, English, built with Desen): every component with live examples and code, foundations, guides and app examples |
 
@@ -159,5 +158,13 @@ python3 tool/gen_colors.py lib/src/theme/colors.dart  # regenerate DsColors
 python3 tool/gen_icons.py lib/src/icons/icons.dart     # regenerate DsIcons
 python3 tool/gen_styles.py                            # regenerate component styles/themes
 python3 tool/gen_l10n.py                              # regenerate DsLocalizations
-tool/publish_fonts.sh --dry-run                       # check (or publish) desen_ui_fonts from a clean copy
 ```
+
+## License
+
+The code is under the MIT License ([LICENSE](LICENSE)). The font files in `fonts/` are not: they are under the SIL Open Font License 1.1, which allows bundling and embedding them in any app, free or commercial. Its text is in `fonts/` and, for your app's license notices, in [LICENSE](LICENSE) too.
+
+- Schibsted Grotesk: Copyright 2023 The Schibsted-Grotesk Project Authors; license text in `fonts/OFL-SchibstedGrotesk.txt`.
+- Geist Mono: Copyright 2024 The Geist Project Authors; license text in `fonts/OFL-GeistMono.txt`.
+
+The icon shapes are from [Lucide](https://lucide.dev) (ISC License, included in [LICENSE](LICENSE)).
