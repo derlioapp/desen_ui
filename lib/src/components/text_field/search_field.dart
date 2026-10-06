@@ -28,6 +28,26 @@ part of 'text_field.dart';
 /// or a [DsField] label names it. Its look is the text field's
 /// [DsTextFieldVariant.search]: style all search fields through
 /// `DsTextFieldThemeData.variants`.
+///
+/// **A quieter edge, on purpose.** It is drawn as a control, like a
+/// secondary button: the control fill, its soft edge and a slight lift,
+/// rather than the inset well and firm edge of [DsTextField]. The
+/// magnifier and the placeholder tell it is a field. For the text field's
+/// edge instead, set the variant in a theme:
+///
+/// ```dart
+/// DsTextFieldTheme(
+///   data: DsTextFieldThemeData(
+///     variants: {
+///       DsTextFieldVariant.search: DsTextFieldStyle(
+///         borderColor: colors.borderField,
+///         hovered: DsTextFieldStyle(borderColor: colors.borderField),
+///       ),
+///     },
+///   ),
+///   child: page,
+/// )
+/// ```
 class DsSearchField extends StatelessWidget {
   /// Creates a search field.
   const DsSearchField({
