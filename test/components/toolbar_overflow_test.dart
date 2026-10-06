@@ -466,9 +466,9 @@ void main() {
         app(
           maxWidth: 100,
           children: [
-            DsToolbarItem(
-              menuItems: const [],
-              child: const SizedBox(width: 40, height: 20),
+            const DsToolbarItem(
+              menuItems: [],
+              child: SizedBox(width: 40, height: 20),
             ),
             DsToolbarItem(
               menuItems: [
@@ -512,9 +512,9 @@ void main() {
               onChanged: (_) {},
             ),
             const DsToolbarDivider(),
-            DsToolbarItem(
-              menuItems: const [],
-              child: const SizedBox(width: 120, height: 20),
+            const DsToolbarItem(
+              menuItems: [],
+              child: SizedBox(width: 120, height: 20),
             ),
           ],
         ),
