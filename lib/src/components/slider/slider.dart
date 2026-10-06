@@ -6,14 +6,11 @@ import 'package:flutter/widgets.dart';
 
 import '../../behavior/focus_visibility.dart';
 import '../../behavior/haptic_feedback.dart';
-import '../../painting/decoration.dart';
-import '../../painting/shadow.dart';
 import '../../theme/haptics.dart';
-import '../../theme/radii.dart';
 import '../../theme/theme.dart';
-import '../../l10n/localizations.dart';
 import '../../theme/theme_data.dart';
 import 'slider_style.dart';
+import 'slider_track.dart';
 
 /// Picks a value on a track: continuous, or in steps with [divisions].
 ///
@@ -183,26 +180,8 @@ class _DsSliderState extends State<DsSlider> {
     super.dispose();
   }
 
-  /// [v] in the range and, with divisions, on the nearest grid point,
-  /// without float dust: 3 of 10 steps from 0 to 1 is 0.3, not
-  /// 0.30000000000000004, and the ends are exactly [DsSlider.min] and
-  /// [DsSlider.max].
-  double _snap(double v) {
-    v = v.clamp(widget.min, widget.max);
-    final d = widget.divisions;
-    final range = widget.max - widget.min;
-    if (d == null || range <= 0) return v;
-    final k = ((v - widget.min) / range * d).round();
-    if (k <= 0) return widget.min;
-    if (k >= d) return widget.max;
-    final point = widget.min + range * k / d;
-    // Rounded to a millionth of the step's decade: a point's own digits
-    // stay, the last-bit error of the sum goes.
-    final digits = 6 - (math.log(range / d) / math.ln10).floor();
-    if (digits <= 0 || digits > 20) return point;
-    return double.parse(point.toStringAsFixed(digits))
-        .clamp(widget.min, widget.max);
-  }
+  double _snap(double v) =>
+      dsSliderSnap(v, widget.min, widget.max, widget.divisions);
 
   /// Reports [v], snapped. A [touch] (tap or drag) on a stepped slider
   /// ticks; keys and assistive actions are silent, as on iOS.
@@ -236,58 +215,43 @@ class _DsSliderState extends State<DsSlider> {
     widget.onChangeEnd?.call(_latest);
   }
 
-  double _valueAt(double dx, double width, double thumb) {
-    final rtl = Directionality.of(context) == TextDirection.rtl;
-    final travel = width - thumb;
-    var f = travel > 0 ? ((dx - thumb / 2) / travel).clamp(0.0, 1.0) : 0.0;
-    if (rtl) f = 1 - f;
-    return widget.min + f * (widget.max - widget.min);
-  }
+  double _valueAt(double dx, double width, double thumb) => dsSliderValueAt(
+    dx,
+    width,
+    thumb,
+    min: widget.min,
+    max: widget.max,
+    rtl: Directionality.of(context) == TextDirection.rtl,
+  );
 
-  double get _step {
-    final d = widget.divisions;
-    final range = widget.max - widget.min;
-    return d != null ? range / d : range / 100;
-  }
+  double get _step => dsSliderStep(widget.min, widget.max, widget.divisions);
 
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {
     if (!_enabled || (event is! KeyDownEvent && event is! KeyRepeatEvent)) {
       return KeyEventResult.ignored;
     }
-    final rtl = Directionality.of(context) == TextDirection.rtl;
-    final key = event.logicalKey;
-    final range = widget.max - widget.min;
-    double? next;
-    if (key == LogicalKeyboardKey.arrowUp ||
-        key ==
-            (rtl
-                ? LogicalKeyboardKey.arrowLeft
-                : LogicalKeyboardKey.arrowRight)) {
-      next = _value + _step;
-    } else if (key == LogicalKeyboardKey.arrowDown ||
-        key ==
-            (rtl
-                ? LogicalKeyboardKey.arrowRight
-                : LogicalKeyboardKey.arrowLeft)) {
-      next = _value - _step;
-    } else if (key == LogicalKeyboardKey.pageUp) {
-      next = _value + range / 10;
-    } else if (key == LogicalKeyboardKey.pageDown) {
-      next = _value - range / 10;
-    } else if (key == LogicalKeyboardKey.home) {
-      next = widget.min;
-    } else if (key == LogicalKeyboardKey.end) {
-      next = widget.max;
-    }
+    final next = dsSliderKeyTarget(
+      event.logicalKey,
+      value: _value,
+      step: _step,
+      min: widget.min,
+      max: widget.max,
+      low: widget.min,
+      high: widget.max,
+      rtl: Directionality.of(context) == TextDirection.rtl,
+    );
     if (next == null) return KeyEventResult.ignored;
     _emit(next);
     return KeyEventResult.handled;
   }
 
-  String _format(double v) =>
-      widget.semanticFormatter?.call(v) ??
-      DsLocalizations.of(context)
-          .percent(_range > 0 ? ((v - widget.min) / _range * 100).round() : 0);
+  String _format(double v) => dsSliderFormat(
+    context,
+    v,
+    min: widget.min,
+    max: widget.max,
+    formatter: widget.semanticFormatter,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -303,80 +267,20 @@ class _DsSliderState extends State<DsSlider> {
       DsSliderTheme.of(context).style,
       widget.style,
     ], states);
-    final height = s.height!, trackH = s.trackHeight!;
     final thumb = s.thumbSize!;
-    final tick = s.tickSize!;
-    final v = _t;
-    final border = s.thumbBorderColor ?? const Color(0x00000000);
 
     // Fill the width; take the style's width when there is no bound.
     double widthOf(BoxConstraints c) =>
         c.hasBoundedWidth ? c.maxWidth : math.max(s.width!, thumb);
 
-    Widget paint(BoxConstraints c) {
-      final width = widthOf(c);
-      final travel = math.max(0.0, width - thumb);
-      final thumbStart = v * travel;
-      final ticks = widget.divisions;
-      return SizedBox(
-        width: width,
-        // The touch band grows to the minimum tap target; the track and
-        // thumb stay centered in it. Not DsMinTapTarget: a tap above the
-        // track must keep its horizontal position.
-        height: math.max(height, t.sizes.minTapTarget),
-        child: Stack(
-          alignment: AlignmentDirectional.centerStart,
-          children: [
-            Container(
-              height: trackH,
-              decoration: DsBoxDecoration(
-                color: s.trackColor,
-                borderRadius: BorderRadius.circular(DsRadii.pill),
-                shadows: s.trackShadows ?? const <DsShadow>[],
-              ),
-            ),
-            Container(
-              width: thumbStart + thumb / 2,
-              height: trackH,
-              decoration: BoxDecoration(
-                color: s.fillColor,
-                borderRadius: BorderRadius.circular(DsRadii.pill),
-              ),
-            ),
-            if (ticks != null)
-              for (var i = 0; i <= ticks; i++)
-                if ((i / ticks - v).abs() * travel > thumb / 2)
-                  PositionedDirectional(
-                    start: thumb / 2 + i / ticks * travel - tick / 2,
-                    child: Container(
-                      width: tick,
-                      height: tick,
-                      decoration: BoxDecoration(
-                        color: i / ticks <= v ? s.tickFilledColor : s.tickColor,
-                        borderRadius: BorderRadius.circular(tick / 2),
-                      ),
-                    ),
-                  ),
-            PositionedDirectional(
-              start: thumbStart,
-              child: Container(
-                width: thumb,
-                height: thumb,
-                decoration: DsBoxDecoration(
-                  color: s.thumbColor,
-                  borderRadius: BorderRadius.circular(thumb / 2),
-                  shadows: [
-                    if (border.a > 0) DsShadow.innerRing(border),
-                    ...?s.thumbShadows,
-                    if (_focusVisible) ...?s.focusShadows,
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    Widget paint(BoxConstraints c) => DsSliderTrack(
+      style: s,
+      width: widthOf(c),
+      bandHeight: t.sizes.minTapTarget,
+      fillTo: _t,
+      divisions: widget.divisions,
+      thumbs: [DsSliderThumb(t: _t, style: s, focusRing: _focusVisible)],
+    );
 
     return Semantics(
       slider: true,
