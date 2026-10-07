@@ -60,6 +60,21 @@ void main() {
     ]);
   });
 
+  test('separators are drawn narrower than a digit, digits still tabular', () {
+    double width(InlineSpan span) => (TextPainter(
+      text: span,
+      textDirection: TextDirection.ltr,
+    )..layout()).width;
+    const amount = '12.480,00';
+    final split = width(numericSpan(amount, style: numeric));
+    // Every run tabular: the separators take a digit's width.
+    final allTabular = width(TextSpan(text: amount, style: numeric));
+    // No tabular figures at all.
+    final proportional = width(TextSpan(text: amount, style: y.small));
+    expect(split, lessThan(allTabular - 4));
+    expect(split, greaterThanOrEqualTo(proportional));
+  });
+
   test('digits of other scripts count as digits', () {
     expect(runs(numericSpan('١٢٫٥', style: numeric)), [
       ('١٢', true),
@@ -87,7 +102,7 @@ void main() {
       style: TextStyle(fontFeatures: [tnum, ss01]),
     );
     final dot = span.children![1] as TextSpan;
-    expect(dot.style!.fontFeatures, [ss01]);
+    expect(dot.style!.fontFeatures, [ss01, const FontFeature.disable('tnum')]);
   });
 
   testWidgets('a table amount sets its separators proportionally, and the '
