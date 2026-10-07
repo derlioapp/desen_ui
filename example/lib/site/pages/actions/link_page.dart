@@ -69,11 +69,54 @@ class LinkPage extends StatelessWidget {
             ),
           ),
           const DocText(
-            'A `DsParagraph` holds text and links only, not other widgets. '
-            'For a link that leaves the app, with its arrow, put a `DsLink` '
-            'with `external: true` and `inline: true` in a `WidgetSpan` '
-            'aligned to the baseline. It sits on the line like a word, but '
-            'wraps inside its own box, so keep its label short.',
+            'A `DsLinkSpan` with `external: true` ends with the up-right '
+            'arrow, which activates the link too. A `WidgetSpan` (an icon, a '
+            'key cap) can sit in the text, and screen readers read it in its '
+            'place. `maxLines` and `overflow` cut the paragraph as they cut a '
+            '`Text`; a link cut off entirely leaves the Tab order.',
+          ),
+          Example(
+            snippet: 'link-inline-more',
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 280),
+              child: Builder(
+                builder: (context) {
+                  final t = DsTheme.of(context);
+                  return DefaultTextStyle.merge(
+                    style: t.typography.body.copyWith(color: t.colors.text),
+                    // #region link-inline-more
+                    child: DsParagraph(
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      children: [
+                        const TextSpan(text: 'Press '),
+                        const WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: DsIcon(
+                            DsIcons.command,
+                            size: 14,
+                            semanticLabel: 'Command',
+                          ),
+                        ),
+                        const TextSpan(text: ' K to search, or ask in the '),
+                        DsLinkSpan(
+                          label: 'community forum',
+                          external: true,
+                          url: Uri.parse('https://example.com/forum'),
+                          onPressed: () {},
+                        ),
+                        const TextSpan(
+                          text:
+                              ', where people share answers about every '
+                              'version.',
+                        ),
+                      ],
+                    ),
+                    // #endregion
+                  );
+                },
+              ),
+            ),
           ),
         ],
       ),
@@ -306,9 +349,9 @@ class LinkPage extends StatelessWidget {
         children: [
           DocText(
             'A link inside a `DsParagraph`. The paragraph takes `children` '
-            '(`TextSpan`s and `DsLinkSpan`s, nested at any depth), an '
-            'optional `style` laid over the surrounding text style, and '
-            '`textAlign`.',
+            '(`TextSpan`s, `DsLinkSpan`s and `WidgetSpan`s, nested at any '
+            'depth), an optional `style` laid over the surrounding text '
+            'style, `textAlign`, `maxLines` and `overflow`.',
           ),
           ApiTable([
             ('label', 'String', 'The link text. Must not be empty.'),
@@ -318,6 +361,7 @@ class LinkPage extends StatelessWidget {
               'Called on activation. Null disables the link.',
             ),
             ('url', 'Uri?', 'The address, for link semantics.'),
+            ('external', 'bool', 'Adds the up-right arrow after the label.'),
             (
               'semanticLabel',
               'String?',
