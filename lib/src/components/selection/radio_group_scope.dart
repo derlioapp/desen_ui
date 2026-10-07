@@ -32,6 +32,7 @@ class RadioGroupScope extends InheritedWidget {
     required this.enabled,
     required this.error,
     required this.members,
+    required this.valueType,
     required super.child,
   });
 
@@ -45,13 +46,51 @@ class RadioGroupScope extends InheritedWidget {
   /// is mounted. The set is the group's for its whole life.
   final Set<RadioGroupMember> members;
 
+  /// The group's value type, the `T` of `DsRadioGroup<T>`.
+  final Type valueType;
+
   /// The nearest scope, or null outside a group.
   static RadioGroupScope? maybeOf(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<RadioGroupScope>();
 
   @override
   bool updateShouldNotify(RadioGroupScope old) =>
-      enabled != old.enabled || error != old.error || members != old.members;
+      enabled != old.enabled ||
+      error != old.error ||
+      members != old.members ||
+      valueType != old.valueType;
+}
+
+/// In debug builds, fails when [option] (a radio or a radio card whose
+/// value type is [T]) sits in a `DsRadioGroup` of another value type, so
+/// [registry] (what `RadioGroup.maybeOf<T>` found) is null: the group
+/// only takes options of exactly its own type, and the option would be
+/// inert without a word.
+void debugCheckRadioGroupType<T>(
+  BuildContext context,
+  Widget option,
+  Object? registry,
+) {
+  assert(() {
+    if (registry != null) return true;
+    final group = context.getInheritedWidgetOfExactType<RadioGroupScope>();
+    if (group == null) return true;
+    final name = option.runtimeType.toString().split('<').first;
+    throw FlutterError.fromParts([
+      ErrorSummary(
+        'A ${option.runtimeType} is inside a DsRadioGroup<${group.valueType}>.',
+      ),
+      ErrorDescription(
+        'A group only takes options of exactly its own value type, so this '
+        'one can never be selected: it would show as disabled.',
+      ),
+      ErrorHint(
+        'Give both the same type argument, e.g. '
+        '$name<${group.valueType}>(...) in DsRadioGroup<${group.valueType}>, '
+        'or $name<$T>(...) in DsRadioGroup<$T>.',
+      ),
+    ]);
+  }());
 }
 
 /// Keeps [member] in the group of the nearest [RadioGroupScope] while it

@@ -81,4 +81,43 @@ void main() {
     );
     expect(RendererBinding.instance, isNotNull);
   });
+
+  testWidgets('very large text makes the tabs taller instead of cutting '
+      'the labels', (tester) async {
+    Widget tabs(double scale) => host(
+      DsTabs<int>(
+        value: 0,
+        onChanged: (_) {},
+        tabs: const [
+          DsTab(value: 0, label: Text('General')),
+          DsTab(value: 1, label: Text('Members'), count: 12),
+        ],
+      ),
+      textScale: scale,
+    );
+    // The bar's own height: the tabs and nothing else.
+    double barHeight() => tester.getSize(find.byType(DsTabs<int>)).height;
+
+    await tester.pumpWidget(tabs(1));
+    await tester.pumpAndSettle();
+    expect(barHeight(), 46);
+
+    await tester.pumpWidget(tabs(3.1));
+    await tester.pumpAndSettle();
+    final label = tester.renderObject<RenderParagraph>(
+      find
+          .descendant(of: find.text('General'), matching: find.byType(RichText))
+          .first,
+    );
+    // The label gets its full line height, and the underline sits under it.
+    expect(label.size.height, label.getMaxIntrinsicHeight(double.infinity));
+    expect(barHeight(), greaterThanOrEqualTo(label.size.height));
+    final bar = tester.getRect(find.byType(DsTabs<int>));
+    for (final text in ['General', 'Members']) {
+      final rect = tester.getRect(find.text(text));
+      expect(rect.top, greaterThanOrEqualTo(bar.top), reason: text);
+      expect(rect.bottom, lessThanOrEqualTo(bar.bottom - 2), reason: text);
+    }
+    expect(tester.takeException(), isNull);
+  });
 }

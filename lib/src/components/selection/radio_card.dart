@@ -243,6 +243,7 @@ class _DsRadioCardState<T> extends State<DsRadioCard<T>> {
     ];
     final enabled = widget.enabled && (group?.enabled ?? true);
     final registry = RadioGroup.maybeOf<T>(context);
+    debugCheckRadioGroupType<T>(context, widget, registry);
     _enabled = enabled && registry != null;
     final card = RawRadio<T>(
       value: widget.value,

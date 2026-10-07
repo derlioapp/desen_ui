@@ -14,6 +14,7 @@ import '../../theme/haptics.dart';
 import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
+import '../field/field_group.dart';
 import 'segmented_control_style.dart';
 
 /// One option of a [DsSegmentedControl].
@@ -160,6 +161,7 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
   FocusNode? _ownNode;
   FocusNode get _node => widget.focusNode ?? (_ownNode ??= FocusNode());
   int? _hovered, _pressed;
+  final _naming = FieldGroupNaming();
 
   /// The selected segment, or -1 when [DsSegmentedControl.value] matches
   /// none (it used to report the first one as checked).
@@ -185,6 +187,7 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
   @override
   void dispose() {
     DsFocusVisibility.keyboard.removeListener(_onModality);
+    _naming.dispose();
     _ownNode?.dispose();
     super.dispose();
   }
@@ -245,6 +248,8 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
     final base = DsSegmentedControlStyle.resolveLayers(layers, {
       if (_focusVisible) WidgetState.focused,
     });
+    // In a DsField the segments stay apart; the field's label names them.
+    final field = _naming.read(context, semanticLabel: widget.semanticLabel);
     final n = widget.segments.length;
     final selected = _index;
     // The segment that stands for the group's focus: the selected one, or
@@ -366,7 +371,10 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
       child: Semantics(
         container: true,
         role: SemanticsRole.radioGroup,
-        label: widget.semanticLabel,
+        label: field.label,
+        hint: field.hint,
+        isRequired: field.isRequired,
+        validationResult: field.validationResult,
         explicitChildNodes: true,
         child: Focus(
           // Key events travel up from the focused node, so the handler sits

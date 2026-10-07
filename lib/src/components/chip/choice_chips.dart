@@ -13,6 +13,7 @@ import '../../painting/shadow.dart';
 import '../../theme/haptics.dart';
 import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
+import '../field/field_group.dart';
 import 'chip.dart';
 import 'chip_face.dart';
 import 'chip_style.dart';
@@ -120,6 +121,7 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
   FocusNode? _ownNode;
   FocusNode get _node => widget.focusNode ?? (_ownNode ??= FocusNode());
   int? _hovered, _pressed;
+  final _naming = FieldGroupNaming();
 
   /// One key per chip, so a chip can be scrolled into view by its own
   /// laid-out box.
@@ -152,6 +154,7 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
   @override
   void dispose() {
     DsFocusVisibility.keyboard.removeListener(_onModality);
+    _naming.dispose();
     _ownNode?.dispose();
     super.dispose();
   }
@@ -271,6 +274,8 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
     if (_keys.length > n) _keys.removeRange(n, _keys.length);
     final selected = _index;
     final focusTarget = _focusTarget;
+    // In a DsField the chips stay apart; the field's label names them.
+    final field = _naming.read(context, semanticLabel: widget.semanticLabel);
 
     Widget chip(int i) {
       final option = widget.options[i];
@@ -371,7 +376,10 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
             child: Semantics(
               container: true,
               role: SemanticsRole.radioGroup,
-              label: widget.semanticLabel,
+              label: field.label,
+              hint: field.hint,
+              isRequired: field.isRequired,
+              validationResult: field.validationResult,
               explicitChildNodes: true,
               child: Row(
                 mainAxisSize: MainAxisSize.min,

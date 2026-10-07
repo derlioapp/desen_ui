@@ -36,7 +36,7 @@ class DsTabsStyle with Diagnosticable {
     this.disabled,
   });
 
-  /// Tab height.
+  /// Minimum tab height; grows with large text.
   final double? height;
 
   /// Space between tabs.
