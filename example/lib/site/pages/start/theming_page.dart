@@ -84,7 +84,8 @@ class ThemingPage extends StatelessWidget {
             'is a filled accent background with a contrasting label. In dark '
             'mode a warm brand (red, orange, yellow, green) selects `soft` '
             'items in gray with the brand in the text, so a selection never '
-            'reads as a status; see [Colors](/foundations/colors).',
+            'reads as a status; a yellow or amber brand does so in light mode '
+            'too. See [Colors](/foundations/colors).',
           ),
           Board(child: _SelectionStyles()),
         ],

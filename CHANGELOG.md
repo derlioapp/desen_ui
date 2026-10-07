@@ -98,6 +98,10 @@ them):
   light mode instead of maroon or bottle green. Yellow, amber and orange
   brands write accent text and links in a clean tone instead of olive,
   mustard or khaki.
+- Yellow, amber and light orange brands select in gray in light mode too,
+  as warm brands do in dark mode, with the brand in the text: a cream
+  selection swallowed a warning badge or alert on a selected row. The
+  warning color is unchanged.
 - A light `DsAlert` whose tint barely stands off the page gets a quiet
   1px edge in its status color; its icon stays centered on the title's
   first line with large text.
@@ -112,6 +116,11 @@ them):
   evenly on continuous corners.
 - `DsApp` keeps the device's region once its language is supported, so a
   British device reads and writes dd/MM/y dates.
+
+To empty a number, date or time field that holds invalid text from
+outside (a "Clear" button), give it a new key or reset its form: it has
+already reported null, so `value: null` again cannot change it. Their docs
+now say so.
 
 ### Fixed
 

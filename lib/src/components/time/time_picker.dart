@@ -85,6 +85,13 @@ export 'time_picker_style.dart';
 /// does or is empty again; inside a [DsField] without an error of its own
 /// the field shows that message (WCAG 3.3.1).
 ///
+/// **Clearing.** While the text is invalid the field has already reported
+/// null, so passing `value: null` again changes nothing and the text and
+/// its error stay. To empty it from outside, such as with a "Clear"
+/// button, give the field a new [Key] (`key: ValueKey(clears)`, counting
+/// each clear), or in a [Form] use `DsTimeFormField` and call
+/// `FormState.reset()`.
+///
 /// **Columns.** The button at the end ("Choose time") or Alt+Down opens
 /// the columns; each scrolls, shows its chosen item in the selection style
 /// and scrolls it into view. Minutes go in [minuteStep]s and seconds in

@@ -334,6 +334,41 @@ void main() {
   });
 
   test(
+    'a yellow or amber brand selects in gray, apart from warning (light)',
+    () {
+      // A cream-amber selection swallowed the warning badge and alert on it;
+      // the warning keeps its hue (shifted, it read as lime or coral).
+      for (final brand in const [
+        Color(0xFFF59E0B), // amber
+        Color(0xFFFF9900), // Amazon
+        Color(0xFFFFC72C), // McDonald's
+        Color(0xFFEAB308), // yellow
+      ]) {
+        final seed = DsSeed.color(brand);
+        final k = DsPalette.fromSeed(seed, brightness: Brightness.light).colors;
+        final base = DsPalette.fromSeed(DsSeed.blue).colors;
+        expect(
+          DsOklch.fromColor(k.selection).c,
+          lessThan(.02),
+          reason: '$brand',
+        );
+        expect(
+          DsOklch.fromColor(k.selectionHover).c,
+          lessThan(.02),
+          reason: '$brand',
+        );
+        expect(k.onSelection, k.accentText, reason: '$brand');
+        expect(k.warning, base.warning, reason: '$brand');
+      }
+      // Cool brands, and warm ones far from warning, keep their color.
+      for (final seed in [DsSeed.blue, DsSeed.color(const Color(0xFF7C3AED))]) {
+        final k = DsPalette.fromSeed(seed, brightness: Brightness.light).colors;
+        expect(DsOklch.fromColor(k.selection).c, greaterThan(.02));
+      }
+    },
+  );
+
+  test(
     'a red brand keeps a red-family selection, apart from danger (light)',
     () {
       for (final seed in [

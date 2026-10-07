@@ -41,7 +41,10 @@ enum DsContrast {
 /// How the seed relates to the fixed status hues (the clash rule).
 enum DsSeedRole {
   /// At least 35° away from danger and success: selection, focus and links
-  /// come straight from the seed.
+  /// come straight from the seed. A yellow, amber or light orange seed
+  /// (within 35° of warning, ~75°) selects in gray in light mode, as warm
+  /// seeds do in dark mode, with the brand in the text: a warning badge or
+  /// alert on a selected row stays apart from it.
   free,
 
   /// Chroma below 0.03: selection is a mid gray with full-ink text.
@@ -228,6 +231,9 @@ class _Engine {
 
   static const double _dangerHue = 27, _successHue = 155, _infoHue = 240;
 
+  /// The warning fill's hue.
+  static const double _warningHue = 75;
+
   final double hu, c;
   final bool dark, auto;
 
@@ -316,6 +322,13 @@ class _Engine {
   /// Whether the dark soft selection keeps the brand hue: blues,
   /// violets and teals stay clear at low lightness; reds, oranges,
   /// yellows and greens turn brown or olive and read as status colors.
+  /// Whether the light soft selection is gray: a yellow, amber or light
+  /// orange brand's cream selection swallowed the warning badge and
+  /// alert on it. The warning keeps its hue (shifted away from the brand
+  /// it read as lime or coral), so the selection gives way, as warm
+  /// brands' does in dark mode.
+  bool get _nearWarning => auto && !neutral && !clash && _near(hu, _warningHue);
+
   bool get _coolSelection => !clash && hu >= 180 && hu <= 330;
 
   /// Light-mode `channelStrong`: the progress and slider track.
@@ -829,7 +842,9 @@ class _Engine {
       link: clash ? _clean(o(_clashInk, c * .8), c * .8) : accentInk,
       // A vivid seed's tint is capped and fitted to sRGB rather than
       // clipped, which made it darker than the text budget allows.
-      selection: neutral
+      selection: _nearWarning
+          ? oN(.915, nt)
+          : neutral
           ? o(.895, c)
           : clash
           ? oS(.913, c * .24)
@@ -837,12 +852,16 @@ class _Engine {
           ? DsOklch(.916, .08, hu).fitted().toColor()
           : o(.911, c * .4),
       // A stronger tint, like the status tints' hover.
-      selectionHover: neutral
+      selectionHover: _nearWarning
+          ? oN(.875, nt)
+          : neutral
           ? o(.85, c)
           : clash
           ? oS(.875, c * .3)
           : o(.87, math.min(c * .5, .1)),
-      onSelection: neutral
+      onSelection: _nearWarning
+          ? accentInk
+          : neutral
           ? o(.22, c * .3)
           : clash
           ? oS(.32, c * .55)
