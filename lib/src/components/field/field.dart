@@ -68,6 +68,16 @@ import 'field_style.dart';
 /// platform does not announce. A description that is not a [Text] keeps
 /// its own node after the buttons.
 ///
+/// A control that holds its options in a node of its own (a segmented
+/// control, choice chips, tabs, a radio group) keeps them as separate nodes
+/// the same way, each with its own action, and names that node after the
+/// field: the label's text, then the control's own `semanticLabel`, with
+/// the message as its hint and the required and invalid states. In a
+/// [group] such a control (usually a radio group) does the same
+/// ([DsFieldHooks.namesGroup]), so the question and the error are heard on
+/// entering the group; checkboxes have no such node, so for them the label
+/// and the message stay text before and after them.
+///
 /// **Input issues.** A date, time or number field that holds text which
 /// is not a value tells the field how to fix it
 /// ([DsFieldHooks.setInputIssue]); without an [errorText] of its own the field
@@ -336,6 +346,8 @@ class _DsFieldState extends State<DsField> {
       isLabelled: !widget.group && widget.label != null,
       labelText: widget.group ? null : labelText,
       messageText: widget.group ? null : messageText,
+      groupLabelText: widget.group ? labelText : null,
+      groupMessageText: widget.group ? messageText : null,
       hooks: _hooks,
       child: widget.child,
     );
@@ -371,14 +383,21 @@ class _DsFieldState extends State<DsField> {
             if (label != null)
               Padding(
                 padding: EdgeInsetsDirectional.only(bottom: s.labelGap!),
-                child: Semantics(container: true, child: label),
+                child: _FieldPartSemantics(
+                  hooks: _hooks,
+                  group: true,
+                  // A label whose text names the group's node is not read
+                  // twice.
+                  excludeWhenSeparate: labelText != null,
+                  child: Semantics(container: true, child: label),
+                ),
               ),
             scope,
-            Semantics(
-              container: true,
-              liveRegion: live,
-              label: messageText,
-              excludeSemantics: messageText != null,
+            _FieldMessageSemantics(
+              hooks: _hooks,
+              group: true,
+              text: messageText,
+              live: live,
               child: messageRow,
             ),
           ],
@@ -453,6 +472,8 @@ class DsFieldScope extends InheritedWidget {
     required this.isLabelled,
     this.labelText,
     this.messageText,
+    this.groupLabelText,
+    this.groupMessageText,
     this.hooks,
     required super.child,
   });
@@ -480,6 +501,17 @@ class DsFieldScope extends InheritedWidget {
   /// (without [hooks]) passes it to the control the same way.
   final String? messageText;
 
+  /// In a [DsField.group], the label as plain text when it is a [Text];
+  /// null otherwise. A control that holds the group's options in a node of
+  /// its own (a radio group) names that node with it and tells the field
+  /// so ([DsFieldHooks.namesGroup]).
+  final String? groupLabelText;
+
+  /// In a [DsField.group], the message as screen readers hear it (see
+  /// [messageText]); null otherwise. A control that names the group
+  /// ([DsFieldHooks.namesGroup]) reads it as its node's hint.
+  final String? groupMessageText;
+
   /// What the control can tell the field; null for a scope built by hand.
   final DsFieldHooks? hooks;
 
@@ -494,6 +526,8 @@ class DsFieldScope extends InheritedWidget {
       isLabelled != oldWidget.isLabelled ||
       labelText != oldWidget.labelText ||
       messageText != oldWidget.messageText ||
+      groupLabelText != oldWidget.groupLabelText ||
+      groupMessageText != oldWidget.groupMessageText ||
       hooks != oldWidget.hooks;
 }
 
@@ -511,6 +545,7 @@ final class DsFieldHooks {
   Object? _endKey;
   final _issues = <Object, String>{};
   bool _separate = false;
+  bool _namesGroup = false;
   bool _scheduled = false;
   bool _disposed = false;
 
@@ -555,6 +590,23 @@ final class DsFieldHooks {
     _changed();
   }
 
+  /// Whether a control in a [DsField.group] names its own group node with
+  /// the field's label and message.
+  bool get namesGroup => _namesGroup;
+
+  /// In a [DsField.group], tells the field that the control names a node of
+  /// its own after the group (a radio group's node): with
+  /// [DsFieldScope.groupLabelText] as its label and
+  /// [DsFieldScope.groupMessageText] as its hint. The field then leaves its
+  /// label (when it is a [Text]) and that message out of the tree, except
+  /// the message as a live region for an error where the platform does not
+  /// announce. A field that is not a group ignores it.
+  set namesGroup(bool value) {
+    if (value == _namesGroup) return;
+    _namesGroup = value;
+    _changed();
+  }
+
   void _changed() {
     if (_disposed) return;
     // A control's build runs while the field's message row may already
@@ -571,6 +623,11 @@ final class DsFieldHooks {
     }
     _notifier.notify();
   }
+
+  /// Whether the control took the field's label and message: in a single
+  /// control's field by keeping its buttons apart, in a group by naming its
+  /// own node.
+  bool _took({required bool group}) => group ? _namesGroup : _separate;
 
   void _dispose() {
     _disposed = true;
@@ -687,21 +744,26 @@ class _RenderFieldSemantics extends RenderProxyBox with _HooksSemantics {
   }
 }
 
-/// The label of a field whose control keeps its buttons apart: left out
-/// when the control took its text.
+/// The label of a field whose control keeps its buttons apart, or of a
+/// [group] whose control names its own node: left out when the control
+/// took its text.
 class _FieldPartSemantics extends SingleChildRenderObjectWidget {
   const _FieldPartSemantics({
     required this.hooks,
+    this.group = false,
     this.excludeWhenSeparate = false,
     super.child,
   });
 
   final DsFieldHooks hooks;
+  final bool group;
   final bool excludeWhenSeparate;
 
   @override
   _RenderFieldPartSemantics createRenderObject(BuildContext context) =>
-      _RenderFieldPartSemantics(hooks)..exclude = excludeWhenSeparate;
+      _RenderFieldPartSemantics(hooks)
+        ..group = group
+        ..exclude = excludeWhenSeparate;
 
   @override
   void updateRenderObject(
@@ -709,6 +771,7 @@ class _FieldPartSemantics extends SingleChildRenderObjectWidget {
     _RenderFieldPartSemantics renderObject,
   ) => renderObject
     ..hooks = hooks
+    ..group = group
     ..exclude = excludeWhenSeparate;
 }
 
@@ -717,6 +780,13 @@ class _RenderFieldPartSemantics extends RenderProxyBox with _HooksSemantics {
 
   @override
   DsFieldHooks _hooks;
+
+  bool _group = false;
+  set group(bool value) {
+    if (value == _group) return;
+    _group = value;
+    markNeedsSemanticsUpdate();
+  }
 
   bool _exclude = false;
   set exclude(bool value) {
@@ -727,7 +797,7 @@ class _RenderFieldPartSemantics extends RenderProxyBox with _HooksSemantics {
 
   @override
   void visitChildrenForSemantics(RenderObjectVisitor visitor) {
-    if (_exclude && _hooks.separateNodes) return;
+    if (_exclude && _hooks._took(group: _group)) return;
     super.visitChildrenForSemantics(visitor);
   }
 }
@@ -743,21 +813,28 @@ class _RenderFieldPartSemantics extends RenderProxyBox with _HooksSemantics {
 ///
 /// Without [text] (a description that is not a [Text]) the row's widgets
 /// are read as they are.
+///
+/// In a [group] the row is a node of its own, after the controls, read as
+/// [text]; it is left out when the control named its own node after the
+/// group and took [text] as its hint, unless [live].
 class _FieldMessageSemantics extends SingleChildRenderObjectWidget {
   const _FieldMessageSemantics({
     required this.hooks,
+    this.group = false,
     required this.text,
     required this.live,
     super.child,
   });
 
   final DsFieldHooks hooks;
+  final bool group;
   final String? text;
   final bool live;
 
   @override
   _RenderFieldMessageSemantics createRenderObject(BuildContext context) =>
       _RenderFieldMessageSemantics(hooks)
+        ..group = group
         ..text = text
         ..live = live
         ..textDirection = Directionality.maybeOf(context);
@@ -768,6 +845,7 @@ class _FieldMessageSemantics extends SingleChildRenderObjectWidget {
     _RenderFieldMessageSemantics renderObject,
   ) => renderObject
     ..hooks = hooks
+    ..group = group
     ..text = text
     ..live = live
     ..textDirection = Directionality.maybeOf(context);
@@ -778,6 +856,13 @@ class _RenderFieldMessageSemantics extends RenderProxyBox with _HooksSemantics {
 
   @override
   DsFieldHooks _hooks;
+
+  bool _group = false;
+  set group(bool value) {
+    if (value == _group) return;
+    _group = value;
+    markNeedsSemanticsUpdate();
+  }
 
   String? _text;
   set text(String? value) {
@@ -801,7 +886,7 @@ class _RenderFieldMessageSemantics extends RenderProxyBox with _HooksSemantics {
   }
 
   /// Whether the control took the message, so it is not read here.
-  bool get _taken => _hooks.separateNodes && _text != null && !_live;
+  bool get _taken => _hooks._took(group: _group) && _text != null && !_live;
 
   @override
   void visitChildrenForSemantics(RenderObjectVisitor visitor) {
@@ -815,7 +900,7 @@ class _RenderFieldMessageSemantics extends RenderProxyBox with _HooksSemantics {
     if (_taken) return;
     config.isSemanticBoundary = true;
     final text = _text;
-    if (_hooks.separateNodes) {
+    if (_group || _hooks.separateNodes) {
       if (_live) config.liveRegion = true;
       if (text != null) {
         config

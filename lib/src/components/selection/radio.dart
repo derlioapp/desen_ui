@@ -13,6 +13,7 @@ import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
 import '../field/field.dart';
+import '../field/field_group.dart';
 import 'error_edge.dart';
 import 'first_line.dart';
 import 'radio_circle.dart';
@@ -29,6 +30,11 @@ import 'radio_style.dart';
 /// around; Right and Left do too and mirror in RTL (Right goes toward the
 /// end of the line). Home and End select the first and last enabled
 /// option; Space selects the focused one.
+///
+/// Screen readers hear a radio group named by [semanticLabel]. In a
+/// [DsField] the field's label names it (a [Text] label), and the field's
+/// description or error is its hint, so the question and the error are
+/// heard on entering the group, not only as text around it.
 class DsRadioGroup<T> extends StatefulWidget {
   /// Creates a group.
   const DsRadioGroup({
@@ -36,6 +42,7 @@ class DsRadioGroup<T> extends StatefulWidget {
     required this.value,
     required this.onChanged,
     this.error = false,
+    this.semanticLabel,
     required this.child,
   });
 
@@ -50,6 +57,10 @@ class DsRadioGroup<T> extends StatefulWidget {
   /// group (a [DsField] with `group: true` does both).
   final bool error;
 
+  /// Names the group for screen readers ("Shipping"); in a [DsField] it
+  /// follows the field's label.
+  final String? semanticLabel;
+
   /// The subtree containing the radios.
   final Widget child;
 
@@ -60,6 +71,13 @@ class DsRadioGroup<T> extends StatefulWidget {
 class _DsRadioGroupState<T> extends State<DsRadioGroup<T>> {
   /// The radios and radio cards below, which add themselves.
   final _members = <RadioGroupMember>{};
+  final _naming = FieldGroupNaming();
+
+  @override
+  void dispose() {
+    _naming.dispose();
+    super.dispose();
+  }
 
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {
     if (event is! KeyDownEvent && event is! KeyRepeatEvent) {
@@ -119,6 +137,7 @@ class _DsRadioGroupState<T> extends State<DsRadioGroup<T>> {
     final value = widget.value;
     final onChanged = widget.onChanged;
     final error = widget.error;
+    final field = _naming.read(context, semanticLabel: widget.semanticLabel);
     Widget group = Actions(
       // RadioGroup's arrow-key shortcuts invoke VoidCallbackIntent, which
       // WidgetsApp normally handles; provide it so arrows work under any root.
@@ -145,7 +164,16 @@ class _DsRadioGroupState<T> extends State<DsRadioGroup<T>> {
             canRequestFocus: false,
             skipTraversal: true,
             onKeyEvent: _onKey,
-            child: widget.child,
+            // Not a node of its own: merged into RadioGroup's radio group
+            // node, which has no name otherwise. The radios sit in a node
+            // below it, so a single radio keeps its own name too.
+            child: Semantics(
+              label: field.label,
+              hint: field.hint,
+              isRequired: field.isRequired,
+              validationResult: field.validationResult,
+              child: Semantics(container: true, child: widget.child),
+            ),
           ),
         ),
       ),

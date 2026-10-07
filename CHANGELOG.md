@@ -1,5 +1,14 @@
 ## Unreleased
 
+- Fixed: inside a `DsField`, screen readers heard a `DsSegmentedControl`,
+  `DsChoiceChips` or `DsTabs` as one item with one action, so the options
+  could not be chosen one by one. Each option is its own item again; the
+  field's label names the group, and its description or error is the
+  group's hint.
+- `DsRadioGroup` takes a `semanticLabel`, and a `DsField` names the radio
+  group with its label, its description or error as the group's hint: a
+  screen reader user who tabs into the group hears the question and the
+  error, not only the first option.
 - **Breaking:** `DsIcons` is now the full Lucide set, 2225 icons (Lucide
   1.52.0 and Lucide Lab), in place of the 56 picked before. Names follow
   Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and

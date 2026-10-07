@@ -20,6 +20,7 @@ import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
 import '../badge/badge.dart';
+import '../field/field_group.dart';
 import 'tabs_style.dart';
 
 /// One tab of a [DsTabs] bar.
@@ -161,6 +162,7 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
   bool _highlight = false;
   bool get _focusVisible => _highlight && DsFocusVisibility.keyboard.value;
   int? _hovered;
+  final _naming = FieldGroupNaming();
   // Input modality only changes how focus looks: rebuild only while
   // focused, not on every pointer or key event in the app.
   void _onModality() {
@@ -190,6 +192,7 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
   @override
   void dispose() {
     DsFocusVisibility.keyboard.removeListener(_onModality);
+    _naming.dispose();
     _ownNode?.dispose();
     _scroll.dispose();
     super.dispose();
@@ -306,6 +309,8 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
       _tabKeys.add(GlobalKey());
     }
     final l10n = DsLocalizations.of(context);
+    // In a DsField the tabs stay apart; the field's label names the bar.
+    final field = _naming.read(context, semanticLabel: widget.semanticLabel);
     final gap = base.gap ?? DsSpace.s20;
     // Each tab takes half the gap on either side; a tab too short for the
     // smallest tap target with that is widened (its label stays centered).
@@ -441,7 +446,10 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
 
     return Semantics(
       container: true,
-      label: widget.semanticLabel,
+      label: field.label,
+      hint: field.hint,
+      isRequired: field.isRequired,
+      validationResult: field.validationResult,
       explicitChildNodes: true,
       child: Focus(
         canRequestFocus: false,
