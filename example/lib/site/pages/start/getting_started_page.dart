@@ -19,9 +19,10 @@ class GettingStartedPage extends StatelessWidget {
         title: 'Install',
         children: [
           DocText(
-            'Add Desen from pub.dev. It is in alpha: the API may still change '
-            'before 1.0. Its typefaces, Schibsted Grotesk and Geist Mono, '
-            'come with it.',
+            'Add Desen from pub.dev. Until 1.0 a minor release may still '
+            'change the API; the changelog lists each change with how to '
+            'update. Its typefaces, Schibsted Grotesk and Geist Mono, come '
+            'with it.',
           ),
           CodeBlock('flutter pub add desen_ui', language: 'shell'),
         ],

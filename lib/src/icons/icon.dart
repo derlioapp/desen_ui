@@ -41,6 +41,22 @@ class DsIconData {
   /// Fill each path as well as stroking it. [DsIcon.fill] overrides it.
   final bool fill;
 
+  /// This icon with the given settings changed, e.g. an icon that should
+  /// not mirror in right-to-left text:
+  /// `DsIcons.logOut.copyWith(matchTextDirection: false)`.
+  DsIconData copyWith({
+    double? viewBox,
+    double? strokeWidth,
+    bool? matchTextDirection,
+    bool? fill,
+  }) => DsIconData(
+    paths,
+    viewBox: viewBox ?? this.viewBox,
+    strokeWidth: strokeWidth ?? this.strokeWidth,
+    matchTextDirection: matchTextDirection ?? this.matchTextDirection,
+    fill: fill ?? this.fill,
+  );
+
   static final Expando<Path> _cache = Expando('DsIconData.path');
   static final Expando<List<Path>> _shapes = Expando('DsIconData.shapes');
   static final Expando<List<bool>> _details = Expando('DsIconData.details');

@@ -223,7 +223,7 @@ class _Logo extends StatelessWidget {
             // Room for the header's buttons on a phone.
             if (MediaQuery.sizeOf(context).width >= 480)
               ExcludeSemantics(
-                child: DsBadge(label: const Text('0.1 alpha'), dot: false),
+                child: DsBadge(label: const Text('0.2'), dot: false),
               ),
           ],
         ),
