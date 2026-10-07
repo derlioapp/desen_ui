@@ -1,5 +1,10 @@
 ## Unreleased
 
+- `DsTextField.textDirection` sets the direction of the text itself (an
+  IBAN or an email address in a right-to-left app) while the field's
+  layout keeps the ambient direction, and
+  `DsTextField.enableIMEPersonalizedLearning` asks for an incognito
+  keyboard.
 - `DsListRow.description`: a muted line under the title, such as a
   setting's explanation or a message's preview, read after the title
   (new style fields `descriptionStyle` and `textGap`).

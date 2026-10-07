@@ -99,6 +99,7 @@ class DsChoiceChips<T> extends StatefulWidget {
   final T value;
 
   /// Called with the newly selected value. Null disables the row.
+  /// Choosing the value that is already selected does not call it.
   final ValueChanged<T>? onChanged;
 
   /// Chip style laid over the theme and defaults, for every chip.

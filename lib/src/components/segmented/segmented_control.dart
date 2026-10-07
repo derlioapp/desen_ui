@@ -96,6 +96,7 @@ class DsSegmentedControl<T> extends StatefulWidget {
   final T value;
 
   /// Called with the newly selected value. Null disables the control.
+  /// Choosing the value that is already selected does not call it.
   final ValueChanged<T>? onChanged;
 
   /// Style laid over the theme and defaults.
