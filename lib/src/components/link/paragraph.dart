@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
@@ -11,6 +12,8 @@ import '../../behavior/focus_visibility.dart';
 import '../../behavior/focus_visibility_state.dart' show notePressed;
 import '../../behavior/haptic_feedback.dart';
 import '../../behavior/pressable.dart';
+import '../../icons/icon.dart';
+import '../../icons/icons.dart';
 import '../../painting/decoration.dart';
 import '../../painting/shadow.dart';
 import '../../theme/haptics.dart';
@@ -47,7 +50,7 @@ import 'link_style.dart';
 /// the pointer, keyboard focus, painting and semantics. In a `Text.rich`
 /// or a `RichText` it would be plain text, so debug builds report it there.
 ///
-/// The span has no external arrow: for a link that leaves the app, use a
+/// With [external], an up-right arrow follows the label, as on a
 /// [DsLink] with `external: true`.
 class DsLinkSpan extends TextSpan {
   /// Creates a link span. [label] must not be empty.
@@ -55,6 +58,7 @@ class DsLinkSpan extends TextSpan {
     required String label,
     required this.onPressed,
     this.url,
+    this.external = false,
     String? semanticLabel,
     this.linkStyle,
     this.focusNode,
@@ -72,6 +76,10 @@ class DsLinkSpan extends TextSpan {
   /// The address, for link semantics: on the web the link then carries an
   /// `href`. Opening it is up to [onPressed].
   final Uri? url;
+
+  /// Leaves the app: an up-right arrow follows the label, not underlined,
+  /// and activates the link as the label does.
+  final bool external;
 
   /// Overrides the label screen readers announce (default: [label]).
   String? get semanticLabel => semanticsLabel;
@@ -111,12 +119,19 @@ class DsLinkSpan extends TextSpan {
       other is DsLinkSpan &&
       other.onPressed == onPressed &&
       other.url == url &&
+      other.external == external &&
       other.linkStyle == linkStyle &&
       other.focusNode == focusNode;
 
   @override
-  int get hashCode =>
-      Object.hash(super.hashCode, onPressed, url, linkStyle, focusNode);
+  int get hashCode => Object.hash(
+    super.hashCode,
+    onPressed,
+    url,
+    external,
+    linkStyle,
+    focusNode,
+  );
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -125,6 +140,9 @@ class DsLinkSpan extends TextSpan {
       FlagProperty('enabled', value: onPressed != null, ifFalse: 'disabled'),
     );
     properties.add(DiagnosticsProperty('url', url, defaultValue: null));
+    properties.add(
+      FlagProperty('external', value: external, ifTrue: 'external'),
+    );
   }
 }
 
@@ -153,13 +171,15 @@ class DsLinkSpan extends TextSpan {
 ///   as a link with its label (and its [DsLinkSpan.url]), enabled or not,
 ///   focusable, and activated by the screen reader's gesture.
 ///
-/// [children] may mix `TextSpan`s (nested, styled) and [DsLinkSpan]s at
-/// any depth. They must not hold a `WidgetSpan`: the paragraph builds the
-/// semantics of its text itself, and a widget inside it would be skipped.
+/// [children] may mix `TextSpan`s (nested, styled), [DsLinkSpan]s and
+/// `WidgetSpan`s (an icon, a key cap) at any depth. A widget is read by
+/// screen readers in its place in the text.
 ///
 /// The paragraph takes the surrounding `DefaultTextStyle`, [style] laid
 /// over it, the ambient text direction and the `MediaQuery` text scale.
-/// It always shows all its text: no line limit, no ellipsis.
+/// [maxLines] and [overflow] cut it as they cut a `Text`; a link cut off
+/// entirely leaves the Tab order and the semantics with its text, as the
+/// text cut off is not read either.
 class DsParagraph extends StatefulWidget {
   /// Creates a paragraph.
   const DsParagraph({
@@ -167,10 +187,20 @@ class DsParagraph extends StatefulWidget {
     required this.children,
     this.style,
     this.textAlign,
-  });
+    this.maxLines,
+    this.overflow,
+  }) : assert(maxLines == null || maxLines > 0);
 
-  /// The text: `TextSpan`s and [DsLinkSpan]s.
+  /// The text: `TextSpan`s, [DsLinkSpan]s and `WidgetSpan`s.
   final List<InlineSpan> children;
+
+  /// The most lines to show; defaults to the `DefaultTextStyle`'s, then
+  /// no limit.
+  final int? maxLines;
+
+  /// How text past [maxLines] ends, e.g. [TextOverflow.ellipsis];
+  /// defaults to the `DefaultTextStyle`'s.
+  final TextOverflow? overflow;
 
   /// Laid over the surrounding `DefaultTextStyle`.
   final TextStyle? style;
@@ -248,6 +278,18 @@ class _Link {
 
 class _DsParagraphState extends State<DsParagraph> {
   final _links = <_Link>[];
+
+  /// Per link, whether any of its label is laid out: false for one cut
+  /// off by [DsParagraph.maxLines]. Reported after each layout.
+  List<bool> _shown = const [];
+
+  bool _isShown(int i) => i >= _shown.length || _shown[i];
+
+  void _onShown(List<bool> shown) {
+    if (mounted && !listEquals(shown, _shown)) {
+      setState(() => _shown = shown);
+    }
+  }
 
   @override
   void initState() {
@@ -412,14 +454,53 @@ class _DsParagraphState extends State<DsParagraph> {
             url: span.url,
           ),
         );
+        final cursor = s.cursor ?? DsPressable.defaultCursor.resolve(states);
+        final arrow = !span.external
+            ? null
+            : WidgetSpan(
+                alignment: PlaceholderAlignment.middle,
+                child: MouseRegion(
+                  cursor: cursor,
+                  onEnter: link.onEnter,
+                  onExit: link.onExit,
+                  child: GestureDetector(
+                    excludeFromSemantics: true,
+                    onTapDown: link.enabled
+                        ? (_) => _setPressed(link, true)
+                        : null,
+                    onTapUp: link.enabled
+                        ? (_) => _setPressed(link, false)
+                        : null,
+                    onTapCancel: link.enabled
+                        ? () => _setPressed(link, false)
+                        : null,
+                    onTap: link.enabled
+                        ? () => _activate(link, pointer: true)
+                        : null,
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.only(
+                        start: s.iconGap ?? 0,
+                      ),
+                      child: DsIcon(
+                        DsIcons.arrowUpRight,
+                        size: s.iconSize,
+                        color: color,
+                      ),
+                    ),
+                  ),
+                ),
+              );
+        // The arrow's placeholder follows the label in the plain text.
+        if (arrow != null) offset += 1;
         return TextSpan(
           text: span.label,
           style: _withoutHeight(s.textStyle).copyWith(color: color),
           recognizer: link.enabled ? link.recognizer : null,
-          mouseCursor: s.cursor ?? DsPressable.defaultCursor.resolve(states),
+          mouseCursor: cursor,
           onEnter: link.onEnter,
           onExit: link.onExit,
           semanticsLabel: span.semanticsLabel,
+          children: arrow == null ? null : [arrow],
         );
       }
       if (span is TextSpan) {
@@ -442,11 +523,7 @@ class _DsParagraphState extends State<DsParagraph> {
           spellOut: span.spellOut,
         );
       }
-      assert(
-        span is! PlaceholderSpan,
-        'A DsParagraph does not take a WidgetSpan: it builds the semantics '
-        'of its text itself, and the widget would be skipped.',
-      );
+      // A WidgetSpan: one placeholder character.
       offset += span.toPlainText().length;
       return span;
     }
@@ -457,10 +534,13 @@ class _DsParagraphState extends State<DsParagraph> {
     );
     Widget result = _LinkParagraph(
       links: paints,
+      onShown: _onShown,
       children: [
         RichText(
           text: text,
           textAlign: widget.textAlign ?? base.textAlign ?? TextAlign.start,
+          maxLines: widget.maxLines ?? base.maxLines,
+          overflow: widget.overflow ?? base.overflow,
           textDirection: direction,
           textScaler: MediaQuery.textScalerOf(context),
           textWidthBasis: base.textWidthBasis,
@@ -476,8 +556,8 @@ class _DsParagraphState extends State<DsParagraph> {
             order: NumericFocusOrder(i.toDouble()),
             child: Focus(
               focusNode: link.node,
-              canRequestFocus: link.enabled,
-              skipTraversal: !link.enabled,
+              canRequestFocus: link.enabled && _isShown(i),
+              skipTraversal: !link.enabled || !_isShown(i),
               // The paragraph announces focus on the link's text instead.
               includeSemantics: false,
               onKeyEvent: link.onKey,
@@ -601,13 +681,20 @@ class _LinkPaint {
 /// The paragraph (first child) and one focus target per link (the other
 /// children, laid over the first line of each label).
 class _LinkParagraph extends MultiChildRenderObjectWidget {
-  const _LinkParagraph({required this.links, required super.children});
+  const _LinkParagraph({
+    required this.links,
+    required this.onShown,
+    required super.children,
+  });
 
   final List<_LinkPaint> links;
 
+  /// Called after a layout that changed which links are laid out.
+  final ValueChanged<List<bool>> onShown;
+
   @override
   _RenderLinkParagraph createRenderObject(BuildContext context) =>
-      _RenderLinkParagraph(links, Directionality.of(context));
+      _RenderLinkParagraph(links, Directionality.of(context), onShown);
 
   @override
   void updateRenderObject(
@@ -616,7 +703,8 @@ class _LinkParagraph extends MultiChildRenderObjectWidget {
   ) {
     renderObject
       ..links = links
-      ..textDirection = Directionality.of(context);
+      ..textDirection = Directionality.of(context)
+      ..onShown = onShown;
   }
 }
 
@@ -626,7 +714,12 @@ class _RenderLinkParagraph extends RenderBox
     with
         ContainerRenderObjectMixin<RenderBox, _LinkParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, _LinkParentData> {
-  _RenderLinkParagraph(this._links, this._textDirection);
+  _RenderLinkParagraph(this._links, this._textDirection, this.onShown);
+
+  ValueChanged<List<bool>> onShown;
+
+  /// The links laid out at the last report to [onShown].
+  List<bool> _reported = const [];
 
   List<_LinkPaint> _links;
   set links(List<_LinkPaint> value) {
@@ -736,6 +829,12 @@ class _RenderLinkParagraph extends RenderBox
     final text = _text..layout(constraints, parentUsesSize: true);
     size = constraints.constrain(text.size);
     _lines = [for (final link in _links) _measure(link)];
+    final shown = [for (final lines in _lines) lines.isNotEmpty];
+    if (!listEquals(shown, _reported)) {
+      _reported = shown;
+      // The focus targets follow in the next frame: not during layout.
+      SchedulerBinding.instance.addPostFrameCallback((_) => onShown(shown));
+    }
     var child = childAfter(text);
     for (final lines in _lines) {
       final rect = lines.isEmpty ? Rect.zero : lines.first;
@@ -797,8 +896,13 @@ class _RenderLinkParagraph extends RenderBox
   @override
   void visitChildrenForSemantics(RenderObjectVisitor visitor) {
     // The focus targets add nothing; the text is described here when it
-    // holds links.
-    if (_links.isEmpty) visitor(_text);
+    // holds links, with the nodes of its widgets (WidgetSpans) in their
+    // places.
+    if (_links.isEmpty) {
+      visitor(_text);
+    } else {
+      _text.visitChildren(visitor);
+    }
   }
 
   @override
@@ -824,7 +928,9 @@ class _RenderLinkParagraph extends RenderBox
       super.assembleSemanticsNode(node, config, children);
       return;
     }
-    final runs = <(InlineSpanSemanticsInformation, int, _LinkPaint?)>[];
+    // A run of text, a link, or a widget's place (its placeholder index).
+    final runs = <(InlineSpanSemanticsInformation, int, _LinkPaint?, int?)>[];
+    var placeholders = 0;
     var offset = 0;
     var linkIndex = 0;
     var pending = <InlineSpanSemanticsInformation>[];
@@ -832,7 +938,7 @@ class _RenderLinkParagraph extends RenderBox
     void flush() {
       var start = pendingStart;
       for (final info in combineSemanticsInfo(pending)) {
-        runs.add((info, start, null));
+        runs.add((info, start, null, null));
         start += info.text.length;
       }
       pending = [];
@@ -840,11 +946,14 @@ class _RenderLinkParagraph extends RenderBox
 
     for (final info in _text.text.getSemanticsInformation()) {
       final link = linkIndex < _links.length ? _links[linkIndex] : null;
-      if (link != null &&
+      if (info.isPlaceholder) {
+        flush();
+        runs.add((info, offset, null, placeholders++));
+      } else if (link != null &&
           link.start == offset &&
           link.end - link.start == info.text.length) {
         flush();
-        runs.add((info, offset, link));
+        runs.add((info, offset, link, null));
         linkIndex++;
       } else {
         if (pending.isEmpty) pendingStart = offset;
@@ -856,8 +965,28 @@ class _RenderLinkParagraph extends RenderBox
 
     final reuse = _nodes.iterator;
     final nodes = <SemanticsNode>[];
+    final own = <SemanticsNode>[];
     var ordinal = 0.0;
-    for (final (info, start, link) in runs) {
+    final widgets = children.toList();
+    var widgetIndex = 0;
+    var placeholder = _text.firstChild;
+    for (final (info, start, link, index) in runs) {
+      if (index != null) {
+        // The widget's nodes, unless the line limit cut it off, as
+        // RenderParagraph does. Each takes the next place in the order.
+        while (widgetIndex < widgets.length &&
+            widgets[widgetIndex].isTagged(
+              PlaceholderSpanIndexSemanticsTag(index),
+            )) {
+          final child = widgets[widgetIndex++];
+          final data = placeholder!.parentData! as TextParentData;
+          if (data.offset != null) {
+            nodes.add(child);
+          }
+        }
+        placeholder = _text.childAfter(placeholder!);
+        continue;
+      }
       final boxes = _text.getBoxesForSelection(
         TextSelection(
           baseOffset: start,
@@ -920,8 +1049,9 @@ class _RenderLinkParagraph extends RenderBox
         ..updateWith(config: c)
         ..rect = rect;
       nodes.add(child);
+      own.add(child);
     }
-    _nodes = nodes;
+    _nodes = own;
     node.updateWith(config: config, childrenInInversePaintOrder: nodes);
   }
 

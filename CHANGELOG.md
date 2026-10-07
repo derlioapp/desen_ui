@@ -16,6 +16,10 @@
   filled shape (the "!" in an alert, an envelope's flap) is cut out so it
   stays visible; open strokes (arrows, a chart's axes) stay strokes. A play
   button, pause bars or a selected tab's icon can be drawn solid.
+- `DsParagraph` takes `maxLines` and `overflow` (a link cut off entirely
+  leaves the Tab order and the semantics) and `WidgetSpan`s, which screen
+  readers read in their place in the text. `DsLinkSpan.external` ends a
+  link with the up-right arrow, as on a `DsLink`.
 - `DsTimePicker` takes a range across midnight: a `firstTime` after
   `lastTime` (a night shift from 22:00 to 06:00). The hour column runs 22,
   23, 00 to 06, Home and End give the range's first and last time, and a
