@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Fixed: a `DsContextMenuRegion` added a nameless node around its row or
+  card whose tap did nothing, and screen reader users could not find the
+  menu. The row's or card's own node now opens it, with a long press and
+  with a localized "Show menu" action.
 - **Breaking:** `DsIcons` is now the full Lucide set, 2225 icons (Lucide
   1.52.0 and Lucide Lab), in place of the 56 picked before. Names follow
   Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and

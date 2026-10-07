@@ -1660,6 +1660,33 @@ for _lang, _value in MORE_ACTIONS.items():
 VARIANTS['zh_Hant']['values'].update(moreActions='更多操作')
 VARIANTS['pt_PT']['values'].update(moreActions='Mais ações')
 
+# The screen reader action that opens a row's or a card's context menu,
+# worded as each platform's own "show menu".
+KEYS.update({
+    'showMenu': (
+        "Screen reader action: opens a row's or a card's context menu.",
+        'Show menu',
+    ),
+})
+SHOW_MENU = {
+    'ar': 'عرض القائمة',
+    'de': 'Menü anzeigen',
+    'es': 'Mostrar menú',
+    'fr': 'Afficher le menu',
+    'hi': 'मेन्यू दिखाएं',
+    'it': 'Mostra menu',
+    'ja': 'メニューを表示',
+    'ko': '메뉴 표시',
+    'pt': 'Mostrar menu',
+    'ru': 'Показать меню',
+    'tr': 'Menüyü göster',
+    'zh': '显示菜单',
+}
+for _lang, _value in SHOW_MENU.items():
+    LANGS[_lang].update(showMenu=_value)
+VARIANTS['zh_Hant']['values'].update(showMenu='顯示選單')
+VARIANTS['pt_PT']['values'].update(showMenu='Mostrar menu')
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

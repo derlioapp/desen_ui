@@ -442,4 +442,7 @@ class DsLocalizationsJa extends DsLocalizationsEn {
 
   @override
   String get moreActions => 'その他の操作';
+
+  @override
+  String get showMenu => 'メニューを表示';
 }

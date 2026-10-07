@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../behavior/focus_visibility.dart';
+import '../../behavior/menu_action.dart';
 import '../../behavior/pressable.dart';
 import '../../foundation/case.dart';
 import '../../icons/icon.dart';
@@ -1259,7 +1260,9 @@ class _DsMenuAnchorState extends State<DsMenuAnchor> {
 /// pointer is over [child].
 ///
 /// [child] needs something focusable for the keyboard path, e.g. a list
-/// row or card with an `onPressed`.
+/// row or card with an `onPressed`. Screen readers open the menu from
+/// that row's or card's own node (the outermost [DsPressable] in
+/// [child]): with a long press, and with a localized "Show menu" action.
 class DsContextMenuRegion extends StatefulWidget {
   /// Creates a context menu region.
   const DsContextMenuRegion({
@@ -1303,6 +1306,20 @@ class _DsContextMenuRegionState extends State<DsContextMenuRegion> {
       ..open();
   }
 
+  /// Opens at [target]'s bottom start corner.
+  void _openBelow(RenderObject? target) {
+    final region = context.findRenderObject();
+    var at = Offset.zero;
+    if (region is RenderBox && target is RenderBox && target.attached) {
+      final rtl = Directionality.maybeOf(context) == TextDirection.rtl;
+      final corner = rtl
+          ? target.size.bottomRight(Offset.zero)
+          : target.size.bottomLeft(Offset.zero);
+      at = target.localToGlobal(corner, ancestor: region);
+    }
+    _openAt(at);
+  }
+
   /// Shift+F10 or the context menu key: open at the focused control's
   /// bottom start corner.
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {
@@ -1314,20 +1331,13 @@ class _DsContextMenuRegionState extends State<DsContextMenuRegion> {
     if (!shiftF10 && key != LogicalKeyboardKey.contextMenu) {
       return KeyEventResult.ignored;
     }
-    final region = context.findRenderObject();
-    final focused = FocusManager.instance.primaryFocus?.context
-        ?.findRenderObject();
-    var at = Offset.zero;
-    if (region is RenderBox && focused is RenderBox && focused.attached) {
-      final rtl = Directionality.maybeOf(context) == TextDirection.rtl;
-      final corner = rtl
-          ? focused.size.bottomRight(Offset.zero)
-          : focused.size.bottomLeft(Offset.zero);
-      at = focused.localToGlobal(corner, ancestor: region);
-    }
-    _openAt(at);
+    _openBelow(FocusManager.instance.primaryFocus?.context?.findRenderObject());
     return KeyEventResult.handled;
   }
+
+  /// A screen reader's long press or "Show menu" on the pressable inside:
+  /// open below the region.
+  void _showMenu() => _openBelow(context.findRenderObject());
 
   void _browserMenu({required bool enabled}) {
     if (!kIsWeb) return;
@@ -1354,13 +1364,16 @@ class _DsContextMenuRegionState extends State<DsContextMenuRegion> {
       onExit: (_) => _browserMenu(enabled: true),
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
+        // Screen readers open the menu from the pressable's own node
+        // instead (DsMenuActionScope); a node here would have no name.
+        excludeFromSemantics: true,
         onSecondaryTapUp: (d) => _openAt(d.localPosition),
         onLongPressStart: (d) => _openAt(d.localPosition),
         child: Focus(
           canRequestFocus: false,
           skipTraversal: true,
           onKeyEvent: _onKey,
-          child: widget.child,
+          child: DsMenuActionScope(onShowMenu: _showMenu, child: widget.child),
         ),
       ),
     ),

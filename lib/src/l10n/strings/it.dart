@@ -451,4 +451,7 @@ class DsLocalizationsIt extends DsLocalizationsEn {
 
   @override
   String get moreActions => 'Altre azioni';
+
+  @override
+  String get showMenu => 'Mostra menu';
 }

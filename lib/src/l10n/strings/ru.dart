@@ -466,4 +466,7 @@ class DsLocalizationsRu extends DsLocalizationsEn {
 
   @override
   String get moreActions => 'Другие действия';
+
+  @override
+  String get showMenu => 'Показать меню';
 }

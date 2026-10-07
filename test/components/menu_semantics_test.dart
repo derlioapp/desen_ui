@@ -2,6 +2,7 @@ import 'dart:ui' show CheckedState, SemanticsRole;
 
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/semantics.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -169,6 +170,93 @@ void main() {
           .label;
       expect(label, 'Edit\nCommand E');
       expect(label, isNot(contains('⌘')));
+      handle.dispose();
+    });
+  });
+  group('context menu region', () {
+    Widget region() => app(
+      SizedBox(
+        width: 400,
+        child: DsContextMenuRegion(
+          items: [DsMenuItem(label: const Text('Open'), onPressed: () {})],
+          child: DsListRow(title: const Text('a.pdf'), onPressed: () {}),
+        ),
+      ),
+    );
+
+    testWidgets('adds no node of its own around the row', (tester) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(region());
+      final row = tester.getSemantics(find.text('a.pdf'));
+      var parent = row.parent;
+      while (parent != null) {
+        final data = parent.getSemanticsData();
+        expect(data.hasAction(SemanticsAction.tap), isFalse);
+        expect(data.hasAction(SemanticsAction.longPress), isFalse);
+        parent = parent.parent;
+      }
+      handle.dispose();
+    });
+
+    testWidgets('the row opens the menu on a long press or "Show menu"', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(region());
+      final row = tester.getSemantics(find.text('a.pdf'));
+      final data = row.getSemanticsData();
+      expect(data.label, 'a.pdf');
+      expect(data.hasAction(SemanticsAction.tap), isTrue);
+      expect(data.hasAction(SemanticsAction.longPress), isTrue);
+      expect(
+        [
+          for (final id in data.customSemanticsActionIds ?? <int>[])
+            CustomSemanticsAction.getAction(id)!.label,
+        ],
+        ['Show menu'],
+      );
+
+      tester.semantics.performAction(
+        find.semantics.byLabel('a.pdf'),
+        SemanticsAction.longPress,
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Open'), findsOneWidget);
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pumpAndSettle();
+      expect(find.text('Open'), findsNothing);
+
+      tester.binding.performSemanticsAction(
+        SemanticsActionEvent(
+          type: SemanticsAction.customAction,
+          viewId: tester.view.viewId,
+          nodeId: tester.getSemantics(find.text('a.pdf')).id,
+          arguments: CustomSemanticsAction.getIdentifier(
+            const CustomSemanticsAction(label: 'Show menu'),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Open'), findsOneWidget);
+      handle.dispose();
+    });
+
+    testWidgets('only the outer pressable offers the menu', (tester) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(
+          DsContextMenuRegion(
+            items: [DsMenuItem(label: const Text('Open'), onPressed: () {})],
+            child: DsCard(
+              onPressed: () {},
+              child: DsButton(onPressed: () {}, child: const Text('Share')),
+            ),
+          ),
+        ),
+      );
+      final button = tester.getSemantics(find.text('Share')).getSemanticsData();
+      expect(button.hasAction(SemanticsAction.longPress), isFalse);
+      expect(button.customSemanticsActionIds ?? <int>[], isEmpty);
       handle.dispose();
     });
   });

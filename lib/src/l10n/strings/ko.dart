@@ -442,4 +442,7 @@ class DsLocalizationsKo extends DsLocalizationsEn {
 
   @override
   String get moreActions => '추가 작업';
+
+  @override
+  String get showMenu => '메뉴 표시';
 }

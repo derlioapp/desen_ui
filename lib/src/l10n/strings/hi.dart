@@ -449,4 +449,7 @@ class DsLocalizationsHi extends DsLocalizationsEn {
 
   @override
   String get moreActions => 'और कार्रवाइयाँ';
+
+  @override
+  String get showMenu => 'मेन्यू दिखाएं';
 }
