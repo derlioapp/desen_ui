@@ -128,7 +128,6 @@ class DsStepper<T extends num> extends StatefulWidget {
   /// Desen's default stepper style under [theme].
   static DsStepperStyle defaultStyle(DsThemeData theme) {
     final k = theme.colors;
-    const clear = Color(0x00000000);
     // The buttons are [height] tall; the track around them is a control
     // [inset] taller on each side, its buttons concentric with it. No
     // radii here: both follow whatever height and inset the layers settle
@@ -152,8 +151,9 @@ class DsStepper<T extends num> extends StatefulWidget {
       unitGap: DsSpace.s4,
       pressScale: .92,
       focusShadows: theme.focusShadows,
+      // A button that cannot step keeps its shape, flat and with a muted
+      // glyph, so a stepper at its limit stays symmetric.
       disabled: DsStepperStyle(
-        buttonColor: clear,
         buttonShadows: const [],
         foreground: k.onDisabled,
         unitStyle: TextStyle(color: k.onDisabled),
