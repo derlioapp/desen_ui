@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/circle-alert",
+  "category": "notifications",
+  "tags": [
+    "warning",
+    "alert",
+    "danger",
+    "exclamation mark"
+  ],
+  "aliases": [
+    "error"
+  ],
+  "mirror": false
+}

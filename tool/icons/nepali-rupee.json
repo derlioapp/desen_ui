@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/nepali-rupee",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "nepal",
+    "rupee",
+    "npr"
+  ],
+  "aliases": [],
+  "mirror": false
+}

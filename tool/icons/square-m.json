@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/square-m",
+  "category": "transportation",
+  "tags": [
+    "metro",
+    "subway",
+    "underground",
+    "track",
+    "line"
+  ],
+  "aliases": [],
+  "mirror": false
+}

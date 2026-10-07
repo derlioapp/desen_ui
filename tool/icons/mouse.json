@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/mouse",
+  "category": "devices",
+  "tags": [
+    "device",
+    "scroll",
+    "click"
+  ],
+  "aliases": [],
+  "mirror": false
+}

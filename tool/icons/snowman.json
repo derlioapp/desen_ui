@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide-lab/snowman",
+  "category": "weather",
+  "tags": [
+    "cold",
+    "freeze",
+    "frozen",
+    "winter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

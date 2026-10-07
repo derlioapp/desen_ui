@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/x",
+  "category": "notifications",
+  "tags": [
+    "cancel",
+    "close",
+    "cross",
+    "delete",
+    "ex",
+    "remove",
+    "times",
+    "clear",
+    "math",
+    "multiply",
+    "multiplication"
+  ],
+  "aliases": [
+    "close"
+  ],
+  "mirror": false
+}

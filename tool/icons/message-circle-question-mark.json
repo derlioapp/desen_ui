@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/message-circle-question-mark",
+  "category": "social",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubble",
+    "help"
+  ],
+  "aliases": [],
+  "mirror": false
+}

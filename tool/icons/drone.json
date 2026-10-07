@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/drone",
+  "category": "transportation",
+  "tags": [
+    "quadcopter",
+    "uav",
+    "aerial",
+    "flight",
+    "flying",
+    "technology",
+    "airborne",
+    "robotics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

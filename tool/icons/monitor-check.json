@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/monitor-check",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "screen sharing",
+    "connected",
+    "success",
+    "verified",
+    "running",
+    "active",
+    "virtual machine",
+    "vm"
+  ],
+  "aliases": [],
+  "mirror": false
+}

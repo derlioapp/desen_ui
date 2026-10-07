@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide-lab/mug-teabag",
+  "category": "food-beverage",
+  "tags": [
+    "cup",
+    "hot",
+    "drink",
+    "cafe"
+  ],
+  "aliases": [],
+  "mirror": false
+}

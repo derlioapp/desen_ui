@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/mail-search",
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "search",
+    "lens"
+  ],
+  "aliases": [],
+  "mirror": false
+}

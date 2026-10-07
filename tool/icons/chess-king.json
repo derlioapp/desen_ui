@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/chess-king",
+  "category": "gaming",
+  "tags": [
+    "ruler",
+    "crown",
+    "piece",
+    "board game",
+    "stalemate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

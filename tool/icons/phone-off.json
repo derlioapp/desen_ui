@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/phone-off",
+  "category": "connectivity",
+  "tags": [
+    "call",
+    "mute"
+  ],
+  "aliases": [],
+  "mirror": false
+}

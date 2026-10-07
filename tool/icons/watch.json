@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/watch",
+  "category": "time",
+  "tags": [
+    "clock",
+    "time"
+  ],
+  "aliases": [],
+  "mirror": false
+}

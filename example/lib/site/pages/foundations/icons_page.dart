@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../code.dart';
 import '../../doc.dart';
+import '../../icon_catalog.dart';
 import 'common.dart';
 
 /// Every built-in icon, searchable, with sizing and other icon sets.
@@ -15,17 +16,19 @@ class IconsPage extends StatelessWidget {
     eyebrow: 'Foundations',
     title: 'Icons',
     lead:
-        '${_icons.length} stroke icons in the Lucide style, drawn from SVG '
-        'paths. Desen uses them inside its components. Your own UI can use '
-        'them, or any other icon set: components take icons as widgets.',
+        '${iconCatalog.length} stroke icons from Lucide, drawn from SVG '
+        'paths. Icons an app does not use add nothing to its size. '
+        'Components take icons as widgets, so any other icon set works too.',
     sections: [
       const DocSection(
         title: 'All icons',
         children: [
           DocText(
-            'Search by name or meaning, and click an icon to copy its name. '
-            'The shapes come from [Lucide](https://lucide.dev) under the ISC '
-            'license.',
+            'Search by name, alias or meaning, and click an icon to copy its '
+            'name. Names follow [Lucide](https://lucide.dev) in camel case '
+            '(`triangle-alert` is `DsIcons.triangleAlert`); some icons also '
+            'have a more common alias (`volume2` is also `volumeUp`). The '
+            'shapes are Lucide\'s, under the ISC license.',
           ),
           Board(child: _IconBrowser()),
         ],
@@ -62,6 +65,36 @@ class IconsPage extends StatelessWidget {
                   ],
                 );
               },
+            ),
+          ),
+        ],
+      ),
+      const DocSection(
+        title: 'Filled icons',
+        children: [
+          DocText(
+            '`fill` fills each path as well as stroking it, for solid shapes '
+            'such as a play button or a selected tab. The stroke still runs '
+            'around the fill, so corners stay round and the solid icon is '
+            'the same size as the outlined one. Open lines look the same '
+            'either way. Set it on `DsIconData` for a shape that is always '
+            'solid, or on `DsIcon` to switch the same icon.',
+          ),
+          Example(
+            snippet: 'icons-fill',
+            child: Wrap(
+              spacing: 20,
+              runSpacing: 16,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                // #region icons-fill
+                DsIcon(DsIcons.play, size: 24),
+                DsIcon(DsIcons.play, size: 24, fill: true),
+                DsIcon(DsIcons.pause, size: 24, fill: true),
+                DsIcon(DsIcons.heart, size: 24, fill: true),
+                DsIcon(DsIcons.star, size: 24, fill: true),
+                // #endregion
+              ],
             ),
           ),
         ],
@@ -145,6 +178,11 @@ class IconsPage extends StatelessWidget {
               'In grid units; overrides the icon\'s own (2).',
             ),
             (
+              'fill',
+              'bool?',
+              'Fill the paths as well; overrides the icon\'s own (off).',
+            ),
+            (
               'semanticLabel',
               'String?',
               'Read by screen readers. Without it the icon is hidden.',
@@ -156,66 +194,6 @@ class IconsPage extends StatelessWidget {
   );
 }
 
-/// The built-in icons with what they mean (from the dartdoc of each
-/// icon); `DsIcons.all` guards that none is missing.
-const _icons = <(String, DsIconData, String)>[
-  ('plus', DsIcons.plus, 'Plus'),
-  ('minus', DsIcons.minus, 'Minus'),
-  ('check', DsIcons.check, 'Check mark'),
-  ('x', DsIcons.x, 'Close / clear'),
-  ('chevronDown', DsIcons.chevronDown, 'Chevron pointing down'),
-  ('chevronUp', DsIcons.chevronUp, 'Chevron pointing up'),
-  ('chevronLeft', DsIcons.chevronLeft, 'Chevron pointing left'),
-  ('chevronRight', DsIcons.chevronRight, 'Chevron pointing right'),
-  ('ellipsis', DsIcons.ellipsis, 'Horizontal ellipsis (more)'),
-  ('search', DsIcons.search, 'Magnifier'),
-  ('circleAlert', DsIcons.circleAlert, 'Error'),
-  ('circleCheck', DsIcons.circleCheck, 'Success'),
-  ('info', DsIcons.info, 'Information'),
-  ('triangleAlert', DsIcons.triangleAlert, 'Warning'),
-  ('mail', DsIcons.mail, 'Envelope'),
-  ('calendar', DsIcons.calendar, 'Calendar'),
-  ('layoutGrid', DsIcons.layoutGrid, 'Grid layout'),
-  ('list', DsIcons.list, 'List layout'),
-  ('bold', DsIcons.bold, 'Bold text'),
-  ('italic', DsIcons.italic, 'Italic text'),
-  ('underline', DsIcons.underline, 'Underlined text'),
-  ('bell', DsIcons.bell, 'Notifications'),
-  ('inbox', DsIcons.inbox, 'Inbox'),
-  ('user', DsIcons.user, 'Person'),
-  ('arrowUpRight', DsIcons.arrowUpRight, 'External link'),
-  ('volumeLow', DsIcons.volumeLow, 'Volume, low'),
-  ('volumeHigh', DsIcons.volumeHigh, 'Volume, high'),
-  ('chevronsUpDown', DsIcons.chevronsUpDown, 'A switcher or sort'),
-  ('sun', DsIcons.sun, 'Light appearance'),
-  ('moon', DsIcons.moon, 'Dark appearance'),
-  ('menu', DsIcons.menu, 'Menu (navigation)'),
-  ('folder', DsIcons.folder, 'Folder'),
-  ('house', DsIcons.house, 'Home'),
-  ('globe', DsIcons.globe, 'Language or web'),
-  ('logOut', DsIcons.logOut, 'Sign out'),
-  ('share', DsIcons.share, 'Share'),
-  ('link', DsIcons.link, 'Link'),
-  ('copy', DsIcons.copy, 'Copy'),
-  ('trash', DsIcons.trash, 'Delete'),
-  ('slidersHorizontal', DsIcons.slidersHorizontal, 'Filters'),
-  ('eye', DsIcons.eye, 'Show a password'),
-  ('eyeOff', DsIcons.eyeOff, 'Hide a password'),
-  ('command', DsIcons.command, 'Command key (⌘)'),
-  ('option', DsIcons.option, 'Option key (⌥)'),
-  ('shift', DsIcons.shift, 'Shift key (⇧)'),
-  ('backspace', DsIcons.backspace, 'Backspace key (⌫)'),
-  ('enter', DsIcons.enter, 'Return key (⏎)'),
-  ('upload', DsIcons.upload, 'Upload'),
-  ('fileText', DsIcons.fileText, 'File with text lines'),
-  ('clock', DsIcons.clock, 'Clock'),
-  ('arrowUp', DsIcons.arrowUp, 'Arrow up, ascending sort'),
-  ('arrowDown', DsIcons.arrowDown, 'Arrow down, descending sort'),
-  ('searchX', DsIcons.searchX, 'Nothing found'),
-  ('imageOff', DsIcons.imageOff, 'An image that cannot be shown'),
-  ('settings', DsIcons.settings, 'Settings (gear)'),
-];
-
 class _IconBrowser extends StatefulWidget {
   const _IconBrowser();
 
@@ -226,16 +204,16 @@ class _IconBrowser extends StatefulWidget {
 class _IconBrowserState extends State<_IconBrowser> {
   String _query = '';
 
-  List<(String, DsIconData, String)> get _matches {
+  List<IconEntry> get _matches {
     final q = dsFoldCase(_query.trim());
-    assert(
-      _icons.length == DsIcons.all.length,
-      'the icons page lists ${_icons.length} of ${DsIcons.all.length} icons',
-    );
-    if (q.isEmpty) return _icons;
+    if (q.isEmpty) return iconCatalog;
+    bool hit(String word) => dsFoldCase(word).contains(q);
     return [
-      for (final icon in _icons)
-        if (dsFoldCase(icon.$1).contains(q) || dsFoldCase(icon.$3).contains(q))
+      for (final icon in iconCatalog)
+        if (hit(icon.name) ||
+            hit(icon.category) ||
+            icon.aliases.any(hit) ||
+            icon.tags.any(hit))
           icon,
     ];
   }
@@ -269,7 +247,7 @@ class _IconBrowserState extends State<_IconBrowser> {
             constraints: const BoxConstraints(maxWidth: 320),
             child: DsTextField(
               onChanged: (v) => setState(() => _query = v),
-              placeholder: 'Search ${_icons.length} icons',
+              placeholder: 'Search ${iconCatalog.length} icons',
               semanticLabel: 'Search icons',
               leading: const DsIcon(DsIcons.search),
               clearable: true,
@@ -283,19 +261,28 @@ class _IconBrowserState extends State<_IconBrowser> {
             description: Text('Nothing matches “$_query”. Try a shorter word.'),
           )
         else
-          TokenGrid(
-            minWidth: 96,
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              for (final (name, icon, meaning) in matches)
-                _IconTile(
-                  name: name,
-                  icon: icon,
-                  meaning: meaning,
-                  onPressed: () => _copy(name),
-                ),
-            ],
+          // A lazy grid with its own scroll: building every tile at once
+          // would cost thousands of widgets.
+          SizedBox(
+            height: 480,
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 112,
+                mainAxisExtent: 80,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+              ),
+              itemCount: matches.length,
+              itemBuilder: (context, i) {
+                final entry = matches[i];
+                return _IconTile(
+                  name: entry.name,
+                  icon: entry.icon,
+                  meaning: [...entry.aliases, ...entry.tags].take(6).join(', '),
+                  onPressed: () => _copy(entry.name),
+                );
+              },
+            ),
           ),
       ],
     );
@@ -319,48 +306,46 @@ class _IconTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = DsTheme.of(context);
     final k = t.colors;
-    return DsTooltip(
-      message: meaning,
-      child: DsPressable(
-        onPressed: onPressed,
-        semanticLabel: 'Copy DsIcons.$name',
-        builder: (context, states, _) {
-          final hovered = states.contains(WidgetState.hovered);
-          final pressed = states.contains(WidgetState.pressed);
-          return Container(
-            height: 80,
-            padding: const EdgeInsets.symmetric(horizontal: 6),
-            decoration: DsBoxDecoration(
-              color: pressed ? k.press : (hovered ? k.hover : null),
-              borderRadius: BorderRadius.circular(
-                t.radii.nested(t.radii.card, DsSpace.s4),
-              ),
-              shadows: [
-                if (states.contains(WidgetState.focused))
-                  DsShadow.innerRing(k.focus, width: 2),
-              ],
+    final tile = DsPressable(
+      onPressed: onPressed,
+      semanticLabel: 'Copy DsIcons.$name',
+      builder: (context, states, _) {
+        final hovered = states.contains(WidgetState.hovered);
+        final pressed = states.contains(WidgetState.pressed);
+        return Container(
+          height: 80,
+          padding: const EdgeInsets.symmetric(horizontal: 6),
+          decoration: DsBoxDecoration(
+            color: pressed ? k.press : (hovered ? k.hover : null),
+            borderRadius: BorderRadius.circular(
+              t.radii.nested(t.radii.card, DsSpace.s4),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 10,
-              children: [
-                DsIcon(icon, size: 20, color: k.text),
-                // Long names shrink a little rather than lose letters.
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    name,
-                    maxLines: 1,
-                    style: t.typography
-                        .mono(t.typography.caption)
-                        .copyWith(color: k.textMuted, fontSize: 11),
-                  ),
+            shadows: [
+              if (states.contains(WidgetState.focused))
+                DsShadow.innerRing(k.focus, width: 2),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 10,
+            children: [
+              DsIcon(icon, size: 20, color: k.text),
+              // Long names shrink a little rather than lose letters.
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  name,
+                  maxLines: 1,
+                  style: t.typography
+                      .mono(t.typography.caption)
+                      .copyWith(color: k.textMuted, fontSize: 11),
                 ),
-              ],
-            ),
-          );
-        },
-      ),
+              ),
+            ],
+          ),
+        );
+      },
     );
+    return meaning.isEmpty ? tile : DsTooltip(message: meaning, child: tile);
   }
 }

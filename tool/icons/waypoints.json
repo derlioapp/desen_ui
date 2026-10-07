@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/waypoints",
+  "category": "security",
+  "tags": [
+    "indirection",
+    "vpn",
+    "virtual private network",
+    "proxy",
+    "connections",
+    "bounce",
+    "reroute",
+    "path",
+    "journey",
+    "planner",
+    "stops",
+    "stations",
+    "shared",
+    "spread",
+    "viral"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/locate-fixed",
+  "category": "navigation",
+  "tags": [
+    "map",
+    "gps",
+    "location",
+    "cross"
+  ],
+  "aliases": [],
+  "mirror": false
+}

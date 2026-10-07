@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/receipt-text",
+  "category": "finance",
+  "tags": [
+    "bill",
+    "voucher",
+    "slip",
+    "check",
+    "counterfoil",
+    "details",
+    "small print",
+    "terms",
+    "conditions",
+    "contract"
+  ],
+  "aliases": [],
+  "mirror": false
+}

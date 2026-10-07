@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/square-dashed-plus",
+  "category": "design",
+  "tags": [
+    "selection",
+    "select",
+    "add",
+    "new",
+    "placeholder",
+    "marquee",
+    "box",
+    "dashed",
+    "plus",
+    "insert",
+    "frame",
+    "empty"
+  ],
+  "aliases": [],
+  "mirror": false
+}

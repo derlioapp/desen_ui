@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/quote",
+  "category": "text",
+  "tags": [
+    "quotation"
+  ],
+  "aliases": [
+    "blockquote"
+  ],
+  "mirror": false
+}

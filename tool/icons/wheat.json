@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/wheat",
+  "category": "food-beverage",
+  "tags": [
+    "corn",
+    "cereal",
+    "grain",
+    "gluten"
+  ],
+  "aliases": [],
+  "mirror": false
+}

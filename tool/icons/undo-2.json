@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/undo-2",
+  "category": "text",
+  "tags": [
+    "redo",
+    "rerun",
+    "history",
+    "back",
+    "return",
+    "reverse",
+    "revert",
+    "direction",
+    "u-turn"
+  ],
+  "aliases": [],
+  "mirror": true
+}

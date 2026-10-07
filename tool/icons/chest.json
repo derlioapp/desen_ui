@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide-lab/chest",
+  "category": "tools",
+  "tags": [
+    "trunk",
+    "treasure",
+    "loot",
+    "gold",
+    "toybox",
+    "toolbox",
+    "tool chest",
+    "storage",
+    "container"
+  ],
+  "aliases": [],
+  "mirror": false
+}

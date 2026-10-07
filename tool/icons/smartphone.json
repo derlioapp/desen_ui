@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/smartphone",
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "cellphone",
+    "device",
+    "mobile",
+    "screen",
+    "display",
+    "touchscreen",
+    "portable",
+    "responsive"
+  ],
+  "aliases": [],
+  "mirror": false
+}

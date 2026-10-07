@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/contact",
+  "category": "account",
+  "tags": [
+    "user",
+    "person",
+    "family",
+    "friend",
+    "acquaintance",
+    "listing",
+    "networking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

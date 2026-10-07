@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide/bell-electric",
+  "category": "devices",
+  "tags": [
+    "fire alarm",
+    "flames",
+    "smoke",
+    "firefighter",
+    "fireman",
+    "department",
+    "brigade",
+    "station",
+    "emergency",
+    "alert",
+    "safety",
+    "school bell",
+    "period break",
+    "recess",
+    "doorbell",
+    "entrance",
+    "entry",
+    "ring",
+    "reception"
+  ],
+  "aliases": [],
+  "mirror": false
+}

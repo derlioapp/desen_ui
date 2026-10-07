@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/chart-column",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph"
+  ],
+  "aliases": [
+    "columnChart"
+  ],
+  "mirror": false
+}

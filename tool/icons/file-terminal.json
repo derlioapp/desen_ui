@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-terminal",
+  "category": "files",
+  "tags": [
+    "terminal",
+    "bash",
+    "script",
+    "executable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

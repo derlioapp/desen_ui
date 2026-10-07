@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/leafy-green",
+  "category": "food-beverage",
+  "tags": [
+    "salad",
+    "lettuce",
+    "vegetable",
+    "chard",
+    "cabbage",
+    "bok choy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

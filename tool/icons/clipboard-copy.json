@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/clipboard-copy",
+  "category": "text",
+  "tags": [
+    "copy",
+    "paste"
+  ],
+  "aliases": [],
+  "mirror": false
+}

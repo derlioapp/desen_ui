@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/file-spreadsheet",
+  "category": "files",
+  "tags": [
+    "spreadsheet",
+    "sheet",
+    "table"
+  ],
+  "aliases": [],
+  "mirror": false
+}

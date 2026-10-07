@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/rows-3",
+  "category": "layout",
+  "tags": [
+    "lines",
+    "list",
+    "queue",
+    "preview",
+    "paragraphs",
+    "parallel",
+    "series",
+    "split",
+    "vertical",
+    "horizontal",
+    "half",
+    "center",
+    "middle",
+    "even",
+    "drawers"
+  ],
+  "aliases": [],
+  "mirror": false
+}

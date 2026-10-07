@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/external-link",
+  "category": "arrows",
+  "tags": [
+    "outbound",
+    "open",
+    "share"
+  ],
+  "aliases": [
+    "openInNew"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/panel-left",
+  "category": "layout",
+  "tags": [
+    "primary",
+    "drawer"
+  ],
+  "aliases": [
+    "sidebar"
+  ],
+  "mirror": false
+}

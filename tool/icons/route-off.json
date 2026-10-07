@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/route-off",
+  "category": "navigation",
+  "tags": [
+    "path",
+    "journey",
+    "planner",
+    "points",
+    "stops",
+    "stations",
+    "reset",
+    "clear",
+    "cancelled",
+    "closed",
+    "blocked"
+  ],
+  "aliases": [],
+  "mirror": false
+}

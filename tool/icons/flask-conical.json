@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/flask-conical",
+  "category": "science",
+  "tags": [
+    "beaker",
+    "erlenmeyer",
+    "lab",
+    "chemistry",
+    "experiment",
+    "test"
+  ],
+  "aliases": [],
+  "mirror": false
+}

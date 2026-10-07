@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/rotate-ccw",
+  "category": "arrows",
+  "tags": [
+    "arrow",
+    "left",
+    "counter-clockwise",
+    "restart",
+    "reload",
+    "rerun",
+    "refresh",
+    "backup",
+    "undo",
+    "replay",
+    "redo",
+    "retry",
+    "rewind",
+    "reverse"
+  ],
+  "aliases": [
+    "rotateLeft"
+  ],
+  "mirror": false
+}

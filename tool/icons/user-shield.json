@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/user-shield",
+  "category": "account",
+  "tags": [
+    "user",
+    "shield",
+    "admin",
+    "protected",
+    "guard",
+    "profile",
+    "security",
+    "privacy",
+    "permissions",
+    "role"
+  ],
+  "aliases": [],
+  "mirror": false
+}

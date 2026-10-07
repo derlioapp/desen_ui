@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/popcorn",
+  "category": "food-beverage",
+  "tags": [
+    "cinema",
+    "movies",
+    "films",
+    "salted",
+    "sweet",
+    "sugar",
+    "candy",
+    "snack"
+  ],
+  "aliases": [],
+  "mirror": false
+}

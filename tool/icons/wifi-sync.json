@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/wifi-sync",
+  "category": "connectivity",
+  "tags": [
+    "connection",
+    "signal",
+    "wireless",
+    "synchronize",
+    "reconnect",
+    "reset",
+    "restart"
+  ],
+  "aliases": [],
+  "mirror": false
+}

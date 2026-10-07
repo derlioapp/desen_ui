@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/folder-input",
+  "category": "files",
+  "tags": [
+    "directory",
+    "import",
+    "export"
+  ],
+  "aliases": [],
+  "mirror": false
+}

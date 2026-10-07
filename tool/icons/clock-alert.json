@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/clock-alert",
+  "category": "time",
+  "tags": [
+    "time",
+    "watch",
+    "alarm",
+    "warning",
+    "wrong"
+  ],
+  "aliases": [],
+  "mirror": false
+}

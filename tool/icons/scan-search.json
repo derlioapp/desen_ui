@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/scan-search",
+  "category": "photography",
+  "tags": [
+    "preview",
+    "zoom",
+    "expand",
+    "fullscreen",
+    "gallery",
+    "image",
+    "focus",
+    "lens"
+  ],
+  "aliases": [],
+  "mirror": false
+}

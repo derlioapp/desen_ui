@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/tram-front",
+  "category": "transportation",
+  "tags": [
+    "railway",
+    "metro",
+    "subway",
+    "underground",
+    "track",
+    "line",
+    "tourism"
+  ],
+  "aliases": [],
+  "mirror": false
+}

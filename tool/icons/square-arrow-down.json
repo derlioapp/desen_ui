@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/square-arrow-down",
+  "category": "arrows",
+  "tags": [
+    "backwards",
+    "reverse",
+    "direction",
+    "south",
+    "sign",
+    "keyboard",
+    "button"
+  ],
+  "aliases": [],
+  "mirror": false
+}

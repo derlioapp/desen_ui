@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/copy",
+  "category": "text",
+  "tags": [
+    "clone",
+    "duplicate",
+    "multiple"
+  ],
+  "aliases": [],
+  "mirror": false
+}

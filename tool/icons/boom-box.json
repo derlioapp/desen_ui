@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/boom-box",
+  "category": "devices",
+  "tags": [
+    "radio",
+    "speakers",
+    "audio",
+    "music",
+    "sound",
+    "broadcast",
+    "live",
+    "frequency"
+  ],
+  "aliases": [],
+  "mirror": false
+}

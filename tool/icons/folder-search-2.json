@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/folder-search-2",
+  "category": "files",
+  "tags": [
+    "directory",
+    "search",
+    "find",
+    "lost",
+    "browser",
+    "lens"
+  ],
+  "aliases": [],
+  "mirror": false
+}

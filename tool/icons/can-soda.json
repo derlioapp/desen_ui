@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/can-soda",
+  "category": "food-beverage",
+  "tags": [
+    "beverage",
+    "drink",
+    "food",
+    "soda",
+    "tin",
+    "beer",
+    "alcohol",
+    "waste"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/scale-3d",
+  "category": "design",
+  "tags": [
+    "gizmo",
+    "transform",
+    "size",
+    "axis"
+  ],
+  "aliases": [],
+  "mirror": false
+}

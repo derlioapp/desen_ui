@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/save-plus",
+  "category": "text",
+  "tags": [
+    "floppy disk",
+    "save",
+    "plus",
+    "add",
+    "update",
+    "create"
+  ],
+  "aliases": [],
+  "mirror": false
+}

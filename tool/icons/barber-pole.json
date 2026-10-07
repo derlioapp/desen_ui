@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide-lab/barber-pole",
+  "category": "navigation",
+  "tags": [
+    "hairdresser",
+    "grooming",
+    "cut",
+    "shave",
+    "shop",
+    "salon",
+    "service",
+    "signage",
+    "stripes",
+    "spin",
+    "spiral",
+    "helix",
+    "twist",
+    "twirl",
+    "rotate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

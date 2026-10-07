@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/equal",
+  "category": "math",
+  "tags": [
+    "calculate",
+    "math",
+    "operator",
+    "assignment",
+    "code",
+    "="
+  ],
+  "aliases": [],
+  "mirror": false
+}

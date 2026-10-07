@@ -45,6 +45,8 @@ jobs:
       - run: dart format --output=none --set-exit-if-changed lib test example/lib example/test
       - name: Code snippets match the example pages
         run: python3 tool/gen_snippets.py --check
+      - name: Icon files match tool/icons
+        run: python3 tool/gen_icons.py --check
       - name: Publish dry run
         run: dart pub publish --dry-run
 

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/fishing-rod",
+  "category": "sports",
+  "tags": [
+    "fishing",
+    "rod",
+    "hobby",
+    "equipment",
+    "reel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

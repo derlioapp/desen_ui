@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/maximize",
+  "category": "layout",
+  "tags": [
+    "fullscreen",
+    "expand",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

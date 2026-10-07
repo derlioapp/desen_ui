@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/receipt-euro",
+  "category": "finance",
+  "tags": [
+    "bill",
+    "voucher",
+    "slip",
+    "check",
+    "counterfoil",
+    "currency",
+    "€"
+  ],
+  "aliases": [],
+  "mirror": false
+}

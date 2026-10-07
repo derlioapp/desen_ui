@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide-lab/cricket-ball",
+  "category": "sports",
+  "tags": [
+    "bowler",
+    "batsman",
+    "batting",
+    "fielder",
+    "runs",
+    "wicket",
+    "innings",
+    "overs",
+    "score",
+    "umpire",
+    "spin",
+    "catch",
+    "bounce",
+    "ashes",
+    "summer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

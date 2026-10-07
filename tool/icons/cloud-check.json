@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/cloud-check",
+  "category": "development",
+  "tags": [
+    "sync",
+    "network",
+    "success",
+    "done",
+    "completed",
+    "saved",
+    "persisted"
+  ],
+  "aliases": [],
+  "mirror": false
+}

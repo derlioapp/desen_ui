@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/midi-port",
+  "category": "multimedia",
+  "tags": [
+    "musical instrument digital interface",
+    "port",
+    "connector",
+    "socket",
+    "jack",
+    "din",
+    "5-pin",
+    "audio",
+    "music",
+    "synthesizer",
+    "keyboard",
+    "controller",
+    "interface",
+    "input",
+    "output",
+    "io"
+  ],
+  "aliases": [],
+  "mirror": false
+}

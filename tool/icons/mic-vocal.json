@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/mic-vocal",
+  "category": "devices",
+  "tags": [
+    "lyrics",
+    "voice",
+    "listen",
+    "sound",
+    "music",
+    "radio",
+    "podcast",
+    "karaoke",
+    "singing",
+    "microphone"
+  ],
+  "aliases": [],
+  "mirror": false
+}

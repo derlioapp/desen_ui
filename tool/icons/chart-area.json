@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/chart-area",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph",
+    "area"
+  ],
+  "aliases": [
+    "areaChart"
+  ],
+  "mirror": false
+}

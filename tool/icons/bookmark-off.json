@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/bookmark-off",
+  "category": "account",
+  "tags": [
+    "unsaved",
+    "unfavorite",
+    "unmarked",
+    "unlabel",
+    "disabled",
+    "removed",
+    "unpin",
+    "unread",
+    "unclip",
+    "marker",
+    "untag"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/cloudy",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "clouds"
+  ],
+  "aliases": [],
+  "mirror": false
+}

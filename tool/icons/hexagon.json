@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/hexagon",
+  "category": "shapes",
+  "tags": [
+    "shape",
+    "node.js",
+    "logo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

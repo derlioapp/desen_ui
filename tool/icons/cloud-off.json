@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/cloud-off",
+  "category": "connectivity",
+  "tags": [
+    "disconnect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

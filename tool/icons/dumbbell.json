@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/dumbbell",
+  "category": "navigation",
+  "tags": [
+    "barbell",
+    "weight",
+    "workout",
+    "gym"
+  ],
+  "aliases": [
+    "gym"
+  ],
+  "mirror": false
+}

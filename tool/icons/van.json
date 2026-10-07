@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/van",
+  "category": "transportation",
+  "tags": [
+    "minivan",
+    "cart",
+    "wagon",
+    "truck",
+    "lorry",
+    "trailer",
+    "camper",
+    "vehicle",
+    "drive",
+    "trip",
+    "journey",
+    "van",
+    "transport",
+    "carriage",
+    "delivery",
+    "travel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

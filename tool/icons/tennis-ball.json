@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide-lab/tennis-ball",
+  "category": "sports",
+  "tags": [
+    "court",
+    "racquet",
+    "racket",
+    "net",
+    "deuce",
+    "love",
+    "bounce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

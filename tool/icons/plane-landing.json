@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/plane-landing",
+  "category": "transportation",
+  "tags": [
+    "arrival",
+    "plane",
+    "trip",
+    "airplane",
+    "landing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

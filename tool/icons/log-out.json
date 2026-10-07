@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/log-out",
+  "category": "arrows",
+  "tags": [
+    "sign out",
+    "arrow",
+    "exit",
+    "auth"
+  ],
+  "aliases": [
+    "signOut"
+  ],
+  "mirror": true
+}

@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/alarm-clock-plus",
+  "category": "devices",
+  "tags": [
+    "add"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/log-in",
+  "category": "arrows",
+  "tags": [
+    "sign in",
+    "arrow",
+    "enter",
+    "auth"
+  ],
+  "aliases": [
+    "signIn"
+  ],
+  "mirror": true
+}

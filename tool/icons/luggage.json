@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/luggage",
+  "category": "travel",
+  "tags": [
+    "baggage",
+    "luggage",
+    "travel",
+    "suitcase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

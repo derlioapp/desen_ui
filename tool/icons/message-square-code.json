@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/message-square-code",
+  "category": "development",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubble",
+    "code review",
+    "coding"
+  ],
+  "aliases": [],
+  "mirror": false
+}

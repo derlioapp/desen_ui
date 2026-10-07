@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/scan-heart",
+  "category": "medical",
+  "tags": [
+    "health",
+    "heart rate",
+    "pulse",
+    "monitoring",
+    "healthiness",
+    "screening",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

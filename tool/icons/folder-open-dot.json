@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/folder-open-dot",
+  "category": "files",
+  "tags": [
+    "directory",
+    "root",
+    "project",
+    "active",
+    "current",
+    "pinned"
+  ],
+  "aliases": [],
+  "mirror": false
+}

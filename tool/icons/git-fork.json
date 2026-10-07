@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/git-fork",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control"
+  ],
+  "aliases": [],
+  "mirror": false
+}

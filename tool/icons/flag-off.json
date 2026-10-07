@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/flag-off",
+  "category": "account",
+  "tags": [
+    "unflag",
+    "unmark",
+    "report",
+    "marker",
+    "notification",
+    "warning",
+    "milestone",
+    "goal",
+    "notice",
+    "signal",
+    "attention",
+    "banner"
+  ],
+  "aliases": [],
+  "mirror": false
+}

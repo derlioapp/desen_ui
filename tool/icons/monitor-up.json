@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/monitor-up",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "upload",
+    "connect",
+    "remote",
+    "screen sharing",
+    "cast"
+  ],
+  "aliases": [],
+  "mirror": false
+}

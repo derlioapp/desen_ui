@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/drumstick",
+  "category": "food-beverage",
+  "tags": [
+    "food",
+    "chicken",
+    "meat"
+  ],
+  "aliases": [],
+  "mirror": false
+}

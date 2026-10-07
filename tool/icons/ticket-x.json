@@ -1,0 +1,32 @@
+{
+  "upstream": "lucide/ticket-x",
+  "category": "transportation",
+  "tags": [
+    "entry",
+    "pass",
+    "voucher",
+    "event",
+    "concert",
+    "show",
+    "cancelled",
+    "cancellation",
+    "refunded",
+    "used",
+    "void",
+    "invalidated",
+    "spoiled",
+    "denied",
+    "refused",
+    "banned",
+    "barred",
+    "forbidden",
+    "prohibited",
+    "delete",
+    "remove",
+    "clear",
+    "error",
+    "x"
+  ],
+  "aliases": [],
+  "mirror": false
+}

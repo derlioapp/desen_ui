@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide-lab/egg-cup",
+  "category": "food-beverage",
+  "tags": [
+    "boiled",
+    "soldiers",
+    "continental breakfast",
+    "brunch",
+    "meal",
+    "morning"
+  ],
+  "aliases": [],
+  "mirror": false
+}

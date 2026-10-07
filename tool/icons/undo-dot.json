@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/undo-dot",
+  "category": "text",
+  "tags": [
+    "redo",
+    "history",
+    "step",
+    "back"
+  ],
+  "aliases": [],
+  "mirror": true
+}

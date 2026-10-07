@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/grip-horizontal",
+  "category": "layout",
+  "tags": [
+    "grab",
+    "dots",
+    "handle",
+    "move",
+    "drag"
+  ],
+  "aliases": [
+    "dragIndicator"
+  ],
+  "mirror": false
+}

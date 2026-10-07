@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/file-symlink",
+  "category": "files",
+  "tags": [
+    "symlink",
+    "symbolic",
+    "link"
+  ],
+  "aliases": [],
+  "mirror": false
+}

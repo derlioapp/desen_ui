@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/database-x",
+  "category": "devices",
+  "tags": [
+    "storage",
+    "memory",
+    "bytes",
+    "server",
+    "x",
+    "error",
+    "failed",
+    "invalid",
+    "rejected",
+    "denied",
+    "clear",
+    "remove",
+    "disconnect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

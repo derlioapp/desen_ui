@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/printer-x",
+  "category": "devices",
+  "tags": [
+    "fax",
+    "office",
+    "device",
+    "cross",
+    "cancel",
+    "remove",
+    "error"
+  ],
+  "aliases": [],
+  "mirror": false
+}

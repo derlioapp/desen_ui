@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide-lab/locate-square",
+  "category": "navigation",
+  "tags": [
+    "gps",
+    "location",
+    "crosshair",
+    "inspector",
+    "element",
+    "selector",
+    "target",
+    "box",
+    "browser",
+    "dom",
+    "node",
+    "aim",
+    "target",
+    "scope",
+    "sight",
+    "reticule"
+  ],
+  "aliases": [],
+  "mirror": false
+}

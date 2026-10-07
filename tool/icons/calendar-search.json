@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/calendar-search",
+  "category": "time",
+  "tags": [
+    "date",
+    "day",
+    "month",
+    "year",
+    "events",
+    "search",
+    "lens"
+  ],
+  "aliases": [],
+  "mirror": false
+}

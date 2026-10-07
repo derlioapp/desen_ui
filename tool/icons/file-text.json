@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-text",
+  "category": "files",
+  "tags": [
+    "data",
+    "txt",
+    "pdf",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

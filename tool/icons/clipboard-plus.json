@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/clipboard-plus",
+  "category": "text",
+  "tags": [
+    "copy",
+    "paste",
+    "add",
+    "create",
+    "new",
+    "document",
+    "medical",
+    "report",
+    "doctor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

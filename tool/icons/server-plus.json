@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/server-plus",
+  "category": "development",
+  "tags": [
+    "add",
+    "create",
+    "new",
+    "cloud",
+    "storage",
+    "computing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

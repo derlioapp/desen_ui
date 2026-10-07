@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/message-square-dashed",
+  "category": "social",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubble",
+    "draft"
+  ],
+  "aliases": [],
+  "mirror": false
+}

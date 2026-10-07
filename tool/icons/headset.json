@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/headset",
+  "category": "multimedia",
+  "tags": [
+    "music",
+    "audio",
+    "sound",
+    "gaming",
+    "headphones",
+    "headset",
+    "call",
+    "center",
+    "phone",
+    "telephone",
+    "voip",
+    "video"
+  ],
+  "aliases": [],
+  "mirror": false
+}

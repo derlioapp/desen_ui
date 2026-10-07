@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/arrow-up-down",
+  "category": "arrows",
+  "tags": [
+    "bidirectional",
+    "two-way",
+    "2-way",
+    "swap",
+    "switch",
+    "network",
+    "mobile data",
+    "internet",
+    "sort",
+    "reorder",
+    "move"
+  ],
+  "aliases": [],
+  "mirror": false
+}

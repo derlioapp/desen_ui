@@ -1,0 +1,33 @@
+{
+  "upstream": "lucide/chevrons-left-right-ellipsis",
+  "category": "social",
+  "tags": [
+    "internet",
+    "network",
+    "connection",
+    "cable",
+    "lan",
+    "port",
+    "router",
+    "switch",
+    "hub",
+    "modem",
+    "web",
+    "online",
+    "networking",
+    "communication",
+    "socket",
+    "plug",
+    "slot",
+    "controller",
+    "connector",
+    "interface",
+    "console",
+    "signal",
+    "data",
+    "input",
+    "output"
+  ],
+  "aliases": [],
+  "mirror": false
+}

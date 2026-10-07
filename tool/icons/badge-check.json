@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/badge-check",
+  "category": "social",
+  "tags": [
+    "verified",
+    "check"
+  ],
+  "aliases": [
+    "verified"
+  ],
+  "mirror": false
+}

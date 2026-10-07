@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/bug-play",
+  "category": "development",
+  "tags": [
+    "issue",
+    "testing",
+    "debug",
+    "reproduce",
+    "code",
+    "insect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

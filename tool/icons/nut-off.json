@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/nut-off",
+  "category": "food-beverage",
+  "tags": [
+    "hazelnut",
+    "acorn",
+    "food",
+    "allergy",
+    "intolerance",
+    "diet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

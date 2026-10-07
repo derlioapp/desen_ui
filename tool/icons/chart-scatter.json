@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/chart-scatter",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph"
+  ],
+  "aliases": [
+    "scatterPlot"
+  ],
+  "mirror": false
+}

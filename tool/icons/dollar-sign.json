@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/dollar-sign",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment"
+  ],
+  "aliases": [
+    "dollar"
+  ],
+  "mirror": false
+}

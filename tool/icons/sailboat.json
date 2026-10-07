@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/sailboat",
+  "category": "transportation",
+  "tags": [
+    "ship",
+    "boat",
+    "harbor",
+    "harbour",
+    "dock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

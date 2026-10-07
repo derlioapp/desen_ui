@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/music-4",
+  "category": "multimedia",
+  "tags": [
+    "semiquaver",
+    "sixteenth note",
+    "note"
+  ],
+  "aliases": [],
+  "mirror": false
+}

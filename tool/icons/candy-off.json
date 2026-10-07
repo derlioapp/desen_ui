@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/candy-off",
+  "category": "food-beverage",
+  "tags": [
+    "sugar free",
+    "food",
+    "sweet",
+    "allergy",
+    "intolerance",
+    "diet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

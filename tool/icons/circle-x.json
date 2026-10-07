@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/circle-x",
+  "category": "math",
+  "tags": [
+    "cancel",
+    "close",
+    "delete",
+    "remove",
+    "times",
+    "clear",
+    "error",
+    "incorrect",
+    "wrong",
+    "mistake",
+    "failure",
+    "linter",
+    "multiply",
+    "multiplication"
+  ],
+  "aliases": [],
+  "mirror": false
+}

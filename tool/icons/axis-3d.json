@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/axis-3d",
+  "category": "design",
+  "tags": [
+    "gizmo",
+    "coordinates"
+  ],
+  "aliases": [],
+  "mirror": false
+}

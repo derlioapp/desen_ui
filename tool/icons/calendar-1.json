@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/calendar-1",
+  "category": "time",
+  "tags": [
+    "date",
+    "month",
+    "year",
+    "event",
+    "single",
+    "singular",
+    "once",
+    "1",
+    "first"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/list-sort-ascending",
+  "category": "text",
+  "tags": [
+    "list",
+    "order",
+    "arrangement",
+    "organization",
+    "sequence",
+    "ranking",
+    "categories",
+    "presentation",
+    "filter",
+    "sort",
+    "ascending",
+    "descending",
+    "increasing",
+    "decreasing",
+    "rising",
+    "falling"
+  ],
+  "aliases": [],
+  "mirror": false
+}

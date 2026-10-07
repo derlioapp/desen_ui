@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/receipt-russian-ruble",
+  "category": "finance",
+  "tags": [
+    "bill",
+    "voucher",
+    "slip",
+    "check",
+    "counterfoil",
+    "currency",
+    "rub",
+    "₽"
+  ],
+  "aliases": [],
+  "mirror": false
+}

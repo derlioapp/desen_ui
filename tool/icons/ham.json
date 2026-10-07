@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/ham",
+  "category": "food-beverage",
+  "tags": [
+    "food",
+    "pork",
+    "pig",
+    "meat",
+    "bone",
+    "hock",
+    "knuckle",
+    "gammon",
+    "cured"
+  ],
+  "aliases": [],
+  "mirror": false
+}

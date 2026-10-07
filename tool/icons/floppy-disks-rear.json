@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide-lab/floppy-disks-rear",
+  "category": "files",
+  "tags": [
+    "copy",
+    "format",
+    "data",
+    "storage",
+    "capacity",
+    "megabytes",
+    "mb",
+    "label",
+    "back",
+    "reverse"
+  ],
+  "aliases": [],
+  "mirror": false
+}

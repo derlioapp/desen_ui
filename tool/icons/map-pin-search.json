@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/map-pin-search",
+  "category": "text",
+  "tags": [
+    "location",
+    "navigation",
+    "travel",
+    "waypoint",
+    "marker",
+    "drop"
+  ],
+  "aliases": [],
+  "mirror": false
+}

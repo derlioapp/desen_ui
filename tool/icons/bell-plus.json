@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/bell-plus",
+  "category": "notifications",
+  "tags": [
+    "notification",
+    "silent",
+    "reminder",
+    "add",
+    "create",
+    "new"
+  ],
+  "aliases": [],
+  "mirror": false
+}

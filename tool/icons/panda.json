@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/panda",
+  "category": "animals",
+  "tags": [
+    "animal",
+    "wildlife",
+    "bear",
+    "zoo",
+    "bamboo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

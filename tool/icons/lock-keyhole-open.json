@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/lock-keyhole-open",
+  "category": "security",
+  "tags": [
+    "security"
+  ],
+  "aliases": [],
+  "mirror": false
+}

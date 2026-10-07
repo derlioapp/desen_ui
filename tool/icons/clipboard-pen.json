@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/clipboard-pen",
+  "category": "text",
+  "tags": [
+    "paste",
+    "signature"
+  ],
+  "aliases": [],
+  "mirror": false
+}

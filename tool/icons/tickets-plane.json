@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/tickets-plane",
+  "category": "transportation",
+  "tags": [
+    "plane",
+    "trip",
+    "airplane",
+    "flight",
+    "travel",
+    "fly",
+    "takeoff",
+    "vacation",
+    "passenger",
+    "pass",
+    "check-in",
+    "airport"
+  ],
+  "aliases": [],
+  "mirror": false
+}

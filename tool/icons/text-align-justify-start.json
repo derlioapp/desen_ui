@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/text-align-justify-start",
+  "category": "text",
+  "tags": [
+    "paragraph",
+    "alignment",
+    "justified",
+    "left",
+    "start",
+    "typography",
+    "editor",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

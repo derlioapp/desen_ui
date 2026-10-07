@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide-lab/coffee-bean",
+  "category": "food-beverage",
+  "tags": [
+    "roast",
+    "ground",
+    "blend",
+    "arabica",
+    "filter",
+    "instant",
+    "cafetiere",
+    "hot",
+    "drink",
+    "barista",
+    "fair trade"
+  ],
+  "aliases": [],
+  "mirror": false
+}

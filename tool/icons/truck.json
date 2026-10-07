@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/truck",
+  "category": "transportation",
+  "tags": [
+    "delivery",
+    "van",
+    "shipping",
+    "haulage",
+    "lorry"
+  ],
+  "aliases": [
+    "delivery"
+  ],
+  "mirror": false
+}

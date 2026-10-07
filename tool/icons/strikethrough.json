@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/strikethrough",
+  "category": "text",
+  "tags": [
+    "cross out",
+    "delete",
+    "remove",
+    "format"
+  ],
+  "aliases": [],
+  "mirror": false
+}

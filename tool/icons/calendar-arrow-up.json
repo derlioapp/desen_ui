@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/calendar-arrow-up",
+  "category": "time",
+  "tags": [
+    "date",
+    "month",
+    "year",
+    "event",
+    "sort",
+    "order",
+    "ascending",
+    "descending",
+    "increasing",
+    "decreasing",
+    "rising",
+    "falling"
+  ],
+  "aliases": [],
+  "mirror": false
+}

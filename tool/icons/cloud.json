@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/cloud",
+  "category": "weather",
+  "tags": [
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

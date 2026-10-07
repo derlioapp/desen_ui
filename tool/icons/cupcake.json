@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/cupcake",
+  "category": "food-beverage",
+  "tags": [
+    "cake",
+    "dessert",
+    "food",
+    "celebration",
+    "sweet",
+    "baking",
+    "cooking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

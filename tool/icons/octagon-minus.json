@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/octagon-minus",
+  "category": "transportation",
+  "tags": [
+    "stop",
+    "forbidden",
+    "subtract",
+    "remove",
+    "decrease",
+    "reduce",
+    "-",
+    "traffic",
+    "halt",
+    "restricted"
+  ],
+  "aliases": [],
+  "mirror": false
+}

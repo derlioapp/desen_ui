@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/signpost-big",
+  "category": "arrows",
+  "tags": [
+    "bidirectional",
+    "left",
+    "right",
+    "east",
+    "west"
+  ],
+  "aliases": [],
+  "mirror": false
+}

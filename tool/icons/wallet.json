@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/wallet",
+  "category": "account",
+  "tags": [
+    "money",
+    "finance",
+    "pocket"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/plug",
+  "category": "devices",
+  "tags": [
+    "electricity",
+    "energy",
+    "electronics",
+    "socket",
+    "outlet",
+    "power",
+    "voltage",
+    "current",
+    "charger"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/russian-ruble",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

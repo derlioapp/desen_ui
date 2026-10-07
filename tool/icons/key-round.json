@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/key-round",
+  "category": "security",
+  "tags": [
+    "password",
+    "login",
+    "authentication",
+    "secure",
+    "unlock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

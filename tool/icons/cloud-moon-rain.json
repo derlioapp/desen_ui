@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/cloud-moon-rain",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "partly",
+    "night",
+    "rainfall"
+  ],
+  "aliases": [],
+  "mirror": false
+}

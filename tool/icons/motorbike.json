@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/motorbike",
+  "category": "transportation",
+  "tags": [
+    "moto",
+    "motorcycle",
+    "transport",
+    "vehicle",
+    "drive",
+    "ride",
+    "trip",
+    "race",
+    "racing",
+    "journey",
+    "delivery"
+  ],
+  "aliases": [],
+  "mirror": false
+}

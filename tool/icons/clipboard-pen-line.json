@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/clipboard-pen-line",
+  "category": "text",
+  "tags": [
+    "paste"
+  ],
+  "aliases": [],
+  "mirror": false
+}

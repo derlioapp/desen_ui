@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/panel-right-close",
+  "category": "layout",
+  "tags": [
+    "sidebar",
+    "secondary",
+    "drawer",
+    "hide",
+    "chevron",
+    ">"
+  ],
+  "aliases": [],
+  "mirror": false
+}

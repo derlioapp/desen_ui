@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/decimals-arrow-left",
+  "category": "design",
+  "tags": [
+    "numerical",
+    "decimal",
+    "decrease",
+    "less",
+    "fewer",
+    "precision",
+    "rounding",
+    "digits",
+    "fraction",
+    "float",
+    "number"
+  ],
+  "aliases": [],
+  "mirror": false
+}

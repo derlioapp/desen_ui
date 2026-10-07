@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/monitor-smartphone",
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "cellphone",
+    "device",
+    "mobile",
+    "desktop",
+    "screen",
+    "display",
+    "external display",
+    "screen sharing",
+    "responsive",
+    "screens",
+    "sync",
+    "cast"
+  ],
+  "aliases": [],
+  "mirror": false
+}

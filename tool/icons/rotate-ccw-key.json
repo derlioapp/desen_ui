@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/rotate-ccw-key",
+  "category": "security",
+  "tags": [
+    "password",
+    "key",
+    "refresh",
+    "change"
+  ],
+  "aliases": [],
+  "mirror": false
+}

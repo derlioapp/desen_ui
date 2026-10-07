@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/arrow-big-right-dash",
+  "category": "arrows",
+  "tags": [
+    "next",
+    "forward",
+    "direction",
+    "east",
+    "turn",
+    "corner"
+  ],
+  "aliases": [],
+  "mirror": true
+}

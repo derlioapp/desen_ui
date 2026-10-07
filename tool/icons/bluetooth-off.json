@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/bluetooth-off",
+  "category": "connectivity",
+  "tags": [
+    "lost"
+  ],
+  "aliases": [],
+  "mirror": false
+}

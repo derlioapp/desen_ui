@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/funnel-x",
+  "category": "layout",
+  "tags": [
+    "filter",
+    "hopper",
+    "remove",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

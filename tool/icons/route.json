@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/route",
+  "category": "navigation",
+  "tags": [
+    "path",
+    "journey",
+    "planner",
+    "points",
+    "stops",
+    "stations"
+  ],
+  "aliases": [],
+  "mirror": false
+}

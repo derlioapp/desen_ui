@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/fold-horizontal",
+  "category": "arrows",
+  "tags": [
+    "arrow",
+    "collapse",
+    "fold",
+    "vertical",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

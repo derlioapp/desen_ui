@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/mail-pen",
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "pen",
+    "edit",
+    "compose",
+    "draft",
+    "write",
+    "writing",
+    "create",
+    "reply"
+  ],
+  "aliases": [],
+  "mirror": false
+}

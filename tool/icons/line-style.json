@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/line-style",
+  "category": "design",
+  "tags": [
+    "line",
+    "stroke",
+    "style",
+    "dashed",
+    "border"
+  ],
+  "aliases": [],
+  "mirror": false
+}

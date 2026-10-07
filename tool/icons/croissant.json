@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/croissant",
+  "category": "food-beverage",
+  "tags": [
+    "bakery",
+    "cooking",
+    "food",
+    "pastry"
+  ],
+  "aliases": [],
+  "mirror": false
+}

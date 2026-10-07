@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-image",
+  "category": "files",
+  "tags": [
+    "image",
+    "graphics",
+    "photo",
+    "picture"
+  ],
+  "aliases": [],
+  "mirror": false
+}

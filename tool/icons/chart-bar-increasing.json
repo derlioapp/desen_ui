@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/chart-bar-increasing",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph",
+    "trending up"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/settings-2",
+  "category": "account",
+  "tags": [
+    "cog",
+    "edit",
+    "gear",
+    "preferences",
+    "slider"
+  ],
+  "aliases": [],
+  "mirror": false
+}

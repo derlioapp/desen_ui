@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/soup",
+  "category": "food-beverage",
+  "tags": [
+    "food",
+    "dish",
+    "restaurant",
+    "course",
+    "meal",
+    "bowl",
+    "starter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

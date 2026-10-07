@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/wifi-pen",
+  "category": "connectivity",
+  "tags": [
+    "edit",
+    "wifi",
+    "pen",
+    "change",
+    "network"
+  ],
+  "aliases": [],
+  "mirror": false
+}

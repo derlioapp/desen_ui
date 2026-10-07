@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/thermometer",
+  "category": "weather",
+  "tags": [
+    "temperature",
+    "celsius",
+    "fahrenheit",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

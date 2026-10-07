@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/scan-face",
+  "category": "account",
+  "tags": [
+    "face",
+    "biometric",
+    "identification",
+    "authentication",
+    "2fa",
+    "access",
+    "login",
+    "dashed"
+  ],
+  "aliases": [
+    "faceId"
+  ],
+  "mirror": false
+}

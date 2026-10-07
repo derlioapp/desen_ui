@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/mailbox",
+  "category": "mail",
+  "tags": [
+    "emails",
+    "messages",
+    "letters",
+    "mailing list",
+    "newsletter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

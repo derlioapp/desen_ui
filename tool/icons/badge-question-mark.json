@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/badge-question-mark",
+  "category": "accessibility",
+  "tags": [
+    "verified",
+    "unverified",
+    "help"
+  ],
+  "aliases": [],
+  "mirror": false
+}

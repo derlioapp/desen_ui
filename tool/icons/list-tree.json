@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/list-tree",
+  "category": "files",
+  "tags": [
+    "tree",
+    "browser"
+  ],
+  "aliases": [],
+  "mirror": true
+}

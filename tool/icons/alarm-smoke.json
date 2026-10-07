@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/alarm-smoke",
+  "category": "home",
+  "tags": [
+    "fire",
+    "alert",
+    "warning",
+    "detector",
+    "carbon monoxide",
+    "safety",
+    "equipment",
+    "amenities"
+  ],
+  "aliases": [],
+  "mirror": false
+}

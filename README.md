@@ -109,7 +109,7 @@ final t = DsTheme.of(context);            // everything
 
 ## Fonts and icons
 
-Desen bundles [Schibsted Grotesk](https://github.com/schibsted/schibsted-grotesk) for text and [Geist Mono](https://github.com/vercel/geist-font) for code, so they need no setup (SIL Open Font License 1.1, see [License](#license)). iOS and macOS apps set text in the system font (San Francisco) by default; pass a `family` to `DsTypography` to use another face there too. Built-in icons (`DsIcons`) are drawn from [Lucide](https://lucide.dev) shapes (ISC). Components take icons as widgets, so any icon set works.
+Desen bundles [Schibsted Grotesk](https://github.com/schibsted/schibsted-grotesk) for text and [Geist Mono](https://github.com/vercel/geist-font) for code, so they need no setup (SIL Open Font License 1.1, see [License](#license)). iOS and macOS apps set text in the system font (San Francisco) by default; pass a `family` to `DsTypography` to use another face there too. `DsIcons` holds the full [Lucide](https://lucide.dev) set, 2225 icons (ISC), drawn from SVG paths with no font asset; an icon an app does not use adds nothing to its size. Names follow Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and some icons have a more common alias as well (`DsIcons.volumeUp` is `volume2`). Components take icons as widgets, so any other icon set works too.
 
 ## Testing your app
 
@@ -155,7 +155,8 @@ flutter test --tags golden                    # visual regression only
 flutter test --update-goldens --tags golden   # after an intended visual change; review the PNGs
 tool/native_snapshot.sh /tmp dark             # native macOS (Impeller) render of the example
 python3 tool/gen_colors.py lib/src/theme/colors.dart  # regenerate DsColors
-python3 tool/gen_icons.py lib/src/icons/icons.dart     # regenerate DsIcons
+python3 tool/gen_icons.py                              # regenerate DsIcons from tool/icons/
+python3 tool/import_icons.py --lucide <tag> --lab <commit>  # take Lucide changes into tool/icons/ for review
 python3 tool/gen_styles.py                            # regenerate component styles/themes
 python3 tool/gen_l10n.py                              # regenerate DsLocalizations
 ```
@@ -167,4 +168,4 @@ The code is under the MIT License ([LICENSE](LICENSE)). The font files in `fonts
 - Schibsted Grotesk: Copyright 2023 The Schibsted-Grotesk Project Authors; license text in `fonts/OFL-SchibstedGrotesk.txt`.
 - Geist Mono: Copyright 2024 The Geist Project Authors; license text in `fonts/OFL-GeistMono.txt`.
 
-The icon shapes are from [Lucide](https://lucide.dev) (ISC License, included in [NOTICES](NOTICES)).
+The icon shapes are from [Lucide](https://lucide.dev) and Lucide Lab (ISC License, included in [NOTICES](NOTICES)).

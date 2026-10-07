@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/text-align-justify",
+  "category": "text",
+  "tags": [
+    "text",
+    "alignment",
+    "justified",
+    "menu",
+    "list"
+  ],
+  "aliases": [],
+  "mirror": false
+}

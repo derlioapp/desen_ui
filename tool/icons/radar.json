@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/radar",
+  "category": "navigation",
+  "tags": [
+    "scan",
+    "sonar",
+    "detect",
+    "find",
+    "locate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

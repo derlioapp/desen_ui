@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/user-round-plus",
+  "category": "account",
+  "tags": [
+    "new",
+    "add",
+    "create",
+    "follow",
+    "subscribe"
+  ],
+  "aliases": [],
+  "mirror": false
+}

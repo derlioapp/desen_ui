@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/pizza",
+  "category": "food-beverage",
+  "tags": [
+    "pie",
+    "quiche",
+    "food"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/ban",
+  "category": "account",
+  "tags": [
+    "cancel",
+    "no",
+    "stop",
+    "forbidden",
+    "prohibited",
+    "error",
+    "incorrect",
+    "mistake",
+    "wrong",
+    "failure",
+    "circle",
+    "slash",
+    "null",
+    "void"
+  ],
+  "aliases": [
+    "block"
+  ],
+  "mirror": false
+}

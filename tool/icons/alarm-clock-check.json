@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/alarm-clock-check",
+  "category": "devices",
+  "tags": [
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

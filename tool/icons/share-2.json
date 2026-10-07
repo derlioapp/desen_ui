@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/share-2",
+  "category": "account",
+  "tags": [
+    "network",
+    "connections"
+  ],
+  "aliases": [],
+  "mirror": false
+}

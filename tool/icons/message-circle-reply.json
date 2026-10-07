@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/message-circle-reply",
+  "category": "social",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubble",
+    "reply",
+    "response"
+  ],
+  "aliases": [],
+  "mirror": true
+}

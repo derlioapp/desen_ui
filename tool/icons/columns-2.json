@@ -1,0 +1,30 @@
+{
+  "upstream": "lucide/columns-2",
+  "category": "layout",
+  "tags": [
+    "lines",
+    "list",
+    "queue",
+    "preview",
+    "panel",
+    "parallel",
+    "series",
+    "split",
+    "vertical",
+    "horizontal",
+    "half",
+    "center",
+    "middle",
+    "even",
+    "sidebar",
+    "drawer",
+    "gutter",
+    "fold",
+    "reflow",
+    "typography",
+    "pagination",
+    "pages"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/timer-reset",
+  "category": "time",
+  "tags": [
+    "time",
+    "timer",
+    "stopwatch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

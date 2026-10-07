@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide-lab/toast",
+  "category": "food-beverage",
+  "tags": [
+    "bread",
+    "butter",
+    "spread",
+    "jam",
+    "conserve",
+    "preserve",
+    "marmalade",
+    "continental breakfast",
+    "brunch",
+    "meal",
+    "morning"
+  ],
+  "aliases": [],
+  "mirror": false
+}

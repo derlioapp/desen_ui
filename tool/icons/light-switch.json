@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide-lab/light-switch",
+  "category": "devices",
+  "tags": [
+    "on",
+    "off",
+    "electricity",
+    "electronics",
+    "lights",
+    "toggle",
+    "binary",
+    "boolean",
+    "power",
+    "outlet",
+    "plug"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/highlighter",
+  "category": "text",
+  "tags": [
+    "mark",
+    "text"
+  ],
+  "aliases": [],
+  "mirror": false
+}

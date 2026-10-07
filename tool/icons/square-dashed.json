@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/square-dashed",
+  "category": "text",
+  "tags": [
+    "selection",
+    "square",
+    "rectangular",
+    "marquee",
+    "tool",
+    "dashed",
+    "box"
+  ],
+  "aliases": [],
+  "mirror": false
+}

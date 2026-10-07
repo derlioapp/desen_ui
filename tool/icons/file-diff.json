@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/file-diff",
+  "category": "files",
+  "tags": [
+    "diff",
+    "patch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

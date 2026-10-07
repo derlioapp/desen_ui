@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/cloud-sync",
+  "category": "arrows",
+  "tags": [
+    "synchronize",
+    "synchronise",
+    "refresh",
+    "reconnect",
+    "transfer",
+    "backup",
+    "storage",
+    "upload",
+    "download",
+    "connection",
+    "network",
+    "data"
+  ],
+  "aliases": [],
+  "mirror": false
+}

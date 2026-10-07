@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/squares-intersect",
+  "category": "design",
+  "tags": [
+    "square",
+    "pathfinder",
+    "path",
+    "intersect",
+    "shape",
+    "include",
+    "vector"
+  ],
+  "aliases": [],
+  "mirror": false
+}

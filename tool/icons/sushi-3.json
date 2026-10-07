@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide-lab/sushi-3",
+  "category": "food-beverage",
+  "tags": [
+    "rice",
+    "raw fish",
+    "salmon",
+    "tuna",
+    "snack",
+    "brunch",
+    "lunch",
+    "dinner",
+    "culinary",
+    "cuisine",
+    "asian",
+    "japanese",
+    "chinese",
+    "oriental",
+    "eastern"
+  ],
+  "aliases": [],
+  "mirror": false
+}

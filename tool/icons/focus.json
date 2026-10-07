@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/focus",
+  "category": "photography",
+  "tags": [
+    "camera",
+    "lens",
+    "photo",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

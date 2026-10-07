@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/house-cog",
+  "category": "buildings",
+  "tags": [
+    "home",
+    "building",
+    "residence",
+    "settings",
+    "gear",
+    "configuration",
+    "property",
+    "automation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/mail-question-mark",
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "delivery",
+    "undelivered"
+  ],
+  "aliases": [],
+  "mirror": false
+}

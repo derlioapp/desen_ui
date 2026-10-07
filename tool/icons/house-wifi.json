@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/house-wifi",
+  "category": "home",
+  "tags": [
+    "home",
+    "living",
+    "building",
+    "wifi",
+    "connectivity"
+  ],
+  "aliases": [],
+  "mirror": false
+}

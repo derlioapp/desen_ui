@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/user-check",
+  "category": "account",
+  "tags": [
+    "followed",
+    "subscribed",
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

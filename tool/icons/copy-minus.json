@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/copy-minus",
+  "category": "text",
+  "tags": [
+    "clone",
+    "duplicate",
+    "remove",
+    "delete",
+    "collapse",
+    "subtract",
+    "multiple",
+    "-"
+  ],
+  "aliases": [],
+  "mirror": false
+}

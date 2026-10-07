@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/file-digit",
+  "category": "files",
+  "tags": [
+    "number",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

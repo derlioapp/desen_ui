@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-key",
+  "category": "files",
+  "tags": [
+    "key",
+    "private",
+    "public",
+    "security"
+  ],
+  "aliases": [],
+  "mirror": false
+}

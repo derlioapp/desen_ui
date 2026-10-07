@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/tool-case",
+  "category": "tools",
+  "tags": [
+    "tools",
+    "maintenance",
+    "repair"
+  ],
+  "aliases": [],
+  "mirror": false
+}

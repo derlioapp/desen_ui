@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/ice-cream-cone",
+  "category": "food-beverage",
+  "tags": [
+    "gelato",
+    "food"
+  ],
+  "aliases": [],
+  "mirror": false
+}

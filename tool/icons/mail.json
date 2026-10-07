@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/mail",
+  "category": "text",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "unread"
+  ],
+  "aliases": [
+    "email"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/workflow",
+  "category": "development",
+  "tags": [
+    "action",
+    "continuous integration",
+    "ci",
+    "automation",
+    "devops",
+    "network",
+    "node",
+    "connection"
+  ],
+  "aliases": [],
+  "mirror": false
+}

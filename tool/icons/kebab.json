@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide-lab/kebab",
+  "category": "food-beverage",
+  "tags": [
+    "shish",
+    "skewer",
+    "meat",
+    "fast food",
+    "junk food",
+    "snack",
+    "meal",
+    "savory",
+    "savoury",
+    "cookery",
+    "cooking",
+    "grilled",
+    "barbecue",
+    "barbeque",
+    "bbq"
+  ],
+  "aliases": [],
+  "mirror": false
+}

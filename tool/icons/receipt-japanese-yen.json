@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/receipt-japanese-yen",
+  "category": "finance",
+  "tags": [
+    "bill",
+    "voucher",
+    "slip",
+    "check",
+    "counterfoil",
+    "currency",
+    "jpy",
+    "¥"
+  ],
+  "aliases": [],
+  "mirror": false
+}

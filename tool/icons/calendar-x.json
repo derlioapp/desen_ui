@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/calendar-x",
+  "category": "time",
+  "tags": [
+    "date",
+    "day",
+    "month",
+    "year",
+    "event",
+    "remove",
+    "busy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

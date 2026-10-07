@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/gamepad",
+  "category": "gaming",
+  "tags": [
+    "console"
+  ],
+  "aliases": [],
+  "mirror": false
+}

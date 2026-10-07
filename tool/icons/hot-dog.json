@@ -1,0 +1,30 @@
+{
+  "upstream": "lucide-lab/hot-dog",
+  "category": "food-beverage",
+  "tags": [
+    "banger",
+    "wiener",
+    "wurst",
+    "jumbo",
+    "bun",
+    "meat",
+    "pork",
+    "fast food",
+    "junk food",
+    "snack",
+    "dish",
+    "restaurant",
+    "lunch",
+    "meal",
+    "savory",
+    "savoury",
+    "cookery",
+    "cooking",
+    "grilled",
+    "barbecue",
+    "barbeque",
+    "bbq"
+  ],
+  "aliases": [],
+  "mirror": false
+}

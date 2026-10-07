@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/wind-arrow-up",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "air",
+    "pressure",
+    "blow",
+    "gust",
+    "windy",
+    "sort",
+    "increase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

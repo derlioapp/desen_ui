@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/tower-control",
+  "category": "travel",
+  "tags": [
+    "airport",
+    "travel",
+    "tower",
+    "transportation",
+    "lighthouse"
+  ],
+  "aliases": [],
+  "mirror": false
+}

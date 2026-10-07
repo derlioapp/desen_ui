@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/braces",
+  "category": "development",
+  "tags": [
+    "json",
+    "code",
+    "token",
+    "curly brackets",
+    "data",
+    "{",
+    "}"
+  ],
+  "aliases": [
+    "curlyBraces"
+  ],
+  "mirror": false
+}

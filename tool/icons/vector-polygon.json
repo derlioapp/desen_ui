@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/vector-polygon",
+  "category": "design",
+  "tags": [
+    "map",
+    "vector",
+    "geometry",
+    "coordinates",
+    "shape",
+    "location",
+    "boundary",
+    "area",
+    "region",
+    "gis",
+    "geospatial",
+    "vertices",
+    "points",
+    "outline",
+    "drawing",
+    "design",
+    "math"
+  ],
+  "aliases": [],
+  "mirror": false
+}

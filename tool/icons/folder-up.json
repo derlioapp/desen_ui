@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/folder-up",
+  "category": "files",
+  "tags": [
+    "directory",
+    "upload",
+    "import",
+    "export"
+  ],
+  "aliases": [],
+  "mirror": false
+}

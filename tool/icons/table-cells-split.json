@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/table-cells-split",
+  "category": "text",
+  "tags": [
+    "spreadsheet",
+    "grid",
+    "row"
+  ],
+  "aliases": [],
+  "mirror": false
+}

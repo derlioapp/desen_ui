@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/calendar-check-2",
+  "category": "time",
+  "tags": [
+    "date",
+    "day",
+    "month",
+    "year",
+    "event",
+    "confirm",
+    "subscribe",
+    "schedule",
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

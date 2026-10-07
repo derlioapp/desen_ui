@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/user-star",
+  "category": "account",
+  "tags": [
+    "person",
+    "account",
+    "favorite",
+    "contact",
+    "like",
+    "review",
+    "rating",
+    "admin"
+  ],
+  "aliases": [],
+  "mirror": false
+}

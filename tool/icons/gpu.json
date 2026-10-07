@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/gpu",
+  "category": "devices",
+  "tags": [
+    "processor",
+    "cores",
+    "technology",
+    "computer",
+    "chip",
+    "circuit",
+    "specs",
+    "graphics processing unit",
+    "video card",
+    "display adapter",
+    "gddr",
+    "rendering",
+    "digital image processing",
+    "crypto mining"
+  ],
+  "aliases": [],
+  "mirror": false
+}

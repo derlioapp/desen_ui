@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/clipboard-check",
+  "category": "text",
+  "tags": [
+    "copied",
+    "pasted",
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

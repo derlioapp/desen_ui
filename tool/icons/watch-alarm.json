@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide-lab/watch-alarm",
+  "category": "time",
+  "tags": [
+    "beep",
+    "ring",
+    "clock",
+    "timer",
+    "stopwatch",
+    "alarm",
+    "alert",
+    "wear",
+    "wrist",
+    "strap",
+    "face",
+    "mechanical",
+    "analog",
+    "analogue",
+    "round",
+    "circle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

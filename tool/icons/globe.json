@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/globe",
+  "category": "navigation",
+  "tags": [
+    "world",
+    "browser",
+    "language",
+    "translate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

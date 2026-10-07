@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/pc-case",
+  "category": "devices",
+  "tags": [
+    "computer",
+    "chassis"
+  ],
+  "aliases": [],
+  "mirror": false
+}

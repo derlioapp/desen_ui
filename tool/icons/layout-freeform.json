@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/layout-freeform",
+  "category": "design",
+  "tags": [
+    "layout",
+    "freeform",
+    "free",
+    "absolute",
+    "position",
+    "auto layout",
+    "unaligned",
+    "scattered",
+    "arrange",
+    "blocks",
+    "canvas",
+    "frame"
+  ],
+  "aliases": [],
+  "mirror": false
+}

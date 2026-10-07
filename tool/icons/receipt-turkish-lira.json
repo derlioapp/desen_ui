@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/receipt-turkish-lira",
+  "category": "finance",
+  "tags": [
+    "bill",
+    "voucher",
+    "slip",
+    "check",
+    "counterfoil",
+    "currency",
+    "try",
+    "₺"
+  ],
+  "aliases": [],
+  "mirror": false
+}

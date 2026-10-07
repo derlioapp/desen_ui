@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/road",
+  "category": "transportation",
+  "tags": [
+    "road",
+    "street",
+    "highway",
+    "route",
+    "path",
+    "transport",
+    "traffic",
+    "drive",
+    "map"
+  ],
+  "aliases": [],
+  "mirror": false
+}

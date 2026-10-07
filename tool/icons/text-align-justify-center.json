@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/text-align-justify-center",
+  "category": "text",
+  "tags": [
+    "paragraph",
+    "alignment",
+    "justified",
+    "center",
+    "middle",
+    "typography",
+    "editor",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

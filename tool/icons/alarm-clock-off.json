@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/alarm-clock-off",
+  "category": "devices",
+  "tags": [
+    "morning",
+    "turn-off"
+  ],
+  "aliases": [],
+  "mirror": false
+}

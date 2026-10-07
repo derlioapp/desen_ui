@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide-lab/copy-image",
+  "category": "photography",
+  "tags": [
+    "clone",
+    "duplicate",
+    "multiple",
+    "images",
+    "pictures",
+    "photos",
+    "album",
+    "collection",
+    "event",
+    "gallery"
+  ],
+  "aliases": [],
+  "mirror": false
+}

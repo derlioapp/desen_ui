@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/lasso",
+  "category": "design",
+  "tags": [
+    "select",
+    "cursor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

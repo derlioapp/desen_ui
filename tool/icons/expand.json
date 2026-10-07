@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/expand",
+  "category": "text",
+  "tags": [
+    "scale",
+    "fullscreen",
+    "maximize",
+    "minimize",
+    "contract"
+  ],
+  "aliases": [],
+  "mirror": false
+}

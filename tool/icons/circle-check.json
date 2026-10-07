@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/circle-check",
+  "category": "notifications",
+  "tags": [
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [
+    "checkCircle"
+  ],
+  "mirror": false
+}

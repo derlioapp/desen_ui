@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/phone-incoming",
+  "category": "arrows",
+  "tags": [
+    "call"
+  ],
+  "aliases": [],
+  "mirror": false
+}

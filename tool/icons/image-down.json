@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/image-down",
+  "category": "photography",
+  "tags": [
+    "picture",
+    "photo",
+    "download",
+    "save",
+    "export"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/dice-3",
+  "category": "gaming",
+  "tags": [
+    "dice",
+    "random",
+    "tabletop",
+    "3",
+    "board",
+    "game"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/inbox",
+  "category": "account",
+  "tags": [
+    "email"
+  ],
+  "aliases": [],
+  "mirror": false
+}

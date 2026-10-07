@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/puzzle",
+  "category": "development",
+  "tags": [
+    "component",
+    "module",
+    "part",
+    "piece"
+  ],
+  "aliases": [],
+  "mirror": false
+}

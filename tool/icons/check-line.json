@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/check-line",
+  "category": "notifications",
+  "tags": [
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

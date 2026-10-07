@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/wallpaper",
+  "category": "account",
+  "tags": [
+    "background",
+    "texture",
+    "image",
+    "art",
+    "design",
+    "visual",
+    "decor",
+    "pattern",
+    "screen",
+    "cover",
+    "lock screen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/text-align-justify-end",
+  "category": "text",
+  "tags": [
+    "paragraph",
+    "alignment",
+    "justified",
+    "right",
+    "end",
+    "typography",
+    "editor",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/gallery-horizontal",
+  "category": "layout",
+  "tags": [
+    "carousel",
+    "pictures",
+    "images",
+    "scroll",
+    "swipe",
+    "album",
+    "portfolio"
+  ],
+  "aliases": [],
+  "mirror": false
+}

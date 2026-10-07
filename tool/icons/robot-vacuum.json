@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/robot-vacuum",
+  "category": "devices",
+  "tags": [
+    "appliance",
+    "cleaning",
+    "household",
+    "housekeeping",
+    "tool",
+    "maintenance",
+    "smarthome",
+    "sweeping",
+    "hygiene",
+    "chores",
+    "automation",
+    "smart home",
+    "device",
+    "floor",
+    "dust",
+    "debris",
+    "navigation",
+    "sensor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

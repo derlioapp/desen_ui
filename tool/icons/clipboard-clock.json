@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/clipboard-clock",
+  "category": "time",
+  "tags": [
+    "copy",
+    "paste",
+    "history",
+    "log",
+    "clock",
+    "time",
+    "watch",
+    "alarm",
+    "hour",
+    "minute",
+    "reminder",
+    "scheduled",
+    "deadline",
+    "pending",
+    "time tracking",
+    "timesheets",
+    "appointment",
+    "logbook"
+  ],
+  "aliases": [],
+  "mirror": false
+}

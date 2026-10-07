@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/monitor-speaker",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "connect",
+    "cast",
+    "audio",
+    "sound",
+    "volume",
+    "presentation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

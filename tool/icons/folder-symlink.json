@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/folder-symlink",
+  "category": "files",
+  "tags": [
+    "directory",
+    "symlink",
+    "symbolic",
+    "link"
+  ],
+  "aliases": [],
+  "mirror": false
+}

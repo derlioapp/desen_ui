@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/castle",
+  "category": "buildings",
+  "tags": [
+    "fortress",
+    "stronghold",
+    "palace",
+    "chateau",
+    "building"
+  ],
+  "aliases": [],
+  "mirror": false
+}

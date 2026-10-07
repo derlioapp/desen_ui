@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide-lab/rugby",
+  "category": "sports",
+  "tags": [
+    "goal",
+    "score",
+    "posts",
+    "kicker",
+    "pitch",
+    "team",
+    "scrum",
+    "ruck",
+    "ball"
+  ],
+  "aliases": [],
+  "mirror": false
+}

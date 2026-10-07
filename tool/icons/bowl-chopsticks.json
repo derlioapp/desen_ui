@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide-lab/bowl-chopsticks",
+  "category": "food-beverage",
+  "tags": [
+    "noodles",
+    "poke",
+    "soup",
+    "culinary",
+    "cuisine",
+    "asian",
+    "japanese",
+    "chinese",
+    "oriental",
+    "eastern",
+    "brunch",
+    "lunch",
+    "dinner"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/folder-clock",
+  "category": "files",
+  "tags": [
+    "history",
+    "directory",
+    "clock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/octagon-alert",
+  "category": "notifications",
+  "tags": [
+    "warning",
+    "alert",
+    "danger",
+    "exclamation mark"
+  ],
+  "aliases": [],
+  "mirror": false
+}

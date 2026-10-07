@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/screen-share",
+  "category": "connectivity",
+  "tags": [
+    "host",
+    "desktop",
+    "monitor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/user-minus",
+  "category": "account",
+  "tags": [
+    "delete",
+    "remove",
+    "unfollow",
+    "unsubscribe"
+  ],
+  "aliases": [],
+  "mirror": false
+}

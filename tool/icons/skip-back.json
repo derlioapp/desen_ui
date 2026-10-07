@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/skip-back",
+  "category": "multimedia",
+  "tags": [
+    "arrow",
+    "previous",
+    "music"
+  ],
+  "aliases": [
+    "skipPrevious"
+  ],
+  "mirror": false
+}

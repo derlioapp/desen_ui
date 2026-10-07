@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/layout-dashboard",
+  "category": "design",
+  "tags": [
+    "masonry",
+    "brick"
+  ],
+  "aliases": [
+    "dashboard"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/receipt",
+  "category": "finance",
+  "tags": [
+    "bill",
+    "voucher",
+    "slip",
+    "check",
+    "counterfoil",
+    "currency",
+    "dollar",
+    "usd",
+    "$"
+  ],
+  "aliases": [],
+  "mirror": false
+}

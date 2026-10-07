@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/mic-audio-lines",
+  "category": "devices",
+  "tags": [
+    "podcast",
+    "audio",
+    "waveform",
+    "sound waves",
+    "microphone",
+    "talk",
+    "voice",
+    "speech",
+    "stream",
+    "recording",
+    "transcription",
+    "dictation",
+    "voice assistant",
+    "noise cancellation",
+    "sound processing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

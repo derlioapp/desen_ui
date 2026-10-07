@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide-lab/layout-grid-move-horizontal",
+  "category": "design",
+  "tags": [
+    "apps",
+    "applications",
+    "sorting",
+    "ascending",
+    "descending",
+    "reorder",
+    "rearrange",
+    "up",
+    "down",
+    "drag",
+    "view"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/cctv",
+  "category": "security",
+  "tags": [
+    "camera",
+    "surveillance",
+    "recording",
+    "film",
+    "videotape",
+    "crime",
+    "watching"
+  ],
+  "aliases": [],
+  "mirror": false
+}

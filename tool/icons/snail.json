@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/snail",
+  "category": "animals",
+  "tags": [
+    "animal",
+    "insect",
+    "slow",
+    "speed",
+    "delicacy",
+    "spiral"
+  ],
+  "aliases": [],
+  "mirror": false
+}

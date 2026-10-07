@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide-lab/doorbell-intercom",
+  "category": "buildings",
+  "tags": [
+    "buzzer",
+    "speaker",
+    "call",
+    "service",
+    "summon",
+    "hospitality",
+    "hotel",
+    "accommodation",
+    "elevator",
+    "lift",
+    "ring",
+    "ding",
+    "sound",
+    "access",
+    "gate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

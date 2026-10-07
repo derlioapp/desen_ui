@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/switch-camera",
+  "category": "social",
+  "tags": [
+    "photo",
+    "selfie",
+    "front",
+    "back"
+  ],
+  "aliases": [],
+  "mirror": false
+}

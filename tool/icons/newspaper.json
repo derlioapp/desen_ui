@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/newspaper",
+  "category": "multimedia",
+  "tags": [
+    "news",
+    "feed",
+    "home",
+    "magazine",
+    "article",
+    "headline"
+  ],
+  "aliases": [
+    "news"
+  ],
+  "mirror": false
+}

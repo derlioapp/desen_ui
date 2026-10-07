@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/files",
+  "category": "files",
+  "tags": [
+    "multiple",
+    "copy",
+    "documents"
+  ],
+  "aliases": [],
+  "mirror": false
+}

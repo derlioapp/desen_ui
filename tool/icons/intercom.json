@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide-lab/intercom",
+  "category": "buildings",
+  "tags": [
+    "buzzer",
+    "speaker",
+    "voice",
+    "call",
+    "service",
+    "summon",
+    "hospitality",
+    "hotel",
+    "accommodation",
+    "sound",
+    "access",
+    "gate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

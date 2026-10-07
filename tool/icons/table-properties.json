@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/table-properties",
+  "category": "text",
+  "tags": [
+    "property list",
+    "plist",
+    "spreadsheet",
+    "grid",
+    "dictionary",
+    "object",
+    "hash"
+  ],
+  "aliases": [],
+  "mirror": false
+}

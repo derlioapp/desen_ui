@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/wine",
+  "category": "food-beverage",
+  "tags": [
+    "alcohol",
+    "beverage",
+    "bar",
+    "drink",
+    "glass",
+    "sommelier",
+    "vineyard",
+    "winery"
+  ],
+  "aliases": [],
+  "mirror": false
+}

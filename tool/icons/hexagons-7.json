@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide-lab/hexagons-7",
+  "category": "shapes",
+  "tags": [
+    "honeycomb",
+    "beeswax",
+    "cells",
+    "cluster",
+    "tessellation",
+    "pollen",
+    "pollinate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

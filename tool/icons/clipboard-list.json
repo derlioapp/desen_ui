@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/clipboard-list",
+  "category": "text",
+  "tags": [
+    "copy",
+    "paste",
+    "tasks"
+  ],
+  "aliases": [],
+  "mirror": false
+}

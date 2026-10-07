@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/scan-line",
+  "category": "devices",
+  "tags": [
+    "checkout",
+    "till",
+    "cart",
+    "transaction",
+    "purchase",
+    "buy",
+    "product",
+    "packaging",
+    "retail",
+    "consumer",
+    "qr-code",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

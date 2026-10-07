@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/parking-meter",
+  "category": "transportation",
+  "tags": [
+    "driving",
+    "car park",
+    "pay",
+    "sidewalk",
+    "pavement"
+  ],
+  "aliases": [],
+  "mirror": false
+}

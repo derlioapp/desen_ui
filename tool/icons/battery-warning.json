@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/battery-warning",
+  "category": "connectivity",
+  "tags": [
+    "power",
+    "electricity",
+    "energy",
+    "accumulator",
+    "charge",
+    "exclamation mark"
+  ],
+  "aliases": [],
+  "mirror": false
+}

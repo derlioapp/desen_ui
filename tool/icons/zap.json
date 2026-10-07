@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/zap",
+  "category": "connectivity",
+  "tags": [
+    "flash",
+    "camera",
+    "lightning",
+    "electricity",
+    "energy",
+    "power",
+    "quick"
+  ],
+  "aliases": [
+    "flash"
+  ],
+  "mirror": false
+}

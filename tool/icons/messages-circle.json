@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/messages-circle",
+  "category": "social",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubbles",
+    "copy",
+    "multiple",
+    "discussion",
+    "interview",
+    "debate",
+    "group",
+    "groupchat",
+    "threads",
+    "unread",
+    "bubble",
+    "messaging"
+  ],
+  "aliases": [],
+  "mirror": false
+}

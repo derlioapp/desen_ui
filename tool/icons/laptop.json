@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/laptop",
+  "category": "devices",
+  "tags": [
+    "computer",
+    "screen",
+    "remote"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/folder-tree",
+  "category": "files",
+  "tags": [
+    "directory",
+    "tree",
+    "browser"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/sun-snow",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "air conditioning",
+    "temperature",
+    "hot",
+    "cold",
+    "seasons"
+  ],
+  "aliases": [],
+  "mirror": false
+}

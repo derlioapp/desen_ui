@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/chart-spline",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph",
+    "curve",
+    "continuous",
+    "smooth",
+    "polynomial",
+    "quadratic",
+    "function",
+    "interpolation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

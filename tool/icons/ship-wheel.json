@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/ship-wheel",
+  "category": "transportation",
+  "tags": [
+    "steering",
+    "rudder",
+    "boat",
+    "knots",
+    "nautical mile",
+    "maritime",
+    "sailing",
+    "yacht",
+    "cruise",
+    "ocean liner",
+    "tanker",
+    "vessel",
+    "navy",
+    "trip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

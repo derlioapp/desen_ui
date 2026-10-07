@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/monitor-play",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "screen sharing",
+    "video",
+    "movie",
+    "film",
+    "play",
+    "running",
+    "start",
+    "boot",
+    "virtual machine",
+    "vm"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/rotate-cw-fading-clock",
+  "category": "time",
+  "tags": [
+    "clock",
+    "waiting",
+    "schedule",
+    "hourglass",
+    "loading",
+    "pause",
+    "pending",
+    "time",
+    "watch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

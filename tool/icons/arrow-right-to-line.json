@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/arrow-right-to-line",
+  "category": "arrows",
+  "tags": [
+    "next",
+    "forward",
+    "direction",
+    "east",
+    "tab",
+    "keyboard",
+    "mac",
+    "indent",
+    "collapse",
+    "fold",
+    "horizontal",
+    "->|"
+  ],
+  "aliases": [],
+  "mirror": true
+}

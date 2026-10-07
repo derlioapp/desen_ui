@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/sticker",
+  "category": "social",
+  "tags": [
+    "reaction",
+    "emotion",
+    "smile",
+    "happy",
+    "feedback"
+  ],
+  "aliases": [],
+  "mirror": false
+}

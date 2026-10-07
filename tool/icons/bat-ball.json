@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide-lab/bat-ball",
+  "category": "sports",
+  "tags": [
+    "table tennis",
+    "ping-pong",
+    "whiff-whaff",
+    "paddle",
+    "racquet",
+    "racket",
+    "net",
+    "bounce",
+    "score"
+  ],
+  "aliases": [],
+  "mirror": false
+}

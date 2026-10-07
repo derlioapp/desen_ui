@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-x",
+  "category": "files",
+  "tags": [
+    "lost",
+    "delete",
+    "remove",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

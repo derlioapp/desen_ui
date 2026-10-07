@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/vegan",
+  "category": "food-beverage",
+  "tags": [
+    "vegetarian",
+    "fruitarian",
+    "herbivorous",
+    "animal rights",
+    "diet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

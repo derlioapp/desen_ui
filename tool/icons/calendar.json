@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/calendar",
+  "category": "time",
+  "tags": [
+    "date",
+    "month",
+    "year",
+    "event",
+    "birthday",
+    "birthdate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

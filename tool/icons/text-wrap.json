@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/text-wrap",
+  "category": "text",
+  "tags": [
+    "words",
+    "lines",
+    "break",
+    "paragraph"
+  ],
+  "aliases": [
+    "wordWrap"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/refresh-cw",
+  "category": "arrows",
+  "tags": [
+    "rotate",
+    "reload",
+    "rerun",
+    "synchronise",
+    "synchronize",
+    "arrows",
+    "circular",
+    "cycle"
+  ],
+  "aliases": [
+    "refresh"
+  ],
+  "mirror": false
+}

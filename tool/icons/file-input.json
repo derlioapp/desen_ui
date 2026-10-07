@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/file-input",
+  "category": "files",
+  "tags": [
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

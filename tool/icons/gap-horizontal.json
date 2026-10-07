@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/gap-horizontal",
+  "category": "design",
+  "tags": [
+    "gap",
+    "spacing",
+    "space",
+    "between",
+    "padding",
+    "margin",
+    "horizontal",
+    "auto layout",
+    "layout",
+    "distance",
+    "frame",
+    "distribute"
+  ],
+  "aliases": [],
+  "mirror": false
+}

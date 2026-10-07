@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/tangent",
+  "category": "shapes",
+  "tags": [
+    "tangential",
+    "shape",
+    "circle",
+    "geometry",
+    "trigonometry",
+    "bezier curve"
+  ],
+  "aliases": [],
+  "mirror": false
+}

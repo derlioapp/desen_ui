@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/chart-gantt",
+  "category": "charts",
+  "tags": [
+    "diagram",
+    "graph",
+    "timeline",
+    "planning"
+  ],
+  "aliases": [],
+  "mirror": false
+}

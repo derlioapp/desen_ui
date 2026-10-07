@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/pound-sterling",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

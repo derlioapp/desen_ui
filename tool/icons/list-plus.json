@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/list-plus",
+  "category": "multimedia",
+  "tags": [
+    "playlist",
+    "add",
+    "song",
+    "track",
+    "new"
+  ],
+  "aliases": [],
+  "mirror": true
+}

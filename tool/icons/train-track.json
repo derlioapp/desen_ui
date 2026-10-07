@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/train-track",
+  "category": "transportation",
+  "tags": [
+    "railway",
+    "line"
+  ],
+  "aliases": [],
+  "mirror": false
+}

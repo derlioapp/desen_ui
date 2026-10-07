@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/database-plus",
+  "category": "devices",
+  "tags": [
+    "storage",
+    "memory",
+    "bytes",
+    "server",
+    "plus",
+    "add",
+    "create",
+    "insert",
+    "new",
+    "expand"
+  ],
+  "aliases": [],
+  "mirror": false
+}

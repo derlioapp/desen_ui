@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/layout-list",
+  "category": "design",
+  "tags": [
+    "todo",
+    "tasks",
+    "items",
+    "pending",
+    "image",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

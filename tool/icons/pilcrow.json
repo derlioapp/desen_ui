@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/pilcrow",
+  "category": "text",
+  "tags": [
+    "paragraph",
+    "mark",
+    "paraph",
+    "blind",
+    "typography",
+    "type",
+    "text",
+    "prose",
+    "symbol"
+  ],
+  "aliases": [
+    "paragraph"
+  ],
+  "mirror": false
+}

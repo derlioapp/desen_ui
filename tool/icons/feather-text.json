@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide-lab/feather-text",
+  "category": "text",
+  "tags": [
+    "quill",
+    "pen",
+    "write",
+    "writing",
+    "prose",
+    "inkwell",
+    "scribe",
+    "scroll",
+    "draft",
+    "signature"
+  ],
+  "aliases": [],
+  "mirror": false
+}

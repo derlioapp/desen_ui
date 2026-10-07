@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/car-battery",
+  "category": "connectivity",
+  "tags": [
+    "battery",
+    "automobile",
+    "powercell",
+    "electric",
+    "power",
+    "electricity",
+    "energy",
+    "accumulator",
+    "charge",
+    "transport",
+    "vehicle",
+    "car"
+  ],
+  "aliases": [],
+  "mirror": false
+}

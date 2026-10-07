@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/panel-bottom",
+  "category": "layout",
+  "tags": [
+    "drawer",
+    "dock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

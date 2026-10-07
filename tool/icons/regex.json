@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/regex",
+  "category": "text",
+  "tags": [
+    "search",
+    "text",
+    "code"
+  ],
+  "aliases": [],
+  "mirror": false
+}

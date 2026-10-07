@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/sticky-note",
+  "category": "text",
+  "tags": [
+    "post-it",
+    "comment",
+    "annotation",
+    "reaction",
+    "memo",
+    "reminder",
+    "todo",
+    "task",
+    "idea",
+    "brainstorm",
+    "document",
+    "page",
+    "paper",
+    "sheet",
+    "stationary",
+    "office"
+  ],
+  "aliases": [],
+  "mirror": false
+}

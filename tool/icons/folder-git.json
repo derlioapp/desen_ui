@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/folder-git",
+  "category": "files",
+  "tags": [
+    "directory",
+    "root",
+    "project",
+    "git",
+    "repo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/bell-dot",
+  "category": "account",
+  "tags": [
+    "alarm",
+    "notification",
+    "sound",
+    "reminder",
+    "unread"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/package-plus",
+  "category": "development",
+  "tags": [
+    "new",
+    "add",
+    "create"
+  ],
+  "aliases": [],
+  "mirror": false
+}

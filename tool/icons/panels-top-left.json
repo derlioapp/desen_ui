@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/panels-top-left",
+  "category": "layout",
+  "tags": [
+    "menu bar",
+    "sidebar",
+    "primary",
+    "drawers",
+    "window",
+    "webpage",
+    "projects",
+    "overview"
+  ],
+  "aliases": [],
+  "mirror": false
+}

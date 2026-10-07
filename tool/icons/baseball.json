@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide-lab/baseball",
+  "category": "sports",
+  "tags": [
+    "home run",
+    "pitcher",
+    "bat",
+    "innings",
+    "rounders",
+    "bounce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

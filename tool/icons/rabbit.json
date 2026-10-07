@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/rabbit",
+  "category": "animals",
+  "tags": [
+    "animal",
+    "rodent",
+    "pet",
+    "pest",
+    "bunny",
+    "hare",
+    "fast",
+    "speed",
+    "hop"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/microchip",
+  "category": "devices",
+  "tags": [
+    "processor",
+    "cores",
+    "technology",
+    "computer",
+    "chip",
+    "integrated circuit",
+    "memory",
+    "ram",
+    "specs",
+    "gpu",
+    "gigahertz",
+    "ghz"
+  ],
+  "aliases": [],
+  "mirror": false
+}

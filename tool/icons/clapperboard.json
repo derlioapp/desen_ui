@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/clapperboard",
+  "category": "multimedia",
+  "tags": [
+    "movie",
+    "film",
+    "video",
+    "camera",
+    "cinema",
+    "cut",
+    "action",
+    "television",
+    "tv",
+    "show",
+    "entertainment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

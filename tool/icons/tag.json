@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/tag",
+  "category": "account",
+  "tags": [
+    "label",
+    "badge",
+    "ticket",
+    "mark"
+  ],
+  "aliases": [],
+  "mirror": false
+}

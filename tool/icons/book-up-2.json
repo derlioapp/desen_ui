@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/book-up-2",
+  "category": "development",
+  "tags": [
+    "code",
+    "coding",
+    "version control",
+    "git",
+    "repository",
+    "push",
+    "force"
+  ],
+  "aliases": [],
+  "mirror": false
+}

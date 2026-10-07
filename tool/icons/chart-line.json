@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/chart-line",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph"
+  ],
+  "aliases": [
+    "lineChart"
+  ],
+  "mirror": false
+}

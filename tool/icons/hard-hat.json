@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/hard-hat",
+  "category": "tools",
+  "tags": [
+    "helmet",
+    "construction",
+    "safety"
+  ],
+  "aliases": [],
+  "mirror": false
+}

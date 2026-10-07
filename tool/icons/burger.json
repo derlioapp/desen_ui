@@ -1,0 +1,30 @@
+{
+  "upstream": "lucide-lab/burger",
+  "category": "food-beverage",
+  "tags": [
+    "hamburger",
+    "cheeseburger",
+    "meat",
+    "patty",
+    "bun",
+    "fast food",
+    "junk food",
+    "takeaway",
+    "takeout",
+    "snack",
+    "dish",
+    "restaurant",
+    "lunch",
+    "meal",
+    "savory",
+    "savoury",
+    "cookery",
+    "cooking",
+    "grilled",
+    "barbecue",
+    "barbeque",
+    "bbq"
+  ],
+  "aliases": [],
+  "mirror": false
+}

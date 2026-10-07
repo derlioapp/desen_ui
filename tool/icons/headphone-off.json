@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/headphone-off",
+  "category": "multimedia",
+  "tags": [
+    "music",
+    "audio",
+    "sound",
+    "mute",
+    "off"
+  ],
+  "aliases": [],
+  "mirror": false
+}

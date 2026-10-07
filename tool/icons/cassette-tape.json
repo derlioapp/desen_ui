@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/cassette-tape",
+  "category": "connectivity",
+  "tags": [
+    "audio",
+    "music",
+    "recording",
+    "play"
+  ],
+  "aliases": [],
+  "mirror": false
+}

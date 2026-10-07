@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/mail-badge",
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "certified",
+    "registered",
+    "seal",
+    "stamp",
+    "verified",
+    "envelope",
+    "rosette",
+    "signed",
+    "official",
+    "delivery"
+  ],
+  "aliases": [],
+  "mirror": false
+}

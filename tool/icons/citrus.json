@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/citrus",
+  "category": "food-beverage",
+  "tags": [
+    "lemon",
+    "orange",
+    "grapefruit",
+    "fruit"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/file-video-camera",
+  "category": "files",
+  "tags": [
+    "movie",
+    "video",
+    "film"
+  ],
+  "aliases": [],
+  "mirror": false
+}

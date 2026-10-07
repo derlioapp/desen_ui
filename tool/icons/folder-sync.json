@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/folder-sync",
+  "category": "files",
+  "tags": [
+    "directory",
+    "synchronize",
+    "synchronise",
+    "refresh",
+    "reconnect",
+    "transfer",
+    "backup"
+  ],
+  "aliases": [],
+  "mirror": false
+}

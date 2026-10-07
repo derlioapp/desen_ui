@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/copy-slash",
+  "category": "text",
+  "tags": [
+    "clone",
+    "duplicate",
+    "cancel",
+    "ban",
+    "no",
+    "stop",
+    "forbidden",
+    "prohibited",
+    "error",
+    "multiple",
+    "divide",
+    "division",
+    "split",
+    "or",
+    "/"
+  ],
+  "aliases": [],
+  "mirror": false
+}

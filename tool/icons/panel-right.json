@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/panel-right",
+  "category": "layout",
+  "tags": [
+    "sidebar",
+    "secondary",
+    "drawer"
+  ],
+  "aliases": [
+    "sidebarRight"
+  ],
+  "mirror": false
+}

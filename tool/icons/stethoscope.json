@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/stethoscope",
+  "category": "science",
+  "tags": [
+    "phonendoscope",
+    "medical",
+    "heart",
+    "lungs",
+    "sound"
+  ],
+  "aliases": [],
+  "mirror": false
+}

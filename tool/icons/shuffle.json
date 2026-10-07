@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/shuffle",
+  "category": "multimedia",
+  "tags": [
+    "music",
+    "random",
+    "reorder"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,29 @@
+{
+  "upstream": "lucide/ship-cargo",
+  "category": "transportation",
+  "tags": [
+    "boat",
+    "knots",
+    "nautical mile",
+    "maritime",
+    "sailing",
+    "cruise",
+    "ocean liner",
+    "tanker",
+    "vessel",
+    "navy",
+    "cargo",
+    "container",
+    "freighter",
+    "freight",
+    "shipping",
+    "port",
+    "harbor",
+    "dock",
+    "logistics",
+    "import",
+    "export"
+  ],
+  "aliases": [],
+  "mirror": false
+}

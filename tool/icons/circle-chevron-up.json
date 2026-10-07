@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/circle-chevron-up",
+  "category": "arrows",
+  "tags": [
+    "caret",
+    "ahead",
+    "menu",
+    "^"
+  ],
+  "aliases": [],
+  "mirror": false
+}

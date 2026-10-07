@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/fuel",
+  "category": "transportation",
+  "tags": [
+    "filling-station",
+    "gas",
+    "petrol",
+    "tank"
+  ],
+  "aliases": [
+    "gasStation"
+  ],
+  "mirror": false
+}

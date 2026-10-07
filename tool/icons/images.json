@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/images",
+  "category": "photography",
+  "tags": [
+    "picture",
+    "photo",
+    "multiple",
+    "copy",
+    "gallery",
+    "album",
+    "collection",
+    "slideshow",
+    "showcase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

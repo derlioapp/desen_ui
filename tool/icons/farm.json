@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide-lab/farm",
+  "category": "buildings",
+  "tags": [
+    "farmland",
+    "ranch",
+    "acres",
+    "fields",
+    "harvest",
+    "silo",
+    "farmhouse",
+    "barn",
+    "door"
+  ],
+  "aliases": [],
+  "mirror": false
+}

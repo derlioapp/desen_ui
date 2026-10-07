@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/flag",
+  "category": "account",
+  "tags": [
+    "report",
+    "marker",
+    "notification",
+    "warning",
+    "milestone",
+    "goal",
+    "notice",
+    "signal",
+    "attention",
+    "banner"
+  ],
+  "aliases": [],
+  "mirror": false
+}

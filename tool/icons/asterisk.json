@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide/asterisk",
+  "category": "text",
+  "tags": [
+    "symbol",
+    "sterisk",
+    "mark",
+    "pointer",
+    "pencil",
+    "sign",
+    "alert",
+    "notification",
+    "indicator",
+    "symbolic",
+    "reference",
+    "times",
+    "multiply",
+    "multiplication",
+    "operator",
+    "code",
+    "glob pattern",
+    "wildcard",
+    "*"
+  ],
+  "aliases": [],
+  "mirror": false
+}

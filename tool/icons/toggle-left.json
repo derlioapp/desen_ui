@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/toggle-left",
+  "category": "layout",
+  "tags": [
+    "on",
+    "off",
+    "switch",
+    "boolean"
+  ],
+  "aliases": [
+    "toggleOff"
+  ],
+  "mirror": false
+}

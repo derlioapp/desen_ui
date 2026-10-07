@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/lock",
+  "category": "security",
+  "tags": [
+    "security",
+    "password",
+    "secure",
+    "admin"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/banknote-check",
+  "category": "finance",
+  "tags": [
+    "banknote",
+    "bill",
+    "currency",
+    "payment",
+    "money",
+    "finance",
+    "document",
+    "verification",
+    "tick",
+    "verified",
+    "accepted",
+    "done",
+    "complete",
+    "found",
+    "paid",
+    "task",
+    "check",
+    "success"
+  ],
+  "aliases": [],
+  "mirror": false
+}

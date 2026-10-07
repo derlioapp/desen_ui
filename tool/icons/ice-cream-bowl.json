@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/ice-cream-bowl",
+  "category": "food-beverage",
+  "tags": [
+    "gelato",
+    "food",
+    "dessert",
+    "dish",
+    "restaurant",
+    "course",
+    "meal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

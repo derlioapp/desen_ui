@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/lock-keyhole",
+  "category": "security",
+  "tags": [
+    "security",
+    "password",
+    "secure",
+    "admin"
+  ],
+  "aliases": [],
+  "mirror": false
+}

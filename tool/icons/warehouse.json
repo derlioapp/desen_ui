@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/warehouse",
+  "category": "buildings",
+  "tags": [
+    "storage",
+    "storehouse",
+    "depot",
+    "depository",
+    "repository",
+    "stockroom",
+    "logistics",
+    "building"
+  ],
+  "aliases": [],
+  "mirror": false
+}

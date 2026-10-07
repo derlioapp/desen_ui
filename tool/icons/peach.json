@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide-lab/peach",
+  "category": "food-beverage",
+  "tags": [
+    "fruit",
+    "nectarine",
+    "apricot",
+    "plum",
+    "damson",
+    "cherry",
+    "juice",
+    "smoothie",
+    "jam",
+    "conserve",
+    "preserve",
+    "sweet",
+    "snack",
+    "meal",
+    "lunch",
+    "eating",
+    "healthy",
+    "nutrition",
+    "diet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

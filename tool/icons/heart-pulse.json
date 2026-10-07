@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/heart-pulse",
+  "category": "medical",
+  "tags": [
+    "heartbeat",
+    "pulse",
+    "health",
+    "medical",
+    "blood pressure",
+    "cardiac",
+    "systole",
+    "diastole"
+  ],
+  "aliases": [],
+  "mirror": false
+}

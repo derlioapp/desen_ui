@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/picture-in-picture",
+  "category": "multimedia",
+  "tags": [
+    "display",
+    "play",
+    "video",
+    "pop out",
+    "always on top",
+    "window",
+    "inset",
+    "multitask"
+  ],
+  "aliases": [],
+  "mirror": false
+}

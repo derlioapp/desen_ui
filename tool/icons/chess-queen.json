@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/chess-queen",
+  "category": "gaming",
+  "tags": [
+    "ruler",
+    "crown",
+    "piece",
+    "board game",
+    "stalemate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

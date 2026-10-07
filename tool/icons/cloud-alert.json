@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/cloud-alert",
+  "category": "development",
+  "tags": [
+    "weather",
+    "danger",
+    "warning",
+    "alert",
+    "error",
+    "sync",
+    "network",
+    "exclamation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

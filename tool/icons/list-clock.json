@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/list-clock",
+  "category": "text",
+  "tags": [
+    "history",
+    "log",
+    "clock",
+    "time",
+    "recent",
+    "updated",
+    "revision",
+    "activity",
+    "timestamp",
+    "audit",
+    "list"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/chevron-down",
+  "category": "arrows",
+  "tags": [
+    "backwards",
+    "reverse",
+    "slow",
+    "dropdown"
+  ],
+  "aliases": [],
+  "mirror": false
+}

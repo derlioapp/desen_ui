@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/egg",
+  "category": "food-beverage",
+  "tags": [
+    "bird",
+    "chicken",
+    "nest",
+    "hatch",
+    "shell",
+    "incubate",
+    "soft boiled",
+    "hard",
+    "breakfast",
+    "brunch",
+    "morning",
+    "easter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/squares-exclude",
+  "category": "design",
+  "tags": [
+    "square",
+    "pathfinder",
+    "path",
+    "exclude",
+    "invert",
+    "xor",
+    "shape",
+    "vector"
+  ],
+  "aliases": [],
+  "mirror": false
+}

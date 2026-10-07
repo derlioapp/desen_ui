@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/award",
+  "category": "account",
+  "tags": [
+    "achievement",
+    "badge",
+    "rosette",
+    "prize",
+    "winner"
+  ],
+  "aliases": [],
+  "mirror": false
+}

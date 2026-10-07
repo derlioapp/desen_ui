@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/airplay",
+  "category": "multimedia",
+  "tags": [
+    "stream",
+    "cast",
+    "mirroring",
+    "screen",
+    "monitor",
+    "macos",
+    "osx"
+  ],
+  "aliases": [],
+  "mirror": false
+}

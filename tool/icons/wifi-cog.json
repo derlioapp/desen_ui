@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/wifi-cog",
+  "category": "connectivity",
+  "tags": [
+    "connection",
+    "signal",
+    "wireless",
+    "directory",
+    "settings",
+    "control",
+    "preferences",
+    "cog",
+    "edit",
+    "gear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

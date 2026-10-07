@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/thumbs-up",
+  "category": "account",
+  "tags": [
+    "like",
+    "good",
+    "emotion"
+  ],
+  "aliases": [],
+  "mirror": false
+}

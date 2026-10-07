@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/map-pin-pen",
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "drop",
+    "edit"
+  ],
+  "aliases": [],
+  "mirror": false
+}

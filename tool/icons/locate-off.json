@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/locate-off",
+  "category": "navigation",
+  "tags": [
+    "map",
+    "gps",
+    "location",
+    "cross"
+  ],
+  "aliases": [],
+  "mirror": false
+}

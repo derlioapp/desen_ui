@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/command",
+  "category": "development",
+  "tags": [
+    "keyboard",
+    "key",
+    "mac",
+    "cmd",
+    "button"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/monitor-pc",
+  "category": "devices",
+  "tags": [
+    "personal computer",
+    "desktop",
+    "screen",
+    "display",
+    "workstation",
+    "tower",
+    "chassis",
+    "hardware",
+    "setup",
+    "gaming"
+  ],
+  "aliases": [],
+  "mirror": false
+}

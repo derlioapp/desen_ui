@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/database-zap",
+  "category": "devices",
+  "tags": [
+    "cache busting",
+    "storage",
+    "memory",
+    "bytes",
+    "servers",
+    "power",
+    "crash"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/table-columns-split",
+  "category": "text",
+  "tags": [
+    "spreadsheet",
+    "grid",
+    "cut",
+    "break",
+    "divide",
+    "separate",
+    "segment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

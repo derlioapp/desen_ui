@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/tablets",
+  "category": "medical",
+  "tags": [
+    "medicine",
+    "medication",
+    "drug",
+    "prescription",
+    "pills",
+    "pharmacy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

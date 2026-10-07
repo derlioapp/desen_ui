@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/chess-pawn",
+  "category": "gaming",
+  "tags": [
+    "piece",
+    "board game"
+  ],
+  "aliases": [],
+  "mirror": false
+}

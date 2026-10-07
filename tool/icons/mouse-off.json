@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/mouse-off",
+  "category": "devices",
+  "tags": [
+    "device",
+    "scroll",
+    "click",
+    "disabled"
+  ],
+  "aliases": [],
+  "mirror": false
+}

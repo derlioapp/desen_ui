@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/arrow-big-right",
+  "category": "arrows",
+  "tags": [
+    "next",
+    "forward",
+    "direction",
+    "east",
+    "indicate turn"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/camera-off",
+  "category": "photography",
+  "tags": [
+    "photo",
+    "webcam",
+    "video"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/table-of-contents",
+  "category": "text",
+  "tags": [
+    "toc",
+    "outline",
+    "navigation",
+    "document structure",
+    "index",
+    "overview",
+    "sections",
+    "chapters",
+    "content",
+    "documentation",
+    "manual",
+    "knowledge base",
+    "faq"
+  ],
+  "aliases": [],
+  "mirror": true
+}

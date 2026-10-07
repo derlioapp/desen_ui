@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/clef-treble",
+  "category": "multimedia",
+  "tags": [
+    "sol",
+    "g",
+    "music",
+    "note",
+    "key",
+    "treble",
+    "staff",
+    "pitch",
+    "violin",
+    "solfege",
+    "major",
+    "scale"
+  ],
+  "aliases": [],
+  "mirror": false
+}

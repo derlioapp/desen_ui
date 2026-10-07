@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/heart-x",
+  "category": "social",
+  "tags": [
+    "unlike",
+    "unfavorite",
+    "remove",
+    "reject",
+    "dismiss",
+    "delete",
+    "clear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

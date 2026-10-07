@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/calendar-heart",
+  "category": "time",
+  "tags": [
+    "date",
+    "month",
+    "year",
+    "event",
+    "heart",
+    "favourite",
+    "subscribe",
+    "valentines day"
+  ],
+  "aliases": [],
+  "mirror": false
+}

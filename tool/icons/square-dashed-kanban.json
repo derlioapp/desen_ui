@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/square-dashed-kanban",
+  "category": "charts",
+  "tags": [
+    "projects",
+    "manage",
+    "overview",
+    "board",
+    "tickets",
+    "issues",
+    "roadmap",
+    "plan",
+    "intentions",
+    "productivity",
+    "work",
+    "agile",
+    "draft",
+    "template",
+    "boilerplate",
+    "code",
+    "coding"
+  ],
+  "aliases": [],
+  "mirror": false
+}

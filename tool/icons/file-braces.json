@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-braces",
+  "category": "files",
+  "tags": [
+    "code",
+    "json",
+    "curly braces",
+    "curly brackets"
+  ],
+  "aliases": [],
+  "mirror": false
+}

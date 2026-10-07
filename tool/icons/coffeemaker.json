@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide-lab/coffeemaker",
+  "category": "food-beverage",
+  "tags": [
+    "machine",
+    "amenities",
+    "electronics",
+    "appliances",
+    "roast",
+    "ground",
+    "blend",
+    "arabica",
+    "filter",
+    "instant",
+    "cafetiere",
+    "hot",
+    "drink",
+    "barista",
+    "fair trade"
+  ],
+  "aliases": [],
+  "mirror": false
+}

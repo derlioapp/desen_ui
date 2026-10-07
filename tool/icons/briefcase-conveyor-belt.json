@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/briefcase-conveyor-belt",
+  "category": "travel",
+  "tags": [
+    "baggage",
+    "luggage",
+    "travel",
+    "suitcase",
+    "conveyor",
+    "carousel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

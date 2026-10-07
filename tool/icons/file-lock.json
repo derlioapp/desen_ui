@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/file-lock",
+  "category": "files",
+  "tags": [
+    "lock",
+    "password",
+    "security"
+  ],
+  "aliases": [],
+  "mirror": false
+}

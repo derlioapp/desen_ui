@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/truck-electric",
+  "category": "transportation",
+  "tags": [
+    "delivery",
+    "van",
+    "shipping",
+    "haulage",
+    "lorry",
+    "electric"
+  ],
+  "aliases": [],
+  "mirror": false
+}

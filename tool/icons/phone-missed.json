@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/phone-missed",
+  "category": "connectivity",
+  "tags": [
+    "call"
+  ],
+  "aliases": [],
+  "mirror": false
+}

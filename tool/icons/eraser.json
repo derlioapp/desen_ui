@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/eraser",
+  "category": "text",
+  "tags": [
+    "pencil",
+    "drawing",
+    "undo",
+    "delete",
+    "clear",
+    "trash",
+    "remove"
+  ],
+  "aliases": [],
+  "mirror": false
+}

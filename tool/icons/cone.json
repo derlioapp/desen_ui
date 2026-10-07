@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/cone",
+  "category": "shapes",
+  "tags": [
+    "conical",
+    "triangle",
+    "triangular",
+    "geometry",
+    "filter",
+    "funnel",
+    "hopper",
+    "spotlight",
+    "searchlight"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/square",
+  "category": "shapes",
+  "tags": [
+    "stop",
+    "playback",
+    "music",
+    "audio",
+    "video",
+    "rectangle",
+    "aspect ratio",
+    "1:1",
+    "shape"
+  ],
+  "aliases": [],
+  "mirror": false
+}

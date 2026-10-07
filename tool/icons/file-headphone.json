@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-headphone",
+  "category": "files",
+  "tags": [
+    "music",
+    "audio",
+    "sound",
+    "headphones"
+  ],
+  "aliases": [],
+  "mirror": false
+}

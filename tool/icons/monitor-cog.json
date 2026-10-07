@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/monitor-cog",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "virtual machine",
+    "vm",
+    "executable",
+    "settings",
+    "edit",
+    "gear",
+    "configuration",
+    "preferences",
+    "system",
+    "control panel",
+    "network",
+    "computing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

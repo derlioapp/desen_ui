@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/joystick",
+  "category": "gaming",
+  "tags": [
+    "game",
+    "console",
+    "control stick"
+  ],
+  "aliases": [],
+  "mirror": false
+}

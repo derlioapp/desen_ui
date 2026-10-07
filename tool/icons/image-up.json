@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/image-up",
+  "category": "photography",
+  "tags": [
+    "picture",
+    "photo",
+    "upload",
+    "import"
+  ],
+  "aliases": [],
+  "mirror": false
+}

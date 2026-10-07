@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/cloud-sun-rain",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "partly",
+    "rainfall"
+  ],
+  "aliases": [],
+  "mirror": false
+}

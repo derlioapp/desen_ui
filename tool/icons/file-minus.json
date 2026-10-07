@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-minus",
+  "category": "files",
+  "tags": [
+    "delete",
+    "remove",
+    "erase",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

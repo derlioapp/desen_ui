@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/milk",
+  "category": "food-beverage",
+  "tags": [
+    "lactose",
+    "bottle",
+    "beverage",
+    "drink",
+    "water",
+    "diet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

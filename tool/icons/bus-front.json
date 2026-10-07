@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/bus-front",
+  "category": "transportation",
+  "tags": [
+    "coach",
+    "vehicle",
+    "trip",
+    "road"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/credit-card-reader",
+  "category": "finance",
+  "tags": [
+    "bank",
+    "purchase",
+    "payment",
+    "cc",
+    "atm",
+    "terminal",
+    "checkout",
+    "kiosk",
+    "pos",
+    "point of sale",
+    "transaction",
+    "contactless",
+    "chip",
+    "swipe",
+    "tap",
+    "banking",
+    "finance",
+    "retail"
+  ],
+  "aliases": [],
+  "mirror": false
+}

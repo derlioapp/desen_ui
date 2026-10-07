@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/calendar-fold",
+  "category": "time",
+  "tags": [
+    "date",
+    "month",
+    "year",
+    "event",
+    "birthday",
+    "birthdate",
+    "ics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

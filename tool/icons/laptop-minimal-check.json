@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/laptop-minimal-check",
+  "category": "devices",
+  "tags": [
+    "computer",
+    "screen",
+    "remote",
+    "success",
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

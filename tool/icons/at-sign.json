@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/at-sign",
+  "category": "text",
+  "tags": [
+    "mention",
+    "at",
+    "email",
+    "message",
+    "@"
+  ],
+  "aliases": [
+    "mention"
+  ],
+  "mirror": false
+}

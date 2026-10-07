@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/camera",
+  "category": "photography",
+  "tags": [
+    "photography",
+    "lens",
+    "focus",
+    "capture",
+    "shot",
+    "visual",
+    "image",
+    "device",
+    "equipment",
+    "photo",
+    "webcam",
+    "video"
+  ],
+  "aliases": [],
+  "mirror": false
+}

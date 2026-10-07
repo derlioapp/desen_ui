@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/bath",
+  "category": "travel",
+  "tags": [
+    "amenities",
+    "services",
+    "bathroom",
+    "shower"
+  ],
+  "aliases": [],
+  "mirror": false
+}

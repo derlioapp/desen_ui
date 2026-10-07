@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/badge-alert",
+  "category": "account",
+  "tags": [
+    "check",
+    "verified",
+    "unverified",
+    "security",
+    "safety",
+    "issue"
+  ],
+  "aliases": [],
+  "mirror": false
+}

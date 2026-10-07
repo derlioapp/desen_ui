@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/navigation",
+  "category": "navigation",
+  "tags": [
+    "location",
+    "travel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

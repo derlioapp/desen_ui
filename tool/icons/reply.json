@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/reply",
+  "category": "mail",
+  "tags": [
+    "email"
+  ],
+  "aliases": [],
+  "mirror": true
+}

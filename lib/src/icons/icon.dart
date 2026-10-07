@@ -5,6 +5,12 @@ import 'package:flutter/widgets.dart';
 import '../foundation/svg_path.dart';
 
 /// A stroke icon described by SVG path data on a square canvas.
+///
+/// With [fill], each path is also filled: a play triangle or pause bars
+/// become solid, the way `fill="currentColor"` fills a Lucide icon on the
+/// web. The stroke still runs around the fill, so corners stay round and
+/// the solid icon matches the outlined one in size. Open lines have no
+/// area and look the same either way.
 @immutable
 class DsIconData {
   /// Creates icon data from SVG path strings.
@@ -13,6 +19,7 @@ class DsIconData {
     this.viewBox = 24,
     this.strokeWidth = 2,
     this.matchTextDirection = false,
+    this.fill = false,
   });
 
   /// SVG `d` strings, drawn as strokes.
@@ -27,16 +34,26 @@ class DsIconData {
   /// Mirror the icon in right-to-left text.
   final bool matchTextDirection;
 
+  /// Fill each path as well as stroking it. [DsIcon.fill] overrides it.
+  final bool fill;
+
   static final Expando<Path> _cache = Expando('DsIconData.path');
+  static final Expando<List<Path>> _shapes = Expando('DsIconData.shapes');
 
   /// The combined path, parsed once per icon.
   Path get path => _cache[this] ??= () {
     final p = Path();
-    for (final d in paths) {
-      p.addPath(dsParseSvgPath(d), Offset.zero);
+    for (final shape in _shapesOf(this)) {
+      p.addPath(shape, Offset.zero);
     }
     return p;
   }();
+
+  /// Each of [paths], parsed once per icon. They fill one by one, as
+  /// separate SVG elements do: as one path, a shape inside another that
+  /// winds the other way would cut a hole.
+  static List<Path> _shapesOf(DsIconData icon) =>
+      _shapes[icon] ??= [for (final d in icon.paths) dsParseSvgPath(d)];
 
   @override
   bool operator ==(Object other) =>
@@ -44,6 +61,7 @@ class DsIconData {
       other.viewBox == viewBox &&
       other.strokeWidth == strokeWidth &&
       other.matchTextDirection == matchTextDirection &&
+      other.fill == fill &&
       listEquals(other.paths, paths);
 
   @override
@@ -52,6 +70,7 @@ class DsIconData {
     viewBox,
     strokeWidth,
     matchTextDirection,
+    fill,
   );
 }
 
@@ -68,6 +87,7 @@ class DsIcon extends LeafRenderObjectWidget {
     this.size,
     this.color,
     this.strokeWidth,
+    this.fill,
     this.semanticLabel,
   });
 
@@ -83,6 +103,10 @@ class DsIcon extends LeafRenderObjectWidget {
   /// Stroke width in [DsIconData.viewBox] units; overrides the icon's own.
   final double? strokeWidth;
 
+  /// Fill the paths as well as stroking them; overrides [DsIconData.fill].
+  /// A selected tab, for example, can show the same icon solid.
+  final bool? fill;
+
   /// Read by screen readers. Without it the icon is decorative and hidden
   /// from the semantics tree.
   final String? semanticLabel;
@@ -93,6 +117,7 @@ class DsIcon extends LeafRenderObjectWidget {
     size: _size(context),
     color: _color(context),
     strokeWidth: strokeWidth ?? icon.strokeWidth,
+    fill: fill ?? icon.fill,
     semanticLabel: semanticLabel,
     textDirection: Directionality.maybeOf(context),
   );
@@ -104,6 +129,7 @@ class DsIcon extends LeafRenderObjectWidget {
       ..iconSize = _size(context)
       ..color = _color(context)
       ..strokeWidth = strokeWidth ?? icon.strokeWidth
+      ..fill = fill ?? icon.fill
       ..semanticLabel = semanticLabel
       ..textDirection = Directionality.maybeOf(context);
   }
@@ -129,6 +155,7 @@ class DsIcon extends LeafRenderObjectWidget {
     properties
       ..add(DoubleProperty('size', size, defaultValue: null))
       ..add(ColorProperty('color', color, defaultValue: null))
+      ..add(FlagProperty('fill', value: fill, ifTrue: 'filled'))
       ..add(StringProperty('semanticLabel', semanticLabel, defaultValue: null));
   }
 }
@@ -141,6 +168,7 @@ class RenderDsIcon extends RenderBox {
     required this._size,
     required this._color,
     required this._strokeWidth,
+    required this._fill,
     required this._semanticLabel,
     required this._textDirection,
   });
@@ -178,6 +206,15 @@ class RenderDsIcon extends RenderBox {
   set strokeWidth(double v) {
     if (v == _strokeWidth) return;
     _strokeWidth = v;
+    markNeedsPaint();
+  }
+
+  bool _fill;
+
+  /// Fill the paths as well as stroking them.
+  set fill(bool v) {
+    if (v == _fill) return;
+    _fill = v;
     markNeedsPaint();
   }
 
@@ -236,7 +273,16 @@ class RenderDsIcon extends RenderBox {
     canvas
       ..save()
       ..translate(dx + (mirror ? _size : 0), dy)
-      ..scale(mirror ? -scale : scale, scale)
+      ..scale(mirror ? -scale : scale, scale);
+    if (_fill) {
+      final fill = Paint()
+        ..color = _color
+        ..isAntiAlias = true;
+      for (final shape in DsIconData._shapesOf(_icon)) {
+        canvas.drawPath(shape, fill);
+      }
+    }
+    canvas
       ..drawPath(
         _icon.path,
         Paint()

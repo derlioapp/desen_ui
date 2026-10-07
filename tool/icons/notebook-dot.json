@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/notebook-dot",
+  "category": "social",
+  "tags": [
+    "document",
+    "file",
+    "journal",
+    "page",
+    "paper",
+    "record",
+    "entry",
+    "notebook",
+    "notification",
+    "unread",
+    "note"
+  ],
+  "aliases": [],
+  "mirror": false
+}

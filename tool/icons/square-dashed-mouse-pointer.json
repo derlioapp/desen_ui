@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/square-dashed-mouse-pointer",
+  "category": "arrows",
+  "tags": [
+    "inspector",
+    "element",
+    "mouse",
+    "click",
+    "pointer",
+    "box",
+    "browser",
+    "selector",
+    "target",
+    "dom",
+    "node"
+  ],
+  "aliases": [],
+  "mirror": false
+}

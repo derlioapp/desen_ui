@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/bluetooth-searching",
+  "category": "connectivity",
+  "tags": [
+    "pairing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/swatch-book",
+  "category": "design",
+  "tags": [
+    "colors",
+    "colours",
+    "swatches",
+    "pantone",
+    "shades",
+    "tint",
+    "hue",
+    "saturation",
+    "brightness",
+    "theme",
+    "scheme",
+    "palette",
+    "samples",
+    "textile",
+    "carpet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

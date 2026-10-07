@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/book-user",
+  "category": "account",
+  "tags": [
+    "person",
+    "people",
+    "family",
+    "friends",
+    "acquaintances",
+    "contacts",
+    "details",
+    "addresses",
+    "phone numbers",
+    "directory",
+    "listing",
+    "networking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

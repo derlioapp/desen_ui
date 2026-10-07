@@ -1,0 +1,33 @@
+{
+  "upstream": "lucide-lab/cheese",
+  "category": "food-beverage",
+  "tags": [
+    "swiss",
+    "holes",
+    "fondue",
+    "emmental",
+    "gouda",
+    "edam",
+    "cheddar",
+    "brie",
+    "mozzarella",
+    "feta",
+    "halloumi",
+    "gorgonzola",
+    "roquefort",
+    "camembert",
+    "dairy",
+    "snack",
+    "dish",
+    "restaurant",
+    "lunch",
+    "meal",
+    "savory",
+    "savoury",
+    "cookery",
+    "cooking",
+    "grilled"
+  ],
+  "aliases": [],
+  "mirror": false
+}

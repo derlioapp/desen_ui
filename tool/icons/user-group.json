@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/user-group",
+  "category": "account",
+  "tags": [
+    "group",
+    "people",
+    "team",
+    "members",
+    "community",
+    "membership",
+    "collaboration",
+    "organization",
+    "contacts",
+    "directory",
+    "staff",
+    "family",
+    "ancestry",
+    "ancestors",
+    "lineage",
+    "parents"
+  ],
+  "aliases": [],
+  "mirror": false
+}

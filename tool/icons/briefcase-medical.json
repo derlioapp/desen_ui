@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/briefcase-medical",
+  "category": "medical",
+  "tags": [
+    "doctor",
+    "medicine",
+    "first aid"
+  ],
+  "aliases": [],
+  "mirror": false
+}

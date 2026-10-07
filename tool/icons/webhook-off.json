@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/webhook-off",
+  "category": "development",
+  "tags": [
+    "push api",
+    "interface",
+    "callback"
+  ],
+  "aliases": [],
+  "mirror": false
+}

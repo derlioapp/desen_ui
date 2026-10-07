@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/list-todo",
+  "category": "text",
+  "tags": [
+    "todo",
+    "done",
+    "check",
+    "tick",
+    "complete",
+    "tasks",
+    "items",
+    "pending"
+  ],
+  "aliases": [],
+  "mirror": true
+}

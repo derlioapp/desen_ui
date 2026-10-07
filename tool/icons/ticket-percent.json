@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/ticket-percent",
+  "category": "transportation",
+  "tags": [
+    "discount",
+    "reduced",
+    "offer",
+    "voucher",
+    "entry",
+    "pass",
+    "event",
+    "concert",
+    "show",
+    "book",
+    "purchase",
+    "%"
+  ],
+  "aliases": [],
+  "mirror": false
+}

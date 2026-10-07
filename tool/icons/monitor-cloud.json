@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/monitor-cloud",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "virtual machine",
+    "virtual desktop",
+    "vm",
+    "vdi",
+    "computing",
+    "remote work",
+    "monitoring",
+    "infrastructure",
+    "software as a service",
+    "saas",
+    "workstation",
+    "environment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

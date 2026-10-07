@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/square-off",
+  "category": "shapes",
+  "tags": [
+    "/",
+    "not",
+    "slash",
+    "off",
+    "disabled",
+    "inactive",
+    "cancel",
+    "none",
+    "block",
+    "forbidden",
+    "unavailable",
+    "stopped",
+    "checkbox",
+    "unchecked",
+    "toggle",
+    "negation",
+    "form",
+    "ui"
+  ],
+  "aliases": [],
+  "mirror": false
+}

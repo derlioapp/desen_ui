@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/circle-arrow-out-up-right",
+  "category": "arrows",
+  "tags": [
+    "outwards",
+    "direction",
+    "north-east",
+    "diagonal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

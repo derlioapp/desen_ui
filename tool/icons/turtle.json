@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/turtle",
+  "category": "animals",
+  "tags": [
+    "animal",
+    "pet",
+    "tortoise",
+    "slow",
+    "speed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

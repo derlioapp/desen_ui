@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/chess-rook",
+  "category": "gaming",
+  "tags": [
+    "castle",
+    "piece",
+    "board game"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/keyboard-off",
+  "category": "devices",
+  "tags": [
+    "unkeys",
+    "layout",
+    "spell",
+    "settings",
+    "mouse"
+  ],
+  "aliases": [],
+  "mirror": false
+}

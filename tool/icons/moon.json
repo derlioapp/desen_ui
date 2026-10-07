@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/moon",
+  "category": "accessibility",
+  "tags": [
+    "dark",
+    "night"
+  ],
+  "aliases": [
+    "darkMode"
+  ],
+  "mirror": false
+}

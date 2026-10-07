@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/users",
+  "category": "account",
+  "tags": [
+    "group",
+    "people"
+  ],
+  "aliases": [],
+  "mirror": false
+}

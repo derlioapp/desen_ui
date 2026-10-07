@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/cat",
+  "category": "animals",
+  "tags": [
+    "animal",
+    "pet",
+    "kitten",
+    "feline"
+  ],
+  "aliases": [],
+  "mirror": false
+}

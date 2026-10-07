@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/archive-restore",
+  "category": "files",
+  "tags": [
+    "unarchive",
+    "index",
+    "backup",
+    "box",
+    "storage",
+    "records"
+  ],
+  "aliases": [],
+  "mirror": false
+}

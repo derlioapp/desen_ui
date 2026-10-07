@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/user-search",
+  "category": "account",
+  "tags": [
+    "person",
+    "account",
+    "contact",
+    "find",
+    "scan",
+    "magnifier",
+    "magnifying glass",
+    "lens"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/server-off",
+  "category": "development",
+  "tags": [
+    "cloud",
+    "storage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

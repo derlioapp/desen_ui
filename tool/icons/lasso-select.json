@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/lasso-select",
+  "category": "arrows",
+  "tags": [
+    "select",
+    "cursor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/car-taxi-front",
+  "category": "transportation",
+  "tags": [
+    "cab",
+    "vehicle",
+    "drive",
+    "trip",
+    "journey"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/scan-square",
+  "category": "photography",
+  "tags": [
+    "scan",
+    "square",
+    "detect",
+    "recognition",
+    "select",
+    "frame",
+    "object",
+    "viewfinder",
+    "capture",
+    "shape",
+    "boundary",
+    "camera",
+    "scanner",
+    "overlay",
+    "focus",
+    "crop",
+    "marker"
+  ],
+  "aliases": [],
+  "mirror": false
+}

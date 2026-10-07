@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide-lab/bottle-plastic",
+  "category": "food-beverage",
+  "tags": [
+    "drink",
+    "water",
+    "liquid",
+    "litres",
+    "pints",
+    "container",
+    "shampoo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

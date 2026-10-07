@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/ligature",
+  "category": "text",
+  "tags": [
+    "text",
+    "font",
+    "typography",
+    "alternates",
+    "alternatives"
+  ],
+  "aliases": [],
+  "mirror": false
+}

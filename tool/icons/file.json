@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/file",
+  "category": "files",
+  "tags": [
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

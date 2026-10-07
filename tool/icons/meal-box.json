@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide-lab/meal-box",
+  "category": "food-beverage",
+  "tags": [
+    "brunch",
+    "lunch",
+    "dinner",
+    "tray",
+    "bento",
+    "sushi",
+    "noodles",
+    "culinary",
+    "cuisine",
+    "asian",
+    "japanese",
+    "chinese",
+    "oriental",
+    "eastern",
+    "microwave",
+    "ready",
+    "frozen",
+    "packaging"
+  ],
+  "aliases": [],
+  "mirror": false
+}

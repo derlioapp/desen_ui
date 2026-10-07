@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/milk-off",
+  "category": "food-beverage",
+  "tags": [
+    "lactose free",
+    "bottle",
+    "beverage",
+    "drink",
+    "water",
+    "allergy",
+    "intolerance",
+    "diet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

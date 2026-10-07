@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/image-play",
+  "category": "photography",
+  "tags": [
+    "picture",
+    "gif",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/fullscreen",
+  "category": "layout",
+  "tags": [
+    "expand",
+    "zoom",
+    "preview",
+    "focus",
+    "camera",
+    "lens",
+    "image"
+  ],
+  "aliases": [],
+  "mirror": false
+}

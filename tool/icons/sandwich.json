@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/sandwich",
+  "category": "food-beverage",
+  "tags": [
+    "food",
+    "snack",
+    "dish",
+    "restaurant",
+    "lunch",
+    "meal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

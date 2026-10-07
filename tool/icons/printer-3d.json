@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide/printer-3d",
+  "category": "devices",
+  "tags": [
+    "model",
+    "hardware",
+    "technology",
+    "device",
+    "factory",
+    "manufacturing",
+    "art",
+    "extruder",
+    "stl",
+    "obj",
+    "step",
+    "additive",
+    "fabrication",
+    "rapid prototype",
+    "layer",
+    "filament",
+    "nozzle",
+    "maker",
+    "machine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

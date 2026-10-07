@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide-lab/at-sign-circle",
+  "category": "text",
+  "tags": [
+    "mention",
+    "at",
+    "email address",
+    "message",
+    "contact",
+    "networking",
+    "ping",
+    "@"
+  ],
+  "aliases": [],
+  "mirror": false
+}

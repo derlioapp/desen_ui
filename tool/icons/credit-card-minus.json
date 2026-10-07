@@ -1,0 +1,28 @@
+{
+  "upstream": "lucide/credit-card-minus",
+  "category": "account",
+  "tags": [
+    "debit",
+    "payment",
+    "remove",
+    "delete",
+    "unlink",
+    "revoke",
+    "decline",
+    "canceled",
+    "banking",
+    "finance",
+    "wallet",
+    "transaction",
+    "billing",
+    "account",
+    "purchase",
+    "checkout",
+    "subtract",
+    "minus",
+    "bank",
+    "cc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/scan-eye",
+  "category": "photography",
+  "tags": [
+    "preview",
+    "zoom",
+    "expand",
+    "fullscreen",
+    "gallery",
+    "image",
+    "camera",
+    "watch",
+    "surveillance",
+    "retina",
+    "focus",
+    "lens",
+    "biometric",
+    "identification",
+    "authentication",
+    "access",
+    "login"
+  ],
+  "aliases": [],
+  "mirror": false
+}

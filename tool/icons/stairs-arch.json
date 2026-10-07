@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide-lab/stairs-arch",
+  "category": "buildings",
+  "tags": [
+    "steps",
+    "staircase",
+    "stairway",
+    "basement",
+    "cellar",
+    "amenities"
+  ],
+  "aliases": [],
+  "mirror": false
+}

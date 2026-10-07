@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/circle-arrow-out-up-left",
+  "category": "arrows",
+  "tags": [
+    "outwards",
+    "direction",
+    "north-west",
+    "diagonal",
+    "keyboard",
+    "button",
+    "escape"
+  ],
+  "aliases": [],
+  "mirror": false
+}

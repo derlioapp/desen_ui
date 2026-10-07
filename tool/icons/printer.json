@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/printer",
+  "category": "devices",
+  "tags": [
+    "fax",
+    "office",
+    "device"
+  ],
+  "aliases": [],
+  "mirror": false
+}

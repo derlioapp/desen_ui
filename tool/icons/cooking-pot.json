@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/cooking-pot",
+  "category": "food-beverage",
+  "tags": [
+    "pod",
+    "cooking",
+    "recipe",
+    "food",
+    "kitchen",
+    "chef",
+    "restaurant",
+    "dinner",
+    "lunch",
+    "breakfast",
+    "meal",
+    "eat"
+  ],
+  "aliases": [],
+  "mirror": false
+}

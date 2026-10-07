@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/toilet",
+  "category": "devices",
+  "tags": [
+    "toilet",
+    "potty",
+    "bathroom",
+    "washroom"
+  ],
+  "aliases": [],
+  "mirror": false
+}

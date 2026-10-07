@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/beer",
+  "category": "food-beverage",
+  "tags": [
+    "alcohol",
+    "bar",
+    "beverage",
+    "brewery",
+    "drink"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/id-card",
+  "category": "security",
+  "tags": [
+    "card",
+    "badge",
+    "identity",
+    "authentication",
+    "secure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

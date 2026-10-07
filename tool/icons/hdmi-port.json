@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/hdmi-port",
+  "category": "devices",
+  "tags": [
+    "socket",
+    "plug",
+    "slot",
+    "controller",
+    "connector",
+    "interface",
+    "console",
+    "signal",
+    "audio",
+    "video",
+    "visual",
+    "av",
+    "data",
+    "input",
+    "output"
+  ],
+  "aliases": [],
+  "mirror": false
+}

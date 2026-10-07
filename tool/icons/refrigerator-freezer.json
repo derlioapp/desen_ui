@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide-lab/refrigerator-freezer",
+  "category": "food-beverage",
+  "tags": [
+    "fridge",
+    "freezer",
+    "cooler",
+    "icebox",
+    "chiller",
+    "cold storage",
+    "appliances"
+  ],
+  "aliases": [],
+  "mirror": false
+}

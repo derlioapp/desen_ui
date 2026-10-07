@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/file-pen-line",
+  "category": "files",
+  "tags": [
+    "edit"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/vote",
+  "category": "social",
+  "tags": [
+    "vote",
+    "poll",
+    "ballot",
+    "political",
+    "social",
+    "check",
+    "tick"
+  ],
+  "aliases": [],
+  "mirror": false
+}

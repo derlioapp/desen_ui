@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/monitor-x",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "screen sharing",
+    "virtual machine",
+    "vm",
+    "close",
+    "error",
+    "failed",
+    "disconnected",
+    "stop",
+    "suspend",
+    "remove",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

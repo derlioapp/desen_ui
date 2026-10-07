@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/kazakh-tenge",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment",
+    "kazakhstan",
+    "currency-symbol",
+    "exchange",
+    "cash"
+  ],
+  "aliases": [],
+  "mirror": false
+}

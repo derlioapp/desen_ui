@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/bus",
+  "category": "transportation",
+  "tags": [
+    "bus",
+    "vehicle",
+    "transport",
+    "trip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

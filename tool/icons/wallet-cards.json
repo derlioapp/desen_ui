@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/wallet-cards",
+  "category": "account",
+  "tags": [
+    "wallet",
+    "cards",
+    "banking",
+    "cash",
+    "debit",
+    "transport",
+    "money",
+    "finance",
+    "pocket",
+    "credit",
+    "purchase",
+    "payment",
+    "shopping",
+    "retail",
+    "consumer",
+    "cc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

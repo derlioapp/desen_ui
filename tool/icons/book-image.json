@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/book-image",
+  "category": "photography",
+  "tags": [
+    "images",
+    "pictures",
+    "photos",
+    "album",
+    "collection",
+    "event",
+    "magazine",
+    "catalog",
+    "catalogue",
+    "brochure",
+    "browse",
+    "gallery"
+  ],
+  "aliases": [],
+  "mirror": false
+}

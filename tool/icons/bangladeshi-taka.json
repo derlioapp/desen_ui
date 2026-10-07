@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/bangladeshi-taka",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment",
+    "bdt",
+    "৳",
+    "currencysymbol",
+    "cash",
+    "banknote",
+    "price",
+    "remittance",
+    "ecommerce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

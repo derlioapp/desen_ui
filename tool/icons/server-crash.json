@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/server-crash",
+  "category": "development",
+  "tags": [
+    "cloud",
+    "storage",
+    "problem",
+    "error"
+  ],
+  "aliases": [],
+  "mirror": false
+}

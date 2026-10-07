@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/list-indent-decrease",
+  "category": "text",
+  "tags": [
+    "text",
+    "tab"
+  ],
+  "aliases": [
+    "outdent"
+  ],
+  "mirror": true
+}

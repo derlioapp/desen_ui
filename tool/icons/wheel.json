@@ -1,0 +1,28 @@
+{
+  "upstream": "lucide-lab/wheel",
+  "category": "transportation",
+  "tags": [
+    "tire",
+    "rim",
+    "hub",
+    "spoke",
+    "cog",
+    "pulley",
+    "gear",
+    "turning",
+    "disk",
+    "circle",
+    "revolve",
+    "rotate",
+    "spin",
+    "roll",
+    "cart",
+    "bike",
+    "wagon",
+    "water wheel",
+    "axle",
+    "turn"
+  ],
+  "aliases": [],
+  "mirror": false
+}
