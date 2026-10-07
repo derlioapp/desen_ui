@@ -1,5 +1,11 @@
 ## Unreleased
 
+- Fixed: dates followed the language but not the region of the app's
+  locale when an app listed language-only `supportedLocales` (as
+  `DsLocalizations.supportedLocales`): a British device resolved to `en`
+  and read "05/10/2026" as 10 May. `DsApp` now keeps the device's region
+  and script once its language is supported, unless the app sets its own
+  resolution callback.
 - **Breaking:** `DsApp.supportedLocales` defaults to `locale` when one is
   given, else to English, as Flutter's own app widgets do. It used to
   default to all 13 of Desen's locales, so an untranslated English app

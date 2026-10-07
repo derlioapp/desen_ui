@@ -186,6 +186,25 @@ class DsApp extends StatelessWidget {
     ),
   );
 
+  /// The app's [localeListResolutionCallback], or, when it sets neither
+  /// callback, Flutter's resolution that keeps the preferred locale's
+  /// region and script once its language is supported: a British device
+  /// resolves to en_GB, not en, so dates read and write dd/MM/y. Desen's
+  /// strings fall back by language on their own.
+  LocaleListResolutionCallback? get _localeListResolution {
+    if (localeListResolutionCallback != null ||
+        localeResolutionCallback != null) {
+      return localeListResolutionCallback;
+    }
+    return (preferred, supported) {
+      final basic = basicLocaleListResolution(preferred, supported);
+      for (final locale in preferred ?? const <Locale>[]) {
+        if (locale.languageCode == basic.languageCode) return locale;
+      }
+      return basic;
+    };
+  }
+
   Iterable<Locale> get _supportedLocales =>
       supportedLocales ?? [locale ?? const Locale('en')];
 
@@ -203,7 +222,7 @@ class DsApp extends StatelessWidget {
         localizationsDelegates: _delegates,
         supportedLocales: _supportedLocales,
         localeResolutionCallback: localeResolutionCallback,
-        localeListResolutionCallback: localeListResolutionCallback,
+        localeListResolutionCallback: _localeListResolution,
         shortcuts: shortcuts,
         actions: actions,
         restorationScopeId: restorationScopeId,
@@ -228,7 +247,7 @@ class DsApp extends StatelessWidget {
       localizationsDelegates: _delegates,
       supportedLocales: _supportedLocales,
       localeResolutionCallback: localeResolutionCallback,
-      localeListResolutionCallback: localeListResolutionCallback,
+      localeListResolutionCallback: _localeListResolution,
       shortcuts: shortcuts,
       actions: actions,
       restorationScopeId: restorationScopeId,
