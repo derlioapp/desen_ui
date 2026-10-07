@@ -33,11 +33,14 @@ class LocalizationPage extends StatelessWidget {
             'English, key by key.',
           ),
           const DocText(
-            'With `DsApp`, set `locale:` and you are done: its '
-            '`supportedLocales` default to every bundled locale. Under '
-            'another app root, list the locales you support in its '
-            '`supportedLocales`. Desen reads the app\'s locale and needs no '
-            'delegate of its own.',
+            'With `DsApp`, set `locale:` for a fixed language. To follow the '
+            'device, list the languages your app is translated into in '
+            '`supportedLocales` (or `DsLocalizations.supportedLocales` for '
+            'every bundled one). Without either, the app stays in English, '
+            'as Flutter\'s own app widgets do, so an untranslated app is not '
+            'mirrored on an Arabic device. Under another app root, list the '
+            'locales in its `supportedLocales`. Desen reads the app\'s locale '
+            'and needs no delegate of its own.',
           ),
           Example(
             snippet: 'l10n-locale',
@@ -69,6 +72,12 @@ class LocalizationPage extends StatelessWidget {
             '}\n'
             '\n'
             "DsLocalizationScope(overrides: const {'el': Greek()}, child: app)",
+          ),
+          const DocText(
+            'The app must also resolve to the new language: set '
+            '`locale: const Locale(\'el\')`, or add it to '
+            '`supportedLocales`, e.g. '
+            '`[...DsLocalizations.supportedLocales, const Locale(\'el\')]`.',
           ),
           const DocText(
             'Overriding works the same way for a bundled language. Here the '

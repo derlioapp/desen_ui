@@ -26,6 +26,41 @@ void main() {
     expect(await directionFor(tester, const Locale('en')), TextDirection.ltr);
   });
 
+  testWidgets('without supportedLocales an untranslated app stays in '
+      'English, left to right, on an Arabic device', (tester) async {
+    tester.platformDispatcher.localesTestValue = const [Locale('ar', 'EG')];
+    addTearDown(tester.platformDispatcher.clearLocalesTestValue);
+    late TextDirection seen;
+    late Locale resolved;
+    await tester.pumpWidget(
+      DsApp(
+        home: Builder(
+          builder: (context) {
+            seen = Directionality.of(context);
+            resolved = Localizations.localeOf(context);
+            return const SizedBox();
+          },
+        ),
+      ),
+    );
+    expect(resolved, const Locale('en'));
+    expect(seen, TextDirection.ltr);
+
+    // Listing Desen's locales follows the device.
+    await tester.pumpWidget(
+      DsApp(
+        supportedLocales: DsLocalizations.supportedLocales,
+        home: Builder(
+          builder: (context) {
+            seen = Directionality.of(context);
+            return const SizedBox();
+          },
+        ),
+      ),
+    );
+    expect(seen, TextDirection.rtl);
+  });
+
   testWidgets('a delegate the app passes wins', (tester) async {
     late TextDirection seen;
     await tester.pumpWidget(
