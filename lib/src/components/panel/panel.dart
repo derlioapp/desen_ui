@@ -258,6 +258,20 @@ class _PanelFrameState extends State<_PanelFrame> {
     if (oldWidget.bottom != widget.bottom) _drag = 0;
   }
 
+  /// A drag past the threshold: asks the route to close. When it refuses
+  /// (a [PopScope] that cannot pop, e.g. to ask about unsaved changes),
+  /// the sheet goes back in place.
+  Future<void> _dismiss() async {
+    final route = ModalRoute.of(context);
+    await Navigator.of(context).maybePop();
+    if (!mounted) return;
+    final closing = switch (route?.animation?.status) {
+      AnimationStatus.reverse || AnimationStatus.dismissed => true,
+      _ => false,
+    };
+    if (!closing) setState(() => _drag = 0);
+  }
+
   @override
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context);
@@ -302,7 +316,7 @@ class _PanelFrameState extends State<_PanelFrame> {
                   // ds-raw: a divisor guard, not a size
                   final height = _sheet.currentContext?.size?.height ?? 1;
                   if (_drag > height / 3 || (d.primaryVelocity ?? 0) > 700) {
-                    Navigator.of(context).maybePop();
+                    _dismiss();
                   } else {
                     setState(() => _drag = 0);
                   }

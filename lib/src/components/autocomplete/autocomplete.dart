@@ -647,8 +647,16 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     _chosen.removeWhere((value, _) => !_isChosen(value));
     if (!listEquals(widget.options, oldWidget.options) &&
         widget.optionsBuilder == null) {
+      // The active option stays active wherever it sorts now; when it is
+      // gone, the first match takes over, as on typing.
+      final active = _active >= 0 && _active < _results.length
+          ? _results[_active]
+          : null;
       _results = _filtered(_query);
-      _active = math.min(_active, _results.length - 1);
+      _active = active == null
+          ? -1
+          : _results.indexWhere((o) => o.value == active.value);
+      if (active != null && _active < 0) _active = _initialActive();
     }
     // A value set from outside (or its label, once known) shows, unless
     // the user is typing.
@@ -742,11 +750,12 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   void _onFocus() {
     if (!_focus.hasFocus) {
       _activeTag = -1;
-      _commitText();
-      // Not while the focus manager is still applying this change: closing
-      // takes the popup out of the focus tree.
+      // Not while the focus manager is still applying this change: choosing
+      // and closing take the popup out of the focus tree.
       scheduleMicrotask(() {
-        if (mounted && !_focus.hasFocus) _popup.close();
+        if (!mounted) return;
+        _commitText();
+        if (!_focus.hasFocus) _popup.close();
       });
     }
     setState(() {});
@@ -776,7 +785,13 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       return;
     }
     final request = ++_request;
-    setState(() => _loading = true);
+    // The listed options are the last query's: none is active until the
+    // new ones arrive.
+    setState(() {
+      _loading = true;
+      _active = -1;
+      _keyboardActive = false;
+    });
     builder(query).then(
       (results) {
         if (!mounted || request != _request) return;
@@ -938,7 +953,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
 
   void _move(int delta) {
     final n = _results.length;
-    if (n == 0 || !_results.any((o) => o.enabled)) return;
+    if (_loading || n == 0 || !_results.any((o) => o.enabled)) return;
     var i = _active;
     if (i < 0) i = delta > 0 ? -1 : n;
     for (var step = 0; step < n; step++) {
@@ -1023,7 +1038,10 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   /// Enter, or the on-screen keyboard's action: chooses the active option
   /// or takes free text. Returns whether it did something.
   bool _commitEnter() {
-    if (_popup.isOpen && _active >= 0 && _active < _results.length) {
+    if (_popup.isOpen &&
+        !_loading &&
+        _active >= 0 &&
+        _active < _results.length) {
       _choose(_results[_active]);
       return true;
     }
@@ -1159,6 +1177,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       // As a select: Tab takes the active option, then focus moves on.
       if (open &&
           !widget.multiple &&
+          !_loading &&
           _active >= 0 &&
           _active < _results.length) {
         _choose(_results[_active]);

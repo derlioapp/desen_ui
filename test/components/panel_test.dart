@@ -306,6 +306,33 @@ void main() {
     semantics.dispose();
   });
 
+  testWidgets('a bottom sheet whose content refuses to close goes back in '
+      'place after a dismissing drag', (tester) async {
+    window(tester, const Size(390, 800));
+    var refused = 0;
+    await tester.pumpWidget(
+      app(
+        tester,
+        (_) => PopScope(
+          // Unsaved changes: the app asks before closing.
+          canPop: false,
+          onPopInvokedWithResult: (didPop, _) {
+            if (!didPop) refused++;
+          },
+          child: const DsPanel(title: Text('Title'), child: Text('Body')),
+        ),
+        presentation: DsPanelPresentation.bottom,
+      ),
+    );
+    await open(tester);
+    final rest = tester.getRect(surface());
+    await tester.drag(find.text('Title'), const Offset(0, 300));
+    await tester.pumpAndSettle();
+    expect(refused, 1);
+    expect(find.text('Body'), findsOneWidget);
+    expect(tester.getRect(surface()), rest);
+  });
+
   group('auto presentation follows the window', () {
     Future<void> openResizable(WidgetTester tester) async {
       window(tester, const Size(1000, 700));

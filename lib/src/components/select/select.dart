@@ -9,6 +9,7 @@ import '../../behavior/pressable.dart';
 import '../../behavior/spring_value.dart';
 import '../../behavior/tap_band.dart';
 import '../../foundation/case.dart';
+import '../../foundation/text_room.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../l10n/localizations.dart';
@@ -520,7 +521,8 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
                 duration: animate ? t.motion.toneDuration : Duration.zero,
                 curve: t.motion.toneCurve,
                 minHeight: s.height!,
-                padding: s.padding,
+                // Grows with large text, as a text field does.
+                padding: dsWithTextRoom(s.padding, s.height!, s.textStyle),
                 background: s.background,
                 borderColor: border,
                 borderWidth: s.borderWidth!,

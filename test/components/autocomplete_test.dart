@@ -4,6 +4,7 @@ import 'dart:ui' show CheckedState, ImageFilter, SemanticsRole, Tristate;
 import 'package:desen_ui/desen_ui.dart';
 import 'package:desen_ui/src/components/autocomplete/layout.dart';
 import 'package:desen_ui/src/components/autocomplete/match.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -479,6 +480,126 @@ void main() {
       pending['anx']!.complete(const []);
       await tester.pumpAndSettle();
       expect(find.text('Sonuç yok'), findsOneWidget);
+    });
+
+    testWidgets('async: keys wait for the next results, never taking the '
+        'previous query\'s option', (tester) async {
+      for (final commit in [LogicalKeyboardKey.enter, LogicalKeyboardKey.tab]) {
+        final pending = <String, Completer<List<DsSelectOption<String>>>>{};
+        String? value;
+        await tester.pumpWidget(
+          app(
+            single(
+              options: const [],
+              optionsBuilder: (q) => (pending[q] = Completer()).future,
+              onChanged: (v) => value = v,
+            ),
+          ),
+        );
+        await tester.tap(editable());
+        await tester.enterText(editable(), 'an');
+        await tester.pump();
+        pending['an']!.complete(const [
+          DsSelectOption(value: 'ank', label: 'Ankara'),
+        ]);
+        await tester.pumpAndSettle();
+        expect(listed(tester), ['Ankara']);
+        // The next query is still loading: Ankara is not shown.
+        await tester.enterText(editable(), 'iz');
+        await tester.pump();
+        expect(find.text('Yükleniyor'), findsOneWidget);
+        await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+        await tester.sendKeyEvent(commit);
+        await tester.pump();
+        expect(value, isNull, reason: '$commit');
+        if (commit == LogicalKeyboardKey.enter) {
+          // Once loaded, the new results take the keys.
+          pending['iz']!.complete(const [
+            DsSelectOption(value: 'izm', label: 'İzmir'),
+          ]);
+          await tester.pumpAndSettle();
+          await key(tester, LogicalKeyboardKey.enter);
+          expect(value, 'izm');
+        }
+        await tester.pumpWidget(const SizedBox());
+      }
+    });
+
+    testWidgets('the active option stays the same option when the options '
+        'change while open', (tester) async {
+      String? value;
+      late StateSetter set;
+      var options = cities.take(3).toList();
+      await tester.pumpWidget(
+        app(
+          StatefulBuilder(
+            builder: (context, setState) {
+              set = setState;
+              return single(options: options, onChanged: (v) => value = v);
+            },
+          ),
+        ),
+      );
+      await tester.tap(editable());
+      await tester.pump();
+      await key(tester, LogicalKeyboardKey.arrowDown); // İstanbul
+      await key(tester, LogicalKeyboardKey.arrowDown); // İzmir
+      // An option sorts in before İzmir.
+      set(() => options = [cities[0], cities[3], cities[1], cities[2]]);
+      await tester.pumpAndSettle();
+      await key(tester, LogicalKeyboardKey.enter);
+      expect(value, 'izm');
+    });
+
+    testWidgets('losing focus with an exact label typed chooses it', (
+      tester,
+    ) async {
+      final node = FocusNode();
+      addTearDown(node.dispose);
+      String? value;
+      await tester.pumpWidget(
+        app(
+          StatefulBuilder(
+            builder: (context, setState) => DsAutocomplete<String>(
+              value: value,
+              onChanged: (v) => setState(() => value = v),
+              options: cities,
+              focusNode: node,
+              semanticLabel: 'Şehir',
+            ),
+          ),
+        ),
+      );
+      await tester.tap(editable());
+      await tester.enterText(editable(), 'Ankara');
+      await tester.pump();
+      expect(find.byType(ListView), findsOneWidget);
+      // Focus leaves while the popup is open.
+      node.unfocus();
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      expect(value, 'ank');
+      expect(find.byType(ListView), findsNothing);
+    });
+
+    testWidgets('desktop: switching to another window with an exact label '
+        'typed chooses it', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.macOS;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
+      FocusManager.instance.listenToApplicationLifecycleChangesIfSupported();
+      String? value;
+      await tester.pumpWidget(app(single(onChanged: (v) => value = v)));
+      await tester.tap(editable());
+      await tester.enterText(editable(), 'Ankara');
+      await tester.pump();
+      // The focus manager takes focus away while the app is inactive.
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
+      await tester.pumpAndSettle();
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      expect(value, 'ank');
+      debugDefaultTargetPlatformOverride = null;
     });
 
     testWidgets('announces the result count once typing pauses', (
