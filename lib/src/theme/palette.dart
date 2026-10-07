@@ -205,6 +205,12 @@ class _Engine {
         : (hu + _selectionTurn * _side(hu, status)) % 360;
   }
 
+  /// Light-mode lightness of a near-status seed's strong selection, focus
+  /// and links: on the brand hue, darker than the brand and danger fills
+  /// so a selected item is not read as an error, but still the brand's
+  /// red or green, not maroon or bottle green (they sat at 0.32–0.36).
+  static const double _clashInk = .42;
+
   /// How far a near-status seed's selection turns from the brand hue.
   static const double _selectionTurn = 20;
 
@@ -820,7 +826,7 @@ class _Engine {
       indicator: mark,
       accentTint: _lightTint(acc, mark),
       accentText: accentInk,
-      link: clash ? _clean(o(.36, c * .8), c * .8) : accentInk,
+      link: clash ? _clean(o(_clashInk, c * .8), c * .8) : accentInk,
       // A vivid seed's tint is capped and fitted to sRGB rather than
       // clipped, which made it darker than the text budget allows.
       selection: neutral
@@ -841,11 +847,11 @@ class _Engine {
           : clash
           ? oS(.32, c * .55)
           : o(math.min(l, .38), c),
-      selectionStrong: clash ? o(.32, c * .75) : acc,
+      selectionStrong: clash ? o(_clashInk, c * .75) : acc,
       // Darkens under the white label; a near-black fill cannot, so
       // it lightens instead (the label stays far above AA).
       selectionStrongHover: clash
-          ? o(.27, c * .75)
+          ? o(_clashInk - .05, c * .75)
           : bright
           ? o(_brightStep(1), c)
           : o(_r(l < .3 ? math.max(l + .07, .3) : l - .05), c),
@@ -853,7 +859,7 @@ class _Engine {
       focus: neutral
           ? o(.30, c * .3)
           : clash
-          ? o(.34, c * .75)
+          ? o(_clashInk, c * .75)
           : mark,
       // Soft: as faint as iOS draws them.
       border: oN(.30, nt, v(.11, soft: .10)),

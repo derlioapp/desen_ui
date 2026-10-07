@@ -16,6 +16,10 @@
   filled shape (the "!" in an alert, an envelope's flap) is cut out so it
   stays visible; open strokes (arrows, a chart's axes) stay strokes. A play
   button, pause bars or a selected tab's icon can be drawn solid.
+- Red and green brands (and the `oxblood` and `forest` presets) draw the
+  strong selection, focus outline and links in their own red or green in
+  light mode, a step darker than the fills, instead of maroon or bottle
+  green.
 - Yellow, amber and orange brands write accent text and links in a clean
   tone: in light mode the deep orange (or a lemon brand's deep lime) of
   their progress bars instead of olive or mustard, in dark mode a vivid
