@@ -4,6 +4,8 @@
   python3 tool/gen_icons.py --check    fail if they are out of date
 
 tool/icons/ holds one SVG and one JSON file per icon (see import_icons.py).
+Icons marked `"fill": false` there were reviewed in their filled form and
+lose their details; their docs say to use them outlined.
 The output:
 
   lib/src/icons/icons.dart          the DsIcons class: one constant per icon
@@ -153,6 +155,7 @@ def load():
             'tags': meta['tags'],
             'aliases': meta['aliases'],
             'mirror': meta['mirror'],
+            'fill': meta.get('fill', True),
             'paths': paths_of(svg, kebab),
         })
     seen = {}
@@ -177,6 +180,8 @@ def doc(icon):
         text += ' Tags: ' + ', '.join(tags[:8]) + '.'
     if icon['mirror']:
         text += ' Mirrors in right-to-left text.'
+    if not icon['fill']:
+        text += ' Its details merge when filled: use it outlined.'
     return text
 
 

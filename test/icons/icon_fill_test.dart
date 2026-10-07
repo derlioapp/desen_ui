@@ -106,6 +106,62 @@ void main() {
     expect(ink, greaterThan(.95));
   });
 
+  testWidgets('a detail inside a filled shape is cut out of the fill', (
+    tester,
+  ) async {
+    // A line across a square: drawn in ink it would vanish into the fill.
+    const icon = DsIconData(['M2 2h20v20H2z', 'M7 12h10'], fill: true);
+    Future<double> at(Offset p) =>
+        _inkAt(tester, const DsIcon(icon, size: 24, color: _black), p);
+    expect(await at(const Offset(12, 12)), lessThan(.05));
+    expect(await at(const Offset(12, 6)), greaterThan(.95));
+  });
+
+  testWidgets('a mark in a circle drawn as two arcs is cut out too', (
+    tester,
+  ) async {
+    // Circles end where they start without a closing command.
+    const icon = DsIconData([
+      'M2 12a10 10 0 1 0 20 0a10 10 0 1 0-20 0',
+      'M10 12h4',
+    ], fill: true);
+    Future<double> at(Offset p) =>
+        _inkAt(tester, const DsIcon(icon, size: 24, color: _black), p);
+    expect(await at(const Offset(12, 12)), lessThan(.05));
+    expect(await at(const Offset(12, 5)), greaterThan(.95));
+  });
+
+  testWidgets('a part that reaches outside the shape stays ink', (
+    tester,
+  ) async {
+    // Like a calendar's binding rings over its top edge.
+    const icon = DsIconData(['M4 6h16v14H4z', 'M8 2v6'], fill: true);
+    expect(
+      await _inkAt(
+        tester,
+        const DsIcon(icon, size: 24, color: _black),
+        const Offset(8, 7),
+      ),
+      greaterThan(.95),
+    );
+  });
+
+  testWidgets('an open stroke stays a stroke, not a wedge', (tester) async {
+    // A chart's axes: filled, the open corner would close into a triangle.
+    expect(
+      await _inkAt(
+        tester,
+        const DsIcon(
+          DsIconData(['M3 3v16h16'], fill: true),
+          size: 24,
+          color: _black,
+        ),
+        const Offset(8, 15),
+      ),
+      lessThan(.05),
+    );
+  });
+
   testWidgets('a filled open line looks like the outlined one', (tester) async {
     for (final at in const [Offset(12, 6), Offset(12, 18)]) {
       expect(

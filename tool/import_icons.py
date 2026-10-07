@@ -19,6 +19,8 @@ with Desen's metadata:
   aliases    extra Dart names for the icon (Desen's own, kept on import)
   mirror     true if the icon points along the reading direction and flips in
              right-to-left text (Desen's own, kept on import)
+  fill       false if the icon's filled form loses its details, so its docs
+             say to use it outlined (Desen's own, optional, kept on import)
 
 Icons listed in tool/icons/excluded.txt are not imported. When the same name
 exists in both sets, the main set wins (Lab icons move there when they
@@ -142,6 +144,8 @@ def main():
             'aliases': old['aliases'] if old else [],
             'mirror': old['mirror'] if old else False,
         }
+        if old and 'fill' in old:
+            record['fill'] = old['fill']
         svg_path = os.path.join(OUT, name + '.svg')
         before = open(svg_path).read() if os.path.exists(svg_path) else None
         with open(svg_path, 'w') as fh:

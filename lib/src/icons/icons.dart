@@ -364,7 +364,7 @@ abstract final class DsIcons {
   /// Astronaut helmet. Tags: spacesuit, spaceman, explore, interplanetary, stars, safety, protection, headgear.
   static const astronautHelmet = _astronautHelmet;
 
-  /// Atom. Tags: atomic, nuclear, physics, particle, element, molecule, electricity, energy.
+  /// Atom. Tags: atomic, nuclear, physics, particle, element, molecule, electricity, energy. Its details merge when filled: use it outlined.
   static const atom = _atom;
 
   /// At sign. Tags: mention, at, email, message.
@@ -688,7 +688,7 @@ abstract final class DsIcons {
   /// Bitcoin. Tags: cryptocurrency, digital, blockchain, finance, coin, market, decentralized, investment.
   static const bitcoin = _bitcoin;
 
-  /// Blend. Tags: mode, overlay, multiply, screen, opacity, transparency, alpha, filters.
+  /// Blend. Tags: mode, overlay, multiply, screen, opacity, transparency, alpha, filters. Its details merge when filled: use it outlined.
   static const blend = _blend;
 
   /// Blender. Tags: mixer, appliances, food, liquid, juicer, vitamizer, mix, emulsify.
@@ -895,7 +895,7 @@ abstract final class DsIcons {
   /// Brain. Tags: medical, mind, mental, intellect, cerebral, consciousness, genius, artificial intelligence.
   static const brain = _brain;
 
-  /// Brain circuit. Tags: mind, intellect, artificial intelligence, ai, deep learning, machine learning, computing.
+  /// Brain circuit. Tags: mind, intellect, artificial intelligence, ai, deep learning, machine learning, computing. Its details merge when filled: use it outlined.
   static const brainCircuit = _brainCircuit;
 
   /// Brain cog. Tags: mind, intellect, artificial intelligence, ai, deep learning, machine learning, computing.
@@ -1186,19 +1186,19 @@ abstract final class DsIcons {
   /// Carton off. Tags: milk, dairy, beverage, drink, diet, lactose free, non dairy, liquid.
   static const cartonOff = _cartonOff;
 
-  /// Case camel. Tags: text, letters, characters, font, typography, ab, string, code.
+  /// Case camel. Tags: text, letters, characters, font, typography, ab, string, code. Its details merge when filled: use it outlined.
   static const caseCamel = _caseCamel;
 
-  /// Case kebab. Tags: text, letters, characters, font, typography, dash, a-b, ab.
+  /// Case kebab. Tags: text, letters, characters, font, typography, dash, a-b, ab. Its details merge when filled: use it outlined.
   static const caseKebab = _caseKebab;
 
-  /// Case lower. Tags: text, letters, characters, font, typography.
+  /// Case lower. Tags: text, letters, characters, font, typography. Its details merge when filled: use it outlined.
   static const caseLower = _caseLower;
 
-  /// Case sensitive. Tags: text, letters, characters, font, typography.
+  /// Case sensitive. Tags: text, letters, characters, font, typography. Its details merge when filled: use it outlined.
   static const caseSensitive = _caseSensitive;
 
-  /// Case snake. Tags: text, letters, characters, font, typography, underscore, ab, string.
+  /// Case snake. Tags: text, letters, characters, font, typography, underscore, ab, string. Its details merge when filled: use it outlined.
   static const caseSnake = _caseSnake;
 
   /// Case snake upper. Tags: text, letters, capitals, caps, characters, font, typography, underscore.
@@ -1480,7 +1480,7 @@ abstract final class DsIcons {
   /// Circle dashed check. Tags: approved, pending, changes, revision, reapproval, published, schedule, assignment.
   static const circleDashedCheck = _circleDashedCheck;
 
-  /// Circle divide. Tags: calculate, math.
+  /// Circle divide. Tags: calculate, math. Its details merge when filled: use it outlined.
   static const circleDivide = _circleDivide;
 
   /// Circle dollar sign. Tags: monetization, marketing, currency, money, payment.
@@ -1549,7 +1549,7 @@ abstract final class DsIcons {
   /// Circle slash. Tags: diameter, zero, nothing, null, void, cancel, ban, no.
   static const circleSlash = _circleSlash;
 
-  /// Circle slash 2. Tags: diameter, zero, nothing, null, void, ban, math, divide.
+  /// Circle slash 2. Tags: diameter, zero, nothing, null, void, ban, math, divide. Its details merge when filled: use it outlined.
   static const circleSlash2 = _circleSlash2;
 
   /// Circle small. Tags: shape, bullet, gender, genderless.
@@ -1693,7 +1693,7 @@ abstract final class DsIcons {
   /// Closed caption. Tags: tv, movie, video, closed captions, subtitles, subhead, transcription, transcribe.
   static const closedCaption = _closedCaption;
 
-  /// Cloth. Tags: thread, sewing, stitch, embroidery, waeve, woven, fabric, material.
+  /// Cloth. Tags: thread, sewing, stitch, embroidery, waeve, woven, fabric, material. Its details merge when filled: use it outlined.
   static const cloth = _cloth;
 
   /// Cloud. Tags: weather.
@@ -2212,7 +2212,7 @@ abstract final class DsIcons {
   /// Same icon as [gripHorizontal].
   static const dragIndicator = _gripHorizontal;
 
-  /// Drama. Tags: masks, theater, theatre, entertainment, show.
+  /// Drama. Tags: masks, theater, theatre, entertainment, show. Its details merge when filled: use it outlined.
   static const drama = _drama;
 
   /// Dress. Tags: skirt, womens, girls, female, ladies, store, sexy, classy.
@@ -3043,10 +3043,10 @@ abstract final class DsIcons {
   /// Graduation cap. Tags: school, university, learn, study, mortarboard, education, ceremony, academic.
   static const graduationCap = _graduationCap;
 
-  /// Grape. Tags: fruit, wine, food.
+  /// Grape. Tags: fruit, wine, food. Its details merge when filled: use it outlined.
   static const grape = _grape;
 
-  /// Grapes. Tags: bunch, wine, vineyard, seedless, blackberry, blackberries, rasberry, rasberries.
+  /// Grapes. Tags: bunch, wine, vineyard, seedless, blackberry, blackberries, rasberry, rasberries. Its details merge when filled: use it outlined.
   static const grapes = _grapes;
 
   /// Grid 2x2. Tags: table, rows, columns, blocks, plot, land, geometry, measure.
@@ -3400,7 +3400,7 @@ abstract final class DsIcons {
   /// Indian rupee square. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
   static const indianRupeeSquare = _indianRupeeSquare;
 
-  /// Infinity. Tags: unlimited, forever, loop, math.
+  /// Infinity. Tags: unlimited, forever, loop, math. Its details merge when filled: use it outlined.
   static const infinity = _infinity;
 
   /// Info. Tags: about, advice, clue, details, help, hint, indicator, information.
@@ -3778,7 +3778,7 @@ abstract final class DsIcons {
   /// Loader circle. Tags: loading, wait, busy, progress, spinner, spinning, throbber, circle.
   static const loaderCircle = _loaderCircle;
 
-  /// Loader pinwheel. Tags: loading, wait, busy, progress, throbber, spinner, spinning, beach ball.
+  /// Loader pinwheel. Tags: loading, wait, busy, progress, throbber, spinner, spinning, beach ball. Its details merge when filled: use it outlined.
   static const loaderPinwheel = _loaderPinwheel;
 
   /// Locate. Tags: map, gps, location, cross.
@@ -4363,7 +4363,7 @@ abstract final class DsIcons {
   /// Same icon as [listOrdered].
   static const numberedList = _listOrdered;
 
-  /// Nut. Tags: hazelnut, acorn, food, diet.
+  /// Nut. Tags: hazelnut, acorn, food, diet. Its details merge when filled: use it outlined.
   static const nut = _nut;
 
   /// Nut off. Tags: hazelnut, acorn, food, allergy, intolerance, diet.
@@ -4408,7 +4408,7 @@ abstract final class DsIcons {
   /// Same icon as [listIndentDecrease].
   static const outdent = _listIndentDecrease;
 
-  /// Owl. Tags: wise, wisdom, wings, bird, avian, tawny, perch, wildlife.
+  /// Owl. Tags: wise, wisdom, wings, bird, avian, tawny, perch, wildlife. Its details merge when filled: use it outlined.
   static const owl = _owl;
 
   /// Package. Tags: box, container, storage, sealed, delivery, undelivered, unopened, packed.
@@ -4423,7 +4423,7 @@ abstract final class DsIcons {
   /// Package minus. Tags: delete, remove.
   static const packageMinus = _packageMinus;
 
-  /// Package open. Tags: box, container, storage, unpack, unarchive, unzip, opened, delivered.
+  /// Package open. Tags: box, container, storage, unpack, unarchive, unzip, opened, delivered. Its details merge when filled: use it outlined.
   static const packageOpen = _packageOpen;
 
   /// Package plus. Tags: new, add, create.
@@ -4591,7 +4591,7 @@ abstract final class DsIcons {
   /// Pencil sparkles. Tags: edit, ai, tools, smart, create, draw, sketch, draft.
   static const pencilSparkles = _pencilSparkles;
 
-  /// Penguin. Tags: pingu, bird, arctic, aquatic, flightless, linux.
+  /// Penguin. Tags: pingu, bird, arctic, aquatic, flightless, linux. Its details merge when filled: use it outlined.
   static const penguin = _penguin;
 
   /// Pen line. Tags: pencil, change, create, draw, writer, writing, biro, ink.
@@ -4870,7 +4870,7 @@ abstract final class DsIcons {
   /// Rat. Tags: mouse, mice, gerbil, rodent, pet, pest, plague, disease.
   static const rat = _rat;
 
-  /// Ratio. Tags: screens, sizes, rotate, rotation, adjust, aspect ratio, proportions, widescreen.
+  /// Ratio. Tags: screens, sizes, rotate, rotation, adjust, aspect ratio, proportions, widescreen. Its details merge when filled: use it outlined.
   static const ratio = _ratio;
 
   /// Razor. Tags: shaving, shaver, trimmer, styler, edger, beard, stubble, mens.
@@ -4906,7 +4906,7 @@ abstract final class DsIcons {
   /// Receipt turkish lira. Tags: bill, voucher, slip, check, counterfoil, currency, try.
   static const receiptTurkishLira = _receiptTurkishLira;
 
-  /// Rectangle circle. Tags: compose, keyboard, key, button.
+  /// Rectangle circle. Tags: compose, keyboard, key, button. Its details merge when filled: use it outlined.
   static const rectangleCircle = _rectangleCircle;
 
   /// Rectangle ellipsis. Tags: login, password, authenticate, 2fa, field, fill, ellipsis, et cetera.
@@ -4999,7 +4999,7 @@ abstract final class DsIcons {
   /// Rewind. Tags: music.
   static const rewind = _rewind;
 
-  /// Ribbon. Tags: awareness, strip, band, tape, strap, cordon.
+  /// Ribbon. Tags: awareness, strip, band, tape, strap, cordon. Its details merge when filled: use it outlined.
   static const ribbon = _ribbon;
 
   /// Road. Tags: street, highway, route, path, transport, traffic, drive, map.
@@ -5260,7 +5260,7 @@ abstract final class DsIcons {
   /// Server crash. Tags: cloud, storage, problem, error.
   static const serverCrash = _serverCrash;
 
-  /// Server off. Tags: cloud, storage.
+  /// Server off. Tags: cloud, storage. Its details merge when filled: use it outlined.
   static const serverOff = _serverOff;
 
   /// Server plus. Tags: add, create, new, cloud, storage, computing.
@@ -5590,7 +5590,7 @@ abstract final class DsIcons {
   /// Spider. Tags: silk, web, weave, insect, bite, fangs, venom, poison.
   static const spider = _spider;
 
-  /// Spider web. Tags: silk, weave, insects, arachnids, arachnophobia, fear, frightening, horror.
+  /// Spider web. Tags: silk, weave, insects, arachnids, arachnophobia, fear, frightening, horror. Its details merge when filled: use it outlined.
   static const spiderWeb = _spiderWeb;
 
   /// Same icon as [loaderCircle].
@@ -5744,7 +5744,7 @@ abstract final class DsIcons {
   /// Square dimensions. Tags: ratio, size, width, height, resize, scale, frame, proportions.
   static const squareDimensions = _squareDimensions;
 
-  /// Square divide. Tags: calculate, math.
+  /// Square divide. Tags: calculate, math. Its details merge when filled: use it outlined.
   static const squareDivide = _squareDivide;
 
   /// Square dot. Tags: git, diff, modified, ..
@@ -5960,7 +5960,7 @@ abstract final class DsIcons {
   /// Sticky note x. Tags: post-it, comment, annotation, reaction, memo, reminder, todo, task.
   static const stickyNoteX = _stickyNoteX;
 
-  /// Stone. Tags: mineral, geology, nature, solid, pebble, crystal, ore, hard.
+  /// Stone. Tags: mineral, geology, nature, solid, pebble, crystal, ore, hard. Its details merge when filled: use it outlined.
   static const stone = _stone;
 
   /// Same icon as [timer].
@@ -6347,7 +6347,7 @@ abstract final class DsIcons {
   /// Toothbrush sparkles. Tags: dental care, oral hygiene, brushing, teeth, dentist, bathroom, toiletries, personal care.
   static const toothbrushSparkles = _toothbrushSparkles;
 
-  /// Top crop. Tags: brassiere, breasts, boobs, tops, womens, girls, female, ladies.
+  /// Top crop. Tags: brassiere, breasts, boobs, tops, womens, girls, female, ladies. Its details merge when filled: use it outlined.
   static const topCrop = _topCrop;
 
   /// Tornado. Tags: weather, wind, storm, hurricane.
@@ -6478,7 +6478,7 @@ abstract final class DsIcons {
   /// Turntable. Tags: record player, gramophone, stereo, phonograph, vinyl, lp, disc, platter.
   static const turntable = _turntable;
 
-  /// Turtle. Tags: animal, pet, tortoise, slow, speed.
+  /// Turtle. Tags: animal, pet, tortoise, slow, speed. Its details merge when filled: use it outlined.
   static const turtle = _turtle;
 
   /// Tuxedo. Tags: blazer, buttons, shirt, suit, gentleman, mens, boys, top.
@@ -6682,7 +6682,7 @@ abstract final class DsIcons {
   /// Same icon as [badgeCheck].
   static const verified = _badgeCheck;
 
-  /// Vest. Tags: underwear, undergarment, mens, boys, top, waistcoat, sleeveless, sportswear.
+  /// Vest. Tags: underwear, undergarment, mens, boys, top, waistcoat, sleeveless, sportswear. Its details merge when filled: use it outlined.
   static const vest = _vest;
 
   /// Vibrate. Tags: smartphone, notification, rumble, haptic feedback, screen.
@@ -6811,7 +6811,7 @@ abstract final class DsIcons {
   /// Watermelon. Tags: snack, meal, lunch, juice, smoothie, eating, healthy, nutrition.
   static const watermelon = _watermelon;
 
-  /// Wave circle. Tags: surfing, tidal, tide, water, aqua, seaside, beach, ocean.
+  /// Wave circle. Tags: surfing, tidal, tide, water, aqua, seaside, beach, ocean. Its details merge when filled: use it outlined.
   static const waveCircle = _waveCircle;
 
   /// Waves arrow down. Tags: water, sea, level, sound, hertz, wavelength, vibrate, low.

@@ -16,5 +16,6 @@
     "boulder"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }
