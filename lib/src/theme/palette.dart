@@ -496,9 +496,15 @@ class _Engine {
   /// The dark-mode accent text: from 0.80 a step lighter until it reads
   /// 4.5:1 on the date range band in a floating calendar (the band is 18%
   /// so it stands 1.3:1 off that layer; a pink stood at 4.48:1).
+  ///
+  /// A warm hue (orange to yellow-green) at the text cap of 0.105 reads
+  /// as khaki: it keeps the bright fill's chroma (up to 0.148) and starts
+  /// close to the lightness where it is vivid, as iOS's dark yellow does.
   Color _darkAccentInk(double chroma, {required Color overlay}) {
     final band = DsColorUtils.flatten(_darkTint(), overlay);
-    var lightness = .80;
+    final warm = !neutral && hu >= _mudFrom && hu <= _mudTo;
+    if (warm) chroma = math.min(c, .148);
+    var lightness = warm ? math.max(.80, _r(_cuspL(hu) - _mudDepth / 2)) : .80;
     while (lightness < .86 &&
         DsColorUtils.contrastRatio(o(lightness, chroma), band) < 4.55) {
       lightness = _r(lightness + .005);
@@ -775,7 +781,13 @@ class _Engine {
     // Translucent like the channel: light on a card, still 1.2:1 on
     // it and 1.15:1 on the page.
     final neutralTint = oN(.30, nt, .10);
-    final accentInk = o(math.min(l, .45), c);
+    // Read as text at 4.5:1; a warm hue this dark is olive or mustard, so
+    // it turns to the marks' clean tone at the same luminance (a yellow
+    // or amber brand writes in deep orange, a lemon one in deep lime).
+    final plainInk = o(math.min(l, .45), c);
+    final accentInk = neutral
+        ? plainInk
+        : _clean(plainInk, math.max(c, _markChroma));
     return DsColors(
       canvas: oN(.96, clash ? cn * .012 : cn * .025),
       surface: white(),
@@ -808,7 +820,7 @@ class _Engine {
       indicator: mark,
       accentTint: _lightTint(acc, mark),
       accentText: accentInk,
-      link: clash ? o(.36, c * .8) : accentInk,
+      link: clash ? _clean(o(.36, c * .8), c * .8) : accentInk,
       // A vivid seed's tint is capped and fitted to sRGB rather than
       // clipped, which made it darker than the text budget allows.
       selection: neutral
@@ -957,8 +969,14 @@ class _Engine {
     final textAccC = math.min(c * .7, .105);
     final acc = o(bright ? fl : dl, accC);
     final onAcc = bright ? _brightInk() : white();
+    // A near-status seed's text stays pale; a warm one rises toward the
+    // lightness where its hue is vivid, so it is not muddy.
+    final clashWarm = !neutral && hu >= _mudFrom && hu <= _mudTo;
     final accentInk = clash
-        ? o(.82, math.min(c * .45, .10))
+        ? o(
+            clashWarm ? math.max(.82, _r(_cuspL(hu) - _mudDepth / 2)) : .82,
+            math.min(c * (clashWarm ? 1 : .45), .10),
+          )
         : _darkAccentInk(textAccC, overlay: oN(.335, n));
     // Deep, opaque status tints (a light color at low opacity mixed with
     // the dark gray into olive and brown). As saturated as sRGB
