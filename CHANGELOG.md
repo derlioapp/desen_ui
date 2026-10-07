@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Fixed: `FormState.reset()` kept the edited text of a `DsTextFormField`
+  with a `controller` when the parent rebuilt on each change. Reset now
+  goes back to the controller's text when the field was created, as
+  Flutter's `TextFormField` does.
 - Fixed: dates followed the language but not the region of the app's
   locale when an app listed language-only `supportedLocales` (as
   `DsLocalizations.supportedLocales`): a British device resolved to `en`
