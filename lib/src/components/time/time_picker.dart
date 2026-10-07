@@ -107,6 +107,10 @@ export 'time_picker_style.dart';
 /// the time moves to the nearest one in range (choosing 9 on 10:15 in
 /// 09:30–18:00 gives 09:30).
 ///
+/// A [firstTime] after [lastTime] is a range across midnight, such as a
+/// night shift from 22:00 to 06:00: the hour column runs 22, 23, 00 … 06
+/// and goes round between them, and Home and End give 22 and 06.
+///
 /// | Key | Action |
 /// |---|---|
 /// | Up / Down | Previous / next item in the column (an earlier / later time, as the list reads top to bottom), wrapping |
@@ -172,9 +176,9 @@ class DsTimePicker extends StatefulWidget {
 
   /// The earliest time that can be chosen or typed, or null for none.
   ///
-  /// With [lastTime] it bounds one stretch of the day (at most
-  /// [lastTime]); a range across midnight is not supported. Without
-  /// [showSeconds] its seconds are ignored. For "not before now":
+  /// With [lastTime] it bounds one stretch of the day: up to [lastTime],
+  /// or, when it is after [lastTime], across midnight (22:00 to 06:00).
+  /// Without [showSeconds] its seconds are ignored. For "not before now":
   /// `firstTime: DsTime.fromDateTime(DateTime.now())`.
   final DsTime? firstTime;
 
@@ -427,6 +431,21 @@ class _DsTimePickerState extends State<DsTimePicker>
       );
     }
     final l10n = _locale!.strings;
+    if (_overnight) {
+      if (_inside(time.inSeconds)) return (value: time, issue: null);
+      // Out of the night: early when nearer the start, else late.
+      final early = _lo - time.inSeconds < time.inSeconds - _hi;
+      return (
+        value: null,
+        issue: DsInputIssue(
+          early ? DsInputIssueKind.belowMin : DsInputIssueKind.aboveMax,
+          l10n.timeOutsideRange(
+            _format!.formatTime(DsTime.fromSeconds(_lo)),
+            _format!.formatTime(DsTime.fromSeconds(_hi)),
+          ),
+        ),
+      );
+    }
     if (time.inSeconds < _lo) {
       return (
         value: null,
@@ -466,12 +485,27 @@ class _DsTimePickerState extends State<DsTimePicker>
     null => 24 * 3600 - _unit,
   };
 
-  /// Whether a time in range starts in the [length] seconds from [from].
-  bool _holds(int from, int length) => from <= _hi && from + length > _lo;
+  /// Whether the range runs across midnight: [_lo] to the end of the
+  /// day, then the start of the day to [_hi].
+  bool get _overnight => _lo > _hi;
 
-  /// [time] to the [_unit], moved into range.
-  DsTime _inRange(DsTime time) =>
-      DsTime.fromSeconds(_toUnit(time).clamp(_lo, math.max(_lo, _hi)));
+  /// Whether the time [seconds] after midnight is in range.
+  bool _inside(int seconds) => _overnight
+      ? seconds >= _lo || seconds <= _hi
+      : seconds >= _lo && seconds <= _hi;
+
+  /// Whether a time in range starts in the [length] seconds from [from].
+  bool _holds(int from, int length) => _overnight
+      ? from + length > _lo || from <= _hi
+      : from <= _hi && from + length > _lo;
+
+  /// [time] to the [_unit], moved into range: to the nearer end of it.
+  DsTime _inRange(DsTime time) {
+    final s = _toUnit(time);
+    if (!_overnight) return DsTime.fromSeconds(s.clamp(_lo, _hi));
+    if (_inside(s)) return DsTime.fromSeconds(s);
+    return DsTime.fromSeconds(_lo - s <= s - _hi ? _lo : _hi);
+  }
 
   /// Chooses [time], moved into range: an hour chosen on 10:15 in
   /// 09:30–18:00 gives 09:30.
@@ -497,12 +531,6 @@ class _DsTimePickerState extends State<DsTimePicker>
 
   @override
   Widget build(BuildContext context) {
-    assert(
-      widget.firstTime == null ||
-          widget.lastTime == null ||
-          widget.firstTime!.compareTo(widget.lastTime!) <= 0,
-      'firstTime must not be after lastTime.',
-    );
     final t = dsThemeOf(context);
     final locale = _locale!;
     final l10n = locale.strings;
@@ -1023,11 +1051,25 @@ class _TimeColumnState extends State<_TimeColumn> {
     data.step(delta)?.go();
   }
 
-  /// Home or End: the first or last item that can be chosen.
+  /// Home or End: the first or last item that can be chosen. In a column
+  /// whose items in range run round its end (22, 23, 00 … 06 for a night),
+  /// the run's first and last.
   void _edge({required bool first}) {
-    final open = widget.data.items.where((item) => item.available);
-    if (open.isEmpty) return;
-    _select((first ? open.first : open.last).value);
+    final items = widget.data.items;
+    final n = items.length;
+    if (!items.any((item) => item.available)) return;
+    if (items.every((item) => item.available)) {
+      _select((first ? items.first : items.last).value);
+      return;
+    }
+    for (var i = 0; i < n; i++) {
+      final before = items[(i - 1 + n) % n].available;
+      final after = items[(i + 1) % n].available;
+      if (items[i].available && (first ? !before : !after)) {
+        _select(items[i].value);
+        return;
+      }
+    }
   }
 
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {

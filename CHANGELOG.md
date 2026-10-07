@@ -16,6 +16,11 @@
   filled shape (the "!" in an alert, an envelope's flap) is cut out so it
   stays visible; open strokes (arrows, a chart's axes) stay strokes. A play
   button, pause bars or a selected tab's icon can be drawn solid.
+- `DsTimePicker` takes a range across midnight: a `firstTime` after
+  `lastTime` (a night shift from 22:00 to 06:00). The hour column runs 22,
+  23, 00 to 06, Home and End give the range's first and last time, and a
+  typed time outside it gets the new localized message
+  `timeOutsideRange` ("Enter a time from 10:00 PM to 6:00 AM.").
 - `DsBottomNav` draws the selected destination's icon solid, as iOS tab
   bars and Android navigation bars do. It sets the icon theme's `fill`,
   which `DsIcon` now follows (as an `Icon` from a font with a fill axis

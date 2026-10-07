@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-// firstTime / lastTime (office hours, "not before now") and the optional
-// seconds column.
+// firstTime / lastTime (office hours, "not before now", a night shift
+// across midnight) and the optional seconds column.
 
 Widget _app(
   Widget child, {
@@ -243,6 +243,107 @@ void main() {
       await tester.tap(_item('AM/PM', 'AM'));
       await tester.pumpAndSettle();
       expect(state.reported, isEmpty);
+    });
+  });
+
+  group('a range across midnight', () {
+    // A night shift: 22:00 to 06:00.
+    const night = _Picker(
+      initial: DsTime(23, 0),
+      firstTime: DsTime(22, 0),
+      lastTime: DsTime(6, 0),
+    );
+
+    testWidgets('hours from the first time round to the last can be chosen', (
+      tester,
+    ) async {
+      final state = await _pump(tester, night);
+      await _open(tester);
+      // The column around 23 shows the hours before and after midnight.
+      for (final h in ['22', '23', '00', '01']) {
+        expect(_struck(tester, 'Saat', h), isFalse, reason: h);
+      }
+      expect(_struck(tester, 'Saat', '21'), isTrue);
+      await tester.tap(_item('Saat', '01'));
+      await tester.pumpAndSettle();
+      expect(state.reported, [const DsTime(1, 0)]);
+    });
+
+    testWidgets('keys go on past midnight and stop at the ends; Home and End '
+        'give the first and last time', (tester) async {
+      final state = await _pump(tester, night);
+      await _open(tester);
+      await _key(tester, LogicalKeyboardKey.arrowDown);
+      expect(state.reported.last, const DsTime(0, 0));
+      await _key(tester, LogicalKeyboardKey.end);
+      expect(state.reported.last, const DsTime(6, 0));
+      await _key(tester, LogicalKeyboardKey.arrowDown);
+      expect(state.reported.last, const DsTime(6, 0));
+      await _key(tester, LogicalKeyboardKey.home);
+      expect(state.reported.last, const DsTime(22, 0));
+      await _key(tester, LogicalKeyboardKey.arrowUp);
+      expect(state.reported.last, const DsTime(22, 0));
+    });
+
+    testWidgets('an hour moves the time to the nearer end of the range', (
+      tester,
+    ) async {
+      Future<DsTime?> pick(DsTime initial, String hour) async {
+        final state = await _pump(
+          tester,
+          _Picker(
+            initial: initial,
+            firstTime: const DsTime(22, 30),
+            lastTime: const DsTime(6, 0),
+          ),
+        );
+        await _open(tester);
+        await tester.tap(_item('Saat', hour));
+        await tester.pumpAndSettle();
+        final picked = state.reported.last;
+        await tester.pumpWidget(const SizedBox());
+        return picked;
+      }
+
+      // 22:15 is a quarter before the start, far from the end.
+      expect(await pick(const DsTime(23, 15), '22'), const DsTime(22, 30));
+      // 06:15 is just after the end.
+      expect(await pick(const DsTime(5, 15), '06'), const DsTime(6, 0));
+    });
+
+    testWidgets('a typed time outside the night names both ends', (
+      tester,
+    ) async {
+      final state = await _pump(
+        tester,
+        const _Picker(firstTime: DsTime(22, 0), lastTime: DsTime(6, 0)),
+      );
+      await _type(tester, '12:00');
+      expect(state.issues.last?.kind, DsInputIssueKind.aboveMax);
+      expect(
+        find.textContaining(
+          '22:00 ile 06:00 arasında bir saat girin.',
+          findRichText: true,
+        ),
+        findsOneWidget,
+      );
+      await _type(tester, '20:00');
+      expect(state.issues.last?.kind, DsInputIssueKind.belowMin);
+      expect(state.reported, isEmpty);
+      await _type(tester, '05:00');
+      await _type(tester, '23:30');
+      expect(state.reported, [const DsTime(5, 0), const DsTime(23, 30)]);
+      expect(state.issues.last, isNull);
+    });
+
+    testWidgets('12-hour clock: both periods hold a time', (tester) async {
+      await _pump(tester, night, english: true);
+      await _open(tester, label: 'Choose time');
+      expect(_struck(tester, 'AM/PM', 'AM'), isFalse);
+      expect(_struck(tester, 'AM/PM', 'PM'), isFalse);
+      // 11 PM chosen: 10 and 11 PM are in the night, 9 PM is not.
+      expect(_struck(tester, 'Hours', '10'), isFalse);
+      expect(_struck(tester, 'Hours', '9'), isTrue);
     });
   });
 

@@ -21,6 +21,7 @@ class _TimePickerPageState extends State<TimePickerPage> {
   DsTime? _standup = const DsTime(9, 15);
   DsTime? _meeting = const DsTime(10, 0);
   DsTime? _pickup;
+  DsTime? _shift = const DsTime(23, 0);
   DsTime? _lap = const DsTime(0, 4, 30);
 
   @override
@@ -170,6 +171,13 @@ class _TimePickerPageState extends State<TimePickerPage> {
             'keeps the error look with a message such as "Enter a time at '
             'or after 9:00 AM."',
           ),
+          const DocText(
+            'A `firstTime` after `lastTime` is a range across midnight, '
+            'such as a night shift from 22:00 to 06:00. The hour column '
+            'runs 22, 23, 00 to 06 and goes round between them, Home and '
+            'End give 22:00 and 06:00, and a typed time outside it asks for '
+            '"a time from 10:00 PM to 6:00 AM."',
+          ),
           Example(
             snippet: 'time-picker-limits',
             child: Wrap(
@@ -201,6 +209,20 @@ class _TimePickerPageState extends State<TimePickerPage> {
                       value: _pickup,
                       firstTime: DsTime.fromDateTime(DateTime.now()),
                       onChanged: (t) => setState(() => _pickup = t),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 160,
+                  child: DsField(
+                    label: const Text('Night shift'),
+                    description: const Text('From 22:00 to 06:00.'),
+                    child: DsTimePicker(
+                      value: _shift,
+                      minuteStep: 15,
+                      firstTime: const DsTime(22, 0),
+                      lastTime: const DsTime(6, 0),
+                      onChanged: (t) => setState(() => _shift = t),
                     ),
                   ),
                 ),
@@ -429,7 +451,8 @@ class _TimePickerPageState extends State<TimePickerPage> {
             (
               'firstTime / lastTime',
               'DsTime?',
-              'The earliest and latest time that can be chosen or typed.',
+              'The earliest and latest time that can be chosen or typed. '
+                  'A first time after the last is a range across midnight.',
             ),
             (
               'showSeconds',
