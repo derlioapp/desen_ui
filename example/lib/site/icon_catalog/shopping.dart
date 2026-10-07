@@ -1110,6 +1110,7 @@ const _shopping = <IconEntry>[
       'cotton',
       'casual',
     ],
+    fills: false,
   ),
   IconEntry(
     'trousers',
@@ -1213,5 +1214,6 @@ const _shopping = <IconEntry>[
       'slim fit',
       'regular',
     ],
+    fills: false,
   ),
 ];

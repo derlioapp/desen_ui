@@ -955,6 +955,7 @@ const _development = <IconEntry>[
     DsIcons.rectangleCircle,
     category: 'development',
     tags: ['compose', 'keyboard', 'key', 'button'],
+    fills: false,
   ),
   IconEntry(
     'router',
@@ -1008,6 +1009,7 @@ const _development = <IconEntry>[
     DsIcons.serverOff,
     category: 'development',
     tags: ['cloud', 'storage'],
+    fills: false,
   ),
   IconEntry(
     'serverPlus',

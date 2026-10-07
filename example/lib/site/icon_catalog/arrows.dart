@@ -774,6 +774,7 @@ const _arrows = <IconEntry>[
       'frozen',
       'freeze',
     ],
+    fills: false,
   ),
   IconEntry(
     'loader',

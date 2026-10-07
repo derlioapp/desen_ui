@@ -864,6 +864,7 @@ const _text = <IconEntry>[
       'string',
       'code',
     ],
+    fills: false,
   ),
   IconEntry(
     'caseKebab',
@@ -881,18 +882,21 @@ const _text = <IconEntry>[
       'string',
       'code',
     ],
+    fills: false,
   ),
   IconEntry(
     'caseLower',
     DsIcons.caseLower,
     category: 'text',
     tags: ['text', 'letters', 'characters', 'font', 'typography'],
+    fills: false,
   ),
   IconEntry(
     'caseSensitive',
     DsIcons.caseSensitive,
     category: 'text',
     tags: ['text', 'letters', 'characters', 'font', 'typography'],
+    fills: false,
   ),
   IconEntry(
     'caseSnakeUpper',
@@ -930,6 +934,7 @@ const _text = <IconEntry>[
       'string',
       'code',
     ],
+    fills: false,
   ),
   IconEntry(
     'caseUpper',

@@ -36,6 +36,7 @@ const _math = <IconEntry>[
     DsIcons.circleDivide,
     category: 'math',
     tags: ['calculate', 'math', '÷', '/'],
+    fills: false,
   ),
   IconEntry(
     'circleEqual',
@@ -292,6 +293,7 @@ const _math = <IconEntry>[
     DsIcons.squareDivide,
     category: 'math',
     tags: ['calculate', 'math', '÷', '/'],
+    fills: false,
   ),
   IconEntry(
     'squareEqual',

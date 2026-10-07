@@ -772,6 +772,7 @@ const _files = <IconEntry>[
       'opened',
       'delivered',
     ],
+    fills: false,
   ),
   IconEntry(
     'packageSearch',

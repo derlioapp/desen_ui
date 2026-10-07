@@ -391,6 +391,7 @@ const _multimedia = <IconEntry>[
     DsIcons.drama,
     category: 'multimedia',
     tags: ['drama', 'masks', 'theater', 'theatre', 'entertainment', 'show'],
+    fills: false,
   ),
   IconEntry(
     'drum',
@@ -482,6 +483,7 @@ const _multimedia = <IconEntry>[
     DsIcons.infinity,
     category: 'multimedia',
     tags: ['unlimited', 'forever', 'loop', 'math'],
+    fills: false,
   ),
   IconEntry(
     'keyboardMusic',

@@ -36,6 +36,7 @@ const _science = <IconEntry>[
       'energy',
       'chemistry',
     ],
+    fills: false,
   ),
   IconEntry(
     'beaker',
@@ -62,6 +63,7 @@ const _science = <IconEntry>[
       'machine learning',
       'computing',
     ],
+    fills: false,
   ),
   IconEntry(
     'brainCog',

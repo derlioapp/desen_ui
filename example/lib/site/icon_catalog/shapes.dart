@@ -143,6 +143,7 @@ const _shapes = <IconEntry>[
       'median',
       'normal',
     ],
+    fills: false,
   ),
   IconEntry(
     'circleSmall',

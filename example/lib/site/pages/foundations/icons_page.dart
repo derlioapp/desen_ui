@@ -213,6 +213,7 @@ class _IconBrowser extends StatefulWidget {
 
 class _IconBrowserState extends State<_IconBrowser> {
   String _query = '';
+  bool _filled = false;
 
   List<IconEntry> get _matches {
     final q = dsFoldCase(_query.trim());
@@ -251,18 +252,31 @@ class _IconBrowserState extends State<_IconBrowser> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       spacing: 20,
       children: [
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 320),
-            child: DsTextField(
-              onChanged: (v) => setState(() => _query = v),
-              placeholder: 'Search ${iconCatalog.length} icons',
-              semanticLabel: 'Search icons',
-              leading: const DsIcon(DsIcons.search),
-              clearable: true,
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 320),
+              child: DsTextField(
+                onChanged: (v) => setState(() => _query = v),
+                placeholder: 'Search ${iconCatalog.length} icons',
+                semanticLabel: 'Search icons',
+                leading: const DsIcon(DsIcons.search),
+                clearable: true,
+              ),
             ),
-          ),
+            DsSegmentedControl<bool>(
+              value: _filled,
+              onChanged: (v) => setState(() => _filled = v),
+              semanticLabel: 'Icon style',
+              segments: const [
+                DsSegment(value: false, label: Text('Outline')),
+                DsSegment(value: true, label: Text('Filled')),
+              ],
+            ),
+          ],
         ),
         if (matches.isEmpty)
           DsEmptyState(
@@ -285,10 +299,17 @@ class _IconBrowserState extends State<_IconBrowser> {
               itemCount: matches.length,
               itemBuilder: (context, i) {
                 final entry = matches[i];
+                final words = [...entry.aliases, ...entry.tags].take(6);
+                // An icon whose details merge when filled shows outlined,
+                // as its docs recommend.
+                final unfilled = _filled && !entry.fills;
                 return _IconTile(
                   name: entry.name,
                   icon: entry.icon,
-                  meaning: [...entry.aliases, ...entry.tags].take(6).join(', '),
+                  filled: _filled && entry.fills,
+                  meaning: unfilled
+                      ? 'Use outlined: its details merge when filled'
+                      : words.join(', '),
                   onPressed: () => _copy(entry.name),
                 );
               },
@@ -303,12 +324,14 @@ class _IconTile extends StatelessWidget {
   const _IconTile({
     required this.name,
     required this.icon,
+    required this.filled,
     required this.meaning,
     required this.onPressed,
   });
 
   final String name;
   final DsIconData icon;
+  final bool filled;
   final String meaning;
   final VoidCallback onPressed;
 
@@ -339,7 +362,7 @@ class _IconTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 10,
             children: [
-              DsIcon(icon, size: 20, color: k.text),
+              DsIcon(icon, size: 20, color: k.text, fill: filled),
               // Long names shrink a little rather than lose letters.
               FittedBox(
                 fit: BoxFit.scaleDown,

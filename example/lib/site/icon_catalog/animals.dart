@@ -395,6 +395,7 @@ const _animals = <IconEntry>[
       'hoot',
       '🦉',
     ],
+    fills: false,
   ),
   IconEntry(
     'panda',
@@ -421,6 +422,7 @@ const _animals = <IconEntry>[
     DsIcons.penguin,
     category: 'animals',
     tags: ['pingu', 'bird', 'arctic', 'aquatic', 'flightless', 'linux'],
+    fills: false,
   ),
   IconEntry(
     'pigHead',
@@ -665,6 +667,7 @@ const _animals = <IconEntry>[
     DsIcons.turtle,
     category: 'animals',
     tags: ['animal', 'pet', 'tortoise', 'slow', 'speed'],
+    fills: false,
   ),
   IconEntry(
     'unicornHead',
