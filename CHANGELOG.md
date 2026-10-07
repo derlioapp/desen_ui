@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Fixed: a `DsParagraph` threw when a link's `semanticLabel` (or a span's
+  `semanticsLabel`) was shorter than its text, and drew the underline in
+  the wrong place when it was longer.
 - Fixed: dates followed the language but not the region of the app's
   locale when an app listed language-only `supportedLocales` (as
   `DsLocalizations.supportedLocales`): a British device resolved to `en`

@@ -761,7 +761,10 @@ class _RenderLinkParagraph extends RenderBox
   /// is left out, so neither the underline nor the ring runs past the
   /// last word, as in browsers.
   List<Rect> _measure(_LinkPaint link) {
-    final label = _text.text.toPlainText().substring(link.start, link.end);
+    // Offsets count the drawn text, not the screen reader's labels.
+    final label = _text.text
+        .toPlainText(includeSemanticsLabels: false)
+        .substring(link.start, link.end);
     final tokens = _tokens.allMatches(label).toList();
     List<Rect> boxes(Match m) => [
       for (final box in _text.getBoxesForSelection(

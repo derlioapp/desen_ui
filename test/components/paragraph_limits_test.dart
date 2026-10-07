@@ -191,4 +191,32 @@ void main() {
       expect(taps, 1);
     });
   });
+
+  group('semantic labels', () {
+    testWidgets('a link or a span read differently from its text lays out '
+        'and is read by its label', (tester) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(
+          DsParagraph(
+            children: [
+              const TextSpan(
+                text: 'Total: 1.250,00 TL ',
+                semanticsLabel: '1250 lira',
+              ),
+              DsLinkSpan(
+                label: 'privacy policy',
+                semanticLabel: 'Privacy',
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      );
+      expect(tester.takeException(), isNull);
+      expect(find.semantics.byLabel('Privacy'), findsOne);
+      expect(find.semantics.byLabel('1250 lira'), findsOne);
+      handle.dispose();
+    });
+  });
 }
