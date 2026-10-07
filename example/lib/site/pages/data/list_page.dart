@@ -66,7 +66,8 @@ class ListPage extends StatelessWidget {
         children: [
           const DocText(
             'A `DsListRow` has a `title` and, optionally, a `leading` icon, '
-            'a muted `detail` and a `trailing` widget. `showChevron` says the '
+            'a `description` under the title, a muted `detail` and a '
+            '`trailing` widget. `showChevron` says the '
             'row opens another page. With `onPressed` the row is a button '
             'with a hover fill; without it, the row only shows information.',
           ),
@@ -282,6 +283,11 @@ class ListPage extends StatelessWidget {
             ('title', 'Widget', 'The row\'s name.'),
             ('leading', 'Widget?', 'An icon before the title.'),
             (
+              'description',
+              'Widget?',
+              'A muted line under the title, read after it.',
+            ),
+            (
               'detail',
               'Widget?',
               'A detail such as the current setting, muted, on the end side.',
@@ -332,6 +338,7 @@ class _SwitchDemoState extends State<_SwitchDemo> {
         DsListRow(
           leading: const DsIcon(DsIcons.inbox),
           title: const Text('Email digest'),
+          description: const Text('Every Monday morning'),
           trailing: DsSwitch(
             value: _digest,
             onChanged: (v) => setState(() => _digest = v),
