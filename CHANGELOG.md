@@ -16,6 +16,8 @@
   filled shape (the "!" in an alert, an envelope's flap) is cut out so it
   stays visible; open strokes (arrows, a chart's axes) stay strokes. A play
   button, pause bars or a selected tab's icon can be drawn solid.
+- A `DsAlert`'s icon stays centered on the title's first line with large
+  text; before, it kept to the top and sat up to 7px above the line.
 - `DsParagraph` takes `maxLines` and `overflow` (a link cut off entirely
   leaves the Tab order and the semantics) and `WidgetSpan`s, which screen
   readers read in their place in the text. `DsLinkSpan.external` ends a
