@@ -323,6 +323,11 @@ class _MultiSelectPageState extends State<MultiSelectPage> {
               'DsOptionsBuilder<T>?',
               'Looks options up for the typed text.',
             ),
+            (
+              'labelOf',
+              'String Function(T)?',
+              'Labels the tag of a value no option names.',
+            ),
             ('filter', 'DsOptionFilter<T>?', 'Replaces the default matching.'),
             (
               'onCreate',

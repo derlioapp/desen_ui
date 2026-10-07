@@ -327,12 +327,13 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(find.text('2,4 / 3,1 MB · %78'), findsOneWidget);
-      final bar = tester
-          .getSemantics(find.byType(DsProgressBar))
+      // One node says it all: the bar's progress is the item's value.
+      final item = tester
+          .getSemantics(find.text('sunum-v3.pdf'))
           .getSemanticsData();
-      expect(bar.role, SemanticsRole.progressBar);
-      expect(bar.value, '78%');
-      expect(bar.label, 'sunum-v3.pdf');
+      expect(item.role, SemanticsRole.progressBar);
+      expect(item.label, 'sunum-v3.pdf\nYükleniyor\n2,4 / 3,1\u00a0MB');
+      expect(item.value, '78%');
       await tester.tap(
         find.bySemanticsLabel('sunum-v3.pdf yüklemesini iptal et'),
       );
@@ -507,6 +508,31 @@ void main() {
             .isLiveRegion,
         isTrue,
       );
+      handle.dispose();
+    });
+
+    testWidgets('uploading is read once, with its progress', (tester) async {
+      final handle = tester.ensureSemantics();
+      for (final progress in [.4, null]) {
+        await tester.pumpWidget(
+          app(
+            DsFileItem(
+              name: 'a.pdf',
+              status: DsFileStatus.uploading,
+              progress: progress,
+            ),
+          ),
+        );
+        // The indeterminate bar keeps moving: no settling.
+        await tester.pump(const Duration(milliseconds: 300));
+        final nodes = find.semantics.byPredicate(
+          (n) => n.getSemanticsData().label.contains('a.pdf'),
+        );
+        expect(nodes, findsOne, reason: 'no second node for the bar');
+        final data = tester.getSemantics(find.text('a.pdf')).getSemanticsData();
+        expect(data.label, 'a.pdf\nYükleniyor', reason: 'said once');
+        expect(data.value, progress == null ? '' : '40%');
+      }
       handle.dispose();
     });
 

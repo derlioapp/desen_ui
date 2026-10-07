@@ -448,4 +448,10 @@ class DsLocalizationsPt extends DsLocalizationsEn {
 
   @override
   String get moreActions => 'Mais ações';
+
+  @override
+  String get showMenu => 'Mostrar menu';
+
+  @override
+  String get opensExternally => 'Abre fora do app';
 }

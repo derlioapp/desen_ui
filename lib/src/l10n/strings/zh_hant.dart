@@ -290,4 +290,10 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
 
   @override
   String get noSpellingSuggestions => '找不到替代字詞';
+
+  @override
+  String get showMenu => '顯示選單';
+
+  @override
+  String get opensExternally => '在 App 外開啟';
 }

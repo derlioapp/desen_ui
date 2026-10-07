@@ -1,6 +1,7 @@
 import 'dart:ui' show SemanticsRole, SemanticsValidationResult;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/semantics.dart' show CustomSemanticsAction;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
@@ -10,6 +11,7 @@ import '../theme/theme.dart';
 import 'focus_visibility.dart';
 import 'focus_visibility_state.dart' show notePressed;
 import 'haptic_feedback.dart';
+import 'menu_action.dart';
 import 'min_tap_target.dart';
 
 /// Builds a pressable's visuals from its current interaction states.
@@ -41,6 +43,10 @@ typedef DsStatesWidgetBuilder = Widget Function(
 /// enabled for assistive technology, announces the localized "loading" as
 /// its value, and ignores presses: the `aria-disabled` + `aria-busy`
 /// pattern, so keyboard focus is not lost mid-task.
+///
+/// Inside a `DsContextMenuRegion`, the outermost pressable's node opens
+/// the region's menu for screen readers: with a long press (unless
+/// [onLongPress] takes it) and with a localized "Show menu" action.
 ///
 /// Keyboard activation follows native and web buttons, even without an app
 /// root that installs default shortcuts:
@@ -377,6 +383,13 @@ class _DsPressableState extends State<DsPressable> {
       widget.mouseCursor ?? DsPressable.defaultCursor,
       states,
     );
+    // A context menu around it (DsContextMenuRegion) opens from this node:
+    // with a long press, unless the pressable has its own, and by name.
+    final showMenu = DsMenuActionScope.of(context);
+    Widget content = widget.builder(context, states, widget.child);
+    if (showMenu != null) {
+      content = DsMenuActionScope(onShowMenu: null, child: content);
+    }
     return Semantics(
       container: true,
       button: widget.isButton,
@@ -393,7 +406,16 @@ class _DsPressableState extends State<DsPressable> {
       role: widget.role,
       label: widget.semanticLabel,
       onTap: _active && widget.onPressed != null ? _activate : null,
-      onLongPress: _active && widget.onLongPress != null ? _longPress : null,
+      onLongPress: _active && widget.onLongPress != null
+          ? _longPress
+          : showMenu,
+      customSemanticsActions: showMenu == null
+          ? null
+          : {
+              CustomSemanticsAction(
+                label: DsLocalizations.of(context).showMenu,
+              ): showMenu,
+            },
       child: DsMinTapTarget(
         size: widget.minTapTarget ?? DsTheme.sizesOf(context).minTapTarget,
         child: Focus(
@@ -431,7 +453,7 @@ class _DsPressableState extends State<DsPressable> {
               // to it, so nothing is read twice.
               child: ExcludeSemantics(
                 excluding: widget.semanticLabel != null,
-                child: widget.builder(context, states, widget.child),
+                child: content,
               ),
             ),
           ),

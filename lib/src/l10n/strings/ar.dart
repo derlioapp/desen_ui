@@ -453,4 +453,10 @@ class DsLocalizationsAr extends DsLocalizationsEn {
 
   @override
   String get moreActions => 'مزيد من الإجراءات';
+
+  @override
+  String get showMenu => 'عرض القائمة';
+
+  @override
+  String get opensExternally => 'يُفتح خارج التطبيق';
 }

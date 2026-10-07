@@ -519,6 +519,28 @@ void main() {
       semantics.dispose();
     });
 
+    testWidgets('without announcements (Android) the active option is a '
+        'polite live region', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(single(initial: 'ank'), supportsAnnounce: false),
+      );
+      await tester.tap(editable());
+      await tester.pumpAndSettle();
+      await key(tester, LogicalKeyboardKey.escape);
+      Iterable<String> live() => find.semantics
+          .byPredicate((n) => n.getSemanticsData().flagsCollection.isLiveRegion)
+          .evaluate()
+          .map((n) => n.label)
+          .where((label) => label.isNotEmpty);
+      await key(tester, LogicalKeyboardKey.arrowDown);
+      expect(live(), ['Ankara, Seçili'], reason: 'opens on the chosen option');
+      await key(tester, LogicalKeyboardKey.arrowDown);
+      expect(live(), ['Şırnak']);
+      expect(tester.takeAnnouncements(), isEmpty);
+      semantics.dispose();
+    });
+
     testWidgets('semantics: expanded text field, menu of radio items', (
       tester,
     ) async {
@@ -1488,6 +1510,117 @@ void main() {
     });
   });
 
+  group('values outside the options', () {
+    const ada = _Customer(7, 'Ada Lovelace');
+
+    testWidgets('show as empty text, never as toString()', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(
+          DsAutocomplete<_Customer>(
+            value: ada,
+            onChanged: (_) {},
+            options: const [],
+            semanticLabel: 'Müşteri',
+            placeholder: 'Müşteri ara',
+          ),
+        ),
+      );
+      expect(text(tester), isEmpty);
+      expect(find.textContaining('Instance of'), findsNothing);
+      expect(fieldData(tester).value, isNot(contains('Instance of')));
+      await tester.pumpWidget(
+        app(
+          DsMultiSelect<_Customer>(
+            value: const [ada],
+            onChanged: (_) {},
+            options: const [],
+            semanticLabel: 'Müşteriler',
+          ),
+        ),
+      );
+      expect(find.textContaining('Instance of'), findsNothing);
+      semantics.dispose();
+    });
+
+    testWidgets('labelOf names them', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(
+          DsAutocomplete<_Customer>(
+            value: ada,
+            onChanged: (_) {},
+            options: const [],
+            labelOf: (c) => c.name,
+            semanticLabel: 'Müşteri',
+          ),
+        ),
+      );
+      expect(text(tester), 'Ada Lovelace');
+      expect(fieldData(tester).value, 'Ada Lovelace');
+      await tester.pumpWidget(
+        app(
+          DsMultiSelect<_Customer>(
+            value: const [ada],
+            onChanged: (_) {},
+            options: const [],
+            labelOf: (c) => c.name,
+            semanticLabel: 'Müşteriler',
+          ),
+        ),
+      );
+      expect(find.text('Ada Lovelace'), findsOneWidget);
+      semantics.dispose();
+    });
+
+    testWidgets('only the chosen value of a search keeps its label', (
+      tester,
+    ) async {
+      String? value;
+      late StateSetter setValue;
+      await tester.pumpWidget(
+        app(
+          StatefulBuilder(
+            builder: (context, setState) {
+              setValue = setState;
+              return DsAutocomplete<String>(
+                value: value,
+                onChanged: (v) => setState(() => value = v),
+                options: const [],
+                optionsBuilder: (q) async => [
+                  for (final o in cities)
+                    if (dsFoldCase(o.label).startsWith(dsFoldCase(q))) o,
+                ],
+                labelOf: (v) => 'id:$v',
+                semanticLabel: 'Şehir',
+              );
+            },
+          ),
+        ),
+      );
+      await tester.tap(editable());
+      await tester.enterText(editable(), 'iz');
+      await tester.pumpAndSettle();
+      await tester.enterText(editable(), 'an');
+      await tester.pumpAndSettle();
+      await key(tester, LogicalKeyboardKey.enter);
+      expect(value, 'ank');
+      expect(text(tester), 'Ankara');
+      // Other searches pass; the chosen label stays.
+      await tester.enterText(editable(), 'es');
+      await tester.pumpAndSettle();
+      await tester.enterText(editable(), 'şı');
+      await tester.pumpAndSettle();
+      await key(tester, LogicalKeyboardKey.escape);
+      await key(tester, LogicalKeyboardKey.escape);
+      expect(text(tester), 'Ankara');
+      // İzmir was listed once but never chosen: it is not remembered.
+      setValue(() => value = 'izm');
+      await tester.pumpAndSettle();
+      expect(text(tester), 'id:izm');
+    });
+  });
+
   group('contrast', () {
     const seeds = [
       DsSeed.blue,
@@ -1528,4 +1661,18 @@ void main() {
       expect(failures, isEmpty, reason: failures.join('\n'));
     });
   });
+}
+
+/// A record whose value class does not override toString().
+class _Customer {
+  const _Customer(this.id, this.name);
+
+  final int id;
+  final String name;
+
+  @override
+  bool operator ==(Object other) => other is _Customer && other.id == id;
+
+  @override
+  int get hashCode => id.hashCode;
 }

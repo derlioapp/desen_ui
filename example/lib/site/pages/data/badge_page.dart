@@ -140,7 +140,10 @@ class BadgePage extends StatelessWidget {
             '`DsAnchoredBadge` places the badge on the top-end corner of its '
             'child, mirrored in right-to-left text. `offset` moves it out '
             'past the edge; wider counts need a larger x. The count draws a '
-            '2px ring in the surface color to stand off what it covers.',
+            '2px ring in the surface color to stand off what it covers. '
+            'Screen readers hear the badge with its anchor, as one node '
+            '("Messages, 2 new messages"), so name the count with its '
+            '`semanticLabel`.',
           ),
           Example(
             snippet: 'badge-anchored',

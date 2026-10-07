@@ -442,4 +442,10 @@ class DsLocalizationsJa extends DsLocalizationsEn {
 
   @override
   String get moreActions => 'その他の操作';
+
+  @override
+  String get showMenu => 'メニューを表示';
+
+  @override
+  String get opensExternally => 'アプリの外で開きます';
 }

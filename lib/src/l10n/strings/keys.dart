@@ -414,4 +414,10 @@ mixin _DsStrings {
 
   /// Names the button that opens a menu of the actions that do not fit, e.g. at the end of a toolbar.
   String get moreActions;
+
+  /// Screen reader action: opens a row's or a card's context menu.
+  String get showMenu;
+
+  /// Screen reader hint of an external link: it leaves the app.
+  String get opensExternally;
 }

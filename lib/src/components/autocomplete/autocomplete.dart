@@ -111,10 +111,11 @@ const _announceDelay = Duration(milliseconds: 600);
 /// **Screen readers.** The field is a text field marked expanded or
 /// collapsed (Flutter 3.47 does not support its combobox role yet); its value is the
 /// text. The popup is a menu of radio items (Flutter 3.47 has no listbox
-/// role either); the chosen one is checked. Where the platform supports
-/// announcements, the active option is announced as it moves, and the
-/// number of results ("5 results") politely once typing pauses; "No results"
-/// is also a live region.
+/// role either); the chosen one is checked. The active option is
+/// announced as it moves (where the platform has no announcements, from a
+/// polite live region), and, where it supports them, the number of
+/// results ("5 results") politely once typing pauses; "No results" is also
+/// a live region.
 ///
 /// Anatomy: well (fill + inner edge), text, clear button, error icon,
 /// chevron; popup panel with option rows (leading, label with the match in
@@ -133,6 +134,7 @@ class DsAutocomplete<T> extends StatelessWidget {
     required this.onChanged,
     required this.options,
     this.optionsBuilder,
+    this.labelOf,
     this.filter,
     this.onCreate,
     this.placeholder,
@@ -163,6 +165,12 @@ class DsAutocomplete<T> extends StatelessWidget {
 
   /// Looks options up for the typed text instead of filtering [options].
   final DsOptionsBuilder<T>? optionsBuilder;
+
+  /// Labels a [value] that is not among [options] or the options
+  /// [optionsBuilder] returned, e.g. a saved record's customer before the
+  /// user searches. Without it such a value shows as empty text (and the
+  /// [placeholder]), never as its `toString()`.
+  final String Function(T value)? labelOf;
 
   /// Replaces the default matching (the label contains the text,
   /// case-folded).
@@ -309,6 +317,7 @@ class DsAutocomplete<T> extends StatelessWidget {
     onChangedMany: null,
     options: options,
     optionsBuilder: optionsBuilder,
+    labelOf: labelOf,
     filter: filter,
     onCreate: onCreate,
     placeholder: placeholder,
@@ -387,6 +396,7 @@ class DsMultiSelect<T> extends StatelessWidget {
     required this.onChanged,
     required this.options,
     this.optionsBuilder,
+    this.labelOf,
     this.filter,
     this.onCreate,
     this.placeholder,
@@ -417,6 +427,10 @@ class DsMultiSelect<T> extends StatelessWidget {
 
   /// See [DsAutocomplete.optionsBuilder].
   final DsOptionsBuilder<T>? optionsBuilder;
+
+  /// Labels the tag of a value that is not among [options] or the loaded
+  /// ones; see [DsAutocomplete.labelOf]. Without it the tag has no text.
+  final String Function(T value)? labelOf;
 
   /// See [DsAutocomplete.filter].
   final DsOptionFilter<T>? filter;
@@ -474,6 +488,7 @@ class DsMultiSelect<T> extends StatelessWidget {
     onChangedMany: onChanged,
     options: options,
     optionsBuilder: optionsBuilder,
+    labelOf: labelOf,
     filter: filter,
     onCreate: onCreate,
     placeholder: placeholder,
@@ -500,6 +515,7 @@ class _Combobox<T> extends StatefulWidget {
     required this.onChangedMany,
     required this.options,
     required this.optionsBuilder,
+    required this.labelOf,
     required this.filter,
     required this.onCreate,
     required this.placeholder,
@@ -523,6 +539,7 @@ class _Combobox<T> extends StatefulWidget {
   final ValueChanged<List<T>>? onChangedMany;
   final List<DsSelectOption<T>> options;
   final DsOptionsBuilder<T>? optionsBuilder;
+  final String Function(T value)? labelOf;
   final DsOptionFilter<T>? filter;
   final ValueChanged<String>? onCreate;
   final String? placeholder;
@@ -556,8 +573,14 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   /// The options the popup lists now.
   List<DsSelectOption<T>> _results = const [];
 
-  /// Every option seen, for the labels of chosen values.
-  final _known = <T, DsSelectOption<T>>{};
+  /// Options of the chosen values that are not in [_Combobox.options]
+  /// (found by [_Combobox.optionsBuilder]), for their labels. Only the
+  /// chosen ones are kept.
+  final _chosen = <T, DsSelectOption<T>>{};
+
+  /// [_Combobox.options] by value, and the list it was built from.
+  var _byValue = <T, DsSelectOption<T>>{};
+  List<DsSelectOption<T>>? _indexed;
 
   /// The active option's index in [_results], or -1.
   int _active = -1;
@@ -582,6 +605,10 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
 
   Timer? _announceTimer;
 
+  /// The active option in words, for the popup's live region where the
+  /// platform cannot announce (Android).
+  String _liveActive = '';
+
   /// Rows of the popup that are built now, by index (to scroll them in).
   final _rows = <int, BuildContext>{};
 
@@ -599,7 +626,6 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   @override
   void initState() {
     super.initState();
-    _remember(widget.options);
     _focus.addListener(_onFocus);
     _popup.addListener(_onPopup);
     _label = _labelOf(widget.value) ?? '';
@@ -618,7 +644,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       }
       _focus.addListener(_onFocus);
     }
-    _remember(widget.options);
+    _chosen.removeWhere((value, _) => !_isChosen(value));
     if (!listEquals(widget.options, oldWidget.options) &&
         widget.optionsBuilder == null) {
       _results = _filtered(_query);
@@ -655,14 +681,28 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     super.dispose();
   }
 
+  /// Keeps those of [options] whose value is chosen, for their labels.
   void _remember(Iterable<DsSelectOption<T>> options) {
     for (final o in options) {
-      _known[o.value] = o;
+      if (_isChosen(o.value)) _chosen[o.value] = o;
     }
   }
 
-  String? _labelOf(T? value) =>
-      value == null ? null : (_known[value]?.label ?? value.toString());
+  /// The label of [value]: its option's (among the options, those listed
+  /// now or those chosen), else [_Combobox.labelOf]'s; null when none
+  /// names it.
+  String? _labelOf(T? value) {
+    if (value == null) return null;
+    if (!identical(_indexed, widget.options)) {
+      _indexed = widget.options;
+      _byValue = {for (final o in widget.options) o.value: o};
+    }
+    final option =
+        _byValue[value] ??
+        _chosen[value] ??
+        _results.where((o) => o.value == value).firstOrNull;
+    return option?.label ?? widget.labelOf?.call(value);
+  }
 
   /// The text a single field shows when nobody is typing.
   String get _committedText => widget.multiple ? '' : _label;
@@ -716,6 +756,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     if (!_popup.isOpen) {
       _announceTimer?.cancel();
       _keyboardActive = false;
+      _liveActive = '';
     }
     setState(() {});
   }
@@ -850,14 +891,26 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   }
 
   /// Says which option is active, for screen readers that cannot follow
-  /// it (focus stays in the text).
+  /// it (focus stays in the text). Where the platform cannot announce,
+  /// the popup's polite live region says it instead.
   void _announceActive() {
     if (_active < 0 || _active >= _results.length) return;
     final o = _results[_active];
     final l10n = DsLocalizations.of(context);
-    _announce(
-      [o.label, ?o.detail, if (_isChosen(o.value)) l10n.selected].join(', '),
-    );
+    final message = [
+      o.label,
+      ?o.detail,
+      if (_isChosen(o.value)) l10n.selected,
+    ].join(', ');
+    if (MediaQuery.supportsAnnounceOf(context)) {
+      _announce(message);
+      return;
+    }
+    // A frame later: a live region speaks when its text changes, so the
+    // region of a popup that opens now must exist before it.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && _popup.isOpen) setState(() => _liveActive = message);
+    });
   }
 
   // ---------------------------------------------------------------------
@@ -933,6 +986,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   void _choose(DsSelectOption<T> option, {bool touch = false}) {
     if (!option.enabled || !_canEdit) return;
     if (touch) DsHapticFeedback.play(context, DsHapticEvent.selection);
+    _chosen[option.value] = option;
     if (widget.multiple) {
       final chosen = widget.values.contains(option.value);
       final next = chosen
@@ -1631,6 +1685,23 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
           ),
         ),
       );
+      if (!MediaQuery.supportsAnnounceOf(context)) {
+        // Where the platform cannot announce, the active option is said
+        // from a polite live region behind the rows, as "No results" is.
+        body = Stack(
+          children: [
+            Positioned.fill(
+              child: Semantics(
+                container: true,
+                liveRegion: true,
+                label: _liveActive,
+                child: const SizedBox.expand(),
+              ),
+            ),
+            body,
+          ],
+        );
+      }
     }
     return TextFieldTapRegion(
       // What the field's `controls` relation points at, in every state.

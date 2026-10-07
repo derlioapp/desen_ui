@@ -442,4 +442,10 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String get moreActions => '更多操作';
+
+  @override
+  String get showMenu => '显示菜单';
+
+  @override
+  String get opensExternally => '在应用外打开';
 }

@@ -1660,6 +1660,60 @@ for _lang, _value in MORE_ACTIONS.items():
 VARIANTS['zh_Hant']['values'].update(moreActions='更多操作')
 VARIANTS['pt_PT']['values'].update(moreActions='Mais ações')
 
+# The screen reader action that opens a row's or a card's context menu,
+# worded as each platform's own "show menu".
+KEYS.update({
+    'showMenu': (
+        "Screen reader action: opens a row's or a card's context menu.",
+        'Show menu',
+    ),
+})
+SHOW_MENU = {
+    'ar': 'عرض القائمة',
+    'de': 'Menü anzeigen',
+    'es': 'Mostrar menú',
+    'fr': 'Afficher le menu',
+    'hi': 'मेन्यू दिखाएं',
+    'it': 'Mostra menu',
+    'ja': 'メニューを表示',
+    'ko': '메뉴 표시',
+    'pt': 'Mostrar menu',
+    'ru': 'Показать меню',
+    'tr': 'Menüyü göster',
+    'zh': '显示菜单',
+}
+for _lang, _value in SHOW_MENU.items():
+    LANGS[_lang].update(showMenu=_value)
+VARIANTS['zh_Hant']['values'].update(showMenu='顯示選單')
+VARIANTS['pt_PT']['values'].update(showMenu='Mostrar menu')
+
+# What screen readers add to an external link, which the up-right arrow
+# shows to the eye.
+KEYS.update({
+    'opensExternally': (
+        'Screen reader hint of an external link: it leaves the app.',
+        'Opens outside the app',
+    ),
+})
+OPENS_EXTERNALLY = {
+    'ar': 'يُفتح خارج التطبيق',
+    'de': 'Wird außerhalb der App geöffnet',
+    'es': 'Se abre fuera de la aplicación',
+    'fr': 'S’ouvre en dehors de l’application',
+    'hi': 'ऐप के बाहर खुलता है',
+    'it': 'Si apre fuori dall’app',
+    'ja': 'アプリの外で開きます',
+    'ko': '앱 외부에서 열림',
+    'pt': 'Abre fora do app',
+    'ru': 'Открывается вне приложения',
+    'tr': 'Uygulamanın dışında açılır',
+    'zh': '在应用外打开',
+}
+for _lang, _value in OPENS_EXTERNALLY.items():
+    LANGS[_lang].update(opensExternally=_value)
+VARIANTS['zh_Hant']['values'].update(opensExternally='在 App 外開啟')
+VARIANTS['pt_PT']['values'].update(opensExternally='Abre fora da aplicação')
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

@@ -117,7 +117,9 @@ class _AutocompletePageState extends State<AutocompletePage> {
             'slow reply never replaces a newer one. `options` are still '
             'what shows before anything is typed, such as recent picks. An '
             '`optionsBuilder` does its own matching, so it cannot be '
-            'combined with `filter`.',
+            'combined with `filter`. A value no option names, such as a '
+            'saved record\'s customer before any search, shows no text '
+            'until `labelOf` names it.',
           ),
           Example(
             snippet: 'autocomplete-async',
@@ -385,6 +387,12 @@ class _AutocompletePageState extends State<AutocompletePage> {
               'optionsBuilder',
               'DsOptionsBuilder<T>?',
               'Looks options up for the typed text, e.g. on a server.',
+            ),
+            (
+              'labelOf',
+              'String Function(T)?',
+              'Labels a value no option names, e.g. a saved record\'s. '
+                  'Without it the field shows no text for it.',
             ),
             (
               'filter',

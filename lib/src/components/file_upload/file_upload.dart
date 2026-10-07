@@ -428,6 +428,11 @@ class _DsFileUploadState extends State<DsFileUpload> {
 /// The most of a row's name line the size and progress text may take.
 const _metaShare = 2 / 3;
 
+/// [progress] (0–1) as a progress bar's semantic value, "78%", as
+/// `DsProgressBar` reports it: the form Flutter's progress bar role
+/// expects, read by the platform in its own language.
+String _progressValue(double progress) => '${(progress * 100).round()}%';
+
 /// Where a file's upload stands.
 enum DsFileStatus {
   /// Being uploaded: a progress bar and a cancel button.
@@ -453,7 +458,8 @@ enum DsFileStatus {
 ///
 /// Sizes are formatted the local way ([dsFormatFileSize]: "2,4 MB" in
 /// Turkish). Screen readers hear the file name with its state ("cover.png
-/// uploaded, 840 KB"), the progress bar's value and the buttons, each
+/// uploaded, 840 KB") in one node, which while uploading is the progress
+/// bar too, with the percentage as its value; then the buttons, each
 /// named with the file. When the state changes to done or failed it is
 /// announced politely (a polite live region where the platform has no
 /// announcements's rule).
@@ -625,20 +631,21 @@ class _DsFileItemState extends State<DsFileItem> {
     final percent = progress == null
         ? null
         : l10n.percent((progress * 100).round());
+    final uploading = status == DsFileStatus.uploading;
+    // What has arrived, "2,4 / 3,1 MB", when the size and progress are
+    // known.
+    final arrived = switch ((widget.size, progress)) {
+      (final total?, final progress?) when uploading => dsFormatFileProgress(
+        (total * progress).round(),
+        total,
+        locale: locale,
+        strings: l10n,
+      ),
+      _ => null,
+    };
     final meta = switch (status) {
-      DsFileStatus.uploading => switch ((widget.size, percent)) {
-        (final total?, final percent?) => [
-          dsFormatFileProgress(
-            (total * progress!).round(),
-            total,
-            locale: locale,
-            strings: l10n,
-          ),
-          percent,
-        ].join(' · '),
-        (_, final percent?) => percent,
-        _ => l10n.uploading,
-      },
+      DsFileStatus.uploading =>
+        percent == null ? l10n.uploading : [?arrived, percent].join(' · '),
       DsFileStatus.done => widget.size == null ? null : size(widget.size!),
       DsFileStatus.error => null,
     };
@@ -654,11 +661,21 @@ class _DsFileItemState extends State<DsFileItem> {
     };
 
     // What the row says, as one node: the name with its state, the size
-    // or progress, the message.
-    final description = [_statusText(l10n), ?meta].join('\n');
+    // or what has arrived, the message. While uploading it is the
+    // progress bar too, the percentage its value (the bar below adds no
+    // node), and "Uploading" is said once.
+    final description = [
+      _statusText(l10n),
+      ?(uploading ? arrived : meta),
+    ].join('\n');
+    final determinate = uploading && progress != null;
     final text = Semantics(
       container: true,
       label: description,
+      role: determinate ? SemanticsRole.progressBar : null,
+      value: determinate ? _progressValue(progress) : null,
+      minValue: determinate ? '0' : null,
+      maxValue: determinate ? '100' : null,
       // Without announcements (Android), state changes are read from a
       // polite live region instead (never both).
       liveRegion: !MediaQuery.supportsAnnounceOf(context),
@@ -750,11 +767,14 @@ class _DsFileItemState extends State<DsFileItem> {
                 spacing: s.textGap ?? 0,
                 children: [
                   text,
-                  if (status == DsFileStatus.uploading)
-                    DsProgressBar(
-                      value: progress,
-                      style: DsProgressBarStyle(height: s.progressHeight ?? 0),
-                      semanticLabel: widget.name,
+                  if (uploading)
+                    ExcludeSemantics(
+                      child: DsProgressBar(
+                        value: progress,
+                        style: DsProgressBarStyle(
+                          height: s.progressHeight ?? 0,
+                        ),
+                      ),
                     ),
                 ],
               ),

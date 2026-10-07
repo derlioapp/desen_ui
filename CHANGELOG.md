@@ -111,6 +111,33 @@
   switches between side panel and bottom sheet, keeping the panel's state
   and focus.
 
+- An external `DsLink` or `DsLinkSpan` tells screen readers it leaves the
+  app, as its arrow shows: a localized "Opens outside the app" hint.
+- Fixed: a `DsAnchoredBadge` was a node of its own, so an icon button
+  with a count read "Notifications, button" and then a bare "5". The
+  badge is now read with its anchor, in one node ("Notifications, 5");
+  a `DsCount.semanticLabel` still names the count.
+- `DsAutocomplete` and `DsMultiSelect` take `labelOf`, which labels a
+  value that is not among the options, e.g. a saved record's customer
+  when the options come from a server. Fixed: such a value showed (and
+  screen readers read) its `toString()`, "Instance of 'Customer'"; without
+  `labelOf` it now shows no text. The labels of options a search returned
+  are no longer all kept: only the chosen ones.
+- Fixed: where the platform has no announcements (Android), screen
+  readers did not hear which `DsAutocomplete` or `DsMultiSelect` option
+  the arrow keys made active. The popup now says it from a polite live
+  region.
+- Fixed: progress was read twice. A `DsProgressRing` with a value no
+  longer reads its child ("50") before its value ("50%"); name it with
+  `semanticLabel`. An uploading `DsFileItem` is one node, the progress bar
+  with the percentage as its value, instead of the row and then a
+  separate bar; with unknown progress it says "Uploading" once.
+- Fixed: in right-to-left text the edit toolbar's page chevrons pointed
+  against the reading direction; "next" now points left.
+- Fixed: a `DsContextMenuRegion` added a nameless node around its row or
+  card whose tap did nothing, and screen reader users could not find the
+  menu. The row's or card's own node now opens it, with a long press and
+  with a localized "Show menu" action.
 - **Breaking:** `DsIcons` is now the full Lucide set, 2225 icons (Lucide
   1.52.0 and Lucide Lab), in place of the 56 picked before. Names follow
   Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and

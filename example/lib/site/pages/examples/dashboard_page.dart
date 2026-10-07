@@ -1135,12 +1135,15 @@ class _FilterButton extends StatelessWidget {
     builder: (context, controller, _) {
       final n = filter.count;
       if (compact) {
+        // The badge is read with the button: "Filter, 2 active".
         return DsAnchoredBadge(
-          badge: n == 0 ? const SizedBox.shrink() : DsCount(n),
+          badge: n == 0
+              ? const SizedBox.shrink()
+              : DsCount(n, semanticLabel: '$n active'),
           child: DsButton.icon(
             variant: .secondary,
             size: .sm,
-            semanticLabel: n == 0 ? 'Filter' : 'Filter, $n active',
+            semanticLabel: 'Filter',
             icon: const DsIcon(DsIcons.slidersHorizontal),
             onPressed: controller.toggle,
           ),

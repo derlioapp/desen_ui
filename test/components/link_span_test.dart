@@ -454,6 +454,30 @@ void main() {
       handle.dispose();
     });
 
+    testWidgets('an external link says it opens outside the app', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(
+          DsParagraph(
+            children: [
+              const TextSpan(text: before),
+              DsLinkSpan(label: label, external: true, onPressed: () {}),
+              const TextSpan(text: after),
+              DsLinkSpan(label: 'notes', onPressed: () {}),
+            ],
+          ),
+        ),
+      );
+      SemanticsData data(String text) =>
+          find.semantics.byLabel(text).evaluate().single.getSemanticsData();
+      expect(data(label).hint, 'Opens outside the app');
+      expect(data('notes').hint, isEmpty);
+      expect(data(before).hint, isEmpty);
+      handle.dispose();
+    });
+
     testWidgets('disabled, a semantic label, right to left', (tester) async {
       final handle = tester.ensureSemantics();
       await tester.pumpWidget(

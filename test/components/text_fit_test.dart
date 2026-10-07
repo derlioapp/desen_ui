@@ -717,7 +717,11 @@ void main() {
   group('text selection toolbar', () {
     const labels = ['Cut', 'Copy', 'Paste', 'Select all', 'Look up', 'Share'];
 
-    Future<void> pumpToolbar(WidgetTester tester, double width) async {
+    Future<void> pumpToolbar(
+      WidgetTester tester,
+      double width, {
+      TextDirection direction = TextDirection.ltr,
+    }) async {
       tester.view
         ..physicalSize = Size(width, 600)
         ..devicePixelRatio = 1;
@@ -725,36 +729,39 @@ void main() {
       await tester.pumpWidget(
         DsApp(
           locale: const Locale('en', 'US'),
-          home: DsTextSelectionToolbar(
-            anchors: TextSelectionToolbarAnchors(
-              primaryAnchor: Offset(width / 2, 300),
+          home: Directionality(
+            textDirection: direction,
+            child: DsTextSelectionToolbar(
+              anchors: TextSelectionToolbarAnchors(
+                primaryAnchor: Offset(width / 2, 300),
+              ),
+              buttonItems: [
+                ContextMenuButtonItem(
+                  type: ContextMenuButtonType.cut,
+                  onPressed: () {},
+                ),
+                ContextMenuButtonItem(
+                  type: ContextMenuButtonType.copy,
+                  onPressed: () {},
+                ),
+                ContextMenuButtonItem(
+                  type: ContextMenuButtonType.paste,
+                  onPressed: () {},
+                ),
+                ContextMenuButtonItem(
+                  type: ContextMenuButtonType.selectAll,
+                  onPressed: () {},
+                ),
+                ContextMenuButtonItem(
+                  type: ContextMenuButtonType.lookUp,
+                  onPressed: () {},
+                ),
+                ContextMenuButtonItem(
+                  type: ContextMenuButtonType.share,
+                  onPressed: () {},
+                ),
+              ],
             ),
-            buttonItems: [
-              ContextMenuButtonItem(
-                type: ContextMenuButtonType.cut,
-                onPressed: () {},
-              ),
-              ContextMenuButtonItem(
-                type: ContextMenuButtonType.copy,
-                onPressed: () {},
-              ),
-              ContextMenuButtonItem(
-                type: ContextMenuButtonType.paste,
-                onPressed: () {},
-              ),
-              ContextMenuButtonItem(
-                type: ContextMenuButtonType.selectAll,
-                onPressed: () {},
-              ),
-              ContextMenuButtonItem(
-                type: ContextMenuButtonType.lookUp,
-                onPressed: () {},
-              ),
-              ContextMenuButtonItem(
-                type: ContextMenuButtonType.share,
-                onPressed: () {},
-              ),
-            ],
           ),
         ),
       );
@@ -813,6 +820,33 @@ void main() {
       await tester.tap(find.bySemanticsLabel('Previous page'));
       await tester.pumpAndSettle();
       expect(shown(tester).first, 'Cut');
+      handle.dispose();
+    });
+
+    testWidgets('right to left: the chevrons point along the reading '
+        'direction', (tester) async {
+      final handle = tester.ensureSemantics();
+      await pumpToolbar(tester, 320, direction: TextDirection.rtl);
+      Finder chevron(String label) => find.descendant(
+        of: find.bySemanticsLabel(label),
+        matching: find.byType(DsIcon),
+      );
+      // The forward chevron mirrors in right-to-left text, so the next
+      // page's points left, at the end (left) of the toolbar.
+      expect(
+        tester.widget<DsIcon>(chevron('Next page')).icon,
+        DsIcons.chevronRight,
+      );
+      expect(
+        tester.getCenter(chevron('Next page')).dx,
+        lessThan(tester.getCenter(find.text('Cut')).dx),
+      );
+      await tester.tap(find.bySemanticsLabel('Next page'));
+      await tester.pumpAndSettle();
+      expect(
+        tester.widget<DsIcon>(chevron('Previous page')).icon,
+        DsIcons.chevronLeft,
+      );
       handle.dispose();
     });
   });

@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import '../../behavior/pressable.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
+import '../../l10n/localizations.dart';
 import '../../painting/decoration.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
@@ -56,7 +57,8 @@ class DsLink extends StatelessWidget {
   /// The address, for link semantics.
   final Uri? url;
 
-  /// Leaves the app: adds an up-right arrow.
+  /// Leaves the app: adds an up-right arrow, and screen readers hear a
+  /// localized "Opens outside the app" after the label.
   final bool external;
 
   /// Focus node; one is created when null.
@@ -118,7 +120,6 @@ class DsLink extends StatelessWidget {
       linkUrl: url,
       focusNode: focusNode,
       autofocus: autofocus,
-      semanticLabel: semanticLabel,
       mouseCursor: WidgetStateMouseCursor.resolveWith(
         (states) =>
             DsLinkStyle.resolveLayers(layers, states).cursor ??
@@ -130,37 +131,44 @@ class DsLink extends StatelessWidget {
         final textStyle = DefaultTextStyle.of(context).style
             .merge(s.textStyle)
             .copyWith(color: color);
-        return DecoratedBox(
-          decoration: DsBoxDecoration(
-            borderRadius: s.borderRadius ?? BorderRadius.zero,
-            shadows: [
-              if (states.contains(WidgetState.focused)) ...?s.focusShadows,
-            ],
-          ),
-          child: _Underline(
-            color: color,
-            width: s.underlineWidth!,
-            length: label.length,
-            child: Text.rich(
-              TextSpan(
-                text: label,
-                style: textStyle,
-                children: [
-                  if (external)
-                    WidgetSpan(
-                      alignment: PlaceholderAlignment.middle,
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.only(
-                          start: s.iconGap ?? 0,
-                        ),
-                        child: DsIcon(
-                          DsIcons.arrowUpRight,
-                          size: s.iconSize,
-                          color: color,
+        // Merged into the link's node: a semantic label replaces the text,
+        // and an external link says where it goes, as the arrow shows.
+        return Semantics(
+          label: semanticLabel,
+          hint: external ? DsLocalizations.of(context).opensExternally : null,
+          excludeSemantics: semanticLabel != null,
+          child: DecoratedBox(
+            decoration: DsBoxDecoration(
+              borderRadius: s.borderRadius ?? BorderRadius.zero,
+              shadows: [
+                if (states.contains(WidgetState.focused)) ...?s.focusShadows,
+              ],
+            ),
+            child: _Underline(
+              color: color,
+              width: s.underlineWidth!,
+              length: label.length,
+              child: Text.rich(
+                TextSpan(
+                  text: label,
+                  style: textStyle,
+                  children: [
+                    if (external)
+                      WidgetSpan(
+                        alignment: PlaceholderAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.only(
+                            start: s.iconGap ?? 0,
+                          ),
+                          child: DsIcon(
+                            DsIcons.arrowUpRight,
+                            size: s.iconSize,
+                            color: color,
+                          ),
                         ),
                       ),
-                    ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

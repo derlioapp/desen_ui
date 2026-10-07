@@ -442,4 +442,10 @@ class DsLocalizationsKo extends DsLocalizationsEn {
 
   @override
   String get moreActions => '추가 작업';
+
+  @override
+  String get showMenu => '메뉴 표시';
+
+  @override
+  String get opensExternally => '앱 외부에서 열림';
 }
