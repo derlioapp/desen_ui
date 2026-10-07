@@ -18,6 +18,7 @@ import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
 import '../button/button.dart';
 import '../button/button_theme.dart';
+import '../../foundation/component_theme.dart';
 import 'pagination_slots.dart';
 import 'pagination_style.dart';
 
@@ -151,21 +152,23 @@ class DsPagination extends StatefulWidget {
       }).textStyle,
     );
 
-    Widget arrow(bool next) => DsButton.icon(
-      focusNode: next ? nodes.next : nodes.previous,
-      variant: DsButtonVariant.ghost,
-      size: DsSize.sm,
-      icon: DsIcon(next ? DsIcons.chevronRight : DsIcons.chevronLeft),
-      semanticLabel: next
-          ? nextLabel ?? l10n.nextPage
-          : previousLabel ?? l10n.previousPage,
-      onPressed: !enabled
-          ? null
-          : next && page < count
-          ? () => onChanged!(page + 1)
-          : !next && page > 1
-          ? () => onChanged!(page - 1)
-          : null,
+    Widget arrow(bool next) => DsComponentThemeReset<DsButtonThemeData>(
+      child: DsButton.icon(
+        focusNode: next ? nodes.next : nodes.previous,
+        variant: DsButtonVariant.ghost,
+        size: DsSize.sm,
+        icon: DsIcon(next ? DsIcons.chevronRight : DsIcons.chevronLeft),
+        semanticLabel: next
+            ? nextLabel ?? l10n.nextPage
+            : previousLabel ?? l10n.previousPage,
+        onPressed: !enabled
+            ? null
+            : next && page < count
+            ? () => onChanged!(page + 1)
+            : !next && page > 1
+            ? () => onChanged!(page - 1)
+            : null,
+      ),
     );
 
     // The full row's width: every slot at least the tap target, numbers

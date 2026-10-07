@@ -140,3 +140,25 @@ class _ComponentThemeScope extends InheritedModel<Type>
     Set<Type> dependencies,
   ) => dependencies.any((type) => themes[type] != oldWidget.themes[type]);
 }
+
+/// Internal: hides the component defaults of type [T] from [child], so a
+/// part of a component (a text field's clear button, a calendar's month
+/// arrows) keeps the look its component gives it whatever an app sets for
+/// that type. Not exported from the package.
+class DsComponentThemeReset<T extends DsComponentThemeData<T>>
+    extends StatelessWidget {
+  /// Hides the defaults of type [T] from [child].
+  const DsComponentThemeReset({super.key, required this.child});
+
+  /// The part.
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final outer = context
+        .dependOnInheritedWidgetOfExactType<_ComponentThemeScope>()
+        ?.themes;
+    if (outer == null || !outer.containsKey(T)) return child;
+    return _ComponentThemeScope(themes: {...outer}..remove(T), child: child);
+  }
+}

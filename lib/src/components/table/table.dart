@@ -33,6 +33,7 @@ import '../button/button.dart';
 import '../button/button_theme.dart';
 import '../../theme/status.dart';
 import '../skeleton/skeleton.dart';
+import '../../foundation/component_theme.dart';
 import 'table_column.dart';
 import 'table_style.dart';
 
@@ -518,19 +519,21 @@ class _DsTableState<T> extends State<DsTable<T>> {
 
   /// The "⋯" button that opens the row menu of [key].
   Widget _rowMenuButton(Object key, T item, DsLocalizations l10n) => Builder(
-    builder: (context) => DsButton.icon(
-      variant: DsButtonVariant.ghost,
-      size: DsSize.xs,
-      semanticExpanded: _rows[key]?._menu?.isOpen ?? false,
-      semanticLabel: switch (_rowText(item)) {
-        final name? => l10n.rowActionsFor(name),
-        null => l10n.rowActions,
-      },
-      onPressed: () {
-        _setActive(key);
-        _rows[key]?.openMenuBelow(context);
-      },
-      icon: const DsIcon(DsIcons.ellipsis),
+    builder: (context) => DsComponentThemeReset<DsButtonThemeData>(
+      child: DsButton.icon(
+        variant: DsButtonVariant.ghost,
+        size: DsSize.xs,
+        semanticExpanded: _rows[key]?._menu?.isOpen ?? false,
+        semanticLabel: switch (_rowText(item)) {
+          final name? => l10n.rowActionsFor(name),
+          null => l10n.rowActions,
+        },
+        onPressed: () {
+          _setActive(key);
+          _rows[key]?.openMenuBelow(context);
+        },
+        icon: const DsIcon(DsIcons.ellipsis),
+      ),
     ),
   );
 
@@ -1762,14 +1765,20 @@ class _DsTableState<T> extends State<DsTable<T>> {
           Flexible(
             child: ListenableBuilder(
               listenable: controller,
-              builder: (context, _) => DsButton(
-                variant: DsButtonVariant.ghost,
-                size: DsSize.sm,
-                semanticExpanded: controller.isOpen,
-                semanticLabel: [l10n.sortBy, ?sorted?.label, ?said].join(', '),
-                trailing: DsIcon(arrow(direction) ?? DsIcons.chevronDown),
-                onPressed: controller.toggle,
-                child: Text(sorted?.label ?? l10n.sortBy),
+              builder: (context, _) => DsComponentThemeReset<DsButtonThemeData>(
+                child: DsButton(
+                  variant: DsButtonVariant.ghost,
+                  size: DsSize.sm,
+                  semanticExpanded: controller.isOpen,
+                  semanticLabel: [
+                    l10n.sortBy,
+                    ?sorted?.label,
+                    ?said,
+                  ].join(', '),
+                  trailing: DsIcon(arrow(direction) ?? DsIcons.chevronDown),
+                  onPressed: controller.toggle,
+                  child: Text(sorted?.label ?? l10n.sortBy),
+                ),
               ),
             ),
           ),

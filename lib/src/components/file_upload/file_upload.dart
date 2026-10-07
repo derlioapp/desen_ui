@@ -21,6 +21,7 @@ import '../field/field.dart';
 import '../progress/progress.dart';
 import '../progress/progress_bar_style.dart';
 import '../selection/error_edge.dart';
+import '../../foundation/component_theme.dart';
 import 'dashed_border.dart';
 import 'file_item_style.dart';
 import 'file_size.dart';
@@ -721,27 +722,31 @@ class _DsFileItemState extends State<DsFileItem> {
     );
 
     Widget iconButton(DsIconData data, String label, VoidCallback onPressed) =>
-        DsButton.icon(
-          variant: DsButtonVariant.ghost,
-          size: DsSize.xs,
-          style: s.iconButtonStyle,
-          semanticLabel: label,
-          onPressed: onPressed,
-          icon: DsIcon(data),
+        DsComponentThemeReset<DsButtonThemeData>(
+          child: DsButton.icon(
+            variant: DsButtonVariant.ghost,
+            size: DsSize.xs,
+            style: s.iconButtonStyle,
+            semanticLabel: label,
+            onPressed: onPressed,
+            icon: DsIcon(data),
+          ),
         );
     final actions = <Widget>[
       if (status == DsFileStatus.uploading && widget.onCancel != null)
         iconButton(DsIcons.x, l10n.cancelUpload(widget.name), widget.onCancel!),
       if (status == DsFileStatus.error && widget.onRetry != null)
-        DsButton(
-          variant: DsButtonVariant.ghost,
-          size: DsSize.xs,
-          style: s.textButtonStyle,
-          // Named with the file, so a list of failed files does not read
-          // "Retry, Retry"; the visible word stays in the name.
-          semanticLabel: l10n.retryUpload(widget.name),
-          onPressed: widget.onRetry,
-          child: Text(l10n.retry),
+        DsComponentThemeReset<DsButtonThemeData>(
+          child: DsButton(
+            variant: DsButtonVariant.ghost,
+            size: DsSize.xs,
+            style: s.textButtonStyle,
+            // Named with the file, so a list of failed files does not read
+            // "Retry, Retry"; the visible word stays in the name.
+            semanticLabel: l10n.retryUpload(widget.name),
+            onPressed: widget.onRetry,
+            child: Text(l10n.retry),
+          ),
         ),
       if (status != DsFileStatus.uploading && widget.onRemove != null)
         iconButton(DsIcons.trash, l10n.remove(widget.name), widget.onRemove!),
