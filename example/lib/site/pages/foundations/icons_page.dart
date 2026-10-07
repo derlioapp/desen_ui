@@ -80,12 +80,15 @@ class IconsPage extends StatelessWidget {
         title: 'Filled icons',
         children: [
           DocText(
-            '`fill` fills each path as well as stroking it, for solid shapes '
-            'such as a play button or a selected tab. The stroke still runs '
-            'around the fill, so corners stay round and the solid icon is '
-            'the same size as the outlined one. Open lines look the same '
-            'either way. Set it on `DsIconData` for a shape that is always '
-            'solid, or on `DsIcon` to switch the same icon.',
+            '`fill` fills each closed shape of an icon, for solid states such '
+            'as a play button or a selected tab. The stroke still runs '
+            'around the fill, so the solid icon is the same size as the '
+            'outlined one. A mark inside a filled shape (the "!" in an '
+            'alert) is cut out so it stays visible. Open strokes stay '
+            'strokes: icons drawn from them come out partly filled or '
+            'unchanged, so look at the filled form of the icon you pick. '
+            'Set it on `DsIconData` for a shape that is always solid, or on '
+            '`DsIcon` to switch the same icon.',
           ),
           Example(
             snippet: 'icons-fill',

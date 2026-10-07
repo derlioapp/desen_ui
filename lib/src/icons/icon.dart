@@ -3,14 +3,18 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 import '../foundation/svg_path.dart';
+import 'fill_details.dart';
 
 /// A stroke icon described by SVG path data on a square canvas.
 ///
-/// With [fill], each path is also filled: a play triangle or pause bars
-/// become solid, the way `fill="currentColor"` fills a Lucide icon on the
-/// web. The stroke still runs around the fill, so corners stay round and
-/// the solid icon matches the outlined one in size. Open lines have no
-/// area and look the same either way.
+/// With [fill], each path that encloses an area is also filled: a play
+/// triangle or pause bars become solid, like SF Symbols' filled icons. The
+/// stroke still runs around the fill, so corners stay round and the solid
+/// icon matches the outlined one in size. A path that lies wholly inside a
+/// filled one (the mark in an alert circle, an envelope's flap) is cut out
+/// of the fill, so it stays visible. Open strokes (an arrow, a chart's
+/// axes) stay strokes, so an icon built from them looks partly filled or
+/// the same as its outline, never broken.
 @immutable
 class DsIconData {
   /// Creates icon data from SVG path strings.
@@ -39,6 +43,8 @@ class DsIconData {
 
   static final Expando<Path> _cache = Expando('DsIconData.path');
   static final Expando<List<Path>> _shapes = Expando('DsIconData.shapes');
+  static final Expando<List<bool>> _details = Expando('DsIconData.details');
+  static final Expando<List<bool>> _fillable = Expando('DsIconData.fillable');
 
   /// The combined path, parsed once per icon.
   Path get path => _cache[this] ??= () {
@@ -54,6 +60,14 @@ class DsIconData {
   /// winds the other way would cut a hole.
   static List<Path> _shapesOf(DsIconData icon) =>
       _shapes[icon] ??= [for (final d in icon.paths) dsParseSvgPath(d)];
+
+  /// For each path, whether a filled icon cuts it out of the fill.
+  static List<bool> _detailsOf(DsIconData icon) =>
+      _details[icon] ??= dsFillDetails(_shapesOf(icon));
+
+  /// For each path, whether a filled icon fills it (it encloses an area).
+  static List<bool> _fillableOf(DsIconData icon) =>
+      _fillable[icon] ??= dsFillable(_shapesOf(icon));
 
   @override
   bool operator ==(Object other) =>
@@ -274,26 +288,53 @@ class RenderDsIcon extends RenderBox {
       ..save()
       ..translate(dx + (mirror ? _size : 0), dy)
       ..scale(mirror ? -scale : scale, scale);
-    if (_fill) {
-      final fill = Paint()
-        ..color = _color
-        ..isAntiAlias = true;
-      for (final shape in DsIconData._shapesOf(_icon)) {
-        canvas.drawPath(shape, fill);
-      }
+    final stroke = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = _strokeWidth
+      ..strokeCap = StrokeCap.round
+      ..strokeJoin = StrokeJoin.round
+      ..color = _color
+      ..isAntiAlias = true;
+    if (!_fill) {
+      canvas
+        ..drawPath(_icon.path, stroke)
+        ..restore();
+      return;
     }
-    canvas
-      ..drawPath(
-        _icon.path,
-        Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = _strokeWidth
-          ..strokeCap = StrokeCap.round
-          ..strokeJoin = StrokeJoin.round
-          ..color = _color
-          ..isAntiAlias = true,
-      )
-      ..restore();
+    final shapes = DsIconData._shapesOf(_icon);
+    final details = DsIconData._detailsOf(_icon);
+    final fillable = DsIconData._fillableOf(_icon);
+    final cuts = details.contains(true);
+    // Cutting needs a layer of its own, so the cut shows what is behind
+    // the icon rather than clearing it.
+    if (cuts) {
+      final reach = _strokeWidth;
+      canvas.saveLayer(
+        Rect.fromLTWH(
+          -reach,
+          -reach,
+          _icon.viewBox + reach * 2,
+          _icon.viewBox + reach * 2,
+        ),
+        Paint(),
+      );
+    }
+    final fill = Paint()
+      ..color = _color
+      ..isAntiAlias = true;
+    for (final (i, shape) in shapes.indexed) {
+      if (details[i]) continue;
+      if (fillable[i]) canvas.drawPath(shape, fill);
+      canvas.drawPath(shape, stroke);
+    }
+    if (cuts) {
+      stroke.blendMode = BlendMode.dstOut;
+      for (final (i, shape) in shapes.indexed) {
+        if (details[i]) canvas.drawPath(shape, stroke);
+      }
+      canvas.restore();
+    }
+    canvas.restore();
   }
 
   @override
