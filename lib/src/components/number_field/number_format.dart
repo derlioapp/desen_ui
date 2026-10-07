@@ -22,7 +22,11 @@ class DsNumberFormat {
     this.grouping = false,
     this.decimalSeparator,
     this.groupSeparator,
-  }) : assert(decimals >= 0 && decimals <= maxDecimals);
+  }) : assert(decimals >= 0 && decimals <= maxDecimals),
+       assert(
+         decimalSeparator == null || decimalSeparator != groupSeparator,
+         'The decimal and group separators must differ.',
+       );
 
   /// The most fraction digits a format shows: 20, the most a double's
   /// fixed notation writes. A format asking for more shows 20 (and fails an
@@ -38,25 +42,41 @@ class DsNumberFormat {
   /// or `,` is read).
   final bool grouping;
 
-  /// Separates the fraction; null takes the locale's.
+  /// Separates the fraction; null takes the locale's. Differs from
+  /// [groupSeparator].
   final String? decimalSeparator;
 
-  /// Separates thousands when [grouping]; null takes the locale's.
+  /// Separates thousands when [grouping]; null takes the locale's. Differs
+  /// from [decimalSeparator].
   final String? groupSeparator;
 
   /// This format with the separators [locale] uses wherever none is set.
+  /// Where the locale's would equal the one that is set (a `,` decimal
+  /// separator with English's `,` group), the locale's other separator is
+  /// taken instead (`.`), so a number reads back as it was shown.
   DsNumberFormat forLocale(Locale locale) {
-    final (decimal, group) = dsNumberSeparators(locale);
+    final (localeDecimal, localeGroup) = dsNumberSeparators(locale);
+    var decimal = decimalSeparator ?? localeDecimal;
+    var group = groupSeparator ?? localeGroup;
+    if (decimal == group) {
+      if (decimalSeparator == null) {
+        decimal = localeGroup;
+      } else {
+        group = localeDecimal;
+      }
+    }
     return DsNumberFormat(
       decimals: decimals,
       grouping: grouping,
-      decimalSeparator: decimalSeparator ?? decimal,
-      groupSeparator: groupSeparator ?? group,
+      decimalSeparator: decimal,
+      groupSeparator: group,
     );
   }
 
-  String get _decimal => decimalSeparator ?? '.';
-  String get _group => groupSeparator ?? ',';
+  // English's, unless the other separator is set to it.
+  String get _decimal =>
+      decimalSeparator ?? (groupSeparator == '.' ? ',' : '.');
+  String get _group => groupSeparator ?? (decimalSeparator == ',' ? '.' : ',');
 
   /// [decimals], held to 0–[maxDecimals].
   int get _digits => decimals.clamp(0, maxDecimals);

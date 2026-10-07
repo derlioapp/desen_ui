@@ -96,6 +96,35 @@ void main() {
       expect(() => make(21), throwsAssertionError);
       expect(make(20).format(1), '1.${'0' * 20}');
     });
+
+    test('a set separator never meets the same one from the locale', () {
+      final decimal = const DsNumberFormat(
+        decimals: 2,
+        grouping: true,
+        decimalSeparator: ',',
+      ).forLocale(en);
+      expect(decimal.format(1234.5), '1.234,50');
+      expect(decimal.tryParse(decimal.format(1234.5)), 1234.5);
+      final group = const DsNumberFormat(
+        decimals: 2,
+        grouping: true,
+        groupSeparator: '.',
+      ).forLocale(en);
+      expect(group.format(1234.5), '1.234,50');
+      expect(group.tryParse(group.format(1234.5)), 1234.5);
+      expect(
+        const DsNumberFormat(
+          decimals: 2,
+          grouping: true,
+          decimalSeparator: ',',
+        ).format(1234.5),
+        '1.234,50',
+        reason: 'without a locale',
+      );
+      DsNumberFormat same() =>
+          DsNumberFormat(decimalSeparator: ',', groupSeparator: ',');
+      expect(same, throwsAssertionError);
+    });
   });
 
   group('field', () {

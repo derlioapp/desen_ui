@@ -1,5 +1,10 @@
 ## Unreleased
 
+- Fixed: a `DsNumberFormat` with one separator set could take the same
+  character from the locale for the other: a `,` decimal separator with
+  grouping showed 1234.5 as "1,234,50" in English and could not read it
+  back. The locale's other separator is now taken in that case ("1.234,50"),
+  and setting both to the same character fails an assertion.
 - Fixed: `FormState.reset()` kept the edited text of a `DsTextFormField`
   with a `controller` when the parent rebuilt on each change. Reset now
   goes back to the controller's text when the field was created, as
