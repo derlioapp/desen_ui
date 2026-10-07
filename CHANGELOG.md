@@ -1,5 +1,10 @@
 ## Unreleased
 
+- Fixed: a `DsTable` focused while `loading` (with `autofocus` or its
+  `focusNode`) kept focus on itself once the rows arrived, so the arrow
+  keys did nothing. It now hands focus to the active row.
+- Fixed: `DsTableColumnWidth.flex(0)` laid the table out with NaN widths;
+  a flex column now asserts a flex above 0.
 - Fixed: a `DsCalendar` or `DsRangeCalendar` with `onChanged: null` kept
   its days a Tab stop, and Page Up or Page Down still turned the month
   and called `onMonthChanged`. Its days are now no Tab stop and its keys

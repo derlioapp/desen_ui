@@ -660,6 +660,48 @@ void main() {
       );
     });
 
+    testWidgets('a table focused while loading hands focus to a row once '
+        'the rows arrive', (tester) async {
+      final node = FocusNode();
+      addTearDown(node.dispose);
+      var loading = true;
+      var rows = const <Invoice>[];
+      late StateSetter set;
+      await tester.pumpWidget(
+        app(
+          StatefulBuilder(
+            builder: (context, setState) {
+              set = setState;
+              return SizedBox(
+                width: 400,
+                height: 300,
+                child: DsTable<Invoice>(
+                  focusNode: node,
+                  columns: columns(),
+                  rows: rows,
+                  rowKey: (i) => i.id,
+                  loading: loading,
+                  onSelectionChanged: (_) {},
+                ),
+              );
+            },
+          ),
+        ),
+      );
+      node.requestFocus();
+      await tester.pump(const Duration(milliseconds: 50));
+      expect(node.hasPrimaryFocus, isTrue);
+      set(() {
+        loading = false;
+        rows = invoices;
+      });
+      await tester.pump();
+      await tester.pump();
+      expect(hasFocus(tester, 'Kuzey Lojistik'), isTrue);
+      await key(tester, LogicalKeyboardKey.arrowDown);
+      expect(hasFocus(tester, 'Atlas Yazılım'), isTrue);
+    });
+
     testWidgets('no rows shows a compact "No results"', (tester) async {
       await tester.pumpWidget(host(const Harness(rows: [])));
       expect(find.text('No results'), findsOneWidget);
@@ -763,6 +805,12 @@ void main() {
   });
 
   group('layout', () {
+    test('a flex column needs a flex above 0', () {
+      // Not const: a const zero would not compile.
+      final zero = 0.0;
+      expect(() => DsTableColumnWidth.flex(zero), throwsAssertionError);
+    });
+
     testWidgets('numbers are tabular and end-aligned', (tester) async {
       final theme = DsThemeData(platform: TargetPlatform.macOS);
       await tester.pumpWidget(host(const Harness(), theme: theme));
