@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../foundation/text_room.dart';
 import '../../foundation/color_utils.dart';
 import '../../foundation/oklch.dart';
 import '../../foundation/spring.dart';
@@ -562,7 +563,9 @@ class _ButtonVisual extends StatelessWidget {
         minHeight: height,
         minWidth: iconOnly ? height : 0,
       ),
-      padding: s.padding,
+      padding: iconOnly
+          ? s.padding
+          : dsWithTextRoom(s.padding, height, s.textStyle),
       decoration: DsBoxDecoration(
         color: s.background,
         borderRadius: radius,

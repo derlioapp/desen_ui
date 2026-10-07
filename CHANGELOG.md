@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Buttons, chips and segmented controls grow with large text, as text
+  fields do, so their labels keep clear of their edges (at 200% a chip's
+  label touched its outline). At the regular text size their heights are
+  unchanged.
 - A `DsSwitch` label is set in the body weight, as a checkbox's and a
   radio's are (it was semibold), so the three read alike side by side.
 - A `DsStepper` button that cannot step (at its limit, or in a disabled
