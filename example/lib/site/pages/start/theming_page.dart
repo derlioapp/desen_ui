@@ -164,8 +164,11 @@ class ThemingPage extends StatelessWidget {
         children: [
           DocText(
             '`DsThemeData.raw` takes every token set by hand, for full '
-            'control. It cannot be regenerated without losing your tokens, '
-            'so it comes with three rules:',
+            'control. It is outside the compatibility promise: a minor '
+            'release may add color roles or tokens it requires, so prefer '
+            '`adjustColors` and the other adjust hooks, which keep working. '
+            'It cannot be regenerated without losing your tokens, so it '
+            'comes with three rules:',
           ),
           DocList([
             'Give `DsScope` (or `DsApp`) a `darkTheme` of its own. Without '

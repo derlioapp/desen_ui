@@ -39,4 +39,4 @@ test/golden/failures/
 docs
 docs/
 # Requests from apps that use Desen (handled locally, not published)
-feedback/
+/feedback/

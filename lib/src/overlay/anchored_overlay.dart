@@ -15,6 +15,9 @@ import 'placement.dart';
 /// `DsPopover` and `DsMenuAnchor` make their own when given none and hand
 /// it to their trigger builder ([DsOverlayTriggerBuilder]).
 class DsOverlayController extends ChangeNotifier {
+  /// Creates a controller for a closed layer.
+  DsOverlayController();
+
   bool _open = false;
   bool _disposed = false;
 

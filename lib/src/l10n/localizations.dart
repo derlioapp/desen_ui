@@ -19,11 +19,16 @@ part 'strings/keys.dart';
 /// class Greek extends DsLocalizationsEn {
 ///   const Greek();
 ///   @override
+///   String get localeName => 'el';
+///   @override
 ///   String get close => 'Κλείσιμο'; // the rest stays English
 /// }
 ///
 /// DsLocalizationScope(overrides: const {'el': Greek()}, child: app)
 /// ```
+///
+/// The app must resolve to that language too: `DsApp(locale:
+/// const Locale('el'))`, or the locale listed in `supportedLocales`.
 ///
 /// To customize strings, extend [DsLocalizationsEn] or another bundled
 /// language, as above. Implementing this interface directly may break when
