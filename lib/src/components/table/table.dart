@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/browser_menu.dart';
 import '../../behavior/focus_forward.dart';
 import '../../behavior/focus_visibility.dart';
 import '../../foundation/case.dart';
@@ -2239,6 +2240,9 @@ class _TableRowState extends State<_TableRow>
     node.removeListener(_onFocus);
     _menu?.dispose();
     node.dispose();
+    // A row removed under the pointer (deleted from its own menu) never
+    // sees the pointer leave.
+    _browserHold.release();
     super.dispose();
   }
 
@@ -2291,12 +2295,10 @@ class _TableRowState extends State<_TableRow>
       ..open();
   }
 
-  void _browserMenu({required bool enabled}) {
-    if (!kIsWeb) return;
-    enabled
-        ? BrowserContextMenu.enableContextMenu()
-        : BrowserContextMenu.disableContextMenu();
-  }
+  final _browserHold = DsBrowserMenuHold();
+
+  void _browserMenu({required bool enabled}) =>
+      enabled ? _browserHold.release() : _browserHold.hold();
 
   @override
   Widget build(BuildContext context) {
