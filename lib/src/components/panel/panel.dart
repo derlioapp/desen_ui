@@ -16,6 +16,7 @@ import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
 import '../button/button.dart';
 import '../button/button_theme.dart';
+import '../../foundation/component_theme.dart';
 import 'panel_style.dart';
 
 /// How [showDsPanel] presents a panel.
@@ -155,17 +156,19 @@ class DsPanel extends StatelessWidget {
                     ),
                   ),
                   if (showClose ?? kind?.dismissible ?? true)
-                    DsButton.icon(
-                      variant: DsButtonVariant.ghost,
-                      size: DsSize.sm,
-                      icon: const DsIcon(DsIcons.x),
-                      semanticLabel: l10n.close,
-                      // A close button shown on a panel that cannot be
-                      // dismissed (showClose: true) is the panel's own
-                      // action: it closes even though back does not.
-                      onPressed: () => kind?.dismissible == false
-                          ? Navigator.of(context).pop()
-                          : Navigator.of(context).maybePop(),
+                    DsComponentThemeReset<DsButtonThemeData>(
+                      child: DsButton.icon(
+                        variant: DsButtonVariant.ghost,
+                        size: DsSize.sm,
+                        icon: const DsIcon(DsIcons.x),
+                        semanticLabel: l10n.close,
+                        // A close button shown on a panel that cannot be
+                        // dismissed (showClose: true) is the panel's own
+                        // action: it closes even though back does not.
+                        onPressed: () => kind?.dismissible == false
+                            ? Navigator.of(context).pop()
+                            : Navigator.of(context).maybePop(),
+                      ),
                     ),
                 ],
               ),

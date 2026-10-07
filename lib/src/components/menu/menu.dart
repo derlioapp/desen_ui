@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/browser_menu.dart';
 import '../../behavior/focus_visibility.dart';
 import '../../behavior/menu_action.dart';
 import '../../behavior/pressable.dart';
@@ -1338,6 +1339,8 @@ class _DsContextMenuRegionState extends State<DsContextMenuRegion> {
   @override
   void dispose() {
     _controller.dispose();
+    // A region removed under the pointer never sees the pointer leave.
+    _browserHold.release();
     super.dispose();
   }
 
@@ -1381,12 +1384,10 @@ class _DsContextMenuRegionState extends State<DsContextMenuRegion> {
   /// open below the region.
   void _showMenu() => _openBelow(context.findRenderObject());
 
-  void _browserMenu({required bool enabled}) {
-    if (!kIsWeb) return;
-    enabled
-        ? BrowserContextMenu.enableContextMenu()
-        : BrowserContextMenu.disableContextMenu();
-  }
+  final _browserHold = DsBrowserMenuHold();
+
+  void _browserMenu({required bool enabled}) =>
+      enabled ? _browserHold.release() : _browserHold.hold();
 
   @override
   Widget build(BuildContext context) => DsAnchoredOverlay(

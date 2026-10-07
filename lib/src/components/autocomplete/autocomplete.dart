@@ -34,6 +34,8 @@ import '../spinner/spinner_style.dart';
 import '../text_field/text_field.dart';
 import '../text_field/text_field_style.dart';
 import '../text_field/text_field_variant.dart';
+import '../../foundation/component_theme.dart';
+import '../button/button_theme.dart';
 import 'autocomplete_style.dart';
 import 'layout.dart';
 import 'match.dart';
@@ -1503,13 +1505,15 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
             _button(
               ActionTapArea(
                 visual: f.clearStyle!.height!,
-                child: DsButton.icon(
-                  size: DsSize.xs,
-                  focusNode: _clearFocus,
-                  style: f.clearStyle,
-                  semanticLabel: l10n.clear,
-                  onPressed: _clearAll,
-                  icon: const DsIcon(DsIcons.x),
+                child: DsComponentThemeReset<DsButtonThemeData>(
+                  child: DsButton.icon(
+                    size: DsSize.xs,
+                    focusNode: _clearFocus,
+                    style: f.clearStyle,
+                    semanticLabel: l10n.clear,
+                    onPressed: _clearAll,
+                    icon: const DsIcon(DsIcons.x),
+                  ),
                 ),
               ),
             ),
@@ -1531,18 +1535,20 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
               ExcludeSemantics(
                 child: ActionTapArea(
                   visual: f.revealStyle!.height!,
-                  child: DsButton.icon(
-                    size: DsSize.xs,
-                    focusNode: _chevronFocus,
-                    style: f.revealStyle,
-                    semanticLabel: '',
-                    onPressed: _toggle,
-                    icon: DsSpringValue(
-                      value: _popup.isOpen ? 1 : 0,
-                      spring: t.motion.moveSpringOrNull,
-                      builder: (context, v, child) =>
-                          Transform.rotate(angle: v * math.pi, child: child),
-                      child: const DsIcon(DsIcons.chevronDown),
+                  child: DsComponentThemeReset<DsButtonThemeData>(
+                    child: DsButton.icon(
+                      size: DsSize.xs,
+                      focusNode: _chevronFocus,
+                      style: f.revealStyle,
+                      semanticLabel: '',
+                      onPressed: _toggle,
+                      icon: DsSpringValue(
+                        value: _popup.isOpen ? 1 : 0,
+                        spring: t.motion.moveSpringOrNull,
+                        builder: (context, v, child) =>
+                            Transform.rotate(angle: v * math.pi, child: child),
+                        child: const DsIcon(DsIcons.chevronDown),
+                      ),
                     ),
                   ),
                 ),
@@ -2089,13 +2095,15 @@ class _Tag extends StatelessWidget {
                 wrapButton(
                   ActionTapArea(
                     visual: remove.height!,
-                    child: DsButton.icon(
-                      size: DsSize.xs,
-                      focusNode: focusNode,
-                      style: remove,
-                      semanticLabel: removeLabel,
-                      onPressed: onRemove,
-                      icon: const DsIcon(DsIcons.x),
+                    child: DsComponentThemeReset<DsButtonThemeData>(
+                      child: DsButton.icon(
+                        size: DsSize.xs,
+                        focusNode: focusNode,
+                        style: remove,
+                        semanticLabel: removeLabel,
+                        onPressed: onRemove,
+                        icon: const DsIcon(DsIcons.x),
+                      ),
                     ),
                   ),
                 ),

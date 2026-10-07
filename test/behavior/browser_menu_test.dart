@@ -72,4 +72,30 @@ void main() {
     expect(calls, isEmpty);
     expect(enabled, isFalse);
   });
+
+  testWidgets('a context menu region removed under the pointer gives the '
+      'menu back', (tester) async {
+    Widget region({required bool shown}) => DsApp(
+      home: Center(
+        child: shown
+            ? DsContextMenuRegion(
+                items: [
+                  DsMenuItem(label: const Text('Rename'), onPressed: () {}),
+                ],
+                child: const SizedBox(width: 200, height: 100),
+              )
+            : const SizedBox(),
+      ),
+    );
+    await tester.pumpWidget(region(shown: true));
+    final mouse = await tester.createGesture(kind: PointerDeviceKind.mouse);
+    addTearDown(mouse.removePointer);
+    await mouse.addPointer(location: Offset.zero);
+    await mouse.moveTo(tester.getCenter(find.byType(DsContextMenuRegion)));
+    await tester.pump();
+    expect(calls, [false]);
+    await tester.pumpWidget(region(shown: false));
+    await tester.pump();
+    expect(calls, [false, true]);
+  });
 }

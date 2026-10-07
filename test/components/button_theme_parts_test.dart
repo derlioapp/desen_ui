@@ -36,6 +36,23 @@ void main() {
       DsTimePicker(value: const DsTime(9, 0), onChanged: (_) {}),
       find.byType(DsButton),
     ),
+    'select clear': (
+      DsSelect<int>(
+        value: 0,
+        clearable: true,
+        onChanged: (_) {},
+        options: const [DsSelectOption(value: 0, label: 'One')],
+      ),
+      find.byType(DsButton),
+    ),
+    'autocomplete buttons': (
+      DsAutocomplete<String>(
+        value: 'a',
+        onChanged: (_) {},
+        options: const [DsSelectOption(value: 'a', label: 'Apple')],
+      ),
+      find.byType(DsButton).first,
+    ),
     'file item cancel': (
       DsFileItem(
         name: 'a.pdf',
