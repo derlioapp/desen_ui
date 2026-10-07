@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../behavior/haptic_feedback.dart';
 import '../../foundation/color_utils.dart';
+import '../../foundation/text_room.dart';
 import '../../behavior/spring_value.dart';
 import '../../behavior/tap_band.dart';
 import '../../behavior/focus_visibility.dart';
@@ -319,7 +320,7 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
             // the label wraps between words.
             child: Container(
               constraints: BoxConstraints(minHeight: height),
-              padding: s.itemPadding,
+              padding: dsWithTextRoom(s.itemPadding, height, s.textStyle),
               alignment: Alignment.center,
               child: TweenAnimationBuilder<Color?>(
                 tween: DsColorTween(end: fg),

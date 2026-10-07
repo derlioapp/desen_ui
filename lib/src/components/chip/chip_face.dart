@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../foundation/text_room.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../painting/decoration.dart';
@@ -63,7 +64,7 @@ class _ChipFaceState extends State<ChipFace> {
       duration: duration,
       curve: t.motion.toneCurve,
       constraints: BoxConstraints(minHeight: s.height!),
-      padding: s.padding,
+      padding: dsWithTextRoom(s.padding, s.height!, s.textStyle, max: 6),
       decoration: DsBoxDecoration(
         color: s.background,
         borderRadius: corners,
