@@ -25,6 +25,8 @@ import '../menu/menu.dart';
 import '../menu/menu_item_style.dart';
 import '../selection/error_edge.dart';
 import '../text_field/text_field.dart';
+import '../../foundation/component_theme.dart';
+import '../button/button_theme.dart';
 import 'select_style.dart';
 
 /// One choice of a [DsSelect].
@@ -558,13 +560,15 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
                             visual: s.clearStyle!.height!,
                             child: selected == null
                                 ? null
-                                : DsButton.icon(
-                                    size: DsSize.xs,
-                                    focusNode: _clearFocus,
-                                    style: s.clearStyle,
-                                    semanticLabel: l10n.clear,
-                                    onPressed: _clear,
-                                    icon: const DsIcon(DsIcons.x),
+                                : DsComponentThemeReset<DsButtonThemeData>(
+                                    child: DsButton.icon(
+                                      size: DsSize.xs,
+                                      focusNode: _clearFocus,
+                                      style: s.clearStyle,
+                                      semanticLabel: l10n.clear,
+                                      onPressed: _clear,
+                                      icon: const DsIcon(DsIcons.x),
+                                    ),
                                   ),
                           ),
                         if (error)

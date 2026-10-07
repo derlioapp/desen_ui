@@ -2,8 +2,8 @@
 
 - Fixed (web): the browser's own context menu stayed off for the whole
   app after a `DsTable` row with a row menu was removed under the pointer
-  (deleted from its own menu), and moving between rows turned it on and
-  off again. It is off while the pointer is over such rows and back on
+  (deleted from its own menu), and so did a `DsContextMenuRegion`; moving
+  between rows turned it on and off again. It is off while the pointer is over such rows and back on
   after; an app that turned it off for good keeps it off.
 - `DsTextField.textDirection` sets the direction of the text itself (an
   IBAN or an email address in a right-to-left app) while the field's
@@ -17,7 +17,9 @@
   of other components: a wide padding made a text field's clear button
   62px wide, and a height or background changed the calendar's month
   arrows, the pagination arrows, the picker buttons, a file item's cancel
-  and retry, the table's row menu and sort buttons and the toast's buttons.
+  and retry, the table's row menu and sort buttons, the toast's buttons,
+  the select's and autocomplete's clear and toggle buttons and the panel's
+  close button.
   Those parts keep their component's look now; the app's own buttons
   (including dialog actions and toolbar items) still take the theme.
 - Fixed: a `DsAutocomplete` threw when focus left it with an option's
