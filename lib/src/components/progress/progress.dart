@@ -228,6 +228,10 @@ class DsProgressRing extends StatefulWidget {
   final bool animate;
 
   /// Centered content, e.g. a percentage in `DsTypography.numeric`.
+  ///
+  /// With a [value], screen readers do not read it: the ring reports the
+  /// percentage itself, so a "50" in the middle is not read before
+  /// "50%". Name what is progressing with [semanticLabel] instead.
   final Widget? child;
 
   /// What is progressing, for screen readers.
@@ -357,9 +361,13 @@ class _DsProgressRingState extends State<DsProgressRing>
           children: [
             painted,
             if (widget.child != null)
-              DefaultTextStyle.merge(
-                style: TextStyle(color: s.foreground),
-                child: widget.child!,
+              // The value says it; the child would say it twice.
+              ExcludeSemantics(
+                excluding: _value != null,
+                child: DefaultTextStyle.merge(
+                  style: TextStyle(color: s.foreground),
+                  child: widget.child!,
+                ),
               ),
           ],
         ),

@@ -1,5 +1,10 @@
 ## Unreleased
 
+- Fixed: progress was read twice. A `DsProgressRing` with a value no
+  longer reads its child ("50") before its value ("50%"); name it with
+  `semanticLabel`. An uploading `DsFileItem` is one node, the progress bar
+  with the percentage as its value, instead of the row and then a
+  separate bar; with unknown progress it says "Uploading" once.
 - Fixed: in right-to-left text the edit toolbar's page chevrons pointed
   against the reading direction; "next" now points left.
 - Fixed: a `DsContextMenuRegion` added a nameless node around its row or

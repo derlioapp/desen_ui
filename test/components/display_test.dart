@@ -405,6 +405,35 @@ void main() {
       semantics.dispose();
     });
 
+    testWidgets('a ring with a value does not read its child too', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await tester.pumpWidget(
+        host(const DsProgressRing(value: .5, child: Text('50'))),
+      );
+      await tester.pumpAndSettle();
+      final data = tester
+          .getSemantics(find.byType(DsProgressRing))
+          .getSemanticsData();
+      expect(data.label, isEmpty, reason: 'not "50" and "50%"');
+      expect(data.value, '50%');
+      await tester.pumpWidget(
+        host(
+          const DsProgressRing(
+            value: .5,
+            semanticLabel: 'Storage',
+            child: Text('50'),
+          ),
+        ),
+      );
+      expect(
+        tester.getSemantics(find.byType(DsProgressRing)),
+        isSemantics(label: 'Storage', value: '50%'),
+      );
+      semantics.dispose();
+    });
+
     testWidgets('indeterminate bar stops moving under reduced motion', (
       tester,
     ) async {
