@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Fixed: in right-to-left text, a `DsListSection` divider took its start
+  inset from the rows' end padding, so with uneven row padding it did not
+  line up with the row text.
 - Fixed: a `DsTable` focused while `loading` (with `autofocus` or its
   `focusNode`) kept focus on itself once the rows arrived, so the arrow
   keys did nothing. It now hands focus to the active row.

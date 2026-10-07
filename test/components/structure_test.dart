@@ -294,6 +294,40 @@ void main() {
       expect(left(dividers.at(1)), left(find.text('Sürüm')));
     });
 
+    for (final direction in TextDirection.values) {
+      testWidgets('a divider starts at the text with uneven row padding '
+          '(${direction.name})', (tester) async {
+        await tester.pumpWidget(
+          host(
+            direction: direction,
+            SizedBox(
+              width: 300,
+              child: DsListRowTheme(
+                data: const DsListRowThemeData(
+                  style: DsListRowStyle(
+                    padding: EdgeInsetsDirectional.only(start: 40, end: 8),
+                  ),
+                ),
+                child: DsListSection(
+                  children: [
+                    DsListRow(title: const Text('First'), onPressed: () {}),
+                    DsListRow(title: const Text('Second'), onPressed: () {}),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+        final line = tester.getRect(find.byType(DsLine));
+        final title = tester.getRect(find.text('Second'));
+        if (direction == TextDirection.ltr) {
+          expect(line.left, moreOrLessEquals(title.left, epsilon: 1));
+        } else {
+          expect(line.right, moreOrLessEquals(title.right, epsilon: 1));
+        }
+      });
+    }
+
     testWidgets('destructive rows use the danger text color', (tester) async {
       final theme = DsThemeData();
       await tester.pumpWidget(
