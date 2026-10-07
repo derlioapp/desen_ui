@@ -202,8 +202,9 @@ def generate(icons):
     lines += [f"part 'set/{file_name(c)}.dart';" for c in categories]
     lines += [
         '',
-        f'/// The built-in icons: {len(icons)} stroke icons on a 24-unit grid, from',
-        '/// Lucide (https://lucide.dev, ISC license).',
+        f'/// The built-in icons: {len(icons)} stroke icons on a 24-unit grid, a',
+        '/// fork of Lucide (https://lucide.dev, ISC license) that Desen keeps',
+        '/// and updates only after review.',
         '///',
         '/// Names follow Lucide\'s, in lowerCamelCase: `triangle-alert` on',
         '/// lucide.dev is `DsIcons.triangleAlert`. Some icons also have an',

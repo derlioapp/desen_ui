@@ -109,7 +109,7 @@ final t = DsTheme.of(context);            // everything
 
 ## Fonts and icons
 
-Desen bundles [Schibsted Grotesk](https://github.com/schibsted/schibsted-grotesk) for text and [Geist Mono](https://github.com/vercel/geist-font) for code, so they need no setup (SIL Open Font License 1.1, see [License](#license)). iOS and macOS apps set text in the system font (San Francisco) by default; pass a `family` to `DsTypography` to use another face there too. `DsIcons` holds the full [Lucide](https://lucide.dev) set, 2225 icons (ISC), drawn from SVG paths with no font asset; an icon an app does not use adds nothing to its size. Names follow Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and some icons have a more common alias as well (`DsIcons.volumeUp` is `volume2`). Components take icons as widgets, so any other icon set works too.
+Desen bundles [Schibsted Grotesk](https://github.com/schibsted/schibsted-grotesk) for text and [Geist Mono](https://github.com/vercel/geist-font) for code, so they need no setup (SIL Open Font License 1.1, see [License](#license)). iOS and macOS apps set text in the system font (San Francisco) by default; pass a `family` to `DsTypography` to use another face there too. `DsIcons` is a fork of [Lucide](https://lucide.dev): all 2225 icons of Lucide 1.52.0 and Lucide Lab (ISC), kept in this repository and updated only after review, drawn from SVG paths with no font asset; an icon an app does not use adds nothing to its size. Names follow Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and some icons have a more common alias as well (`DsIcons.volumeUp` is `volume2`). Components take icons as widgets, so any other icon set works too.
 
 ## Testing your app
 

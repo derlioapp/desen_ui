@@ -16,19 +16,26 @@ class IconsPage extends StatelessWidget {
     eyebrow: 'Foundations',
     title: 'Icons',
     lead:
-        '${iconCatalog.length} stroke icons from Lucide, drawn from SVG '
-        'paths. Icons an app does not use add nothing to its size. '
+        '${iconCatalog.length} stroke icons from Desen\'s fork of Lucide, '
+        'drawn from SVG paths. Icons an app does not use add nothing to its '
+        'size. '
         'Components take icons as widgets, so any other icon set works too.',
     sections: [
       const DocSection(
         title: 'All icons',
         children: [
           DocText(
+            'Desen\'s icons are a fork of [Lucide](https://lucide.dev): the '
+            'shapes come from Lucide 1.52.0 and Lucide Lab, under the ISC '
+            'license, and Desen keeps its own copy. Changes made upstream '
+            'after that are taken in only once they are reviewed, so an icon '
+            'never changes or disappears with a Lucide release.',
+          ),
+          DocText(
             'Search by name, alias or meaning, and click an icon to copy its '
-            'name. Names follow [Lucide](https://lucide.dev) in camel case '
-            '(`triangle-alert` is `DsIcons.triangleAlert`); some icons also '
-            'have a more common alias (`volume2` is also `volumeUp`). The '
-            'shapes are Lucide\'s, under the ISC license.',
+            'name. Names follow Lucide\'s in camel case (`triangle-alert` is '
+            '`DsIcons.triangleAlert`); some icons also have a more common '
+            'alias (`volume2` is also `volumeUp`).',
           ),
           Board(child: _IconBrowser()),
         ],

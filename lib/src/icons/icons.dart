@@ -39,8 +39,9 @@ part 'set/transportation.dart';
 part 'set/travel.dart';
 part 'set/weather.dart';
 
-/// The built-in icons: 2225 stroke icons on a 24-unit grid, from
-/// Lucide (https://lucide.dev, ISC license).
+/// The built-in icons: 2225 stroke icons on a 24-unit grid, a
+/// fork of Lucide (https://lucide.dev, ISC license) that Desen keeps
+/// and updates only after review.
 ///
 /// Names follow Lucide's, in lowerCamelCase: `triangle-alert` on
 /// lucide.dev is `DsIcons.triangleAlert`. Some icons also have an
