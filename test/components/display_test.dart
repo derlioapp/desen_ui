@@ -547,6 +547,34 @@ void main() {
       semantics.dispose();
     });
 
+    testWidgets('an external link says it opens outside the app', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      SemanticsData data() =>
+          tester.getSemantics(find.byType(DsLink)).getSemanticsData();
+      await tester.pumpWidget(
+        host(DsLink(label: 'destek', external: true, onPressed: () {})),
+      );
+      expect(data().label, 'destek');
+      expect(data().hint, 'Opens outside the app');
+      await tester.pumpWidget(
+        host(
+          DsLink(
+            label: 'destek',
+            semanticLabel: 'Destek merkezi',
+            external: true,
+            onPressed: () {},
+          ),
+        ),
+      );
+      expect(data().label, 'Destek merkezi');
+      expect(data().hint, 'Opens outside the app');
+      await tester.pumpWidget(host(DsLink(label: 'destek', onPressed: () {})));
+      expect(data().hint, isEmpty);
+      semantics.dispose();
+    });
+
     testWidgets('link activates with Enter', (tester) async {
       var taps = 0;
       await tester.pumpWidget(

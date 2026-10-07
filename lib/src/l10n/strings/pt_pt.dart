@@ -144,4 +144,7 @@ class DsLocalizationsPtPt extends DsLocalizationsPt {
 
   @override
   String get spellingSuggestions => 'Sugestões ortográficas';
+
+  @override
+  String get opensExternally => 'Abre fora da aplicação';
 }

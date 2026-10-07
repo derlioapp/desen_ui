@@ -417,4 +417,7 @@ mixin _DsStrings {
 
   /// Screen reader action: opens a row's or a card's context menu.
   String get showMenu;
+
+  /// Screen reader hint of an external link: it leaves the app.
+  String get opensExternally;
 }

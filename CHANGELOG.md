@@ -1,5 +1,7 @@
 ## Unreleased
 
+- An external `DsLink` or `DsLinkSpan` tells screen readers it leaves the
+  app, as its arrow shows: a localized "Opens outside the app" hint.
 - Fixed: a `DsAnchoredBadge` was a node of its own, so an icon button
   with a count read "Notifications, button" and then a bare "5". The
   badge is now read with its anchor, in one node ("Notifications, 5");

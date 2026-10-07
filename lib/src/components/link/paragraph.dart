@@ -14,6 +14,7 @@ import '../../behavior/haptic_feedback.dart';
 import '../../behavior/pressable.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
+import '../../l10n/localizations.dart';
 import '../../painting/decoration.dart';
 import '../../painting/shadow.dart';
 import '../../theme/haptics.dart';
@@ -50,8 +51,9 @@ import 'link_style.dart';
 /// the pointer, keyboard focus, painting and semantics. In a `Text.rich`
 /// or a `RichText` it would be plain text, so debug builds report it there.
 ///
-/// With [external], an up-right arrow follows the label, as on a
-/// [DsLink] with `external: true`.
+/// With [external], an up-right arrow follows the label, and screen
+/// readers hear a localized "Opens outside the app", as on a [DsLink]
+/// with `external: true`.
 class DsLinkSpan extends TextSpan {
   /// Creates a link span. [label] must not be empty.
   const DsLinkSpan({
@@ -78,7 +80,8 @@ class DsLinkSpan extends TextSpan {
   final Uri? url;
 
   /// Leaves the app: an up-right arrow follows the label, not underlined,
-  /// and activates the link as the label does.
+  /// and activates the link as the label does. Screen readers hear a
+  /// localized "Opens outside the app" after the label.
   final bool external;
 
   /// Overrides the label screen readers announce (default: [label]).
@@ -452,6 +455,9 @@ class _DsParagraphState extends State<DsParagraph> {
             enabled: link.enabled,
             focused: link.node.hasPrimaryFocus,
             url: span.url,
+            hint: span.external
+                ? DsLocalizations.of(context).opensExternally
+                : null,
           ),
         );
         final cursor = s.cursor ?? DsPressable.defaultCursor.resolve(states);
@@ -626,6 +632,7 @@ class _LinkPaint {
     required this.enabled,
     required this.focused,
     required this.url,
+    required this.hint,
   });
 
   final _Link link;
@@ -647,6 +654,10 @@ class _LinkPaint {
   final bool focused;
   final Uri? url;
 
+  /// What screen readers add after the label: "Opens outside the app" for
+  /// an external link.
+  final String? hint;
+
   @override
   bool operator ==(Object other) =>
       other is _LinkPaint &&
@@ -660,7 +671,8 @@ class _LinkPaint {
       listEquals(other.focusShadows, focusShadows) &&
       other.enabled == enabled &&
       other.focused == focused &&
-      other.url == url;
+      other.url == url &&
+      other.hint == hint;
 
   @override
   int get hashCode => Object.hash(
@@ -675,6 +687,7 @@ class _LinkPaint {
     enabled,
     focused,
     url,
+    hint,
   );
 }
 
@@ -1026,6 +1039,7 @@ class _RenderLinkParagraph extends RenderBox
           ..linkUrl = link.url
           ..isEnabled = link.enabled
           ..isFocused = link.enabled ? link.focused : null;
+        if (link.hint case final hint?) c.hint = hint;
         if (link.enabled) {
           c.onTap = link.link.onSemanticTap;
           // As the Focus widget does: iOS does not send the focus action.

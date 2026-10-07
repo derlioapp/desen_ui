@@ -293,4 +293,7 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
 
   @override
   String get showMenu => '顯示選單';
+
+  @override
+  String get opensExternally => '在 App 外開啟';
 }

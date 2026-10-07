@@ -457,4 +457,7 @@ class DsLocalizationsTr extends DsLocalizationsEn {
 
   @override
   String get showMenu => 'Menüyü göster';
+
+  @override
+  String get opensExternally => 'Uygulamanın dışında açılır';
 }

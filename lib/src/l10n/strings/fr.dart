@@ -462,4 +462,7 @@ class DsLocalizationsFr extends DsLocalizationsEn {
 
   @override
   String get showMenu => 'Afficher le menu';
+
+  @override
+  String get opensExternally => 'S’ouvre en dehors de l’application';
 }

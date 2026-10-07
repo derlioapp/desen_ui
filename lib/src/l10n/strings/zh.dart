@@ -445,4 +445,7 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String get showMenu => '显示菜单';
+
+  @override
+  String get opensExternally => '在应用外打开';
 }

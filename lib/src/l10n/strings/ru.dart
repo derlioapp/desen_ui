@@ -469,4 +469,7 @@ class DsLocalizationsRu extends DsLocalizationsEn {
 
   @override
   String get showMenu => 'Показать меню';
+
+  @override
+  String get opensExternally => 'Открывается вне приложения';
 }
