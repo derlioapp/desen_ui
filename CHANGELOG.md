@@ -18,6 +18,30 @@
 - Fixed: a `DsParagraph` threw when a link's `semanticLabel` (or a span's
   `semanticsLabel`) was shorter than its text, and drew the underline in
   the wrong place when it was longer.
+- Fixed: a `DsSelect` in an unbounded width (a `Row`) kept its old width
+  when its `options` list was changed in place, cutting a longer label.
+  It now measures again whenever the labels change.
+- Fixed: `DsNumberField`, `DsDatePicker` and `DsTimePicker` did not commit
+  their text when focus left through a new `focusNode` given while
+  focused, so typed text stayed unformatted and unreported. It is now
+  committed as on any other blur.
+- Fixed: `DsNumberField` steps could stall or skip. With a step the
+  format cannot show (0.5 in whole numbers) Down from 2 stayed at 2; with
+  a cents step, Up did nothing past a billion; and Page Up and Page Down
+  rounded to the nearest tenth step (60 from 8 with a step of 5). A step
+  now rounds on in its direction, holds at any size, and Page Up and Page
+  Down land where ten steps do (55).
+- Fixed: a new `value` given to a `DsNumberField` together with a new
+  `format` was ignored while the text held an issue; it is now shown.
+- Fixed: a `DsNumberFormat` with one separator set could take the same
+  character from the locale for the other: a `,` decimal separator with
+  grouping showed 1234.5 as "1,234,50" in English and could not read it
+  back. The locale's other separator is now taken in that case ("1.234,50"),
+  and setting both to the same character fails an assertion.
+- Fixed: `FormState.reset()` kept the edited text of a `DsTextFormField`
+  with a `controller` when the parent rebuilt on each change. Reset now
+  goes back to the controller's text when the field was created, as
+  Flutter's `TextFormField` does.
 - Fixed: dates followed the language but not the region of the app's
   locale when an app listed language-only `supportedLocales` (as
   `DsLocalizations.supportedLocales`): a British device resolved to `en`

@@ -137,6 +137,36 @@ void main() {
       expect(state.value, 'start');
     });
 
+    testWidgets('reset keeps the starting text when the parent rebuilds', (
+      tester,
+    ) async {
+      final form = GlobalKey<FormState>();
+      const name = Key('name');
+      final controller = TextEditingController(text: 'start');
+      addTearDown(controller.dispose);
+      await tester.pumpWidget(
+        app(
+          form: form,
+          StatefulBuilder(
+            // A rebuild on every change makes a widget with the new text.
+            builder: (context, setState) => DsTextFormField(
+              key: name,
+              controller: controller,
+              label: const Text('Name'),
+              onChanged: (_) => setState(() {}),
+            ),
+          ),
+        ),
+      );
+      await tester.enterText(editable(name), 'typed');
+      await tester.pump();
+      form.currentState!.reset();
+      await tester.pump();
+      final state = tester.state<DsFormFieldState<String>>(find.byKey(name));
+      expect(controller.text, 'start');
+      expect(state.value, 'start');
+    });
+
     testWidgets('disabled follows enabled', (tester) async {
       const name = Key('name');
       await tester.pumpWidget(

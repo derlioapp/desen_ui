@@ -240,6 +240,10 @@ class DsTextFormField extends DsFormField<String> {
 class _DsTextFormFieldState extends DsFormFieldState<String> {
   RestorableTextEditingController? _own;
 
+  /// The app controller's text when the field was created: what [reset]
+  /// restores, as the widget's initial value follows the controller.
+  String? _startText;
+
   DsTextFormField get _w => widget as DsTextFormField;
 
   TextEditingController get _text => _w.controller ?? _own!.value;
@@ -249,6 +253,7 @@ class _DsTextFormFieldState extends DsFormFieldState<String> {
     super.initState();
     if (_w.controller case final c?) {
       c.addListener(_onText);
+      _startText = c.text;
     } else {
       _own = RestorableTextEditingController(text: _w.initialValue);
     }
@@ -297,8 +302,12 @@ class _DsTextFormFieldState extends DsFormFieldState<String> {
   @override
   void reset() {
     // The text first, so the controller listener finds nothing to report.
-    _text.value = TextEditingValue(text: widget.initialValue ?? '');
+    _text.value = TextEditingValue(
+      text: _startText ?? widget.initialValue ?? '',
+    );
     super.reset();
+    // The value follows the text, not the widget's latest initial value.
+    if (value != _text.text) setValue(_text.text);
   }
 
   /// A change made to the app's controller from outside.
