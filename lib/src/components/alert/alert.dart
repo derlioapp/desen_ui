@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/widgets.dart';
 
 import '../../foundation/color_utils.dart';
+import '../../foundation/oklch.dart';
 import '../../foundation/shrink_wrap.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
@@ -74,6 +75,7 @@ class DsAlert extends StatelessWidget {
     return DsAlertStyle(
       padding: const EdgeInsets.all(DsSpace.s12),
       background: background,
+      borderColor: theme.isDark ? null : _edge(background, s.text, k.canvas),
       borderRadius: BorderRadius.circular(theme.radii.card),
       iconColor: iconColor(s, DsColorUtils.flatten(background, k.surface)),
       iconSize: 16,
@@ -99,6 +101,23 @@ class DsAlert extends StatelessWidget {
         DsStatus.warning => l10n.warning,
         DsStatus.danger => l10n.error,
       };
+
+  /// A light alert's edge: none when its [tint] stands apart from the
+  /// page ([canvas]) at 1.12:1, else the tint with some of the status
+  /// [ink] mixed in, about 1.35:1 from the page. Light status tints are
+  /// barely darker than a gray page; the edge keeps the block's shape
+  /// there, and on a white card it stays a quiet line.
+  static Color? _edge(Color tint, Color ink, Color canvas) {
+    final flat = DsColorUtils.flatten(tint, canvas);
+    if (DsColorUtils.contrastRatio(flat, canvas) >= 1.12) return null;
+    var share = .2;
+    var color = DsOklch.mix(flat, ink, share);
+    while (DsColorUtils.contrastRatio(color, canvas) < 1.35 && share < .4) {
+      share += .05;
+      color = DsOklch.mix(flat, ink, share);
+    }
+    return color;
+  }
 
   /// The icon color on an alert's [background] (opaque): the vivid
   /// [DsStatusColors.signal] when it reads at 3:1 there (WCAG 1.4.11),

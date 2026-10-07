@@ -305,6 +305,45 @@ void main() {
       );
     });
 
+    test('a light status tint that does not stand off the page gets an '
+        'edge; dark alerts and a white page get none', () {
+      final t = DsThemeData();
+      final k = t.colors;
+      for (final s in [
+        DsStatus.info,
+        DsStatus.success,
+        DsStatus.warning,
+        DsStatus.danger,
+      ]) {
+        final edge = DsAlert.defaultStyle(t, status: s).borderColor;
+        expect(edge, isNotNull, reason: s.name);
+        expect(
+          DsColorUtils.contrastRatio(edge!, k.canvas),
+          inInclusiveRange(1.3, 1.8),
+          reason: s.name,
+        );
+      }
+      // The neutral tint already stands apart.
+      expect(
+        DsAlert.defaultStyle(t, status: DsStatus.neutral).borderColor,
+        isNull,
+      );
+      final dark = DsThemeData(brightness: Brightness.dark);
+      for (final s in DsStatus.values) {
+        expect(DsAlert.defaultStyle(dark, status: s).borderColor, isNull);
+      }
+      // On a white page the tints stand apart on their own.
+      final white = DsThemeData(
+        adjustColors: (k, b) => b == Brightness.light
+            ? k.copyWith(canvas: const Color(0xFFFFFFFF))
+            : k,
+      );
+      expect(
+        DsAlert.defaultStyle(white, status: DsStatus.info).borderColor,
+        isNull,
+      );
+    });
+
     testWidgets('announce makes a live region', (tester) async {
       final semantics = tester.ensureSemantics();
       await tester.pumpWidget(

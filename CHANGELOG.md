@@ -16,6 +16,10 @@
   filled shape (the "!" in an alert, an envelope's flap) is cut out so it
   stays visible; open strokes (arrows, a chart's axes) stay strokes. A play
   button, pause bars or a selected tab's icon can be drawn solid.
+- In light mode a `DsAlert` whose status tint barely stands off the page
+  (1.01–1.06:1 on the default gray page) gets a quiet 1px edge in its
+  status color, so the block keeps its shape for people who see little
+  hue difference. On a white page, and in dark mode, there is none.
 - A `DsAlert`'s icon stays centered on the title's first line with large
   text; before, it kept to the top and sat up to 7px above the line.
 - `DsParagraph` takes `maxLines` and `overflow` (a link cut off entirely
