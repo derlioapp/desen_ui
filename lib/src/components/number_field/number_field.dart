@@ -297,10 +297,9 @@ class _DsNumberFieldState extends State<DsNumberField>
   void didUpdateWidget(DsNumberField oldWidget) {
     super.didUpdateWidget(oldWidget);
     updateFocusNode(oldWidget.focusNode);
-    if (widget.format != oldWidget.format) {
-      _resolveFormat(force: true);
-    } else if (widget.value != oldWidget.value && widget.value != reported) {
-      // Set from outside: show it.
+    if (widget.format != oldWidget.format) _resolveFormat(force: true);
+    if (widget.value != oldWidget.value && widget.value != reported) {
+      // Set from outside, with a new format or not: show it.
       showValue(widget.value);
     }
     if (!_canEdit) _stopRepeat();
@@ -469,24 +468,39 @@ class _DsNumberFieldState extends State<DsNumberField>
 
   /// Where a step in [direction] from the current number lands: the next
   /// point of the step grid (from [DsNumberField.min] or 0), or for a
-  /// [page], ten steps on. From an empty field, the value nearest 0.
+  /// [page], where ten such steps land. From an empty field, the value
+  /// nearest 0.
   num _target(int direction, {bool page = false}) {
     final current = _current;
     if (current == null) return _settle(0);
+    var v = current;
+    for (var i = 0; i < (page ? 10 : 1); i++) {
+      v = _next(v, direction);
+    }
+    return v;
+  }
+
+  /// The next point of the step grid from [v] in [direction], as the
+  /// format shows it, kept in range. A point the format cannot show (1.5
+  /// without fraction digits) rounds on toward [direction], so a step
+  /// never rounds back to [v].
+  num _next(num v, int direction) {
     final step = widget.step;
     final base = widget.min ?? 0;
-    // Float steps (0.1) leave dust; a millionth of a step is the same point.
-    const dust = 1e-6;
-    final k = (current - base) / step;
-    final num n;
-    if (page) {
-      n = (k + direction * 10).roundToDouble();
-    } else if (direction > 0) {
-      n = (k + dust).floorToDouble() + 1;
-    } else {
-      n = (k - dust).ceilToDouble() - 1;
+    // Float steps (0.1) and large numbers leave dust: within a millionth
+    // of a step, or of what a double keeps at this size, is the same
+    // point.
+    final k = (v - base) / step;
+    final dust = 1e-6 + (v.abs() + base.abs()) / step * 1e-12;
+    final n = direction > 0
+        ? (k + dust).floorToDouble() + 1
+        : (k - dust).ceilToDouble() - 1;
+    final point = base + n * step;
+    var r = _round(point);
+    if (direction > 0 ? r <= v : r >= v) {
+      r = _roundTo(point, up: direction > 0);
     }
-    return _settle(base + n * step);
+    return _settle(r);
   }
 
   bool get _canIncrease {

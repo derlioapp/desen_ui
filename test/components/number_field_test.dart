@@ -313,6 +313,21 @@ void main() {
       await tester.pumpWidget(build(null));
       expect(text(tester), '');
     });
+
+    testWidgets('an outside value with a new format replaces invalid text', (
+      tester,
+    ) async {
+      Widget build(num? v, DsNumberFormat format) =>
+          host(DsNumberField(value: v, format: format, onChanged: (_) {}));
+      await tester.pumpWidget(build(1, const DsNumberFormat()));
+      await focus(tester);
+      await tester.enterText(editableFinder(), '-');
+      await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pump();
+      expect(text(tester), '-', reason: 'kept with an issue');
+      await tester.pumpWidget(build(7, const DsNumberFormat(decimals: 2)));
+      expect(text(tester), '7.00');
+    });
   });
 
   group('keyboard', () {
@@ -369,6 +384,55 @@ void main() {
       await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
       expect(values.last, 0.3);
       expect(text(tester), '0.3');
+    });
+
+    testWidgets('a step the format cannot show rounds on, never back', (
+      tester,
+    ) async {
+      final values = <num?>[];
+      // Whole numbers with a step of 0.5: 1.5 rounds half away from zero
+      // to 2, so Down from 2 would stay there.
+      await tester.pumpWidget(numberApp(initial: 2, step: 0.5, values: values));
+      await focus(tester);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      expect(values.last, 1);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
+      expect(values.last, 2);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
+      expect(values.last, 3);
+    });
+
+    testWidgets('a cents step moves at a billion', (tester) async {
+      final values = <num?>[];
+      await tester.pumpWidget(
+        numberApp(
+          initial: 1000000000.06,
+          step: 0.01,
+          format: const DsNumberFormat(decimals: 2),
+          values: values,
+        ),
+      );
+      await focus(tester);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
+      expect(values.last, 1000000000.07);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      expect(values.last, 1000000000.05);
+    });
+
+    testWidgets('Page Up and Page Down land where ten steps do', (
+      tester,
+    ) async {
+      final values = <num?>[];
+      await tester.pumpWidget(numberApp(initial: 8, step: 5, values: values));
+      await focus(tester);
+      await tester.sendKeyEvent(LogicalKeyboardKey.pageUp);
+      expect(values.last, 55, reason: '10, then nine steps of 5');
+      await tester.pumpWidget(Container());
+      await tester.pumpWidget(numberApp(initial: 7, step: 5, values: values));
+      await focus(tester);
+      await tester.sendKeyEvent(LogicalKeyboardKey.pageDown);
+      expect(values.last, -40, reason: '5, then nine steps of 5');
     });
 
     testWidgets('Home and End move the caret without a range', (tester) async {

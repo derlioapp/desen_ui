@@ -1,5 +1,13 @@
 ## Unreleased
 
+- Fixed: `DsNumberField` steps could stall or skip. With a step the
+  format cannot show (0.5 in whole numbers) Down from 2 stayed at 2; with
+  a cents step, Up did nothing past a billion; and Page Up and Page Down
+  rounded to the nearest tenth step (60 from 8 with a step of 5). A step
+  now rounds on in its direction, holds at any size, and Page Up and Page
+  Down land where ten steps do (55).
+- Fixed: a new `value` given to a `DsNumberField` together with a new
+  `format` was ignored while the text held an issue; it is now shown.
 - Fixed: a `DsNumberFormat` with one separator set could take the same
   character from the locale for the other: a `,` decimal separator with
   grouping showed 1234.5 as "1,234,50" in English and could not read it
