@@ -356,6 +356,9 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
     if (mounted) _dismiss();
   }
 
+  /// Counts the layer's reopenings while it fades out; keys its content.
+  int _opening = 0;
+
   void _show() {
     if (Overlay.maybeOf(context) == null) {
       assert(() {
@@ -381,7 +384,12 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
     }
     _remember();
     final motion = DsTheme.motionOf(context);
-    if (!_portal.isShowing) _portal.show();
+    if (!_portal.isShowing) {
+      _portal.show();
+    } else if (!_scope.descendantsAreTraversable) {
+      // Reopened while closing ([_hide] took it out of the Tab order).
+      _opening++;
+    }
     _scope.descendantsAreTraversable = true;
     _reveal.animateWith(
       (motion.reduced ? motion.toneSpring : motion.moveSpring).simulate(
@@ -545,7 +553,13 @@ class _DsAnchoredOverlayState extends State<DsAnchoredOverlay>
           child: FocusScope(
             node: _scope,
             onKeyEvent: _onKey,
-            child: Builder(builder: widget.overlayBuilder),
+            // A new key when the layer opens again while it fades out: the
+            // content starts over (a menu focuses the chosen option again,
+            // not the one focused when it closed).
+            child: KeyedSubtree(
+              key: ValueKey(_opening),
+              child: Builder(builder: widget.overlayBuilder),
+            ),
           ),
         );
         layer = TapRegion(

@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Fixed: a select, menu or popover opened again while it was still fading
+  out kept the focus it had when it closed: a `DsSelect` reopened on a
+  stale option, so Enter could undo the choice just typed. A layer that
+  reopens now starts over and focuses as when it first opens.
 - Fixed (web): the browser's own context menu stayed off for the whole
   app after a `DsTable` row with a row menu was removed under the pointer
   (deleted from its own menu), and so did a `DsContextMenuRegion`; moving
