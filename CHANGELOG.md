@@ -1,5 +1,10 @@
 ## Unreleased
 
+- A `DsSwitch` label is set in the body weight, as a checkbox's and a
+  radio's are (it was semibold), so the three read alike side by side.
+- A `DsStepper` button that cannot step (at its limit, or in a disabled
+  stepper) keeps its shape, flat and with a muted glyph, instead of
+  vanishing into the track.
 - A `DsAvatar`'s tone keeps its color when the app switches between light
   and dark mode (a person shown purple in light mode was teal in dark).
   The tones are a fixed set of clean hues, blue-green through blue and

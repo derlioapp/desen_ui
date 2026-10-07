@@ -93,7 +93,8 @@ class DsSwitch extends StatefulWidget {
       trackShadows: const [],
       knobColor: k.knob,
       knobShadows: theme.shadows.knob,
-      labelStyle: theme.typography.bodyStrong,
+      // As a checkbox's and a radio's: the three sit side by side in forms.
+      labelStyle: theme.typography.body,
       descriptionStyle: theme.typography.label.copyWith(
         fontWeight: FontWeight.w400,
       ),
