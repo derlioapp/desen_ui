@@ -158,6 +158,7 @@ class _DsRadioGroupState<T> extends State<DsRadioGroup<T>> {
           enabled: onChanged != null,
           error: error,
           members: _members,
+          valueType: T,
           // Below RadioGroup's own arrow shortcuts, so these keys win:
           // they mirror in RTL and add Home and End.
           child: Focus(
@@ -372,6 +373,7 @@ class _DsRadioState<T> extends State<DsRadio<T>> {
     ];
     final enabled = widget.enabled && (group?.enabled ?? true);
     final registry = RadioGroup.maybeOf<T>(context);
+    debugCheckRadioGroupType<T>(context, widget, registry);
     _enabled = enabled && registry != null;
     final radio = RawRadio<T>(
       value: widget.value,

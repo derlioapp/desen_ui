@@ -185,6 +185,43 @@ void main() {
       );
       semantics.dispose();
     });
+
+    testWidgets('a radio of another value type than its group asserts', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        host(
+          DsRadioGroup<int>(
+            value: 1,
+            onChanged: (_) {},
+            child: const DsRadio<int?>(value: 1, label: Text('Bir')),
+          ),
+        ),
+      );
+      final error = tester.takeException();
+      expect(error, isA<FlutterError>());
+      expect(
+        '$error',
+        allOf(contains('DsRadioGroup<int>'), contains('DsRadio<int?>')),
+      );
+      await tester.pumpWidget(
+        host(
+          DsRadioGroup<int>(
+            value: 1,
+            onChanged: (_) {},
+            child: const DsRadioCard<num>(value: 1, label: Text('Bir')),
+          ),
+        ),
+      );
+      expect(tester.takeException(), isA<FlutterError>());
+    });
+
+    testWidgets('a radio outside any group does not assert', (tester) async {
+      await tester.pumpWidget(
+        host(const DsRadio<int>(value: 1, label: Text('Bir'))),
+      );
+      expect(tester.takeException(), isNull);
+    });
   });
 
   group('DsSwitch', () {
