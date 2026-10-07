@@ -1,5 +1,31 @@
 ## Unreleased
 
+- Fixed: `DsPanel.style` now sizes and paints the panel. Its `width`,
+  `sheetMaxWidth`, `margin`, `background`, `borderRadius`, `shadows` and
+  `backdropFilter` were ignored; only the theme's applied. The `DsPanel`
+  now draws the panel's surface itself, so other content given to
+  `showDsPanel` draws its own.
+- `DsPanel(scrollable: false)` leaves scrolling to a child that scrolls
+  itself, such as a `ListView`: it gets a bounded height instead of
+  throwing for an unbounded one.
+- Long content in a `DsDialog`, a `DsPanel` and a toast scrolls from the
+  keyboard: with focus on a button, Page Up, Page Down, Arrow Up, Arrow
+  Down, Home and End scroll it. A focused text field keeps these keys.
+- `showDsDialog`, `showDsPanel` and `showDsModal` take `routeSettings`, for
+  navigator observers, analytics and route arguments.
+- `DsToastController.closed` completes when the toast goes, with a
+  `DsToastClosedReason`: `action`, `dismissed`, `timeout` or `replaced`. An
+  undo flow commits there unless the action was pressed; an action pressed
+  while the toast is already leaving no longer runs. `showDsToast` asserts
+  that `actionLabel` and `onAction` come together.
+- A bottom sheet and a toast no longer offer screen readers a scroll
+  action that dismissed them; the close button, the scrim and Escape
+  still do.
+- `showDsPanel` with `DsPanelPresentation.auto` follows the window while
+  the panel is open: resizing it or turning a tablet across the breakpoint
+  switches between side panel and bottom sheet, keeping the panel's state
+  and focus.
+
 - **Breaking:** `DsIcons` is now the full Lucide set, 2225 icons (Lucide
   1.52.0 and Lucide Lab), in place of the 56 picked before. Names follow
   Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and

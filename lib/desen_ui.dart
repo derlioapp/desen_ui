@@ -138,7 +138,7 @@ export 'src/l10n/strings/all.dart';
 export 'src/icons/icon.dart' hide RenderDsIcon;
 export 'src/icons/icons.dart';
 export 'src/overlay/anchored_overlay.dart';
-export 'src/overlay/modal_route.dart';
+export 'src/overlay/modal_route.dart' hide pushDsModal;
 export 'src/overlay/placement.dart' hide DsPlacement, dsPlace;
 export 'src/painting/decoration.dart';
 export 'src/painting/line.dart';

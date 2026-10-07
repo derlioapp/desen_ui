@@ -10,6 +10,7 @@ import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../l10n/localizations.dart';
 import '../../overlay/modal_route.dart';
+import '../../overlay/scroll_keys.dart';
 import '../../painting/decoration.dart';
 import '../../painting/surface.dart';
 import '../../theme/motion.dart';
@@ -21,7 +22,24 @@ import '../button/button.dart';
 import '../button/button_theme.dart';
 import 'toast_style.dart';
 
-/// A shown toast; [dismiss] takes it away early.
+/// Why a toast closed; [DsToastController.closed] completes with it.
+enum DsToastClosedReason {
+  /// Its action was pressed.
+  action,
+
+  /// The close button, Escape, a swipe or [DsToastController.dismiss]
+  /// took it away, or its overlay left the tree.
+  dismissed,
+
+  /// Its time ran out.
+  timeout,
+
+  /// A newer toast took its place.
+  replaced,
+}
+
+/// A shown toast; [dismiss] takes it away early and [closed] tells when it
+/// is gone.
 class DsToastController {
   DsToastController._(this._host, this._request);
 
@@ -31,8 +49,27 @@ class DsToastController {
   /// Whether the toast is still on screen (not dismissed or replaced).
   bool get isShowing => !_request.dismissed;
 
-  /// Hides the toast.
-  void dismiss() => _host._dismiss(_request);
+  /// Completes when the toast closes, with the reason, as it starts to
+  /// leave: from then on its action no longer runs.
+  ///
+  /// An undo flow commits here unless the action was pressed:
+  ///
+  /// ```dart
+  /// final toast = showDsToast(
+  ///   context: context,
+  ///   title: 'Task deleted',
+  ///   actionLabel: 'Undo',
+  ///   onAction: restoreTask,
+  /// );
+  /// if (await toast.closed != DsToastClosedReason.action) {
+  ///   deleteTaskForGood();
+  /// }
+  /// ```
+  Future<DsToastClosedReason> get closed => _request.closed.future;
+
+  /// Hides the toast; [closed] completes with
+  /// [DsToastClosedReason.dismissed].
+  void dismiss() => _host._dismiss(_request, DsToastClosedReason.dismissed);
 }
 
 /// The look of a toast's content, for previews and custom hosts. Usually
@@ -142,66 +179,71 @@ class DsToast extends StatelessWidget {
         shadows: s.shadows ?? const [],
       ),
       backdropFilter: s.backdropFilter,
-      child: LayoutBuilder(
-        builder: (context, constraints) => Row(
-          spacing: s.gap ?? DsSpace.s12,
-          children: [
-            if (status case final st?)
-              DsIcon(
-                _icon(st),
-                size: s.iconSize!,
-                color: iconColor,
-                semanticLabel: _statusLabel(l10n, st),
-              ),
-            Expanded(
-              // Scrolls when the toast is capped (long text at large scale).
-              // The text is read as part of the toast, not as a scroll area
-              // of its own, so the live region still says it.
-              child: Semantics(
-                label: [title, ?description].join('\n'),
-                child: ExcludeSemantics(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      spacing: s.textGap!,
-                      children: [
-                        Text(title, style: s.titleStyle),
-                        if (description != null)
-                          Text(description!, style: s.descriptionStyle),
-                      ],
+      // With focus on the action or the close button, the keyboard scrolls
+      // the text when it is capped.
+      child: LayerScrollKeys(
+        builder: (context, controller) => LayoutBuilder(
+          builder: (context, constraints) => Row(
+            spacing: s.gap ?? DsSpace.s12,
+            children: [
+              if (status case final st?)
+                DsIcon(
+                  _icon(st),
+                  size: s.iconSize!,
+                  color: iconColor,
+                  semanticLabel: _statusLabel(l10n, st),
+                ),
+              Expanded(
+                // Scrolls when the toast is capped (long text at large scale).
+                // The text is read as part of the toast, not as a scroll area
+                // of its own, so the live region still says it.
+                child: Semantics(
+                  label: [title, ?description].join('\n'),
+                  child: ExcludeSemantics(
+                    child: SingleChildScrollView(
+                      controller: controller,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        spacing: s.textGap!,
+                        children: [
+                          Text(title, style: s.titleStyle),
+                          if (description != null)
+                            Text(description!, style: s.descriptionStyle),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            if (actionLabel != null)
-              // A long action on a narrow screen shortens instead of pushing
-              // the toast past its edge.
-              // At most two fifths of the toast; its label then ends in an
-              // ellipsis (screen readers get it whole).
-              ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: constraints.maxWidth.isFinite
-                      ? constraints.maxWidth * 0.4
-                      : double.infinity,
+              if (actionLabel != null)
+                // A long action on a narrow screen shortens instead of pushing
+                // the toast past its edge.
+                // At most two fifths of the toast; its label then ends in an
+                // ellipsis (screen readers get it whole).
+                ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: constraints.maxWidth.isFinite
+                        ? constraints.maxWidth * 0.4
+                        : double.infinity,
+                  ),
+                  child: DsButton(
+                    variant: DsButtonVariant.ghost,
+                    size: DsSize.sm,
+                    onPressed: onAction,
+                    child: Text(actionLabel!),
+                  ),
                 ),
-                child: DsButton(
+              if (onDismiss != null)
+                DsButton.icon(
                   variant: DsButtonVariant.ghost,
                   size: DsSize.sm,
-                  onPressed: onAction,
-                  child: Text(actionLabel!),
+                  icon: DsIcon(DsIcons.x, size: s.closeIconSize),
+                  semanticLabel: l10n.dismissNotification,
+                  onPressed: onDismiss,
                 ),
-              ),
-            if (onDismiss != null)
-              DsButton.icon(
-                variant: DsButtonVariant.ghost,
-                size: DsSize.sm,
-                icon: DsIcon(DsIcons.x, size: s.closeIconSize),
-                semanticLabel: l10n.dismissNotification,
-                onPressed: onDismiss,
-              ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -218,10 +260,14 @@ class DsToast extends StatelessWidget {
 ///   until it is dismissed, as Material's snack bar does, so the action
 ///   can be reached.
 /// - **Keyboard:** F8 moves focus into the toast (as in Radix) and Escape
-///   inside it dismisses it; focus then returns to where it was.
+///   inside it dismisses it; focus then returns to where it was. With focus
+///   inside, Page Up, Page Down, Arrow Up, Arrow Down, Home and End scroll
+///   text too long for the screen.
 /// - **Dismissal:** the close button, the action, a sideways swipe, or a
 ///   newer toast: one shows at a time and a new one replaces it, even
-///   within the same frame.
+///   within the same frame. The returned controller's
+///   [DsToastController.closed] completes with the reason, so an undo flow
+///   knows when to commit.
 /// - **Screen readers** hear it as a live region, the status by name. A
 ///   [DsStatus.danger] toast is announced assertively instead (it
 ///   interrupts), where the platform supports announcements
@@ -234,6 +280,9 @@ class DsToast extends StatelessWidget {
 ///   on-screen keyboard and below the status bar: long text at a large
 ///   text scale scrolls inside the toast.
 ///
+/// [actionLabel] and [onAction] come together: a label alone would show a
+/// button that does nothing.
+///
 /// Needs an [Overlay] above [context].
 DsToastController showDsToast({
   required BuildContext context,
@@ -244,6 +293,10 @@ DsToastController showDsToast({
   VoidCallback? onAction,
   Duration? duration,
 }) {
+  assert(
+    (actionLabel == null) == (onAction == null),
+    'actionLabel and onAction come together.',
+  );
   final overlay = Overlay.of(context, rootOverlay: true);
   final host = _ToastHostState._hosts[overlay] ??= _ToastHostState._(overlay);
   final l10n = DsLocalizations.of(context);
@@ -259,18 +312,19 @@ DsToastController showDsToast({
               Directionality.maybeOf(context) ?? TextDirection.ltr,
             )
           : null,
-      toast: (onDismiss) => DsToast(
+      toast: (close) => DsToast(
         title: title,
         description: description,
         status: status,
         actionLabel: actionLabel,
+        // Closed first, so the reason is the action even when the action
+        // shows a new toast; a toast already leaving runs no action.
         onAction: onAction == null
             ? null
             : () {
-                onAction();
-                onDismiss();
+                if (close(DsToastClosedReason.action)) onAction();
               },
-        onDismiss: onDismiss,
+        onDismiss: () => close(DsToastClosedReason.dismissed),
       ),
       duration: duration,
     ),
@@ -291,13 +345,19 @@ class _ToastRequest {
 
   /// For a danger toast: the assertive announcement and its direction.
   final (String, TextDirection)? urgent;
-  final Widget Function(VoidCallback onDismiss) toast;
+
+  /// Builds the content; `close` returns whether it closed the toast (false
+  /// when it was already closing).
+  final Widget Function(bool Function(DsToastClosedReason reason) close) toast;
 
   /// Null: the theme's notice duration (twice that with an action).
   final Duration? duration;
 
   /// Dismissed or replaced: it leaves as soon as it can.
   bool dismissed = false;
+
+  /// Completed with the reason when it is dismissed or replaced.
+  final closed = Completer<DsToastClosedReason>();
 
   /// The view once mounted. A toast replaced before its first frame has
   /// none yet; it leaves as soon as it mounts.
@@ -316,14 +376,16 @@ class _ToastHostState {
   _ToastRequest? _current;
 
   DsToastController _show(_ToastRequest request) {
-    if (_current case final old?) _dismiss(old);
+    if (_current case final old?) {
+      _dismiss(old, DsToastClosedReason.replaced);
+    }
     _current = request;
     final entry = OverlayEntry(
       builder: (context) => _ToastView(
         request: request,
         // A toast's own timer, swipe and close button always take that
         // toast away, whether it is the current one or not.
-        onDismiss: () => _dismiss(request),
+        onClose: (reason) => _dismiss(request, reason),
         onGone: () {
           // Removed and disposed: an entry is the host's to free.
           request.entry
@@ -338,23 +400,26 @@ class _ToastHostState {
     return DsToastController._(this, request);
   }
 
-  void _dismiss(_ToastRequest request) {
-    if (request.dismissed) return;
+  /// Closes [request] for [reason]; false when it was already closing.
+  bool _dismiss(_ToastRequest request, DsToastClosedReason reason) {
+    if (request.dismissed) return false;
     request.dismissed = true;
+    request.closed.complete(reason);
     if (_current == request) _current = null;
     request.view?._leave();
+    return true;
   }
 }
 
 class _ToastView extends StatefulWidget {
   const _ToastView({
     required this.request,
-    required this.onDismiss,
+    required this.onClose,
     required this.onGone,
   });
 
   final _ToastRequest request;
-  final VoidCallback onDismiss;
+  final bool Function(DsToastClosedReason reason) onClose;
   final VoidCallback onGone;
 
   @override
@@ -431,6 +496,8 @@ class _ToastViewState extends State<_ToastView>
   @override
   void dispose() {
     if (widget.request.view == this) widget.request.view = null;
+    // Its overlay left the tree with the toast still up.
+    widget.onClose(DsToastClosedReason.dismissed);
     FocusManager.instance.removeEarlyKeyEventHandler(_onHotkey);
     _timer?.cancel();
     _reveal.dispose();
@@ -447,7 +514,10 @@ class _ToastViewState extends State<_ToastView>
     if (_hovered || _focused || _held || _leaving) return;
     // A screen reader user must be able to reach the action (WCAG 2.2.1).
     if (_accessible && widget.request.hasAction) return;
-    _timer = Timer(_duration, widget.onDismiss);
+    _timer = Timer(
+      _duration,
+      () => widget.onClose(DsToastClosedReason.timeout),
+    );
   }
 
   /// F8 moves focus into the toast, to its first control. It runs before
@@ -478,7 +548,7 @@ class _ToastViewState extends State<_ToastView>
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {
     if (event is KeyDownEvent &&
         event.logicalKey == LogicalKeyboardKey.escape) {
-      widget.onDismiss();
+      widget.onClose(DsToastClosedReason.dismissed);
       return KeyEventResult.handled;
     }
     return KeyEventResult.ignored;
@@ -558,13 +628,17 @@ class _ToastViewState extends State<_ToastView>
                     },
                     onPointerUp: (_) => _release(),
                     onPointerCancel: (_) => _release(),
+                    // Screen readers get no scroll action from the swipe,
+                    // which would dismiss the toast: the close button and
+                    // Escape do that.
                     child: GestureDetector(
+                      excludeFromSemantics: true,
                       onHorizontalDragUpdate: (d) =>
                           setState(() => _swipe += d.delta.dx),
                       onHorizontalDragEnd: (d) {
                         if (_swipe.abs() > 80 ||
                             (d.primaryVelocity ?? 0).abs() > 700) {
-                          widget.onDismiss();
+                          widget.onClose(DsToastClosedReason.dismissed);
                         } else {
                           setState(() => _swipe = 0);
                         }
@@ -581,7 +655,7 @@ class _ToastViewState extends State<_ToastView>
                             ),
                           );
                         },
-                        child: widget.request.toast(widget.onDismiss),
+                        child: widget.request.toast(widget.onClose),
                       ),
                     ),
                   ),

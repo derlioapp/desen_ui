@@ -5,6 +5,7 @@ import '../../icons/icon.dart';
 import '../../l10n/localizations.dart';
 import '../../overlay/modal_route.dart';
 import '../../overlay/plain_text.dart';
+import '../../overlay/scroll_keys.dart';
 import '../../painting/decoration.dart';
 import '../../painting/surface.dart';
 import '../../theme/sizes.dart';
@@ -19,8 +20,10 @@ import 'dialog_style.dart';
 ///
 /// It takes its preferred width ([DsDialogStyle.width]) and shrinks on
 /// narrow windows. When the window is short or the text large, the icon,
-/// title and description scroll while the actions stay in view. Show it with [showDsDialog]; for a yes/no
-/// question use [showDsConfirm].
+/// title and description scroll while the actions stay in view; with focus
+/// on an action, Page Up, Page Down, Arrow Up, Arrow Down, Home and End
+/// scroll them. Show it with [showDsDialog]; for a yes/no question use
+/// [showDsConfirm].
 class DsDialog extends StatelessWidget {
   /// Creates a dialog panel.
   const DsDialog({
@@ -131,75 +134,79 @@ class DsDialog extends StatelessWidget {
             ),
             backdropFilter: s.backdropFilter,
             // The text scrolls when the window is short or the text large;
-            // the actions stay in view below it.
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              spacing: gap,
-              children: [
-                Flexible(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      spacing: gap,
-                      children: [
-                        if (icon != null)
-                          Align(
-                            alignment: AlignmentDirectional.centerStart,
-                            child: ExcludeSemantics(
-                              child: Container(
-                                width: box,
-                                height: box,
-                                alignment: Alignment.center,
-                                decoration: DsBoxDecoration(
-                                  color: s.iconBoxColor,
-                                  borderRadius: t.radii.controlCorners(
-                                    s.iconBoxRadius,
-                                    box,
+            // the actions stay in view below it, and the keyboard scrolls
+            // the text from them.
+            child: LayerScrollKeys(
+              builder: (context, controller) => Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: gap,
+                children: [
+                  Flexible(
+                    child: SingleChildScrollView(
+                      controller: controller,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        spacing: gap,
+                        children: [
+                          if (icon != null)
+                            Align(
+                              alignment: AlignmentDirectional.centerStart,
+                              child: ExcludeSemantics(
+                                child: Container(
+                                  width: box,
+                                  height: box,
+                                  alignment: Alignment.center,
+                                  decoration: DsBoxDecoration(
+                                    color: s.iconBoxColor,
+                                    borderRadius: t.radii.controlCorners(
+                                      s.iconBoxRadius,
+                                      box,
+                                    ),
                                   ),
-                                ),
-                                child: IconTheme.merge(
-                                  data: IconThemeData(
-                                    color: s.iconColor,
-                                    size: s.iconSize,
+                                  child: IconTheme.merge(
+                                    data: IconThemeData(
+                                      color: s.iconColor,
+                                      size: s.iconSize,
+                                    ),
+                                    child: icon!,
                                   ),
-                                  child: icon!,
                                 ),
                               ),
                             ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            spacing: DsSpace.s8,
+                            children: [
+                              Semantics(
+                                header: true,
+                                child: DefaultTextStyle.merge(
+                                  style: s.titleStyle,
+                                  child: title,
+                                ),
+                              ),
+                              if (description != null)
+                                DefaultTextStyle.merge(
+                                  style: s.descriptionStyle,
+                                  child: description!,
+                                ),
+                            ],
                           ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: DsSpace.s8,
-                          children: [
-                            Semantics(
-                              header: true,
-                              child: DefaultTextStyle.merge(
-                                style: s.titleStyle,
-                                child: title,
-                              ),
-                            ),
-                            if (description != null)
-                              DefaultTextStyle.merge(
-                                style: s.descriptionStyle,
-                                child: description!,
-                              ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                if (actions.isNotEmpty)
-                  Padding(
-                    padding: const EdgeInsets.only(top: DsSpace.s4),
-                    child: _DialogActions(
-                      gap: DsSpace.s8,
-                      direction: Directionality.of(context),
-                      children: actions,
+                  if (actions.isNotEmpty)
+                    Padding(
+                      padding: const EdgeInsets.only(top: DsSpace.s4),
+                      child: _DialogActions(
+                        gap: DsSpace.s8,
+                        direction: Directionality.of(context),
+                        children: actions,
+                      ),
                     ),
-                  ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -412,18 +419,23 @@ class _RenderDialogActions extends RenderBox
 /// [scrim] set to [DsScrim.clear] leaves the page at full contrast, e.g.
 /// for a dialog whose choices preview on the page behind it; the page
 /// still takes no input while the dialog is open.
+///
+/// [routeSettings] names the dialog's route for navigator observers and
+/// analytics, and can carry arguments.
 Future<T?> showDsDialog<T>({
   required BuildContext context,
   required WidgetBuilder builder,
   bool dismissible = true,
   DsScrim scrim = DsScrim.dim,
   bool useRootNavigator = true,
+  RouteSettings? routeSettings,
 }) => showDsModal<T>(
   context: context,
   builder: builder,
   dismissible: dismissible,
   scrim: scrim,
   useRootNavigator: useRootNavigator,
+  routeSettings: routeSettings,
 );
 
 /// Asks a yes/no question and returns whether the user confirmed. The safe

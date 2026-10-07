@@ -295,6 +295,10 @@ class DsModalRoute<T> extends PopupRoute<T> {
 
   final bool _dismissible;
 
+  /// Decides the placement each time the modal builds, in place of
+  /// [placement] ([pushDsModal]).
+  DsModalPlacement Function(BuildContext context)? _placementOf;
+
   /// The control whose press opened the modal, if one did ([install]).
   WeakReference<FocusNode>? _opener;
 
@@ -490,6 +494,7 @@ class DsModalRoute<T> extends PopupRoute<T> {
     final fade = _fade!;
     if (motion.reduced) return FadeTransition(opacity: fade, child: child);
     final move = _move!;
+    final placement = _placementOf?.call(context) ?? this.placement;
     final rtl =
         (direction ??
             captured.textDirection ??
@@ -527,7 +532,8 @@ class DsModalRoute<T> extends PopupRoute<T> {
 /// Opens a modal from [context]. The modal follows the theme above the
 /// navigator live and carries what [context] has below it (see
 /// [DsCapturedThemes]). [scrim] leaves the page undimmed with
-/// [DsScrim.clear].
+/// [DsScrim.clear]. [routeSettings] names the modal's route for navigator
+/// observers and analytics, and can carry arguments.
 Future<T?> showDsModal<T>({
   required BuildContext context,
   required WidgetBuilder builder,
@@ -535,6 +541,29 @@ Future<T?> showDsModal<T>({
   bool dismissible = true,
   DsScrim scrim = DsScrim.dim,
   bool useRootNavigator = true,
+  RouteSettings? routeSettings,
+}) => pushDsModal<T>(
+  context: context,
+  builder: builder,
+  placement: placement,
+  dismissible: dismissible,
+  scrim: scrim,
+  useRootNavigator: useRootNavigator,
+  routeSettings: routeSettings,
+);
+
+/// [showDsModal], with the placement decided by [placementOf] each time the
+/// modal builds when it is given, so that it follows the window's size.
+/// For Desen's own layers; not exported.
+Future<T?> pushDsModal<T>({
+  required BuildContext context,
+  required WidgetBuilder builder,
+  DsModalPlacement placement = DsModalPlacement.center,
+  DsModalPlacement Function(BuildContext context)? placementOf,
+  bool dismissible = true,
+  DsScrim scrim = DsScrim.dim,
+  bool useRootNavigator = true,
+  RouteSettings? routeSettings,
 }) {
   final navigator = Navigator.of(context, rootNavigator: useRootNavigator);
   return navigator.push(
@@ -545,6 +574,7 @@ Future<T?> showDsModal<T>({
       scrim: scrim,
       dismissible: dismissible,
       semanticBarrierLabel: DsLocalizations.of(context).close,
-    ),
+      settings: routeSettings,
+    ).._placementOf = placementOf,
   );
 }

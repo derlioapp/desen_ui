@@ -7,6 +7,7 @@ import '../../icons/icons.dart';
 import '../../l10n/localizations.dart';
 import '../../overlay/modal_route.dart';
 import '../../overlay/plain_text.dart';
+import '../../overlay/scroll_keys.dart';
 import '../../painting/decoration.dart';
 import '../../painting/surface.dart';
 import '../../theme/radii.dart';
@@ -32,17 +33,23 @@ enum DsPanelPresentation {
 /// Below this width [DsPanelPresentation.auto] shows a bottom sheet.
 const double kDsPanelBreakpoint = 640;
 
-/// The body of a side panel or bottom sheet: a title with a close button,
-/// content that scrolls when long, and an optional footer. Show it with
-/// [showDsPanel].
+/// A side panel or bottom sheet: a title with a close button, content that
+/// scrolls when long, and an optional footer. Show it with [showDsPanel],
+/// which places it; the panel draws its own surface there, sized by its
+/// style ([DsPanelStyle.width], [DsPanelStyle.sheetMaxWidth]).
+///
+/// With focus on the close button, the footer or another control in the
+/// panel, Page Up, Page Down, Arrow Up, Arrow Down, Home and End scroll
+/// long content; a focused text field keeps these keys.
 class DsPanel extends StatelessWidget {
-  /// Creates a panel body.
+  /// Creates a panel.
   const DsPanel({
     super.key,
     required this.title,
     required this.child,
     this.footer,
     this.showClose,
+    this.scrollable = true,
     this.semanticLabel,
     this.style,
   });
@@ -51,8 +58,17 @@ class DsPanel extends StatelessWidget {
   /// also names the panel for screen readers.
   final Widget title;
 
-  /// The content; scrolls when it does not fit.
+  /// The content; scrolls when it does not fit, unless [scrollable] is
+  /// false.
   final Widget child;
+
+  /// Whether the panel scrolls [child] when it does not fit. Set it to false
+  /// for content that scrolls itself, such as a `ListView` built lazily:
+  /// the child then gets the room left between the header and the footer
+  /// as a bounded height (all of it in a side panel; up to it in a bottom
+  /// sheet, which a `ListView` fills). The keys that scroll long content
+  /// are then the child's own.
+  final bool scrollable;
 
   /// Actions along the bottom, e.g. a full-width primary button.
   final Widget? footer;
@@ -97,7 +113,7 @@ class DsPanel extends StatelessWidget {
     final kind = _PanelKind.maybeOf(context);
     final bottom = kind?.bottom ?? false;
     final l10n = DsLocalizations.of(context);
-    return Semantics(
+    final body = Semantics(
       container: true,
       role: SemanticsRole.dialog,
       scopesRoute: true,
@@ -108,64 +124,97 @@ class DsPanel extends StatelessWidget {
         padding: s.padding ?? EdgeInsets.zero,
         // A side panel is full height: the body fills it and the footer
         // sits at the bottom. A bottom sheet hugs its content.
-        child: Column(
-          mainAxisSize: bottom ? MainAxisSize.min : MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          spacing: s.gap ?? DsSpace.s16,
-          children: [
-            if (bottom)
-              ExcludeSemantics(
-                child: Center(
-                  child: Container(
-                    width: s.grabberSize!.width,
-                    height: s.grabberSize!.height,
-                    decoration: BoxDecoration(
-                      color: s.grabberColor,
-                      borderRadius: BorderRadius.circular(DsRadii.pill),
+        child: LayerScrollKeys(
+          builder: (context, controller) => Column(
+            mainAxisSize: bottom ? MainAxisSize.min : MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            spacing: s.gap ?? DsSpace.s16,
+            children: [
+              if (bottom)
+                ExcludeSemantics(
+                  child: Center(
+                    child: Container(
+                      width: s.grabberSize!.width,
+                      height: s.grabberSize!.height,
+                      decoration: BoxDecoration(
+                        color: s.grabberColor,
+                        borderRadius: BorderRadius.circular(DsRadii.pill),
+                      ),
                     ),
                   ),
                 ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Semantics(
+                      header: true,
+                      child: DefaultTextStyle.merge(
+                        style: s.titleStyle,
+                        child: title,
+                      ),
+                    ),
+                  ),
+                  if (showClose ?? kind?.dismissible ?? true)
+                    DsButton.icon(
+                      variant: DsButtonVariant.ghost,
+                      size: DsSize.sm,
+                      icon: const DsIcon(DsIcons.x),
+                      semanticLabel: l10n.close,
+                      // A close button shown on a panel that cannot be
+                      // dismissed (showClose: true) is the panel's own
+                      // action: it closes even though back does not.
+                      onPressed: () => kind?.dismissible == false
+                          ? Navigator.of(context).pop()
+                          : Navigator.of(context).maybePop(),
+                    ),
+                ],
               ),
-            Row(
-              children: [
-                Expanded(
-                  child: Semantics(
-                    header: true,
-                    child: DefaultTextStyle.merge(
-                      style: s.titleStyle,
-                      child: title,
-                    ),
-                  ),
-                ),
-                if (showClose ?? kind?.dismissible ?? true)
-                  DsButton.icon(
-                    variant: DsButtonVariant.ghost,
-                    size: DsSize.sm,
-                    icon: const DsIcon(DsIcons.x),
-                    semanticLabel: l10n.close,
-                    // A close button shown on a panel that cannot be
-                    // dismissed (showClose: true) is the panel's own
-                    // action: it closes even though back does not.
-                    onPressed: () => kind?.dismissible == false
-                        ? Navigator.of(context).pop()
-                        : Navigator.of(context).maybePop(),
-                  ),
-              ],
-            ),
-            Flexible(
-              fit: bottom ? FlexFit.loose : FlexFit.tight,
-              child: SingleChildScrollView(child: child),
-            ),
-            ?footer,
-          ],
+              Flexible(
+                fit: bottom ? FlexFit.loose : FlexFit.tight,
+                child: scrollable
+                    ? SingleChildScrollView(
+                        controller: controller,
+                        child: child,
+                      )
+                    : child,
+              ),
+              ?footer,
+            ],
+          ),
         ),
+      ),
+    );
+    // Outside showDsPanel (a preview) the panel is only its content.
+    if (kind == null) return body;
+    final surface = DsSurface(
+      decoration: DsBoxDecoration(
+        color: s.background,
+        borderRadius: s.borderRadius ?? BorderRadius.zero,
+        shadows: s.shadows ?? const [],
+      ),
+      backdropFilter: s.backdropFilter,
+      child: body,
+    );
+    return Padding(
+      padding: s.margin ?? EdgeInsets.zero,
+      // One box for both, so that the content keeps its state when the
+      // window's size turns one presentation into the other.
+      child: ConstrainedBox(
+        constraints: bottom
+            ? BoxConstraints(
+                maxWidth: s.sheetMaxWidth!,
+                maxHeight: MediaQuery.sizeOf(context).height * .9,
+              )
+            : BoxConstraints.tightFor(width: s.width),
+        child: surface,
       ),
     );
   }
 }
 
-/// Positions the panel for its presentation and handles the bottom
-/// sheet's drag to dismiss.
+/// Positions the panel for its presentation, clear of the system bars and
+/// the on-screen keyboard, and handles the bottom sheet's drag to dismiss.
+/// The panel draws its own surface, so its style sizes it.
 class _PanelFrame extends StatefulWidget {
   const _PanelFrame({
     required this.bottom,
@@ -204,25 +253,21 @@ class _PanelFrameState extends State<_PanelFrame> {
   double _drag = 0;
 
   @override
+  void didUpdateWidget(_PanelFrame oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.bottom != widget.bottom) _drag = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final t = dsThemeOf(context);
-    final s = DsPanelStyle.resolveLayers([
-      DsPanel.defaultStyle(t),
-      DsPanelTheme.of(context).style,
-    ], const {});
     final media = MediaQuery.of(context);
     // Clear of the system bars and the on-screen keyboard.
     final margin =
-        (s.margin ?? EdgeInsets.zero).resolve(Directionality.of(context)) +
-        media.padding +
-        EdgeInsets.only(bottom: media.viewInsets.bottom);
-    final surface = DsSurface(
-      decoration: DsBoxDecoration(
-        color: s.background,
-        borderRadius: s.borderRadius ?? BorderRadius.zero,
-        shadows: s.shadows ?? const [],
-      ),
-      backdropFilter: s.backdropFilter,
+        media.padding + EdgeInsets.only(bottom: media.viewInsets.bottom);
+    // Keyed, so that the panel keeps its state (and focus) when the
+    // window's size turns one presentation into the other.
+    final panel = KeyedSubtree(
+      key: _sheet,
       child: _PanelKind(
         bottom: widget.bottom,
         dismissible: widget.dismissible,
@@ -234,11 +279,7 @@ class _PanelFrameState extends State<_PanelFrame> {
         padding: margin,
         child: Align(
           alignment: AlignmentDirectional.centerEnd,
-          child: SizedBox(
-            width: s.width!,
-            height: double.infinity,
-            child: surface,
-          ),
+          child: SizedBox(height: double.infinity, child: panel),
         ),
       );
     }
@@ -246,35 +287,28 @@ class _PanelFrameState extends State<_PanelFrame> {
       padding: margin,
       child: Align(
         alignment: Alignment.bottomCenter,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxWidth: s.sheetMaxWidth!,
-            maxHeight: media.size.height * .9,
-          ),
-          // Drag down to dismiss: past a third of the sheet's height, or
-          // flicked. A sheet that cannot be dismissed does not drag.
-          child: GestureDetector(
-            onVerticalDragUpdate: widget.dismissible
-                ? (d) => setState(
-                    () => _drag = (_drag + d.delta.dy).clamp(0, 9999),
-                  )
-                : null,
-            onVerticalDragEnd: widget.dismissible
-                ? (d) {
-                    // ds-raw: a divisor guard, not a size
-                    final height = _sheet.currentContext?.size?.height ?? 1;
-                    if (_drag > height / 3 || (d.primaryVelocity ?? 0) > 700) {
-                      Navigator.of(context).maybePop();
-                    } else {
-                      setState(() => _drag = 0);
-                    }
+        // Drag down to dismiss: past a third of the sheet's height, or
+        // flicked. A sheet that cannot be dismissed does not drag. Screen
+        // readers get no scroll action from the drag, which would close the
+        // sheet: the close button, the scrim and Escape do that.
+        child: GestureDetector(
+          excludeFromSemantics: true,
+          onVerticalDragUpdate: widget.dismissible
+              ? (d) =>
+                    setState(() => _drag = (_drag + d.delta.dy).clamp(0, 9999))
+              : null,
+          onVerticalDragEnd: widget.dismissible
+              ? (d) {
+                  // ds-raw: a divisor guard, not a size
+                  final height = _sheet.currentContext?.size?.height ?? 1;
+                  if (_drag > height / 3 || (d.primaryVelocity ?? 0) > 700) {
+                    Navigator.of(context).maybePop();
+                  } else {
+                    setState(() => _drag = 0);
                   }
-                : null,
-            child: Transform.translate(
-              offset: Offset(0, _drag),
-              child: KeyedSubtree(key: _sheet, child: surface),
-            ),
-          ),
+                }
+              : null,
+          child: Transform.translate(offset: Offset(0, _drag), child: panel),
         ),
       ),
     );
@@ -289,9 +323,19 @@ class _PanelFrameState extends State<_PanelFrame> {
 /// [dismissible]; otherwise none of them does and the close button is
 /// hidden, so the panel's own actions must close it.
 ///
+/// The [DsPanel] draws the panel's surface and takes its size from its
+/// style; other content is placed as it is and draws its own.
+///
+/// With [DsPanelPresentation.auto] the choice follows the window while the
+/// panel is open: resizing the window or turning a tablet across the
+/// breakpoint turns a side panel into a bottom sheet and back.
+///
 /// [scrim] set to [DsScrim.clear] leaves the page at full contrast, for a
 /// live preview: a short bottom sheet of settings whose effect shows on
 /// the page above it. A tap on the page still closes the panel.
+///
+/// [routeSettings] names the panel's route for navigator observers and
+/// analytics, and can carry arguments.
 Future<T?> showDsPanel<T>({
   required BuildContext context,
   required WidgetBuilder builder,
@@ -299,21 +343,26 @@ Future<T?> showDsPanel<T>({
   bool dismissible = true,
   DsScrim scrim = DsScrim.dim,
   bool useRootNavigator = true,
+  RouteSettings? routeSettings,
 }) {
-  final bottom = switch (presentation) {
+  // Decided from the modal's own context each time it builds, so that it
+  // follows the window's current size.
+  bool bottomIn(BuildContext context) => switch (presentation) {
     DsPanelPresentation.bottom => true,
     DsPanelPresentation.side => false,
     DsPanelPresentation.auto =>
       MediaQuery.sizeOf(context).width < kDsPanelBreakpoint,
   };
-  return showDsModal<T>(
+  return pushDsModal<T>(
     context: context,
-    placement: bottom ? DsModalPlacement.bottom : DsModalPlacement.end,
+    placementOf: (context) =>
+        bottomIn(context) ? DsModalPlacement.bottom : DsModalPlacement.end,
     dismissible: dismissible,
     scrim: scrim,
     useRootNavigator: useRootNavigator,
+    routeSettings: routeSettings,
     builder: (context) => _PanelFrame(
-      bottom: bottom,
+      bottom: bottomIn(context),
       dismissible: dismissible,
       child: Builder(builder: builder),
     ),
