@@ -1176,6 +1176,7 @@ const _foodBeverage = <IconEntry>[
     DsIcons.grape,
     category: 'food-beverage',
     tags: ['fruit', 'wine', 'food'],
+    fills: false,
   ),
   IconEntry(
     'grapes',
@@ -1208,6 +1209,7 @@ const _foodBeverage = <IconEntry>[
       'gambling',
       'jackpot',
     ],
+    fills: false,
   ),
   IconEntry(
     'ham',
@@ -1624,6 +1626,7 @@ const _foodBeverage = <IconEntry>[
     DsIcons.nut,
     category: 'food-beverage',
     tags: ['hazelnut', 'acorn', 'food', 'diet'],
+    fills: false,
   ),
   IconEntry(
     'olive',

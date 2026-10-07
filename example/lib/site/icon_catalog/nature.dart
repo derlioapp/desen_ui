@@ -444,6 +444,7 @@ const _nature = <IconEntry>[
       'trap',
       'entangle',
     ],
+    fills: false,
   ),
   IconEntry(
     'sprout',
@@ -479,6 +480,7 @@ const _nature = <IconEntry>[
       'rock',
       'boulder',
     ],
+    fills: false,
   ),
   IconEntry(
     'treeDeciduous',

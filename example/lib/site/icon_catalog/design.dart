@@ -37,6 +37,7 @@ const _design = <IconEntry>[
       'couple',
       'connection',
     ],
+    fills: false,
   ),
   IconEntry(
     'bringToFront',

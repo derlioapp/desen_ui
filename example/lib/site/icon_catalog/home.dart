@@ -479,6 +479,7 @@ const _home = <IconEntry>[
       'upholstery',
       'cleaning',
     ],
+    fills: false,
   ),
   IconEntry(
     'coatHanger',

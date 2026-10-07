@@ -107,4 +107,48 @@ void main() {
     expect(find.text('volume2'), findsWidgets);
     expect(find.text('triangleAlert'), findsNothing);
   });
+
+  testWidgets('the icon browser shows the filled form on request', (
+    tester,
+  ) async {
+    tester.view
+      ..physicalSize = const Size(1280, 2400)
+      ..devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(
+      DsApp(
+        locale: const Locale('en'),
+        home: SiteSettingsScope(
+          settings: const SiteSettings(),
+          onChanged: (_) {},
+          child: SiteLinks(
+            path: '/foundations/icons',
+            go: (_) {},
+            child: const SiteShell(path: '/foundations/icons'),
+          ),
+        ),
+      ),
+    );
+    await tester.pump(const Duration(seconds: 1));
+    final search = find.descendant(
+      of: find.bySemanticsLabel('Search icons'),
+      matching: find.byType(EditableText),
+    );
+    // The browser's tiles draw their icon at 20px.
+    DsIcon tileIcon(DsIconData icon) => tester.widget<DsIcon>(
+      find.byWidgetPredicate(
+        (w) => w is DsIcon && identical(w.icon, icon) && w.size == 20,
+      ),
+    );
+    await tester.enterText(search, 'triangleAlert');
+    await tester.pump();
+    expect(tileIcon(DsIcons.triangleAlert).fill, isFalse);
+    await tester.tap(find.text('Filled'));
+    await tester.pump();
+    expect(tileIcon(DsIcons.triangleAlert).fill, isTrue);
+    // An icon whose details merge when filled stays outlined.
+    await tester.enterText(search, 'atom');
+    await tester.pump();
+    expect(tileIcon(DsIcons.atom).fill, isFalse);
+  });
 }

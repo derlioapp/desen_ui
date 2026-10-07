@@ -241,6 +241,7 @@ def generate(icons):
         '    required this.category,',
         '    this.aliases = const [],',
         '    this.tags = const [],',
+        '    this.fills = true,',
         '  });',
         '',
         '  final String name;',
@@ -248,6 +249,9 @@ def generate(icons):
         '  final String category;',
         '  final List<String> aliases;',
         '  final List<String> tags;',
+        '',
+        '  /// False when the filled form loses its details.',
+        '  final bool fills;',
         '}',
         '',
         '/// Every built-in icon, by category, then by name.',
@@ -266,6 +270,8 @@ def generate(icons):
                 args.append('aliases: [' + ', '.join(dart_str(a) for a in icon['aliases']) + ']')
             if icon['tags']:
                 args.append('tags: [' + ', '.join(dart_str(t) for t in icon['tags']) + ']')
+            if not icon['fill']:
+                args.append('fills: false')
             lines.append(f'  IconEntry({", ".join(args)}),')
         lines += ['];', '']
         files[f'{SITE_SET}/{file_name(category)}.dart'] = '\n'.join(lines)

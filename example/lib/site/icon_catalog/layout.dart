@@ -904,6 +904,7 @@ const _layout = <IconEntry>[
       'portrait',
       'landscape',
     ],
+    fills: false,
   ),
   IconEntry(
     'rotateCcwSquare',

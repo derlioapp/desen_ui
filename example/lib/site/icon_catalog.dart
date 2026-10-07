@@ -47,6 +47,7 @@ class IconEntry {
     required this.category,
     this.aliases = const [],
     this.tags = const [],
+    this.fills = true,
   });
 
   final String name;
@@ -54,6 +55,9 @@ class IconEntry {
   final String category;
   final List<String> aliases;
   final List<String> tags;
+
+  /// False when the filled form loses its details.
+  final bool fills;
 }
 
 /// Every built-in icon, by category, then by name.

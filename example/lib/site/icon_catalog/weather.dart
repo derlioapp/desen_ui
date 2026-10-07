@@ -286,6 +286,7 @@ const _weather = <IconEntry>[
       'ocean',
       'curl',
     ],
+    fills: false,
   ),
   IconEntry(
     'wavesArrowDown',

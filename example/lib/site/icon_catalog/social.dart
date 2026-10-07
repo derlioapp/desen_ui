@@ -1031,6 +1031,7 @@ const _social = <IconEntry>[
     DsIcons.ribbon,
     category: 'social',
     tags: ['awareness', 'strip', 'band', 'tape', 'strap', 'cordon'],
+    fills: false,
   ),
   IconEntry(
     'smartphoneNfc',
