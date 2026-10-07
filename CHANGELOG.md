@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Fixed: `DsTabs` cut its labels at very large text. A tab now grows
+  taller with its label; `DsTabsStyle.height` is its minimum height, so
+  the bar looks the same at usual sizes.
 - A `DsRadio` or `DsRadioCard` whose value type differs from its
   `DsRadioGroup`'s (`DsRadio<Plan?>` in a `DsRadioGroup<Plan>`) could never
   be selected, without a word; debug builds now stop with a message that

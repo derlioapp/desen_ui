@@ -384,25 +384,35 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
               behavior: HitTestBehavior.opaque,
               excludeFromSemantics: true,
               onTap: interactive ? () => _select(i, touch: true) : null,
+              // A minimum height grows with large text.
               child: Container(
-                height: s.height!,
-                constraints: BoxConstraints(minWidth: minWidth),
+                constraints: BoxConstraints(
+                  minWidth: minWidth,
+                  minHeight: s.height!,
+                ),
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    DecoratedBox(
-                      decoration: DsBoxDecoration(
-                        // The ring hugs the label, a line of text about 20
-                        // tall: rounded as a control of that height.
-                        borderRadius: BorderRadius.circular(
-                          t.radii.control(20),
+                    // Room above and below the label keeps a label that
+                    // grew past the height clear of the underline and its
+                    // ring inside the tab; at usual sizes the height
+                    // holds both.
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: DsSpace.s8),
+                      child: DecoratedBox(
+                        decoration: DsBoxDecoration(
+                          // The ring hugs the label, a line of text about 20
+                          // tall: rounded as a control of that height.
+                          borderRadius: BorderRadius.circular(
+                            t.radii.control(20),
+                          ),
+                          shadows: [
+                            if (states.contains(WidgetState.focused))
+                              ...?s.focusShadows,
+                          ],
                         ),
-                        shadows: [
-                          if (states.contains(WidgetState.focused))
-                            ...?s.focusShadows,
-                        ],
+                        child: label,
                       ),
-                      child: label,
                     ),
                     // The position, read after the label; on the web the tab
                     // role tells it.

@@ -426,7 +426,7 @@ SPECS = [
         doc='The look of a `DsTabs` bar and its tabs. States apply per tab.',
         states=['focused', 'hovered', 'pressed', 'selected', 'disabled'],
         fields=[
-            ('height', 'double', 'Tab height.'),
+            ('height', 'double', 'Minimum tab height; grows with large text.'),
             ('gap', 'double', 'Space between tabs.'),
             ('padding', 'EdgeInsetsGeometry', 'Padding of the bar.'),
             ('foreground', 'Color', 'Label color.'),
