@@ -126,6 +126,23 @@ List<String> fidelityFailures(DsSeed seed) {
         );
       }
     }
+    // A near-status seed's strong selection, focus and links stay its red
+    // or green in light mode: darker than the fills, not maroon or bottle
+    // green (they sat at 0.32–0.36).
+    if (p.role == DsSeedRole.nearStatus && brightness == Brightness.light) {
+      for (final (name, color) in [
+        ('selectionStrong', k.selectionStrong),
+        ('focus', k.focus),
+        ('link', k.link),
+      ]) {
+        final ink = DsOklch.fromColor(color);
+        if (ink.l < .40) {
+          failures.add(
+            'light: $name lightness ${ink.l.toStringAsFixed(2)} is heavy',
+          );
+        }
+      }
+    }
     // Marks with no label (progress, slider, tab underline) keep the
     // brand's family and stay vivid: the seed hue, or for a
     // yellow or amber whose deep tone is olive or mustard, the nearest
