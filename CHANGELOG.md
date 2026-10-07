@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Fixed: a context or row menu opened from the keyboard (Shift+F10 or the
+  Menu key) closed at once when its control touched the window's edge, so
+  the row menu of a full-width `DsTable` never showed.
 - Fixed: on touch, long-pressing a control inside a `DsTooltip` to read
   its tooltip also pressed the control when the finger lifted. The long
   press that shows the tooltip now cancels the press.

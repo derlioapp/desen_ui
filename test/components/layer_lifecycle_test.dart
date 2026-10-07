@@ -70,6 +70,64 @@ void main() {
       await tester.pumpAndSettle();
       expect(value, 'a', reason: 'no choice through an unseen menu');
     });
+
+    for (final (where, direction) in [
+      (Alignment.centerLeft, TextDirection.ltr),
+      (Alignment.centerRight, TextDirection.rtl),
+    ]) {
+      testWidgets('a keyboard-opened context menu stays open for a control '
+          'on the window edge (${direction.name})', (tester) async {
+        await tester.pumpWidget(
+          DsApp(
+            home: Directionality(
+              textDirection: direction,
+              child: Align(
+                alignment: where,
+                child: DsContextMenuRegion(
+                  items: [
+                    DsMenuItem(label: const Text('Rename'), onPressed: () {}),
+                  ],
+                  child: DsButton(
+                    autofocus: true,
+                    onPressed: () {},
+                    child: const Text('Row'),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+        await tester.pumpAndSettle();
+        await tester.sendKeyEvent(LogicalKeyboardKey.contextMenu);
+        await tester.pumpAndSettle();
+        expect(find.text('Rename'), findsOneWidget);
+      });
+    }
+
+    testWidgets('the Menu key opens the row menu of a full-width table', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        DsApp(
+          home: DsTable<int>(
+            columns: [
+              DsTableColumn(id: 'n', label: 'Name', text: (i) => 'Item $i'),
+            ],
+            rows: const [1, 2, 3],
+            rowKey: (i) => i,
+            onRowPressed: (_) {},
+            autofocus: true,
+            rowMenuBuilder: (context, i) => [
+              DsMenuItem(label: const Text('Rename'), onPressed: () {}),
+            ],
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await tester.sendKeyEvent(LogicalKeyboardKey.contextMenu);
+      await tester.pumpAndSettle();
+      expect(find.text('Rename'), findsOneWidget);
+    });
   });
 
   group('trigger kept alive off screen in a lazy list', () {
