@@ -129,7 +129,7 @@ export 'src/components/tooltip/tooltip.dart';
 export 'src/components/tooltip/tooltip_style.dart';
 export 'src/foundation/case.dart';
 export 'src/foundation/color_utils.dart' hide DsColorTween;
-export 'src/foundation/component_theme.dart';
+export 'src/foundation/component_theme.dart' hide DsComponentThemeReset;
 export 'src/foundation/spring.dart';
 export 'src/foundation/oklch.dart';
 export 'src/l10n/direction.dart';

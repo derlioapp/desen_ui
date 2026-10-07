@@ -20,6 +20,7 @@ import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
 import '../button/button.dart';
 import '../button/button_theme.dart';
+import '../../foundation/component_theme.dart';
 import 'toast_style.dart';
 
 /// Why a toast closed; [DsToastController.closed] completes with it.
@@ -227,20 +228,24 @@ class DsToast extends StatelessWidget {
                         ? constraints.maxWidth * 0.4
                         : double.infinity,
                   ),
-                  child: DsButton(
-                    variant: DsButtonVariant.ghost,
-                    size: DsSize.sm,
-                    onPressed: onAction,
-                    child: Text(actionLabel!),
+                  child: DsComponentThemeReset<DsButtonThemeData>(
+                    child: DsButton(
+                      variant: DsButtonVariant.ghost,
+                      size: DsSize.sm,
+                      onPressed: onAction,
+                      child: Text(actionLabel!),
+                    ),
                   ),
                 ),
               if (onDismiss != null)
-                DsButton.icon(
-                  variant: DsButtonVariant.ghost,
-                  size: DsSize.sm,
-                  icon: DsIcon(DsIcons.x, size: s.closeIconSize),
-                  semanticLabel: l10n.dismissNotification,
-                  onPressed: onDismiss,
+                DsComponentThemeReset<DsButtonThemeData>(
+                  child: DsButton.icon(
+                    variant: DsButtonVariant.ghost,
+                    size: DsSize.sm,
+                    icon: DsIcon(DsIcons.x, size: s.closeIconSize),
+                    semanticLabel: l10n.dismissNotification,
+                    onPressed: onDismiss,
+                  ),
                 ),
             ],
           ),

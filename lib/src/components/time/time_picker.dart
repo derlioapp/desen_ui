@@ -28,6 +28,7 @@ import '../popover/popover_style.dart';
 import '../text_field/text_field.dart';
 import '../text_field/text_field_style.dart';
 import '../text_field/typed_field.dart';
+import '../../foundation/component_theme.dart';
 import 'time_of_day.dart';
 import 'time_picker_style.dart';
 
@@ -571,13 +572,15 @@ class _DsTimePickerState extends State<DsTimePicker>
       ),
       button: PickerFieldFrame.expandedButton(
         expanded: _popup.isOpen,
-        child: DsButton.icon(
-          size: DsSize.xs,
-          variant: DsButtonVariant.ghost,
-          style: buttonStyle,
-          semanticLabel: l10n.chooseTime,
-          onPressed: _canEdit ? _popup.toggle : null,
-          icon: const DsIcon(DsIcons.clock),
+        child: DsComponentThemeReset<DsButtonThemeData>(
+          child: DsButton.icon(
+            size: DsSize.xs,
+            variant: DsButtonVariant.ghost,
+            style: buttonStyle,
+            semanticLabel: l10n.chooseTime,
+            onPressed: _canEdit ? _popup.toggle : null,
+            icon: const DsIcon(DsIcons.clock),
+          ),
         ),
       ),
       buttonVisual: visual,

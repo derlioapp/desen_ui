@@ -1,5 +1,12 @@
 ## Unreleased
 
+- Fixed: an app-wide `DsButtonTheme` reached the buttons that are parts
+  of other components: a wide padding made a text field's clear button
+  62px wide, and a height or background changed the calendar's month
+  arrows, the pagination arrows, the picker buttons, a file item's cancel
+  and retry, the table's row menu and sort buttons and the toast's buttons.
+  Those parts keep their component's look now; the app's own buttons
+  (including dialog actions and toolbar items) still take the theme.
 - Buttons, chips and segmented controls grow with large text, as text
   fields do, so their labels keep clear of their edges (at 200% a chip's
   label touched its outline). At the regular text size their heights are

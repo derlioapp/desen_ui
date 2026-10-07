@@ -18,6 +18,7 @@ import '../../theme/theme_data.dart';
 import '../button/button.dart';
 import '../button/button_style.dart';
 import '../button/button_theme.dart';
+import '../../foundation/component_theme.dart';
 import 'calendar_style.dart';
 import 'calendar_metrics.dart';
 import 'date_locale.dart';
@@ -854,21 +855,25 @@ class _CalendarState extends State<_Calendar>
                 widget.months - 1,
               ).isBefore(DsDateUtils.monthOf(_last!)));
       final buttons = [
-        DsButton.icon(
-          size: DsSize.sm,
-          variant: DsButtonVariant.ghost,
-          style: s.navButtonStyle,
-          semanticLabel: l10n.previousMonth,
-          onPressed: canPrev ? () => _turn(-1) : null,
-          icon: const DsIcon(DsIcons.chevronLeft),
+        DsComponentThemeReset<DsButtonThemeData>(
+          child: DsButton.icon(
+            size: DsSize.sm,
+            variant: DsButtonVariant.ghost,
+            style: s.navButtonStyle,
+            semanticLabel: l10n.previousMonth,
+            onPressed: canPrev ? () => _turn(-1) : null,
+            icon: const DsIcon(DsIcons.chevronLeft),
+          ),
         ),
-        DsButton.icon(
-          size: DsSize.sm,
-          variant: DsButtonVariant.ghost,
-          style: s.navButtonStyle,
-          semanticLabel: l10n.nextMonth,
-          onPressed: canNext ? () => _turn(1) : null,
-          icon: const DsIcon(DsIcons.chevronRight),
+        DsComponentThemeReset<DsButtonThemeData>(
+          child: DsButton.icon(
+            size: DsSize.sm,
+            variant: DsButtonVariant.ghost,
+            style: s.navButtonStyle,
+            semanticLabel: l10n.nextMonth,
+            onPressed: canNext ? () => _turn(1) : null,
+            icon: const DsIcon(DsIcons.chevronRight),
+          ),
         ),
       ];
       return Padding(

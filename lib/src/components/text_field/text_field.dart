@@ -24,6 +24,8 @@ import '../field/field.dart';
 import '../field/field_well.dart';
 import '../menu/shortcut.dart';
 import '../selection/error_edge.dart';
+import '../../foundation/component_theme.dart';
+import '../button/button_theme.dart';
 import 'field_fit.dart';
 import 'text_field_style.dart';
 import 'text_field_variant.dart';
@@ -1426,13 +1428,15 @@ class _DsTextFieldState extends State<DsTextField>
           if (clearable && !empty)
             _ActionTapArea(
               visual: s.clearStyle!.height!,
-              child: DsButton.icon(
-                size: DsSize.xs,
-                focusNode: _clearFocus,
-                style: s.clearStyle,
-                semanticLabel: l10n.clear,
-                onPressed: _clear,
-                icon: const DsIcon(DsIcons.x),
+              child: DsComponentThemeReset<DsButtonThemeData>(
+                child: DsButton.icon(
+                  size: DsSize.xs,
+                  focusNode: _clearFocus,
+                  style: s.clearStyle,
+                  semanticLabel: l10n.clear,
+                  onPressed: _clear,
+                  icon: const DsIcon(DsIcons.x),
+                ),
               ),
             ),
           if (revealable)
@@ -1440,14 +1444,16 @@ class _DsTextFieldState extends State<DsTextField>
               visual: s.revealStyle!.height!,
               child: ExcludeFocus(
                 excluding: _yielded >= FieldYield.reveal,
-                child: DsButton.icon(
-                  size: DsSize.xs,
-                  style: s.revealStyle,
-                  semanticLabel: _revealed
-                      ? l10n.hidePassword
-                      : l10n.showPassword,
-                  onPressed: _toggleReveal,
-                  icon: DsIcon(_revealed ? DsIcons.eyeOff : DsIcons.eye),
+                child: DsComponentThemeReset<DsButtonThemeData>(
+                  child: DsButton.icon(
+                    size: DsSize.xs,
+                    style: s.revealStyle,
+                    semanticLabel: _revealed
+                        ? l10n.hidePassword
+                        : l10n.showPassword,
+                    onPressed: _toggleReveal,
+                    icon: DsIcon(_revealed ? DsIcons.eyeOff : DsIcons.eye),
+                  ),
                 ),
               ),
             ),
