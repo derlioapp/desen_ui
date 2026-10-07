@@ -22,10 +22,13 @@ TextSpan numericSpan(String text, {TextStyle? style}) {
   if (runs.isEmpty || (runs.length == 1 && runs.single.group(0) == text)) {
     return TextSpan(text: text, style: style);
   }
+  // Turned off explicitly: a run with tabular figures merely left out of
+  // its list still takes the parent's.
   final proportional = TextStyle(
     fontFeatures: [
       for (final f in features)
         if (f != _tabular) f,
+      const FontFeature.disable('tnum'),
     ],
   );
   final children = <TextSpan>[];

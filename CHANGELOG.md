@@ -16,6 +16,10 @@
   filled shape (the "!" in an alert, an envelope's flap) is cut out so it
   stays visible; open strokes (arrows, a chart's axes) stay strokes. A play
   button, pause bars or a selected tab's icon can be drawn solid.
+- Fixed: numbers in tables, counts, the stepper and the pagination drew
+  their separators (`.`, `,`, `:`, `/`) a digit wide, so "12.480,00" read
+  like a typewriter. Only the digits are tabular now; the separators
+  keep the font's own spacing, and the digits still line up.
 - Red and green brands (and the `oxblood` and `forest` presets) draw the
   strong selection, focus outline and links in their own red or green in
   light mode, a step darker than the fills, instead of maroon or bottle
