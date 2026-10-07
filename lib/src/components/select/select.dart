@@ -351,8 +351,9 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
     return KeyEventResult.ignored;
   }
 
-  /// The last [_widestLabel], and what it was measured for.
-  (List<DsSelectOption<T>>, Object, double)? _widest;
+  /// The last [_widestLabel], and the labels and text it was measured for:
+  /// a copy of the labels, so options changed in place are measured anew.
+  (List<String>, Object, double)? _widest;
 
   /// The widest of the placeholder and the option labels, for an
   /// unbounded width. Measured once per options and text style, not on
@@ -365,12 +366,12 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
     final key = (style, extra, direction, scaler);
     if (_widest case (final seen, final seenKey, final width)
         when seenKey == key && _sameLabels(seen, options)) {
-      _widest = (options, key, width);
       return width;
     }
-    var labels = [for (final o in options) o.label];
+    final all = [for (final o in options) o.label];
+    var labels = all;
     if (labels.length > _measuredLabels) {
-      labels.sort((a, b) => b.length.compareTo(a.length));
+      labels = [...all]..sort((a, b) => b.length.compareTo(a.length));
       labels = labels.sublist(0, _measuredLabels);
     }
     final painter = TextPainter(
@@ -387,18 +388,17 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
     }
     painter.dispose();
     final width = widest.ceilToDouble();
-    _widest = (options, key, width);
+    _widest = (all, key, width);
     return width;
   }
 
   static bool _sameLabels(
-    List<DsSelectOption<Object?>> a,
-    List<DsSelectOption<Object?>> b,
+    List<String> labels,
+    List<DsSelectOption<Object?>> options,
   ) {
-    if (identical(a, b)) return true;
-    if (a.length != b.length) return false;
-    for (var i = 0; i < a.length; i++) {
-      if (a[i].label != b[i].label) return false;
+    if (labels.length != options.length) return false;
+    for (var i = 0; i < labels.length; i++) {
+      if (labels[i] != options[i].label) return false;
     }
     return true;
   }

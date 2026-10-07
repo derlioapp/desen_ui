@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Fixed: a `DsSelect` in an unbounded width (a `Row`) kept its old width
+  when its `options` list was changed in place, cutting a longer label.
+  It now measures again whenever the labels change.
 - Fixed: `DsNumberField`, `DsDatePicker` and `DsTimePicker` did not commit
   their text when focus left through a new `focusNode` given while
   focused, so typed text stayed unformatted and unreported. It is now

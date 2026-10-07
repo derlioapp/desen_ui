@@ -1,4 +1,5 @@
 import 'package:desen_ui/desen_ui.dart';
+import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -6,7 +7,8 @@ import 'helpers.dart';
 
 /// Full-width components under an unbounded width (in a Row, in an
 /// UnconstrainedBox) lay out instead of throwing: the progress bar takes
-/// its style's width, the alert and the accordion their content's width.
+/// its style's width, the alert and the accordion their content's width,
+/// a select its widest label's.
 void main() {
   const alert = DsAlert(
     title: Text('Saved'),
@@ -165,5 +167,46 @@ void main() {
       ),
     );
     expect(tester.getSize(find.byType(DsProgressBar)).width, 90);
+  });
+
+  testWidgets('a select in a Row measures options changed in place', (
+    tester,
+  ) async {
+    final options = [const DsSelectOption(value: 1, label: 'One')];
+    var value = 1;
+    late StateSetter setState;
+    await tester.pumpWidget(
+      DsApp(
+        home: Center(
+          child: StatefulBuilder(
+            builder: (context, s) {
+              setState = s;
+              return Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  DsSelect<int>(
+                    value: value,
+                    onChanged: (_) {},
+                    options: options,
+                  ),
+                ],
+              );
+            },
+          ),
+        ),
+      ),
+    );
+    final before = tester.getSize(find.byType(DsSelect<int>)).width;
+    setState(() {
+      options.add(const DsSelectOption(value: 2, label: 'A much longer label'));
+      value = 2;
+    });
+    await tester.pump();
+    final after = tester.getSize(find.byType(DsSelect<int>)).width;
+    expect(after, greaterThan(before));
+    final label = tester.renderObject<RenderParagraph>(
+      find.text('A much longer label'),
+    );
+    expect(label.didExceedMaxLines, isFalse, reason: 'shown whole');
   });
 }
