@@ -628,8 +628,10 @@ List<String> darkChroma(DsColors k) => [
     ('accentPress', k.accentPress, isBright(k) ? 0.15 : 0.21),
     ('selectionStrong', k.selectionStrong, isBright(k) ? 0.15 : 0.21),
     ('selectionStrongHover', k.selectionStrongHover, isBright(k) ? 0.15 : 0.21),
-    ('link', k.link, 0.11),
-    ('focus', k.focus, 0.11),
+    // Text accents stay quiet; a warm hue keeps the bright fill's 0.148,
+    // since at 0.11 a yellow or amber reads as khaki.
+    ('link', k.link, _warm(k.link) ? 0.15 : 0.11),
+    ('focus', k.focus, _warm(k.focus) ? 0.15 : 0.11),
     // A vivid red like iOS's (was 0.15: a brick red); still no neon.
     ('danger.fill', k.danger.fill, 0.21),
     ('danger.fillHover', k.danger.fillHover, 0.21),
@@ -758,6 +760,15 @@ List<String> markFailures(DsColors k, {required bool dark}) => [
     if (isMuddy(k.indicator)) 'indicator is muddy (${_hex(k.indicator)})',
     if (!dark && k.focus == k.indicator && isMuddy(k.focus)) 'focus is muddy',
   ],
+  // Accent text and links: never olive or mustard in light mode, never
+  // khaki (a warm hue washed out to 0.11 chroma) in dark mode.
+  for (final (name, ink) in [('accentText', k.accentText), ('link', k.link)])
+    if (chroma(ink) >= .03) ...[
+      if (isMuddy(ink)) '$name is muddy (${_hex(ink)})',
+      if (dark && _khaki(ink, k.accent))
+        '$name is khaki (${_hex(ink)}, chroma '
+            '${chroma(ink).toStringAsFixed(3)})',
+    ],
   for (final (name, bg) in [('surface', k.surface), ('overlay', k.overlay)])
     if (DsColorUtils.flatten(k.accentTint, bg) case final band
         when isMuddy(band))
@@ -774,6 +785,19 @@ List<String> markFailures(DsColors k, {required bool dark}) => [
             'mud',
     ],
 ];
+
+/// A yellowish text accent (75–125°) washed out below 0.09 chroma while
+/// the brand's [accent] has 0.12 or more: khaki on a dark layer.
+bool _khaki(Color ink, Color accent) {
+  final v = DsOklch.fromColor(ink);
+  return v.h >= 75 && v.h <= 125 && v.c < .09 && chroma(accent) >= .12;
+}
+
+/// A warm hue, orange to yellow-green (50–125°), with some chroma.
+bool _warm(Color color) {
+  final v = DsOklch.fromColor(color);
+  return v.c >= .03 && v.h >= 50 && v.h <= 125;
+}
 
 bool _muddyAvatarHue(DsOklch v, {required bool dark}) =>
     v.c >= .015 &&

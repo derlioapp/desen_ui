@@ -16,6 +16,10 @@
   filled shape (the "!" in an alert, an envelope's flap) is cut out so it
   stays visible; open strokes (arrows, a chart's axes) stay strokes. A play
   button, pause bars or a selected tab's icon can be drawn solid.
+- Yellow, amber and orange brands write accent text and links in a clean
+  tone: in light mode the deep orange (or a lemon brand's deep lime) of
+  their progress bars instead of olive or mustard, in dark mode a vivid
+  yellow or amber instead of khaki.
 - In light mode a `DsAlert` whose status tint barely stands off the page
   (1.01–1.06:1 on the default gray page) gets a quiet 1px edge in its
   status color, so the block keeps its shape for people who see little
