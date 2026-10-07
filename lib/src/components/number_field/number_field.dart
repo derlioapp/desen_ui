@@ -78,6 +78,13 @@ export 'number_format.dart';
 /// Inside a [DsField] without an error of its own the field shows the message
 /// (WCAG 3.3.1).
 ///
+/// **Clearing.** While the text is invalid the field has already reported
+/// null, so passing `value: null` again changes nothing and the text and
+/// its error stay. To empty it from outside, such as with a "Clear"
+/// button, give the field a new [Key] (`key: ValueKey(clears)`, counting
+/// each clear), or in a [Form] use `DsNumberFormField` and call
+/// `FormState.reset()`.
+///
 /// **Buttons.** Side by side at the end, minus then plus (mirrored in
 /// RTL): each is the field's height tall and at least
 /// [DsSizes.minTapTarget] wide, inside the field, so the field does not

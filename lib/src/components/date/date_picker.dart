@@ -64,6 +64,13 @@ export 'date_picker_style.dart';
 /// an empty field from an invalid one. Inside a [DsField] without an error of
 /// its own, the field shows the message (WCAG 3.3.1).
 ///
+/// **Clearing.** While the text is invalid the field has already reported
+/// null, so passing `value: null` again changes nothing and the text and
+/// its error stay. To empty it from outside, such as with a "Clear"
+/// button, give the field a new [Key] (`key: ValueKey(clears)`, counting
+/// each clear), or in a [Form] use `DsDateFormField` and call
+/// `FormState.reset()`.
+///
 /// **Calendar.** The button at the end of the field ("Choose date") opens
 /// a [DsCalendar] in a popover, as does Alt+Down in the field. Focus moves
 /// to the chosen day (else today); the calendar's keys apply. Choosing a
@@ -216,6 +223,9 @@ class DsDatePicker extends StatefulWidget {
 /// [DsDatePickerStyle.wideBreakpoint] wide (640) where they fit, one otherwise,
 /// or [months] when set. It closes once the end is chosen; closing it before
 /// leaves the value as it was. [onChanged] reports only whole ranges (or null).
+///
+/// Clearing it from outside works as for [DsDatePicker], with
+/// `DsDateRangeFormField` in a [Form].
 class DsDateRangePicker extends StatefulWidget {
   /// Creates a date range picker.
   const DsDateRangePicker({

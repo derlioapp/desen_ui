@@ -141,7 +141,7 @@ class ColorsPage extends StatelessWidget {
         ],
       ),
       const DocSection(
-        title: 'Selection in dark mode',
+        title: 'Gray selection',
         children: [
           DocText(
             'In light mode the soft selection is a pale tint of the brand. '
@@ -152,6 +152,13 @@ class ColorsPage extends StatelessWidget {
             'olive that dark and read as status colors, so they select in '
             'the slate gray with the brand in the text. Seeds near danger or '
             'success count as warm.',
+          ),
+          DocText(
+            'Yellow, amber and light orange brands (within 35° of the '
+            'warning hue) select in gray in light mode too: a cream '
+            'selection would swallow a warning badge or alert on a selected '
+            'row. The warning keeps its own color; moved away from the '
+            'brand, it would read as lime or coral.',
           ),
           Board(child: _SelectionModes()),
         ],
@@ -818,15 +825,16 @@ class _ClashBoard extends StatelessWidget {
   }
 }
 
-// Selection in dark mode ----------------------------------------------------
+// Gray selection -------------------------------------------------------------
 
-/// A cool and a warm brand's soft selection, light and dark.
+/// A cool, a warm and a near-warning brand's soft selection, light and dark.
 class _SelectionModes extends StatelessWidget {
   const _SelectionModes();
 
-  static const _brands = [
+  static final _brands = [
     ('Indigo', DsSeed.indigo),
     ('Oxblood', DsSeed.oxblood),
+    ('Amber', DsSeed.color(Color(0xFFF59E0B))),
   ];
 
   @override

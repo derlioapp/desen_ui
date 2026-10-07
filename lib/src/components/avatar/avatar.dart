@@ -175,8 +175,17 @@ class DsAvatar extends StatelessWidget {
     // A dark tone keeps the chroma of a cool brand's dark selection
     // whatever the brand: a warm brand selects in gray there, and its tones
     // went a drab gray-green and gray-violet.
-    final dark = DsOklch.fromColor(colors.selection).l < .6;
-    final bg = turn(colors.selection, dark ? .07 : .035, .08).toColor();
+    // A yellow or amber brand selects in gray in light mode too; its tones
+    // keep the chroma its tinted selection would have had.
+    final selection = DsOklch.fromColor(colors.selection);
+    final dark = selection.l < .6;
+    final grayBrand = selection.c < .02 && brand.c >= .03;
+    final floor = dark
+        ? .07
+        : grayBrand
+        ? math.min(brand.c * .4, .08)
+        : .035;
+    final bg = turn(colors.selection, floor, .08).toColor();
     // Rotating the hue at fixed lightness changes luminance (yellow is
     // brighter than blue at the same OKLCH lightness), so the initials are
     // measured and pushed away from the fill until they read at 4.5:1.
