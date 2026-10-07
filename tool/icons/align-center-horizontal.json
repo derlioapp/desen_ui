@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/align-center-horizontal",
+  "category": "layout",
+  "tags": [
+    "items",
+    "flex",
+    "justify"
+  ],
+  "aliases": [],
+  "mirror": false
+}

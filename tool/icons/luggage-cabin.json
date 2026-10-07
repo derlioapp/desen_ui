@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide-lab/luggage-cabin",
+  "category": "travel",
+  "tags": [
+    "baggage",
+    "suitcase",
+    "wheels",
+    "packing",
+    "sotrage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

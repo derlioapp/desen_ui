@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/satellite",
+  "category": "connectivity",
+  "tags": [
+    "space station",
+    "orbit",
+    "transmitter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

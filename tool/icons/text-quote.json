@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/text-quote",
+  "category": "text",
+  "tags": [
+    "blockquote",
+    "quotation",
+    "indent",
+    "reply",
+    "response"
+  ],
+  "aliases": [],
+  "mirror": true
+}

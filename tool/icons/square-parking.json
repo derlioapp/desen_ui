@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/square-parking",
+  "category": "transportation",
+  "tags": [
+    "parking lot",
+    "car park"
+  ],
+  "aliases": [],
+  "mirror": false
+}

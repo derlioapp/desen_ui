@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/flask-round",
+  "category": "science",
+  "tags": [
+    "beaker",
+    "lab",
+    "chemistry",
+    "experiment",
+    "test"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/paw-print",
+  "category": "animals",
+  "tags": [
+    "pets",
+    "vets",
+    "veterinarian",
+    "domesticated",
+    "cat",
+    "dog",
+    "bear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

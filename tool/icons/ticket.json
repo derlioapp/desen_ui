@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/ticket",
+  "category": "account",
+  "tags": [
+    "entry",
+    "pass",
+    "voucher",
+    "event",
+    "concert",
+    "show",
+    "perforated",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

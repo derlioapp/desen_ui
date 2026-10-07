@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/spell-check-2",
+  "category": "text",
+  "tags": [
+    "spelling",
+    "error",
+    "mistake",
+    "oversight",
+    "typo",
+    "correction",
+    "code",
+    "linter",
+    "a"
+  ],
+  "aliases": [],
+  "mirror": false
+}

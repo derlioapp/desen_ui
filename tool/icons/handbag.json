@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/handbag",
+  "category": "shopping",
+  "tags": [
+    "bag",
+    "baggage",
+    "carry",
+    "clutch",
+    "fashion",
+    "luggage",
+    "purse",
+    "tote",
+    "travel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

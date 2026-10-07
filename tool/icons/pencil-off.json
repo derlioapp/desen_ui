@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/pencil-off",
+  "category": "design",
+  "tags": [
+    "disabled",
+    "inactive",
+    "non-editable",
+    "locked",
+    "read-only",
+    "unmodifiable",
+    "frozen",
+    "restricted",
+    "rubber",
+    "edit",
+    "create",
+    "draw",
+    "sketch",
+    "draft",
+    "writer",
+    "writing",
+    "stationery",
+    "artist"
+  ],
+  "aliases": [],
+  "mirror": false
+}

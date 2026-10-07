@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/messages-square",
+  "category": "social",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubbles",
+    "copy",
+    "multiple",
+    "discussion",
+    "interview",
+    "debate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

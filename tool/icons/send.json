@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/send",
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "mail",
+    "paper airplane",
+    "paper aeroplane",
+    "submit"
+  ],
+  "aliases": [],
+  "mirror": true
+}

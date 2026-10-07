@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/loader",
+  "category": "arrows",
+  "tags": [
+    "loading",
+    "wait",
+    "busy",
+    "progress",
+    "spinner",
+    "spinning",
+    "throbber"
+  ],
+  "aliases": [],
+  "mirror": false
+}

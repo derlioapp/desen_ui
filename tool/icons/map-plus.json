@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/map-plus",
+  "category": "navigation",
+  "tags": [
+    "location",
+    "navigation",
+    "travel",
+    "new",
+    "add",
+    "create"
+  ],
+  "aliases": [],
+  "mirror": false
+}

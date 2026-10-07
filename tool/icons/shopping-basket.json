@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/shopping-basket",
+  "category": "shopping",
+  "tags": [
+    "cart",
+    "e-commerce",
+    "store",
+    "purchase",
+    "products",
+    "items",
+    "ingredients"
+  ],
+  "aliases": [],
+  "mirror": false
+}

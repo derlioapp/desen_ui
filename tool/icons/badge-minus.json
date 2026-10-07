@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/badge-minus",
+  "category": "social",
+  "tags": [
+    "verified",
+    "unverified",
+    "delete",
+    "remove",
+    "erase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

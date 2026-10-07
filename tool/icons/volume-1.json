@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/volume-1",
+  "category": "connectivity",
+  "tags": [
+    "music",
+    "sound",
+    "speaker"
+  ],
+  "aliases": [
+    "volumeLow"
+  ],
+  "mirror": false
+}

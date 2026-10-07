@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/fish-off",
+  "category": "food-beverage",
+  "tags": [
+    "food",
+    "dish",
+    "restaurant",
+    "course",
+    "meal",
+    "seafood",
+    "animal",
+    "pet",
+    "sea",
+    "marine",
+    "allergy",
+    "intolerance",
+    "diet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

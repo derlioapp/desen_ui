@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/cloud-backup",
+  "category": "arrows",
+  "tags": [
+    "storage",
+    "memory",
+    "bytes",
+    "servers",
+    "backup",
+    "timemachine",
+    "rotate",
+    "synchronize",
+    "synchronise",
+    "refresh",
+    "reconnect",
+    "transfer",
+    "data",
+    "security",
+    "upload",
+    "save",
+    "remote",
+    "safety"
+  ],
+  "aliases": [],
+  "mirror": false
+}

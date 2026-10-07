@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide-lab/bottle-dispenser",
+  "category": "home",
+  "tags": [
+    "toiletries",
+    "bathroom",
+    "amenities",
+    "shower gel",
+    "bubble bath",
+    "shampoo",
+    "conditioner",
+    "hand soap",
+    "sanitizer",
+    "sanitiser",
+    "clean",
+    "wash"
+  ],
+  "aliases": [],
+  "mirror": false
+}

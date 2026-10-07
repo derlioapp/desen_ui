@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/monitor-down",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "screen sharing",
+    "download",
+    "remote",
+    "cast"
+  ],
+  "aliases": [],
+  "mirror": false
+}

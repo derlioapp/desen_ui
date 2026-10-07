@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/package",
+  "category": "files",
+  "tags": [
+    "box",
+    "container",
+    "storage",
+    "sealed",
+    "delivery",
+    "undelivered",
+    "unopened",
+    "packed",
+    "archive",
+    "zip",
+    "module"
+  ],
+  "aliases": [],
+  "mirror": false
+}

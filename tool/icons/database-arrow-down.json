@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/database-arrow-down",
+  "category": "devices",
+  "tags": [
+    "storage",
+    "memory",
+    "bytes",
+    "server",
+    "export",
+    "download",
+    "backup",
+    "pull",
+    "downsize"
+  ],
+  "aliases": [],
+  "mirror": false
+}

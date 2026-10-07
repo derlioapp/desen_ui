@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/key",
+  "category": "security",
+  "tags": [
+    "password",
+    "login",
+    "authentication",
+    "secure",
+    "unlock",
+    "keychain",
+    "key ring",
+    "fob"
+  ],
+  "aliases": [],
+  "mirror": false
+}

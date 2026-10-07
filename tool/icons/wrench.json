@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/wrench",
+  "category": "account",
+  "tags": [
+    "account",
+    "settings",
+    "spanner",
+    "diy",
+    "toolbox",
+    "build",
+    "construction"
+  ],
+  "aliases": [],
+  "mirror": false
+}

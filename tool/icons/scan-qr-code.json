@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/scan-qr-code",
+  "category": "account",
+  "tags": [
+    "barcode",
+    "scan",
+    "qrcode",
+    "url",
+    "information",
+    "digital",
+    "scanner"
+  ],
+  "aliases": [],
+  "mirror": false
+}

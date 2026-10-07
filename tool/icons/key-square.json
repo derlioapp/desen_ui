@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/key-square",
+  "category": "security",
+  "tags": [
+    "password",
+    "login",
+    "authentication",
+    "secure",
+    "unlock",
+    "car key"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/disc-2",
+  "category": "devices",
+  "tags": [
+    "album",
+    "music",
+    "vinyl",
+    "record",
+    "cd",
+    "dvd",
+    "format",
+    "dj",
+    "spin",
+    "rotate",
+    "rpm"
+  ],
+  "aliases": [],
+  "mirror": false
+}

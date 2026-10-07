@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/chart-column-decreasing",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph",
+    "trending down"
+  ],
+  "aliases": [],
+  "mirror": false
+}

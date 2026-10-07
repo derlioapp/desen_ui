@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/circle-dashed-check",
+  "category": "shapes",
+  "tags": [
+    "approved",
+    "pending",
+    "changes",
+    "revision",
+    "reapproval",
+    "published",
+    "schedule",
+    "assignment",
+    "request",
+    "review",
+    "progress",
+    "issue",
+    "draft",
+    "code",
+    "coding",
+    "version control"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/unlink",
+  "category": "text",
+  "tags": [
+    "url",
+    "unchain"
+  ],
+  "aliases": [
+    "linkOff"
+  ],
+  "mirror": false
+}

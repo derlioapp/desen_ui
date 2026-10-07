@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/mail-clock",
+  "category": "text",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "unread",
+    "scheduled",
+    "delayed",
+    "sendlater",
+    "delivery",
+    "reminder",
+    "pending",
+    "outgoing",
+    "timer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

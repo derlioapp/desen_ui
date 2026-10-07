@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/list-ordered",
+  "category": "text",
+  "tags": [
+    "number",
+    "order",
+    "queue"
+  ],
+  "aliases": [
+    "numberedList"
+  ],
+  "mirror": true
+}

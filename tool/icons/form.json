@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/form",
+  "category": "development",
+  "tags": [
+    "document",
+    "page",
+    "file",
+    "layout",
+    "paper",
+    "stub",
+    "formality",
+    "structure",
+    "template",
+    "inputs",
+    "design",
+    "components"
+  ],
+  "aliases": [],
+  "mirror": false
+}

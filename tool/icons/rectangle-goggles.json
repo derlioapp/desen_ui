@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/rectangle-goggles",
+  "category": "devices",
+  "tags": [
+    "vr",
+    "virtual",
+    "augmented",
+    "reality",
+    "headset",
+    "goggles"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/folder-check",
+  "category": "files",
+  "tags": [
+    "done",
+    "directory",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

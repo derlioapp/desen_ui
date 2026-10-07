@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide-lab/coins-exchange",
+  "category": "finance",
+  "tags": [
+    "exchange",
+    "trader",
+    "trading",
+    "transaction",
+    "swap",
+    "finance",
+    "financial",
+    "markets"
+  ],
+  "aliases": [],
+  "mirror": false
+}

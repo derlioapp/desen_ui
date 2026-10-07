@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide-lab/copy-code",
+  "category": "text",
+  "tags": [
+    "clone",
+    "duplicate",
+    "multiple",
+    "codebase",
+    "source",
+    "raw",
+    "snippets",
+    "gists"
+  ],
+  "aliases": [],
+  "mirror": false
+}

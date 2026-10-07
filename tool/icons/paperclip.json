@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/paperclip",
+  "category": "text",
+  "tags": [
+    "attachment",
+    "file"
+  ],
+  "aliases": [
+    "attach"
+  ],
+  "mirror": false
+}

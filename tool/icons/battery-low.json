@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/battery-low",
+  "category": "connectivity",
+  "tags": [
+    "power",
+    "electricity",
+    "energy",
+    "accumulator",
+    "charge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

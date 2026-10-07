@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/dog",
+  "category": "animals",
+  "tags": [
+    "animal",
+    "pet",
+    "puppy",
+    "hound",
+    "canine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

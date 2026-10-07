@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/align-horizontal-distribute-center",
+  "category": "layout",
+  "tags": [
+    "items",
+    "flex",
+    "justify",
+    "space",
+    "evenly",
+    "around"
+  ],
+  "aliases": [],
+  "mirror": false
+}

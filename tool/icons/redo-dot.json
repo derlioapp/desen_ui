@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/redo-dot",
+  "category": "text",
+  "tags": [
+    "redo",
+    "history",
+    "step",
+    "over",
+    "forward"
+  ],
+  "aliases": [],
+  "mirror": true
+}

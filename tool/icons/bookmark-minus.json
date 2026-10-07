@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/bookmark-minus",
+  "category": "account",
+  "tags": [
+    "delete",
+    "remove"
+  ],
+  "aliases": [],
+  "mirror": false
+}

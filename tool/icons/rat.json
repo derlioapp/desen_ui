@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/rat",
+  "category": "animals",
+  "tags": [
+    "mouse",
+    "mice",
+    "gerbil",
+    "rodent",
+    "pet",
+    "pest",
+    "plague",
+    "disease"
+  ],
+  "aliases": [],
+  "mirror": false
+}

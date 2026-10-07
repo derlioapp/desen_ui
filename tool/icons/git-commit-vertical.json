@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/git-commit-vertical",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control",
+    "waypoint",
+    "stop",
+    "station"
+  ],
+  "aliases": [],
+  "mirror": false
+}

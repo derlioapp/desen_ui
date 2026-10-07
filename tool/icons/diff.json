@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/diff",
+  "category": "development",
+  "tags": [
+    "patch",
+    "difference",
+    "compare",
+    "plus",
+    "minus",
+    "plus-minus",
+    "math"
+  ],
+  "aliases": [],
+  "mirror": false
+}

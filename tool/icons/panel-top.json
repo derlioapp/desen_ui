@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/panel-top",
+  "category": "layout",
+  "tags": [
+    "drawer",
+    "browser",
+    "webpage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

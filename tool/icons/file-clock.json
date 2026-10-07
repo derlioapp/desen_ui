@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/file-clock",
+  "category": "files",
+  "tags": [
+    "history",
+    "log",
+    "clock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

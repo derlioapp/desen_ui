@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/touchpad-off",
+  "category": "devices",
+  "tags": [
+    "trackpad",
+    "cursor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

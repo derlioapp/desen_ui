@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/text-align-start",
+  "category": "text",
+  "tags": [
+    "text",
+    "alignment",
+    "left",
+    "list"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/sun",
+  "category": "accessibility",
+  "tags": [
+    "brightness",
+    "weather",
+    "light",
+    "summer"
+  ],
+  "aliases": [
+    "lightMode"
+  ],
+  "mirror": false
+}

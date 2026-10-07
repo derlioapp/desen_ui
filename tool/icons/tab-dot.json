@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide-lab/tab-dot",
+  "category": "layout",
+  "tags": [
+    "tab",
+    "unsaved",
+    "unread"
+  ],
+  "aliases": [],
+  "mirror": false
+}

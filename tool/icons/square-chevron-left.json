@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/square-chevron-left",
+  "category": "arrows",
+  "tags": [
+    "back",
+    "previous",
+    "less than",
+    "fewer",
+    "menu",
+    "panel",
+    "button",
+    "keyboard",
+    "<"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/git-branch-plus",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control",
+    "vcs",
+    "repository",
+    "add",
+    "create",
+    "+"
+  ],
+  "aliases": [],
+  "mirror": false
+}

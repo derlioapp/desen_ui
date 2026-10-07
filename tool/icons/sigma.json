@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/sigma",
+  "category": "text",
+  "tags": [
+    "sum",
+    "calculate",
+    "formula",
+    "math",
+    "enumeration",
+    "enumerate"
+  ],
+  "aliases": [
+    "sum"
+  ],
+  "mirror": false
+}

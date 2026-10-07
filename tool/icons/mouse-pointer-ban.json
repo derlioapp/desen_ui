@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/mouse-pointer-ban",
+  "category": "arrows",
+  "tags": [
+    "wait",
+    "busy",
+    "loading",
+    "blocked",
+    "frozen",
+    "freeze"
+  ],
+  "aliases": [],
+  "mirror": false
+}

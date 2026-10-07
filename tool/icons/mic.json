@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/mic",
+  "category": "devices",
+  "tags": [
+    "record",
+    "sound",
+    "listen",
+    "radio",
+    "podcast",
+    "microphone"
+  ],
+  "aliases": [
+    "microphone"
+  ],
+  "mirror": false
+}

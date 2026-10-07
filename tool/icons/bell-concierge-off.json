@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide-lab/bell-concierge-off",
+  "category": "travel",
+  "tags": [
+    "unstaffed",
+    "self-service",
+    "self-catering",
+    "hospitality",
+    "hotel",
+    "accommodation",
+    "silent",
+    "silence",
+    "quiet",
+    "ignore",
+    "forget"
+  ],
+  "aliases": [],
+  "mirror": false
+}

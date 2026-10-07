@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/ampersand",
+  "category": "text",
+  "tags": [
+    "and",
+    "typography",
+    "operator",
+    "join",
+    "concatenate",
+    "code",
+    "&"
+  ],
+  "aliases": [],
+  "mirror": false
+}

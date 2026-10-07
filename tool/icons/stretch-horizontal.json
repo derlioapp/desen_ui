@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/stretch-horizontal",
+  "category": "layout",
+  "tags": [
+    "items",
+    "flex",
+    "justify",
+    "distribute"
+  ],
+  "aliases": [],
+  "mirror": false
+}

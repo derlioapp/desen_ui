@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/clipboard-type",
+  "category": "text",
+  "tags": [
+    "paste",
+    "format",
+    "text"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/mic-signal",
+  "category": "devices",
+  "tags": [
+    "podcast",
+    "audio",
+    "broadcast",
+    "signal",
+    "wireless",
+    "radio",
+    "airwaves",
+    "microphone",
+    "talk",
+    "voice",
+    "speech",
+    "stream",
+    "live",
+    "voice chat",
+    "push to talk",
+    "transmission"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/radio",
+  "category": "devices",
+  "tags": [
+    "signal",
+    "broadcast",
+    "connectivity",
+    "live",
+    "frequency"
+  ],
+  "aliases": [],
+  "mirror": false
+}

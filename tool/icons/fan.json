@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/fan",
+  "category": "home",
+  "tags": [
+    "air",
+    "cooler",
+    "ventilation",
+    "ventilator",
+    "blower"
+  ],
+  "aliases": [],
+  "mirror": false
+}

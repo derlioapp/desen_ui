@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/chart-network",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph",
+    "topology",
+    "cluster",
+    "web",
+    "nodes",
+    "connections",
+    "edges"
+  ],
+  "aliases": [],
+  "mirror": false
+}

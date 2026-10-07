@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/layout-arrow-down",
+  "category": "design",
+  "tags": [
+    "layout",
+    "direction",
+    "flex",
+    "flexbox",
+    "flex-direction",
+    "column",
+    "auto layout",
+    "vertical",
+    "arrange",
+    "order",
+    "flow",
+    "stack"
+  ],
+  "aliases": [],
+  "mirror": false
+}

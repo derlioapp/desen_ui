@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/equal-approximately-not",
+  "category": "math",
+  "tags": [
+    "calculate",
+    "math",
+    "operator",
+    "not",
+    "approximately",
+    "unequal",
+    "code",
+    "≇",
+    "tolerance",
+    "threshold",
+    "mismatch",
+    "comparison",
+    "assertion",
+    "variance"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/package-open",
+  "category": "files",
+  "tags": [
+    "box",
+    "container",
+    "storage",
+    "unpack",
+    "unarchive",
+    "unzip",
+    "opened",
+    "delivered"
+  ],
+  "aliases": [],
+  "mirror": false
+}

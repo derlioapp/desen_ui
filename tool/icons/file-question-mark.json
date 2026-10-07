@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/file-question-mark",
+  "category": "files",
+  "tags": [
+    "readme",
+    "help",
+    "question"
+  ],
+  "aliases": [],
+  "mirror": false
+}

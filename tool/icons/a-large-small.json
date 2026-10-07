@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/a-large-small",
+  "category": "text",
+  "tags": [
+    "letter",
+    "font size",
+    "text",
+    "formatting"
+  ],
+  "aliases": [
+    "fontSize"
+  ],
+  "mirror": false
+}

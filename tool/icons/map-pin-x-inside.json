@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/map-pin-x-inside",
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "drop",
+    "delete",
+    "remove",
+    "erase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

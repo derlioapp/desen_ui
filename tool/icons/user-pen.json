@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/user-pen",
+  "category": "account",
+  "tags": [
+    "person",
+    "account",
+    "contact",
+    "profile",
+    "edit",
+    "change"
+  ],
+  "aliases": [],
+  "mirror": false
+}

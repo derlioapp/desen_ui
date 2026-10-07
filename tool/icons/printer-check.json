@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/printer-check",
+  "category": "devices",
+  "tags": [
+    "fax",
+    "office",
+    "device",
+    "success",
+    "printed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

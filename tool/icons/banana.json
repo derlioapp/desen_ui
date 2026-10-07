@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/banana",
+  "category": "food-beverage",
+  "tags": [
+    "fruit",
+    "food"
+  ],
+  "aliases": [],
+  "mirror": false
+}

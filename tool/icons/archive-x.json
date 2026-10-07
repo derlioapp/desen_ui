@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/archive-x",
+  "category": "files",
+  "tags": [
+    "index",
+    "backup",
+    "box",
+    "storage",
+    "records",
+    "junk"
+  ],
+  "aliases": [],
+  "mirror": false
+}

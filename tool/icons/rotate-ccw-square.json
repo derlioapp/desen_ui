@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/rotate-ccw-square",
+  "category": "layout",
+  "tags": [
+    "left",
+    "counter-clockwise",
+    "rotate",
+    "image",
+    "90",
+    "45",
+    "degrees",
+    "°"
+  ],
+  "aliases": [],
+  "mirror": false
+}

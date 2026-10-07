@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/bluetooth-connected",
+  "category": "connectivity",
+  "tags": [
+    "paired"
+  ],
+  "aliases": [],
+  "mirror": false
+}

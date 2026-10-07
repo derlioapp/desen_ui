@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/rainbow",
+  "category": "weather",
+  "tags": [
+    "colors",
+    "colours",
+    "spectrum",
+    "light",
+    "prism",
+    "arc",
+    "clear",
+    "sunshine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

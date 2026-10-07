@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/folder-cog",
+  "category": "files",
+  "tags": [
+    "directory",
+    "settings",
+    "control",
+    "preferences",
+    "cog",
+    "edit",
+    "gear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

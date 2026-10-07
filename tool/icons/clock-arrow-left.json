@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/clock-arrow-left",
+  "category": "time",
+  "tags": [
+    "time",
+    "watch",
+    "alarm",
+    "assign",
+    "range"
+  ],
+  "aliases": [],
+  "mirror": false
+}

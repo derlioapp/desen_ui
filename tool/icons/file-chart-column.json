@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/file-chart-column",
+  "category": "files",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph",
+    "presentation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

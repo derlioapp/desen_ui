@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/cloud-snow",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "blizzard"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/rotate-cw-square",
+  "category": "layout",
+  "tags": [
+    "right",
+    "clockwise",
+    "rotate",
+    "image",
+    "90",
+    "45",
+    "degrees",
+    "°"
+  ],
+  "aliases": [],
+  "mirror": false
+}

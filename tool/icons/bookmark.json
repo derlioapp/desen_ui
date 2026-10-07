@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/bookmark",
+  "category": "account",
+  "tags": [
+    "save",
+    "favorite",
+    "mark",
+    "label",
+    "attachment",
+    "file",
+    "stick",
+    "pin",
+    "read",
+    "clip",
+    "marker",
+    "tag"
+  ],
+  "aliases": [],
+  "mirror": false
+}

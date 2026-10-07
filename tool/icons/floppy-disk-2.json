@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide-lab/floppy-disk-2",
+  "category": "files",
+  "tags": [
+    "format",
+    "data",
+    "storage",
+    "capacity",
+    "megabytes",
+    "mb",
+    "label"
+  ],
+  "aliases": [],
+  "mirror": false
+}

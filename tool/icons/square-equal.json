@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/square-equal",
+  "category": "math",
+  "tags": [
+    "calculate",
+    "="
+  ],
+  "aliases": [],
+  "mirror": false
+}

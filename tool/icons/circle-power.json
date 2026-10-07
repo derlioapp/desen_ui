@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/circle-power",
+  "category": "connectivity",
+  "tags": [
+    "on",
+    "off",
+    "device",
+    "switch",
+    "toggle",
+    "binary",
+    "boolean",
+    "reboot",
+    "restart",
+    "button",
+    "keyboard",
+    "troubleshoot"
+  ],
+  "aliases": [],
+  "mirror": false
+}

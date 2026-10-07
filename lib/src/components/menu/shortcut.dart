@@ -26,7 +26,7 @@ class DsShortcut extends StatelessWidget {
   static const Map<String, DsIconData> icons = {
     '⌘': DsIcons.command,
     '⌥': DsIcons.option,
-    '⇧': DsIcons.shift,
+    '⇧': DsIcons.arrowBigUp,
     '⌫': DsIcons.backspace,
     '⏎': DsIcons.enter,
     '↵': DsIcons.enter,

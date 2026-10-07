@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/triangles-centerline-dashed-vertical",
+  "category": "design",
+  "tags": [
+    "reflect",
+    "mirror",
+    "alignment",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

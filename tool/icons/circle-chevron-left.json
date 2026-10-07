@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/circle-chevron-left",
+  "category": "arrows",
+  "tags": [
+    "back",
+    "previous",
+    "less than",
+    "fewer",
+    "menu",
+    "<"
+  ],
+  "aliases": [],
+  "mirror": true
+}

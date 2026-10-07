@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/arrow-left",
+  "category": "arrows",
+  "tags": [
+    "previous",
+    "back",
+    "direction",
+    "west",
+    "<-"
+  ],
+  "aliases": [],
+  "mirror": true
+}

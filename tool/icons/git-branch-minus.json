@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/git-branch-minus",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control",
+    "vcs",
+    "repository",
+    "delete",
+    "remove",
+    "-"
+  ],
+  "aliases": [],
+  "mirror": false
+}

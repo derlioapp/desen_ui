@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/door-closed-locked",
+  "category": "home",
+  "tags": [
+    "entrance",
+    "entry",
+    "exit",
+    "ingress",
+    "egress",
+    "gate",
+    "gateway",
+    "emergency exit",
+    "lock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

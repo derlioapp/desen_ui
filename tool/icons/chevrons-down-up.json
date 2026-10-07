@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/chevrons-down-up",
+  "category": "arrows",
+  "tags": [
+    "collapse",
+    "fold",
+    "vertical"
+  ],
+  "aliases": [],
+  "mirror": false
+}

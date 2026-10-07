@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/text-cursor-input",
+  "category": "text",
+  "tags": [
+    "select"
+  ],
+  "aliases": [],
+  "mirror": false
+}

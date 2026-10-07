@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/haze",
+  "category": "weather",
+  "tags": [
+    "mist",
+    "fog"
+  ],
+  "aliases": [],
+  "mirror": false
+}

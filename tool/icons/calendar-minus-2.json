@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/calendar-minus-2",
+  "category": "time",
+  "tags": [
+    "date",
+    "day",
+    "month",
+    "year",
+    "event",
+    "delete",
+    "remove"
+  ],
+  "aliases": [],
+  "mirror": false
+}

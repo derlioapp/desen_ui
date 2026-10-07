@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/database-backup",
+  "category": "devices",
+  "tags": [
+    "storage",
+    "memory",
+    "bytes",
+    "servers",
+    "backup",
+    "timemachine",
+    "rotate",
+    "arrow",
+    "left"
+  ],
+  "aliases": [],
+  "mirror": false
+}

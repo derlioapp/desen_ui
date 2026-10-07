@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/list-check",
+  "category": "text",
+  "tags": [
+    "done",
+    "check",
+    "tick",
+    "complete",
+    "list",
+    "to-do",
+    "bom"
+  ],
+  "aliases": [],
+  "mirror": false
+}

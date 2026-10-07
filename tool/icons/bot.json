@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/bot",
+  "category": "development",
+  "tags": [
+    "robot",
+    "ai",
+    "chat",
+    "assistant"
+  ],
+  "aliases": [
+    "robot"
+  ],
+  "mirror": false
+}

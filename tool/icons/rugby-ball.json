@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/rugby-ball",
+  "category": "sports",
+  "tags": [
+    "rugby",
+    "football",
+    "ball",
+    "goal",
+    "sport"
+  ],
+  "aliases": [],
+  "mirror": false
+}

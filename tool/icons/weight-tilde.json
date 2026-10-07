@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/weight-tilde",
+  "category": "math",
+  "tags": [
+    "measure",
+    "scale",
+    "estimate",
+    "load",
+    "balance",
+    "size",
+    "measurement",
+    "quantity",
+    "mass"
+  ],
+  "aliases": [],
+  "mirror": false
+}

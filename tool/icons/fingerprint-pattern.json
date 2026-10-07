@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/fingerprint-pattern",
+  "category": "account",
+  "tags": [
+    "2fa",
+    "authentication",
+    "biometric",
+    "identity",
+    "security"
+  ],
+  "aliases": [
+    "fingerprint"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/vault",
+  "category": "security",
+  "tags": [
+    "safe",
+    "lockbox",
+    "deposit",
+    "locker",
+    "coffer",
+    "strongbox",
+    "safety",
+    "secure",
+    "storage",
+    "valuables",
+    "bank"
+  ],
+  "aliases": [],
+  "mirror": false
+}

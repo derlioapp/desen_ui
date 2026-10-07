@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/circuit-board",
+  "category": "science",
+  "tags": [
+    "computing",
+    "electricity",
+    "electronics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

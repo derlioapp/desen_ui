@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/scan-barcode",
+  "category": "shopping",
+  "tags": [
+    "checkout",
+    "till",
+    "cart",
+    "transaction",
+    "purchase",
+    "buy",
+    "product",
+    "packaging",
+    "retail",
+    "consumer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

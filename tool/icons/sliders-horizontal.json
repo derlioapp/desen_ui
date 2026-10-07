@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/sliders-horizontal",
+  "category": "account",
+  "tags": [
+    "settings",
+    "filters",
+    "controls"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/cloud-upload",
+  "category": "arrows",
+  "tags": [
+    "file"
+  ],
+  "aliases": [],
+  "mirror": false
+}

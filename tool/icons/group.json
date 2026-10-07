@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/group",
+  "category": "files",
+  "tags": [
+    "cubes",
+    "packages",
+    "parts",
+    "units",
+    "collection",
+    "cluster",
+    "gather",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

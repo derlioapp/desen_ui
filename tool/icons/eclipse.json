@@ -1,0 +1,31 @@
+{
+  "upstream": "lucide/eclipse",
+  "category": "science",
+  "tags": [
+    "lunar",
+    "solar",
+    "crescent moon",
+    "sun",
+    "earth",
+    "day",
+    "night",
+    "planet",
+    "space",
+    "mode",
+    "dark",
+    "light",
+    "toggle",
+    "switch",
+    "color",
+    "css",
+    "styles",
+    "display",
+    "accessibility",
+    "contrast",
+    "brightness",
+    "blend",
+    "shade"
+  ],
+  "aliases": [],
+  "mirror": false
+}

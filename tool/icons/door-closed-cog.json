@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/door-closed-cog",
+  "category": "home",
+  "tags": [
+    "room",
+    "entrance",
+    "entry",
+    "settings",
+    "gear",
+    "access",
+    "automation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/star-check",
+  "category": "account",
+  "tags": [
+    "bookmark",
+    "favorite",
+    "like",
+    "review",
+    "rating",
+    "check",
+    "star"
+  ],
+  "aliases": [],
+  "mirror": false
+}

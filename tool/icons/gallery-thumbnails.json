@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/gallery-thumbnails",
+  "category": "layout",
+  "tags": [
+    "carousel",
+    "pictures",
+    "images",
+    "album",
+    "portfolio",
+    "preview"
+  ],
+  "aliases": [],
+  "mirror": false
+}

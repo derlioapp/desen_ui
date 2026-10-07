@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/wind-arrow-down",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "air",
+    "pressure",
+    "blow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

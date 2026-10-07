@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/rectangle-horizontal",
+  "category": "shapes",
+  "tags": [
+    "rectangle",
+    "aspect ratio",
+    "16:9",
+    "horizontal",
+    "shape"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/square-dot",
+  "category": "development",
+  "tags": [
+    "git",
+    "diff",
+    "modified",
+    "."
+  ],
+  "aliases": [],
+  "mirror": false
+}

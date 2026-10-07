@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/atom",
+  "category": "science",
+  "tags": [
+    "atomic",
+    "nuclear",
+    "physics",
+    "particle",
+    "element",
+    "molecule",
+    "electricity",
+    "energy",
+    "chemistry"
+  ],
+  "aliases": [],
+  "mirror": false
+}

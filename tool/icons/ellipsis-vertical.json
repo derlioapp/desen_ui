@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/ellipsis-vertical",
+  "category": "layout",
+  "tags": [
+    "menu",
+    "options",
+    "spread",
+    "more",
+    "further",
+    "extra",
+    "overflow",
+    "dots",
+    "…",
+    "..."
+  ],
+  "aliases": [
+    "moreVert"
+  ],
+  "mirror": false
+}

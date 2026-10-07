@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/clipboard-minus",
+  "category": "text",
+  "tags": [
+    "copy",
+    "delete",
+    "remove",
+    "erase",
+    "document",
+    "medical",
+    "report",
+    "doctor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

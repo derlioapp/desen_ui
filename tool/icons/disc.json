@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/disc",
+  "category": "devices",
+  "tags": [
+    "album",
+    "music",
+    "songs",
+    "format",
+    "cd",
+    "dvd",
+    "vinyl",
+    "sleeve",
+    "cover",
+    "platinum",
+    "compilation",
+    "ep",
+    "recording",
+    "playback",
+    "spin",
+    "rotate",
+    "rpm",
+    "dj"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/utensils",
+  "category": "food-beverage",
+  "tags": [
+    "fork",
+    "knife",
+    "cutlery",
+    "flatware",
+    "tableware",
+    "silverware",
+    "food",
+    "restaurant",
+    "meal",
+    "breakfast",
+    "dinner",
+    "supper"
+  ],
+  "aliases": [
+    "restaurant"
+  ],
+  "mirror": false
+}

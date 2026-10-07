@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/mail-x",
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "remove",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

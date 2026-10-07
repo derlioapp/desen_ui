@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/closed-caption",
+  "category": "accessibility",
+  "tags": [
+    "tv",
+    "movie",
+    "video",
+    "closed captions",
+    "subtitles",
+    "subhead",
+    "transcription",
+    "transcribe",
+    "dialogue",
+    "accessibility"
+  ],
+  "aliases": [],
+  "mirror": false
+}

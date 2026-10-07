@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/user-round-arrow-left",
+  "category": "account",
+  "tags": [
+    "person",
+    "assign",
+    "move",
+    "give",
+    "setup",
+    "self",
+    "me",
+    "myself",
+    "profile",
+    "avatar",
+    "incoming",
+    "recipient",
+    "assignee",
+    "inbound"
+  ],
+  "aliases": [],
+  "mirror": false
+}

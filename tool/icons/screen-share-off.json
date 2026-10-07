@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/screen-share-off",
+  "category": "connectivity",
+  "tags": [
+    "desktop",
+    "disconnect",
+    "monitor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

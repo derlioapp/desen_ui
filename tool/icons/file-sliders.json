@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/file-sliders",
+  "category": "files",
+  "tags": [
+    "cogged",
+    "gear",
+    "mechanical",
+    "machinery",
+    "configuration",
+    "controls",
+    "preferences",
+    "settings",
+    "system",
+    "admin",
+    "edit",
+    "executable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

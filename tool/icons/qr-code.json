@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/qr-code",
+  "category": "development",
+  "tags": [
+    "barcode",
+    "scan",
+    "link",
+    "url",
+    "information",
+    "digital"
+  ],
+  "aliases": [],
+  "mirror": false
+}

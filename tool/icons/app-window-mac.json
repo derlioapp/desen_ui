@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/app-window-mac",
+  "category": "layout",
+  "tags": [
+    "application",
+    "menu bar",
+    "pane",
+    "preferences",
+    "macos",
+    "osx",
+    "executable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

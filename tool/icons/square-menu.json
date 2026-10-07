@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/square-menu",
+  "category": "layout",
+  "tags": [
+    "bars",
+    "navigation",
+    "hamburger",
+    "options",
+    "menu bar",
+    "panel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

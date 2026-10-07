@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/grid-2x2-x",
+  "category": "text",
+  "tags": [
+    "table",
+    "rows",
+    "columns",
+    "data",
+    "blocks",
+    "plot",
+    "land",
+    "geometry",
+    "measure",
+    "size",
+    "width",
+    "height",
+    "distance",
+    "surface area",
+    "square meter",
+    "acre"
+  ],
+  "aliases": [],
+  "mirror": false
+}

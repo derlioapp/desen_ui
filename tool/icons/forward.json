@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/forward",
+  "category": "mail",
+  "tags": [
+    "send",
+    "share",
+    "email"
+  ],
+  "aliases": [],
+  "mirror": true
+}

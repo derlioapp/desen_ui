@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/folder-dot",
+  "category": "files",
+  "tags": [
+    "directory",
+    "root",
+    "project",
+    "pinned",
+    "active",
+    "current",
+    "cogged",
+    "gear",
+    "mechanical",
+    "machinery",
+    "configuration",
+    "controls",
+    "preferences",
+    "settings",
+    "system",
+    "admin",
+    "edit"
+  ],
+  "aliases": [],
+  "mirror": false
+}

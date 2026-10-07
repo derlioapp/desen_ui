@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/bookmark-check",
+  "category": "account",
+  "tags": [
+    "read",
+    "finished",
+    "complete",
+    "clip",
+    "marker",
+    "tag",
+    "task",
+    "todo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/loader-circle",
+  "category": "arrows",
+  "tags": [
+    "loading",
+    "wait",
+    "busy",
+    "progress",
+    "spinner",
+    "spinning",
+    "throbber",
+    "circle"
+  ],
+  "aliases": [
+    "spinner"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/tree-deciduous",
+  "category": "nature",
+  "tags": [
+    "tree",
+    "forest",
+    "park",
+    "nature"
+  ],
+  "aliases": [
+    "tree"
+  ],
+  "mirror": false
+}

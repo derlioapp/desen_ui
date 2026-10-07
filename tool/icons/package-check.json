@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/package-check",
+  "category": "development",
+  "tags": [
+    "confirm",
+    "verified",
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task",
+    "delivered"
+  ],
+  "aliases": [],
+  "mirror": false
+}

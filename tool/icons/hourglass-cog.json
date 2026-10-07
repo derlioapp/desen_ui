@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/hourglass-cog",
+  "category": "time",
+  "tags": [
+    "timer",
+    "time",
+    "sandglass",
+    "duration",
+    "settings",
+    "gear",
+    "cog",
+    "edit",
+    "configuration",
+    "countdown",
+    "timeout",
+    "expiration"
+  ],
+  "aliases": [],
+  "mirror": false
+}

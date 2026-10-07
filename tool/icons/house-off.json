@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide-lab/house-off",
+  "category": "account",
+  "tags": [
+    "property",
+    "real estate",
+    "dwellings",
+    "living",
+    "rooms",
+    "door",
+    "automation",
+    "iot",
+    "disconnected",
+    "disabled",
+    "deactivated",
+    "unpowered"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/arrow-down-to-dot",
+  "category": "arrows",
+  "tags": [
+    "direction",
+    "south",
+    "waypoint",
+    "location",
+    "step",
+    "into"
+  ],
+  "aliases": [],
+  "mirror": false
+}

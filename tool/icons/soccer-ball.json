@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide-lab/soccer-ball",
+  "category": "sports",
+  "tags": [
+    "football",
+    "futbol",
+    "kick",
+    "pitch",
+    "goal",
+    "score",
+    "bounce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

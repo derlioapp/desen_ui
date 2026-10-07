@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/car",
+  "category": "transportation",
+  "tags": [
+    "vehicle",
+    "drive",
+    "trip",
+    "journey"
+  ],
+  "aliases": [],
+  "mirror": false
+}

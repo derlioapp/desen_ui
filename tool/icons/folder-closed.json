@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/folder-closed",
+  "category": "files",
+  "tags": [
+    "directory",
+    "closed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

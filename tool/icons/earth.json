@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/earth",
+  "category": "navigation",
+  "tags": [
+    "world",
+    "browser",
+    "language",
+    "translate",
+    "globe"
+  ],
+  "aliases": [],
+  "mirror": false
+}

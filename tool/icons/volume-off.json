@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/volume-off",
+  "category": "connectivity",
+  "tags": [
+    "music",
+    "sound",
+    "mute",
+    "speaker"
+  ],
+  "aliases": [],
+  "mirror": false
+}

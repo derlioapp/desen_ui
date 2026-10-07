@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/rotate-3d",
+  "category": "design",
+  "tags": [
+    "gizmo",
+    "transform",
+    "orientation",
+    "orbit",
+    "axis"
+  ],
+  "aliases": [],
+  "mirror": false
+}

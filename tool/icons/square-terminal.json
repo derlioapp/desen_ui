@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/square-terminal",
+  "category": "development",
+  "tags": [
+    "code",
+    "command line",
+    "prompt",
+    "shell"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide/file-box",
+  "category": "files",
+  "tags": [
+    "document",
+    "page",
+    "sheet",
+    "cube",
+    "box",
+    "3d",
+    "model",
+    "asset",
+    "object",
+    "geometry",
+    "mesh",
+    "ar",
+    "augmented reality",
+    "cad",
+    "design",
+    "blueprint",
+    "draft",
+    "package",
+    "scene"
+  ],
+  "aliases": [],
+  "mirror": false
+}

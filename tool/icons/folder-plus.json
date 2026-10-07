@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/folder-plus",
+  "category": "files",
+  "tags": [
+    "directory",
+    "add",
+    "create",
+    "new"
+  ],
+  "aliases": [],
+  "mirror": false
+}

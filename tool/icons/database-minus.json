@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/database-minus",
+  "category": "devices",
+  "tags": [
+    "storage",
+    "memory",
+    "bytes",
+    "server",
+    "minus",
+    "remove",
+    "delete",
+    "reduce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

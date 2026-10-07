@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/phone-call",
+  "category": "connectivity",
+  "tags": [
+    "ring"
+  ],
+  "aliases": [
+    "call"
+  ],
+  "mirror": false
+}

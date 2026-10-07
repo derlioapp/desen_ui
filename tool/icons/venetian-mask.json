@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/venetian-mask",
+  "category": "account",
+  "tags": [
+    "mask",
+    "masquerade",
+    "impersonate",
+    "secret",
+    "incognito"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/file-search-corner",
+  "category": "files",
+  "tags": [
+    "lost",
+    "document",
+    "find",
+    "browser",
+    "lens"
+  ],
+  "aliases": [],
+  "mirror": false
+}

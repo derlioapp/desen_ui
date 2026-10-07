@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/package-x",
+  "category": "development",
+  "tags": [
+    "delete",
+    "remove"
+  ],
+  "aliases": [],
+  "mirror": false
+}

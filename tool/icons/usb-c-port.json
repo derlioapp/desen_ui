@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/usb-c-port",
+  "category": "devices",
+  "tags": [
+    "universal",
+    "serial",
+    "bus",
+    "controller",
+    "connector",
+    "interface",
+    "socket",
+    "plug",
+    "slot",
+    "data",
+    "input",
+    "output"
+  ],
+  "aliases": [],
+  "mirror": false
+}

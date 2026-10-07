@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide/scan-box",
+  "category": "design",
+  "tags": [
+    "ar",
+    "augmented reality",
+    "3d",
+    "object detection",
+    "object recognition",
+    "tracking",
+    "spatial computing",
+    "capture",
+    "cube",
+    "bounding box",
+    "camera",
+    "frame",
+    "shape",
+    "boundary",
+    "lidar",
+    "depth",
+    "scanning",
+    "mapping",
+    "placement"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/heading-2",
+  "category": "text",
+  "tags": [
+    "h2",
+    "html",
+    "markup",
+    "markdown"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,29 @@
+{
+  "upstream": "lucide/between-horizontal-start",
+  "category": "layout",
+  "tags": [
+    "insert",
+    "add",
+    "right",
+    "slot",
+    "squeeze",
+    "space",
+    "vertical",
+    "grid",
+    "table",
+    "rows",
+    "cells",
+    "excel",
+    "spreadsheet",
+    "accountancy",
+    "data",
+    "enter",
+    "entry",
+    "entries",
+    "blocks",
+    "rectangles",
+    "chevron"
+  ],
+  "aliases": [],
+  "mirror": false
+}

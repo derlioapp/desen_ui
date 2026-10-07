@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/wand-sparkles",
+  "category": "design",
+  "tags": [
+    "magic",
+    "wizard",
+    "magician"
+  ],
+  "aliases": [
+    "magicWand"
+  ],
+  "mirror": false
+}

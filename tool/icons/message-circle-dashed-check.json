@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide/message-circle-dashed-check",
+  "category": "social",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubble",
+    "draft",
+    "pending",
+    "provisional",
+    "verification",
+    "confirmation",
+    "success",
+    "status",
+    "check",
+    "approval",
+    "moderate",
+    "resolved",
+    "done",
+    "complete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

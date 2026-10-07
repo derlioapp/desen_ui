@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/georgian-lari",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/gallery-vertical-end",
+  "category": "layout",
+  "tags": [
+    "carousel",
+    "pictures",
+    "images",
+    "scroll",
+    "swipe",
+    "album",
+    "portfolio",
+    "history",
+    "versions",
+    "backup",
+    "time machine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

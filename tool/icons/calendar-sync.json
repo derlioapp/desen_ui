@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/calendar-sync",
+  "category": "arrows",
+  "tags": [
+    "repeat",
+    "refresh",
+    "reconnect",
+    "transfer",
+    "backup",
+    "date",
+    "month",
+    "year",
+    "event",
+    "subscribe",
+    "recurring",
+    "schedule",
+    "reminder",
+    "automatic",
+    "auto"
+  ],
+  "aliases": [],
+  "mirror": false
+}

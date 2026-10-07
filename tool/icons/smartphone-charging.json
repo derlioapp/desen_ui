@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/smartphone-charging",
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "cellphone",
+    "device",
+    "power",
+    "screen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

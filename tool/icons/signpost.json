@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/signpost",
+  "category": "arrows",
+  "tags": [
+    "navigation",
+    "direction",
+    "arrow",
+    "wayfinding",
+    "guide",
+    "location",
+    "pointer",
+    "route",
+    "indicator",
+    "marker",
+    "bidirectional",
+    "left",
+    "right",
+    "east",
+    "west"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/folder-bookmark",
+  "category": "files",
+  "tags": [
+    "folder",
+    "bookmark",
+    "file",
+    "mark",
+    "storage",
+    "archive",
+    "directory",
+    "project",
+    "favorite",
+    "save",
+    "read later"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/list-restart",
+  "category": "multimedia",
+  "tags": [
+    "reset",
+    "refresh",
+    "reload",
+    "playlist",
+    "replay"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/video",
+  "category": "devices",
+  "tags": [
+    "camera",
+    "movie",
+    "film",
+    "recording",
+    "motion picture",
+    "camcorder",
+    "reel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

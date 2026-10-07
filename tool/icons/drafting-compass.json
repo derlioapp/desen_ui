@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/drafting-compass",
+  "category": "math",
+  "tags": [
+    "geometry",
+    "trigonometry",
+    "radius",
+    "diameter",
+    "circumference",
+    "calculate",
+    "measure",
+    "arc",
+    "curve",
+    "draw",
+    "sketch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

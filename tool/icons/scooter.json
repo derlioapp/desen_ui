@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/scooter",
+  "category": "transportation",
+  "tags": [
+    "vehicle",
+    "drive",
+    "trip",
+    "journey",
+    "transport",
+    "electric",
+    "ride",
+    "urban",
+    "commute",
+    "speed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/square-arrow-left",
+  "category": "arrows",
+  "tags": [
+    "previous",
+    "back",
+    "direction",
+    "west",
+    "sign",
+    "keyboard",
+    "button",
+    "<-"
+  ],
+  "aliases": [],
+  "mirror": true
+}

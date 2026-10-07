@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/undo",
+  "category": "text",
+  "tags": [
+    "redo",
+    "rerun",
+    "history"
+  ],
+  "aliases": [],
+  "mirror": true
+}

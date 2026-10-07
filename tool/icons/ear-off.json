@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/ear-off",
+  "category": "medical",
+  "tags": [
+    "hearing",
+    "hard of hearing",
+    "hearing loss",
+    "deafness",
+    "noise",
+    "silence",
+    "audio",
+    "accessibility"
+  ],
+  "aliases": [],
+  "mirror": false
+}

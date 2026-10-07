@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/diamond",
+  "category": "shapes",
+  "tags": [
+    "square",
+    "rectangle",
+    "oblique",
+    "rhombus",
+    "shape",
+    "suit",
+    "playing",
+    "cards"
+  ],
+  "aliases": [],
+  "mirror": false
+}

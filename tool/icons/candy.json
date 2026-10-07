@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/candy",
+  "category": "food-beverage",
+  "tags": [
+    "sugar",
+    "food",
+    "sweet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/signal-zero",
+  "category": "connectivity",
+  "tags": [
+    "connection",
+    "wireless",
+    "gsm",
+    "phone",
+    "2g",
+    "3g",
+    "4g",
+    "5g",
+    "lost"
+  ],
+  "aliases": [],
+  "mirror": false
+}

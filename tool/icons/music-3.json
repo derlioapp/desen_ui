@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/music-3",
+  "category": "multimedia",
+  "tags": [
+    "crotchet",
+    "minim",
+    "quarter note",
+    "half note",
+    "note"
+  ],
+  "aliases": [],
+  "mirror": false
+}

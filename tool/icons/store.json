@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/store",
+  "category": "buildings",
+  "tags": [
+    "shop",
+    "supermarket",
+    "stand",
+    "boutique",
+    "building"
+  ],
+  "aliases": [],
+  "mirror": false
+}

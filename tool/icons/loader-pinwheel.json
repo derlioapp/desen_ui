@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/loader-pinwheel",
+  "category": "arrows",
+  "tags": [
+    "loading",
+    "wait",
+    "busy",
+    "progress",
+    "throbber",
+    "spinner",
+    "spinning",
+    "beach ball",
+    "frozen",
+    "freeze"
+  ],
+  "aliases": [],
+  "mirror": false
+}

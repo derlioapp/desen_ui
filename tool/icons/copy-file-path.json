@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide-lab/copy-file-path",
+  "category": "files",
+  "tags": [
+    "relative",
+    "location",
+    "multiple"
+  ],
+  "aliases": [],
+  "mirror": false
+}

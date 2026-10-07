@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/bot-message-square",
+  "category": "development",
+  "tags": [
+    "robot",
+    "ai",
+    "chat",
+    "assistant"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/id-card-lanyard",
+  "category": "security",
+  "tags": [
+    "id-card",
+    "id-card-lanyard",
+    "identity",
+    "employee",
+    "gate-pass",
+    "badge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

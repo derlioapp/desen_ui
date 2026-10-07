@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/brush",
+  "category": "text",
+  "tags": [
+    "clean",
+    "sweep",
+    "refactor",
+    "remove",
+    "draw",
+    "paint",
+    "color",
+    "artist"
+  ],
+  "aliases": [],
+  "mirror": false
+}

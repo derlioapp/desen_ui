@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide/monitor-pause",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "screen sharing",
+    "video",
+    "movie",
+    "film",
+    "pause",
+    "suspend",
+    "hibernate",
+    "boot",
+    "virtual machine",
+    "vm"
+  ],
+  "aliases": [],
+  "mirror": false
+}

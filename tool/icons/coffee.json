@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/coffee",
+  "category": "food-beverage",
+  "tags": [
+    "drink",
+    "cup",
+    "mug",
+    "tea",
+    "cafe",
+    "hot",
+    "beverage"
+  ],
+  "aliases": [
+    "cafe"
+  ],
+  "mirror": false
+}

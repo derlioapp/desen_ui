@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/download",
+  "category": "arrows",
+  "tags": [
+    "import",
+    "export",
+    "save"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/baggage-claim",
+  "category": "transportation",
+  "tags": [
+    "baggage",
+    "luggage",
+    "travel",
+    "cart",
+    "trolley",
+    "suitcase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

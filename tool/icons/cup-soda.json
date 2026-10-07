@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/cup-soda",
+  "category": "food-beverage",
+  "tags": [
+    "beverage",
+    "cup",
+    "drink",
+    "soda",
+    "straw",
+    "water"
+  ],
+  "aliases": [],
+  "mirror": false
+}

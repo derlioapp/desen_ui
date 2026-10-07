@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/calendar-clock",
+  "category": "time",
+  "tags": [
+    "date",
+    "day",
+    "month",
+    "year",
+    "event",
+    "clock",
+    "hour"
+  ],
+  "aliases": [],
+  "mirror": false
+}

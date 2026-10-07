@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/bell-off",
+  "category": "notifications",
+  "tags": [
+    "alarm",
+    "notification",
+    "silent",
+    "reminder"
+  ],
+  "aliases": [
+    "notificationsOff"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/file-archive",
+  "category": "files",
+  "tags": [
+    "zip",
+    "package",
+    "archive"
+  ],
+  "aliases": [],
+  "mirror": false
+}

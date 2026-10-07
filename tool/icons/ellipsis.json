@@ -1,0 +1,31 @@
+{
+  "upstream": "lucide/ellipsis",
+  "category": "layout",
+  "tags": [
+    "et cetera",
+    "etc",
+    "loader",
+    "loading",
+    "progress",
+    "pending",
+    "throbber",
+    "menu",
+    "options",
+    "operator",
+    "code",
+    "coding",
+    "spread",
+    "rest",
+    "more",
+    "further",
+    "extra",
+    "overflow",
+    "dots",
+    "…",
+    "..."
+  ],
+  "aliases": [
+    "moreHoriz"
+  ],
+  "mirror": false
+}

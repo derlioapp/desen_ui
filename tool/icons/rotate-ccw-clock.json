@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/rotate-ccw-clock",
+  "category": "arrows",
+  "tags": [
+    "history",
+    "time",
+    "redo",
+    "undo",
+    "rewind",
+    "timeline",
+    "version",
+    "time machine",
+    "backup",
+    "ccw"
+  ],
+  "aliases": [],
+  "mirror": false
+}

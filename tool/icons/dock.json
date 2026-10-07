@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/dock",
+  "category": "layout",
+  "tags": [
+    "desktop",
+    "applications",
+    "launch",
+    "home",
+    "menu bar",
+    "bottom",
+    "line",
+    "macos",
+    "osx"
+  ],
+  "aliases": [],
+  "mirror": false
+}

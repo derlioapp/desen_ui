@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/phone",
+  "category": "text",
+  "tags": [
+    "call"
+  ],
+  "aliases": [],
+  "mirror": false
+}

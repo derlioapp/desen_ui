@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/eject",
+  "category": "devices",
+  "tags": [
+    "disc",
+    "drive",
+    "dvd",
+    "blu-ray",
+    "cd",
+    "media",
+    "optical",
+    "optical drive",
+    "removable media",
+    "storage",
+    "tray",
+    "unmount",
+    "usb"
+  ],
+  "aliases": [],
+  "mirror": false
+}

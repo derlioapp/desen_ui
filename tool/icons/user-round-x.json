@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/user-round-x",
+  "category": "account",
+  "tags": [
+    "delete",
+    "remove",
+    "unfollow",
+    "unsubscribe",
+    "unavailable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/cloud-lightning",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "bolt"
+  ],
+  "aliases": [
+    "thunderstorm"
+  ],
+  "mirror": false
+}

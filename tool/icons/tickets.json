@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/tickets",
+  "category": "travel",
+  "tags": [
+    "trip",
+    "travel",
+    "pass",
+    "entry",
+    "voucher",
+    "event",
+    "concert",
+    "show",
+    "perforated",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

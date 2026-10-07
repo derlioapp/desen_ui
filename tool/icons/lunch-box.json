@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide-lab/lunch-box",
+  "category": "tools",
+  "tags": [
+    "trunk",
+    "toolbox",
+    "chest",
+    "storage",
+    "container",
+    "snack",
+    "meal",
+    "brunch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

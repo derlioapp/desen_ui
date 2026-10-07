@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/star-minus",
+  "category": "account",
+  "tags": [
+    "bookmark",
+    "favorite",
+    "like",
+    "review",
+    "rating",
+    "minus",
+    "remove",
+    "deselect",
+    "star"
+  ],
+  "aliases": [],
+  "mirror": false
+}

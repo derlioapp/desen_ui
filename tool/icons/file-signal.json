@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/file-signal",
+  "category": "files",
+  "tags": [
+    "audio",
+    "music",
+    "volume"
+  ],
+  "aliases": [],
+  "mirror": false
+}

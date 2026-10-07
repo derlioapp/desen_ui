@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/microwave",
+  "category": "food-beverage",
+  "tags": [
+    "oven",
+    "cooker",
+    "toaster oven",
+    "bake"
+  ],
+  "aliases": [],
+  "mirror": false
+}

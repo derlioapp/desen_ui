@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/hop",
+  "category": "food-beverage",
+  "tags": [
+    "beer",
+    "brewery",
+    "drink"
+  ],
+  "aliases": [],
+  "mirror": false
+}

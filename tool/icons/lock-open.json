@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/lock-open",
+  "category": "security",
+  "tags": [
+    "security"
+  ],
+  "aliases": [
+    "unlock"
+  ],
+  "mirror": false
+}

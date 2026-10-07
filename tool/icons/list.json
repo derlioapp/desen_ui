@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/list",
+  "category": "text",
+  "tags": [
+    "options"
+  ],
+  "aliases": [
+    "bulletList"
+  ],
+  "mirror": true
+}

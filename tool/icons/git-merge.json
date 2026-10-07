@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/git-merge",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control"
+  ],
+  "aliases": [],
+  "mirror": false
+}

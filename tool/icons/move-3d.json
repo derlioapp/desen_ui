@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/move-3d",
+  "category": "design",
+  "tags": [
+    "arrows",
+    "axis",
+    "gizmo",
+    "coordinates",
+    "transform",
+    "translate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

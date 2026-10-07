@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/panel-left-close",
+  "category": "layout",
+  "tags": [
+    "primary",
+    "drawer",
+    "hide",
+    "chevron",
+    "<"
+  ],
+  "aliases": [],
+  "mirror": false
+}

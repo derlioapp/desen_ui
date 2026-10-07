@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/train-front",
+  "category": "transportation",
+  "tags": [
+    "railway",
+    "metro",
+    "subway",
+    "underground",
+    "high-speed",
+    "bullet",
+    "fast",
+    "track",
+    "line"
+  ],
+  "aliases": [],
+  "mirror": false
+}

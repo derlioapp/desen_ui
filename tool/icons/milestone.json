@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/milestone",
+  "category": "arrows",
+  "tags": [
+    "signpost",
+    "direction",
+    "right",
+    "east",
+    "forward",
+    "version control",
+    "waypoint"
+  ],
+  "aliases": [],
+  "mirror": false
+}

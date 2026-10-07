@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/server-cog",
+  "category": "development",
+  "tags": [
+    "cloud",
+    "storage",
+    "computing",
+    "cog",
+    "gear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

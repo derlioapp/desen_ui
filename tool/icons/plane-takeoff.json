@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/plane-takeoff",
+  "category": "transportation",
+  "tags": [
+    "departure",
+    "plane",
+    "trip",
+    "airplane",
+    "takeoff"
+  ],
+  "aliases": [],
+  "mirror": false
+}

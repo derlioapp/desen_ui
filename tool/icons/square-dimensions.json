@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/square-dimensions",
+  "category": "design",
+  "tags": [
+    "ratio",
+    "size",
+    "width",
+    "height",
+    "resize",
+    "scale",
+    "frame",
+    "proportions",
+    "aspect",
+    "bounds",
+    "measurements",
+    "canvas"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/router",
+  "category": "development",
+  "tags": [
+    "computer",
+    "server",
+    "cloud"
+  ],
+  "aliases": [],
+  "mirror": false
+}

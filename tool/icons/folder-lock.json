@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/folder-lock",
+  "category": "files",
+  "tags": [
+    "directory",
+    "lock",
+    "private",
+    "security",
+    "protected"
+  ],
+  "aliases": [],
+  "mirror": false
+}

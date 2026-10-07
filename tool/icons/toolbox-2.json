@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide-lab/toolbox-2",
+  "category": "tools",
+  "tags": [
+    "tools",
+    "trunk",
+    "chest",
+    "storage",
+    "utility",
+    "utilities",
+    "container",
+    "kit",
+    "set"
+  ],
+  "aliases": [],
+  "mirror": false
+}

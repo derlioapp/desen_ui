@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/bring-to-front",
+  "category": "design",
+  "tags": [
+    "bring",
+    "send",
+    "move",
+    "over",
+    "forward",
+    "front",
+    "overlap",
+    "layer",
+    "order"
+  ],
+  "aliases": [],
+  "mirror": false
+}

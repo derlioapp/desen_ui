@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/kanban",
+  "category": "charts",
+  "tags": [
+    "projects",
+    "manage",
+    "overview",
+    "board",
+    "tickets",
+    "issues",
+    "roadmap",
+    "plan",
+    "intentions",
+    "productivity",
+    "work",
+    "agile",
+    "code",
+    "coding"
+  ],
+  "aliases": [],
+  "mirror": false
+}

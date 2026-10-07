@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/umbrella",
+  "category": "weather",
+  "tags": [
+    "rain",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

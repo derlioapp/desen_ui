@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/calendar-range",
+  "category": "time",
+  "tags": [
+    "date",
+    "day",
+    "month",
+    "year",
+    "event",
+    "range",
+    "period"
+  ],
+  "aliases": [],
+  "mirror": false
+}

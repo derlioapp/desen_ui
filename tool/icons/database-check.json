@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/database-check",
+  "category": "devices",
+  "tags": [
+    "storage",
+    "memory",
+    "bytes",
+    "server",
+    "check",
+    "success",
+    "valid",
+    "verified",
+    "confirmed",
+    "complete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

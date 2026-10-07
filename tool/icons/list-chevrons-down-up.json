@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/list-chevrons-down-up",
+  "category": "text",
+  "tags": [
+    "options",
+    "items",
+    "collapse",
+    "expand",
+    "details",
+    "disclosure",
+    "show",
+    "hide",
+    "toggle",
+    "accordion",
+    "more",
+    "less",
+    "fold",
+    "unfold",
+    "vertical"
+  ],
+  "aliases": [],
+  "mirror": false
+}

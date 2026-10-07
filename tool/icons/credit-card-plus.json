@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide/credit-card-plus",
+  "category": "account",
+  "tags": [
+    "debit",
+    "payment",
+    "banking",
+    "finance",
+    "transaction",
+    "wallet",
+    "purchase",
+    "checkout",
+    "billing",
+    "account",
+    "cardholder",
+    "add",
+    "new",
+    "link",
+    "save",
+    "method",
+    "plastic",
+    "bank",
+    "cc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

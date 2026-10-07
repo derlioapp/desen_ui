@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/folder-heart",
+  "category": "files",
+  "tags": [
+    "directory",
+    "heart",
+    "favourite",
+    "bookmark",
+    "quick link"
+  ],
+  "aliases": [],
+  "mirror": false
+}

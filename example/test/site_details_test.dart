@@ -3,6 +3,8 @@ import 'package:desen_ui_example/site/doc.dart';
 import 'package:desen_ui_example/site/links.dart';
 import 'package:desen_ui_example/site/pages/examples/dashboard_page.dart';
 import 'package:desen_ui_example/site/pages/examples/northwind.dart';
+import 'package:desen_ui_example/site/settings.dart';
+import 'package:desen_ui_example/site/shell.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -69,5 +71,40 @@ void main() {
     );
     expect(meta, findsWidgets);
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('the icon browser finds icons by tag and by alias', (
+    tester,
+  ) async {
+    tester.view
+      ..physicalSize = const Size(1280, 2400)
+      ..devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(
+      DsApp(
+        locale: const Locale('en'),
+        home: SiteSettingsScope(
+          settings: const SiteSettings(),
+          onChanged: (_) {},
+          child: SiteLinks(
+            path: '/foundations/icons',
+            go: (_) {},
+            child: const SiteShell(path: '/foundations/icons'),
+          ),
+        ),
+      ),
+    );
+    await tester.pump(const Duration(seconds: 1));
+    final search = find.descendant(
+      of: find.bySemanticsLabel('Search icons'),
+      matching: find.byType(EditableText),
+    );
+    await tester.enterText(search, 'warning');
+    await tester.pump();
+    expect(find.text('triangleAlert'), findsOneWidget);
+    await tester.enterText(search, 'volumeUp');
+    await tester.pump();
+    expect(find.text('volume2'), findsWidgets);
+    expect(find.text('triangleAlert'), findsNothing);
   });
 }

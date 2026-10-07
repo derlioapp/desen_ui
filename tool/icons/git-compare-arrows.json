@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/git-compare-arrows",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control",
+    "diff"
+  ],
+  "aliases": [],
+  "mirror": false
+}

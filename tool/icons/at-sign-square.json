@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide-lab/at-sign-square",
+  "category": "text",
+  "tags": [
+    "mention",
+    "at",
+    "email address",
+    "message",
+    "contacts",
+    "details",
+    "address book",
+    "directory",
+    "listing",
+    "networking",
+    "business card",
+    "ping",
+    "toolbar",
+    "keyboard",
+    "button",
+    "@"
+  ],
+  "aliases": [],
+  "mirror": false
+}

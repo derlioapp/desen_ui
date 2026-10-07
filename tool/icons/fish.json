@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/fish",
+  "category": "food-beverage",
+  "tags": [
+    "dish",
+    "restaurant",
+    "course",
+    "meal",
+    "seafood",
+    "pet",
+    "sea",
+    "marine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

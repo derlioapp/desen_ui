@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/ear",
+  "category": "medical",
+  "tags": [
+    "hearing",
+    "noise",
+    "audio",
+    "accessibility"
+  ],
+  "aliases": [],
+  "mirror": false
+}

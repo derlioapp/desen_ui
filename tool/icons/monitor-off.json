@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/monitor-off",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "screen sharing",
+    "offline",
+    "disabled",
+    "disconnected",
+    "power"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,5 +1,16 @@
 ## Unreleased
 
+- **Breaking:** `DsIcons` is now the full Lucide set, 2225 icons (Lucide
+  1.52.0 and Lucide Lab), in place of the 56 picked before. Names follow
+  Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and
+  94 icons also have a more common alias (`volumeUp` for `volume2`, `home`
+  for `house`, `close` for `x`). Icons an app does not use add nothing to
+  its size. `DsIcons.shift` is now `DsIcons.arrowBigUp`; `volumeLow`,
+  `volumeHigh`, `backspace` and `enter` keep working as aliases.
+  `DsIcons.all` is gone. The calendar, settings and search shapes follow
+  Lucide's current drawings. 67 icons that point along the reading
+  direction (back and forward arrows, undo and redo, lists) mirror in
+  right-to-left text.
 - Skeleton blocks are easier to see: new color roles `skeleton` and
   `skeletonStrong` (about 1.27:1 on the card, the page and the sidebar in
   light mode). In dark mode a strong skeleton line no longer vanishes on a

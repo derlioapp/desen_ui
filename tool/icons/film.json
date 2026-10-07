@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/film",
+  "category": "photography",
+  "tags": [
+    "movie",
+    "video",
+    "reel",
+    "camera",
+    "cinema",
+    "entertainment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

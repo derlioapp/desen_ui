@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/check-check",
+  "category": "notifications",
+  "tags": [
+    "done",
+    "received",
+    "double",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

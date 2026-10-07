@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/hash",
+  "category": "text",
+  "tags": [
+    "hashtag",
+    "number",
+    "pound"
+  ],
+  "aliases": [],
+  "mirror": false
+}

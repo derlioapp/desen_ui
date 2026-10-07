@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/mail-warning",
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "delivery error",
+    "exclamation mark"
+  ],
+  "aliases": [],
+  "mirror": false
+}

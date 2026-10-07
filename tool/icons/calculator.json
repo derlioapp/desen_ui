@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/calculator",
+  "category": "math",
+  "tags": [
+    "count",
+    "calculating machine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

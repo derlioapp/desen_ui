@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/turkish-lira",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

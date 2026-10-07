@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/cloud-moon",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "night"
+  ],
+  "aliases": [],
+  "mirror": false
+}

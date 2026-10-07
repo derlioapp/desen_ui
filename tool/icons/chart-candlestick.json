@@ -1,0 +1,29 @@
+{
+  "upstream": "lucide/chart-candlestick",
+  "category": "charts",
+  "tags": [
+    "trading",
+    "trader",
+    "financial",
+    "markets",
+    "portfolio",
+    "assets",
+    "prices",
+    "value",
+    "valuation",
+    "commodities",
+    "currencies",
+    "currency",
+    "stocks",
+    "exchange",
+    "hedge fund",
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph"
+  ],
+  "aliases": [
+    "candlestickChart"
+  ],
+  "mirror": false
+}

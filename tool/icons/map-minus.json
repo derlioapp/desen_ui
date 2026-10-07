@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/map-minus",
+  "category": "navigation",
+  "tags": [
+    "location",
+    "navigation",
+    "travel",
+    "drop",
+    "delete",
+    "remove",
+    "erase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

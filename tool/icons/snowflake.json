@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/snowflake",
+  "category": "weather",
+  "tags": [
+    "cold",
+    "weather",
+    "freeze",
+    "snow",
+    "winter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

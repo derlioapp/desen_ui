@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/user-round-cog",
+  "category": "account",
+  "tags": [
+    "settings",
+    "edit",
+    "cog",
+    "gear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/pill-bottle",
+  "category": "medical",
+  "tags": [
+    "medicine",
+    "medication",
+    "prescription",
+    "drug",
+    "supplement",
+    "vitamin",
+    "capsule",
+    "jar",
+    "container",
+    "healthcare",
+    "pharmaceutical",
+    "tablet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

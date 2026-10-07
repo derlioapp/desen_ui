@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/compass",
+  "category": "navigation",
+  "tags": [
+    "direction",
+    "north",
+    "east",
+    "south",
+    "west",
+    "browser"
+  ],
+  "aliases": [],
+  "mirror": false
+}

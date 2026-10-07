@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/currency",
+  "category": "finance",
+  "tags": [
+    "finance",
+    "money"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/sun-dim",
+  "category": "accessibility",
+  "tags": [
+    "brightness",
+    "dim",
+    "low",
+    "brightness low"
+  ],
+  "aliases": [],
+  "mirror": false
+}

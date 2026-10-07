@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/beef",
+  "category": "food-beverage",
+  "tags": [
+    "food",
+    "dish",
+    "restaurant",
+    "course",
+    "meal",
+    "meat",
+    "bbq",
+    "steak"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/folder-open",
+  "category": "files",
+  "tags": [
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

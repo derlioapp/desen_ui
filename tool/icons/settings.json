@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/settings",
+  "category": "account",
+  "tags": [
+    "cog",
+    "edit",
+    "gear",
+    "preferences"
+  ],
+  "aliases": [],
+  "mirror": false
+}

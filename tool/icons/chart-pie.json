@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/chart-pie",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "presentation"
+  ],
+  "aliases": [
+    "pieChart"
+  ],
+  "mirror": false
+}

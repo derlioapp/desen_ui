@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/octagon-x",
+  "category": "math",
+  "tags": [
+    "delete",
+    "stop",
+    "alert",
+    "warning",
+    "times",
+    "clear",
+    "math"
+  ],
+  "aliases": [],
+  "mirror": false
+}

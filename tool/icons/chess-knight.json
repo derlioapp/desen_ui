@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/chess-knight",
+  "category": "gaming",
+  "tags": [
+    "piece",
+    "horse",
+    "board game"
+  ],
+  "aliases": [],
+  "mirror": false
+}

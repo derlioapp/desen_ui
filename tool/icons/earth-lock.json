@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/earth-lock",
+  "category": "security",
+  "tags": [
+    "vpn",
+    "private",
+    "privacy",
+    "network",
+    "world",
+    "browser",
+    "security",
+    "encryption",
+    "protection",
+    "connection"
+  ],
+  "aliases": [],
+  "mirror": false
+}

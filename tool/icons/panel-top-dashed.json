@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/panel-top-dashed",
+  "category": "layout",
+  "tags": [
+    "menu bar",
+    "drawer",
+    "show",
+    "reveal",
+    "padding",
+    "margin",
+    "guide",
+    "layout",
+    "bleed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

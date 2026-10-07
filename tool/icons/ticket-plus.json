@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/ticket-plus",
+  "category": "transportation",
+  "tags": [
+    "entry",
+    "pass",
+    "voucher",
+    "event",
+    "concert",
+    "show",
+    "book",
+    "purchase",
+    "add",
+    "+"
+  ],
+  "aliases": [],
+  "mirror": false
+}

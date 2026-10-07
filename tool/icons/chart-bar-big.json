@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/chart-bar-big",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph"
+  ],
+  "aliases": [],
+  "mirror": false
+}

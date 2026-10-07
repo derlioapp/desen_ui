@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide-lab/golf-driver",
+  "category": "sports",
+  "tags": [
+    "tee off",
+    "driving range",
+    "sand wedge",
+    "pitching wedge",
+    "course",
+    "hole in one",
+    "par",
+    "double bogey",
+    "birdie",
+    "eagle",
+    "albatross",
+    "handicap",
+    "caddie",
+    "caddy",
+    "bunker",
+    "rough"
+  ],
+  "aliases": [],
+  "mirror": false
+}

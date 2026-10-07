@@ -1,0 +1,33 @@
+{
+  "upstream": "lucide/playing-cards-fan",
+  "category": "gaming",
+  "tags": [
+    "deck",
+    "fan",
+    "spread",
+    "hand",
+    "deal",
+    "dealt",
+    "draw",
+    "shuffle",
+    "tabletop",
+    "planning poker",
+    "scrum",
+    "agile",
+    "estimation",
+    "estimate",
+    "prompt",
+    "icebreaker",
+    "conversation",
+    "collectible",
+    "collection",
+    "trading",
+    "poker",
+    "casino",
+    "game",
+    "gambling",
+    "suit"
+  ],
+  "aliases": [],
+  "mirror": false
+}

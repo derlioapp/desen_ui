@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/engine",
+  "category": "transportation",
+  "tags": [
+    "vehicle",
+    "power",
+    "energy",
+    "drive",
+    "repair",
+    "car",
+    "motor",
+    "mechanical",
+    "diagnostics",
+    "maintenance",
+    "warning",
+    "dashboard",
+    "parts"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide-lab/grid-lines",
+  "category": "layout",
+  "tags": [
+    "table",
+    "guides",
+    "number",
+    "pound",
+    "tic-tac-toe",
+    "noughts and crosses"
+  ],
+  "aliases": [],
+  "mirror": false
+}

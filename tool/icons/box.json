@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/box",
+  "category": "shapes",
+  "tags": [
+    "cube",
+    "package",
+    "container",
+    "storage",
+    "geometry",
+    "3d",
+    "isometric"
+  ],
+  "aliases": [],
+  "mirror": false
+}

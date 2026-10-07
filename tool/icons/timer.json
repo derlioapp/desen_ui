@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/timer",
+  "category": "time",
+  "tags": [
+    "time",
+    "timer",
+    "stopwatch"
+  ],
+  "aliases": [
+    "stopwatch"
+  ],
+  "mirror": false
+}

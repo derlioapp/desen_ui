@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/bell-check",
+  "category": "account",
+  "tags": [
+    "alarm",
+    "notification",
+    "sound",
+    "reminder"
+  ],
+  "aliases": [],
+  "mirror": false
+}

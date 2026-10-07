@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/monitor-stop",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "screen",
+    "display",
+    "desktop",
+    "external display",
+    "screen sharing",
+    "video",
+    "movie",
+    "film",
+    "stop",
+    "shutdown",
+    "virtual machine",
+    "vm"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/cloud-cog",
+  "category": "development",
+  "tags": [
+    "computing",
+    "ai",
+    "cluster",
+    "network"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/voicemail",
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "cassette",
+    "tape",
+    "reel",
+    "recording",
+    "audio"
+  ],
+  "aliases": [],
+  "mirror": false
+}

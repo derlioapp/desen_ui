@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/delete",
+  "category": "text",
+  "tags": [
+    "backspace",
+    "remove"
+  ],
+  "aliases": [
+    "backspace"
+  ],
+  "mirror": false
+}

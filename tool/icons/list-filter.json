@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/list-filter",
+  "category": "text",
+  "tags": [
+    "options"
+  ],
+  "aliases": [],
+  "mirror": true
+}

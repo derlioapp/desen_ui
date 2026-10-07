@@ -1,0 +1,24 @@
+{
+  "upstream": "lucide-lab/fork-knife",
+  "category": "food-beverage",
+  "tags": [
+    "utensils",
+    "kitchenware",
+    "cutlery",
+    "culinary",
+    "cooking",
+    "cookery",
+    "cut",
+    "slice",
+    "eat",
+    "restaurant",
+    "meal",
+    "breakfast",
+    "brunch",
+    "lunch",
+    "dinner",
+    "supper"
+  ],
+  "aliases": [],
+  "mirror": false
+}

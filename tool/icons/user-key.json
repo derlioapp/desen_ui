@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/user-key",
+  "category": "account",
+  "tags": [
+    "passkey",
+    "password",
+    "login",
+    "authentication",
+    "authorization",
+    "roles",
+    "permissions",
+    "private",
+    "public",
+    "security",
+    "person",
+    "account",
+    "contact"
+  ],
+  "aliases": [],
+  "mirror": false
+}

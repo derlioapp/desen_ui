@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/videotape",
+  "category": "devices",
+  "tags": [
+    "vhs",
+    "movie",
+    "film",
+    "recording",
+    "motion picture",
+    "showreel",
+    "cassette"
+  ],
+  "aliases": [],
+  "mirror": false
+}

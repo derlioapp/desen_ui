@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/text-search",
+  "category": "text",
+  "tags": [
+    "find",
+    "data",
+    "copy",
+    "txt",
+    "pdf",
+    "document",
+    "scan",
+    "magnifier",
+    "magnifying glass",
+    "lens"
+  ],
+  "aliases": [],
+  "mirror": false
+}

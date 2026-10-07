@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/layout-template",
+  "category": "layout",
+  "tags": [
+    "window",
+    "webpage",
+    "block",
+    "section"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/building",
+  "category": "account",
+  "tags": [
+    "organisation",
+    "organization"
+  ],
+  "aliases": [],
+  "mirror": false
+}

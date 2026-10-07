@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/square-asterisk",
+  "category": "text",
+  "tags": [
+    "password",
+    "secret",
+    "access",
+    "key",
+    "multiply",
+    "multiplication",
+    "glob pattern",
+    "wildcard",
+    "*"
+  ],
+  "aliases": [],
+  "mirror": false
+}

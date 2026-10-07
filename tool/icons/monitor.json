@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/monitor",
+  "category": "connectivity",
+  "tags": [
+    "tv",
+    "computer",
+    "desktop",
+    "screen",
+    "display",
+    "external display",
+    "screen sharing",
+    "virtual machine",
+    "vm"
+  ],
+  "aliases": [
+    "desktop"
+  ],
+  "mirror": false
+}

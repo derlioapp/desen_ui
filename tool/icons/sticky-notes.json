@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/sticky-notes",
+  "category": "text",
+  "tags": [
+    "post-it",
+    "annotation",
+    "memo",
+    "reminder",
+    "todo",
+    "tasks",
+    "ideas",
+    "brainstorm",
+    "documents",
+    "notes",
+    "multiple",
+    "collection",
+    "group",
+    "stack",
+    "clone",
+    "duplicate",
+    "copy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

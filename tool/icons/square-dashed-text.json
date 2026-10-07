@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/square-dashed-text",
+  "category": "text",
+  "tags": [
+    "find",
+    "search",
+    "selection",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

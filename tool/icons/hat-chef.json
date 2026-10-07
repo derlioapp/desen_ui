@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide-lab/hat-chef",
+  "category": "food-beverage",
+  "tags": [
+    "cooking",
+    "kitchen",
+    "restaurant"
+  ],
+  "aliases": [],
+  "mirror": false
+}

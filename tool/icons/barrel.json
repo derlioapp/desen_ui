@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/barrel",
+  "category": "food-beverage",
+  "tags": [
+    "keg",
+    "drum",
+    "tank",
+    "wine",
+    "beer",
+    "oak",
+    "wood",
+    "firkin",
+    "hogshead",
+    "kilderkin",
+    "barrique",
+    "solera",
+    "aging",
+    "whiskey",
+    "brewery",
+    "distillery",
+    "winery",
+    "vineyard"
+  ],
+  "aliases": [],
+  "mirror": false
+}

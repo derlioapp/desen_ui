@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/wifi-off",
+  "category": "connectivity",
+  "tags": [
+    "disabled"
+  ],
+  "aliases": [],
+  "mirror": false
+}

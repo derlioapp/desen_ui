@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/radius",
+  "category": "shapes",
+  "tags": [
+    "shape",
+    "circle",
+    "geometry",
+    "trigonometry",
+    "radii",
+    "calculate",
+    "measure",
+    "size"
+  ],
+  "aliases": [],
+  "mirror": false
+}

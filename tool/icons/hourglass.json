@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/hourglass",
+  "category": "time",
+  "tags": [
+    "timer",
+    "time",
+    "sandglass"
+  ],
+  "aliases": [],
+  "mirror": false
+}

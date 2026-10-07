@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/file-exclamation-point",
+  "category": "files",
+  "tags": [
+    "hidden",
+    "warning",
+    "alert",
+    "danger",
+    "protected",
+    "exclamation mark"
+  ],
+  "aliases": [],
+  "mirror": false
+}

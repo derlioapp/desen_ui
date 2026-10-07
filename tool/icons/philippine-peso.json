@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/philippine-peso",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "peso",
+    "money",
+    "php"
+  ],
+  "aliases": [],
+  "mirror": false
+}

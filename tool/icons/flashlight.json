@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/flashlight",
+  "category": "photography",
+  "tags": [
+    "torch",
+    "light",
+    "beam",
+    "emergency",
+    "safety",
+    "tool",
+    "bright"
+  ],
+  "aliases": [],
+  "mirror": false
+}

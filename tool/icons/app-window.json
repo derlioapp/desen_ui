@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/app-window",
+  "category": "layout",
+  "tags": [
+    "application",
+    "menu bar",
+    "pane",
+    "executable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

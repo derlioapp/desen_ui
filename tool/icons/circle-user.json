@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/circle-user",
+  "category": "account",
+  "tags": [
+    "person",
+    "account",
+    "contact"
+  ],
+  "aliases": [],
+  "mirror": false
+}

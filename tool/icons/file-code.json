@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/file-code",
+  "category": "files",
+  "tags": [
+    "script",
+    "document",
+    "gist",
+    "html",
+    "xml",
+    "property list",
+    "plist"
+  ],
+  "aliases": [],
+  "mirror": false
+}

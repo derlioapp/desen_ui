@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/webcam-off",
+  "category": "connectivity",
+  "tags": [
+    "camera",
+    "security"
+  ],
+  "aliases": [],
+  "mirror": false
+}

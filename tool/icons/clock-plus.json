@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/clock-plus",
+  "category": "time",
+  "tags": [
+    "time",
+    "watch",
+    "alarm",
+    "add",
+    "create",
+    "new"
+  ],
+  "aliases": [],
+  "mirror": false
+}

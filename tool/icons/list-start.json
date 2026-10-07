@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/list-start",
+  "category": "multimedia",
+  "tags": [
+    "queue",
+    "top",
+    "start",
+    "next",
+    "playlist"
+  ],
+  "aliases": [],
+  "mirror": false
+}

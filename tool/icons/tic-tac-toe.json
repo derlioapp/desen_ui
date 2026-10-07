@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/tic-tac-toe",
+  "category": "gaming",
+  "tags": [
+    "game",
+    "board",
+    "grid",
+    "strategy",
+    "noughts and crosses"
+  ],
+  "aliases": [],
+  "mirror": false
+}

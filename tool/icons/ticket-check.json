@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/ticket-check",
+  "category": "transportation",
+  "tags": [
+    "entry",
+    "pass",
+    "voucher",
+    "event",
+    "concert",
+    "show",
+    "booked",
+    "purchased",
+    "receipt",
+    "redeemed",
+    "validated",
+    "verified",
+    "certified",
+    "checked",
+    "used"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,32 @@
+{
+  "upstream": "lucide-lab/card-credit",
+  "category": "account",
+  "tags": [
+    "atm",
+    "cash machine",
+    "cash point",
+    "withdrawal",
+    "debit",
+    "visa",
+    "mastercard",
+    "bank",
+    "finance",
+    "financial",
+    "spending",
+    "budget",
+    "purchase",
+    "payment",
+    "cc",
+    "shopping",
+    "retail",
+    "store",
+    "mall",
+    "consumer",
+    "loyalty",
+    "points",
+    "cashback",
+    "transaction"
+  ],
+  "aliases": [],
+  "mirror": false
+}

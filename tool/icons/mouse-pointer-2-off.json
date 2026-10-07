@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/mouse-pointer-2-off",
+  "category": "arrows",
+  "tags": [
+    "pointer",
+    "mouse",
+    "cursor",
+    "off",
+    "disable",
+    "arrow",
+    "navigation",
+    "selection",
+    "select",
+    "click",
+    "no-click",
+    "interaction"
+  ],
+  "aliases": [],
+  "mirror": false
+}

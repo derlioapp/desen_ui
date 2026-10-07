@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/logs",
+  "category": "text",
+  "tags": [
+    "options",
+    "list",
+    "menu",
+    "order",
+    "queue",
+    "tasks",
+    "logs"
+  ],
+  "aliases": [],
+  "mirror": false
+}

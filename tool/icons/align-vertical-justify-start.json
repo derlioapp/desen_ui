@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/align-vertical-justify-start",
+  "category": "layout",
+  "tags": [
+    "top",
+    "items",
+    "flex",
+    "justify",
+    "distribute",
+    "between"
+  ],
+  "aliases": [],
+  "mirror": false
+}

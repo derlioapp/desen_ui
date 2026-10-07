@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/square-centerline-dashed-horizontal",
+  "category": "design",
+  "tags": [
+    "reflect",
+    "mirror",
+    "alignment",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

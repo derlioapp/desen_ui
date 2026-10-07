@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide-lab/cup-saucer",
+  "category": "food-beverage",
+  "tags": [
+    "mug",
+    "hot",
+    "drink",
+    "cafe",
+    "tea"
+  ],
+  "aliases": [],
+  "mirror": false
+}

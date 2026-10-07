@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/pin",
+  "category": "navigation",
+  "tags": [
+    "save",
+    "map",
+    "lock",
+    "fix"
+  ],
+  "aliases": [],
+  "mirror": false
+}

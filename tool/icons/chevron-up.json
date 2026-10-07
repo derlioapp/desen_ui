@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/chevron-up",
+  "category": "arrows",
+  "tags": [
+    "caret",
+    "keyboard",
+    "mac",
+    "control",
+    "ctrl",
+    "superscript",
+    "exponential",
+    "power",
+    "ahead",
+    "fast",
+    "^",
+    "dropdown"
+  ],
+  "aliases": [],
+  "mirror": false
+}

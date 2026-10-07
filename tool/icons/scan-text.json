@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/scan-text",
+  "category": "text",
+  "tags": [
+    "recognition",
+    "read",
+    "translate",
+    "copy",
+    "lines"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/plug-2",
+  "category": "devices",
+  "tags": [
+    "electricity",
+    "energy",
+    "socket",
+    "outlet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

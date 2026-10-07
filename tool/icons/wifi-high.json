@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/wifi-high",
+  "category": "connectivity",
+  "tags": [
+    "connection",
+    "signal",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/clock-arrow-up",
+  "category": "time",
+  "tags": [
+    "time",
+    "watch",
+    "alarm",
+    "sort",
+    "order",
+    "ascending",
+    "descending",
+    "increasing",
+    "decreasing",
+    "rising",
+    "falling"
+  ],
+  "aliases": [],
+  "mirror": false
+}

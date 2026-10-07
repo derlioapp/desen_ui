@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/table",
+  "category": "text",
+  "tags": [
+    "spreadsheet",
+    "grid"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/image-plus",
+  "category": "photography",
+  "tags": [
+    "add",
+    "create",
+    "picture"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,28 @@
+{
+  "upstream": "lucide/card-sim",
+  "category": "connectivity",
+  "tags": [
+    "cellphone",
+    "smartphone",
+    "mobile",
+    "network",
+    "cellular",
+    "service",
+    "provider",
+    "signal",
+    "coverage",
+    "disk",
+    "data",
+    "format",
+    "storage",
+    "flash",
+    "digital",
+    "contacts",
+    "phone book",
+    "contractual",
+    "circuit board",
+    "chip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

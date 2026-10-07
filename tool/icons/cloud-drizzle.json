@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/cloud-drizzle",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "shower"
+  ],
+  "aliases": [],
+  "mirror": false
+}

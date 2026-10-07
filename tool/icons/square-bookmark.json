@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/square-bookmark",
+  "category": "photography",
+  "tags": [
+    "photo",
+    "book"
+  ],
+  "aliases": [],
+  "mirror": false
+}

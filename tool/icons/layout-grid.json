@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/layout-grid",
+  "category": "design",
+  "tags": [
+    "app",
+    "home",
+    "start"
+  ],
+  "aliases": [],
+  "mirror": false
+}

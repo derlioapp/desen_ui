@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/traffic-cone",
+  "category": "transportation",
+  "tags": [
+    "roadworks",
+    "tarmac",
+    "safety",
+    "block"
+  ],
+  "aliases": [],
+  "mirror": false
+}

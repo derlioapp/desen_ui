@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/door-closed-package",
+  "category": "home",
+  "tags": [
+    "delivery",
+    "parcel",
+    "doorstep",
+    "shipping",
+    "drop-off",
+    "courier"
+  ],
+  "aliases": [],
+  "mirror": false
+}

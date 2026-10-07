@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/image-upscale",
+  "category": "photography",
+  "tags": [
+    "resize",
+    "picture",
+    "sharpen",
+    "increase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

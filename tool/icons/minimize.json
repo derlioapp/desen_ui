@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/minimize",
+  "category": "layout",
+  "tags": [
+    "exit fullscreen",
+    "close",
+    "shrink"
+  ],
+  "aliases": [],
+  "mirror": false
+}

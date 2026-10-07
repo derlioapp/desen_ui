@@ -25,7 +25,8 @@ SOFTWARE.
 --------------------------------------------------------------------------------
 lucide
 
-The icon shapes in lib/src/icons/ are from Lucide (https://lucide.dev).
+The icon shapes in lib/src/icons/ are from Lucide (https://lucide.dev) 1.52.0
+and Lucide Lab (https://github.com/lucide-icons/lucide-lab).
 
 ISC License
 

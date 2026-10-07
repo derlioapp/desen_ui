@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide-lab/goal-net",
+  "category": "sports",
+  "tags": [
+    "score",
+    "football",
+    "futbol",
+    "soccer",
+    "ice hockey",
+    "posts",
+    "crossbar",
+    "kick",
+    "pitch",
+    "penalty"
+  ],
+  "aliases": [],
+  "mirror": false
+}

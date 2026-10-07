@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/train-front-tunnel",
+  "category": "transportation",
+  "tags": [
+    "railway",
+    "metro",
+    "subway",
+    "underground",
+    "speed",
+    "bullet",
+    "fast",
+    "track",
+    "line"
+  ],
+  "aliases": [],
+  "mirror": false
+}

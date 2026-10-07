@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/text-align-center",
+  "category": "text",
+  "tags": [
+    "text",
+    "alignment",
+    "center"
+  ],
+  "aliases": [],
+  "mirror": false
+}

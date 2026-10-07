@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/chart-bar-stacked",
+  "category": "charts",
+  "tags": [
+    "statistics",
+    "analytics",
+    "diagram",
+    "graph",
+    "multivariate",
+    "categorical",
+    "comparison"
+  ],
+  "aliases": [],
+  "mirror": false
+}

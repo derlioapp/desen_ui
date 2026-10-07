@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/pen-tool",
+  "category": "text",
+  "tags": [
+    "vector",
+    "drawing",
+    "path"
+  ],
+  "aliases": [],
+  "mirror": false
+}

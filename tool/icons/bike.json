@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/bike",
+  "category": "transportation",
+  "tags": [
+    "bicycle",
+    "transport",
+    "trip"
+  ],
+  "aliases": [
+    "bicycle"
+  ],
+  "mirror": false
+}

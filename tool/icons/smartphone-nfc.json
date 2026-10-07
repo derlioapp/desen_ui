@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/smartphone-nfc",
+  "category": "social",
+  "tags": [
+    "contactless",
+    "payment",
+    "near-field communication",
+    "screen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

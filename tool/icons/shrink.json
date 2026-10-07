@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/shrink",
+  "category": "layout",
+  "tags": [
+    "scale",
+    "fullscreen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

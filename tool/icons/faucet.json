@@ -1,0 +1,30 @@
+{
+  "upstream": "lucide/faucet",
+  "category": "food-beverage",
+  "tags": [
+    "tap",
+    "spigot",
+    "water",
+    "drinking",
+    "fresh",
+    "source",
+    "pipes",
+    "plumbing",
+    "plumber",
+    "sink",
+    "basin",
+    "kitchen",
+    "bathroom",
+    "washroom",
+    "fixture",
+    "valve",
+    "flow",
+    "drinkable",
+    "potable",
+    "amenities",
+    "utilities",
+    "hydration"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/list-x",
+  "category": "multimedia",
+  "tags": [
+    "playlist",
+    "subtract",
+    "remove",
+    "delete",
+    "unqueue"
+  ],
+  "aliases": [],
+  "mirror": true
+}

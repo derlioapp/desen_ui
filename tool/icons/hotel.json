@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/hotel",
+  "category": "buildings",
+  "tags": [
+    "building",
+    "hostel",
+    "motel",
+    "inn"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide-lab/dishwasher",
+  "category": "home",
+  "tags": [
+    "kitchen",
+    "appliances",
+    "amenities",
+    "electric",
+    "cleaning",
+    "cycle",
+    "plates",
+    "glasses",
+    "cutlery",
+    "utensils"
+  ],
+  "aliases": [],
+  "mirror": false
+}

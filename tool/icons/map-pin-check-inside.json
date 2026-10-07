@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/map-pin-check-inside",
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "drop",
+    "done",
+    "tick",
+    "complete",
+    "task",
+    "added"
+  ],
+  "aliases": [],
+  "mirror": false
+}

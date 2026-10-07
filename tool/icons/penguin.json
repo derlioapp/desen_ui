@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide-lab/penguin",
+  "category": "animals",
+  "tags": [
+    "pingu",
+    "bird",
+    "arctic",
+    "aquatic",
+    "flightless",
+    "linux"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/table-cells-merge",
+  "category": "text",
+  "tags": [
+    "spreadsheet",
+    "grid",
+    "row"
+  ],
+  "aliases": [],
+  "mirror": false
+}

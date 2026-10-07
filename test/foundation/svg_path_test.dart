@@ -86,7 +86,7 @@ void main() {
     for (final icon in [
       DsIcons.command,
       DsIcons.option,
-      DsIcons.shift,
+      DsIcons.arrowBigUp,
       DsIcons.backspace,
       DsIcons.enter,
     ]) {

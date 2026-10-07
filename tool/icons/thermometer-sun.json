@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/thermometer-sun",
+  "category": "weather",
+  "tags": [
+    "temperature",
+    "celsius",
+    "fahrenheit",
+    "weather",
+    "warm",
+    "hot"
+  ],
+  "aliases": [],
+  "mirror": false
+}

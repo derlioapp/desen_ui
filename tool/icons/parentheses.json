@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/parentheses",
+  "category": "development",
+  "tags": [
+    "code",
+    "token",
+    "parenthesis",
+    "parens",
+    "brackets",
+    "parameters",
+    "arguments",
+    "args",
+    "input",
+    "call",
+    "math",
+    "formula",
+    "function",
+    "(",
+    ")"
+  ],
+  "aliases": [],
+  "mirror": false
+}

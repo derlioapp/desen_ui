@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/triangle-alert",
+  "category": "notifications",
+  "tags": [
+    "warning",
+    "alert",
+    "danger",
+    "exclamation mark",
+    "linter"
+  ],
+  "aliases": [
+    "warning"
+  ],
+  "mirror": false
+}

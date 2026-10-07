@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/timeline",
+  "category": "time",
+  "tags": [
+    "tags",
+    "history"
+  ],
+  "aliases": [],
+  "mirror": false
+}

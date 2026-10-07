@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/pencil",
+  "category": "design",
+  "tags": [
+    "rubber",
+    "edit",
+    "create",
+    "draw",
+    "sketch",
+    "draft",
+    "writer",
+    "writing",
+    "stationery",
+    "artist"
+  ],
+  "aliases": [
+    "edit"
+  ],
+  "mirror": false
+}

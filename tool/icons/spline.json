@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/spline",
+  "category": "design",
+  "tags": [
+    "path",
+    "pen",
+    "tool",
+    "shape",
+    "curve",
+    "draw"
+  ],
+  "aliases": [],
+  "mirror": false
+}

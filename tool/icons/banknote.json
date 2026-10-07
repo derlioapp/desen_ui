@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/banknote",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment"
+  ],
+  "aliases": [
+    "cash"
+  ],
+  "mirror": false
+}

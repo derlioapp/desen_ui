@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/siren",
+  "category": "medical",
+  "tags": [
+    "police",
+    "ambulance",
+    "emergency",
+    "security",
+    "alert",
+    "alarm",
+    "light"
+  ],
+  "aliases": [],
+  "mirror": false
+}

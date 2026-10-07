@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/square-square",
+  "category": "layout",
+  "tags": [
+    "float",
+    "center",
+    "rectangle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

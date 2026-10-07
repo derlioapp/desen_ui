@@ -1,0 +1,28 @@
+{
+  "upstream": "lucide/credit-card-x",
+  "category": "account",
+  "tags": [
+    "debit",
+    "payment",
+    "banking",
+    "finance",
+    "transaction",
+    "wallet",
+    "purchase",
+    "checkout",
+    "billing",
+    "account",
+    "cardholder",
+    "declined",
+    "rejected",
+    "failed",
+    "invalid",
+    "canceled",
+    "error",
+    "cancel",
+    "bank",
+    "cc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

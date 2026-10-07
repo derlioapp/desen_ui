@@ -1,0 +1,9 @@
+{
+  "upstream": "lucide/bookmark-plus",
+  "category": "account",
+  "tags": [
+    "add"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/piggy-bank",
+  "category": "finance",
+  "tags": [
+    "money",
+    "savings"
+  ],
+  "aliases": [],
+  "mirror": false
+}

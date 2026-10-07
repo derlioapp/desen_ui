@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/mail-check",
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "subscribe",
+    "delivered",
+    "success",
+    "read",
+    "done",
+    "todo",
+    "tick",
+    "complete",
+    "task"
+  ],
+  "aliases": [],
+  "mirror": false
+}

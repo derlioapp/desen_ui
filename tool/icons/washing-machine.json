@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/washing-machine",
+  "category": "home",
+  "tags": [
+    "tumble dryer",
+    "amenities",
+    "electronics",
+    "cycle",
+    "clothes",
+    "rinse",
+    "spin",
+    "drum"
+  ],
+  "aliases": [],
+  "mirror": false
+}

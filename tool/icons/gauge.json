@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/gauge",
+  "category": "transportation",
+  "tags": [
+    "dashboard",
+    "dial",
+    "meter",
+    "speed",
+    "pressure",
+    "measure",
+    "level"
+  ],
+  "aliases": [],
+  "mirror": false
+}

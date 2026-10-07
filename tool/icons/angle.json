@@ -1,0 +1,23 @@
+{
+  "upstream": "lucide/angle",
+  "category": "math",
+  "tags": [
+    "angle",
+    "degree",
+    "corner",
+    "geometry",
+    "measure",
+    "math",
+    "rotate",
+    "vertex",
+    "slope",
+    "protractor",
+    "measurement",
+    "dimension",
+    "arc",
+    "drafting",
+    "cad"
+  ],
+  "aliases": [],
+  "mirror": false
+}

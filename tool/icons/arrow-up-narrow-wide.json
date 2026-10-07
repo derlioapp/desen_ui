@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/arrow-up-narrow-wide",
+  "category": "text",
+  "tags": [
+    "filter",
+    "sort",
+    "ascending",
+    "descending",
+    "increasing",
+    "decreasing",
+    "rising",
+    "falling"
+  ],
+  "aliases": [],
+  "mirror": false
+}

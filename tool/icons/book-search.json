@@ -1,0 +1,19 @@
+{
+  "upstream": "lucide/book-search",
+  "category": "text",
+  "tags": [
+    "reading",
+    "library",
+    "study",
+    "education",
+    "research",
+    "knowledge",
+    "discover",
+    "browsing",
+    "lookup",
+    "finding",
+    "scanning"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/arrow-left-right",
+  "category": "arrows",
+  "tags": [
+    "bidirectional",
+    "two-way",
+    "2-way",
+    "swap",
+    "switch",
+    "transaction",
+    "reorder",
+    "move",
+    "<-",
+    "->"
+  ],
+  "aliases": [],
+  "mirror": false
+}

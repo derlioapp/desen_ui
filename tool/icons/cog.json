@@ -1,0 +1,22 @@
+{
+  "upstream": "lucide/cog",
+  "category": "account",
+  "tags": [
+    "computing",
+    "settings",
+    "cog",
+    "edit",
+    "gear",
+    "preferences",
+    "controls",
+    "configuration",
+    "fixed",
+    "build",
+    "construction",
+    "parts"
+  ],
+  "aliases": [
+    "gear"
+  ],
+  "mirror": false
+}

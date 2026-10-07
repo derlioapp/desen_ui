@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/ambulance",
+  "category": "medical",
+  "tags": [
+    "ambulance",
+    "emergency",
+    "medical",
+    "vehicle",
+    "siren",
+    "healthcare",
+    "transportation",
+    "rescue",
+    "urgent",
+    "first aid"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide-lab/barn",
+  "category": "buildings",
+  "tags": [
+    "stable",
+    "cattle",
+    "horses",
+    "farm",
+    "ranch",
+    "hay",
+    "alfalfa",
+    "door"
+  ],
+  "aliases": [],
+  "mirror": false
+}

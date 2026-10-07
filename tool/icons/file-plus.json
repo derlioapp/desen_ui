@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/file-plus",
+  "category": "files",
+  "tags": [
+    "add",
+    "create",
+    "new",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

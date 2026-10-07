@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide-lab/mailbox-flag",
+  "category": "mail",
+  "tags": [
+    "post",
+    "inbox",
+    "emails",
+    "messages",
+    "letters",
+    "mailing list",
+    "newsletter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

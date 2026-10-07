@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/panel-bottom-open",
+  "category": "layout",
+  "tags": [
+    "drawer",
+    "dock",
+    "show",
+    "reveal",
+    "chevron",
+    "up"
+  ],
+  "aliases": [],
+  "mirror": false
+}

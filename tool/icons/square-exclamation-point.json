@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/square-exclamation-point",
+  "category": "notifications",
+  "tags": [
+    "warning",
+    "alert",
+    "danger",
+    "exclamation mark",
+    "rectangle",
+    "square",
+    "notification",
+    "attention",
+    "important",
+    "caution"
+  ],
+  "aliases": [],
+  "mirror": false
+}

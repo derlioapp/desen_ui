@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/funnel",
+  "category": "layout",
+  "tags": [
+    "filter",
+    "hopper"
+  ],
+  "aliases": [
+    "filter"
+  ],
+  "mirror": false
+}

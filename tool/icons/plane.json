@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/plane",
+  "category": "transportation",
+  "tags": [
+    "plane",
+    "trip",
+    "airplane"
+  ],
+  "aliases": [],
+  "mirror": false
+}

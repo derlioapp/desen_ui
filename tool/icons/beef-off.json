@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/beef-off",
+  "category": "food-beverage",
+  "tags": [
+    "food",
+    "dish",
+    "restaurant",
+    "course",
+    "meal",
+    "meat",
+    "bbq",
+    "steak",
+    "vegetarian"
+  ],
+  "aliases": [],
+  "mirror": false
+}

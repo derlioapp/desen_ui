@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/folder-pen",
+  "category": "files",
+  "tags": [
+    "directory",
+    "rename"
+  ],
+  "aliases": [],
+  "mirror": false
+}

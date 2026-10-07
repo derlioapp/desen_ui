@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/git-graph",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control",
+    "commit graph",
+    "commits",
+    "gitlens"
+  ],
+  "aliases": [],
+  "mirror": false
+}

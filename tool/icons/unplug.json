@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/unplug",
+  "category": "devices",
+  "tags": [
+    "electricity",
+    "energy",
+    "electronics",
+    "socket",
+    "outlet",
+    "disconnect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

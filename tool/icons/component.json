@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/component",
+  "category": "design",
+  "tags": [
+    "design",
+    "element",
+    "group",
+    "module",
+    "part",
+    "symbol"
+  ],
+  "aliases": [],
+  "mirror": false
+}

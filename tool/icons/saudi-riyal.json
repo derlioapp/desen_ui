@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/saudi-riyal",
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

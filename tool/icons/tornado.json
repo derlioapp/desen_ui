@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/tornado",
+  "category": "weather",
+  "tags": [
+    "weather",
+    "wind",
+    "storm",
+    "hurricane"
+  ],
+  "aliases": [],
+  "mirror": false
+}

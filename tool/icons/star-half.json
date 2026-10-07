@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/star-half",
+  "category": "social",
+  "tags": [
+    "bookmark",
+    "favorite",
+    "like",
+    "review",
+    "rating"
+  ],
+  "aliases": [],
+  "mirror": false
+}

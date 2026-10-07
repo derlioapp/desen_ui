@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide-lab/socket-eu",
+  "category": "devices",
+  "tags": [
+    "electricity",
+    "electronics",
+    "outlet",
+    "plug",
+    "european",
+    "two pin",
+    "2 pin"
+  ],
+  "aliases": [],
+  "mirror": false
+}

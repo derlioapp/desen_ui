@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/mic-off",
+  "category": "devices",
+  "tags": [
+    "record",
+    "sound",
+    "mute",
+    "microphone"
+  ],
+  "aliases": [],
+  "mirror": false
+}

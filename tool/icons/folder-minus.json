@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/folder-minus",
+  "category": "files",
+  "tags": [
+    "directory",
+    "remove",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/file-stack",
+  "category": "files",
+  "tags": [
+    "versions",
+    "multiple",
+    "copy",
+    "documents",
+    "revisions",
+    "version control",
+    "history"
+  ],
+  "aliases": [],
+  "mirror": false
+}

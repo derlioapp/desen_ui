@@ -1,0 +1,27 @@
+{
+  "upstream": "lucide/ruler",
+  "category": "tools",
+  "tags": [
+    "measurements",
+    "centimeters",
+    "cm",
+    "millimeters",
+    "mm",
+    "metre",
+    "foot",
+    "feet",
+    "inches",
+    "units",
+    "size",
+    "length",
+    "width",
+    "height",
+    "dimensions",
+    "depth",
+    "breadth",
+    "extent",
+    "stationery"
+  ],
+  "aliases": [],
+  "mirror": false
+}

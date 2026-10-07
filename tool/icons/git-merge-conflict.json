@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/git-merge-conflict",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control",
+    "commits",
+    "diff",
+    "error",
+    "conflict"
+  ],
+  "aliases": [],
+  "mirror": false
+}

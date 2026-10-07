@@ -1,0 +1,21 @@
+{
+  "upstream": "lucide/ship",
+  "category": "transportation",
+  "tags": [
+    "boat",
+    "knots",
+    "nautical mile",
+    "maritime",
+    "sailing",
+    "yacht",
+    "cruise",
+    "ocean liner",
+    "tanker",
+    "vessel",
+    "navy",
+    "trip",
+    "releases"
+  ],
+  "aliases": [],
+  "mirror": false
+}

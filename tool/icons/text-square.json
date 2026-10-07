@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide-lab/text-square",
+  "category": "text",
+  "tags": [
+    "note",
+    "log",
+    "document",
+    "page",
+    "paper",
+    "sheet",
+    "list",
+    "script",
+    "code",
+    "editor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

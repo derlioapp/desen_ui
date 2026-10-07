@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/cast",
+  "category": "devices",
+  "tags": [
+    "stream",
+    "streaming",
+    "screen",
+    "display",
+    "wireless",
+    "broadcast",
+    "transmit",
+    "media",
+    "receiver",
+    "remote display",
+    "screen sharing",
+    "media streaming"
+  ],
+  "aliases": [],
+  "mirror": false
+}

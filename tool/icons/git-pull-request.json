@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/git-pull-request",
+  "category": "development",
+  "tags": [
+    "code",
+    "version control",
+    "open"
+  ],
+  "aliases": [
+    "pullRequest"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/credit-card",
+  "category": "account",
+  "tags": [
+    "bank",
+    "purchase",
+    "payment",
+    "cc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

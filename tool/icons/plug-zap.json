@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/plug-zap",
+  "category": "devices",
+  "tags": [
+    "electricity",
+    "energy",
+    "electronics",
+    "charge",
+    "charging",
+    "battery",
+    "connect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

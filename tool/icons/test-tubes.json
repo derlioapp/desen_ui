@@ -1,0 +1,18 @@
+{
+  "upstream": "lucide/test-tubes",
+  "category": "science",
+  "tags": [
+    "tubes",
+    "vials",
+    "phials",
+    "flasks",
+    "ampoules",
+    "ampules",
+    "lab",
+    "chemistry",
+    "experiment",
+    "test"
+  ],
+  "aliases": [],
+  "mirror": false
+}

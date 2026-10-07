@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/house-plug",
+  "category": "buildings",
+  "tags": [
+    "home",
+    "living",
+    "building",
+    "residence",
+    "architecture",
+    "autarky",
+    "energy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

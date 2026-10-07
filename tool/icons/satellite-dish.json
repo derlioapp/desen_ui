@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/satellite-dish",
+  "category": "connectivity",
+  "tags": [
+    "antenna",
+    "receiver",
+    "dish aerial",
+    "saucer",
+    "communication",
+    "broadcast",
+    "signal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

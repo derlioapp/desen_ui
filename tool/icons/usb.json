@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/usb",
+  "category": "devices",
+  "tags": [
+    "universal",
+    "serial",
+    "bus",
+    "controller",
+    "connector",
+    "interface"
+  ],
+  "aliases": [],
+  "mirror": false
+}

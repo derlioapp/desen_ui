@@ -402,7 +402,7 @@ void main() {
           .widgetList<DsIcon>(find.byType(DsIcon))
           .map((i) => i.icon)
           .toList();
-      expect(icons, [DsIcons.shift, DsIcons.command, DsIcons.backspace]);
+      expect(icons, [DsIcons.arrowBigUp, DsIcons.command, DsIcons.backspace]);
       // Read by name, not as symbols.
       expect(find.bySemanticsLabel('Shift Command Backspace'), findsOneWidget);
       await tester.pumpWidget(

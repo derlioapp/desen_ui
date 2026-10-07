@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/grape",
+  "category": "food-beverage",
+  "tags": [
+    "fruit",
+    "wine",
+    "food"
+  ],
+  "aliases": [],
+  "mirror": false
+}

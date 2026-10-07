@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/file-cog",
+  "category": "files",
+  "tags": [
+    "executable",
+    "settings",
+    "cog",
+    "edit",
+    "gear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

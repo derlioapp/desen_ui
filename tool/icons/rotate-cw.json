@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/rotate-cw",
+  "category": "arrows",
+  "tags": [
+    "arrow",
+    "right",
+    "clockwise",
+    "refresh",
+    "reload",
+    "rerun",
+    "redo"
+  ],
+  "aliases": [
+    "rotateRight"
+  ],
+  "mirror": false
+}

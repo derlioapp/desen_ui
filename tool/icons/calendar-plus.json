@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/calendar-plus",
+  "category": "time",
+  "tags": [
+    "date",
+    "day",
+    "month",
+    "year",
+    "event",
+    "add",
+    "subscribe",
+    "create",
+    "new"
+  ],
+  "aliases": [],
+  "mirror": false
+}

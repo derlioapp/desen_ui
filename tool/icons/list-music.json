@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/list-music",
+  "category": "multimedia",
+  "tags": [
+    "playlist",
+    "queue",
+    "music",
+    "audio",
+    "playback"
+  ],
+  "aliases": [],
+  "mirror": true
+}

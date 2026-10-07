@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/scissors",
+  "category": "text",
+  "tags": [
+    "cut",
+    "snip",
+    "chop",
+    "stationery",
+    "crafts"
+  ],
+  "aliases": [
+    "cut"
+  ],
+  "mirror": false
+}

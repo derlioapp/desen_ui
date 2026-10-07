@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/armenian-dram",
+  "category": "finance",
+  "tags": [
+    "finance",
+    "symbol",
+    "banking",
+    "economy",
+    "currency",
+    "money",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

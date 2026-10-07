@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/captions-off",
+  "category": "multimedia",
+  "tags": [
+    "closed captions",
+    "subtitles",
+    "subhead",
+    "transcription",
+    "transcribe",
+    "dialogue",
+    "accessibility"
+  ],
+  "aliases": [],
+  "mirror": false
+}

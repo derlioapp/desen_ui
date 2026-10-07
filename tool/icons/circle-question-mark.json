@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/circle-question-mark",
+  "category": "accessibility",
+  "tags": [
+    "question mark"
+  ],
+  "aliases": [
+    "help"
+  ],
+  "mirror": false
+}

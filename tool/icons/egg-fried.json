@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/egg-fried",
+  "category": "food-beverage",
+  "tags": [
+    "food",
+    "breakfast"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/bell-ring",
+  "category": "notifications",
+  "tags": [
+    "alarm",
+    "notification",
+    "sound",
+    "reminder"
+  ],
+  "aliases": [],
+  "mirror": false
+}

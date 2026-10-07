@@ -1,0 +1,28 @@
+{
+  "upstream": "lucide/notebook-tabs",
+  "category": "account",
+  "tags": [
+    "notepad",
+    "notes",
+    "people",
+    "family",
+    "friends",
+    "acquaintances",
+    "contacts",
+    "details",
+    "addresses",
+    "phone numbers",
+    "directory",
+    "listing",
+    "networking",
+    "alphabetical",
+    "a-z",
+    "organizer",
+    "organiser",
+    "planner",
+    "diary",
+    "stationery"
+  ],
+  "aliases": [],
+  "mirror": false
+}

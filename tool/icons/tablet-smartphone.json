@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/tablet-smartphone",
+  "category": "devices",
+  "tags": [
+    "phone",
+    "cellphone",
+    "device",
+    "mobile",
+    "screen",
+    "display",
+    "touchscreen",
+    "portable",
+    "responsive",
+    "screens",
+    "browser",
+    "testing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/aperture",
+  "category": "photography",
+  "tags": [
+    "camera",
+    "photo",
+    "pictures",
+    "shutter",
+    "exposure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

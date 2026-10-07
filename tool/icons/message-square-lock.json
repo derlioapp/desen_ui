@@ -1,0 +1,16 @@
+{
+  "upstream": "lucide/message-square-lock",
+  "category": "social",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubble",
+    "secure",
+    "encrypted"
+  ],
+  "aliases": [],
+  "mirror": false
+}

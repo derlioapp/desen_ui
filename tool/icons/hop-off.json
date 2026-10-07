@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/hop-off",
+  "category": "food-beverage",
+  "tags": [
+    "beer",
+    "brewery",
+    "drink",
+    "hop free",
+    "allergy",
+    "intolerance",
+    "diet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

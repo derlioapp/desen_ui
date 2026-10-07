@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/layout-panel-top",
+  "category": "layout",
+  "tags": [
+    "window",
+    "webpage",
+    "block",
+    "section",
+    "grid",
+    "template",
+    "structure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

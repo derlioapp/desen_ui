@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/cylinder",
+  "category": "shapes",
+  "tags": [
+    "shape",
+    "elliptical",
+    "geometry",
+    "container",
+    "storage",
+    "tin",
+    "pot"
+  ],
+  "aliases": [],
+  "mirror": false
+}

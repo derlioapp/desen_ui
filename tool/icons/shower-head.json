@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/shower-head",
+  "category": "home",
+  "tags": [
+    "shower",
+    "bath",
+    "bathroom",
+    "amenities",
+    "services"
+  ],
+  "aliases": [],
+  "mirror": false
+}

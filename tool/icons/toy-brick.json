@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/toy-brick",
+  "category": "gaming",
+  "tags": [
+    "lego",
+    "block",
+    "addon",
+    "plugin",
+    "integration"
+  ],
+  "aliases": [],
+  "mirror": false
+}

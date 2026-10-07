@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/grid-3x3",
+  "category": "text",
+  "tags": [
+    "table",
+    "rows",
+    "columns"
+  ],
+  "aliases": [],
+  "mirror": false
+}

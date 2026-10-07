@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/anvil",
+  "category": "buildings",
+  "tags": [
+    "metal",
+    "iron",
+    "alloy",
+    "materials",
+    "heavy",
+    "weight",
+    "blacksmith",
+    "forge",
+    "acme"
+  ],
+  "aliases": [],
+  "mirror": false
+}

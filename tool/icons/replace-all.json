@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/replace-all",
+  "category": "text",
+  "tags": [
+    "search",
+    "substitute",
+    "swap",
+    "change"
+  ],
+  "aliases": [],
+  "mirror": false
+}

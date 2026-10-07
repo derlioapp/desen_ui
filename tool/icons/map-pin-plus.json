@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/map-pin-plus",
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "drop",
+    "add",
+    "create",
+    "new"
+  ],
+  "aliases": [],
+  "mirror": false
+}

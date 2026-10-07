@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/mouse-pointer-click",
+  "category": "arrows",
+  "tags": [
+    "click",
+    "select"
+  ],
+  "aliases": [],
+  "mirror": false
+}

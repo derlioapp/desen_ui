@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/shopping-bag",
+  "category": "shopping",
+  "tags": [
+    "ecommerce",
+    "cart",
+    "purchase",
+    "store"
+  ],
+  "aliases": [],
+  "mirror": false
+}

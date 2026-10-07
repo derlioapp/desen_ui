@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/radical",
+  "category": "development",
+  "tags": [
+    "calculate",
+    "formula",
+    "math",
+    "operator",
+    "root",
+    "square",
+    "symbol"
+  ],
+  "aliases": [
+    "squareRoot"
+  ],
+  "mirror": false
+}

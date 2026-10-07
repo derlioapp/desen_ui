@@ -1,0 +1,13 @@
+{
+  "upstream": "lucide/user-lock",
+  "category": "account",
+  "tags": [
+    "person",
+    "lock",
+    "locked",
+    "account",
+    "secure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

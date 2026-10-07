@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/factory",
+  "category": "buildings",
+  "tags": [
+    "building",
+    "business",
+    "energy",
+    "industry",
+    "manufacture",
+    "sector"
+  ],
+  "aliases": [],
+  "mirror": false
+}

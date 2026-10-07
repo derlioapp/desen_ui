@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/bookmark-x",
+  "category": "account",
+  "tags": [
+    "read",
+    "clip",
+    "marker",
+    "tag",
+    "cancel",
+    "close",
+    "delete",
+    "remove",
+    "clear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

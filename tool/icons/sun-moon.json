@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/sun-moon",
+  "category": "accessibility",
+  "tags": [
+    "dark",
+    "light",
+    "moon",
+    "sun",
+    "brightness",
+    "theme",
+    "auto theme",
+    "system theme",
+    "appearance"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/refrigerator",
+  "category": "food-beverage",
+  "tags": [
+    "frigerator",
+    "fridge",
+    "freezer",
+    "cooler",
+    "icebox",
+    "chiller",
+    "cold storage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

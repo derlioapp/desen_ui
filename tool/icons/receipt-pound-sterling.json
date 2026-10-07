@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/receipt-pound-sterling",
+  "category": "finance",
+  "tags": [
+    "bill",
+    "voucher",
+    "slip",
+    "check",
+    "counterfoil",
+    "british",
+    "currency",
+    "gbp",
+    "£"
+  ],
+  "aliases": [],
+  "mirror": false
+}

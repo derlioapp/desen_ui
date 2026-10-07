@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/copy-x",
+  "category": "notifications",
+  "tags": [
+    "cancel",
+    "close",
+    "delete",
+    "remove",
+    "clear",
+    "multiple",
+    "multiply",
+    "multiplication",
+    "times"
+  ],
+  "aliases": [],
+  "mirror": false
+}

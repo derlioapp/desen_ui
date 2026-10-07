@@ -1,0 +1,26 @@
+{
+  "upstream": "lucide/proportions",
+  "category": "layout",
+  "tags": [
+    "screens",
+    "sizes",
+    "rotate",
+    "rotation",
+    "adjust",
+    "aspect ratio",
+    "16:9",
+    "widescreen",
+    "4:3",
+    "resolution",
+    "responsive",
+    "mobile",
+    "desktop",
+    "dimensions",
+    "monitor",
+    "orientation",
+    "portrait",
+    "landscape"
+  ],
+  "aliases": [],
+  "mirror": false
+}

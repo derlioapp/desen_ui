@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/badge",
+  "category": "account",
+  "tags": [
+    "check",
+    "verified",
+    "unverified"
+  ],
+  "aliases": [],
+  "mirror": false
+}

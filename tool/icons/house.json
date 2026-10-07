@@ -1,0 +1,15 @@
+{
+  "upstream": "lucide/house",
+  "category": "buildings",
+  "tags": [
+    "home",
+    "living",
+    "building",
+    "residence",
+    "architecture"
+  ],
+  "aliases": [
+    "home"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/folder-down",
+  "category": "files",
+  "tags": [
+    "directory",
+    "download",
+    "import",
+    "export"
+  ],
+  "aliases": [],
+  "mirror": false
+}

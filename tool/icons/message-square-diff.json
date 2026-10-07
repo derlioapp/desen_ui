@@ -1,0 +1,25 @@
+{
+  "upstream": "lucide/message-square-diff",
+  "category": "development",
+  "tags": [
+    "comment",
+    "chat",
+    "conversation",
+    "dialog",
+    "feedback",
+    "speech bubble",
+    "add",
+    "patch",
+    "difference",
+    "plus",
+    "minus",
+    "plus-minus",
+    "math",
+    "code review",
+    "coding",
+    "version control",
+    "git"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,10 @@
+{
+  "upstream": "lucide/pause",
+  "category": "multimedia",
+  "tags": [
+    "music",
+    "stop"
+  ],
+  "aliases": [],
+  "mirror": false
+}

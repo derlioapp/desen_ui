@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/utility-pole",
+  "category": "buildings",
+  "tags": [
+    "electricity",
+    "energy",
+    "transmission line",
+    "telegraph pole",
+    "power lines",
+    "phone"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,20 @@
+{
+  "upstream": "lucide/summary",
+  "category": "text",
+  "tags": [
+    "brief",
+    "abstract",
+    "synopsis",
+    "report",
+    "digest",
+    "outline",
+    "recap",
+    "condensation",
+    "summary",
+    "ai",
+    "text",
+    "overview"
+  ],
+  "aliases": [],
+  "mirror": false
+}

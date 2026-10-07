@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/save-pen",
+  "category": "text",
+  "tags": [
+    "floppy disk",
+    "directory",
+    "rename"
+  ],
+  "aliases": [],
+  "mirror": false
+}

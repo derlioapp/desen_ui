@@ -1,0 +1,29 @@
+{
+  "upstream": "lucide/square-text",
+  "category": "text",
+  "tags": [
+    "text",
+    "paragraph",
+    "content",
+    "note",
+    "document",
+    "body",
+    "copy",
+    "article",
+    "square",
+    "container",
+    "block",
+    "card",
+    "placeholder",
+    "log",
+    "page",
+    "paper",
+    "sheet",
+    "list",
+    "script",
+    "code",
+    "editor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

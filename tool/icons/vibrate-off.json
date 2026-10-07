@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/vibrate-off",
+  "category": "devices",
+  "tags": [
+    "smartphone",
+    "notification",
+    "rumble",
+    "haptic feedback",
+    "notifications",
+    "screen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/hd",
+  "category": "devices",
+  "tags": [
+    "tv",
+    "resolution",
+    "video",
+    "high definition",
+    "720p",
+    "1080p"
+  ],
+  "aliases": [],
+  "mirror": false
+}

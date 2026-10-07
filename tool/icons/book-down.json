@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/book-down",
+  "category": "development",
+  "tags": [
+    "code",
+    "coding",
+    "version control",
+    "git",
+    "repository",
+    "pull"
+  ],
+  "aliases": [],
+  "mirror": false
+}

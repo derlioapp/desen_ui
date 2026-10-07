@@ -1,0 +1,14 @@
+{
+  "upstream": "lucide/pin-off",
+  "category": "navigation",
+  "tags": [
+    "unpin",
+    "map",
+    "unlock",
+    "unfix",
+    "unsave",
+    "remove"
+  ],
+  "aliases": [],
+  "mirror": false
+}

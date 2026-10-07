@@ -1,0 +1,11 @@
+{
+  "upstream": "lucide/circle-parking-off",
+  "category": "transportation",
+  "tags": [
+    "parking lot",
+    "car park",
+    "no parking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

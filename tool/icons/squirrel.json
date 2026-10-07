@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/squirrel",
+  "category": "animals",
+  "tags": [
+    "animal",
+    "rodent",
+    "pet",
+    "pest",
+    "nuts",
+    "retrieve",
+    "updates",
+    "storage",
+    "stash"
+  ],
+  "aliases": [],
+  "mirror": false
+}

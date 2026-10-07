@@ -1,0 +1,12 @@
+{
+  "upstream": "lucide/rectangle-circle",
+  "category": "development",
+  "tags": [
+    "compose",
+    "keyboard",
+    "key",
+    "button"
+  ],
+  "aliases": [],
+  "mirror": false
+}

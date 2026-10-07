@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/brackets",
+  "category": "development",
+  "tags": [
+    "code",
+    "token",
+    "array",
+    "list",
+    "square",
+    "[",
+    "]"
+  ],
+  "aliases": [
+    "squareBrackets"
+  ],
+  "mirror": false
+}

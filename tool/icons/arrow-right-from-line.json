@@ -1,0 +1,17 @@
+{
+  "upstream": "lucide/arrow-right-from-line",
+  "category": "arrows",
+  "tags": [
+    "next",
+    "forward",
+    "direction",
+    "east",
+    "export",
+    "expand",
+    "fold",
+    "horizontal",
+    "|->"
+  ],
+  "aliases": [],
+  "mirror": true
+}
