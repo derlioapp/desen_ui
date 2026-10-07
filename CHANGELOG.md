@@ -1,5 +1,11 @@
 ## Unreleased
 
+- A `DsAvatar`'s tone keeps its color when the app switches between light
+  and dark mode (a person shown purple in light mode was teal in dark).
+  The tones are a fixed set of clean hues, blue-green through blue and
+  violet to pink, spread evenly and kept off the brand's own hue, the same
+  for every brand; in dark mode they are as vivid for a warm brand as for
+  a blue one.
 - Fixed: a `DsParagraph` threw when a link's `semanticLabel` (or a span's
   `semanticsLabel`) was shorter than its text, and drew the underline in
   the wrong place when it was longer.

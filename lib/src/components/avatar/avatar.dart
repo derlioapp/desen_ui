@@ -122,34 +122,61 @@ class DsAvatar extends StatelessWidget {
   }
 
   /// The background and foreground of tone [index] under [colors]: the
-  /// selection pair with its hue turned by the golden angle per step,
-  /// skipping the hues that read as mud at the tone's lightness. Yellow to
-  /// yellow-green (about 50–140°) turns khaki, sage and olive at any
-  /// avatar lightness; on a dark tone, orange and red (about 350–50°) turn
-  /// brown and maroon too. Lightness stays, so contrast stays AA; chroma gets a floor
-  /// so neutral seeds still tell tones apart.
+  /// selection pair with its hue set by a fixed golden-angle sequence,
+  /// skipping the hues that read as mud. Yellow to yellow-green (about
+  /// 50–140°) turns khaki, sage and olive at any avatar lightness; orange
+  /// and red (about 350–50°) turn brown and maroon on a dark tone. Both
+  /// are skipped in light and dark mode alike, so a person's avatar keeps
+  /// its color when the mode changes (and no tone looks like an error or
+  /// a warning). Lightness stays, so contrast stays AA; chroma gets a
+  /// floor so neutral seeds still tell tones apart.
   static (Color, Color) toneColors(DsColors colors, int index) {
     final step = index % toneCount;
     if (step == 0) return (colors.selection, colors.onSelection);
-    final base = DsOklch.fromColor(colors.selection);
-    final dark = base.l < .6;
-    // A margin on both sides: sRGB clipping moves a drawn hue a few
-    // degrees.
-    bool clean(double hue) =>
-        !(hue >= 50 && hue < 140) && !(dark && (hue >= 350 || hue < 50));
-    // The step-th clean hue of the golden-angle sequence from the
-    // selection's hue.
-    var hue = base.h;
-    for (var found = 0; found < step;) {
-      hue = (hue + 137.5) % 360;
-      if (clean(hue)) found++;
+    // The clean hues (blue-green through blue and violet to pink,
+    // 140–350°; a margin on both sides, as sRGB clipping moves a drawn hue
+    // a few degrees), less 20° on either side of the brand's hue: tone 0 is
+    // the brand's selection, and no other tone should look like it.
+    final brand = DsOklch.fromColor(colors.accent);
+    var segments = <(double, double)>[(140, 350)];
+    if (brand.c >= .03) {
+      for (final shift in const [-360.0, 0.0, 360.0]) {
+        final from = brand.h - 20 + shift, to = brand.h + 20 + shift;
+        segments = [
+          for (final (a, b) in segments)
+            if (to <= a || from >= b)
+              (a, b)
+            else ...[
+              if (from > a) (a, from),
+              if (to < b) (to, b),
+            ],
+        ];
+      }
+    }
+    // Spread along those hues by the golden ratio: each step lands far from
+    // the ones before it, the same in both modes and for every brand, so a
+    // person keeps their color. A brand hue a degree off between modes
+    // moves a tone by about a degree, never to another color.
+    final total = segments.fold(0.0, (sum, s) => sum + s.$2 - s.$1);
+    var at = (step * 0.6180339887) % 1 * total;
+    var hue = segments.first.$1;
+    for (final (a, b) in segments) {
+      if (at <= b - a) {
+        hue = a + at;
+        break;
+      }
+      at -= b - a;
     }
     DsOklch turn(Color c, double minChroma, double maxChroma) {
       final o = DsOklch.fromColor(c);
       return DsOklch(o.l, o.c.clamp(minChroma, maxChroma), hue, o.alpha);
     }
 
-    final bg = turn(colors.selection, .035, .08).toColor();
+    // A dark tone keeps the chroma of a cool brand's dark selection
+    // whatever the brand: a warm brand selects in gray there, and its tones
+    // went a drab gray-green and gray-violet.
+    final dark = DsOklch.fromColor(colors.selection).l < .6;
+    final bg = turn(colors.selection, dark ? .07 : .035, .08).toColor();
     // Rotating the hue at fixed lightness changes luminance (yellow is
     // brighter than blue at the same OKLCH lightness), so the initials are
     // measured and pushed away from the fill until they read at 4.5:1.
