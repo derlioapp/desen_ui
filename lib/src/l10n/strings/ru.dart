@@ -364,6 +364,10 @@ class DsLocalizationsRu extends DsLocalizationsEn {
   String timeTooLate(String time) => 'Введите время не позже $time.';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      'Введите время с $first до $last.';
+
+  @override
   String get fieldRequired => 'Это поле обязательно.';
 
   @override

@@ -355,6 +355,10 @@ class DsLocalizationsFr extends DsLocalizationsEn {
   String timeTooLate(String time) => 'Saisissez $time ou une heure antérieure.';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      'Saisissez une heure entre $first et $last.';
+
+  @override
   String get fieldRequired => 'Ce champ est obligatoire.';
 
   @override

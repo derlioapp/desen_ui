@@ -355,6 +355,10 @@ class DsLocalizationsTr extends DsLocalizationsEn {
   String timeTooLate(String time) => '$time ya da önceki bir saat girin.';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      '$first ile $last arasında bir saat girin.';
+
+  @override
   String get fieldRequired => 'Bu alan zorunludur.';
 
   @override

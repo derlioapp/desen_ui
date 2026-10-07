@@ -343,6 +343,10 @@ class DsLocalizationsKo extends DsLocalizationsEn {
   String timeTooLate(String time) => '$time 이전의 시간을 입력하세요.';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      '$first부터 $last까지의 시간을 입력하세요.';
+
+  @override
   String get fieldRequired => '필수 항목입니다.';
 
   @override

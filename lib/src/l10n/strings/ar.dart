@@ -354,6 +354,10 @@ class DsLocalizationsAr extends DsLocalizationsEn {
   String timeTooLate(String time) => 'أدخل الوقت $time أو وقتًا قبله.';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      'أدخل وقتًا من $first إلى $last.';
+
+  @override
   String get fieldRequired => 'هذا الحقل مطلوب.';
 
   @override

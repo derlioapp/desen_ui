@@ -350,6 +350,10 @@ class DsLocalizationsHi extends DsLocalizationsEn {
   String timeTooLate(String time) => '$time या उससे पहले का समय दर्ज करें।';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      '$first से $last तक का समय दर्ज करें।';
+
+  @override
   String get fieldRequired => 'यह फ़ील्ड आवश्यक है।';
 
   @override

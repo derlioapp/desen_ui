@@ -371,6 +371,10 @@ class DsLocalizationsEn extends DsLocalizations {
   String timeTooLate(String time) => 'Enter a time at or before $time.';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      'Enter a time from $first to $last.';
+
+  @override
   String get fieldRequired => 'This field is required.';
 
   @override

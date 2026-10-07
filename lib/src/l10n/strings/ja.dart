@@ -343,6 +343,10 @@ class DsLocalizationsJa extends DsLocalizationsEn {
   String timeTooLate(String time) => '$time 以前の時刻を入力してください。';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      '$first から $last までの時刻を入力してください。';
+
+  @override
   String get fieldRequired => 'この項目は必須です。';
 
   @override

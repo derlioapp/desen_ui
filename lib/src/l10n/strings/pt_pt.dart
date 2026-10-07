@@ -109,6 +109,10 @@ class DsLocalizationsPtPt extends DsLocalizationsPt {
   String timeTooLate(String time) => 'Introduza $time ou uma hora anterior.';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      'Introduza uma hora entre $first e $last.';
+
+  @override
   String textTooShort(int min) => min == 1
       ? 'Introduza pelo menos 1 caráter.'
       : 'Introduza pelo menos $min carateres.';

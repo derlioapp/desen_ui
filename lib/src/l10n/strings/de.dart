@@ -354,6 +354,10 @@ class DsLocalizationsDe extends DsLocalizationsEn {
       'Geben Sie $time oder eine frühere Uhrzeit ein.';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      'Geben Sie eine Uhrzeit von $first bis $last ein.';
+
+  @override
   String get fieldRequired => 'Dieses Feld ist erforderlich.';
 
   @override

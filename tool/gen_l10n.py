@@ -1160,6 +1160,31 @@ VARIANTS['pt_PT']['values'].update(
     timeTooEarly="'Introduza $time ou uma hora posterior.'",
     timeTooLate="'Introduza $time ou uma hora anterior.'")
 
+# Time picker: a typed time outside a range across midnight
+# (`firstTime` after `lastTime`, a night shift from 22:00 to 06:00).
+KEYS.update({
+    'timeOutsideRange(String first, String last)': (
+        'A typed time is outside a time picker\'s range across midnight, from `first` to `last`.',
+        "'Enter a time from $first to $last.'"),
+})
+for _lang, _value in {
+    'ar': "'أدخل وقتًا من $first إلى $last.'",
+    'de': "'Geben Sie eine Uhrzeit von $first bis $last ein.'",
+    'es': "'Introduce una hora entre $first y $last.'",
+    'fr': "'Saisissez une heure entre $first et $last.'",
+    'hi': "'$first से $last तक का समय दर्ज करें।'",
+    'it': "'Inserisci un orario tra $first e $last.'",
+    'ja': "'$first から $last までの時刻を入力してください。'",
+    'ko': "'$first부터 $last까지의 시간을 입력하세요.'",
+    'pt': "'Digite um horário entre $first e $last.'",
+    'ru': "'Введите время с $first до $last.'",
+    'tr': "'$first ile $last arasında bir saat girin.'",
+    'zh': "'请输入 $first 至 $last 之间的时间。'",
+}.items():
+    LANGS[_lang]['timeOutsideRange'] = _value
+VARIANTS['zh_Hant']['values']['timeOutsideRange'] = "'請輸入 $first 至 $last 之間的時間。'"
+VARIANTS['pt_PT']['values']['timeOutsideRange'] = "'Introduza uma hora entre $first e $last.'"
+
 # Forms: the messages of DsValidators (DsFormField). They say how to fix
 # the value (WCAG 3.3.3), as the typed field messages do. Counts are
 # characters as people count them (grapheme clusters); languages without

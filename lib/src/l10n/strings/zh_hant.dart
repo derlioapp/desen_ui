@@ -221,6 +221,10 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
   String timeTooLate(String time) => '請輸入 $time 或之前的時間。';
 
   @override
+  String timeOutsideRange(String first, String last) =>
+      '請輸入 $first 至 $last 之間的時間。';
+
+  @override
   String get fieldRequired => '此欄位為必填。';
 
   @override

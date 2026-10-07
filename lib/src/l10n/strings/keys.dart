@@ -313,6 +313,9 @@ mixin _DsStrings {
   /// A typed time is after the last one that can be chosen.
   String timeTooLate(String time);
 
+  /// A typed time is outside a time picker's range across midnight, from `first` to `last`.
+  String timeOutsideRange(String first, String last);
+
   /// A required form field is empty (DsValidators.required).
   String get fieldRequired;
 
