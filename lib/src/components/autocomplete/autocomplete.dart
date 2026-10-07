@@ -111,10 +111,11 @@ const _announceDelay = Duration(milliseconds: 600);
 /// **Screen readers.** The field is a text field marked expanded or
 /// collapsed (Flutter 3.47 does not support its combobox role yet); its value is the
 /// text. The popup is a menu of radio items (Flutter 3.47 has no listbox
-/// role either); the chosen one is checked. Where the platform supports
-/// announcements, the active option is announced as it moves, and the
-/// number of results ("5 results") politely once typing pauses; "No results"
-/// is also a live region.
+/// role either); the chosen one is checked. The active option is
+/// announced as it moves (where the platform has no announcements, from a
+/// polite live region), and, where it supports them, the number of
+/// results ("5 results") politely once typing pauses; "No results" is also
+/// a live region.
 ///
 /// Anatomy: well (fill + inner edge), text, clear button, error icon,
 /// chevron; popup panel with option rows (leading, label with the match in
@@ -582,6 +583,10 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
 
   Timer? _announceTimer;
 
+  /// The active option in words, for the popup's live region where the
+  /// platform cannot announce (Android).
+  String _liveActive = '';
+
   /// Rows of the popup that are built now, by index (to scroll them in).
   final _rows = <int, BuildContext>{};
 
@@ -716,6 +721,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     if (!_popup.isOpen) {
       _announceTimer?.cancel();
       _keyboardActive = false;
+      _liveActive = '';
     }
     setState(() {});
   }
@@ -850,14 +856,26 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   }
 
   /// Says which option is active, for screen readers that cannot follow
-  /// it (focus stays in the text).
+  /// it (focus stays in the text). Where the platform cannot announce,
+  /// the popup's polite live region says it instead.
   void _announceActive() {
     if (_active < 0 || _active >= _results.length) return;
     final o = _results[_active];
     final l10n = DsLocalizations.of(context);
-    _announce(
-      [o.label, ?o.detail, if (_isChosen(o.value)) l10n.selected].join(', '),
-    );
+    final message = [
+      o.label,
+      ?o.detail,
+      if (_isChosen(o.value)) l10n.selected,
+    ].join(', ');
+    if (MediaQuery.supportsAnnounceOf(context)) {
+      _announce(message);
+      return;
+    }
+    // A frame later: a live region speaks when its text changes, so the
+    // region of a popup that opens now must exist before it.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && _popup.isOpen) setState(() => _liveActive = message);
+    });
   }
 
   // ---------------------------------------------------------------------
@@ -1631,6 +1649,23 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
           ),
         ),
       );
+      if (!MediaQuery.supportsAnnounceOf(context)) {
+        // Where the platform cannot announce, the active option is said
+        // from a polite live region behind the rows, as "No results" is.
+        body = Stack(
+          children: [
+            Positioned.fill(
+              child: Semantics(
+                container: true,
+                liveRegion: true,
+                label: _liveActive,
+                child: const SizedBox.expand(),
+              ),
+            ),
+            body,
+          ],
+        );
+      }
     }
     return TextFieldTapRegion(
       // What the field's `controls` relation points at, in every state.

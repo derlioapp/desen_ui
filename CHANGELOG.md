@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Fixed: where the platform has no announcements (Android), screen
+  readers did not hear which `DsAutocomplete` or `DsMultiSelect` option
+  the arrow keys made active. The popup now says it from a polite live
+  region.
 - Fixed: progress was read twice. A `DsProgressRing` with a value no
   longer reads its child ("50") before its value ("50%"); name it with
   `semanticLabel`. An uploading `DsFileItem` is one node, the progress bar

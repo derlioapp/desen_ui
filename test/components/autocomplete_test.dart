@@ -519,6 +519,28 @@ void main() {
       semantics.dispose();
     });
 
+    testWidgets('without announcements (Android) the active option is a '
+        'polite live region', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(single(initial: 'ank'), supportsAnnounce: false),
+      );
+      await tester.tap(editable());
+      await tester.pumpAndSettle();
+      await key(tester, LogicalKeyboardKey.escape);
+      Iterable<String> live() => find.semantics
+          .byPredicate((n) => n.getSemanticsData().flagsCollection.isLiveRegion)
+          .evaluate()
+          .map((n) => n.label)
+          .where((label) => label.isNotEmpty);
+      await key(tester, LogicalKeyboardKey.arrowDown);
+      expect(live(), ['Ankara, Seçili'], reason: 'opens on the chosen option');
+      await key(tester, LogicalKeyboardKey.arrowDown);
+      expect(live(), ['Şırnak']);
+      expect(tester.takeAnnouncements(), isEmpty);
+      semantics.dispose();
+    });
+
     testWidgets('semantics: expanded text field, menu of radio items', (
       tester,
     ) async {
