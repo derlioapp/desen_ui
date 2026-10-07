@@ -85,7 +85,7 @@ class DsShadows {
   final List<DsShadow> knob;
 
   /// Switch knob over the on track ([DsColors.accent]). The same as [knob],
-  /// except under a bright accent (a light brand with a dark [onAccent]):
+  /// except under a bright accent (a light brand with a dark [DsColors.onAccent]):
   /// then its edge is a 1px dark line that stands 3:1 off the accent, since
   /// the white knob itself cannot.
   final List<DsShadow> knobOn;

@@ -24,8 +24,11 @@ dependencies:
   desen_ui: ^0.1.0-alpha.2
 ```
 
+A complete first screen:
+
 ```dart
 import 'package:desen_ui/desen_ui.dart';
+import 'package:flutter/widgets.dart';
 
 void main() => runApp(
   DsApp(
@@ -33,6 +36,63 @@ void main() => runApp(
     home: const HomePage(),
   ),
 );
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final _email = TextEditingController();
+
+  @override
+  void dispose() {
+    _email.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = DsTheme.of(context);
+    return ColoredBox(
+      color: t.colors.canvas,
+      child: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 360),
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: 16,
+                children: [
+                  Text('Sign up', style: t.typography.title.copyWith(color: t.colors.text)),
+                  DsField(
+                    label: const Text('Email'),
+                    child: DsTextField(
+                      controller: _email,
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                  ),
+                  DsButton(
+                    onPressed: () => showDsToast(
+                      context: context,
+                      title: 'Welcome, ${_email.text}',
+                    ),
+                    child: const Text('Continue'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 ```
 
 Inside an existing app:
@@ -52,7 +112,7 @@ DsButton(variant: .secondary, size: .sm, leading: const DsIcon(DsIcons.plus), on
 DsButton.icon(icon: const DsIcon(DsIcons.ellipsis), semanticLabel: 'More', onPressed: openMenu)
 
 // Customize one instance, a subtree, or build a new look on the same behavior:
-DsButton(style: const DsButtonStyle(borderColor: brand), …)
+DsButton(style: DsButtonStyle(borderColor: brand), …)
 DsButtonTheme(data: const DsButtonThemeData(size: .sm), child: …)
 DsPressable(onPressed: …, builder: (context, states, _) => …)
 ```
@@ -84,17 +144,22 @@ Floating layers are opaque. To make them frosted glass, give them a translucent 
 ```dart
 import 'dart:ui' show ImageFilter;
 
-final glass = ImageFilter.blur(sigmaX: 24, sigmaY: 24);
-final fill = colors.overlay.withValues(alpha: .8);
-
-DsComponentThemes(
-  themes: [
-    DsMenuThemeData(style: DsMenuStyle(background: fill, backdropFilter: glass)),
-    DsPopoverThemeData(style: DsPopoverStyle(background: fill, backdropFilter: glass)),
-    DsBottomNavThemeData(style: DsBottomNavStyle(background: fill, backdropFilter: glass)),
-    // also DsDialog, DsPanel, DsToast, DsToolbar, DsTooltip, DsTextSelectionToolbar
-  ],
-  child: app,
+DsApp(
+  builder: (context, child) {
+    final colors = DsTheme.colorsOf(context);
+    final glass = ImageFilter.blur(sigmaX: 24, sigmaY: 24);
+    final fill = colors.overlay.withValues(alpha: .8);
+    return DsComponentThemes(
+      themes: [
+        DsMenuThemeData(style: DsMenuStyle(background: fill, backdropFilter: glass)),
+        DsPopoverThemeData(style: DsPopoverStyle(background: fill, backdropFilter: glass)),
+        DsBottomNavThemeData(style: DsBottomNavStyle(background: fill, backdropFilter: glass)),
+        // also DsDialog, DsPanel, DsToast, DsToolbar, DsTooltip, DsTextSelectionToolbar
+      ],
+      child: child!,
+    );
+  },
+  home: const HomePage(),
 )
 ```
 
@@ -106,6 +171,12 @@ Reading tokens:
 final colors = DsTheme.colorsOf(context); // rebuilds only when colors change
 final t = DsTheme.of(context);            // everything
 ```
+
+## Platforms, size and languages
+
+- **Platforms:** iOS, Android, web, macOS, Windows and Linux; widgets only, no platform plugins. Density, the text font and haptics follow the platform.
+- **Size:** the bundled fonts add about 600 KB to every build (iOS and macOS included, even though they set text in the system font by default). Icons an app does not use are tree-shaken away.
+- **Languages:** strings for 13 languages, plus Portuguese (Portugal) and Traditional Chinese, with right-to-left layout for Arabic. `DsApp` resolves to its `locale`, or English; to follow the device, pass the languages your app is translated into (or `DsLocalizations.supportedLocales`) as `supportedLocales`. Add or override strings with `DsLocalizationScope`. See [Localization](https://derlioapp.github.io/desen_ui/#/localization).
 
 ## Fonts and icons
 
@@ -121,7 +192,6 @@ setUp(() => DsFocusVisibility.debugReset(keyboard: true));
 
 ## Known limitations
 
-- The time picker's limits (`firstTime`, `lastTime`) bound one stretch of a day; a range across midnight, such as a night shift from 22:00 to 06:00, isn't supported.
 - Screen readers aren't told which menu item opens a submenu (needs a role Flutter doesn't expose yet).
 - Screen readers announce the select as a button with its expanded state, and the number field as an adjustable text field: Flutter doesn't support the combobox and spin button roles yet.
 - Plain `FormState.validate()` announces errors through Flutter's own unnamed announcement. `formKey.currentState!.validateAndFocus()` (from `DsFormValidation`) focuses the first invalid field and announces it once, with its name.

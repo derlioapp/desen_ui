@@ -1,9 +1,10 @@
 # A .pubignore replaces .gitignore for `dart pub publish`, so the ignore
 # rules that matter for the archive are repeated here.
 
-# Development only.
+# Development only. The tests need the repository (tool/, git, goldens).
 docs/
 tool/
+test/
 
 # Build output and tool state (also inside example/).
 .dart_tool/

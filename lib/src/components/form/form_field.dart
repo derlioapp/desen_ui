@@ -156,6 +156,10 @@ class DsFormField<T> extends FormField<T> {
 /// The state of a [DsFormField]: Flutter's [FormFieldState] plus the
 /// control's typed-text issue, focus and restoration.
 class DsFormFieldState<T> extends FormFieldState<T> {
+  /// Creates the state; [DsFormField.createState] calls it, and a subclass
+  /// of [DsFormField] that keeps more state extends it.
+  DsFormFieldState();
+
   final _link = DsFormLink();
 
   /// Around the control: its focusable descendants are what [focus] picks

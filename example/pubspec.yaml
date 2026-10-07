@@ -1,5 +1,5 @@
 name: desen_ui_example
-description: "A new Flutter project."
+description: "The Desen UI docs site and examples."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
