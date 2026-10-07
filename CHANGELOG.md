@@ -1,5 +1,10 @@
 ## Unreleased
 
+- Fixed (web): the browser's own context menu stayed off for the whole
+  app after a `DsTable` row with a row menu was removed under the pointer
+  (deleted from its own menu), and moving between rows turned it on and
+  off again. It is off while the pointer is over such rows and back on
+  after; an app that turned it off for good keeps it off.
 - `DsTextField.textDirection` sets the direction of the text itself (an
   IBAN or an email address in a right-to-left app) while the field's
   layout keeps the ambient direction, and
