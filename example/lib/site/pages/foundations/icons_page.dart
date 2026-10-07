@@ -70,6 +70,36 @@ class IconsPage extends StatelessWidget {
         ],
       ),
       const DocSection(
+        title: 'Filled icons',
+        children: [
+          DocText(
+            '`fill` fills each path as well as stroking it, for solid shapes '
+            'such as a play button or a selected tab. The stroke still runs '
+            'around the fill, so corners stay round and the solid icon is '
+            'the same size as the outlined one. Open lines look the same '
+            'either way. Set it on `DsIconData` for a shape that is always '
+            'solid, or on `DsIcon` to switch the same icon.',
+          ),
+          Example(
+            snippet: 'icons-fill',
+            child: Wrap(
+              spacing: 20,
+              runSpacing: 16,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                // #region icons-fill
+                DsIcon(DsIcons.play, size: 24),
+                DsIcon(DsIcons.play, size: 24, fill: true),
+                DsIcon(DsIcons.pause, size: 24, fill: true),
+                DsIcon(DsIcons.heart, size: 24, fill: true),
+                DsIcon(DsIcons.star, size: 24, fill: true),
+                // #endregion
+              ],
+            ),
+          ),
+        ],
+      ),
+      const DocSection(
         title: 'Accessibility',
         children: [
           DocList([
@@ -146,6 +176,11 @@ class IconsPage extends StatelessWidget {
               'strokeWidth',
               'double?',
               'In grid units; overrides the icon\'s own (2).',
+            ),
+            (
+              'fill',
+              'bool?',
+              'Fill the paths as well; overrides the icon\'s own (off).',
             ),
             (
               'semanticLabel',

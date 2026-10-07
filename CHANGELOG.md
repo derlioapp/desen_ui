@@ -11,6 +11,10 @@
   Lucide's current drawings. 67 icons that point along the reading
   direction (back and forward arrows, undo and redo, lists) mirror in
   right-to-left text.
+- Icons can be solid: `DsIconData.fill` and `DsIcon.fill` fill each path
+  as well as stroking it, the way `fill="currentColor"` fills a Lucide icon
+  on the web. A play button, pause bars or a selected tab's icon can be
+  drawn solid, at the same size as the outlined icon.
 - Skeleton blocks are easier to see: new color roles `skeleton` and
   `skeletonStrong` (about 1.27:1 on the card, the page and the sidebar in
   light mode). In dark mode a strong skeleton line no longer vanishes on a
