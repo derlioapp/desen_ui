@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui' show SemanticsRole;
 
 import 'package:flutter/services.dart';
@@ -188,8 +189,8 @@ class DsBreadcrumb extends StatelessWidget {
       runSpacing: gap,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        for (final item in items.take(items.length - 1))
-          withSeparator(link(item), bounded: true),
+        for (var i = 0; i < items.length - 1; i++)
+          withSeparator(link(items[i]), bounded: true),
         if (items.isNotEmpty) current(fit: false),
       ],
     );
@@ -314,13 +315,18 @@ class DsBreadcrumb extends StatelessWidget {
     // A leading icon and the space after it.
     double icon(DsBreadcrumbItem item, DsBreadcrumbStyle s) =>
         item.icon == null ? 0 : (s.iconSize ?? 0) + (s.iconGap ?? 0);
-    // A level with its separator and the gaps around it.
+    // A level with its separator and the gaps around it. A level grows to
+    // the minimum tap target (44px on touch); "…" does not.
+    final minTapTarget = DsTheme.sizesOf(context).minTapTarget;
     final after = gap + (link.separatorSize ?? 0) + gap;
     final widths = [
       for (var i = 0; i < n - 1; i++)
-        pad(link) +
-            icon(items[i], link) +
-            textWidth(items[i].label, link) +
+        math.max(
+              pad(link) +
+                  icon(items[i], link) +
+                  textWidth(items[i].label, link),
+              minTapTarget,
+            ) +
             after,
       pad(selected) +
           icon(items.last, selected) +

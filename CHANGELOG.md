@@ -1,5 +1,10 @@
 ## Unreleased
 
+- Fixed: `DsBreadcrumb(items: [])` threw a `RangeError`; it now builds
+  empty.
+- Fixed: on touch, a collapsed `DsBreadcrumb` of short levels could
+  overflow its width: it measured the levels without their 44 px tap
+  targets.
 - Fixed: a context or row menu opened from the keyboard (Shift+F10 or the
   Menu key) closed at once when its control touched the window's edge, so
   the row menu of a full-width `DsTable` never showed.
