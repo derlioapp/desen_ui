@@ -1,5 +1,13 @@
 ## Unreleased
 
+- Fixed: a `DsPagination` with `onChanged: null` kept its current page a
+  Tab stop that screen readers announced as enabled.
+- Fixed: focusing a `DsPagination` (its `focusNode` or `autofocus`) after
+  it narrowed to "‹ 6 / 24 ›" focused nothing; it now focuses the arrow
+  that can move.
+- Fixed: a `DsPagination` whose `page` is past `pageCount` (a filter left
+  fewer pages) failed an assert. It now shows the last page, without
+  calling `onChanged`.
 - Fixed: `DsBreadcrumb(items: [])` threw a `RangeError`; it now builds
   empty.
 - Fixed: on touch, a collapsed `DsBreadcrumb` of short levels could

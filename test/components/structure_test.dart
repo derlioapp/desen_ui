@@ -434,6 +434,82 @@ void main() {
       expect(page, 2);
     });
 
+    testWidgets('a disabled pagination is no Tab stop and says disabled', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await tester.pumpWidget(
+        host(const DsPagination(page: 2, pageCount: 5, onChanged: null)),
+      );
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pump();
+      expect(
+        FocusManager.instance.primaryFocus?.debugLabel ?? '',
+        isNot(startsWith('DsPagination')),
+      );
+      expect(
+        tester.getSemantics(find.text('2')),
+        isSemantics(isEnabled: false),
+      );
+      semantics.dispose();
+    });
+
+    testWidgets('focusing a pagination narrowed to the counter focuses an '
+        'arrow', (tester) async {
+      final node = FocusNode();
+      addTearDown(node.dispose);
+      var width = 600.0;
+      late StateSetter set;
+      await tester.pumpWidget(
+        host(
+          StatefulBuilder(
+            builder: (c, s) {
+              set = s;
+              return SizedBox(
+                width: width,
+                child: DsPagination(
+                  page: 5,
+                  pageCount: 20,
+                  focusNode: node,
+                  onChanged: (_) {},
+                ),
+              );
+            },
+          ),
+        ),
+      );
+      set(() => width = 160);
+      await tester.pump();
+      expect(find.text('5 / 20'), findsOneWidget);
+      node.requestFocus();
+      await tester.pump();
+      expect(
+        FocusManager.instance.primaryFocus?.debugLabel,
+        'DsPagination next',
+      );
+    });
+
+    testWidgets('a pagination page past the page count shows as the last', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      final changed = <int>[];
+      await tester.pumpWidget(
+        host(DsPagination(page: 5, pageCount: 5, onChanged: changed.add)),
+      );
+      // A filter leaves two pages; the app still holds page 5.
+      await tester.pumpWidget(
+        host(DsPagination(page: 5, pageCount: 2, onChanged: changed.add)),
+      );
+      expect(tester.takeException(), isNull);
+      expect(
+        tester.getSemantics(find.text('2')).value,
+        const DsLocalizationsEn().currentPage,
+      );
+      expect(changed, isEmpty);
+      semantics.dispose();
+    });
+
     testWidgets('a button in a toolbar takes the toggles\' nested corner', (
       tester,
     ) async {

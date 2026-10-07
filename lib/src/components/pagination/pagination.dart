@@ -44,7 +44,8 @@ import 'pagination_style.dart';
 /// [autofocus]) focuses the current page.
 class DsPagination extends StatefulWidget {
   /// Creates pagination. [page] counts from 1; it is ignored when
-  /// [pageCount] is 0.
+  /// [pageCount] is 0, and shows as the last page when it is past
+  /// [pageCount].
   const DsPagination({
     super.key,
     required this.page,
@@ -57,9 +58,13 @@ class DsPagination extends StatefulWidget {
     this.autofocus = false,
     this.semanticLabel,
   }) : assert(pageCount >= 0),
-       assert(pageCount == 0 || (page >= 1 && page <= pageCount));
+       assert(pageCount == 0 || page >= 1);
 
   /// The current page, from 1.
+  ///
+  /// A page past [pageCount] (a filter left fewer pages while the app
+  /// still holds the old page) shows as the last page. [onChanged] is not
+  /// called for that: the app's page stays as it is until it sets one.
   final int page;
 
   /// Number of pages; 0 for an empty result.
@@ -119,6 +124,9 @@ class DsPagination extends StatefulWidget {
   @override
   State<DsPagination> createState() => _DsPaginationState();
 
+  /// The page shown: [page] kept within 1 and [pageCount]; 0 for no pages.
+  int get _shownPage => pageCount <= 0 ? 0 : page.clamp(1, pageCount);
+
   /// Builds the control with the stops' [nodes].
   Widget _build(BuildContext context, _Nodes nodes) {
     final t = dsThemeOf(context);
@@ -133,7 +141,7 @@ class DsPagination extends StatefulWidget {
     final gap = s.gap ?? DsSpace.s4;
     final l10n = DsLocalizations.of(context);
     final count = math.max(0, pageCount);
-    final page = count == 0 ? 0 : this.page.clamp(1, count);
+    final page = _shownPage;
     final pages = paginationSlots(page, count);
     final textStyle = DefaultTextStyle.of(context).style.merge(s.textStyle);
     // The current page's look, the widest case when measuring.
@@ -310,10 +318,13 @@ class _DsPaginationState extends State<DsPagination> {
   /// The current page, or in the narrow form the arrow that can move.
   void _focusCurrent() {
     final w = widget;
-    final current = _nodes._pages[w.page];
-    if (current != null && current.context != null) {
+    final page = w._shownPage;
+    // A page node outlives its button for a frame, and its context then
+    // belongs to an element that is gone (the row narrowed to "‹ 6 / 24 ›").
+    final current = _nodes._pages[page];
+    if (current != null && (current.context?.mounted ?? false)) {
       current.requestFocus();
-    } else if (w.page < w.pageCount) {
+    } else if (page < w.pageCount) {
       _nodes.next.requestFocus();
     } else {
       _nodes.previous.requestFocus();
@@ -323,7 +334,7 @@ class _DsPaginationState extends State<DsPagination> {
   @override
   Widget build(BuildContext context) {
     // Once the frame is built, pages no longer shown let go of their nodes.
-    final shown = paginationSlots(widget.page, widget.pageCount);
+    final shown = paginationSlots(widget._shownPage, widget.pageCount);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _nodes.keep(shown);
     });
@@ -363,7 +374,11 @@ class _PageState extends State<_Page> {
     final t = dsThemeOf(context);
     final l10n = DsLocalizations.of(context);
     return DsPressable(
-      onPressed: widget.selected ? () {} : widget.onPressed,
+      // The current page stays a Tab stop that does nothing; in a disabled
+      // control it is disabled as the others are.
+      onPressed: widget.selected && widget.onPressed != null
+          ? () {}
+          : widget.onPressed,
       // The current page does nothing, so it plays nothing either.
       haptic: widget.selected ? null : DsHapticEvent.command,
       focusNode: widget.focusNode,
