@@ -97,7 +97,9 @@ export 'number_format.dart';
 ///
 /// **Screen readers.** One node: a text field whose value carries the unit
 /// ("72 kg"), with the next and previous values and increase and decrease
-/// actions (swipe up and down on iOS, volume keys on Android).
+/// actions (swipe up and down on iOS, volume keys on Android). It is heard
+/// as an adjustable text field, not as a spin button: Flutter 3.47 does
+/// not support its spin button role yet.
 ///
 /// **Field.** Inside a [DsField] the label names it and the field's error
 /// and required state apply. [onChanged] null disables it; [readOnly]

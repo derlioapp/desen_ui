@@ -53,6 +53,11 @@ import 'field_style.dart';
 /// is part of the node's label instead of its hint. The required mark is read
 /// as the localized "Required", not as an asterisk.
 ///
+/// The description and the error are hints because Flutter 3.47 has no way
+/// to link a text to a control as its description (the web's
+/// `aria-describedby`). A VoiceOver user who turned hints off does not
+/// hear them.
+///
 /// A control with buttons of its own (a text field's clear or show
 /// password button) asks the field, through [DsFieldHooks], to keep them
 /// as separate nodes: the control's node is then named by the label's

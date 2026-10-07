@@ -356,6 +356,10 @@ extension DsFormValidation on FormState {
   /// out. When no invalid field can take focus (disabled controls), the
   /// first error is announced with its field's name instead.
   ///
+  /// Use it rather than [FormState.validate]: Flutter's own validation
+  /// announces the bare message, without the field's name, and Desen
+  /// cannot change what it says.
+  ///
   /// ```dart
   /// DsButton(
   ///   onPressed: () {

@@ -47,6 +47,10 @@ jobs:
         run: python3 tool/gen_snippets.py --check
       - name: Icon files match tool/icons
         run: python3 tool/gen_icons.py --check
+      # Fails after a Flutter upgrade that changes the semantics API, so
+      # the screen reader gaps it may close get a look.
+      - name: Flutter semantics API as recorded
+        run: python3 tool/flutter_gaps.py --check
       - name: Publish dry run
         run: dart pub publish --dry-run
 

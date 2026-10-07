@@ -109,7 +109,7 @@ const _announceDelay = Duration(milliseconds: 600);
 /// | Home / End, Left / Right | Move the caret in the text |
 ///
 /// **Screen readers.** The field is a text field marked expanded or
-/// collapsed (Flutter has no combobox role yet); its value is the
+/// collapsed (Flutter 3.47 does not support its combobox role yet); its value is the
 /// text. The popup is a menu of radio items (Flutter 3.47 has no listbox
 /// role either); the chosen one is checked. Where the platform supports
 /// announcements, the active option is announced as it moves, and the
