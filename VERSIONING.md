@@ -39,13 +39,14 @@ Notes:
 
 ## Before 1.0 (now)
 
-Desen is in alpha (`0.x`, pre-release tags like `0.1.0-alpha.1`). Until 1.0:
+Desen is at `0.x` (the first two releases were `0.1.0-alpha.1` and
+`-alpha.2`; since `0.2.0` there are no pre-release tags). Until 1.0:
 
-- **Breaking changes may land in a minor bump** (`0.1` → `0.2`), never in a
+- **Breaking changes may land in a minor bump** (`0.2` → `0.3`), never in a
   patch bump. Every one is listed under *Breaking* in the changelog with a
   before/after table (the migration note); no deprecation period is needed.
-- `-alpha.N` and `-beta.N` pre-releases may break anything between them;
-  they exist for early adopters who read the changelog.
+  A caret constraint (`^0.2.0`) therefore never takes in a breaking
+  change.
 - `fix_data.yaml` (`dart fix` migrations) is optional before 1.0.
 
 ## From 1.0 on

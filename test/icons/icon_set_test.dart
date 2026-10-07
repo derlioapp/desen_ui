@@ -93,6 +93,14 @@ void main() {
     }
   });
 
+  test('copyWith changes only what it is given', () {
+    final still = DsIcons.logOut.copyWith(matchTextDirection: false);
+    expect(still.matchTextDirection, isFalse);
+    expect(still.paths, DsIcons.logOut.paths);
+    expect(still.strokeWidth, DsIcons.logOut.strokeWidth);
+    expect(DsIcons.play.copyWith(fill: true).fill, isTrue);
+  });
+
   test('the metadata reads as JSON with the fields the generator needs', () {
     for (final file in Directory('tool/icons').listSync()) {
       if (!file.path.endsWith('.json')) continue;
