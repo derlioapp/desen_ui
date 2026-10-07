@@ -65,7 +65,9 @@ class DsSelectOption<T> {
 ///
 /// Screen readers hear [semanticLabel] as the name, the chosen option as
 /// the value, whether the menu is open, and an invalid state with
-/// [error]. The options are radio items of the menu. The error look is not
+/// [error]. The options are radio items of the menu. The trigger is heard
+/// as a button that is expanded or collapsed, not as a combobox: Flutter
+/// 3.47 does not support its combobox role yet. The error look is not
 /// color alone: an error icon joins the border.
 ///
 /// **Clearing.** With [clearable], a clear button shows before the chevron

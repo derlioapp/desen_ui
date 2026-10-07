@@ -88,7 +88,7 @@ enum DsToolbarOverflow {
 /// Right (mirrored in RTL), Home and End also move focus between the items,
 /// as in the WAI-ARIA toolbar pattern. Tab goes through all the items
 /// before it moves on to what is beside the toolbar. The pattern's single Tab stop is not
-/// used: Flutter has no toolbar semantics role, so screen-reader users
+/// used: Flutter 3.47 has no toolbar semantics role, so screen-reader users
 /// would not be told that the other items are reached with arrows.
 ///
 /// The ⋯ button is one more item, the last. Enter or Space opens its menu,

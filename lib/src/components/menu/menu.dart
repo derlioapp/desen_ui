@@ -602,7 +602,9 @@ class DsMenuItem extends StatefulWidget {
   ///   closes every level and moves on, like in the parent menu.
   /// - **Choosing** an item in the submenu closes the whole menu.
   /// - **Screen readers** hear a menu item that is expanded or collapsed;
-  ///   the submenu is a menu named by [label].
+  ///   the submenu is a menu named by [label]. They are not told that the
+  ///   item opens a submenu before it opens: Flutter 3.47 has no way to
+  ///   say so (the web's `aria-haspopup`).
   ///
   /// Submenus nest. Each level has its own arrow keys and type-ahead.
   const DsMenuItem.submenu({
