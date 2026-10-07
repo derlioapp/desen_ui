@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 /// buttons, a table's rows): not a stop itself, it has focus while any
 /// stop inside does, and focusing it moves focus on to the stop the widget
 /// picks in [onFocused]. [autofocus] does the same when first built.
+/// Focused while it has no stop yet, it passes focus on when it next
+/// builds.
 ///
 /// Library-internal: it gives such widgets the `focusNode` and `autofocus`
 /// every interactive widget takes.
@@ -78,14 +80,23 @@ class _FocusForwardState extends State<FocusForward> {
   }
 
   @override
-  Widget build(BuildContext context) => Focus(
-    focusNode: _node,
-    autofocus: widget.autofocus,
-    // Not a stop of its own: Tab moves between the stops inside.
-    skipTraversal: true,
-    includeSemantics: false,
-    child: FocusStops(child: widget.child),
-  );
+  Widget build(BuildContext context) {
+    // Focused while it had no stop to pass focus on to (a table still
+    // loading): pass it on once the stops are built.
+    if (_node.hasPrimaryFocus) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _onFocus();
+      });
+    }
+    return Focus(
+      focusNode: _node,
+      autofocus: widget.autofocus,
+      // Not a stop of its own: Tab moves between the stops inside.
+      skipTraversal: true,
+      includeSemantics: false,
+      child: FocusStops(child: widget.child),
+    );
+  }
 }
 
 /// Keeps the Tab stops of a widget made of several (a sidebar, a toolbar,

@@ -270,4 +270,40 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Website redesign'), findsOneWidget);
   });
+
+  testWidgets('on touch, short levels collapse by their 44px tap targets', (
+    tester,
+  ) async {
+    // The test platform is Android: each level is at least 44px wide.
+    await tester.pumpWidget(
+      app(
+        SizedBox(
+          width: 320,
+          child: DsBreadcrumb(
+            overflow: DsBreadcrumbOverflow.collapse,
+            items: [
+              for (final label in ['A', 'B', 'C', 'D', 'E', 'F'])
+                DsBreadcrumbItem(label: label, onPressed: () {}),
+              const DsBreadcrumbItem(label: 'Current'),
+            ],
+          ),
+        ),
+      ),
+    );
+    expect(tester.takeException(), isNull);
+    expect(find.bySemanticsLabel('More levels'), findsOneWidget);
+    expect(tester.getRect(find.text('Current')).right, lessThanOrEqualTo(320));
+  });
+
+  for (final overflow in DsBreadcrumbOverflow.values) {
+    testWidgets('a path with no levels builds empty (${overflow.name})', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        app(DsBreadcrumb(items: const [], overflow: overflow)),
+      );
+      expect(tester.takeException(), isNull);
+      expect(find.byType(Text), findsNothing);
+    });
+  }
 }

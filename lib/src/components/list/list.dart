@@ -80,8 +80,13 @@ class DsListSection extends StatelessWidget {
       DsListRow.defaultStyle(t),
       DsListRowTheme.of(context).style,
     ], const {});
-    final rowStart =
-        row.padding?.resolve(Directionality.of(context)).left ?? DsSpace.s12;
+    final direction = Directionality.of(context);
+    final rowPadding = row.padding?.resolve(direction);
+    final rowStart = rowPadding == null
+        ? DsSpace.s12
+        : direction == TextDirection.ltr
+        ? rowPadding.left
+        : rowPadding.right;
     final gap = row.gap ?? DsSpace.s12;
     final icon = row.iconSize!;
 

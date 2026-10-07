@@ -4,8 +4,14 @@ library;
 /// Date arithmetic on calendar days (local, midnight), shared by the
 /// calendar and the pickers.
 abstract final class DsDateUtils {
-  /// [date] at midnight, dropping the time of day.
-  static DateTime dateOnly(DateTime date) =>
+  /// [date] at midnight, dropping the time of day. A UTC date stays UTC.
+  static DateTime dateOnly(DateTime date) => (date.isUtc
+      ? DateTime.utc
+      : DateTime.new)(date.year, date.month, date.day);
+
+  /// [date]'s calendar day at local midnight, as the days of a calendar
+  /// grid are: a UTC date keeps its day, not its moment.
+  static DateTime localDay(DateTime date) =>
       DateTime(date.year, date.month, date.day);
 
   /// Whether [a] and [b] are the same calendar day (null never is).

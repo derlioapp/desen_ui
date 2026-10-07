@@ -70,6 +70,64 @@ void main() {
       await tester.pumpAndSettle();
       expect(value, 'a', reason: 'no choice through an unseen menu');
     });
+
+    for (final (where, direction) in [
+      (Alignment.centerLeft, TextDirection.ltr),
+      (Alignment.centerRight, TextDirection.rtl),
+    ]) {
+      testWidgets('a keyboard-opened context menu stays open for a control '
+          'on the window edge (${direction.name})', (tester) async {
+        await tester.pumpWidget(
+          DsApp(
+            home: Directionality(
+              textDirection: direction,
+              child: Align(
+                alignment: where,
+                child: DsContextMenuRegion(
+                  items: [
+                    DsMenuItem(label: const Text('Rename'), onPressed: () {}),
+                  ],
+                  child: DsButton(
+                    autofocus: true,
+                    onPressed: () {},
+                    child: const Text('Row'),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+        await tester.pumpAndSettle();
+        await tester.sendKeyEvent(LogicalKeyboardKey.contextMenu);
+        await tester.pumpAndSettle();
+        expect(find.text('Rename'), findsOneWidget);
+      });
+    }
+
+    testWidgets('the Menu key opens the row menu of a full-width table', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        DsApp(
+          home: DsTable<int>(
+            columns: [
+              DsTableColumn(id: 'n', label: 'Name', text: (i) => 'Item $i'),
+            ],
+            rows: const [1, 2, 3],
+            rowKey: (i) => i,
+            onRowPressed: (_) {},
+            autofocus: true,
+            rowMenuBuilder: (context, i) => [
+              DsMenuItem(label: const Text('Rename'), onPressed: () {}),
+            ],
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await tester.sendKeyEvent(LogicalKeyboardKey.contextMenu);
+      await tester.pumpAndSettle();
+      expect(find.text('Rename'), findsOneWidget);
+    });
   });
 
   group('trigger kept alive off screen in a lazy list', () {
@@ -644,6 +702,43 @@ void main() {
       expect(find.text('Tip'), findsOneWidget);
       await g.up();
       await tester.pumpAndSettle();
+      debugDefaultTargetPlatformOverride = null;
+    });
+
+    testWidgets('a long press that shows it does not press the trigger', (
+      tester,
+    ) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
+      var presses = 0;
+      await tester.pumpWidget(
+        DsApp(
+          home: Center(
+            child: DsTooltip(
+              message: 'Delete project',
+              child: DsButton.icon(
+                icon: const DsIcon(DsIcons.trash),
+                semanticLabel: 'Delete',
+                onPressed: () => presses++,
+              ),
+            ),
+          ),
+        ),
+      );
+      final g = await tester.startGesture(
+        tester.getCenter(find.byType(DsButton)),
+        kind: PointerDeviceKind.touch,
+      );
+      await tester.pump(kLongPressTimeout + const Duration(milliseconds: 50));
+      await tester.pumpAndSettle();
+      expect(find.text('Delete project'), findsOneWidget);
+      await g.up();
+      await tester.pumpAndSettle();
+      expect(presses, 0);
+      // A short tap still presses it.
+      await tester.tap(find.byType(DsButton));
+      await tester.pumpAndSettle();
+      expect(presses, 1);
       debugDefaultTargetPlatformOverride = null;
     });
   });

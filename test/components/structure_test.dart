@@ -294,6 +294,40 @@ void main() {
       expect(left(dividers.at(1)), left(find.text('Sürüm')));
     });
 
+    for (final direction in TextDirection.values) {
+      testWidgets('a divider starts at the text with uneven row padding '
+          '(${direction.name})', (tester) async {
+        await tester.pumpWidget(
+          host(
+            direction: direction,
+            SizedBox(
+              width: 300,
+              child: DsListRowTheme(
+                data: const DsListRowThemeData(
+                  style: DsListRowStyle(
+                    padding: EdgeInsetsDirectional.only(start: 40, end: 8),
+                  ),
+                ),
+                child: DsListSection(
+                  children: [
+                    DsListRow(title: const Text('First'), onPressed: () {}),
+                    DsListRow(title: const Text('Second'), onPressed: () {}),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+        final line = tester.getRect(find.byType(DsLine));
+        final title = tester.getRect(find.text('Second'));
+        if (direction == TextDirection.ltr) {
+          expect(line.left, moreOrLessEquals(title.left, epsilon: 1));
+        } else {
+          expect(line.right, moreOrLessEquals(title.right, epsilon: 1));
+        }
+      });
+    }
+
     testWidgets('destructive rows use the danger text color', (tester) async {
       final theme = DsThemeData();
       await tester.pumpWidget(
@@ -432,6 +466,82 @@ void main() {
       await tester.tap(prev);
       await tester.pump();
       expect(page, 2);
+    });
+
+    testWidgets('a disabled pagination is no Tab stop and says disabled', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await tester.pumpWidget(
+        host(const DsPagination(page: 2, pageCount: 5, onChanged: null)),
+      );
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pump();
+      expect(
+        FocusManager.instance.primaryFocus?.debugLabel ?? '',
+        isNot(startsWith('DsPagination')),
+      );
+      expect(
+        tester.getSemantics(find.text('2')),
+        isSemantics(isEnabled: false),
+      );
+      semantics.dispose();
+    });
+
+    testWidgets('focusing a pagination narrowed to the counter focuses an '
+        'arrow', (tester) async {
+      final node = FocusNode();
+      addTearDown(node.dispose);
+      var width = 600.0;
+      late StateSetter set;
+      await tester.pumpWidget(
+        host(
+          StatefulBuilder(
+            builder: (c, s) {
+              set = s;
+              return SizedBox(
+                width: width,
+                child: DsPagination(
+                  page: 5,
+                  pageCount: 20,
+                  focusNode: node,
+                  onChanged: (_) {},
+                ),
+              );
+            },
+          ),
+        ),
+      );
+      set(() => width = 160);
+      await tester.pump();
+      expect(find.text('5 / 20'), findsOneWidget);
+      node.requestFocus();
+      await tester.pump();
+      expect(
+        FocusManager.instance.primaryFocus?.debugLabel,
+        'DsPagination next',
+      );
+    });
+
+    testWidgets('a pagination page past the page count shows as the last', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      final changed = <int>[];
+      await tester.pumpWidget(
+        host(DsPagination(page: 5, pageCount: 5, onChanged: changed.add)),
+      );
+      // A filter leaves two pages; the app still holds page 5.
+      await tester.pumpWidget(
+        host(DsPagination(page: 5, pageCount: 2, onChanged: changed.add)),
+      );
+      expect(tester.takeException(), isNull);
+      expect(
+        tester.getSemantics(find.text('2')).value,
+        const DsLocalizationsEn().currentPage,
+      );
+      expect(changed, isEmpty);
+      semantics.dispose();
     });
 
     testWidgets('a button in a toolbar takes the toggles\' nested corner', (

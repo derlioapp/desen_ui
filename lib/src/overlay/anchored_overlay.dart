@@ -791,7 +791,7 @@ class _RenderPlaced extends RenderShiftedBox {
     if (child == null) return;
     // A NaN anchor (a trigger kept alive off screen) "overlaps" every rect,
     // since each comparison with NaN is false: test it first.
-    final visible = _anchor.isFinite && _anchor.overlaps(Offset.zero & size);
+    final visible = _anchor.isFinite && _onScreen(_anchor, size);
     final room = Size(
       (size.width - _margin.horizontal).clamp(0, double.infinity),
       (size.height - _margin.vertical).clamp(0, double.infinity),
@@ -840,6 +840,17 @@ class _RenderPlaced extends RenderShiftedBox {
     _placedSide = placement.side;
     _reportLost(visible);
     (child.parentData! as BoxParentData).offset = placement.offset;
+  }
+
+  /// Whether [anchor] shows inside [size]. A side of no length (the point
+  /// a keyboard-opened menu hangs from) counts on the window's edge too: a
+  /// row that fills the window puts it at x = 0, or at the window's width
+  /// in right-to-left text.
+  static bool _onScreen(Rect anchor, Size size) {
+    bool span(double from, double to, double extent) =>
+        from == to ? from >= 0 && from <= extent : from < extent && to > 0;
+    return span(anchor.left, anchor.right, size.width) &&
+        span(anchor.top, anchor.bottom, size.height);
   }
 
   /// Records whether the anchor is on screen; an open layer whose anchor

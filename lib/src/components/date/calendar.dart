@@ -28,14 +28,19 @@ export 'date_format.dart';
 export 'date_locale.dart';
 
 /// A range of calendar days: a [start] and, once chosen, an [end] (the
-/// same day for a one-day range). Times of day are ignored.
+/// same day for a one-day range). Times of day are ignored: each end is
+/// the day its date reads, at midnight. A UTC [start] makes a UTC range.
 @immutable
 class DsDateRange {
   /// Creates a range; [end] is null while only the start is chosen.
   DsDateRange({required DateTime start, DateTime? end})
     : start = DsDateUtils.dateOnly(start),
-      end = end == null ? null : DsDateUtils.dateOnly(end),
-      assert(end == null || !end.isBefore(DsDateUtils.dateOnly(start)));
+      end = end == null ? null : _sameKind(end, start),
+      assert(end == null || DsDateUtils.dayDelta(start, end) >= 0);
+
+  /// [day]'s date at midnight, in UTC when [like] is.
+  static DateTime _sameKind(DateTime day, DateTime like) =>
+      (like.isUtc ? DateTime.utc : DateTime.new)(day.year, day.month, day.day);
 
   /// The first day.
   final DateTime start;
@@ -46,11 +51,11 @@ class DsDateRange {
   /// Whether both ends are chosen.
   bool get isComplete => end != null;
 
-  /// Whether [day] is from [start] to [end], both included.
-  bool contains(DateTime day) {
-    final d = DsDateUtils.dateOnly(day);
-    return !d.isBefore(start) && !d.isAfter(end ?? start);
-  }
+  /// Whether [day] is from [start] to [end], both included. Only the
+  /// dates are compared.
+  bool contains(DateTime day) =>
+      DsDateUtils.dayDelta(start, day) >= 0 &&
+      DsDateUtils.dayDelta(day, end ?? start) >= 0;
 
   @override
   bool operator ==(Object other) =>
@@ -143,7 +148,8 @@ class DsCalendar extends _Calendar {
   /// The chosen day, or null.
   final DateTime? value;
 
-  /// Called with the day chosen. Null disables the calendar.
+  /// Called with the day chosen. Null disables the calendar: its days are
+  /// no Tab stop and its keys do nothing.
   final ValueChanged<DateTime>? onChanged;
 
   @override
@@ -277,7 +283,8 @@ class DsRangeCalendar extends _Calendar {
   final DsDateRange? value;
 
   /// Called with the new range: a start alone, then the complete range.
-  /// Null disables the calendar.
+  /// Null disables the calendar: its days are no Tab stop and its keys do
+  /// nothing.
   final ValueChanged<DsDateRange>? onChanged;
 
   @override
@@ -322,7 +329,8 @@ sealed class _Calendar extends StatefulWidget {
   /// start), else today's.
   final DateTime? initialMonth;
 
-  /// Called with the first shown month when the page turns.
+  /// Called with the first shown month when the page turns, by the user
+  /// or to show a new [DsCalendar.value] or [DsRangeCalendar.value].
   final ValueChanged<DateTime>? onMonthChanged;
 
   /// Today; defaults to now. Set it for stable tests and screenshots.
@@ -416,18 +424,18 @@ class _CalendarState extends State<_Calendar>
   bool get _enabled => widget._enabled;
 
   DateTime get _today =>
-      DsDateUtils.dateOnly(widget.currentDate ?? DateTime.now());
+      DsDateUtils.localDay(widget.currentDate ?? DateTime.now());
 
   DateTime? get _first =>
-      widget.firstDate == null ? null : DsDateUtils.dateOnly(widget.firstDate!);
+      widget.firstDate == null ? null : DsDateUtils.localDay(widget.firstDate!);
 
   DateTime? get _last =>
-      widget.lastDate == null ? null : DsDateUtils.dateOnly(widget.lastDate!);
+      widget.lastDate == null ? null : DsDateUtils.localDay(widget.lastDate!);
 
   /// The day the calendar is about: the chosen day or the range's start.
   DateTime? get _anchor {
     final d = widget._anchor;
-    return d == null ? null : DsDateUtils.dateOnly(d);
+    return d == null ? null : DsDateUtils.localDay(d);
   }
 
   /// The range of a [DsRangeCalendar], or null.
@@ -459,6 +467,7 @@ class _CalendarState extends State<_Calendar>
       }
       _gridNode.addListener(_onGridFocus);
     }
+    final month = _month;
     final anchor = _anchor;
     if (anchor != null && !DsDateUtils.isSameDay(anchor, oldWidget._anchor)) {
       // Chosen from outside (or typed): show it.
@@ -471,6 +480,14 @@ class _CalendarState extends State<_Calendar>
       _month = _clampMonth(_month);
     }
     if (!_visible(_focused)) _focused = _landing();
+    // A page turned by the new widget is reported as one turned by the
+    // user is; after the frame, as the app may rebuild in the callback.
+    if (_month != month) {
+      final shown = _month;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _month == shown) widget.onMonthChanged?.call(shown);
+      });
+    }
   }
 
   @override
@@ -600,17 +617,23 @@ class _CalendarState extends State<_Calendar>
     }
   }
 
+  /// Turns the page as little as shows [day]: a day before the shown
+  /// months becomes the first month, one after them the last.
+  void _showDay(DateTime day) {
+    final month = DsDateUtils.monthOf(day);
+    _showMonth(
+      month.isBefore(_month)
+          ? month
+          : DsDateUtils.addMonths(month, -(widget.months - 1)),
+    );
+  }
+
   /// Moves the keyboard to [day], turning the page when it is not shown.
   void _moveTo(DateTime day) {
     final target = _clampDay(day);
     _focused = target;
     if (!_visible(target)) {
-      final month = DsDateUtils.monthOf(target);
-      _showMonth(
-        month.isBefore(_month)
-            ? month
-            : DsDateUtils.addMonths(month, -(widget.months - 1)),
-      );
+      _showDay(target);
     } else {
       setState(() {});
     }
@@ -649,24 +672,30 @@ class _CalendarState extends State<_Calendar>
   void _choose(DateTime day, {bool touch = false}) {
     if (!_enabled || !_selectable(day)) return;
     _focused = day;
-    if (!_visible(day)) _showMonth(DsDateUtils.monthOf(day));
+    if (!_visible(day)) _showDay(day);
     if (touch) DsHapticFeedback.play(context, DsHapticEvent.selection);
     switch (widget) {
       case DsCalendar(:final onChanged):
         onChanged!(day);
       case DsRangeCalendar(value: final range, :final onChanged):
+        // A UTC range stays UTC.
+        final d = range != null && range.start.isUtc
+            ? DateTime.utc(day.year, day.month, day.day)
+            : day;
         if (range == null || range.isComplete) {
-          onChanged!(DsDateRange(start: day));
-        } else if (day.isBefore(range.start)) {
-          onChanged!(DsDateRange(start: day, end: range.start));
+          onChanged!(DsDateRange(start: d));
+        } else if (DsDateUtils.dayDelta(range.start, d) < 0) {
+          onChanged!(DsDateRange(start: d, end: range.start));
         } else {
-          onChanged!(DsDateRange(start: range.start, end: day));
+          onChanged!(DsDateRange(start: range.start, end: d));
         }
     }
     setState(() {});
   }
 
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {
+    // A disabled calendar neither chooses nor turns pages.
+    if (!_enabled) return KeyEventResult.ignored;
     final key = event.logicalKey;
     final isSpace = key == LogicalKeyboardKey.space;
     final isEnter =
@@ -1097,11 +1126,13 @@ class _CalendarState extends State<_Calendar>
     if (calendar is DsRangeCalendar) {
       final range = calendar.value;
       if (range != null) {
-        final preview = _previewEnd;
-        final to = range.end ?? preview;
+        // The grid's days are local: a UTC range is compared by its days.
+        final from = DsDateUtils.localDay(range.start);
+        final end = range.end;
+        final to = end == null ? _previewEnd : DsDateUtils.localDay(end);
         if (to != null) {
-          bandFrom = to.isBefore(range.start) ? to : range.start;
-          bandTo = to.isBefore(range.start) ? range.start : to;
+          bandFrom = to.isBefore(from) ? to : from;
+          bandTo = to.isBefore(from) ? from : to;
         }
         rangeStart = DsDateUtils.isSameDay(day, range.start);
         rangeEnd = DsDateUtils.isSameDay(day, range.end);
@@ -1282,6 +1313,8 @@ class _CalendarState extends State<_Calendar>
       onTap: enabled ? () => _choose(day) : null,
       child: Focus(
         focusNode: node,
+        // A disabled calendar is no Tab stop, as a disabled button is not.
+        canRequestFocus: _enabled,
         skipTraversal: day != _focused,
         autofocus: widget.autofocus && day == _focused,
         onFocusChange: (focused) {

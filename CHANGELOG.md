@@ -42,6 +42,49 @@
   with a `controller` when the parent rebuilt on each change. Reset now
   goes back to the controller's text when the field was created, as
   Flutter's `TextFormField` does.
+- Fixed: a `DsSlider` or `DsRangeSlider` disabled mid-drag never called
+  `onChangeEnd` after `onChangeStart`. It now ends the change with the
+  last value.
+- Fixed: in right-to-left text, a `DsListSection` divider took its start
+  inset from the rows' end padding, so with uneven row padding it did not
+  line up with the row text.
+- Fixed: a `DsTable` focused while `loading` (with `autofocus` or its
+  `focusNode`) kept focus on itself once the rows arrived, so the arrow
+  keys did nothing. It now hands focus to the active row.
+- Fixed: `DsTableColumnWidth.flex(0)` laid the table out with NaN widths;
+  a flex column now asserts a flex above 0.
+- Fixed: a `DsCalendar` or `DsRangeCalendar` with `onChanged: null` kept
+  its days a Tab stop, and Page Up or Page Down still turned the month
+  and called `onMonthChanged`. Its days are now no Tab stop and its keys
+  do nothing.
+- Fixed: with `months` above 1, choosing an outside day after the last
+  shown month turned two pages instead of one.
+- Fixed: a new `value` from the app that moved a calendar to another
+  month did not call `onMonthChanged`.
+- Fixed: `DsDateRange` failed an assert for a one-day range with a UTC
+  end west of UTC, and turned a UTC range into a local one. Its ends are
+  compared by date only, and a UTC `start` now keeps the range in UTC
+  (the end takes the day its date reads), as `DsDatePicker` keeps a UTC
+  value.
+- Fixed: a `DsPagination` with `onChanged: null` kept its current page a
+  Tab stop that screen readers announced as enabled.
+- Fixed: focusing a `DsPagination` (its `focusNode` or `autofocus`) after
+  it narrowed to "‹ 6 / 24 ›" focused nothing; it now focuses the arrow
+  that can move.
+- Fixed: a `DsPagination` whose `page` is past `pageCount` (a filter left
+  fewer pages) failed an assert. It now shows the last page, without
+  calling `onChanged`.
+- Fixed: `DsBreadcrumb(items: [])` threw a `RangeError`; it now builds
+  empty.
+- Fixed: on touch, a collapsed `DsBreadcrumb` of short levels could
+  overflow its width: it measured the levels without their 44 px tap
+  targets.
+- Fixed: a context or row menu opened from the keyboard (Shift+F10 or the
+  Menu key) closed at once when its control touched the window's edge, so
+  the row menu of a full-width `DsTable` never showed.
+- Fixed: on touch, long-pressing a control inside a `DsTooltip` to read
+  its tooltip also pressed the control when the finger lifted. The long
+  press that shows the tooltip now cancels the press.
 - Fixed: dates followed the language but not the region of the app's
   locale when an app listed language-only `supportedLocales` (as
   `DsLocalizations.supportedLocales`): a British device resolved to `en`

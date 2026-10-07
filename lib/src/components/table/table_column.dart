@@ -122,10 +122,11 @@ class DsTableColumnWidth {
       max = null;
 
   /// A share of the space left after the fixed and intrinsic columns, in
-  /// proportion to [flex], never narrower than [min] (the table style's
-  /// `minColumnWidth` when null).
+  /// proportion to [flex] (above 0), never narrower than [min] (the table
+  /// style's `minColumnWidth` when null).
   const DsTableColumnWidth.flex([double this.flex = 1, this.min])
-    : _kind = _WidthKind.flex,
+    : assert(flex > 0, 'a flex column needs a flex above 0'),
+      _kind = _WidthKind.flex,
       width = null,
       max = null;
 
