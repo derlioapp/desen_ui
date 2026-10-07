@@ -1,5 +1,8 @@
 ## Unreleased
 
+- `DsListRow.description`: a muted line under the title, such as a
+  setting's explanation or a message's preview, read after the title
+  (new style fields `descriptionStyle` and `textGap`).
 - Fixed: an app-wide `DsButtonTheme` reached the buttons that are parts
   of other components: a wide padding made a text field's clear button
   62px wide, and a height or background changed the calendar's month

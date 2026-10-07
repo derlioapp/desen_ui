@@ -140,7 +140,8 @@ class DsListSection extends StatelessWidget {
   }
 }
 
-/// A settings-style row: icon, title, detail and chevron.
+/// A settings-style row: icon, title, an optional description under it,
+/// detail and chevron.
 ///
 /// With [onPressed] the row is a button with a hover fill; without it, a static
 /// row. [destructive] colors it as a danger action ("Sign out").
@@ -152,6 +153,7 @@ class DsListSection extends StatelessWidget {
 /// ```dart
 /// DsListRow(
 ///   title: Text(mail.subject),
+///   description: Text(mail.preview),
 ///   detail: Text(mail.time),
 ///   selected: mail.id == openId,
 ///   onPressed: () => open(mail.id),
@@ -162,6 +164,7 @@ class DsListRow extends StatefulWidget {
   const DsListRow({
     super.key,
     required this.title,
+    this.description,
     this.leading,
     this.detail,
     this.trailing,
@@ -177,6 +180,10 @@ class DsListRow extends StatefulWidget {
 
   /// The row's name.
   final Widget title;
+
+  /// A muted line under the title, such as a setting's explanation ("Every
+  /// Monday") or a message's preview. Read after the title.
+  final Widget? description;
 
   /// An icon before the title, usually a [DsIcon].
   final Widget? leading;
@@ -233,6 +240,8 @@ class DsListRow extends StatefulWidget {
       titleStyle: destructive
           ? theme.typography.body.copyWith(fontWeight: FontWeight.w500)
           : theme.typography.body,
+      descriptionStyle: theme.typography.small.copyWith(color: k.textMuted),
+      textGap: 2,
       detailStyle: theme.typography.small.copyWith(color: k.textSubtle),
       // Wraps before it cuts: a long title at 320px or 2x text stays
       // readable (it was cut to one line even at 1x).
@@ -251,6 +260,7 @@ class DsListRow extends StatefulWidget {
         // grays are tuned for the card, not for the selection fill.
         foreground: theme.onSelectedFill,
         iconColor: theme.onSelectedFill,
+        descriptionStyle: TextStyle(color: theme.onSelectedFill),
         detailStyle: TextStyle(color: theme.onSelectedFill),
         chevronColor: theme.onSelectedFill,
         // On a filled selection the accent ring would vanish; its label
@@ -264,6 +274,7 @@ class DsListRow extends StatefulWidget {
       disabled: DsListRowStyle(
         foreground: k.onDisabled,
         iconColor: k.onDisabled,
+        descriptionStyle: TextStyle(color: k.onDisabled),
       ),
     );
   }
@@ -317,13 +328,27 @@ class _DsListRowState extends State<DsListRow> {
                   child: widget.leading!,
                 ),
               Expanded(
-                child: DefaultTextStyle.merge(
-                  style: (s.titleStyle ?? const TextStyle()).copyWith(
-                    color: s.foreground,
-                  ),
-                  maxLines: s.maxLines,
-                  overflow: TextOverflow.ellipsis,
-                  child: widget.title,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  spacing: s.textGap ?? 0,
+                  children: [
+                    DefaultTextStyle.merge(
+                      style: (s.titleStyle ?? const TextStyle()).copyWith(
+                        color: s.foreground,
+                      ),
+                      maxLines: s.maxLines,
+                      overflow: TextOverflow.ellipsis,
+                      child: widget.title,
+                    ),
+                    if (widget.description != null)
+                      DefaultTextStyle.merge(
+                        style: s.descriptionStyle,
+                        maxLines: s.maxLines,
+                        overflow: TextOverflow.ellipsis,
+                        child: widget.description!,
+                      ),
+                  ],
                 ),
               ),
               if (widget.detail != null)

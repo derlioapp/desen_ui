@@ -28,6 +28,8 @@ class DsListRowStyle with Diagnosticable {
     this.iconColor,
     this.iconSize,
     this.titleStyle,
+    this.descriptionStyle,
+    this.textGap,
     this.detailStyle,
     this.maxLines,
     this.chevronColor,
@@ -68,10 +70,16 @@ class DsListRowStyle with Diagnosticable {
   /// Title style, merged.
   final TextStyle? titleStyle;
 
+  /// Description style (the line under the title), merged.
+  final TextStyle? descriptionStyle;
+
+  /// Space between the title and the description.
+  final double? textGap;
+
   /// Trailing detail style, merged.
   final TextStyle? detailStyle;
 
-  /// Lines the title and the detail may each take before they ellipsize.
+  /// Lines the title, the description and the detail may each take before they ellipsize.
   final int? maxLines;
 
   /// Disclosure chevron color.
@@ -114,6 +122,10 @@ class DsListRowStyle with Diagnosticable {
       iconColor: other.iconColor ?? iconColor,
       iconSize: other.iconSize ?? iconSize,
       titleStyle: titleStyle?.merge(other.titleStyle) ?? other.titleStyle,
+      descriptionStyle:
+          descriptionStyle?.merge(other.descriptionStyle) ??
+          other.descriptionStyle,
+      textGap: other.textGap ?? textGap,
       detailStyle: detailStyle?.merge(other.detailStyle) ?? other.detailStyle,
       maxLines: other.maxLines ?? maxLines,
       chevronColor: other.chevronColor ?? chevronColor,
@@ -142,6 +154,8 @@ class DsListRowStyle with Diagnosticable {
     iconColor: iconColor,
     iconSize: iconSize,
     titleStyle: titleStyle,
+    descriptionStyle: descriptionStyle,
+    textGap: textGap,
     detailStyle: detailStyle,
     maxLines: maxLines,
     chevronColor: chevronColor,
@@ -194,6 +208,8 @@ class DsListRowStyle with Diagnosticable {
     iconColor,
     iconSize,
     titleStyle,
+    descriptionStyle,
+    textGap,
     detailStyle,
     maxLines,
     chevronColor,
@@ -241,6 +257,14 @@ class DsListRowStyle with Diagnosticable {
     properties.add(
       DiagnosticsProperty('titleStyle', titleStyle, defaultValue: null),
     );
+    properties.add(
+      DiagnosticsProperty(
+        'descriptionStyle',
+        descriptionStyle,
+        defaultValue: null,
+      ),
+    );
+    properties.add(DoubleProperty('textGap', textGap, defaultValue: null));
     properties.add(
       DiagnosticsProperty('detailStyle', detailStyle, defaultValue: null),
     );
