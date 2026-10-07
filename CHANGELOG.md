@@ -1,5 +1,18 @@
 ## Unreleased
 
+- Fixed: a `DsCalendar` or `DsRangeCalendar` with `onChanged: null` kept
+  its days a Tab stop, and Page Up or Page Down still turned the month
+  and called `onMonthChanged`. Its days are now no Tab stop and its keys
+  do nothing.
+- Fixed: with `months` above 1, choosing an outside day after the last
+  shown month turned two pages instead of one.
+- Fixed: a new `value` from the app that moved a calendar to another
+  month did not call `onMonthChanged`.
+- Fixed: `DsDateRange` failed an assert for a one-day range with a UTC
+  end west of UTC, and turned a UTC range into a local one. Its ends are
+  compared by date only, and a UTC `start` now keeps the range in UTC
+  (the end takes the day its date reads), as `DsDatePicker` keeps a UTC
+  value.
 - Fixed: a `DsPagination` with `onChanged: null` kept its current page a
   Tab stop that screen readers announced as enabled.
 - Fixed: focusing a `DsPagination` (its `focusNode` or `autofocus`) after

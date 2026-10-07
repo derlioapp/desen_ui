@@ -439,6 +439,93 @@ void main() {
       );
       expect(day.flagsCollection.isEnabled, Tristate.isFalse);
     });
+
+    testWidgets('a disabled calendar is no Tab stop and turns no pages', (
+      tester,
+    ) async {
+      final turned = <DateTime>[];
+      await tester.pumpWidget(
+        _app(
+          DsCalendar(
+            value: null,
+            currentDate: _today,
+            onMonthChanged: turned.add,
+            onChanged: null,
+          ),
+        ),
+      );
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pumpAndSettle();
+      expect(
+        FocusManager.instance.primaryFocus?.debugLabel ?? '',
+        isNot(startsWith('DsCalendar day')),
+      );
+      await _key(tester, LogicalKeyboardKey.pageDown);
+      expect(find.text('Ekim 2026'), findsOneWidget);
+      expect(turned, isEmpty);
+    });
+  });
+
+  group('pages', () {
+    testWidgets('an outside day after the last month turns one page', (
+      tester,
+    ) async {
+      tester.view
+        ..physicalSize = const Size(1200, 800)
+        ..devicePixelRatio = 1;
+      addTearDown(tester.view.reset);
+      DateTime? value;
+      final turned = <DateTime>[];
+      await tester.pumpWidget(
+        _localized(
+          StatefulBuilder(
+            builder: (context, setState) => DsCalendar(
+              value: value,
+              months: 2,
+              showOutsideDays: true,
+              initialMonth: DateTime(2026, 10),
+              currentDate: _today,
+              onMonthChanged: turned.add,
+              onChanged: (d) => setState(() => value = d),
+            ),
+          ),
+          strings: tr,
+        ),
+      );
+      // October | November; November's last row holds 1–5 December.
+      await tester.tap(find.text('5').last);
+      await tester.pumpAndSettle();
+      expect(value, DateTime(2026, 12, 5));
+      expect(turned, [DateTime(2026, 11)]);
+      expect(find.text('Kasım 2026'), findsOneWidget);
+      expect(find.text('Aralık 2026'), findsOneWidget);
+    });
+
+    testWidgets('a page turned by a new value is reported', (tester) async {
+      final turned = <DateTime>[];
+      late StateSetter set;
+      DateTime? value = _today;
+      await tester.pumpWidget(
+        _localized(
+          StatefulBuilder(
+            builder: (context, setState) {
+              set = setState;
+              return DsCalendar(
+                value: value,
+                currentDate: _today,
+                onMonthChanged: turned.add,
+                onChanged: (d) => setState(() => value = d),
+              );
+            },
+          ),
+          strings: tr,
+        ),
+      );
+      set(() => value = DateTime(2027, 3, 3));
+      await tester.pumpAndSettle();
+      expect(find.text('Mart 2027'), findsOneWidget);
+      expect(turned, [DateTime(2027, 3)]);
+    });
   });
 
   group('range', () {
@@ -489,6 +576,60 @@ void main() {
       await tester.tap(find.text('25'));
       await tester.pump();
       expect(state.reported.last, DsDateRange(start: DateTime(2026, 10, 25)));
+    });
+
+    test('a range takes its ends by date and keeps a UTC start UTC', () {
+      final utc = DsDateRange(
+        start: DateTime.utc(2026, 10, 5, 22),
+        end: DateTime.utc(2026, 10, 6, 1),
+      );
+      expect(utc.start, DateTime.utc(2026, 10, 5));
+      expect(utc.end, DateTime.utc(2026, 10, 6));
+      expect(utc.contains(DateTime(2026, 10, 6, 23)), isTrue);
+      expect(utc.contains(DateTime(2026, 10, 7)), isFalse);
+      // The end follows the start's kind: the day its date reads.
+      final local = DsDateRange(
+        start: DateTime(2026, 10, 5),
+        end: DateTime.utc(2026, 10, 5),
+      );
+      expect(local.end, DateTime(2026, 10, 5));
+    });
+
+    test('a one-day range with a UTC end is valid west of UTC', () {
+      // Fails only where midnight UTC is the day before: run with
+      // TZ=America/New_York.
+      final range = DsDateRange(
+        start: DateTime(2026, 10, 5),
+        end: DateTime.utc(2026, 10, 5),
+      );
+      expect(range.end, DateTime(2026, 10, 5));
+    }, skip: !_today.timeZoneOffset.isNegative);
+
+    testWidgets('a UTC range stays UTC and bands its own days', (tester) async {
+      final band = DsThemeData().colors.accentTint;
+      var range = DsDateRange(start: DateTime.utc(2026, 10, 12));
+      await tester.pumpWidget(
+        _localized(
+          StatefulBuilder(
+            builder: (context, setState) => DsRangeCalendar(
+              value: range,
+              currentDate: _today,
+              onChanged: (r) => setState(() => range = r),
+            ),
+          ),
+          strings: tr,
+        ),
+      );
+      await tester.tap(find.text('16'));
+      await tester.pumpAndSettle();
+      expect(
+        range,
+        DsDateRange(
+          start: DateTime.utc(2026, 10, 12),
+          end: DateTime.utc(2026, 10, 16),
+        ),
+      );
+      expect(_bandCount(tester, band), 5);
     });
 
     testWidgets('the keyboard previews too', (tester) async {

@@ -434,8 +434,8 @@ class _DatePickerState extends State<StatefulWidget>
   /// What is wrong with [day], or null when it can be chosen.
   DsInputIssue? _check(DateTime day) {
     final l10n = _locale!.strings;
-    final first = _firstDate == null ? null : DsDateUtils.dateOnly(_firstDate!);
-    final last = _lastDate == null ? null : DsDateUtils.dateOnly(_lastDate!);
+    final first = _firstDate == null ? null : DsDateUtils.localDay(_firstDate!);
+    final last = _lastDate == null ? null : DsDateUtils.localDay(_lastDate!);
     if (first != null && day.isBefore(first)) {
       return DsInputIssue(
         DsInputIssueKind.belowMin,
