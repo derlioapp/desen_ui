@@ -27,6 +27,7 @@ class DsBottomNavItemStyle with Diagnosticable {
     this.borderColor,
     this.foreground,
     this.iconSize,
+    this.fillIcon,
     this.labelStyle,
     this.capsuleSize,
     this.focusShadows,
@@ -58,6 +59,9 @@ class DsBottomNavItemStyle with Diagnosticable {
 
   /// Icon size.
   final double? iconSize;
+
+  /// Whether the icon is drawn filled, through the icon theme's `IconThemeData.fill` (1 or 0): a `DsIcon` follows it, as does an `Icon` from a font with a fill axis. The selected item's is true by default; set it to false to keep the selected icon outlined.
+  final bool? fillIcon;
 
   /// Label style, merged.
   final TextStyle? labelStyle;
@@ -97,6 +101,7 @@ class DsBottomNavItemStyle with Diagnosticable {
       borderColor: other.borderColor ?? borderColor,
       foreground: other.foreground ?? foreground,
       iconSize: other.iconSize ?? iconSize,
+      fillIcon: other.fillIcon ?? fillIcon,
       labelStyle: labelStyle?.merge(other.labelStyle) ?? other.labelStyle,
       capsuleSize: other.capsuleSize ?? capsuleSize,
       focusShadows: other.focusShadows ?? focusShadows,
@@ -121,6 +126,7 @@ class DsBottomNavItemStyle with Diagnosticable {
     borderColor: borderColor,
     foreground: foreground,
     iconSize: iconSize,
+    fillIcon: fillIcon,
     labelStyle: labelStyle,
     capsuleSize: capsuleSize,
     focusShadows: focusShadows,
@@ -169,6 +175,7 @@ class DsBottomNavItemStyle with Diagnosticable {
     borderColor,
     foreground,
     iconSize,
+    fillIcon,
     labelStyle,
     capsuleSize,
     focusShadows,
@@ -210,6 +217,9 @@ class DsBottomNavItemStyle with Diagnosticable {
     );
     properties.add(ColorProperty('foreground', foreground, defaultValue: null));
     properties.add(DoubleProperty('iconSize', iconSize, defaultValue: null));
+    properties.add(
+      DiagnosticsProperty('fillIcon', fillIcon, defaultValue: null),
+    );
     properties.add(
       DiagnosticsProperty('labelStyle', labelStyle, defaultValue: null),
     );

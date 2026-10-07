@@ -90,7 +90,7 @@ class DsIconData {
 
 /// Draws a [DsIconData].
 ///
-/// Size and color default to the ambient [IconTheme]. The stroke scales with
+/// Size, color and fill default to the ambient [IconTheme]. The stroke scales with
 /// the size (a 24-unit icon with stroke 2 drawn at 16px has a 1.33px stroke),
 /// matching how the icon renders on the web.
 class DsIcon extends LeafRenderObjectWidget {
@@ -117,8 +117,13 @@ class DsIcon extends LeafRenderObjectWidget {
   /// Stroke width in [DsIconData.viewBox] units; overrides the icon's own.
   final double? strokeWidth;
 
-  /// Fill the paths as well as stroking them; overrides [DsIconData.fill].
-  /// A selected tab, for example, can show the same icon solid.
+  /// Fill the paths as well as stroking them; overrides [DsIconData.fill]
+  /// and the icon theme. A selected tab, for example, can show the same
+  /// icon solid.
+  ///
+  /// When null, the icon is filled if its [DsIconData.fill] says so or the
+  /// ambient [IconThemeData.fill] is 0.5 or more: a selected [DsBottomNav]
+  /// item sets it, as it would for an icon font with a fill axis.
   final bool? fill;
 
   /// Read by screen readers. Without it the icon is decorative and hidden
@@ -131,7 +136,7 @@ class DsIcon extends LeafRenderObjectWidget {
     size: _size(context),
     color: _color(context),
     strokeWidth: strokeWidth ?? icon.strokeWidth,
-    fill: fill ?? icon.fill,
+    fill: _fill(context),
     semanticLabel: semanticLabel,
     textDirection: Directionality.maybeOf(context),
   );
@@ -143,7 +148,7 @@ class DsIcon extends LeafRenderObjectWidget {
       ..iconSize = _size(context)
       ..color = _color(context)
       ..strokeWidth = strokeWidth ?? icon.strokeWidth
-      ..fill = fill ?? icon.fill
+      ..fill = _fill(context)
       ..semanticLabel = semanticLabel
       ..textDirection = Directionality.maybeOf(context);
   }
@@ -151,6 +156,9 @@ class DsIcon extends LeafRenderObjectWidget {
   double _size(BuildContext context) =>
       // ds-raw: unreachable, IconTheme.of fills the size in
       size ?? IconTheme.of(context).size ?? 16;
+
+  bool _fill(BuildContext context) =>
+      fill ?? (icon.fill || (IconTheme.of(context).fill ?? 0) >= .5);
 
   Color _color(BuildContext context) {
     if (color != null) return color!;
