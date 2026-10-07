@@ -190,7 +190,9 @@ class IconsPage extends StatelessWidget {
             (
               'fill',
               'bool?',
-              'Fill the paths as well; overrides the icon\'s own (off).',
+              'Fill the paths as well. Null follows the icon\'s own (off) '
+                  'and the icon theme\'s `fill` (on at 0.5 or more, as in a '
+                  'selected bottom navigation item).',
             ),
             (
               'semanticLabel',

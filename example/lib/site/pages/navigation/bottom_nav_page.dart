@@ -23,7 +23,7 @@ class BottomNavPage extends StatelessWidget {
             'The default `floating` variant is an opaque bar that floats '
             'above the content, centered, and sizes to its items. The '
             'selected destination is filled with the theme\'s selection '
-            'style.',
+            'style, and its icon is drawn solid.',
           ),
           Example(
             snippet: 'bottom-nav-overview',
@@ -92,6 +92,15 @@ class BottomNavPage extends StatelessWidget {
             '`DsBottomNavTheme` also sets the default `variant`. Set '
             '`capsuleSize` to mark the selected destination with a capsule '
             'behind the icon instead of filling the whole item.',
+          ),
+          DocText(
+            'The selected icon is solid through the icon theme\'s `fill`: a '
+            '`DsIcon` follows it, as does an `Icon` from a font with a fill '
+            'axis. `itemStyle: DsBottomNavItemStyle(fillIcon: false)` keeps '
+            'it outlined (or set it in `DsBottomNavItemTheme` for the whole '
+            'app), and `DsIcon(..., fill: false)` keeps one icon outlined. '
+            'For an icon font without a fill axis, pass the filled glyph for '
+            'the selected value yourself.',
           ),
           Example(
             snippet: 'bottom-nav-custom',
@@ -189,7 +198,12 @@ class BottomNavPage extends StatelessWidget {
           DocHeading('DsBottomNavItem'),
           ApiTable([
             ('value', 'T', 'The value this destination selects.'),
-            ('icon', 'Widget', 'Usually a `DsIcon`.'),
+            (
+              'icon',
+              'Widget',
+              'Usually a `DsIcon`; any widget works. Drawn solid while '
+                  'selected, unless `fillIcon` is false.',
+            ),
             ('label', 'Widget', 'A short `Text` under the icon.'),
             (
               'semanticLabel',

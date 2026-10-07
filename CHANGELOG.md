@@ -16,6 +16,10 @@
   filled shape (the "!" in an alert, an envelope's flap) is cut out so it
   stays visible; open strokes (arrows, a chart's axes) stay strokes. A play
   button, pause bars or a selected tab's icon can be drawn solid.
+- `DsBottomNav` draws the selected destination's icon solid, as iOS tab
+  bars and Android navigation bars do. It sets the icon theme's `fill`,
+  which `DsIcon` now follows (as an `Icon` from a font with a fill axis
+  does). `DsBottomNavItemStyle(fillIcon: false)` keeps it outlined.
 - Skeleton blocks are easier to see: new color roles `skeleton` and
   `skeletonStrong` (about 1.27:1 on the card, the page and the sidebar in
   light mode). In dark mode a strong skeleton line no longer vanishes on a

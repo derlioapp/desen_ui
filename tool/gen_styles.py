@@ -586,6 +586,7 @@ SPECS = [
             ('borderColor', 'Color', 'Inner 1px outline of the selected fill, e.g. the edge a bright filled selection needs.'),
             ('foreground', 'Color', 'Icon and label color.'),
             ('iconSize', 'double', 'Icon size.'),
+            ('fillIcon', 'bool', 'Whether the icon is drawn filled, through the icon theme\'s `IconThemeData.fill` (1 or 0): a `DsIcon` follows it, as does an `Icon` from a font with a fill axis. The selected item\'s is true by default; set it to false to keep the selected icon outlined.'),
             ('labelStyle', 'TextStyle', 'Label style, merged.'),
             ('capsuleSize', 'Size', 'Size of a capsule behind the icon that takes the selected fill instead of the whole item; null (the default) fills the item.'),
             ('focusShadows', None, None),

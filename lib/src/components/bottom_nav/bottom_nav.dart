@@ -44,7 +44,15 @@ class DsBottomNavItem<T> {
   /// The value this destination selects.
   final T value;
 
-  /// Usually a [DsIcon].
+  /// Usually a [DsIcon]; any widget works, such as an [Icon].
+  ///
+  /// The selected destination's icon is drawn filled: a [DsIcon] follows
+  /// the icon theme's [IconThemeData.fill], as does an [Icon] from a font
+  /// with a fill axis. To keep it outlined, pass
+  /// `itemStyle: DsBottomNavItemStyle(fillIcon: false)` (or set it in the
+  /// theme), or `DsIcon(..., fill: false)` for one icon. For an icon font
+  /// without a fill axis, pass the filled glyph for the selected value
+  /// yourself.
   final Widget icon;
 
   /// A short label under the icon.
@@ -179,9 +187,10 @@ class DsBottomNav<T> extends StatefulWidget {
   /// Desen's default item style under [theme] for [variant].
   ///
   /// Both variants mark the selected item the same way: the whole item
-  /// filled with the theme's selection, its icon and label in the selection
-  /// ink at weight 600. Set [DsBottomNavItemStyle.capsuleSize] for a
-  /// capsule behind the icon instead.
+  /// filled with the theme's selection, its icon filled and in the
+  /// selection ink, its label in the selection ink at weight 600. Set
+  /// [DsBottomNavItemStyle.capsuleSize] for a capsule behind the icon
+  /// instead.
   static DsBottomNavItemStyle defaultItemStyle(
     DsThemeData theme, {
     required DsBottomNavVariant variant,
@@ -204,6 +213,9 @@ class DsBottomNav<T> extends StatefulWidget {
         // A bright filled selection keeps its edge off a light bar.
         borderColor: theme.selectedEdge,
         foreground: theme.onSelectedFill,
+        // Solid, as iOS tab bars and Android navigation bars show the
+        // current destination.
+        fillIcon: true,
         labelStyle: const TextStyle(fontWeight: FontWeight.w600),
         // Hover stays visible on a selected item.
         hovered: DsBottomNavItemStyle(background: theme.selectedHoverFill),
@@ -610,7 +622,11 @@ class _ItemState extends State<_Item> {
         ];
         final capsule = s.capsuleSize;
         Widget icon = IconTheme.merge(
-          data: IconThemeData(color: fg, size: s.iconSize),
+          data: IconThemeData(
+            color: fg,
+            size: s.iconSize,
+            fill: (s.fillIcon ?? false) ? 1 : 0,
+          ),
           child: widget.item.icon,
         );
         if (capsule != null) {

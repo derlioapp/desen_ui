@@ -73,6 +73,35 @@ void main() {
   SemanticsData semanticsOf(WidgetTester tester, String text) =>
       tester.getSemantics(find.text(text)).getSemanticsData();
 
+  group('the selected icon', () {
+    /// The icon theme's fill around each destination's icon.
+    List<double?> fills(WidgetTester tester) => [
+      for (final e in find.byType(DsIcon).evaluate()) IconTheme.of(e).fill,
+    ];
+
+    testWidgets('is filled, the others outlined', (tester) async {
+      await tester.pumpWidget(host(nav(initial: 1)));
+      expect(fills(tester), [0, 1, 0, 0]);
+      await tester.tap(find.text('Takvim'));
+      await tester.pumpAndSettle();
+      expect(fills(tester), [0, 0, 1, 0]);
+    });
+
+    testWidgets('stays outlined with fillIcon false', (tester) async {
+      await tester.pumpWidget(
+        host(
+          DsBottomNav<int>(
+            value: 1,
+            onChanged: (_) {},
+            itemStyle: const DsBottomNavItemStyle(fillIcon: false),
+            items: items(),
+          ),
+        ),
+      );
+      expect(fills(tester), [0, 0, 0, 0]);
+    });
+  });
+
   group('a disabled destination', () {
     testWidgets('ignores taps and looks disabled', (tester) async {
       final changes = <int>[];

@@ -183,6 +183,47 @@ void main() {
     );
   });
 
+  testWidgets('the icon theme\'s fill fills an outlined icon', (tester) async {
+    // A selected bottom navigation item sets it, as for an icon font with a
+    // fill axis.
+    Future<double> under(double fill, Widget icon) => _inkAt(
+      tester,
+      IconTheme(
+        data: IconThemeData(fill: fill),
+        child: icon,
+      ),
+      const Offset(12, 12),
+    );
+    expect(
+      await under(1, const DsIcon(_square, size: 24, color: _black)),
+      greaterThan(.95),
+    );
+    expect(
+      await under(0, const DsIcon(_square, size: 24, color: _black)),
+      lessThan(.05),
+    );
+    // DsIcon.fill wins over the theme.
+    expect(
+      await under(
+        1,
+        const DsIcon(_square, size: 24, color: _black, fill: false),
+      ),
+      lessThan(.05),
+    );
+    // A shape that is always solid stays solid.
+    expect(
+      await under(
+        0,
+        const DsIcon(
+          DsIconData(['M4 4h16v16H4z'], fill: true),
+          size: 24,
+          color: _black,
+        ),
+      ),
+      greaterThan(.95),
+    );
+  });
+
   test('fill is part of the icon data\'s identity', () {
     expect(
       const DsIconData(['M4 4h16v16H4z'], fill: true),
