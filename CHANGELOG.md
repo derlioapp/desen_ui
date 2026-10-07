@@ -1,5 +1,10 @@
 ## Unreleased
 
+- Fixed: a `DsRangeSlider` inside a `DsField` merged its two thumbs into
+  one screen-reader node, so the maximum could not be adjusted with a
+  screen reader. The thumbs now stay two sliders, each named by the
+  field's label and its end ("Price, Minimum"), with the field's
+  description or error as its hint.
 - Fixed: `DsSlider` and `DsRangeSlider` called `onChangeStart` and
   `onChangeEnd` only for taps and drags, so an app that saves in
   `onChangeEnd` lost every change made with the keyboard or a screen

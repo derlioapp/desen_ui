@@ -596,6 +596,80 @@ void main() {
       semantics.dispose();
     });
 
+    testWidgets('in a DsField, each thumb stays its own slider, named by '
+        'the field label', (tester) async {
+      final semantics = tester.ensureSemantics();
+      var values = const DsRangeValues(start: 100, end: 400);
+      String? error;
+      late StateSetter setOuter;
+      await tester.pumpWidget(
+        host(
+          SizedBox(
+            width: 420,
+            child: StatefulBuilder(
+              builder: (context, set) {
+                setOuter = set;
+                return DsField(
+                  label: const Text('Price'),
+                  description: const Text('Per night'),
+                  errorText: error,
+                  required: true,
+                  child: DsRangeSlider(
+                    values: values,
+                    min: 0,
+                    max: 500,
+                    divisions: 50,
+                    semanticFormatter: (v) => '\$${v.round()}',
+                    onChanged: (v) => set(() => values = v),
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
+      );
+      await tester.pump();
+      final start = find.semantics.byLabel('Price\nMinimum');
+      final end = find.semantics.byLabel('Price\nMaximum');
+      expect(
+        node(start),
+        isSemantics(
+          isSlider: true,
+          isEnabled: true,
+          hasEnabledState: true,
+          isFocusable: true,
+          isRequired: true,
+          label: 'Price\nMinimum',
+          hint: 'Per night',
+          value: r'$100',
+          increasedValue: r'$110',
+          decreasedValue: r'$90',
+          hasIncreaseAction: true,
+          hasDecreaseAction: true,
+          hasFocusAction: true,
+        ),
+      );
+      expect(node(end).value, r'$400');
+      expect(node(end).hint, 'Per night');
+      // The label is not read again as a node of its own.
+      expect(find.semantics.byLabel('Price'), findsNothing);
+      // The end thumb can be adjusted on its own.
+      tester.semantics.performAction(end, SemanticsAction.increase);
+      await tester.pump();
+      expect(values, const DsRangeValues(start: 100, end: 410));
+      setOuter(() => error = 'Pick a range.');
+      await tester.pump();
+      await tester.pump();
+      for (final thumb in [start, end]) {
+        expect(
+          node(thumb).getSemanticsData().validationResult,
+          SemanticsValidationResult.invalid,
+        );
+        expect(node(thumb).hint, 'Error\nPick a range.');
+      }
+      semantics.dispose();
+    });
+
     testWidgets('the thumb names follow the app language', (tester) async {
       final semantics = tester.ensureSemantics();
       await tester.pumpWidget(
