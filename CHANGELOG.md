@@ -1,5 +1,11 @@
 ## Unreleased
 
+- `DsAutocomplete` and `DsMultiSelect` take `labelOf`, which labels a
+  value that is not among the options, e.g. a saved record's customer
+  when the options come from a server. Fixed: such a value showed (and
+  screen readers read) its `toString()`, "Instance of 'Customer'"; without
+  `labelOf` it now shows no text. The labels of options a search returned
+  are no longer all kept: only the chosen ones.
 - Fixed: where the platform has no announcements (Android), screen
   readers did not hear which `DsAutocomplete` or `DsMultiSelect` option
   the arrow keys made active. The popup now says it from a polite live

@@ -134,6 +134,7 @@ class DsAutocomplete<T> extends StatelessWidget {
     required this.onChanged,
     required this.options,
     this.optionsBuilder,
+    this.labelOf,
     this.filter,
     this.onCreate,
     this.placeholder,
@@ -164,6 +165,12 @@ class DsAutocomplete<T> extends StatelessWidget {
 
   /// Looks options up for the typed text instead of filtering [options].
   final DsOptionsBuilder<T>? optionsBuilder;
+
+  /// Labels a [value] that is not among [options] or the options
+  /// [optionsBuilder] returned, e.g. a saved record's customer before the
+  /// user searches. Without it such a value shows as empty text (and the
+  /// [placeholder]), never as its `toString()`.
+  final String Function(T value)? labelOf;
 
   /// Replaces the default matching (the label contains the text,
   /// case-folded).
@@ -310,6 +317,7 @@ class DsAutocomplete<T> extends StatelessWidget {
     onChangedMany: null,
     options: options,
     optionsBuilder: optionsBuilder,
+    labelOf: labelOf,
     filter: filter,
     onCreate: onCreate,
     placeholder: placeholder,
@@ -388,6 +396,7 @@ class DsMultiSelect<T> extends StatelessWidget {
     required this.onChanged,
     required this.options,
     this.optionsBuilder,
+    this.labelOf,
     this.filter,
     this.onCreate,
     this.placeholder,
@@ -418,6 +427,10 @@ class DsMultiSelect<T> extends StatelessWidget {
 
   /// See [DsAutocomplete.optionsBuilder].
   final DsOptionsBuilder<T>? optionsBuilder;
+
+  /// Labels the tag of a value that is not among [options] or the loaded
+  /// ones; see [DsAutocomplete.labelOf]. Without it the tag has no text.
+  final String Function(T value)? labelOf;
 
   /// See [DsAutocomplete.filter].
   final DsOptionFilter<T>? filter;
@@ -475,6 +488,7 @@ class DsMultiSelect<T> extends StatelessWidget {
     onChangedMany: onChanged,
     options: options,
     optionsBuilder: optionsBuilder,
+    labelOf: labelOf,
     filter: filter,
     onCreate: onCreate,
     placeholder: placeholder,
@@ -501,6 +515,7 @@ class _Combobox<T> extends StatefulWidget {
     required this.onChangedMany,
     required this.options,
     required this.optionsBuilder,
+    required this.labelOf,
     required this.filter,
     required this.onCreate,
     required this.placeholder,
@@ -524,6 +539,7 @@ class _Combobox<T> extends StatefulWidget {
   final ValueChanged<List<T>>? onChangedMany;
   final List<DsSelectOption<T>> options;
   final DsOptionsBuilder<T>? optionsBuilder;
+  final String Function(T value)? labelOf;
   final DsOptionFilter<T>? filter;
   final ValueChanged<String>? onCreate;
   final String? placeholder;
@@ -557,8 +573,14 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   /// The options the popup lists now.
   List<DsSelectOption<T>> _results = const [];
 
-  /// Every option seen, for the labels of chosen values.
-  final _known = <T, DsSelectOption<T>>{};
+  /// Options of the chosen values that are not in [_Combobox.options]
+  /// (found by [_Combobox.optionsBuilder]), for their labels. Only the
+  /// chosen ones are kept.
+  final _chosen = <T, DsSelectOption<T>>{};
+
+  /// [_Combobox.options] by value, and the list it was built from.
+  var _byValue = <T, DsSelectOption<T>>{};
+  List<DsSelectOption<T>>? _indexed;
 
   /// The active option's index in [_results], or -1.
   int _active = -1;
@@ -604,7 +626,6 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   @override
   void initState() {
     super.initState();
-    _remember(widget.options);
     _focus.addListener(_onFocus);
     _popup.addListener(_onPopup);
     _label = _labelOf(widget.value) ?? '';
@@ -623,7 +644,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       }
       _focus.addListener(_onFocus);
     }
-    _remember(widget.options);
+    _chosen.removeWhere((value, _) => !_isChosen(value));
     if (!listEquals(widget.options, oldWidget.options) &&
         widget.optionsBuilder == null) {
       _results = _filtered(_query);
@@ -660,14 +681,28 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
     super.dispose();
   }
 
+  /// Keeps those of [options] whose value is chosen, for their labels.
   void _remember(Iterable<DsSelectOption<T>> options) {
     for (final o in options) {
-      _known[o.value] = o;
+      if (_isChosen(o.value)) _chosen[o.value] = o;
     }
   }
 
-  String? _labelOf(T? value) =>
-      value == null ? null : (_known[value]?.label ?? value.toString());
+  /// The label of [value]: its option's (among the options, those listed
+  /// now or those chosen), else [_Combobox.labelOf]'s; null when none
+  /// names it.
+  String? _labelOf(T? value) {
+    if (value == null) return null;
+    if (!identical(_indexed, widget.options)) {
+      _indexed = widget.options;
+      _byValue = {for (final o in widget.options) o.value: o};
+    }
+    final option =
+        _byValue[value] ??
+        _chosen[value] ??
+        _results.where((o) => o.value == value).firstOrNull;
+    return option?.label ?? widget.labelOf?.call(value);
+  }
 
   /// The text a single field shows when nobody is typing.
   String get _committedText => widget.multiple ? '' : _label;
@@ -951,6 +986,7 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
   void _choose(DsSelectOption<T> option, {bool touch = false}) {
     if (!option.enabled || !_canEdit) return;
     if (touch) DsHapticFeedback.play(context, DsHapticEvent.selection);
+    _chosen[option.value] = option;
     if (widget.multiple) {
       final chosen = widget.values.contains(option.value);
       final next = chosen
