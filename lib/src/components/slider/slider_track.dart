@@ -62,9 +62,10 @@ double dsSliderValueAt(
 
 /// Where [key] moves [value], or null for a key a slider does not use.
 /// Arrows step by [step] (Right increases, mirrored in right-to-left
-/// layouts; Up always increases), Page Up/Down by a tenth of `min..max`,
-/// Home and End go to [low] and [high]: the slider's ends, or the other
-/// thumb of a range.
+/// layouts; Up always increases), Page Up/Down by a tenth of `min..max`
+/// in whole steps, rounded up so a coarse slider still moves one, Home
+/// and End go to [low] and [high]: the slider's ends, or the other thumb
+/// of a range.
 double? dsSliderKeyTarget(
   LogicalKeyboardKey key, {
   required double value,
@@ -90,8 +91,10 @@ double? dsSliderKeyTarget(
               : LogicalKeyboardKey.arrowLeft)) {
     return value - step;
   }
-  if (key == LogicalKeyboardKey.pageUp) return value + range / 10;
-  if (key == LogicalKeyboardKey.pageDown) return value - range / 10;
+  // A hair of slack, so a tenth that is already whole steps stays put.
+  final page = step * math.max(1, (range / 10 / step - 1e-9).ceil());
+  if (key == LogicalKeyboardKey.pageUp) return value + page;
+  if (key == LogicalKeyboardKey.pageDown) return value - page;
   if (key == LogicalKeyboardKey.home) return low;
   if (key == LogicalKeyboardKey.end) return high;
   return null;

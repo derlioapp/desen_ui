@@ -2,12 +2,14 @@ import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../behavior/focus_visibility.dart';
 import '../../behavior/haptic_feedback.dart';
 import '../../l10n/localizations.dart';
+import '../field/field.dart';
 import '../../theme/haptics.dart';
 import '../../theme/theme.dart';
 import 'slider.dart';
@@ -65,19 +67,25 @@ class DsRangeValues {
 /// press would move.
 ///
 /// **Keyboard.** Each thumb is its own focus stop, the start thumb first.
-/// Arrows step (mirrored in RTL), Page Up/Down move a tenth of the range,
-/// and Home/End go as far as the thumb can: to [min] or [max], or to the
-/// other thumb.
+/// Arrows step (mirrored in RTL), Page Up/Down move a tenth of the range
+/// (at least one step), and Home/End go as far as the thumb can: to [min]
+/// or [max], or to the other thumb.
 ///
 /// **Screen readers.** Each thumb is its own slider, named by
 /// [semanticLabel] and its end ("Minimum", "Maximum", in the app's
 /// language), with its value read through [semanticFormatter] and
-/// increase and decrease actions that stop at the other thumb.
+/// increase and decrease actions that stop at the other thumb. Inside a
+/// [DsField] the thumbs stay two sliders: each is named by the field's
+/// label (a [Text]) before its end, "Price, Minimum", and carries the
+/// field's description or error as its hint and its required and error
+/// states.
 ///
 /// [onChangeStart] and [onChangeEnd] come in pairs, once per tap or drag,
-/// and [onChangeEnd] gets the values the gesture produced. Values outside
-/// `min..max` show at the nearest end, a NaN start as [min] and a NaN end
-/// as [max]; an empty range (`min == max`) cannot be changed.
+/// and [onChangeEnd] gets the values the gesture produced. A key press or
+/// a screen reader's increase or decrease that changes a value is a change
+/// of its own, with its own pair; each repeat of a held key is one too.
+/// Values outside `min..max` show at the nearest end, a NaN start as [min]
+/// and a NaN end as [max]; an empty range (`min == max`) cannot be changed.
 class DsRangeSlider extends StatefulWidget {
   /// Creates a range slider.
   const DsRangeSlider({
@@ -106,10 +114,12 @@ class DsRangeSlider extends StatefulWidget {
   /// Called while either value changes. Null disables the slider.
   final ValueChanged<DsRangeValues>? onChanged;
 
-  /// Called once when a drag or tap starts, with the values before it.
+  /// Called once when a drag, tap or key step starts, with the values
+  /// before it.
   final ValueChanged<DsRangeValues>? onChangeStart;
 
-  /// Called once when a drag or tap ends, with the values it produced.
+  /// Called once when a drag, tap or key step ends, with the values it
+  /// produced.
   final ValueChanged<DsRangeValues>? onChangeEnd;
 
   /// Lowest value.
@@ -156,6 +166,10 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
   FocusNode _node(int i) => i == 0
       ? widget.startFocusNode ?? (_ownStart ??= FocusNode())
       : widget.endFocusNode ?? (_ownEnd ??= FocusNode());
+
+  /// The hooks of the [DsField] around the slider, told to keep the
+  /// thumbs apart.
+  DsFieldHooks? _hooks;
 
   /// The thumb the current gesture moves: 0 start, 1 end. Null when none
   /// is chosen yet: no gesture, or a press on both thumbs at once, which
@@ -238,9 +252,20 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
   @override
   void dispose() {
     DsFocusVisibility.keyboard.removeListener(_onModality);
+    _hooks?.separateNodes = false;
     _ownStart?.dispose();
     _ownEnd?.dispose();
     super.dispose();
+  }
+
+  /// The thumbs keep their own semantics nodes inside a field: merged
+  /// into one, a screen reader could adjust only one of them.
+  void _report(DsFieldHooks? hooks) {
+    if (_hooks != hooks) {
+      _hooks?.separateNodes = false;
+      _hooks = hooks;
+    }
+    hooks?.separateNodes = true;
   }
 
   /// The grid point at or below [v] (or at or above it, [up]), for a
@@ -281,8 +306,10 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
 
   /// Moves thumb [i] to [v] and reports the new values. A [touch] (tap or
   /// drag) on a stepped slider ticks; keys and assistive actions are
-  /// silent, as on iOS.
-  void _move(int i, double v, {bool touch = false}) {
+  /// silent, as on iOS. A [step] (a key or an assistive action) is a
+  /// change of its own: it starts and ends around it, unless a gesture is
+  /// under way and ends it.
+  void _move(int i, double v, {bool touch = false, bool step = false}) {
     if (!_enabled || v.isNaN) return;
     final n = _allowed(i, v);
     final now = _values;
@@ -290,6 +317,8 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
         ? DsRangeValues(start: n, end: now.end)
         : DsRangeValues(start: now.start, end: n);
     if (next == _latest) return;
+    final own = step && !_active;
+    if (own) widget.onChangeStart?.call(_latest);
     _latest = next;
     if (_top != i) setState(() => _top = i);
     // A detent per step, as on DsSlider.
@@ -297,6 +326,7 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
       DsHapticFeedback.play(context, DsHapticEvent.selection);
     }
     widget.onChanged!(next);
+    if (own) widget.onChangeEnd?.call(next);
   }
 
   /// The thumb a press at [x] (across a track [width] wide) would move:
@@ -390,7 +420,7 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
       rtl: _rtl,
     );
     if (next == null) return KeyEventResult.ignored;
-    _move(i, next);
+    _move(i, next, step: true);
     return KeyEventResult.handled;
   }
 
@@ -407,16 +437,32 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
   Widget _wrapThumb(int i, Widget thumb) {
     final l10n = DsLocalizations.of(context);
     final value = _valueOf(i);
+    // Kept apart from a field's node (see [_report]), each thumb takes the
+    // field's label, message and states itself.
+    final field = DsFieldScope.maybeOf(context);
+    final label = [
+      if (field?.hooks != null) ?field?.labelText,
+      ?widget.semanticLabel,
+    ];
     return Semantics(
       container: true,
       slider: true,
-      label: widget.semanticLabel,
+      label: label.isEmpty ? null : label.join('\n'),
+      hint: field?.messageText,
+      isRequired: (field?.isRequired ?? false) ? true : null,
+      validationResult: (field?.hasError ?? false)
+          ? SemanticsValidationResult.invalid
+          : SemanticsValidationResult.none,
       enabled: _enabled,
       value: _format(value),
       increasedValue: _enabled ? _format(_allowed(i, value + _step)) : null,
       decreasedValue: _enabled ? _format(_allowed(i, value - _step)) : null,
-      onIncrease: _enabled ? () => _move(i, _valueOf(i) + _step) : null,
-      onDecrease: _enabled ? () => _move(i, _valueOf(i) - _step) : null,
+      onIncrease: _enabled
+          ? () => _move(i, _valueOf(i) + _step, step: true)
+          : null,
+      onDecrease: _enabled
+          ? () => _move(i, _valueOf(i) - _step, step: true)
+          : null,
       // Merged into the node above, after the slider's own name.
       child: Semantics(
         label: i == 0 ? l10n.rangeMinimum : l10n.rangeMaximum,
@@ -445,6 +491,7 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
   @override
   Widget build(BuildContext context) {
     final t = dsThemeOf(context);
+    _report(DsFieldScope.maybeOf(context)?.hooks);
     final layers = [
       DsSlider.defaultStyle(t),
       DsSliderTheme.of(context).style,

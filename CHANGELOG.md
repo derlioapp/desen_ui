@@ -12,6 +12,21 @@
   resolved to Arabic on an Arabic device and was mirrored right to left.
   To follow the device's language, pass the locales the app is
   translated into, or `supportedLocales: DsLocalizations.supportedLocales`.
+- Fixed: a `DsRangeSlider` inside a `DsField` merged its two thumbs into
+  one screen-reader node, so the maximum could not be adjusted with a
+  screen reader. The thumbs now stay two sliders, each named by the
+  field's label and its end ("Price, Minimum"), with the field's
+  description or error as its hint.
+- Fixed: `DsSlider` and `DsRangeSlider` called `onChangeStart` and
+  `onChangeEnd` only for taps and drags, so an app that saves in
+  `onChangeEnd` lost every change made with the keyboard or a screen
+  reader. Each key step or screen-reader increase or decrease that changes
+  the value now has its own start and end; each repeat of a held key is
+  one step.
+- Fixed: Page Up and Page Down could do nothing on a slider with only a
+  few steps (a tenth of the range rounded back to the same step). They now
+  move a tenth of the range in whole steps, at least one, on `DsSlider`
+  and `DsRangeSlider`.
 - **Breaking:** `DsIcons` is now the full Lucide set, 2225 icons (Lucide
   1.52.0 and Lucide Lab), in place of the 56 picked before. Names follow
   Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and

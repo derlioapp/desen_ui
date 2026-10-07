@@ -58,7 +58,7 @@ class SliderPage extends StatelessWidget {
           DocText(
             '`onChanged` fires on every move. When a change is costly, such '
             'as a request to a server, save in `onChangeEnd`: it fires once '
-            'per tap or drag, with the value the gesture produced. '
+            'per tap, drag or key step, with the value it produced. '
             '`onChangeStart` pairs with it.',
           ),
           Example(snippet: 'slider-change-end', child: _ChangeEndDemo()),
@@ -127,7 +127,10 @@ class SliderPage extends StatelessWidget {
               'Decreases by one step. In right-to-left layouts, Right '
                   'decreases.',
             ),
-            ('Page Up / Page Down', 'Moves by a tenth of the range.'),
+            (
+              'Page Up / Page Down',
+              'Moves by a tenth of the range, at least one step.',
+            ),
             ('Home / End', 'Jumps to `min` or `max`.'),
           ]),
         ],
@@ -163,7 +166,7 @@ class SliderPage extends StatelessWidget {
             (
               'onChangeStart / onChangeEnd',
               'ValueChanged<double>?',
-              'Called once when a tap or drag starts and ends.',
+              'Called once when a tap, drag or key step starts and ends.',
             ),
             (
               'semanticLabel',

@@ -15,8 +15,8 @@ import 'slider_track.dart';
 /// Picks a value on a track: continuous, or in steps with [divisions].
 ///
 /// Drag or tap the track. From the keyboard: arrows step (mirrored in RTL),
-/// Page Up/Down move a tenth, Home/End jump to the ends. Screen readers get
-/// a slider with increase/decrease actions.
+/// Page Up/Down move a tenth (at least one step), Home/End jump to the
+/// ends. Screen readers get a slider with increase/decrease actions.
 ///
 /// The thumb has a form-control outline, so it stays visible on light
 /// surfaces, where a plain white thumb would disappear.
@@ -24,8 +24,11 @@ import 'slider_track.dart';
 /// It fills the available width; under an unbounded width (in a [Row])
 /// it takes [DsSliderStyle.width]. [onChangeStart] and [onChangeEnd] come
 /// in pairs, once per tap or drag, and [onChangeEnd] gets the value the
-/// gesture produced. A NaN [value] shows as [min]; an empty range
-/// (`min == max`) shows a full-left thumb and cannot be changed.
+/// gesture produced. A key press or a screen reader's increase or
+/// decrease that changes the value is a change of its own, with its own
+/// pair; each repeat of a held key is one too. A NaN [value] shows as
+/// [min]; an empty range (`min == max`) shows a full-left thumb and cannot
+/// be changed.
 class DsSlider extends StatefulWidget {
   /// Creates a slider.
   const DsSlider({
@@ -51,10 +54,12 @@ class DsSlider extends StatefulWidget {
   /// Called while the value changes. Null disables the slider.
   final ValueChanged<double>? onChanged;
 
-  /// Called once when a drag or tap starts, with the value before it.
+  /// Called once when a drag, tap or key step starts, with the value
+  /// before it.
   final ValueChanged<double>? onChangeStart;
 
-  /// Called once when a drag or tap ends, with the value it produced.
+  /// Called once when a drag, tap or key step ends, with the value it
+  /// produced.
   final ValueChanged<double>? onChangeEnd;
 
   /// Lowest value.
@@ -184,11 +189,15 @@ class _DsSliderState extends State<DsSlider> {
       dsSliderSnap(v, widget.min, widget.max, widget.divisions);
 
   /// Reports [v], snapped. A [touch] (tap or drag) on a stepped slider
-  /// ticks; keys and assistive actions are silent, as on iOS.
-  void _emit(double v, {bool touch = false}) {
+  /// ticks; keys and assistive actions are silent, as on iOS. A [step] (a
+  /// key or an assistive action) is a change of its own: it starts and
+  /// ends around it, unless a gesture is under way and ends it.
+  void _emit(double v, {bool touch = false, bool step = false}) {
     if (!_enabled || v.isNaN) return;
     final next = _snap(v);
     if (next != _latest) {
+      final own = step && !_active;
+      if (own) widget.onChangeStart?.call(_latest);
       _latest = next;
       // A stepped slider ticks as the thumb crosses each step, like a
       // physical detent. A continuous one stays silent: it has no steps to
@@ -197,6 +206,7 @@ class _DsSliderState extends State<DsSlider> {
         DsHapticFeedback.play(context, DsHapticEvent.selection);
       }
       widget.onChanged!(next);
+      if (own) widget.onChangeEnd?.call(next);
     }
   }
 
@@ -241,7 +251,7 @@ class _DsSliderState extends State<DsSlider> {
       rtl: Directionality.of(context) == TextDirection.rtl,
     );
     if (next == null) return KeyEventResult.ignored;
-    _emit(next);
+    _emit(next, step: true);
     return KeyEventResult.handled;
   }
 
@@ -289,8 +299,8 @@ class _DsSliderState extends State<DsSlider> {
       value: _format(_value),
       increasedValue: _enabled ? _format(_snap(_value + _step)) : null,
       decreasedValue: _enabled ? _format(_snap(_value - _step)) : null,
-      onIncrease: _enabled ? () => _emit(_value + _step) : null,
-      onDecrease: _enabled ? () => _emit(_value - _step) : null,
+      onIncrease: _enabled ? () => _emit(_value + _step, step: true) : null,
+      onDecrease: _enabled ? () => _emit(_value - _step, step: true) : null,
       child: Focus(
         // Key events travel up from the focused node, so the handler sits
         // above the detector that owns focus.
