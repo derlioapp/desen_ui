@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/widgets.dart';
 
 import '../../foundation/color_utils.dart';
@@ -104,6 +106,28 @@ class DsAlert extends StatelessWidget {
   static Color iconColor(DsStatusColors s, Color background) =>
       DsColorUtils.contrastRatio(s.signal, background) >= 3 ? s.signal : s.text;
 
+  /// The space above an icon [size] tall that centers it on the first
+  /// line of a title in [style], at the current text scale: the icon stays
+  /// on that line as large text makes it taller.
+  static double _firstLineInset(
+    BuildContext context,
+    TextStyle? style,
+    double size,
+  ) {
+    final painter = TextPainter(
+      // The title's own style: its DefaultTextStyle replaces the
+      // ambient one.
+      // ds-raw: measures one line's height, never painted
+      text: TextSpan(text: 'Hg', style: style ?? const TextStyle()),
+      textDirection: TextDirection.ltr,
+      textScaler: MediaQuery.textScalerOf(context),
+      maxLines: 1,
+    )..layout();
+    final line = painter.height;
+    painter.dispose();
+    return math.max(0, (line - size) / 2);
+  }
+
   @override
   Widget build(BuildContext context) {
     final t = dsThemeOf(context);
@@ -140,8 +164,9 @@ class DsAlert extends StatelessWidget {
               Semantics(
                 label: _statusLabel(DsLocalizations.of(context), status),
                 child: Padding(
-                  // ds-raw: optical nudge onto the title's first line
-                  padding: const EdgeInsets.only(top: 1),
+                  padding: EdgeInsets.only(
+                    top: _firstLineInset(context, s.titleStyle, s.iconSize!),
+                  ),
                   child: IconTheme.merge(
                     data: IconThemeData(color: s.iconColor, size: s.iconSize),
                     child: icon ?? DsIcon(_defaultIcon(status)),
