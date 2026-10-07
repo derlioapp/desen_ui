@@ -1,5 +1,11 @@
 ## Unreleased
 
+- **Breaking:** `DsApp.supportedLocales` defaults to `locale` when one is
+  given, else to English, as Flutter's own app widgets do. It used to
+  default to all 13 of Desen's locales, so an untranslated English app
+  resolved to Arabic on an Arabic device and was mirrored right to left.
+  To follow the device's language, pass the locales the app is
+  translated into, or `supportedLocales: DsLocalizations.supportedLocales`.
 - **Breaking:** `DsIcons` is now the full Lucide set, 2225 icons (Lucide
   1.52.0 and Lucide Lab), in place of the 56 picked before. Names follow
   Lucide's in camel case (`triangle-alert` is `DsIcons.triangleAlert`), and

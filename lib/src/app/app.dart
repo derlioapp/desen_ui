@@ -134,9 +134,14 @@ class DsApp extends StatelessWidget {
   /// [DsWidgetsLocalizations.delegate] after these, for the text direction.
   final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
 
-  /// See [WidgetsApp.supportedLocales]. Defaults to every locale Desen has
-  /// strings for ([DsLocalizations.supportedLocales]), so setting [locale]
-  /// alone is enough.
+  /// See [WidgetsApp.supportedLocales]. Defaults to [locale] when it is
+  /// given, else to English, like Flutter's own app widgets: an app
+  /// without translations stays in English (and left to right) on a
+  /// device set to Arabic or Turkish.
+  ///
+  /// To follow the device's language, list the locales the app is
+  /// translated into, or every locale Desen has strings for:
+  /// `supportedLocales:` [DsLocalizations.supportedLocales].
   final Iterable<Locale>? supportedLocales;
 
   /// See [WidgetsApp.localeResolutionCallback].
@@ -181,6 +186,9 @@ class DsApp extends StatelessWidget {
     ),
   );
 
+  Iterable<Locale> get _supportedLocales =>
+      supportedLocales ?? [locale ?? const Locale('en')];
+
   @override
   Widget build(BuildContext context) {
     final color = (theme ?? DsThemeData()).colors.accent;
@@ -193,7 +201,7 @@ class DsApp extends StatelessWidget {
         color: color,
         locale: locale,
         localizationsDelegates: _delegates,
-        supportedLocales: supportedLocales ?? DsLocalizations.supportedLocales,
+        supportedLocales: _supportedLocales,
         localeResolutionCallback: localeResolutionCallback,
         localeListResolutionCallback: localeListResolutionCallback,
         shortcuts: shortcuts,
@@ -218,7 +226,7 @@ class DsApp extends StatelessWidget {
       color: color,
       locale: locale,
       localizationsDelegates: _delegates,
-      supportedLocales: supportedLocales ?? DsLocalizations.supportedLocales,
+      supportedLocales: _supportedLocales,
       localeResolutionCallback: localeResolutionCallback,
       localeListResolutionCallback: localeListResolutionCallback,
       shortcuts: shortcuts,
