@@ -195,6 +195,33 @@ class _DsMenuState extends State<DsMenu> {
   );
 
   @override
+  void didUpdateWidget(DsMenu oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    final wasLazy = oldWidget.children.length > _lazyAbove;
+    if (wasLazy == _lazy) return;
+    // The entries move into a list, or back into a column: the items are
+    // built anew, and the one with focus takes it again at its place.
+    final int entry;
+    if (wasLazy) {
+      entry = _focusedEntry();
+    } else {
+      final item = _items.where((i) => i._node.hasPrimaryFocus).firstOrNull;
+      entry = item == null ? -1 : oldWidget.children.indexOf(item.widget);
+    }
+    if (entry < 0) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || entry >= widget.children.length) return;
+      if (_lazy) {
+        _focusEntry(entry, down: true);
+        return;
+      }
+      final child = widget.children[entry];
+      final item = _items.where((i) => identical(i.widget, child)).firstOrNull;
+      if (item != null) _show(item._node);
+    });
+  }
+
+  @override
   void dispose() {
     _aimTimer?.cancel();
     _focusNode.dispose();
@@ -351,10 +378,22 @@ class _DsMenuState extends State<DsMenu> {
     scroll.position.correctPixels(offset.clamp(0.0, max));
   }
 
+  /// Whether Control, Meta (Command) or Alt (Option) is held: the key is
+  /// an app shortcut, not type-ahead.
+  static bool get _commandHeld {
+    final keyboard = HardwareKeyboard.instance;
+    return keyboard.isControlPressed ||
+        keyboard.isMetaPressed ||
+        keyboard.isAltPressed;
+  }
+
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {
     if (event is! KeyDownEvent && event is! KeyRepeatEvent) {
       return KeyEventResult.ignored;
     }
+    // A key an open submenu left (a letter none of its items starts with)
+    // is not this menu's either.
+    if (_openSub?._subFocus?.hasFocus ?? false) return KeyEventResult.ignored;
     final key = event.logicalKey;
     // The enabled items: how many, which has focus, how to focus one and
     // its folded text. From the tree, or from a long menu's model.
@@ -389,16 +428,18 @@ class _DsMenuState extends State<DsMenu> {
     } else if (key == LogicalKeyboardKey.end) {
       go(n - 1, down: true);
     } else if (event.character case final c?
-        when c.trim().isNotEmpty && c.length == 1) {
+        when c.trim().isNotEmpty && c.length == 1 && !_commandHeld) {
       // Type-ahead: the next item, after the current one, starting with c.
+      // A letter no item starts with is left to the app.
       final wanted = dsFoldCase(c);
       for (var step = 1; step <= n; step++) {
         final j = ((i < 0 ? -1 : i) + step) % n;
         if (folded(j)?.startsWith(wanted) ?? false) {
           go(j, down: j > i);
-          break;
+          return KeyEventResult.handled;
         }
       }
+      return KeyEventResult.ignored;
     } else {
       return KeyEventResult.ignored;
     }
@@ -418,7 +459,7 @@ class _DsMenuState extends State<DsMenu> {
     );
     final scroll = _scroll ??= ScrollController(keepScrollOffset: false);
     return _LazyMenuBody(
-      contentHeight: model.total,
+      model: model,
       onViewport: _placeInitial,
       // Offstage: finders, hit tests and screen readers pass it by.
       measure: Offstage(
@@ -435,8 +476,9 @@ class _DsMenuState extends State<DsMenu> {
         controller: scroll,
         padding: EdgeInsets.zero,
         itemCount: children.length,
-        itemExtent: model.uniform,
-        itemExtentBuilder: model.uniform == null
+        // Rows with a leading widget get their height in layout.
+        itemExtent: model.gutter ? null : model.uniform,
+        itemExtentBuilder: model.gutter || model.uniform == null
             ? (i, _) => i < children.length ? model.extentOf(i) : null
             : null,
         // Screen readers hear "item k of n" for the built window.
@@ -1477,14 +1519,16 @@ class _LazyModel {
     required this.enabled,
     required this.ordinal,
     required this.itemCount,
-    required this.uniform,
-    required this._extents,
-    required this._offsets,
-    required this.total,
+    required this.gap,
+    required this._base,
+    required this._leading,
     required this.sample,
+    required this.leadingSample,
     required this.gutter,
     required this.checks,
-  });
+  }) {
+    _resolve();
+  }
 
   /// The entries this model describes.
   final List<Widget> children;
@@ -1501,15 +1545,32 @@ class _LazyModel {
   /// How many entries are items.
   final int itemCount;
 
+  /// The gap below each entry.
+  final double gap;
+
+  /// Per entry: its height from its text, with the gap below it.
+  final Float64List _base;
+
+  /// Per entry: whether it is an item with a leading widget.
+  final List<bool> _leading;
+
+  /// How tall a row with a leading widget is at least (without the gap),
+  /// as measured in layout; see [setLeadingFloor].
+  double _leadingFloor = 0;
+
   /// The height every entry has, when they share one.
-  final double? uniform;
-  final Float64List? _extents, _offsets;
+  double? uniform;
+  Float64List? _extents, _offsets;
 
   /// The height of all entries.
-  final double total;
+  double total = 0;
 
   /// Entry indices of the items measured for the width.
   final List<int> sample;
+
+  /// Places in [sample] of the items with a leading widget, whose rows
+  /// are measured for their height.
+  final List<int> leadingSample;
 
   /// Some item has a leading icon.
   final bool gutter;
@@ -1524,6 +1585,43 @@ class _LazyModel {
 
   /// Where entry [i] starts.
   double offsetOf(int i) => uniform == null ? _offsets![i] : uniform! * i;
+
+  /// Rows with a leading widget are at least [floor] tall (a leading
+  /// taller than the text, e.g. an avatar).
+  void setLeadingFloor(double floor) {
+    if (floor == _leadingFloor) return;
+    _leadingFloor = floor;
+    _resolve();
+  }
+
+  /// Works out the heights and offsets from [_base] and [_leadingFloor].
+  void _resolve() {
+    final n = _base.length;
+    final extents = Float64List(n);
+    for (var i = 0; i < n; i++) {
+      extents[i] = _leading[i]
+          ? math.max(_base[i], _leadingFloor + gap)
+          : _base[i];
+    }
+    var same = n == 0 ? 0.0 : extents[0];
+    for (var i = 1; i < n && same >= 0; i++) {
+      if (extents[i] != same) same = -1;
+    }
+    if (same >= 0) {
+      uniform = same;
+      _extents = _offsets = null;
+      total = same * n;
+      return;
+    }
+    final offsets = Float64List(n + 1);
+    for (var i = 0; i < n; i++) {
+      offsets[i + 1] = offsets[i] + extents[i];
+    }
+    uniform = null;
+    _extents = extents;
+    _offsets = offsets;
+    total = offsets[n];
+  }
 
   /// Entry [entry]'s place in [enabled], or -1.
   int enabledPlace(int entry) {
@@ -1630,6 +1728,7 @@ class _LazyModel {
 
     final n = children.length;
     final extents = Float64List(n);
+    final leading = List.filled(n, false);
     final ordinal = Int32List(n);
     final enabled = <int>[];
     final scores = <(int, int)>[];
@@ -1643,7 +1742,7 @@ class _LazyModel {
         extents[i] = row(c.destructive, c.style);
         ordinal[i] = items++;
         if (c._canChoose) enabled.add(i);
-        if (c.leading != null) gutter = true;
+        if (c.leading != null) gutter = leading[i] = true;
         if (c.checked != null) checks = true;
         // Bold rows are wider; they are always measured.
         if (c.checked ?? false) {
@@ -1664,35 +1763,28 @@ class _LazyModel {
       sample = [
         ...chosen.take(_sampleSize ~/ 4),
         for (final (_, i) in scores.take(_sampleSize)) i,
-      ]..sort();
+      ];
+      // At least one row with a leading widget is measured for the height.
+      if (gutter && !sample.any((i) => leading[i])) {
+        sample.add(leading.indexOf(true));
+      }
+      sample.sort();
     }
 
-    var uniform = n == 0 ? 0.0 : extents[0];
-    for (var i = 1; i < n && uniform >= 0; i++) {
-      if (extents[i] != uniform) uniform = -1;
-    }
-    Float64List? offsets;
-    double total;
-    if (uniform >= 0) {
-      total = uniform * n;
-    } else {
-      offsets = Float64List(n + 1);
-      for (var i = 0; i < n; i++) {
-        offsets[i + 1] = offsets[i] + extents[i];
-      }
-      total = offsets[n];
-    }
     return _LazyModel._(
       children: children,
       metrics: metrics,
       enabled: Int32List.fromList(enabled),
       ordinal: ordinal,
       itemCount: items,
-      uniform: uniform >= 0 ? uniform : null,
-      extents: uniform >= 0 ? null : extents,
-      offsets: offsets,
-      total: total,
+      gap: gap,
+      base: extents,
+      leading: leading,
       sample: sample,
+      leadingSample: [
+        for (var p = 0; p < sample.length; p++)
+          if (leading[sample[p]]) p,
+      ],
       gutter: gutter,
       checks: checks,
     );
@@ -1747,19 +1839,22 @@ class _MenuRowMeasure extends StatelessWidget {
 enum _BodySlot { measure, list }
 
 /// A long menu's body: [list] as wide as [measure] wants (within the
-/// constraints) and [contentHeight] tall (within them). [measure] is only
-/// asked for its width: never laid out, painted, hit or read.
+/// constraints) and as tall as [model]'s entries (within them). [measure]
+/// is only asked for its width, and its rows with a leading widget for
+/// their heights: never laid out, painted, hit or read.
 class _LazyMenuBody
     extends SlottedMultiChildRenderObjectWidget<_BodySlot, RenderBox> {
   const _LazyMenuBody({
     required this.measure,
     required this.list,
-    required this.contentHeight,
+    required this.model,
     required this.onViewport,
   });
 
   final Widget measure, list;
-  final double contentHeight;
+
+  /// The entries' heights; [measure] is its [_LazyModel.sample].
+  final _LazyModel model;
 
   /// Called in layout with the list's height, before the list lays out.
   final ValueChanged<double> onViewport;
@@ -1775,29 +1870,55 @@ class _LazyMenuBody
 
   @override
   _RenderLazyMenuBody createRenderObject(BuildContext context) =>
-      _RenderLazyMenuBody(contentHeight, onViewport);
+      _RenderLazyMenuBody(model, onViewport);
 
   @override
   void updateRenderObject(
     BuildContext context,
     _RenderLazyMenuBody renderObject,
   ) => renderObject
-    ..contentHeight = contentHeight
+    ..model = model
     ..onViewport = onViewport;
 }
 
 class _RenderLazyMenuBody extends RenderBox
     with SlottedContainerRenderObjectMixin<_BodySlot, RenderBox> {
-  _RenderLazyMenuBody(this._contentHeight, this.onViewport);
+  _RenderLazyMenuBody(this._model, this.onViewport);
 
-  double _contentHeight;
-  set contentHeight(double value) {
-    if (value == _contentHeight) return;
-    _contentHeight = value;
+  _LazyModel _model;
+  set model(_LazyModel value) {
+    if (identical(value, _model)) return;
+    _model = value;
     markNeedsLayout();
   }
 
   ValueChanged<double> onViewport;
+
+  /// The height of all entries at [width]. Rows with a leading widget are
+  /// as tall as the tallest of the measured ones (e.g. with an avatar).
+  double _heightAt(double width) {
+    final rows = _model.leadingSample;
+    final column = switch (_measure) {
+      RenderProxyBox(:final child?) => child,
+      final measure => measure,
+    };
+    if (rows.isNotEmpty && column is RenderFlex) {
+      var floor = 0.0;
+      var place = 0;
+      var next = 0;
+      for (
+        var row = column.firstChild;
+        row != null && next < rows.length;
+        row = column.childAfter(row), place++
+      ) {
+        if (place != rows[next]) continue;
+        next++;
+        floor = math.max(floor, row.getMaxIntrinsicHeight(width));
+      }
+      _model.setLeadingFloor(floor);
+    }
+    return _model.total;
+  }
 
   RenderBox? get _measure => childForSlot(_BodySlot.measure);
   RenderBox? get _list => childForSlot(_BodySlot.list);
@@ -1819,19 +1940,22 @@ class _RenderLazyMenuBody extends RenderBox
   double computeMaxIntrinsicWidth(double height) => _width;
 
   @override
-  double computeMinIntrinsicHeight(double width) => _contentHeight;
+  double computeMinIntrinsicHeight(double width) => _heightAt(width);
 
   @override
-  double computeMaxIntrinsicHeight(double width) => _contentHeight;
+  double computeMaxIntrinsicHeight(double width) => _heightAt(width);
 
   @override
-  Size computeDryLayout(BoxConstraints constraints) =>
-      constraints.constrain(Size(_width, _contentHeight));
+  Size computeDryLayout(BoxConstraints constraints) {
+    final width = constraints.constrainWidth(_width);
+    return constraints.constrain(Size(width, _heightAt(width)));
+  }
 
   @override
   void performLayout() {
+    final width = constraints.constrainWidth(_width);
     final size = this.size = constraints.constrain(
-      Size(_width, _contentHeight),
+      Size(width, _heightAt(width)),
     );
     onViewport(size.height);
     _list?.layout(BoxConstraints.tight(size));

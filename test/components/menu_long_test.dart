@@ -295,6 +295,97 @@ void main() {
     expect(row.size.height, greaterThan(30));
   });
 
+  testWidgets('rows are as tall as a leading taller than the text', (
+    tester,
+  ) async {
+    await desk(tester);
+    await tester.pumpWidget(
+      app(
+        SizedBox(
+          width: 300,
+          child: DsSelect<int>(
+            value: 0,
+            onChanged: (v) => chosen = v,
+            semanticLabel: 'Pick',
+            options: [
+              for (var i = 0; i < 300; i++)
+                DsSelectOption(
+                  value: i,
+                  label: label(i),
+                  leading: const DsAvatar(initials: 'AB', size: DsSize.lg),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+    await open(tester);
+    Finder avatar(int i) => find.descendant(
+      of: find.ancestor(
+        of: inMenu(label(i)),
+        matching: find.byType(DsMenuItem),
+      ),
+      matching: find.byType(DsAvatar),
+    );
+    final size = tester.getSize(avatar(3));
+    expect(size.height, size.width, reason: 'not squashed');
+    expect(
+      tester.getRect(avatar(4)).top,
+      greaterThan(tester.getRect(avatar(3)).bottom),
+    );
+    // The model's offsets match: End reaches the last row, in view.
+    await key(tester, LogicalKeyboardKey.end);
+    expect(focused(), label(299));
+    expect(shows(label(299)), isTrue);
+    expect(tester.getSize(avatar(299)), size);
+  });
+
+  testWidgets('a menu that grows past the long-menu size, or shrinks back, '
+      'keeps the item with focus', (tester) async {
+    await desk(tester);
+    var n = 3;
+    late StateSetter set;
+    final pressed = <int>[];
+    final controller = DsOverlayController();
+    addTearDown(controller.dispose);
+    await tester.pumpWidget(
+      app(
+        StatefulBuilder(
+          builder: (context, setState) {
+            set = setState;
+            return DsMenuAnchor(
+              controller: controller,
+              items: [
+                for (var i = 0; i < n; i++)
+                  DsMenuItem(
+                    label: Text(label(i)),
+                    onPressed: () => pressed.add(i),
+                  ),
+              ],
+              child: const SizedBox(width: 40, height: 20),
+            );
+          },
+        ),
+      ),
+    );
+    controller.open();
+    await tester.pumpAndSettle();
+    await key(tester, LogicalKeyboardKey.arrowDown);
+    await key(tester, LogicalKeyboardKey.arrowDown);
+    expect(focused(), label(2));
+    set(() => n = 150); // more items arrive: the menu turns long
+    await tester.pumpAndSettle();
+    expect(focused(), label(2));
+    await key(tester, LogicalKeyboardKey.arrowDown);
+    expect(focused(), label(3));
+    set(() => n = 50);
+    await tester.pumpAndSettle();
+    expect(focused(), label(3));
+    await key(tester, LogicalKeyboardKey.arrowDown);
+    await key(tester, LogicalKeyboardKey.enter);
+    expect(pressed, [4]);
+  });
+
   group('relative budgets: a 5,000-option select costs about what a short '
       'one does', () {
     Future<(int, int)> measure(WidgetTester tester, int n) async {

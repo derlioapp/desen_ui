@@ -23,6 +23,15 @@ void main() {
       ),
       38,
     ),
+    'select': (
+      DsSelect<int>(
+        value: 0,
+        onChanged: (_) {},
+        semanticLabel: 'Action',
+        options: const [DsSelectOption(value: 0, label: 'Save')],
+      ),
+      40,
+    ),
   };
 
   Future<(double, double, double)> measure(

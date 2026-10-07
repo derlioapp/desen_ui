@@ -945,6 +945,61 @@ void main() {
       expect(focusedLabel(), 'Banana', reason: 'the current label');
     });
 
+    testWidgets('type-ahead leaves Control, Meta and Alt shortcuts, and '
+        'letters no item starts with, to the app', (tester) async {
+      const s = LogicalKeyboardKey.keyS;
+      const shortcuts = {
+        'Ctrl+S': SingleActivator(s, control: true),
+        'Cmd+S': SingleActivator(s, meta: true),
+        'Alt+S': SingleActivator(s, alt: true),
+        'X': SingleActivator(LogicalKeyboardKey.keyX),
+      };
+      final pressed = <String>[];
+      await tester.pumpWidget(
+        DsApp(
+          home: CallbackShortcuts(
+            bindings: {
+              for (final MapEntry(:key, :value) in shortcuts.entries)
+                value: () => pressed.add(key),
+            },
+            child: Center(
+              child: DsMenuAnchor(
+                controller: controller,
+                items: [
+                  DsMenuItem(label: const Text('Aç'), onPressed: () {}),
+                  DsMenuItem(label: const Text('Sakla'), onPressed: () {}),
+                ],
+                child: DsButton(
+                  onPressed: controller.toggle,
+                  child: const Text('Menü'),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Menü'));
+      await tester.pumpAndSettle();
+      expect(focusedLabel(), 'Aç');
+      for (final modifier in [
+        LogicalKeyboardKey.controlLeft,
+        LogicalKeyboardKey.metaLeft,
+        LogicalKeyboardKey.altLeft,
+      ]) {
+        await tester.sendKeyDownEvent(modifier);
+        await tester.sendKeyEvent(LogicalKeyboardKey.keyS);
+        await tester.sendKeyUpEvent(modifier);
+        await tester.pump();
+        expect(focusedLabel(), 'Aç', reason: '$modifier+S is no type-ahead');
+      }
+      await tester.sendKeyEvent(LogicalKeyboardKey.keyX);
+      await tester.pump();
+      expect(pressed, ['Ctrl+S', 'Cmd+S', 'Alt+S', 'X']);
+      // A plain letter still moves.
+      await tester.sendKeyEvent(LogicalKeyboardKey.keyS);
+      expect(focusedLabel(), 'Sakla');
+    });
+
     test('the shortcut reads at 4.5:1 on the highlight', () {
       for (final brightness in Brightness.values) {
         for (final seed in [DsSeed.blue, DsSeed.graphite, DsSeed.forest]) {

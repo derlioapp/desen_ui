@@ -1,5 +1,28 @@
 ## Unreleased
 
+- Fixed: a `DsAutocomplete` threw when focus left it with an option's
+  label typed out in full while its popup was open (focus moved away, or
+  the app switched windows on desktop and web). The option is still
+  chosen.
+- Fixed: a `DsAutocomplete` with an `optionsBuilder` chose an option of
+  the previous query on Enter or Tab while the new results were loading.
+  No option is active until they arrive.
+- Fixed: when a `DsAutocomplete`'s `options` changed while its popup was
+  open, the highlight stayed at the same row and so moved to another
+  option. It now stays on the same option.
+- Fixed: a bottom sheet dragged down past the dismiss point stayed off
+  screen, its scrim blocking the page, when its content refused to close
+  (a `PopScope` with `canPop: false`). It now goes back in place.
+- Fixed: an open `DsMenu`, or a `DsSelect`'s menu, took Control, Command
+  and Alt shortcuts (Ctrl+S) as type-ahead, and kept letters no item
+  starts with. Both now reach the app.
+- Fixed: in menus and selects with more than 100 entries, a leading taller
+  than the text (an avatar) was squashed to the row height, and a menu
+  that grew past 100 entries while open lost the item with focus. Rows
+  are now as tall as their leading, and the focused item keeps focus.
+- Fixed: a `DsSelect` kept its height at large text sizes, so its label
+  touched its edges (at 200%, 3 px of room). It now grows with its label,
+  as a text field does; at the regular size its height is unchanged.
 - Buttons, chips and segmented controls grow with large text, as text
   fields do, so their labels keep clear of their edges (at 200% a chip's
   label touched its outline). At the regular text size their heights are
