@@ -171,6 +171,8 @@ class DsTextField extends StatefulWidget {
     this.spellCheck,
     this.textCapitalization = TextCapitalization.none,
     this.textAlign = TextAlign.start,
+    this.textDirection,
+    this.enableIMEPersonalizedLearning = true,
     this.maxLength,
     this.maxLengthEnforcement,
     this.inputFormatters,
@@ -214,6 +216,8 @@ class DsTextField extends StatefulWidget {
     this.spellCheck,
     this.textCapitalization = TextCapitalization.none,
     this.textAlign = TextAlign.start,
+    this.textDirection,
+    this.enableIMEPersonalizedLearning = true,
     this.minLines = 3,
     this.maxLines = 8,
     this.maxLength,
@@ -272,6 +276,8 @@ class DsTextField extends StatefulWidget {
        spellCheck = null,
        textCapitalization = TextCapitalization.none,
        textAlign = TextAlign.start,
+       textDirection = null,
+       enableIMEPersonalizedLearning = true,
        maxLines = 1,
        minLines = null,
        maxLength = null,
@@ -352,6 +358,17 @@ class DsTextField extends StatefulWidget {
   /// one-time code in [autofillHints]); on for other text. Such literal
   /// text also gets no smart dashes or quotes.
   final bool? autocorrect;
+
+  /// The direction of the text itself, e.g. left to right for an email
+  /// address, an IBAN or a code in a right-to-left app. Null follows the
+  /// ambient [Directionality]. The field's own layout (the leading and
+  /// trailing slots, its buttons) keeps the ambient direction.
+  final TextDirection? textDirection;
+
+  /// Whether the keyboard may learn from what is typed (words it suggests
+  /// later). False asks for an incognito keyboard, as for banking or health
+  /// details, where the platform supports it (Android's Gboard).
+  final bool enableIMEPersonalizedLearning;
 
   /// Whether the on-screen keyboard offers word suggestions.
   ///
@@ -1211,6 +1228,8 @@ class _DsTextFieldState extends State<DsTextField>
       spellCheckConfiguration: _spellCheckConfiguration(s),
       textCapitalization: widget.textCapitalization,
       textAlign: widget.textAlign,
+      textDirection: widget.textDirection,
+      enableIMEPersonalizedLearning: widget.enableIMEPersonalizedLearning,
       maxLines: widget.maxLines,
       minLines: widget.minLines,
       inputFormatters: formatters,

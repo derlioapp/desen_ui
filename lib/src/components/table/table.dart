@@ -69,6 +69,10 @@ const _measureSample = 200;
 /// [onSelectionChanged] a checkbox column leads, with a tri-state
 /// "select all" in the header. Rows are separated by hairlines.
 ///
+/// Every row has the same height, one line of text, so a long list
+/// scrolls without measuring its rows. A cell with two lines (a name over
+/// an email) needs a taller `DsTableStyle.rowHeight`.
+///
 /// **Sorting.** A [DsTableColumn.sortable] header is a button that cycles
 /// ascending → descending → unsorted; the sorted header shows an arrow.
 /// The sort is controlled ([sort], [onSortChanged]); with [sortLocally] the

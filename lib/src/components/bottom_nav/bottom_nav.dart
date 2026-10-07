@@ -130,6 +130,11 @@ class DsBottomNav<T> extends StatefulWidget {
 
   /// Called with the chosen destination's value. Null disables the bar;
   /// [DsBottomNavItem.enabled] disables one destination.
+  ///
+  /// Choosing the current destination calls it too, with the current
+  /// value, so an app can do what iOS and Android do then: scroll the page
+  /// to the top or go back to the destination's first screen. (Tabs and
+  /// segmented controls, which only switch a panel, do not report it.)
   final ValueChanged<T>? onChanged;
 
   /// Floating bar or full-width bar. Null uses
