@@ -646,6 +646,43 @@ void main() {
       await tester.pumpAndSettle();
       debugDefaultTargetPlatformOverride = null;
     });
+
+    testWidgets('a long press that shows it does not press the trigger', (
+      tester,
+    ) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
+      var presses = 0;
+      await tester.pumpWidget(
+        DsApp(
+          home: Center(
+            child: DsTooltip(
+              message: 'Delete project',
+              child: DsButton.icon(
+                icon: const DsIcon(DsIcons.trash),
+                semanticLabel: 'Delete',
+                onPressed: () => presses++,
+              ),
+            ),
+          ),
+        ),
+      );
+      final g = await tester.startGesture(
+        tester.getCenter(find.byType(DsButton)),
+        kind: PointerDeviceKind.touch,
+      );
+      await tester.pump(kLongPressTimeout + const Duration(milliseconds: 50));
+      await tester.pumpAndSettle();
+      expect(find.text('Delete project'), findsOneWidget);
+      await g.up();
+      await tester.pumpAndSettle();
+      expect(presses, 0);
+      // A short tap still presses it.
+      await tester.tap(find.byType(DsButton));
+      await tester.pumpAndSettle();
+      expect(presses, 1);
+      debugDefaultTargetPlatformOverride = null;
+    });
   });
 
   testWidgets('a menu trigger with a tooltip: the keyboard round trip leaves '

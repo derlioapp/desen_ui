@@ -22,7 +22,8 @@ import 'tooltip_style.dart';
 /// - **shows** after the pointer rests on the trigger ([DsMotion.hoverDelay];
 ///   at once when another tooltip just closed), on keyboard focus, or on a
 ///   long press on touch screens (not when the finger moves, as in a
-///   scroll that starts on the trigger);
+///   scroll that starts on the trigger). That long press does not also
+///   press the control;
 /// - **stays** while the pointer moves onto the tooltip itself;
 /// - **hides** on Escape, on a press on the trigger, or when pointer and
 ///   focus leave. That Escape stops at the tooltip: a dialog behind it
@@ -115,9 +116,6 @@ class _DsTooltipState extends State<DsTooltip> {
   Timer? _showTimer, _hideTimer;
   bool _keyboardListening = false;
 
-  /// Where a touch that may become a long press went down.
-  Offset? _touchDown;
-
   @override
   void dispose() {
     _showTimer?.cancel();
@@ -192,33 +190,25 @@ class _DsTooltipState extends State<DsTooltip> {
   void _onPointerDown(PointerDownEvent event) {
     // A press on the trigger hides the tooltip; a long touch shows it.
     _hide();
-    if (event.kind == PointerDeviceKind.touch) {
-      _touchDown = event.position;
-      _showTimer = Timer(kLongPressTimeout, _show);
-    }
   }
 
-  void _onPointerMove(PointerMoveEvent event) {
-    final from = _touchDown;
-    if (from == null) return;
-    // A finger that moves past the slop is scrolling or dragging, not
-    // pressing: no tooltip (the scrollable wins at the same distance).
-    final slop = computeHitSlop(
-      event.kind,
-      MediaQuery.maybeGestureSettingsOf(context),
-    );
-    if ((event.position - from).distance > slop) {
-      _touchDown = null;
-      _showTimer?.cancel();
-    }
-  }
-
-  void _onPointerUp(PointerEvent event) {
-    if (event.kind != PointerDeviceKind.touch) return;
-    _touchDown = null;
-    _showTimer?.cancel();
-    if (_controller.isOpen) _scheduleHide(after: kLongPressTimeout * 3);
-  }
+  // The long press joins the gesture arena: once it is accepted, the
+  // trigger's own tap is rejected, so holding a button to read its
+  // tooltip does not also press it. A finger that moves past the slop is
+  // scrolling or dragging, not pressing: no tooltip.
+  late final _longPress = <Type, GestureRecognizerFactory>{
+    LongPressGestureRecognizer:
+        GestureRecognizerFactoryWithHandlers<LongPressGestureRecognizer>(
+          () => LongPressGestureRecognizer(
+            debugOwner: this,
+            supportedDevices: const {PointerDeviceKind.touch},
+          ),
+          (recognizer) => recognizer
+            ..onLongPress = _show
+            ..onLongPressEnd = (_) =>
+                _scheduleHide(after: kLongPressTimeout * 3),
+        ),
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -292,10 +282,11 @@ class _DsTooltipState extends State<DsTooltip> {
             onExit: (_) => _scheduleHide(),
             child: Listener(
               onPointerDown: _onPointerDown,
-              onPointerMove: _onPointerMove,
-              onPointerUp: _onPointerUp,
-              onPointerCancel: _onPointerUp,
-              child: widget.child,
+              child: RawGestureDetector(
+                gestures: _longPress,
+                excludeFromSemantics: true,
+                child: widget.child,
+              ),
             ),
           ),
         ),

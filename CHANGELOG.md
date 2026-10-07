@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Fixed: on touch, long-pressing a control inside a `DsTooltip` to read
+  its tooltip also pressed the control when the finger lifted. The long
+  press that shows the tooltip now cancels the press.
 - Fixed: dates followed the language but not the region of the app's
   locale when an app listed language-only `supportedLocales` (as
   `DsLocalizations.supportedLocales`): a British device resolved to `en`
