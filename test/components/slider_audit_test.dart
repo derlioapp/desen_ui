@@ -232,4 +232,145 @@ void main() {
       expect(seen, [-2.0, -1.0, 0.0, 1.0, 2.0, 3.0]);
     });
   });
+
+  group('keys and screen-reader steps', () {
+    /// A slider that keeps its value, logging every callback in order.
+    Future<FocusNode> pumpLogged(
+      WidgetTester tester,
+      List<String> log, {
+      required double initial,
+      double min = 0,
+      double max = 1,
+      int? divisions,
+    }) async {
+      final node = FocusNode();
+      addTearDown(node.dispose);
+      var value = initial;
+      await tester.pumpWidget(
+        host(
+          SizedBox(
+            width: 300,
+            child: StatefulBuilder(
+              builder: (context, set) => DsSlider(
+                value: value,
+                min: min,
+                max: max,
+                divisions: divisions,
+                focusNode: node,
+                semanticLabel: 'Zoom',
+                onChangeStart: (v) => log.add('start $v'),
+                onChangeEnd: (v) => log.add('end $v'),
+                onChanged: (v) => set(() {
+                  value = v;
+                  log.add('change $v');
+                }),
+              ),
+            ),
+          ),
+        ),
+      );
+      node.requestFocus();
+      await tester.pump();
+      return node;
+    }
+
+    Future<void> press(WidgetTester tester, LogicalKeyboardKey key) async {
+      await tester.sendKeyEvent(key);
+      await tester.pump();
+    }
+
+    testWidgets('each key step is a change with its own start and end', (
+      tester,
+    ) async {
+      final log = <String>[];
+      await pumpLogged(tester, log, initial: 2, max: 4, divisions: 4);
+      await press(tester, LogicalKeyboardKey.arrowRight);
+      expect(log, ['start 2.0', 'change 3.0', 'end 3.0']);
+      log.clear();
+      await press(tester, LogicalKeyboardKey.end);
+      expect(log, ['start 3.0', 'change 4.0', 'end 4.0']);
+      log.clear();
+      // At the end already: nothing changes, nothing is reported.
+      await press(tester, LogicalKeyboardKey.end);
+      expect(log, isEmpty);
+    });
+
+    testWidgets('a held key reports each repeat as its own change', (
+      tester,
+    ) async {
+      final log = <String>[];
+      await pumpLogged(tester, log, initial: 0, max: 10, divisions: 10);
+      await tester.sendKeyDownEvent(LogicalKeyboardKey.arrowRight);
+      await tester.pump();
+      await tester.sendKeyRepeatEvent(LogicalKeyboardKey.arrowRight);
+      await tester.pump();
+      await tester.sendKeyUpEvent(LogicalKeyboardKey.arrowRight);
+      await tester.pump();
+      expect(log, [
+        'start 0.0',
+        'change 1.0',
+        'end 1.0',
+        'start 1.0',
+        'change 2.0',
+        'end 2.0',
+      ]);
+    });
+
+    testWidgets('each screen-reader step is a change with its own start '
+        'and end', (tester) async {
+      final semantics = tester.ensureSemantics();
+      final log = <String>[];
+      await pumpLogged(tester, log, initial: 2, max: 4, divisions: 4);
+      final zoom = find.semantics.byLabel('Zoom');
+      tester.semantics.performAction(zoom, SemanticsAction.increase);
+      await tester.pump();
+      expect(log, ['start 2.0', 'change 3.0', 'end 3.0']);
+      log.clear();
+      tester.semantics.performAction(zoom, SemanticsAction.decrease);
+      await tester.pump();
+      expect(log, ['start 3.0', 'change 2.0', 'end 2.0']);
+      semantics.dispose();
+    });
+
+    testWidgets('Page Up and Page Down move at least one step', (tester) async {
+      Future<List<double>> pages(
+        double initial,
+        int? divisions,
+        List<LogicalKeyboardKey> keys, {
+        double max = 1,
+      }) async {
+        final log = <String>[];
+        await pumpLogged(
+          tester,
+          log,
+          initial: initial,
+          max: max,
+          divisions: divisions,
+        );
+        final seen = <double>[];
+        for (final key in keys) {
+          log.clear();
+          await press(tester, key);
+          final change = log.where((e) => e.startsWith('change ')).toList();
+          seen.add(
+            change.isEmpty
+                ? double.nan
+                : double.parse(change.single.split(' ')[1]),
+          );
+        }
+        return seen;
+      }
+
+      const up = LogicalKeyboardKey.pageUp, down = LogicalKeyboardKey.pageDown;
+      // Two and four steps: a tenth of the range rounds to no step at all.
+      expect(await pages(.5, 2, [up, down, down]), [1.0, .5, 0.0]);
+      expect(await pages(.5, 4, [up, down]), [.75, .5]);
+      expect(await pages(1, 5, [down, down]), [.8, .6]);
+      // A tenth that falls between steps rounds away from the value.
+      expect(await pages(0, 15, [up, down], max: 15), [2.0, 0.0]);
+      // Ten or more steps, and continuous: a tenth, as before.
+      expect(await pages(0, 20, [up], max: 20), [2.0]);
+      expect(await pages(50, null, [up, down], max: 100), [60.0, 50.0]);
+    });
+  });
 }

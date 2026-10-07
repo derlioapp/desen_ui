@@ -45,7 +45,7 @@ class RangeSliderPage extends StatelessWidget {
           DocText(
             '`onChanged` fires on every move with both values. To filter a '
             'list from a server, query in `onChangeEnd`: it fires once per '
-            'tap or drag, with the values the gesture produced.',
+            'tap, drag or key step, with the values it produced.',
           ),
           Example(snippet: 'range-slider-change-end', child: _ChangeEndDemo()),
         ],
@@ -118,7 +118,10 @@ class RangeSliderPage extends StatelessWidget {
               'Decreases by one step. In right-to-left layouts, Right '
                   'decreases.',
             ),
-            ('Page Up / Page Down', 'Moves by a tenth of the range.'),
+            (
+              'Page Up / Page Down',
+              'Moves by a tenth of the range, at least one step.',
+            ),
             (
               'Home / End',
               'Moves the thumb as far as it can go: to `min` or `max`, or '
@@ -168,7 +171,7 @@ class RangeSliderPage extends StatelessWidget {
             (
               'onChangeStart / onChangeEnd',
               'ValueChanged<DsRangeValues>?',
-              'Called once when a tap or drag starts and ends.',
+              'Called once when a tap, drag or key step starts and ends.',
             ),
             (
               'semanticLabel',

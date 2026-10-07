@@ -367,6 +367,61 @@ void main() {
       expect(last(log), const DsRangeValues(start: 20, end: 80));
     });
 
+    testWidgets('Page Up and Page Down move at least one step', (tester) async {
+      final log = <DsRangeValues>[];
+      await tester.pumpWidget(
+        harness(
+          initial: const DsRangeValues(start: 0, end: 1),
+          divisions: 4,
+          log: log,
+        ),
+      );
+      await focusThumb(tester, 0);
+      await tester.sendKeyEvent(LogicalKeyboardKey.pageUp);
+      await tester.pump();
+      expect(last(log), const DsRangeValues(start: .25, end: 1));
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pump();
+      await tester.sendKeyEvent(LogicalKeyboardKey.pageDown);
+      await tester.pump();
+      expect(last(log), const DsRangeValues(start: .25, end: .75));
+    });
+
+    testWidgets('each key step is a change with its own start and end', (
+      tester,
+    ) async {
+      final log = <DsRangeValues>[], starts = <DsRangeValues>[];
+      final ends = <DsRangeValues>[];
+      await tester.pumpWidget(
+        harness(
+          initial: const DsRangeValues(start: 2, end: 6),
+          min: 0,
+          max: 10,
+          divisions: 10,
+          log: log,
+          starts: starts,
+          ends: ends,
+        ),
+      );
+      await focusThumb(tester, 1);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
+      await tester.pump();
+      await tester.sendKeyEvent(LogicalKeyboardKey.end);
+      await tester.pump();
+      expect(starts, const [
+        DsRangeValues(start: 2, end: 6),
+        DsRangeValues(start: 2, end: 7),
+      ]);
+      expect(ends, const [
+        DsRangeValues(start: 2, end: 7),
+        DsRangeValues(start: 2, end: 10),
+      ]);
+      // At the end already: nothing changes, nothing is reported.
+      await tester.sendKeyEvent(LogicalKeyboardKey.end);
+      await tester.pump();
+      expect((log.length, starts.length, ends.length), (2, 2, 2));
+    });
+
     testWidgets('arrows mirror in RTL', (tester) async {
       final log = <DsRangeValues>[];
       await tester.pumpWidget(
@@ -502,6 +557,42 @@ void main() {
       tester.semantics.performAction(end, SemanticsAction.increase);
       await tester.pump();
       expect(last(log), const DsRangeValues(start: 5, end: 6));
+      semantics.dispose();
+    });
+
+    testWidgets('each step is a change with its own start and end', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      final starts = <DsRangeValues>[], ends = <DsRangeValues>[];
+      await tester.pumpWidget(
+        harness(
+          initial: const DsRangeValues(start: 4, end: 6),
+          min: 0,
+          max: 10,
+          divisions: 10,
+          starts: starts,
+          ends: ends,
+        ),
+      );
+      tester.semantics.performAction(
+        find.semantics.byLabel('Maximum'),
+        SemanticsAction.increase,
+      );
+      await tester.pump();
+      tester.semantics.performAction(
+        find.semantics.byLabel('Minimum'),
+        SemanticsAction.decrease,
+      );
+      await tester.pump();
+      expect(starts, const [
+        DsRangeValues(start: 4, end: 6),
+        DsRangeValues(start: 4, end: 7),
+      ]);
+      expect(ends, const [
+        DsRangeValues(start: 4, end: 7),
+        DsRangeValues(start: 3, end: 7),
+      ]);
       semantics.dispose();
     });
 

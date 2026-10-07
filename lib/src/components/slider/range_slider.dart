@@ -65,9 +65,9 @@ class DsRangeValues {
 /// press would move.
 ///
 /// **Keyboard.** Each thumb is its own focus stop, the start thumb first.
-/// Arrows step (mirrored in RTL), Page Up/Down move a tenth of the range,
-/// and Home/End go as far as the thumb can: to [min] or [max], or to the
-/// other thumb.
+/// Arrows step (mirrored in RTL), Page Up/Down move a tenth of the range
+/// (at least one step), and Home/End go as far as the thumb can: to [min]
+/// or [max], or to the other thumb.
 ///
 /// **Screen readers.** Each thumb is its own slider, named by
 /// [semanticLabel] and its end ("Minimum", "Maximum", in the app's
@@ -75,9 +75,11 @@ class DsRangeValues {
 /// increase and decrease actions that stop at the other thumb.
 ///
 /// [onChangeStart] and [onChangeEnd] come in pairs, once per tap or drag,
-/// and [onChangeEnd] gets the values the gesture produced. Values outside
-/// `min..max` show at the nearest end, a NaN start as [min] and a NaN end
-/// as [max]; an empty range (`min == max`) cannot be changed.
+/// and [onChangeEnd] gets the values the gesture produced. A key press or
+/// a screen reader's increase or decrease that changes a value is a change
+/// of its own, with its own pair; each repeat of a held key is one too.
+/// Values outside `min..max` show at the nearest end, a NaN start as [min]
+/// and a NaN end as [max]; an empty range (`min == max`) cannot be changed.
 class DsRangeSlider extends StatefulWidget {
   /// Creates a range slider.
   const DsRangeSlider({
@@ -106,10 +108,12 @@ class DsRangeSlider extends StatefulWidget {
   /// Called while either value changes. Null disables the slider.
   final ValueChanged<DsRangeValues>? onChanged;
 
-  /// Called once when a drag or tap starts, with the values before it.
+  /// Called once when a drag, tap or key step starts, with the values
+  /// before it.
   final ValueChanged<DsRangeValues>? onChangeStart;
 
-  /// Called once when a drag or tap ends, with the values it produced.
+  /// Called once when a drag, tap or key step ends, with the values it
+  /// produced.
   final ValueChanged<DsRangeValues>? onChangeEnd;
 
   /// Lowest value.
@@ -281,8 +285,10 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
 
   /// Moves thumb [i] to [v] and reports the new values. A [touch] (tap or
   /// drag) on a stepped slider ticks; keys and assistive actions are
-  /// silent, as on iOS.
-  void _move(int i, double v, {bool touch = false}) {
+  /// silent, as on iOS. A [step] (a key or an assistive action) is a
+  /// change of its own: it starts and ends around it, unless a gesture is
+  /// under way and ends it.
+  void _move(int i, double v, {bool touch = false, bool step = false}) {
     if (!_enabled || v.isNaN) return;
     final n = _allowed(i, v);
     final now = _values;
@@ -290,6 +296,8 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
         ? DsRangeValues(start: n, end: now.end)
         : DsRangeValues(start: now.start, end: n);
     if (next == _latest) return;
+    final own = step && !_active;
+    if (own) widget.onChangeStart?.call(_latest);
     _latest = next;
     if (_top != i) setState(() => _top = i);
     // A detent per step, as on DsSlider.
@@ -297,6 +305,7 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
       DsHapticFeedback.play(context, DsHapticEvent.selection);
     }
     widget.onChanged!(next);
+    if (own) widget.onChangeEnd?.call(next);
   }
 
   /// The thumb a press at [x] (across a track [width] wide) would move:
@@ -390,7 +399,7 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
       rtl: _rtl,
     );
     if (next == null) return KeyEventResult.ignored;
-    _move(i, next);
+    _move(i, next, step: true);
     return KeyEventResult.handled;
   }
 
@@ -415,8 +424,12 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
       value: _format(value),
       increasedValue: _enabled ? _format(_allowed(i, value + _step)) : null,
       decreasedValue: _enabled ? _format(_allowed(i, value - _step)) : null,
-      onIncrease: _enabled ? () => _move(i, _valueOf(i) + _step) : null,
-      onDecrease: _enabled ? () => _move(i, _valueOf(i) - _step) : null,
+      onIncrease: _enabled
+          ? () => _move(i, _valueOf(i) + _step, step: true)
+          : null,
+      onDecrease: _enabled
+          ? () => _move(i, _valueOf(i) - _step, step: true)
+          : null,
       // Merged into the node above, after the slider's own name.
       child: Semantics(
         label: i == 0 ? l10n.rangeMinimum : l10n.rangeMaximum,
