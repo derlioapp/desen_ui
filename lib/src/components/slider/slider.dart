@@ -59,7 +59,7 @@ class DsSlider extends StatefulWidget {
   final ValueChanged<double>? onChangeStart;
 
   /// Called once when a drag, tap or key step ends, with the value it
-  /// produced.
+  /// produced; also when the slider is disabled mid-drag.
   final ValueChanged<double>? onChangeEnd;
 
   /// Lowest value.
@@ -171,7 +171,13 @@ class _DsSliderState extends State<DsSlider> {
     super.didUpdateWidget(oldWidget);
     _latest = _value;
     if (!_enabled) {
-      // Disabled mid-gesture: no stale grabbing or pressed state.
+      // Disabled mid-gesture: the gesture ends with the value it reached
+      // (after the frame, as the app may rebuild in the callback), and no
+      // grabbing or pressed state is left behind.
+      if (_active) {
+        final end = widget.onChangeEnd, value = _latest;
+        WidgetsBinding.instance.addPostFrameCallback((_) => end?.call(value));
+      }
       _active = false;
       _dragging = false;
       _hovered = false;

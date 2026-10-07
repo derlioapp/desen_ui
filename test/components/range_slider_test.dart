@@ -220,6 +220,41 @@ void main() {
       expect((starts.length, ends.length), (2, 2));
       expect(ends.last.end, closeTo(.8 - 50 / 400, .01));
     });
+
+    testWidgets('disabled mid-drag ends the change it started', (tester) async {
+      var values = const DsRangeValues(start: .2, end: .8);
+      var enabled = true;
+      late StateSetter setOuter;
+      final starts = <DsRangeValues>[], ends = <DsRangeValues>[];
+      await tester.pumpWidget(
+        host(
+          SizedBox(
+            width: 420,
+            child: StatefulBuilder(
+              builder: (context, set) {
+                setOuter = set;
+                return DsRangeSlider(
+                  values: values,
+                  onChangeStart: starts.add,
+                  onChangeEnd: ends.add,
+                  onChanged: enabled ? (v) => set(() => values = v) : null,
+                );
+              },
+            ),
+          ),
+        ),
+      );
+      final g = await tester.startGesture(at(tester, .8));
+      await g.moveBy(const Offset(-40, 0));
+      await tester.pump();
+      expect((starts.length, ends.length), (1, 0));
+      setOuter(() => enabled = false);
+      await tester.pump();
+      expect(ends, [values]);
+      await g.up();
+      await tester.pump();
+      expect(ends, hasLength(1));
+    });
   });
 
   group('steps and distance', () {

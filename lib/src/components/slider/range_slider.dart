@@ -119,7 +119,7 @@ class DsRangeSlider extends StatefulWidget {
   final ValueChanged<DsRangeValues>? onChangeStart;
 
   /// Called once when a drag, tap or key step ends, with the values it
-  /// produced.
+  /// produced; also when the slider is disabled mid-drag.
   final ValueChanged<DsRangeValues>? onChangeEnd;
 
   /// Lowest value.
@@ -240,7 +240,13 @@ class _DsRangeSliderState extends State<DsRangeSlider> {
     super.didUpdateWidget(oldWidget);
     _latest = _values;
     if (!_enabled) {
-      // Disabled mid-gesture: no stale grabbing or pressed state.
+      // Disabled mid-gesture: the gesture ends with the values it reached
+      // (after the frame, as the app may rebuild in the callback), and no
+      // grabbing or pressed state is left behind.
+      if (_active) {
+        final end = widget.onChangeEnd, values = _latest;
+        WidgetsBinding.instance.addPostFrameCallback((_) => end?.call(values));
+      }
       _active = false;
       _dragging = false;
       _grabbed = false;

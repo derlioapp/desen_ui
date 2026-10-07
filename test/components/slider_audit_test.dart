@@ -155,6 +155,43 @@ void main() {
     await mouse.removePointer();
   });
 
+  testWidgets('disabled mid-drag ends the change it started', (tester) async {
+    var value = .5;
+    var enabled = true;
+    late StateSetter setOuter;
+    final log = <String>[];
+    await tester.pumpWidget(
+      host(
+        SizedBox(
+          width: 400,
+          child: StatefulBuilder(
+            builder: (context, setState) {
+              setOuter = setState;
+              return slider(
+                value: value,
+                onChangeStart: (v) => log.add('start'),
+                onChangeEnd: (v) => log.add('end $v'),
+                onChanged: enabled ? (v) => setState(() => value = v) : null,
+              );
+            },
+          ),
+        ),
+      ),
+    );
+    final g = await tester.startGesture(
+      tester.getCenter(find.byType(DsSlider)),
+    );
+    await g.moveBy(const Offset(40, 0));
+    await tester.pump();
+    expect(log, ['start']);
+    setOuter(() => enabled = false);
+    await tester.pump();
+    expect(log, ['start', 'end $value']);
+    await g.up();
+    await tester.pump();
+    expect(log, hasLength(2));
+  });
+
   testWidgets('NaN and an empty range do not crash', (tester) async {
     await tester.pumpWidget(
       host(

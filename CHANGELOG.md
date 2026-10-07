@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Fixed: a `DsSlider` or `DsRangeSlider` disabled mid-drag never called
+  `onChangeEnd` after `onChangeStart`. It now ends the change with the
+  last value.
 - Fixed: in right-to-left text, a `DsListSection` divider took its start
   inset from the rows' end padding, so with uneven row padding it did not
   line up with the row text.
