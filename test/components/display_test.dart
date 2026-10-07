@@ -1,4 +1,5 @@
 import 'package:desen_ui/desen_ui.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -132,6 +133,48 @@ void main() {
 
       expect(await badgeX(TextDirection.ltr), greaterThan(0));
       expect(await badgeX(TextDirection.rtl), lessThan(0));
+    });
+
+    testWidgets('anchored badge is read with its anchor, as one node', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      var pressed = 0;
+      Future<SemanticsData> anchor(Widget badge) async {
+        await tester.pumpWidget(
+          host(
+            DsAnchoredBadge(
+              badge: badge,
+              child: DsButton.icon(
+                semanticLabel: 'Notifications',
+                icon: const DsIcon(DsIcons.bell),
+                onPressed: () => pressed++,
+              ),
+            ),
+          ),
+        );
+        return tester.getSemantics(find.byType(DsButton)).getSemanticsData();
+      }
+
+      var data = await anchor(const DsCount(5));
+      expect(data.label, 'Notifications\n5');
+      expect(data.flagsCollection.isButton, isTrue);
+      expect(
+        find.semantics.byPredicate(
+          (n) => n.label == '5' && !n.isMergedIntoParent,
+        ),
+        findsNothing,
+        reason: 'no bare "5"',
+      );
+      data = await anchor(const DsCount(3, semanticLabel: '3 unread'));
+      expect(data.label, 'Notifications\n3 unread');
+      tester.semantics.tap(
+        find.semantics.byPredicate(
+          (n) => n.getSemanticsData().label == 'Notifications\n3 unread',
+        ),
+      );
+      expect(pressed, 1);
+      semantics.dispose();
     });
   });
 

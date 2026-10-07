@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Fixed: a `DsAnchoredBadge` was a node of its own, so an icon button
+  with a count read "Notifications, button" and then a bare "5". The
+  badge is now read with its anchor, in one node ("Notifications, 5");
+  a `DsCount.semanticLabel` still names the count.
 - `DsAutocomplete` and `DsMultiSelect` take `labelOf`, which labels a
   value that is not among the options, e.g. a saved record's customer
   when the options come from a server. Fixed: such a value showed (and

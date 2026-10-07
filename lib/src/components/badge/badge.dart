@@ -262,6 +262,11 @@ class DsCount extends StatelessWidget {
 }
 
 /// Places a [badge] (usually a [DsCount]) on the top-end corner of [child].
+///
+/// Screen readers hear the badge with its anchor, in one node: an icon
+/// button reads "Notifications, 5", not "Notifications, button" and then a
+/// bare "5". Say what the number counts with the count's own
+/// [DsCount.semanticLabel] ("3 unread").
 class DsAnchoredBadge extends StatelessWidget {
   /// Anchors [badge] to [child].
   const DsAnchoredBadge({
@@ -281,12 +286,19 @@ class DsAnchoredBadge extends StatelessWidget {
   final Offset offset;
 
   @override
-  Widget build(BuildContext context) => Stack(
-    clipBehavior: Clip.none,
-    children: [
-      child,
-      PositionedDirectional(top: offset.dy, end: -offset.dx, child: badge),
-    ],
+  Widget build(BuildContext context) => MergeSemantics(
+    child: Stack(
+      clipBehavior: Clip.none,
+      children: [
+        child,
+        PositionedDirectional(
+          top: offset.dy,
+          end: -offset.dx,
+          // Its own part of the merge, so it is read after the anchor.
+          child: Semantics(container: true, child: badge),
+        ),
+      ],
+    ),
   );
 }
 
