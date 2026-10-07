@@ -450,15 +450,15 @@ class _ToolbarPagesState extends State<_ToolbarPages> {
       final to = page + 1 < starts.length
           ? starts[page + 1]
           : widget.labels.length;
-      final rtl = Directionality.of(context) == TextDirection.rtl;
 
       Widget line() => SizedBox(
         height: s.height! / 2,
         child: DsLine(color: s.dividerColor!, axis: Axis.vertical),
       );
+      // The chevrons mirror themselves in right-to-left text.
       Widget chevron({required bool next}) => _ToolbarButton(
         icon: DsIcon(
-          next == rtl ? DsIcons.chevronLeft : DsIcons.chevronRight,
+          next ? DsIcons.chevronRight : DsIcons.chevronLeft,
           size: chevronSize,
         ),
         label: next ? l10n.nextPage : l10n.previousPage,

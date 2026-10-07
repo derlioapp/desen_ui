@@ -1,5 +1,7 @@
 ## Unreleased
 
+- Fixed: in right-to-left text the edit toolbar's page chevrons pointed
+  against the reading direction; "next" now points left.
 - Fixed: a `DsContextMenuRegion` added a nameless node around its row or
   card whose tap did nothing, and screen reader users could not find the
   menu. The row's or card's own node now opens it, with a long press and
