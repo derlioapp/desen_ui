@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:desen_ui/desen_ui.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -181,6 +184,188 @@ void main() {
       tester.getRect(find.byType(DsToast)).bottom,
       lessThanOrEqualTo(844 - 320),
     );
+  });
+
+  group('closing', () {
+    /// Shows a toast with an Undo action and returns its controller.
+    Future<DsToastController> show(
+      WidgetTester tester, {
+      VoidCallback? onUndo,
+    }) async {
+      late DsToastController toast;
+      await tester.pumpWidget(
+        app(
+          (context) => toast = showDsToast(
+            context: context,
+            title: 'Deleted',
+            actionLabel: 'Undo',
+            onAction: onUndo ?? () {},
+            duration: const Duration(seconds: 4),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Go'));
+      await tester.pumpAndSettle();
+      return toast;
+    }
+
+    testWidgets('closed completes with the action', (tester) async {
+      var undone = 0;
+      final toast = await show(tester, onUndo: () => undone++);
+      DsToastClosedReason? reason;
+      unawaited(toast.closed.then((r) => reason = r));
+      await tester.tap(find.text('Undo'));
+      await tester.pumpAndSettle();
+      expect(undone, 1);
+      expect(reason, DsToastClosedReason.action);
+    });
+
+    testWidgets('closed completes with dismissed: close button, Escape, '
+        'swipe and dismiss()', (tester) async {
+      Future<DsToastClosedReason> close(
+        Future<void> Function(DsToastController toast) how,
+      ) async {
+        final toast = await show(tester);
+        await how(toast);
+        await tester.pumpAndSettle();
+        expect(find.text('Deleted'), findsNothing);
+        return toast.closed;
+      }
+
+      expect(
+        await close(
+          (_) => tester.tap(find.bySemanticsLabel('Dismiss notification')),
+        ),
+        DsToastClosedReason.dismissed,
+      );
+      expect(
+        await close((_) async {
+          await tester.sendKeyEvent(LogicalKeyboardKey.f8);
+          await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+        }),
+        DsToastClosedReason.dismissed,
+      );
+      expect(
+        await close(
+          (_) => tester.drag(find.text('Deleted'), const Offset(200, 0)),
+        ),
+        DsToastClosedReason.dismissed,
+      );
+      expect(
+        await close((toast) async => toast.dismiss()),
+        DsToastClosedReason.dismissed,
+      );
+    });
+
+    testWidgets('closed completes with timeout and with replaced', (
+      tester,
+    ) async {
+      final first = await show(tester);
+      DsToastClosedReason? reason;
+      unawaited(first.closed.then((r) => reason = r));
+      await tester.pump(const Duration(seconds: 3));
+      expect(reason, isNull, reason: 'still showing');
+      await tester.pump(const Duration(seconds: 2));
+      expect(reason, DsToastClosedReason.timeout);
+      await tester.pumpAndSettle();
+
+      final second = await show(tester);
+      await tester.tap(find.text('Go'));
+      await tester.pumpAndSettle();
+      expect(await second.closed, DsToastClosedReason.replaced);
+    });
+
+    testWidgets('a toast already leaving runs no action', (tester) async {
+      var undone = 0;
+      final toast = await show(tester, onUndo: () => undone++);
+      toast.dismiss();
+      await tester.pump();
+      expect(find.byType(DsToast), findsOneWidget, reason: 'fading out');
+      tester.widget<DsToast>(find.byType(DsToast)).onAction!();
+      await tester.pumpAndSettle();
+      expect(undone, 0);
+    });
+
+    testWidgets('actionLabel and onAction come together', (tester) async {
+      late BuildContext context;
+      await tester.pumpWidget(
+        app(
+          (c) {},
+          around: (child) => Builder(
+            builder: (c) {
+              context = c;
+              return child;
+            },
+          ),
+        ),
+      );
+      expect(
+        () => showDsToast(context: context, title: 'Hi', actionLabel: 'Undo'),
+        throwsAssertionError,
+      );
+      expect(
+        () => showDsToast(context: context, title: 'Hi', onAction: () {}),
+        throwsAssertionError,
+      );
+    });
+
+    testWidgets('the swipe gives screen readers no scroll action', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await show(tester);
+      expect(find.text('Deleted'), findsOneWidget);
+      for (final action in [
+        SemanticsAction.scrollLeft,
+        SemanticsAction.scrollRight,
+      ]) {
+        expect(find.semantics.byAction(action), findsNothing);
+      }
+      semantics.dispose();
+      await tester.pump(const Duration(seconds: 30));
+      await tester.pumpAndSettle();
+    });
+  });
+
+  testWidgets('long text scrolls from the keyboard with focus on the action', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      app(
+        (context) => showDsToast(
+          context: context,
+          title: 'Sync finished with warnings',
+          description: List.filled(40, 'One file was skipped.').join(' '),
+          actionLabel: 'Details',
+          onAction: () {},
+        ),
+        media: const MediaQueryData(
+          size: Size(360, 300),
+          textScaler: TextScaler.linear(2),
+        ),
+      ),
+    );
+    await tester.tap(find.text('Go'));
+    await tester.pumpAndSettle();
+    await tester.sendKeyEvent(LogicalKeyboardKey.f8);
+    await tester.pump();
+    ScrollPosition body() => tester
+        .state<ScrollableState>(
+          find.descendant(
+            of: find.byType(DsToast),
+            matching: find.byType(Scrollable),
+          ),
+        )
+        .position;
+    expect(body().maxScrollExtent, greaterThan(0));
+    await tester.sendKeyEvent(LogicalKeyboardKey.end);
+    await tester.pumpAndSettle();
+    expect(body().pixels, body().maxScrollExtent);
+    await tester.sendKeyEvent(LogicalKeyboardKey.pageUp);
+    await tester.pumpAndSettle();
+    expect(body().pixels, lessThan(body().maxScrollExtent));
+    await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+    await tester.pumpAndSettle();
   });
 
   group('context', () {

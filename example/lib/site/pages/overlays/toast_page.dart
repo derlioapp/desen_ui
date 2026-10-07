@@ -58,6 +58,10 @@ class ToastPage extends StatelessWidget {
             '`showDsToast` returns a `DsToastController`; call `dismiss()` '
                 'to take the toast away early, for example when the upload '
                 'it reports on is cancelled.',
+            'Its `closed` future completes when the toast goes, with the '
+                'reason: `action`, `dismissed`, `timeout` or `replaced`. An '
+                'undo flow commits the change there unless the reason is '
+                '`action`.',
           ]),
         ],
       ),
@@ -90,6 +94,11 @@ class ToastPage extends StatelessWidget {
             ('F8', 'Moves focus into the toast, to its first control.'),
             ('Tab', 'Moves between the action and the close button.'),
             ('Enter / Space', 'Presses the focused control.'),
+            (
+              'Page Up / Page Down, ↑ / ↓, Home / End',
+              'Scroll long text from any control in the toast, unless a '
+                  'text field has focus.',
+            ),
             (
               'Escape',
               'With focus in the toast, dismisses it; focus returns to where '
@@ -130,13 +139,17 @@ class ToastPage extends StatelessWidget {
               'DsStatus?',
               '`success`, `info`, `warning`, `danger` or `neutral`.',
             ),
-            ('actionLabel', 'String?', 'A short action, e.g. "Undo".'),
+            (
+              'actionLabel',
+              'String?',
+              'A short action, e.g. "Undo". Comes with `onAction`.',
+            ),
             ('onAction', 'VoidCallback?', 'Runs the action.'),
             ('duration', 'Duration?', 'Overrides how long it shows.'),
           ]),
           DocText(
-            'Returns a `DsToastController` with `dismiss()` and '
-            '`isShowing`.',
+            'Returns a `DsToastController` with `dismiss()`, `isShowing` '
+            'and `closed`, a `Future<DsToastClosedReason>`.',
           ),
           DocHeading('DsToast'),
           ApiTable([

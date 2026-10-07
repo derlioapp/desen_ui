@@ -86,6 +86,11 @@ class DialogPage extends StatelessWidget {
             ),
             ('Enter / Space', 'Presses the focused button.'),
             (
+              'Page Up / Page Down, ↑ / ↓, Home / End',
+              'Scroll long content from any control in the dialog, unless a '
+                  'text field has focus.',
+            ),
+            (
               'Escape',
               'Closes the dialog (`showDsConfirm` answers `false`), unless '
                   'it is not dismissible.',
@@ -162,6 +167,11 @@ class DialogPage extends StatelessWidget {
               'useRootNavigator',
               'bool',
               'Opens above every nested navigator. Default `true`.',
+            ),
+            (
+              'routeSettings',
+              'RouteSettings?',
+              'Names the route for navigator observers and analytics.',
             ),
           ]),
           DocText('Returns `Future<T?>`: the value passed to `pop`, or null.'),
