@@ -112,12 +112,22 @@ mixin DsTypedFieldState<W extends StatefulWidget, T> on State<W>
   /// Call from `didUpdateWidget` with the old widget's focus node.
   void updateFocusNode(FocusNode? old) {
     if (widgetFocusNode == old) return;
-    (old ?? _ownNode)?.removeListener(_onFocus);
+    final previous = old ?? _ownNode;
+    final hadFocus = previous?.hasFocus ?? false;
+    previous?.removeListener(_onFocus);
     if (widgetFocusNode != null) {
       _ownNode?.dispose();
       _ownNode = null;
     }
     node.addListener(_onFocus);
+    // The old node loses focus after this, unheard: commit once the frame
+    // is built (a report may rebuild the app), unless the new node holds
+    // focus.
+    if (hadFocus) {
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        if (mounted && !node.hasFocus && commitsOnBlur) commit();
+      });
+    }
   }
 
   /// Call from `dispose`.

@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Fixed: `DsNumberField`, `DsDatePicker` and `DsTimePicker` did not commit
+  their text when focus left through a new `focusNode` given while
+  focused, so typed text stayed unformatted and unreported. It is now
+  committed as on any other blur.
 - Fixed: `DsNumberField` steps could stall or skip. With a step the
   format cannot show (0.5 in whole numbers) Down from 2 stayed at 2; with
   a cents step, Up did nothing past a billion; and Page Up and Page Down

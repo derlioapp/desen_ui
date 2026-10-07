@@ -856,5 +856,46 @@ void main() {
       // ignore: invalid_use_of_protected_member
       expect(b.hasListeners, isFalse);
     });
+
+    testWidgets('focus leaving through a node swap commits the text', (
+      tester,
+    ) async {
+      final external = FocusNode();
+      addTearDown(external.dispose);
+      FocusNode? node = external;
+      num? value;
+      late StateSetter swap;
+      await tester.pumpWidget(
+        _app(
+          StatefulBuilder(
+            // The report rebuilds the app above the swapped part.
+            builder: (context, setValue) => StatefulBuilder(
+              builder: (context, s) {
+                swap = s;
+                return SizedBox(
+                  width: 300,
+                  child: DsNumberField(
+                    value: value,
+                    min: 10,
+                    focusNode: node,
+                    onChanged: (v) => setValue(() => value = v),
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
+      );
+      await tester.tap(_editable);
+      await _type(tester, '5');
+      swap(() => node = null);
+      await tester.pump();
+      await tester.pump();
+      expect(tester.takeException(), isNull);
+      final editable = tester.widget<EditableText>(_editable);
+      expect(editable.focusNode.hasFocus, isFalse);
+      expect(_text(tester), '10', reason: 'clamped to min on commit');
+      expect(value, 10);
+    });
   });
 }
