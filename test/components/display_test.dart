@@ -175,6 +175,22 @@ void main() {
       expect(backgrounds.length, DsAvatar.toneCount);
     });
 
+    test('a tone keeps its hue in light and dark mode', () {
+      for (final seed in [DsSeed.blue, DsSeed.forest, DsSeed.indigo]) {
+        final l = DsThemeData(seed: seed).colors;
+        final d = DsThemeData(seed: seed, brightness: Brightness.dark).colors;
+        for (var i = 1; i < DsAvatar.toneCount; i++) {
+          final a = DsOklch.fromColor(DsAvatar.toneColors(l, i).$1).h;
+          final b = DsOklch.fromColor(DsAvatar.toneColors(d, i).$1).h;
+          expect(
+            DsOklch.hueDistance(a, b),
+            lessThan(15),
+            reason: 'tone $i: ${a.round()} light, ${b.round()} dark',
+          );
+        }
+      }
+    });
+
     testWidgets('group shows +N past max and gives neighbors different tones', (
       tester,
     ) async {
