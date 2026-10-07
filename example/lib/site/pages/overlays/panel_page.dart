@@ -30,7 +30,10 @@ class PanelPage extends StatelessWidget {
             '`presentation` to choose. A side panel is 400px wide and full '
             'height, with the footer at the bottom. A bottom sheet fits its '
             'content, up to 90% of the window height, and its body scrolls '
-            'past that.',
+            'past that. With `auto`, the panel follows the window while it '
+            'is open: resizing it or turning a tablet across 640px switches '
+            'between the two. For content that scrolls itself, such as a '
+            'long `ListView`, pass `scrollable: false` to the `DsPanel`.',
           ),
           Example(snippet: 'panel-presentation', child: _PresentationDemo()),
         ],
@@ -86,6 +89,11 @@ class PanelPage extends StatelessWidget {
               'Moves between the panel\'s controls; focus stays inside.',
             ),
             ('Enter / Space', 'Presses the focused control.'),
+            (
+              'Page Up / Page Down, ↑ / ↓, Home / End',
+              'Scroll long content from any control in the panel, unless a '
+                  'text field has focus.',
+            ),
             ('Escape', 'Closes the panel, unless it is not dismissible.'),
           ]),
           DocText(
@@ -141,12 +149,24 @@ class PanelPage extends StatelessWidget {
               'bool',
               'Opens above every nested navigator. Default `true`.',
             ),
+            (
+              'routeSettings',
+              'RouteSettings?',
+              'Names the route for navigator observers and analytics.',
+            ),
           ]),
           DocText('Returns `Future<T?>`: the value passed to `pop`, or null.'),
           DocHeading('DsPanel'),
           ApiTable([
             ('title', 'Widget', 'The header; a `Text` also names the panel.'),
             ('child', 'Widget', 'The content; scrolls when it does not fit.'),
+            (
+              'scrollable',
+              'bool',
+              'Set to `false` for a child that scrolls itself, such as a '
+                  '`ListView`: it then gets a bounded height. Default '
+                  '`true`.',
+            ),
             ('footer', 'Widget?', 'Actions along the bottom.'),
             (
               'showClose',
