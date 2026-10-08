@@ -1,6 +1,7 @@
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../code.dart';
 import '../../doc.dart';
 
 /// Toasts: brief messages after something happened.
@@ -63,6 +64,29 @@ class ToastPage extends StatelessWidget {
                 'undo flow commits the change there unless the reason is '
                 '`action`.',
           ]),
+        ],
+      ),
+      DocSection(
+        title: 'Bottom bars',
+        children: [
+          DocText(
+            'A toast sits 16px above the bottom of the screen, the home '
+            'indicator and the on-screen keyboard. `DsBottomNav` keeps toasts '
+            'above itself. Wrap chrome of your own, such as a mini player or '
+            'a docked media bar, in `DsToastInset` to do the same: it '
+            'measures the bar after every frame, so a bar that slides in, '
+            'grows or goes away moves the toast with it. A bar on a page '
+            'covered by another route reserves nothing.',
+          ),
+          CodeBlock(
+            'Column(\n'
+            '  children: [\n'
+            '    Expanded(child: page),\n'
+            '    if (playing) DsToastInset(child: MiniPlayer(track)),\n'
+            '    DsBottomNav(...),\n'
+            '  ],\n'
+            ')',
+          ),
         ],
       ),
       DocSection(
@@ -151,6 +175,14 @@ class ToastPage extends StatelessWidget {
             'Returns a `DsToastController` with `dismiss()`, `isShowing` '
             'and `closed`, a `Future<DsToastClosedReason>`.',
           ),
+          DocHeading('DsToastInset'),
+          ApiTable([
+            (
+              'child',
+              'Widget',
+              'Bottom chrome that toasts keep clear of while it shows.',
+            ),
+          ]),
           DocHeading('DsToast'),
           ApiTable([
             ('title / description', 'String / String?', 'The text.'),

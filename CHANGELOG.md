@@ -12,12 +12,23 @@
   items (tags, filter chips) that scrolls when it does not fit and fades
   the edge that hides items, as the toolbar and text fields already do.
   `DsEdgeFade` fades a horizontal scrollable you already have.
+- `DsImage.fallback`: your own stand-in (initials, a placeholder cover)
+  shown in the image's box and corners when the picture fails, announced
+  by the image's `semanticLabel`. `DsImage.image` may be null when there is
+  no picture: the fallback, or the unavailable state, shows at once.
+- `DsToastInset`: marks bottom chrome of your own (a mini player, a docked
+  media bar) that toasts keep clear of while it shows. It measures the
+  chrome after every frame, so toasts follow it as it slides in or out.
 
 ### Changed
 
 - A `DsChoiceChips` row too narrow for its chips fades the edge that hides
   chips instead of cutting one in half, and brings the selected chip into
   view clear of the fade.
+
+### Fixed
+
+- Toasts no longer cover a `DsBottomNav`: they sit above it while it shows.
 
 ## 0.2.0
 
