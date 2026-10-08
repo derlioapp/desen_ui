@@ -147,4 +147,7 @@ class DsLocalizationsPtPt extends DsLocalizationsPt {
 
   @override
   String get opensExternally => 'Abre fora da aplicação';
+
+  @override
+  String get sectionIndex => 'Índice de secções';
 }

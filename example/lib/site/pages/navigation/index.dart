@@ -5,6 +5,7 @@ import 'breadcrumb_page.dart';
 import 'pagination_page.dart';
 import 'pane_header_page.dart';
 import 'scrollbar_page.dart';
+import 'section_index_page.dart';
 import 'sidebar_page.dart';
 import 'tabs_page.dart';
 
@@ -65,5 +66,12 @@ final navigationPages = <SitePage>[
     builder: (_) => const ScrollbarPage(),
     keywords: ['DsScrollbar', 'DsScrollBehavior', 'scroll', 'thumb'],
     summary: 'Shows where a scrolling area is and drags it.',
+  ),
+  SitePage(
+    path: '/components/section-index',
+    title: 'Section index',
+    builder: (_) => const SectionIndexPage(),
+    keywords: ['DsSectionIndex', 'A-Z', 'alphabet', 'letters', 'fast scroll'],
+    summary: 'Jumps a long sorted list to a letter.',
   ),
 ];

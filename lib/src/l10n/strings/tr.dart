@@ -460,4 +460,7 @@ class DsLocalizationsTr extends DsLocalizationsEn {
 
   @override
   String get opensExternally => 'Uygulamanın dışında açılır';
+
+  @override
+  String get sectionIndex => 'Bölüm dizini';
 }
