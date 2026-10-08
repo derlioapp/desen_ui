@@ -1,16 +1,36 @@
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
 
+import '../theme/sizes.dart';
+
 /// A horizontal scroll view for a row of items that may not fit, such as
-/// a toolbar: an edge that hides items fades out, so a clipped row reads
-/// as scrollable. When everything fits, nothing fades and nothing scrolls.
+/// a toolbar or a row of tags: an edge that hides items fades out, so a
+/// clipped row reads as scrollable. When everything fits, nothing fades
+/// and nothing scrolls. `DsToolbar` and `DsChoiceChips` fade the same way.
 ///
 /// It sizes to its child under an unbounded width (in a Row), and its
 /// [padding] scrolls with the child, so focus rings that reach into the
 /// padding are not clipped.
-class EdgeFadeScrollView extends StatelessWidget {
+///
+/// ```dart
+/// DsEdgeFadeScrollView(
+///   padding: const EdgeInsets.all(4),
+///   child: Row(
+///     spacing: 8,
+///     children: [
+///       for (final tag in tags)
+///         DsChip(
+///           label: Text(tag),
+///           selected: chosen.contains(tag),
+///           onChanged: (on) => toggle(tag, on),
+///         ),
+///     ],
+///   ),
+/// )
+/// ```
+class DsEdgeFadeScrollView extends StatelessWidget {
   /// Creates the scroll view.
-  const EdgeFadeScrollView({
+  const DsEdgeFadeScrollView({
     super.key,
     required this.child,
     this.padding,
@@ -27,7 +47,7 @@ class EdgeFadeScrollView extends StatelessWidget {
   final ScrollController? controller;
 
   @override
-  Widget build(BuildContext context) => EdgeFade(
+  Widget build(BuildContext context) => DsEdgeFade(
     child: SingleChildScrollView(
       controller: controller,
       scrollDirection: Axis.horizontal,
@@ -40,10 +60,25 @@ class EdgeFadeScrollView extends StatelessWidget {
 /// Fades the edges of the horizontal scrollable directly inside [child]
 /// (a scroll view, a single-line text editor) where they hide content, so
 /// the cut reads as more to scroll rather than a sliced glyph. Nothing
-/// fades while everything shows, or while [enabled] is false.
-class EdgeFade extends StatefulWidget {
+/// fades while everything shows, or while [enabled] is false. In a
+/// right-to-left scroll view the edges follow the layout.
+///
+/// Use it to fade a scrollable you already have, such as a horizontal
+/// `ListView`; for a plain row of items, [DsEdgeFadeScrollView] builds the
+/// scroll view too.
+///
+/// ```dart
+/// DsEdgeFade(
+///   child: ListView.builder(
+///     scrollDirection: Axis.horizontal,
+///     itemCount: albums.length,
+///     itemBuilder: (context, i) => AlbumTile(albums[i]),
+///   ),
+/// )
+/// ```
+class DsEdgeFade extends StatefulWidget {
   /// Fades [child]'s edges.
-  const EdgeFade({
+  const DsEdgeFade({
     super.key,
     required this.child,
     this.width = defaultWidth,
@@ -60,13 +95,13 @@ class EdgeFade extends StatefulWidget {
   final bool enabled;
 
   /// The fade of a row of items.
-  static const defaultWidth = 24.0;
+  static const defaultWidth = DsSpace.s24;
 
   @override
-  State<EdgeFade> createState() => _EdgeFadeState();
+  State<DsEdgeFade> createState() => _DsEdgeFadeState();
 }
 
-class _EdgeFadeState extends State<EdgeFade> {
+class _DsEdgeFadeState extends State<DsEdgeFade> {
   /// Keeps the child, and its scroll position, when the fade turns on or
   /// off.
   final _key = GlobalKey();
@@ -116,21 +151,47 @@ class _EdgeFadeState extends State<EdgeFade> {
     if (!widget.enabled || (!_left && !_right)) return listened;
     const opaque = Color(0xFF000000); // ds-raw: a mask, only alpha counts
     const clear = Color(0x00000000);
-    return ShaderMask(
-      blendMode: BlendMode.dstIn,
-      shaderCallback: (rect) {
-        final edge = rect.width <= 0 ? 0.0 : (widget.width / rect.width);
-        return LinearGradient(
-          colors: [
-            _left ? clear : opaque,
-            opaque,
-            opaque,
-            _right ? clear : opaque,
-          ],
-          stops: [0, edge.clamp(0, .5), 1 - edge.clamp(0, .5), 1],
-        ).createShader(rect);
-      },
-      child: listened,
+    // The mask covers only this box; a faded edge also clips there, so a
+    // scroll view that paints past its box (to leave room for focus rings)
+    // shows no sharp sliver outside the fade. Other edges stay open.
+    return ClipRect(
+      clipper: _FadedEdgeClipper(left: _left, right: _right),
+      child: ShaderMask(
+        blendMode: BlendMode.dstIn,
+        shaderCallback: (rect) {
+          final edge = rect.width <= 0 ? 0.0 : (widget.width / rect.width);
+          return LinearGradient(
+            colors: [
+              _left ? clear : opaque,
+              opaque,
+              opaque,
+              _right ? clear : opaque,
+            ],
+            stops: [0, edge.clamp(0, .5), 1 - edge.clamp(0, .5), 1],
+          ).createShader(rect);
+        },
+        child: listened,
+      ),
     );
   }
+}
+
+/// Clips exactly at the box's [left] or [right] edge when that edge
+/// fades, and nowhere else.
+class _FadedEdgeClipper extends CustomClipper<Rect> {
+  const _FadedEdgeClipper({required this.left, required this.right});
+
+  final bool left, right;
+
+  @override
+  Rect getClip(Size size) => Rect.fromLTRB(
+    left ? 0 : Rect.largest.left,
+    Rect.largest.top,
+    right ? size.width : Rect.largest.right,
+    Rect.largest.bottom,
+  );
+
+  @override
+  bool shouldReclip(_FadedEdgeClipper oldClipper) =>
+      oldClipper.left != left || oldClipper.right != right;
 }

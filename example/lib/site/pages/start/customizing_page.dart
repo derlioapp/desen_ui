@@ -272,6 +272,11 @@ class CustomizingPage extends StatelessWidget {
             'Enter fires on key down; Space shows the pressed state while '
                 'held and fires on release.',
             'The hit area is at least the theme\'s `minTapTarget`.',
+            'For a row of your own items that may not fit, '
+                '`DsEdgeFadeScrollView` scrolls it sideways and fades the '
+                'edge that hides items, as the toolbar and chip rows do. '
+                '`DsEdgeFade` does the same for a horizontal scrollable you '
+                'already have, such as a `ListView`.',
           ]),
           const DocText(
             'Floating layers (menus, popovers, dialogs) have their own '

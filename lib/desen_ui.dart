@@ -4,6 +4,7 @@ library;
 export 'src/app/app.dart';
 export 'src/app/page_route.dart';
 export 'src/app/scroll_behavior.dart';
+export 'src/behavior/edge_fade_scroll.dart';
 export 'src/behavior/focus_ring.dart';
 export 'src/behavior/focus_visibility.dart';
 export 'src/behavior/haptic_feedback.dart';

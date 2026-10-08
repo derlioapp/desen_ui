@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/edge_fade_scroll.dart';
 import '../../behavior/focus_visibility.dart';
 import '../../behavior/haptic_feedback.dart';
 import '../../behavior/min_tap_target.dart';
@@ -53,10 +54,11 @@ class DsChipOption<T> {
 /// [DsChipTheme]), so single-choice and multi-choice filters match. The
 /// selected chip takes the theme's selection style and a check.
 ///
-/// A row wider than its space scrolls sideways. The selected chip is
-/// brought into view when the row is first built and whenever [value]
-/// changes, moving the row the least distance that shows it: a chip
-/// already in view does not move the row.
+/// A row wider than its space scrolls sideways, and an edge that hides
+/// chips fades out, so the cut reads as more to scroll. The selected chip
+/// is brought into view, clear of the fade, when the row is first built
+/// and whenever [value] changes, moving the row the least distance that
+/// shows it: a chip already in view does not move the row.
 ///
 /// Keyboard (WAI-ARIA radio group): the row is one Tab stop, on the
 /// selected chip (or the first enabled one when none is selected). Arrow
@@ -218,8 +220,11 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
   }
 
   /// After this frame's layout, scrolls the chip [index] gives the least
-  /// distance that shows it whole: to the start edge when it is cut there,
-  /// to the end edge when it is cut there, not at all when it is in view.
+  /// distance that shows it whole and clear of the faded edges: to just
+  /// inside the start edge when it is cut or faded there, to just inside
+  /// the end edge when it is cut or faded there, not at all when it is in
+  /// view. Next to the row's own start or end nothing fades, so the first
+  /// and last chips reach the edge.
   void _reveal(int Function() index, {required bool animate}) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
@@ -233,20 +238,19 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
       final viewport = RenderAbstractViewport.maybeOf(chip);
       if (viewport == null) return;
       final position = scrollable.position;
-      final atStart = viewport.getOffsetToReveal(chip, 0).offset;
-      final atEnd = viewport.getOffsetToReveal(chip, 1).offset;
+      const fade = DsEdgeFade.defaultWidth;
+      final atStart = viewport.getOffsetToReveal(chip, 0).offset - fade;
+      final atEnd = viewport.getOffsetToReveal(chip, 1).offset + fade;
+      final min = position.minScrollExtent, max = position.maxScrollExtent;
       final double target;
-      if (position.pixels > atStart) {
+      if (position.pixels > atStart.clamp(min, max)) {
         target = atStart;
-      } else if (position.pixels < atEnd) {
+      } else if (position.pixels < atEnd.clamp(min, max)) {
         target = atEnd;
       } else {
         return;
       }
-      final to = target.clamp(
-        position.minScrollExtent,
-        position.maxScrollExtent,
-      );
+      final to = target.clamp(min, max);
       final motion = DsTheme.motionOf(context);
       if (!animate || motion.reduced) {
         position.jumpTo(to);
@@ -369,23 +373,25 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
         onShowFocusHighlight: (v) => setState(() => _highlight = v),
         child: ClipRect(
           clipper: _OutsetClipper(ring),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            clipBehavior: Clip.none,
-            // The radio group role sits inside the scroll view, so its
-            // direct children are the chips.
-            child: Semantics(
-              container: true,
-              role: SemanticsRole.radioGroup,
-              label: field.label,
-              hint: field.hint,
-              isRequired: field.isRequired,
-              validationResult: field.validationResult,
-              explicitChildNodes: true,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                spacing: DsSpace.s8,
-                children: [for (var i = 0; i < n; i++) chip(i)],
+          child: DsEdgeFade(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              clipBehavior: Clip.none,
+              // The radio group role sits inside the scroll view, so its
+              // direct children are the chips.
+              child: Semantics(
+                container: true,
+                role: SemanticsRole.radioGroup,
+                label: field.label,
+                hint: field.hint,
+                isRequired: field.isRequired,
+                validationResult: field.validationResult,
+                explicitChildNodes: true,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  spacing: DsSpace.s8,
+                  children: [for (var i = 0; i < n; i++) chip(i)],
+                ),
               ),
             ),
           ),

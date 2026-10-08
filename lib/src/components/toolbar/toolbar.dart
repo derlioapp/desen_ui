@@ -281,7 +281,7 @@ class _DsToolbarState extends State<DsToolbar> {
             // Items that do not fit scroll, the edge that hides them
             // faded. The padding scrolls along, so the items' focus rings
             // in it are not clipped.
-            : EdgeFadeScrollView(
+            : DsEdgeFadeScrollView(
                 padding: _padding(padding, reach),
                 child: content,
               ),

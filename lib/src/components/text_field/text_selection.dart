@@ -480,7 +480,7 @@ class _ToolbarPagesState extends State<_ToolbarPages> {
       ];
       // A single action wider than the window still scrolls rather than
       // overflow.
-      return EdgeFadeScrollView(
+      return DsEdgeFadeScrollView(
         child: Row(mainAxisSize: MainAxisSize.min, children: children),
       );
     },
