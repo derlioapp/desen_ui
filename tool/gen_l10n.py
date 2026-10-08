@@ -1714,6 +1714,32 @@ for _lang, _value in OPENS_EXTERNALLY.items():
 VARIANTS['zh_Hant']['values'].update(opensExternally='在 App 外開啟')
 VARIANTS['pt_PT']['values'].update(opensExternally='Abre fora da aplicação')
 
+# Names the letter column beside a long sorted list (DsSectionIndex).
+KEYS.update({
+    'sectionIndex': (
+        'Names a section index: the letter column beside a sorted list.',
+        'Section index',
+    ),
+})
+SECTION_INDEX = {
+    'ar': 'فهرس الأقسام',
+    'de': 'Abschnittsindex',
+    'es': 'Índice de secciones',
+    'fr': 'Index des sections',
+    'hi': 'अनुभाग अनुक्रमणिका',
+    'it': 'Indice delle sezioni',
+    'ja': 'セクションインデックス',
+    'ko': '섹션 색인',
+    'pt': 'Índice de seções',
+    'ru': 'Указатель разделов',
+    'tr': 'Bölüm dizini',
+    'zh': '分区索引',
+}
+for _lang, _value in SECTION_INDEX.items():
+    LANGS[_lang].update(sectionIndex=_value)
+VARIANTS['zh_Hant']['values'].update(sectionIndex='分區索引')
+VARIANTS['pt_PT']['values'].update(sectionIndex='Índice de secções')
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

@@ -420,4 +420,7 @@ mixin _DsStrings {
 
   /// Screen reader hint of an external link: it leaves the app.
   String get opensExternally;
+
+  /// Names a section index: the letter column beside a sorted list.
+  String get sectionIndex;
 }

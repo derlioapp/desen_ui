@@ -455,4 +455,7 @@ class DsLocalizationsHi extends DsLocalizationsEn {
 
   @override
   String get opensExternally => 'ऐप के बाहर खुलता है';
+
+  @override
+  String get sectionIndex => 'अनुभाग अनुक्रमणिका';
 }

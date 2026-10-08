@@ -457,4 +457,7 @@ class DsLocalizationsIt extends DsLocalizationsEn {
 
   @override
   String get opensExternally => 'Si apre fuori dall’app';
+
+  @override
+  String get sectionIndex => 'Indice delle sezioni';
 }

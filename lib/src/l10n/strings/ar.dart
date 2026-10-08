@@ -459,4 +459,7 @@ class DsLocalizationsAr extends DsLocalizationsEn {
 
   @override
   String get opensExternally => 'يُفتح خارج التطبيق';
+
+  @override
+  String get sectionIndex => 'فهرس الأقسام';
 }

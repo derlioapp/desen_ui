@@ -296,4 +296,7 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
 
   @override
   String get opensExternally => '在 App 外開啟';
+
+  @override
+  String get sectionIndex => '分區索引';
 }

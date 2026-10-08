@@ -84,6 +84,8 @@ export 'src/components/progress/progress_bar_style.dart';
 export 'src/components/progress/progress_ring_style.dart';
 export 'src/components/scrollbar/scrollbar.dart';
 export 'src/components/scrollbar/scrollbar_style.dart';
+export 'src/components/section_index/section_index.dart';
+export 'src/components/section_index/section_index_style.dart';
 export 'src/components/segmented/segmented_control.dart';
 export 'src/components/segmented/segmented_control_style.dart';
 export 'src/components/select/select.dart';

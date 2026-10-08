@@ -448,4 +448,7 @@ class DsLocalizationsKo extends DsLocalizationsEn {
 
   @override
   String get opensExternally => '앱 외부에서 열림';
+
+  @override
+  String get sectionIndex => '섹션 색인';
 }

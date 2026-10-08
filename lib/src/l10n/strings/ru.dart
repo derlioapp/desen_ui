@@ -472,4 +472,7 @@ class DsLocalizationsRu extends DsLocalizationsEn {
 
   @override
   String get opensExternally => 'Открывается вне приложения';
+
+  @override
+  String get sectionIndex => 'Указатель разделов';
 }

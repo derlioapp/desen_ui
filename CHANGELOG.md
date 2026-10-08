@@ -2,6 +2,12 @@
 
 ### Added
 
+- `DsSectionIndex`: a column of section letters beside a long sorted list
+  (contacts, stations, countries). Tap a letter or drag along the column to
+  jump; a bubble shows the letter under the finger, letters that do not fit
+  give way to dots, and it ticks once per section. Keyboard (arrows,
+  Home/End, typing a letter) and screen readers (one adjustable control)
+  step through the sections. `DsLocalizations.sectionIndex` names it.
 - `DsEdgeFadeScrollView` and `DsEdgeFade`: a horizontal row of your own
   items (tags, filter chips) that scrolls when it does not fit and fades
   the edge that hides items, as the toolbar and text fields already do.

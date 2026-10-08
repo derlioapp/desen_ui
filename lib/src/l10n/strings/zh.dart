@@ -448,4 +448,7 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String get opensExternally => '在应用外打开';
+
+  @override
+  String get sectionIndex => '分区索引';
 }
