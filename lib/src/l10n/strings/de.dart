@@ -463,4 +463,22 @@ class DsLocalizationsDe extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => 'Abschnittsindex';
+
+  @override
+  String get reorderItemUp => 'Nach oben verschieben';
+
+  @override
+  String get reorderItemDown => 'Nach unten verschieben';
+
+  @override
+  String get reorderItemLeft => 'Nach links verschieben';
+
+  @override
+  String get reorderItemRight => 'Nach rechts verschieben';
+
+  @override
+  String get reorderItemToStart => 'An den Anfang verschieben';
+
+  @override
+  String get reorderItemToEnd => 'An das Ende verschieben';
 }

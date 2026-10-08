@@ -299,4 +299,10 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
 
   @override
   String get sectionIndex => '分區索引';
+
+  @override
+  String get reorderItemToStart => '移至開頭';
+
+  @override
+  String get reorderItemToEnd => '移至結尾';
 }

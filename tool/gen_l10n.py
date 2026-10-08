@@ -1740,6 +1740,47 @@ for _lang, _value in SECTION_INDEX.items():
 VARIANTS['zh_Hant']['values'].update(sectionIndex='分區索引')
 VARIANTS['pt_PT']['values'].update(sectionIndex='Índice de secções')
 
+# Screen reader actions that move an item of a reorderable list. Desen's
+# WidgetsLocalizations hands them to Flutter's reorderable lists, so the
+# actions speak the app's language without flutter_localizations.
+KEYS.update({
+    'reorderItemUp': ('Reorderable list: moves an item one place up.', 'Move up'),
+    'reorderItemDown': ('Reorderable list: moves an item one place down.', 'Move down'),
+    'reorderItemLeft': ('Reorderable list: moves an item one place left.', 'Move left'),
+    'reorderItemRight': ('Reorderable list: moves an item one place right.', 'Move right'),
+    'reorderItemToStart': ('Reorderable list: moves an item to the start.', 'Move to the start'),
+    'reorderItemToEnd': ('Reorderable list: moves an item to the end.', 'Move to the end'),
+})
+REORDER = {
+    'ar': ('نقل لأعلى', 'نقل لأسفل', 'نقل لليسار', 'نقل لليمين', 'نقل إلى البداية', 'نقل إلى النهاية'),
+    'de': ('Nach oben verschieben', 'Nach unten verschieben', 'Nach links verschieben',
+           'Nach rechts verschieben', 'An den Anfang verschieben', 'An das Ende verschieben'),
+    'es': ('Mover hacia arriba', 'Mover hacia abajo', 'Mover a la izquierda',
+           'Mover a la derecha', 'Mover al principio', 'Mover al final'),
+    'fr': ('Déplacer vers le haut', 'Déplacer vers le bas', 'Déplacer vers la gauche',
+           'Déplacer vers la droite', 'Déplacer au début', 'Déplacer à la fin'),
+    'hi': ('ऊपर ले जाएं', 'नीचे ले जाएं', 'बाईं ओर ले जाएं', 'दाईं ओर ले जाएं',
+           'शुरुआत में ले जाएं', 'आखिर में ले जाएं'),
+    'it': ('Sposta su', 'Sposta giù', 'Sposta a sinistra', 'Sposta a destra',
+           'Sposta all’inizio', 'Sposta alla fine'),
+    'ja': ('上に移動', '下に移動', '左に移動', '右に移動', '先頭に移動', '末尾に移動'),
+    'ko': ('위로 이동', '아래로 이동', '왼쪽으로 이동', '오른쪽으로 이동', '처음으로 이동', '끝으로 이동'),
+    'pt': ('Mover para cima', 'Mover para baixo', 'Mover para a esquerda',
+           'Mover para a direita', 'Mover para o início', 'Mover para o final'),
+    'ru': ('Переместить вверх', 'Переместить вниз', 'Переместить влево',
+           'Переместить вправо', 'Переместить в начало', 'Переместить в конец'),
+    'tr': ('Yukarı taşı', 'Aşağı taşı', 'Sola taşı', 'Sağa taşı', 'Başa taşı', 'Sona taşı'),
+    'zh': ('上移', '下移', '左移', '右移', '移至开头', '移至末尾'),
+}
+_REORDER_KEYS = ('reorderItemUp', 'reorderItemDown', 'reorderItemLeft',
+                 'reorderItemRight', 'reorderItemToStart', 'reorderItemToEnd')
+for _lang, _values in REORDER.items():
+    LANGS[_lang].update(dict(zip(_REORDER_KEYS, _values)))
+VARIANTS['zh_Hant']['values'].update(
+    reorderItemUp='上移', reorderItemDown='下移', reorderItemLeft='左移',
+    reorderItemRight='右移', reorderItemToStart='移至開頭', reorderItemToEnd='移至結尾')
+VARIANTS['pt_PT']['values'].update(reorderItemToEnd='Mover para o fim')
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

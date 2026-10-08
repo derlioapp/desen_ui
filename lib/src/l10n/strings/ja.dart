@@ -451,4 +451,22 @@ class DsLocalizationsJa extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => 'セクションインデックス';
+
+  @override
+  String get reorderItemUp => '上に移動';
+
+  @override
+  String get reorderItemDown => '下に移動';
+
+  @override
+  String get reorderItemLeft => '左に移動';
+
+  @override
+  String get reorderItemRight => '右に移動';
+
+  @override
+  String get reorderItemToStart => '先頭に移動';
+
+  @override
+  String get reorderItemToEnd => '末尾に移動';
 }

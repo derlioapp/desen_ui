@@ -451,4 +451,22 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => '分区索引';
+
+  @override
+  String get reorderItemUp => '上移';
+
+  @override
+  String get reorderItemDown => '下移';
+
+  @override
+  String get reorderItemLeft => '左移';
+
+  @override
+  String get reorderItemRight => '右移';
+
+  @override
+  String get reorderItemToStart => '移至开头';
+
+  @override
+  String get reorderItemToEnd => '移至末尾';
 }

@@ -451,4 +451,22 @@ class DsLocalizationsKo extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => '섹션 색인';
+
+  @override
+  String get reorderItemUp => '위로 이동';
+
+  @override
+  String get reorderItemDown => '아래로 이동';
+
+  @override
+  String get reorderItemLeft => '왼쪽으로 이동';
+
+  @override
+  String get reorderItemRight => '오른쪽으로 이동';
+
+  @override
+  String get reorderItemToStart => '처음으로 이동';
+
+  @override
+  String get reorderItemToEnd => '끝으로 이동';
 }

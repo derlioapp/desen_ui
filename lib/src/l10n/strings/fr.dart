@@ -468,4 +468,22 @@ class DsLocalizationsFr extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => 'Index des sections';
+
+  @override
+  String get reorderItemUp => 'Déplacer vers le haut';
+
+  @override
+  String get reorderItemDown => 'Déplacer vers le bas';
+
+  @override
+  String get reorderItemLeft => 'Déplacer vers la gauche';
+
+  @override
+  String get reorderItemRight => 'Déplacer vers la droite';
+
+  @override
+  String get reorderItemToStart => 'Déplacer au début';
+
+  @override
+  String get reorderItemToEnd => 'Déplacer à la fin';
 }
