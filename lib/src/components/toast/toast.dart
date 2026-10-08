@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -21,6 +22,7 @@ import '../../theme/theme_data.dart';
 import '../button/button.dart';
 import '../button/button_theme.dart';
 import '../../foundation/component_theme.dart';
+import 'toast_inset.dart';
 import 'toast_style.dart';
 
 /// Why a toast closed; [DsToastController.closed] completes with it.
@@ -388,6 +390,7 @@ class _ToastHostState {
     final entry = OverlayEntry(
       builder: (context) => _ToastView(
         request: request,
+        overlay: _overlay,
         // A toast's own timer, swipe and close button always take that
         // toast away, whether it is the current one or not.
         onClose: (reason) => _dismiss(request, reason),
@@ -419,11 +422,15 @@ class _ToastHostState {
 class _ToastView extends StatefulWidget {
   const _ToastView({
     required this.request,
+    required this.overlay,
     required this.onClose,
     required this.onGone,
   });
 
   final _ToastRequest request;
+
+  /// The root overlay the toast shows in.
+  final OverlayState overlay;
   final bool Function(DsToastClosedReason reason) onClose;
   final VoidCallback onGone;
 
@@ -498,8 +505,11 @@ class _ToastViewState extends State<_ToastView>
     }
   }
 
+  void _onInset() => setState(() {});
+
   @override
   void dispose() {
+    _inset?.removeListener(_onInset);
     if (widget.request.view == this) widget.request.view = null;
     // Its overlay left the tree with the toast still up.
     widget.onClose(DsToastClosedReason.dismissed);
@@ -584,12 +594,20 @@ class _ToastViewState extends State<_ToastView>
         .then((_) => widget.onGone());
   }
 
+  /// How far up bottom chrome marked with [DsToastInset] reaches.
+  ValueListenable<double>? _inset;
+
   @override
   Widget build(BuildContext context) {
+    final inset = _inset ??= dsToastInsetOf(widget.overlay)
+      ..addListener(_onInset);
     final media = MediaQuery.of(context);
     final travel = _motion.reduced ? 0.0 : 16.0;
-    // Above the home indicator and the on-screen keyboard.
-    final bottom = media.viewInsets.bottom + media.padding.bottom + DsSpace.s16;
+    // Above the home indicator, the on-screen keyboard and bottom chrome
+    // such as a tab bar or a mini player.
+    final bottom =
+        math.max(media.viewInsets.bottom + media.padding.bottom, inset.value) +
+        DsSpace.s16;
     // Below the status bar: a long toast at large text scrolls its text
     // instead of growing off the top of the screen.
     final room = media.size.height - bottom - media.padding.top - DsSpace.s16;

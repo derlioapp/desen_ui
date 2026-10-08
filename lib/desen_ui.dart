@@ -121,6 +121,7 @@ export 'src/components/text_field/text_selection.dart'
 export 'src/components/text_field/text_selection_toolbar_style.dart';
 export 'src/components/time/time_picker.dart';
 export 'src/components/toast/toast.dart';
+export 'src/components/toast/toast_inset.dart' show DsToastInset;
 export 'src/components/toast/toast_style.dart';
 export 'src/components/toolbar/toolbar.dart';
 export 'src/components/toolbar/toolbar_style.dart';

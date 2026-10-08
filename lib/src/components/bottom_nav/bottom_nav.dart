@@ -14,6 +14,7 @@ import '../../theme/haptics.dart';
 import '../../theme/sizes.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
+import '../toast/toast_inset.dart';
 import '../tooltip/tooltip.dart';
 import 'bottom_nav_item_style.dart';
 import 'bottom_nav_style.dart';
@@ -107,6 +108,9 @@ class DsBottomNavItem<T> {
 ///
 /// A tap plays the selection haptic, or the command one on the current
 /// destination (e.g. back to the top); the keyboard plays none.
+///
+/// Toasts from `showDsToast` sit above the bar while it shows, not over
+/// it ([DsToastInset]).
 class DsBottomNav<T> extends StatefulWidget {
   /// Creates bottom navigation.
   const DsBottomNav({
@@ -474,37 +478,41 @@ class _DsBottomNavState<T> extends State<DsBottomNav<T>> {
         );
       },
     );
-    return Semantics(
-      container: true,
-      role: SemanticsRole.navigation,
-      label: semanticLabel ?? l10n.navigation,
-      explicitChildNodes: true,
-      child: DsSurface(
-        decoration: DsBoxDecoration(
-          color: s.background,
-          borderRadius: corners,
-          shadows: s.shadows ?? const [],
-        ),
-        backdropFilter: s.backdropFilter,
-        child: Padding(
-          // The full-width bar keeps clear of the home indicator.
-          padding: bar
-              ? padding.copyWith(
-                  bottom: padding.bottom + MediaQuery.paddingOf(context).bottom,
-                )
-              : padding,
-          child: FocusForward(
-            focusNode: widget.focusNode,
-            autofocus: widget.autofocus,
-            onFocused: _focusCurrent,
-            child: Focus(
-              canRequestFocus: false,
-              skipTraversal: true,
-              // Only the arrow keys: no node of its own, so the
-              // destinations stay the landmark's direct children.
-              includeSemantics: false,
-              onKeyEvent: _onKey,
-              child: row,
+    // Toasts keep clear of the bar instead of covering it.
+    return DsToastInset(
+      child: Semantics(
+        container: true,
+        role: SemanticsRole.navigation,
+        label: semanticLabel ?? l10n.navigation,
+        explicitChildNodes: true,
+        child: DsSurface(
+          decoration: DsBoxDecoration(
+            color: s.background,
+            borderRadius: corners,
+            shadows: s.shadows ?? const [],
+          ),
+          backdropFilter: s.backdropFilter,
+          child: Padding(
+            // The full-width bar keeps clear of the home indicator.
+            padding: bar
+                ? padding.copyWith(
+                    bottom:
+                        padding.bottom + MediaQuery.paddingOf(context).bottom,
+                  )
+                : padding,
+            child: FocusForward(
+              focusNode: widget.focusNode,
+              autofocus: widget.autofocus,
+              onFocused: _focusCurrent,
+              child: Focus(
+                canRequestFocus: false,
+                skipTraversal: true,
+                // Only the arrow keys: no node of its own, so the
+                // destinations stay the landmark's direct children.
+                includeSemantics: false,
+                onKeyEvent: _onKey,
+                child: row,
+              ),
             ),
           ),
         ),

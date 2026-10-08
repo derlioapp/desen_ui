@@ -318,6 +318,101 @@ void main() {
     });
   });
 
+  group('fallback', () {
+    const monogram = ColoredBox(
+      color: Color(0xFF884422),
+      child: Center(child: Text('RX')),
+    );
+
+    testWidgets('a failure shows the fallback in the same box and corners', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        host(
+          const DsImage(
+            image: _Broken(),
+            width: 120,
+            height: 80,
+            fallback: monogram,
+          ),
+          theme: theme,
+        ),
+      );
+      await tester.pump();
+      expect(errorIcon(), findsNothing);
+      expect(find.text('RX'), findsOneWidget);
+      // It fills the box, and the box keeps its size.
+      expect(tester.getSize(find.byType(ColoredBox).last), const Size(120, 80));
+      expect(tester.getSize(find.byType(DsImage)), const Size(120, 80));
+      // Clipped to the image's corners.
+      expect(
+        find.ancestor(of: find.text('RX'), matching: find.byType(DsShapeClip)),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('while loading, the skeleton shows, not the fallback', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        host(
+          const DsImage(
+            image: _Pending(),
+            width: 120,
+            height: 80,
+            fallback: monogram,
+          ),
+          theme: theme,
+        ),
+      );
+      await tester.pump();
+      expect(find.byType(DsSkeleton), findsOneWidget);
+      expect(find.text('RX'), findsNothing);
+    });
+
+    testWidgets('no image shows the fallback at once, or the unavailable '
+        'state without one', (tester) async {
+      await tester.pumpWidget(
+        host(
+          const DsImage(image: null, width: 48, height: 48, fallback: monogram),
+          theme: theme,
+        ),
+      );
+      expect(find.text('RX'), findsOneWidget);
+      expect(find.byType(DsSkeleton), findsNothing);
+
+      await tester.pumpWidget(
+        host(const DsImage(image: null, width: 48, height: 48), theme: theme),
+      );
+      expect(errorIcon(), findsOneWidget);
+      expect(tester.getSize(find.byType(DsImage)), const Size(48, 48));
+    });
+
+    testWidgets('screen readers hear the label, not the stand-in or an '
+        'error', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await tester.pumpWidget(
+        host(
+          const DsImage(
+            image: _Broken(),
+            width: 120,
+            height: 80,
+            semanticLabel: 'Radio X',
+            fallback: monogram,
+          ),
+          theme: theme,
+        ),
+      );
+      await tester.pump();
+      expect(
+        tester.getSemantics(find.byType(DsImage)),
+        isSemantics(label: 'Radio X', isImage: true),
+      );
+      expect(find.bySemanticsLabel('RX'), findsNothing);
+      semantics.dispose();
+    });
+  });
+
   group('semantics', () {
     testWidgets('a labeled image is an image node with its label', (
       tester,

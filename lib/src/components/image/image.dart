@@ -27,9 +27,11 @@ import 'image_style.dart';
 /// `DsShimmer` with the text placeholders beside it for one shared sweep.
 /// **Loaded**, the picture fades in briefly (a tone change, so reduced
 /// motion keeps it; nothing moves). A picture that is already decoded
-/// shows at once, with no fade. **Unavailable** shows a quiet crossed-out
-/// picture icon on a channel-toned fill, announced as "Image unavailable"
-/// (localized).
+/// shows at once, with no fade. **Unavailable** (the picture fails, or
+/// [image] is null) shows a quiet crossed-out picture icon on a
+/// channel-toned fill, announced as "Image unavailable" (localized); give
+/// a [fallback] to show your own stand-in there instead, such as initials
+/// or a placeholder cover.
 ///
 /// **Corners** follow the theme: by default the radius of media inside a
 /// card, with continuous corners, the same in every state. Set
@@ -49,6 +51,22 @@ import 'image_style.dart';
 /// ```
 ///
 /// Any [ImageProvider] works, so a caching provider drops in unchanged.
+///
+/// A station logo that may be missing or broken, with its initials in the
+/// same box instead:
+///
+/// ```dart
+/// DsImage(
+///   image: station.logoUrl == null ? null : NetworkImage(station.logoUrl!),
+///   width: 48,
+///   height: 48,
+///   semanticLabel: station.name,
+///   fallback: ColoredBox(
+///     color: tone,
+///     child: Center(child: Text(station.initials)),
+///   ),
+/// )
+/// ```
 class DsImage extends StatefulWidget {
   /// Shows [image] in a reserved box.
   const DsImage({
@@ -61,6 +79,7 @@ class DsImage extends StatefulWidget {
     this.alignment = Alignment.center,
     this.resizeImage = true,
     this.semanticLabel,
+    this.fallback,
     this.style,
   }) : assert(
          (width != null && height != null) != (aspectRatio != null),
@@ -81,6 +100,7 @@ class DsImage extends StatefulWidget {
     this.alignment = Alignment.center,
     this.resizeImage = true,
     this.semanticLabel,
+    this.fallback,
     this.style,
     double scale = 1.0,
     Map<String, String>? headers,
@@ -92,8 +112,9 @@ class DsImage extends StatefulWidget {
        ),
        assert(aspectRatio == null || aspectRatio > 0);
 
-  /// Where the picture comes from.
-  final ImageProvider image;
+  /// Where the picture comes from. Null, when there is none, shows the
+  /// unavailable state (or [fallback]) at once, without loading.
+  final ImageProvider? image;
 
   /// Width of the box. With [height], the whole box; with [aspectRatio],
   /// the height follows.
@@ -127,6 +148,15 @@ class DsImage extends StatefulWidget {
   /// What the picture shows, for screen readers. Null marks it as
   /// decoration: screen readers skip it in every state.
   final String? semanticLabel;
+
+  /// Shown instead of the crossed-out picture when the picture fails or
+  /// [image] is null: a stand-in such as initials or a placeholder cover.
+  /// It fills the box and is clipped to its corners, so nothing moves; it
+  /// draws its own background. Screen readers hear [semanticLabel] for
+  /// the box, not the stand-in's own text, and no "Image unavailable": the
+  /// stand-in is the picture's place, not an error. While the picture
+  /// loads, the box shows the loading placeholder as usual.
+  final Widget? fallback;
 
   /// Style laid over the theme and defaults.
   final DsImageStyle? style;
@@ -167,8 +197,7 @@ class _DsImageState extends State<DsImage> {
     }
   }
 
-  ImageProvider _provider(Size box) {
-    final image = widget.image;
+  ImageProvider _provider(ImageProvider image, Size box) {
     if (!widget.resizeImage ||
         image is ResizeImage ||
         image is DsCoverImage ||
@@ -203,61 +232,70 @@ class _DsImageState extends State<DsImage> {
       style: const DsSkeletonStyle(borderRadius: BorderRadius.zero),
     );
 
-    Widget unavailable() => Semantics(
-      value: DsLocalizations.of(context).imageUnavailable,
-      child: DecoratedBox(
-        decoration: DsBoxDecoration(color: s.errorBackground),
-        child: Center(
-          // A box smaller than the icon shrinks it rather than overflowing.
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: DsIcon(
-              DsIcons.imageOff,
-              size: s.errorIconSize,
-              color: s.errorIconColor,
+    Widget unavailable() => switch (widget.fallback) {
+      // The stand-in's own text is not read: the box's label names it.
+      final fallback? => ExcludeSemantics(
+        child: SizedBox.expand(child: fallback),
+      ),
+      null => Semantics(
+        value: DsLocalizations.of(context).imageUnavailable,
+        child: DecoratedBox(
+          decoration: DsBoxDecoration(color: s.errorBackground),
+          child: Center(
+            // A box smaller than the icon shrinks it rather than overflowing.
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: DsIcon(
+                DsIcons.imageOff,
+                size: s.errorIconSize,
+                color: s.errorIconColor,
+              ),
             ),
           ),
         ),
       ),
-    );
+    };
 
-    Widget picture = LayoutBuilder(
-      builder: (context, constraints) {
-        final box = constraints.biggest;
-        return Image(
-          image: _provider(box),
-          fit: widget.fit,
-          alignment: widget.alignment,
-          width: box.width,
-          height: box.height,
-          excludeFromSemantics: true,
-          // A new decode size keeps the current picture until it is ready.
-          gaplessPlayback: true,
-          frameBuilder: (context, child, frame, synchronous) {
-            final shown = synchronous || frame != null || _loaded;
-            if (synchronous || frame != null) _loaded = true;
-            return Stack(
-              fit: StackFit.expand,
-              children: [
-                if (!synchronous && !_settled) placeholder(box),
-                AnimatedOpacity(
-                  opacity: shown ? 1 : 0,
-                  duration: t.motion.toneDuration,
-                  curve: t.motion.toneCurve,
-                  onEnd: () {
-                    if (shown && mounted && !_settled) {
-                      setState(() => _settled = true);
-                    }
-                  },
-                  child: child,
-                ),
-              ],
-            );
-          },
-          errorBuilder: (context, error, stackTrace) => unavailable(),
-        );
-      },
-    );
+    final image = widget.image;
+    Widget picture = image == null
+        ? unavailable()
+        : LayoutBuilder(
+            builder: (context, constraints) {
+              final box = constraints.biggest;
+              return Image(
+                image: _provider(image, box),
+                fit: widget.fit,
+                alignment: widget.alignment,
+                width: box.width,
+                height: box.height,
+                excludeFromSemantics: true,
+                // A new decode size keeps the current picture until it is ready.
+                gaplessPlayback: true,
+                frameBuilder: (context, child, frame, synchronous) {
+                  final shown = synchronous || frame != null || _loaded;
+                  if (synchronous || frame != null) _loaded = true;
+                  return Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      if (!synchronous && !_settled) placeholder(box),
+                      AnimatedOpacity(
+                        opacity: shown ? 1 : 0,
+                        duration: t.motion.toneDuration,
+                        curve: t.motion.toneCurve,
+                        onEnd: () {
+                          if (shown && mounted && !_settled) {
+                            setState(() => _settled = true);
+                          }
+                        },
+                        child: child,
+                      ),
+                    ],
+                  );
+                },
+                errorBuilder: (context, error, stackTrace) => unavailable(),
+              );
+            },
+          );
 
     picture = DsShapeClip(
       borderRadius: s.borderRadius ?? BorderRadius.zero,

@@ -1,3 +1,19 @@
+## Unreleased
+
+### Added
+
+- `DsImage.fallback`: your own stand-in (initials, a placeholder cover)
+  shown in the image's box and corners when the picture fails, announced
+  by the image's `semanticLabel`. `DsImage.image` may be null when there is
+  no picture: the fallback, or the unavailable state, shows at once.
+- `DsToastInset`: marks bottom chrome of your own (a mini player, a docked
+  media bar) that toasts keep clear of while it shows. It measures the
+  chrome after every frame, so toasts follow it as it slides in or out.
+
+### Fixed
+
+- Toasts no longer cover a `DsBottomNav`: they sit above it while it shows.
+
 ## 0.2.0
 
 The first release without the `alpha` tag. Desen is still before 1.0:

@@ -73,6 +73,19 @@ class ImagePage extends StatelessWidget {
         ],
       ),
       DocSection(
+        title: 'Fallback',
+        children: [
+          DocText(
+            'Give `fallback` to show your own stand-in when the picture '
+            'cannot load, such as initials for a missing logo or a '
+            'placeholder cover. Pass `image: null` when there is no picture '
+            'at all: the fallback shows at once, in the same box and '
+            'corners, so a list of logos lines up whether they load or not.',
+          ),
+          Example(snippet: 'image-fallback', child: _FallbackDemo()),
+        ],
+      ),
+      DocSection(
         title: 'Customizing',
         children: [
           DocText(
@@ -96,6 +109,8 @@ class ImagePage extends StatelessWidget {
             'When it cannot load, a named picture is announced with "Image '
                 'unavailable", in the app\'s language. The state is shown by '
                 'an icon, not by color.',
+            'A `fallback` is announced by the picture\'s `semanticLabel`, '
+                'not by its own text, and without "Image unavailable".',
             'The fade-in changes only opacity: nothing moves, also with '
                 'reduced motion.',
           ]),
@@ -106,7 +121,11 @@ class ImagePage extends StatelessWidget {
         children: [
           DocHeading('DsImage'),
           ApiTable([
-            ('image', 'ImageProvider', 'Where the picture comes from.'),
+            (
+              'image',
+              'ImageProvider?',
+              'Where the picture comes from; null when there is none.',
+            ),
             ('width', 'double?', 'Box width.'),
             ('height', 'double?', 'Box height.'),
             (
@@ -122,6 +141,12 @@ class ImagePage extends StatelessWidget {
               'Where a cropped picture sits. Centered.',
             ),
             ('resizeImage', 'bool', 'Decodes at the box size. Default true.'),
+            (
+              'fallback',
+              'Widget?',
+              'Shown instead of the unavailable state: when the picture '
+                  'fails, or `image` is null.',
+            ),
             (
               'semanticLabel',
               'String?',
@@ -269,6 +294,49 @@ class _CustomDemo extends StatelessWidget {
       // #endregion
     ],
   );
+}
+
+class _FallbackDemo extends StatelessWidget {
+  const _FallbackDemo();
+
+  @override
+  Widget build(BuildContext context) {
+    final t = DsTheme.of(context);
+    Widget initials(String text) => ColoredBox(
+      color: t.colors.accentTint,
+      child: Center(
+        child: Text(
+          text,
+          style: t.typography.heading.copyWith(color: t.colors.accentText),
+        ),
+      ),
+    );
+    return Wrap(
+      spacing: 16,
+      runSpacing: 16,
+      alignment: WrapAlignment.center,
+      children: [
+        // #region image-fallback
+        // The picture fails to load: the initials take its place.
+        DsImage(
+          image: MemoryImage(_broken),
+          width: 96,
+          height: 96,
+          semanticLabel: 'Radio Nova',
+          fallback: initials('RN'),
+        ),
+        // No picture at all: the initials show at once.
+        DsImage(
+          image: null,
+          width: 96,
+          height: 96,
+          semanticLabel: 'Jazz FM',
+          fallback: initials('JF'),
+        ),
+        // #endregion
+      ],
+    );
+  }
 }
 
 /// A picture that never arrives.
