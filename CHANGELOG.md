@@ -1,4 +1,9 @@
-## Unreleased
+## 0.2.1
+
+New components and fixes, nothing breaking: `^0.2.0` picks this release up.
+From this release on, additions and changes of the default look come in
+patch releases before 1.0, breaking changes in minor ones (see
+[VERSIONING.md](VERSIONING.md)).
 
 ### Added
 
