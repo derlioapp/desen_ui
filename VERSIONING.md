@@ -42,11 +42,20 @@ Notes:
 Desen is at `0.x` (the first two releases were `0.1.0-alpha.1` and
 `-alpha.2`; since `0.2.0` there are no pre-release tags). Until 1.0:
 
-- **Breaking changes may land in a minor bump** (`0.2` → `0.3`), never in a
-  patch bump. Every one is listed under *Breaking* in the changelog with a
+- **Every kind moves one place to the right**, as is usual for Dart
+  packages before 1.0:
+
+  | Kind (table above) | Before 1.0 | Example |
+  |---|---|---|
+  | Breaking | Minor bump | `0.2.3` → `0.3.0` |
+  | Minor (a new component or parameter, a change of the default look) | Patch bump | `0.2.0` → `0.2.1` |
+  | Patch | Patch bump | `0.2.1` → `0.2.2` |
+
+  A caret constraint (`^0.2.0`) therefore takes in new components and look
+  changes but never a breaking change. Look changes are still listed under
+  *Changed*; pin an exact version if your goldens must not move.
+- Every breaking change is listed under *Breaking* in the changelog with a
   before/after table (the migration note); no deprecation period is needed.
-  A caret constraint (`^0.2.0`) therefore never takes in a breaking
-  change.
 - `fix_data.yaml` (`dart fix` migrations) is optional before 1.0.
 
 ## From 1.0 on
