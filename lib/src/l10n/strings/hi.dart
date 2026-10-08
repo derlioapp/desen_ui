@@ -458,4 +458,22 @@ class DsLocalizationsHi extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => 'अनुभाग अनुक्रमणिका';
+
+  @override
+  String get reorderItemUp => 'ऊपर ले जाएं';
+
+  @override
+  String get reorderItemDown => 'नीचे ले जाएं';
+
+  @override
+  String get reorderItemLeft => 'बाईं ओर ले जाएं';
+
+  @override
+  String get reorderItemRight => 'दाईं ओर ले जाएं';
+
+  @override
+  String get reorderItemToStart => 'शुरुआत में ले जाएं';
+
+  @override
+  String get reorderItemToEnd => 'आखिर में ले जाएं';
 }

@@ -16,6 +16,15 @@
   shown in the image's box and corners when the picture fails, announced
   by the image's `semanticLabel`. `DsImage.image` may be null when there is
   no picture: the fallback, or the unavailable state, shows at once.
+- `DsReorderableList`: a list people put in their own order (favorites,
+  playlists). Drag an item by its grip handle, or long-press it on iOS and
+  Android; the lifted item floats over the others, which make room. The
+  handle moves its item with the arrow keys and Home/End, Alt+arrows move
+  it from a focused row, and screen readers get "Move up", "Move down",
+  "Move to the start" and "Move to the end". `onReorder(from, to)` counts
+  `to` after the move.
+- `DsWidgetsLocalizations` gives Flutter's reorderable lists their screen
+  reader actions in the app's language (13 languages), not only English.
 - `DsToastInset`: marks bottom chrome of your own (a mini player, a docked
   media bar) that toasts keep clear of while it shows. It measures the
   chrome after every frame, so toasts follow it as it slides in or out.

@@ -475,4 +475,22 @@ class DsLocalizationsRu extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => 'Указатель разделов';
+
+  @override
+  String get reorderItemUp => 'Переместить вверх';
+
+  @override
+  String get reorderItemDown => 'Переместить вниз';
+
+  @override
+  String get reorderItemLeft => 'Переместить влево';
+
+  @override
+  String get reorderItemRight => 'Переместить вправо';
+
+  @override
+  String get reorderItemToStart => 'Переместить в начало';
+
+  @override
+  String get reorderItemToEnd => 'Переместить в конец';
 }

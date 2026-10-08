@@ -423,4 +423,22 @@ mixin _DsStrings {
 
   /// Names a section index: the letter column beside a sorted list.
   String get sectionIndex;
+
+  /// Reorderable list: moves an item one place up.
+  String get reorderItemUp;
+
+  /// Reorderable list: moves an item one place down.
+  String get reorderItemDown;
+
+  /// Reorderable list: moves an item one place left.
+  String get reorderItemLeft;
+
+  /// Reorderable list: moves an item one place right.
+  String get reorderItemRight;
+
+  /// Reorderable list: moves an item to the start.
+  String get reorderItemToStart;
+
+  /// Reorderable list: moves an item to the end.
+  String get reorderItemToEnd;
 }

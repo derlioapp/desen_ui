@@ -209,6 +209,22 @@ SPECS = [
         ],
     ),
     dict(
+        name='ReorderableList', dir='reorderable_list', file='reorderable_list_style.dart',
+        doc='The look of a `DsReorderableList`: the drag handle beside each item (resolved for its own states) and the item while it is lifted.',
+        states=['focused', 'hovered', 'pressed', 'disabled'],
+        fields=[
+            ('handleColor', 'Color', 'Grip icon color.'),
+            ('handleSize', 'double', 'Grip icon size.'),
+            ('handleGap', 'double', 'Space on each side of the handle: between it and the item, and between it and the list\'s end edge.'),
+            ('liftedBackground', 'Color', 'Fill of the lifted item, so it covers the items it passes over.'),
+            ('liftedShadows', 'List<DsShadow>', 'Shadow of the lifted item.'),
+            ('liftedBorderRadius', 'BorderRadiusGeometry', 'Corners of the lifted item.'),
+            ('liftedScale', 'double', 'How much the lifted item grows, 1 for none; ignored under reduced motion.'),
+            ('focusShadows', None, None),
+            ('cursor', None, None),
+        ],
+    ),
+    dict(
         name='Card', dir='card', file='card_style.dart',
         doc='The look of a `DsCard`.',
         states=['focused', 'hovered', 'pressed', 'disabled'],

@@ -150,4 +150,7 @@ class DsLocalizationsPtPt extends DsLocalizationsPt {
 
   @override
   String get sectionIndex => 'Índice de secções';
+
+  @override
+  String get reorderItemToEnd => 'Mover para o fim';
 }

@@ -457,4 +457,22 @@ class DsLocalizationsPt extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => 'Índice de seções';
+
+  @override
+  String get reorderItemUp => 'Mover para cima';
+
+  @override
+  String get reorderItemDown => 'Mover para baixo';
+
+  @override
+  String get reorderItemLeft => 'Mover para a esquerda';
+
+  @override
+  String get reorderItemRight => 'Mover para a direita';
+
+  @override
+  String get reorderItemToStart => 'Mover para o início';
+
+  @override
+  String get reorderItemToEnd => 'Mover para o final';
 }

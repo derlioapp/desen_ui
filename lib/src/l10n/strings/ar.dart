@@ -462,4 +462,22 @@ class DsLocalizationsAr extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => 'فهرس الأقسام';
+
+  @override
+  String get reorderItemUp => 'نقل لأعلى';
+
+  @override
+  String get reorderItemDown => 'نقل لأسفل';
+
+  @override
+  String get reorderItemLeft => 'نقل لليسار';
+
+  @override
+  String get reorderItemRight => 'نقل لليمين';
+
+  @override
+  String get reorderItemToStart => 'نقل إلى البداية';
+
+  @override
+  String get reorderItemToEnd => 'نقل إلى النهاية';
 }

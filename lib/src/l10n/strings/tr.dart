@@ -463,4 +463,22 @@ class DsLocalizationsTr extends DsLocalizationsEn {
 
   @override
   String get sectionIndex => 'Bölüm dizini';
+
+  @override
+  String get reorderItemUp => 'Yukarı taşı';
+
+  @override
+  String get reorderItemDown => 'Aşağı taşı';
+
+  @override
+  String get reorderItemLeft => 'Sola taşı';
+
+  @override
+  String get reorderItemRight => 'Sağa taşı';
+
+  @override
+  String get reorderItemToStart => 'Başa taşı';
+
+  @override
+  String get reorderItemToEnd => 'Sona taşı';
 }

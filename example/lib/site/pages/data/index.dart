@@ -7,6 +7,7 @@ import 'divider_page.dart';
 import 'empty_state_page.dart';
 import 'image_page.dart';
 import 'list_page.dart';
+import 'reorderable_list_page.dart';
 import 'table_page.dart';
 
 /// The "Data display" pages, in sidebar order.
@@ -22,6 +23,12 @@ final dataPages = <SitePage>[
     title: 'List',
     builder: (_) => const ListPage(),
     keywords: ['DsListSection', 'DsListRow', 'settings', 'rows'],
+  ),
+  SitePage(
+    path: '/components/reorderable-list',
+    title: 'Reorderable list',
+    builder: (_) => const ReorderableListPage(),
+    keywords: ['DsReorderableList', 'drag', 'reorder', 'sort', 'favorites'],
   ),
   SitePage(
     path: '/components/card',
