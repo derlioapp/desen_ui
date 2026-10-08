@@ -1,3 +1,18 @@
+## Unreleased
+
+### Added
+
+- `DsEdgeFadeScrollView` and `DsEdgeFade`: a horizontal row of your own
+  items (tags, filter chips) that scrolls when it does not fit and fades
+  the edge that hides items, as the toolbar and text fields already do.
+  `DsEdgeFade` fades a horizontal scrollable you already have.
+
+### Changed
+
+- A `DsChoiceChips` row too narrow for its chips fades the edge that hides
+  chips instead of cutting one in half, and brings the selected chip into
+  view clear of the fade.
+
 ## 0.2.0
 
 The first release without the `alpha` tag. Desen is still before 1.0:

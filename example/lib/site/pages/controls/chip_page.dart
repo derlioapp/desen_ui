@@ -45,9 +45,9 @@ class ChipPage extends StatelessWidget {
             '`DsChoiceChips` is a row of the same chips with exactly one '
             'selected, such as a list filter. It is one Tab stop with arrow '
             'keys inside, and screen readers hear a radio group. A row wider '
-            'than its space scrolls sideways, and the selected chip is '
-            'scrolled into view when the row appears and whenever the '
-            'selection changes.',
+            'than its space scrolls sideways and fades the edge that hides '
+            'chips. The selected chip is scrolled into view, clear of the '
+            'fade, when the row appears and whenever the selection changes.',
           ),
           Example(snippet: 'chip-single', child: _SingleDemo()),
           DocText(

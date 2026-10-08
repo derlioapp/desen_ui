@@ -333,7 +333,8 @@ void main() {
       await tester.pumpWidget(
         host(
           SizedBox(
-            width: 200,
+            // Wide enough for a chip clear of both faded edges.
+            width: 260,
             child: StatefulBuilder(
               builder: (context, s) {
                 set = s;
@@ -360,8 +361,12 @@ void main() {
           matching: find.byType(AnimatedContainer),
         ),
       );
-      // Moved forward: the chip ends at the row's end edge, not centered.
-      expect(drafts.right, moreOrLessEquals(view.right, epsilon: 1));
+      // Moved forward: the chip ends just inside the faded end edge (Sent
+      // is still past it), not centered.
+      expect(
+        drafts.right,
+        moreOrLessEquals(view.right - DsEdgeFade.defaultWidth, epsilon: 1),
+      );
 
       // A chip already in view does not move the row.
       final before = position(tester).pixels;
@@ -376,8 +381,8 @@ void main() {
       final visible = labels.firstWhere(
         (l) =>
             l != 'Drafts' &&
-            chipOf(l).left >= view.left &&
-            chipOf(l).right <= view.right,
+            chipOf(l).left >= view.left + DsEdgeFade.defaultWidth &&
+            chipOf(l).right <= view.right - DsEdgeFade.defaultWidth,
       );
       set(() => value = visible);
       await tester.pumpAndSettle();
@@ -387,6 +392,61 @@ void main() {
       set(() => value = 'All');
       await tester.pumpAndSettle();
       expect(position(tester).pixels, 0);
+    });
+
+    /// Whether the row's edge fade is on.
+    bool faded(WidgetTester tester) => find
+        .descendant(
+          of: find.byType(DsChoiceChips<String>),
+          matching: find.byType(ShaderMask),
+        )
+        .evaluate()
+        .isNotEmpty;
+
+    testWidgets('an edge that hides chips fades; a row that fits does not', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        host(SizedBox(width: 200, child: stateful('All', options: labels))),
+      );
+      await tester.pump();
+      expect(faded(tester), isTrue);
+
+      await tester.pumpWidget(
+        host(SizedBox(width: 400, child: stateful('All'))),
+      );
+      await tester.pump();
+      expect(faded(tester), isFalse);
+    });
+
+    testWidgets('a chip under the faded edge is brought clear of it', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        host(
+          SizedBox(width: 200, child: stateful('All', options: labels)),
+          theme: DsThemeData(density: DsDensity.compact),
+        ),
+      );
+      await tester.pump();
+      final view = viewport(tester);
+      Rect chipOf(String l) => tester.getRect(
+        find.ancestor(
+          of: find.text(l),
+          matching: find.byType(AnimatedContainer),
+        ),
+      );
+      // The chip under the faded end edge, tapped on its visible part.
+      final x = view.right - DsEdgeFade.defaultWidth / 2;
+      final under = labels.firstWhere(
+        (l) => chipOf(l).left < x && chipOf(l).right > x,
+      );
+      await tester.tapAt(Offset(x, view.center.dy));
+      await tester.pumpAndSettle();
+      expect(
+        chipOf(under).right,
+        moreOrLessEquals(view.right - DsEdgeFade.defaultWidth, epsilon: 1),
+      );
     });
 
     testWidgets('arrow keys keep the selected chip in view', (tester) async {

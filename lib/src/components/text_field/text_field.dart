@@ -1265,7 +1265,7 @@ class _DsTextFieldState extends State<DsTextField>
     // hides text while the field is not being edited, instead of slicing
     // a glyph in two; editing shows the plain edge the caret moves along.
     if (!_multiline) {
-      editable = EdgeFade(
+      editable = DsEdgeFade(
         width: DsSpace.s12,
         enabled: !focused,
         child: editable,
