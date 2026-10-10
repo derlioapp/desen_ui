@@ -1,12 +1,20 @@
-## Unreleased
+## 0.2.2
+
+Additions and fixes, nothing breaking: `^0.2.0` picks this release up.
 
 ### Added
 
 - `DsToastStyle.actionStyle` and `closeStyle`, and `DsPanelStyle.closeStyle`:
   the toast's action and close buttons and the panel's close button can be
   styled, like the inner buttons of other components. The app's button
-  theme still does not reach them. A `closeStyle.iconSize` wins over
-  `DsToastStyle.closeIconSize`.
+  theme still does not reach them.
+
+### Deprecated
+
+- `DsToastStyle.closeIconSize`: use
+  `closeStyle: DsButtonStyle(iconSize: …)`. It still works until it is
+  removed in 0.3.0; a `closeStyle` that sets its own `iconSize` wins over
+  it.
 
 ### Fixed
 
