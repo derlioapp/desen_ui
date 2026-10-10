@@ -1,3 +1,9 @@
+## 0.2.3
+
+The same code as 0.2.2. The archives of 0.2.0, 0.2.1 and 0.2.2 included
+local files that were not meant to be published; those versions are
+retracted. Update to this release: `^0.2.0` picks it up.
+
 ## 0.2.2
 
 Additions and fixes, nothing breaking: `^0.2.0` picks this release up.
