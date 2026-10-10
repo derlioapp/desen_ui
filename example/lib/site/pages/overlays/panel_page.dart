@@ -74,8 +74,9 @@ class PanelPage extends StatelessWidget {
             'Pass `style` to one `DsPanel`, or put a `DsPanelTheme` around '
             'the part of the app that opens panels: the panel carries the '
             'opener\'s component themes. `width` sets the side panel, '
-            '`sheetMaxWidth` the widest bottom sheet. For a frosted panel, '
-            'see [Layers and glass](/guides/glass).',
+            '`sheetMaxWidth` the widest bottom sheet, `closeStyle` the close '
+            'button (the app\'s button theme does not reach it). For a '
+            'frosted panel, see [Layers and glass](/guides/glass).',
           ),
           Example(snippet: 'panel-custom', child: _ThemedDemo()),
         ],

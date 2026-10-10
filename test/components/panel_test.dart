@@ -120,6 +120,44 @@ void main() {
       expect(rect.width, 500, reason: 'the theme\'s width');
       expect(rect.right, 1000, reason: 'the panel\'s margin');
     });
+
+    testWidgets('the close button takes the panel\'s closeStyle, not the '
+        'app\'s button theme', (tester) async {
+      const fill = Color(0xFF123456);
+      await tester.pumpWidget(
+        DsButtonTheme(
+          data: const DsButtonThemeData(
+            style: DsButtonStyle(background: Color(0xFFFF0000)),
+          ),
+          child: app(
+            tester,
+            (_) => DsPanel(
+              title: const Text('Title'),
+              style: DsPanelStyle(
+                closeStyle: DsButtonStyle(
+                  background: fill,
+                  height: 36,
+                  borderRadius: BorderRadius.circular(18),
+                ),
+              ),
+              child: const Text('Body'),
+            ),
+            presentation: DsPanelPresentation.side,
+          ),
+        ),
+      );
+      await open(tester);
+      final close = find.bySemanticsLabel('Close');
+      final box = find.descendant(
+        of: find.ancestor(of: close, matching: find.byType(DsButton)).first,
+        matching: find.byType(AnimatedContainer),
+      );
+      final decoration =
+          tester.widget<AnimatedContainer>(box).decoration! as DsBoxDecoration;
+      expect(decoration.color, fill);
+      expect(decoration.borderRadius, BorderRadius.circular(18));
+      expect(tester.getSize(box).height, 36);
+    });
   });
 
   group('content that scrolls itself', () {

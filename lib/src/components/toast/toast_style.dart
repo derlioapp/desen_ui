@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../foundation/component_theme.dart';
 import '../../painting/shadow.dart';
+import '../button/button_style.dart';
 
 /// The look of a `DsToast`.
 ///
@@ -28,6 +29,8 @@ class DsToastStyle with Diagnosticable {
     this.titleStyle,
     this.descriptionStyle,
     this.textGap,
+    this.actionStyle,
+    this.closeStyle,
   });
 
   /// Fill.
@@ -54,7 +57,7 @@ class DsToastStyle with Diagnosticable {
   /// Status icon size.
   final double? iconSize;
 
-  /// Dismiss button icon size.
+  /// Dismiss button icon size. A `closeStyle` that sets its own `iconSize` wins.
   final double? closeIconSize;
 
   /// Title style, merged.
@@ -65,6 +68,12 @@ class DsToastStyle with Diagnosticable {
 
   /// Space between title and description.
   final double? textGap;
+
+  /// The action button, laid over a ghost small button.
+  final DsButtonStyle? actionStyle;
+
+  /// The dismiss button, laid over a ghost small icon button.
+  final DsButtonStyle? closeStyle;
 
   /// Lays [other] over this: its set fields win; state styles merge.
   DsToastStyle merge(DsToastStyle? other) {
@@ -84,6 +93,8 @@ class DsToastStyle with Diagnosticable {
           descriptionStyle?.merge(other.descriptionStyle) ??
           other.descriptionStyle,
       textGap: other.textGap ?? textGap,
+      actionStyle: actionStyle?.merge(other.actionStyle) ?? other.actionStyle,
+      closeStyle: closeStyle?.merge(other.closeStyle) ?? other.closeStyle,
     );
   }
 
@@ -116,6 +127,8 @@ class DsToastStyle with Diagnosticable {
     titleStyle,
     descriptionStyle,
     textGap,
+    actionStyle,
+    closeStyle,
   ];
 
   @override
@@ -163,6 +176,12 @@ class DsToastStyle with Diagnosticable {
       ),
     );
     properties.add(DoubleProperty('textGap', textGap, defaultValue: null));
+    properties.add(
+      DiagnosticsProperty('actionStyle', actionStyle, defaultValue: null),
+    );
+    properties.add(
+      DiagnosticsProperty('closeStyle', closeStyle, defaultValue: null),
+    );
   }
 }
 

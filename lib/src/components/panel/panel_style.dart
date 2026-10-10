@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../foundation/component_theme.dart';
 import '../../painting/shadow.dart';
+import '../button/button_style.dart';
 
 /// The look of a `DsPanel` (side panel or bottom sheet).
 ///
@@ -28,6 +29,7 @@ class DsPanelStyle with Diagnosticable {
     this.grabberColor,
     this.grabberSize,
     this.sheetMaxWidth,
+    this.closeStyle,
   });
 
   /// Fill.
@@ -66,6 +68,9 @@ class DsPanelStyle with Diagnosticable {
   /// Largest width of a bottom sheet.
   final double? sheetMaxWidth;
 
+  /// The close button, laid over a ghost small icon button.
+  final DsButtonStyle? closeStyle;
+
   /// Lays [other] over this: its set fields win; state styles merge.
   DsPanelStyle merge(DsPanelStyle? other) {
     if (other == null) return this;
@@ -82,6 +87,7 @@ class DsPanelStyle with Diagnosticable {
       grabberColor: other.grabberColor ?? grabberColor,
       grabberSize: other.grabberSize ?? grabberSize,
       sheetMaxWidth: other.sheetMaxWidth ?? sheetMaxWidth,
+      closeStyle: closeStyle?.merge(other.closeStyle) ?? other.closeStyle,
     );
   }
 
@@ -114,6 +120,7 @@ class DsPanelStyle with Diagnosticable {
     grabberColor,
     grabberSize,
     sheetMaxWidth,
+    closeStyle,
   ];
 
   @override
@@ -158,6 +165,9 @@ class DsPanelStyle with Diagnosticable {
     );
     properties.add(
       DoubleProperty('sheetMaxWidth', sheetMaxWidth, defaultValue: null),
+    );
+    properties.add(
+      DiagnosticsProperty('closeStyle', closeStyle, defaultValue: null),
     );
   }
 }

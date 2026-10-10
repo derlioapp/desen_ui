@@ -91,6 +91,12 @@ class CustomizingPage extends StatelessWidget {
             'lift off the secondary button above, and a transparent '
             '`borderColor` removes its edge.',
           ),
+          const DocText(
+            'Button variants are a fixed set. A variant of your own, such '
+            'as a main call to action, is a style kept in one place (a '
+            'function of the theme\'s colors) and passed as `style:`; a '
+            'small widget that wraps `DsButton` with it saves repeating it.',
+          ),
         ],
       ),
       DocSection(

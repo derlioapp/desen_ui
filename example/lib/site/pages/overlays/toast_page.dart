@@ -109,6 +109,12 @@ class ToastPage extends StatelessWidget {
             'see [Layers and glass](/guides/glass).',
           ),
           Example(snippet: 'toast-custom', child: _ThemedDemo()),
+          DocText(
+            'The action and close buttons do not take the app\'s button '
+            'theme; `actionStyle` and `closeStyle` style them. A toast on a '
+            'dark ground of your own needs them: give the action the '
+            'toast\'s text color as its `foreground`.',
+          ),
         ],
       ),
       DocSection(
