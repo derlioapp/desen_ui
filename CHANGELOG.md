@@ -1,3 +1,13 @@
+## Unreleased
+
+### Added
+
+- `DsIcon` follows the icon theme's `weight`, as the weight axis of a
+  variable icon font does: 400 draws the icon's own stroke, other weights
+  scale it (350 draws a 2-unit stroke at 1.75). Set it once in
+  `DsApp.builder` and it reaches the icons inside components and layers;
+  `DsIcon.strokeWidth` still wins. Without a weight nothing changes.
+
 ## 0.2.3
 
 The same code as 0.2.2. The archives of 0.2.0, 0.2.1 and 0.2.2 included
