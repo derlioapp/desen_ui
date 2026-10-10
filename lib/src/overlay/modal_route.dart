@@ -439,6 +439,8 @@ class DsModalRoute<T> extends PopupRoute<T> {
             data: IconThemeData(
               color: t.colors.text,
               size: t.sizes.iconSize(DsSize.md),
+              // The app's icon weight, not the trigger's look.
+              weight: IconTheme.of(context).weight,
             ),
             child: FocusFirstOnOpen(child: Builder(builder: builder)),
           ),
