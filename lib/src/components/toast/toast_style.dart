@@ -25,6 +25,9 @@ class DsToastStyle with Diagnosticable {
     this.maxWidth,
     this.gap,
     this.iconSize,
+    @Deprecated(
+      'Use closeStyle: DsButtonStyle(iconSize: …) instead. Deprecated in 0.2.2.',
+    )
     this.closeIconSize,
     this.titleStyle,
     this.descriptionStyle,
@@ -58,6 +61,9 @@ class DsToastStyle with Diagnosticable {
   final double? iconSize;
 
   /// Dismiss button icon size. A `closeStyle` that sets its own `iconSize` wins.
+  @Deprecated(
+    'Use closeStyle: DsButtonStyle(iconSize: …) instead. Deprecated in 0.2.2.',
+  )
   final double? closeIconSize;
 
   /// Title style, merged.

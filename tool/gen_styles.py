@@ -24,6 +24,8 @@ Every component follows the model proven on DsButton:
   data, laid over like any other value (an inner theme's wins).
 - `subject` (optional) names the widgets in the theme data's doc when one
   style serves several, such as `DsSlider` and `DsRangeSlider`.
+- `deprecated` (optional) maps a field name to its `@Deprecated` message,
+  put on the field and its constructor parameter.
 
 Usage: python3 tool/gen_styles.py   (writes every spec below)
 """
@@ -836,6 +838,7 @@ SPECS = [
             ('actionStyle', 'DsButtonStyle', 'The action button, laid over a ghost small button.'),
             ('closeStyle', 'DsButtonStyle', 'The dismiss button, laid over a ghost small icon button.'),
         ],
+        deprecated={'closeIconSize': 'Use closeStyle: DsButtonStyle(iconSize: …) instead. Deprecated in 0.2.2.'},
         imports=['../button/button_style.dart'],
     ),
     dict(
@@ -1223,7 +1226,10 @@ def gen(spec):
     w(f'class {S} with Diagnosticable {{')
     w('  /// Creates a style.')
     w(f'  const {S}({{')
+    deprecated = spec.get('deprecated', {})
     for f, _, _ in fields:
+        if f in deprecated:
+            w(f"    @Deprecated('{deprecated[f]}')")
         w(f'    this.{f},')
     for st in states + flag_names:
         w(f'    this.{st},')
@@ -1231,6 +1237,8 @@ def gen(spec):
     w('')
     for f, t, d in fields:
         w(f'  /// {d}')
+        if f in deprecated:
+            w(f"  @Deprecated('{deprecated[f]}')")
         w(f'  final {t}? {f};')
         w('')
     for st in states:
