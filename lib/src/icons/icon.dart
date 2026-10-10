@@ -109,6 +109,22 @@ class DsIconData {
 /// Size, color and fill default to the ambient [IconTheme]. The stroke scales with
 /// the size (a 24-unit icon with stroke 2 drawn at 16px has a 1.33px stroke),
 /// matching how the icon renders on the web.
+///
+/// The ambient [IconThemeData.weight] sets how heavy the stroke is, as the
+/// weight axis of a variable icon font does: 400 (regular) draws the icon's
+/// own [DsIconData.strokeWidth], and other weights scale it, so 350 draws a
+/// stroke-2 icon at 1.75. Set it once for the app in `DsApp.builder`; it
+/// reaches the icons inside Desen's components and layers too:
+///
+/// ```dart
+/// DsApp(
+///   builder: (context, child) => IconTheme.merge(
+///     data: const IconThemeData(weight: 350),
+///     child: child!,
+///   ),
+///   home: const Home(),
+/// )
+/// ```
 class DsIcon extends LeafRenderObjectWidget {
   /// Creates an icon.
   const DsIcon(
@@ -130,7 +146,8 @@ class DsIcon extends LeafRenderObjectWidget {
   /// Stroke color. Defaults to [IconThemeData.color].
   final Color? color;
 
-  /// Stroke width in [DsIconData.viewBox] units; overrides the icon's own.
+  /// Stroke width in [DsIconData.viewBox] units; overrides the icon's own
+  /// and the icon theme's weight.
   final double? strokeWidth;
 
   /// Fill the paths as well as stroking them; overrides [DsIconData.fill]
@@ -151,7 +168,7 @@ class DsIcon extends LeafRenderObjectWidget {
     icon: icon,
     size: _size(context),
     color: _color(context),
-    strokeWidth: strokeWidth ?? icon.strokeWidth,
+    strokeWidth: _stroke(context),
     fill: _fill(context),
     semanticLabel: semanticLabel,
     textDirection: Directionality.maybeOf(context),
@@ -163,7 +180,7 @@ class DsIcon extends LeafRenderObjectWidget {
       ..icon = icon
       ..iconSize = _size(context)
       ..color = _color(context)
-      ..strokeWidth = strokeWidth ?? icon.strokeWidth
+      ..strokeWidth = _stroke(context)
       ..fill = _fill(context)
       ..semanticLabel = semanticLabel
       ..textDirection = Directionality.maybeOf(context);
@@ -172,6 +189,13 @@ class DsIcon extends LeafRenderObjectWidget {
   double _size(BuildContext context) =>
       // ds-raw: unreachable, IconTheme.of fills the size in
       size ?? IconTheme.of(context).size ?? 16;
+
+  /// The regular weight of an icon font's weight axis: the icon's own stroke.
+  static const double _regular = 400; // ds-raw: the weight axis' regular
+
+  double _stroke(BuildContext context) =>
+      strokeWidth ??
+      icon.strokeWidth * (IconTheme.of(context).weight ?? _regular) / _regular;
 
   bool _fill(BuildContext context) =>
       fill ?? (icon.fill || (IconTheme.of(context).fill ?? 0) >= .5);
@@ -241,6 +265,7 @@ class RenderDsIcon extends RenderBox {
   double _strokeWidth;
 
   /// Stroke width in view box units.
+  double get strokeWidth => _strokeWidth;
   set strokeWidth(double v) {
     if (v == _strokeWidth) return;
     _strokeWidth = v;

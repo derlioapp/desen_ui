@@ -76,6 +76,37 @@ class IconsPage extends StatelessWidget {
           ),
         ],
       ),
+      DocSection(
+        title: 'Stroke weight',
+        children: [
+          const DocText(
+            'The icon theme\'s `weight` sets how heavy every stroke is, as '
+            'the weight axis of a variable icon font does: 400 draws each '
+            'icon\'s own stroke, 350 draws the 2-unit stroke at 1.75, 500 '
+            'at 2.5. Set it once in `DsApp.builder` and it reaches the '
+            'icons inside components, menus, dialogs and toasts too. A '
+            '`strokeWidth` on one `DsIcon` still wins, for a selected tab '
+            'drawn heavier.',
+          ),
+          Example(
+            snippet: 'icons-weight',
+            child: Wrap(
+              spacing: 20,
+              runSpacing: 16,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                // #region icons-weight
+                for (final weight in [300.0, 350.0, 400.0, 500.0])
+                  IconTheme.merge(
+                    data: IconThemeData(weight: weight),
+                    child: const DsIcon(DsIcons.bell, size: 24),
+                  ),
+                // #endregion
+              ],
+            ),
+          ),
+        ],
+      ),
       const DocSection(
         title: 'Filled icons',
         children: [
@@ -185,7 +216,9 @@ class IconsPage extends StatelessWidget {
             (
               'strokeWidth',
               'double?',
-              'In grid units; overrides the icon\'s own (2).',
+              'In grid units; overrides the icon\'s own (2) and the icon '
+                  'theme\'s `weight` (400 keeps the icon\'s own stroke, '
+                  'other weights scale it).',
             ),
             (
               'fill',

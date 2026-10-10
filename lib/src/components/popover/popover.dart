@@ -140,6 +140,8 @@ class _DsPopoverState extends State<DsPopover> {
               data: IconThemeData(
                 color: t.colors.text,
                 size: t.sizes.iconSize(DsSize.md),
+                // The app's icon weight, not the trigger's look.
+                weight: IconTheme.of(context).weight,
               ),
               child: Builder(builder: widget.contentBuilder),
             ),

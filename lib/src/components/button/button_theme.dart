@@ -62,7 +62,8 @@ class DsButtonThemeData extends DsComponentThemeData<DsButtonThemeData> {
   /// Size for buttons that do not set one.
   final DsSize? size;
 
-  /// Style laid over Desen's defaults for every variant.
+  /// Style laid over Desen's defaults for every variant. Its `padding`
+  /// (and a variant's) is for text buttons: icon-only buttons stay square.
   final DsButtonStyle? style;
 
   /// Styles laid over [style] for one variant each.

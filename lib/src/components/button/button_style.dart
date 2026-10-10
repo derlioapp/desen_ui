@@ -123,7 +123,8 @@ class DsButtonStyle with Diagnosticable {
   /// Minimum height. The button grows with large text.
   final double? height;
 
-  /// Inner padding.
+  /// Inner padding. An icon-only button (`DsButton.icon`) takes it only from
+  /// its own `style`, never from a theme, so it stays square.
   final EdgeInsetsGeometry? padding;
 
   /// Space between icon and label.

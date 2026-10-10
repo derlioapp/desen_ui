@@ -702,7 +702,12 @@ class _DsDefaults extends StatelessWidget {
     return DefaultTextStyle(
       style: typography.body.copyWith(color: colors.text),
       child: IconTheme(
-        data: IconThemeData(color: colors.text, size: 16),
+        data: IconThemeData(
+          color: colors.text,
+          size: 16,
+          // An icon weight set around the scope passes through.
+          weight: IconTheme.of(context).weight,
+        ),
         child: DefaultSelectionStyle(
           // 3:1 on the field even under a bright accent (yellow caret).
           cursorColor: colors.indicator,
