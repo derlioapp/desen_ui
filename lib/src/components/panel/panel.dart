@@ -160,6 +160,7 @@ class DsPanel extends StatelessWidget {
                       child: DsButton.icon(
                         variant: DsButtonVariant.ghost,
                         size: DsSize.sm,
+                        style: s.closeStyle,
                         icon: const DsIcon(DsIcons.x),
                         semanticLabel: l10n.close,
                         // A close button shown on a panel that cannot be

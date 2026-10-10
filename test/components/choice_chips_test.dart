@@ -325,6 +325,46 @@ void main() {
       expect(chip.left, greaterThanOrEqualTo(view.left - .5));
     });
 
+    testWidgets('a row under a covering page opens on the selected chip', (
+      tester,
+    ) async {
+      // A deep link builds [root, detail] at once: the root page is built
+      // but never laid out while covered. Revealing must wait, not assert.
+      final nav = GlobalKey<NavigatorState>();
+      await tester.pumpWidget(
+        host(
+          SizedBox(
+            width: 200,
+            height: 300,
+            child: Navigator(
+              key: nav,
+              pages: [
+                PlainPage(
+                  key: const ValueKey('root'),
+                  child: Center(child: stateful('Sent', options: labels)),
+                ),
+                const PlainPage(
+                  key: ValueKey('detail'),
+                  child: ColoredBox(color: Color(0xFFFFFFFF)),
+                ),
+              ],
+              onDidRemovePage: (_) {},
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+
+      nav.currentState!.pop();
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      final view = viewport(tester);
+      final chip = tester.getRect(find.text('Sent'));
+      expect(chip.right, lessThanOrEqualTo(view.right + .5));
+      expect(chip.left, greaterThanOrEqualTo(view.left - .5));
+    });
+
     testWidgets('a new selection scrolls into view the least distance', (
       tester,
     ) async {

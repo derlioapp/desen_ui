@@ -66,6 +66,10 @@ class DsButtonThemeData extends DsComponentThemeData<DsButtonThemeData> {
   final DsButtonStyle? style;
 
   /// Styles laid over [style] for one variant each.
+  ///
+  /// The variants are a fixed set. A variant of the app's own (a main call
+  /// to action) is a [DsButtonStyle] kept in one place and passed as
+  /// `DsButton.style`.
   final Map<DsButtonVariant, DsButtonStyle> variants;
 
   /// Replaces the default `DsSpinner` shown while a button is loading. It

@@ -1,3 +1,20 @@
+## Unreleased
+
+### Added
+
+- `DsToastStyle.actionStyle` and `closeStyle`, and `DsPanelStyle.closeStyle`:
+  the toast's action and close buttons and the panel's close button can be
+  styled, like the inner buttons of other components. The app's button
+  theme still does not reach them. A `closeStyle.iconSize` wins over
+  `DsToastStyle.closeIconSize`.
+
+### Fixed
+
+- `DsTabs` and `DsChoiceChips` on a page that is covered from its first
+  frame (a deep link that opens a stack of pages at once) no longer fail
+  an assertion; they bring the selected item into view once the page is
+  laid out.
+
 ## 0.2.1
 
 New components and fixes, nothing breaking: `^0.2.0` picks this release up.

@@ -20,6 +20,7 @@ import '../../theme/status.dart';
 import '../../theme/theme.dart';
 import '../../theme/theme_data.dart';
 import '../button/button.dart';
+import '../button/button_style.dart';
 import '../button/button_theme.dart';
 import '../../foundation/component_theme.dart';
 import 'toast_inset.dart';
@@ -234,6 +235,7 @@ class DsToast extends StatelessWidget {
                     child: DsButton(
                       variant: DsButtonVariant.ghost,
                       size: DsSize.sm,
+                      style: s.actionStyle,
                       onPressed: onAction,
                       child: Text(actionLabel!),
                     ),
@@ -244,7 +246,9 @@ class DsToast extends StatelessWidget {
                   child: DsButton.icon(
                     variant: DsButtonVariant.ghost,
                     size: DsSize.sm,
-                    icon: DsIcon(DsIcons.x, size: s.closeIconSize),
+                    style: DsButtonStyle(iconSize: s.closeIconSize)
+                        .merge(s.closeStyle),
+                    icon: const DsIcon(DsIcons.x),
                     semanticLabel: l10n.dismissNotification,
                     onPressed: onDismiss,
                   ),

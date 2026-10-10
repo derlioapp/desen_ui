@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:desen_ui/desen_ui.dart';
-import 'package:flutter/semantics.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -429,6 +429,71 @@ void main() {
       semantics.dispose();
       await tester.pump(const Duration(seconds: 30));
       await tester.pumpAndSettle();
+    });
+  });
+
+  group('buttons', () {
+    /// The visible box of the button that holds [part].
+    Finder box(Finder part) => find
+        .descendant(
+          of: find.ancestor(of: part, matching: find.byType(DsButton)).first,
+          matching: find.byType(AnimatedContainer),
+        )
+        .first;
+
+    Widget toast({DsToastStyle? style}) => DsApp(
+      // An app-wide button look the toast's own buttons do not take.
+      builder: (context, child) => DsButtonTheme(
+        data: const DsButtonThemeData(
+          style: DsButtonStyle(foreground: Color(0xFFFF0000)),
+        ),
+        child: child!,
+      ),
+      home: Center(
+        child: DsToast(
+          title: 'Moved to trash',
+          actionLabel: 'Undo',
+          onAction: () {},
+          onDismiss: () {},
+          style: style,
+        ),
+      ),
+    );
+
+    testWidgets('the action and close buttons take the toast\'s styles', (
+      tester,
+    ) async {
+      const ink = Color(0xFF101010), fill = Color(0xFF123456);
+      await tester.pumpWidget(
+        toast(
+          style: const DsToastStyle(
+            actionStyle: DsButtonStyle(foreground: ink),
+            closeStyle: DsButtonStyle(background: fill, iconSize: 20),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      final undo = tester.renderObject<RenderParagraph>(find.text('Undo'));
+      expect(undo.text.style?.color, ink);
+      final close = find.byType(DsIcon);
+      expect(
+        (tester.widget<AnimatedContainer>(box(close)).decoration!
+                as DsBoxDecoration)
+            .color,
+        fill,
+      );
+      expect(tester.getSize(close).width, 20);
+    });
+
+    testWidgets('without them the app\'s button theme does not reach in; '
+        'the close icon keeps closeIconSize', (tester) async {
+      await tester.pumpWidget(
+        toast(style: const DsToastStyle(closeIconSize: 18)),
+      );
+      await tester.pumpAndSettle();
+      final undo = tester.renderObject<RenderParagraph>(find.text('Undo'));
+      expect(undo.text.style?.color, isNot(const Color(0xFFFF0000)));
+      expect(tester.getSize(find.byType(DsIcon)).width, 18);
     });
   });
 }
