@@ -74,6 +74,9 @@ class DsButton extends StatefulWidget {
 
   /// Creates a square, icon-only button. [semanticLabel] is required so
   /// screen readers can name it.
+  ///
+  /// It stays square under a button theme: the theme's `padding` is room
+  /// for text, so an icon button takes padding only from its own [style].
   const DsButton.icon({
     super.key,
     required this.onPressed,
@@ -434,7 +437,18 @@ class _DsButtonState extends State<DsButton> {
         return DsPressable.defaultCursor.resolve(states);
       }),
       builder: (context, visual, _) {
-        final s = DsButtonStyle.resolveLayers(layers, visual);
+        var s = DsButtonStyle.resolveLayers(layers, visual);
+        if (widget._iconOnly) {
+          // A square: the theme's padding is text room, so an icon button
+          // takes padding only from its own style.
+          s = s.merge(
+            DsButtonStyle(
+              padding:
+                  DsButtonStyle.resolveLayers([widget.style], visual).padding ??
+                  EdgeInsets.zero,
+            ),
+          );
+        }
         // Animate only interaction changes. When the theme changes (for
         // example while it cross-fades to dark), follow it directly instead
         // of chasing a moving target.

@@ -770,4 +770,73 @@ void main() {
       expect(theme.motion.toneDuration, Duration.zero);
     });
   });
+
+  group('icon-only', () {
+    const pad = EdgeInsets.symmetric(horizontal: 16);
+    Widget icon({DsButtonVariant? variant, DsButtonStyle? style}) =>
+        DsButton.icon(
+          variant: variant,
+          style: style,
+          icon: const DsIcon(DsIcons.plus),
+          semanticLabel: 'Add',
+          onPressed: () {},
+        );
+
+    testWidgets('stays square under a theme\'s text padding, in every '
+        'variant', (tester) async {
+      for (final variant in DsButtonVariant.values) {
+        await tester.pumpWidget(
+          host(
+            theme: DsThemeData(density: DsDensity.compact),
+            DsButtonTheme(
+              data: DsButtonThemeData(
+                style: const DsButtonStyle(
+                  padding: pad,
+                  hovered: DsButtonStyle(padding: pad),
+                ),
+                variants: {variant: const DsButtonStyle(padding: pad)},
+              ),
+              child: icon(variant: variant),
+            ),
+          ),
+        );
+        final size = buttonBoxSize(tester);
+        expect(size.width, size.height, reason: variant.name);
+      }
+    });
+
+    testWidgets('a padding on the button itself still applies', (tester) async {
+      await tester.pumpWidget(
+        host(
+          theme: DsThemeData(density: DsDensity.compact),
+          icon(style: const DsButtonStyle(padding: pad)),
+        ),
+      );
+      final size = buttonBoxSize(tester);
+      expect(size.width, greaterThan(size.height));
+    });
+
+    testWidgets('text buttons still take the theme\'s padding', (tester) async {
+      Future<double> width(DsButtonStyle? themed) async {
+        await tester.pumpWidget(
+          host(
+            theme: DsThemeData(density: DsDensity.compact),
+            DsButtonTheme(
+              data: DsButtonThemeData(style: themed),
+              child: DsButton(onPressed: () {}, child: const Text('Save')),
+            ),
+          ),
+        );
+        return buttonBoxSize(tester).width;
+      }
+
+      final plain = await width(null);
+      expect(
+        await width(
+          const DsButtonStyle(padding: EdgeInsets.symmetric(horizontal: 40)),
+        ),
+        greaterThan(plain),
+      );
+    });
+  });
 }

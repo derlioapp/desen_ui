@@ -8,6 +8,13 @@
   `DsApp.builder` and it reaches the icons inside components and layers;
   `DsIcon.strokeWidth` still wins. Without a weight nothing changes.
 
+### Changed
+
+- Icon-only buttons (`DsButton.icon`) stay square under a button theme:
+  the `padding` of `DsButtonThemeData.style` and of its variants is room
+  for text and no longer widens them. A `padding` in the button's own
+  `style` still applies.
+
 ## 0.2.3
 
 The same code as 0.2.2. The archives of 0.2.0, 0.2.1 and 0.2.2 included
