@@ -6,6 +6,9 @@ docs/
 tool/
 test/
 
+# Requests from apps that use Desen; local and private.
+feedback/
+
 # Build output and tool state (also inside example/).
 .dart_tool/
 build/
