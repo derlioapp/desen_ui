@@ -130,6 +130,10 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
   /// laid-out box.
   final _keys = <GlobalKey>[];
 
+  /// A reveal that found the row not laid out yet (a page built under a
+  /// covering one): it runs when the row first reports its metrics.
+  int Function()? _pendingReveal;
+
   /// Flutter's focus highlight, before the keyboard check.
   bool _highlight = false;
   bool get _focusVisible => _highlight && DsFocusVisibility.keyboard.value;
@@ -235,6 +239,10 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
           ? null
           : Scrollable.maybeOf(_keys[i].currentContext!);
       if (chip == null || !chip.attached || scrollable == null) return;
+      if (chip is! RenderBox || !chip.hasSize) {
+        _pendingReveal = index;
+        return;
+      }
       final viewport = RenderAbstractViewport.maybeOf(chip);
       if (viewport == null) return;
       final position = scrollable.position;
@@ -374,23 +382,33 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
         child: ClipRect(
           clipper: _OutsetClipper(ring),
           child: DsEdgeFade(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              clipBehavior: Clip.none,
-              // The radio group role sits inside the scroll view, so its
-              // direct children are the chips.
-              child: Semantics(
-                container: true,
-                role: SemanticsRole.radioGroup,
-                label: field.label,
-                hint: field.hint,
-                isRequired: field.isRequired,
-                validationResult: field.validationResult,
-                explicitChildNodes: true,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  spacing: DsSpace.s8,
-                  children: [for (var i = 0; i < n; i++) chip(i)],
+            child: NotificationListener<ScrollMetricsNotification>(
+              onNotification: (_) {
+                final pending = _pendingReveal;
+                if (pending != null) {
+                  _pendingReveal = null;
+                  _reveal(pending, animate: false);
+                }
+                return false;
+              },
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                clipBehavior: Clip.none,
+                // The radio group role sits inside the scroll view, so its
+                // direct children are the chips.
+                child: Semantics(
+                  container: true,
+                  role: SemanticsRole.radioGroup,
+                  label: field.label,
+                  hint: field.hint,
+                  isRequired: field.isRequired,
+                  validationResult: field.validationResult,
+                  explicitChildNodes: true,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    spacing: DsSpace.s8,
+                    children: [for (var i = 0; i < n; i++) chip(i)],
+                  ),
                 ),
               ),
             ),

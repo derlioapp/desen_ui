@@ -78,3 +78,14 @@ List<DsShadow> visibleShadows(DsBoxDecoration d) => [
   for (final s in d.shadows)
     if (s.color.a > 0) s,
 ];
+
+/// A route page without transitions, for navigator stacks in tests.
+class PlainPage extends Page<void> {
+  const PlainPage({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Route<void> createRoute(BuildContext context) =>
+      PageRouteBuilder<void>(settings: this, pageBuilder: (_, _, _) => child);
+}

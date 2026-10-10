@@ -177,6 +177,10 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
   /// Whether tabs are hidden past the start or the end: those edges fade.
   bool _moreBefore = false, _moreAfter = false;
 
+  /// A reveal that found the strip not laid out yet (a page built under a
+  /// covering one): it runs when the strip first reports its metrics.
+  bool _revealPending = false;
+
   @override
   void initState() {
     super.initState();
@@ -207,6 +211,10 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
       if (i < 0 || i >= _tabKeys.length) return;
       final tab = _tabKeys[i].currentContext?.findRenderObject();
       if (tab == null || !_scroll.hasClients) return;
+      if (tab is! RenderBox || !tab.hasSize) {
+        _revealPending = true;
+        return;
+      }
       final motion = DsTheme.motionOf(context);
       // The strip's own position only: `Scrollable.ensureVisible` would
       // also scroll every scrollable around the tabs, so a page opened on
@@ -223,6 +231,10 @@ class _DsTabsState<T> extends State<DsTabs<T>> {
   }
 
   bool _onMetrics(ScrollMetrics m) {
+    if (_revealPending) {
+      _revealPending = false;
+      _revealSelected(animate: false);
+    }
     final before = m.extentBefore > .5, after = m.extentAfter > .5;
     if (before != _moreBefore || after != _moreAfter) {
       void apply() {
