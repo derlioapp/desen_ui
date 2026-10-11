@@ -370,8 +370,8 @@ void main() {
             // Disabled, and too narrow: the end fades.
             card(
               width: 220,
-              Padding(
-                padding: const EdgeInsets.all(8),
+              const Padding(
+                padding: EdgeInsets.all(8),
                 child: DsTopNav<int>(value: 1, onChanged: null, items: plain),
               ),
             ),
