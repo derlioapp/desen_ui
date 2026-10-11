@@ -88,6 +88,10 @@ class DsSidebar<T extends Object> extends StatelessWidget {
 
   /// Called with an item's [DsSidebarItem.value] when it is pressed. Items
   /// with a value and no `onPressed` of their own are disabled when null.
+  ///
+  /// Pressing the current page's item calls it too, with the current
+  /// value, as a link to the page's root does on the web: an app can go
+  /// back to the page's first screen or scroll it to the top.
   final ValueChanged<T>? onChanged;
 
   /// Style laid over the theme and defaults.

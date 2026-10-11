@@ -391,6 +391,30 @@ void main() {
       semantics.dispose();
     });
 
+    testWidgets('sidebar reports a press on the current page too', (
+      tester,
+    ) async {
+      final reported = <String>[];
+      await tester.pumpWidget(
+        host(
+          SizedBox(
+            height: 300,
+            child: DsSidebar<String>(
+              value: 'inbox',
+              onChanged: reported.add,
+              children: const [
+                DsSidebarItem(value: 'inbox', label: Text('Gelen')),
+                DsSidebarItem(value: 'design', label: Text('Tasarım')),
+              ],
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Gelen'));
+      await tester.tap(find.text('Tasarım'));
+      expect(reported, ['inbox', 'design']);
+    });
+
     testWidgets('bottom nav selects; the bar keeps clear of the safe area', (
       tester,
     ) async {
