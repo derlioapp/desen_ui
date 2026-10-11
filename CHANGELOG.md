@@ -1,4 +1,6 @@
-## Unreleased
+## 0.2.4
+
+Additions and a fix, nothing breaking: `^0.2.0` picks this release up.
 
 ### Added
 
