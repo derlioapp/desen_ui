@@ -13,8 +13,9 @@ class SidebarPage extends StatelessWidget {
     title: 'Sidebar',
     lead:
         'The main navigation of a desktop or tablet app: a column of pages '
-        'along the start edge, grouped into sections. On phones, use '
-        '[Bottom navigation](/components/bottom-navigation) instead.',
+        'along the start edge, grouped into sections. For a few pages in '
+        'the app\'s header, use [Top navigation](/components/top-navigation); '
+        'on phones, [Bottom navigation](/components/bottom-navigation).',
     sections: [
       const DocSection(
         title: 'Overview',

@@ -98,8 +98,8 @@ class DsSegmentedControl<T> extends StatefulWidget {
   /// Called with the newly selected value. Null disables the control.
   /// Choosing the value that is already selected does not call it: this is
   /// a choice, announced as a radio group. To move between an app's
-  /// destinations, `DsSidebar` and `DsBottomNav` are navigation and report
-  /// a press on the current one.
+  /// destinations, [DsTopNav], [DsSidebar] and [DsBottomNav] are
+  /// navigation and report a press on the current one.
   final ValueChanged<T>? onChanged;
 
   /// Style laid over the theme and defaults.

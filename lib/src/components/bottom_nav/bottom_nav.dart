@@ -68,7 +68,8 @@ class DsBottomNavItem<T> {
   final bool enabled;
 }
 
-/// Bottom navigation for phone layouts.
+/// Bottom navigation for phone layouts. On wider screens, [DsTopNav] or
+/// [DsSidebar] hold the same destinations.
 ///
 /// Items of the floating bar are [DsBottomNavItemStyle.width] wide and
 /// share the width evenly when that does not fit (five items on a 375pt

@@ -8,6 +8,7 @@ import 'scrollbar_page.dart';
 import 'section_index_page.dart';
 import 'sidebar_page.dart';
 import 'tabs_page.dart';
+import 'top_nav_page.dart';
 
 /// The "Navigation" pages, in sidebar order.
 final navigationPages = <SitePage>[
@@ -24,6 +25,13 @@ final navigationPages = <SitePage>[
     builder: (_) => const SidebarPage(),
     keywords: ['DsSidebar', 'DsSidebarItem', 'DsSidebarSection', 'side nav'],
     summary: 'The main navigation of a desktop app.',
+  ),
+  SitePage(
+    path: '/components/top-navigation',
+    title: 'Top navigation',
+    builder: (_) => const TopNavPage(),
+    keywords: ['DsTopNav', 'DsTopNavItem', 'header', 'nav bar', 'menu bar'],
+    summary: 'The main navigation in an app\'s header.',
   ),
   SitePage(
     path: '/components/bottom-navigation',

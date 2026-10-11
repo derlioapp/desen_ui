@@ -44,6 +44,79 @@ class AppFrame extends StatelessWidget {
   }
 }
 
+/// A small app window for top navigation examples: a header with the app's
+/// name, [nav] and a search button, over a content pane.
+class HeaderFrame extends StatelessWidget {
+  const HeaderFrame({
+    super.key,
+    required this.nav,
+    required this.title,
+    this.height = 260,
+  });
+
+  final Widget nav;
+  final String title;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = DsTheme.of(context);
+    final k = t.colors;
+    final radius = BorderRadius.circular(t.radii.card);
+    return Container(
+      height: height,
+      decoration: DsBoxDecoration(
+        color: k.surface,
+        borderRadius: radius,
+        shadows: t.shadows.surface,
+      ),
+      child: ClipRRect(
+        borderRadius: radius,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            DecoratedBox(
+              decoration: DsBoxDecoration(
+                shadows: [DsShadow.bottomLine(k.border, hairline: true)],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 10,
+                ),
+                child: Row(
+                  spacing: 16,
+                  children: [
+                    ExcludeSemantics(
+                      child: Text(
+                        'Tune',
+                        style: t.typography.bodyStrong.copyWith(color: k.text),
+                      ),
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional.centerStart,
+                        child: nav,
+                      ),
+                    ),
+                    DsButton.icon(
+                      onPressed: () {},
+                      variant: DsButtonVariant.ghost,
+                      icon: const DsIcon(DsIcons.search),
+                      semanticLabel: 'Search',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(child: ContentSketch(title: title)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 /// A page title over skeleton lines: content that is not the point.
 class ContentSketch extends StatelessWidget {
   const ContentSketch({super.key, required this.title});

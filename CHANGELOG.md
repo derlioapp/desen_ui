@@ -7,6 +7,13 @@
   scale it (350 draws a 2-unit stroke at 1.75). Set it once in
   `DsApp.builder` and it reaches the icons inside components and layers;
   `DsIcon.strokeWidth` still wins. Without a weight nothing changes.
+- `DsTopNav`: the main navigation in an app's header, the wide-screen
+  counterpart of `DsBottomNav` and the horizontal one of `DsSidebar`. A
+  navigation landmark of buttons, the current one selected; one Tab stop
+  with the arrow keys; destinations that do not fit scroll. Choosing the
+  current destination reports it too, so an app can go back to the
+  page's first screen or scroll it to the top. `DsTopNavStyle` and
+  `DsTopNavTheme` style it.
 
 ### Changed
 

@@ -13,9 +13,10 @@ class SegmentedControlPage extends StatelessWidget {
     lead:
         'Picks one of two to five options that change how the same content '
         'is shown: a time range, a view, a unit. To move between different '
-        'sections of a page, use [Tabs](/components/tabs); for a longer list '
-        'of choices, a [Radio](/components/radio) group or a '
-        '[Select](/components/select).',
+        'sections of a page, use [Tabs](/components/tabs); to move between '
+        'the pages of an app, [Top navigation](/components/top-navigation); '
+        'for a longer list of choices, a [Radio](/components/radio) group or '
+        'a [Select](/components/select).',
     sections: [
       const DocSection(
         title: 'Overview',

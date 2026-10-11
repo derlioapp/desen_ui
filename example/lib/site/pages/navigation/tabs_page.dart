@@ -14,7 +14,8 @@ class TabsPage extends StatelessWidget {
         'Moves between sections of the same page, such as the parts of a '
         'settings screen. To change how one set of content is shown, use a '
         '[Segmented control](/components/segmented-control); to move between '
-        'pages of an app, a [Sidebar](/components/sidebar) or '
+        'pages of an app, a [Sidebar](/components/sidebar), '
+        '[Top navigation](/components/top-navigation) or '
         '[Bottom navigation](/components/bottom-navigation).',
     sections: [
       const DocSection(

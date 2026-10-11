@@ -10,6 +10,7 @@ import '../../behavior/focus_visibility.dart';
 import '../../behavior/haptic_feedback.dart';
 import '../../behavior/min_tap_target.dart';
 import '../../behavior/pressable.dart';
+import '../../behavior/reveal_in_row.dart';
 import '../../painting/shadow.dart';
 import '../../theme/haptics.dart';
 import '../../theme/sizes.dart';
@@ -223,51 +224,15 @@ class _DsChoiceChipsState<T> extends State<DsChoiceChips<T>> {
     return KeyEventResult.handled;
   }
 
-  /// After this frame's layout, scrolls the chip [index] gives the least
-  /// distance that shows it whole and clear of the faded edges: to just
-  /// inside the start edge when it is cut or faded there, to just inside
-  /// the end edge when it is cut or faded there, not at all when it is in
-  /// view. Next to the row's own start or end nothing fades, so the first
-  /// and last chips reach the edge.
+  /// After this frame's layout, scrolls the chip [index] gives into view
+  /// ([revealInRow]).
   void _reveal(int Function() index, {required bool animate}) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       final i = index();
       if (i < 0 || i >= _keys.length) return;
-      final chip = _keys[i].currentContext?.findRenderObject();
-      final scrollable = _keys[i].currentContext == null
-          ? null
-          : Scrollable.maybeOf(_keys[i].currentContext!);
-      if (chip == null || !chip.attached || scrollable == null) return;
-      if (chip is! RenderBox || !chip.hasSize) {
+      if (!revealInRow(_keys[i].currentContext, animate: animate)) {
         _pendingReveal = index;
-        return;
-      }
-      final viewport = RenderAbstractViewport.maybeOf(chip);
-      if (viewport == null) return;
-      final position = scrollable.position;
-      const fade = DsEdgeFade.defaultWidth;
-      final atStart = viewport.getOffsetToReveal(chip, 0).offset - fade;
-      final atEnd = viewport.getOffsetToReveal(chip, 1).offset + fade;
-      final min = position.minScrollExtent, max = position.maxScrollExtent;
-      final double target;
-      if (position.pixels > atStart.clamp(min, max)) {
-        target = atStart;
-      } else if (position.pixels < atEnd.clamp(min, max)) {
-        target = atEnd;
-      } else {
-        return;
-      }
-      final to = target.clamp(min, max);
-      final motion = DsTheme.motionOf(context);
-      if (!animate || motion.reduced) {
-        position.jumpTo(to);
-      } else {
-        position.animateTo(
-          to,
-          duration: motion.toneDuration,
-          curve: motion.toneCurve,
-        );
       }
     });
   }

@@ -14,7 +14,8 @@ class BottomNavPage extends StatelessWidget {
     lead:
         'The main navigation of a phone app: three to five destinations '
         'along the bottom of the screen, each with an icon and a short '
-        'label. On wider screens, use a [Sidebar](/components/sidebar).',
+        'label. On wider screens, use a [Sidebar](/components/sidebar) or '
+        '[Top navigation](/components/top-navigation).',
     sections: [
       const DocSection(
         title: 'Overview',

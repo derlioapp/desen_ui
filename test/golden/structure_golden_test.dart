@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'golden_harness.dart';
 
 /// Visual regression for the button-based components (tabs, toolbar,
-/// sidebar, bottom navigation, list rows, stepper, pagination), light and
+/// sidebar, top and bottom navigation, list rows, stepper, pagination), light and
 /// dark.
 void main() {
   // A card with the component on top and placeholder content below (the
@@ -318,6 +318,67 @@ void main() {
         ),
       );
       await expectGolden(tester, 'goldens/structure_shell_$mode.png');
+    });
+
+    testWidgets('top navigation $mode', (tester) async {
+      const plain = [
+        DsTopNavItem(value: 0, label: Text('Radyo')),
+        DsTopNavItem(value: 1, label: Text('Podcast')),
+        DsTopNavItem(value: 2, label: Text('TV'), enabled: false),
+        DsTopNavItem(value: 3, label: Text('Kitaplık')),
+      ];
+      await pumpGolden(
+        tester,
+        theme: theme,
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 20,
+          children: [
+            card(
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: DsTopNav<int>(value: 1, onChanged: (_) {}, items: plain),
+              ),
+            ),
+            card(
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: DsTopNav<int>(
+                  value: 0,
+                  onChanged: (_) {},
+                  items: const [
+                    DsTopNavItem(
+                      value: 0,
+                      icon: DsIcon(DsIcons.radio),
+                      label: Text('Radyo'),
+                    ),
+                    DsTopNavItem(
+                      value: 1,
+                      icon: DsIcon(DsIcons.mic),
+                      label: Text('Podcast'),
+                    ),
+                    DsTopNavItem(
+                      value: 2,
+                      icon: DsIcon(DsIcons.monitorPlay),
+                      label: Text('TV'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // Disabled, and too narrow: the end fades.
+            card(
+              width: 220,
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: DsTopNav<int>(value: 1, onChanged: null, items: plain),
+              ),
+            ),
+          ],
+        ),
+      );
+      await expectGolden(tester, 'goldens/structure_top_nav_$mode.png');
     });
   }
 }

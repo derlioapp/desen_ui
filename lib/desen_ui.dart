@@ -133,6 +133,8 @@ export 'src/components/toolbar/toolbar_style.dart';
 export 'src/components/toolbar/toolbar_toggle_style.dart';
 export 'src/components/tooltip/tooltip.dart';
 export 'src/components/tooltip/tooltip_style.dart';
+export 'src/components/top_nav/top_nav.dart';
+export 'src/components/top_nav/top_nav_style.dart';
 export 'src/foundation/case.dart';
 export 'src/foundation/color_utils.dart' hide DsColorTween;
 export 'src/foundation/component_theme.dart' hide DsComponentThemeReset;
