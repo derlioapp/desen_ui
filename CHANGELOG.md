@@ -1,4 +1,4 @@
-## Unreleased
+## 0.3.0
 
 Breaking: the icon set changes, and the deprecated
 `DsToastStyle.closeIconSize` is gone. `^0.2.0` stays on 0.2.4; move to
