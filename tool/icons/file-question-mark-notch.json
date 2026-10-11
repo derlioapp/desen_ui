@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FileUnknown",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "unknown",
+    "help",
+    "question",
+    "missing",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

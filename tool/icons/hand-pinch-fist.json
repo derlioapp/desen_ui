@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Resize02",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "resize",
+    "pinch",
+    "zoom",
+    "gesture",
+    "touch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

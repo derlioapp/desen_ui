@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderZip",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "zip",
+    "compress",
+    "archive",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

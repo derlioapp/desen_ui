@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/gamepad-directional",
+  "upstream": "hugeicons/GamepadDirectional",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "direction",
-    "arrow",
+    "gamepad",
+    "d-pad",
+    "directional",
     "controller",
-    "navigation",
-    "button",
-    "move",
-    "pointer",
-    "arrowhead",
-    "console",
-    "game",
-    "gaming"
+    "game"
   ],
   "aliases": [],
   "mirror": false

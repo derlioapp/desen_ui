@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ParagraphBulletsPoint01",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "list",
+    "bullets",
+    "points",
+    "paragraph",
+    "squares"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,10 +1,15 @@
 {
-  "upstream": "lucide/text-align-end",
+  "upstream": "hugeicons/TextAlignEnd",
+  "also": [
+    "TextAlignRight"
+  ],
   "category": "text",
   "tags": [
-    "text",
-    "alignment",
-    "right"
+    "align",
+    "end",
+    "right",
+    "paragraph",
+    "format"
   ],
   "aliases": [],
   "mirror": false

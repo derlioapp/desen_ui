@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/PlayListFavourite01",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "playlist",
+    "favourite",
+    "favorite",
+    "video",
+    "clapperboard",
+    "heart"
+  ],
+  "aliases": [],
+  "mirror": false
+}

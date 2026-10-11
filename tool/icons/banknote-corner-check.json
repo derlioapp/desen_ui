@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PaymentSuccess01",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "payment",
+    "success",
+    "cash",
+    "paid",
+    "check"
+  ],
+  "aliases": [],
+  "mirror": false
+}

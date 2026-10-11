@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/brackets",
+  "upstream": "hugeicons/Brackets",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "token",
-    "array",
-    "list",
+    "brackets",
     "square",
-    "[",
-    "]"
+    "code",
+    "array"
   ],
-  "aliases": [
-    "squareBrackets"
-  ],
+  "aliases": [],
   "mirror": false
 }

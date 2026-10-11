@@ -1,19 +1,12 @@
 {
-  "upstream": "lucide/file-user",
-  "category": "account",
+  "upstream": "hugeicons/FileUser",
+  "also": [],
+  "category": "files",
   "tags": [
     "person",
-    "personal information",
-    "people",
-    "listing",
-    "networking",
-    "document",
-    "contact",
-    "cover letter",
-    "resume",
-    "cv",
-    "curriculum vitae",
-    "application form"
+    "owner",
+    "profile",
+    "document"
   ],
   "aliases": [],
   "mirror": false

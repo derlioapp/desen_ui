@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Move01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "move",
+    "drag",
+    "touch",
+    "gesture",
+    "finger",
+    "pan"
+  ],
+  "aliases": [],
+  "mirror": false
+}

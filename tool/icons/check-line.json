@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/check-line",
+  "upstream": "hugeicons/CheckLine",
+  "also": [],
   "category": "notifications",
   "tags": [
-    "done",
-    "todo",
     "tick",
-    "complete",
-    "task"
+    "done",
+    "confirm",
+    "ok",
+    "success",
+    "underline"
   ],
   "aliases": [],
   "mirror": false

@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/chart-no-axes-column",
+  "upstream": "hugeicons/ChartNoAxesColumn",
+  "also": [],
   "category": "charts",
   "tags": [
+    "bars",
+    "columns",
+    "graph",
     "statistics",
-    "analytics",
-    "diagram",
-    "graph"
+    "analytics"
   ],
   "aliases": [],
   "mirror": false

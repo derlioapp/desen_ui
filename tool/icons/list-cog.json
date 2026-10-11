@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ListSetting",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "settings",
+    "configure",
+    "options",
+    "list",
+    "preferences"
+  ],
+  "aliases": [],
+  "mirror": true
+}

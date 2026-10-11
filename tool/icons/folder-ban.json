@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderBlock",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "block",
+    "forbidden",
+    "restricted",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

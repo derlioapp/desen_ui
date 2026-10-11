@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/chevrons-right",
+  "upstream": "hugeicons/ChevronsRight",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "turn",
-    "corner"
+    "last",
+    "fast forward",
+    "next",
+    "double",
+    "forward"
   ],
   "aliases": [],
   "mirror": true

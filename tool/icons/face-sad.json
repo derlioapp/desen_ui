@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/Sad01",
+  "also": [
+    "Frown"
+  ],
+  "category": "social",
+  "tags": [
+    "sad",
+    "face",
+    "emoji",
+    "unhappy",
+    "frown"
+  ],
+  "aliases": [
+    "faceSlightlyFrowning"
+  ],
+  "mirror": false
+}

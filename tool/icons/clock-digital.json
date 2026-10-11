@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DigitalClock",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "digital clock",
+    "time",
+    "alarm",
+    "display",
+    "watch",
+    "timer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

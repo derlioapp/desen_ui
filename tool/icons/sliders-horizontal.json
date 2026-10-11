@@ -1,11 +1,15 @@
 {
-  "upstream": "lucide/sliders-horizontal",
+  "upstream": "hugeicons/SlidersHorizontal",
+  "also": [],
   "category": "account",
   "tags": [
     "settings",
     "filters",
-    "controls"
+    "controls",
+    "adjust"
   ],
-  "aliases": [],
+  "aliases": [
+    "settings2"
+  ],
   "mirror": false
 }

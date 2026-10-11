@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/line-dot-right-horizontal",
+  "upstream": "hugeicons/LineDotRightHorizontal",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "waypoint",
-    "stop",
-    "station",
-    "last",
-    "end"
+    "line",
+    "dot",
+    "end",
+    "point",
+    "timeline"
   ],
   "aliases": [],
   "mirror": false

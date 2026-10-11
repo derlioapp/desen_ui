@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Calendar05",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "date",
+    "dot",
+    "marker",
+    "badge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

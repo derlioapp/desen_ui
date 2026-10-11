@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/wifi-low",
+  "upstream": "hugeicons/WifiLow",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "connection",
+    "wifi",
     "signal",
+    "strength",
+    "weak",
+    "reception",
     "wireless"
   ],
   "aliases": [],

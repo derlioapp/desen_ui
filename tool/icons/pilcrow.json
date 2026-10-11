@@ -1,16 +1,15 @@
 {
-  "upstream": "lucide/pilcrow",
+  "upstream": "hugeicons/Pilcrow",
+  "also": [
+    "Paragraph"
+  ],
   "category": "text",
   "tags": [
+    "pilcrow",
     "paragraph",
-    "mark",
-    "paraph",
-    "blind",
-    "typography",
-    "type",
     "text",
-    "prose",
-    "symbol"
+    "format",
+    "section"
   ],
   "aliases": [
     "paragraph"

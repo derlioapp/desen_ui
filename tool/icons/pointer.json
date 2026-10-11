@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/pointer",
+  "upstream": "hugeicons/Pointer",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "mouse"
+    "pointer",
+    "hand",
+    "click",
+    "finger",
+    "touch"
   ],
   "aliases": [],
   "mirror": false

@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/file-badge",
+  "upstream": "hugeicons/FileBadge",
+  "also": [],
   "category": "files",
   "tags": [
-    "award",
-    "achievement",
     "badge",
-    "rosette",
-    "prize",
-    "winner"
+    "award",
+    "certificate",
+    "document"
   ],
   "aliases": [],
   "mirror": false

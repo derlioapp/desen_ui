@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/form",
-  "category": "development",
+  "upstream": "hugeicons/Form",
+  "also": [],
+  "category": "text",
   "tags": [
-    "document",
-    "page",
-    "file",
-    "layout",
-    "paper",
-    "stub",
-    "formality",
-    "structure",
-    "template",
-    "inputs",
-    "design",
-    "components"
+    "form",
+    "fields",
+    "input",
+    "survey",
+    "inputs"
   ],
   "aliases": [],
   "mirror": false

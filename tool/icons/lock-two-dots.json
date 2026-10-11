@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SquareLockPassword",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "lock",
+    "password",
+    "dots",
+    "secure",
+    "pin",
+    "passcode"
+  ],
+  "aliases": [],
+  "mirror": false
+}

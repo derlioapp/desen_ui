@@ -1,12 +1,17 @@
 {
-  "upstream": "lucide/circle-check",
+  "upstream": "hugeicons/CircleCheck",
+  "also": [
+    "CheckmarkCircle02"
+  ],
   "category": "notifications",
   "tags": [
+    "success",
     "done",
-    "todo",
+    "approved",
+    "valid",
     "tick",
-    "complete",
-    "task"
+    "confirm",
+    "complete"
   ],
   "aliases": [
     "checkCircle"

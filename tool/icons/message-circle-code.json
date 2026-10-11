@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/message-circle-code",
-  "category": "development",
+  "upstream": "hugeicons/MessageCircleCode",
+  "also": [],
+  "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "code review",
-    "coding"
+    "code",
+    "developer",
+    "programming"
   ],
   "aliases": [],
   "mirror": false

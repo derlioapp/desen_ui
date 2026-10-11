@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InputNumeric",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "numeric",
+    "number field",
+    "input",
+    "digits",
+    "form"
+  ],
+  "aliases": [],
+  "mirror": false
+}

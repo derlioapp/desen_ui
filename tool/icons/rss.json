@@ -1,28 +1,13 @@
 {
-  "upstream": "lucide/rss",
+  "upstream": "hugeicons/Rss",
+  "also": [],
   "category": "development",
   "tags": [
+    "rss",
     "feed",
     "subscribe",
     "news",
-    "updates",
-    "notifications",
-    "content",
-    "blog",
-    "articles",
-    "broadcast",
-    "syndication",
-    "reader",
-    "channels",
-    "posts",
-    "publishing",
-    "digest",
-    "alert",
-    "following",
-    "inbox",
-    "newsletter",
-    "weblog",
-    "podcast"
+    "blog"
   ],
   "aliases": [
     "feed"

@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-taurus",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacTaurus",
+  "also": [],
+  "category": "science",
   "tags": [
-    "bull",
-    "strength",
-    "stability",
-    "earth",
-    "endurance",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "bull"
   ],
   "aliases": [],
   "mirror": false

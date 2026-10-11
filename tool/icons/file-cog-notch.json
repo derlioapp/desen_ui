@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FileManagement",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "management",
+    "settings",
+    "manage",
+    "gear",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

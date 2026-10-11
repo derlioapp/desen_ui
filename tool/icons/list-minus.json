@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/list-minus",
+  "upstream": "hugeicons/ListMinus",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "playlist",
     "remove",
-    "song",
     "subtract",
-    "delete",
-    "unqueue"
+    "list",
+    "rows",
+    "playlist"
   ],
   "aliases": [],
   "mirror": true

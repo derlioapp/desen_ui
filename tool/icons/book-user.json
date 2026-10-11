@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/book-user",
+  "upstream": "hugeicons/BookUser",
+  "also": [],
   "category": "account",
   "tags": [
-    "person",
-    "people",
-    "family",
-    "friends",
-    "acquaintances",
-    "contacts",
-    "details",
-    "addresses",
-    "phone numbers",
-    "directory",
-    "listing",
-    "networking"
+    "book",
+    "user",
+    "contact",
+    "address",
+    "person"
   ],
   "aliases": [],
   "mirror": false

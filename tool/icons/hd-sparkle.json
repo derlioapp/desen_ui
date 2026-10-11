@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AiHdResolution",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "ai",
+    "hd",
+    "resolution",
+    "upscale",
+    "sparkle",
+    "quality"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/circle-user-round",
+  "upstream": "hugeicons/UserCircle02",
+  "also": [],
   "category": "account",
   "tags": [
     "person",
     "account",
-    "contact"
+    "profile",
+    "avatar",
+    "contact",
+    "user circle"
   ],
   "aliases": [],
   "mirror": false

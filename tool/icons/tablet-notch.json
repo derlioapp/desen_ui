@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Tablet02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "device",
+    "ipad",
+    "screen",
+    "touchscreen",
+    "portable",
+    "bezel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

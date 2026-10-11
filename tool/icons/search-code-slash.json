@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InspectCode",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "inspect code",
+    "find code",
+    "search source",
+    "magnifier",
+    "dev tools"
+  ],
+  "aliases": [],
+  "mirror": false
+}

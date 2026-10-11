@@ -1,21 +1,12 @@
 {
-  "upstream": "lucide/monitor-stop",
+  "upstream": "hugeicons/MonitorStop",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "screen sharing",
-    "video",
-    "movie",
-    "film",
     "stop",
-    "shutdown",
-    "virtual machine",
-    "vm"
+    "halt"
   ],
   "aliases": [],
   "mirror": false

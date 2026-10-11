@@ -1,31 +1,15 @@
 {
-  "upstream": "lucide/library",
+  "upstream": "hugeicons/Libraries",
+  "also": [],
   "category": "text",
   "tags": [
     "books",
+    "shelf",
     "reading",
-    "written",
-    "authors",
-    "stories",
-    "fiction",
-    "novels",
-    "information",
-    "knowledge",
-    "education",
-    "high school",
-    "university",
-    "college",
-    "academy",
-    "learning",
-    "study",
-    "research",
     "collection",
-    "vinyl",
-    "records",
-    "albums",
-    "music",
-    "package"
+    "stories"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

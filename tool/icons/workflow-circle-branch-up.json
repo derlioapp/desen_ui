@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/WorkflowCircle05",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "workflow",
+    "branch",
+    "git",
+    "diagram",
+    "nodes"
+  ],
+  "aliases": [],
+  "mirror": false
+}

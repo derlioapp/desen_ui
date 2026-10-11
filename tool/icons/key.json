@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/key",
+  "upstream": "hugeicons/Key01",
+  "also": [],
   "category": "security",
   "tags": [
+    "key",
     "password",
-    "login",
-    "authentication",
-    "secure",
+    "access",
     "unlock",
-    "keychain",
-    "key ring",
-    "fob"
+    "login"
   ],
   "aliases": [],
   "mirror": false

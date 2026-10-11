@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CursorInWindow",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "cursor in window",
+    "click",
+    "browser",
+    "pointer",
+    "window",
+    "hover"
+  ],
+  "aliases": [],
+  "mirror": false
+}

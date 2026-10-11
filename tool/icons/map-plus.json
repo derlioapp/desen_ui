@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/map-plus",
+  "upstream": "hugeicons/MapPlus",
+  "also": [],
   "category": "navigation",
   "tags": [
-    "location",
-    "navigation",
-    "travel",
-    "new",
+    "map",
+    "plus",
     "add",
-    "create"
+    "new",
+    "route"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/StopLossOrder",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "stop loss",
+    "order",
+    "trading",
+    "limit",
+    "price",
+    "risk"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/VrGlasses",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "vr glasses",
+    "virtual reality",
+    "goggles",
+    "headset",
+    "augmented",
+    "immersive"
+  ],
+  "aliases": [],
+  "mirror": false
+}

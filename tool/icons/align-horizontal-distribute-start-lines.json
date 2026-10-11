@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DistributeHorizontalLeft",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "distribute",
+    "horizontal",
+    "left",
+    "align",
+    "spacing",
+    "layout"
+  ],
+  "aliases": [],
+  "mirror": false
+}

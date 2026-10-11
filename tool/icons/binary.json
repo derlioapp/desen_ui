@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/binary",
+  "upstream": "hugeicons/Binary",
+  "also": [],
   "category": "text",
   "tags": [
     "code",

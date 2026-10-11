@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide-lab/japanese-yen-circle",
+  "upstream": "hugeicons/YenCircle",
+  "also": [],
   "category": "finance",
   "tags": [
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "markets",
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
+    "currency",
+    "money",
     "payment",
-    "coin",
-    "jpy",
-    "¥"
+    "yuan",
+    "coin"
   ],
   "aliases": [],
   "mirror": false

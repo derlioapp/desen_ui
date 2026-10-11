@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/badge-pound-sterling",
+  "upstream": "hugeicons/BadgePoundSterling",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "discount",
-    "offer",
-    "sale",
-    "voucher",
-    "tag",
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "exchange",
-    "transaction",
-    "payment",
-    "british",
+    "pound",
     "gbp",
-    "£"
+    "price",
+    "money",
+    "badge"
   ],
   "aliases": [],
   "mirror": false

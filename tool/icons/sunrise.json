@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/sunrise",
+  "upstream": "hugeicons/Sunrise",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "weather",
-    "time",
+    "sunrise",
     "morning",
-    "day"
+    "dawn",
+    "day",
+    "horizon"
   ],
   "aliases": [],
   "mirror": false

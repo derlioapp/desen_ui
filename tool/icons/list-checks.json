@@ -1,18 +1,22 @@
 {
-  "upstream": "lucide/list-checks",
+  "upstream": "hugeicons/ListChecks",
+  "also": [
+    "CheckList"
+  ],
   "category": "text",
   "tags": [
     "todo",
-    "done",
-    "check",
-    "tick",
-    "complete",
     "tasks",
+    "done",
+    "checklist",
+    "completed",
+    "complete",
     "items",
-    "pending"
+    "tick"
   ],
   "aliases": [
-    "checklist"
+    "checklist",
+    "listCheck"
   ],
   "mirror": true
 }

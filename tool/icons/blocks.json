@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/blocks",
+  "upstream": "hugeicons/Blocks",
+  "also": [],
   "category": "development",
   "tags": [
-    "addon",
-    "plugin",
-    "integration",
-    "extension",
-    "package",
-    "build",
-    "stack",
-    "toys",
-    "kids",
-    "children",
-    "learning",
-    "squares",
-    "corner"
+    "blocks",
+    "components",
+    "modules"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

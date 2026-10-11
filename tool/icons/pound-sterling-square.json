@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide-lab/pound-sterling-square",
+  "upstream": "hugeicons/PoundSquare",
+  "also": [],
   "category": "finance",
   "tags": [
-    "finance",
-    "financial",
-    "markets",
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
-    "payment",
-    "british",
-    "gbp",
-    "£",
-    "toolbar",
-    "button"
+    "pound",
+    "sterling",
+    "square",
+    "currency",
+    "gbp"
   ],
   "aliases": [],
   "mirror": false

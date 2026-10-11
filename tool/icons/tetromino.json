@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BlockGame",
+  "also": [],
+  "category": "gaming",
+  "tags": [
+    "block",
+    "game",
+    "puzzle",
+    "tetris",
+    "falling"
+  ],
+  "aliases": [],
+  "mirror": false
+}

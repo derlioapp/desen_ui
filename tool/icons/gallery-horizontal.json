@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/gallery-horizontal",
+  "upstream": "hugeicons/GalleryHorizontal",
+  "also": [],
   "category": "layout",
   "tags": [
+    "gallery",
     "carousel",
-    "pictures",
-    "images",
-    "scroll",
-    "swipe",
-    "album",
-    "portfolio"
+    "slider",
+    "horizontal",
+    "images"
   ],
   "aliases": [],
   "mirror": false

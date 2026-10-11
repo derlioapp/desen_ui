@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/rabbit",
+  "upstream": "hugeicons/Rabbit",
+  "also": [],
   "category": "animals",
   "tags": [
-    "animal",
-    "rodent",
-    "pet",
-    "pest",
+    "rabbit",
     "bunny",
     "hare",
-    "fast",
-    "speed",
-    "hop"
+    "pet",
+    "animal"
   ],
   "aliases": [],
   "mirror": false

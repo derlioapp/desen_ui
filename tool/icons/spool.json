@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/spool",
+  "upstream": "hugeicons/Spool",
+  "also": [],
   "category": "social",
   "tags": [
-    "bobbin",
-    "spindle",
-    "yarn",
     "thread",
-    "string",
     "sewing",
-    "needlework"
+    "yarn",
+    "reel"
   ],
-  "aliases": [],
+  "aliases": [
+    "reelThread"
+  ],
   "mirror": false
 }

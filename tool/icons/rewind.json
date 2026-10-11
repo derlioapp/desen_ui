@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/rewind",
-  "category": "arrows",
+  "upstream": "hugeicons/Backward02",
+  "also": [],
+  "category": "multimedia",
   "tags": [
-    "music"
+    "rewind",
+    "backward",
+    "media",
+    "fast",
+    "reverse"
   ],
   "aliases": [],
   "mirror": false

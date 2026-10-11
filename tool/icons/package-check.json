@@ -1,15 +1,17 @@
 {
-  "upstream": "lucide/package-check",
+  "upstream": "hugeicons/PackageCheck",
+  "also": [
+    "PackageDelivered"
+  ],
   "category": "development",
   "tags": [
-    "confirm",
+    "package",
+    "check",
     "verified",
+    "box",
     "done",
-    "todo",
-    "tick",
-    "complete",
-    "task",
-    "delivered"
+    "delivered",
+    "received"
   ],
   "aliases": [],
   "mirror": false

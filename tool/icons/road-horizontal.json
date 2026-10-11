@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Road02",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "road",
+    "horizontal",
+    "street",
+    "lane",
+    "highway"
+  ],
+  "aliases": [],
+  "mirror": false
+}

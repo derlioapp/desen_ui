@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide/handbag",
+  "upstream": "hugeicons/Handbag",
+  "also": [],
   "category": "shopping",
   "tags": [
     "bag",
-    "baggage",
-    "carry",
-    "clutch",
-    "fashion",
-    "luggage",
     "purse",
-    "tote",
-    "travel"
+    "fashion",
+    "accessory"
   ],
   "aliases": [],
   "mirror": false

@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/box",
-  "category": "shapes",
+  "upstream": "hugeicons/Blockchain01",
+  "also": [],
+  "category": "development",
   "tags": [
+    "blockchain",
     "cube",
-    "package",
-    "container",
-    "storage",
-    "geometry",
-    "3d",
-    "isometric"
+    "block",
+    "crypto"
   ],
   "aliases": [],
   "mirror": false

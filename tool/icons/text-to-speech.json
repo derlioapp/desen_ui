@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TextToSpeach",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "speech",
+    "voice",
+    "read aloud",
+    "audio",
+    "type"
+  ],
+  "aliases": [],
+  "mirror": false
+}

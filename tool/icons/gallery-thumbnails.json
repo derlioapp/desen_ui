@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/gallery-thumbnails",
+  "upstream": "hugeicons/GalleryThumbnails",
+  "also": [],
   "category": "layout",
   "tags": [
+    "gallery",
+    "thumbnails",
     "carousel",
-    "pictures",
-    "images",
-    "album",
-    "portfolio",
-    "preview"
+    "preview",
+    "images"
   ],
   "aliases": [],
   "mirror": false

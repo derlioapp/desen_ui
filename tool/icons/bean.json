@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/bean",
+  "upstream": "hugeicons/Bean",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "coffee",
     "legume",
-    "soy",
-    "food",
-    "seed"
+    "seed",
+    "food"
   ],
   "aliases": [],
   "mirror": false

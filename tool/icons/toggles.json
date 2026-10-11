@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Customize",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "customize",
+    "settings",
+    "switches",
+    "preferences",
+    "options",
+    "toggle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

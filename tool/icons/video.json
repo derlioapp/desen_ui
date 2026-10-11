@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/video",
+  "upstream": "hugeicons/Video01",
+  "also": [],
   "category": "devices",
   "tags": [
     "camera",
     "movie",
     "film",
     "recording",
-    "motion picture",
     "camcorder",
-    "reel"
+    "record"
   ],
   "aliases": [],
   "mirror": false

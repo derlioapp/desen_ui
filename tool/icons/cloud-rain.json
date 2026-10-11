@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/cloud-rain",
+  "upstream": "hugeicons/CloudRain",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "rainfall"
+    "rain",
+    "shower",
+    "wet",
+    "water",
+    "precipitation"
   ],
   "aliases": [],
   "mirror": false

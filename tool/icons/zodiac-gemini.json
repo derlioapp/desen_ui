@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-gemini",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacGemini",
+  "also": [],
+  "category": "science",
   "tags": [
-    "twins",
-    "duality",
-    "communication",
-    "air",
-    "adaptability",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "twins"
   ],
   "aliases": [],
   "mirror": false

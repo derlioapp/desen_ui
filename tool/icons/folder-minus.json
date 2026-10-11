@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/folder-minus",
+  "upstream": "hugeicons/FolderMinus",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
+    "folder",
     "remove",
-    "delete"
+    "minus",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

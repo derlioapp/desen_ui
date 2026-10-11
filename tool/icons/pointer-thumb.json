@@ -1,0 +1,20 @@
+{
+  "upstream": "hugeicons/Tap08",
+  "also": [
+    "Touch08"
+  ],
+  "category": "arrows",
+  "tags": [
+    "hand",
+    "cursor",
+    "click",
+    "tap",
+    "select",
+    "touch",
+    "pointer",
+    "finger",
+    "gesture"
+  ],
+  "aliases": [],
+  "mirror": false
+}

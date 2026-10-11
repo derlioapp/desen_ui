@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Locked",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "lock",
+    "secure",
+    "face id",
+    "scan",
+    "biometric",
+    "frame"
+  ],
+  "aliases": [],
+  "mirror": false
+}

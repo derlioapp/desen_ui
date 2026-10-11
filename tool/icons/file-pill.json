@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Prescriptions",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "prescription",
+    "document",
+    "pill",
+    "medicine",
+    "note"
+  ],
+  "aliases": [],
+  "mirror": false
+}

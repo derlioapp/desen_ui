@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/case-sensitive",
+  "upstream": "hugeicons/TextFont",
+  "also": [],
   "category": "text",
   "tags": [
-    "text",
-    "letters",
-    "characters",
     "font",
-    "typography"
+    "font size",
+    "text",
+    "letter"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

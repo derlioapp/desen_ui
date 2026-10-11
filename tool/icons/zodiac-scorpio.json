@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-scorpio",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacScorpio",
+  "also": [],
+  "category": "science",
   "tags": [
-    "scorpion",
-    "stinger",
-    "intensity",
-    "water",
-    "transformation",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "scorpion"
   ],
   "aliases": [],
   "mirror": false

@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/hand",
+  "upstream": "hugeicons/Hand",
+  "also": [],
   "category": "arrows",
   "tags": [
+    "palm",
+    "stop",
+    "raised hand",
     "wave",
-    "move",
-    "mouse",
-    "grab"
+    "gesture"
   ],
   "aliases": [],
   "mirror": false

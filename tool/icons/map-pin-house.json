@@ -1,25 +1,13 @@
 {
-  "upstream": "lucide/map-pin-house",
+  "upstream": "hugeicons/MapPinHouse",
+  "also": [],
   "category": "navigation",
   "tags": [
     "location",
-    "waypoint",
-    "marker",
-    "drop",
+    "pin",
     "home",
-    "living",
-    "building",
-    "residence",
-    "architecture",
     "address",
-    "poi",
-    "real estate",
-    "property",
-    "navigation",
-    "destination",
-    "geolocation",
-    "place",
-    "landmark"
+    "house"
   ],
   "aliases": [],
   "mirror": false

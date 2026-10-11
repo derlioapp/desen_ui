@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/scale-3d",
+  "upstream": "hugeicons/ThreeDScale",
+  "also": [],
   "category": "design",
   "tags": [
-    "gizmo",
-    "transform",
-    "size",
-    "axis"
+    "3d",
+    "scale",
+    "resize",
+    "nodes",
+    "transform"
   ],
   "aliases": [],
   "mirror": false

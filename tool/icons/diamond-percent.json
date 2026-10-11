@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/diamond-percent",
+  "upstream": "hugeicons/DiamondPercent",
+  "also": [],
   "category": "social",
   "tags": [
-    "verified",
-    "unverified",
-    "sale",
+    "diamond",
+    "percent",
     "discount",
-    "offer",
-    "marketing",
-    "sticker",
-    "price tag"
+    "sale",
+    "offer"
   ],
   "aliases": [],
   "mirror": false

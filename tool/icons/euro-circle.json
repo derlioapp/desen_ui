@@ -1,20 +1,15 @@
 {
-  "upstream": "lucide-lab/euro-circle",
+  "upstream": "hugeicons/EuroCircle",
+  "also": [],
   "category": "finance",
   "tags": [
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "markets",
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
+    "currency",
+    "money",
     "payment",
-    "coin",
-    "€"
+    "coin"
   ],
-  "aliases": [],
+  "aliases": [
+    "circleEuro"
+  ],
   "mirror": false
 }

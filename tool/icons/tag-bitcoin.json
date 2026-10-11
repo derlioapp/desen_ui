@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BitcoinTag",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "tag",
+    "price",
+    "label",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinSafe",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "safe",
+    "vault",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

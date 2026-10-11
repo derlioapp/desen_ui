@@ -1,0 +1,20 @@
+{
+  "upstream": "hugeicons/CallEnd01",
+  "also": [
+    "PhoneMissed"
+  ],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "call",
+    "end",
+    "x",
+    "hang",
+    "up",
+    "cancel",
+    "missed",
+    "declined"
+  ],
+  "aliases": [],
+  "mirror": false
+}

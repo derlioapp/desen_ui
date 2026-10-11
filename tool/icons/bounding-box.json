@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BoundingBox",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "bounding",
+    "box",
+    "selection",
+    "nodes",
+    "transform",
+    "vector"
+  ],
+  "aliases": [],
+  "mirror": false
+}

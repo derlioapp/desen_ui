@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CallDisabled02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "call",
+    "disabled",
+    "off",
+    "mute"
+  ],
+  "aliases": [],
+  "mirror": false
+}

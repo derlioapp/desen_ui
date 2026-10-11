@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/circle-arrow-out-down-left",
+  "upstream": "hugeicons/CircleArrowOutDownLeft",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "outwards",
-    "direction",
-    "south-west",
+    "exit",
+    "out",
+    "down left",
+    "leave",
     "diagonal"
   ],
   "aliases": [],

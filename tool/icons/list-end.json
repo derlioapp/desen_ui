@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/list-end",
+  "upstream": "hugeicons/ListEnd",
+  "also": [],
   "category": "multimedia",
   "tags": [
     "queue",
-    "bottom",
-    "end",
-    "playlist"
+    "append",
+    "add to end",
+    "list",
+    "return"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": true
 }

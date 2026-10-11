@@ -1,9 +1,18 @@
 {
-  "upstream": "lucide/image-off",
+  "upstream": "hugeicons/ImageOff",
+  "also": [
+    "ImageNotFound02"
+  ],
   "category": "photography",
   "tags": [
-    "picture",
-    "photo"
+    "image",
+    "off",
+    "hidden",
+    "disabled",
+    "no image",
+    "not found",
+    "broken",
+    "missing"
   ],
   "aliases": [],
   "mirror": false

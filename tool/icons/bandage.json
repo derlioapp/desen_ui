@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/bandage",
+  "upstream": "hugeicons/Bandage",
+  "also": [],
   "category": "medical",
   "tags": [
     "plaster",
     "band-aid",
-    "first aid",
-    "medical",
-    "health",
-    "wound",
-    "injury",
-    "care",
-    "treatment",
-    "healing",
-    "protection",
-    "emergency",
+    "first",
     "aid",
-    "safety",
-    "patch"
+    "injury"
   ],
   "aliases": [],
   "mirror": false

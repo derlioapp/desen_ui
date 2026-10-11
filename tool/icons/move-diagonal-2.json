@@ -1,5 +1,19 @@
 {
-  "upstream": "lucide/move-diagonal-2",
+  "upstream": "desen/move-diagonal-2",
+  "derived": {
+    "parts": [
+      {
+        "from": "ArrowDiagonal",
+        "keep": [
+          0,
+          1,
+          2
+        ]
+      }
+    ],
+    "transform": "mirror-x"
+  },
+  "also": [],
   "category": "arrows",
   "tags": [
     "double",

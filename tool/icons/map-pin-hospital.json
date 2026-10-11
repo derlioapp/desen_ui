@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/HospitalLocation",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "hospital",
+    "location",
+    "map",
+    "emergency",
+    "pin"
+  ],
+  "aliases": [],
+  "mirror": false
+}

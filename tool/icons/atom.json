@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/atom",
+  "upstream": "hugeicons/Atom02",
+  "also": [],
   "category": "science",
   "tags": [
-    "atomic",
-    "nuclear",
+    "atom",
     "physics",
-    "particle",
-    "element",
-    "molecule",
-    "electricity",
-    "energy",
+    "science",
+    "orbit",
+    "electron",
     "chemistry"
   ],
   "aliases": [],

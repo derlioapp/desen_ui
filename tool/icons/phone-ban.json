@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CallBlocked",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "call",
+    "blocked",
+    "ban",
+    "reject"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiSmartwatch",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "ai",
+    "smartwatch",
+    "watch",
+    "wearable",
+    "nodes"
+  ],
+  "aliases": [],
+  "mirror": false
+}

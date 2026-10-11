@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide-lab/flower-stem",
+  "upstream": "hugeicons/Flower01",
+  "also": [],
   "category": "nature",
   "tags": [
-    "petals",
+    "flower",
+    "stem",
     "plant",
-    "leaves",
-    "spring",
-    "bloom",
-    "blossom",
-    "gardening",
-    "botanical",
-    "flora",
-    "florist",
-    "bouquet",
-    "bunch",
-    "gift",
-    "special occasion"
+    "garden",
+    "bloom"
   ],
   "aliases": [],
   "mirror": false

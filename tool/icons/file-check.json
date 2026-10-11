@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/file-check",
+  "upstream": "hugeicons/FileCheck",
+  "also": [],
   "category": "files",
   "tags": [
     "done",
-    "document",
-    "todo",
-    "tick",
+    "verified",
     "complete",
-    "task"
+    "approve",
+    "document"
   ],
   "aliases": [],
   "mirror": false

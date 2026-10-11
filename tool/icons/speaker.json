@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/speaker",
+  "upstream": "hugeicons/Speaker",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "sound",
+    "speaker",
     "audio",
+    "sound",
     "music",
-    "tweeter",
-    "subwoofer",
-    "bass",
-    "production",
-    "producer",
-    "dj"
+    "woofer"
   ],
   "aliases": [],
   "mirror": false

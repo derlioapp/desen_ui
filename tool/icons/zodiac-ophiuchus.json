@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/zodiac-ophiuchus",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacOphiuchus",
+  "also": [],
+  "category": "science",
   "tags": [
-    "serpent",
-    "snake holder",
-    "healing",
-    "knowledge",
-    "astronomy",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "serpent",
+    "bearer"
   ],
   "aliases": [],
   "mirror": false

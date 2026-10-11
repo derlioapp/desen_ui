@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/square-dashed-mouse-pointer",
+  "upstream": "hugeicons/SquareDashedMousePointer",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "inspector",
-    "element",
-    "mouse",
-    "click",
+    "select",
     "pointer",
-    "box",
-    "browser",
-    "selector",
-    "target",
-    "dom",
-    "node"
+    "cursor",
+    "dashed",
+    "marquee"
   ],
   "aliases": [],
   "mirror": false

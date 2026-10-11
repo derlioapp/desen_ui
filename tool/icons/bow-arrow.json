@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/bow-arrow",
+  "upstream": "hugeicons/BowArrow",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "archer",
+    "bow",
+    "arrow",
     "archery",
-    "game",
-    "war",
-    "weapon"
+    "target"
   ],
   "aliases": [],
   "mirror": false

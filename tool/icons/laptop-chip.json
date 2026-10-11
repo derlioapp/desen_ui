@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/AiLaptop",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "ai",
+    "laptop",
+    "computer",
+    "chip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

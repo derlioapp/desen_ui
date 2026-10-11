@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Energy",
+  "also": [
+    "Flash"
+  ],
+  "category": "devices",
+  "tags": [
+    "energy",
+    "power",
+    "lightning",
+    "bolt",
+    "electricity",
+    "flash"
+  ],
+  "aliases": [],
+  "mirror": false
+}

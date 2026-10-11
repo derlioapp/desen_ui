@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/list-tree",
-  "category": "files",
+  "upstream": "hugeicons/ListTree",
+  "also": [],
+  "category": "text",
   "tags": [
+    "hierarchy",
+    "nested",
+    "outline",
     "tree",
-    "browser"
+    "rows"
   ],
   "aliases": [],
   "mirror": true

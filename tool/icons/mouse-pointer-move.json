@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CursorMove01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "cursor",
+    "move",
+    "drag",
+    "pointer",
+    "reposition"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/PrinterOff",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "printer",
+    "print",
+    "disabled",
+    "off"
+  ],
+  "aliases": [],
+  "mirror": false
+}

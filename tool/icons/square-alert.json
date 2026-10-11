@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AlertSquare",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "alert",
+    "warning",
+    "square",
+    "exclamation"
+  ],
+  "aliases": [
+    "squareExclamationPoint"
+  ],
+  "mirror": false
+}

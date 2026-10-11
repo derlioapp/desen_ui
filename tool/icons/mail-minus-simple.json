@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MailMinus02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "remove",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

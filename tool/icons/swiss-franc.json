@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SwissFranc",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "currency",
+    "franc",
+    "chf",
+    "money",
+    "switzerland"
+  ],
+  "aliases": [],
+  "mirror": false
+}

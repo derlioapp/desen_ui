@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide-lab/bowling",
+  "upstream": "hugeicons/BowlingPins",
+  "also": [],
   "category": "sports",
   "tags": [
-    "ten-pin",
-    "10 pin",
-    "pins",
+    "bowling",
     "ball",
-    "lane",
-    "alley",
+    "pin",
     "strike",
-    "spare",
-    "score",
-    "indoor sports",
-    "heavy"
+    "game"
   ],
   "aliases": [],
   "mirror": false

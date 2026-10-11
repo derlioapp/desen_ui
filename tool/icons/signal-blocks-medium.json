@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/SignalMedium02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "signal",
+    "medium",
+    "strength",
+    "bars"
+  ],
+  "aliases": [],
+  "mirror": false
+}

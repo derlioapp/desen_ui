@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/app-window-mac",
+  "upstream": "hugeicons/AppWindowMac",
+  "also": [],
   "category": "layout",
   "tags": [
-    "application",
-    "menu bar",
-    "pane",
-    "preferences",
+    "window",
     "macos",
-    "osx",
-    "executable"
+    "application",
+    "program",
+    "screen"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

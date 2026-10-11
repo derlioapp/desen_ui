@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/rat",
+  "upstream": "hugeicons/Rat",
+  "also": [],
   "category": "animals",
   "tags": [
+    "rat",
     "mouse",
-    "mice",
-    "gerbil",
     "rodent",
-    "pet",
-    "pest",
-    "plague",
-    "disease"
+    "animal"
   ],
   "aliases": [],
   "mirror": false

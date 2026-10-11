@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/EaseInControlPoint",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "easing",
+    "curve",
+    "animation",
+    "control point",
+    "bezier"
+  ],
+  "aliases": [],
+  "mirror": false
+}

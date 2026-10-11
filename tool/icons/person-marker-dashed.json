@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/UserRoadside",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "roadside assistance",
+    "help",
+    "breakdown",
+    "beacon",
+    "person",
+    "lamp",
+    "service"
+  ],
+  "aliases": [],
+  "mirror": false
+}

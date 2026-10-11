@@ -1,18 +1,17 @@
 {
-  "upstream": "lucide/message-circle-check",
+  "upstream": "hugeicons/MessageCircleCheck",
+  "also": [
+    "BubbleChatDone"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "moderate",
     "check",
     "done",
-    "todo",
-    "complete"
+    "delivered",
+    "bubble",
+    "sent"
   ],
   "aliases": [],
   "mirror": false

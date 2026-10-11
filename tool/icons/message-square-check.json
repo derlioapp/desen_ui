@@ -1,18 +1,17 @@
 {
-  "upstream": "lucide/message-square-check",
+  "upstream": "hugeicons/MessageSquareCheck",
+  "also": [
+    "ChatDone"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "moderate",
     "check",
     "done",
-    "todo",
-    "complete"
+    "delivered",
+    "sent",
+    "resolved"
   ],
   "aliases": [],
   "mirror": false

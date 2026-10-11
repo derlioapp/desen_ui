@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderOpen",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "open",
+    "expand",
+    "arrow",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

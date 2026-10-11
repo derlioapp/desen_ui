@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/notepad-text-dashed",
+  "upstream": "hugeicons/NotepadTextDashed",
+  "also": [],
   "category": "text",
   "tags": [
-    "notebook",
-    "notes",
-    "pages",
-    "paper",
-    "stationery",
-    "diary",
-    "journal",
-    "writing",
-    "write",
-    "written",
+    "notepad",
+    "note",
     "draft",
-    "template",
-    "lines"
+    "placeholder",
+    "dashed"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/VoiceToText",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "voice to text",
+    "dictation",
+    "speech to text",
+    "transcribe",
+    "microphone",
+    "typing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

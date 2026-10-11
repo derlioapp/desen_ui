@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/pin",
+  "upstream": "hugeicons/Pin",
+  "also": [],
   "category": "navigation",
   "tags": [
-    "save",
-    "map",
-    "lock",
-    "fix"
+    "pin",
+    "thumbtack",
+    "pushpin",
+    "attach",
+    "pinned"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ExternalDrive",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "external drive",
+    "storage",
+    "disk",
+    "backup",
+    "usb"
+  ],
+  "aliases": [],
+  "mirror": false
+}

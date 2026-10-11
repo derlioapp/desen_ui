@@ -1,11 +1,11 @@
 {
-  "upstream": "lucide/replace",
+  "upstream": "hugeicons/Replace",
+  "also": [],
   "category": "text",
   "tags": [
-    "search",
-    "substitute",
+    "replace",
     "swap",
-    "change"
+    "find and replace"
   ],
   "aliases": [],
   "mirror": false

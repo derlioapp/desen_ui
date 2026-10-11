@@ -1,24 +1,14 @@
 {
-  "upstream": "lucide/message-square-diff",
-  "category": "development",
+  "upstream": "hugeicons/MessageSquareDiff",
+  "also": [],
+  "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "add",
-    "patch",
-    "difference",
+    "diff",
     "plus",
     "minus",
-    "plus-minus",
-    "math",
-    "code review",
-    "coding",
-    "version control",
-    "git"
+    "change"
   ],
   "aliases": [],
   "mirror": false

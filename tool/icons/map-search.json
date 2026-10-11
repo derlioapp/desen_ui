@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/MapsSearch",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "map",
+    "search",
+    "find",
+    "explore"
+  ],
+  "aliases": [],
+  "mirror": false
+}

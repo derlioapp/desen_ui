@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/RestaurantTable",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "restaurant",
+    "cloche",
+    "dome",
+    "serving",
+    "food"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

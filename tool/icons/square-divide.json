@@ -1,13 +1,18 @@
 {
-  "upstream": "lucide/square-divide",
+  "upstream": "hugeicons/SquareDivide",
+  "also": [
+    "DivideSignSquare"
+  ],
   "category": "math",
   "tags": [
-    "calculate",
-    "math",
-    "÷",
-    "/"
+    "divide",
+    "division",
+    "calculator",
+    "operator",
+    "obelus",
+    "square",
+    "math"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

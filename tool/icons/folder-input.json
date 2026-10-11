@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/folder-input",
+  "upstream": "hugeicons/FolderInput",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "import",
-    "export"
+    "folder",
+    "input",
+    "move in",
+    "arrow",
+    "directory"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": true
 }

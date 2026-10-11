@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/upload",
+  "upstream": "hugeicons/Upload01",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "file"
+    "upload",
+    "arrow",
+    "send",
+    "tray",
+    "cloud"
   ],
   "aliases": [],
   "mirror": false

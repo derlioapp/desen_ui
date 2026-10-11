@@ -1,25 +1,13 @@
 {
-  "upstream": "lucide/whistle",
+  "upstream": "hugeicons/Whistle",
+  "also": [],
   "category": "sports",
   "tags": [
-    "alert",
-    "signal",
-    "sound",
-    "blow",
-    "noise",
-    "coach",
-    "trainer",
     "referee",
-    "gym",
-    "game",
-    "training",
-    "sports",
-    "traffic cops",
-    "police",
-    "lifeguard",
-    "safety",
-    "rescue",
-    "emergency"
+    "coach",
+    "alert",
+    "blow",
+    "sound"
   ],
   "aliases": [],
   "mirror": false

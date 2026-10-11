@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/log-out",
+  "upstream": "hugeicons/LogOut",
+  "also": [],
   "category": "arrows",
   "tags": [
     "sign out",
     "arrow",
     "exit",
-    "auth"
+    "auth",
+    "logout"
   ],
   "aliases": [
     "signOut"

@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/image-down",
+  "upstream": "hugeicons/ImageDownload02",
+  "also": [],
   "category": "photography",
   "tags": [
-    "picture",
-    "photo",
+    "image",
     "download",
     "save",
-    "export"
+    "photo"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinMail",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "mail",
+    "email",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

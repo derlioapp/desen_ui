@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CircleArrowVertical",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "vertical",
+    "resize",
+    "both ways",
+    "up down",
+    "stretch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

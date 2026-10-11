@@ -1,28 +1,17 @@
 {
-  "upstream": "lucide/globe-off",
+  "upstream": "hugeicons/GlobeOff",
+  "also": [],
   "category": "navigation",
   "tags": [
     "globe",
-    "earth",
-    "planet",
-    "disable",
-    "mute",
     "off",
-    "hide",
-    "avoid",
-    "world",
-    "browser",
-    "language",
-    "translate",
-    "internet",
     "offline",
-    "disconnected",
-    "network",
-    "connection",
-    "no connection",
-    "network failure",
-    "signal off"
+    "world",
+    "no",
+    "internet",
+    "disabled"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

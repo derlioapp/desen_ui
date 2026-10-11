@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/venus-and-mars",
+  "upstream": "hugeicons/VenusAndMars",
+  "also": [],
   "category": "medical",
   "tags": [
     "gender",
-    "sex",
-    "intersex",
-    "androgynous",
-    "hermaphrodite"
+    "male",
+    "female",
+    "couple",
+    "symbol",
+    "heterosexual"
   ],
   "aliases": [],
   "mirror": false

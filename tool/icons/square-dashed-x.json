@@ -1,5 +1,22 @@
 {
-  "upstream": "lucide/square-dashed-x",
+  "upstream": "desen/square-dashed-x",
+  "derived": {
+    "parts": [
+      {
+        "from": "SquareDashed",
+        "keep": [
+          0
+        ]
+      },
+      {
+        "from": "SquareX",
+        "keep": [
+          1
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "design",
   "tags": [
     "deselect",

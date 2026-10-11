@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FileAdd",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "new file",
+    "add",
+    "create",
+    "document",
+    "plus"
+  ],
+  "aliases": [],
+  "mirror": false
+}

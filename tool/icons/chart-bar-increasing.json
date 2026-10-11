@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/chart-bar-increasing",
+  "upstream": "hugeicons/ChartBarIncreasing",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
+    "horizontal bars",
+    "ascending",
     "graph",
-    "trending up"
+    "statistics",
+    "growth"
   ],
   "aliases": [],
   "mirror": false

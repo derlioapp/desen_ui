@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide-lab/face-alien",
+  "upstream": "hugeicons/Alien01",
+  "also": [],
   "category": "science",
   "tags": [
+    "alien",
     "extraterrestrial",
-    "life form",
-    "outer space",
-    "interplanetary",
-    "galactic",
-    "universe",
-    "area 51",
-    "👽️"
+    "ufo",
+    "face"
   ],
   "aliases": [],
   "mirror": false

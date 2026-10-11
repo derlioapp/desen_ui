@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Vr",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "vr",
+    "virtual reality",
+    "360",
+    "rotate",
+    "headset",
+    "goggles",
+    "view around"
+  ],
+  "aliases": [],
+  "mirror": false
+}

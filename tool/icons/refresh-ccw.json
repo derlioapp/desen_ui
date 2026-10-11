@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/refresh-ccw",
+  "upstream": "hugeicons/RefreshCcw",
+  "also": [
+    "Refresh03"
+  ],
   "category": "arrows",
   "tags": [
-    "arrows",
-    "rotate",
+    "refresh",
     "reload",
-    "rerun",
-    "synchronise",
-    "synchronize",
-    "circular",
-    "cycle"
+    "sync",
+    "counter-clockwise",
+    "chevron arrows"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderImport",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "import",
+    "receive",
+    "arrow",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": true
+}

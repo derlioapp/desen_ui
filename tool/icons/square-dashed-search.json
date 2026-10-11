@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SearchArea",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "search area",
+    "region",
+    "select",
+    "find",
+    "magnifier"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,8 +1,18 @@
 {
-  "upstream": "lucide/list-filter",
+  "upstream": "hugeicons/ListFilter",
+  "also": [
+    "FilterMail"
+  ],
   "category": "text",
   "tags": [
-    "options"
+    "filter",
+    "sort",
+    "funnel",
+    "refine",
+    "list",
+    "options",
+    "lines",
+    "mail filter"
   ],
   "aliases": [],
   "mirror": true

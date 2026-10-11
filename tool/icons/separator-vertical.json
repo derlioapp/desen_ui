@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/separator-vertical",
-  "category": "text",
+  "upstream": "hugeicons/SeparatorVertical",
+  "also": [],
+  "category": "layout",
   "tags": [
-    "move",
-    "split"
+    "divider",
+    "split",
+    "line",
+    "chevrons",
+    "horizontal gap"
   ],
   "aliases": [],
   "mirror": false

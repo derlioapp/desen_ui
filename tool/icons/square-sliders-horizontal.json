@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Settings05",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "settings",
+    "controls",
+    "toggle",
+    "sliders",
+    "adjust"
+  ],
+  "aliases": [],
+  "mirror": false
+}

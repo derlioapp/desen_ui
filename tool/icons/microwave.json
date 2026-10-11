@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/microwave",
+  "upstream": "hugeicons/Microwave",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "microwave",
     "oven",
-    "cooker",
-    "toaster oven",
-    "bake"
+    "kitchen",
+    "heat",
+    "appliance"
   ],
   "aliases": [],
   "mirror": false

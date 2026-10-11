@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/MoneySavingJar",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "money",
+    "saving",
+    "jar",
+    "savings",
+    "tip",
+    "dollar"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

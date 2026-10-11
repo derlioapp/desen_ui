@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Album",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "album",
+    "bookmark",
+    "saved",
+    "collection"
+  ],
+  "aliases": [],
+  "mirror": false
+}

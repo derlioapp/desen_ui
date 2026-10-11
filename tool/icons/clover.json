@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/clover",
+  "upstream": "hugeicons/Clover",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "leaf",
     "luck",
-    "plant"
+    "four leaf",
+    "irish",
+    "lucky",
+    "plant",
+    "shamrock"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide/beef-off",
+  "upstream": "hugeicons/BeefOff",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "food",
-    "dish",
-    "restaurant",
-    "course",
-    "meal",
+    "vegetarian",
+    "no",
     "meat",
-    "bbq",
-    "steak",
-    "vegetarian"
+    "vegan"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/Grid",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "grid",
+    "hash",
+    "lines",
+    "tic",
+    "tac",
+    "toe",
+    "guides"
+  ],
+  "aliases": [
+    "gridLines"
+  ],
+  "mirror": false
+}

@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide-lab/horse-head",
+  "upstream": "hugeicons/HorseHead",
+  "also": [],
   "category": "animals",
   "tags": [
-    "donkey",
-    "pony",
-    "calf",
-    "filly",
-    "stallion",
-    "steed",
-    "mare",
-    "mammal",
-    "equestrian",
-    "horseback",
-    "ride",
-    "riding",
-    "racing",
-    "furlong",
-    "betting",
-    "gambling",
-    "🐴"
+    "horse",
+    "head",
+    "chess",
+    "knight",
+    "animal"
   ],
   "aliases": [],
   "mirror": false

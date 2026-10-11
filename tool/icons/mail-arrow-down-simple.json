@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailDownload02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "download",
+    "receive",
+    "save",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

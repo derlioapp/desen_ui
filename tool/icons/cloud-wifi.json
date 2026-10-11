@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/WirelessCloudAccess",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "cloud",
+    "wifi",
+    "wireless",
+    "internet",
+    "online",
+    "network"
+  ],
+  "aliases": [],
+  "mirror": false
+}

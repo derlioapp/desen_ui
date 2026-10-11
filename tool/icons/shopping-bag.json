@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/shopping-bag",
+  "upstream": "hugeicons/ShoppingBag01",
+  "also": [],
   "category": "shopping",
   "tags": [
     "ecommerce",
     "cart",
     "purchase",
-    "store"
+    "store",
+    "bag"
   ],
   "aliases": [],
   "mirror": false

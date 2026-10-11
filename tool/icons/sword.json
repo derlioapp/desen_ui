@@ -1,22 +1,14 @@
 {
-  "upstream": "lucide/sword",
+  "upstream": "hugeicons/Sword01",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "battle",
-    "challenge",
-    "combat",
-    "duel",
-    "fantasy",
-    "game",
-    "knight",
-    "melee",
-    "medieval",
-    "offense",
-    "rpg",
-    "sharp",
     "weapon",
-    "war",
-    "warrior"
+    "blade",
+    "fight",
+    "rpg",
+    "knight",
+    "medieval"
   ],
   "aliases": [],
   "mirror": false

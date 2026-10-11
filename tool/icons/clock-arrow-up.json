@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/clock-arrow-up",
+  "upstream": "hugeicons/ClockArrowUp",
+  "also": [],
   "category": "time",
   "tags": [
+    "upload",
+    "increase",
     "time",
-    "watch",
-    "alarm",
-    "sort",
-    "order",
-    "ascending",
-    "descending",
-    "increasing",
-    "decreasing",
-    "rising",
-    "falling"
+    "earlier",
+    "sort"
   ],
   "aliases": [],
   "mirror": false

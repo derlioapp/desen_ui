@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MoonCloudLittleRain",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "night",
+    "light rain",
+    "drizzle",
+    "moon",
+    "cloud",
+    "sprinkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

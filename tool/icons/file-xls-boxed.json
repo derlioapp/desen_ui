@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Xls02",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "excel",
+    "spreadsheet",
+    "document",
+    "xls",
+    "table"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

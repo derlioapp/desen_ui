@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Clock02",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "undo time",
+    "recent",
+    "past",
+    "rewind",
+    "counter clockwise",
+    "log"
+  ],
+  "aliases": [],
+  "mirror": false
+}

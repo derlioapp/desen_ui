@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Clock03",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "forward",
+    "redo",
+    "future",
+    "clockwise",
+    "time",
+    "refresh"
+  ],
+  "aliases": [
+    "rotateCwClock"
+  ],
+  "mirror": false
+}

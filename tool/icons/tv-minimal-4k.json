@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ModernTvFourK",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tv",
+    "4k",
+    "uhd",
+    "resolution",
+    "television",
+    "screen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

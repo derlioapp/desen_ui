@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SignalNo01",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "signal",
+    "antenna",
+    "no",
+    "lost",
+    "cellular",
+    "offline"
+  ],
+  "aliases": [],
+  "mirror": false
+}

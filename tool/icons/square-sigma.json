@@ -1,13 +1,15 @@
 {
-  "upstream": "lucide/square-sigma",
+  "upstream": "hugeicons/SquareSigma",
+  "also": [
+    "SummationSquare"
+  ],
   "category": "text",
   "tags": [
+    "sigma",
     "sum",
-    "calculate",
-    "formula",
-    "math",
-    "enumeration",
-    "enumerate"
+    "summation",
+    "total",
+    "math"
   ],
   "aliases": [],
   "mirror": false

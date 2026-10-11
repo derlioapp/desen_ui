@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/turtle",
+  "upstream": "hugeicons/Turtle",
+  "also": [],
   "category": "animals",
   "tags": [
-    "animal",
-    "pet",
+    "turtle",
     "tortoise",
-    "slow",
-    "speed"
+    "reptile",
+    "slow"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

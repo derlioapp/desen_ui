@@ -1,19 +1,15 @@
 {
-  "upstream": "lucide/mail-check",
+  "upstream": "hugeicons/MailCheck",
+  "also": [],
   "category": "mail",
   "tags": [
     "email",
     "message",
     "letter",
-    "subscribe",
     "delivered",
     "success",
     "read",
-    "done",
-    "todo",
-    "tick",
-    "complete",
-    "task"
+    "done"
   ],
   "aliases": [],
   "mirror": false

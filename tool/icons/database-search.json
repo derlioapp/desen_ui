@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/database-search",
+  "upstream": "hugeicons/DatabaseSearch",
+  "also": [],
   "category": "devices",
   "tags": [
+    "database",
+    "search",
+    "find",
+    "query",
     "storage",
-    "memory",
-    "container",
-    "tin",
-    "pot",
-    "bytes",
-    "servers"
+    "lookup"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/signal-medium",
+  "upstream": "hugeicons/MediumSignal",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "connection",
-    "wireless",
-    "gsm",
-    "phone",
-    "2g",
-    "3g",
-    "4g",
-    "5g"
+    "network",
+    "bars",
+    "reception",
+    "cellular"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

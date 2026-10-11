@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CpuSettings",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "processor",
+    "chip",
+    "settings",
+    "configure",
+    "hardware"
+  ],
+  "aliases": [],
+  "mirror": false
+}

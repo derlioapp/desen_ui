@@ -1,13 +1,16 @@
 {
-  "upstream": "lucide/sigma",
-  "category": "text",
+  "upstream": "hugeicons/Sigma",
+  "also": [
+    "Summation01"
+  ],
+  "category": "math",
   "tags": [
     "sum",
-    "calculate",
-    "formula",
-    "math",
-    "enumeration",
-    "enumerate"
+    "total",
+    "greek",
+    "summation",
+    "sigma",
+    "math"
   ],
   "aliases": [
     "sum"

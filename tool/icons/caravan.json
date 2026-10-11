@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/caravan",
+  "upstream": "hugeicons/Caravan",
+  "also": [],
   "category": "transportation",
   "tags": [
     "trailer",
-    "tow",
-    "camping",
-    "campsite",
-    "mobile home",
-    "holiday",
-    "nomadic",
-    "wilderness",
-    "outdoors"
+    "camper",
+    "rv",
+    "towing",
+    "vehicle",
+    "travel"
   ],
   "aliases": [],
   "mirror": false

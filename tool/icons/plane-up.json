@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AirplaneMode",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "airplane",
+    "mode",
+    "flight",
+    "offline",
+    "aircraft"
+  ],
+  "aliases": [],
+  "mirror": false
+}

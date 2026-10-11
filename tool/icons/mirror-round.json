@@ -1,21 +1,12 @@
 {
-  "upstream": "lucide/mirror-round",
+  "upstream": "hugeicons/MirrorRound",
+  "also": [],
   "category": "science",
   "tags": [
+    "mirror",
+    "round",
     "reflection",
-    "optics",
-    "glass",
-    "surface",
-    "image",
-    "physics",
-    "science",
-    "bathroom",
-    "vanity",
-    "makeup",
-    "decor",
-    "cosmetic",
-    "shiny",
-    "periscope"
+    "glass"
   ],
   "aliases": [],
   "mirror": false

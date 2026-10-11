@@ -1,26 +1,17 @@
 {
-  "upstream": "lucide/square-plus",
+  "upstream": "hugeicons/SquarePlus",
+  "also": [
+    "AddSquare",
+    "PlusSignSquare"
+  ],
   "category": "math",
   "tags": [
+    "plus",
     "add",
     "new",
-    "increase",
-    "increment",
-    "positive",
-    "calculate",
-    "calculator",
-    "button",
-    "keyboard",
-    "toolbar",
-    "maximum",
-    "upgrade",
-    "extra",
-    "operator",
-    "join",
-    "concatenate",
-    "code",
-    "coding",
-    "+"
+    "create",
+    "checkbox",
+    "square"
   ],
   "aliases": [],
   "mirror": false

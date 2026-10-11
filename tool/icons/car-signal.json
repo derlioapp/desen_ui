@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CarSignal",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "vehicle",
+    "connected car",
+    "wifi",
+    "telematics",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

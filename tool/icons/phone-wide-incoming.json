@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CallIncoming04",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "call",
+    "incoming",
+    "received",
+    "arrow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

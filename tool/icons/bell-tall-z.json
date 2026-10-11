@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/NotificationSnooze02",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "notification",
+    "snooze",
+    "sleep",
+    "pause",
+    "bell",
+    "zzz"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

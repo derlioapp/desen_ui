@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/folder-git-2",
+  "upstream": "hugeicons/FolderGit2",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "root",
-    "project",
+    "folder",
     "git",
-    "repo"
+    "repository",
+    "branch",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

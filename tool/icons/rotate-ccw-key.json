@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/rotate-ccw-key",
+  "upstream": "hugeicons/RotateCcwKey",
+  "also": [],
   "category": "security",
   "tags": [
-    "password",
+    "rotate",
     "key",
-    "refresh",
-    "change"
+    "restore",
+    "counter-clockwise",
+    "reset"
   ],
   "aliases": [],
   "mirror": false

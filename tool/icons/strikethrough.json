@@ -1,11 +1,16 @@
 {
-  "upstream": "lucide/strikethrough",
+  "upstream": "hugeicons/Strikethrough",
+  "also": [
+    "TextStrikethrough"
+  ],
   "category": "text",
   "tags": [
+    "strikethrough",
     "cross out",
+    "delete text",
+    "format",
     "delete",
-    "remove",
-    "format"
+    "remove"
   ],
   "aliases": [],
   "mirror": false

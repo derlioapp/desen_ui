@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Wav02",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "wav",
+    "audio",
+    "sound",
+    "waveform",
+    "music",
+    "format",
+    "file type"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

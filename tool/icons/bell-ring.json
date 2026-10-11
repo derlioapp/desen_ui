@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/bell-ring",
-  "category": "notifications",
+  "upstream": "hugeicons/BellRing",
+  "also": [],
+  "category": "account",
   "tags": [
-    "alarm",
     "notification",
-    "sound",
-    "reminder"
+    "alert",
+    "ringing",
+    "alarm"
   ],
   "aliases": [],
   "mirror": false

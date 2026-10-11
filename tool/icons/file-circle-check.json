@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileValidation",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "validation",
+    "approved",
+    "verified",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

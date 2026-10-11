@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Tiff01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "tiff",
+    "image",
+    "document",
+    "format",
+    "extension"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

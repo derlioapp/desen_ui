@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/split",
+  "upstream": "hugeicons/Split",
+  "also": [],
   "category": "development",
   "tags": [
-    "break",
-    "disband",
-    "divide",
-    "separate",
     "branch",
-    "disunite"
+    "fork",
+    "divide",
+    "separate"
   ],
   "aliases": [],
   "mirror": false

@@ -1,11 +1,15 @@
 {
-  "upstream": "lucide/wheat",
+  "upstream": "hugeicons/Wheat",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "corn",
-    "cereal",
     "grain",
-    "gluten"
+    "cereal",
+    "bread",
+    "flour",
+    "crop",
+    "farming",
+    "harvest"
   ],
   "aliases": [],
   "mirror": false

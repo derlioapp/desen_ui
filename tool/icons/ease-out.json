@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/EaseOut",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "easing",
+    "curve",
+    "animation",
+    "decelerate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

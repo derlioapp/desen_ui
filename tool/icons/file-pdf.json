@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Pdf01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "pdf",
+    "file",
+    "document",
+    "acrobat"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

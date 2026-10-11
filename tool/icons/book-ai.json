@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AiBook",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "ai",
+    "book",
+    "guide",
+    "ebook",
+    "learning"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

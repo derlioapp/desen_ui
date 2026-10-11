@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/square-pi",
+  "upstream": "hugeicons/PiSquare",
+  "also": [],
   "category": "development",
   "tags": [
+    "pi",
+    "math",
     "constant",
-    "code",
-    "coding",
-    "programming",
-    "symbol",
-    "trigonometry",
-    "geometry",
-    "formula"
+    "square"
   ],
   "aliases": [],
   "mirror": false

@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/person-standing",
+  "upstream": "hugeicons/PersonStanding",
+  "also": [],
   "category": "accessibility",
   "tags": [
-    "people",
+    "person",
+    "standing",
     "human",
     "accessibility",
-    "stick figure"
+    "figure"
   ],
   "aliases": [],
   "mirror": false

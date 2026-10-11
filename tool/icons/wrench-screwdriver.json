@@ -1,0 +1,19 @@
+{
+  "upstream": "hugeicons/Repair",
+  "also": [
+    "Tools"
+  ],
+  "category": "tools",
+  "tags": [
+    "repair",
+    "wrench",
+    "screwdriver",
+    "tools",
+    "fix",
+    "maintenance",
+    "settings"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

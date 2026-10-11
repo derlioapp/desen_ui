@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/baggage-claim",
-  "category": "transportation",
+  "upstream": "hugeicons/BaggageClaim",
+  "also": [],
+  "category": "travel",
   "tags": [
-    "baggage",
     "luggage",
-    "travel",
-    "cart",
-    "trolley",
-    "suitcase"
+    "suitcase",
+    "airport",
+    "baggage",
+    "arrivals"
   ],
   "aliases": [],
   "mirror": false

@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/pickaxe",
+  "upstream": "hugeicons/Pickaxe",
+  "also": [],
   "category": "tools",
   "tags": [
-    "mining",
+    "pickaxe",
     "mine",
-    "land worker",
-    "extraction",
-    "labor",
-    "construction",
-    "progress",
-    "advancement",
-    "crafting",
-    "building",
-    "creation"
+    "mining",
+    "dig",
+    "tool"
   ],
   "aliases": [],
   "mirror": false

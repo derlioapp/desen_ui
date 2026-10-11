@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CircleDashed",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "dashed",
+    "dotted",
+    "placeholder",
+    "empty",
+    "loading",
+    "pending"
+  ],
+  "aliases": [],
+  "mirror": false
+}

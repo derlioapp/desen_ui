@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MicOff01",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "microphone",
+    "mic",
+    "mute",
+    "off",
+    "disabled",
+    "audio"
+  ],
+  "aliases": [],
+  "mirror": false
+}

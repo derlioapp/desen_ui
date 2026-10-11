@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/HorizonalScrollPoint",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "scroll",
+    "horizontal",
+    "slider",
+    "swipe",
+    "pagination"
+  ],
+  "aliases": [],
+  "mirror": false
+}

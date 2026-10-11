@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/align-center-horizontal",
+  "upstream": "hugeicons/AlignVerticalCenter",
+  "also": [],
   "category": "layout",
   "tags": [
-    "items",
-    "flex",
-    "justify"
+    "align",
+    "vertical",
+    "center",
+    "middle"
   ],
   "aliases": [],
   "mirror": false

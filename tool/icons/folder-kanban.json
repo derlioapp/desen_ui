@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide/folder-kanban",
+  "upstream": "hugeicons/FolderKanban",
+  "also": [],
   "category": "charts",
   "tags": [
-    "projects",
-    "manage",
-    "overview",
+    "folder",
+    "kanban",
     "board",
-    "tickets",
-    "issues",
-    "roadmap",
-    "plan",
-    "intentions",
-    "productivity",
-    "work",
-    "agile",
-    "code",
-    "coding",
-    "directory",
     "project",
-    "root"
+    "tasks"
   ],
   "aliases": [],
   "mirror": false

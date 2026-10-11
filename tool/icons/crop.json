@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/crop",
+  "upstream": "hugeicons/Crop",
+  "also": [],
   "category": "photography",
   "tags": [
     "photo",
-    "image"
+    "image",
+    "trim",
+    "resize",
+    "cut"
   ],
   "aliases": [],
   "mirror": false

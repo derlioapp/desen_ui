@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/navigation",
+  "upstream": "hugeicons/Navigation",
+  "also": [],
   "category": "navigation",
   "tags": [
+    "navigate",
+    "direction",
+    "gps",
     "location",
-    "travel"
+    "arrow",
+    "heading"
   ],
   "aliases": [],
   "mirror": false

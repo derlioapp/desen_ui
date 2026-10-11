@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide/circle-pile",
+  "upstream": "hugeicons/CirclePile",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "off",
-    "zero",
-    "record",
-    "shape",
-    "circle-pile",
-    "circle",
+    "pyramid",
     "pile",
+    "dots",
     "stack",
-    "layer",
-    "structure",
-    "form",
-    "group",
-    "collection",
-    "stock",
-    "inventory",
-    "materials",
-    "warehouse"
+    "triangle"
   ],
   "aliases": [],
   "mirror": false

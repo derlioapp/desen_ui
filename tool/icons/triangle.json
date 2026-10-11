@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/triangle",
+  "upstream": "hugeicons/Triangle",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "equilateral",
-    "delta",
+    "triangle",
     "shape",
-    "pyramid",
-    "hierarchy"
+    "delta",
+    "rounded"
   ],
   "aliases": [],
   "mirror": false

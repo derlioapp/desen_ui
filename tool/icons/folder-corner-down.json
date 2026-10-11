@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/FolderDownload",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "download",
+    "save",
+    "arrow",
+    "directory"
+  ],
+  "aliases": [
+    "folderDown"
+  ],
+  "mirror": false
+}

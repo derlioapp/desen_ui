@@ -1,13 +1,15 @@
 {
-  "upstream": "lucide/heart-plus",
+  "upstream": "hugeicons/HeartAdd",
+  "also": [
+    "HeartPlus"
+  ],
   "category": "medical",
   "tags": [
-    "plus",
-    "like",
-    "favorite",
+    "heart",
     "add",
-    "health",
-    "support"
+    "favorite",
+    "like",
+    "plus"
   ],
   "aliases": [],
   "mirror": false

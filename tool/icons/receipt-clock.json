@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TransactionHistory",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "transaction history",
+    "receipt",
+    "clock",
+    "statement",
+    "log"
+  ],
+  "aliases": [],
+  "mirror": false
+}

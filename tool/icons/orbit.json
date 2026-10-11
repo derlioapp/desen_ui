@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/orbit",
+  "upstream": "hugeicons/Orbit01",
+  "also": [],
   "category": "science",
   "tags": [
+    "orbit",
+    "satellite",
     "planet",
     "space",
-    "physics",
-    "satellites",
-    "moons"
+    "rings"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FileYen",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "file",
+    "document",
+    "yen",
+    "currency",
+    "invoice"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/arrow-big-down",
+  "upstream": "hugeicons/ArrowDownBig",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "backwards",
-    "reverse",
+    "arrow",
+    "down",
+    "block",
+    "big",
     "direction",
     "south"
   ],

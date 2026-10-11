@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/loader-circle",
+  "upstream": "hugeicons/LoaderCircle",
+  "also": [],
   "category": "arrows",
   "tags": [
     "loading",

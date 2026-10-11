@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/mails",
+  "upstream": "hugeicons/Mails",
+  "also": [],
   "category": "mail",
   "tags": [
     "emails",
     "messages",
     "letters",
     "multiple",
-    "mailing list",
-    "newsletter",
-    "copy"
+    "stack"
   ],
   "aliases": [],
   "mirror": false

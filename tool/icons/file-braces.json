@@ -1,12 +1,16 @@
 {
-  "upstream": "lucide/file-braces",
+  "upstream": "hugeicons/FileBraces",
+  "also": [],
   "category": "files",
   "tags": [
-    "code",
     "json",
-    "curly braces",
-    "curly brackets"
+    "code",
+    "data",
+    "document",
+    "curly"
   ],
-  "aliases": [],
+  "aliases": [
+    "fileBracesCorner"
+  ],
   "mirror": false
 }

@@ -1,10 +1,20 @@
 {
-  "upstream": "lucide/mouse",
+  "upstream": "hugeicons/Mouse01",
+  "also": [
+    "Mouse09",
+    "Mouse23"
+  ],
   "category": "devices",
   "tags": [
-    "device",
+    "mouse",
+    "pointer",
+    "computer",
+    "peripheral",
+    "click",
     "scroll",
-    "click"
+    "oval",
+    "square",
+    "plain"
   ],
   "aliases": [],
   "mirror": false

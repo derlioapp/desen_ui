@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/AddressBook",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "address",
+    "book",
+    "contacts",
+    "at",
+    "email",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

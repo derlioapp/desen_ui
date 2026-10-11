@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/roller-coaster",
+  "upstream": "hugeicons/RollerCoaster",
+  "also": [],
   "category": "navigation",
   "tags": [
-    "attraction",
-    "entertainment",
+    "roller coaster",
     "amusement park",
-    "theme park",
-    "funfair"
+    "ride",
+    "fun"
   ],
   "aliases": [],
   "mirror": false

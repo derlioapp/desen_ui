@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FilePin",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "pin",
+    "pinned",
+    "important",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

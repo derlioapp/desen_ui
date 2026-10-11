@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/WorkoutWarmUp",
+  "also": [],
+  "category": "sports",
+  "tags": [
+    "workout",
+    "exercise",
+    "lunge",
+    "fitness",
+    "training",
+    "stretch"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

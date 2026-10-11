@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CloudFastWind",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "windy",
+    "gust",
+    "breeze",
+    "air",
+    "swirl"
+  ],
+  "aliases": [],
+  "mirror": false
+}

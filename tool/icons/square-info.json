@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InformationSquare",
+  "also": [],
+  "category": "accessibility",
+  "tags": [
+    "information",
+    "help",
+    "about",
+    "details",
+    "square"
+  ],
+  "aliases": [],
+  "mirror": false
+}

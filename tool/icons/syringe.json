@@ -1,14 +1,15 @@
 {
-  "upstream": "lucide/syringe",
-  "category": "science",
+  "upstream": "hugeicons/Syringe",
+  "also": [
+    "Injection"
+  ],
+  "category": "medical",
   "tags": [
-    "medicine",
-    "medical",
+    "injection",
+    "vaccine",
     "needle",
-    "pump",
-    "plunger",
-    "nozzle",
-    "blood"
+    "medicine",
+    "shot"
   ],
   "aliases": [],
   "mirror": false

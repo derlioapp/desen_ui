@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Tv02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tv",
+    "television",
+    "screen",
+    "display"
+  ],
+  "aliases": [],
+  "mirror": false
+}

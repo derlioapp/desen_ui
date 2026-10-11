@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/IdVerified",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "id",
+    "verified",
+    "approved",
+    "identity",
+    "badge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

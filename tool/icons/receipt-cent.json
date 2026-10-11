@@ -1,18 +1,12 @@
 {
-  "upstream": "lucide/receipt-cent",
+  "upstream": "hugeicons/ReceiptCent",
+  "also": [],
   "category": "finance",
   "tags": [
-    "bill",
-    "voucher",
-    "slip",
-    "check",
-    "counterfoil",
-    "currency",
-    "cents",
-    "dollar",
-    "usd",
-    "$",
-    "¢"
+    "receipt",
+    "cent",
+    "invoice",
+    "bill"
   ],
   "aliases": [],
   "mirror": false

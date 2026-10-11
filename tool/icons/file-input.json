@@ -1,7 +1,11 @@
 {
-  "upstream": "lucide/file-input",
+  "upstream": "hugeicons/FileImport",
+  "also": [],
   "category": "files",
   "tags": [
+    "import",
+    "receive",
+    "arrow left",
     "document"
   ],
   "aliases": [],

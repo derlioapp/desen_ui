@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/megaphone",
+  "upstream": "hugeicons/Megaphone02",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "advertisement",
-    "announcement",
-    "attention",
-    "alert",
-    "loudspeaker",
     "megaphone",
-    "notification"
+    "loudspeaker",
+    "announce",
+    "promotion",
+    "broadcast"
   ],
   "aliases": [],
   "mirror": false

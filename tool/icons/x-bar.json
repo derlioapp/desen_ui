@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/XLineTop",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "mean",
+    "average",
+    "statistics",
+    "overline",
+    "variable"
+  ],
+  "aliases": [
+    "xLineTop"
+  ],
+  "mirror": false
+}

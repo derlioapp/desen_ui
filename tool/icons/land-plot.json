@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide/land-plot",
-  "category": "design",
+  "upstream": "hugeicons/LandPlot",
+  "also": [],
+  "category": "navigation",
   "tags": [
-    "area",
-    "surface",
-    "square metres",
-    "allotment",
-    "parcel",
-    "property",
-    "plane",
-    "acres",
-    "measure",
-    "distance",
-    "isometric",
+    "land plot",
+    "golf",
     "flag",
-    "golf course",
-    "hole"
+    "field",
+    "lot",
+    "property"
   ],
   "aliases": [],
   "mirror": false

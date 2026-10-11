@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/square-dashed-text",
+  "upstream": "hugeicons/TextSelect",
+  "also": [],
   "category": "text",
   "tags": [
-    "find",
-    "search",
+    "select text",
     "selection",
-    "dashed"
+    "dashed",
+    "text"
   ],
   "aliases": [],
   "mirror": false

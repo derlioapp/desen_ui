@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/user-minus",
+  "upstream": "hugeicons/UserMinus01",
+  "also": [],
   "category": "account",
   "tags": [
+    "remove user",
     "delete",
-    "remove",
     "unfollow",
-    "unsubscribe"
+    "unsubscribe",
+    "person",
+    "account"
   ],
   "aliases": [],
   "mirror": false

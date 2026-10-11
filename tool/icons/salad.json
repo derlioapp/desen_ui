@@ -1,17 +1,15 @@
 {
-  "upstream": "lucide/salad",
+  "upstream": "hugeicons/Salad",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "food",
-    "vegetarian",
-    "dish",
-    "restaurant",
-    "course",
-    "meal",
-    "side",
+    "bowl",
+    "healthy",
     "vegetables",
-    "health"
+    "lettuce",
+    "diet"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

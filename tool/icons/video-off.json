@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/video-off",
+  "upstream": "hugeicons/VideoOff",
+  "also": [],
   "category": "devices",
   "tags": [
     "camera",
     "movie",
-    "film"
+    "film",
+    "recording off",
+    "disabled",
+    "no video"
   ],
   "aliases": [],
   "mirror": false

@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/book-search",
+  "upstream": "hugeicons/BookSearch",
+  "also": [],
   "category": "text",
   "tags": [
-    "reading",
+    "book",
+    "search",
+    "find",
     "library",
-    "study",
-    "education",
-    "research",
-    "knowledge",
-    "discover",
-    "browsing",
-    "lookup",
-    "finding",
-    "scanning"
+    "lookup"
   ],
   "aliases": [],
   "mirror": false

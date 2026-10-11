@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/circle-parking-off",
+  "upstream": "hugeicons/CircleParkingOff",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "parking lot",
-    "car park",
-    "no parking"
+    "no parking",
+    "park",
+    "forbidden",
+    "banned"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

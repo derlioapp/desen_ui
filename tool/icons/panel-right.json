@@ -1,10 +1,17 @@
 {
-  "upstream": "lucide/panel-right",
+  "upstream": "hugeicons/PanelRight",
+  "also": [
+    "LayoutRight"
+  ],
   "category": "layout",
   "tags": [
+    "panel",
+    "right",
     "sidebar",
-    "secondary",
-    "drawer"
+    "layout",
+    "drawer",
+    "right panel",
+    "split"
   ],
   "aliases": [
     "sidebarRight"

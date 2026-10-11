@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide-lab/tennis-ball",
+  "upstream": "hugeicons/TennisBall",
+  "also": [],
   "category": "sports",
   "tags": [
-    "court",
-    "racquet",
-    "racket",
-    "net",
-    "deuce",
-    "love",
-    "bounce"
+    "tennis",
+    "ball",
+    "sport",
+    "game"
   ],
   "aliases": [],
   "mirror": false

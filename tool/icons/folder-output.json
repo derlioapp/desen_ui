@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/folder-output",
+  "upstream": "hugeicons/FolderOutput",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "import",
-    "export"
+    "folder",
+    "output",
+    "move out",
+    "arrow",
+    "directory"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": true
 }

@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/arrow-down-to-dot",
+  "upstream": "hugeicons/ArrowDownToDot",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "direction",
-    "south",
-    "waypoint",
-    "location",
-    "step",
-    "into"
+    "arrow",
+    "down",
+    "target",
+    "drop",
+    "point",
+    "destination"
   ],
   "aliases": [],
   "mirror": false

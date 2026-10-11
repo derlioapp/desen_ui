@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BatteriesEnergy",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "batteries",
+    "energy",
+    "power",
+    "charge",
+    "storage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

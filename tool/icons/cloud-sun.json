@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/cloud-sun",
+  "upstream": "hugeicons/SunCloud02",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "partly"
+    "cloud",
+    "sun",
+    "partly cloudy",
+    "weather"
   ],
   "aliases": [],
   "mirror": false

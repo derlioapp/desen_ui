@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MapPin",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "pin",
+    "map",
+    "destination"
+  ],
+  "aliases": [],
+  "mirror": false
+}

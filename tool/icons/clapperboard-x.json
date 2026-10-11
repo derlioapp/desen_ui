@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PlayListRemove",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "playlist",
+    "remove",
+    "video",
+    "clapperboard",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

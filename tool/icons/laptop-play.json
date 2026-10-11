@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LaptopVideo",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "laptop video",
+    "watch",
+    "stream",
+    "laptop",
+    "computer",
+    "play"
+  ],
+  "aliases": [],
+  "mirror": false
+}

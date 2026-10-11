@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/plane-takeoff",
+  "upstream": "hugeicons/AirplaneTakeOff01",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "departure",
-    "plane",
-    "trip",
     "airplane",
-    "takeoff"
+    "takeoff",
+    "depart",
+    "flight",
+    "airport"
   ],
   "aliases": [],
   "mirror": false

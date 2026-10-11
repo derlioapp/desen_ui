@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MarketAnalysis",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "candlestick",
+    "stock",
+    "market",
+    "trading",
+    "analysis",
+    "finance"
+  ],
+  "aliases": [],
+  "mirror": false
+}

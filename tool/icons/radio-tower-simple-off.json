@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CellularNetworkOffline",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "cellular network",
+    "antenna",
+    "offline",
+    "no signal",
+    "cell tower",
+    "mast"
+  ],
+  "aliases": [],
+  "mirror": false
+}

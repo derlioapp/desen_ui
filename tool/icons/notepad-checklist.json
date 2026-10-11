@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Note03",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "note",
+    "notepad",
+    "checklist",
+    "todo",
+    "tasks",
+    "list"
+  ],
+  "aliases": [],
+  "mirror": false
+}

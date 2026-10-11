@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/scan-heart",
+  "upstream": "hugeicons/ScanHeart",
+  "also": [],
   "category": "medical",
   "tags": [
+    "heart scan",
     "health",
-    "heart rate",
+    "check",
     "pulse",
-    "monitoring",
-    "healthiness",
-    "screening",
-    "dashed"
+    "cardio"
   ],
   "aliases": [],
   "mirror": false

@@ -1,14 +1,11 @@
 {
-  "upstream": "lucide/bell-minus",
+  "upstream": "hugeicons/BellMinus",
+  "also": [],
   "category": "notifications",
   "tags": [
-    "alarm",
     "notification",
-    "silent",
-    "reminder",
-    "delete",
     "remove",
-    "erase"
+    "alert"
   ],
   "aliases": [],
   "mirror": false

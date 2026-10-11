@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-capricorn",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacCapricorn",
+  "also": [],
+  "category": "science",
   "tags": [
-    "goat",
-    "mountain",
-    "ambition",
-    "earth",
-    "discipline",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "goat"
   ],
   "aliases": [],
   "mirror": false

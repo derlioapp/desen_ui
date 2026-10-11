@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/Waves",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "water",
+    "sea",
+    "ocean",
+    "waves",
+    "surf",
+    "tide",
+    "swimming"
+  ],
+  "aliases": [
+    "wavesHorizontal"
+  ],
+  "mirror": false
+}

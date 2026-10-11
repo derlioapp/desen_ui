@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ListView",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "list view",
+    "rows",
+    "layout",
+    "stacked",
+    "bars"
+  ],
+  "aliases": [],
+  "mirror": false
+}

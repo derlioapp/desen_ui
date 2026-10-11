@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/fingerprint-pattern",
-  "category": "account",
+  "upstream": "hugeicons/FingerprintPattern",
+  "also": [],
+  "category": "security",
   "tags": [
-    "2fa",
-    "authentication",
+    "fingerprint",
     "biometric",
     "identity",
-    "security"
+    "pattern",
+    "touch id"
   ],
-  "aliases": [
-    "fingerprint"
-  ],
+  "aliases": [],
   "mirror": false
 }

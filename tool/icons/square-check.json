@@ -1,11 +1,19 @@
 {
-  "upstream": "lucide/square-check",
+  "upstream": "hugeicons/SquareCheck",
+  "also": [
+    "CheckmarkSquare01",
+    "CheckmarkSquare02"
+  ],
   "category": "notifications",
   "tags": [
+    "check",
     "done",
-    "todo",
     "tick",
-    "complete",
+    "checkbox",
+    "select",
+    "approved",
+    "valid",
+    "confirm",
     "task"
   ],
   "aliases": [],

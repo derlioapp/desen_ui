@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/PathfinderExclude",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "pathfinder",
+    "exclude",
+    "shapes",
+    "boolean"
+  ],
+  "aliases": [],
+  "mirror": false
+}

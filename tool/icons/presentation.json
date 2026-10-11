@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/presentation",
+  "upstream": "hugeicons/Presentation01",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "screen",
+    "presentation",
+    "board",
     "whiteboard",
-    "marker pens",
-    "markers",
-    "blackboard",
-    "chalk",
-    "easel",
-    "school",
-    "learning",
-    "lesson",
-    "office",
-    "meeting",
-    "project",
-    "planning"
+    "slides",
+    "meeting"
   ],
   "aliases": [],
   "mirror": false

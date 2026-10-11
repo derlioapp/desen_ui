@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/corner-down-left",
+  "upstream": "hugeicons/CornerDownLeft",
+  "also": [],
   "category": "arrows",
   "tags": [
     "arrow",
-    "return"
+    "turn",
+    "return",
+    "enter",
+    "line break"
   ],
   "aliases": [
     "enter"

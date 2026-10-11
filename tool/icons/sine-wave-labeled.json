@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Sine01",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "sine",
+    "cosine",
+    "wave",
+    "trigonometry",
+    "function",
+    "graph"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

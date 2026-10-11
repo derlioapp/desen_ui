@@ -1,0 +1,23 @@
+{
+  "upstream": "hugeicons/Appointment02",
+  "also": [
+    "CalendarCheck"
+  ],
+  "category": "time",
+  "tags": [
+    "appointment",
+    "schedule",
+    "event",
+    "confirmed",
+    "booking",
+    "date",
+    "calendar",
+    "check",
+    "done",
+    "inside"
+  ],
+  "aliases": [
+    "calendarCheck2"
+  ],
+  "mirror": false
+}

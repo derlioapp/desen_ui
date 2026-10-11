@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/toy-brick",
+  "upstream": "hugeicons/ToyBrick",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "lego",
+    "toy",
+    "brick",
     "block",
-    "addon",
-    "plugin",
-    "integration"
+    "lego",
+    "building"
   ],
   "aliases": [],
   "mirror": false

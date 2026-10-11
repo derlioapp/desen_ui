@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/square-split-vertical",
+  "upstream": "hugeicons/SquareSplitVertical",
+  "also": [],
   "category": "layout",
   "tags": [
     "split",
-    "divide"
+    "vertical",
+    "rows",
+    "divide",
+    "panels"
   ],
   "aliases": [],
   "mirror": false

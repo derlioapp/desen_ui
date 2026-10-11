@@ -1,17 +1,12 @@
 {
-  "upstream": "lucide/projector",
+  "upstream": "hugeicons/Projector",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "cinema",
-    "film",
-    "movie",
-    "home video",
+    "projector",
     "presentation",
-    "slideshow",
-    "office",
-    "meeting",
-    "project",
-    "planning"
+    "cinema",
+    "beam"
   ],
   "aliases": [],
   "mirror": false

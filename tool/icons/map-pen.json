@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MapsEditing",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "map",
+    "edit",
+    "pen",
+    "change",
+    "route"
+  ],
+  "aliases": [],
+  "mirror": false
+}

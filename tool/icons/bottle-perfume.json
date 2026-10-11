@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide-lab/bottle-perfume",
+  "upstream": "hugeicons/Perfume",
+  "also": [],
   "category": "social",
   "tags": [
-    "parfum",
-    "aftershave",
-    "aroma",
+    "perfume",
     "fragrance",
-    "smell",
-    "scent",
-    "special",
-    "present",
-    "gift",
-    "accessories",
-    "container",
-    "duty free"
+    "bottle",
+    "cologne",
+    "scent"
   ],
   "aliases": [],
   "mirror": false

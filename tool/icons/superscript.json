@@ -1,9 +1,19 @@
 {
-  "upstream": "lucide/superscript",
+  "upstream": "hugeicons/Superscript",
+  "also": [
+    "Square01"
+  ],
   "category": "text",
   "tags": [
-    "text",
-    "exponent"
+    "superscript",
+    "exponent",
+    "power",
+    "format",
+    "x2",
+    "chi",
+    "square",
+    "statistics",
+    "formula"
   ],
   "aliases": [],
   "mirror": false

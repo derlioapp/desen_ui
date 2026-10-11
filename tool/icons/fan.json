@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/fan",
+  "upstream": "hugeicons/Fan01",
+  "also": [],
   "category": "home",
   "tags": [
     "air",
     "cooler",
     "ventilation",
-    "ventilator",
-    "blower"
+    "blower",
+    "propeller"
   ],
   "aliases": [],
   "mirror": false

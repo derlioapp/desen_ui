@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LaptopSettings",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "laptop settings",
+    "configuration",
+    "laptop",
+    "computer",
+    "preferences"
+  ],
+  "aliases": [],
+  "mirror": false
+}

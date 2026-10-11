@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/TaskDaily01",
+  "also": [
+    "TaskDaily02"
+  ],
+  "category": "text",
+  "tags": [
+    "task",
+    "daily",
+    "checklist",
+    "todo",
+    "routine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

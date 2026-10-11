@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/phone-off",
+  "upstream": "hugeicons/CallDisabled",
+  "also": [],
   "category": "connectivity",
   "tags": [
+    "phone",
     "call",
+    "disabled",
+    "off",
     "mute"
   ],
   "aliases": [],

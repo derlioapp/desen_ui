@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/file-chart-column-increasing",
+  "upstream": "hugeicons/FileChartColumnIncreasing",
+  "also": [],
   "category": "files",
   "tags": [
+    "report",
+    "chart",
+    "growth",
     "statistics",
-    "analytics",
-    "diagram",
-    "graph",
-    "presentation",
-    "trending up"
+    "document"
   ],
   "aliases": [],
   "mirror": false

@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/calculator",
+  "upstream": "hugeicons/Calculator01",
+  "also": [],
   "category": "math",
   "tags": [
-    "count",
-    "calculating machine"
+    "calculator",
+    "calculate",
+    "math",
+    "numbers",
+    "keypad"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ImageToVideo",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "image",
+    "video",
+    "convert",
+    "animate",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

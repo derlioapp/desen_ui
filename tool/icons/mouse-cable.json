@@ -1,0 +1,19 @@
+{
+  "upstream": "hugeicons/Mouse04",
+  "also": [
+    "Mouse12"
+  ],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "wired",
+    "cable",
+    "peripheral",
+    "computer",
+    "click",
+    "oval",
+    "wheel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

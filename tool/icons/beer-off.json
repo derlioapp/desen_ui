@@ -1,11 +1,11 @@
 {
-  "upstream": "lucide/beer-off",
+  "upstream": "hugeicons/BeerOff",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "no",
     "alcohol",
-    "bar",
-    "beverage",
-    "brewery",
+    "sober",
     "drink"
   ],
   "aliases": [],

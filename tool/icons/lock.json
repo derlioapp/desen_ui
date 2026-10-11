@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/lock",
+  "upstream": "hugeicons/SquareLock01",
+  "also": [],
   "category": "security",
   "tags": [
-    "security",
-    "password",
+    "lock",
+    "locked",
     "secure",
-    "admin"
+    "private",
+    "padlock"
   ],
   "aliases": [],
   "mirror": false

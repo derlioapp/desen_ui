@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/mouse-right",
+  "upstream": "hugeicons/MouseRight",
+  "also": [],
   "category": "devices",
   "tags": [
-    "device",
-    "scroll",
-    "click"
+    "mouse",
+    "right click",
+    "right button",
+    "context menu",
+    "secondary",
+    "peripheral"
   ],
   "aliases": [],
   "mirror": false

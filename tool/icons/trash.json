@@ -1,21 +1,17 @@
 {
-  "upstream": "lucide/trash",
+  "upstream": "hugeicons/Trash",
+  "also": [
+    "Delete01"
+  ],
   "category": "files",
   "tags": [
-    "empty",
-    "deletion",
-    "cleanup",
-    "junk",
-    "clear",
-    "garbage",
+    "trash",
     "delete",
-    "remove",
     "bin",
-    "waste",
-    "recycle",
-    "discard",
-    "binoculars",
-    "rubbish"
+    "remove",
+    "garbage",
+    "trash can",
+    "waste"
   ],
   "aliases": [],
   "mirror": false

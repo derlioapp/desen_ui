@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ShoppingBasketFavorite01",
+  "also": [],
+  "category": "shopping",
+  "tags": [
+    "bag",
+    "favorite",
+    "wishlist",
+    "like",
+    "shopping",
+    "heart"
+  ],
+  "aliases": [],
+  "mirror": false
+}

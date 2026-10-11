@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CallRinging02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "call",
+    "ringing",
+    "telephone",
+    "incoming",
+    "handset"
+  ],
+  "aliases": [],
+  "mirror": false
+}

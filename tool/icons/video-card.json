@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/GraphicCard",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "graphic",
+    "card",
+    "gpu",
+    "video",
+    "computer",
+    "hardware"
+  ],
+  "aliases": [],
+  "mirror": false
+}

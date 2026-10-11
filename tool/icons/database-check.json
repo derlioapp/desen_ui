@@ -1,5 +1,23 @@
 {
-  "upstream": "lucide/database-check",
+  "upstream": "desen/database-check",
+  "derived": {
+    "parts": [
+      {
+        "from": "DatabaseAdd",
+        "keep": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "paths": [
+      "M14.5 18.5L17 21L21.5 15.5"
+    ]
+  },
+  "also": [],
   "category": "devices",
   "tags": [
     "storage",

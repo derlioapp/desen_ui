@@ -1,17 +1,12 @@
 {
-  "upstream": "lucide-lab/pillow",
+  "upstream": "hugeicons/Pillow",
+  "also": [],
   "category": "home",
   "tags": [
-    "pillowcase",
-    "extra",
-    "bedding",
+    "pillow",
     "cushion",
-    "headrest",
-    "sheets",
-    "soft",
-    "support",
-    "sleep",
-    "rest"
+    "bed",
+    "sleep"
   ],
   "aliases": [],
   "mirror": false

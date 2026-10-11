@@ -1,10 +1,17 @@
 {
-  "upstream": "lucide/layout-grid",
+  "upstream": "hugeicons/GridView",
+  "also": [
+    "DashboardSquare01"
+  ],
   "category": "design",
   "tags": [
-    "app",
-    "home",
-    "start"
+    "grid",
+    "view",
+    "tiles",
+    "dashboard",
+    "apps",
+    "squares",
+    "menu"
   ],
   "aliases": [],
   "mirror": false

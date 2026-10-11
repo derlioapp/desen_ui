@@ -1,25 +1,27 @@
 {
-  "upstream": "lucide/cloud-backup",
+  "upstream": "desen/cloud-backup",
+  "derived": {
+    "parts": [
+      {
+        "from": "CloudBackup",
+        "keep": [
+          0
+        ]
+      }
+    ],
+    "paths": [
+      "M8.5 16.5C9 15.5 10 14 12 14C14.2091 14 16 15.7909 16 18C16 20.2091 14.2091 22 12 22C10.8053 22 9.7329 21.476 9 20.6458",
+      "M8.1936 13.5V16.8064H11.5"
+    ]
+  },
+  "also": [],
   "category": "arrows",
   "tags": [
-    "storage",
-    "memory",
-    "bytes",
-    "servers",
+    "cloud",
     "backup",
-    "timemachine",
-    "rotate",
-    "synchronize",
-    "synchronise",
-    "refresh",
-    "reconnect",
-    "transfer",
-    "data",
-    "security",
-    "upload",
-    "save",
-    "remote",
-    "safety"
+    "restore",
+    "history",
+    "sync"
   ],
   "aliases": [],
   "mirror": false

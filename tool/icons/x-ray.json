@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/XRay",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "radiology",
+    "scan",
+    "bones",
+    "skeleton",
+    "imaging",
+    "chest"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Metro",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "metro",
+    "subway",
+    "train",
+    "transit",
+    "underground",
+    "rail"
+  ],
+  "aliases": [],
+  "mirror": false
+}

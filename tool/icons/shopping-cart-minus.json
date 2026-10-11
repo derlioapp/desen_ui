@@ -1,5 +1,21 @@
 {
-  "upstream": "lucide/shopping-cart-minus",
+  "upstream": "desen/shopping-cart-minus",
+  "derived": {
+    "parts": [
+      {
+        "from": "ShoppingCartAdd01",
+        "keep": [
+          0,
+          1,
+          2
+        ]
+      }
+    ],
+    "paths": [
+      "M16 6H22"
+    ]
+  },
+  "also": [],
   "category": "shopping",
   "tags": [
     "trolley",

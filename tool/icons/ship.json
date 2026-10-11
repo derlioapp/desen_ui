@@ -1,20 +1,12 @@
 {
-  "upstream": "lucide/ship",
+  "upstream": "hugeicons/Boat",
+  "also": [],
   "category": "transportation",
   "tags": [
     "boat",
-    "knots",
-    "nautical mile",
-    "maritime",
-    "sailing",
-    "yacht",
-    "cruise",
-    "ocean liner",
-    "tanker",
     "vessel",
-    "navy",
-    "trip",
-    "releases"
+    "sailing",
+    "maritime"
   ],
   "aliases": [],
   "mirror": false

@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/cctv",
+  "upstream": "hugeicons/CctvCamera",
+  "also": [],
   "category": "security",
   "tags": [
-    "camera",
     "surveillance",
-    "recording",
-    "film",
-    "videotape",
-    "crime",
-    "watching"
+    "camera",
+    "security camera",
+    "monitoring"
   ],
   "aliases": [],
   "mirror": false

@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/square-power",
+  "upstream": "hugeicons/SquarePower",
+  "also": [],
   "category": "connectivity",
   "tags": [
+    "power",
     "on",
     "off",
-    "device",
-    "switch",
-    "toggle",
-    "binary",
-    "boolean",
-    "reboot",
-    "restart",
-    "button",
-    "keyboard",
-    "troubleshoot"
+    "shutdown",
+    "switch"
   ],
   "aliases": [],
   "mirror": false

@@ -1,9 +1,15 @@
 {
-  "upstream": "lucide/cloud-lightning",
+  "upstream": "hugeicons/CloudAngledZap",
+  "also": [
+    "CloudLightning"
+  ],
   "category": "weather",
   "tags": [
-    "weather",
-    "bolt"
+    "thunder",
+    "storm",
+    "bolt",
+    "lightning",
+    "electric"
   ],
   "aliases": [
     "thunderstorm"

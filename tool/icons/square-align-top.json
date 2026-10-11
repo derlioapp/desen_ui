@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AlignBoxTopCenter",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "align",
+    "box",
+    "top",
+    "center",
+    "position"
+  ],
+  "aliases": [],
+  "mirror": false
+}

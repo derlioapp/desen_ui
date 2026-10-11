@@ -1,12 +1,17 @@
 {
-  "upstream": "lucide/grip",
+  "upstream": "hugeicons/Grip",
+  "also": [
+    "More01"
+  ],
   "category": "layout",
   "tags": [
-    "grab",
-    "dots",
+    "grip",
+    "drag",
     "handle",
-    "move",
-    "drag"
+    "dots",
+    "reorder",
+    "more",
+    "grid"
   ],
   "aliases": [],
   "mirror": false

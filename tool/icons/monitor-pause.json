@@ -1,23 +1,12 @@
 {
-  "upstream": "lucide/monitor-pause",
+  "upstream": "hugeicons/MonitorPause",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "screen sharing",
-    "video",
-    "movie",
-    "film",
     "pause",
-    "suspend",
-    "hibernate",
-    "boot",
-    "virtual machine",
-    "vm"
+    "hold"
   ],
   "aliases": [],
   "mirror": false

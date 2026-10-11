@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/fish-off",
+  "upstream": "hugeicons/FishOff",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "food",
-    "dish",
-    "restaurant",
-    "course",
-    "meal",
-    "seafood",
-    "animal",
-    "pet",
-    "sea",
-    "marine",
+    "fish",
+    "no fish",
     "allergy",
-    "intolerance",
-    "diet"
+    "seafood",
+    "vegetarian"
   ],
   "aliases": [],
   "mirror": false

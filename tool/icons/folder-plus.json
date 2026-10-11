@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/folder-plus",
+  "upstream": "hugeicons/FolderPlus",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
+    "folder",
     "add",
+    "plus",
     "create",
-    "new"
+    "new",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

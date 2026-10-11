@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/text-wrap",
+  "upstream": "hugeicons/TextWrap",
+  "also": [],
   "category": "text",
   "tags": [
     "words",
     "lines",
     "break",
-    "paragraph"
+    "paragraph",
+    "wrap"
   ],
   "aliases": [
     "wordWrap"
   ],
-  "mirror": false
+  "mirror": true
 }

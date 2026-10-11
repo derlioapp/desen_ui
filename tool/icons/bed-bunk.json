@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide-lab/bed-bunk",
+  "upstream": "hugeicons/BedBunk",
+  "also": [],
   "category": "home",
   "tags": [
+    "bunk",
     "sleep",
-    "hostel",
-    "accommodation",
-    "sheets"
+    "furniture",
+    "bedroom",
+    "kids"
   ],
   "aliases": [],
   "mirror": false

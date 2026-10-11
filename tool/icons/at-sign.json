@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/at-sign",
+  "upstream": "hugeicons/AtSign",
+  "also": [
+    "At"
+  ],
   "category": "text",
   "tags": [
-    "mention",
     "at",
+    "mention",
     "email",
-    "message",
+    "address",
     "@"
   ],
   "aliases": [

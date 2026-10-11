@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/joystick",
+  "upstream": "hugeicons/Joystick01",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "game",
-    "console",
-    "control stick"
+    "joystick",
+    "controller",
+    "arcade",
+    "gamepad",
+    "stick"
   ],
   "aliases": [],
   "mirror": false

@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/settings",
+  "upstream": "hugeicons/Settings01",
+  "also": [],
   "category": "account",
   "tags": [
-    "cog",
-    "edit",
     "gear",
-    "preferences"
+    "cog",
+    "preferences",
+    "configuration",
+    "options"
   ],
   "aliases": [],
   "mirror": false

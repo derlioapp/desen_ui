@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BitcoinTransaction",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "transaction",
+    "exchange",
+    "refresh",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

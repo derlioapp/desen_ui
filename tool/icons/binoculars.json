@@ -1,25 +1,12 @@
 {
-  "upstream": "lucide/binoculars",
+  "upstream": "hugeicons/Binoculars",
+  "also": [],
   "category": "navigation",
   "tags": [
-    "field glasses",
-    "lorgnette",
-    "pince-nez",
-    "observation",
-    "sightseeing",
-    "nature",
-    "wildlife",
-    "birdwatching",
-    "scouting",
-    "surveillance",
+    "look",
     "search",
-    "discovery",
-    "monitoring",
-    "lookout",
-    "viewpoint",
-    "travel",
-    "tourism",
-    "research"
+    "scout",
+    "observation"
   ],
   "aliases": [],
   "mirror": false

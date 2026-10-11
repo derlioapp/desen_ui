@@ -1,23 +1,13 @@
 {
-  "upstream": "lucide-lab/fork-knife-crossed",
+  "upstream": "hugeicons/Restaurant03",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "utensils",
-    "kitchenware",
-    "cutlery",
-    "culinary",
-    "cooking",
-    "cookery",
-    "cut",
-    "slice",
-    "eat",
     "restaurant",
-    "meal",
-    "breakfast",
-    "brunch",
-    "lunch",
-    "dinner",
-    "supper"
+    "fork",
+    "knife",
+    "cutlery",
+    "dining"
   ],
   "aliases": [],
   "mirror": false

@@ -1,5 +1,23 @@
 {
-  "upstream": "lucide/clipboard-x",
+  "upstream": "desen/clipboard-x",
+  "derived": {
+    "parts": [
+      {
+        "from": "ClipboardMinus",
+        "keep": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": "ClipboardX",
+        "keep": [
+          2
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "copy",

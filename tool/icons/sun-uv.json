@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Uv02",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "uv",
+    "ultraviolet",
+    "uv index",
+    "sun",
+    "radiation",
+    "sunburn",
+    "sun protection"
+  ],
+  "aliases": [],
+  "mirror": false
+}

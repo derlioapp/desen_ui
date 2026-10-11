@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/rotate-cw",
+  "upstream": "hugeicons/Redo",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "arrow",
-    "right",
+    "redo",
+    "rotate",
     "clockwise",
     "refresh",
-    "reload",
-    "rerun",
-    "redo"
+    "reload"
   ],
   "aliases": [
     "rotateRight"

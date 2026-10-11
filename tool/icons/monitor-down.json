@@ -1,17 +1,16 @@
 {
-  "upstream": "lucide/monitor-down",
+  "upstream": "hugeicons/MonitorDown",
+  "also": [
+    "ComputerArrowDown"
+  ],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "screen sharing",
     "download",
-    "remote",
-    "cast"
+    "arrow down",
+    "computer",
+    "arrow"
   ],
   "aliases": [],
   "mirror": false

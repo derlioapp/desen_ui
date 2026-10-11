@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileBookmark",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "bookmark",
+    "save",
+    "favorite",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

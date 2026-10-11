@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/move-3d",
+  "upstream": "hugeicons/MoveThreeD",
+  "also": [],
   "category": "design",
   "tags": [
-    "arrows",
-    "axis",
+    "move",
+    "3d",
+    "axes",
+    "translate",
     "gizmo",
-    "coordinates",
-    "transform",
-    "translate"
+    "transform"
   ],
   "aliases": [],
   "mirror": false

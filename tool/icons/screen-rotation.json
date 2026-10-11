@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ScreenRotation",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "rotate",
+    "orientation",
+    "landscape",
+    "portrait",
+    "screen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

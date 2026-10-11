@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Cctv",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "surveillance",
+    "camera",
+    "security camera",
+    "monitoring",
+    "dome"
+  ],
+  "aliases": [],
+  "mirror": false
+}

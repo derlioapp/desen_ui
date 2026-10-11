@@ -1,13 +1,17 @@
 {
-  "upstream": "lucide/align-horizontal-distribute-center",
+  "upstream": "hugeicons/AlignHorizontalDistributeCenter",
+  "also": [
+    "DistributeHorizontalCenter"
+  ],
   "category": "layout",
   "tags": [
-    "items",
-    "flex",
-    "justify",
+    "align",
+    "horizontal",
+    "distribute",
+    "center",
     "space",
-    "evenly",
-    "around"
+    "spacing",
+    "layout"
   ],
   "aliases": [],
   "mirror": false

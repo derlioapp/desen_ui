@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Connect",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "connect",
+    "plug",
+    "socket",
+    "power",
+    "link",
+    "connection"
+  ],
+  "aliases": [],
+  "mirror": false
+}

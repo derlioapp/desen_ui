@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/lamp-ceiling",
+  "upstream": "hugeicons/LampCeiling",
+  "also": [],
   "category": "home",
   "tags": [
+    "ceiling lamp",
+    "pendant",
+    "light",
+    "hanging",
     "lighting",
-    "household",
-    "home",
-    "furniture"
+    "lamp"
   ],
   "aliases": [],
   "mirror": false

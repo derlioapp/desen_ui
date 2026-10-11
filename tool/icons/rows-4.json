@@ -1,23 +1,12 @@
 {
-  "upstream": "lucide/rows-4",
+  "upstream": "hugeicons/Rows4",
+  "also": [],
   "category": "layout",
   "tags": [
-    "lines",
-    "list",
-    "queue",
-    "preview",
-    "paragraphs",
-    "parallel",
-    "series",
-    "split",
-    "vertical",
-    "horizontal",
-    "half",
-    "center",
-    "middle",
-    "even",
-    "drawers",
-    "grill"
+    "rows",
+    "four",
+    "layout",
+    "list"
   ],
   "aliases": [],
   "mirror": false

@@ -1,17 +1,12 @@
 {
-  "upstream": "lucide/ticket-plus",
+  "upstream": "hugeicons/TicketPlus",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "entry",
-    "pass",
-    "voucher",
-    "event",
-    "concert",
-    "show",
-    "book",
-    "purchase",
+    "ticket",
     "add",
-    "+"
+    "new",
+    "booking"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/user-round-plus",
+  "upstream": "hugeicons/UserRoundPlus",
+  "also": [],
   "category": "account",
   "tags": [
-    "new",
-    "add",
-    "create",
+    "add user",
+    "new user",
     "follow",
-    "subscribe"
+    "subscribe",
+    "create",
+    "invite"
   ],
   "aliases": [],
   "mirror": false

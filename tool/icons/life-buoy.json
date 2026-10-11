@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide/life-buoy",
+  "upstream": "hugeicons/Lifebuoy",
+  "also": [],
   "category": "accessibility",
   "tags": [
-    "preserver",
-    "life belt",
-    "lifesaver",
     "help",
+    "support",
     "rescue",
-    "ship",
+    "lifesaver",
     "ring",
-    "raft",
-    "inflatable",
-    "wheel",
-    "donut"
+    "preserver"
   ],
   "aliases": [],
   "mirror": false

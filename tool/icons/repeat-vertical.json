@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ArrowReloadVertical",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "repeat",
+    "loop",
+    "reload",
+    "cycle",
+    "vertical",
+    "refresh"
+  ],
+  "aliases": [],
+  "mirror": false
+}

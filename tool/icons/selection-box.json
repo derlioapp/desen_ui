@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AlignSelection",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "align",
+    "selection",
+    "box",
+    "handles",
+    "resize",
+    "transform"
+  ],
+  "aliases": [],
+  "mirror": false
+}

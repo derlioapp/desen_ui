@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PulseRectangle01",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "pulse",
+    "heartbeat",
+    "monitor",
+    "activity",
+    "ecg"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BubbleChatLock",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "bubble",
+    "message",
+    "lock",
+    "private",
+    "secure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,10 +1,16 @@
 {
-  "upstream": "lucide/type",
+  "upstream": "hugeicons/Type",
+  "also": [
+    "Text"
+  ],
   "category": "text",
   "tags": [
+    "type",
     "text",
     "font",
-    "typography"
+    "typography",
+    "letter",
+    "t"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,17 @@
 {
-  "upstream": "lucide/chef-hat",
+  "upstream": "hugeicons/ChefHat",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "cook",
     "cooking",
-    "food",
     "kitchen",
-    "restaurant"
+    "restaurant",
+    "toque",
+    "hat"
   ],
-  "aliases": [],
+  "aliases": [
+    "hatChef"
+  ],
   "mirror": false
 }

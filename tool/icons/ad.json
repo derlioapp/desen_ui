@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/ad",
+  "upstream": "hugeicons/Advertisiment",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "advert",
-    "affiliate",
-    "brand",
-    "campaign",
-    "commercial",
+    "advertisement",
+    "ad",
+    "promotion",
     "marketing",
-    "monetize",
-    "paid",
-    "partner",
-    "promo",
-    "sponsor",
-    "audio description",
-    "video description",
-    "described video",
-    "visual description"
+    "banner"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TvSmart",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "smart tv",
+    "wifi",
+    "stream",
+    "connected",
+    "television"
+  ],
+  "aliases": [],
+  "mirror": false
+}

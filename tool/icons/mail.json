@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/mail",
-  "category": "text",
+  "upstream": "hugeicons/Mail01",
+  "also": [],
+  "category": "mail",
   "tags": [
     "email",
     "message",
     "letter",
-    "unread"
+    "unread",
+    "envelope"
   ],
   "aliases": [
     "email"

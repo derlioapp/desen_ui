@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide/brick-wall",
-  "category": "buildings",
+  "upstream": "hugeicons/BrickWall",
+  "also": [],
+  "category": "security",
   "tags": [
-    "bricks",
-    "mortar",
-    "cement",
-    "materials",
-    "construction",
-    "builder",
-    "labourer",
-    "quantity surveyor",
-    "blocks",
-    "stone"
+    "brick",
+    "wall",
+    "firewall",
+    "barrier"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

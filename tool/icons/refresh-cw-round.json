@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Exchange01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "exchange",
+    "swap",
+    "sync",
+    "reload",
+    "cycle",
+    "rotate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

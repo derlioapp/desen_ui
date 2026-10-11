@@ -1,24 +1,14 @@
 {
-  "upstream": "lucide/sticky-notes",
+  "upstream": "hugeicons/Note",
+  "also": [],
   "category": "text",
   "tags": [
-    "post-it",
-    "annotation",
-    "memo",
-    "reminder",
-    "todo",
-    "tasks",
-    "ideas",
-    "brainstorm",
-    "documents",
+    "note",
     "notes",
-    "multiple",
-    "collection",
-    "group",
-    "stack",
-    "clone",
-    "duplicate",
-    "copy"
+    "cards",
+    "memo",
+    "stickies",
+    "two notes"
   ],
   "aliases": [],
   "mirror": false

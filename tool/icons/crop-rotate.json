@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/RotateCrop",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "rotate",
+    "crop",
+    "image",
+    "edit",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

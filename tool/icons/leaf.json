@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/leaf",
+  "upstream": "hugeicons/Leaf01",
+  "also": [],
   "category": "nature",
   "tags": [
-    "sustainability",
-    "nature",
-    "energy",
+    "leaf",
     "plant",
-    "autumn"
+    "eco",
+    "green",
+    "nature",
+    "organic"
   ],
   "aliases": [],
   "mirror": false

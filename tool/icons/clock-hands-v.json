@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Time04",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "clock",
+    "time",
+    "hour",
+    "minute",
+    "watch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

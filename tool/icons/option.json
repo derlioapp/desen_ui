@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/option",
+  "upstream": "hugeicons/Option",
+  "also": [],
   "category": "development",
   "tags": [
-    "keyboard",
-    "key",
-    "mac",
+    "option",
     "alt",
-    "button"
+    "key",
+    "keyboard",
+    "mac"
   ],
   "aliases": [],
   "mirror": false

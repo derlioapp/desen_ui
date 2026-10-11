@@ -1,9 +1,15 @@
 {
-  "upstream": "lucide/wand",
+  "upstream": "hugeicons/Wand",
+  "also": [],
   "category": "design",
   "tags": [
     "magic",
-    "selection"
+    "magic wand",
+    "wizard",
+    "spell",
+    "tool",
+    "stick",
+    "auto"
   ],
   "aliases": [],
   "mirror": false

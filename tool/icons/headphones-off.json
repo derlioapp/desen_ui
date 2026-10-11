@@ -1,0 +1,19 @@
+{
+  "upstream": "hugeicons/HeadphoneMute",
+  "also": [
+    "HeadphoneOff"
+  ],
+  "category": "multimedia",
+  "tags": [
+    "headphones",
+    "mute",
+    "off",
+    "audio",
+    "silent",
+    "disabled"
+  ],
+  "aliases": [
+    "headphoneOff"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CloudHail",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "hail",
+    "rain",
+    "ice",
+    "storm",
+    "dashes"
+  ],
+  "aliases": [],
+  "mirror": false
+}

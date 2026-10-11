@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/circle-pause",
+  "upstream": "hugeicons/PauseCircle",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "music",
-    "audio",
-    "stop"
+    "pause",
+    "hold",
+    "media",
+    "circle"
   ],
   "aliases": [],
   "mirror": false

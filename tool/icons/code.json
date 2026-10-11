@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/code",
+  "upstream": "hugeicons/Code",
+  "also": [],
   "category": "text",
   "tags": [
     "source",
     "programming",
-    "html",
-    "xml"
+    "brackets",
+    "developer",
+    "curly"
   ],
   "aliases": [],
   "mirror": false

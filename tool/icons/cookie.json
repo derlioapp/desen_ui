@@ -1,19 +1,15 @@
 {
-  "upstream": "lucide/cookie",
+  "upstream": "hugeicons/Cookie",
+  "also": [],
   "category": "account",
   "tags": [
     "biscuit",
     "snack",
     "dessert",
     "food",
-    "sweet",
-    "bakery",
     "consent",
     "privacy",
-    "legal",
-    "tracking",
-    "browser",
-    "website"
+    "tracking"
   ],
   "aliases": [],
   "mirror": false

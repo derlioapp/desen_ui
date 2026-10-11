@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/tablets",
+  "upstream": "hugeicons/Tablets",
+  "also": [],
   "category": "medical",
   "tags": [
-    "medicine",
-    "medication",
-    "drug",
-    "prescription",
     "pills",
-    "pharmacy"
+    "medicine",
+    "tablet",
+    "drug",
+    "capsule"
   ],
   "aliases": [],
   "mirror": false

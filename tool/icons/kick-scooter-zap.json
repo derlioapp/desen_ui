@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ScooterElectric",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "electric scooter",
+    "e-scooter",
+    "ride",
+    "commute",
+    "charge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

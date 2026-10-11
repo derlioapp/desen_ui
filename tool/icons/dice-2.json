@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/dice-2",
+  "upstream": "hugeicons/DiceFaces02",
+  "also": [],
   "category": "gaming",
   "tags": [
     "dice",

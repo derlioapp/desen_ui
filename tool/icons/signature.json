@@ -1,27 +1,13 @@
 {
-  "upstream": "lucide/signature",
+  "upstream": "hugeicons/Signature",
+  "also": [],
   "category": "text",
   "tags": [
-    "text",
-    "format",
-    "input",
-    "contract",
+    "sign",
     "autograph",
     "handwriting",
-    "sign",
-    "cursive",
-    "ink",
-    "scribble",
-    "authorize",
-    "personal",
-    "agreement",
-    "legal",
-    "document",
-    "identity",
-    "authentic",
-    "approval",
-    "verification",
-    "unique"
+    "write",
+    "signed"
   ],
   "aliases": [],
   "mirror": false

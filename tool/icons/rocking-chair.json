@@ -1,11 +1,11 @@
 {
-  "upstream": "lucide/rocking-chair",
+  "upstream": "hugeicons/RockingChair",
+  "also": [],
   "category": "home",
   "tags": [
+    "rocking chair",
     "chair",
     "furniture",
-    "seat",
-    "comfort",
     "relax"
   ],
   "aliases": [],

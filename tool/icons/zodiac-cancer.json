@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-cancer",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacCancer",
+  "also": [],
+  "category": "science",
   "tags": [
-    "crab",
-    "shell",
-    "protection",
-    "water",
-    "intuition",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "crab"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/EnergyRectangle",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "energy",
+    "power",
+    "lightning",
+    "bolt",
+    "electricity",
+    "square"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DashboardBrowsing",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "dashboard",
+    "browsing",
+    "gauge",
+    "speed",
+    "analytics",
+    "window"
+  ],
+  "aliases": [],
+  "mirror": false
+}

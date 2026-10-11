@@ -39,177 +39,347 @@ part 'set/transportation.dart';
 part 'set/travel.dart';
 part 'set/weather.dart';
 
-/// The built-in icons: 2225 stroke icons on a 24-unit grid, a
-/// fork of Lucide (https://lucide.dev, ISC license) that Desen keeps
-/// and updates only after review.
+/// The built-in icons: 5388 stroke icons on a 24-unit grid, a
+/// fork of the free Hugeicons set (https://hugeicons.com, MIT license)
+/// that Desen keeps and updates only after review.
 ///
-/// Names follow Lucide's, in lowerCamelCase: `triangle-alert` on
-/// lucide.dev is `DsIcons.triangleAlert`. Some icons also have an
-/// alias, a more common name for the same shape (`volume2` is also
-/// `volumeUp`). Icons an app does not use add nothing to its size.
+/// Desen names the icons itself, after what they show, with Lucide's
+/// naming rules: `circle-check` is `DsIcons.circleCheck`. Where Lucide
+/// uses another name for the same shape, that name is an alias
+/// (`home` is also `house`). Icons an app does not use add nothing to
+/// its size.
 abstract final class DsIcons {
-  /// A arrow down. Tags: letter, font size, text, formatting, smaller.
+  /// A arrow down. Tags: a, arrow, down, font, size, decrease, smaller, text.
   static const aArrowDown = _aArrowDown;
 
-  /// A arrow up. Tags: letter, font size, text, formatting, larger, bigger.
+  /// A arrow up. Tags: a, arrow, up, font, size, increase, larger, text.
   static const aArrowUp = _aArrowUp;
 
-  /// Accessibility. Tags: disability, disabled, dda, wheelchair.
+  /// Abacus. Tags: counting, calculate, beads, math.
+  static const abacus = _abacus;
+
+  /// Abs. Tags: body, six, pack, torso, fitness, muscle.
+  static const abs = _abs;
+
+  /// Accessibility. Tags: universal access, a11y, disability, inclusive.
   static const accessibility = _accessibility;
 
-  /// Activity. Tags: pulse, action, motion, movement, exercise, fitness, healthcare, heart rate monitor.
+  /// Acorn. Tags: nut, oak, seed, autumn.
+  static const acorn = _acorn;
+
+  /// Acorn off. Tags: nut, acorn, allergy, free, no nuts.
+  static const acornOff = _acornOff;
+
+  /// Activity. Tags: pulse, heartbeat, rate, ecg.
   static const activity = _activity;
 
-  /// Ad. Tags: advert, affiliate, brand, campaign, commercial, marketing, monetize, paid.
+  /// Activity spike. Tags: pulse, heartbeat, activity, rate, ecg.
+  static const activitySpike = _activitySpike;
+
+  /// Ad. Tags: advertisement, promotion, marketing, banner.
   static const ad = _ad;
 
   /// Same icon as [circlePlus].
   static const addCircle = _circlePlus;
 
-  /// Airplay. Tags: stream, cast, mirroring, screen, monitor, macos, osx.
-  static const airplay = _airplay;
+  /// A frame sign. Tags: shop, sign, store, signboard, awning, storefront.
+  static const aFrameSign = _aFrameSign;
 
-  /// Air vent. Tags: air conditioner, ac, central air, cooling, climate-control.
+  /// Air conditioner. Tags: ac, cooling, climate, smart, home, hvac.
+  static const airConditioner = _airConditioner;
+
+  /// Airport. Tags: tower, plane, terminal, flight.
+  static const airport = _airport;
+
+  /// Airport terminal. Tags: airport, baggage, claim, luggage, carousel, conveyor.
+  static const airportTerminal = _airportTerminal;
+
+  /// Air vent. Tags: air, vent, conditioning, hvac, ventilation.
   static const airVent = _airVent;
 
-  /// A large small. Tags: letter, font size, text, formatting.
+  /// A large small. Tags: large, small, text, size, font, letters.
   static const aLargeSmall = _aLargeSmall;
 
   /// Same icon as [alarmClock].
   static const alarm = _alarmClock;
 
-  /// Alarm clock. Tags: morning.
+  /// Alarm clock. Tags: alarm, clock, time, wake.
   static const alarmClock = _alarmClock;
 
-  /// Alarm clock check. Tags: done, todo, tick, complete, task.
+  /// Alarm clock check. Tags: alarm, clock, time, wake, check, set.
   static const alarmClockCheck = _alarmClockCheck;
 
-  /// Alarm clock minus. Tags: remove.
+  /// Alarm clock minus. Tags: alarm, clock, time, wake, minus, remove.
   static const alarmClockMinus = _alarmClockMinus;
 
-  /// Alarm clock off. Tags: morning, turn-off.
+  /// Alarm clock off. Tags: alarm, clock, time, wake, off, disabled.
   static const alarmClockOff = _alarmClockOff;
 
-  /// Alarm clock plus. Tags: add.
+  /// Alarm clock plus. Tags: alarm, clock, time, wake, plus, add.
   static const alarmClockPlus = _alarmClockPlus;
 
-  /// Alarm smoke. Tags: fire, alert, warning, detector, carbon monoxide, safety, equipment, amenities.
+  /// Alarm smoke. Tags: alarm, smoke, detector, fire, safety.
   static const alarmSmoke = _alarmSmoke;
 
-  /// Align center horizontal. Tags: items, flex, justify.
+  /// Align center horizontal. Tags: align, vertical, center, middle.
   static const alignCenterHorizontal = _alignCenterHorizontal;
 
-  /// Align center vertical. Tags: items, flex, justify.
+  /// Align center vertical. Tags: align, horizontal, center, middle.
   static const alignCenterVertical = _alignCenterVertical;
 
-  /// Align end horizontal. Tags: items, bottom, flex, justify.
+  /// Align end horizontal. Tags: align, bottom, end, horizontal.
   static const alignEndHorizontal = _alignEndHorizontal;
 
-  /// Align end vertical. Tags: items, right, flex, justify.
+  /// Align end vertical. Tags: align, right, end, vertical.
   static const alignEndVertical = _alignEndVertical;
 
-  /// Align horizontal distribute center. Tags: items, flex, justify, space, evenly, around.
+  /// Align horizontal distribute center. Tags: align, horizontal, distribute, center, space, spacing, layout.
   static const alignHorizontalDistributeCenter =
       _alignHorizontalDistributeCenter;
 
-  /// Align horizontal distribute end. Tags: right, items, flex, justify.
+  /// Align horizontal distribute end. Tags: align, horizontal, distribute, end, space.
   static const alignHorizontalDistributeEnd = _alignHorizontalDistributeEnd;
 
-  /// Align horizontal distribute start. Tags: left, items, flex, justify.
+  /// Align horizontal distribute end lines. Tags: distribute, horizontal, right, align, spacing, layout.
+  static const alignHorizontalDistributeEndLines =
+      _alignHorizontalDistributeEndLines;
+
+  /// Align horizontal distribute start. Tags: align, horizontal, distribute, start, space.
   static const alignHorizontalDistributeStart = _alignHorizontalDistributeStart;
 
-  /// Align horizontal justify center. Tags: center, items, flex, justify.
+  /// Align horizontal distribute start lines. Tags: distribute, horizontal, left, align, spacing, layout.
+  static const alignHorizontalDistributeStartLines =
+      _alignHorizontalDistributeStartLines;
+
+  /// Align horizontal justify center. Tags: align, horizontal, justify, center.
   static const alignHorizontalJustifyCenter = _alignHorizontalJustifyCenter;
 
-  /// Align horizontal justify end. Tags: right, items, flex, justify.
+  /// Align horizontal justify end. Tags: align, horizontal, justify, end.
   static const alignHorizontalJustifyEnd = _alignHorizontalJustifyEnd;
 
-  /// Align horizontal justify start. Tags: left, items, flex, justify.
+  /// Align horizontal justify start. Tags: align, horizontal, justify, start.
   static const alignHorizontalJustifyStart = _alignHorizontalJustifyStart;
 
-  /// Align horizontal space around. Tags: center, items, flex, justify, distribute, between.
+  /// Align horizontal space around. Tags: align, horizontal, space, around, distribute.
   static const alignHorizontalSpaceAround = _alignHorizontalSpaceAround;
 
-  /// Align horizontal space between. Tags: around, items, bottom, flex, justify.
+  /// Align horizontal space between. Tags: align, horizontal, space, between, distribute.
   static const alignHorizontalSpaceBetween = _alignHorizontalSpaceBetween;
 
-  /// Align start horizontal. Tags: top, items, flex, justify.
+  /// Align left. Tags: align, left, start.
+  static const alignLeft = _alignLeft;
+
+  /// Align right. Tags: align, right, end.
+  static const alignRight = _alignRight;
+
+  /// Align start horizontal. Tags: align, top, start, horizontal.
   static const alignStartHorizontal = _alignStartHorizontal;
 
-  /// Align start vertical. Tags: left, items, flex, justify.
+  /// Align start vertical. Tags: align, left, start, vertical.
   static const alignStartVertical = _alignStartVertical;
 
-  /// Align vertical distribute center. Tags: items, flex, justify, space, evenly, around.
+  /// Align vertical distribute center. Tags: align, vertical, distribute, center, space, spacing, layout.
   static const alignVerticalDistributeCenter = _alignVerticalDistributeCenter;
 
-  /// Align vertical distribute end. Tags: bottom, items, flex, justify.
+  /// Align vertical distribute end. Tags: align, vertical, distribute, end, space.
   static const alignVerticalDistributeEnd = _alignVerticalDistributeEnd;
 
-  /// Align vertical distribute start. Tags: top, items, flex, justify.
+  /// Align vertical distribute end lines. Tags: distribute, vertical, bottom, align, spacing, layout.
+  static const alignVerticalDistributeEndLines =
+      _alignVerticalDistributeEndLines;
+
+  /// Align vertical distribute start. Tags: align, vertical, distribute, start, space.
   static const alignVerticalDistributeStart = _alignVerticalDistributeStart;
 
-  /// Align vertical justify center. Tags: center, items, flex, justify, distribute, between.
+  /// Align vertical distribute start lines. Tags: distribute, vertical, top, align, spacing, layout.
+  static const alignVerticalDistributeStartLines =
+      _alignVerticalDistributeStartLines;
+
+  /// Align vertical justify center. Tags: align, vertical, justify, center.
   static const alignVerticalJustifyCenter = _alignVerticalJustifyCenter;
 
-  /// Align vertical justify end. Tags: bottom, items, flex, justify, distribute, between.
+  /// Align vertical justify end. Tags: align, vertical, justify, end.
   static const alignVerticalJustifyEnd = _alignVerticalJustifyEnd;
 
-  /// Align vertical justify start. Tags: top, items, flex, justify, distribute, between.
+  /// Align vertical justify start. Tags: align, vertical, justify, start.
   static const alignVerticalJustifyStart = _alignVerticalJustifyStart;
 
-  /// Align vertical space around. Tags: center, items, flex, justify, distribute, between.
+  /// Align vertical space around. Tags: align, vertical, space, around, distribute.
   static const alignVerticalSpaceAround = _alignVerticalSpaceAround;
 
-  /// Align vertical space between. Tags: center, items, flex, justify, distribute, between.
+  /// Align vertical space between. Tags: align, vertical, space, between, distribute.
   static const alignVerticalSpaceBetween = _alignVerticalSpaceBetween;
 
-  /// Ambulance. Tags: emergency, medical, vehicle, siren, healthcare, transportation, rescue, urgent.
+  /// Allah. Tags: islam, calligraphy, arabic, religion, muslim.
+  static const allah = _allah;
+
+  /// Alpha. Tags: greek, letter, symbol.
+  static const alpha = _alpha;
+
+  /// Alphabet arabic. Tags: alphabet, arabic, letters, script, language.
+  static const alphabetArabic = _alphabetArabic;
+
+  /// Alphabet bangla. Tags: alphabet, bangla, bengali, letters, script, language.
+  static const alphabetBangla = _alphabetBangla;
+
+  /// Alphabet chinese. Tags: alphabet, chinese, hanzi, characters, script, language.
+  static const alphabetChinese = _alphabetChinese;
+
+  /// Alphabet hebrew. Tags: alphabet, hebrew, letters, script, language.
+  static const alphabetHebrew = _alphabetHebrew;
+
+  /// Alphabet hindi. Tags: alphabet, hindi, devanagari, letters, script, language.
+  static const alphabetHindi = _alphabetHindi;
+
+  /// Alphabet japanese. Tags: alphabet, japanese, hiragana, characters, script, language.
+  static const alphabetJapanese = _alphabetJapanese;
+
+  /// Alphabet korean. Tags: alphabet, korean, hangul, characters, script, language.
+  static const alphabetKorean = _alphabetKorean;
+
+  /// Alphabet thai. Tags: alphabet, thai, letters, script, language.
+  static const alphabetThai = _alphabetThai;
+
+  /// Ambulance. Tags: emergency, medical, vehicle, siren, rescue, first aid.
   static const ambulance = _ambulance;
 
-  /// Ampersand. Tags: and, typography, operator, join, concatenate, code, &.
+  /// Ammo. Tags: bullets, cartridges, ammunition, weapon, shooting.
+  static const ammo = _ammo;
+
+  /// Ampersand. Tags: and, symbol, character, typography.
   static const ampersand = _ampersand;
 
-  /// Ampersands. Tags: and, operator, then, code, &&.
+  /// Ampersands. Tags: and, symbols, double, characters, typography.
   static const ampersands = _ampersands;
 
-  /// Ampersand square. Tags: and, typography, operator, join, concatenate, code, coding, &.
-  static const ampersandSquare = _ampersandSquare;
-
-  /// Amphora. Tags: pottery, artifact, artefact, vase, ceramics, clay, archaeology, museum.
+  /// Amphora. Tags: vase, jar, greek, pottery, wine, antique.
   static const amphora = _amphora;
 
-  /// Anchor. Tags: ship.
+  /// Ampoules. Tags: ampoule, vial, medicine, injection, serum, two.
+  static const ampoules = _ampoules;
+
+  /// Anchor. Tags: ship, boat, harbor, marine, nautical.
   static const anchor = _anchor;
 
-  /// Angle. Tags: degree, corner, geometry, measure, math, rotate, vertex, slope.
+  /// Anchor point. Tags: vector, bezier, path, nodes, pen tool, spline.
+  static const anchorPoint = _anchorPoint;
+
+  /// Angle. Tags: geometry, degrees, protractor, measure.
   static const angle = _angle;
 
-  /// Antenna. Tags: signal, connection, connectivity, tv, television, broadcast, live, frequency.
+  /// Angle acute. Tags: acute, angle, geometry, arrow, degrees.
+  static const angleAcute = _angleAcute;
+
+  /// Angle obtuse. Tags: angle, obtuse, geometry, degrees.
+  static const angleObtuse = _angleObtuse;
+
+  /// Antenna. Tags: aerial, signal, tv, broadcast, reception.
   static const antenna = _antenna;
 
-  /// Anvil. Tags: metal, iron, alloy, materials, heavy, weight, blacksmith, forge.
+  /// Antenna signal full. Tags: signal, antenna, full, strength, cellular, reception.
+  static const antennaSignalFull = _antennaSignalFull;
+
+  /// Antenna signal low. Tags: signal, antenna, low, strength, cellular, weak.
+  static const antennaSignalLow = _antennaSignalLow;
+
+  /// Antenna signal low medium. Tags: signal, antenna, low, medium, strength, cellular.
+  static const antennaSignalLowMedium = _antennaSignalLowMedium;
+
+  /// Antenna signal medium. Tags: signal, antenna, medium, strength, cellular.
+  static const antennaSignalMedium = _antennaSignalMedium;
+
+  /// Antenna signal off. Tags: signal, antenna, no, lost, cellular, offline.
+  static const antennaSignalOff = _antennaSignalOff;
+
+  /// Antenna waves. Tags: internet antenna, signal, wireless, broadcast, tower.
+  static const antennaWaves = _antennaWaves;
+
+  /// Antenna waves ball. Tags: internet antenna, signal, wireless, broadcast, tower.
+  static const antennaWavesBall = _antennaWavesBall;
+
+  /// Antenna waves cone. Tags: internet antenna, signal, wireless, broadcast, tower.
+  static const antennaWavesCone = _antennaWavesCone;
+
+  /// Anvil. Tags: blacksmith, forge, metal, craft, tool.
   static const anvil = _anvil;
 
-  /// Aperture. Tags: camera, photo, pictures, shutter, exposure.
+  /// Aperture. Tags: camera, lens, shutter, photo, iris.
   static const aperture = _aperture;
 
-  /// Apple. Tags: fruit, food, healthy, snack, nutrition, fresh, produce, grocery.
+  /// Aperture angular. Tags: lens, camera lens, aperture, blades, shutter, optics.
+  static const apertureAngular = _apertureAngular;
+
+  /// Api gateway. Tags: api, gateway, code, integration, network, microservices.
+  static const apiGateway = _apiGateway;
+
+  /// Apple. Tags: fruit, food, healthy, snack, nutrition.
   static const apple = _apple;
 
-  /// Apple core. Tags: fruit, juice, smoothie, sweet, snack, meal, lunch, ingredient.
-  static const appleCore = _appleCore;
-
-  /// App window. Tags: application, menu bar, pane, executable.
+  /// App window. Tags: window, browser, application, program, screen. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const appWindow = _appWindow;
 
-  /// App window mac. Tags: application, menu bar, pane, preferences, macos, osx, executable.
+  /// App window check. Tags: web validation, website verified, browser, valid, approved, checked, done.
+  static const appWindowCheck = _appWindowCheck;
+
+  /// App window code. Tags: web programming, web development, browser, code, html, developer, coding.
+  static const appWindowCode = _appWindowCode;
+
+  /// App window code stack. Tags: web design, website, browser, code, layers, development, windows.
+  static const appWindowCodeStack = _appWindowCodeStack;
+
+  /// App window gauge. Tags: dashboard, browsing, gauge, speed, analytics, window.
+  static const appWindowGauge = _appWindowGauge;
+
+  /// App window lock. Tags: web security, website security, browser, secure, https, locked, privacy.
+  static const appWindowLock = _appWindowLock;
+
+  /// App window mac. Tags: window, macos, application, program, screen. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const appWindowMac = _appWindowMac;
 
-  /// Archive. Tags: index, backup, box, storage, records.
+  /// App window pointer. Tags: cursor in window, click, browser, pointer, window, hover.
+  static const appWindowPointer = _appWindowPointer;
+
+  /// App window shield. Tags: web protection, website security, browser, firewall, safe, shield, privacy.
+  static const appWindowShield = _appWindowShield;
+
+  /// App window sidebar. Tags: web design, website, browser, layout, page, wireframe, sidebar.
+  static const appWindowSidebar = _appWindowSidebar;
+
+  /// App window simple. Tags: browser, window, app, web.
+  static const appWindowSimple = _appWindowSimple;
+
+  /// App window sparkle. Tags: ai, browser, window, web, sparkle.
+  static const appWindowSparkle = _appWindowSparkle;
+
+  /// App window terminal. Tags: terminal, window, console, command line, shell, cli.
+  static const appWindowTerminal = _appWindowTerminal;
+
+  /// Apricot. Tags: fruit, food, stone fruit, peach.
+  static const apricot = _apricot;
+
+  /// Apron. Tags: chef, cooking, kitchen, work.
+  static const apron = _apron;
+
+  /// Archive. Tags: storage, box, records, backup.
   static const archive = _archive;
 
-  /// Archive restore. Tags: unarchive, index, backup, box, storage, records.
+  /// Archive arrow down. Tags: archive, box, store, save, move to archive, download.
+  static const archiveArrowDown = _archiveArrowDown;
+
+  /// Archive books. Tags: archive, books, library, records, storage.
+  static const archiveBooks = _archiveBooks;
+
+  /// Archive drawer. Tags: archive, tray, drawer, storage, records, box.
+  static const archiveDrawer = _archiveDrawer;
+
+  /// Archive off. Tags: archive, box, disabled, no archive, crossed.
+  static const archiveOff = _archiveOff;
+
+  /// Archive restore. Tags: archive, restore, unarchive, box, recover, upload.
   static const archiveRestore = _archiveRestore;
+
+  /// Archive up. Tags: upload, box, archive, arrow up, package, unarchive, restore.
+  static const archiveUp = _archiveUp;
 
   /// Archive x. Tags: index, backup, box, storage, records, junk.
   static const archiveX = _archiveX;
@@ -217,484 +387,925 @@ abstract final class DsIcons {
   /// Same icon as [chartArea].
   static const areaChart = _chartArea;
 
-  /// Armchair. Tags: sofa, furniture, leisure, lounge, loveseat, couch.
+  /// Armchair. Tags: chair, furniture, seat, lounge, sofa.
   static const armchair = _armchair;
 
-  /// Armenian dram. Tags: finance, symbol, banking, economy, currency, money, payment.
-  static const armenianDram = _armenianDram;
+  /// Armchair legs. Tags: chair, furniture, seat, single, sofa.
+  static const armchairLegs = _armchairLegs;
 
-  /// Arrow big down. Tags: backwards, reverse, direction, south.
+  /// Arm muscle. Tags: body, muscle, arm, strong, fitness.
+  static const armMuscle = _armMuscle;
+
+  /// Armored boot. Tags: boot, armor, knight, fantasy, equipment, shoe.
+  static const armoredBoot = _armoredBoot;
+
+  /// Arrow big down. Tags: arrow, down, block, big, direction, south.
   static const arrowBigDown = _arrowBigDown;
 
-  /// Arrow big down dash. Tags: backwards, reverse, slow, direction, south, download.
+  /// Arrow big down dash. Tags: arrow, down, block, big, dash, direction.
   static const arrowBigDownDash = _arrowBigDownDash;
 
-  /// Arrow big left. Tags: previous, back, direction, west, indicate turn. Mirrors in right-to-left text.
+  /// Arrow big down line. Tags: download, arrow, bottom, save, import, line.
+  static const arrowBigDownLine = _arrowBigDownLine;
+
+  /// Arrow big left. Tags: arrow, left, block, big, back, previous. Mirrors in right-to-left text.
   static const arrowBigLeft = _arrowBigLeft;
 
-  /// Arrow big left dash. Tags: previous, back, direction, west, turn, corner. Mirrors in right-to-left text.
+  /// Arrow big left dash. Tags: arrow, left, block, big, dash, direction. Mirrors in right-to-left text.
   static const arrowBigLeftDash = _arrowBigLeftDash;
 
-  /// Arrow big right. Tags: next, forward, direction, east, indicate turn. Mirrors in right-to-left text.
+  /// Arrow big right. Tags: arrow, right, block, big, next, forward. Mirrors in right-to-left text.
   static const arrowBigRight = _arrowBigRight;
 
-  /// Arrow big right dash. Tags: next, forward, direction, east, turn, corner. Mirrors in right-to-left text.
+  /// Arrow big right dash. Tags: arrow, right, block, big, dash, direction. Mirrors in right-to-left text.
   static const arrowBigRightDash = _arrowBigRightDash;
 
-  /// Arrow big up. Tags: shift, keyboard, button, mac, capitalize, capitalise, forward, direction.
+  /// Arrow big up. Tags: arrow, up, block, big, shift, direction.
   static const arrowBigUp = _arrowBigUp;
 
-  /// Arrow big up dash. Tags: caps lock, capitals, keyboard, button, mac, forward, direction, north.
+  /// Arrow big up dash. Tags: arrow, up, block, big, dash, direction.
   static const arrowBigUpDash = _arrowBigUpDash;
 
-  /// Arrow down. Tags: backwards, reverse, direction, south.
+  /// Arrow big up line. Tags: upload, arrow, up, dash, line.
+  static const arrowBigUpLine = _arrowBigUpLine;
+
+  /// Arrow down. Tags: arrow, down, south, direction, download.
   static const arrowDown = _arrowDown;
 
-  /// Arrow down 0 1. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow down 0 1. Tags: sort, numeric, ascending, order, numbers.
   static const arrowDown01 = _arrowDown01;
 
-  /// Arrow down 1 0. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow down 1 0. Tags: sort, numeric, descending, order, numbers.
   static const arrowDown10 = _arrowDown10;
 
-  /// Arrow down a z. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow down a z. Tags: sort, alphabetical, a-z, ascending, order.
   static const arrowDownAZ = _arrowDownAZ;
 
-  /// Arrow down from line. Tags: backwards, reverse, direction, south, download, expand, fold, vertical.
+  /// Arrow down from circle. Tags: move to bottom, send to bottom, down, arrow, dot, lowest.
+  static const arrowDownFromCircle = _arrowDownFromCircle;
+
+  /// Arrow down from line. Tags: arrow, down, from, top, line, start.
   static const arrowDownFromLine = _arrowDownFromLine;
 
-  /// Arrow down left. Tags: direction, south-west, diagonal.
+  /// Arrow down left. Tags: arrow, down-left, south-west, diagonal, direction.
   static const arrowDownLeft = _arrowDownLeft;
 
-  /// Arrow down narrow wide. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow down left triangle. Tags: arrow, down-left, south-west, diagonal, small.
+  static const arrowDownLeftTriangle = _arrowDownLeftTriangle;
+
+  /// Arrow down lines. Tags: sort, list, order, lines, arrow.
+  static const arrowDownLines = _arrowDownLines;
+
+  /// Arrow down narrow wide. Tags: sort, ascending, order, filter, lines.
   static const arrowDownNarrowWide = _arrowDownNarrowWide;
 
-  /// Arrow down right. Tags: direction, south-east, diagonal.
+  /// Arrow down narrow wide 4. Tags: sort, ascending, order, increasing, filter.
+  static const arrowDownNarrowWide4 = _arrowDownNarrowWide4;
+
+  /// Arrow down right. Tags: arrow, down-right, south-east, diagonal, direction.
   static const arrowDownRight = _arrowDownRight;
 
-  /// Arrow down to dot. Tags: direction, south, waypoint, location, step, into.
+  /// Arrow down right triangle. Tags: arrow, down-right, south-east, diagonal, small.
+  static const arrowDownRightTriangle = _arrowDownRightTriangle;
+
+  /// Arrow down to dot. Tags: arrow, down, target, drop, point, destination.
   static const arrowDownToDot = _arrowDownToDot;
 
-  /// Arrow down to line. Tags: behind, direction, south, download, save, git, version control, pull.
+  /// Arrow down to line. Tags: arrow, down, download, bottom, save, end.
   static const arrowDownToLine = _arrowDownToLine;
 
-  /// Arrow down up. Tags: bidirectional, two-way, 2-way, swap, switch, network, traffic, flow.
-  static const arrowDownUp = _arrowDownUp;
+  /// Arrow down to line triangle. Tags: arrow, down, bottom, small, end, pointer.
+  static const arrowDownToLineTriangle = _arrowDownToLineTriangle;
 
-  /// Arrow down wide narrow. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow down triangle. Tags: arrow, down, small, pointer, direction, south.
+  static const arrowDownTriangle = _arrowDownTriangle;
+
+  /// Same icon as [arrowUpDown].
+  static const arrowDownUp = _arrowUpDown;
+
+  /// Arrow down wide narrow. Tags: sort, descending, order, filter, lines.
   static const arrowDownWideNarrow = _arrowDownWideNarrow;
 
-  /// Arrow down z a. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
-  static const arrowDownZA = _arrowDownZA;
+  /// Arrow down wide narrow 4. Tags: sort, descending, order, decreasing, filter.
+  static const arrowDownWideNarrow4 = _arrowDownWideNarrow4;
 
-  /// Arrow left. Tags: previous, back, direction, west. Mirrors in right-to-left text.
+  /// Arrow down wide narrow 4 steep. Tags: sort, descending, order, decreasing, filter.
+  static const arrowDownWideNarrow4Steep = _arrowDownWideNarrow4Steep;
+
+  /// Same icon as [lettersAZArrowDown].
+  static const arrowDownZA = _lettersAZArrowDown;
+
+  /// Arrow left. Tags: arrow, left, back, previous, west, direction. Mirrors in right-to-left text.
   static const arrowLeft = _arrowLeft;
 
-  /// Arrow left from line. Tags: previous, back, direction, west, expand, fold, horizontal. Mirrors in right-to-left text.
+  /// Arrow left from circle. Tags: move left, left, arrow, dot, start, previous.
+  static const arrowLeftFromCircle = _arrowLeftFromCircle;
+
+  /// Arrow left from line. Tags: arrow, left, from, line, leave, start. Mirrors in right-to-left text.
   static const arrowLeftFromLine = _arrowLeftFromLine;
 
-  /// Arrow left right. Tags: bidirectional, two-way, 2-way, swap, switch, transaction, reorder, move.
+  /// Arrow left right. Tags: arrow, left, right, swap, exchange, transfer, two-way.
   static const arrowLeftRight = _arrowLeftRight;
 
-  /// Arrow left to line. Tags: previous, back, direction, west, collapse, fold, horizontal. Mirrors in right-to-left text.
+  /// Arrow left to line. Tags: arrow, left, start, first, beginning, home. Mirrors in right-to-left text.
   static const arrowLeftToLine = _arrowLeftToLine;
 
-  /// Arrow right. Tags: forward, next, direction, east. Mirrors in right-to-left text.
+  /// Arrow left to line triangle. Tags: arrow, left, start, small, first, pointer. Mirrors in right-to-left text.
+  static const arrowLeftToLineTriangle = _arrowLeftToLineTriangle;
+
+  /// Arrow left triangle. Tags: arrow, left, back, small, pointer, west. Mirrors in right-to-left text.
+  static const arrowLeftTriangle = _arrowLeftTriangle;
+
+  /// Arrow loop right. Tags: reflex, loop, curved arrow, boomerang, turn. Mirrors in right-to-left text.
+  static const arrowLoopRight = _arrowLoopRight;
+
+  /// Arrow right. Tags: arrow, right, next, forward, east, direction. Mirrors in right-to-left text.
   static const arrowRight = _arrowRight;
 
-  /// Arrow right from line. Tags: next, forward, direction, east, export, expand, fold, horizontal. Mirrors in right-to-left text.
+  /// Arrow right from circle. Tags: move right, right, arrow, dot, start, next.
+  static const arrowRightFromCircle = _arrowRightFromCircle;
+
+  /// Arrow right from line. Tags: arrow, right, from, line, start, leave. Mirrors in right-to-left text.
   static const arrowRightFromLine = _arrowRightFromLine;
 
-  /// Arrow right left. Tags: bidirectional, two-way, 2-way, swap, switch, transaction, reorder, move.
-  static const arrowRightLeft = _arrowRightLeft;
+  /// Same icon as [arrowLeftRight].
+  static const arrowRightLeft = _arrowLeftRight;
 
-  /// Arrow right to line. Tags: next, forward, direction, east, tab, keyboard, mac, indent. Mirrors in right-to-left text.
+  /// Arrow right to line. Tags: arrow, right, end, last, finish. Mirrors in right-to-left text.
   static const arrowRightToLine = _arrowRightToLine;
 
-  /// Arrows up down square. Tags: elevator, lift, floors, levels, hotel, accommodation, expand, unfold.
-  static const arrowsUpDownSquare = _arrowsUpDownSquare;
+  /// Arrow right to line triangle. Tags: arrow, right, end, small, last, pointer. Mirrors in right-to-left text.
+  static const arrowRightToLineTriangle = _arrowRightToLineTriangle;
 
-  /// Arrows up from line. Tags: direction, orientation, this way up, vertical, package, box, fragile, postage.
+  /// Arrow right triangle. Tags: arrow, right, next, small, pointer, east. Mirrors in right-to-left text.
+  static const arrowRightTriangle = _arrowRightTriangle;
+
+  /// Arrows down lines. Tags: sort, down, arrows, lines, order.
+  static const arrowsDownLines = _arrowsDownLines;
+
+  /// Arrows left right line. Tags: more or less, swap, exchange, compare, toggle, reverse.
+  static const arrowsLeftRightLine = _arrowsLeftRightLine;
+
+  /// Arrows split up. Tags: sharing, distribute, split, branch, spread.
+  static const arrowsSplitUp = _arrowsSplitUp;
+
+  /// Arrows to dot. Tags: centralized, converge, center, focus, inward, gather.
+  static const arrowsToDot = _arrowsToDot;
+
+  /// Arrows up down lines. Tags: sort, list, order, lines, arrows.
+  static const arrowsUpDownLines = _arrowsUpDownLines;
+
+  /// Arrows up from line. Tags: arrows, up, from, line, rise, increase.
   static const arrowsUpFromLine = _arrowsUpFromLine;
 
-  /// Arrow up. Tags: forward, direction, north.
+  /// Arrows up lines. Tags: sort, up, arrows, lines, order.
+  static const arrowsUpLines = _arrowsUpLines;
+
+  /// Arrow up. Tags: arrow, up, north, direction, upload.
   static const arrowUp = _arrowUp;
 
-  /// Arrow up 0 1. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow up 0 1. Tags: sort, numeric, ascending, order, numbers.
   static const arrowUp01 = _arrowUp01;
 
-  /// Arrow up 1 0. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow up 1 0. Tags: sort, numeric, descending, order, numbers.
   static const arrowUp10 = _arrowUp10;
 
-  /// Arrow up a z. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
-  static const arrowUpAZ = _arrowUpAZ;
+  /// Same icon as [lettersAZArrowDown].
+  static const arrowUpAZ = _lettersAZArrowDown;
 
-  /// Arrow up down. Tags: bidirectional, two-way, 2-way, swap, switch, network, mobile data, internet.
+  /// Arrow up down. Tags: arrow, up, down, swap, sort, two-way, reorder.
   static const arrowUpDown = _arrowUpDown;
 
-  /// Arrow up from dot. Tags: direction, north, step, out.
+  /// Arrow up from circle. Tags: move to top, send to top, up, arrow, dot, highest.
+  static const arrowUpFromCircle = _arrowUpFromCircle;
+
+  /// Arrow up from dot. Tags: arrow, up, origin, rise, start, point.
   static const arrowUpFromDot = _arrowUpFromDot;
 
   /// Arrow up from line. Tags: forward, direction, north, upload, git, version control, push, expand.
   static const arrowUpFromLine = _arrowUpFromLine;
 
-  /// Arrow up left. Tags: direction, north-west, diagonal.
+  /// Arrow up left. Tags: arrow, up-left, north-west, diagonal, direction.
   static const arrowUpLeft = _arrowUpLeft;
 
-  /// Arrow up narrow wide. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow up left triangle. Tags: arrow, up-left, north-west, diagonal, small.
+  static const arrowUpLeftTriangle = _arrowUpLeftTriangle;
+
+  /// Arrow up narrow wide. Tags: sort, ascending, order, filter, lines.
   static const arrowUpNarrowWide = _arrowUpNarrowWide;
 
-  /// Arrow up right. Tags: direction, north-east, diagonal.
+  /// Arrow up right. Tags: arrow, up-right, north-east, diagonal, external.
   static const arrowUpRight = _arrowUpRight;
 
-  /// Arrow up to line. Tags: forward, direction, north, upload, collapse, fold, vertical.
+  /// Arrow up right double. Tags: arrow, up-right, stack, layers, external, diagonal.
+  static const arrowUpRightDouble = _arrowUpRightDouble;
+
+  /// Arrow up right triangle. Tags: arrow, up-right, north-east, diagonal, small.
+  static const arrowUpRightTriangle = _arrowUpRightTriangle;
+
+  /// Arrow up to line. Tags: arrow, up, top, upload, end.
   static const arrowUpToLine = _arrowUpToLine;
 
-  /// Arrow up wide narrow. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow up to line triangle. Tags: arrow, up, top, small, end, pointer.
+  static const arrowUpToLineTriangle = _arrowUpToLineTriangle;
+
+  /// Arrow up triangle. Tags: arrow, up, small, pointer, direction, north.
+  static const arrowUpTriangle = _arrowUpTriangle;
+
+  /// Arrow up wide narrow. Tags: sort, descending, order, filter, lines.
   static const arrowUpWideNarrow = _arrowUpWideNarrow;
 
-  /// Arrow up z a. Tags: filter, sort, ascending, descending, increasing, decreasing, rising, falling.
+  /// Arrow up z a. Tags: sort, alphabetical, z-a, descending, order.
   static const arrowUpZA = _arrowUpZA;
 
-  /// Asterisk. Tags: symbol, sterisk, mark, pointer, pencil, sign, alert, notification.
+  /// Artboard. Tags: canvas, frame, design, workspace, page.
+  static const artboard = _artboard;
+
+  /// Artboard tool. Tags: artboard, tool, frame, canvas, crop, design.
+  static const artboardTool = _artboardTool;
+
+  /// Aspect ratio. Tags: screen, proportion, resize, crop, format.
+  static const aspectRatio = _aspectRatio;
+
+  /// Asterisk. Tags: star, required, footnote, wildcard, multiply.
   static const asterisk = _asterisk;
 
-  /// Astroid. Tags: star, math, shape, curve, sharp, four-pointed, hypocycloid, ai.
-  static const astroid = _astroid;
+  /// Asteroid. Tags: rock, space, meteoroid, astronomy.
+  static const asteroid = _asteroid;
 
-  /// Astronaut helmet. Tags: spacesuit, spaceman, explore, interplanetary, stars, safety, protection, headgear.
+  /// Astronaut. Tags: space, spaceman, cosmonaut, suit.
+  static const astronaut = _astronaut;
+
+  /// Astronaut helmet. Tags: astronaut, helmet, space, visor, explorer.
   static const astronautHelmet = _astronautHelmet;
 
-  /// Atom. Tags: atomic, nuclear, physics, particle, element, molecule, electricity, energy. Its details merge when filled: use it outlined.
+  /// Atm. Tags: cash, withdraw, bank, money, machine.
+  static const atm = _atm;
+
+  /// Atm arrow down. Tags: deposit, reverse withdrawal, atm, slot, arrow down.
+  static const atmArrowDown = _atmArrowDown;
+
+  /// Atm bitcoin. Tags: bitcoin, atm, withdraw, cash, crypto, btc.
+  static const atmBitcoin = _atmBitcoin;
+
+  /// Atm dollar. Tags: deposit, reverse withdrawal, atm, dollar, cash.
+  static const atmDollar = _atmDollar;
+
+  /// Atm dollar sign. Tags: atm, cash, withdraw, bank, money, dollar.
+  static const atmDollarSign = _atmDollarSign;
+
+  /// Atom. Tags: physics, science, orbit, electron, chemistry. Its details merge when filled: use it outlined.
   static const atom = _atom;
 
-  /// At sign. Tags: mention, at, email, message.
+  /// Atom nucleus. Tags: physics, atom, nucleus, electron, science.
+  static const atomNucleus = _atomNucleus;
+
+  /// Atom ring. Tags: atom, nucleus, ring, orbit, physics, molecule.
+  static const atomRing = _atomRing;
+
+  /// Atom zap. Tags: atom, nuclear, power, energy, bolt, electric. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const atomZap = _atomZap;
+
+  /// At sign. Tags: at, mention, email, address.
   static const atSign = _atSign;
-
-  /// At sign circle. Tags: mention, at, email address, message, contact, networking, ping.
-  static const atSignCircle = _atSignCircle;
-
-  /// At sign square. Tags: mention, at, email address, message, contacts, details, address book, directory.
-  static const atSignSquare = _atSignSquare;
 
   /// Same icon as [paperclip].
   static const attach = _paperclip;
 
-  /// Audio lines. Tags: graphic equaliser, sound, noise, listen, hearing, hertz, frequency, wavelength.
+  /// Audio bars. Tags: audio, sound, waveform, voice, equalizer, bars.
+  static const audioBars = _audioBars;
+
+  /// Audio lines. Tags: audio, sound, waveform, voice, equalizer, lines.
   static const audioLines = _audioLines;
 
-  /// Audio lines off. Tags: audio, sound, noise, mute, silence, off, disabled, inactive.
-  static const audioLinesOff = _audioLinesOff;
+  /// Audio lines sparkle. Tags: ai, speech, audio, waveform, voice, sparkle.
+  static const audioLinesSparkle = _audioLinesSparkle;
 
-  /// Audio lines x. Tags: sound, noise, mute, silence, disabled, cancel, remove, unavailable.
-  static const audioLinesX = _audioLinesX;
+  /// Audio lines type. Tags: speech, to, text, voice, transcription, waveform, dictation.
+  static const audioLinesType = _audioLinesType;
 
-  /// Audio waveform. Tags: sound, noise, listen, hearing, hertz, frequency, wavelength, vibrate.
+  /// Audio waveform. Tags: audio, sound, waveform, music, signal, wave.
   static const audioWaveform = _audioWaveform;
 
-  /// Avocado. Tags: fruit, snack, meal, lunch, ingredient, cooking, cookery, kitchen.
+  /// Audio waves. Tags: audio, sound, wave, smooth, voice, signal.
+  static const audioWaves = _audioWaves;
+
+  /// Avalanche. Tags: snow, mountain, disaster, slide, danger.
+  static const avalanche = _avalanche;
+
+  /// Avocado. Tags: fruit, food, guacamole, vegan.
   static const avocado = _avocado;
 
-  /// Award. Tags: achievement, badge, rosette, prize, winner.
-  static const award = _award;
+  /// Same icon as [awardStarRibbon].
+  static const award = _awardStarRibbon;
 
-  /// Axe. Tags: hatchet, weapon, chop, sharp, equipment, fireman, firefighter, brigade.
+  /// Award check. Tags: award, medal, check, verified, achievement, ribbon.
+  static const awardCheck = _awardCheck;
+
+  /// Award hexagon check. Tags: award, medal, check, verified, achievement, ribbon.
+  static const awardHexagonCheck = _awardHexagonCheck;
+
+  /// Award star. Tags: award, medal, ribbon, star, prize, achievement.
+  static const awardStar = _awardStar;
+
+  /// Award star ribbon. Tags: award, badge, ribbon, star, prize, achievement.
+  static const awardStarRibbon = _awardStarRibbon;
+
+  /// Axe. Tags: chop, tool, wood, lumberjack.
   static const axe = _axe;
 
-  /// Axis 3d. Tags: gizmo, coordinates.
+  /// Axes diagonal. Tags: axes, graph, coordinate, diagonal, line, between, vertical, end.
+  static const axesDiagonal = _axesDiagonal;
+
+  /// Axis 2d. Tags: coordinate, axes, graph, cartesian, plane, x y.
+  static const axis2d = _axis2d;
+
+  /// Axis 3d. Tags: axis, 3d, coordinates, graph, xyz, three dimensional.
   static const axis3d = _axis3d;
 
-  /// Baby. Tags: child, childproof, children.
+  /// Axis 3d labels. Tags: coordinate, axes, 3d, xyz, graph, space.
+  static const axis3dLabels = _axis3dLabels;
+
+  /// Axis 3d short. Tags: scale, 3d, axes, xyz, dimension.
+  static const axis3dShort = _axis3dShort;
+
+  /// Baby. Tags: child, infant, face, newborn.
   static const baby = _baby;
 
-  /// Baby pacifier. Tags: dummy, teething, suck, silence, quiet, newborn, childproof, children.
-  static const babyPacifier = _babyPacifier;
+  /// Baby dress. Tags: baby, dress, clothes, girl, infant, heart.
+  static const babyDress = _babyDress;
 
-  /// Backpack. Tags: bag, hiking, travel, camping, school, childhood.
+  /// Baby shirt. Tags: baby, shirt, clothes, boy, infant, tee.
+  static const babyShirt = _babyShirt;
+
+  /// Baby shoulders. Tags: infant, child, newborn, toddler, kid.
+  static const babyShoulders = _babyShoulders;
+
+  /// Baby swaddled. Tags: baby, swaddle, infant, newborn, wrapped, child.
+  static const babySwaddled = _babySwaddled;
+
+  /// Back muscles. Tags: back, muscles, body, anatomy, spine, torso.
+  static const backMuscles = _backMuscles;
+
+  /// Backpack. Tags: bag, school, hiking, travel.
   static const backpack = _backpack;
+
+  /// Backpack flap. Tags: backpack, bag, school, flap, travel, rucksack.
+  static const backpackFlap = _backpackFlap;
+
+  /// Backpack pouches. Tags: backpack, bag, hiking, pouches, travel, rucksack.
+  static const backpackPouches = _backpackPouches;
 
   /// Same icon as [delete].
   static const backspace = _delete;
 
-  /// Bacon. Tags: rashers, smoked, streaky, crispy, meat, fast food, junk food, snack.
-  static const bacon = _bacon;
+  /// Bacteria. Tags: microbe, germ, microorganism, disease, biology.
+  static const bacteria = _bacteria;
 
-  /// Badge. Tags: check, verified, unverified.
+  /// Badge. Tags: seal, label, shape, scalloped, stamp, certificate, award, rosette.
   static const badge = _badge;
 
-  /// Badge alert. Tags: check, verified, unverified, security, safety, issue.
+  /// Badge ai. Tags: ai, artificial intelligence, badge, assistant, label.
+  static const badgeAi = _badgeAi;
+
+  /// Badge alert. Tags: badge, alert, warning, exclamation, attention.
   static const badgeAlert = _badgeAlert;
 
-  /// Badge cent. Tags: discount, offer, sale, voucher, tag, monetization, marketing, finance.
+  /// Badge calligraphy. Tags: muhammad, islam, calligraphy, religion, arabic, name.
+  static const badgeCalligraphy = _badgeCalligraphy;
+
+  /// Badge cent. Tags: badge, cent, currency, price, money, coin.
   static const badgeCent = _badgeCent;
 
-  /// Badge check. Tags: verified, check.
+  /// Badge check. Tags: verified, approved, seal, success, certified, check, badge.
   static const badgeCheck = _badgeCheck;
 
-  /// Badge dollar sign. Tags: discount, offer, sale, voucher, tag, monetization, marketing, finance.
+  /// Badge check big. Tags: verified, approved, seal, certified, check, badge, overflow.
+  static const badgeCheckBig = _badgeCheckBig;
+
+  /// Badge check big curved. Tags: verified, approved, seal, certified, check, badge, overflow.
+  static const badgeCheckBigCurved = _badgeCheckBigCurved;
+
+  /// Badge check ruffled. Tags: new release, verified, approved, check, badge, seal.
+  static const badgeCheckRuffled = _badgeCheckRuffled;
+
+  /// Badge clock. Tags: clock, settings, time settings, cog, gear.
+  static const badgeClock = _badgeClock;
+
+  /// Badge dollar sign. Tags: dollar, price, usd, money, badge, discount.
   static const badgeDollarSign = _badgeDollarSign;
 
-  /// Badge euro. Tags: discount, offer, sale, voucher, tag, monetization, marketing, finance.
+  /// Badge euro. Tags: euro, price, eur, money, badge.
   static const badgeEuro = _badgeEuro;
 
-  /// Badge indian rupee. Tags: discount, offer, sale, voucher, tag, monetization, marketing, finance.
+  /// Badge indian rupee. Tags: rupee, inr, price, money, badge.
   static const badgeIndianRupee = _badgeIndianRupee;
 
-  /// Badge info. Tags: verified, unverified, help.
+  /// Badge info. Tags: information, help, details, about, badge.
   static const badgeInfo = _badgeInfo;
 
-  /// Badge japanese yen. Tags: discount, offer, sale, voucher, tag, monetization, marketing, finance.
+  /// Badge japanese yen. Tags: yen, jpy, price, money, badge.
   static const badgeJapaneseYen = _badgeJapaneseYen;
 
-  /// Badge minus. Tags: verified, unverified, delete, remove, erase.
+  /// Badge minus. Tags: remove, subtract, badge, decrease.
   static const badgeMinus = _badgeMinus;
 
-  /// Badge percent. Tags: verified, unverified, sale, discount, offer, marketing, sticker, price tag.
+  /// Badge percent. Tags: discount, sale, offer, percentage, badge, deal, percent.
   static const badgePercent = _badgePercent;
 
-  /// Badge plus. Tags: verified, unverified, add, create, new.
+  /// Badge plus. Tags: add, new, badge, increase.
   static const badgePlus = _badgePlus;
 
-  /// Badge pound sterling. Tags: discount, offer, sale, voucher, tag, monetization, marketing, finance.
+  /// Badge pound sterling. Tags: pound, gbp, price, money, badge.
   static const badgePoundSterling = _badgePoundSterling;
 
-  /// Badge question mark. Tags: verified, unverified, help.
+  /// Badge question mark. Tags: help, unknown, question, support, badge, quiz.
   static const badgeQuestionMark = _badgeQuestionMark;
 
-  /// Badge russian ruble. Tags: discount, offer, sale, voucher, tag, monetization, marketing, finance.
+  /// Badge russian ruble. Tags: ruble, rub, price, money, badge.
   static const badgeRussianRuble = _badgeRussianRuble;
 
-  /// Badge turkish lira. Tags: discount, offer, sale, voucher, tag, monetization, marketing, finance.
+  /// Badge swiss franc. Tags: franc, chf, price, money, badge.
+  static const badgeSwissFranc = _badgeSwissFranc;
+
+  /// Badge turkish lira. Tags: lira, try, price, money, badge.
   static const badgeTurkishLira = _badgeTurkishLira;
 
-  /// Badge x. Tags: verified, unverified, lost, delete, remove.
+  /// Badge user. Tags: account, setting, user, badge, seal, profile, preferences.
+  static const badgeUser = _badgeUser;
+
+  /// Badge x. Tags: close, cancel, remove, error, badge.
   static const badgeX = _badgeX;
 
-  /// Baggage claim. Tags: baggage, luggage, travel, cart, trolley, suitcase.
+  /// Badge zap. Tags: power, service, electricity, utility, badge, lightning.
+  static const badgeZap = _badgeZap;
+
+  /// Badminton racket. Tags: badminton, racket, racquet, sport.
+  static const badmintonRacket = _badmintonRacket;
+
+  /// Bag. Tags: shopping, tote, paper bag, purchase, store.
+  static const bag = _bag;
+
+  /// Bag arrow down. Tags: check out, bag, take, remove, store.
+  static const bagArrowDown = _bagArrowDown;
+
+  /// Bag arrow up. Tags: check in, bag, return, put, store.
+  static const bagArrowUp = _bagArrowUp;
+
+  /// Baggage claim. Tags: luggage, suitcase, airport, baggage, arrivals.
   static const baggageClaim = _baggageClaim;
 
-  /// Bag hand. Tags: purse, finance, storage, store, ecommerce, cart, purchase, womens.
-  static const bagHand = _bagHand;
+  /// Bag plus. Tags: add, bag, plus, purchase, store.
+  static const bagPlus = _bagPlus;
 
-  /// Balloon. Tags: party, festival, congratulations, celebration, decoration, colorful, floating, fun.
+  /// Baguette. Tags: bread, french, bakery.
+  static const baguette = _baguette;
+
+  /// Balcony. Tags: patio, gazebo, outdoor, garden, terrace.
+  static const balcony = _balcony;
+
+  /// Ball bounce left. Tags: ball, bounce, left, trajectory, drop. Mirrors in right-to-left text.
+  static const ballBounceLeft = _ballBounceLeft;
+
+  /// Ball bounce right. Tags: ball, bounce, right, trajectory, drop. Mirrors in right-to-left text.
+  static const ballBounceRight = _ballBounceRight;
+
+  /// Balloon. Tags: party, birthday, celebration, decoration.
   static const balloon = _balloon;
 
-  /// Ban. Tags: cancel, no, stop, forbidden, prohibited, error, incorrect, mistake.
+  /// Balloons. Tags: party, birthday, celebration, decoration, festival.
+  static const balloons = _balloons;
+
+  /// Ban. Tags: forbidden, prohibited, block, no, not, allowed, unavailable, not allowed.
   static const ban = _ban;
 
-  /// Banana. Tags: fruit, food.
+  /// Banana. Tags: fruit, food, yellow, snack.
   static const banana = _banana;
 
-  /// Bandage. Tags: plaster, band-aid, first aid, medical, health, wound, injury, care.
+  /// Bandage. Tags: plaster, band-aid, first, aid, injury.
   static const bandage = _bandage;
 
-  /// Bangladeshi taka. Tags: currency, money, payment, bdt, currencysymbol, cash, banknote, price.
-  static const bangladeshiTaka = _bangladeshiTaka;
-
-  /// Banknote. Tags: currency, money, payment.
+  /// Banknote. Tags: money, cash, bill, currency.
   static const banknote = _banknote;
 
-  /// Banknote arrow down. Tags: bill, currency, money, payment, funds, transaction, cash, finance.
+  /// Banknote arrow down. Tags: money, cash, withdraw, decrease, bill.
   static const banknoteArrowDown = _banknoteArrowDown;
 
-  /// Banknote arrow up. Tags: bill, currency, money, payment, funds, transaction, cash, finance.
+  /// Banknote arrow up. Tags: money, cash, deposit, increase, bill.
   static const banknoteArrowUp = _banknoteArrowUp;
 
-  /// Banknote check. Tags: banknote, bill, currency, payment, money, finance, document, verification.
-  static const banknoteCheck = _banknoteCheck;
+  /// Banknote corner. Tags: money, cash, banknote, bill, currency, payment.
+  static const banknoteCorner = _banknoteCorner;
 
-  /// Banknote x. Tags: bill, currency, money, payment, funds, transaction, cash, finance.
+  /// Banknote corner arrow down. Tags: money, receive, incoming, cash, deposit, income.
+  static const banknoteCornerArrowDown = _banknoteCornerArrowDown;
+
+  /// Banknote corner arrow up. Tags: money, send, outgoing, cash, transfer, payment.
+  static const banknoteCornerArrowUp = _banknoteCornerArrowUp;
+
+  /// Banknote corner bitcoin. Tags: bitcoin, banknote, cash, crypto, btc.
+  static const banknoteCornerBitcoin = _banknoteCornerBitcoin;
+
+  /// Banknote corner check. Tags: payment, success, cash, paid, check.
+  static const banknoteCornerCheck = _banknoteCornerCheck;
+
+  /// Banknote corner exchange. Tags: money, cash, exchange, transfer, swap, convert.
+  static const banknoteCornerExchange = _banknoteCornerExchange;
+
+  /// Banknote corner line. Tags: cash, money, bill, currency, payment.
+  static const banknoteCornerLine = _banknoteCornerLine;
+
+  /// Banknote corner lines in. Tags: money, receive, flow, incoming, cash, income.
+  static const banknoteCornerLinesIn = _banknoteCornerLinesIn;
+
+  /// Banknote corner lines out. Tags: money, send, flow, outgoing, cash, transfer.
+  static const banknoteCornerLinesOut = _banknoteCornerLinesOut;
+
+  /// Banknote corner lock. Tags: money, lock, secure, cash, protected, locked.
+  static const banknoteCornerLock = _banknoteCornerLock;
+
+  /// Banknote corner off. Tags: money, not found, no cash, missing, cash off, unavailable.
+  static const banknoteCornerOff = _banknoteCornerOff;
+
+  /// Banknote corner plus. Tags: money, cash, banknote, add, plus, deposit.
+  static const banknoteCornerPlus = _banknoteCornerPlus;
+
+  /// Banknote corner x. Tags: money, remove, cash, delete, cancel, withdraw.
+  static const banknoteCornerX = _banknoteCornerX;
+
+  /// Banknote dots. Tags: money, cash, banknote, bill, currency, payment.
+  static const banknoteDots = _banknoteDots;
+
+  /// Banknote dots off. Tags: money, not found, no cash, missing, cash off, unavailable.
+  static const banknoteDotsOff = _banknoteDotsOff;
+
+  /// Banknotes exchange. Tags: money, exchange, swap, transfer, currency, convert.
+  static const banknotesExchange = _banknotesExchange;
+
+  /// Banknote wavy. Tags: money, cash, banknote, bill, currency, payment.
+  static const banknoteWavy = _banknoteWavy;
+
+  /// Banknote wavy arrow down. Tags: money, receive, incoming, cash, deposit, income.
+  static const banknoteWavyArrowDown = _banknoteWavyArrowDown;
+
+  /// Banknote wavy arrow up. Tags: money, send, outgoing, cash, transfer, payment.
+  static const banknoteWavyArrowUp = _banknoteWavyArrowUp;
+
+  /// Banknote wavy bitcoin. Tags: bitcoin, banknote, cash, flag, crypto, btc.
+  static const banknoteWavyBitcoin = _banknoteWavyBitcoin;
+
+  /// Banknote wavy check. Tags: payment, success, cash, paid, banknotes, check.
+  static const banknoteWavyCheck = _banknoteWavyCheck;
+
+  /// Banknote wavy dots. Tags: money, cash, banknote, bill, currency, payment.
+  static const banknoteWavyDots = _banknoteWavyDots;
+
+  /// Banknote wavy dots off. Tags: money, not found, no cash, missing, cash off, unavailable.
+  static const banknoteWavyDotsOff = _banknoteWavyDotsOff;
+
+  /// Banknote wavy exchange. Tags: money, cash, exchange, transfer, swap, convert.
+  static const banknoteWavyExchange = _banknoteWavyExchange;
+
+  /// Banknote wavy line. Tags: cash, money, bill, currency, payment.
+  static const banknoteWavyLine = _banknoteWavyLine;
+
+  /// Banknote wavy lines in. Tags: money, receive, flow, incoming, cash, income.
+  static const banknoteWavyLinesIn = _banknoteWavyLinesIn;
+
+  /// Banknote wavy lines out. Tags: money, send, flow, outgoing, cash, transfer.
+  static const banknoteWavyLinesOut = _banknoteWavyLinesOut;
+
+  /// Banknote wavy off. Tags: money, not found, no cash, missing, cash off, unavailable.
+  static const banknoteWavyOff = _banknoteWavyOff;
+
+  /// Banknote wavy plus. Tags: money, cash, banknote, add, plus, deposit.
+  static const banknoteWavyPlus = _banknoteWavyPlus;
+
+  /// Banknote wavy x. Tags: money, remove, cash, delete, cancel, withdraw.
+  static const banknoteWavyX = _banknoteWavyX;
+
+  /// Banknote x. Tags: money, cash, cancel, failed, bill.
   static const banknoteX = _banknoteX;
 
-  /// Barbecue. Tags: barbeque, bbq, grilled, smoke, dinner, meal, meat, cookery.
+  /// Ban long. Tags: forbidden, banned, prohibited, no, block, not allowed. Its details merge when filled: use it outlined.
+  static const banLong = _banLong;
+
+  /// Banner. Tags: pennant, honor, award, flag.
+  static const banner = _banner;
+
+  /// Banner star. Tags: banner, pennant, honor, star, award.
+  static const bannerStar = _bannerStar;
+
+  /// Barbecue. Tags: bbq, grill, cooking, outdoor. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const barbecue = _barbecue;
 
-  /// Barber pole. Tags: hairdresser, grooming, cut, shave, shop, salon, service, signage.
-  static const barberPole = _barberPole;
+  /// Barber chair. Tags: salon, hairdresser, barber, haircut, seat.
+  static const barberChair = _barberChair;
 
   /// Same icon as [chartBar].
   static const barChart = _chartBar;
 
-  /// Barcode. Tags: scan, checkout, till, cart, transaction, purchase, buy, product.
+  /// Barcode. Tags: scan, product, code, checkout.
   static const barcode = _barcode;
 
-  /// Barn. Tags: stable, cattle, horses, farm, ranch, hay, alfalfa, door.
+  /// Barcode hollow. Tags: scan, product, code, thick, bars, checkout.
+  static const barcodeHollow = _barcodeHollow;
+
+  /// Barn. Tags: farm, agriculture, building, shed.
   static const barn = _barn;
 
-  /// Barrel. Tags: keg, drum, tank, wine, beer, oak, wood, firkin.
+  /// Barrel. Tags: cask, keg, wine, beer, storage.
   static const barrel = _barrel;
 
-  /// Baseball. Tags: home run, pitcher, bat, innings, rounders, bounce.
+  /// Baseball. Tags: ball, sport, game.
   static const baseball = _baseball;
 
-  /// Baseline. Tags: text, format, color.
+  /// Baseball helmet. Tags: baseball, helmet, batting, sport.
+  static const baseballHelmet = _baseballHelmet;
+
+  /// Baseline. Tags: text color, font color, letter, underline, format.
   static const baseline = _baseline;
 
-  /// Baseline square. Tags: color, colour, toolbar, formatting, plain text, rich text, rtf, typography.
-  static const baselineSquare = _baselineSquare;
-
-  /// Basketball. Tags: bounce, hoop, netball, court, dribble, slam dunk, alley-oop, team.
+  /// Basketball. Tags: ball, sport.
   static const basketball = _basketball;
 
-  /// Bat ball. Tags: table tennis, ping-pong, whiff-whaff, paddle, racquet, racket, net, bounce.
+  /// Basketball curved. Tags: basketball, ball, sport.
+  static const basketballCurved = _basketballCurved;
+
+  /// Basketball hoop. Tags: basketball, hoop, net, goal, sport.
+  static const basketballHoop = _basketballHoop;
+
+  /// Basket handle. Tags: basket, shopping, purchase, store, handle.
+  static const basketHandle = _basketHandle;
+
+  /// Basket handle arrow down. Tags: check out, basket, take, remove, store.
+  static const basketHandleArrowDown = _basketHandleArrowDown;
+
+  /// Basket handle arrow up. Tags: check in, basket, return, put, store.
+  static const basketHandleArrowUp = _basketHandleArrowUp;
+
+  /// Basket handle plus. Tags: add, basket, plus, purchase, store.
+  static const basketHandlePlus = _basketHandlePlus;
+
+  /// Bat ball. Tags: baseball, bat, ball, sport, hit. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const batBall = _batBall;
 
-  /// Bath. Tags: amenities, services, bathroom, shower.
+  /// Bath. Tags: bathtub, bathroom, hotel, amenities.
   static const bath = _bath;
 
-  /// Bath bubble. Tags: amenities, services, bathroom, towel, relax, luxury.
-  static const bathBubble = _bathBubble;
+  /// Bathroom scale. Tags: weight scale, scale, weigh, body weight, health, measure, fitness.
+  static const bathroomScale = _bathroomScale;
 
-  /// Battery. Tags: power, electricity, energy, accumulator, charge.
+  /// Bathtub. Tags: bath, tub, bathroom, hotel, amenities.
+  static const bathtub = _bathtub;
+
+  /// Bathtub clawfoot. Tags: bath, tub, bathroom, clawfoot, freestanding.
+  static const bathtubClawfoot = _bathtubClawfoot;
+
+  /// Batteries zap. Tags: batteries, energy, power, charge, storage.
+  static const batteriesZap = _batteriesZap;
+
+  /// Battery. Tags: power, charge, energy.
   static const battery = _battery;
 
-  /// Battery charging. Tags: power, electricity, energy, accumulator, charge.
+  /// Battery charging. Tags: power, charge, energy, bolt.
   static const batteryCharging = _batteryCharging;
 
-  /// Battery full. Tags: power, electricity, energy, accumulator, charge.
+  /// Battery empty. Tags: power, empty, dead, low, charge. Its details merge when filled: use it outlined.
+  static const batteryEmpty = _batteryEmpty;
+
+  /// Battery full. Tags: power, full, charged, energy.
   static const batteryFull = _batteryFull;
 
-  /// Battery low. Tags: power, electricity, energy, accumulator, charge.
+  /// Battery high. Tags: power, high, charge, energy.
+  static const batteryHigh = _batteryHigh;
+
+  /// Battery leaf. Tags: eco, green, energy, charging, power.
+  static const batteryLeaf = _batteryLeaf;
+
+  /// Battery low. Tags: power, low, charge, energy.
   static const batteryLow = _batteryLow;
 
-  /// Battery medium. Tags: power, electricity, energy, accumulator, charge.
+  /// Battery medium. Tags: power, half, charge, energy.
   static const batteryMedium = _batteryMedium;
 
-  /// Battery plus. Tags: power, electricity, energy, accumulator, charge, plus, economy, health.
+  /// Battery plus. Tags: power, add, charge, energy.
   static const batteryPlus = _batteryPlus;
 
-  /// Battery warning. Tags: power, electricity, energy, accumulator, charge, exclamation mark.
+  /// Battery warning. Tags: power, alert, low, warning.
   static const batteryWarning = _batteryWarning;
 
-  /// Beach ball. Tags: inflatable, summer holiday, seaside, toys, kids, children, play, football.
-  static const beachBall = _beachBall;
+  /// Battery zap. Tags: power, charging, energy, bolt, fast.
+  static const batteryZap = _batteryZap;
 
-  /// Beaker. Tags: cup, lab, chemistry, experiment, test.
+  /// Battle ropes. Tags: workout, exercise, gym, fitness, training, rope. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const battleRopes = _battleRopes;
+
+  /// Beaker. Tags: laboratory, chemistry, measuring, experiment.
   static const beaker = _beaker;
 
-  /// Bean. Tags: legume, soy, food, seed.
+  /// Bean. Tags: coffee, legume, seed, food.
   static const bean = _bean;
 
-  /// Bean off. Tags: soy free, legume, soy, food, seed, allergy, intolerance, diet.
+  /// Bean off. Tags: allergy, free, no, legume.
   static const beanOff = _beanOff;
 
-  /// Bear face. Tags: cub, cuddle, children, kids, toys, teddy, nursery, picnic.
-  static const bearFace = _bearFace;
-
-  /// Bed. Tags: sleep, hotel, furniture.
+  /// Bed. Tags: sleep, hotel, furniture, bedroom.
   static const bed = _bed;
 
-  /// Bed bunk. Tags: sleep, hostel, accommodation, sheets.
+  /// Bed bunk. Tags: bunk, sleep, furniture, bedroom, kids.
   static const bedBunk = _bedBunk;
 
-  /// Bed double. Tags: sleep, hotel, furniture.
+  /// Bed double. Tags: sleep, hotel, furniture, bedroom.
   static const bedDouble = _bedDouble;
 
-  /// Bed single. Tags: sleep, hotel, furniture.
+  /// Bed single. Tags: sleep, hotel, furniture, bedroom.
   static const bedSingle = _bedSingle;
 
-  /// Bee. Tags: bumble, buzz, busy, productivity, pollen, pollinate, honey, hive.
+  /// Bed single headboard. Tags: sleep, furniture, bedroom, headboard.
+  static const bedSingleHeadboard = _bedSingleHeadboard;
+
+  /// Bee. Tags: swarm, insect, honey, bees.
   static const bee = _bee;
 
-  /// Beef. Tags: food, dish, restaurant, course, meal, meat, bbq, steak.
+  /// Beef. Tags: meat, steak, food.
   static const beef = _beef;
 
-  /// Beef off. Tags: food, dish, restaurant, course, meal, meat, bbq, steak.
+  /// Beef off. Tags: vegetarian, no, meat, vegan.
   static const beefOff = _beefOff;
 
-  /// Bee hive. Tags: nest, beehive, beeswax, bumble, buzz, busy, productivity, honeycomb.
-  static const beeHive = _beeHive;
-
-  /// Beer. Tags: alcohol, bar, beverage, brewery, drink.
+  /// Beer. Tags: drink, pub, mug, alcohol.
   static const beer = _beer;
 
-  /// Beer off. Tags: alcohol, bar, beverage, brewery, drink.
+  /// Beer off. Tags: no, alcohol, sober, drink.
   static const beerOff = _beerOff;
 
-  /// Beetle scarab. Tags: bug, wildlife, wings, flying, insect, antennae, ancient, egyptian.
-  static const beetleScarab = _beetleScarab;
-
-  /// Bell. Tags: alarm, notification, sound, reminder.
+  /// Bell. Tags: notification, alert, ring, alarm, reminder.
   static const bell = _bell;
+
+  /// Bell ban. Tags: notification, block, mute, forbidden, bell.
+  static const bellBan = _bellBan;
 
   /// Bell check. Tags: alarm, notification, sound, reminder.
   static const bellCheck = _bellCheck;
 
-  /// Bell concierge. Tags: reception, bellboy, bellhop, porter, service, summon, hospitality, hotel.
+  /// Bell concierge. Tags: concierge, service, hotel, reception, bell, desk.
   static const bellConcierge = _bellConcierge;
 
-  /// Bell concierge dot. Tags: reception, bellboy, bellhop, porter, service, summon, hospitality, hotel.
-  static const bellConciergeDot = _bellConciergeDot;
+  /// Bell concierge ring. Tags: reception, hotel, service, concierge, bell.
+  static const bellConciergeRing = _bellConciergeRing;
 
-  /// Bell concierge off. Tags: unstaffed, self-service, self-catering, hospitality, hotel, accommodation, silent, silence.
-  static const bellConciergeOff = _bellConciergeOff;
-
-  /// Bell dot. Tags: alarm, notification, sound, reminder, unread.
+  /// Bell dot. Tags: notification, alert, unread.
   static const bellDot = _bellDot;
 
-  /// Bell electric. Tags: fire alarm, flames, smoke, firefighter, fireman, department, brigade, station.
+  /// Bell electric. Tags: alarm, ring, door, school.
   static const bellElectric = _bellElectric;
 
-  /// Bell minus. Tags: alarm, notification, silent, reminder, delete, remove, erase.
+  /// Bell minus. Tags: notification, remove, alert.
   static const bellMinus = _bellMinus;
 
-  /// Bell off. Tags: alarm, notification, silent, reminder.
+  /// Bell off. Tags: mute, silent, notification, disabled, off.
   static const bellOff = _bellOff;
 
-  /// Bell plus. Tags: notification, silent, reminder, add, create, new.
+  /// Bell plus. Tags: notification, add, alert.
   static const bellPlus = _bellPlus;
 
-  /// Bell ring. Tags: alarm, notification, sound, reminder.
+  /// Bell ring. Tags: notification, alert, ringing, alarm.
   static const bellRing = _bellRing;
 
-  /// Belt. Tags: buckle, strap, fasten, fasting, waistline, weight loss, diet, calories.
+  /// Bell school. Tags: school bell, ring, alarm, class, break.
+  static const bellSchool = _bellSchool;
+
+  /// Bell tall. Tags: notification, alert, alarm, bell, reminder. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const bellTall = _bellTall;
+
+  /// Bell tall ban. Tags: notification, block, mute, forbidden, bell. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const bellTallBan = _bellTallBan;
+
+  /// Bell tall off. Tags: notification, mute, silent, disabled, off. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const bellTallOff = _bellTallOff;
+
+  /// Bell tall z. Tags: notification, snooze, sleep, pause, bell, zzz. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const bellTallZ = _bellTallZ;
+
+  /// Bell wide. Tags: notification, alert, alarm, bell, dome.
+  static const bellWide = _bellWide;
+
+  /// Bell wide ban. Tags: notification, block, mute, forbidden, bell.
+  static const bellWideBan = _bellWideBan;
+
+  /// Bell wide off. Tags: notification, mute, silent, disabled, off.
+  static const bellWideOff = _bellWideOff;
+
+  /// Bell wide z. Tags: notification, snooze, sleep, pause, bell, zzz.
+  static const bellWideZ = _bellWideZ;
+
+  /// Bell z. Tags: notification, snooze, sleep, pause, bell, zzz.
+  static const bellZ = _bellZ;
+
+  /// Belt. Tags: clothing, buckle, fashion, accessory.
   static const belt = _belt;
 
-  /// Between horizontal end. Tags: insert, add, left, slot, squeeze, space, vertical, grid.
-  static const betweenHorizontalEnd = _betweenHorizontalEnd;
+  /// Bench press. Tags: gym, weights, workout, equipment, barbell, fitness.
+  static const benchPress = _benchPress;
 
-  /// Between horizontal start. Tags: insert, add, right, slot, squeeze, space, vertical, grid.
+  /// Beta. Tags: greek, letter, symbol, test, version.
+  static const beta = _beta;
+
+  /// Between horizontal both. Tags: insert, rows, between, horizontal, squeeze.
+  static const betweenHorizontalBoth = _betweenHorizontalBoth;
+
+  /// Same icon as [betweenHorizontalBoth].
+  static const betweenHorizontalEnd = _betweenHorizontalBoth;
+
+  /// Between horizontal start. Tags: insert, rows, between, horizontal, start.
   static const betweenHorizontalStart = _betweenHorizontalStart;
 
-  /// Between vertical end. Tags: insert, add, top, slot, squeeze, space, vertical, grid.
-  static const betweenVerticalEnd = _betweenVerticalEnd;
-
-  /// Between vertical start. Tags: insert, add, bottom, slot, squeeze, space, vertical, grid.
+  /// Between vertical start. Tags: insert, columns, between, vertical, start.
   static const betweenVerticalStart = _betweenVerticalStart;
 
-  /// Biceps flexed. Tags: arm, muscle, strong, working out, athletic, toned, muscular, forelimb.
+  /// Biceps flexed. Tags: muscle, strong, strength, arm, gym, flex.
   static const bicepsFlexed = _bicepsFlexed;
 
   /// Same icon as [bike].
   static const bicycle = _bike;
 
-  /// Bike. Tags: bicycle, transport, trip.
+  /// Bike. Tags: bicycle, cycling, transport, trip. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const bike = _bike;
+
+  /// Billiard ball. Tags: billiards, pool, snooker, eight, ball, 8.
+  static const billiardBall = _billiardBall;
+
+  /// Billiard cue. Tags: billiards, pool, snooker, cue, ball.
+  static const billiardCue = _billiardCue;
 
   /// Binary. Tags: code, digits, computer, zero, one, boolean.
   static const binary = _binary;
 
-  /// Binoculars. Tags: field glasses, lorgnette, pince-nez, observation, sightseeing, nature, wildlife, birdwatching.
+  /// Binary code. Tags: binary, code, digits, computer, zero, one.
+  static const binaryCode = _binaryCode;
+
+  /// Binder clip. Tags: bulldog clip, paper, office, fasten, stationery.
+  static const binderClip = _binderClip;
+
+  /// Binoculars. Tags: look, search, scout, observation.
   static const binoculars = _binoculars;
 
-  /// Biohazard. Tags: fallout, waste, biology, chemistry, chemical, element.
+  /// Biohazard. Tags: danger, toxic, hazard, warning.
   static const biohazard = _biohazard;
 
-  /// Bird. Tags: peace, freedom, wing, avian, tweet.
+  /// Biohazard simple. Tags: radioactive alert, biohazard, hazard, toxic, warning.
+  static const biohazardSimple = _biohazardSimple;
+
+  /// Bird. Tags: animal, tweet, fly.
   static const bird = _bird;
 
-  /// Birdhouse. Tags: bird, garden, home, house, woodwork.
+  /// Birdhouse. Tags: bird, house, nest.
   static const birdhouse = _birdhouse;
 
-  /// Bitcoin. Tags: cryptocurrency, digital, blockchain, finance, coin, market, decentralized, investment.
+  /// Bitcoin. Tags: cryptocurrency, crypto, btc, currency, money.
   static const bitcoin = _bitcoin;
 
-  /// Blend. Tags: mode, overlay, multiply, screen, opacity, transparency, alpha, filters. Its details merge when filled: use it outlined.
+  /// Bitcoin arrow down. Tags: bitcoin, down, decrease, withdraw, crypto, btc.
+  static const bitcoinArrowDown = _bitcoinArrowDown;
+
+  /// Bitcoin arrow left. Tags: bitcoin, receive, incoming, crypto, btc. Mirrors in right-to-left text.
+  static const bitcoinArrowLeft = _bitcoinArrowLeft;
+
+  /// Bitcoin arrow right. Tags: bitcoin, send, transfer, outgoing, crypto, btc. Mirrors in right-to-left text.
+  static const bitcoinArrowRight = _bitcoinArrowRight;
+
+  /// Bitcoin arrow up. Tags: bitcoin, up, increase, deposit, crypto, btc.
+  static const bitcoinArrowUp = _bitcoinArrowUp;
+
+  /// Bitcoin refresh. Tags: exchange, convert, crypto, swap, btc.
+  static const bitcoinRefresh = _bitcoinRefresh;
+
+  /// Bitcoin sprout. Tags: profit, growth, bitcoin, crypto, plant, investment.
+  static const bitcoinSprout = _bitcoinSprout;
+
+  /// Bitcoin sync. Tags: bitcoin, transaction, exchange, refresh, crypto, btc.
+  static const bitcoinSync = _bitcoinSync;
+
+  /// Bitcoin trending down. Tags: bitcoin, down, loss, fall, crypto, btc.
+  static const bitcoinTrendingDown = _bitcoinTrendingDown;
+
+  /// Bitcoin trending up. Tags: bitcoin, up, gain, rise, crypto, btc.
+  static const bitcoinTrendingUp = _bitcoinTrendingUp;
+
+  /// Black hole. Tags: space, gravity, astronomy, singularity.
+  static const blackHole = _blackHole;
+
+  /// Black hole funnel. Tags: space, gravity, astronomy, singularity, vortex.
+  static const blackHoleFunnel = _blackHoleFunnel;
+
+  /// Blend. Tags: mode, overlay, opacity, mix, color.
   static const blend = _blend;
 
-  /// Blender. Tags: mixer, appliances, food, liquid, juicer, vitamizer, mix, emulsify.
+  /// Blender. Tags: smoothie, kitchen, mixer, appliance. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const blender = _blender;
 
-  /// Blinds. Tags: shades, screen, curtain, shutter, roller blind, window, lighting, household.
+  /// Blinds. Tags: window, shade, curtain.
   static const blinds = _blinds;
 
   /// Same icon as [ban].
@@ -703,890 +1314,2162 @@ abstract final class DsIcons {
   /// Same icon as [quote].
   static const blockquote = _quote;
 
-  /// Blocks. Tags: addon, plugin, integration, extension, package, build, stack, toys.
+  /// Block quote rtl. Tags: right to left, block quote, rtl, indent, quote.
+  static const blockQuoteRtl = _blockQuoteRtl;
+
+  /// Blocks. Tags: components, modules. Its details merge when filled: use it outlined.
   static const blocks = _blocks;
 
-  /// Bluetooth. Tags: wireless.
+  /// Blood bag. Tags: blood, donation, transfusion, bag.
+  static const bloodBag = _bloodBag;
+
+  /// Blouse. Tags: dress, shirt, clothing, top, round hem.
+  static const blouse = _blouse;
+
+  /// Blueprint. Tags: plan, drawing, architecture, construction.
+  static const blueprint = _blueprint;
+
+  /// Bluetooth. Tags: wireless, connect, pairing, device.
   static const bluetooth = _bluetooth;
 
-  /// Bluetooth connected. Tags: paired.
+  /// Bluetooth connected. Tags: paired, wireless, connected, device.
   static const bluetoothConnected = _bluetoothConnected;
 
-  /// Bluetooth off. Tags: lost.
+  /// Bluetooth off. Tags: lost, disconnected, wireless, disabled, off.
   static const bluetoothOff = _bluetoothOff;
 
-  /// Bluetooth searching. Tags: pairing.
+  /// Bluetooth search. Tags: find, pairing, wireless, magnifier.
+  static const bluetoothSearch = _bluetoothSearch;
+
+  /// Bluetooth searching. Tags: pairing, wireless, searching, scan.
   static const bluetoothSearching = _bluetoothSearching;
 
-  /// Bold. Tags: text, strong, format.
+  /// Body armor. Tags: armor, vest, protection, bulletproof.
+  static const bodyArmor = _bodyArmor;
+
+  /// Bold. Tags: strong, format, text, weight. Its details merge when filled: use it outlined.
   static const bold = _bold;
 
-  /// Bold square. Tags: emphasis, emphasize, strong, toolbar, formatting, styling, plain text, rich text.
-  static const boldSquare = _boldSquare;
-
-  /// Bolt. Tags: nut, screw, settings, preferences, configuration, controls, edit, diy.
+  /// Bolt. Tags: nut, hex, fastener, hardware.
   static const bolt = _bolt;
 
-  /// Bomb. Tags: fatal, error, crash, blockbuster, mine, explosion, explode, explosive.
+  /// Bomb. Tags: explosion, explosive, error, crash.
   static const bomb = _bomb;
 
-  /// Bone. Tags: health, skeleton, skull, death, pets, dog.
+  /// Bone. Tags: skeleton, dog, pet.
   static const bone = _bone;
 
-  /// Bone fracture. Tags: bone, fracture, injury, orthopedic, medical, anatomy, skeletal, broken.
+  /// Bone fracture. Tags: broken, bone, injury.
   static const boneFracture = _boneFracture;
 
-  /// Book. Tags: reading, paperback, booklet, magazine, leaflet, pamphlet, tome, library.
+  /// Bone split. Tags: broken, bone, fracture, injury.
+  static const boneSplit = _boneSplit;
+
+  /// Book. Tags: reading, library, novel, literature.
   static const book = _book;
 
-  /// Book a. Tags: dictionary, define, definition, thesaurus, encyclopedia, encyclopaedia, reading, booklet.
+  /// Book a. Tags: dictionary, definition, glossary.
   static const bookA = _bookA;
 
-  /// Book alert. Tags: reading, paperback, booklet, magazine, leaflet, pamphlet, tome, library.
+  /// Book ai. Tags: ai, book, guide, ebook, learning. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const bookAi = _bookAi;
+
+  /// Book alert. Tags: warning, notice, reading, book, important, alert, exclamation.
   static const bookAlert = _bookAlert;
 
-  /// Book audio. Tags: audiobook, reading, listening, sound, story, fiction, novel, information.
+  /// Book apple. Tags: knowledge, education, learning, school, apple, books. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const bookApple = _bookApple;
+
+  /// Book arrow down. Tags: book, arrow, download.
+  static const bookArrowDown = _bookArrowDown;
+
+  /// Book at sign. Tags: address, book, contacts, at, email, directory. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const bookAtSign = _bookAtSign;
+
+  /// Book audio. Tags: audiobook, book, volume, sound, speaker, listen.
   static const bookAudio = _bookAudio;
 
-  /// Book bookmark. Tags: dictionary, reading, booklet, magazine, leaflet, pamphlet, tome, library.
+  /// Book bookmark. Tags: book, bookmark, saved, read, marked, favorite.
   static const bookBookmark = _bookBookmark;
 
-  /// Book check. Tags: read, booklet, magazine, leaflet, pamphlet, library, written, authored.
+  /// Book bookmark layered. Tags: bookmark, reading, saved.
+  static const bookBookmarkLayered = _bookBookmarkLayered;
+
+  /// Book check. Tags: read, finished, reading.
   static const bookCheck = _bookCheck;
 
-  /// Book copy. Tags: code, coding, version control, git, repository, clone, fork, duplicate.
+  /// Book chef hat. Tags: cookbook, recipe, book, chef, cooking.
+  static const bookChefHat = _bookChefHat;
+
+  /// Book copy. Tags: duplicate, copy, clone, documentation.
   static const bookCopy = _bookCopy;
 
-  /// Book dashed. Tags: code, coding, version control, git, repository, template, draft, script.
+  /// Book cover bookmark. Tags: bookmark, reading, saved.
+  static const bookCoverBookmark = _bookCoverBookmark;
+
+  /// Book cover headphones. Tags: audiobook, book, headphones, listen, reading, podcast.
+  static const bookCoverHeadphones = _bookCoverHeadphones;
+
+  /// Book crescent. Tags: quran, book, islam, holy book, crescent.
+  static const bookCrescent = _bookCrescent;
+
+  /// Book dashed. Tags: draft, template, unwritten, outline.
   static const bookDashed = _bookDashed;
 
-  /// Book down. Tags: code, coding, version control, git, repository, pull.
+  /// Book down. Tags: download, pull, save, documentation.
   static const bookDown = _bookDown;
 
-  /// Book headphones. Tags: audiobook, reading, listening, sound, story, fiction, novel, information.
+  /// Book glasses. Tags: knowledge, reading, study, glasses, books, library.
+  static const bookGlasses = _bookGlasses;
+
+  /// Book headphones. Tags: audiobook, listen, audio, podcast.
   static const bookHeadphones = _bookHeadphones;
 
-  /// Book heart. Tags: diary, romance, novel, journal, entry, entries, personal, private.
+  /// Book heart. Tags: diary, romance, favorite.
   static const bookHeart = _bookHeart;
 
-  /// Book image. Tags: images, pictures, photos, album, collection, event, magazine, catalog.
+  /// Book image. Tags: album, gallery, pictures.
   static const bookImage = _bookImage;
 
-  /// Book key. Tags: code, coding, version control, git, repository, private, public, secret.
+  /// Book key. Tags: secret, private, password, journal.
   static const bookKey = _bookKey;
 
-  /// Book lock. Tags: code, coding, version control, git, repository, private, secret, hidden.
+  /// Book lock. Tags: private, locked, secret.
   static const bookLock = _bookLock;
 
-  /// Bookmark. Tags: save, favorite, mark, label, attachment, file, stick, pin.
+  /// Bookmark. Tags: save, favorite, mark, read.
   static const bookmark = _bookmark;
 
-  /// Bookmark check. Tags: read, finished, complete, clip, marker, tag, task, todo.
+  /// Bookmark ban. Tags: bookmark, block, forbidden.
+  static const bookmarkBan = _bookmarkBan;
+
+  /// Bookmark band. Tags: bookmark, save, favorite, read.
+  static const bookmarkBand = _bookmarkBand;
+
+  /// Bookmark band ban. Tags: bookmark, block, forbidden.
+  static const bookmarkBandBan = _bookmarkBandBan;
+
+  /// Bookmark band check. Tags: bookmark, saved, done.
+  static const bookmarkBandCheck = _bookmarkBandCheck;
+
+  /// Bookmark band minus. Tags: bookmark, minus, remove, save, line.
+  static const bookmarkBandMinus = _bookmarkBandMinus;
+
+  /// Bookmark band off. Tags: bookmark, off, disabled, unsave, slash, line.
+  static const bookmarkBandOff = _bookmarkBandOff;
+
+  /// Bookmark band plus. Tags: bookmark, add, save, new.
+  static const bookmarkBandPlus = _bookmarkBandPlus;
+
+  /// Bookmark band x. Tags: bookmark, x, remove, close, cancel, delete, line.
+  static const bookmarkBandX = _bookmarkBandX;
+
+  /// Bookmark check. Tags: bookmark, saved, done.
   static const bookmarkCheck = _bookmarkCheck;
 
-  /// Bookmark minus. Tags: delete, remove.
+  /// Bookmark minus. Tags: bookmark, minus, remove, delete, save.
   static const bookmarkMinus = _bookmarkMinus;
 
-  /// Bookmark off. Tags: unsaved, unfavorite, unmarked, unlabel, disabled, removed, unpin, unread.
+  /// Bookmark off. Tags: bookmark, off, disabled, unsave, slash.
   static const bookmarkOff = _bookmarkOff;
 
-  /// Bookmark plus. Tags: add.
+  /// Bookmark plus. Tags: bookmark, plus, add, save, new.
   static const bookmarkPlus = _bookmarkPlus;
 
-  /// Bookmark x. Tags: read, clip, marker, tag, cancel, close, delete, remove.
+  /// Bookmarks. Tags: all, saved, stack, collection.
+  static const bookmarks = _bookmarks;
+
+  /// Bookmark stack. Tags: collections, bookmark, saved, stack, favorites.
+  static const bookmarkStack = _bookmarkStack;
+
+  /// Bookmark x. Tags: bookmark, x, remove, close, cancel, delete.
   static const bookmarkX = _bookmarkX;
 
-  /// Book minus. Tags: code, coding, version control, git, repository, remove, delete, censor.
+  /// Book minus. Tags: book, minus, remove, library.
   static const bookMinus = _bookMinus;
 
-  /// Book open. Tags: reading, pages, booklet, magazine, leaflet, pamphlet, library, writing.
+  /// Book music. Tags: audiobook, book, music, songbook, sheet music, media.
+  static const bookMusic = _bookMusic;
+
+  /// Book open. Tags: book, open, read, pages, library.
   static const bookOpen = _bookOpen;
 
-  /// Book open check. Tags: read, pages, booklet, magazine, leaflet, pamphlet, library, written.
+  /// Book open check. Tags: book, open, check, read, done, complete.
   static const bookOpenCheck = _bookOpenCheck;
 
-  /// Book open text. Tags: reading, pages, booklet, magazine, leaflet, pamphlet, library, writing.
+  /// Book open page turn. Tags: book, open, read, pages, angled.
+  static const bookOpenPageTurn = _bookOpenPageTurn;
+
+  /// Book open pen. Tags: book, edit, write, open.
+  static const bookOpenPen = _bookOpenPen;
+
+  /// Book open text. Tags: book, open, text, read, pages, lines.
   static const bookOpenText = _bookOpenText;
 
-  /// Book plus. Tags: code, coding, version control, git, repository, remove, delete, read.
+  /// Book open wifi. Tags: online learning, e-learning, book, wifi, course, education.
+  static const bookOpenWifi = _bookOpenWifi;
+
+  /// Book play. Tags: audiobook, book, play, listen, narration, media.
+  static const bookPlay = _bookPlay;
+
+  /// Book plus. Tags: book, plus, add, library, new.
   static const bookPlus = _bookPlus;
 
-  /// Book search. Tags: reading, library, study, education, research, knowledge, discover, browsing.
+  /// Book rosette. Tags: quran, book, islam, holy book, rosette.
+  static const bookRosette = _bookRosette;
+
+  /// Books. Tags: stack, library, pile.
+  static const books = _books;
+
+  /// Books bookmark. Tags: books, library, leaning, shelf.
+  static const booksBookmark = _booksBookmark;
+
+  /// Book search. Tags: book, search, find, library, lookup.
   static const bookSearch = _bookSearch;
 
-  /// Book text. Tags: reading, booklet, magazine, leaflet, pamphlet, tome, library, writing.
+  /// Bookshelf. Tags: shelf, books, library, furniture.
+  static const bookshelf = _bookshelf;
+
+  /// Bookshelf door. Tags: bookshelf, cabinet, door, books, furniture.
+  static const bookshelfDoor = _bookshelfDoor;
+
+  /// Bookshelf stand. Tags: bookshelf, stand, legs, books, furniture. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const bookshelfStand = _bookshelfStand;
+
+  /// Book spine. Tags: reading, library, spine.
+  static const bookSpine = _bookSpine;
+
+  /// Book stand. Tags: quran, rehal, islam, reading.
+  static const bookStand = _bookStand;
+
+  /// Book text. Tags: book, text, pages, lines, read, reading, library, notes.
   static const bookText = _bookText;
 
-  /// Book type. Tags: thesaurus, synonym, reading, booklet, magazine, leaflet, pamphlet, tome.
+  /// Book text pages. Tags: reading, library, pages.
+  static const bookTextPages = _bookTextPages;
+
+  /// Book type. Tags: book, type, font, typography, text.
   static const bookType = _bookType;
 
-  /// Book up. Tags: code, coding, version control, git, repository, push.
+  /// Book up. Tags: book, upload, up, arrow, publish.
   static const bookUp = _bookUp;
 
-  /// Book up 2. Tags: code, coding, version control, git, repository, push, force.
-  static const bookUp2 = _bookUp2;
+  /// Same icon as [bookUp].
+  static const bookUp2 = _bookUp;
 
-  /// Book user. Tags: person, people, family, friends, acquaintances, contacts, details, addresses.
+  /// Book user. Tags: book, user, contact, address, person.
   static const bookUser = _bookUser;
 
-  /// Book x. Tags: code, coding, version control, git, repository, remove, delete, reading.
+  /// Book wifi. Tags: online learning, e-learning, book, wifi, ebook.
+  static const bookWifi = _bookWifi;
+
+  /// Book x. Tags: book, x, close, remove, delete.
   static const bookX = _bookX;
 
-  /// Boom box. Tags: radio, speakers, audio, music, sound, broadcast, live, frequency.
+  /// Boom box. Tags: boom, box, radio, stereo, speaker, music.
   static const boomBox = _boomBox;
 
-  /// Bot. Tags: robot, ai, chat, assistant.
+  /// Same icon as [square].
+  static const borderAll = _square;
+
+  /// Border all grid. Tags: border, all, grid, table, cell, outline.
+  static const borderAllGrid = _borderAllGrid;
+
+  /// Border bottom. Tags: border, bottom, edge, table, cell.
+  static const borderBottom = _borderBottom;
+
+  /// Border bottom grid. Tags: border, bottom, grid, table, cell, edge.
+  static const borderBottomGrid = _borderBottomGrid;
+
+  /// Border horizontal. Tags: border, horizontal, line, divider, table, cell.
+  static const borderHorizontal = _borderHorizontal;
+
+  /// Border inner. Tags: border, inner, cross, table, cell, grid.
+  static const borderInner = _borderInner;
+
+  /// Border left. Tags: border, left, edge, table, cell.
+  static const borderLeft = _borderLeft;
+
+  /// Border left grid. Tags: border, left, grid, table, cell, edge.
+  static const borderLeftGrid = _borderLeftGrid;
+
+  /// Same icon as [squareDashed].
+  static const borderNone = _squareDashed;
+
+  /// Border none grid. Tags: border, none, no, borders, table, cell, grid.
+  static const borderNoneGrid = _borderNoneGrid;
+
+  /// Border right. Tags: border, right, edge, table, cell.
+  static const borderRight = _borderRight;
+
+  /// Border right grid. Tags: border, right, grid, table, cell, edge.
+  static const borderRightGrid = _borderRightGrid;
+
+  /// Border style. Tags: edge, border, style, dashed, lines, stroke.
+  static const borderStyle = _borderStyle;
+
+  /// Border top. Tags: border, top, edge, table, cell.
+  static const borderTop = _borderTop;
+
+  /// Border top grid. Tags: border, top, grid, table, cell, edge.
+  static const borderTopGrid = _borderTopGrid;
+
+  /// Border vertical. Tags: border, vertical, line, divider, table, cell.
+  static const borderVertical = _borderVertical;
+
+  /// Borobudur. Tags: temple, landmark, indonesia, monument, buddhist.
+  static const borobudur = _borobudur;
+
+  /// Bot. Tags: robot, ai, assistant, face.
   static const bot = _bot;
 
-  /// Bot message square. Tags: robot, ai, chat, assistant.
+  /// Bot antenna. Tags: robot, bot, ai, assistant, automation.
+  static const botAntenna = _botAntenna;
+
+  /// Bot dome. Tags: robot, bot, ai, assistant.
+  static const botDome = _botDome;
+
+  /// Bot message. Tags: chat bot, assistant, robot, ai, support, bot.
+  static const botMessage = _botMessage;
+
+  /// Bot message square. Tags: bot, message, robot, chat, assistant, ai.
   static const botMessageSquare = _botMessageSquare;
 
-  /// Bot off. Tags: robot, ai, chat, assistant.
+  /// Bot off. Tags: bot, off, robot, disabled, ai. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const botOff = _botOff;
 
-  /// Bottle baby. Tags: newborn, children, infant, kids, toddler, mother, mum, family.
+  /// Bot shoulders. Tags: robot, bot, ai, assistant.
+  static const botShoulders = _botShoulders;
+
+  /// Bottle baby. Tags: baby, bottle, milk, feeding, infant, formula.
   static const bottleBaby = _bottleBaby;
 
-  /// Bottle champagne. Tags: alcohol, drink, glass, bubbly, sparkling, fizzy, bar, party.
-  static const bottleChampagne = _bottleChampagne;
-
-  /// Bottle dispenser. Tags: toiletries, bathroom, amenities, shower gel, bubble bath, shampoo, conditioner, hand soap.
+  /// Bottle dispenser. Tags: shampoo, pump, soap, lotion, hygiene.
   static const bottleDispenser = _bottleDispenser;
 
-  /// Bottle perfume. Tags: parfum, aftershave, aroma, fragrance, smell, scent, special, present.
+  /// Bottle droplet. Tags: syrup, medicine, bottle, liquid, drop, cough.
+  static const bottleDroplet = _bottleDroplet;
+
+  /// Bottle perfume. Tags: perfume, fragrance, bottle, cologne, scent.
   static const bottlePerfume = _bottlePerfume;
 
-  /// Bottle plastic. Tags: drink, water, liquid, litres, pints, container, shampoo.
-  static const bottlePlastic = _bottlePlastic;
+  /// Bounding box. Tags: bounding, box, selection, nodes, transform, vector.
+  static const boundingBox = _boundingBox;
 
-  /// Bottle spray. Tags: cleaning products, toiletries, bathroom, amenities, service, sanitizer, sanitiser.
-  static const bottleSpray = _bottleSpray;
-
-  /// Bottle toothbrush comb. Tags: toiletries, bathroom, amenities, shower gel, bubble bath, shampoo, conditioner, toothpaste.
-  static const bottleToothbrushComb = _bottleToothbrushComb;
-
-  /// Bottle wine. Tags: alcohol, drink, glass, goblet, chalice, vineyard, winery, red.
-  static const bottleWine = _bottleWine;
-
-  /// Bow arrow. Tags: archer, archery, game, war, weapon.
+  /// Bow arrow. Tags: bow, arrow, archery, target.
   static const bowArrow = _bowArrow;
 
-  /// Bowl chopsticks. Tags: noodles, poke, soup, culinary, cuisine, asian, japanese, chinese.
+  /// Bow arrow wide. Tags: archer, bow, arrow, archery, shoot, hunt.
+  static const bowArrowWide = _bowArrowWide;
+
+  /// Bowl chopsticks. Tags: rice bowl, chopsticks, asian, meal, food.
   static const bowlChopsticks = _bowlChopsticks;
 
-  /// Bowling. Tags: ten-pin, 10 pin, pins, ball, lane, alley, strike, spare.
+  /// Bowling. Tags: ball, pin, strike, game.
   static const bowling = _bowling;
 
-  /// Bowl overflow. Tags: spillage, drip, liquid, soup, porridge, gruel, cereal, breakfast.
-  static const bowlOverflow = _bowlOverflow;
+  /// Bowling ball. Tags: bowling, ball, game.
+  static const bowlingBall = _bowlingBall;
 
-  /// Box. Tags: cube, package, container, storage, geometry, 3d, isometric.
+  /// Bowling pins. Tags: bowling, pins, strike, game.
+  static const bowlingPins = _bowlingPins;
+
+  /// Bowl leaf. Tags: organic, food, bowl, leaf, vegan, healthy.
+  static const bowlLeaf = _bowlLeaf;
+
+  /// Box. Tags: blockchain, cube, block, crypto.
   static const box = _box;
 
-  /// Boxes. Tags: cubes, packages, parts, group, units, collection, cluster, geometry.
+  /// Box arrow down. Tags: download, box, package, receive, inbox, arrow down.
+  static const boxArrowDown = _boxArrowDown;
+
+  /// Box corners. Tags: blockchain, cube, block, crypto.
+  static const boxCorners = _boxCorners;
+
+  /// Boxes. Tags: cubes, stack, packages, blocks. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const boxes = _boxes;
 
-  /// Braces. Tags: json, code, token, curly brackets, data.
+  /// Boxes network. Tags: blockchain, network, blocks, crypto.
+  static const boxesNetwork = _boxesNetwork;
+
+  /// Boxes network lock. Tags: blockchain, network, blocks, secure, lock, crypto.
+  static const boxesNetworkLock = _boxesNetworkLock;
+
+  /// Box hexagon. Tags: blockchain, cube, block, hexagon, crypto.
+  static const boxHexagon = _boxHexagon;
+
+  /// Boxing bag. Tags: boxing, bag, punching, training, gym.
+  static const boxingBag = _boxingBag;
+
+  /// Boxing glove. Tags: boxing, glove, fight, sport, punch.
+  static const boxingGlove = _boxingGlove;
+
+  /// Boxing glove tilted. Tags: boxing, glove, fight, sport, punch.
+  static const boxingGloveTilted = _boxingGloveTilted;
+
+  /// Box lid arrow down. Tags: download, box, package, archive, arrow down, receive.
+  static const boxLidArrowDown = _boxLidArrowDown;
+
+  /// Box lid eye. Tags: delivery view, box, package, preview, inspect, track.
+  static const boxLidEye = _boxLidEye;
+
+  /// Box lid lock. Tags: delivery secure, box, package, locked, safe, protected.
+  static const boxLidLock = _boxLidLock;
+
+  /// Box lid map pin. Tags: delivery tracking, box, package, location, track, pin.
+  static const boxLidMapPin = _boxLidMapPin;
+
+  /// Box lid undo. Tags: delivery return, box, package, return, refund, send back. Mirrors in right-to-left text.
+  static const boxLidUndo = _boxLidUndo;
+
+  /// Box node. Tags: blockchain, cube, node, crypto.
+  static const boxNode = _boxNode;
+
+  /// Box oblique. Tags: box, cube, package, 3d.
+  static const boxOblique = _boxOblique;
+
+  /// Box on stand. Tags: distribution, box, stand, crate, supply, logistics.
+  static const boxOnStand = _boxOnStand;
+
+  /// Box plain. Tags: delivery, box, package, parcel, shipment, carton.
+  static const boxPlain = _boxPlain;
+
+  /// Box plain eye. Tags: delivery view, box, package, preview, inspect, track.
+  static const boxPlainEye = _boxPlainEye;
+
+  /// Box plain lock. Tags: delivery secure, box, package, locked, safe, protected.
+  static const boxPlainLock = _boxPlainLock;
+
+  /// Box plain map pin. Tags: delivery tracking, box, package, location, track, pin.
+  static const boxPlainMapPin = _boxPlainMapPin;
+
+  /// Box plain undo. Tags: delivery return, box, package, return, refund, send back. Mirrors in right-to-left text.
+  static const boxPlainUndo = _boxPlainUndo;
+
+  /// Braces. Tags: curly, brackets, code, json.
   static const braces = _braces;
 
-  /// Brackets. Tags: code, token, array, list, square.
+  /// Braces radical x. Tags: root, radical, braces, x, math.
+  static const bracesRadicalX = _bracesRadicalX;
+
+  /// Braces wide. Tags: curly braces, brackets, code, json, bracket.
+  static const bracesWide = _bracesWide;
+
+  /// Brackets. Tags: square, code, array.
   static const brackets = _brackets;
 
-  /// Brain. Tags: medical, mind, mental, intellect, cerebral, consciousness, genius, artificial intelligence.
+  /// Brackets sigma. Tags: summation, sigma, sum, brackets, total.
+  static const bracketsSigma = _bracketsSigma;
+
+  /// Brain. Tags: ai, mind, intelligence, thinking.
   static const brain = _brain;
 
-  /// Brain circuit. Tags: mind, intellect, artificial intelligence, ai, deep learning, machine learning, computing. Its details merge when filled: use it outlined.
+  /// Brain ai. Tags: ai, brain, intelligence, machine, learning.
+  static const brainAi = _brainAi;
+
+  /// Brain chip. Tags: ai, brain, chip, cpu, intelligence.
+  static const brainChip = _brainChip;
+
+  /// Brain chip half. Tags: ai, brain, chip, half, cpu, intelligence.
+  static const brainChipHalf = _brainChipHalf;
+
+  /// Brain circuit. Tags: brain, circuit, ai, neural, network.
   static const brainCircuit = _brainCircuit;
 
-  /// Brain cog. Tags: mind, intellect, artificial intelligence, ai, deep learning, machine learning, computing.
+  /// Brain cog. Tags: brain, cog, gear, ai, settings.
   static const brainCog = _brainCog;
 
-  /// Bra sports. Tags: brassiere, breasts, boobs, tops, womens, girls, female, ladies.
-  static const braSports = _braSports;
+  /// Brain front. Tags: brain, mind, hemispheres, front, symmetric. Its details merge when filled: use it outlined.
+  static const brainFront = _brainFront;
 
-  /// Brick wall. Tags: bricks, mortar, cement, materials, construction, builder, labourer, quantity surveyor.
+  /// Brain head. Tags: brain, head, mind, mental, health, profile.
+  static const brainHead = _brainHead;
+
+  /// Brain nodes. Tags: ai, brain, circuit, nodes, neural, network, half.
+  static const brainNodes = _brainNodes;
+
+  /// Brain side. Tags: brain, mind, intelligence, think.
+  static const brainSide = _brainSide;
+
+  /// Brain stem. Tags: brain, mind, intelligence, outline.
+  static const brainStem = _brainStem;
+
+  /// Brandenburg gate. Tags: berlin, germany, landmark, monument, city.
+  static const brandenburgGate = _brandenburgGate;
+
+  /// Bread loaf. Tags: bread, loaf, bakery, baked.
+  static const breadLoaf = _breadLoaf;
+
+  /// Breast pump. Tags: breast, pump, baby, feeding, nursing, milk.
+  static const breastPump = _breastPump;
+
+  /// Breeze. Tags: wind, slow, light, air, waves.
+  static const breeze = _breeze;
+
+  /// Brick wall. Tags: brick, wall, firewall, barrier. Its details merge when filled: use it outlined.
   static const brickWall = _brickWall;
 
-  /// Brick wall fire. Tags: firewall, security, bricks, mortar, cement, materials, construction, builder.
+  /// Brick wall fire. Tags: firewall, network, security, protection, fire.
   static const brickWallFire = _brickWallFire;
 
-  /// Brick wall shield. Tags: firewall, security, bricks, mortar, cement, materials, construction, builder.
+  /// Brick wall fire corner. Tags: brick, wall, fire, firewall, security.
+  static const brickWallFireCorner = _brickWallFireCorner;
+
+  /// Brick wall shield. Tags: brick, wall, shield, firewall, protection.
   static const brickWallShield = _brickWallShield;
 
-  /// Bridge. Tags: overpass, cross over, traverse, viaduct, suspension, infrastructure, transportation, crossing.
+  /// Bridge. Tags: crossing, river, road.
   static const bridge = _bridge;
 
-  /// Briefcase. Tags: work, bag, baggage, folder.
+  /// Briefcase. Tags: work, business, bag, job, latch.
   static const briefcase = _briefcase;
 
-  /// Briefcase business. Tags: work, bag, baggage, folder, portfolio.
+  /// Briefcase alert. Tags: job, work, warning, problem, business, case. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const briefcaseAlert = _briefcaseAlert;
+
+  /// Briefcase arrow down. Tags: job, work, update, download, business, case.
+  static const briefcaseArrowDown = _briefcaseArrowDown;
+
+  /// Briefcase bands. Tags: briefcase, work, business, bag, suitcase, bands.
+  static const briefcaseBands = _briefcaseBands;
+
+  /// Briefcase belt. Tags: briefcase, work, business, bag, belt, straps.
+  static const briefcaseBelt = _briefcaseBelt;
+
+  /// Briefcase business. Tags: briefcase, work, business, bag, portfolio.
   static const briefcaseBusiness = _briefcaseBusiness;
 
-  /// Briefcase conveyor belt. Tags: baggage, luggage, travel, suitcase, conveyor, carousel.
+  /// Briefcase button. Tags: briefcase, work, business, bag, button.
+  static const briefcaseButton = _briefcaseButton;
+
+  /// Briefcase chevron right. Tags: next week, briefcase, chevron, upcoming, schedule, forward. Mirrors in right-to-left text.
+  static const briefcaseChevronRight = _briefcaseChevronRight;
+
+  /// Briefcase clasp. Tags: briefcase, work, business, bag, lock, keyhole.
+  static const briefcaseClasp = _briefcaseClasp;
+
+  /// Briefcase clock. Tags: job, work, history, time, past, business, case.
+  static const briefcaseClock = _briefcaseClock;
+
+  /// Briefcase cog. Tags: new job, work, settings, career, briefcase, gear.
+  static const briefcaseCog = _briefcaseCog;
+
+  /// Briefcase conveyor belt. Tags: briefcase, luggage, baggage, claim, airport.
   static const briefcaseConveyorBelt = _briefcaseConveyorBelt;
 
-  /// Briefcase medical. Tags: doctor, medicine, first aid.
+  /// Briefcase dollar. Tags: briefcase, dollar, money, finance, business.
+  static const briefcaseDollar = _briefcaseDollar;
+
+  /// Briefcase flap. Tags: briefcase, work, business, bag, flap.
+  static const briefcaseFlap = _briefcaseFlap;
+
+  /// Briefcase flap short. Tags: job, business, office, case, bag, work.
+  static const briefcaseFlapShort = _briefcaseFlapShort;
+
+  /// Briefcase link. Tags: job link, briefcase, work, career, link, share.
+  static const briefcaseLink = _briefcaseLink;
+
+  /// Briefcase medical. Tags: briefcase, medical, first, aid, doctor.
   static const briefcaseMedical = _briefcaseMedical;
+
+  /// Briefcase minimal. Tags: briefcase, work, business, bag, simple.
+  static const briefcaseMinimal = _briefcaseMinimal;
 
   /// Briefcase plus. Tags: work, bag, baggage, folder, new, add, create, increase.
   static const briefcasePlus = _briefcasePlus;
 
-  /// Bring to front. Tags: bring, send, move, over, forward, front, overlap, layer.
+  /// Briefcase search. Tags: job search, briefcase, career, find job, work, hiring.
+  static const briefcaseSearch = _briefcaseSearch;
+
+  /// Briefcase share. Tags: job share, briefcase, work, career, share, network.
+  static const briefcaseShare = _briefcaseShare;
+
+  /// Briefs. Tags: underpants, underwear, clothing.
+  static const briefs = _briefs;
+
+  /// Briefs trunks. Tags: underpants, trunks, underwear, clothing.
+  static const briefsTrunks = _briefsTrunks;
+
+  /// Bring to front. Tags: bring, front, forward, arrange, layer.
   static const bringToFront = _bringToFront;
 
-  /// Broccoli. Tags: leafy, crisp, fresh, culinary, vegetation, vegetable, food, healthy.
+  /// Broccoli. Tags: vegetable, food, green.
   static const broccoli = _broccoli;
 
-  /// Broom. Tags: broomstick, brush, sweep, sweeping, floor, cleaning, housekeeping, chores.
+  /// Brochure. Tags: leaflet, booklet, pamphlet, document.
+  static const brochure = _brochure;
+
+  /// Broom. Tags: clean, sweep, housekeeping, tidy.
   static const broom = _broom;
 
-  /// Broom sparkles. Tags: broomstick, brush, sweep, sweeping, floor, cleaning, ai, magic.
+  /// Broom sparkles. Tags: clean, sweep, brush, dust, tidy, clear. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const broomSparkles = _broomSparkles;
 
-  /// Brush. Tags: clean, sweep, refactor, remove, draw, paint, color, artist.
+  /// Brush. Tags: paint, draw, art.
   static const brush = _brush;
 
-  /// Brush cleaning. Tags: cleaning, utensil, housekeeping, tool, sweeping, scrubbing, hygiene, maintenance.
+  /// Brush cleaning. Tags: brush, cleaning, dustpan, sweep.
   static const brushCleaning = _brushCleaning;
 
-  /// Bubbles. Tags: water, cleaning, soap, bath, hygiene, freshness, wash, foam.
+  /// Brush cleaning sparkle. Tags: ai, wiper, squeegee, clean, sparkle.
+  static const brushCleaningSparkle = _brushCleaningSparkle;
+
+  /// Brush flat. Tags: brush, paint, art, bristles.
+  static const brushFlat = _brushFlat;
+
+  /// Brush wide. Tags: brush, paint, wide, bristles, art.
+  static const brushWide = _brushWide;
+
+  /// Bubbles. Tags: soap, water, foam.
   static const bubbles = _bubbles;
 
-  /// Bucket. Tags: handle, container, fill, liquid, water, seaside, summer holiday, beach.
+  /// Bubble tea. Tags: bubble, tea, boba, drink, cup, straw.
+  static const bubbleTea = _bubbleTea;
+
+  /// Bubble tea dome. Tags: bubble, tea, boba, drink, cup, dome, lid.
+  static const bubbleTeaDome = _bubbleTeaDome;
+
+  /// Bucket. Tags: pail, water.
   static const bucket = _bucket;
 
-  /// Bug. Tags: issue, error, defect, testing, troubleshoot, problem, report, debug.
+  /// Bug. Tags: insect, issue, debug.
   static const bug = _bug;
 
-  /// Bug off. Tags: issue, fixed, resolved, testing, debug, code, insect, kill.
-  static const bugOff = _bugOff;
+  /// Bug antennae. Tags: bug, insect, antennae, issue, debug.
+  static const bugAntennae = _bugAntennae;
 
-  /// Bug play. Tags: issue, testing, debug, reproduce, code, insect.
-  static const bugPlay = _bugPlay;
-
-  /// Building. Tags: organisation, organization.
+  /// Building. Tags: office, tower, windows.
   static const building = _building;
 
-  /// Building complex. Tags: business, company, enterprise, skyscraper, organisation, organization, city.
+  /// Building annex. Tags: building, office, annex, bank.
+  static const buildingAnnex = _buildingAnnex;
+
+  /// Building cog. Tags: new office, building, settings, company, gear, workplace.
+  static const buildingCog = _buildingCog;
+
+  /// Building complex. Tags: apartment, flats, towers, city, office, residential.
   static const buildingComplex = _buildingComplex;
 
-  /// Building complex plus. Tags: business, company, enterprise, skyscraper, organisation, organization, city, new.
-  static const buildingComplexPlus = _buildingComplexPlus;
+  /// Building complex round. Tags: office, building, company, business, city.
+  static const buildingComplexRound = _buildingComplexRound;
+
+  /// Building curved. Tags: building, organization, office, company.
+  static const buildingCurved = _buildingCurved;
+
+  /// Building pair. Tags: buildings, office, apartment, pair, windows.
+  static const buildingPair = _buildingPair;
+
+  /// Building roof. Tags: department, building, office, apartment, windows, block.
+  static const buildingRoof = _buildingRoof;
+
+  /// Buildings. Tags: city, skyline, office.
+  static const buildings = _buildings;
+
+  /// Buildings angled. Tags: plaza, buildings, city, skyscraper, office.
+  static const buildingsAngled = _buildingsAngled;
+
+  /// Buildings block. Tags: corporate, company, office, business, enterprise, skyscraper.
+  static const buildingsBlock = _buildingsBlock;
+
+  /// Building slanted. Tags: building, slanted, modern, architecture.
+  static const buildingSlanted = _buildingSlanted;
+
+  /// Buildings tree. Tags: real estate, city, buildings, property, for sale.
+  static const buildingsTree = _buildingsTree;
+
+  /// Building tower. Tags: building, tower, skyscraper, office.
+  static const buildingTower = _buildingTower;
+
+  /// Building user. Tags: permanent job, employee, office, person, building, work. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const buildingUser = _buildingUser;
+
+  /// Bullet. Tags: ammo, cartridge, projectile.
+  static const bullet = _bullet;
 
   /// Same icon as [list].
   static const bulletList = _list;
 
-  /// Bull head. Tags: cow, horns, meat, steak, barbecue, bbq, beef, bovine.
-  static const bullHead = _bullHead;
+  /// Bulletproof vest. Tags: bulletproof, vest, armor, protection, police.
+  static const bulletproofVest = _bulletproofVest;
 
-  /// Burger. Tags: hamburger, cheeseburger, meat, patty, bun, fast food, junk food, takeaway.
-  static const burger = _burger;
+  /// Bunting. Tags: garland, party, festival, decoration.
+  static const bunting = _bunting;
 
-  /// Bus. Tags: vehicle, transport, trip.
+  /// Same icon as [hamburger].
+  static const burger = _hamburger;
+
+  /// Burj al arab. Tags: burj, al, arab, hotel, dubai, landmark.
+  static const burjAlArab = _burjAlArab;
+
+  /// Bus. Tags: vehicle, transport, side, view.
   static const bus = _bus;
 
-  /// Bus front. Tags: coach, vehicle, trip, road.
+  /// Bus front. Tags: bus, front, vehicle, transport.
   static const busFront = _busFront;
 
-  /// Butterfly. Tags: wings, flying, wildlife, botanical gardens, nectar, pollen, pollinate, pattern.
-  static const butterfly = _butterfly;
+  /// Bus front round. Tags: bus, vehicle, transport, public. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const busFrontRound = _busFrontRound;
 
-  /// Cabin. Tags: hut, shed, property, real estate, dwellings, living, door, woods.
-  static const cabin = _cabin;
+  /// Bus front split. Tags: school bus, vehicle, transport, student, front. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const busFrontSplit = _busFrontSplit;
 
-  /// Cabinet filing. Tags: nightstand, bedside table, drawers, documents, binders, folders, records, storage.
-  static const cabinetFiling = _cabinetFiling;
+  /// Bus minimal. Tags: bus, vehicle, transport, simple.
+  static const busMinimal = _busMinimal;
 
-  /// Cable. Tags: cord, wire, connector, connection, link, signal, console, computer.
+  /// Cabinet. Tags: furniture, storage, doors.
+  static const cabinet = _cabinet;
+
+  /// Cabinet drawers. Tags: cabinet, furniture, storage, drawers, dresser.
+  static const cabinetDrawers = _cabinetDrawers;
+
+  /// Cabinet feet. Tags: cabinet, furniture, storage, doors, legs.
+  static const cabinetFeet = _cabinetFeet;
+
+  /// Cabinet sideboard. Tags: cabinet, sideboard, furniture, storage.
+  static const cabinetSideboard = _cabinetSideboard;
+
+  /// Cable. Tags: wire, plug, cord.
   static const cable = _cable;
 
-  /// Cable car. Tags: ski lift, winter holiday, alpine, resort, mountains.
+  /// Cable car. Tags: cable, car, gondola, ski, lift.
   static const cableCar = _cableCar;
 
-  /// Cactus. Tags: spikes, spines, needles, glochid, plant, desert, botanical, flora.
+  /// Cable machine. Tags: gym, equipment, workout, weights, fitness, rack.
+  static const cableMachine = _cableMachine;
+
+  /// Cactus. Tags: desert, plant, succulent.
   static const cactus = _cactus;
 
-  /// Same icon as [coffee].
-  static const cafe = _coffee;
+  /// Cactus sun. Tags: desert, cactus, sun, dry, arid, sand.
+  static const cactusSun = _cactusSun;
 
-  /// Cake. Tags: birthday, birthdate, celebration, party, surprise, gateaux, dessert, fondant.
+  /// Caduceus. Tags: medical, medicine, staff, snakes.
+  static const caduceus = _caduceus;
+
+  /// Cafe. Tags: coffee, shop, restaurant, awning.
+  static const cafe = _cafe;
+
+  /// Cake. Tags: birthday, dessert, celebration.
   static const cake = _cake;
 
-  /// Cake slice. Tags: birthday, birthdate, celebration, party, surprise, gateaux, dessert, candles.
+  /// Cake layers. Tags: dessert, cake, cherry, pancakes, sweet, layered.
+  static const cakeLayers = _cakeLayers;
+
+  /// Cake slice. Tags: cake, slice, dessert, piece.
   static const cakeSlice = _cakeSlice;
 
-  /// Calculator. Tags: count, calculating machine.
+  /// Calculator. Tags: calculate, math, numbers, keypad.
   static const calculator = _calculator;
 
-  /// Calendar. Tags: date, month, year, event, birthday, birthdate.
+  /// Calculator boxed. Tags: calculator, calculate, math, symbols, square.
+  static const calculatorBoxed = _calculatorBoxed;
+
+  /// Calculator symbols. Tags: calculator, math, plus, minus, times, equals.
+  static const calculatorSymbols = _calculatorSymbols;
+
+  /// Calendar. Tags: date, month, schedule.
   static const calendar = _calendar;
 
-  /// Calendar 1. Tags: date, month, year, event, single, singular, once, 1.
+  /// Calendar 1. Tags: calendar, date, first, day, one.
   static const calendar1 = _calendar1;
 
-  /// Calendar arrow down. Tags: date, month, year, event, sort, order, ascending, descending.
+  /// Calendar 17. Tags: calendar, date, day, schedule.
+  static const calendar17 = _calendar17;
+
+  /// Calendar arrow down. Tags: calendar, arrow, down, download, import.
   static const calendarArrowDown = _calendarArrowDown;
 
-  /// Calendar arrow up. Tags: date, month, year, event, sort, order, ascending, descending.
+  /// Calendar arrow down inside. Tags: calendar, download, arrow, down, import.
+  static const calendarArrowDownInside = _calendarArrowDownInside;
+
+  /// Calendar arrow left. Tags: calendar, check, in, arrow, left, enter. Mirrors in right-to-left text.
+  static const calendarArrowLeft = _calendarArrowLeft;
+
+  /// Calendar arrow left inside. Tags: calendar, check, in, arrow, left, enter. Mirrors in right-to-left text.
+  static const calendarArrowLeftInside = _calendarArrowLeftInside;
+
+  /// Calendar arrow right. Tags: calendar, check, out, arrow, right, leave. Mirrors in right-to-left text.
+  static const calendarArrowRight = _calendarArrowRight;
+
+  /// Calendar arrow right inside. Tags: calendar, check, out, arrow, right, leave. Mirrors in right-to-left text.
+  static const calendarArrowRightInside = _calendarArrowRightInside;
+
+  /// Calendar arrow up. Tags: calendar, arrow, up, upload, export.
   static const calendarArrowUp = _calendarArrowUp;
 
-  /// Calendar check. Tags: date, day, month, year, event, confirm, subscribe, schedule.
+  /// Calendar arrow up inside. Tags: calendar, upload, arrow, up, export.
+  static const calendarArrowUpInside = _calendarArrowUpInside;
+
+  /// Calendar ban. Tags: calendar, block, ban, blocked, unavailable.
+  static const calendarBan = _calendarBan;
+
+  /// Calendar ban inside. Tags: calendar, block, ban, blocked, unavailable.
+  static const calendarBanInside = _calendarBanInside;
+
+  /// Calendar chart line. Tags: calendar, analysis, chart, statistics, schedule.
+  static const calendarChartLine = _calendarChartLine;
+
+  /// Calendar check. Tags: calendar, check, done, confirmed, appointment, schedule, event, booking.
   static const calendarCheck = _calendarCheck;
 
-  /// Calendar check 2. Tags: date, day, month, year, event, confirm, subscribe, schedule.
-  static const calendarCheck2 = _calendarCheck2;
+  /// Same icon as [calendarCheckInside].
+  static const calendarCheck2 = _calendarCheckInside;
 
-  /// Calendar chevrons right. Tags: navigation, arrow, right, chevron, direction, symbol, pointer, indicator.
-  static const calendarChevronsRight = _calendarChevronsRight;
+  /// Calendar check inside. Tags: appointment, schedule, event, confirmed, booking, date, calendar, check.
+  static const calendarCheckInside = _calendarCheckInside;
 
-  /// Calendar clock. Tags: date, day, month, year, event, clock, hour.
+  /// Calendar clock. Tags: calendar, clock, time, schedule, appointment.
   static const calendarClock = _calendarClock;
 
-  /// Calendar cog. Tags: date, day, month, year, events, settings, gear, cog.
+  /// Calendar clock small. Tags: date time, calendar, schedule, appointment, clock, datetime.
+  static const calendarClockSmall = _calendarClockSmall;
+
+  /// Calendar cog. Tags: calendar, cog, settings, gear, schedule, setting.
   static const calendarCog = _calendarCog;
 
-  /// Calendar days. Tags: date, month, year, event.
+  /// Calendar cog inside. Tags: calendar, setting, cog, gear, settings.
+  static const calendarCogInside = _calendarCogInside;
+
+  /// Calendar days. Tags: calendar, date, days, month, dots.
   static const calendarDays = _calendarDays;
 
-  /// Calendar fold. Tags: date, month, year, event, birthday, birthdate, ics.
+  /// Calendar dot. Tags: calendar, date, dot, marker, badge.
+  static const calendarDot = _calendarDot;
+
+  /// Calendar fold. Tags: calendar, fold, corner, date, page.
   static const calendarFold = _calendarFold;
 
-  /// Calendar heart. Tags: date, month, year, event, heart, favourite, subscribe, valentines day.
+  /// Calendar graduation cap. Tags: calendar, mortarboard, graduation, school, exam.
+  static const calendarGraduationCap = _calendarGraduationCap;
+
+  /// Calendar heart. Tags: calendar, heart, favorite, love, event.
   static const calendarHeart = _calendarHeart;
 
-  /// Calendar minus. Tags: date, day, month, year, event, delete, remove.
+  /// Calendar heart inside. Tags: calendar, love, heart, favorite.
+  static const calendarHeartInside = _calendarHeartInside;
+
+  /// Calendar lock. Tags: calendar, lock, private, secure.
+  static const calendarLock = _calendarLock;
+
+  /// Calendar lock inside. Tags: calendar, lock, private, secure.
+  static const calendarLockInside = _calendarLockInside;
+
+  /// Calendar minus. Tags: calendar, minus, remove, delete, event.
   static const calendarMinus = _calendarMinus;
 
-  /// Calendar minus 2. Tags: date, day, month, year, event, delete, remove.
-  static const calendarMinus2 = _calendarMinus2;
+  /// Same icon as [calendarMinusInside].
+  static const calendarMinus2 = _calendarMinusInside;
 
-  /// Calendar off. Tags: date, day, month, year, event, delete, remove.
+  /// Calendar minus inside. Tags: calendar, minus, remove, inside.
+  static const calendarMinusInside = _calendarMinusInside;
+
+  /// Calendar moon. Tags: ramadan, calendar, month, crescent, islam.
+  static const calendarMoon = _calendarMoon;
+
+  /// Calendar off. Tags: calendar, off, disabled, cancelled, slash.
   static const calendarOff = _calendarOff;
 
-  /// Calendar plus. Tags: date, day, month, year, event, add, subscribe, create.
+  /// Calendar plus. Tags: calendar, plus, add, new, event.
   static const calendarPlus = _calendarPlus;
 
-  /// Calendar plus 2. Tags: date, day, month, year, event, add, subscribe, create.
-  static const calendarPlus2 = _calendarPlus2;
+  /// Same icon as [calendarPlusInside].
+  static const calendarPlus2 = _calendarPlusInside;
 
-  /// Calendar range. Tags: date, day, month, year, event, range, period.
+  /// Calendar plus inside. Tags: calendar, plus, add, new, event, inside.
+  static const calendarPlusInside = _calendarPlusInside;
+
+  /// Calendar range. Tags: calendar, range, period, dates, lines, date, agenda, schedule.
   static const calendarRange = _calendarRange;
 
-  /// Calendars. Tags: date, month, year, event, dates, months, years, events.
+  /// Calendars. Tags: multiple, dates, events.
   static const calendars = _calendars;
 
-  /// Calendar search. Tags: date, day, month, year, events, search, lens.
+  /// Calendar search. Tags: calendar, search, find, events.
   static const calendarSearch = _calendarSearch;
 
-  /// Calendar sync. Tags: repeat, refresh, reconnect, transfer, backup, date, month, year.
+  /// Calendar sparkle. Tags: ai, scheduling, calendar, planner, sparkle.
+  static const calendarSparkle = _calendarSparkle;
+
+  /// Calendar star. Tags: calendar, favorite, star, important.
+  static const calendarStar = _calendarStar;
+
+  /// Calendar star inside. Tags: calendar, favorite, star, important.
+  static const calendarStarInside = _calendarStarInside;
+
+  /// Calendar sync. Tags: calendar, sync, refresh, repeat, recurring.
   static const calendarSync = _calendarSync;
 
-  /// Calendar x. Tags: date, day, month, year, event, remove, busy.
+  /// Calendar user. Tags: calendar, user, person, attendee, booking.
+  static const calendarUser = _calendarUser;
+
+  /// Calendar x. Tags: calendar, remove, x, cancel, delete, event.
   static const calendarX = _calendarX;
 
-  /// Calendar x 2. Tags: date, day, month, year, event, remove.
-  static const calendarX2 = _calendarX2;
+  /// Same icon as [calendarXInside].
+  static const calendarX2 = _calendarXInside;
+
+  /// Calendar x inside. Tags: calendar, remove, x, cancel, delete, inside.
+  static const calendarXInside = _calendarXInside;
 
   /// Same icon as [phoneCall].
   static const call = _phoneCall;
 
-  /// Camera. Tags: photography, lens, focus, capture, shot, visual, image, device.
+  /// Camel. Tags: animal, desert, dromedary, hump, mammal. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const camel = _camel;
+
+  /// Camera. Tags: photo, picture, snapshot, photography, capture.
   static const camera = _camera;
 
-  /// Camera off. Tags: photo, webcam, video.
+  /// Camera auto. Tags: photo, automatic, auto, picture, capture.
+  static const cameraAuto = _cameraAuto;
+
+  /// Camera compact. Tags: photo, picture, snapshot, point and shoot, capture.
+  static const cameraCompact = _cameraCompact;
+
+  /// Camera dash. Tags: photo, picture, snapshot, flash, capture.
+  static const cameraDash = _cameraDash;
+
+  /// Camera dash auto. Tags: photo, automatic, auto, flash, picture.
+  static const cameraDashAuto = _cameraDashAuto;
+
+  /// Camera dash mic. Tags: photo, microphone, audio, voice, flash.
+  static const cameraDashMic = _cameraDashMic;
+
+  /// Camera dash moon. Tags: photo, night mode, low light, dark, flash.
+  static const cameraDashMoon = _cameraDashMoon;
+
+  /// Camera dash off. Tags: photo, disabled, no camera, blocked, flash.
+  static const cameraDashOff = _cameraDashOff;
+
+  /// Camera dash plus. Tags: photo, add, new, flash, picture.
+  static const cameraDashPlus = _cameraDashPlus;
+
+  /// Camera dash rotate. Tags: photo, flip camera, switch camera, selfie, rotate.
+  static const cameraDashRotate = _cameraDashRotate;
+
+  /// Camera dash smile. Tags: photo, selfie, smile, face detection, flash.
+  static const cameraDashSmile = _cameraDashSmile;
+
+  /// Camera mic. Tags: photo, microphone, audio, voice, record.
+  static const cameraMic = _cameraMic;
+
+  /// Camera moon. Tags: photo, night mode, low light, dark, picture.
+  static const cameraMoon = _cameraMoon;
+
+  /// Camera off. Tags: photo, disabled, no camera, blocked, picture.
   static const cameraOff = _cameraOff;
 
-  /// Can. Tags: food, storage, groceries, tin, metal, recyclable, container, pantry.
-  static const can = _can;
+  /// Camera plus. Tags: photo, add, new, picture, capture.
+  static const cameraPlus = _cameraPlus;
 
-  /// Candle holder. Tags: handle, wax, incense, fragrance, smell, senses, spirituality, meditation.
-  static const candleHolder = _candleHolder;
+  /// Camera rotate. Tags: photo, flip camera, switch camera, selfie, rotate.
+  static const cameraRotate = _cameraRotate;
 
-  /// Candle holder lit. Tags: handle, wax, incense, fragrance, smell, senses, spirituality, meditation.
-  static const candleHolderLit = _candleHolderLit;
+  /// Camera smile. Tags: photo, selfie, smile, face detection, portrait.
+  static const cameraSmile = _cameraSmile;
 
-  /// Candlestick. Tags: wax, incense, fragrance, smell, senses, spirituality, meditation, relaxation.
-  static const candlestick = _candlestick;
+  /// Camera sparkle. Tags: ai, camera, photo, sparkle, generate.
+  static const cameraSparkle = _cameraSparkle;
 
-  /// Candlestick big. Tags: wax, incense, fragrance, smell, senses, spirituality, meditation, relaxation.
-  static const candlestickBig = _candlestickBig;
+  /// Camera tripod. Tags: photo, tripod, stand, camera stand, studio.
+  static const cameraTripod = _cameraTripod;
 
-  /// Candlestick big lit. Tags: wax, incense, fragrance, smell, senses, spirituality, meditation, relaxation.
-  static const candlestickBigLit = _candlestickBigLit;
+  /// Campfire. Tags: fire, camping, bonfire, flame, outdoor, logs.
+  static const campfire = _campfire;
+
+  /// Campfire curl. Tags: campfire, fire pit, camping, wood, outdoors. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const campfireCurl = _campfireCurl;
 
   /// Same icon as [chartCandlestick].
   static const candlestickChart = _chartCandlestick;
 
-  /// Candlestick lit. Tags: wax, incense, fragrance, smell, senses, spirituality, meditation, relaxation.
-  static const candlestickLit = _candlestickLit;
-
-  /// Candle tealight. Tags: wax, incense, fragrance, smell, senses, spirituality, meditation, relaxation.
-  static const candleTealight = _candleTealight;
-
-  /// Candle tealight lit. Tags: wax, incense, fragrance, smell, senses, spirituality, meditation, relaxation.
-  static const candleTealightLit = _candleTealightLit;
-
-  /// Candy. Tags: sugar, food, sweet.
+  /// Candy. Tags: sweet, wrapped candy, dessert, treat, confectionery.
   static const candy = _candy;
 
-  /// Candy cane. Tags: sugar, food, sweet, christmas, xmas.
+  /// Candy cane. Tags: sweet, christmas, dessert, treat, holiday.
   static const candyCane = _candyCane;
 
-  /// Candy off. Tags: sugar free, food, sweet, allergy, intolerance, diet.
+  /// Candy off. Tags: sweet, no sugar, disabled, no candy, treat.
   static const candyOff = _candyOff;
 
-  /// Cannabis. Tags: weed, leaf.
+  /// Cannabis. Tags: weed, marijuana, leaf, plant, hemp.
   static const cannabis = _cannabis;
 
-  /// Cannabis off. Tags: cannabis, weed, leaf.
+  /// Cannabis off. Tags: weed, marijuana, leaf, no cannabis, prohibited.
   static const cannabisOff = _cannabisOff;
 
-  /// Can soda. Tags: beverage, drink, food, soda, tin, beer, alcohol, waste.
+  /// Can soda. Tags: soda, can, drink, beverage.
   static const canSoda = _canSoda;
 
-  /// Captions. Tags: closed captions, subtitles, subhead, transcription, transcribe, dialogue, accessibility.
+  /// Captions. Tags: subtitles, closed captions, cc, text, video.
   static const captions = _captions;
 
-  /// Captions off. Tags: closed captions, subtitles, subhead, transcription, transcribe, dialogue, accessibility.
+  /// Captions off. Tags: subtitles, closed captions, cc, disabled, video.
   static const captionsOff = _captionsOff;
 
-  /// Car. Tags: vehicle, drive, trip, journey.
+  /// Captions screen. Tags: captions, subtitles, open caption, cc, burned-in.
+  static const captionsScreen = _captionsScreen;
+
+  /// Captions short. Tags: subtitle, captions, closed captions, text, video.
+  static const captionsShort = _captionsShort;
+
+  /// Car. Tags: vehicle, automobile, auto, side view, sedan. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const car = _car;
 
-  /// Caravan. Tags: trailer, tow, camping, campsite, mobile home, holiday, nomadic, wilderness.
+  /// Car alert. Tags: vehicle, automobile, warning, alert, breakdown. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const carAlert = _carAlert;
+
+  /// Caravan. Tags: trailer, camper, rv, towing, vehicle, travel.
   static const caravan = _caravan;
 
-  /// Car battery. Tags: battery, automobile, powercell, electric, power, electricity, energy, accumulator.
+  /// Car battery. Tags: car, battery, automotive, power, charge, vehicle.
   static const carBattery = _carBattery;
 
-  /// Card credit. Tags: atm, cash machine, cash point, withdrawal, debit, visa, mastercard, bank.
-  static const cardCredit = _cardCredit;
+  /// Car battery zap. Tags: car, battery, automotive, charging, bolt, vehicle.
+  static const carBatteryZap = _carBatteryZap;
 
-  /// Card sd. Tags: smartphone, mobile, disk, data, backup, save, read, write.
+  /// Car clock. Tags: vehicle, time, eta, schedule, parking time, duration. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const carClock = _carClock;
+
+  /// Car crash. Tags: accident, crash, collision, car, wreck, insurance.
+  static const carCrash = _carCrash;
+
+  /// Same icon as [creditCard].
+  static const cardCredit = _creditCard;
+
+  /// Card heart. Tags: loyalty, membership, rewards, card, favorite.
+  static const cardHeart = _cardHeart;
+
+  /// Cardigan. Tags: clothing, sweater, knitwear, jacket, fashion.
+  static const cardigan = _cardigan;
+
+  /// Cardigan puff. Tags: clothing, jacket, sweater, apparel, wear, fashion.
+  static const cardiganPuff = _cardiganPuff;
+
+  /// Card sd. Tags: sd card, memory, storage, camera, flash.
   static const cardSd = _cardSd;
 
-  /// Card sim. Tags: cellphone, smartphone, mobile, network, cellular, service, provider, signal.
+  /// Card sim. Tags: sim, sim card, mobile, phone, chip.
   static const cardSim = _cardSim;
 
-  /// Car front. Tags: vehicle, drive, trip, journey.
+  /// Card sim code. Tags: sim, card, chip, code, developer.
+  static const cardSimCode = _cardSimCode;
+
+  /// Card sim dual. Tags: sim, card, dual, two, phone.
+  static const cardSimDual = _cardSimDual;
+
+  /// Card sim simple. Tags: sim, card, chip, mobile.
+  static const cardSimSimple = _cardSimSimple;
+
+  /// Cards tilted. Tags: photos, pictures, cards, stack, tilted, clipboard.
+  static const cardsTilted = _cardsTilted;
+
+  /// Card swap. Tags: exchange, cards, transfer, swap, payment.
+  static const cardSwap = _cardSwap;
+
+  /// Card swap flipped. Tags: exchange, cards, transfer, swap, payment.
+  static const cardSwapFlipped = _cardSwapFlipped;
+
+  /// Car flip. Tags: accident, incident, crash, traffic, road. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const carFlip = _carFlip;
+
+  /// Car front. Tags: vehicle, automobile, auto, front view.
   static const carFront = _carFront;
 
-  /// Carrot. Tags: orange, healthy, nature, fresh, root, produce, organic, nutrition.
+  /// Car front bumper. Tags: vehicle, automobile, auto, front view, suv, sports car.
+  static const carFrontBumper = _carFrontBumper;
+
+  /// Car front lights. Tags: vehicle, automobile, auto, front view, headlights.
+  static const carFrontLights = _carFrontLights;
+
+  /// Car police. Tags: police, car, patrol, vehicle, law.
+  static const carPolice = _carPolice;
+
+  /// Car road. Tags: road, car, street, driving, traffic.
+  static const carRoad = _carRoad;
+
+  /// Carrot. Tags: vegetable, food, orange, veggie, root.
   static const carrot = _carrot;
+
+  /// Cars 2. Tags: traffic jam, cars, congestion, road.
+  static const cars2 = _cars2;
+
+  /// Cars 3. Tags: traffic jam, cars, congestion, heavy traffic, road.
+  static const cars3 = _cars3;
+
+  /// Car signal. Tags: vehicle, connected car, wifi, telematics, wireless.
+  static const carSignal = _carSignal;
 
   /// Same icon as [shoppingCart].
   static const cart = _shoppingCart;
 
-  /// Car taxi front. Tags: cab, vehicle, drive, trip, journey.
+  /// Car taxi. Tags: taxi, cab, vehicle, ride, trip.
+  static const carTaxi = _carTaxi;
+
+  /// Car taxi front. Tags: cab, taxi, vehicle, front view, ride.
   static const carTaxiFront = _carTaxiFront;
 
-  /// Carton. Tags: milk, dairy, beverage, drink, diet, lactose, liquid, liter.
+  /// Car taxi front bumper. Tags: taxi, cab, vehicle, ride, trip.
+  static const carTaxiFrontBumper = _carTaxiFrontBumper;
+
+  /// Carton. Tags: milk, dairy, drink, juice.
   static const carton = _carton;
 
-  /// Carton off. Tags: milk, dairy, beverage, drink, diet, lactose free, non dairy, liquid.
-  static const cartonOff = _cartonOff;
+  /// Carton ban. Tags: oat milk, carton, plant-based, dairy-free, allergy.
+  static const cartonBan = _cartonBan;
 
-  /// Case camel. Tags: text, letters, characters, font, typography, ab, string, code. Its details merge when filled: use it outlined.
-  static const caseCamel = _caseCamel;
+  /// Carton coconut. Tags: coconut milk, carton, plant-based, dairy-free, drink. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const cartonCoconut = _cartonCoconut;
 
-  /// Case kebab. Tags: text, letters, characters, font, typography, dash, a-b, ab. Its details merge when filled: use it outlined.
-  static const caseKebab = _caseKebab;
-
-  /// Case lower. Tags: text, letters, characters, font, typography. Its details merge when filled: use it outlined.
+  /// Case lower. Tags: lowercase, letters, ab, text transform, small letters.
   static const caseLower = _caseLower;
 
-  /// Case sensitive. Tags: text, letters, characters, font, typography. Its details merge when filled: use it outlined.
+  /// Case sensitive. Tags: font, font size, text, letter.
   static const caseSensitive = _caseSensitive;
 
-  /// Case snake. Tags: text, letters, characters, font, typography, underscore, ab, string. Its details merge when filled: use it outlined.
-  static const caseSnake = _caseSnake;
-
-  /// Case snake upper. Tags: text, letters, capitals, caps, characters, font, typography, underscore.
-  static const caseSnakeUpper = _caseSnakeUpper;
-
-  /// Case upper. Tags: text, letters, characters, font, typography.
+  /// Case upper. Tags: text, letters, characters, font, typography. Its details merge when filled: use it outlined.
   static const caseUpper = _caseUpper;
+
+  /// Case upper serif. Tags: all caps, uppercase, capital, letters, text.
+  static const caseUpperSerif = _caseUpperSerif;
 
   /// Same icon as [banknote].
   static const cash = _banknote;
 
-  /// Cassette tape. Tags: audio, music, recording, play.
+  /// Cash register. Tags: cashier, checkout, point of sale, till, store, register. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const cashRegister = _cashRegister;
+
+  /// Casino chip. Tags: poker, gambling, casino, token, bet.
+  static const casinoChip = _casinoChip;
+
+  /// Cassette tape. Tags: audio, tape, retro, music, mixtape, cassette.
   static const cassetteTape = _cassetteTape;
 
-  /// Cast. Tags: stream, streaming, screen, display, wireless, broadcast, transmit, media.
+  /// Cast. Tags: screen share, stream, chromecast, airplay, mirror, tv.
   static const cast = _cast;
 
-  /// Castle. Tags: fortress, stronghold, palace, chateau, building.
+  /// Castle. Tags: fortress, tower, medieval, defense.
   static const castle = _castle;
 
-  /// Cat. Tags: animal, pet, kitten, feline.
+  /// Castle flag. Tags: fortress, medieval, palace, kingdom, fairy tale.
+  static const castleFlag = _castleFlag;
+
+  /// Castle keep. Tags: fortress, medieval, palace, kingdom, tower.
+  static const castleKeep = _castleKeep;
+
+  /// Castle tower. Tags: fortress, medieval, rook, kingdom, turret.
+  static const castleTower = _castleTower;
+
+  /// Cast wide. Tags: cast, mirror, screen, share, stream, display.
+  static const castWide = _castWide;
+
+  /// Cat. Tags: pet, kitten, feline, animal, face.
   static const cat = _cat;
 
-  /// Cat big. Tags: tiger, lion, leopard, panther, zoo, safari park, savannah, wildlife.
-  static const catBig = _catBig;
+  /// Cayan tower. Tags: dubai, skyscraper, landmark, twisted tower, architecture.
+  static const cayanTower = _cayanTower;
 
-  /// Cauldron. Tags: pot, boiling, heat, hot, soup, potion, brewing, bubbles.
-  static const cauldron = _cauldron;
-
-  /// Cctv. Tags: camera, surveillance, recording, film, videotape, crime, watching.
+  /// Cctv. Tags: surveillance, camera, security camera, monitoring.
   static const cctv = _cctv;
 
-  /// Cctv off. Tags: camera, surveillance, recording, film, videotape, crime, watching.
-  static const cctvOff = _cctvOff;
+  /// Cctv dome. Tags: surveillance, camera, security camera, monitoring, dome.
+  static const cctvDome = _cctvDome;
 
-  /// Cent. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
-  static const cent = _cent;
+  /// Cctv dome off. Tags: surveillance, camera, security camera, disabled, dome.
+  static const cctvDomeOff = _cctvDomeOff;
 
-  /// Cent circle. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
-  static const centCircle = _centCircle;
+  /// Same icon as [cctvDomeOff].
+  static const cctvOff = _cctvDomeOff;
 
-  /// Cent square. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
-  static const centSquare = _centSquare;
+  /// Cellphone retro. Tags: flip phone, clamshell, mobile, phone, retro.
+  static const cellphoneRetro = _cellphoneRetro;
 
-  /// Chairs table parasol. Tags: terrace, balcony, patio, umbrella, shade, seating, garden, outdoor.
-  static const chairsTableParasol = _chairsTableParasol;
+  /// Celsius. Tags: temperature, degrees, unit, thermometer, metric.
+  static const celsius = _celsius;
 
-  /// Chairs table platter. Tags: restaurant, seating, table service, waiter, waitress, served, dinner, dining.
-  static const chairsTablePlatter = _chairsTablePlatter;
+  /// Central shaheed minar. Tags: monument, landmark, bangladesh, dhaka, memorial.
+  static const centralShaheedMinar = _centralShaheedMinar;
 
-  /// Chameleon. Tags: camouflage, colors, colours, multicolor, multicolour, lizard, reptile, wildlife.
-  static const chameleon = _chameleon;
+  /// Chair. Tags: seat, furniture, dining chair, sit.
+  static const chair = _chair;
 
-  /// Chart area. Tags: statistics, analytics, diagram, graph, area.
+  /// Chair crossbar. Tags: seat, furniture, armchair, sit, office chair.
+  static const chairCrossbar = _chairCrossbar;
+
+  /// Chair round back. Tags: seat, furniture, oval back, dining chair, sit.
+  static const chairRoundBack = _chairRoundBack;
+
+  /// Chair slat. Tags: seat, furniture, ladder back, wooden chair, sit.
+  static const chairSlat = _chairSlat;
+
+  /// Chandelier. Tags: light, lamp, ceiling, lighting, candelabra, decor.
+  static const chandelier = _chandelier;
+
+  /// Chart area. Tags: area chart, graph, statistics, analytics, trend.
   static const chartArea = _chartArea;
 
-  /// Chart bar. Tags: statistics, analytics, diagram, graph.
+  /// Chart bar. Tags: bar, chart, horizontal, statistics, analytics, graph.
   static const chartBar = _chartBar;
 
-  /// Chart bar big. Tags: statistics, analytics, diagram, graph.
+  /// Chart bar big. Tags: horizontal bars, graph, statistics, analytics.
   static const chartBarBig = _chartBarBig;
 
-  /// Chart bar decreasing. Tags: statistics, analytics, diagram, graph, trending down.
+  /// Chart bar decreasing. Tags: horizontal bars, descending, graph, statistics, decline.
   static const chartBarDecreasing = _chartBarDecreasing;
 
-  /// Chart bar increasing. Tags: statistics, analytics, diagram, graph, trending up.
+  /// Chart bar increasing. Tags: horizontal bars, ascending, graph, statistics, growth.
   static const chartBarIncreasing = _chartBarIncreasing;
 
-  /// Chart bar stacked. Tags: statistics, analytics, diagram, graph, multivariate, categorical, comparison.
+  /// Chart bar stacked. Tags: stacked bars, horizontal, graph, statistics, analytics.
   static const chartBarStacked = _chartBarStacked;
 
-  /// Chart candlestick. Tags: trading, trader, financial, markets, portfolio, assets, prices, value.
+  /// Chart bitcoin. Tags: bitcoin, chart, graph, price, crypto, btc.
+  static const chartBitcoin = _chartBitcoin;
+
+  /// Chart breakout circle. Tags: breakout, growth, spike, trending, rise, analytics.
+  static const chartBreakoutCircle = _chartBreakoutCircle;
+
+  /// Chart breakout square. Tags: breakout, growth, spike, trending, rise, analytics.
+  static const chartBreakoutSquare = _chartBreakoutSquare;
+
+  /// Chart bubble. Tags: bubble chart, scatter, graph, statistics, analytics.
+  static const chartBubble = _chartBubble;
+
+  /// Chart candlestick. Tags: candles, stock, trading, finance, analytics.
   static const chartCandlestick = _chartCandlestick;
 
-  /// Chart column. Tags: statistics, analytics, diagram, graph.
+  /// Chart column. Tags: bar chart, vertical bars, graph, statistics, analytics.
   static const chartColumn = _chartColumn;
 
-  /// Chart column big. Tags: statistics, analytics, diagram, graph.
+  /// Chart column big. Tags: bar chart, vertical bars, graph, statistics, analytics.
   static const chartColumnBig = _chartColumnBig;
 
-  /// Chart column decreasing. Tags: statistics, analytics, diagram, graph, trending down.
+  /// Chart column decreasing. Tags: descending, vertical bars, graph, statistics, decline.
   static const chartColumnDecreasing = _chartColumnDecreasing;
 
-  /// Chart column increasing. Tags: statistics, analytics, diagram, graph, trending up.
+  /// Chart column increasing. Tags: ascending, vertical bars, graph, statistics, growth.
   static const chartColumnIncreasing = _chartColumnIncreasing;
 
-  /// Chart column stacked. Tags: statistics, analytics, diagram, graph, multivariate, categorical, comparison.
+  /// Chart column joined. Tags: bars, graph, statistics, analytics, histogram. Its details merge when filled: use it outlined.
+  static const chartColumnJoined = _chartColumnJoined;
+
+  /// Chart column stacked. Tags: stacked bars, vertical bars, graph, statistics, analytics.
   static const chartColumnStacked = _chartColumnStacked;
 
-  /// Chart gantt. Tags: diagram, graph, timeline, planning.
+  /// Chart column trending down. Tags: decrease, decline, drop, falling, bars, trend.
+  static const chartColumnTrendingDown = _chartColumnTrendingDown;
+
+  /// Chart column trending up. Tags: increase, growth, rise, bars, trend, analytics.
+  static const chartColumnTrendingUp = _chartColumnTrendingUp;
+
+  /// Chart curve dots. Tags: average, mean, curve, graph, statistics, dotted.
+  static const chartCurveDots = _chartCurveDots;
+
+  /// Chart curve down. Tags: decrease, decline, drop, falling, graph, trend.
+  static const chartCurveDown = _chartCurveDown;
+
+  /// Chart curve hill. Tags: curve, smooth, graph, peak, statistics, analytics.
+  static const chartCurveHill = _chartCurveHill;
+
+  /// Chart curve peak. Tags: maximum, peak, bell curve, arch, top, graph.
+  static const chartCurvePeak = _chartCurvePeak;
+
+  /// Chart curve sigmoid. Tags: s-curve, logistic, growth, saturation, curve, graph.
+  static const chartCurveSigmoid = _chartCurveSigmoid;
+
+  /// Chart curve up. Tags: increase, growth, rise, rising, graph, trend.
+  static const chartCurveUp = _chartCurveUp;
+
+  /// Chart curve valley. Tags: minimum, valley, trough, bottom, u-shape, graph.
+  static const chartCurveValley = _chartCurveValley;
+
+  /// Chart curve wave. Tags: medium, wave, sine, oscillation, curve, graph.
+  static const chartCurveWave = _chartCurveWave;
+
+  /// Chart donut. Tags: donut, chart, ring, doughnut, graph.
+  static const chartDonut = _chartDonut;
+
+  /// Chart donut cross. Tags: donut, chart, ring, doughnut, graph, crosshair.
+  static const chartDonutCross = _chartDonutCross;
+
+  /// Chart donut quarter. Tags: donut, chart, ring, doughnut, graph, target.
+  static const chartDonutQuarter = _chartDonutQuarter;
+
+  /// Chart donut slices. Tags: ring, donut, doughnut, pie, statistics, analytics.
+  static const chartDonutSlices = _chartDonutSlices;
+
+  /// Chart donut spokes. Tags: donut, chart, ring, doughnut, graph, three, sections.
+  static const chartDonutSpokes = _chartDonutSpokes;
+
+  /// Chart gantt. Tags: timeline, schedule, project, planning, tasks.
   static const chartGantt = _chartGantt;
 
-  /// Chart line. Tags: statistics, analytics, diagram, graph.
+  /// Chart high low. Tags: range, high low, min max, stock, volatility.
+  static const chartHighLow = _chartHighLow;
+
+  /// Chart histogram. Tags: distribution, bars, bell curve, frequency, statistics.
+  static const chartHistogram = _chartHistogram;
+
+  /// Chart line. Tags: graph, statistics, trend, line chart, analytics.
   static const chartLine = _chartLine;
 
-  /// Chart network. Tags: statistics, analytics, diagram, graph, topology, cluster, web, nodes.
+  /// Chart line dots. Tags: line chart, data points, graph, statistics, analytics.
+  static const chartLineDots = _chartLineDots;
+
+  /// Chart line smooth. Tags: line chart, graph, trend, statistics, analytics.
+  static const chartLineSmooth = _chartLineSmooth;
+
+  /// Chart line text. Tags: analysis, report, statistics, graph, trend, notes.
+  static const chartLineText = _chartLineText;
+
+  /// Chart line trending up. Tags: evaluation, assessment, growth, performance, analytics, trend.
+  static const chartLineTrendingUp = _chartLineTrendingUp;
+
+  /// Chart network. Tags: nodes, relationships, graph, connections, analytics.
   static const chartNetwork = _chartNetwork;
 
-  /// Chart no axes column. Tags: statistics, analytics, diagram, graph.
+  /// Chart no axes bubble. Tags: bubble chart, bubbles, graph, statistics, analytics.
+  static const chartNoAxesBubble = _chartNoAxesBubble;
+
+  /// Chart no axes candlestick. Tags: candles, stock, trading, finance, analytics.
+  static const chartNoAxesCandlestick = _chartNoAxesCandlestick;
+
+  /// Chart no axes candlestick triple. Tags: candlestick, stock, market, trading, analysis, finance.
+  static const chartNoAxesCandlestickTriple = _chartNoAxesCandlestickTriple;
+
+  /// Chart no axes column. Tags: bars, columns, graph, statistics, analytics.
   static const chartNoAxesColumn = _chartNoAxesColumn;
 
-  /// Chart no axes column decreasing. Tags: statistics, analytics, diagram, graph, trending down.
+  /// Chart no axes column big. Tags: bars, graph, statistics, analytics, columns.
+  static const chartNoAxesColumnBig = _chartNoAxesColumnBig;
+
+  /// Chart no axes column big line. Tags: bars, graph, statistics, trend, line, analytics.
+  static const chartNoAxesColumnBigLine = _chartNoAxesColumnBigLine;
+
+  /// Chart no axes column decreasing. Tags: descending, bars, graph, statistics, decline.
   static const chartNoAxesColumnDecreasing = _chartNoAxesColumnDecreasing;
 
-  /// Chart no axes column increasing. Tags: statistics, analytics, diagram, graph, trending up.
+  /// Chart no axes column hanging. Tags: bar, chart, statistics, analytics, graph, columns.
+  static const chartNoAxesColumnHanging = _chartNoAxesColumnHanging;
+
+  /// Chart no axes column increasing. Tags: ascending, bars, graph, statistics, growth.
   static const chartNoAxesColumnIncreasing = _chartNoAxesColumnIncreasing;
 
-  /// Chart no axes combined. Tags: statistics, analytics, diagram, graph, trending up.
+  /// Chart no axes column line. Tags: bars, line, combo chart, graph, statistics, analytics.
+  static const chartNoAxesColumnLine = _chartNoAxesColumnLine;
+
+  /// Chart no axes column thin. Tags: analytics, statistics, bars, equalizer, histogram, graph.
+  static const chartNoAxesColumnThin = _chartNoAxesColumnThin;
+
+  /// Chart no axes combined. Tags: analysis, bars, trend, line, growth, analytics.
   static const chartNoAxesCombined = _chartNoAxesCombined;
 
-  /// Chart no axes gantt. Tags: projects, manage, overview, roadmap, plan, intentions, timeline, deadline.
+  /// Chart no axes combined tall. Tags: analysis, bars, trend, growth, statistics, analytics.
+  static const chartNoAxesCombinedTall = _chartNoAxesCombinedTall;
+
+  /// Chart no axes gantt. Tags: timeline, schedule, project, planning, tasks.
   static const chartNoAxesGantt = _chartNoAxesGantt;
 
-  /// Chart pie. Tags: statistics, analytics, diagram, presentation.
+  /// Chart no axes waterfall down. Tags: waterfall, decreasing, decline, bridge chart, loss, descending, analytics.
+  static const chartNoAxesWaterfallDown = _chartNoAxesWaterfallDown;
+
+  /// Chart no axes waterfall up. Tags: waterfall, increasing, growth, bridge chart, gain, ascending, analytics.
+  static const chartNoAxesWaterfallUp = _chartNoAxesWaterfallUp;
+
+  /// Chart pie. Tags: pie, chart, graph, statistics, analytics.
   static const chartPie = _chartPie;
 
-  /// Chart scatter. Tags: statistics, analytics, diagram, graph.
+  /// Chart pie bitcoin. Tags: bitcoin, pie, chart, portfolio, crypto, btc.
+  static const chartPieBitcoin = _chartPieBitcoin;
+
+  /// Chart pie leaf. Tags: pie, chart, graph, petal, lens, split.
+  static const chartPieLeaf = _chartPieLeaf;
+
+  /// Chart pie lines. Tags: pie, chart, graph, circle, sections, divided.
+  static const chartPieLines = _chartPieLines;
+
+  /// Chart pie split. Tags: pie, chart, graph, statistics, split, slice.
+  static const chartPieSplit = _chartPieSplit;
+
+  /// Chart pie wedge. Tags: pie, chart, graph, statistics, wedge, slice.
+  static const chartPieWedge = _chartPieWedge;
+
+  /// Chart qq. Tags: qq, plot, quantile, statistics, scatter.
+  static const chartQq = _chartQq;
+
+  /// Chart radar. Tags: spider chart, web chart, polar, pentagon, statistics, analytics.
+  static const chartRadar = _chartRadar;
+
+  /// Chart rose. Tags: polar, nightingale, coxcomb, radial, statistics, analytics. Its details merge when filled: use it outlined.
+  static const chartRose = _chartRose;
+
+  /// Chart scatter. Tags: scatter plot, dots, points, graph, statistics.
   static const chartScatter = _chartScatter;
 
-  /// Chart spline. Tags: statistics, analytics, diagram, graph, curve, continuous, smooth, polynomial.
+  /// Chart scatter line. Tags: covariate, regression, scatter, trend, statistics, analytics.
+  static const chartScatterLine = _chartScatterLine;
+
+  /// Chart spline. Tags: curve, smooth, line chart, graph, statistics.
   static const chartSpline = _chartSpline;
 
-  /// Check. Tags: done, todo, tick, complete, task.
+  /// Chart waterfall down. Tags: waterfall, decreasing, decline, bridge chart, loss, descending, analytics.
+  static const chartWaterfallDown = _chartWaterfallDown;
+
+  /// Chart waterfall up. Tags: waterfall, increasing, growth, bridge chart, gain, ascending, analytics.
+  static const chartWaterfallUp = _chartWaterfallUp;
+
+  /// Check. Tags: tick, done, confirm, ok, success, yes, todo, complete.
   static const check = _check;
 
-  /// Check check. Tags: done, received, double, todo, tick, complete, task.
+  /// Check check. Tags: double check, read, seen, done, delivered, confirm, received, double.
   static const checkCheck = _checkCheck;
+
+  /// Check check curved. Tags: done, received, double, tick, read.
+  static const checkCheckCurved = _checkCheckCurved;
+
+  /// Check check off. Tags: unread, unseen, message, not read, double check, crossed out.
+  static const checkCheckOff = _checkCheckOff;
+
+  /// Check check off curved. Tags: unread, unseen, message, not read, double check, crossed out.
+  static const checkCheckOffCurved = _checkCheckOffCurved;
+
+  /// Check check thick. Tags: done, received, double, bold, tick, read.
+  static const checkCheckThick = _checkCheckThick;
+
+  /// Check check thick curved. Tags: done, received, double, bold, tick, read.
+  static const checkCheckThickCurved = _checkCheckThickCurved;
 
   /// Same icon as [circleCheck].
   static const checkCircle = _circleCheck;
 
-  /// Check line. Tags: done, todo, tick, complete, task.
+  /// Check curved. Tags: done, todo, tick, complete, task.
+  static const checkCurved = _checkCurved;
+
+  /// Check line. Tags: tick, done, confirm, ok, success, underline.
   static const checkLine = _checkLine;
 
   /// Same icon as [listChecks].
   static const checklist = _listChecks;
 
-  /// Cheese. Tags: swiss, holes, fondue, emmental, gouda, edam, cheddar, brie.
+  /// Check off. Tags: unread, unseen, message, not read, delivered, crossed out.
+  static const checkOff = _checkOff;
+
+  /// Check off curved. Tags: unread, unseen, message, not read, delivered, crossed out.
+  static const checkOffCurved = _checkOffCurved;
+
+  /// Check thick. Tags: done, tick, complete, bold check, confirm.
+  static const checkThick = _checkThick;
+
+  /// Check thick curved. Tags: done, tick, complete, bold check, confirm.
+  static const checkThickCurved = _checkThickCurved;
+
+  /// Cheese. Tags: dairy, food, swiss, snack, wedge.
   static const cheese = _cheese;
 
-  /// Chef hat. Tags: cooking, food, kitchen, restaurant.
+  /// Cheesecake. Tags: cake, dessert, slice, sweet, berry, pastry.
+  static const cheesecake = _cheesecake;
+
+  /// Cheesecake whole. Tags: cake, dessert, plate, sweet, cherry, pastry.
+  static const cheesecakeWhole = _cheesecakeWhole;
+
+  /// Chef. Tags: cook, cooking, kitchen, restaurant, toque, person.
+  static const chef = _chef;
+
+  /// Chef hat. Tags: cook, cooking, kitchen, restaurant, toque, hat.
   static const chefHat = _chefHat;
 
-  /// Cherry. Tags: fruit, food.
+  /// Chef hat arrow right. Tags: order, kitchen, send order, restaurant, chef. Mirrors in right-to-left text.
+  static const chefHatArrowRight = _chefHatArrowRight;
+
+  /// Cheque pen. Tags: check, cheque, pay, sign, pen, payment.
+  static const chequePen = _chequePen;
+
+  /// Cherry. Tags: fruit, food, cherries, sweet.
   static const cherry = _cherry;
 
-  /// Chess bishop. Tags: mitre, miter, piece, board game, religion.
+  /// Chess bishop. Tags: chess, piece, board game, strategy.
   static const chessBishop = _chessBishop;
 
-  /// Chess king. Tags: ruler, crown, piece, board game, stalemate.
+  /// Chess king. Tags: chess, piece, board game, strategy.
   static const chessKing = _chessKing;
 
-  /// Chess knight. Tags: piece, horse, board game.
+  /// Chess knight. Tags: chess, piece, horse, board game, strategy.
   static const chessKnight = _chessKnight;
 
-  /// Chess pawn. Tags: piece, board game.
+  /// Chess knight base. Tags: chess, piece, horse, board game, strategy.
+  static const chessKnightBase = _chessKnightBase;
+
+  /// Chess pawn. Tags: chess, piece, board game, strategy. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const chessPawn = _chessPawn;
 
-  /// Chess queen. Tags: ruler, crown, piece, board game, stalemate.
+  /// Chess queen. Tags: chess, piece, board game, strategy.
   static const chessQueen = _chessQueen;
 
-  /// Chess rook. Tags: castle, piece, board game.
+  /// Chess rook. Tags: chess, piece, tower, castle, board game, strategy.
   static const chessRook = _chessRook;
 
-  /// Chest. Tags: trunk, treasure, loot, gold, toybox, toolbox, tool chest, storage.
-  static const chest = _chest;
+  /// Chess rook tapered. Tags: chess, piece, tower, board game, strategy.
+  static const chessRookTapered = _chessRookTapered;
 
-  /// Chevron down. Tags: backwards, reverse, slow, dropdown.
+  /// Chest press. Tags: gym, machine, workout, equipment, fitness.
+  static const chestPress = _chestPress;
+
+  /// Chevron down. Tags: expand, dropdown, more, caret, open, disclosure, chevron, down.
   static const chevronDown = _chevronDown;
 
-  /// Chevron first. Tags: previous, music. Mirrors in right-to-left text.
+  /// Chevron first. Tags: first, start, beginning, skip, previous, page. Mirrors in right-to-left text.
   static const chevronFirst = _chevronFirst;
 
-  /// Chevron last. Tags: skip, next, music. Mirrors in right-to-left text.
+  /// Chevron last. Tags: last, end, skip, next, page, final. Mirrors in right-to-left text.
   static const chevronLast = _chevronLast;
 
-  /// Chevron left. Tags: back, previous, less than, fewer, menu. Mirrors in right-to-left text.
+  /// Chevron left. Tags: back, previous, caret, collapse, navigate, chevron, left. Mirrors in right-to-left text.
   static const chevronLeft = _chevronLeft;
 
-  /// Chevron right. Tags: forward, next, more than, greater, menu, code, coding, command line. Mirrors in right-to-left text.
+  /// Chevron right. Tags: forward, next, caret, expand, navigate, chevron, right. Mirrors in right-to-left text.
   static const chevronRight = _chevronRight;
 
-  /// Chevrons down. Tags: backwards, reverse, slower.
+  /// Chevrons down. Tags: scroll, expand, more, double, down.
   static const chevronsDown = _chevronsDown;
 
-  /// Chevrons down up. Tags: collapse, fold, vertical.
+  /// Chevrons down up. Tags: collapse, fold, compress, shrink, inward.
   static const chevronsDownUp = _chevronsDownUp;
 
-  /// Chevrons left. Tags: turn, corner. Mirrors in right-to-left text.
+  /// Chevrons large down. Tags: chevrons, double, down, expand, scroll.
+  static const chevronsLargeDown = _chevronsLargeDown;
+
+  /// Chevrons large left. Tags: chevrons, double, left, back, rewind. Mirrors in right-to-left text.
+  static const chevronsLargeLeft = _chevronsLargeLeft;
+
+  /// Chevrons large right. Tags: chevrons, double, right, next, fast forward. Mirrors in right-to-left text.
+  static const chevronsLargeRight = _chevronsLargeRight;
+
+  /// Chevrons large up. Tags: chevrons, double, up, collapse, faster.
+  static const chevronsLargeUp = _chevronsLargeUp;
+
+  /// Chevrons left. Tags: first, rewind, back, double, previous. Mirrors in right-to-left text.
   static const chevronsLeft = _chevronsLeft;
 
-  /// Chevrons left right. Tags: expand, horizontal, unfold.
+  /// Chevrons left right. Tags: expand, horizontal, resize, outward, code, tags, angle brackets, diverge.
   static const chevronsLeftRight = _chevronsLeftRight;
 
-  /// Chevrons left right ellipsis. Tags: internet, network, connection, cable, lan, port, router, switch.
-  static const chevronsLeftRightEllipsis = _chevronsLeftRightEllipsis;
+  /// Chevrons left right dot. Tags: scroll, horizontal, slider, swipe, pagination.
+  static const chevronsLeftRightDot = _chevronsLeftRightDot;
 
-  /// Chevrons left right square. Tags: gist, source, programming, html, xml, code, coding.
-  static const chevronsLeftRightSquare = _chevronsLeftRightSquare;
+  /// Chevrons left right dots. Tags: code, more, expand, horizontal, dots.
+  static const chevronsLeftRightDots = _chevronsLeftRightDots;
 
-  /// Chevrons right. Tags: turn, corner. Mirrors in right-to-left text.
+  /// Same icon as [chevronsLeftRightDots].
+  static const chevronsLeftRightEllipsis = _chevronsLeftRightDots;
+
+  /// Chevrons right. Tags: last, fast forward, next, double, forward. Mirrors in right-to-left text.
   static const chevronsRight = _chevronsRight;
 
-  /// Chevrons right left. Tags: collapse, fold, horizontal.
+  /// Chevrons right left. Tags: collapse, compress, horizontal, shrink, inward.
   static const chevronsRightLeft = _chevronsRightLeft;
 
-  /// Chevrons up. Tags: forward, ahead, faster, speed, boost.
+  /// Chevrons round down up. Tags: unfold less, collapse, fold, compress, chevrons.
+  static const chevronsRoundDownUp = _chevronsRoundDownUp;
+
+  /// Chevrons up. Tags: scroll, collapse, less, double, up.
   static const chevronsUp = _chevronsUp;
 
-  /// Chevrons up down. Tags: expand, unfold, vertical.
+  /// Chevrons up down. Tags: unfold more, expand, select, sort, chevrons.
   static const chevronsUpDown = _chevronsUpDown;
 
-  /// Chevrons up down square. Tags: elevator, lift, floors, levels, hotel, accommodation, expand, unfold.
-  static const chevronsUpDownSquare = _chevronsUpDownSquare;
+  /// Chevrons up down dot. Tags: vertical scroll, scroll point, scroll, up down, position, drag.
+  static const chevronsUpDownDot = _chevronsUpDownDot;
 
-  /// Chevron up. Tags: caret, keyboard, mac, control, ctrl, superscript, exponential, power.
+  /// Chevron up. Tags: collapse, less, caret, close, disclosure, chevron, up.
   static const chevronUp = _chevronUp;
 
-  /// Church. Tags: temple, building.
+  /// Child. Tags: kid, boy, girl, person, young, face.
+  static const child = _child;
+
+  /// Child baby. Tags: kid, child, boy, girl, toddler, young.
+  static const childBaby = _childBaby;
+
+  /// Chimney. Tags: smoke, factory, industry, fireplace, stack.
+  static const chimney = _chimney;
+
+  /// Chocolate bar. Tags: candy, sweet, dessert, cocoa, snack.
+  static const chocolateBar = _chocolateBar;
+
+  /// Chopsticks. Tags: asian, utensils, eating, sushi, food, cutlery.
+  static const chopsticks = _chopsticks;
+
+  /// Church. Tags: chapel, religion, christian, cross, worship, building.
   static const church = _church;
 
-  /// Cigarette. Tags: smoking.
+  /// Cigarette. Tags: smoking, tobacco, smoke.
   static const cigarette = _cigarette;
 
-  /// Cigarette off. Tags: smoking, no-smoking.
+  /// Cigarette off. Tags: no smoking, smoking, tobacco, banned, forbidden.
   static const cigaretteOff = _cigaretteOff;
 
-  /// Circle. Tags: off, zero, record, shape.
+  /// Cinnamon roll. Tags: pastry, bun, dessert, sweet, bakery, swirl.
+  static const cinnamonRoll = _cinnamonRoll;
+
+  /// Circle. Tags: round, shape, ring, radio, dot, progress, empty, zero.
   static const circle = _circle;
 
-  /// Circle alert. Tags: warning, alert, danger, exclamation mark.
+  /// Circle 0. Tags: number, zero, digit, round.
+  static const circle0 = _circle0;
+
+  /// Circle 1. Tags: one, number, 1, circle, first.
+  static const circle1 = _circle1;
+
+  /// Circle 2. Tags: two, 2, number, circle, step.
+  static const circle2 = _circle2;
+
+  /// Circle 3. Tags: three, 3, number, circle, count.
+  static const circle3 = _circle3;
+
+  /// Circle 4. Tags: four, 4, number, circle, digit.
+  static const circle4 = _circle4;
+
+  /// Circle 5. Tags: five, 5, number, circle, digit.
+  static const circle5 = _circle5;
+
+  /// Circle 6. Tags: number, six, 6, digit, circle.
+  static const circle6 = _circle6;
+
+  /// Circle 7. Tags: seven, number, 7, circle, digit.
+  static const circle7 = _circle7;
+
+  /// Circle 8. Tags: eight, number, digit, 8.
+  static const circle8 = _circle8;
+
+  /// Circle 9. Tags: nine, 9, number, digit, circle, count.
+  static const circle9 = _circle9;
+
+  /// Circle accessibility. Tags: universal access, accessibility, a11y, disability, inclusive.
+  static const circleAccessibility = _circleAccessibility;
+
+  /// Circle activity. Tags: activity, pulse, heartbeat, circle, health, monitor.
+  static const circleActivity = _circleActivity;
+
+  /// Circle alert. Tags: alert, warning, circle, exclamation.
   static const circleAlert = _circleAlert;
 
-  /// Circle arrow down. Tags: backwards, reverse, direction, south, sign, button.
+  /// Circle alpha. Tags: alpha, circle, greek, letter, symbol.
+  static const circleAlpha = _circleAlpha;
+
+  /// Circle arrow diagonal up left. Tags: resize, diagonal, stretch, double arrow.
+  static const circleArrowDiagonalUpLeft = _circleArrowDiagonalUpLeft;
+
+  /// Circle arrow diagonal up right. Tags: resize, diagonal, stretch, double arrow.
+  static const circleArrowDiagonalUpRight = _circleArrowDiagonalUpRight;
+
+  /// Circle arrow down. Tags: down, download, south, direction, circle, arrow down, save, import.
   static const circleArrowDown = _circleArrowDown;
 
-  /// Circle arrow left. Tags: previous, back, direction, west, sign, turn, button. Mirrors in right-to-left text.
+  /// Circle arrow down left. Tags: down left, southwest, direction, diagonal.
+  static const circleArrowDownLeft = _circleArrowDownLeft;
+
+  /// Circle arrow down right. Tags: down right, southeast, direction, diagonal.
+  static const circleArrowDownRight = _circleArrowDownRight;
+
+  /// Circle arrow down to line. Tags: down, download, bottom, end, direction, circle, arrow down, save.
+  static const circleArrowDownToLine = _circleArrowDownToLine;
+
+  /// Circle arrow horizontal. Tags: horizontal, resize, both ways, left right, stretch.
+  static const circleArrowHorizontal = _circleArrowHorizontal;
+
+  /// Circle arrow left. Tags: left, back, previous, west, direction. Mirrors in right-to-left text.
   static const circleArrowLeft = _circleArrowLeft;
 
-  /// Circle arrow out down left. Tags: outwards, direction, south-west, diagonal.
+  /// Circle arrow left right. Tags: swap, exchange, transfer, horizontal, two way.
+  static const circleArrowLeftRight = _circleArrowLeftRight;
+
+  /// Circle arrow left to line. Tags: left, start, first, beginning, direction. Mirrors in right-to-left text.
+  static const circleArrowLeftToLine = _circleArrowLeftToLine;
+
+  /// Circle arrow out down left. Tags: exit, out, down left, leave, diagonal.
   static const circleArrowOutDownLeft = _circleArrowOutDownLeft;
 
-  /// Circle arrow out down right. Tags: outwards, direction, south-east, diagonal.
+  /// Circle arrow out down right. Tags: exit, out, down right, leave, diagonal.
   static const circleArrowOutDownRight = _circleArrowOutDownRight;
 
-  /// Circle arrow out up left. Tags: outwards, direction, north-west, diagonal, keyboard, button, escape.
+  /// Circle arrow out up left. Tags: exit, out, up left, leave, diagonal.
   static const circleArrowOutUpLeft = _circleArrowOutUpLeft;
 
-  /// Circle arrow out up right. Tags: outwards, direction, north-east, diagonal.
+  /// Circle arrow out up right. Tags: share, open, external, export, link, circle, arrow.
   static const circleArrowOutUpRight = _circleArrowOutUpRight;
 
-  /// Circle arrow right. Tags: next, forward, direction, east, sign, turn, button. Mirrors in right-to-left text.
+  /// Circle arrow right. Tags: right, forward, next, east, direction. Mirrors in right-to-left text.
   static const circleArrowRight = _circleArrowRight;
 
-  /// Circle arrow up. Tags: forward, direction, north, sign, button.
+  /// Circle arrow right to line. Tags: right, end, last, skip, direction. Mirrors in right-to-left text.
+  static const circleArrowRightToLine = _circleArrowRightToLine;
+
+  /// Circle arrows left right line. Tags: more or less, swap, exchange, compare, toggle, circle.
+  static const circleArrowsLeftRightLine = _circleArrowsLeftRightLine;
+
+  /// Circle arrow swap diagonal. Tags: transfer, exchange, swap, diagonal, data, sync.
+  static const circleArrowSwapDiagonal = _circleArrowSwapDiagonal;
+
+  /// Circle arrow swap horizontal. Tags: transfer, exchange, swap, horizontal, data, sync.
+  static const circleArrowSwapHorizontal = _circleArrowSwapHorizontal;
+
+  /// Circle arrow swap vertical. Tags: transfer, exchange, swap, vertical, data, sync.
+  static const circleArrowSwapVertical = _circleArrowSwapVertical;
+
+  /// Circle arrow up. Tags: up, upload, north, direction, arrow, circle.
   static const circleArrowUp = _circleArrowUp;
 
-  /// Circle check. Tags: done, todo, tick, complete, task.
+  /// Circle arrow up down. Tags: swap, exchange, transfer, vertical, sort, two way.
+  static const circleArrowUpDown = _circleArrowUpDown;
+
+  /// Circle arrow up from line. Tags: upload, up, arrow, circle, line, send.
+  static const circleArrowUpFromLine = _circleArrowUpFromLine;
+
+  /// Circle arrow up left. Tags: up left, northwest, direction, diagonal.
+  static const circleArrowUpLeft = _circleArrowUpLeft;
+
+  /// Circle arrow up right. Tags: up right, northeast, direction, diagonal, external.
+  static const circleArrowUpRight = _circleArrowUpRight;
+
+  /// Circle arrow up right long. Tags: up right, northeast, direction, diagonal, external.
+  static const circleArrowUpRightLong = _circleArrowUpRightLong;
+
+  /// Circle arrow up to line. Tags: up, top, start, direction, arrow, circle, line.
+  static const circleArrowUpToLine = _circleArrowUpToLine;
+
+  /// Circle arrow vertical. Tags: vertical, resize, both ways, up down, stretch.
+  static const circleArrowVertical = _circleArrowVertical;
+
+  /// Circle bitcoin. Tags: bitcoin, circle, coin, crypto, btc.
+  static const circleBitcoin = _circleBitcoin;
+
+  /// Circle bitcoin rays. Tags: bitcoin, coin, crypto, btc, shine, mining.
+  static const circleBitcoinRays = _circleBitcoinRays;
+
+  /// Circle bitcoin ticked. Tags: bitcoin, circle, coin, crypto, btc.
+  static const circleBitcoinTicked = _circleBitcoinTicked;
+
+  /// Circle bluetooth. Tags: wireless, bluetooth, connect, pairing.
+  static const circleBluetooth = _circleBluetooth;
+
+  /// Circle braces. Tags: curly braces, brackets, code, json, circle.
+  static const circleBraces = _circleBraces;
+
+  /// Circle brackets. Tags: brackets, round, parens, code, circle.
+  static const circleBrackets = _circleBrackets;
+
+  /// Circle check. Tags: success, done, approved, valid, tick, confirm, complete.
   static const circleCheck = _circleCheck;
 
-  /// Circle check big. Tags: done, todo, tick, complete, task.
+  /// Circle check big. Tags: success, done, approved, valid, tick, confirm, overflow.
   static const circleCheckBig = _circleCheckBig;
 
-  /// Circle chevron down. Tags: back, menu.
+  /// Circle check big curved. Tags: success, done, approved, valid, tick, confirm, overflow.
+  static const circleCheckBigCurved = _circleCheckBigCurved;
+
+  /// Circle check curved. Tags: success, done, approved, valid, tick, confirm, complete.
+  static const circleCheckCurved = _circleCheckCurved;
+
+  /// Circle chevron down. Tags: down, dropdown, expand, caret, chevron.
   static const circleChevronDown = _circleChevronDown;
 
-  /// Circle chevron left. Tags: back, previous, less than, fewer, menu. Mirrors in right-to-left text.
+  /// Circle chevron left. Tags: left, back, previous, caret, chevron. Mirrors in right-to-left text.
   static const circleChevronLeft = _circleChevronLeft;
 
-  /// Circle chevron right. Tags: back, more than, greater, menu. Mirrors in right-to-left text.
+  /// Circle chevron right. Tags: right, forward, next, caret, chevron. Mirrors in right-to-left text.
   static const circleChevronRight = _circleChevronRight;
 
-  /// Circle chevron up. Tags: caret, ahead, menu.
+  /// Circle chevrons down. Tags: down, double, scroll, fast, expand.
+  static const circleChevronsDown = _circleChevronsDown;
+
+  /// Circle chevrons left. Tags: left, double, rewind, first, fast. Mirrors in right-to-left text.
+  static const circleChevronsLeft = _circleChevronsLeft;
+
+  /// Circle chevrons left right. Tags: code, programming, source, circle, developer.
+  static const circleChevronsLeftRight = _circleChevronsLeftRight;
+
+  /// Circle chevrons right. Tags: right, double, fast forward, last, fast. Mirrors in right-to-left text.
+  static const circleChevronsRight = _circleChevronsRight;
+
+  /// Circle chevrons up. Tags: up, double, scroll, fast, collapse.
+  static const circleChevronsUp = _circleChevronsUp;
+
+  /// Circle chevron up. Tags: up, collapse, less, caret, chevron.
   static const circleChevronUp = _circleChevronUp;
 
-  /// Circle dashed. Tags: pending, dot, progress, issue, draft, code, coding, version control.
+  /// Circle code. Tags: source, code, programming, brackets, circle.
+  static const circleCode = _circleCode;
+
+  /// Circle congruent. Tags: congruent, circle, symbol, equal, math.
+  static const circleCongruent = _circleCongruent;
+
+  /// Circle corner double left down. Tags: turn, curve, left down, bend. Mirrors in right-to-left text.
+  static const circleCornerDoubleLeftDown = _circleCornerDoubleLeftDown;
+
+  /// Circle corner double right down. Tags: turn, curve, right down, bend. Mirrors in right-to-left text.
+  static const circleCornerDoubleRightDown = _circleCornerDoubleRightDown;
+
+  /// Circle corner down left. Tags: turn, return, enter, curve, down left. Mirrors in right-to-left text.
+  static const circleCornerDownLeft = _circleCornerDownLeft;
+
+  /// Circle corner down right. Tags: turn, curve, down right, next line. Mirrors in right-to-left text.
+  static const circleCornerDownRight = _circleCornerDownRight;
+
+  /// Circle corner up left. Tags: turn, curve, up left, back, undo. Mirrors in right-to-left text.
+  static const circleCornerUpLeft = _circleCornerUpLeft;
+
+  /// Circle corner up right. Tags: turn, curve, up right, forward, redo. Mirrors in right-to-left text.
+  static const circleCornerUpRight = _circleCornerUpRight;
+
+  /// Circle dashed. Tags: dashed, circle, selection, placeholder, outline, border.
   static const circleDashed = _circleDashed;
 
-  /// Circle dashed check. Tags: approved, pending, changes, revision, reapproval, published, schedule, assignment.
-  static const circleDashedCheck = _circleDashedCheck;
+  /// Circle dashed long. Tags: dashed, dotted, placeholder, empty, loading, pending.
+  static const circleDashedLong = _circleDashedLong;
 
-  /// Circle divide. Tags: calculate, math. Its details merge when filled: use it outlined.
+  /// Circle dashed map pin. Tags: share location, pin, live location, position, dashed.
+  static const circleDashedMapPin = _circleDashedMapPin;
+
+  /// Circle dashed minus. Tags: remove, minus, dashed circle, subtract.
+  static const circleDashedMinus = _circleDashedMinus;
+
+  /// Circle dashed plus. Tags: add, circle, half, dot, dashed, plus, new, create.
+  static const circleDashedPlus = _circleDashedPlus;
+
+  /// Circle dashed x. Tags: close, cancel, pending, dismiss, partial, remove.
+  static const circleDashedX = _circleDashedX;
+
+  /// Circle diamond. Tags: token, coin, diamond, badge, circle.
+  static const circleDiamond = _circleDiamond;
+
+  /// Circle dirham. Tags: dirham, uae, currency, money, emirates, aed.
+  static const circleDirham = _circleDirham;
+
+  /// Circle divide. Tags: division, divide, calculator, math, obelus, circle, operator.
   static const circleDivide = _circleDivide;
 
-  /// Circle dollar sign. Tags: monetization, marketing, currency, money, payment.
+  /// Circle dollar arrow down left. Tags: money, receive, incoming, dollar, payment, income.
+  static const circleDollarArrowDownLeft = _circleDollarArrowDownLeft;
+
+  /// Circle dollar arrow up right. Tags: money, send, outgoing, dollar, payment, transfer.
+  static const circleDollarArrowUpRight = _circleDollarArrowUpRight;
+
+  /// Circle dollar sign. Tags: money, currency, coin, usd, price, dollar, circle.
   static const circleDollarSign = _circleDollarSign;
 
-  /// Circle dot. Tags: pending, dot, progress, issue, code, coding, version control, choices.
+  /// Circle dollar sign arrows. Tags: affiliate, commission, referral, dollar, network, partner. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const circleDollarSignArrows = _circleDollarSignArrows;
+
+  /// Circle dollar sign plus. Tags: add, money, circle, dollar, plus, deposit, coin.
+  static const circleDollarSignPlus = _circleDollarSignPlus;
+
+  /// Circle dot. Tags: radio, selected, record, target, point.
   static const circleDot = _circleDot;
 
-  /// Circle dot dashed. Tags: pending, dot, progress, issue, draft, code, coding, version control.
+  /// Circle dot dashed. Tags: dashed, radio, target, pending, in progress.
   static const circleDotDashed = _circleDotDashed;
 
-  /// Circle ellipsis. Tags: ellipsis, et cetera, etc, loader, loading, progress, pending, throbber.
+  /// Circle ellipsis. Tags: more, dots, menu, options, overflow, horizontal, circle.
   static const circleEllipsis = _circleEllipsis;
 
-  /// Circle equal. Tags: calculate, shape.
+  /// Circle ellipsis vertical. Tags: more, vertical, menu, options, circle, dots.
+  static const circleEllipsisVertical = _circleEllipsisVertical;
+
+  /// Circle equal. Tags: equals, equal, math, same, equal sign, equality, circle.
   static const circleEqual = _circleEqual;
 
-  /// Circle euro. Tags: symbol, economy, banking, europe, euro, currency, money, payment.
-  static const circleEuro = _circleEuro;
+  /// Circle equal approximately. Tags: approximately, about, similar, tilde, math.
+  static const circleEqualApproximately = _circleEqualApproximately;
 
-  /// Circle fading arrow up. Tags: north, up, upgrade, improve, circle, button.
+  /// Circle equal not. Tags: not equal, unequal, different, inequality.
+  static const circleEqualNot = _circleEqualNot;
+
+  /// Same icon as [euroCircle].
+  static const circleEuro = _euroCircle;
+
+  /// Circle expand up left. Tags: expand, maximize, enlarge, fullscreen, resize, arrows, circle.
+  static const circleExpandUpLeft = _circleExpandUpLeft;
+
+  /// Circle expand up right. Tags: expand, maximize, enlarge, fullscreen, resize, arrows, circle.
+  static const circleExpandUpRight = _circleExpandUpRight;
+
+  /// Circle external link. Tags: external, open, link, share, circle, arrow.
+  static const circleExternalLink = _circleExternalLink;
+
+  /// Circle fading arrow up. Tags: upgrade, update, up, fading, upload, loading, progress, dashed.
   static const circleFadingArrowUp = _circleFadingArrowUp;
 
-  /// Circle fading plus. Tags: stories, social media, sharing, content.
+  /// Circle fading plus. Tags: add, new, create, fading, plus.
   static const circleFadingPlus = _circleFadingPlus;
 
-  /// Circle gauge. Tags: dashboard, dial, meter, speed, pressure, measure, level.
+  /// Circle function. Tags: function, circle, math, formula, f of x.
+  static const circleFunction = _circleFunction;
+
+  /// Circle gauge. Tags: speedometer, dashboard, performance, meter, speed.
   static const circleGauge = _circleGauge;
 
-  /// Circle minus. Tags: subtract, remove, decrease, reduce, calculate, line, operator, code.
+  /// Circle gauge open. Tags: speedometer, limit, dial, meter, performance, restriction.
+  static const circleGaugeOpen = _circleGaugeOpen;
+
+  /// Circle greater than. Tags: greater, than, circle, inequality, compare.
+  static const circleGreaterThan = _circleGreaterThan;
+
+  /// Circle greater than or equal. Tags: greater than or equal, inequality, comparison, operator, circle.
+  static const circleGreaterThanOrEqual = _circleGreaterThanOrEqual;
+
+  /// Circle heart. Tags: favourite, favorite, like, love, circle.
+  static const circleHeart = _circleHeart;
+
+  /// Circle heart ribbon. Tags: covid, health, info, virus, heart, pandemic.
+  static const circleHeartRibbon = _circleHeartRibbon;
+
+  /// Circle infinity. Tags: infinite, endless, unlimited, circle, loop.
+  static const circleInfinity = _circleInfinity;
+
+  /// Circle keyhole. Tags: lock, secure, keyhole, privacy, round.
+  static const circleKeyhole = _circleKeyhole;
+
+  /// Circle language. Tags: language, translate, translation, locale, circle, international.
+  static const circleLanguage = _circleLanguage;
+
+  /// Circle less than. Tags: comparison, smaller, operator, lt, circle.
+  static const circleLessThan = _circleLessThan;
+
+  /// Circle less than or equal. Tags: less than or equal, inequality, compare, math, circle.
+  static const circleLessThanOrEqual = _circleLessThanOrEqual;
+
+  /// Circle list filter. Tags: filter, options, sort, circle, lines.
+  static const circleListFilter = _circleListFilter;
+
+  /// Circle log in. Tags: sign in, arrow, enter, auth, login, circle. Mirrors in right-to-left text.
+  static const circleLogIn = _circleLogIn;
+
+  /// Circle log in open. Tags: sign in, arrow, enter, auth, login, circle. Mirrors in right-to-left text.
+  static const circleLogInOpen = _circleLogInOpen;
+
+  /// Circle log out. Tags: sign out, arrow, exit, auth, logout, circle. Mirrors in right-to-left text.
+  static const circleLogOut = _circleLogOut;
+
+  /// Circle log out open. Tags: sign out, arrow, exit, auth, logout, circle. Mirrors in right-to-left text.
+  static const circleLogOutOpen = _circleLogOutOpen;
+
+  /// Circle map pin off. Tags: map, circle, pin, location, off, unavailable.
+  static const circleMapPinOff = _circleMapPinOff;
+
+  /// Circle minus. Tags: remove, subtract, less, delete, minus, circle, decrease.
   static const circleMinus = _circleMinus;
 
-  /// Circle off. Tags: diameter, zero, nothing, null, void, cancel, ban, no.
+  /// Circle minus plus. Tags: minus, plus, circle, adjust, tolerance.
+  static const circleMinusPlus = _circleMinusPlus;
+
+  /// Circle minus slash plus. Tags: minus, plus, circle, slash, adjust.
+  static const circleMinusSlashPlus = _circleMinusSlashPlus;
+
+  /// Circle navigation. Tags: navigate, direction, gps, location, heading, circle.
+  static const circleNavigation = _circleNavigation;
+
+  /// Circle off. Tags: disabled, crossed out, none, forbidden, empty.
   static const circleOff = _circleOff;
 
-  /// Circle parking. Tags: parking lot, car park.
+  /// Circle paperclip. Tags: attachment, paperclip, clip, attach, file. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const circlePaperclip = _circlePaperclip;
+
+  /// Circle parentheses. Tags: parentheses, brackets, round brackets, code, circle.
+  static const circleParentheses = _circleParentheses;
+
+  /// Circle parking. Tags: park, car park, p, lot, garage, parking, area, circle.
   static const circleParking = _circleParking;
 
-  /// Circle parking off. Tags: parking lot, car park, no parking.
+  /// Circle parking off. Tags: no parking, park, forbidden, banned. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const circleParkingOff = _circleParkingOff;
 
-  /// Circle pause. Tags: music, audio, stop.
+  /// Circle pause. Tags: pause, hold, media, circle.
   static const circlePause = _circlePause;
 
-  /// Circle percent. Tags: verified, unverified, sale, discount, offer, marketing, sticker, price tag.
+  /// Circle pen tool. Tags: pen tool, vector, nib, circle, bezier.
+  static const circlePenTool = _circlePenTool;
+
+  /// Circle percent. Tags: percent, percentage, discount, circle.
   static const circlePercent = _circlePercent;
 
-  /// Circle pile. Tags: off, zero, record, shape, circle-pile, circle, pile, stack.
+  /// Circle pi. Tags: pi, math, constant, circle, greek.
+  static const circlePi = _circlePi;
+
+  /// Circle pile. Tags: pyramid, pile, dots, stack, triangle.
   static const circlePile = _circlePile;
 
-  /// Circle play. Tags: music, start, run.
+  /// Circle play. Tags: play, circle, start, media, video.
   static const circlePlay = _circlePlay;
 
-  /// Circle plus. Tags: add, new, increase, increment, positive, calculate, crosshair, aim.
+  /// Same icon as [circlePlay].
+  static const circlePlayFilled = _circlePlay;
+
+  /// Circle plug. Tags: plug, power, electric, circle, cable.
+  static const circlePlug = _circlePlug;
+
+  /// Circle plus. Tags: add, new, create, more, plus, circle.
   static const circlePlus = _circlePlus;
 
-  /// Circle pound sterling. Tags: monetization, coin, penny, marketing, currency, money, payment, british.
+  /// Circle plus minus. Tags: plus, minus, circle, plusminus.
+  static const circlePlusMinus = _circlePlusMinus;
+
+  /// Circle plus slash minus. Tags: plus, minus, slash, circle, math.
+  static const circlePlusSlashMinus = _circlePlusSlashMinus;
+
+  /// Circle pound sterling. Tags: money, currency, gbp, british, price, pound, sterling, circle.
   static const circlePoundSterling = _circlePoundSterling;
 
-  /// Circle power. Tags: on, off, device, switch, toggle, binary, boolean, reboot.
+  /// Circle power. Tags: power, on off, shutdown, toggle, start.
   static const circlePower = _circlePower;
 
-  /// Circle question mark. Tags: question mark.
+  /// Circle progress wedge. Tags: progress, circle, pie, percent, loading.
+  static const circleProgressWedge = _circleProgressWedge;
+
+  /// Circle question mark. Tags: help, question, faq, unknown, support, info.
   static const circleQuestionMark = _circleQuestionMark;
 
-  /// Circle slash. Tags: diameter, zero, nothing, null, void, cancel, ban, no.
-  static const circleSlash = _circleSlash;
+  /// Circle quote. Tags: quote, quotation, 66, circle, blockquote.
+  static const circleQuote = _circleQuote;
 
-  /// Circle slash 2. Tags: diameter, zero, nothing, null, void, ban, math, divide. Its details merge when filled: use it outlined.
+  /// Circle quote close. Tags: quote, quotation, marks, circle, citation.
+  static const circleQuoteClose = _circleQuoteClose;
+
+  /// Circle radical x. Tags: root, radical, nth, math. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const circleRadicalX = _circleRadicalX;
+
+  /// Circle repeat. Tags: repeat, loop, reload, refresh, sync, swap.
+  static const circleRepeat = _circleRepeat;
+
+  /// Circle repeat vertical. Tags: repeat, loop, reload, refresh, sync, swap, vertical.
+  static const circleRepeatVertical = _circleRepeatVertical;
+
+  /// Circle search. Tags: find, magnifier, round, lens, explore.
+  static const circleSearch = _circleSearch;
+
+  /// Circle shrink up left. Tags: shrink, minimize, collapse, compress, diagonal, inward.
+  static const circleShrinkUpLeft = _circleShrinkUpLeft;
+
+  /// Circle shrink up right. Tags: shrink, minimize, collapse, compress, diagonal, inward.
+  static const circleShrinkUpRight = _circleShrinkUpRight;
+
+  /// Circle sigma. Tags: summation, sigma, sum, total, math.
+  static const circleSigma = _circleSigma;
+
+  /// Same icon as [circleSlash2].
+  static const circleSlash = _circleSlash2;
+
+  /// Circle slash 2. Tags: empty set, diameter, null, none, slash, forbidden. Its details merge when filled: use it outlined.
   static const circleSlash2 = _circleSlash2;
 
-  /// Circle small. Tags: shape, bullet, gender, genderless.
+  /// Circle small. Tags: dot, bullet, small, round, point, record, circle, ring.
   static const circleSmall = _circleSmall;
 
-  /// Circle star. Tags: badge, medal, honour, decoration, order, pin, laurel, trophy.
+  /// Circles overlap. Tags: colors, palette, overlap, rgb, venn, mix.
+  static const circlesOverlap = _circlesOverlap;
+
+  /// Circle split. Tags: circle, half, divided, split, chart.
+  static const circleSplit = _circleSplit;
+
+  /// Circle square. Tags: drawing mode, shapes, circle, square, overlap, draw.
+  static const circleSquare = _circleSquare;
+
+  /// Circle star. Tags: star, circle, favorite, badge, rating.
   static const circleStar = _circleStar;
 
-  /// Circle stop. Tags: media, music.
+  /// Circle stop. Tags: stop, media, record, end, halt.
   static const circleStop = _circleStop;
 
-  /// Circle user. Tags: person, account, contact.
+  /// Circles triangle. Tags: more, three circles, menu, dots, options, triangle.
+  static const circlesTriangle = _circlesTriangle;
+
+  /// Circle text dot. Tags: notification, badge, unread, circle, dot, text.
+  static const circleTextDot = _circleTextDot;
+
+  /// Circle thumbs down. Tags: dislike, bad, emotion, vote, circle.
+  static const circleThumbsDown = _circleThumbsDown;
+
+  /// Circle thumbs up. Tags: like, good, emotion, vote, circle.
+  static const circleThumbsUp = _circleThumbsUp;
+
+  /// Circle type. Tags: text, circle, letter, font, typography.
+  static const circleType = _circleType;
+
+  /// Circle user. Tags: person, account, profile, avatar, contact, user circle.
   static const circleUser = _circleUser;
 
-  /// Circle user round. Tags: person, account, contact.
+  /// Circle user arc. Tags: share profile, sharing, person, account, avatar, profile, user sharing.
+  static const circleUserArc = _circleUserArc;
+
+  /// Circle user dashed. Tags: story, status, social, profile, person, avatar, user story.
+  static const circleUserDashed = _circleUserDashed;
+
+  /// Circle user dot. Tags: status, online, presence, availability, notification, person, account, user status.
+  static const circleUserDot = _circleUserDot;
+
+  /// Circle user round. Tags: person, account, profile, avatar, contact, user circle.
   static const circleUserRound = _circleUserRound;
 
-  /// Circle x. Tags: cancel, close, delete, remove, times, clear, error, incorrect.
+  /// Circle user sparkle. Tags: ai, user ai, assistant, person, profile, avatar, sparkles.
+  static const circleUserSparkle = _circleUserSparkle;
+
+  /// Circle variable x. Tags: algebra, unknown, italic, x, function, symbol, round.
+  static const circleVariableX = _circleVariableX;
+
+  /// Circle wifi. Tags: wifi, signal, wireless, connection, round, badge.
+  static const circleWifi = _circleWifi;
+
+  /// Circle x. Tags: close, cancel, error, remove, delete, dismiss, clear, multiply.
   static const circleX = _circleX;
 
-  /// Circuit board. Tags: computing, electricity, electronics.
+  /// Circle x squared. Tags: x squared, power, exponent, square, algebra, quadratic.
+  static const circleXSquared = _circleXSquared;
+
+  /// Circle zap. Tags: energy, power, lightning, bolt, electricity, circle.
+  static const circleZap = _circleZap;
+
+  /// Circuit board. Tags: electronics, pcb, hardware, chip, traces.
   static const circuitBoard = _circuitBoard;
 
-  /// Citrus. Tags: lemon, orange, grapefruit, fruit.
+  /// Citrus. Tags: lemon, orange, lime, fruit, slice, food.
   static const citrus = _citrus;
 
-  /// Clapperboard. Tags: movie, film, video, camera, cinema, cut, action, television.
+  /// City. Tags: buildings, urban, town, skyline, offices.
+  static const city = _city;
+
+  /// City houses. Tags: buildings, urban, town, street, real estate.
+  static const cityHouses = _cityHouses;
+
+  /// City towers. Tags: buildings, skyscrapers, urban, skyline, offices.
+  static const cityTowers = _cityTowers;
+
+  /// Clapperboard. Tags: film slate, movie, cinema, action, director. Its details merge when filled: use it outlined.
   static const clapperboard = _clapperboard;
 
-  /// Clef alto. Tags: do, c, music, note, key, soprano, mezzo, alto.
-  static const clefAlto = _clefAlto;
+  /// Clapperboard heart. Tags: playlist, favourite, favorite, video, clapperboard, heart.
+  static const clapperboardHeart = _clapperboardHeart;
 
-  /// Clef bass. Tags: fa, f, music, note, key, baritone, staff, pitch.
-  static const clefBass = _clefBass;
+  /// Clapperboard minus. Tags: playlist, remove, video, clapperboard, minus.
+  static const clapperboardMinus = _clapperboardMinus;
 
-  /// Clef treble. Tags: sol, g, music, note, key, treble, staff, pitch.
-  static const clefTreble = _clefTreble;
+  /// Clapperboard play. Tags: playlist, video, clapperboard, play, movie.
+  static const clapperboardPlay = _clapperboardPlay;
+
+  /// Clapperboard plus. Tags: playlist, add, video, clapperboard, plus.
+  static const clapperboardPlus = _clapperboardPlus;
+
+  /// Clapperboard text. Tags: film, movie, cinema, action, video, director.
+  static const clapperboardText = _clapperboardText;
+
+  /// Clapperboard x. Tags: playlist, remove, video, clapperboard, delete.
+  static const clapperboardX = _clapperboardX;
+
+  /// Cleaning bucket. Tags: bucket, mop, cleaning, housework, wash, supplies.
+  static const cleaningBucket = _cleaningBucket;
+
+  /// Cleaver. Tags: knife, butcher, chef, kitchen, cut.
+  static const cleaver = _cleaver;
+
+  /// Clinic. Tags: hospital, health, medical, plus, cross, doctor.
+  static const clinic = _clinic;
 
   /// Clipboard. Tags: copy, paste.
   static const clipboard = _clipboard;
@@ -1594,26 +3477,50 @@ abstract final class DsIcons {
   /// Clipboard check. Tags: copied, pasted, done, todo, tick, complete, task.
   static const clipboardCheck = _clipboardCheck;
 
-  /// Clipboard clock. Tags: copy, paste, history, log, clock, time, watch, alarm.
+  /// Clipboard checks. Tags: quiz, test, checklist, exam, clipboard, done.
+  static const clipboardChecks = _clipboardChecks;
+
+  /// Clipboard clock. Tags: task, schedule, history, pending, copied.
   static const clipboardClock = _clipboardClock;
 
-  /// Clipboard copy. Tags: copy, paste.
+  /// Clipboard copy. Tags: copy, paste, duplicate, arrow.
   static const clipboardCopy = _clipboardCopy;
+
+  /// Clipboard lines. Tags: task, clipboard, list, notes, todo.
+  static const clipboardLines = _clipboardLines;
+
+  /// Clipboard lines check. Tags: task, done, complete, checklist, todo.
+  static const clipboardLinesCheck = _clipboardLinesCheck;
+
+  /// Clipboard lines pen. Tags: task, edit, write, clipboard, notes.
+  static const clipboardLinesPen = _clipboardLinesPen;
+
+  /// Clipboard lines plus. Tags: task, add, new, clipboard, todo.
+  static const clipboardLinesPlus = _clipboardLinesPlus;
+
+  /// Clipboard lines x. Tags: task, remove, delete, clipboard, cancel.
+  static const clipboardLinesX = _clipboardLinesX;
 
   /// Clipboard list. Tags: copy, paste, tasks.
   static const clipboardList = _clipboardList;
 
-  /// Clipboard minus. Tags: copy, delete, remove, erase, document, medical, report, doctor.
+  /// Clipboard list arrow. Tags: add, to, list, checklist, tasks, clipboard, todo.
+  static const clipboardListArrow = _clipboardListArrow;
+
+  /// Clipboard list check. Tags: task, daily, checklist, todo, routine.
+  static const clipboardListCheck = _clipboardListCheck;
+
+  /// Clipboard minus. Tags: remove, subtract, task, copy.
   static const clipboardMinus = _clipboardMinus;
 
-  /// Clipboard paste. Tags: copy, paste.
+  /// Clipboard paste. Tags: paste, insert, import, arrow.
   static const clipboardPaste = _clipboardPaste;
 
   /// Clipboard pen. Tags: paste, signature.
   static const clipboardPen = _clipboardPen;
 
-  /// Clipboard pen line. Tags: paste.
-  static const clipboardPenLine = _clipboardPenLine;
+  /// Same icon as [clipboardLinesPen].
+  static const clipboardPenLine = _clipboardLinesPen;
 
   /// Clipboard plus. Tags: copy, paste, add, create, new, document, medical, report.
   static const clipboardPlus = _clipboardPlus;
@@ -1621,487 +3528,1039 @@ abstract final class DsIcons {
   /// Clipboard type. Tags: paste, format, text.
   static const clipboardType = _clipboardType;
 
+  /// Clipboard user check. Tags: validation approval, approved, verified, checklist, form, review, person.
+  static const clipboardUserCheck = _clipboardUserCheck;
+
   /// Clipboard x. Tags: copy, paste, discard, remove.
   static const clipboardX = _clipboardX;
 
-  /// Clock. Tags: time, watch, alarm.
+  /// Cloche. Tags: dish, serving, restaurant, meal, food.
+  static const cloche = _cloche;
+
+  /// Cloche stand. Tags: restaurant, cloche, dome, serving, food. Its details merge when filled: use it outlined.
+  static const clocheStand = _clocheStand;
+
+  /// Cloche tray. Tags: serving, waiter, food, restaurant, cloche. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const clocheTray = _clocheTray;
+
+  /// Clock. Tags: time, hour, watch, schedule, duration, minutes.
   static const clock = _clock;
 
-  /// Clock 1. Tags: time, watch, alarm.
+  /// Clock 1. Tags: time, one, 1 o'clock, hour, watch.
   static const clock1 = _clock1;
 
-  /// Clock 10. Tags: time, watch, alarm.
+  /// Clock 10. Tags: time, ten, 10 o'clock, hour, watch.
   static const clock10 = _clock10;
 
-  /// Clock 11. Tags: time, watch, alarm.
+  /// Clock 11. Tags: time, eleven, 11 o'clock, hour, watch.
   static const clock11 = _clock11;
 
-  /// Clock 12. Tags: time, watch, alarm, noon, midnight.
+  /// Clock 12. Tags: time, twelve, 12 o'clock, hour, noon, midnight.
   static const clock12 = _clock12;
 
-  /// Clock 2. Tags: time, watch, alarm.
+  /// Clock 2. Tags: time, two, 2 o'clock, hour, watch.
   static const clock2 = _clock2;
 
-  /// Clock 3. Tags: time, watch, alarm.
+  /// Clock 24. Tags: 24 hours, clock, all day, round the clock, time.
+  static const clock24 = _clock24;
+
+  /// Clock 3. Tags: time, three, 3 o'clock, hour, watch.
   static const clock3 = _clock3;
 
-  /// Clock 4. Tags: time, watch, alarm.
+  /// Clock 4. Tags: time, four, 4 o'clock, hour, watch.
   static const clock4 = _clock4;
 
-  /// Clock 5. Tags: time, watch, alarm.
+  /// Clock 5. Tags: time, five, 5 o'clock, hour, watch.
   static const clock5 = _clock5;
 
-  /// Clock 6. Tags: time, watch, alarm.
+  /// Clock 6. Tags: time, six, 6 o'clock, hour, watch.
   static const clock6 = _clock6;
 
-  /// Clock 7. Tags: time, watch, alarm.
+  /// Clock 7. Tags: time, seven, 7 o'clock, hour, watch.
   static const clock7 = _clock7;
 
-  /// Clock 8. Tags: time, watch, alarm.
+  /// Clock 8. Tags: time, eight, 8 o'clock, hour, watch.
   static const clock8 = _clock8;
 
-  /// Clock 9. Tags: time, watch, alarm.
+  /// Clock 9. Tags: time, nine, 9 o'clock, hour, watch.
   static const clock9 = _clock9;
 
-  /// Clock alert. Tags: time, watch, alarm, warning, wrong.
+  /// Clock alert. Tags: warning, overdue, late, time, alert.
   static const clockAlert = _clockAlert;
 
-  /// Clock arrow down. Tags: time, watch, alarm, sort, order, ascending, descending, increasing.
+  /// Clock arrow down. Tags: download, decrease, time, later, sort.
   static const clockArrowDown = _clockArrowDown;
 
-  /// Clock arrow left. Tags: time, watch, alarm, assign, range.
-  static const clockArrowLeft = _clockArrowLeft;
-
-  /// Clock arrow right. Tags: time, watch, alarm, range, unassign.
-  static const clockArrowRight = _clockArrowRight;
-
-  /// Clock arrow up. Tags: time, watch, alarm, sort, order, ascending, descending, increasing.
+  /// Clock arrow up. Tags: upload, increase, time, earlier, sort.
   static const clockArrowUp = _clockArrowUp;
 
-  /// Clock check. Tags: time, watch, alarm.
+  /// Clock check. Tags: done, on time, confirmed, time, approved.
   static const clockCheck = _clockCheck;
 
-  /// Clock fading. Tags: time, watch, alarm.
+  /// Clock cog. Tags: clock, settings, time settings, cog, gear.
+  static const clockCog = _clockCog;
+
+  /// Clock cog wavy. Tags: clock, settings, time settings, cog, gear.
+  static const clockCogWavy = _clockCogWavy;
+
+  /// Clock dashed. Tags: clock, time, dashed, pending, quarter.
+  static const clockDashed = _clockDashed;
+
+  /// Clock digital. Tags: digital clock, time, alarm, display, watch, timer.
+  static const clockDigital = _clockDigital;
+
+  /// Clock dot. Tags: clock, time, hour, minute, watch.
+  static const clockDot = _clockDot;
+
+  /// Clock fading. Tags: loading, pending, fading, time, progress.
   static const clockFading = _clockFading;
 
-  /// Clock plus. Tags: time, watch, alarm, add, create, new.
+  /// Clock half dashed. Tags: clock, time, half, progress, elapsed.
+  static const clockHalfDashed = _clockHalfDashed;
+
+  /// Clock hands v. Tags: clock, time, hour, minute, watch.
+  static const clockHandsV = _clockHandsV;
+
+  /// Clock hanging. Tags: wall clock, bracket, time, shop sign.
+  static const clockHanging = _clockHanging;
+
+  /// Clock hierarchy. Tags: time management, clock, hierarchy, org chart, schedule, workflow.
+  static const clockHierarchy = _clockHierarchy;
+
+  /// Clock hierarchy round. Tags: time management, clock, hierarchy, org chart, schedule, workflow.
+  static const clockHierarchyRound = _clockHierarchyRound;
+
+  /// Clock pendulum. Tags: vintage clock, grandfather clock, antique, wall clock, pendulum, retro.
+  static const clockPendulum = _clockPendulum;
+
+  /// Clock play. Tags: clock, play, schedule, start, time.
+  static const clockPlay = _clockPlay;
+
+  /// Clock plus. Tags: add, new, alarm, schedule, time.
   static const clockPlus = _clockPlus;
+
+  /// Clock plus top. Tags: add, new, alarm, schedule, time.
+  static const clockPlusTop = _clockPlusTop;
+
+  /// Clock quarter. Tags: clock, time, quarter, fifteen, minutes.
+  static const clockQuarter = _clockQuarter;
+
+  /// Clock quarter dashed. Tags: clock, time, quarter, progress, elapsed.
+  static const clockQuarterDashed = _clockQuarterDashed;
+
+  /// Clock rotate cw. Tags: forward, redo, future, clockwise, time, refresh.
+  static const clockRotateCw = _clockRotateCw;
+
+  /// Clock rotate cw dashed. Tags: forward, future, dashed, clockwise, time.
+  static const clockRotateCwDashed = _clockRotateCwDashed;
+
+  /// Clock soon. Tags: coming soon, soon, upcoming, clock, launch, preview.
+  static const clockSoon = _clockSoon;
+
+  /// Clock square. Tags: clock, time, watch, hour, square.
+  static const clockSquare = _clockSquare;
+
+  /// Clock square hands v. Tags: clock, time, square, hour, watch.
+  static const clockSquareHandsV = _clockSquareHandsV;
 
   /// Same icon as [x].
   static const close = _x;
 
-  /// Closed caption. Tags: tv, movie, video, closed captions, subtitles, subhead, transcription, transcribe.
+  /// Closed caption. Tags: cc, subtitles, captions, deaf, hearing.
   static const closedCaption = _closedCaption;
 
-  /// Cloth. Tags: thread, sewing, stitch, embroidery, waeve, woven, fabric, material. Its details merge when filled: use it outlined.
-  static const cloth = _cloth;
-
-  /// Cloud. Tags: weather.
+  /// Cloud. Tags: sky, storage, overcast, cloud computing.
   static const cloud = _cloud;
 
-  /// Cloud alert. Tags: weather, danger, warning, alert, error, sync, network, exclamation.
+  /// Cloud alert. Tags: warning, error, storage, exclamation.
   static const cloudAlert = _cloudAlert;
 
-  /// Cloud backup. Tags: storage, memory, bytes, servers, backup, timemachine, rotate, synchronize.
+  /// Cloud backup. Tags: cloud, backup, restore, history, sync.
   static const cloudBackup = _cloudBackup;
 
-  /// Cloud check. Tags: sync, network, success, done, completed, saved, persisted.
+  /// Cloud bitcoin. Tags: bitcoin, cloud, mining, crypto, btc.
+  static const cloudBitcoin = _cloudBitcoin;
+
+  /// Cloud check. Tags: synced, saved, done, storage, success.
   static const cloudCheck = _cloudCheck;
 
-  /// Cloud cog. Tags: computing, ai, cluster, network.
+  /// Same icon as [cloudCheck].
+  static const cloudCheckBadge = _cloudCheck;
+
+  /// Cloud check big. Tags: saved, synced, done, storage, success.
+  static const cloudCheckBig = _cloudCheckBig;
+
+  /// Cloud chip. Tags: ai, cloud, chip, computing, server.
+  static const cloudChip = _cloudChip;
+
+  /// Cloud circuit. Tags: ai, cloud, circuit, nodes, computing, network.
+  static const cloudCircuit = _cloudCircuit;
+
+  /// Cloud cog. Tags: settings, configure, gear, storage, cloud settings.
   static const cloudCog = _cloudCog;
 
-  /// Cloud download. Tags: import.
+  /// Cloud download. Tags: download, save, storage, get.
   static const cloudDownload = _cloudDownload;
 
-  /// Cloud drizzle. Tags: weather, shower.
+  /// Cloud drizzle. Tags: light rain, drizzle, shower, rain, dashes.
   static const cloudDrizzle = _cloudDrizzle;
 
-  /// Cloud fog. Tags: weather, mist.
+  /// Cloud drizzle dots. Tags: drizzle, light rain, mist, dots, shower.
+  static const cloudDrizzleDots = _cloudDrizzleDots;
+
+  /// Cloud droplet. Tags: rain, drop, water, wet, shower.
+  static const cloudDroplet = _cloudDroplet;
+
+  /// Cloud droplets. Tags: rain, drops, water, wet, shower.
+  static const cloudDroplets = _cloudDroplets;
+
+  /// Cloud fog. Tags: fog, mist, haze, foggy, low visibility.
   static const cloudFog = _cloudFog;
 
-  /// Cloud hail. Tags: weather, rainfall.
+  /// Cloud hail. Tags: hail, hailstones, ice, storm, dots.
   static const cloudHail = _cloudHail;
 
-  /// Cloud lightning. Tags: weather, bolt.
+  /// Cloud hail rain. Tags: hail, rain, ice, storm, dashes.
+  static const cloudHailRain = _cloudHailRain;
+
+  /// Cloud lightning. Tags: thunder, storm, bolt, lightning, electric.
   static const cloudLightning = _cloudLightning;
 
-  /// Cloud moon. Tags: weather, night.
+  /// Cloud loading. Tags: loading, uploading, progress, syncing, dashed line.
+  static const cloudLoading = _cloudLoading;
+
+  /// Cloud moon. Tags: night, cloudy, moon, cloud, evening.
   static const cloudMoon = _cloudMoon;
 
-  /// Cloud moon rain. Tags: weather, partly, night, rainfall.
+  /// Cloud moon drizzle. Tags: night, light rain, drizzle, moon, cloud, sprinkle.
+  static const cloudMoonDrizzle = _cloudMoonDrizzle;
+
+  /// Cloud moon droplet. Tags: night, heavy rain, big drop, moon, cloud, rain.
+  static const cloudMoonDroplet = _cloudMoonDroplet;
+
+  /// Cloud moon droplets. Tags: night, rain, moderate rain, moon, cloud, drops.
+  static const cloudMoonDroplets = _cloudMoonDroplets;
+
+  /// Cloud moon hail. Tags: night, hail, hailstone, moon, cloud, ice.
+  static const cloudMoonHail = _cloudMoonHail;
+
+  /// Cloud moon lightning. Tags: night, storm, thunder, lightning, moon, cloud.
+  static const cloudMoonLightning = _cloudMoonLightning;
+
+  /// Cloud moon rain. Tags: night, rain, shower, moon, evening.
   static const cloudMoonRain = _cloudMoonRain;
 
-  /// Cloud off. Tags: disconnect.
+  /// Cloud moon rain lightning. Tags: night, storm, thunder, rain, moon, cloud, lightning.
+  static const cloudMoonRainLightning = _cloudMoonRainLightning;
+
+  /// Cloud moon rain slanted. Tags: night, rain, slanted rain, moon, cloud, shower.
+  static const cloudMoonRainSlanted = _cloudMoonRainSlanted;
+
+  /// Cloud moon snow. Tags: night, snow, snowing, moon, cloud, winter. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const cloudMoonSnow = _cloudMoonSnow;
+
+  /// Cloud moon snowflake. Tags: night, snow, moderate snow, snowflake, moon, cloud.
+  static const cloudMoonSnowflake = _cloudMoonSnowflake;
+
+  /// Cloud moon snow light. Tags: night, light snow, flurry, moon, cloud, snow.
+  static const cloudMoonSnowLight = _cloudMoonSnowLight;
+
+  /// Cloud moon waves. Tags: night, breeze, slow wind, moon, cloud, gentle.
+  static const cloudMoonWaves = _cloudMoonWaves;
+
+  /// Cloud moon wind. Tags: night, windy, fast wind, moon, cloud, gale.
+  static const cloudMoonWind = _cloudMoonWind;
+
+  /// Cloud node. Tags: hosting, server, cloud computing, network, data center.
+  static const cloudNode = _cloudNode;
+
+  /// Cloud off. Tags: offline, disconnected, no storage, disabled, crossed out.
   static const cloudOff = _cloudOff;
 
-  /// Cloud rain. Tags: weather, rainfall.
+  /// Cloud rain. Tags: rain, shower, wet, water, precipitation.
   static const cloudRain = _cloudRain;
 
-  /// Cloud rain wind. Tags: weather, rainfall.
-  static const cloudRainWind = _cloudRainWind;
+  /// Cloud rain lightning. Tags: thunderstorm, rain, lightning, storm, bolt.
+  static const cloudRainLightning = _cloudRainLightning;
 
-  /// Cloud snow. Tags: weather, blizzard.
+  /// Cloud rain slanted. Tags: rain, windy, storm, slanted, shower.
+  static const cloudRainSlanted = _cloudRainSlanted;
+
+  /// Cloud rain slanted long. Tags: rain, windy, storm, slanted, shower.
+  static const cloudRainSlantedLong = _cloudRainSlantedLong;
+
+  /// Same icon as [cloudRainSlantedLong].
+  static const cloudRainWind = _cloudRainSlantedLong;
+
+  /// Cloud snow. Tags: snow, snowing, winter, cold, flakes.
   static const cloudSnow = _cloudSnow;
 
-  /// Cloud sun. Tags: weather, partly.
+  /// Cloud snowflake. Tags: snow, snowflake, winter, cold, flurry.
+  static const cloudSnowflake = _cloudSnowflake;
+
+  /// Cloud snow light. Tags: light snow, snow, flurry, winter, cold.
+  static const cloudSnowLight = _cloudSnowLight;
+
+  /// Cloud sparkle. Tags: ai, cloud, sparkle, storage, generate.
+  static const cloudSparkle = _cloudSparkle;
+
+  /// Cloud sun. Tags: cloud, sun, partly cloudy, weather.
   static const cloudSun = _cloudSun;
 
-  /// Cloud sun rain. Tags: weather, partly, rainfall.
+  /// Cloud sun drizzle. Tags: cloud, sun, light rain, drizzle, weather.
+  static const cloudSunDrizzle = _cloudSunDrizzle;
+
+  /// Cloud sun drizzle faint. Tags: cloud, sun, light rain, drizzle, weather.
+  static const cloudSunDrizzleFaint = _cloudSunDrizzleFaint;
+
+  /// Cloud sun droplet. Tags: cloud, sun, heavy rain, big drop, weather.
+  static const cloudSunDroplet = _cloudSunDroplet;
+
+  /// Cloud sun droplet faint. Tags: cloud, sun, heavy rain, big drop, weather.
+  static const cloudSunDropletFaint = _cloudSunDropletFaint;
+
+  /// Cloud sun droplets. Tags: cloud, sun, moderate rain, drops, weather.
+  static const cloudSunDroplets = _cloudSunDroplets;
+
+  /// Cloud sun droplets faint. Tags: cloud, sun, moderate rain, drops, weather.
+  static const cloudSunDropletsFaint = _cloudSunDropletsFaint;
+
+  /// Cloud sun faint. Tags: cloud, sun, partly cloudy, weather.
+  static const cloudSunFaint = _cloudSunFaint;
+
+  /// Cloud sun hail. Tags: cloud, sun, hail, hailstone, weather.
+  static const cloudSunHail = _cloudSunHail;
+
+  /// Cloud sun hail faint. Tags: cloud, sun, hail, hailstone, weather.
+  static const cloudSunHailFaint = _cloudSunHailFaint;
+
+  /// Cloud sun lightning. Tags: cloud, sun, lightning, thunder, storm.
+  static const cloudSunLightning = _cloudSunLightning;
+
+  /// Cloud sun lightning faint. Tags: cloud, sun, lightning, thunder, storm.
+  static const cloudSunLightningFaint = _cloudSunLightningFaint;
+
+  /// Cloud sun rain. Tags: rain, sunshine, showers, sun, partly cloudy.
   static const cloudSunRain = _cloudSunRain;
+
+  /// Cloud sun rain lightning. Tags: cloud, sun, thunderstorm, rain, lightning.
+  static const cloudSunRainLightning = _cloudSunRainLightning;
+
+  /// Cloud sun rain lightning faint. Tags: cloud, sun, thunderstorm, rain, lightning.
+  static const cloudSunRainLightningFaint = _cloudSunRainLightningFaint;
+
+  /// Cloud sun rain slanted. Tags: cloud, sun, rain, shower, weather.
+  static const cloudSunRainSlanted = _cloudSunRainSlanted;
+
+  /// Cloud sun rain slanted faint. Tags: cloud, sun, rain, shower, weather.
+  static const cloudSunRainSlantedFaint = _cloudSunRainSlantedFaint;
+
+  /// Cloud sun snow. Tags: cloud, sun, snow, snowfall, weather.
+  static const cloudSunSnow = _cloudSunSnow;
+
+  /// Cloud sun snow faint. Tags: cloud, sun, snow, snowfall, weather.
+  static const cloudSunSnowFaint = _cloudSunSnowFaint;
+
+  /// Cloud sun snowflake. Tags: cloud, sun, snow, snowflake, weather.
+  static const cloudSunSnowflake = _cloudSunSnowflake;
+
+  /// Cloud sun snowflake faint. Tags: cloud, sun, snow, snowflake, weather.
+  static const cloudSunSnowflakeFaint = _cloudSunSnowflakeFaint;
+
+  /// Cloud sun snow light. Tags: cloud, sun, light snow, flurries, weather.
+  static const cloudSunSnowLight = _cloudSunSnowLight;
+
+  /// Cloud sun snow light faint. Tags: cloud, sun, light snow, flurries, weather.
+  static const cloudSunSnowLightFaint = _cloudSunSnowLightFaint;
+
+  /// Cloud sun waves. Tags: cloud, sun, breeze, light wind, weather.
+  static const cloudSunWaves = _cloudSunWaves;
+
+  /// Cloud sun waves faint. Tags: cloud, sun, breeze, light wind, weather.
+  static const cloudSunWavesFaint = _cloudSunWavesFaint;
+
+  /// Cloud sun wind. Tags: cloud, sun, strong wind, gale, weather.
+  static const cloudSunWind = _cloudSunWind;
+
+  /// Cloud sun wind faint. Tags: cloud, sun, strong wind, gale, weather.
+  static const cloudSunWindFaint = _cloudSunWindFaint;
 
   /// Cloud sync. Tags: synchronize, synchronise, refresh, reconnect, transfer, backup, storage, upload.
   static const cloudSync = _cloudSync;
 
-  /// Cloud upload. Tags: file.
+  /// Cloud upload. Tags: upload, save, storage, send, backup.
   static const cloudUpload = _cloudUpload;
 
-  /// Cloudy. Tags: weather, clouds.
+  /// Cloud waves. Tags: breeze, light wind, mist, waves, air.
+  static const cloudWaves = _cloudWaves;
+
+  /// Cloud wifi. Tags: cloud, wifi, wireless, internet, online, network.
+  static const cloudWifi = _cloudWifi;
+
+  /// Cloud wind. Tags: windy, gust, breeze, air, swirl.
+  static const cloudWind = _cloudWind;
+
+  /// Cloudy. Tags: overcast, clouds, sky, gloomy, forecast.
   static const cloudy = _cloudy;
 
-  /// Clover. Tags: leaf, luck, plant.
+  /// Clover. Tags: luck, four leaf, irish, lucky, plant, shamrock.
   static const clover = _clover;
 
-  /// Club. Tags: shape, suit, playing, cards.
+  /// Club. Tags: card suit, clubs, playing card, trefoil.
   static const club = _club;
 
-  /// Coat hanger. Tags: clothes, clothing, apparel, attire, wardrobe, dry cleaning, amenities.
+  /// Club crossed. Tags: card suit, clubs, ornament, fleur, trefoil.
+  static const clubCrossed = _clubCrossed;
+
+  /// Club plain. Tags: card suit, clubs, single outline, trefoil.
+  static const clubPlain = _clubPlain;
+
+  /// Coat hanger. Tags: hanger, clothes, wardrobe, closet.
   static const coatHanger = _coatHanger;
 
-  /// Cocktail. Tags: martini, alcohol, spirits, drink, glass, straw, citrus, orange.
+  /// Cocktail. Tags: drink, martini, bar, beverage, garnish.
   static const cocktail = _cocktail;
 
-  /// Coconut. Tags: segments, milk, smoothie, cocktail, tropical, beach bar, holiday, vacation.
-  static const coconut = _coconut;
-
-  /// Code. Tags: source, programming, html, xml.
+  /// Code. Tags: source, programming, brackets, developer, curly.
   static const code = _code;
 
-  /// Code xml. Tags: source, programming, html, xml.
+  /// Code sparkle. Tags: ai, programming, code, sparkle, developer.
+  static const codeSparkle = _codeSparkle;
+
+  /// Code wide. Tags: source, programming, brackets, developer, angle.
+  static const codeWide = _codeWide;
+
+  /// Code xml. Tags: source, programming, html, xml, markup, developer.
   static const codeXml = _codeXml;
 
-  /// Coffee. Tags: drink, cup, mug, tea, cafe, hot, beverage.
+  /// Code xml narrow. Tags: source, code, html, programming, brackets.
+  static const codeXmlNarrow = _codeXmlNarrow;
+
+  /// Coffee. Tags: coffee01, cup, tea, cafe, hot, beverage, steam.
   static const coffee = _coffee;
 
-  /// Coffee bean. Tags: roast, ground, blend, arabica, filter, instant, cafetiere, hot.
+  /// Coffee bean. Tags: coffee, bean, seed, cafe, roast, coffee beans.
   static const coffeeBean = _coffeeBean;
 
-  /// Coffeemaker. Tags: machine, amenities, electronics, appliances, roast, ground, blend, arabica.
-  static const coffeemaker = _coffeemaker;
-
-  /// Cog. Tags: computing, settings, edit, gear, preferences, controls, configuration, fixed.
+  /// Cog. Tags: settings, gear, preferences, config, options, cogwheel.
   static const cog = _cog;
 
-  /// Coins. Tags: money, cash, finance, gamble.
+  /// Cog ai. Tags: ai, artificial intelligence, settings, automation, gear.
+  static const cogAi = _cogAi;
+
+  /// Cog alert. Tags: settings error, gear, warning, problem, alert. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const cogAlert = _cogAlert;
+
+  /// Cog bitcoin. Tags: bitcoin, settings, gear, config, crypto, btc.
+  static const cogBitcoin = _cogBitcoin;
+
+  /// Cog check. Tags: settings done, gear, check, configured, applied.
+  static const cogCheck = _cogCheck;
+
+  /// Cog nodes. Tags: ai, artificial intelligence, neural network, gear, nodes, automation.
+  static const cogNodes = _cogNodes;
+
+  /// Cog refresh. Tags: system update, gear, settings, sync, software update.
+  static const cogRefresh = _cogRefresh;
+
+  /// Cog round. Tags: gear, settings, preferences, configuration, computing.
+  static const cogRound = _cogRound;
+
+  /// Cog round refresh. Tags: system update, gear, settings, sync, software update.
+  static const cogRoundRefresh = _cogRoundRefresh;
+
+  /// Cog round user. Tags: account, setting, user, cog, gear, profile, preferences.
+  static const cogRoundUser = _cogRoundUser;
+
+  /// Cog round wrench. Tags: settings, configuration, gear, wrench, maintenance, tools.
+  static const cogRoundWrench = _cogRoundWrench;
+
+  /// Cogs. Tags: gears, settings, mechanism, machine.
+  static const cogs = _cogs;
+
+  /// Cog sync. Tags: setup, gear, refresh, update, configuration.
+  static const cogSync = _cogSync;
+
+  /// Cog user. Tags: account, setting, user, cog, gear, profile, preferences.
+  static const cogUser = _cogUser;
+
+  /// Cog wrench. Tags: settings, configuration, gear, wrench, maintenance, tools.
+  static const cogWrench = _cogWrench;
+
+  /// Coin bitcoin. Tags: bitcoin, coin, crypto, btc.
+  static const coinBitcoin = _coinBitcoin;
+
+  /// Coin purse. Tags: purse, coin, pouch, clasp, money. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const coinPurse = _coinPurse;
+
+  /// Coins. Tags: money, cash, finance, two coins.
   static const coins = _coins;
 
-  /// Coins exchange. Tags: exchange, trader, trading, transaction, swap, finance, financial, markets.
+  /// Coins bitcoin. Tags: coins, bitcoin, crypto, money, btc.
+  static const coinsBitcoin = _coinsBitcoin;
+
+  /// Coins box. Tags: stake, staking, coins, crypto, deposit, box.
+  static const coinsBox = _coinsBox;
+
+  /// Coins dollar sign. Tags: coins, dollar, money, cash, usd. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const coinsDollarSign = _coinsDollarSign;
+
+  /// Coins euro. Tags: coins, euro, money, cash, eur.
+  static const coinsEuro = _coinsEuro;
+
+  /// Coins exchange. Tags: coins, swap, exchange, convert, trade, currency.
   static const coinsExchange = _coinsExchange;
 
-  /// Coins stack. Tags: cash, finance, financial, markets, exchange, trader, trading, transaction.
+  /// Coins japanese yen. Tags: coins, yen, money, cash, jpy.
+  static const coinsJapaneseYen = _coinsJapaneseYen;
+
+  /// Coins pound sterling. Tags: coins, pound, sterling, money, cash, gbp.
+  static const coinsPoundSterling = _coinsPoundSterling;
+
+  /// Coins stack. Tags: coins, money, stack, cash, savings, finance.
   static const coinsStack = _coinsStack;
+
+  /// Coins stack bitcoin. Tags: bitcoin, stack, coins, crypto, btc, mining.
+  static const coinsStackBitcoin = _coinsStackBitcoin;
+
+  /// Colosseum. Tags: rome, landmark, amphitheater, ruins, monument.
+  static const colosseum = _colosseum;
 
   /// Same icon as [chartColumn].
   static const columnChart = _chartColumn;
 
-  /// Columns 2. Tags: lines, list, queue, preview, panel, parallel, series, split.
+  /// Column insert. Tags: column, insert, add, table, columns.
+  static const columnInsert = _columnInsert;
+
+  /// Columns 2. Tags: two columns, split, layout, vertical divider, panels.
   static const columns2 = _columns2;
 
-  /// Columns 3. Tags: lines, list, queue, preview, parallel, series, split, vertical.
+  /// Columns 3. Tags: three columns, split, layout, vertical dividers, panels.
   static const columns3 = _columns3;
 
-  /// Columns 3 cog. Tags: columns, settings, customize, table, grid, adjust, configuration, panel.
+  /// Columns 3 cog. Tags: columns, settings, table, configure, layout.
   static const columns3Cog = _columns3Cog;
 
   /// Columns 4. Tags: lines, list, queue, preview, parallel, series, split, vertical.
   static const columns4 = _columns4;
 
-  /// Combine. Tags: cubes, packages, parts, units, collection, cluster, gather, merge.
+  /// Column x. Tags: column, delete, remove, table, columns.
+  static const columnX = _columnX;
+
+  /// Combine. Tags: merge, join, group, blocks.
   static const combine = _combine;
 
-  /// Command. Tags: keyboard, key, mac, cmd, button.
+  /// Comet. Tags: space, astronomy, meteor, fireball.
+  static const comet = _comet;
+
+  /// Comet rock. Tags: comet, asteroid, space, astronomy, meteor.
+  static const cometRock = _cometRock;
+
+  /// Command. Tags: keyboard, key, mac, cmd, button, shortcut. Its details merge when filled: use it outlined.
   static const command = _command;
 
-  /// Compass. Tags: direction, north, east, south, west, browser.
+  /// Compass. Tags: discover, explore, navigate, direction, circle, north, orientation.
   static const compass = _compass;
 
-  /// Component. Tags: design, element, group, module, part, symbol.
+  /// Compass arrow. Tags: direction, navigation, north, explore, compass watch.
+  static const compassArrow = _compassArrow;
+
+  /// Compass square. Tags: discover, compass, explore, navigate, direction, square.
+  static const compassSquare = _compassSquare;
+
+  /// Component. Tags: diamond, design system, symbol, instance.
   static const component = _component;
 
-  /// Computer. Tags: pc, chassis, codespaces.
-  static const computer = _computer;
+  /// Same icon as [monitor].
+  static const computer = _monitor;
 
-  /// Concierge bell. Tags: reception, bell, porter.
-  static const conciergeBell = _conciergeBell;
+  /// Same icon as [bellConcierge].
+  static const conciergeBell = _bellConcierge;
 
-  /// Cone. Tags: conical, triangle, triangular, geometry, filter, funnel, hopper, spotlight.
+  /// Cone. Tags: geometry, 3d, shape, conical.
   static const cone = _cone;
 
-  /// Construction. Tags: roadwork, maintenance, blockade, barricade.
+  /// Cone pendant. Tags: cone, pendant, lamp, hanging, ornament.
+  static const conePendant = _conePendant;
+
+  /// Congruent. Tags: congruent to, equal, approximately, symbol.
+  static const congruent = _congruent;
+
+  /// Connector elbow. Tags: edge, connector, orthogonal, elbow, path, nodes, diagram.
+  static const connectorElbow = _connectorElbow;
+
+  /// Constellation. Tags: stars, nodes, graph, astronomy, network.
+  static const constellation = _constellation;
+
+  /// Construction. Tags: barrier, roadwork, barricade, warning, under construction.
   static const construction = _construction;
 
-  /// Contact. Tags: user, person, family, friend, acquaintance, listing, networking.
+  /// Contact. Tags: address, card, person, directory.
   static const contact = _contact;
 
-  /// Contact round. Tags: user, person, family, friend, acquaintance, listing, networking.
+  /// Contact badge. Tags: contact, badge, id, person, profile, lanyard.
+  static const contactBadge = _contactBadge;
+
+  /// Contact book. Tags: contact, address book, directory, person, user.
+  static const contactBook = _contactBook;
+
+  /// Contact phone. Tags: contact, phone, call, address book, directory.
+  static const contactPhone = _contactPhone;
+
+  /// Contact round. Tags: contact, address book, person, directory, user. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const contactRound = _contactRound;
 
-  /// Container. Tags: storage, shipping, freight, supply chain, environment, devops, code, coding.
+  /// Container. Tags: shipping, cargo, docker, freight.
   static const container = _container;
 
-  /// Contrast. Tags: display, accessibility.
+  /// Contrast. Tags: brightness, half, light, dark, adjust.
   static const contrast = _contrast;
 
-  /// Cookie. Tags: biscuit, snack, dessert, food, sweet, bakery, consent, privacy.
+  /// Contrast ring. Tags: dark mode, theme, night, contrast, appearance, circle.
+  static const contrastRing = _contrastRing;
+
+  /// Cookie. Tags: biscuit, snack, dessert, food, consent, privacy, tracking.
   static const cookie = _cookie;
 
-  /// Cooking pot. Tags: pod, cooking, recipe, food, kitchen, chef, restaurant, dinner.
+  /// Cookie chunks. Tags: biscuit, cookie, snack, consent.
+  static const cookieChunks = _cookieChunks;
+
+  /// Cooking pot. Tags: pot, cooking, kitchen, stew, saucepan, cookware.
   static const cookingPot = _cookingPot;
 
-  /// Copy. Tags: clone, duplicate, multiple.
+  /// Cooking pot open. Tags: pot, cooking, kitchen, lid, open. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const cookingPotOpen = _cookingPotOpen;
+
+  /// Cooking pot tall. Tags: pot, cooking, kitchen, saucepan.
+  static const cookingPotTall = _cookingPotTall;
+
+  /// Cooking utensils. Tags: kitchen utensils, spatula, ladle, cooking, tools, kitchen.
+  static const cookingUtensils = _cookingUtensils;
+
+  /// Copy. Tags: duplicate, clone, paste, clipboard.
   static const copy = _copy;
 
-  /// Copy check. Tags: clone, duplicate, done, multiple.
+  /// Copy check. Tags: clone, duplicate, done, copied, multiple.
   static const copyCheck = _copyCheck;
 
-  /// Copy code. Tags: clone, duplicate, multiple, codebase, source, raw, snippets, gists.
-  static const copyCode = _copyCode;
+  /// Copy dashed. Tags: copy, duplicate, placeholder, clone, dashed, ghost.
+  static const copyDashed = _copyDashed;
 
-  /// Copy down. Tags: read, dictionary, booklet, library, code, version control, git, repository.
-  static const copyDown = _copyDown;
-
-  /// Copy file path. Tags: relative, location, multiple.
-  static const copyFilePath = _copyFilePath;
-
-  /// Copy image. Tags: clone, duplicate, multiple, images, pictures, photos, album, collection.
-  static const copyImage = _copyImage;
-
-  /// Copyleft. Tags: licence.
+  /// Copyleft. Tags: license, open source, free, legal.
   static const copyleft = _copyleft;
 
-  /// Copy minus. Tags: clone, duplicate, remove, delete, collapse, subtract, multiple, -.
+  /// Copy link. Tags: url, clipboard, link, share.
+  static const copyLink = _copyLink;
+
+  /// Copy minus. Tags: clone, duplicate, remove, multiple, minus.
   static const copyMinus = _copyMinus;
 
-  /// Copy plus. Tags: clone, duplicate, add, multiple, expand, +.
+  /// Copy overlap. Tags: copy, duplicate, clone, paste, two squares, layers.
+  static const copyOverlap = _copyOverlap;
+
+  /// Copy overlap plus. Tags: add layer, duplicate, copy, plus, new layer, clone.
+  static const copyOverlapPlus = _copyOverlapPlus;
+
+  /// Copy plus. Tags: clone, duplicate, add, new, multiple.
   static const copyPlus = _copyPlus;
 
-  /// Copyright. Tags: licence, license.
+  /// Copyright. Tags: licence, license, legal, c.
   static const copyright = _copyright;
 
-  /// Copy slash. Tags: clone, duplicate, cancel, ban, no, stop, forbidden, prohibited.
+  /// Copy slash. Tags: clone, duplicate, disabled, not allowed, multiple.
   static const copySlash = _copySlash;
 
-  /// Copy text. Tags: clone, duplicate, multiple, texts, lines, drafts, script, plagiarism.
-  static const copyText = _copyText;
-
-  /// Copy type. Tags: formatting, styling, rich text, rtf, fonts, font book, typography, collection.
-  static const copyType = _copyType;
-
-  /// Copy x. Tags: cancel, close, delete, remove, clear, multiple, multiply, multiplication.
+  /// Copy x. Tags: clone, duplicate, remove, delete, multiple.
   static const copyX = _copyX;
 
-  /// Corner down left. Tags: arrow, return. Mirrors in right-to-left text.
+  /// Corn. Tags: maize, vegetable, cob, crop. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const corn = _corn;
+
+  /// Corner double left up. Tags: left angle, turn, elbow, corner, path, arrow. Mirrors in right-to-left text.
+  static const cornerDoubleLeftUp = _cornerDoubleLeftUp;
+
+  /// Corner down left. Tags: arrow, turn, return, enter, line break. Mirrors in right-to-left text.
   static const cornerDownLeft = _cornerDownLeft;
 
-  /// Corner down right. Tags: arrow, indent, tab. Mirrors in right-to-left text.
+  /// Corner down right. Tags: arrow, turn, indent, line break. Mirrors in right-to-left text.
   static const cornerDownRight = _cornerDownRight;
 
-  /// Corner left down. Tags: arrow. Mirrors in right-to-left text.
+  /// Corner left down. Tags: arrow, turn, down, curve. Mirrors in right-to-left text.
   static const cornerLeftDown = _cornerLeftDown;
 
-  /// Corner left up. Tags: arrow. Mirrors in right-to-left text.
+  /// Corner left up. Tags: arrow, turn, up, curve. Mirrors in right-to-left text.
   static const cornerLeftUp = _cornerLeftUp;
 
-  /// Corner right down. Tags: arrow. Mirrors in right-to-left text.
+  /// Corner right down. Tags: arrow, turn, down, curve. Mirrors in right-to-left text.
   static const cornerRightDown = _cornerRightDown;
 
-  /// Corner right up. Tags: arrow. Mirrors in right-to-left text.
+  /// Corner right up. Tags: arrow, turn, up, curve. Mirrors in right-to-left text.
   static const cornerRightUp = _cornerRightUp;
 
-  /// Corner up left. Tags: arrow. Mirrors in right-to-left text.
+  /// Corner round double left down. Tags: arrow, corner, right, down, turn. Mirrors in right-to-left text.
+  static const cornerRoundDoubleLeftDown = _cornerRoundDoubleLeftDown;
+
+  /// Corner round double right down. Tags: arrow, corner, left, down, turn. Mirrors in right-to-left text.
+  static const cornerRoundDoubleRightDown = _cornerRoundDoubleRightDown;
+
+  /// Corner round down left. Tags: arrow, corner, down, left, return, enter. Mirrors in right-to-left text.
+  static const cornerRoundDownLeft = _cornerRoundDownLeft;
+
+  /// Corner round down right. Tags: arrow, corner, down, right, indent, tab. Mirrors in right-to-left text.
+  static const cornerRoundDownRight = _cornerRoundDownRight;
+
+  /// Corner round up left. Tags: arrow, corner, up, left, turn. Mirrors in right-to-left text.
+  static const cornerRoundUpLeft = _cornerRoundUpLeft;
+
+  /// Corner round up right. Tags: arrow, corner, up, right, turn. Mirrors in right-to-left text.
+  static const cornerRoundUpRight = _cornerRoundUpRight;
+
+  /// Corner up left. Tags: arrow, turn, back, curve. Mirrors in right-to-left text.
   static const cornerUpLeft = _cornerUpLeft;
 
-  /// Corner up right. Tags: arrow. Mirrors in right-to-left text.
+  /// Corner up right. Tags: arrow, turn, forward, curve. Mirrors in right-to-left text.
   static const cornerUpRight = _cornerUpRight;
 
-  /// Cow head. Tags: milk, dairy, drink, diet, unpasturised, lactose, livestock, cattle.
-  static const cowHead = _cowHead;
+  /// Cos. Tags: cosine, trigonometry, function, formula, math.
+  static const cos = _cos;
 
-  /// Cow udder droplets. Tags: milk, dairy, drink, diet, unpasturised, lactose, livestock, cattle.
-  static const cowUdderDroplets = _cowUdderDroplets;
+  /// Cosine wave. Tags: cosine, wave, trigonometry, curve, function, graph.
+  static const cosineWave = _cosineWave;
 
-  /// Cpu. Tags: processor, cores, technology, computer, chip, circuit, memory, ram.
+  /// Cosine wave inverted. Tags: cosine, wave, trigonometry, curve, negative, function.
+  static const cosineWaveInverted = _cosineWaveInverted;
+
+  /// Cotton candy. Tags: sugar, sweet, fair, carnival, candyfloss.
+  static const cottonCandy = _cottonCandy;
+
+  /// Cowboy. Tags: sheriff, western, hat, wild west.
+  static const cowboy = _cowboy;
+
+  /// Cpu. Tags: processor, chip, hardware, computer, microchip.
   static const cpu = _cpu;
 
-  /// Crab. Tags: crustacean, shell, pinch, snap, crawl, sideways, ocean, marine life.
+  /// Cpu bitcoin. Tags: bitcoin, cpu, chip, mining, crypto, btc.
+  static const cpuBitcoin = _cpuBitcoin;
+
+  /// Cpu cog. Tags: processor, chip, settings, configure, hardware.
+  static const cpuCog = _cpuCog;
+
+  /// Cpu zap. Tags: processor, chip, charge, power, battery, energy.
+  static const cpuZap = _cpuZap;
+
+  /// Crab. Tags: seafood, crustacean, claw, sea.
   static const crab = _crab;
 
-  /// Creative commons. Tags: licence, license.
-  static const creativeCommons = _creativeCommons;
+  /// Cradle. Tags: baby, bed, rocking, nursery, infant.
+  static const cradle = _cradle;
 
-  /// Credit card. Tags: bank, purchase, payment, cc.
+  /// Crane tower. Tags: crane, tower crane, construction, building site, lift.
+  static const craneTower = _craneTower;
+
+  /// Credit card. Tags: bank, purchase, payment, cc, card.
   static const creditCard = _creditCard;
 
-  /// Credit card check. Tags: debit, payment, banking, finance, transaction, wallet, purchase, checkout.
+  /// Same icon as [creditCardCheck].
+  static const creditCardBadgeCheck = _creditCardCheck;
+
+  /// Credit card bitcoin. Tags: bitcoin, card, payment, crypto, btc.
+  static const creditCardBitcoin = _creditCardBitcoin;
+
+  /// Credit card check. Tags: payment, accepted, approved, card, verified.
   static const creditCardCheck = _creditCardCheck;
+
+  /// Credit card heat. Tags: defrost, unfreeze, card, heat, unlock, payment.
+  static const creditCardHeat = _creditCardHeat;
 
   /// Credit card minus. Tags: debit, payment, remove, delete, unlink, revoke, decline, canceled.
   static const creditCardMinus = _creditCardMinus;
 
-  /// Credit card plus. Tags: debit, payment, banking, finance, transaction, wallet, purchase, checkout.
+  /// Credit card off. Tags: payment, card not found, disabled, no card.
+  static const creditCardOff = _creditCardOff;
+
+  /// Credit card plus. Tags: payment, add, new, card.
   static const creditCardPlus = _creditCardPlus;
 
-  /// Credit card reader. Tags: bank, purchase, payment, cc, atm, terminal, checkout, kiosk.
-  static const creditCardReader = _creditCardReader;
+  /// Credit card snowflake. Tags: freeze, frozen, card, block, payment, lock. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const creditCardSnowflake = _creditCardSnowflake;
 
-  /// Credit card x. Tags: debit, payment, banking, finance, transaction, wallet, purchase, checkout.
+  /// Credit card swipe. Tags: pos, card reader, swipe, payment, terminal, checkout.
+  static const creditCardSwipe = _creditCardSwipe;
+
+  /// Credit card sync. Tags: payment, change, swap, replace, card, refresh.
+  static const creditCardSync = _creditCardSync;
+
+  /// Credit card x. Tags: payment, declined, rejected, not accepted, card.
   static const creditCardX = _creditCardX;
 
-  /// Cricket ball. Tags: bowler, batsman, batting, fielder, runs, wicket, innings, overs.
-  static const cricketBall = _cricketBall;
+  /// Crib. Tags: baby, bed, cot, nursery, infant.
+  static const crib = _crib;
 
-  /// Cricket wicket. Tags: bowler, ball, batsman, batting, fielder, runs, innings, overs.
-  static const cricketWicket = _cricketWicket;
+  /// Cricket bat. Tags: cricket, bat, ball, sport.
+  static const cricketBat = _cricketBat;
 
-  /// Croissant. Tags: bakery, cooking, food, pastry.
+  /// Cricket helmet. Tags: cricket, helmet, head protection, sport.
+  static const cricketHelmet = _cricketHelmet;
+
+  /// Croissant. Tags: bakery, cooking, food, pastry, breakfast.
   static const croissant = _croissant;
 
-  /// Crop. Tags: photo, image.
+  /// Crop. Tags: photo, image, trim, resize, cut.
   static const crop = _crop;
 
-  /// Cross. Tags: healthcare, first aid.
+  /// Crop rotate. Tags: rotate, crop, image, edit, photo.
+  static const cropRotate = _cropRotate;
+
+  /// Crop sparkle. Tags: ai, crop, trim, image, sparkle.
+  static const cropSparkle = _cropSparkle;
+
+  /// Cross. Tags: plus, medical, health, swiss, add.
   static const cross = _cross;
 
-  /// Crosshair. Tags: aim, target.
+  /// Crosshair. Tags: target, aim, focus, scope, sight.
   static const crosshair = _crosshair;
 
-  /// Crosshair 2. Tags: aim, target, scope, sight, reticule.
-  static const crosshair2 = _crosshair2;
+  /// Crosshair bitcoin. Tags: bitcoin, target, goal, crypto, btc.
+  static const crosshairBitcoin = _crosshairBitcoin;
 
-  /// Crosshair 2 dot. Tags: aim, target, scope, sight, reticule.
-  static const crosshair2Dot = _crosshair2Dot;
+  /// Crossroads. Tags: roadside, intersection, junction, road.
+  static const crossroads = _crossroads;
 
-  /// Crosshair plus. Tags: aim, target, scope, sight, reticule.
-  static const crosshairPlus = _crosshairPlus;
-
-  /// Crosshair plus dot. Tags: aim, target, scope, sight, reticule.
-  static const crosshairPlusDot = _crosshairPlusDot;
-
-  /// Crosshair square. Tags: aim, target, scope, sight, reticule.
-  static const crosshairSquare = _crosshairSquare;
-
-  /// Cross square. Tags: healthcare, first aid kit, paramedic, medkit, medikit, medpack, medicine, pharmacy.
-  static const crossSquare = _crossSquare;
-
-  /// Crown. Tags: diadem, tiara, circlet, corona, king, ruler, winner, favourite.
+  /// Crown. Tags: diadem, tiara, king, winner, premium, vip.
   static const crown = _crown;
 
-  /// Cuboid. Tags: brick, block, box, 3d, solid, volume, container, storage.
+  /// Crown band. Tags: crown, king, winner, premium, vip, royal.
+  static const crownBand = _crownBand;
+
+  /// Crown minus. Tags: crown, remove, downgrade, minus, vip, premium.
+  static const crownMinus = _crownMinus;
+
+  /// Crown plus. Tags: crown, add, upgrade, plus, vip, premium.
+  static const crownPlus = _crownPlus;
+
+  /// Crown simple. Tags: crown, king, winner, premium, vip, royal.
+  static const crownSimple = _crownSimple;
+
+  /// Cube. Tags: 3d, package, square, block.
+  static const cube = _cube;
+
+  /// Cuboid. Tags: box, 3d, brick, rectangular prism. Its details merge when filled: use it outlined.
   static const cuboid = _cuboid;
 
-  /// Cupcake. Tags: cake, dessert, food, celebration, sweet, baking, cooking.
+  /// Cuboid tall. Tags: cuboid, box, 3d, rectangular, shape.
+  static const cuboidTall = _cuboidTall;
+
+  /// Cupcake. Tags: muffin, dessert, bakery, sweet.
   static const cupcake = _cupcake;
 
-  /// Cup saucer. Tags: mug, hot, drink, cafe, tea.
-  static const cupSaucer = _cupSaucer;
+  /// Cupcake candle. Tags: birthday, celebration, party, candle, dessert.
+  static const cupcakeCandle = _cupcakeCandle;
 
-  /// Cup soda. Tags: beverage, cup, drink, soda, straw, water.
+  /// Cupcake cherry. Tags: cupcake, muffin, dessert, cherry, bakery, sweet.
+  static const cupcakeCherry = _cupcakeCherry;
+
+  /// Cupcake wrapper. Tags: cupcake, muffin, dessert, bakery, wrapper, sweet.
+  static const cupcakeWrapper = _cupcakeWrapper;
+
+  /// Cup soda. Tags: soda, drink, straw, takeaway, cup, beverage. Its details merge when filled: use it outlined.
   static const cupSoda = _cupSoda;
 
-  /// Cup to go. Tags: coffee, roast, ground, blend, arabica, filter, instant, cafe.
+  /// Cup soda band. Tags: soft, drink, soda, cup, straw, beverage.
+  static const cupSodaBand = _cupSodaBand;
+
+  /// Cup steam. Tags: coffee, cup, hot, steam, tea, drink.
+  static const cupSteam = _cupSteam;
+
+  /// Cup teabag. Tags: tea, drink, hot, cup, teabag, beverage.
+  static const cupTeabag = _cupTeabag;
+
+  /// Cup to go. Tags: coffee, takeaway, cup, drink, cafe, paper cup.
   static const cupToGo = _cupToGo;
+
+  /// Curling stone. Tags: curling, stone, ice, winter sport, sport.
+  static const curlingStone = _curlingStone;
 
   /// Same icon as [braces].
   static const curlyBraces = _braces;
 
-  /// Currency. Tags: finance, money.
+  /// Currency. Tags: money, exchange, coin, forex.
   static const currency = _currency;
 
-  /// Currency square. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
-  static const currencySquare = _currencySquare;
+  /// Curtains. Tags: drapes, window, theater, stage.
+  static const curtains = _curtains;
 
   /// Same icon as [scissors].
   static const cut = _scissors;
 
-  /// Cylinder. Tags: shape, elliptical, geometry, container, storage, tin, pot.
+  /// Cyclist. Tags: bike, rider, cycling, person, sport.
+  static const cyclist = _cyclist;
+
+  /// Cylinder. Tags: shape, geometry, 3d, tube, can.
   static const cylinder = _cylinder;
 
-  /// Dam. Tags: electricity, energy, water.
+  /// Cylinder wide. Tags: shape, geometry, 3d, drum, disc, storage.
+  static const cylinderWide = _cylinderWide;
+
+  /// Dam. Tags: reservoir, water, barrier, hydro, infrastructure.
   static const dam = _dam;
 
   /// Same icon as [moon].
   static const darkMode = _moon;
 
+  /// Dart. Tags: arrow, target, game, throw, pub.
+  static const dart = _dart;
+
   /// Same icon as [layoutDashboard].
   static const dashboard = _layoutDashboard;
 
-  /// Database. Tags: storage, memory, container, tin, pot, bytes, servers.
+  /// Database. Tags: storage, data, memory, servers, sql, cylinder.
   static const database = _database;
 
-  /// Database arrow down. Tags: storage, memory, bytes, server, export, download, backup, pull.
+  /// Database arrow down. Tags: database, import, download, load, storage, data.
   static const databaseArrowDown = _databaseArrowDown;
 
-  /// Database arrow up. Tags: storage, memory, bytes, server, import, upload, backup, push.
+  /// Database arrow up. Tags: database, export, upload, send, storage, data.
   static const databaseArrowUp = _databaseArrowUp;
 
-  /// Database backup. Tags: storage, memory, bytes, servers, backup, timemachine, rotate, arrow.
+  /// Database backup. Tags: database, backup, restore, history, storage.
   static const databaseBackup = _databaseBackup;
+
+  /// Database bitcoin. Tags: bitcoin, database, storage, crypto, btc.
+  static const databaseBitcoin = _databaseBitcoin;
 
   /// Database check. Tags: storage, memory, bytes, server, check, success, valid, verified.
   static const databaseCheck = _databaseCheck;
 
+  /// Database cog. Tags: database, settings, cog, configure, storage, admin.
+  static const databaseCog = _databaseCog;
+
+  /// Database expand. Tags: database, expand, fullscreen, focus, storage, scan.
+  static const databaseExpand = _databaseExpand;
+
+  /// Database lock. Tags: database, locked, secure, private, protected, storage.
+  static const databaseLock = _databaseLock;
+
   /// Database minus. Tags: storage, memory, bytes, server, minus, remove, delete, reduce.
   static const databaseMinus = _databaseMinus;
 
-  /// Database plus. Tags: storage, memory, bytes, server, plus, add, create, insert.
+  /// Database plus. Tags: database, add, plus, new, storage, data.
   static const databasePlus = _databasePlus;
 
-  /// Database search. Tags: storage, memory, container, tin, pot, bytes, servers.
+  /// Database recovery. Tags: data recovery, database, restore, rescue, storage, refresh.
+  static const databaseRecovery = _databaseRecovery;
+
+  /// Database restore. Tags: database, restore, recover, reload, storage, rotate.
+  static const databaseRestore = _databaseRestore;
+
+  /// Database rows. Tags: database, table, rows, records, server, storage.
+  static const databaseRows = _databaseRows;
+
+  /// Database rows sync. Tags: database, table, sync, refresh, rows, storage.
+  static const databaseRowsSync = _databaseRowsSync;
+
+  /// Database search. Tags: database, search, find, query, storage, lookup.
   static const databaseSearch = _databaseSearch;
+
+  /// Database simple. Tags: database, storage, data, cylinder, sql, single layer.
+  static const databaseSimple = _databaseSimple;
+
+  /// Database simple zap. Tags: database, lightning, power, fast, cache, storage.
+  static const databaseSimpleZap = _databaseSimpleZap;
+
+  /// Database sync. Tags: database, sync, refresh, replicate, storage, rotate.
+  static const databaseSync = _databaseSync;
 
   /// Database x. Tags: storage, memory, bytes, server, x, error, failed, invalid.
   static const databaseX = _databaseX;
 
-  /// Database zap. Tags: cache busting, storage, memory, bytes, servers, power, crash.
+  /// Database zap. Tags: database, lightning, power, fast, cache, storage.
   static const databaseZap = _databaseZap;
 
-  /// Decimals arrow left. Tags: numerical, decimal, decrease, less, fewer, precision, rounding, digits.
+  /// Date fruit. Tags: dates, fruit, dried fruit, snack, sweet, palm.
+  static const dateFruit = _dateFruit;
+
+  /// Decimals arrow left. Tags: decimals, decrease, precision, number, format, left.
   static const decimalsArrowLeft = _decimalsArrowLeft;
 
-  /// Decimals arrow right. Tags: numerical, decimal, increase, more, precision, rounding, digits, fraction.
+  /// Decimals arrow right. Tags: decimals, increase, precision, number, format, right.
   static const decimalsArrowRight = _decimalsArrowRight;
 
-  /// Delete. Tags: backspace, remove.
+  /// Delete. Tags: backspace, erase, remove, clear, key.
   static const delete = _delete;
 
   /// Same icon as [truck].
   static const delivery = _truck;
 
-  /// Desk lamp. Tags: office, workstation, table, drawers, household, lighting, ambience, ambiance.
-  static const deskLamp = _deskLamp;
+  /// Desk. Tags: table, furniture, drawer, office, writing desk.
+  static const desk = _desk;
+
+  /// Desk chair. Tags: desk, school desk, chair, table, study, workstation. Its details merge when filled: use it outlined.
+  static const deskChair = _deskChair;
+
+  /// Desk computer. Tags: desk, workstation, computer, office, work, table.
+  static const deskComputer = _deskComputer;
+
+  /// Desk computer cable. Tags: desk, workstation, computer, office, cable, cord. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const deskComputerCable = _deskComputerCable;
+
+  /// Desk computer panel. Tags: desk, workstation, computer, office, drawer, panel.
+  static const deskComputerPanel = _deskComputerPanel;
+
+  /// Desk drawer. Tags: desk, table, office, drawer, workstation, furniture.
+  static const deskDrawer = _deskDrawer;
+
+  /// Same icon as [lampDesk].
+  static const deskLamp = _lampDesk;
+
+  /// Desk shelf. Tags: desk, table, office, drawers, shelf, furniture.
+  static const deskShelf = _deskShelf;
+
+  /// Desk study. Tags: study desk, desk, work, table, office.
+  static const deskStudy = _deskStudy;
 
   /// Same icon as [monitor].
   static const desktop = _monitor;
 
-  /// Dessert. Tags: pudding, christmas, xmas, custard, iced bun, icing, fondant, cake.
-  static const dessert = _dessert;
+  /// Detergent bottle. Tags: detergent, laundry, cleaning, soap, bottle, washing. Its details merge when filled: use it outlined.
+  static const detergentBottle = _detergentBottle;
 
-  /// Diameter. Tags: shape, circle, geometry, trigonometry, width, height, size, calculate.
+  /// Devil. Tags: evil, imp, demon, mischievous, smiley.
+  static const devil = _devil;
+
+  /// Dialpad circles. Tags: dialpad, keypad, phone, circles, numbers, call.
+  static const dialpadCircles = _dialpadCircles;
+
+  /// Dialpad squares. Tags: dialpad, keypad, phone, squares, numbers, call.
+  static const dialpadSquares = _dialpadSquares;
+
+  /// Diameter. Tags: circle, geometry, width, size, measure, calculate.
   static const diameter = _diameter;
 
-  /// Diamond. Tags: square, rectangle, oblique, rhombus, shape, suit, playing, cards.
+  /// Diamond. Tags: square, rhombus, shape, suit, cards, oblique, rounded.
   static const diamond = _diamond;
 
-  /// Diamond minus. Tags: keyframe, subtract, remove, decrease, reduce, calculator, button, keyboard.
+  /// Diamond alert. Tags: alert, warning, diamond, exclamation.
+  static const diamondAlert = _diamondAlert;
+
+  /// Diamond info. Tags: information, help, about, details, diamond.
+  static const diamondInfo = _diamondInfo;
+
+  /// Diamond minus. Tags: diamond, minus, remove, shape, subtract.
   static const diamondMinus = _diamondMinus;
 
-  /// Diamond percent. Tags: verified, unverified, sale, discount, offer, marketing, sticker, price tag.
+  /// Diamond percent. Tags: diamond, percent, discount, sale, offer.
   static const diamondPercent = _diamondPercent;
 
-  /// Diamond plus. Tags: keyframe, add, new, increase, increment, positive, calculate, toolbar.
+  /// Diamond plus. Tags: diamond, plus, add, shape, new.
   static const diamondPlus = _diamondPlus;
 
-  /// Diaper. Tags: nappy, absorbent, potty, newborn, childproof, children, infant, kids.
+  /// Diamond sharp. Tags: rhombus, diamond, shape, lozenge.
+  static const diamondSharp = _diamondSharp;
+
+  /// Diamond tall. Tags: rhombus, shape, suit, cards, tall, kite.
+  static const diamondTall = _diamondTall;
+
+  /// Diaper. Tags: baby, infant, nappy, child, care.
   static const diaper = _diaper;
 
   /// Dice 1. Tags: dice, random, tabletop, 1, board, game.
@@ -2122,89 +4581,170 @@ abstract final class DsIcons {
   /// Dice 6. Tags: dice, random, tabletop, 6, board, game.
   static const dice6 = _dice6;
 
-  /// Dices. Tags: dice, random, tabletop, board, game.
+  /// Dices. Tags: dice, random, tabletop, gambling, board, game.
   static const dices = _dices;
 
-  /// Diff. Tags: patch, difference, compare, plus, minus, plus-minus, math.
-  static const diff = _diff;
+  /// Dice stack. Tags: dice, game, chance, random, shapes, blocks.
+  static const diceStack = _diceStack;
 
-  /// Disc. Tags: album, music, songs, format, cd, dvd, vinyl, sleeve.
+  /// Same icon as [plusMinus].
+  static const diff = _plusMinus;
+
+  /// Dining table. Tags: furniture, restaurant, pedestal, table, eat.
+  static const diningTable = _diningTable;
+
+  /// Diploma. Tags: certificate, degree, graduation, award, achievement.
+  static const diploma = _diploma;
+
+  /// Disc. Tags: cd, dvd, record, media, storage.
   static const disc = _disc;
 
-  /// Disc 2. Tags: album, music, vinyl, record, cd, dvd, format, dj.
-  static const disc2 = _disc2;
+  /// Same icon as [discRing].
+  static const disc2 = _discRing;
 
-  /// Disc 3. Tags: album, music, vinyl, record, cd, dvd, format, dj.
-  static const disc3 = _disc3;
+  /// Same icon as [discShineDouble].
+  static const disc3 = _discShineDouble;
 
-  /// Disc album. Tags: album, music, songs, format, cd, dvd, vinyl, sleeve.
+  /// Disc album. Tags: disc, album, cd, music, record, media.
   static const discAlbum = _discAlbum;
 
-  /// Dishwasher. Tags: kitchen, appliances, amenities, electric, cleaning, cycle, plates, glasses.
+  /// Disc award. Tags: console, disc, award, medal, badge, ribbon.
+  static const discAward = _discAward;
+
+  /// Disc drive. Tags: burning, cd, disc, drive, writer, burn.
+  static const discDrive = _discDrive;
+
+  /// Disc music. Tags: vinyl, record, album, music, note, cd, song.
+  static const discMusic = _discMusic;
+
+  /// Disc ring. Tags: disc, cd, dvd, record, media, storage.
+  static const discRing = _discRing;
+
+  /// Disc shine. Tags: vinyl, record, album, music, cd, dvd, disc.
+  static const discShine = _discShine;
+
+  /// Disc shine double. Tags: cd, dvd, disk, compact disc, music, media, disc, record.
+  static const discShineDouble = _discShineDouble;
+
+  /// Dish antenna. Tags: satellite, dish, antenna, receiver, signal, tripod.
+  static const dishAntenna = _dishAntenna;
+
+  /// Dish antenna base. Tags: satellite, dish, antenna, receiver, signal, base.
+  static const dishAntennaBase = _dishAntennaBase;
+
+  /// Dishwasher. Tags: dish washer, kitchen, appliance, cleaning, machine.
   static const dishwasher = _dishwasher;
 
-  /// Divide. Tags: calculate, math, division, operator, code.
+  /// Divide. Tags: division, obelus, math, operator, calculate.
   static const divide = _divide;
 
-  /// Dna. Tags: gene, gmo, helix, heredity, chromosome, nucleic acid.
+  /// Divide dots. Tags: divide, division, obelus, math, dots, operator.
+  static const divideDots = _divideDots;
+
+  /// Dna. Tags: gene, helix, genetics, biology, chromosome. Its details merge when filled: use it outlined.
   static const dna = _dna;
 
-  /// Dna off. Tags: gene, gmo free, helix, heredity, chromosome, nucleic acid.
+  /// Dna chip. Tags: ai, dna, genetics, chip, biotech.
+  static const dnaChip = _dnaChip;
+
+  /// Dna diagonal. Tags: dna, gene, helix, genetics, biology, chromosome.
+  static const dnaDiagonal = _dnaDiagonal;
+
+  /// Dna off. Tags: dna, gene, helix, genetics, gmo free, disabled.
   static const dnaOff = _dnaOff;
 
-  /// Dock. Tags: desktop, applications, launch, home, menu bar, bottom, line, macos.
+  /// Dock. Tags: taskbar, bar, launcher, window, shelf.
   static const dock = _dock;
 
-  /// Dog. Tags: animal, pet, puppy, hound, canine.
-  static const dog = _dog;
+  /// Doctor. Tags: physician, stethoscope, medical, health, person.
+  static const doctor = _doctor;
 
   /// Same icon as [dollarSign].
   static const dollar = _dollarSign;
 
-  /// Dollar sign. Tags: currency, money, payment.
+  /// Dollar sign. Tags: dollar, currency, money, usd, price, cash.
   static const dollarSign = _dollarSign;
 
-  /// Dollar sign circle. Tags: monetization, marketing, finance, financial, markets, exchange, trader, trading.
-  static const dollarSignCircle = _dollarSignCircle;
+  /// Dollar sign arrow left. Tags: dollar, receive, incoming, money, income, payment.
+  static const dollarSignArrowLeft = _dollarSignArrowLeft;
 
-  /// Dollar sign square. Tags: monetization, marketing, finance, financial, markets, exchange, trader, trading.
-  static const dollarSignSquare = _dollarSignSquare;
+  /// Dollar sign arrow right. Tags: dollar, send, outgoing, money, transfer, payment.
+  static const dollarSignArrowRight = _dollarSignArrowRight;
 
-  /// Dome. Tags: roof, cupola, rotunda, shelter, building, architecture, structure, church.
-  static const dome = _dome;
+  /// Same icon as [circleDollarSign].
+  static const dollarSignCircle = _circleDollarSign;
 
-  /// Donut. Tags: doughnut, sprinkles, topping, fast food, junk food, snack, treat, sweet.
+  /// Dollar sign refresh. Tags: exchange, convert, currency, swap, money.
+  static const dollarSignRefresh = _dollarSignRefresh;
+
+  /// Dollar sign rotate. Tags: transaction, dollar, exchange, refresh, payment.
+  static const dollarSignRotate = _dollarSignRotate;
+
+  /// Dollar sign short. Tags: dollar, currency, money, usd, short, price.
+  static const dollarSignShort = _dollarSignShort;
+
+  /// Dollar sign short arrow left. Tags: dollar, receive, incoming, money, income, payment.
+  static const dollarSignShortArrowLeft = _dollarSignShortArrowLeft;
+
+  /// Dollar sign short arrow right. Tags: dollar, send, outgoing, money, transfer, payment.
+  static const dollarSignShortArrowRight = _dollarSignShortArrowRight;
+
+  /// Same icon as [squareDollarSign].
+  static const dollarSignSquare = _squareDollarSign;
+
+  /// Domino. Tags: game, tile, dots, tabletop, board.
+  static const domino = _domino;
+
+  /// Donut. Tags: doughnut, ring, dessert, sweet, snack.
   static const donut = _donut;
 
-  /// Doorbell intercom. Tags: buzzer, speaker, call, service, summon, hospitality, hotel, accommodation.
-  static const doorbellIntercom = _doorbellIntercom;
+  /// Donut bite. Tags: donut, doughnut, bite, dessert, sweet, snack.
+  static const donutBite = _donutBite;
 
-  /// Door closed. Tags: entrance, entry, exit, ingress, egress, gate, gateway, emergency exit.
+  /// Door closed. Tags: door, closed, entrance, knob, entry, exit.
   static const doorClosed = _doorClosed;
 
-  /// Door closed cog. Tags: room, entrance, entry, settings, gear, access, automation.
-  static const doorClosedCog = _doorClosedCog;
-
-  /// Door closed locked. Tags: entrance, entry, exit, ingress, egress, gate, gateway, emergency exit.
+  /// Door closed locked. Tags: door, closed, locked, lock, secure, entry.
   static const doorClosedLocked = _doorClosedLocked;
 
-  /// Door closed package. Tags: delivery, parcel, doorstep, shipping, drop-off, courier.
-  static const doorClosedPackage = _doorClosedPackage;
+  /// Door closed window. Tags: door, closed, entrance, window, entry, exit.
+  static const doorClosedWindow = _doorClosedWindow;
 
-  /// Door open. Tags: entrance, entry, exit, ingress, egress, gate, gateway, emergency exit.
+  /// Door lock. Tags: door, lock, locked, secure, padlock, entry.
+  static const doorLock = _doorLock;
+
+  /// Door open. Tags: door, open, entrance, hinge, entry, exit.
   static const doorOpen = _doorOpen;
 
-  /// Door stairwell. Tags: staircase, stairway, stairs, steps, ladder, transition, access, structure.
-  static const doorStairwell = _doorStairwell;
+  /// Door open knob. Tags: door, open, entrance, knob, entry, exit.
+  static const doorOpenKnob = _doorOpenKnob;
 
-  /// Dot. Tags: interpunct, interpoint, middot, step, punctuation, period, full stop, end.
+  /// Door panes. Tags: door, entrance, window panes, house, entry, exit.
+  static const doorPanes = _doorPanes;
+
+  /// Door square off. Tags: no meeting room, room, door, unavailable, occupied, crossed.
+  static const doorSquareOff = _doorSquareOff;
+
+  /// Door square open. Tags: door, room, meeting, entrance, open.
+  static const doorSquareOpen = _doorSquareOpen;
+
+  /// Dot. Tags: point, bullet, small, period, marker.
   static const dot = _dot;
 
-  /// Download. Tags: import, export, save.
+  /// Download. Tags: save, import, get, arrow down, tray.
   static const download = _download;
 
-  /// Drafting compass. Tags: geometry, trigonometry, radius, diameter, circumference, calculate, measure, arc.
+  /// Download bracket. Tags: download, small tray, import, save, arrow down, bracket.
+  static const downloadBracket = _downloadBracket;
+
+  /// Dpad. Tags: navigation, directions, four way, pad, controls, arrows.
+  static const dpad = _dpad;
+
+  /// Drafting compass. Tags: compass, drafting, geometry, draw, circle, drawing compass, drawing, design.
   static const draftingCompass = _draftingCompass;
+
+  /// Drafting compass bar. Tags: drafting, compass, drawing, geometry, design, architect.
+  static const draftingCompassBar = _draftingCompassBar;
 
   /// Same icon as [gripVertical].
   static const dragHandle = _gripVertical;
@@ -2212,1976 +4752,5408 @@ abstract final class DsIcons {
   /// Same icon as [gripHorizontal].
   static const dragIndicator = _gripHorizontal;
 
-  /// Drama. Tags: masks, theater, theatre, entertainment, show. Its details merge when filled: use it outlined.
+  /// Drama. Tags: theater, masks, comedy, tragedy, acting.
   static const drama = _drama;
 
-  /// Dress. Tags: skirt, womens, girls, female, ladies, store, sexy, classy.
+  /// Drama happy. Tags: masks, theater, drama, comedy, tragedy, performance.
+  static const dramaHappy = _dramaHappy;
+
+  /// Dress. Tags: clothing, fashion, girl, puff sleeves, outfit.
   static const dress = _dress;
 
-  /// Drill. Tags: power, bit, head, hole, diy, toolbox, build, construction.
+  /// Dress gown. Tags: dress, gown, clothing, fashion, evening, formal.
+  static const dressGown = _dressGown;
+
+  /// Dressing table. Tags: vanity, mirror, makeup, furniture, drawers.
+  static const dressingTable = _dressingTable;
+
+  /// Dressing table round. Tags: dressing table, vanity, round mirror, makeup, furniture, stool.
+  static const dressingTableRound = _dressingTableRound;
+
+  /// Dressing table wide. Tags: dressing table, vanity, wide mirror, makeup, furniture, drawers.
+  static const dressingTableWide = _dressingTableWide;
+
+  /// Dress layered. Tags: dress, gown, clothing, fashion, layers, party.
+  static const dressLayered = _dressLayered;
+
+  /// Dress sleeveless. Tags: dress, clothing, fashion, sleeveless, belt, outfit.
+  static const dressSleeveless = _dressSleeveless;
+
+  /// Drill. Tags: power tool, cordless, construction, diy, screwdriver.
   static const drill = _drill;
 
-  /// Drone. Tags: quadcopter, uav, aerial, flight, flying, technology, airborne, robotics.
+  /// Drone. Tags: quadcopter, uav, flying, aerial, camera.
   static const drone = _drone;
 
-  /// Droplet. Tags: water, weather, liquid, fluid, wet, moisture, damp, bead.
+  /// Dropdown. Tags: select, field, input, form, combobox.
+  static const dropdown = _dropdown;
+
+  /// Droplet. Tags: rain drop, water, liquid, drop, moisture.
   static const droplet = _droplet;
 
-  /// Droplet off. Tags: water, weather, liquid, fluid, wet, moisture, damp, bead.
+  /// Droplet a. Tags: blood, type, group, donor.
+  static const dropletA = _dropletA;
+
+  /// Droplet activity. Tags: blood, pressure, pulse, health.
+  static const dropletActivity = _dropletActivity;
+
+  /// Droplet highlight. Tags: water, drop, liquid, fluid.
+  static const dropletHighlight = _dropletHighlight;
+
+  /// Droplet leaf. Tags: eco, power, green, energy, biofuel, leaf, drop.
+  static const dropletLeaf = _dropletLeaf;
+
+  /// Droplet lines. Tags: blur, soften, effect, filter.
+  static const dropletLines = _dropletLines;
+
+  /// Droplet off. Tags: water, drop, no liquid, dry, crossed.
   static const dropletOff = _dropletOff;
 
-  /// Droplets. Tags: water, weather, liquid, fluid, wet, moisture, damp, bead.
+  /// Droplet pair. Tags: rain, two drops, water, liquid, double drop.
+  static const dropletPair = _dropletPair;
+
+  /// Droplet rotate. Tags: water energy, hydro power, water cycle, recycle, renewable, sustainability, droplet.
+  static const dropletRotate = _dropletRotate;
+
+  /// Droplets. Tags: water, drops, rain, liquid, humidity.
   static const droplets = _droplets;
 
-  /// Drum. Tags: drummer, kit, sticks, instrument, beat, bang, bass, backing track.
+  /// Droplets 3. Tags: rain, drops, water, weather, rainfall.
+  static const droplets3 = _droplets3;
+
+  /// Droplets overlap. Tags: blood, drops, liquid, water.
+  static const dropletsOverlap = _dropletsOverlap;
+
+  /// Droplet wave. Tags: humidity, water, moisture, droplet.
+  static const dropletWave = _dropletWave;
+
+  /// Drum. Tags: music, percussion, instrument, band.
   static const drum = _drum;
 
-  /// Drumstick. Tags: food, chicken, meat.
+  /// Drum barrel. Tags: bedug, drum, mosque, percussion, sticks.
+  static const drumBarrel = _drumBarrel;
+
+  /// Drum stand. Tags: bedug, drum, mosque, percussion, sticks. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const drumStand = _drumStand;
+
+  /// Drumstick. Tags: chicken, leg, meat, food, poultry.
   static const drumstick = _drumstick;
 
-  /// Dumbbell. Tags: barbell, weight, workout, gym.
+  /// Drumstick bitten. Tags: chicken, leg, meat, food, poultry, thigh.
+  static const drumstickBitten = _drumstickBitten;
+
+  /// Dumbbell. Tags: weight, barbell, gym, fitness, workout.
   static const dumbbell = _dumbbell;
 
-  /// Ear. Tags: hearing, noise, audio, accessibility.
+  /// Dumbbells. Tags: weights, gym, fitness, plates, barbell, workout.
+  static const dumbbells = _dumbbells;
+
+  /// Dumbbell tilted. Tags: weight, gym, fitness, workout, diagonal.
+  static const dumbbellTilted = _dumbbellTilted;
+
+  /// Dumpling chopsticks. Tags: dim sum, dumpling, chopsticks, asian, food, steamed.
+  static const dumplingChopsticks = _dumplingChopsticks;
+
+  /// Dumplings. Tags: dim sum, asian, food, steamed, bao.
+  static const dumplings = _dumplings;
+
+  /// Dump truck. Tags: tipper, truck, construction, vehicle, hauling.
+  static const dumpTruck = _dumpTruck;
+
+  /// Ear. Tags: hearing, listen, audio, sound.
   static const ear = _ear;
 
-  /// Ear off. Tags: hearing, hard of hearing, hearing loss, deafness, noise, silence, audio, accessibility.
+  /// Earbuds. Tags: airpod, headphones, wireless, audio.
+  static const earbuds = _earbuds;
+
+  /// Earbuds case. Tags: airpod, earbuds, case, charging, closed.
+  static const earbudsCase = _earbudsCase;
+
+  /// Earbuds case dot. Tags: airpod, earbuds, case, charging, open.
+  static const earbudsCaseDot = _earbudsCaseDot;
+
+  /// Ear off. Tags: hearing loss, deaf, mute, no sound, crossed.
   static const earOff = _earOff;
 
-  /// Earth. Tags: world, browser, language, translate, globe.
+  /// Earrings drop. Tags: jewelry, earring, drop, accessory.
+  static const earringsDrop = _earringsDrop;
+
+  /// Earrings heart. Tags: jewelry, earring, heart, accessory. Its details merge when filled: use it outlined.
+  static const earringsHeart = _earringsHeart;
+
+  /// Earrings hoop. Tags: jewelry, earring, hoop, ring, accessory. Its details merge when filled: use it outlined.
+  static const earringsHoop = _earringsHoop;
+
+  /// Earth. Tags: world, globe, planet, language, global, continents.
   static const earth = _earth;
 
-  /// Earth lock. Tags: vpn, private, privacy, network, world, browser, security, encryption.
+  /// Earth crust. Tags: geology, earth, crust, layers, planet.
+  static const earthCrust = _earthCrust;
+
+  /// Earth lock. Tags: globe, world, lock, secure, privacy, vpn.
   static const earthLock = _earthLock;
 
-  /// Eclipse. Tags: lunar, solar, crescent moon, sun, earth, day, night, planet.
-  static const eclipse = _eclipse;
+  /// Earth pen. Tags: global, earth, edit, pen, world, localize.
+  static const earthPen = _earthPen;
+
+  /// Earth refresh. Tags: global, earth, refresh, reload, sync, world.
+  static const earthRefresh = _earthRefresh;
+
+  /// Earth search. Tags: global, earth, search, find, world.
+  static const earthSearch = _earthSearch;
+
+  /// Ease curve points. Tags: easing, curve, bezier, animation, handles, control points.
+  static const easeCurvePoints = _easeCurvePoints;
+
+  /// Ease in. Tags: easing, curve, animation, accelerate.
+  static const easeIn = _easeIn;
+
+  /// Ease in out. Tags: easing, curve, animation, s-curve, smooth.
+  static const easeInOut = _easeInOut;
+
+  /// Ease in point. Tags: easing, curve, animation, control point, bezier.
+  static const easeInPoint = _easeInPoint;
+
+  /// Easel. Tags: canvas, painting, art, drawing, stand, studio.
+  static const easel = _easel;
+
+  /// Easel math. Tags: board, math, blackboard, class, school.
+  static const easelMath = _easelMath;
+
+  /// Ease out. Tags: easing, curve, animation, decelerate.
+  static const easeOut = _easeOut;
+
+  /// Ease out point. Tags: easing, curve, animation, control point, bezier.
+  static const easeOutPoint = _easeOutPoint;
+
+  /// Ecg monitor. Tags: cardiogram, ecg, heart monitor, pulse, vital signs, health.
+  static const ecgMonitor = _ecgMonitor;
 
   /// Same icon as [pencil].
   static const edit = _pencil;
 
-  /// Egg. Tags: bird, chicken, nest, hatch, shell, incubate, soft boiled, hard.
+  /// Egg. Tags: breakfast, chicken, food.
   static const egg = _egg;
 
-  /// Egg cup. Tags: boiled, soldiers, continental breakfast, brunch, meal, morning.
-  static const eggCup = _eggCup;
-
-  /// Egg fried. Tags: food, breakfast.
+  /// Egg fried. Tags: breakfast, sunny side up, fried, food.
   static const eggFried = _eggFried;
 
-  /// Egg off. Tags: egg free, vegan, hatched, bad egg.
+  /// Egg off. Tags: no egg, allergy, vegan, crossed.
   static const eggOff = _eggOff;
+
+  /// Eggs. Tags: breakfast, chicken, food, two eggs.
+  static const eggs = _eggs;
+
+  /// Eiffel tower. Tags: paris, france, landmark, monument.
+  static const eiffelTower = _eiffelTower;
 
   /// Eject. Tags: disc, drive, dvd, blu-ray, cd, media, optical, optical drive.
   static const eject = _eject;
 
-  /// Elephant. Tags: mammoth, mastodon, mammal, memory, remember, trunk, tusks, safari park.
-  static const elephant = _elephant;
+  /// Electric wire. Tags: wire, cable, power, electricity, conductor.
+  static const electricWire = _electricWire;
 
-  /// Elephant face. Tags: mammoth, mastodon, mammal, memory, remember, trunk, tusks, safari.
-  static const elephantFace = _elephantFace;
-
-  /// Ellipse. Tags: shape, geometry, rounded, smooth, outline, form, boundary, curve.
+  /// Ellipse. Tags: oval, shape, circle.
   static const ellipse = _ellipse;
 
-  /// Ellipsis. Tags: et cetera, etc, loader, loading, progress, pending, throbber, menu.
+  /// Ellipse round. Tags: oval, ellipse, shape.
+  static const ellipseRound = _ellipseRound;
+
+  /// Ellipse selection. Tags: oval, selection, handles, anchor points, shape.
+  static const ellipseSelection = _ellipseSelection;
+
+  /// Ellipsis. Tags: more, menu, dots, overflow, options, horizontal, square dots.
   static const ellipsis = _ellipsis;
 
-  /// Ellipsis vertical. Tags: menu, options, spread, more, further, extra, overflow, dots.
+  /// Ellipsis circles. Tags: more, horizontal, menu, options, circles, dots.
+  static const ellipsisCircles = _ellipsisCircles;
+
+  /// Ellipsis vertical. Tags: more, menu, dots, overflow, options, kebab, vertical, square dots.
   static const ellipsisVertical = _ellipsisVertical;
+
+  /// Ellipsis vertical circles. Tags: more, vertical, menu, options, circles, dots.
+  static const ellipsisVerticalCircles = _ellipsisVerticalCircles;
 
   /// Same icon as [mail].
   static const email = _mail;
 
-  /// Engine. Tags: vehicle, power, energy, drive, repair, car, motor, mechanical.
+  /// Engine. Tags: motor, car, check engine, vehicle. Its details merge when filled: use it outlined.
   static const engine = _engine;
+
+  /// Engine off. Tags: motor, car, no engine, vehicle, crossed.
+  static const engineOff = _engineOff;
 
   /// Same icon as [cornerDownLeft].
   static const enter = _cornerDownLeft;
 
-  /// Equal. Tags: calculate, math, operator, assignment, code.
+  /// Entrance stairs. Tags: entrance, stairs, door, steps, building.
+  static const entranceStairs = _entranceStairs;
+
+  /// Equal. Tags: equals, equality, same, math.
   static const equal = _equal;
 
-  /// Equal approximately. Tags: about, calculate, math, operator.
+  /// Equal approximately. Tags: approximately, about, similar, tilde, math.
   static const equalApproximately = _equalApproximately;
 
-  /// Equal approximately not. Tags: calculate, math, operator, not, approximately, unequal, code, tolerance.
-  static const equalApproximatelyNot = _equalApproximatelyNot;
-
-  /// Equal not. Tags: calculate, off, math, operator, code.
+  /// Equal not. Tags: not equal, inequality, different.
   static const equalNot = _equalNot;
 
-  /// Eraser. Tags: pencil, drawing, undo, delete, clear, trash, remove.
+  /// Equal not wide. Tags: not equal, unequal, different, inequality, compare.
+  static const equalNotWide = _equalNotWide;
+
+  /// Equal wide. Tags: equals, equal sign, equality, math.
+  static const equalWide = _equalWide;
+
+  /// Eraser. Tags: rub out, clear, remove, rubber.
   static const eraser = _eraser;
+
+  /// Eraser auto. Tags: eraser, auto, smart erase, magic.
+  static const eraserAuto = _eraserAuto;
+
+  /// Eraser sparkle. Tags: ai, eraser, remove, sparkle, clean.
+  static const eraserSparkle = _eraserSparkle;
 
   /// Same icon as [circleAlert].
   static const error = _circleAlert;
 
-  /// Escalator arrow down left. Tags: steps, stairs, staircase, conveyor belt, conveyer, ground floor, levels, signage.
-  static const escalatorArrowDownLeft = _escalatorArrowDownLeft;
+  /// Ethereum. Tags: eth, crypto, cryptocurrency, currency.
+  static const ethereum = _ethereum;
 
-  /// Escalator arrow up right. Tags: steps, stairs, staircase, conveyor belt, conveyer, top floor, levels, signage.
-  static const escalatorArrowUpRight = _escalatorArrowUpRight;
+  /// Ethereum circle. Tags: eth, crypto, cryptocurrency, currency, coin.
+  static const ethereumCircle = _ethereumCircle;
 
-  /// Ethernet port. Tags: internet, network, connection, cable, lan, port, router, switch.
+  /// Ethereum square. Tags: eth, crypto, cryptocurrency, currency.
+  static const ethereumSquare = _ethereumSquare;
+
+  /// Ethernet port. Tags: network, lan, rj45, socket, connection.
   static const ethernetPort = _ethernetPort;
 
   /// Euro. Tags: currency, money, payment.
   static const euro = _euro;
 
-  /// Euro circle. Tags: monetization, marketing, finance, financial, markets, exchange, trader, trading.
+  /// Euro circle. Tags: currency, money, payment, coin.
   static const euroCircle = _euroCircle;
 
-  /// Euro square. Tags: monetization, marketing, finance, financial, markets, exchange, trader, trading.
+  /// Euro receive. Tags: euro, receive, incoming, money, payment, income. Mirrors in right-to-left text.
+  static const euroReceive = _euroReceive;
+
+  /// Euro send. Tags: euro, send, outgoing, money, transfer, payment. Mirrors in right-to-left text.
+  static const euroSend = _euroSend;
+
+  /// Euro square. Tags: currency, money, payment.
   static const euroSquare = _euroSquare;
 
-  /// Ev charger. Tags: electric, charger, station, vehicle, fast, plug, ev, power.
+  /// Ev charger. Tags: electric vehicle, charging, station, battery, plug.
   static const evCharger = _evCharger;
 
-  /// Expand. Tags: scale, fullscreen, maximize, minimize, contract.
+  /// Ev charger cable. Tags: electric vehicle, charging, station, cable, pump. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const evChargerCable = _evChargerCable;
+
+  /// Ev charger pump. Tags: fuel, station, pump, electric, charging.
+  static const evChargerPump = _evChargerPump;
+
+  /// Excavator. Tags: digger, construction, machine, heavy equipment.
+  static const excavator = _excavator;
+
+  /// Excavator arm. Tags: crane, construction, digger, machinery, bulldozer, heavy.
+  static const excavatorArm = _excavatorArm;
+
+  /// Exchange bitcoin ethereum. Tags: crypto, swap, convert, exchange, trade. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const exchangeBitcoinEthereum = _exchangeBitcoinEthereum;
+
+  /// Exchange dollar bitcoin. Tags: crypto, swap, convert, exchange, trade.
+  static const exchangeDollarBitcoin = _exchangeDollarBitcoin;
+
+  /// Exclamation mark. Tags: alert, warning, important, attention.
+  static const exclamationMark = _exclamationMark;
+
+  /// Exclamation mark off. Tags: no alert, muted, dismissed, crossed, big.
+  static const exclamationMarkOff = _exclamationMarkOff;
+
+  /// Exclamation mark thick. Tags: alert, warning, important, attention, big.
+  static const exclamationMarkThick = _exclamationMarkThick;
+
+  /// Exclamation mark thick off. Tags: no alert, muted, dismissed, crossed.
+  static const exclamationMarkThickOff = _exclamationMarkThickOff;
+
+  /// Exercise bike. Tags: cycling, fitness, gym, cardio.
+  static const exerciseBike = _exerciseBike;
+
+  /// Expand. Tags: fullscreen, maximize, enlarge, four corners.
   static const expand = _expand;
 
-  /// External link. Tags: outbound, open, share.
+  /// Expand corner. Tags: expand, enlarge, fullscreen, corner, bracket.
+  static const expandCorner = _expandCorner;
+
+  /// External link. Tags: open, link, new tab, outbound, new window, outside, arrow, share.
   static const externalLink = _externalLink;
 
-  /// Eye. Tags: view, watch, see, show, expose, reveal, display, visible.
+  /// Eye. Tags: view, watch, see, show, reveal, visible, visibility.
   static const eye = _eye;
 
-  /// Eye closed. Tags: view, watch, see, hide, conceal, mask, hidden, visibility.
+  /// Eye bitcoin. Tags: bitcoin, eye, watch, view, monitor, crypto, btc.
+  static const eyeBitcoin = _eyeBitcoin;
+
+  /// Eye brow. Tags: view, show, visible, watch.
+  static const eyeBrow = _eyeBrow;
+
+  /// Eye closed. Tags: hide, closed, sleep, blink, invisible, view off, hidden, closed eyes.
   static const eyeClosed = _eyeClosed;
 
-  /// Eye dashed. Tags: view, watch, see, hide, conceal, mask, hidden, invisible.
-  static const eyeDashed = _eyeDashed;
+  /// Eye diamond. Tags: ai, vision, recognition, eye, diamond, detect.
+  static const eyeDiamond = _eyeDiamond;
 
-  /// Eye off. Tags: view, watch, see, hide, conceal, mask, hidden, visibility.
+  /// Eye off. Tags: view off, hide, hidden, conceal, mask, visibility, invisible.
   static const eyeOff = _eyeOff;
 
-  /// Face alien. Tags: extraterrestrial, life form, outer space, interplanetary, galactic, universe, area 51.
+  /// Eye off long. Tags: hide, invisible, hidden, crossed, password.
+  static const eyeOffLong = _eyeOffLong;
+
+  /// Eye rays. Tags: ai, view, eye, look, sparkle.
+  static const eyeRays = _eyeRays;
+
+  /// Face alien. Tags: alien, extraterrestrial, ufo, face.
   static const faceAlien = _faceAlien;
 
-  /// Face angry. Tags: anger, rage, fury, resentment, irritation, disgust, emoji, emotion.
+  /// Face alien antenna. Tags: alien, extraterrestrial, monster, antennae.
+  static const faceAlienAntenna = _faceAlienAntenna;
+
+  /// Face angry. Tags: angry, mad, emoji, upset, furious.
   static const faceAngry = _faceAngry;
 
-  /// Face expressionless. Tags: nuisance, annoyed, annoyance, frustration, emoji, emotion.
+  /// Face annoyed. Tags: annoyed, unamused, emoji, irritated, meh.
+  static const faceAnnoyed = _faceAnnoyed;
+
+  /// Face confused. Tags: confused, puzzled, unsure, emoji, face. Its details merge when filled: use it outlined.
+  static const faceConfused = _faceConfused;
+
+  /// Face crazy. Tags: crazy, silly, wacky, emoji, face.
+  static const faceCrazy = _faceCrazy;
+
+  /// Face crying. Tags: crying, sad, tears, emoji, face, upset.
+  static const faceCrying = _faceCrying;
+
+  /// Face dead. Tags: dead, face, x eyes, rip, knocked out, emoji.
+  static const faceDead = _faceDead;
+
+  /// Face dead frown. Tags: sad, dizzy, face, emoji, knocked out.
+  static const faceDeadFrown = _faceDeadFrown;
+
+  /// Face dead smile. Tags: dizzy, knocked, out, emoji, face, dead.
+  static const faceDeadSmile = _faceDeadSmile;
+
+  /// Face displeased. Tags: displeased, unhappy, face, frown, emoji, upset.
+  static const faceDispleased = _faceDispleased;
+
+  /// Face dizzy. Tags: senseless, dizzy, confused, woozy, emoji. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const faceDizzy = _faceDizzy;
+
+  /// Face drooling. Tags: drooling, face, hungry, yummy, tasty, emoji.
+  static const faceDrooling = _faceDrooling;
+
+  /// Face expressionless. Tags: face, meh, neutral, emoji, indifferent, reaction.
   static const faceExpressionless = _faceExpressionless;
 
-  /// Face grinning. Tags: happy, happiness, good, laugh, broad smile, pleasure, good cheer, humour.
-  static const faceGrinning = _faceGrinning;
+  /// Face flushed. Tags: flushed, embarrassed, emoji, face, shy.
+  static const faceFlushed = _faceFlushed;
+
+  /// Face grimacing. Tags: grimacing, face, emoji, awkward, nervous.
+  static const faceGrimacing = _faceGrimacing;
+
+  /// Same icon as [faceSmileClosed].
+  static const faceGrinning = _faceSmileClosed;
+
+  /// Face grinning sweat. Tags: grinning, face, emoji, sweat, nervous, relief.
+  static const faceGrinningSweat = _faceGrinningSweat;
+
+  /// Face halo. Tags: angel, halo, innocent, emoji, saint, heaven.
+  static const faceHalo = _faceHalo;
+
+  /// Face happy. Tags: smile, happy, joy, emoji, glad.
+  static const faceHappy = _faceHappy;
 
   /// Same icon as [scanFace].
   static const faceId = _scanFace;
 
-  /// Face neutral. Tags: emoji, neutral, emotion, meh, blank stare, social masking, irritation, concern.
+  /// Face look down. Tags: face, eyes, gaze, emoji, smiley, looking down.
+  static const faceLookDown = _faceLookDown;
+
+  /// Face look left. Tags: face, eyes, gaze, emoji, smiley, looking left. Its details merge when filled: use it outlined.
+  static const faceLookLeft = _faceLookLeft;
+
+  /// Face look right. Tags: face, eyes, gaze, emoji, smiley, looking right. Its details merge when filled: use it outlined.
+  static const faceLookRight = _faceLookRight;
+
+  /// Face look up. Tags: face, eyes, gaze, emoji, smiley, looking up.
+  static const faceLookUp = _faceLookUp;
+
+  /// Face mask. Tags: mask, surgical, medical, protection, hygiene.
+  static const faceMask = _faceMask;
+
+  /// Face masked. Tags: mask, face, medical, protection, covid, hygiene.
+  static const faceMasked = _faceMasked;
+
+  /// Face mask heart. Tags: mask, heart, care, love, protection.
+  static const faceMaskHeart = _faceMaskHeart;
+
+  /// Face monocle. Tags: monocle, face, gentleman, posh, fancy, character.
+  static const faceMonocle = _faceMonocle;
+
+  /// Face nerd. Tags: nerd, geek, glasses, face, smart, emoji.
+  static const faceNerd = _faceNerd;
+
+  /// Face neutral. Tags: neutral, emoji, face, indifferent, meh, expressionless.
   static const faceNeutral = _faceNeutral;
 
-  /// Face slightly frowning. Tags: emoji, bad, sadness, emotion, concern, disappointment.
-  static const faceSlightlyFrowning = _faceSlightlyFrowning;
+  /// Face no mouth. Tags: mute, silent, face, speechless, quiet, emoji.
+  static const faceNoMouth = _faceNoMouth;
 
-  /// Face slightly smiling. Tags: smile, happy, happiness, good, positive, friendly, patronizing, passive aggressive.
-  static const faceSlightlySmiling = _faceSlightlySmiling;
+  /// Face pensive. Tags: pensive, face, sad, thoughtful, emoji.
+  static const facePensive = _facePensive;
 
-  /// Face slightly smiling plus. Tags: smile, happy, good, react, reaction, emoji, add, emotion.
-  static const faceSlightlySmilingPlus = _faceSlightlySmilingPlus;
+  /// Face relieved. Tags: relieved, face, emoji, content, calm.
+  static const faceRelieved = _faceRelieved;
 
-  /// Factory. Tags: building, business, energy, industry, manufacture, sector.
+  /// Face relieved smirk. Tags: relieved, face, emoji, tired, calm.
+  static const faceRelievedSmirk = _faceRelievedSmirk;
+
+  /// Face sad. Tags: sad, face, emoji, unhappy, frown.
+  static const faceSad = _faceSad;
+
+  /// Face sad closed. Tags: sad, face, emoji, unhappy, eyes closed.
+  static const faceSadClosed = _faceSadClosed;
+
+  /// Face shocked. Tags: shocked, surprised, astonished, emoji, scared.
+  static const faceShocked = _faceShocked;
+
+  /// Face singing left. Tags: sing, singing, emoji, music, face.
+  static const faceSingingLeft = _faceSingingLeft;
+
+  /// Face singing right. Tags: sing, singing, emoji, music, face.
+  static const faceSingingRight = _faceSingingRight;
+
+  /// Face sleeping. Tags: sleep, sleepy, tired, emoji, zzz.
+  static const faceSleeping = _faceSleeping;
+
+  /// Same icon as [faceSad].
+  static const faceSlightlyFrowning = _faceSad;
+
+  /// Same icon as [faceSmile].
+  static const faceSlightlySmiling = _faceSmile;
+
+  /// Same icon as [faceSmilePlus].
+  static const faceSlightlySmilingPlus = _faceSmilePlus;
+
+  /// Face smile. Tags: smile, happy, emoji, face, joy.
+  static const faceSmile = _faceSmile;
+
+  /// Face smile closed. Tags: smile, happy, emoji, pleased, face.
+  static const faceSmileClosed = _faceSmileClosed;
+
+  /// Face smile plus. Tags: smile, add, emoji, reaction, face, happy.
+  static const faceSmilePlus = _faceSmilePlus;
+
+  /// Face star eyes. Tags: star struck, excited, amazed, smiley, emoji, wow.
+  static const faceStarEyes = _faceStarEyes;
+
+  /// Face sunglasses. Tags: sunglasses, cool, smiley, emoji, face.
+  static const faceSunglasses = _faceSunglasses;
+
+  /// Face surprised. Tags: surprised, shock, wow, emoji, smiley.
+  static const faceSurprised = _faceSurprised;
+
+  /// Face suspicious. Tags: suspicious, doubt, skeptical, emoji, smiley, unhappy, sad, face.
+  static const faceSuspicious = _faceSuspicious;
+
+  /// Face tired. Tags: tired, sleepy, emoji, face, exhausted.
+  static const faceTired = _faceTired;
+
+  /// Face tongue. Tags: tongue, emoji, face, silly, playful.
+  static const faceTongue = _faceTongue;
+
+  /// Face tongue wink left. Tags: tongue, wink, emoji, face, playful.
+  static const faceTongueWinkLeft = _faceTongueWinkLeft;
+
+  /// Face tongue wink right. Tags: tongue, wink, emoji, face, playful.
+  static const faceTongueWinkRight = _faceTongueWinkRight;
+
+  /// Face unamused. Tags: unamused, emoji, face, meh, bored.
+  static const faceUnamused = _faceUnamused;
+
+  /// Face vomiting. Tags: vomiting, sick, nauseous, ill, emoji, ill face, unwell.
+  static const faceVomiting = _faceVomiting;
+
+  /// Face weary. Tags: weary, tired, emoji, face, frustrated.
+  static const faceWeary = _faceWeary;
+
+  /// Face wink. Tags: emoji, smiley, wink, flirt, playful, face.
+  static const faceWink = _faceWink;
+
+  /// Face wink smirk. Tags: smart, wink, smirk, emoji, clever.
+  static const faceWinkSmirk = _faceWinkSmirk;
+
+  /// Face wink squint. Tags: emoji, smiley, wink, playful, squint, face.
+  static const faceWinkSquint = _faceWinkSquint;
+
+  /// Face worried. Tags: emoji, anxious, nervous, concerned, wavy, mouth, face.
+  static const faceWorried = _faceWorried;
+
+  /// Face zipper. Tags: silence, quiet, secret, mute, emoji, zip, mouth.
+  static const faceZipper = _faceZipper;
+
+  /// Factory. Tags: industry, manufacture, plant, production.
   static const factory = _factory;
 
-  /// Fan. Tags: air, cooler, ventilation, ventilator, blower.
+  /// Factory chimney. Tags: industry, manufacture, plant, smokestack, production.
+  static const factoryChimney = _factoryChimney;
+
+  /// Fahrenheit. Tags: temperature, degrees, unit, f, celsius.
+  static const fahrenheit = _fahrenheit;
+
+  /// Fan. Tags: air, cooler, ventilation, blower, propeller.
   static const fan = _fan;
 
-  /// Fan handheld. Tags: folding, cooler, airflow, waft, decoration, ornate, oriental, chinese.
-  static const fanHandheld = _fanHandheld;
+  /// Fan pinwheel. Tags: air, cooler, ventilation, blower, propeller, four blades.
+  static const fanPinwheel = _fanPinwheel;
 
-  /// Farm. Tags: farmland, ranch, acres, fields, harvest, silo, farmhouse, barn.
-  static const farm = _farm;
-
-  /// Fast forward. Tags: music.
+  /// Fast forward. Tags: skip, forward, media, next, speed.
   static const fastForward = _fastForward;
 
-  /// Faucet. Tags: tap, spigot, water, drinking, fresh, source, pipes, plumbing.
-  static const faucet = _faucet;
+  /// Fast forward round. Tags: forward, fast forward, skip, media, speed.
+  static const fastForwardRound = _fastForwardRound;
 
-  /// Feather. Tags: quill, plume, writing, author, literature, poetry, manuscript, bird.
+  /// Feather. Tags: quill, plume, writing, bird, light.
   static const feather = _feather;
 
-  /// Feather plus. Tags: quill, pen, write, writing, prose, inkwell, scribe, scroll.
-  static const featherPlus = _featherPlus;
+  /// Feather quill. Tags: quill, write, feather, author, pen.
+  static const featherQuill = _featherQuill;
 
-  /// Feather square. Tags: quill, pen, write, writing, prose, inkwell, scribe, scroll.
+  /// Feather square. Tags: quill, write, feather, square, compose.
   static const featherSquare = _featherSquare;
-
-  /// Feather text. Tags: quill, pen, write, writing, prose, inkwell, scribe, scroll.
-  static const featherText = _featherText;
 
   /// Same icon as [rss].
   static const feed = _rss;
 
-  /// Fence. Tags: picket, panels, woodwork, diy, materials, suburban, garden, property.
+  /// Fence. Tags: garden, boundary, barrier, gate, yard. Its details merge when filled: use it outlined.
   static const fence = _fence;
 
-  /// Ferris wheel. Tags: big wheel, daisy wheel, observation, attraction, entertainment, amusement park, theme park, funfair.
+  /// Fencing mask. Tags: fencing, mask, helmet, protection, sport.
+  static const fencingMask = _fencingMask;
+
+  /// Ferris wheel. Tags: amusement park, fairground, attraction, ride. Its details merge when filled: use it outlined.
   static const ferrisWheel = _ferrisWheel;
 
-  /// File. Tags: document.
+  /// Ferry. Tags: boat, ship, sea, ferry boat, water transport.
+  static const ferry = _ferry;
+
+  /// File. Tags: empty, blank, document, page, paper.
   static const file = _file;
 
-  /// File archive. Tags: zip, package, archive.
+  /// File 7z. Tags: 7z, archive, compressed, 7zip, zip. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const file7z = _file7z;
+
+  /// File 7z boxed. Tags: 7z, archive, compressed, 7zip, zip. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const file7zBoxed = _file7zBoxed;
+
+  /// File archive. Tags: zip, archive, compress, package, document.
   static const fileArchive = _fileArchive;
 
-  /// File axis 3d. Tags: model, 3d, axis, coordinates.
-  static const fileAxis3d = _fileAxis3d;
+  /// File archive zipper. Tags: zip, package, archive, compress, file.
+  static const fileArchiveZipper = _fileArchiveZipper;
 
-  /// File badge. Tags: award, achievement, badge, rosette, prize, winner.
+  /// File arrow right. Tags: input, enter, import, document.
+  static const fileArrowRight = _fileArrowRight;
+
+  /// Same icon as [fileUp].
+  static const fileArrowUp = _fileUp;
+
+  /// File badge. Tags: badge, award, certificate, document.
   static const fileBadge = _fileBadge;
 
-  /// File box. Tags: document, page, sheet, cube, box, 3d, model, asset.
+  /// File ban. Tags: block, forbidden, prohibited, document.
+  static const fileBan = _fileBan;
+
+  /// File bitcoin. Tags: bitcoin, crypto, btc, document, invoice.
+  static const fileBitcoin = _fileBitcoin;
+
+  /// File bookmark. Tags: bookmark, save, favorite, document.
+  static const fileBookmark = _fileBookmark;
+
+  /// File box. Tags: 3d, box, package, document.
   static const fileBox = _fileBox;
 
-  /// File braces. Tags: code, json, curly braces, curly brackets.
+  /// File braces. Tags: json, code, data, document, curly.
   static const fileBraces = _fileBraces;
 
-  /// File braces corner. Tags: code, json, curly braces, curly brackets.
-  static const fileBracesCorner = _fileBracesCorner;
+  /// Same icon as [fileBraces].
+  static const fileBracesCorner = _fileBraces;
 
-  /// File chart column. Tags: statistics, analytics, diagram, graph, presentation.
+  /// File card badge. Tags: certificate, diploma, award, document, seal.
+  static const fileCardBadge = _fileCardBadge;
+
+  /// File card bookmark. Tags: repository, bookmark, document, file, code.
+  static const fileCardBookmark = _fileCardBookmark;
+
+  /// File card circle check. Tags: document, validation, approved, verified, check, file.
+  static const fileCardCircleCheck = _fileCardCircleCheck;
+
+  /// File card code. Tags: document, code, file, source, developer, script.
+  static const fileCardCode = _fileCardCode;
+
+  /// File card paperclip. Tags: document, attachment, paperclip, attach, file, clip.
+  static const fileCardPaperclip = _fileCardPaperclip;
+
+  /// File card pen line. Tags: write, content, document, author, edit, text, copywriting.
+  static const fileCardPenLine = _fileCardPenLine;
+
+  /// File card search. Tags: audit, report, document, inspection, search, review.
+  static const fileCardSearch = _fileCardSearch;
+
+  /// File card user. Tags: audit, report, document, inspection, person, review.
+  static const fileCardUser = _fileCardUser;
+
+  /// File chart column. Tags: report, chart, bar, statistics, document.
   static const fileChartColumn = _fileChartColumn;
 
-  /// File chart column increasing. Tags: statistics, analytics, diagram, graph, presentation, trending up.
+  /// File chart column increasing. Tags: report, chart, growth, statistics, document.
   static const fileChartColumnIncreasing = _fileChartColumnIncreasing;
 
-  /// File chart line. Tags: statistics, analytics, diagram, graph, presentation.
+  /// File chart line. Tags: report, chart, line, trend, document.
   static const fileChartLine = _fileChartLine;
 
-  /// File chart pie. Tags: statistics, analytics, diagram, graph, presentation.
+  /// File chart pie. Tags: report, chart, pie, statistics, document.
   static const fileChartPie = _fileChartPie;
 
-  /// File check. Tags: done, document, todo, tick, complete, task.
+  /// File check. Tags: done, verified, complete, approve, document.
   static const fileCheck = _fileCheck;
 
-  /// File check corner. Tags: done, document, todo, tick, complete, task.
+  /// File check corner. Tags: done, verified, complete, approve, document, approved.
   static const fileCheckCorner = _fileCheckCorner;
 
-  /// File clock. Tags: history, log, clock.
+  /// File circle check. Tags: validation, approved, verified, document.
+  static const fileCircleCheck = _fileCircleCheck;
+
+  /// File clock. Tags: history, pending, time, recent, document.
   static const fileClock = _fileClock;
 
-  /// File code. Tags: script, document, gist, html, xml, property list, plist.
+  /// File cloud. Tags: cloud, sync, online, storage, document.
+  static const fileCloud = _fileCloud;
+
+  /// File code. Tags: code, source, script, html, document.
   static const fileCode = _fileCode;
 
-  /// File code corner. Tags: script, document, html, xml, property list, plist.
+  /// File code corner. Tags: code, source, script, html, document.
   static const fileCodeCorner = _fileCodeCorner;
 
-  /// File cog. Tags: executable, settings, cog, edit, gear.
+  /// File code corner right. Tags: script, code, source, document.
+  static const fileCodeCornerRight = _fileCodeCornerRight;
+
+  /// File cog. Tags: settings, config, gear, document.
   static const fileCog = _fileCog;
 
-  /// File diff. Tags: diff, patch.
+  /// File cog notch. Tags: management, settings, manage, gear, document.
+  static const fileCogNotch = _fileCogNotch;
+
+  /// File corrupt. Tags: broken, damaged, error, torn, document.
+  static const fileCorrupt = _fileCorrupt;
+
+  /// File css. Tags: css, stylesheet, code, web, file. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileCss = _fileCss;
+
+  /// File css boxed. Tags: css, stylesheet, code, web, file. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileCssBoxed = _fileCssBoxed;
+
+  /// File csv. Tags: csv, spreadsheet, data, table, export. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileCsv = _fileCsv;
+
+  /// File csv boxed. Tags: csv, spreadsheet, data, table, export. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileCsvBoxed = _fileCsvBoxed;
+
+  /// File database. Tags: database, data, sql, storage, document.
+  static const fileDatabase = _fileDatabase;
+
+  /// File diff. Tags: diff, compare, changes, patch, document.
   static const fileDiff = _fileDiff;
 
-  /// File digit. Tags: number, document.
+  /// File digit. Tags: binary, digits, numbers, data, document.
   static const fileDigit = _fileDigit;
 
-  /// File down. Tags: download, import, export.
+  /// File doc. Tags: doc, document, word, file, text, extension. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileDoc = _fileDoc;
+
+  /// File doc boxed. Tags: doc, document, word, file, text, extension. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileDocBoxed = _fileDocBoxed;
+
+  /// File dollar. Tags: invoice, money, finance, payment, document. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileDollar = _fileDollar;
+
+  /// File down. Tags: download, save, arrow down, document.
   static const fileDown = _fileDown;
 
-  /// File exclamation point. Tags: hidden, warning, alert, danger, protected, exclamation mark.
+  /// File down notch. Tags: download, save, arrow down, document.
+  static const fileDownNotch = _fileDownNotch;
+
+  /// File euro. Tags: euro, invoice, money, finance, document.
+  static const fileEuro = _fileEuro;
+
+  /// File exclamation point. Tags: warning, alert, error, document.
   static const fileExclamationPoint = _fileExclamationPoint;
 
-  /// File headphone. Tags: music, audio, sound, headphones.
+  /// File eye. Tags: view, preview, visible, document.
+  static const fileEye = _fileEye;
+
+  /// File fold bottom. Tags: empty, blank, document, page, new.
+  static const fileFoldBottom = _fileFoldBottom;
+
+  /// File gavel. Tags: legal, document, law, court, contract, gavel. Its details merge when filled: use it outlined.
+  static const fileGavel = _fileGavel;
+
+  /// File gif. Tags: gif, animation, image, file, animated. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileGif = _fileGif;
+
+  /// File gif boxed. Tags: gif, animation, image, file, animated. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileGifBoxed = _fileGifBoxed;
+
+  /// File hdr. Tags: hdr, high dynamic range, image, photo. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileHdr = _fileHdr;
+
+  /// File hdr boxed. Tags: hdr, high dynamic range, image, photo. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileHdrBoxed = _fileHdrBoxed;
+
+  /// File headphone. Tags: audio, podcast, music, headphones, document.
   static const fileHeadphone = _fileHeadphone;
 
-  /// File heart. Tags: heart, favourite, bookmark, quick link.
+  /// File heart. Tags: favorite, favourite, like, love, document.
   static const fileHeart = _fileHeart;
 
-  /// File image. Tags: image, graphics, photo, picture.
+  /// File heart notch. Tags: favorite, favourite, like, love, document.
+  static const fileHeartNotch = _fileHeartNotch;
+
+  /// File html. Tags: html, web, code, file, markup. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileHtml = _fileHtml;
+
+  /// File html boxed. Tags: html, web, code, file, markup. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileHtmlBoxed = _fileHtmlBoxed;
+
+  /// File image. Tags: picture, photo, image, document.
   static const fileImage = _fileImage;
 
-  /// File input. Tags: document.
+  /// File input. Tags: import, receive, arrow left, document.
   static const fileInput = _fileInput;
 
-  /// File key. Tags: key, private, public, security.
+  /// File japanese yen. Tags: file, document, yen, currency, invoice.
+  static const fileJapaneseYen = _fileJapaneseYen;
+
+  /// File jpg. Tags: jpg, jpeg, image file, picture, photo, document. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileJpg = _fileJpg;
+
+  /// File jpg boxed. Tags: jpg, jpeg, image file, picture, photo, document. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileJpgBoxed = _fileJpgBoxed;
+
+  /// File jsx. Tags: jsx, javascript, code, file type, markup, document. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileJsx = _fileJsx;
+
+  /// File jsx boxed. Tags: jsx, javascript, code, file type, markup, document. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileJsxBoxed = _fileJsxBoxed;
+
+  /// File key. Tags: key, password, access, document.
   static const fileKey = _fileKey;
 
-  /// File lock. Tags: lock, password, security.
+  /// File link. Tags: link, chain, url, reference, document. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const fileLink = _fileLink;
+
+  /// File lock. Tags: lock, secure, private, encrypted, document.
   static const fileLock = _fileLock;
 
-  /// File minus. Tags: delete, remove, erase, document.
-  static const fileMinus = _fileMinus;
+  /// File lock left. Tags: lock, secure, private, protected, document.
+  static const fileLockLeft = _fileLockLeft;
 
-  /// File minus corner. Tags: document.
+  /// File lock open. Tags: unlocked, open, unsecured, document.
+  static const fileLockOpen = _fileLockOpen;
+
+  /// Same icon as [fileMinusCorner].
+  static const fileMinus = _fileMinusCorner;
+
+  /// File minus corner. Tags: remove, delete, subtract, document.
   static const fileMinusCorner = _fileMinusCorner;
 
-  /// File music. Tags: audio, sound, noise, track, digital, recording, playback, piano.
+  /// File minus notch. Tags: remove, delete, subtract, document.
+  static const fileMinusNotch = _fileMinusNotch;
+
+  /// File mp3. Tags: mp3, audio, music, file, sound, format. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileMp3 = _fileMp3;
+
+  /// File mp3 boxed. Tags: mp3, audio, music, file, sound, format. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileMp3Boxed = _fileMp3Boxed;
+
+  /// File mp4. Tags: mp4, video, movie, file, format, clip. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileMp4 = _fileMp4;
+
+  /// File mp4 boxed. Tags: mp4, video, movie, file, format, clip. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileMp4Boxed = _fileMp4Boxed;
+
+  /// File music. Tags: audio, sound, track, music, document.
   static const fileMusic = _fileMusic;
 
-  /// File output. Tags: document.
+  /// File note. Tags: document, note, page, text, paper.
+  static const fileNote = _fileNote;
+
+  /// File off. Tags: not found, missing, 404, crossed, document.
+  static const fileOff = _fileOff;
+
+  /// File output. Tags: export, send out, arrow right, document.
   static const fileOutput = _fileOutput;
 
-  /// File pen. Tags: signature.
+  /// File paperclip. Tags: attachment, attach, paperclip, document.
+  static const filePaperclip = _filePaperclip;
+
+  /// File pdf. Tags: pdf, file, document, acrobat. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const filePdf = _filePdf;
+
+  /// File pdf boxed. Tags: pdf, file, document, acrobat. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const filePdfBoxed = _filePdfBoxed;
+
+  /// File pen. Tags: edit, write, modify, document.
   static const filePen = _filePen;
 
-  /// File pen line. Tags: edit.
+  /// File pen left. Tags: edit, write, modify, document.
+  static const filePenLeft = _filePenLeft;
+
+  /// File pen line. Tags: edit, write, modify, underline, document.
   static const filePenLine = _filePenLine;
 
-  /// File play. Tags: movie, video, film.
+  /// File pill. Tags: prescription, document, pill, medicine, note.
+  static const filePill = _filePill;
+
+  /// File pin. Tags: pin, pinned, important, document.
+  static const filePin = _filePin;
+
+  /// File play. Tags: video, play, media, document.
   static const filePlay = _filePlay;
 
-  /// File plus. Tags: add, create, new, document.
+  /// File plus. Tags: new file, add, create, document.
   static const filePlus = _filePlus;
 
-  /// File plus corner. Tags: add, create, new, document.
+  /// File plus corner. Tags: new file, add, create, document.
   static const filePlusCorner = _filePlusCorner;
 
-  /// File question mark. Tags: readme, help, question.
+  /// File plus notch. Tags: new file, add, create, document, plus.
+  static const filePlusNotch = _filePlusNotch;
+
+  /// File png. Tags: png, image, file, extension, format. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const filePng = _filePng;
+
+  /// File png boxed. Tags: png, image, file, extension, format. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const filePngBoxed = _filePngBoxed;
+
+  /// File pound. Tags: pound, sterling, invoice, money, document.
+  static const filePound = _filePound;
+
+  /// File ppt. Tags: ppt, powerpoint, presentation, file, extension. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const filePpt = _filePpt;
+
+  /// File ppt boxed. Tags: ppt, powerpoint, presentation, file, extension. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const filePptBoxed = _filePptBoxed;
+
+  /// File pulse. Tags: file, medical, health, record, pulse, heartbeat.
+  static const filePulse = _filePulse;
+
+  /// File question mark. Tags: help, unknown, question, document.
   static const fileQuestionMark = _fileQuestionMark;
 
-  /// Files. Tags: multiple, copy, documents.
+  /// File question mark notch. Tags: unknown, help, question, missing, document.
+  static const fileQuestionMarkNotch = _fileQuestionMarkNotch;
+
+  /// File rar. Tags: rar, archive, compressed, file, zip. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileRar = _fileRar;
+
+  /// File rar boxed. Tags: rar, archive, compressed, file, zip. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileRarBoxed = _fileRarBoxed;
+
+  /// File raw. Tags: raw, camera raw, photo, file, image. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileRaw = _fileRaw;
+
+  /// File raw boxed. Tags: raw, camera raw, photo, file, image. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileRawBoxed = _fileRawBoxed;
+
+  /// Files. Tags: multiple, copy, documents, duplicate.
   static const files = _files;
 
-  /// File scan. Tags: scan, code, qr-code.
+  /// File scale. Tags: legal, document, law, justice, scales, contract.
+  static const fileScale = _fileScale;
+
+  /// File scan. Tags: scan, ocr, capture, document.
   static const fileScan = _fileScan;
 
-  /// File search. Tags: lost, document, find, browser, lens.
+  /// File search. Tags: find, lens, browse, document.
   static const fileSearch = _fileSearch;
 
-  /// File search corner. Tags: lost, document, find, browser, lens.
+  /// File search corner. Tags: find, lens, browse, document.
   static const fileSearchCorner = _fileSearchCorner;
 
-  /// File signal. Tags: audio, music, volume.
+  /// File shield. Tags: security, protected, safe, document.
+  static const fileShield = _fileShield;
+
+  /// File signal. Tags: wifi, wireless, share, document.
   static const fileSignal = _fileSignal;
 
-  /// File sliders. Tags: cogged, gear, mechanical, machinery, configuration, controls, preferences, settings.
+  /// File signature. Tags: contract, agreement, signature, sign, document, legal.
+  static const fileSignature = _fileSignature;
+
+  /// File signature simple. Tags: agreement, signature, sign, contract, document, pen.
+  static const fileSignatureSimple = _fileSignatureSimple;
+
+  /// Files layered. Tags: multiple, copy, documents, duplicate, stack.
+  static const filesLayered = _filesLayered;
+
+  /// File sliders. Tags: settings, adjust, preferences, document.
   static const fileSliders = _fileSliders;
 
-  /// File spreadsheet. Tags: spreadsheet, sheet, table.
+  /// File sparkle. Tags: ai, file, document, sparkle, generate.
+  static const fileSparkle = _fileSparkle;
+
+  /// File sparkle left. Tags: ai, file, document, sparkle, generate.
+  static const fileSparkleLeft = _fileSparkleLeft;
+
+  /// File speaker. Tags: audio, sound, speaker, document.
+  static const fileSpeaker = _fileSpeaker;
+
+  /// File spreadsheet. Tags: excel, table, grid, sheet, document.
   static const fileSpreadsheet = _fileSpreadsheet;
 
-  /// File stack. Tags: versions, multiple, copy, documents, revisions, version control, history.
+  /// File stack. Tags: multiple, stack, copy, documents.
   static const fileStack = _fileStack;
 
-  /// File symlink. Tags: symlink, symbolic, link.
+  /// File stack text. Tags: catalogue, brochure, documents, pages, products.
+  static const fileStackText = _fileStackText;
+
+  /// File star. Tags: favorite, star, important, document.
+  static const fileStar = _fileStar;
+
+  /// File svg. Tags: svg, vector, image, graphic, file. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileSvg = _fileSvg;
+
+  /// File svg boxed. Tags: svg, vector, image, graphic, file. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileSvgBoxed = _fileSvgBoxed;
+
+  /// File symlink. Tags: shortcut, alias, link, arrow, document.
   static const fileSymlink = _fileSymlink;
 
-  /// File terminal. Tags: terminal, bash, script, executable.
+  /// File sync. Tags: sync, refresh, update, document.
+  static const fileSync = _fileSync;
+
+  /// File terminal. Tags: command, shell, cli, script, document.
   static const fileTerminal = _fileTerminal;
 
-  /// File text. Tags: data, txt, pdf, document.
+  /// File text. Tags: document, text, paragraph, page.
   static const fileText = _fileText;
 
-  /// File type. Tags: font, text, typography, type.
+  /// File text badge. Tags: policy, document, terms, certificate, seal, rules.
+  static const fileTextBadge = _fileTextBadge;
+
+  /// File text short. Tags: document, text, page, txt.
+  static const fileTextShort = _fileTextShort;
+
+  /// File text sparkle. Tags: ai, content, generator, text, document, sparkle, writing.
+  static const fileTextSparkle = _fileTextSparkle;
+
+  /// File tiff. Tags: tiff, image, document, format, extension. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileTiff = _fileTiff;
+
+  /// File tiff boxed. Tags: tiff, image, document, format, extension. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileTiffBoxed = _fileTiffBoxed;
+
+  /// File tree. Tags: files, tree, structure, hierarchy, folders. Its details merge when filled: use it outlined.
+  static const fileTree = _fileTree;
+
+  /// File txt. Tags: txt, text, document, plain text, file. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileTxt = _fileTxt;
+
+  /// File txt boxed. Tags: txt, text, document, plain text, file. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileTxtBoxed = _fileTxtBoxed;
+
+  /// File type. Tags: font, type, text, letter, document.
   static const fileType = _fileType;
 
-  /// File type corner. Tags: font, text, typography, type.
+  /// File type corner. Tags: font, type, text, letter, document.
   static const fileTypeCorner = _fileTypeCorner;
 
-  /// File up. Tags: upload, import, export.
+  /// File type sparkle. Tags: ai, content, generator, type, text, document, sparkle, writing.
+  static const fileTypeSparkle = _fileTypeSparkle;
+
+  /// File undo notch. Tags: paste, clipboard, insert, document.
+  static const fileUndoNotch = _fileUndoNotch;
+
+  /// File up. Tags: upload, arrow up, document.
   static const fileUp = _fileUp;
 
-  /// File user. Tags: person, personal information, people, listing, networking, document, contact, cover letter.
+  /// File up notch. Tags: upload, arrow up, document.
+  static const fileUpNotch = _fileUpNotch;
+
+  /// File user. Tags: person, owner, profile, document.
   static const fileUser = _fileUser;
 
-  /// File video camera. Tags: movie, video, film.
+  /// File video. Tags: video, movie, media, document.
+  static const fileVideo = _fileVideo;
+
+  /// File video camera. Tags: video, camera, movie, media, document.
   static const fileVideoCamera = _fileVideoCamera;
 
-  /// File volume. Tags: audio, music, volume.
+  /// File volume. Tags: audio, sound, volume, speaker, document.
   static const fileVolume = _fileVolume;
 
-  /// File x. Tags: lost, delete, remove, document.
+  /// File wav. Tags: wav, audio, sound, waveform, music, format, file type. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileWav = _fileWav;
+
+  /// File wav boxed. Tags: wav, audio, sound, waveform, music, format, file type. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileWavBoxed = _fileWavBoxed;
+
+  /// File x. Tags: file, document, remove, delete, close.
   static const fileX = _fileX;
 
-  /// File x corner. Tags: lost, delete, remove, document.
+  /// File x corner. Tags: file, document, remove, delete, error.
   static const fileXCorner = _fileXCorner;
+
+  /// File xls. Tags: excel, spreadsheet, document, xls, table. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileXls = _fileXls;
+
+  /// File xls boxed. Tags: excel, spreadsheet, document, xls, table. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileXlsBoxed = _fileXlsBoxed;
+
+  /// File xml. Tags: markup, document, code, xml, data. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileXml = _fileXml;
+
+  /// File xml boxed. Tags: markup, document, code, xml, data. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileXmlBoxed = _fileXmlBoxed;
+
+  /// File x notch. Tags: remove, delete, close, document.
+  static const fileXNotch = _fileXNotch;
+
+  /// File xsl. Tags: stylesheet, transform, document, xsl, xslt. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileXsl = _fileXsl;
+
+  /// File xsl boxed. Tags: stylesheet, transform, document, xsl, xslt. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileXslBoxed = _fileXslBoxed;
+
+  /// File zip. Tags: archive, compressed, document, compress, zip. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileZip = _fileZip;
+
+  /// File zip boxed. Tags: archive, compressed, document, compress, zip. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const fileZipBoxed = _fileZipBoxed;
 
   /// Film. Tags: movie, video, reel, camera, cinema, entertainment.
   static const film = _film;
 
-  /// Same icon as [funnel].
-  static const filter = _funnel;
+  /// Film camera. Tags: video, movie, camcorder, reel, film, record.
+  static const filmCamera = _filmCamera;
 
-  /// Same icon as [fingerprintPattern].
-  static const fingerprint = _fingerprintPattern;
+  /// Film canister. Tags: film, roll, canister, photography, camera. Its details merge when filled: use it outlined.
+  static const filmCanister = _filmCanister;
 
-  /// Fingerprint pattern. Tags: 2fa, authentication, biometric, identity, security.
+  /// Film horizontal. Tags: film, movie, video, strip, cinema.
+  static const filmHorizontal = _filmHorizontal;
+
+  /// Film reel. Tags: film, reel, movie, cinema, video.
+  static const filmReel = _filmReel;
+
+  /// Filter. Tags: funnel, options, sort, refine, narrow.
+  static const filter = _filter;
+
+  /// Filter pen. Tags: funnel, edit, modify, filter, customize.
+  static const filterPen = _filterPen;
+
+  /// Filter plus. Tags: funnel, add, create, new, filter.
+  static const filterPlus = _filterPlus;
+
+  /// Filter reset. Tags: funnel, reset, clear, undo, filter.
+  static const filterReset = _filterReset;
+
+  /// Filter x. Tags: funnel, remove, clear, close, filter.
+  static const filterX = _filterX;
+
+  /// Finger heart. Tags: korean heart, love, gesture, hand, like, k-heart.
+  static const fingerHeart = _fingerHeart;
+
+  /// Fingerprint. Tags: biometric, identity, touch id, finger print.
+  static const fingerprint = _fingerprint;
+
+  /// Fingerprint arch. Tags: fingerprint, touch, biometric, scan, identity.
+  static const fingerprintArch = _fingerprintArch;
+
+  /// Fingerprint arcs. Tags: fingerprint, biometric, access, identity, touch id.
+  static const fingerprintArcs = _fingerprintArcs;
+
+  /// Fingerprint check. Tags: fingerprint, verified, biometric, success, check.
+  static const fingerprintCheck = _fingerprintCheck;
+
+  /// Fingerprint minus. Tags: fingerprint, remove, biometric, delete.
+  static const fingerprintMinus = _fingerprintMinus;
+
+  /// Fingerprint pattern. Tags: fingerprint, biometric, identity, pattern, touch id.
   static const fingerprintPattern = _fingerprintPattern;
 
-  /// Fire extinguisher. Tags: flames, smoke, foam, water, spray, hose, firefighter, fireman.
+  /// Fingerprint plus. Tags: fingerprint, add, enroll, biometric, register.
+  static const fingerprintPlus = _fingerprintPlus;
+
+  /// Fingerprint scan. Tags: fingerprint, scan, biometric, face id, identify.
+  static const fingerprintScan = _fingerprintScan;
+
+  /// Fingerprint x. Tags: fingerprint, remove, biometric, failed, delete.
+  static const fingerprintX = _fingerprintX;
+
+  /// Fire extinguisher. Tags: fire, safety, emergency, extinguisher, equipment.
   static const fireExtinguisher = _fireExtinguisher;
 
-  /// Fish. Tags: dish, restaurant, course, meal, seafood, pet, sea, marine.
+  /// Fireworks. Tags: celebration, party, new year, festival.
+  static const fireworks = _fireworks;
+
+  /// First aid kit. Tags: first aid, medical, kit, emergency, health.
+  static const firstAidKit = _firstAidKit;
+
+  /// Fish. Tags: seafood, animal, sea, aquarium.
   static const fish = _fish;
 
-  /// Fishing hook. Tags: sea, boating, angler, bait, reel, tackle, marine, outdoors.
+  /// Fish fins. Tags: fish, seafood, meal, pet, fins.
+  static const fishFins = _fishFins;
+
+  /// Fishing hook. Tags: fishing, hook, angler, bait, outdoors.
   static const fishingHook = _fishingHook;
 
-  /// Fishing rod. Tags: fishing, rod, hobby, equipment, reel.
+  /// Fishing rod. Tags: fishing, rod, angler, outdoors, hobby.
   static const fishingRod = _fishingRod;
 
-  /// Fish off. Tags: food, dish, restaurant, course, meal, seafood, animal, pet.
+  /// Fish off. Tags: fish, no fish, allergy, seafood, vegetarian.
   static const fishOff = _fishOff;
 
-  /// Fish symbol. Tags: dish, restaurant, course, meal, seafood, pet, sea, marine.
+  /// Fish symbol. Tags: fish, symbol, seafood, christian, sea.
   static const fishSymbol = _fishSymbol;
 
-  /// Flag. Tags: report, marker, notification, warning, milestone, goal, notice, signal.
+  /// Fit width. Tags: fit, width, resize, stretch, fill.
+  static const fitWidth = _fitWidth;
+
+  /// Flag. Tags: report, marker, milestone, goal.
   static const flag = _flag;
 
-  /// Flag off. Tags: unflag, unmark, report, marker, notification, warning, milestone, goal.
+  /// Flag checkered. Tags: racing flag, finish, race, checkered, motorsport.
+  static const flagCheckered = _flagCheckered;
+
+  /// Flag code. Tags: programming, flag, code, milestone.
+  static const flagCode = _flagCode;
+
+  /// Flag ellipse. Tags: goal, flag, target, ground, destination, finish.
+  static const flagEllipse = _flagEllipse;
+
+  /// Flag notch. Tags: flag, banner, pennant, marker, swallowtail.
+  static const flagNotch = _flagNotch;
+
+  /// Flag off. Tags: flag, unflag, unmark, marker, disabled.
   static const flagOff = _flagOff;
 
-  /// Flag triangle left. Tags: report, timeline, marker, pin.
+  /// Flag pole. Tags: flag, milestone, goal, checkpoint, pole, marker.
+  static const flagPole = _flagPole;
+
+  /// Flag pole left. Tags: direction, flag, pennant, pole, left, marker.
+  static const flagPoleLeft = _flagPoleLeft;
+
+  /// Flag pole right. Tags: direction, flag, pennant, pole, right, marker.
+  static const flagPoleRight = _flagPoleRight;
+
+  /// Flag triangle left. Tags: flag, pennant, marker, left, report.
   static const flagTriangleLeft = _flagTriangleLeft;
 
   /// Flag triangle right. Tags: report, timeline, marker, pin.
   static const flagTriangleRight = _flagTriangleRight;
 
-  /// Flame. Tags: heat, burn, light, glow, ignite, passion, ember, fire.
+  /// Flag wavy. Tags: flag, wave, banner, marker, country.
+  static const flagWavy = _flagWavy;
+
+  /// Flame. Tags: fire, heat, burn, hot. Its details merge when filled: use it outlined.
   static const flame = _flame;
 
-  /// Flame kindling. Tags: campfire, camping, wilderness, outdoors, lit, warmth, wood, twigs.
+  /// Flame kindling. Tags: fire, flame, kindling, logs, camping. Its details merge when filled: use it outlined.
   static const flameKindling = _flameKindling;
+
+  /// Flame lock. Tags: fire, security, protection, lock, safe.
+  static const flameLock = _flameLock;
+
+  /// Flame percent. Tags: hot deal, discount, sale, flame, percent.
+  static const flamePercent = _flamePercent;
+
+  /// Flame round. Tags: fire, flame, heat, burn, hot.
+  static const flameRound = _flameRound;
+
+  /// Flame swirl. Tags: fire, flame, heat, burn, hot, trending.
+  static const flameSwirl = _flameSwirl;
+
+  /// Flame tall. Tags: fire, flame, heat, burn, hot.
+  static const flameTall = _flameTall;
 
   /// Same icon as [zap].
   static const flash = _zap;
 
-  /// Flashlight. Tags: torch, light, beam, emergency, safety, tool, bright.
+  /// Flashlight. Tags: torch, light, beam, emergency.
   static const flashlight = _flashlight;
 
-  /// Flashlight off. Tags: torch, light, beam, emergency, safety, tool, bright.
+  /// Flashlight off. Tags: flashlight, torch, light, off, disabled.
   static const flashlightOff = _flashlightOff;
 
-  /// Flask conical. Tags: beaker, erlenmeyer, lab, chemistry, experiment, test.
+  /// Flask bubbles. Tags: test tube, lab, experiment, chemistry, bubbling, reaction.
+  static const flaskBubbles = _flaskBubbles;
+
+  /// Flask conical. Tags: flask, lab, chemistry, experiment, beaker.
   static const flaskConical = _flaskConical;
 
-  /// Flask conical off. Tags: beaker, erlenmeyer, non toxic, lab, chemistry, experiment, test.
+  /// Flask conical dots. Tags: test tube, lab, experiment, chemistry, erlenmeyer.
+  static const flaskConicalDots = _flaskConicalDots;
+
+  /// Flask conical off. Tags: flask, lab, chemistry, off, disabled.
   static const flaskConicalOff = _flaskConicalOff;
 
-  /// Flask round. Tags: beaker, lab, chemistry, experiment, test.
+  /// Flask conical sparkle. Tags: ai, chemistry, flask, conical, lab, sparkle.
+  static const flaskConicalSparkle = _flaskConicalSparkle;
+
+  /// Flask conical sprout. Tags: eco lab, chemistry, plant, research, green, flask.
+  static const flaskConicalSprout = _flaskConicalSprout;
+
+  /// Flask conical stand. Tags: chemistry, lab, laboratory, erlenmeyer, experiment, flask.
+  static const flaskConicalStand = _flaskConicalStand;
+
+  /// Flask round. Tags: flask, lab, chemistry, experiment, round.
   static const flaskRound = _flaskRound;
 
-  /// Flippers. Tags: snorkeling, scuba, submerge, freediving, diver, location, spot, gear.
+  /// Flask round dots. Tags: lab, experiment, chemistry, beaker, test.
+  static const flaskRoundDots = _flaskRoundDots;
+
+  /// Flask round sparkle. Tags: ai, chemistry, flask, round, lab, sparkle.
+  static const flaskRoundSparkle = _flaskRoundSparkle;
+
+  /// Flask round sprout. Tags: eco lab, chemistry, plant, research, green, round flask.
+  static const flaskRoundSprout = _flaskRoundSprout;
+
+  /// Flask round stand. Tags: chemistry, lab, laboratory, round bottom, experiment, flask.
+  static const flaskRoundStand = _flaskRoundStand;
+
+  /// Flip horizontal. Tags: flip, mirror, horizontal, reflect, transform.
+  static const flipHorizontal = _flipHorizontal;
+
+  /// Flip horizontal image. Tags: flip, mirror, horizontal, image, reflect.
+  static const flipHorizontalImage = _flipHorizontalImage;
+
+  /// Flip horizontal rect. Tags: flip, mirror, horizontal, reflect, transform.
+  static const flipHorizontalRect = _flipHorizontalRect;
+
+  /// Flippers. Tags: fins, swimming, diving, snorkel.
   static const flippers = _flippers;
 
-  /// Floor plan. Tags: blueprint, property, real estate, house, home, dwelling, living space, rooms.
+  /// Flip vertical. Tags: flip, mirror, vertical, reflect, transform.
+  static const flipVertical = _flipVertical;
+
+  /// Flip vertical image. Tags: flip, mirror, vertical, image, reflect.
+  static const flipVerticalImage = _flipVerticalImage;
+
+  /// Flip vertical rect. Tags: flip, mirror, vertical, reflect, transform.
+  static const flipVerticalRect = _flipVerticalRect;
+
+  /// Floor plan. Tags: blueprint, layout, rooms, architecture.
   static const floorPlan = _floorPlan;
 
-  /// Floppy disk. Tags: format, data, storage, capacity, megabytes, mb, label.
+  /// Floppy disk. Tags: save, disk, storage, diskette, store.
   static const floppyDisk = _floppyDisk;
 
-  /// Floppy disk 2. Tags: format, data, storage, capacity, megabytes, mb, label.
-  static const floppyDisk2 = _floppyDisk2;
+  /// Floppy disk notch. Tags: save, floppy disk, disk, storage, retro.
+  static const floppyDiskNotch = _floppyDiskNotch;
 
-  /// Floppy disk rear. Tags: format, data, storage, capacity, megabytes, mb, label, back.
-  static const floppyDiskRear = _floppyDiskRear;
+  /// Floppy disk off. Tags: save off, disabled, disk, no save. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const floppyDiskOff = _floppyDiskOff;
 
-  /// Floppy disks. Tags: copy, format, data, storage, capacity, megabytes, mb, label.
+  /// Floppy disks. Tags: save all, disks, diskettes, storage, multiple.
   static const floppyDisks = _floppyDisks;
 
-  /// Floppy disks 2. Tags: copy, format, data, storage, capacity, megabytes, mb, label.
-  static const floppyDisks2 = _floppyDisks2;
+  /// Flow branch. Tags: flow, diagram, decision, workflow, connection.
+  static const flowBranch = _flowBranch;
 
-  /// Floppy disks rear. Tags: copy, format, data, storage, capacity, megabytes, mb, label.
-  static const floppyDisksRear = _floppyDisksRear;
+  /// Flowchart. Tags: diagram, process, workflow, hierarchy.
+  static const flowchart = _flowchart;
 
-  /// Flower. Tags: sustainability, nature, plant, spring.
+  /// Flowchart diamond. Tags: flowchart, diagram, decision, process, workflow.
+  static const flowchartDiamond = _flowchartDiamond;
+
+  /// Flow circle. Tags: flow, diagram, nodes, workflow, branch.
+  static const flowCircle = _flowCircle;
+
+  /// Flow diagram. Tags: flow, diagram, nodes, workflow, process.
+  static const flowDiagram = _flowDiagram;
+
+  /// Flower. Tags: plant, spring, nature, bloom.
   static const flower = _flower;
 
-  /// Flower 2. Tags: sustainability, nature, plant.
-  static const flower2 = _flower2;
-
-  /// Flower lotus. Tags: water lily, petals, plant, spring, bloom, blossom, flora, pond.
+  /// Flower lotus. Tags: yoga, lotus, flower, meditation, spa, wellness. Its details merge when filled: use it outlined.
   static const flowerLotus = _flowerLotus;
 
-  /// Flower pot. Tags: petals, houseplant, stem, spring, bloom, blossom, gardening, botanical.
+  /// Flower lotus hand. Tags: wellness, spa, yoga, meditation, lotus, care, relax.
+  static const flowerLotusHand = _flowerLotusHand;
+
+  /// Flower pot. Tags: flower, pot, plant, garden, tulip.
   static const flowerPot = _flowerPot;
 
-  /// Flower rose. Tags: roses, thorns, petals, plant, stem, leaves, spring, bloom.
-  static const flowerRose = _flowerRose;
+  /// Same icon as [rose].
+  static const flowerRose = _rose;
 
-  /// Flower rose single. Tags: roses, thorns, petals, plant, stem, leaves, spring, bloom.
-  static const flowerRoseSingle = _flowerRoseSingle;
+  /// Same icon as [rose].
+  static const flowerRoseSingle = _rose;
 
-  /// Flower stem. Tags: petals, plant, leaves, spring, bloom, blossom, gardening, botanical.
+  /// Flower sakura. Tags: cherry blossom, flower, spring, japan, blossom.
+  static const flowerSakura = _flowerSakura;
+
+  /// Flower stem. Tags: flower, stem, plant, garden, bloom.
   static const flowerStem = _flowerStem;
 
-  /// Flower tulip. Tags: petals, plant, stem, leaves, spring, bloom, blossom, gardening.
+  /// Flower tulip. Tags: tulip, flower, spring, plant.
   static const flowerTulip = _flowerTulip;
 
-  /// Focus. Tags: camera, lens, photo, dashed.
+  /// Flow square. Tags: flow, diagram, nodes, workflow, branch.
+  static const flowSquare = _flowSquare;
+
+  /// Focus. Tags: center focus, autofocus, viewfinder, target, scan.
   static const focus = _focus;
 
-  /// Folder. Tags: directory.
+  /// Focus diagonal. Tags: diagonal scroll, point, scroll, corners, focus, center.
+  static const focusDiagonal = _focusDiagonal;
+
+  /// Focus diagonal flip. Tags: diagonal scroll, point, scroll, corners, focus, center.
+  static const focusDiagonalFlip = _focusDiagonalFlip;
+
+  /// Focus dots. Tags: focus, autofocus, camera, dashed, viewfinder.
+  static const focusDots = _focusDots;
+
+  /// Focus plus. Tags: focus, camera, center, target, viewfinder.
+  static const focusPlus = _focusPlus;
+
+  /// Folder. Tags: directory, files, storage.
   static const folder = _folder;
 
-  /// Folder archive. Tags: archive, zip, package.
+  /// Folder archive. Tags: folder, archive, store, backup, directory.
   static const folderArchive = _folderArchive;
 
-  /// Folder bookmark. Tags: folder, bookmark, file, mark, storage, archive, directory, project.
+  /// Folder ban. Tags: folder, block, forbidden, restricted, directory.
+  static const folderBan = _folderBan;
+
+  /// Folder bookmark. Tags: folder, bookmark, saved, favorite.
   static const folderBookmark = _folderBookmark;
 
-  /// Folder check. Tags: done, directory, todo, tick, complete, task.
+  /// Folder check. Tags: folder, check, done, complete, directory.
   static const folderCheck = _folderCheck;
 
-  /// Folder clock. Tags: history, directory, clock.
+  /// Folder chip. Tags: ai, folder, chip, data, processor.
+  static const folderChip = _folderChip;
+
+  /// Folder circuit. Tags: ai, folder, circuit, data, network.
+  static const folderCircuit = _folderCircuit;
+
+  /// Folder clock. Tags: folder, clock, history, recent, directory.
   static const folderClock = _folderClock;
 
-  /// Folder closed. Tags: directory, closed.
+  /// Folder closed. Tags: folder, closed, directory, files.
   static const folderClosed = _folderClosed;
 
-  /// Folder code. Tags: directory, coding, develop, software.
+  /// Folder cloud. Tags: folder, cloud, storage, sync, directory.
+  static const folderCloud = _folderCloud;
+
+  /// Folder code. Tags: folder, code, project, source, directory.
   static const folderCode = _folderCode;
 
-  /// Folder cog. Tags: directory, settings, control, preferences, cog, edit, gear.
+  /// Folder code xml. Tags: code, folder, programming, source, project.
+  static const folderCodeXml = _folderCodeXml;
+
+  /// Folder cog. Tags: folder, settings, configuration, cog, directory.
   static const folderCog = _folderCog;
 
-  /// Folder dot. Tags: directory, root, project, pinned, active, current, cogged, gear.
+  /// Folder cog large. Tags: folder, management, settings, cog, directory.
+  static const folderCogLarge = _folderCogLarge;
+
+  /// Folder corner down. Tags: folder, download, save, arrow, directory.
+  static const folderCornerDown = _folderCornerDown;
+
+  /// Folder corner plus. Tags: folder, add, create, new, directory.
+  static const folderCornerPlus = _folderCornerPlus;
+
+  /// Folder corner up. Tags: folder, upload, send, arrow, directory.
+  static const folderCornerUp = _folderCornerUp;
+
+  /// Folder corner x. Tags: folder, remove, delete, close, directory.
+  static const folderCornerX = _folderCornerX;
+
+  /// Folder dot. Tags: folder, dot, badge, marked, directory.
   static const folderDot = _folderDot;
 
-  /// Folder down. Tags: directory, download, import, export.
-  static const folderDown = _folderDown;
+  /// Same icon as [folderCornerDown].
+  static const folderDown = _folderCornerDown;
 
-  /// Folder git. Tags: directory, root, project, git, repo.
+  /// Folder export. Tags: folder, export, send, arrow, directory. Mirrors in right-to-left text.
+  static const folderExport = _folderExport;
+
+  /// Folder eye. Tags: folder, view, preview, eye, directory.
+  static const folderEye = _folderEye;
+
+  /// Folder file. Tags: folder, file, storage, document, directory. Its details merge when filled: use it outlined.
+  static const folderFile = _folderFile;
+
+  /// Folder git. Tags: folder, git, repository, version control, directory.
   static const folderGit = _folderGit;
 
-  /// Folder git 2. Tags: directory, root, project, git, repo.
+  /// Folder git 2. Tags: folder, git, repository, branch, directory.
   static const folderGit2 = _folderGit2;
 
-  /// Folder heart. Tags: directory, heart, favourite, bookmark, quick link.
+  /// Folder heart. Tags: folder, favourite, favorite, heart, directory.
   static const folderHeart = _folderHeart;
 
-  /// Folder input. Tags: directory, import, export.
+  /// Folder heart small. Tags: folder, heart, favourite, like, directory.
+  static const folderHeartSmall = _folderHeartSmall;
+
+  /// Folder import. Tags: folder, import, receive, arrow, directory. Mirrors in right-to-left text.
+  static const folderImport = _folderImport;
+
+  /// Folder input. Tags: folder, input, move in, arrow, directory. Mirrors in right-to-left text.
   static const folderInput = _folderInput;
 
-  /// Folder kanban. Tags: projects, manage, overview, board, tickets, issues, roadmap, plan.
+  /// Folder kanban. Tags: folder, kanban, board, project, tasks.
   static const folderKanban = _folderKanban;
 
-  /// Folder key. Tags: directory, key, private, security, protected.
+  /// Folder key. Tags: folder, key, access, password, directory.
   static const folderKey = _folderKey;
 
-  /// Folder lock. Tags: directory, lock, private, security, protected.
+  /// Folder link. Tags: folder, link, url, shortcut, directory. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const folderLink = _folderLink;
+
+  /// Folder list. Tags: folder, details, list, contents, directory.
+  static const folderList = _folderList;
+
+  /// Folder list arrow. Tags: folder, details, reference, list, directory.
+  static const folderListArrow = _folderListArrow;
+
+  /// Folder lock. Tags: folder, lock, private, security, protected, directory.
   static const folderLock = _folderLock;
 
-  /// Folder minus. Tags: directory, remove, delete.
+  /// Folder lock open. Tags: folder, unlocked, open lock, access, directory.
+  static const folderLockOpen = _folderLockOpen;
+
+  /// Folder lock small. Tags: folder, lock, secure, private, directory.
+  static const folderLockSmall = _folderLockSmall;
+
+  /// Folder minus. Tags: folder, remove, minus, directory.
   static const folderMinus = _folderMinus;
 
-  /// Folder open. Tags: directory.
+  /// Folder monitor. Tags: folder, shared, monitor, network drive, directory.
+  static const folderMonitor = _folderMonitor;
+
+  /// Folder music. Tags: folder, music, audio, songs, directory.
+  static const folderMusic = _folderMusic;
+
+  /// Folder network. Tags: folder, structure, hierarchy, tree, directories.
+  static const folderNetwork = _folderNetwork;
+
+  /// Folder network circle. Tags: folder, structure, hierarchy, tree, directories.
+  static const folderNetworkCircle = _folderNetworkCircle;
+
+  /// Folder off. Tags: folder, off, disabled, hidden, directory.
+  static const folderOff = _folderOff;
+
+  /// Folder open. Tags: folder, open, directory, files.
   static const folderOpen = _folderOpen;
 
-  /// Folder open dot. Tags: directory, root, project, active, current, pinned.
+  /// Folder open arrow. Tags: folder, open, expand, arrow, directory.
+  static const folderOpenArrow = _folderOpenArrow;
+
+  /// Folder open dot. Tags: folder, open, dot, badge, directory.
   static const folderOpenDot = _folderOpenDot;
 
-  /// Folder output. Tags: directory, import, export.
+  /// Folder open wide. Tags: folder, open, directory, files.
+  static const folderOpenWide = _folderOpenWide;
+
+  /// Folder output. Tags: folder, output, move out, arrow, directory. Mirrors in right-to-left text.
   static const folderOutput = _folderOutput;
 
-  /// Folder pen. Tags: directory, rename.
+  /// Folder paperclip. Tags: folder, attachment, paperclip, attach, directory.
+  static const folderPaperclip = _folderPaperclip;
+
+  /// Folder pen. Tags: folder, edit, rename, pen, directory.
   static const folderPen = _folderPen;
 
-  /// Folder plus. Tags: directory, add, create, new.
+  /// Folder pen left. Tags: folder, edit, pen, rename, directory.
+  static const folderPenLeft = _folderPenLeft;
+
+  /// Folder pin. Tags: folder, pin, pinned, favorite, directory.
+  static const folderPin = _folderPin;
+
+  /// Folder plus. Tags: folder, add, plus, create, new, directory.
   static const folderPlus = _folderPlus;
 
-  /// Folder root. Tags: directory, root, project, git, repo.
+  /// Folder question mark. Tags: folder, unknown, question, help, directory.
+  static const folderQuestionMark = _folderQuestionMark;
+
+  /// Folder root. Tags: folder, root, home, directory.
   static const folderRoot = _folderRoot;
 
-  /// Folders. Tags: multiple, copy, directories.
+  /// Folders. Tags: multiple, directories, copy.
   static const folders = _folders;
 
-  /// Folder search. Tags: directory, search, find, lost, browser, lens.
+  /// Folder search. Tags: folder, search, find, lens, directory.
   static const folderSearch = _folderSearch;
 
-  /// Folder search 2. Tags: directory, search, find, lost, browser, lens.
+  /// Folder search 2. Tags: folder, search, find, lens, directory.
   static const folderSearch2 = _folderSearch2;
 
-  /// Folder symlink. Tags: directory, symlink, symbolic, link.
+  /// Folder share. Tags: folder, shared, share, network, directory.
+  static const folderShare = _folderShare;
+
+  /// Folder shield. Tags: folder, security, shield, protected, directory.
+  static const folderShield = _folderShield;
+
+  /// Folder stack. Tags: folder, library, stack, collection, directory. Its details merge when filled: use it outlined.
+  static const folderStack = _folderStack;
+
+  /// Folder symlink. Tags: folder, symlink, shortcut, alias, link, directory. Mirrors in right-to-left text.
   static const folderSymlink = _folderSymlink;
 
-  /// Folder sync. Tags: directory, synchronize, synchronise, refresh, reconnect, transfer, backup.
+  /// Folder sync. Tags: folder, sync, refresh, backup, directory.
   static const folderSync = _folderSync;
 
-  /// Folder tree. Tags: directory, tree, browser.
+  /// Folder transfer. Tags: folder, transfer, move, swap, directory.
+  static const folderTransfer = _folderTransfer;
+
+  /// Folder tree. Tags: folder, tree, hierarchy, structure, directory.
   static const folderTree = _folderTree;
 
-  /// Folder up. Tags: directory, upload, import, export.
-  static const folderUp = _folderUp;
+  /// Same icon as [folderCornerUp].
+  static const folderUp = _folderCornerUp;
 
-  /// Folder x. Tags: directory, remove, delete.
+  /// Folder user. Tags: folder, shared, user, person, directory.
+  static const folderUser = _folderUser;
+
+  /// Folder video. Tags: folder, video, movie, camera, directory.
+  static const folderVideo = _folderVideo;
+
+  /// Folder volume. Tags: folder, audio, sound, speaker, directory.
+  static const folderVolume = _folderVolume;
+
+  /// Folder x. Tags: folder, close, remove, x, directory.
   static const folderX = _folderX;
 
-  /// Fold horizontal. Tags: arrow, collapse, fold, vertical, dashed.
-  static const foldHorizontal = _foldHorizontal;
+  /// Folder zip. Tags: folder, zip, compress, archive, directory.
+  static const folderZip = _folderZip;
 
-  /// Fold vertical. Tags: arrow, collapse, fold, vertical, dashed.
-  static const foldVertical = _foldVertical;
+  /// Fold horizontal. Tags: fold, collapse, horizontal, compress, inward.
+  static const foldHorizontal = _foldHorizontal;
 
   /// Same icon as [aLargeSmall].
   static const fontSize = _aLargeSmall;
 
-  /// Football. Tags: rugby, american, touchdown, kick, pitch, team, goal, score.
+  /// Football. Tags: american football, ball, rugby, nfl, game.
   static const football = _football;
 
-  /// Football goal. Tags: american, gridiron, posts, field, score, touchdown, pitch, team.
-  static const footballGoal = _footballGoal;
-
-  /// Football helmet. Tags: american, gridiron, touchdown, kick, pitch, team, cricket, protective equipment.
-  static const footballHelmet = _footballHelmet;
-
-  /// Footprints. Tags: steps, walking, foot, feet, trail, shoe.
+  /// Footprints. Tags: steps, walking, tracks, feet.
   static const footprints = _footprints;
 
-  /// Fork knife. Tags: utensils, kitchenware, cutlery, culinary, cooking, cookery, cut, slice.
-  static const forkKnife = _forkKnife;
+  /// Fork. Tags: cutlery, eat, dining, utensil.
+  static const fork = _fork;
 
-  /// Fork knife crossed. Tags: utensils, kitchenware, cutlery, culinary, cooking, cookery, cut, slice.
+  /// Fork crescent. Tags: dish, fork, plate, restaurant, dinner, meal.
+  static const forkCrescent = _forkCrescent;
+
+  /// Same icon as [utensils].
+  static const forkKnife = _utensils;
+
+  /// Fork knife crossed. Tags: restaurant, fork, knife, cutlery, dining.
   static const forkKnifeCrossed = _forkKnifeCrossed;
 
-  /// Forklift. Tags: machinery, industrial, warehouse, lifting, storage, equipment, heavy-duty, moving.
+  /// Forklift. Tags: warehouse, lift, logistics, truck.
   static const forklift = _forklift;
 
-  /// Form. Tags: document, page, file, layout, paper, stub, formality, structure.
+  /// Forklift slim. Tags: warehouse, lift, logistics, pallet, truck.
+  static const forkliftSlim = _forkliftSlim;
+
+  /// Form. Tags: fields, input, survey, inputs.
   static const form = _form;
 
-  /// Forward. Tags: send, share, email. Mirrors in right-to-left text.
+  /// Forward. Tags: share, send, arrow, next, redirect. Mirrors in right-to-left text.
   static const forward = _forward;
 
-  /// Fox face tail. Tags: sly, wily, cunning, canine, mammal, bushy, furry, firefox.
-  static const foxFaceTail = _foxFaceTail;
-
-  /// Frame. Tags: logo, design, tool.
+  /// Frame. Tags: crop, artboard, design, grid.
   static const frame = _frame;
 
-  /// Frog face. Tags: jump, hop, lilly pad, pond life, aquatic, amphibian, tadpole.
-  static const frogFace = _frogFace;
+  /// Frame type. Tags: text creation, text box, frame, insert text, type.
+  static const frameType = _frameType;
 
-  /// Fruit. Tags: citrus, orange, grapefruit, lime, tomato, pomodoro technique, productivity, work.
-  static const fruit = _fruit;
+  /// French fries. Tags: fries, fast food, chips, potato.
+  static const frenchFries = _frenchFries;
 
-  /// Fuel. Tags: filling-station, gas, petrol, tank.
+  /// French fries cone. Tags: french fries, fries, fast food, chips, cone. Its details merge when filled: use it outlined.
+  static const frenchFriesCone = _frenchFriesCone;
+
+  /// Frisbee. Tags: disc, flying disc, throw, outdoor.
+  static const frisbee = _frisbee;
+
+  /// Frustum. Tags: shape, geometry, 3d, truncated cone, bucket, lampshade.
+  static const frustum = _frustum;
+
+  /// Frying pan. Tags: pan, cooking, kitchen, skillet.
+  static const fryingPan = _fryingPan;
+
+  /// Frying pan egg. Tags: frying pan, fry, cook, egg, kitchen.
+  static const fryingPanEgg = _fryingPanEgg;
+
+  /// Frying pan side. Tags: pan, frying pan, cooking, kitchen, skillet.
+  static const fryingPanSide = _fryingPanSide;
+
+  /// Frying pan steam. Tags: pan, frying pan, cooking, hot, steam, kitchen.
+  static const fryingPanSteam = _fryingPanSteam;
+
+  /// Fuel. Tags: petrol, pump, gas, station.
   static const fuel = _fuel;
 
-  /// Fullscreen. Tags: expand, zoom, preview, focus, camera, lens, image.
-  static const fullscreen = _fullscreen;
+  /// Same icon as [scan].
+  static const fullscreen = _scan;
 
-  /// Funnel. Tags: filter, hopper.
+  /// Function. Tags: f of x, math, formula, calculus.
+  static const function = _function;
+
+  /// Function of x. Tags: function, f of x, math, formula, calculus.
+  static const functionOfX = _functionOfX;
+
+  /// Funnel. Tags: filter, sort, options, refine.
   static const funnel = _funnel;
 
-  /// Funnel plus. Tags: filter, hopper, add, create, new.
+  /// Funnel bitcoin. Tags: bitcoin, filter, funnel, crypto, btc.
+  static const funnelBitcoin = _funnelBitcoin;
+
+  /// Funnel chart. Tags: pipeline, funnel, sales, conversion, stages.
+  static const funnelChart = _funnelChart;
+
+  /// Funnel plus. Tags: funnel, filter, add, plus, create.
   static const funnelPlus = _funnelPlus;
 
-  /// Funnel x. Tags: filter, hopper, remove, delete.
+  /// Funnel x. Tags: funnel, filter, clear, remove, x.
   static const funnelX = _funnelX;
 
-  /// Galaxy. Tags: astronomy, space, stars, cosmos, universe, spiral, milky way, nebula.
+  /// Galaxy. Tags: spiral, space, stars, universe.
   static const galaxy = _galaxy;
 
-  /// Gallery horizontal. Tags: carousel, pictures, images, scroll, swipe, album, portfolio.
+  /// Gallery horizontal. Tags: gallery, carousel, slider, horizontal, images.
   static const galleryHorizontal = _galleryHorizontal;
 
-  /// Gallery horizontal end. Tags: carousel, pictures, images, scroll, swipe, album, portfolio, history.
+  /// Gallery horizontal arcs. Tags: carousel, slider, slideshow, swipe, gallery.
+  static const galleryHorizontalArcs = _galleryHorizontalArcs;
+
+  /// Gallery horizontal brackets. Tags: carousel, slider, slideshow, swipe, gallery.
+  static const galleryHorizontalBrackets = _galleryHorizontalBrackets;
+
+  /// Gallery horizontal end. Tags: gallery, carousel, slider, end, images.
   static const galleryHorizontalEnd = _galleryHorizontalEnd;
 
-  /// Gallery thumbnails. Tags: carousel, pictures, images, album, portfolio, preview.
+  /// Gallery thumbnails. Tags: gallery, thumbnails, carousel, preview, images.
   static const galleryThumbnails = _galleryThumbnails;
 
-  /// Gallery vertical. Tags: carousel, pictures, images, scroll, swipe, album, portfolio.
+  /// Gallery vertical. Tags: gallery, vertical, scroll, feed, images.
   static const galleryVertical = _galleryVertical;
 
-  /// Gallery vertical end. Tags: carousel, pictures, images, scroll, swipe, album, portfolio, history.
+  /// Gallery vertical arcs. Tags: carousel, slider, slideshow, swipe, gallery.
+  static const galleryVerticalArcs = _galleryVerticalArcs;
+
+  /// Gallery vertical end. Tags: gallery, vertical, scroll, feed, end.
   static const galleryVerticalEnd = _galleryVerticalEnd;
 
-  /// Gamepad. Tags: console.
+  /// Game console. Tags: game, console, retro, arcade, play.
+  static const gameConsole = _gameConsole;
+
+  /// Game console handheld. Tags: video console, handheld, gameboy, gaming, portable, console, play.
+  static const gameConsoleHandheld = _gameConsoleHandheld;
+
+  /// Gamepad. Tags: controller, game, console, play.
   static const gamepad = _gamepad;
 
-  /// Gamepad 2. Tags: console.
+  /// Gamepad 2. Tags: gamepad, controller, game, console, play.
   static const gamepad2 = _gamepad2;
 
-  /// Gamepad directional. Tags: direction, arrow, controller, navigation, button, move, pointer, arrowhead.
+  /// Gamepad buttons. Tags: gamepad, controller, buttons, game, console.
+  static const gamepadButtons = _gamepadButtons;
+
+  /// Gamepad cable. Tags: gamepad, controller, cable, wired, game.
+  static const gamepadCable = _gamepadCable;
+
+  /// Gamepad directional. Tags: gamepad, d-pad, directional, controller, game.
   static const gamepadDirectional = _gamepadDirectional;
 
-  /// Gap horizontal. Tags: gap, spacing, space, between, padding, margin, horizontal, auto layout.
-  static const gapHorizontal = _gapHorizontal;
+  /// Gamepad sparkle. Tags: ai, game, controller, sparkle, generate.
+  static const gamepadSparkle = _gamepadSparkle;
 
-  /// Gap vertical. Tags: gap, spacing, space, between, padding, margin, vertical, auto layout.
-  static const gapVertical = _gapVertical;
+  /// Gamepad sticks. Tags: gamepad, controller, joysticks, game, console.
+  static const gamepadSticks = _gamepadSticks;
 
-  /// Garlic. Tags: flavor, flavour, spice, vegetable, ingredient, cooking, cookery, kitchen.
-  static const garlic = _garlic;
+  /// Garage. Tags: car, building, home, storage.
+  static const garage = _garage;
+
+  /// Garage flat. Tags: car park, parking, carport, vehicle, building.
+  static const garageFlat = _garageFlat;
+
+  /// Garage pitched. Tags: car park, parking, carport, vehicle, building.
+  static const garagePitched = _garagePitched;
+
+  /// Garbage truck. Tags: garbage, truck, trash, waste, collection.
+  static const garbageTruck = _garbageTruck;
+
+  /// Gas pipe. Tags: gas, pipe, valve, meter, utility.
+  static const gasPipe = _gasPipe;
 
   /// Same icon as [fuel].
   static const gasStation = _fuel;
 
-  /// Gauge. Tags: dashboard, dial, meter, speed, pressure, measure, level.
+  /// Gauge. Tags: speedometer, dial, meter, performance.
   static const gauge = _gauge;
 
-  /// Gavel. Tags: justice, law, court, judgment, legal, hands, penalty, decision.
+  /// Gauge half. Tags: dashboard, speed, gauge, meter, speedometer, half circle.
+  static const gaugeHalf = _gaugeHalf;
+
+  /// Gavel. Tags: judge, law, court, auction.
   static const gavel = _gavel;
+
+  /// Gavel bare. Tags: auction, gavel, mallet, law, judge, bid.
+  static const gavelBare = _gavelBare;
+
+  /// Gavel flat. Tags: law, judge, court, hammer, legal, sound block.
+  static const gavelFlat = _gavelFlat;
+
+  /// Gavel strike. Tags: law, judge, court, hammer, legal, auction.
+  static const gavelStrike = _gavelStrike;
 
   /// Same icon as [cog].
   static const gear = _cog;
 
-  /// Gearbox. Tags: gears, gear lever, gearstick, shift, speed, driving, driver, racing.
-  static const gearbox = _gearbox;
-
-  /// Gearbox square. Tags: gears, gear lever, gearstick, shift, speed, driving, driver, racing.
-  static const gearboxSquare = _gearboxSquare;
-
-  /// Gem. Tags: diamond, crystal, ruby, jewellery, price, special, present, gift.
+  /// Gem. Tags: diamond, jewel, crystal, premium.
   static const gem = _gem;
 
-  /// Gem ring. Tags: diamond, crystal, ruby, rock, jewellery, price, special, present.
-  static const gemRing = _gemRing;
+  /// Gem simple. Tags: diamond, gem, jewel, premium, precious, stone.
+  static const gemSimple = _gemSimple;
 
-  /// Georgian lari. Tags: currency, money, payment.
+  /// Geofence enter. Tags: geofence, entering, location, zone, boundary, arrow.
+  static const geofenceEnter = _geofenceEnter;
+
+  /// Geofence exit. Tags: leaving geofence, exit, boundary, location, leave area, perimeter.
+  static const geofenceExit = _geofenceExit;
+
+  /// Georgian lari. Tags: lari, currency, money, georgia.
   static const georgianLari = _georgianLari;
 
-  /// Germ. Tags: virus, microbe, bacterium, bacteria, organism, cilia, pathogen, infection.
-  static const germ = _germ;
-
-  /// Germ off. Tags: virus, microbe, bacterium, bacteria, germ, organism, cilia, pathogen.
-  static const germOff = _germOff;
-
-  /// Ghost. Tags: spirit, haunt, specter, apparition, wraith, shade, phantom, entity.
+  /// Ghost. Tags: spooky, halloween, boo, spirit.
   static const ghost = _ghost;
 
   /// Gift. Tags: present, box, birthday, party.
   static const gift = _gift;
 
-  /// Git branch. Tags: code, version control, vcs, repository.
+  /// Gift card. Tags: voucher, coupon, present, ribbon.
+  static const giftCard = _giftCard;
+
+  /// Gift card asterisk. Tags: gift card, voucher, coupon, present, asterisk.
+  static const giftCardAsterisk = _giftCardAsterisk;
+
+  /// Git branch. Tags: git, branch, version control, code, vcs.
   static const gitBranch = _gitBranch;
 
-  /// Git branch minus. Tags: code, version control, vcs, repository, delete, remove, -.
+  /// Git branch minus. Tags: git, branch, remove, delete, vcs.
   static const gitBranchMinus = _gitBranchMinus;
 
-  /// Git branch plus. Tags: code, version control, vcs, repository, add, create, +.
+  /// Git branch plus. Tags: git, branch, add, create, vcs.
   static const gitBranchPlus = _gitBranchPlus;
 
-  /// Git commit horizontal. Tags: code, version control, waypoint, stop, station.
+  /// Git commit horizontal. Tags: git, commit, horizontal, version control, vcs.
   static const gitCommitHorizontal = _gitCommitHorizontal;
 
-  /// Git commit vertical. Tags: code, version control, waypoint, stop, station.
+  /// Git commit vertical. Tags: git, commit, version, control, node, history, vertical, version control.
   static const gitCommitVertical = _gitCommitVertical;
 
-  /// Git compare. Tags: code, version control, diff.
+  /// Git compare. Tags: git, compare, diff, version, control, branches.
   static const gitCompare = _gitCompare;
 
-  /// Git compare arrows. Tags: code, version control, diff.
+  /// Git compare arrows. Tags: git, compare, arrows, diff, version, control.
   static const gitCompareArrows = _gitCompareArrows;
 
-  /// Git fork. Tags: code, version control.
+  /// Git fork. Tags: git, fork, version, control, branch, copy.
   static const gitFork = _gitFork;
 
-  /// Git graph. Tags: code, version control, commit graph, commits, gitlens.
+  /// Git graph. Tags: git, graph, history, branches, commits, version, control.
   static const gitGraph = _gitGraph;
 
-  /// Git merge. Tags: code, version control.
+  /// Git merge. Tags: git, merge, version, control, combine, join.
   static const gitMerge = _gitMerge;
 
-  /// Git merge conflict. Tags: code, version control, commits, diff, error, conflict.
+  /// Git merge conflict. Tags: git, merge, conflict, version, control, error.
   static const gitMergeConflict = _gitMergeConflict;
 
-  /// Git pull request. Tags: code, version control, open.
+  /// Git pull request. Tags: git, pull, request, version, control, open.
   static const gitPullRequest = _gitPullRequest;
 
-  /// Git pull request arrow. Tags: code, version control, open.
+  /// Git pull request arrow. Tags: git, pull, request, arrow, version, control, open.
   static const gitPullRequestArrow = _gitPullRequestArrow;
 
-  /// Git pull request closed. Tags: code, version control, rejected, closed, cancelled, x.
+  /// Git pull request closed. Tags: git, pull, request, closed, rejected, cancelled, version, control.
   static const gitPullRequestClosed = _gitPullRequestClosed;
 
-  /// Git pull request create. Tags: code, version control, open, plus, add, +.
+  /// Git pull request create. Tags: git, pull, request, create, plus, add, version, control.
   static const gitPullRequestCreate = _gitPullRequestCreate;
 
-  /// Git pull request create arrow. Tags: code, version control, open, plus, add, +.
+  /// Git pull request create arrow. Tags: git, pull, request, create, arrow, plus, add, version.
   static const gitPullRequestCreateArrow = _gitPullRequestCreateArrow;
 
-  /// Git pull request draft. Tags: code, version control, open, draft, dashed.
+  /// Git pull request draft. Tags: git, pull, request, draft, dashed, version, control.
   static const gitPullRequestDraft = _gitPullRequestDraft;
 
-  /// Glasses. Tags: spectacles.
+  /// Git tree. Tags: relationship, hierarchy, tree, branch, nodes, version control.
+  static const gitTree = _gitTree;
+
+  /// Glasses. Tags: spectacles, eyewear, vision, reading.
   static const glasses = _glasses;
 
-  /// Glasses square. Tags: spectacles, eyesight, vision, reading, learning, education, academic, books.
-  static const glassesSquare = _glassesSquare;
+  /// Glass straw. Tags: soft, drink, glass, straw, beverage, water.
+  static const glassStraw = _glassStraw;
 
-  /// Glasses sun. Tags: aviators, shades, sunglasses, summer holiday, seaside, beachwear, vacation, accessories.
-  static const glassesSun = _glassesSun;
-
-  /// Glass water. Tags: beverage, drink, glass, water.
+  /// Glass water. Tags: glass, water, drink, beverage, hydration.
   static const glassWater = _glassWater;
 
-  /// Globe. Tags: world, browser, language, translate.
+  /// Globe. Tags: internet, web, world, earth, international, network.
   static const globe = _globe;
 
-  /// Globe check. Tags: world, browser, language, translate, internet, web, check, verified.
-  static const globeCheck = _globeCheck;
+  /// Globe book. Tags: global, education, globe, book, learning, world, school.
+  static const globeBook = _globeBook;
 
-  /// Globe code. Tags: website, internet, globe, connection, network, digital, access, global.
-  static const globeCode = _globeCode;
+  /// Globe clock. Tags: time zone, globe, world, clock, timezone.
+  static const globeClock = _globeClock;
 
-  /// Globe lock. Tags: vpn, private, privacy, network, world, browser, security, encryption.
+  /// Globe grid. Tags: globe, world, internet, browser, language, translate, web.
+  static const globeGrid = _globeGrid;
+
+  /// Globe latitude. Tags: latitude, globe, parallels, geography, earth, map.
+  static const globeLatitude = _globeLatitude;
+
+  /// Globe lock. Tags: globe, lock, secure, world, internet, private.
   static const globeLock = _globeLock;
 
-  /// Globe off. Tags: globe, earth, planet, disable, mute, off, hide, avoid.
+  /// Globe longitude. Tags: meridian, earth, coordinates, geography, globe.
+  static const globeLongitude = _globeLongitude;
+
+  /// Globe map pin. Tags: globe, map, pin, world, location, region.
+  static const globeMapPin = _globeMapPin;
+
+  /// Globe off. Tags: globe, off, offline, world, no, internet, disabled. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const globeOff = _globeOff;
 
-  /// Globe x. Tags: globe, internet, offline, disconnected, network, connection, world, no connection.
+  /// Globe sparkle. Tags: ai, web, browsing, globe, internet, sparkle.
+  static const globeSparkle = _globeSparkle;
+
+  /// Globe stand. Tags: globe, desk, stand, world, geography, map.
+  static const globeStand = _globeStand;
+
+  /// Globe x. Tags: globe, x, world, close, remove, internet.
   static const globeX = _globeX;
 
-  /// Goal. Tags: flag, bullseye.
-  static const goal = _goal;
+  /// Gnome. Tags: garden, dwarf, fantasy, hat.
+  static const gnome = _gnome;
 
-  /// Goal net. Tags: score, football, futbol, soccer, ice hockey, posts, crossbar, kick.
-  static const goalNet = _goalNet;
+  /// Go backward 10. Tags: rewind, back, replay, backward, 10 seconds, skip.
+  static const goBackward10 = _goBackward10;
 
-  /// Goblet. Tags: glass, chalice, alcohol, drink, vineyard, winery, red, white.
-  static const goblet = _goblet;
+  /// Go backward 15. Tags: rewind, back, replay, backward, 15 seconds, skip.
+  static const goBackward15 = _goBackward15;
 
-  /// Goblet crack. Tags: glass, chalice, broken, break, smash, fragile, damaged, package.
-  static const gobletCrack = _gobletCrack;
+  /// Go backward 30. Tags: rewind, back, replay, backward, 30 seconds, skip.
+  static const goBackward30 = _goBackward30;
 
-  /// Golf driver. Tags: tee off, driving range, sand wedge, pitching wedge, course, hole in one, par, double bogey.
-  static const golfDriver = _golfDriver;
+  /// Go backward 5. Tags: rewind, back, replay, backward, 5 seconds, skip.
+  static const goBackward5 = _goBackward5;
 
-  /// Gpu. Tags: processor, cores, technology, computer, chip, circuit, specs, graphics processing unit.
+  /// Go backward 60. Tags: rewind, back, replay, backward, 60 seconds, skip.
+  static const goBackward60 = _goBackward60;
+
+  /// Go forward 10. Tags: forward, skip, advance, 10 seconds.
+  static const goForward10 = _goForward10;
+
+  /// Go forward 15. Tags: forward, skip, advance, 15 seconds.
+  static const goForward15 = _goForward15;
+
+  /// Go forward 30. Tags: forward, skip, advance, 30 seconds.
+  static const goForward30 = _goForward30;
+
+  /// Go forward 5. Tags: forward, skip, advance, 5 seconds.
+  static const goForward5 = _goForward5;
+
+  /// Go forward 60. Tags: forward, skip, advance, 60 seconds.
+  static const goForward60 = _goForward60;
+
+  /// Gold arrow down. Tags: gold, buy, purchase, ingot, invest, down.
+  static const goldArrowDown = _goldArrowDown;
+
+  /// Gold arrow up. Tags: gold, sell, ingot, invest, up.
+  static const goldArrowUp = _goldArrowUp;
+
+  /// Gold bars. Tags: gold, bars, ingots, wealth, precious, metal, sparkle.
+  static const goldBars = _goldBars;
+
+  /// Gold ingots. Tags: gold, ingots, bars, wealth, precious, metal.
+  static const goldIngots = _goldIngots;
+
+  /// Golf ball. Tags: golf, ball, tee, sport.
+  static const golfBall = _golfBall;
+
+  /// Golf cart. Tags: golf, cart, buggy, sport, vehicle.
+  static const golfCart = _golfCart;
+
+  /// Golf club. Tags: golf, club, bat, sport, driver.
+  static const golfClub = _golfClub;
+
+  /// Same icon as [golfClub].
+  static const golfDriver = _golfClub;
+
+  /// Golf hole. Tags: golf, hole, flag, green, sport.
+  static const golfHole = _golfHole;
+
+  /// Gpu. Tags: graphics, processor, video, card, technology.
   static const gpu = _gpu;
 
-  /// Graduation cap. Tags: school, university, learn, study, mortarboard, education, ceremony, academic.
+  /// Graduate female. Tags: graduate, female, student, woman, graduation, cap.
+  static const graduateFemale = _graduateFemale;
+
+  /// Graduate male. Tags: graduate, male, student, man, graduation, cap.
+  static const graduateMale = _graduateMale;
+
+  /// Graduation cap. Tags: graduation, cap, mortarboard, education, school, degree.
   static const graduationCap = _graduationCap;
 
-  /// Grape. Tags: fruit, wine, food. Its details merge when filled: use it outlined.
+  /// Graduation cap refresh. Tags: e-learning, exchange, education, online course, cycle.
+  static const graduationCapRefresh = _graduationCapRefresh;
+
+  /// Graduation cap tassel. Tags: mortarboard, graduation, education, school, university, degree.
+  static const graduationCapTassel = _graduationCapTassel;
+
+  /// Graduation scroll. Tags: graduation, scroll, diploma, certificate, degree.
+  static const graduationScroll = _graduationScroll;
+
+  /// Grape. Tags: grapes, fruit, wine, vineyard, food.
   static const grape = _grape;
 
-  /// Grapes. Tags: bunch, wine, vineyard, seedless, blackberry, blackberries, rasberry, rasberries. Its details merge when filled: use it outlined.
-  static const grapes = _grapes;
+  /// Grape bunch. Tags: grape, bunch, fruit, wine, vineyard.
+  static const grapeBunch = _grapeBunch;
 
-  /// Grid 2x2. Tags: table, rows, columns, blocks, plot, land, geometry, measure.
+  /// Same icon as [grape].
+  static const grapes = _grape;
+
+  /// Gravity. Tags: fall, weight, physics, drop.
+  static const gravity = _gravity;
+
+  /// Greater than. Tags: greater, than, inequality, compare, chevron.
+  static const greaterThan = _greaterThan;
+
+  /// Greater than or equal. Tags: inequality, compare, math.
+  static const greaterThanOrEqual = _greaterThanOrEqual;
+
+  /// Greater than or equal slanted. Tags: greater, than, or, equal, inequality, compare.
+  static const greaterThanOrEqualSlanted = _greaterThanOrEqualSlanted;
+
+  /// Greek helmet. Tags: greek, helmet, spartan, warrior, soldier.
+  static const greekHelmet = _greekHelmet;
+
+  /// Greenhouse. Tags: green, house, plants, garden, eco.
+  static const greenhouse = _greenhouse;
+
+  /// Grid 2x2. Tags: grid, 2x2, four, cells, window, table, layout, four cells.
   static const grid2x2 = _grid2x2;
 
-  /// Grid 2x2 check. Tags: table, rows, columns, blocks, plot, land, geometry, measure.
+  /// Grid 2x2 check. Tags: grid, 2x2, check, done, select.
   static const grid2x2Check = _grid2x2Check;
 
-  /// Grid 2x2 plus. Tags: table, rows, columns, blocks, plot, land, geometry, measure.
+  /// Grid 2x2 plus. Tags: grid, 2x2, plus, add.
   static const grid2x2Plus = _grid2x2Plus;
 
-  /// Grid 2x2 x. Tags: table, rows, columns, data, blocks, plot, land, geometry.
+  /// Grid 2x2 x. Tags: grid, 2x2, x, close, remove.
   static const grid2x2X = _grid2x2X;
 
-  /// Grid 3x2. Tags: table, rows, columns, blocks, plot, land, geometry, measure.
+  /// Grid 2x3. Tags: grid, table, rows, spreadsheet, two columns, three rows.
+  static const grid2x3 = _grid2x3;
+
+  /// Grid 3x2. Tags: grid, 3x2, columns, rows, table.
   static const grid3x2 = _grid3x2;
 
-  /// Grid 3x3. Tags: table, rows, columns.
+  /// Grid 3x3. Tags: grid, 3x3, table, cells, spreadsheet, rows, columns.
   static const grid3x3 = _grid3x3;
 
-  /// Grid lines. Tags: table, guides, number, pound, tic-tac-toe, noughts and crosses.
-  static const gridLines = _gridLines;
+  /// Grid 3x3 circles. Tags: dialpad, circles, grid, keypad, dots, menu.
+  static const grid3x3Circles = _grid3x3Circles;
 
-  /// Grid lines offset. Tags: guides.
-  static const gridLinesOffset = _gridLinesOffset;
+  /// Grid 3x3 squares. Tags: dialpad, squares, grid, keypad, menu, apps.
+  static const grid3x3Squares = _grid3x3Squares;
 
-  /// Grip. Tags: grab, dots, handle, move, drag.
+  /// Grid hash. Tags: grid, hash, lines, tic, tac, toe, guides.
+  static const gridHash = _gridHash;
+
+  /// Grid hash off. Tags: grid, off, hash, lines, hide, disabled.
+  static const gridHashOff = _gridHashOff;
+
+  /// Grid hash short. Tags: grid, hash, lines, guides, tic, tac, toe.
+  static const gridHashShort = _gridHashShort;
+
+  /// Same icon as [gridHash].
+  static const gridLines = _gridHash;
+
+  /// Grip. Tags: drag, handle, dots, reorder, more, grid.
   static const grip = _grip;
 
-  /// Grip horizontal. Tags: grab, dots, handle, move, drag.
+  /// Grip compact. Tags: drag, drop, handle, dots, grab, reorder.
+  static const gripCompact = _gripCompact;
+
+  /// Grip compact horizontal. Tags: drag, drop, handle, dots, grab, horizontal.
+  static const gripCompactHorizontal = _gripCompactHorizontal;
+
+  /// Grip compact vertical. Tags: drag, drop, handle, dots, grab, vertical.
+  static const gripCompactVertical = _gripCompactVertical;
+
+  /// Grip diagonal. Tags: resize, handle, drag, field, grip.
+  static const gripDiagonal = _gripDiagonal;
+
+  /// Grip horizontal. Tags: grip, drag, handle, dots, horizontal.
   static const gripHorizontal = _gripHorizontal;
 
-  /// Grip vertical. Tags: grab, dots, handle, move, drag.
+  /// Grip ring large. Tags: more, dots, grid, circles, drag, menu.
+  static const gripRingLarge = _gripRingLarge;
+
+  /// Grip square. Tags: more, dots, drag, handle, grid, reorder.
+  static const gripSquare = _gripSquare;
+
+  /// Grip vertical. Tags: grip, drag, handle, dots, vertical, reorder.
   static const gripVertical = _gripVertical;
 
-  /// Group. Tags: cubes, packages, parts, units, collection, cluster, gather, dashed.
+  /// Group. Tags: items, select, cluster, objects.
   static const group = _group;
 
-  /// Guitar. Tags: acoustic, instrument, strings, riff, rock, band, country, concert.
+  /// Group layers. Tags: group, layers, stack, select, objects. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const groupLayers = _groupLayers;
+
+  /// Group squares. Tags: group, squares, objects, combine, layers.
+  static const groupSquares = _groupSquares;
+
+  /// Guest house. Tags: guest, house, home, cottage, stay, lodging.
+  static const guestHouse = _guestHouse;
+
+  /// Guitar. Tags: music, instrument, string.
   static const guitar = _guitar;
+
+  /// Gun. Tags: pistol, weapon, firearm.
+  static const gun = _gun;
 
   /// Same icon as [dumbbell].
   static const gym = _dumbbell;
 
-  /// Hairdryer. Tags: hairdrier, hairstyle, hairdresser, salon, styling, heat, amenities, electronics.
+  /// Gymnastic rings. Tags: gymnastic, rings, gymnastics, sport. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const gymnasticRings = _gymnasticRings;
+
+  /// Gymnastic rings staggered. Tags: gymnastic, rings, gymnastics, sport. Its details merge when filled: use it outlined.
+  static const gymnasticRingsStaggered = _gymnasticRingsStaggered;
+
+  /// Gymnastics. Tags: workout, exercise, gym, fitness, acrobatics.
+  static const gymnastics = _gymnastics;
+
+  /// Gym rings. Tags: gym, equipment, workout, pull up, bars, fitness. Its details merge when filled: use it outlined.
+  static const gymRings = _gymRings;
+
+  /// Hair clips. Tags: hair, clips, barrette, accessory, beauty.
+  static const hairClips = _hairClips;
+
+  /// Hairdryer. Tags: hair, dryer, blow, beauty.
   static const hairdryer = _hairdryer;
 
-  /// Ham. Tags: food, pork, pig, meat, bone, hock, knuckle, gammon.
+  /// Ham. Tags: meat, leg, pork, food.
   static const ham = _ham;
 
-  /// Hamburger. Tags: burger, cheeseburger, meat, beef, patty, bun, fast food, junk food.
+  /// Hamburger. Tags: burger, fast, food, lettuce.
   static const hamburger = _hamburger;
 
-  /// Hammer. Tags: mallet, nails, diy, toolbox, build, construction.
+  /// Hamburger cheese. Tags: hamburger, burger, fast, food, meal.
+  static const hamburgerCheese = _hamburgerCheese;
+
+  /// Hammer. Tags: tool, build, repair.
   static const hammer = _hammer;
 
-  /// Hand. Tags: wave, move, mouse, grab.
+  /// Hand. Tags: palm, stop, raised hand, wave, gesture.
   static const hand = _hand;
 
-  /// Handbag. Tags: bag, baggage, carry, clutch, fashion, luggage, purse, tote.
+  /// Handbag. Tags: bag, purse, fashion, accessory.
   static const handbag = _handbag;
 
-  /// Hand coins. Tags: savings, banking, money, finance, offers, mortgage, payment, received.
+  /// Handbag clasp. Tags: bag, purse, handbag, clasp, fashion.
+  static const handbagClasp = _handbagClasp;
+
+  /// Handbag flap. Tags: bag, purse, handbag, flap, fashion.
+  static const handbagFlap = _handbagFlap;
+
+  /// Handbag tote. Tags: purse, bag, fashion, shopping, tote.
+  static const handbagTote = _handbagTote;
+
+  /// Hand ban. Tags: hand, pill, medicine, tablet, dose, medication.
+  static const handBan = _handBan;
+
+  /// Hand banknote. Tags: payment, cash, hand, banknote, pay.
+  static const handBanknote = _handBanknote;
+
+  /// Handbell. Tags: school bell, hand bell, ring, class, call.
+  static const handbell = _handbell;
+
+  /// Hand bitcoin. Tags: bitcoin, hand, give, receive, crypto, btc.
+  static const handBitcoin = _handBitcoin;
+
+  /// Hand blender. Tags: hand beater, beater, hammer, drumstick, kitchen.
+  static const handBlender = _handBlender;
+
+  /// Hand card. Tags: payment, card, hand, pay, checkout.
+  static const handCard = _handCard;
+
+  /// Hand claw. Tags: hold, press, touch, hand, gesture.
+  static const handClaw = _handClaw;
+
+  /// Hand coin. Tags: savings, money, coin, hand, deposit, donate.
+  static const handCoin = _handCoin;
+
+  /// Hand coin drop. Tags: alms, charity, donation, zakat, hand, coin, give.
+  static const handCoinDrop = _handCoinDrop;
+
+  /// Hand coins. Tags: tips, gratuity, coins, hand, donate.
   static const handCoins = _handCoins;
 
-  /// Hand fist. Tags: clench, strength, power, unity, solidarity, rebellion, victory, triumph.
+  /// Hand coin side. Tags: money, payment, coin, donate, tip.
+  static const handCoinSide = _handCoinSide;
+
+  /// Handcuffs. Tags: arrest, police, restraint, cuffs, law.
+  static const handcuffs = _handcuffs;
+
+  /// Hand dollar sign. Tags: save money, dollar, coin, donate, savings.
+  static const handDollarSign = _handDollarSign;
+
+  /// Hand dome. Tags: zakat, charity, donation, alms, give, islam.
+  static const handDome = _handDome;
+
+  /// Hand droplet. Tags: wudu, ablution, wash, islam, purification, water, hand.
+  static const handDroplet = _handDroplet;
+
+  /// Hand droplet round. Tags: treatment, care, drop, hand, therapy, medicine, give, blood.
+  static const handDropletRound = _handDropletRound;
+
+  /// Hand euro. Tags: save money, euro, coin, donate, savings.
+  static const handEuro = _handEuro;
+
+  /// Hand fingers rotate ccw. Tags: rotate left, hand, fingers, gesture, touch.
+  static const handFingersRotateCcw = _handFingersRotateCcw;
+
+  /// Hand fingers rotate cw. Tags: rotate right, hand, fingers, gesture, touch.
+  static const handFingersRotateCw = _handFingersRotateCw;
+
+  /// Hand fist. Tags: fist, power, protest, punch, strength.
   static const handFist = _handFist;
 
-  /// Hand grab. Tags: hand.
+  /// Hand fist rotate ccw. Tags: rotate left, hand, fist, gesture, touch.
+  static const handFistRotateCcw = _handFistRotateCcw;
+
+  /// Hand fist rotate cw. Tags: rotate right, hand, fist, gesture, touch.
+  static const handFistRotateCw = _handFistRotateCw;
+
+  /// Hand flat. Tags: hold, press, touch, hand, gesture.
+  static const handFlat = _handFlat;
+
+  /// Hand flat lock. Tags: hold, locked, hand, gesture, disabled.
+  static const handFlatLock = _handFlatLock;
+
+  /// Hand four fingers. Tags: hand, four fingers, gesture, touch, swipe, hold, press.
+  static const handFourFingers = _handFourFingers;
+
+  /// Hand grab. Tags: grab, drag, hold, grip, pan.
   static const handGrab = _handGrab;
 
-  /// Hand heart. Tags: love, like, emotion.
+  /// Hand grip. Tags: grip trainer, exercise, fitness, strength, gripper.
+  static const handGrip = _handGrip;
+
+  /// Hand heart. Tags: care, charity, love, donate, support.
   static const handHeart = _handHeart;
 
-  /// Hand helping. Tags: agreement, help, proposal, charity, begging, terms.
+  /// Hand heart palm. Tags: healthcare, care, heart, hand, charity.
+  static const handHeartPalm = _handHeartPalm;
+
+  /// Hand helping. Tags: help, support, offer, assist, give.
   static const handHelping = _handHelping;
 
-  /// Hand metal. Tags: rock.
+  /// Hand japanese yen. Tags: save money, yen, coin, donate, savings.
+  static const handJapaneseYen = _handJapaneseYen;
+
+  /// Hand lock. Tags: hold, locked, hand, gesture, disabled.
+  static const handLock = _handLock;
+
+  /// Hand lock fist. Tags: touch, lock, locked, gesture, finger, disabled.
+  static const handLockFist = _handLockFist;
+
+  /// Hand lock thumb. Tags: touch, lock, locked, gesture, finger, disabled.
+  static const handLockThumb = _handLockThumb;
+
+  /// Hand metal. Tags: rock, horns, metal, gesture, music.
   static const handMetal = _handMetal;
 
-  /// Hand platter. Tags: waiter, waitress, restaurant, table service, served, dinner, dining, meal.
+  /// Hand mixer. Tags: beater, mixer, whisk, baking, kitchen.
+  static const handMixer = _handMixer;
+
+  /// Hand off. Tags: do not touch, hand, stop, no touching, prohibited, keep away.
+  static const handOff = _handOff;
+
+  /// Hand off thumb. Tags: do not touch, hand, stop, no touching, prohibited, keep away.
+  static const handOffThumb = _handOffThumb;
+
+  /// Hand ok. Tags: ok, okay, fingers, gesture, hand, perfect.
+  static const handOk = _handOk;
+
+  /// Hand package. Tags: delivery, safe delivery, parcel, shipping, handover.
+  static const handPackage = _handPackage;
+
+  /// Hand palm. Tags: hand, palm, stop, gesture, touch.
+  static const handPalm = _handPalm;
+
+  /// Hand peace. Tags: victory, peace, v sign, two fingers, gesture, hand, win.
+  static const handPeace = _handPeace;
+
+  /// Hand peace round. Tags: victory, peace, v sign, two fingers, gesture, hand, win.
+  static const handPeaceRound = _handPeaceRound;
+
+  /// Hand peace tilted. Tags: victory, peace, v sign, two fingers, gesture, hand, win.
+  static const handPeaceTilted = _handPeaceTilted;
+
+  /// Hand pill. Tags: give, pill, medicine, medication, hand, drug, dose.
+  static const handPill = _handPill;
+
+  /// Hand pinch. Tags: resize, pinch, zoom, gesture, two fingers.
+  static const handPinch = _handPinch;
+
+  /// Hand pinch fist. Tags: resize, pinch, zoom, gesture, touch.
+  static const handPinchFist = _handPinchFist;
+
+  /// Hand platter. Tags: cloche, serve, waiter, restaurant, service.
   static const handPlatter = _handPlatter;
 
-  /// Handshake. Tags: agreement, partnership, deal, business, assistance, cooperation, friendship, union.
+  /// Hand point. Tags: touch, tap, pointer, finger, gesture, hand.
+  static const handPoint = _handPoint;
+
+  /// Hand point curled tilted. Tags: touch, tap, pointer, finger, gesture, hand.
+  static const handPointCurledTilted = _handPointCurledTilted;
+
+  /// Hand point curled wide. Tags: touch, tap, pointer, finger, gesture, hand.
+  static const handPointCurledWide = _handPointCurledWide;
+
+  /// Hand point down. Tags: point, finger, down, gesture, pointer.
+  static const handPointDown = _handPointDown;
+
+  /// Hand point down fingers. Tags: point, finger, down, gesture, curled fingers.
+  static const handPointDownFingers = _handPointDownFingers;
+
+  /// Hand point down fist. Tags: point, finger, down, gesture, fist.
+  static const handPointDownFist = _handPointDownFist;
+
+  /// Hand point down thumb. Tags: point, finger, down, gesture, thumb.
+  static const handPointDownThumb = _handPointDownThumb;
+
+  /// Hand point fingers. Tags: touch, tap, pointer, finger, gesture, hand.
+  static const handPointFingers = _handPointFingers;
+
+  /// Hand point fingers rotate ccw. Tags: rotate left, hand, pinch, gesture, touch.
+  static const handPointFingersRotateCcw = _handPointFingersRotateCcw;
+
+  /// Hand point fingers rotate cw. Tags: rotate right, hand, pinch, gesture, touch.
+  static const handPointFingersRotateCw = _handPointFingersRotateCw;
+
+  /// Hand point fingers tucked. Tags: touch, tap, pointer, finger, gesture, hand.
+  static const handPointFingersTucked = _handPointFingersTucked;
+
+  /// Hand point fist. Tags: touch, tap, pointer, finger, gesture, fist.
+  static const handPointFist = _handPointFist;
+
+  /// Hand point fist rotate ccw. Tags: rotate left, hand, finger, gesture, touch.
+  static const handPointFistRotateCcw = _handPointFistRotateCcw;
+
+  /// Hand point fist rotate cw. Tags: rotate right, hand, finger, gesture, touch.
+  static const handPointFistRotateCw = _handPointFistRotateCw;
+
+  /// Hand point left. Tags: point, finger, left, gesture, pointer.
+  static const handPointLeft = _handPointLeft;
+
+  /// Hand point left fingers. Tags: point, finger, left, gesture, curled fingers.
+  static const handPointLeftFingers = _handPointLeftFingers;
+
+  /// Hand point left fist. Tags: point, finger, left, gesture, fist.
+  static const handPointLeftFist = _handPointLeftFist;
+
+  /// Hand point left thumb. Tags: point, finger, left, gesture, thumb.
+  static const handPointLeftThumb = _handPointLeftThumb;
+
+  /// Hand point move. Tags: move, drag, touch, gesture, finger, pan.
+  static const handPointMove = _handPointMove;
+
+  /// Hand point right. Tags: point, finger, right, gesture, pointer.
+  static const handPointRight = _handPointRight;
+
+  /// Hand point right fingers. Tags: point, finger, right, gesture, curled fingers.
+  static const handPointRightFingers = _handPointRightFingers;
+
+  /// Hand point right fist. Tags: point, finger, right, gesture, fist.
+  static const handPointRightFist = _handPointRightFist;
+
+  /// Hand point right thumb. Tags: point, finger, right, gesture, thumb.
+  static const handPointRightThumb = _handPointRightThumb;
+
+  /// Hand point rotate ccw. Tags: rotate left, hand, finger, gesture, touch. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const handPointRotateCcw = _handPointRotateCcw;
+
+  /// Hand point rotate cw. Tags: rotate right, hand, finger, gesture, touch.
+  static const handPointRotateCw = _handPointRotateCw;
+
+  /// Hand point thumb. Tags: touch, tap, pointer, finger, gesture, thumb.
+  static const handPointThumb = _handPointThumb;
+
+  /// Hand point thumb move. Tags: move, drag, grab, gesture, hand, pan.
+  static const handPointThumbMove = _handPointThumbMove;
+
+  /// Hand point thumb rotate ccw. Tags: rotate left, hand, finger, gesture, touch.
+  static const handPointThumbRotateCcw = _handPointThumbRotateCcw;
+
+  /// Hand point thumb rotate cw. Tags: rotate right, hand, finger, gesture, touch.
+  static const handPointThumbRotateCw = _handPointThumbRotateCw;
+
+  /// Hand point tucked. Tags: touch, tap, pointer, finger, gesture, hand.
+  static const handPointTucked = _handPointTucked;
+
+  /// Hand pound sterling. Tags: save money, pound, coin, donate, savings.
+  static const handPoundSterling = _handPoundSterling;
+
+  /// Hand punch. Tags: punch, fist, hand, strike, fight.
+  static const handPunch = _handPunch;
+
+  /// Hand sanitizer. Tags: sanitizer, hygiene, soap, clean, pump, covid.
+  static const handSanitizer = _handSanitizer;
+
+  /// Hands clap. Tags: teamwork, clap, applause, cooperation, celebrate.
+  static const handsClap = _handsClap;
+
+  /// Hands clapping. Tags: clap, applause, praise, bravo, congrats.
+  static const handsClapping = _handsClapping;
+
+  /// Hands clapping raised. Tags: applause, clap, congratulations, bravo, praise, hands.
+  static const handsClappingRaised = _handsClappingRaised;
+
+  /// Hands clapping tilted. Tags: applause, clap, congratulations, bravo, praise, hands. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const handsClappingTilted = _handsClappingTilted;
+
+  /// Hands crescent. Tags: dua, prayer, islam, hands, pray, worship.
+  static const handsCrescent = _handsCrescent;
+
+  /// Hand shaka. Tags: shaka, hang loose, surf, greeting, gesture.
+  static const handShaka = _handShaka;
+
+  /// Hand shaka fist. Tags: shaka, hang loose, surf, greeting, gesture.
+  static const handShakaFist = _handShakaFist;
+
+  /// Hand shaka horizontal. Tags: shaka, hang loose, surf, greeting, gesture.
+  static const handShakaHorizontal = _handShakaHorizontal;
+
+  /// Hand shaka side. Tags: shaka, hang loose, surf, greeting, gesture.
+  static const handShakaSide = _handShakaSide;
+
+  /// Handshake. Tags: agreement, deal, partnership, contract.
   static const handshake = _handshake;
 
-  /// Hard drive. Tags: computer, server, memory, data, ssd, disk, hard disk, storage.
+  /// Handshake compact. Tags: deal, agreement, partnership, meeting, greeting.
+  static const handshakeCompact = _handshakeCompact;
+
+  /// Handshake simple. Tags: agreement, handshake, deal, partnership, contract.
+  static const handshakeSimple = _handshakeSimple;
+
+  /// Hand shelter. Tags: charity, donation, help, support, aid, care.
+  static const handShelter = _handShelter;
+
+  /// Hand shield check. Tags: safe, hand, shield, protection, secure.
+  static const handShieldCheck = _handShieldCheck;
+
+  /// Hands praying. Tags: pray, thanks, please, namaste, religion.
+  static const handsPraying = _handsPraying;
+
+  /// Hand spread. Tags: hold, press, touch, hand, gesture.
+  static const handSpread = _handSpread;
+
+  /// Hand swipe left. Tags: hand, finger, point, pointing, left, direction, swipe.
+  static const handSwipeLeft = _handSwipeLeft;
+
+  /// Hand swipe left fingers. Tags: hand, finger, point, pointing, left, direction, swipe.
+  static const handSwipeLeftFingers = _handSwipeLeftFingers;
+
+  /// Hand swipe left fist. Tags: hand, finger, point, pointing, left, direction, swipe.
+  static const handSwipeLeftFist = _handSwipeLeftFist;
+
+  /// Hand swipe left thumb. Tags: hand, finger, point, pointing, left, direction, swipe.
+  static const handSwipeLeftThumb = _handSwipeLeftThumb;
+
+  /// Hand swipe right. Tags: hand, finger, point, pointing, right, direction, swipe.
+  static const handSwipeRight = _handSwipeRight;
+
+  /// Hand swipe right fingers. Tags: hand, finger, point, pointing, right, direction, swipe.
+  static const handSwipeRightFingers = _handSwipeRightFingers;
+
+  /// Hand swipe right fist. Tags: hand, finger, point, pointing, right, direction, swipe.
+  static const handSwipeRightFist = _handSwipeRightFist;
+
+  /// Hand swipe right thumb. Tags: hand, finger, point, pointing, right, direction, swipe.
+  static const handSwipeRightThumb = _handSwipeRightThumb;
+
+  /// Hand tap. Tags: tap, touch, interaction, gesture, finger, press.
+  static const handTap = _handTap;
+
+  /// Hand tap fingers. Tags: tap, touch, interaction, gesture, finger, press.
+  static const handTapFingers = _handTapFingers;
+
+  /// Hand tap fist. Tags: tap, touch, interaction, gesture, finger, press.
+  static const handTapFist = _handTapFist;
+
+  /// Hand tap thumb. Tags: tap, touch, interaction, gesture, finger, press.
+  static const handTapThumb = _handTapThumb;
+
+  /// Hand two fingers. Tags: two fingers, gesture, touch, swipe, scroll.
+  static const handTwoFingers = _handTwoFingers;
+
+  /// Hand two fingers fist. Tags: two fingers, gesture, touch, swipe.
+  static const handTwoFingersFist = _handTwoFingersFist;
+
+  /// Hand two fingers fist tucked. Tags: two fingers, gesture, touch, swipe.
+  static const handTwoFingersFistTucked = _handTwoFingersFistTucked;
+
+  /// Hand two fingers spread. Tags: two fingers, gesture, touch, pinch, spread.
+  static const handTwoFingersSpread = _handTwoFingersSpread;
+
+  /// Hand wave. Tags: waving hand, hello, hi, goodbye, greeting, wave, bye.
+  static const handWave = _handWave;
+
+  /// Hand wave tilted. Tags: waving hand, hello, hi, goodbye, greeting, wave, bye.
+  static const handWaveTilted = _handWaveTilted;
+
+  /// Hand zap. Tags: save energy, power, electricity, lightning, care.
+  static const handZap = _handZap;
+
+  /// Hang gliding. Tags: paragliding, parachute, glider, sport, flying.
+  static const hangGliding = _hangGliding;
+
+  /// Hard drive. Tags: storage, disk, drive, hdd, server.
   static const hardDrive = _hardDrive;
 
-  /// Hard drive download. Tags: computer, server, memory, data, ssd, disk, hard disk, save.
+  /// Hard drive download. Tags: storage, disk, download, backup, restore.
   static const hardDriveDownload = _hardDriveDownload;
 
-  /// Hard drive upload. Tags: computer, server, memory, data, ssd, disk, hard disk, save.
+  /// Hard drive external. Tags: external drive, storage, disk, backup, usb.
+  static const hardDriveExternal = _hardDriveExternal;
+
+  /// Hard drive portable. Tags: external drive, hdd, storage, disk, usb drive.
+  static const hardDrivePortable = _hardDrivePortable;
+
+  /// Hard drive upload. Tags: storage, disk, upload, backup.
   static const hardDriveUpload = _hardDriveUpload;
 
-  /// Hard hat. Tags: helmet, construction, safety.
+  /// Hard drive user. Tags: drive, user, storage, device, profile, account.
+  static const hardDriveUser = _hardDriveUser;
+
+  /// Hard drive users. Tags: shared drive, storage, team, nas, collaborate.
+  static const hardDriveUsers = _hardDriveUsers;
+
+  /// Hard hat. Tags: helmet, construction, safety, worker, site.
   static const hardHat = _hardHat;
 
-  /// Hash. Tags: hashtag, number, pound.
+  /// Harpoons diagonal. Tags: harpoon, exchange, transfer, swap, diagonal, sync.
+  static const harpoonsDiagonal = _harpoonsDiagonal;
+
+  /// Harpoons horizontal. Tags: harpoon, exchange, transfer, swap, horizontal, sync.
+  static const harpoonsHorizontal = _harpoonsHorizontal;
+
+  /// Harpoons vertical. Tags: harpoon, exchange, transfer, swap, vertical, sync.
+  static const harpoonsVertical = _harpoonsVertical;
+
+  /// Hash. Tags: hashtag, pound, number sign, topic, tag.
   static const hash = _hash;
 
-  /// Hat baseball. Tags: cap, hats, headwear, headgear, mens, boys, store, clothing.
+  /// Hash straight. Tags: hash, pound, number sign, hashtag, tic-tac-toe.
+  static const hashStraight = _hashStraight;
+
+  /// Hat baseball. Tags: cap, hat, baseball cap, clothing, headwear.
   static const hatBaseball = _hatBaseball;
 
-  /// Hat beanie. Tags: bobble, wooly, woolly, winter, cold, headgear, apparel, fashion.
-  static const hatBeanie = _hatBeanie;
+  /// Hat bucket. Tags: hat, cap, fashion, bucket hat, sun hat.
+  static const hatBucket = _hatBucket;
 
-  /// Hat bowler. Tags: hats, headwear, headgear, gentleman, mens, boys, store, clothing.
-  static const hatBowler = _hatBowler;
+  /// Same icon as [chefHat].
+  static const hatChef = _chefHat;
 
-  /// Hat chef. Tags: cooking, kitchen, restaurant.
-  static const hatChef = _hatChef;
+  /// Hat cowboy. Tags: cowboy hat, western, hat, rodeo, texas.
+  static const hatCowboy = _hatCowboy;
 
-  /// Hat glasses. Tags: incognito, disguise, costume, masked, anonymous, anonymity, privacy, private browsing.
+  /// Hat glasses. Tags: incognito, private, spy, detective, anonymous.
   static const hatGlasses = _hatGlasses;
 
-  /// Hat hard. Tags: helmet, headgear, construction, protective, safety, builder.
-  static const hatHard = _hatHard;
+  /// Hat glasses curved. Tags: anonymous, incognito, spy, private, detective, disguise.
+  static const hatGlassesCurved = _hatGlassesCurved;
 
-  /// Hat top. Tags: hats, headwear, headgear, gentleman, mens, boys, store, clothing.
-  static const hatTop = _hatTop;
+  /// Hat glasses flat. Tags: incognito, private, anonymous, spy, hat.
+  static const hatGlassesFlat = _hatGlassesFlat;
 
-  /// Haze. Tags: mist, fog.
+  /// Same icon as [hardHat].
+  static const hatHard = _hardHat;
+
+  /// Hat police. Tags: police, cap, hat, uniform, law.
+  static const hatPolice = _hatPolice;
+
+  /// Haze. Tags: sun, fog, horizon, mist.
   static const haze = _haze;
 
-  /// Hd. Tags: tv, resolution, video, high definition, 720p, 1080p.
+  /// Hd. Tags: high definition, video, quality, resolution.
   static const hd = _hd;
 
-  /// Hdmi port. Tags: socket, plug, slot, controller, connector, interface, console, signal.
+  /// Hdmi port. Tags: hdmi, port, connector, video, display.
   static const hdmiPort = _hdmiPort;
 
-  /// Heading. Tags: h1, html, markup, markdown.
+  /// Hd sparkle. Tags: ai, hd, resolution, upscale, sparkle, quality.
+  static const hdSparkle = _hdSparkle;
+
+  /// Head ai. Tags: ai, artificial intelligence, brain, head, mind, intelligence. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const headAi = _headAi;
+
+  /// Head bitcoin. Tags: bitcoin, mind, head, think, crypto, btc.
+  static const headBitcoin = _headBitcoin;
+
+  /// Head chip. Tags: ai, artificial intelligence, brain, processor, head, machine learning.
+  static const headChip = _headChip;
+
+  /// Head code. Tags: developer, programmer, coding, head, code, software.
+  static const headCode = _headCode;
+
+  /// Heading. Tags: title, h, header, typography.
   static const heading = _heading;
 
-  /// Heading 1. Tags: h1, html, markup, markdown.
+  /// Heading 1. Tags: heading, title, h1, header, typography.
   static const heading1 = _heading1;
 
-  /// Heading 2. Tags: h2, html, markup, markdown.
+  /// Heading 2. Tags: heading, title, h2, header, typography.
   static const heading2 = _heading2;
 
-  /// Heading 3. Tags: h3, html, markup, markdown.
+  /// Heading 3. Tags: heading, title, h3, header, typography.
   static const heading3 = _heading3;
 
-  /// Heading 4. Tags: h4, html, markup, markdown.
+  /// Heading 4. Tags: heading, title, h4, header, typography.
   static const heading4 = _heading4;
 
-  /// Heading 5. Tags: h5, html, markup, markdown.
+  /// Heading 5. Tags: heading, title, h5, header, typography.
   static const heading5 = _heading5;
 
-  /// Heading 6. Tags: h6, html, markup, markdown.
+  /// Heading 6. Tags: heading, title, h6, header, typography.
   static const heading6 = _heading6;
 
-  /// Heading circle. Tags: hospital, accident, emergency, helicopter pad, helipad, help.
-  static const headingCircle = _headingCircle;
+  /// Head mask. Tags: protection, mask, head, hand, safety.
+  static const headMask = _headMask;
 
-  /// Heading square. Tags: h1, html, markup, markdown, toolbar, formatting, styling, typography.
-  static const headingSquare = _headingSquare;
+  /// Head nodes. Tags: ai, artificial intelligence, neural network, head, mind, nodes.
+  static const headNodes = _headNodes;
 
-  /// Headphone off. Tags: music, audio, sound, mute, off.
-  static const headphoneOff = _headphoneOff;
+  /// Same icon as [headphonesOff].
+  static const headphoneOff = _headphonesOff;
 
-  /// Headphones. Tags: music, audio, sound.
+  /// Headphones. Tags: audio, music, listen, earphones.
   static const headphones = _headphones;
 
-  /// Headset. Tags: music, audio, sound, gaming, headphones, call, center, phone.
+  /// Headphones check. Tags: headset, connected, paired, support.
+  static const headphonesCheck = _headphonesCheck;
+
+  /// Headphones off. Tags: headphones, mute, off, audio, silent, disabled.
+  static const headphonesOff = _headphonesOff;
+
+  /// Headset. Tags: customer service, support, call center, headphones, microphone, help.
   static const headset = _headset;
 
-  /// Heart. Tags: like, love, emotion, suit, playing, cards.
+  /// Headset mic. Tags: customer service, support, call center, headphones, boom mic, help.
+  static const headsetMic = _headsetMic;
+
+  /// Headset narrow. Tags: customer support, call center, single earpiece, mic, help, operator.
+  static const headsetNarrow = _headsetNarrow;
+
+  /// Headset off. Tags: headset, off, disconnected, muted, support.
+  static const headsetOff = _headsetOff;
+
+  /// Headset round. Tags: headset, support, call center, microphone, gaming.
+  static const headsetRound = _headsetRound;
+
+  /// Head sparkle. Tags: ai, imagine, head, profile, mind, sparkle, creativity.
+  static const headSparkle = _headSparkle;
+
+  /// Heart. Tags: love, like, favorite, health, favourite.
   static const heart = _heart;
 
-  /// Heart crack. Tags: heartbreak, sadness, emotion.
+  /// Heart check. Tags: heart, check, favorite, approved, health.
+  static const heartCheck = _heartCheck;
+
+  /// Heart crack. Tags: heartbreak, broken, sad, breakup, love, crack.
   static const heartCrack = _heartCrack;
 
-  /// Heart handshake. Tags: agreement, charity, help, deal, terms, emotion, together, handshake.
+  /// Heart cross. Tags: health, medical, heart, plus, wellness.
+  static const heartCross = _heartCross;
+
+  /// Heart handshake. Tags: charity, partnership, support, care, deal.
   static const heartHandshake = _heartHandshake;
 
-  /// Heart minus. Tags: unlike, unfavorite, remove, delete, damage.
+  /// Heart handshake simple. Tags: service, support, care, help, customer service.
+  static const heartHandshakeSimple = _heartHandshakeSimple;
+
+  /// Heart minus. Tags: heart, minus, remove, unfavorite.
   static const heartMinus = _heartMinus;
 
-  /// Heart off. Tags: unlike, dislike, hate, emotion.
+  /// Heart off. Tags: heart, off, unlike, disabled.
   static const heartOff = _heartOff;
 
-  /// Heart plus. Tags: plus, like, favorite, add, health, support.
+  /// Heart plus. Tags: heart, add, favorite, like, plus.
   static const heartPlus = _heartPlus;
 
-  /// Heart pulse. Tags: heartbeat, pulse, health, medical, blood pressure, cardiac, systole, diastole.
+  /// Heart pulse. Tags: cardiogram, heartbeat, ecg, health, cardio, pulse.
   static const heartPulse = _heartPulse;
 
-  /// Heart x. Tags: unlike, unfavorite, remove, reject, dismiss, delete, clear.
+  /// Heart pulse line. Tags: heartbeat, pulse, ecg, health, cardio.
+  static const heartPulseLine = _heartPulseLine;
+
+  /// Heart x. Tags: heart, remove, x, unfavorite, dislike.
   static const heartX = _heartX;
 
-  /// Heater. Tags: heating, warmth, comfort, fire, stove, electric, electronics, amenities.
+  /// Heater. Tags: heating, warm, radiator, temperature.
   static const heater = _heater;
 
-  /// Hedgehog. Tags: porcupine, prickly, spiny, spiky, spikes, defences, defend, mammal.
-  static const hedgehog = _hedgehog;
-
-  /// Helicopter. Tags: transport, flying, rotor, aviation, helipad, gear, flyer, technology.
+  /// Helicopter. Tags: chopper, aircraft, air.
   static const helicopter = _helicopter;
-
-  /// Helmet diving. Tags: submerge, diver, location, spot, gear, equipment, safety, sea.
-  static const helmetDiving = _helmetDiving;
 
   /// Same icon as [circleQuestionMark].
   static const help = _circleQuestionMark;
 
-  /// Hexagon. Tags: shape, node.js, logo.
+  /// Hexagon. Tags: shape, polygon, six sides, rounded.
   static const hexagon = _hexagon;
 
-  /// Hexagons 3. Tags: honeycomb, beeswax, cells, cluster, tessellation, pollen, pollinate.
+  /// Hexagon nodes. Tags: nanotechnology, nano, molecule, network, nodes, hexagon.
+  static const hexagonNodes = _hexagonNodes;
+
+  /// Hexagons 3. Tags: cells, honeycomb, biology, hexagon, molecule, pattern.
   static const hexagons3 = _hexagons3;
 
-  /// Hexagons 7. Tags: honeycomb, beeswax, cells, cluster, tessellation, pollen, pollinate.
-  static const hexagons7 = _hexagons7;
+  /// Hexagon slash. Tags: hexagon, slash, disabled, off, diagonal.
+  static const hexagonSlash = _hexagonSlash;
 
-  /// High heel. Tags: stiletto, platform, shoe, footwear, womens, girls, female, ladies.
+  /// Hierarchy circle arch. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchyCircleArch = _hierarchyCircleArch;
+
+  /// Hierarchy circle fork. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchyCircleFork = _hierarchyCircleFork;
+
+  /// Hierarchy circle right. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchyCircleRight = _hierarchyCircleRight;
+
+  /// Hierarchy square. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchySquare = _hierarchySquare;
+
+  /// Hierarchy square arch. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchySquareArch = _hierarchySquareArch;
+
+  /// Hierarchy square dot. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchySquareDot = _hierarchySquareDot;
+
+  /// Hierarchy square indent. Tags: org chart, tree, indent, hierarchy, structure.
+  static const hierarchySquareIndent = _hierarchySquareIndent;
+
+  /// Hierarchy square left. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchySquareLeft = _hierarchySquareLeft;
+
+  /// Hierarchy square node. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchySquareNode = _hierarchySquareNode;
+
+  /// Hierarchy square right. Tags: org chart, tree, nodes, hierarchy, structure.
+  static const hierarchySquareRight = _hierarchySquareRight;
+
+  /// Hierarchy square user. Tags: org chart, tree, person, hierarchy, team. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const hierarchySquareUser = _hierarchySquareUser;
+
+  /// Hierarchy square user right. Tags: org chart, tree, person, hierarchy, team.
+  static const hierarchySquareUserRight = _hierarchySquareUserRight;
+
+  /// Hierarchy users. Tags: org chart, team, people, structure, hierarchy. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const hierarchyUsers = _hierarchyUsers;
+
+  /// High heel. Tags: shoe, heel, fashion, sandal, footwear.
   static const highHeel = _highHeel;
 
-  /// Highlighter. Tags: mark, text.
+  /// Highlighter. Tags: marker, highlight, text, pen.
   static const highlighter = _highlighter;
 
-  /// Hockey. Tags: stick, ball, goalkeeper, goalie, team, protective equipment, protection, face.
+  /// Hijab. Tags: headscarf, woman, person, veil.
+  static const hijab = _hijab;
+
+  /// History. Tags: recent, undo, clock, past.
+  static const history = _history;
+
+  /// History dashed. Tags: history, past, dashed, recent, counter clockwise.
+  static const historyDashed = _historyDashed;
+
+  /// History gap. Tags: undo time, recent, past, rewind, counter clockwise, log.
+  static const historyGap = _historyGap;
+
+  /// Hockey. Tags: field hockey, stick, ball, sport.
   static const hockey = _hockey;
 
-  /// Hockey mask. Tags: ice hockey, puck, goalkeeper, goalie, team, protective equipment, protection, padding.
-  static const hockeyMask = _hockeyMask;
+  /// Hologram. Tags: 3d, projection, cube, future.
+  static const hologram = _hologram;
 
   /// Same icon as [house].
   static const home = _house;
 
-  /// Hop. Tags: beer, brewery, drink.
+  /// Honey dipper. Tags: honey, dipper, jar, bee, sweet. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const honeyDipper = _honeyDipper;
+
+  /// Honey jar. Tags: honey, jar, bee, sweet, honeycomb.
+  static const honeyJar = _honeyJar;
+
+  /// Hoodie. Tags: sweatshirt, clothes, fashion.
+  static const hoodie = _hoodie;
+
+  /// Hop. Tags: beer, brewing, plant.
   static const hop = _hop;
 
-  /// Hop off. Tags: beer, brewery, drink, hop free, allergy, intolerance, diet.
+  /// Hop off. Tags: hop, off, beer-free, gluten. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const hopOff = _hopOff;
 
-  /// Horse head. Tags: donkey, pony, calf, filly, stallion, steed, mare, mammal.
+  /// Horse. Tags: animal, stallion, riding.
+  static const horse = _horse;
+
+  /// Horse head. Tags: horse, head, chess, knight, animal.
   static const horseHead = _horseHead;
 
-  /// Hospital. Tags: infirmary, sanatorium, healthcare, doctor, hospice, clinic, emergency room, ward.
+  /// Horse saddle. Tags: horse, saddle, riding, equestrian.
+  static const horseSaddle = _horseSaddle;
+
+  /// Hospital. Tags: clinic, building, health.
   static const hospital = _hospital;
 
-  /// Hot dog. Tags: banger, wiener, wurst, jumbo, bun, meat, pork, fast food.
+  /// Hospital cross. Tags: hospital, clinic, building, health, plus.
+  static const hospitalCross = _hospitalCross;
+
+  /// Hot air balloon. Tags: balloon, hot air, flight, adventure.
+  static const hotAirBalloon = _hotAirBalloon;
+
+  /// Hot dog. Tags: sausage, fast food, snack.
   static const hotDog = _hotDog;
 
-  /// Hotel. Tags: building, hostel, motel, inn.
+  /// Hotel. Tags: building, accommodation, stay.
   static const hotel = _hotel;
 
-  /// Hourglass. Tags: timer, time, sandglass.
+  /// Hotel awning. Tags: hotel, building, accommodation, stay.
+  static const hotelAwning = _hotelAwning;
+
+  /// Hotspot. Tags: wifi, broadcast, signal, radar.
+  static const hotspot = _hotspot;
+
+  /// Hotspot off. Tags: hotspot, offline, off, signal, disconnected.
+  static const hotspotOff = _hotspotOff;
+
+  /// Hot tub. Tags: bath, spa, relax, jacuzzi. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const hotTub = _hotTub;
+
+  /// Hourglass. Tags: wait, loading, timer, sand.
   static const hourglass = _hourglass;
 
-  /// Hourglass cog. Tags: timer, time, sandglass, duration, settings, gear, cog, edit.
-  static const hourglassCog = _hourglassCog;
+  /// Hourglass off. Tags: hourglass, off, stopped, timer.
+  static const hourglassOff = _hourglassOff;
 
-  /// House. Tags: home, living, building, residence, architecture.
+  /// Hourglass round. Tags: wait, loading, timer, sand, time, pending. Its details merge when filled: use it outlined.
+  static const hourglassRound = _hourglassRound;
+
+  /// House. Tags: home, building, residence, main.
   static const house = _house;
 
-  /// House cog. Tags: home, building, residence, settings, gear, configuration, property, automation.
-  static const houseCog = _houseCog;
+  /// House arch. Tags: home, house, arch, door, building.
+  static const houseArch = _houseArch;
 
-  /// House heart. Tags: home sweet home, abode, building, residence, healthy living, lifestyle.
+  /// House arch round. Tags: home, house, rounded, arch, building.
+  static const houseArchRound = _houseArchRound;
+
+  /// House building. Tags: real estate, house, property, building, apartment.
+  static const houseBuilding = _houseBuilding;
+
+  /// House chimney. Tags: house, chimney, cottage, home.
+  static const houseChimney = _houseChimney;
+
+  /// House circle. Tags: home, house, circle, window, building.
+  static const houseCircle = _houseCircle;
+
+  /// House city. Tags: house, city, town, buildings, real estate.
+  static const houseCity = _houseCity;
+
+  /// House dome. Tags: cottage, house, home, cabin, small house.
+  static const houseDome = _houseDome;
+
+  /// House door. Tags: home, house, door, building.
+  static const houseDoor = _houseDoor;
+
+  /// House door side. Tags: home, house, door, building.
+  static const houseDoorSide = _houseDoorSide;
+
+  /// House duplex. Tags: duplex, home, two units, building, residence.
+  static const houseDuplex = _houseDuplex;
+
+  /// House eaves. Tags: home, house, roof, eaves, building.
+  static const houseEaves = _houseEaves;
+
+  /// House eaves line. Tags: home, house, roof, arch, building.
+  static const houseEavesLine = _houseEavesLine;
+
+  /// House heart. Tags: home, heart, love, favorite.
   static const houseHeart = _houseHeart;
 
-  /// House manor. Tags: mansion, country, property, real estate, dwellings, living, rooms, door.
-  static const houseManor = _houseManor;
+  /// House knob. Tags: home, house, door, knob, building.
+  static const houseKnob = _houseKnob;
 
-  /// House off. Tags: property, real estate, dwellings, living, rooms, door, automation, iot.
-  static const houseOff = _houseOff;
+  /// House minus. Tags: home, house, minus, basement.
+  static const houseMinus = _houseMinus;
 
-  /// House plug. Tags: home, living, building, residence, architecture, autarky, energy.
+  /// House perspective. Tags: home, house, garage, car, building.
+  static const housePerspective = _housePerspective;
+
+  /// House plug. Tags: home, plug, power, energy, electric.
   static const housePlug = _housePlug;
 
-  /// House plus. Tags: home, living, medical, new, addition, building, residence, architecture.
+  /// House plug round. Tags: electric home, power, energy, plug, house.
+  static const housePlugRound = _housePlugRound;
+
+  /// House plus. Tags: home, plus, add, new property.
   static const housePlus = _housePlus;
 
-  /// House roof. Tags: property, real estate, dwellings, living, rooms, door, thatch, snow.
+  /// House roof. Tags: home, house, roof, wide, building.
   static const houseRoof = _houseRoof;
 
-  /// House roof off. Tags: property, real estate, dwellings, living, rooms, door, automation, iot.
-  static const houseRoofOff = _houseRoofOff;
+  /// House roof plug. Tags: electric home, smart home, power, energy, plug.
+  static const houseRoofPlug = _houseRoofPlug;
 
-  /// Houses. Tags: homes, housing, estate, living, buildings, development, residences, residential.
+  /// Houses. Tags: neighborhood, real estate, homes.
   static const houses = _houses;
 
-  /// House wifi. Tags: home, living, building, wifi, connectivity.
+  /// House smile. Tags: home, house, happy, smile, welcome.
+  static const houseSmile = _houseSmile;
+
+  /// House solar panel. Tags: solar, home, energy, panel, eco.
+  static const houseSolarPanel = _houseSolarPanel;
+
+  /// House tree. Tags: house, lamp post, home, street.
+  static const houseTree = _houseTree;
+
+  /// House villa. Tags: villa, house, property, real estate, vacation home, mansion.
+  static const houseVilla = _houseVilla;
+
+  /// House water. Tags: villa, waterfront, lakehouse, beach house, property, flood, real estate.
+  static const houseWater = _houseWater;
+
+  /// House wifi. Tags: smart home, wifi, home, network, internet.
   static const houseWifi = _houseWifi;
 
-  /// Ice cream bowl. Tags: gelato, food, dessert, dish, restaurant, course, meal.
+  /// House wifi corner. Tags: smart home, wifi, home, network.
+  static const houseWifiCorner = _houseWifiCorner;
+
+  /// House windows. Tags: house, windows, home, building.
+  static const houseWindows = _houseWindows;
+
+  /// Hub. Tags: framework, nodes, network, connections.
+  static const hub = _hub;
+
+  /// Hurricane. Tags: tropical storm, cyclone, typhoon, weather.
+  static const hurricane = _hurricane;
+
+  /// Hurricane path. Tags: hurricane, tropical storm, tracks, path, forecast.
+  static const hurricanePath = _hurricanePath;
+
+  /// Hurricane spiral. Tags: hurricane, tropical storm, tracks, cyclone, typhoon.
+  static const hurricaneSpiral = _hurricaneSpiral;
+
+  /// Hut. Tags: cabin, shelter, tent.
+  static const hut = _hut;
+
+  /// Hydro power. Tags: water energy, renewable, eco, droplet.
+  static const hydroPower = _hydroPower;
+
+  /// Hyperbola. Tags: curve, graph, conic, axes.
+  static const hyperbola = _hyperbola;
+
+  /// Ice cream bowl. Tags: ice cream, bowl, scoops, dessert, sweet.
   static const iceCreamBowl = _iceCreamBowl;
 
-  /// Ice cream cone. Tags: gelato, food.
+  /// Ice cream cone. Tags: ice cream, cone, dessert, sweet.
   static const iceCreamCone = _iceCreamCone;
 
-  /// Ice hockey. Tags: stick, puck, ice rink, skates, team, winter sports.
+  /// Ice cream cone drip. Tags: ice cream, cone, scoop, dessert, sweet.
+  static const iceCreamConeDrip = _iceCreamConeDrip;
+
+  /// Ice cream cone scoops. Tags: ice cream, cone, scoops, dessert, sweet.
+  static const iceCreamConeScoops = _iceCreamConeScoops;
+
+  /// Ice cream cup. Tags: ice cream, soft serve, cup, dessert, sweet.
+  static const iceCreamCup = _iceCreamCup;
+
+  /// Ice cream sundae. Tags: ice cream, sundae, dessert, sweet, cup. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const iceCreamSundae = _iceCreamSundae;
+
+  /// Ice cubes. Tags: ice, cubes, cold, drink, frozen.
+  static const iceCubes = _iceCubes;
+
+  /// Ice hockey. Tags: hockey, ice, stick, puck, sport.
   static const iceHockey = _iceHockey;
 
-  /// Ice skate. Tags: skates, ice rink, figure skating, speed skating, boots, shoes, footwear, winter.
+  /// Ice skate. Tags: skating, winter, sport, shoe.
   static const iceSkate = _iceSkate;
 
-  /// Id card. Tags: card, badge, identity, authentication, secure.
+  /// Ico. Tags: icon file, favicon, format.
+  static const ico = _ico;
+
+  /// Id badge. Tags: id, badge, identity, employee, lanyard.
+  static const idBadge = _idBadge;
+
+  /// Id badge check. Tags: id, verified, approved, identity, badge.
+  static const idBadgeCheck = _idBadgeCheck;
+
+  /// Id card. Tags: id, card, identity, license, profile, passport, person, student card. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const idCard = _idCard;
 
-  /// Id card lanyard. Tags: id-card, id-card-lanyard, identity, employee, gate-pass, badge.
+  /// Id card check. Tags: id, card, verified, identity, check.
+  static const idCardCheck = _idCardCheck;
+
+  /// Id card corner check. Tags: passport, valid, verified, identity, check.
+  static const idCardCornerCheck = _idCardCornerCheck;
+
+  /// Id card corner x. Tags: passport, expired, invalid, identity, x.
+  static const idCardCornerX = _idCardCornerX;
+
+  /// Id card lanyard. Tags: id, badge, lanyard, employee, identity.
   static const idCardLanyard = _idCardLanyard;
 
-  /// Igloo. Tags: ice blocks, cold, freeze, frozen, winter, shelter, dome, eskimo.
-  static const igloo = _igloo;
+  /// Id card lines. Tags: id, card, identity, details, profile.
+  static const idCardLines = _idCardLines;
 
-  /// Image. Tags: picture, photo.
+  /// Image. Tags: photo, picture, landscape, gallery.
   static const image = _image;
 
-  /// Image down. Tags: picture, photo, download, save, export.
+  /// Image check. Tags: image, done, check, approved, photo.
+  static const imageCheck = _imageCheck;
+
+  /// Image crop. Tags: image, crop, trim, resize, photo.
+  static const imageCrop = _imageCrop;
+
+  /// Image dot down. Tags: image, download, arrow, photo.
+  static const imageDotDown = _imageDotDown;
+
+  /// Image dot minus. Tags: image, minus, remove, photo.
+  static const imageDotMinus = _imageDotMinus;
+
+  /// Image dot off. Tags: image, not found, broken, missing, off.
+  static const imageDotOff = _imageDotOff;
+
+  /// Image dot plus. Tags: image, plus, add, photo.
+  static const imageDotPlus = _imageDotPlus;
+
+  /// Image dot up. Tags: image, upload, arrow, photo.
+  static const imageDotUp = _imageDotUp;
+
+  /// Image down. Tags: image, download, save, photo.
   static const imageDown = _imageDown;
 
-  /// Image minus. Tags: remove, delete.
+  /// Image hills. Tags: image, photo, picture, landscape.
+  static const imageHills = _imageHills;
+
+  /// Image minus. Tags: image, remove, minus, photo.
   static const imageMinus = _imageMinus;
 
-  /// Image off. Tags: picture, photo.
+  /// Image off. Tags: image, off, hidden, disabled, no image, not found, broken, missing.
   static const imageOff = _imageOff;
 
-  /// Image play. Tags: picture, gif, photo.
+  /// Image oval. Tags: image, frame, oval, composition, photo.
+  static const imageOval = _imageOval;
+
+  /// Image pen sparkle. Tags: ai, image, edit, pen, sparkle.
+  static const imagePenSparkle = _imagePenSparkle;
+
+  /// Image play. Tags: image, play, video, preview, animation.
   static const imagePlay = _imagePlay;
 
-  /// Image plus. Tags: add, create, picture.
+  /// Image plus. Tags: image, add, plus, new, photo.
   static const imagePlus = _imagePlus;
 
-  /// Images. Tags: picture, photo, multiple, copy, gallery, album, collection, slideshow.
+  /// Image rotate ccw. Tags: image, rotate, counterclockwise, turn, photo.
+  static const imageRotateCcw = _imageRotateCcw;
+
+  /// Image rotate cw. Tags: image, rotate, clockwise, turn, photo.
+  static const imageRotateCw = _imageRotateCw;
+
+  /// Image rotate to landscape. Tags: image, orientation, rotate, landscape, portrait.
+  static const imageRotateToLandscape = _imageRotateToLandscape;
+
+  /// Image rotate to portrait. Tags: image, orientation, rotate, landscape, portrait.
+  static const imageRotateToPortrait = _imageRotateToPortrait;
+
+  /// Images. Tags: gallery, photos, pictures, album, stack.
   static const images = _images;
 
-  /// Image up. Tags: picture, photo, upload, import.
+  /// Images fan. Tags: album, photos, pictures, gallery, tilted.
+  static const imagesFan = _imagesFan;
+
+  /// Images fan off. Tags: album, not, found, photos, missing, off, tilted.
+  static const imagesFanOff = _imagesFanOff;
+
+  /// Image slope. Tags: image, photo, picture, landscape.
+  static const imageSlope = _imageSlope;
+
+  /// Image slope check. Tags: image, done, check, approved, photo.
+  static const imageSlopeCheck = _imageSlopeCheck;
+
+  /// Image slope down. Tags: image, download, save, photo.
+  static const imageSlopeDown = _imageSlopeDown;
+
+  /// Image slope minus. Tags: image, remove, minus, photo.
+  static const imageSlopeMinus = _imageSlopeMinus;
+
+  /// Image slope plus. Tags: image, add, plus, upload, new.
+  static const imageSlopePlus = _imageSlopePlus;
+
+  /// Image slope up. Tags: image, upload, share, photo.
+  static const imageSlopeUp = _imageSlopeUp;
+
+  /// Image slope x. Tags: image, delete, remove, x, photo.
+  static const imageSlopeX = _imageSlopeX;
+
+  /// Images off. Tags: album, not, found, photos, missing, off.
+  static const imagesOff = _imagesOff;
+
+  /// Image sparkle. Tags: ai, image, picture, sparkle, generate.
+  static const imageSparkle = _imageSparkle;
+
+  /// Image sparkle corner. Tags: ai, image, picture, sparkle, generate.
+  static const imageSparkleCorner = _imageSparkleCorner;
+
+  /// Image up. Tags: image, upload, share, photo.
   static const imageUp = _imageUp;
 
-  /// Image upscale. Tags: resize, picture, sharpen, increase.
+  /// Image upscale. Tags: image, upscale, enlarge, resize, resolution, expand.
   static const imageUpscale = _imageUpscale;
 
-  /// Import. Tags: save.
+  /// Image video. Tags: image, video, convert, animate, photo.
+  static const imageVideo = _imageVideo;
+
+  /// Image wavy. Tags: image, frame, wavy, composition, photo.
+  static const imageWavy = _imageWavy;
+
+  /// Image x. Tags: image, delete, remove, x, photo.
+  static const imageX = _imageX;
+
+  /// Import. Tags: download, receive, inbox, arrow.
   static const import = _import;
 
-  /// Inbox. Tags: email.
+  /// Import tray. Tags: download, tray, import, save, arrow down, get.
+  static const importTray = _importTray;
+
+  /// Inbox. Tags: tray, mail, empty, messages, box.
   static const inbox = _inbox;
+
+  /// Inbox arrow down. Tags: inbox, tray, receive, download, save, incoming.
+  static const inboxArrowDown = _inboxArrowDown;
+
+  /// Inbox arrow up. Tags: inbox, tray, send, upload, outgoing, restore.
+  static const inboxArrowUp = _inboxArrowUp;
+
+  /// Inbox off. Tags: inbox, tray, disabled, no mail, crossed.
+  static const inboxOff = _inboxOff;
+
+  /// Inbox square. Tags: inbox, mail, tray, messages, receive.
+  static const inboxSquare = _inboxSquare;
+
+  /// Inbox square check. Tags: inbox, check, done, processed. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const inboxSquareCheck = _inboxSquareCheck;
+
+  /// Inbox square dot. Tags: inbox, unread, new, notification, dot.
+  static const inboxSquareDot = _inboxSquareDot;
+
+  /// Inbox square down. Tags: inbox, download, receive, incoming.
+  static const inboxSquareDown = _inboxSquareDown;
+
+  /// Inbox square up. Tags: inbox, upload, outgoing, send.
+  static const inboxSquareUp = _inboxSquareUp;
+
+  /// Inbox x. Tags: inbox, tray, remove, discard, close, clear.
+  static const inboxX = _inboxX;
+
+  /// Incline ball. Tags: acceleration, physics, ramp, slope, ball, speed.
+  static const inclineBall = _inclineBall;
 
   /// Same icon as [listIndentIncrease].
   static const indent = _listIndentIncrease;
 
-  /// Indian rupee. Tags: currency, money, payment.
+  /// India gate. Tags: monument, delhi, landmark, arch.
+  static const indiaGate = _indiaGate;
+
+  /// Indian rupee. Tags: rupee, currency, india, money, inr.
   static const indianRupee = _indianRupee;
 
-  /// Indian rupee circle. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
+  /// Indian rupee circle. Tags: rupee, indian rupee, currency, circle.
   static const indianRupeeCircle = _indianRupeeCircle;
 
-  /// Indian rupee square. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
+  /// Indian rupee square. Tags: rupee, indian rupee, currency, square.
   static const indianRupeeSquare = _indianRupeeSquare;
 
-  /// Infinity. Tags: unlimited, forever, loop, math. Its details merge when filled: use it outlined.
+  /// Infinity. Tags: infinite, loop, endless, unlimited, forever. Its details merge when filled: use it outlined.
   static const infinity = _infinity;
 
-  /// Info. Tags: about, advice, clue, details, help, hint, indicator, information.
+  /// Infinity brackets. Tags: infinite, endless, unlimited, brackets, loop. Its details merge when filled: use it outlined.
+  static const infinityBrackets = _infinityBrackets;
+
+  /// Info. Tags: information, help, about, details, i, circle info.
   static const info = _info;
 
-  /// Inspection panel. Tags: access, cover, tile, metal, materials, screws.
-  static const inspectionPanel = _inspectionPanel;
+  /// Input number. Tags: numeric, number field, input, digits, form.
+  static const inputNumber = _inputNumber;
 
-  /// Intercom. Tags: buzzer, speaker, voice, call, service, summon, hospitality, hotel.
-  static const intercom = _intercom;
+  /// Input text. Tags: input, text field, form, field, type. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const inputText = _inputText;
 
-  /// Iron. Tags: steam, flatten, straighten, clothes, clothing, apparel, attire, dry cleaning.
-  static const iron = _iron;
+  /// Input text long. Tags: input, long text, textarea, field, form. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const inputTextLong = _inputTextLong;
 
-  /// Ironing board. Tags: flatten, straighten, clothes, clothing, apparel, attire, dry cleaning, amenities.
-  static const ironingBoard = _ironingBoard;
+  /// Input text short. Tags: input, short text, field, form, label. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const inputTextShort = _inputTextShort;
 
-  /// Iron off. Tags: do not iron, warning, instructions, clothes, clothing, apparel, attire.
-  static const ironOff = _ironOff;
+  /// Insert image bottom. Tags: insert image, image position, bottom, layout, figure.
+  static const insertImageBottom = _insertImageBottom;
 
-  /// Italic. Tags: oblique, text, format.
+  /// Insert image center. Tags: insert image, image position, center, layout, figure.
+  static const insertImageCenter = _insertImageCenter;
+
+  /// Insert image top. Tags: insert image, image position, top, layout, figure.
+  static const insertImageTop = _insertImageTop;
+
+  /// Island. Tags: palm tree, vacation, beach, tropical, holiday.
+  static const island = _island;
+
+  /// Italic. Tags: slant, font style, emphasis, format, oblique, text.
   static const italic = _italic;
 
-  /// Italic square. Tags: oblique, emphasis, emphasize, toolbar, formatting, styling, plain text, rich text.
-  static const italicSquare = _italicSquare;
+  /// Italic off. Tags: italic, remove, clear, text, format.
+  static const italicOff = _italicOff;
 
-  /// Iteration ccw. Tags: arrow, right.
+  /// Iteration ccw. Tags: iteration, loop, repeat, counterclockwise, cycle.
   static const iterationCcw = _iterationCcw;
 
-  /// Iteration cw. Tags: arrow, left.
+  /// Iteration cw. Tags: iteration, loop, repeat, clockwise, cycle.
   static const iterationCw = _iterationCw;
 
-  /// Iv bag. Tags: intravenous, therapy, infusion, medicine, medication, treatment, healthcare, hydration.
+  /// Iv bag. Tags: blood, drip, infusion, transfusion, hospital.
   static const ivBag = _ivBag;
 
-  /// Jacket. Tags: blazer, coat, suit, gentleman, mens, boys, top, store.
-  static const jacket = _jacket;
-
-  /// Jacket sports. Tags: coat, man, mens, top, store, clothing, clothes, apparel.
-  static const jacketSports = _jacketSports;
-
-  /// Japanese yen. Tags: currency, money, payment.
+  /// Japanese yen. Tags: yen, currency, money, jpy, payment, yuan.
   static const japaneseYen = _japaneseYen;
 
-  /// Japanese yen circle. Tags: monetization, marketing, finance, financial, markets, exchange, trader, trading.
+  /// Japanese yen arrow left. Tags: currency, money, receive, incoming, yuan.
+  static const japaneseYenArrowLeft = _japaneseYenArrowLeft;
+
+  /// Japanese yen arrow right. Tags: currency, money, send, outgoing, transfer, yuan.
+  static const japaneseYenArrowRight = _japaneseYenArrowRight;
+
+  /// Japanese yen circle. Tags: currency, money, payment, yuan, coin.
   static const japaneseYenCircle = _japaneseYenCircle;
 
-  /// Japanese yen square. Tags: monetization, marketing, finance, financial, markets, exchange, trader, trading.
+  /// Japanese yen square. Tags: currency, money, payment, yuan, badge.
   static const japaneseYenSquare = _japaneseYenSquare;
 
-  /// Jar. Tags: pot, container, storage, jam, preserve, conserve, honey, marmalade.
-  static const jar = _jar;
+  /// Same icon as [honeyJar].
+  static const jar = _honeyJar;
 
-  /// Joystick. Tags: game, console, control stick.
+  /// Jar dollar sign. Tags: money, saving, jar, savings, tip, dollar. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const jarDollarSign = _jarDollarSign;
+
+  /// Jerrycan. Tags: fuel, gas can, petrol, canister, oil.
+  static const jerrycan = _jerrycan;
+
+  /// Jerrycan drop. Tags: fuel, jerrycan, gas can, petrol, oil.
+  static const jerrycanDrop = _jerrycanDrop;
+
+  /// Jester hat. Tags: joker, jester, clown, card, fool, hat.
+  static const jesterHat = _jesterHat;
+
+  /// Jogging. Tags: workout, exercise, running, cardio, fitness, sport.
+  static const jogging = _jogging;
+
+  /// Joystick. Tags: controller, arcade, gamepad, stick.
   static const joystick = _joystick;
 
-  /// Jug. Tags: coffee pot, roast, ground, blend, arabica, filter, cafe, hot.
-  static const jug = _jug;
+  /// Joystick ball. Tags: joystick, controller, arcade, gamepad, ball top.
+  static const joystickBall = _joystickBall;
 
-  /// Kanban. Tags: projects, manage, overview, board, tickets, issues, roadmap, plan.
-  static const kanban = _kanban;
+  /// Joystick base. Tags: joystick, controller, arcade, gamepad, box base.
+  static const joystickBase = _joystickBase;
 
-  /// Kayak. Tags: boat, paddle, water, sport, recreation, adventure, outdoors, equipment.
+  /// Joystick button. Tags: joystick, controller, arcade, gamepad, button.
+  static const joystickButton = _joystickButton;
+
+  /// Joystick isometric. Tags: joystick, controller, arcade, gamepad, 3d base.
+  static const joystickIsometric = _joystickIsometric;
+
+  /// Judge. Tags: court, law, justice, wig, legal.
+  static const judge = _judge;
+
+  /// Jupiter. Tags: planet, space, solar system, astronomy, gas giant.
+  static const jupiter = _jupiter;
+
+  /// Kaaba. Tags: mecca, islam, hajj, pilgrimage, mosque.
+  static const kaaba = _kaaba;
+
+  /// Kaaba door. Tags: kaaba, mecca, islam, hajj, pilgrimage, door.
+  static const kaabaDoor = _kaabaDoor;
+
+  /// Same icon as [squareKanban].
+  static const kanban = _squareKanban;
+
+  /// Kayak. Tags: canoe, paddle, boat, water sport.
   static const kayak = _kayak;
 
-  /// Kazakh tenge. Tags: currency, money, payment, kazakhstan, currency-symbol, exchange, cash.
-  static const kazakhTenge = _kazakhTenge;
+  /// Keffiyeh. Tags: headscarf, shemagh, head covering, clothing, kufiya.
+  static const keffiyeh = _keffiyeh;
 
-  /// Kebab. Tags: shish, skewer, meat, fast food, junk food, snack, meal, savory.
-  static const kebab = _kebab;
-
-  /// Kettle. Tags: heat, boiling, water, steam, whistle, drink, tea, coffee.
+  /// Kettle. Tags: tea, boil, stovetop, water, hot.
   static const kettle = _kettle;
 
-  /// Kettle electric. Tags: heat, boiling, water, steam, drink, tea, coffee, kitchen.
-  static const kettleElectric = _kettleElectric;
+  /// Kettlebell. Tags: weight, gym, fitness, workout, training.
+  static const kettlebell = _kettlebell;
 
-  /// Key. Tags: password, login, authentication, secure, unlock, keychain, key ring, fob.
+  /// Ketupat. Tags: rice cake, eid, traditional food, woven.
+  static const ketupat = _ketupat;
+
+  /// Key. Tags: password, access, unlock, login.
   static const key = _key;
 
-  /// Keyboard. Tags: layout, spell, settings, mouse.
+  /// Key bitcoin. Tags: bitcoin, key, private, wallet, crypto, btc.
+  static const keyBitcoin = _keyBitcoin;
+
+  /// Keyboard. Tags: typing, input, keys, computer.
   static const keyboard = _keyboard;
 
-  /// Keyboard music. Tags: music, audio, sound, noise, notes, keys, chord, octave.
-  static const keyboardMusic = _keyboardMusic;
-
-  /// Keyboard off. Tags: unkeys, layout, spell, settings, mouse.
+  /// Keyboard off. Tags: no keyboard, disabled, typing, hide keyboard.
   static const keyboardOff = _keyboardOff;
 
-  /// Key round. Tags: password, login, authentication, secure, unlock.
+  /// Key digits. Tags: encrypt, encryption, key, binary, password, secret.
+  static const keyDigits = _keyDigits;
+
+  /// Key fob. Tags: key generator, token, car key, remote, authenticator.
+  static const keyFob = _keyFob;
+
+  /// Keyframe. Tags: animation, timeline, diamond, motion.
+  static const keyframe = _keyframe;
+
+  /// Keyframe align center. Tags: align keyframe, keyframe, center, animation, timeline.
+  static const keyframeAlignCenter = _keyframeAlignCenter;
+
+  /// Keyframe align horizontal. Tags: align keyframe, horizontal, keyframe, animation, timeline.
+  static const keyframeAlignHorizontal = _keyframeAlignHorizontal;
+
+  /// Keyframe align vertical. Tags: align keyframe, vertical, keyframe, animation, timeline.
+  static const keyframeAlignVertical = _keyframeAlignVertical;
+
+  /// Keyframe bottom. Tags: keyframe, bottom, align, animation, timeline.
+  static const keyframeBottom = _keyframeBottom;
+
+  /// Keyframe left. Tags: keyframe, left, align, animation, timeline.
+  static const keyframeLeft = _keyframeLeft;
+
+  /// Keyframe minus. Tags: remove keyframe, keyframe, animation, timeline, delete.
+  static const keyframeMinus = _keyframeMinus;
+
+  /// Keyframe plus. Tags: add keyframe, keyframe, animation, timeline, motion.
+  static const keyframePlus = _keyframePlus;
+
+  /// Keyframe right. Tags: keyframe, right, align, animation, timeline.
+  static const keyframeRight = _keyframeRight;
+
+  /// Keyframes double. Tags: keyframes, double, animation, timeline, sequence.
+  static const keyframesDouble = _keyframesDouble;
+
+  /// Keyframes double minus. Tags: remove keyframes, keyframes, double, animation, timeline.
+  static const keyframesDoubleMinus = _keyframesDoubleMinus;
+
+  /// Keyframes double plus. Tags: add keyframes, keyframes, double, animation, timeline.
+  static const keyframesDoublePlus = _keyframesDoublePlus;
+
+  /// Keyframes multiple. Tags: keyframes, multiple, animation, timeline, sequence.
+  static const keyframesMultiple = _keyframesMultiple;
+
+  /// Keyframes multiple minus. Tags: remove keyframes, keyframes, multiple, animation, timeline.
+  static const keyframesMultipleMinus = _keyframesMultipleMinus;
+
+  /// Keyframes multiple plus. Tags: add keyframes, keyframes, multiple, animation, timeline.
+  static const keyframesMultiplePlus = _keyframesMultiplePlus;
+
+  /// Keyframe top. Tags: keyframe, top, align, animation, timeline.
+  static const keyframeTop = _keyframeTop;
+
+  /// Key notched. Tags: key, password, access, unlock, teeth.
+  static const keyNotched = _keyNotched;
+
+  /// Key round. Tags: key, password, access, unlock, login.
   static const keyRound = _keyRound;
 
-  /// Key square. Tags: password, login, authentication, secure, unlock, car key.
+  /// Key square. Tags: key, password, access, unlock, login.
   static const keySquare = _keySquare;
 
-  /// Kiwi. Tags: citrus, orange, grapefruit, lemon, lime, segments, juice, squeeze.
-  static const kiwi = _kiwi;
+  /// Kicking. Tags: workout, martial, arts, karate, kickboxing, fitness.
+  static const kicking = _kicking;
 
-  /// Lambda. Tags: greek, symbol, math, function, programming, serverless, anonymous, functional.
-  static const lambda = _lambda;
+  /// Kick scooter. Tags: push scooter, ride, urban, commute, kick.
+  static const kickScooter = _kickScooter;
 
-  /// Lamp. Tags: lighting, household, home, furniture.
+  /// Kick scooter zap. Tags: electric scooter, e-scooter, ride, commute, charge.
+  static const kickScooterZap = _kickScooterZap;
+
+  /// Kidney. Tags: kidneys, organ, anatomy, renal, health, urology.
+  static const kidney = _kidney;
+
+  /// Kiss. Tags: kissing, emoji, face, love, heart, smiley.
+  static const kiss = _kiss;
+
+  /// Kitchen scale. Tags: weight scale, scale, weigh, measure, cooking, dial, balance.
+  static const kitchenScale = _kitchenScale;
+
+  /// Kite. Tags: fly, wind, toy, outdoor, play.
+  static const kite = _kite;
+
+  /// Knife. Tags: chef knife, blade, kitchen, cut, cooking.
+  static const knife = _knife;
+
+  /// Knife block. Tags: knives, cutlery, blades, kitchen, butcher, chef.
+  static const knifeBlock = _knifeBlock;
+
+  /// Knife bread. Tags: bread knife, serrated, knife, kitchen, cut, blade.
+  static const knifeBread = _knifeBread;
+
+  /// Kurta. Tags: tunic, clothing, traditional, indian clothing, shirt.
+  static const kurta = _kurta;
+
+  /// Kurta long. Tags: kurta, long tunic, clothing, traditional, indian clothing, robe.
+  static const kurtaLong = _kurtaLong;
+
+  /// Label. Tags: tag, price tag, badge, category, name tag.
+  static const label = _label;
+
+  /// Label notch. Tags: important label, label, tag, flag, priority, marker.
+  static const labelNotch = _labelNotch;
+
+  /// Label plus. Tags: backspace, eraser, add, key.
+  static const labelPlus = _labelPlus;
+
+  /// Ladder. Tags: climb, rungs, step ladder.
+  static const ladder = _ladder;
+
+  /// Lake. Tags: water, pond, waves, landscape, nature.
+  static const lake = _lake;
+
+  /// Lamp. Tags: light, table lamp, lighting, bedside.
   static const lamp = _lamp;
 
-  /// Lamp ceiling. Tags: lighting, household, home, furniture.
+  /// Lamp ball. Tags: lamp, light, lighting, table lamp, round base.
+  static const lampBall = _lampBall;
+
+  /// Lamp ceiling. Tags: ceiling lamp, pendant, light, hanging, lighting, lamp.
   static const lampCeiling = _lampCeiling;
 
-  /// Lamp desk. Tags: lighting, household, office, desk, home, furniture.
+  /// Lamp ceiling rays. Tags: ceiling lamp, pendant, light, rays, lighting, lamp.
+  static const lampCeilingRays = _lampCeilingRays;
+
+  /// Lamp ceiling wide rays. Tags: ceiling lamp, pendant, light, rays, wide shade, lamp.
+  static const lampCeilingWideRays = _lampCeilingWideRays;
+
+  /// Lamp desk. Tags: desk lamp, light, study, work, lighting, lamp.
   static const lampDesk = _lampDesk;
 
-  /// Lamp floor. Tags: lighting, household, floor, home, furniture.
+  /// Lamp desk angled. Tags: study lamp, desk lamp, light, reading, work.
+  static const lampDeskAngled = _lampDeskAngled;
+
+  /// Lamp floor. Tags: floor lamp, light, standing lamp, lighting, lamp.
   static const lampFloor = _lampFloor;
 
-  /// Lamp wall down. Tags: lighting, household, wall, home, furniture.
+  /// Lamp stand. Tags: lamp, light, stand lamp, lighting, tall base, table lamp.
+  static const lampStand = _lampStand;
+
+  /// Lamp vase. Tags: lamp, light, lighting, table lamp, vase base.
+  static const lampVase = _lampVase;
+
+  /// Lamp wall down. Tags: wall lamp, sconce, light, downlight, lighting, lamp.
   static const lampWallDown = _lampWallDown;
 
-  /// Lamp wall up. Tags: lighting, household, wall, home, furniture.
+  /// Lamp wall up. Tags: wall lamp, sconce, light, uplight, lighting, lamp.
   static const lampWallUp = _lampWallUp;
 
-  /// Landmark. Tags: bank, building, capitol, finance, money, museum, art gallery, hall.
+  /// Landmark. Tags: bank, museum, government, columns, building.
   static const landmark = _landmark;
 
-  /// Land plot. Tags: area, surface, square metres, allotment, parcel, property, plane, acres.
+  /// Landmark percent. Tags: taxes, tax, government, building, percent, irs.
+  static const landmarkPercent = _landmarkPercent;
+
+  /// Landmark pillars. Tags: bank, institution, museum, government, building.
+  static const landmarkPillars = _landmarkPillars;
+
+  /// Land plot. Tags: golf, flag, field, lot, property.
   static const landPlot = _landPlot;
 
-  /// Languages. Tags: translate.
+  /// Lane arrow. Tags: navigator, lane, route, driving, arrow, turn. Mirrors in right-to-left text.
+  static const laneArrow = _laneArrow;
+
+  /// Languages. Tags: translate, translation, locale, international, i18n.
   static const languages = _languages;
 
-  /// Laptop. Tags: computer, screen, remote.
+  /// Languages globe. Tags: language skill, languages, translate, tiles, learn language, fluency.
+  static const languagesGlobe = _languagesGlobe;
+
+  /// Languages sparkle. Tags: ai, translate, language, sparkle.
+  static const languagesSparkle = _languagesSparkle;
+
+  /// Languages square. Tags: translate, language, translation, i18n, locale. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const languagesSquare = _languagesSquare;
+
+  /// Languages tilted. Tags: translate, language, translation, i18n, locale.
+  static const languagesTilted = _languagesTilted;
+
+  /// Lantern. Tags: lamp, light, camping, portable light, candle.
+  static const lantern = _lantern;
+
+  /// Lantern wall. Tags: wall lamp, sconce, light, lantern, outdoor, lighting, bracket.
+  static const lanternWall = _lanternWall;
+
+  /// Laptop. Tags: notebook, computer, pc, device.
   static const laptop = _laptop;
 
-  /// Laptop minimal. Tags: computer, screen, remote.
+  /// Laptop activity. Tags: laptop performance, activity, monitor, pulse, computer, health.
+  static const laptopActivity = _laptopActivity;
+
+  /// Laptop alert. Tags: laptop issue, problem, warning, laptop, computer, error.
+  static const laptopAlert = _laptopAlert;
+
+  /// Laptop check. Tags: verified, laptop, computer, approved, done.
+  static const laptopCheck = _laptopCheck;
+
+  /// Laptop chip. Tags: ai, laptop, computer, chip.
+  static const laptopChip = _laptopChip;
+
+  /// Laptop cloud. Tags: sync, backup, laptop, computer, online.
+  static const laptopCloud = _laptopCloud;
+
+  /// Laptop code. Tags: laptop programming, coding, developer, laptop, code, computer.
+  static const laptopCode = _laptopCode;
+
+  /// Laptop cog. Tags: laptop settings, configuration, laptop, computer, preferences.
+  static const laptopCog = _laptopCog;
+
+  /// Laptop minimal. Tags: laptop, minimal, notebook, computer, device.
   static const laptopMinimal = _laptopMinimal;
 
-  /// Laptop minimal check. Tags: computer, screen, remote, success, done, todo, tick, complete.
+  /// Laptop minimal check. Tags: laptop check, verified, minimal, computer, done.
   static const laptopMinimalCheck = _laptopMinimalCheck;
 
-  /// Lasso. Tags: select, cursor.
+  /// Laptop phone. Tags: laptop phone sync, devices, sync, responsive, multi device, computer.
+  static const laptopPhone = _laptopPhone;
+
+  /// Laptop play. Tags: laptop video, watch, stream, laptop, computer, play.
+  static const laptopPlay = _laptopPlay;
+
+  /// Laptop plus. Tags: add laptop, laptop, computer, new device, plus.
+  static const laptopPlus = _laptopPlus;
+
+  /// Laptop x. Tags: remove laptop, laptop, computer, delete device, close.
+  static const laptopX = _laptopX;
+
+  /// Laptop zap. Tags: laptop charging, battery, power, laptop, computer, lightning.
+  static const laptopZap = _laptopZap;
+
+  /// Lasso. Tags: select, loop, rope, freeform selection.
   static const lasso = _lasso;
 
-  /// Lasso select. Tags: select, cursor.
+  /// Lasso polygon. Tags: lasso tool, polygon select, selection, freeform, cut out.
+  static const lassoPolygon = _lassoPolygon;
+
+  /// Lasso rope. Tags: lasso tool, select, loop, rope, freeform selection.
+  static const lassoRope = _lassoRope;
+
+  /// Lasso select. Tags: selection, cursor, freeform, pick.
   static const lassoSelect = _lassoSelect;
 
-  /// Layer arrow down. Tags: move back, backward, lower, demote, step back, behind, reorder, arrange.
-  static const layerArrowDown = _layerArrowDown;
+  /// Laugh. Tags: emoji, happy, face, smile, smiley.
+  static const laugh = _laugh;
 
-  /// Layer arrow up. Tags: move forward, forward, raise, lift, promote, advance, step forward, reorder.
-  static const layerArrowUp = _layerArrowUp;
+  /// Laugh tears. Tags: laughing, emoji, tears of joy, lol, face, funny.
+  static const laughTears = _laughTears;
 
-  /// Layers. Tags: stack, pile, pages, sheets, paperwork, copies, copy.
+  /// Laurel branch left. Tags: laurel branch, left, award, victory, olive branch, honor.
+  static const laurelBranchLeft = _laurelBranchLeft;
+
+  /// Laurel branch left full. Tags: laurel branch, left, award, victory, olive branch, honor.
+  static const laurelBranchLeftFull = _laurelBranchLeftFull;
+
+  /// Laurel branch left slim. Tags: laurel branch, left, award, victory, olive branch, honor.
+  static const laurelBranchLeftSlim = _laurelBranchLeftSlim;
+
+  /// Laurel branch right. Tags: laurel branch, right, award, victory, olive branch, honor.
+  static const laurelBranchRight = _laurelBranchRight;
+
+  /// Laurel branch right full. Tags: laurel branch, right, award, victory, olive branch, honor.
+  static const laurelBranchRightFull = _laurelBranchRightFull;
+
+  /// Laurel branch right slim. Tags: laurel branch, right, award, victory, olive branch, honor.
+  static const laurelBranchRightSlim = _laurelBranchRightSlim;
+
+  /// Laurel wreath. Tags: award, victory, achievement, winner, honor.
+  static const laurelWreath = _laurelWreath;
+
+  /// Laurel wreath 1. Tags: laurel wreath, first place, winner, champion, number one, award.
+  static const laurelWreath1 = _laurelWreath1;
+
+  /// Laurel wreath 1 sparse. Tags: laurel wreath, first place, winner, champion, number one, award.
+  static const laurelWreath1Sparse = _laurelWreath1Sparse;
+
+  /// Laurel wreath sparse. Tags: laurel wreath, award, victory, achievement, winner, honor.
+  static const laurelWreathSparse = _laurelWreathSparse;
+
+  /// Layer. Tags: single layer, stack, design, plane.
+  static const layer = _layer;
+
+  /// Layer bring forward. Tags: bring forward, layer, arrange, order, up, front.
+  static const layerBringForward = _layerBringForward;
+
+  /// Layer bring to front. Tags: bring to front, layer, arrange, order, top, front.
+  static const layerBringToFront = _layerBringToFront;
+
+  /// Layer mask hatch. Tags: layer mask, mask, hatch, clipping, opacity, design.
+  static const layerMaskHatch = _layerMaskHatch;
+
+  /// Layer mask intersect. Tags: layer mask, mask, intersect, overlap, clipping, design.
+  static const layerMaskIntersect = _layerMaskIntersect;
+
+  /// Layers. Tags: stack, levels, design, pile.
   static const layers = _layers;
 
-  /// Layers 2. Tags: stack, pile, pages, sheets, paperwork, copies, copy, duplicate.
-  static const layers2 = _layers2;
+  /// Same icon as [layersSquare].
+  static const layers2 = _layersSquare;
 
-  /// Layers arrow down. Tags: send to back, send backward, back, background, bottom, bottommost, lower, demote.
-  static const layersArrowDown = _layersArrowDown;
+  /// Layer send backward. Tags: send backward, layer, arrange, order, down, back.
+  static const layerSendBackward = _layerSendBackward;
 
-  /// Layers arrow up. Tags: bring to front, bring forward, front, foreground, top, topmost, raise, lift.
-  static const layersArrowUp = _layersArrowUp;
+  /// Layer send to back. Tags: send to back, layer, arrange, order, bottom, back.
+  static const layerSendToBack = _layerSendToBack;
 
   /// Layers minus. Tags: stack, pile, pages, sheets, paperwork, copies, copy, layers.
   static const layersMinus = _layersMinus;
 
-  /// Layers plus. Tags: stack, layers, add, new, increase, create, positive, copy.
+  /// Layers overlap. Tags: layers, material, texture, stack, fabric.
+  static const layersOverlap = _layersOverlap;
+
+  /// Layers plus. Tags: add layer, layers, stack, new layer, plus.
   static const layersPlus = _layersPlus;
 
-  /// Layout arrow down. Tags: layout, direction, flex, flexbox, flex-direction, column, auto layout, vertical.
-  static const layoutArrowDown = _layoutArrowDown;
+  /// Layers square. Tags: layers, stacked squares, overlap, duplicate, pages.
+  static const layersSquare = _layersSquare;
 
-  /// Layout arrow right. Tags: layout, direction, flex, flexbox, flex-direction, row, auto layout, horizontal.
-  static const layoutArrowRight = _layoutArrowRight;
+  /// Layers squares. Tags: layers, stacked squares, overlap, three layers, pages.
+  static const layersSquares = _layersSquares;
 
-  /// Layout dashboard. Tags: masonry, brick.
+  /// Layout dashboard. Tags: dashboard, layout, widgets, overview, tiles, admin, masonry, panels.
   static const layoutDashboard = _layoutDashboard;
 
-  /// Layout freeform. Tags: layout, freeform, free, absolute, position, auto layout, unaligned, scattered.
-  static const layoutFreeform = _layoutFreeform;
-
-  /// Layout grid. Tags: app, home, start.
+  /// Layout grid. Tags: grid, view, tiles, dashboard, apps, squares, menu.
   static const layoutGrid = _layoutGrid;
 
-  /// Layout grid circles. Tags: app, home, start, dot matrix, dots, menu, dashboard, collection.
+  /// Layout grid circles. Tags: grid, view, tiles, dashboard, apps, circles, dots.
   static const layoutGridCircles = _layoutGridCircles;
 
-  /// Layout grid move horizontal. Tags: apps, applications, sorting, ascending, descending, reorder, rearrange, up.
-  static const layoutGridMoveHorizontal = _layoutGridMoveHorizontal;
+  /// Layout grid circles cog. Tags: dashboard, grid, circles, settings, cog, gear, configure, widget.
+  static const layoutGridCirclesCog = _layoutGridCirclesCog;
 
-  /// Layout grid move vertical. Tags: apps, applications, sorting, ascending, descending, reorder, rearrange, up.
-  static const layoutGridMoveVertical = _layoutGridMoveVertical;
+  /// Layout grid circles minus. Tags: dashboard, grid, circles, remove, minus, delete, widget.
+  static const layoutGridCirclesMinus = _layoutGridCirclesMinus;
 
-  /// Layout grid plus. Tags: apps, applications, add, collection, +.
+  /// Layout grid circles pen. Tags: dashboard, grid, circles, edit, pen, customize, widget.
+  static const layoutGridCirclesPen = _layoutGridCirclesPen;
+
+  /// Layout grid circles plus. Tags: dashboard, grid, circles, add, plus, new, widget.
+  static const layoutGridCirclesPlus = _layoutGridCirclesPlus;
+
+  /// Layout grid cog. Tags: dashboard, squares, settings, cog, configure.
+  static const layoutGridCog = _layoutGridCog;
+
+  /// Layout grid large. Tags: menu, grid, squares, apps, dashboard, launcher.
+  static const layoutGridLarge = _layoutGridLarge;
+
+  /// Layout grid minus. Tags: dashboard, squares, remove, minus, delete.
+  static const layoutGridMinus = _layoutGridMinus;
+
+  /// Layout grid pen. Tags: dashboard, squares, edit, pen, customize.
+  static const layoutGridPen = _layoutGridPen;
+
+  /// Layout grid plus. Tags: dashboard, squares, add, plus, new, widget.
   static const layoutGridPlus = _layoutGridPlus;
 
-  /// Layout list. Tags: todo, tasks, items, pending, image, photo.
+  /// Layout header 2 columns. Tags: layout, header, two columns, wireframe, page.
+  static const layoutHeader2Columns = _layoutHeader2Columns;
+
+  /// Layout header 3 columns. Tags: layout, header, three columns, wireframe, page.
+  static const layoutHeader3Columns = _layoutHeader3Columns;
+
+  /// Layout header sidebar right. Tags: layout, header, sidebar, right column, wireframe, page.
+  static const layoutHeaderSidebarRight = _layoutHeaderSidebarRight;
+
+  /// Layout header sidebar rows. Tags: layout, header, sidebar, rows, wireframe, page.
+  static const layoutHeaderSidebarRows = _layoutHeaderSidebarRows;
+
+  /// Layout list. Tags: list layout, list, items, rows, cards, layout.
   static const layoutList = _layoutList;
 
-  /// Layout list move. Tags: todo, tasks, items, pending, ascending, descending, sorting, reorder.
-  static const layoutListMove = _layoutListMove;
+  /// Layout masonry. Tags: dashboard, masonry, tiles, widgets, bricks, mosaic.
+  static const layoutMasonry = _layoutMasonry;
 
-  /// Layout panel left. Tags: app, home, start, grid.
+  /// Layout panel left. Tags: panel left, layout, sidebar, split, panes.
   static const layoutPanelLeft = _layoutPanelLeft;
 
-  /// Layout panel top. Tags: window, webpage, block, section, grid, template, structure.
+  /// Layout panel top. Tags: panel top, layout, header, split, panes.
   static const layoutPanelTop = _layoutPanelTop;
 
-  /// Layout template. Tags: window, webpage, block, section.
+  /// Layout sidebar left 2 rows. Tags: layout, sidebar, two rows, wireframe, page.
+  static const layoutSidebarLeft2Rows = _layoutSidebarLeft2Rows;
+
+  /// Layout sidebar left 3 rows. Tags: layout, sidebar, three rows, wireframe, page.
+  static const layoutSidebarLeft3Rows = _layoutSidebarLeft3Rows;
+
+  /// Layout template. Tags: template, layout, wireframe, page, header, blocks.
   static const layoutTemplate = _layoutTemplate;
 
-  /// Leaf. Tags: sustainability, nature, energy, plant, autumn.
+  /// Layout template sparkle. Tags: ai, collage, template, layout, grid, sparkle.
+  static const layoutTemplateSparkle = _layoutTemplateSparkle;
+
+  /// Leaf. Tags: plant, eco, green, nature, organic.
   static const leaf = _leaf;
 
-  /// Leafy green. Tags: salad, lettuce, vegetable, chard, cabbage, bok choy.
+  /// Leaf cycle. Tags: biomass, energy, leaf, renewable, recycle, eco.
+  static const leafCycle = _leafCycle;
+
+  /// Leaf cycle dashed. Tags: eco, energy, renewable, recycle, sustainable, green.
+  static const leafCycleDashed = _leafCycleDashed;
+
+  /// Leaf midrib. Tags: leaf, plant, eco, green, nature, vein.
+  static const leafMidrib = _leafMidrib;
+
+  /// Leaf stem. Tags: leaf, plant, eco, green, nature, stem.
+  static const leafStem = _leafStem;
+
+  /// Leafy green. Tags: lettuce, salad, vegetable, herb, greens.
   static const leafyGreen = _leafyGreen;
 
-  /// Lectern. Tags: pulpit, podium, stand.
+  /// Leaning tower. Tags: pisa, tower, leaning, italy, landmark.
+  static const leaningTower = _leaningTower;
+
+  /// Leaves. Tags: natural food, organic, eco, plant, vegan.
+  static const leaves = _leaves;
+
+  /// Lectern. Tags: podium, speech, speaker, presentation, pulpit.
   static const lectern = _lectern;
 
-  /// Lemon. Tags: citrus, lime, juice, squeezy, squeeze, smoothie, bitter, sweet.
-  static const lemon = _lemon;
+  /// Lectern mics. Tags: podium, lectern, speech, microphones, speaker, conference, presentation.
+  static const lecternMics = _lecternMics;
 
-  /// Lens concave. Tags: concave, lens, optics, light, magnification, curved, focus, refraction.
+  /// Leg. Tags: body, part, knee, limb.
+  static const leg = _leg;
+
+  /// Lens concave. Tags: optics, diverging, glass, physics, lens.
   static const lensConcave = _lensConcave;
 
-  /// Lens convex. Tags: convex, lens, optics, magnification, focus, light, refraction, physics.
+  /// Lens convex. Tags: optics, converging, glass, physics, lens.
   static const lensConvex = _lensConvex;
 
-  /// Letters. Tags: abc, alphabet, alphabetical, text, characters, language, typography, literacy.
-  static const letters = _letters;
+  /// Less than. Tags: comparison, smaller, angle bracket, operator, lt.
+  static const lessThan = _lessThan;
 
-  /// Library. Tags: books, reading, written, authors, stories, fiction, novels, information.
+  /// Less than or equal. Tags: inequality, compare, math.
+  static const lessThanOrEqual = _lessThanOrEqual;
+
+  /// Less than or equal slanted. Tags: comparison, smaller, operator, lte, at most.
+  static const lessThanOrEqualSlanted = _lessThanOrEqualSlanted;
+
+  /// Letters a z arrow down. Tags: sort, alphabetical, a-z, ascending, order, letters, az.
+  static const lettersAZArrowDown = _lettersAZArrowDown;
+
+  /// Letter spacing. Tags: typography, tracking, kerning, characters, font.
+  static const letterSpacing = _letterSpacing;
+
+  /// Letters z a arrow down. Tags: sort, alphabetical, z-a, descending, order, letters, za.
+  static const lettersZAArrowDown = _lettersZAArrowDown;
+
+  /// Library. Tags: books, shelf, reading, collection, stories. Its details merge when filled: use it outlined.
   static const library = _library;
 
-  /// Library big. Tags: books, reading, written, authors, stories, fiction, novels, information.
+  /// Library bands. Tags: books, shelf, reading, collection, bookcase.
+  static const libraryBands = _libraryBands;
+
+  /// Library big. Tags: books, reading, written, authors, stories, library.
   static const libraryBig = _libraryBig;
 
-  /// Life buoy. Tags: preserver, life belt, lifesaver, help, rescue, ship, ring, raft.
+  /// License. Tags: document, certificate, permit, paper, terms.
+  static const license = _license;
+
+  /// License cog. Tags: document, maintenance, settings, permit, certificate.
+  static const licenseCog = _licenseCog;
+
+  /// License off. Tags: document, invalid, revoked, permit, no license.
+  static const licenseOff = _licenseOff;
+
+  /// License pen. Tags: document, draft, edit, write, permit, certificate.
+  static const licensePen = _licensePen;
+
+  /// License pin. Tags: document, pinned, permit, certificate, attach.
+  static const licensePin = _licensePin;
+
+  /// License user. Tags: document, third party, person, permit, certificate.
+  static const licenseUser = _licenseUser;
+
+  /// Life buoy. Tags: help, support, rescue, lifesaver, ring, preserver.
   static const lifeBuoy = _lifeBuoy;
 
-  /// Life jacket. Tags: vest, buoyant, buoyancy, lifeguard, coastguard, sea, ocean, baywatch.
-  static const lifeJacket = _lifeJacket;
-
-  /// Ligature. Tags: text, font, typography, alternates, alternatives.
+  /// Ligature. Tags: typography, font, glyph, letters, fi.
   static const ligature = _ligature;
 
-  /// Ligature square. Tags: toolbar, button, formatting, styling, typography, fonts, font book, collection.
-  static const ligatureSquare = _ligatureSquare;
+  /// Ligature ae. Tags: phonetic, character, ae, letter, ash, language.
+  static const ligatureAe = _ligatureAe;
 
-  /// Lightbulb. Tags: idea, bright, lights.
+  /// Lightbulb. Tags: idea, light, bulb, tip, hint, lamp.
   static const lightbulb = _lightbulb;
 
-  /// Lightbulb off. Tags: lights.
+  /// Lightbulb ai. Tags: ai, innovation, lightbulb, idea. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const lightbulbAi = _lightbulbAi;
+
+  /// Lightbulb chip. Tags: ai, innovation, lightbulb, chip, idea.
+  static const lightbulbChip = _lightbulbChip;
+
+  /// Lightbulb circuit. Tags: ai, innovation, lightbulb, circuit, idea, network.
+  static const lightbulbCircuit = _lightbulbCircuit;
+
+  /// Lightbulb corner rays. Tags: idea, bulb, light, tip, inspiration.
+  static const lightbulbCornerRays = _lightbulbCornerRays;
+
+  /// Lightbulb off. Tags: idea, light, bulb, off, disabled, lamp. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const lightbulbOff = _lightbulbOff;
 
-  /// Lighthouse. Tags: beacon, coast, navigation, tower, sea, ocean, maritime, guide.
+  /// Lightbulb question mark. Tags: quiz, question, idea, lightbulb, help.
+  static const lightbulbQuestionMark = _lightbulbQuestionMark;
+
+  /// Lightbulb rays. Tags: idea, bulb, light, rays, tip.
+  static const lightbulbRays = _lightbulbRays;
+
+  /// Lightbulb round. Tags: bulb, idea, light, lamp, tip.
+  static const lightbulbRound = _lightbulbRound;
+
+  /// Lightbulb sparkle. Tags: ai, idea, lightbulb, sparkle, inspiration.
+  static const lightbulbSparkle = _lightbulbSparkle;
+
+  /// Lightbulb zap. Tags: bulb, charging, idea, energy, power, bolt.
+  static const lightbulbZap = _lightbulbZap;
+
+  /// Lighthouse. Tags: beacon, sea, tower, coast, navigation.
   static const lighthouse = _lighthouse;
 
   /// Same icon as [sun].
   static const lightMode = _sun;
 
-  /// Light switch. Tags: on, off, electricity, electronics, lights, toggle, binary, boolean.
-  static const lightSwitch = _lightSwitch;
+  /// Limit order. Tags: trade, stock, price, order, market, exchange.
+  static const limitOrder = _limitOrder;
+
+  /// Line cap projecting. Tags: stroke, line cap, projecting, vector, end.
+  static const lineCapProjecting = _lineCapProjecting;
+
+  /// Line cap round. Tags: stroke, line cap, round, vector, end.
+  static const lineCapRound = _lineCapRound;
+
+  /// Line cap straight. Tags: stroke, line cap, butt, flat, vector, end.
+  static const lineCapStraight = _lineCapStraight;
 
   /// Same icon as [chartLine].
   static const lineChart = _chartLine;
 
-  /// Line dot bottom vertical. Tags: code, version, control, station, waypoint, start, first.
-  static const lineDotBottomVertical = _lineDotBottomVertical;
+  /// Line dashed. Tags: dashed line, divider, stroke, border, separator, dash.
+  static const lineDashed = _lineDashed;
 
-  /// Line dot left horizontal. Tags: line, dot, left, horizontal, shape, symbol, navigation, arrow.
-  static const lineDotLeftHorizontal = _lineDotLeftHorizontal;
+  /// Line dot pointer. Tags: market, order, price, line, trade, entry.
+  static const lineDotPointer = _lineDotPointer;
 
-  /// Line dot right horizontal. Tags: code, version control, waypoint, stop, station, last, end.
+  /// Line dot right horizontal. Tags: line, dot, end, point, timeline.
   static const lineDotRightHorizontal = _lineDotRightHorizontal;
 
-  /// Line dot top vertical. Tags: arrow, pointer, direction, indicator, code, version, control, waypoint.
-  static const lineDotTopVertical = _lineDotTopVertical;
+  /// Line height. Tags: paragraph, spacing, leading, text.
+  static const lineHeight = _lineHeight;
 
-  /// Line squiggle. Tags: line, snakes, annotate, curve, doodle, stroke, pen, tool.
+  /// Line join bevel. Tags: join bevel, stroke join, corner, line corner, vector.
+  static const lineJoinBevel = _lineJoinBevel;
+
+  /// Line join miter. Tags: join straight, miter join, stroke join, corner, vector.
+  static const lineJoinMiter = _lineJoinMiter;
+
+  /// Line join round. Tags: join round, stroke join, corner, line corner, vector.
+  static const lineJoinRound = _lineJoinRound;
+
+  /// Line nodes. Tags: path, line, nodes, points, straight edge, vector.
+  static const lineNodes = _lineNodes;
+
+  /// Line solid. Tags: line, stroke, solid, divider.
+  static const lineSolid = _lineSolid;
+
+  /// Line squiggle. Tags: scribble, doodle, freehand, draw, curve.
   static const lineSquiggle = _lineSquiggle;
 
-  /// Line style. Tags: line, stroke, style, dashed, border.
+  /// Line squiggle sparkle. Tags: ai, sketch, squiggle, draw, sparkle.
+  static const lineSquiggleSparkle = _lineSquiggleSparkle;
+
+  /// Line style. Tags: dashed, dotted, stroke, border, lines.
   static const lineStyle = _lineStyle;
 
-  /// Lingerie. Tags: brassiere, breasts, boobs, bottoms, tops, knickers, womens, girls.
-  static const lingerie = _lingerie;
-
-  /// Link. Tags: chain, url.
+  /// Link. Tags: chain, url, hyperlink, connect, diagonal.
   static const link = _link;
 
-  /// Link 2. Tags: chain, url.
+  /// Link 2. Tags: chain, url, hyperlink, connect, horizontal.
   static const link2 = _link2;
 
-  /// Link 2 off. Tags: unchain, chain.
+  /// Link 2 gap. Tags: chain, url, hyperlink, connect, horizontal, wide gap.
+  static const link2Gap = _link2Gap;
+
+  /// Link 2 off. Tags: chain, url, unlink, broken, disconnect, remove link.
   static const link2Off = _link2Off;
+
+  /// Link chain. Tags: chain, url, hyperlink, connect, diagonal.
+  static const linkChain = _linkChain;
+
+  /// Link clips. Tags: chain, url, hyperlink, connect, attach, clips.
+  static const linkClips = _linkClips;
 
   /// Same icon as [unlink].
   static const linkOff = _unlink;
 
-  /// List. Tags: options. Mirrors in right-to-left text.
+  /// Link vertical. Tags: chain, url, hyperlink, connect, tilted.
+  static const linkVertical = _linkVertical;
+
+  /// List. Tags: bullets, items, unordered, menu, rows, bullet list, left to right. Mirrors in right-to-left text.
   static const list = _list;
 
-  /// List check. Tags: done, check, tick, complete, list, to-do, bom.
-  static const listCheck = _listCheck;
+  /// List arrow right. Tags: move to, list, arrow, send to, outline, lines. Mirrors in right-to-left text.
+  static const listArrowRight = _listArrowRight;
 
-  /// List checks. Tags: todo, done, check, tick, complete, tasks, items, pending. Mirrors in right-to-left text.
+  /// List asterisk. Tags: star list, asterisk list, list, items, footnotes, left to right. Mirrors in right-to-left text.
+  static const listAsterisk = _listAsterisk;
+
+  /// List asterisk rtl. Tags: star list, asterisk list, list, items, footnotes, left to right.
+  static const listAsteriskRtl = _listAsteriskRtl;
+
+  /// Same icon as [listChecks].
+  static const listCheck = _listChecks;
+
+  /// List checks. Tags: todo, tasks, done, checklist, completed, complete, items, tick. Mirrors in right-to-left text.
   static const listChecks = _listChecks;
 
-  /// List chevrons down up. Tags: options, items, collapse, expand, details, disclosure, show, hide.
+  /// List chevrons down up. Tags: collapse, fold, compress, list, rows.
   static const listChevronsDownUp = _listChevronsDownUp;
 
-  /// List chevrons up down. Tags: options, items, collapse, expand, details, disclosure, show, hide.
+  /// List chevrons up down. Tags: indent, expand, collapse, text, list.
   static const listChevronsUpDown = _listChevronsUpDown;
 
-  /// List clock. Tags: history, log, clock, time, recent, updated, revision, activity. Mirrors in right-to-left text.
+  /// List circles. Tags: list, bullets, points, paragraph, circles. Mirrors in right-to-left text.
+  static const listCircles = _listCircles;
+
+  /// List clock. Tags: list, clock, history, recent, schedule, time. Mirrors in right-to-left text.
   static const listClock = _listClock;
 
-  /// List collapse. Tags: items, collapse, expand, details, disclosure, show, hide, toggle.
+  /// List cog. Tags: settings, configure, options, list, preferences. Mirrors in right-to-left text.
+  static const listCog = _listCog;
+
+  /// List collapse. Tags: fold, hide, list, rows, chevron. Mirrors in right-to-left text.
   static const listCollapse = _listCollapse;
 
-  /// List end. Tags: queue, bottom, end, playlist.
+  /// List dash. Tags: dash list, list, unordered, items, left to right. Mirrors in right-to-left text.
+  static const listDash = _listDash;
+
+  /// List dash rtl. Tags: right to left, list, dash, rtl.
+  static const listDashRtl = _listDashRtl;
+
+  /// List end. Tags: queue, append, add to end, list, return. Mirrors in right-to-left text.
   static const listEnd = _listEnd;
 
-  /// List filter. Tags: options. Mirrors in right-to-left text.
+  /// List filter. Tags: filter, sort, funnel, refine, list, options, lines, mail filter. Mirrors in right-to-left text.
   static const listFilter = _listFilter;
 
-  /// List filter plus. Tags: filter, plus, options, add. Mirrors in right-to-left text.
+  /// List filter pen. Tags: filter, edit, modify, lines, options.
+  static const listFilterPen = _listFilterPen;
+
+  /// List filter plus. Tags: filter, add, refine, list, new filter. Mirrors in right-to-left text.
   static const listFilterPlus = _listFilterPlus;
 
-  /// List indent decrease. Tags: text, tab. Mirrors in right-to-left text.
+  /// List filter x. Tags: filter, remove, clear, lines, reset.
+  static const listFilterX = _listFilterX;
+
+  /// List indent decrease. Tags: outdent, indentation, text, paragraph, format. Mirrors in right-to-left text.
   static const listIndentDecrease = _listIndentDecrease;
 
-  /// List indent increase. Tags: text, tab. Mirrors in right-to-left text.
+  /// List indent increase. Tags: indent, indentation, text, paragraph, format. Mirrors in right-to-left text.
   static const listIndentIncrease = _listIndentIncrease;
 
-  /// List minus. Tags: playlist, remove, song, subtract, delete, unqueue. Mirrors in right-to-left text.
+  /// List indent increase top. Tags: indent, text, tab, format. Mirrors in right-to-left text.
+  static const listIndentIncreaseTop = _listIndentIncreaseTop;
+
+  /// List minus. Tags: remove, subtract, list, rows, playlist. Mirrors in right-to-left text.
   static const listMinus = _listMinus;
 
-  /// List music. Tags: playlist, queue, music, audio, playback. Mirrors in right-to-left text.
+  /// List music. Tags: playlist, songs, queue, audio, tracks. Mirrors in right-to-left text.
   static const listMusic = _listMusic;
 
-  /// List ordered. Tags: number, order, queue. Mirrors in right-to-left text.
+  /// List music long. Tags: playlist, music, list, songs, queue.
+  static const listMusicLong = _listMusicLong;
+
+  /// List nested. Tags: group, list, tree, outline, hierarchy, nested.
+  static const listNested = _listNested;
+
+  /// List ordered. Tags: numbered, steps, sequence, 1 2, rows, numbered list, ordered list, list. Mirrors in right-to-left text.
   static const listOrdered = _listOrdered;
 
-  /// List plus. Tags: playlist, add, song, track, new. Mirrors in right-to-left text.
+  /// List ordered rtl. Tags: right to left, list, numbered, ordered, rtl.
+  static const listOrderedRtl = _listOrderedRtl;
+
+  /// List plus. Tags: add, new item, playlist, list, queue. Mirrors in right-to-left text.
   static const listPlus = _listPlus;
 
-  /// List restart. Tags: reset, refresh, reload, playlist, replay. Mirrors in right-to-left text.
+  /// List restart. Tags: reset, replay, reload, list, queue. Mirrors in right-to-left text.
   static const listRestart = _listRestart;
 
-  /// List sort ascending. Tags: list, order, arrangement, organization, sequence, ranking, categories, presentation.
-  static const listSortAscending = _listSortAscending;
+  /// List rtl. Tags: right to left, list, bullet, rtl.
+  static const listRtl = _listRtl;
 
-  /// List sort descending. Tags: list, order, arrangement, organization, sequence, ranking, categories, presentation.
-  static const listSortDescending = _listSortDescending;
+  /// Same icon as [sortUpLines].
+  static const listSortAscending = _sortUpLines;
 
-  /// List start. Tags: queue, top, start, next, playlist.
+  /// Same icon as [sortDownLines].
+  static const listSortDescending = _sortDownLines;
+
+  /// List squares. Tags: list, bullets, points, paragraph, squares. Mirrors in right-to-left text.
+  static const listSquares = _listSquares;
+
+  /// List start. Tags: queue, prepend, add to start, list, top. Mirrors in right-to-left text.
   static const listStart = _listStart;
 
-  /// List todo. Tags: todo, done, check, tick, complete, tasks, items, pending. Mirrors in right-to-left text.
+  /// List todo. Tags: tasks, checklist, todo, checkbox, rows. Mirrors in right-to-left text.
   static const listTodo = _listTodo;
 
-  /// List tree. Tags: tree, browser. Mirrors in right-to-left text.
+  /// List tree. Tags: hierarchy, nested, outline, tree, rows. Mirrors in right-to-left text.
   static const listTree = _listTree;
 
-  /// List video. Tags: playlist, video, playback. Mirrors in right-to-left text.
+  /// List triangle. Tags: triangle list, play list, list, items, bullets, left to right. Mirrors in right-to-left text.
+  static const listTriangle = _listTriangle;
+
+  /// List triangle rtl. Tags: right to left, list, triangle, rtl.
+  static const listTriangleRtl = _listTriangleRtl;
+
+  /// List video. Tags: playlist, movies, queue, list, watch. Mirrors in right-to-left text.
   static const listVideo = _listVideo;
 
-  /// List x. Tags: playlist, subtract, remove, delete, unqueue. Mirrors in right-to-left text.
+  /// List x. Tags: remove, delete, list, clear, playlist. Mirrors in right-to-left text.
   static const listX = _listX;
+
+  /// Live. Tags: broadcast, streaming, stream, on air, badge.
+  static const live = _live;
+
+  /// Liver. Tags: organ, anatomy, body, hepatic, health.
+  static const liver = _liver;
 
   /// Loader. Tags: loading, wait, busy, progress, spinner, spinning, throbber.
   static const loader = _loader;
 
+  /// Loader bar. Tags: loading, wait, progress, pill, bar, throbber. Its details merge when filled: use it outlined.
+  static const loaderBar = _loaderBar;
+
   /// Loader circle. Tags: loading, wait, busy, progress, spinner, spinning, throbber, circle.
   static const loaderCircle = _loaderCircle;
 
-  /// Loader pinwheel. Tags: loading, wait, busy, progress, throbber, spinner, spinning, beach ball. Its details merge when filled: use it outlined.
+  /// Loader pinwheel. Tags: loading, wait, busy, progress, throbber, spinner, beach ball.
   static const loaderPinwheel = _loaderPinwheel;
 
-  /// Locate. Tags: map, gps, location, cross.
+  /// Loader ring. Tags: loading, wait, busy, progress, spinner, ring, throbber.
+  static const loaderRing = _loaderRing;
+
+  /// Locate. Tags: gps, location, target, position, find me.
   static const locate = _locate;
 
-  /// Locate fixed. Tags: map, gps, location, cross.
+  /// Locate fixed. Tags: gps, location, target, position, fixed.
   static const locateFixed = _locateFixed;
 
-  /// Locate off. Tags: map, gps, location, cross.
-  static const locateOff = _locateOff;
+  /// Locate joined. Tags: gps, location, crosshair, map, position.
+  static const locateJoined = _locateJoined;
 
-  /// Locate square. Tags: gps, location, crosshair, inspector, element, selector, target, box.
-  static const locateSquare = _locateSquare;
+  /// Locate joined fixed. Tags: gps, location, target, crosshair, map, fixed, position.
+  static const locateJoinedFixed = _locateJoinedFixed;
+
+  /// Locate joined off. Tags: gps, off, location, disabled, crossed, map.
+  static const locateJoinedOff = _locateJoinedOff;
+
+  /// Locate joined x. Tags: gps, off, location, x, close, cancel, crosshair.
+  static const locateJoinedX = _locateJoinedX;
+
+  /// Locate off. Tags: gps, location, disabled, off, position.
+  static const locateOff = _locateOff;
 
   /// Same icon as [mapPin].
   static const location = _mapPin;
 
-  /// Lock. Tags: security, password, secure, admin.
+  /// Lock. Tags: locked, secure, private, padlock.
   static const lock = _lock;
 
-  /// Lock keyhole. Tags: security, password, secure, admin.
+  /// Lock ai. Tags: ai, lock, security, protect. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const lockAi = _lockAi;
+
+  /// Lock badge check. Tags: lock, verified, secure, check, approved.
+  static const lockBadgeCheck = _lockBadgeCheck;
+
+  /// Lock badge minus. Tags: lock, remove, minus, secure.
+  static const lockBadgeMinus = _lockBadgeMinus;
+
+  /// Lock badge plus. Tags: lock, add, new, secure, plus.
+  static const lockBadgePlus = _lockBadgePlus;
+
+  /// Lock badge x. Tags: lock, remove, delete, denied, secure, cancel.
+  static const lockBadgeX = _lockBadgeX;
+
+  /// Lock bitcoin. Tags: bitcoin, lock, secure, crypto, btc.
+  static const lockBitcoin = _lockBitcoin;
+
+  /// Lock check. Tags: lock, verified, secure, check, approved.
+  static const lockCheck = _lockCheck;
+
+  /// Lock crosses. Tags: login, password, mask, padlock, authentication, sign in options.
+  static const lockCrosses = _lockCrosses;
+
+  /// Lock dots. Tags: security, password, padlock, secure, pin, dots.
+  static const lockDots = _lockDots;
+
+  /// Locker. Tags: cabinet, storage, gym, lockers, doors.
+  static const locker = _locker;
+
+  /// Locker vents. Tags: cabinet, storage, gym, lockers, vents.
+  static const lockerVents = _lockerVents;
+
+  /// Lock fingerprint. Tags: biometric, access, fingerprint, padlock, secure. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const lockFingerprint = _lockFingerprint;
+
+  /// Lock key. Tags: security, password, secure, padlock, key.
+  static const lockKey = _lockKey;
+
+  /// Lock keyhole. Tags: lock, keyhole, secure, private, padlock.
   static const lockKeyhole = _lockKeyhole;
 
-  /// Lock keyhole open. Tags: security.
+  /// Lock keyhole open. Tags: unlock, open, keyhole, unlocked, padlock.
   static const lockKeyholeOpen = _lockKeyholeOpen;
 
-  /// Lock open. Tags: security.
+  /// Lock minus. Tags: lock, remove, minus, secure.
+  static const lockMinus = _lockMinus;
+
+  /// Lock open. Tags: security, unlock, open, padlock, unlocked.
   static const lockOpen = _lockOpen;
 
-  /// Log in. Tags: sign in, arrow, enter, auth. Mirrors in right-to-left text.
+  /// Lock open bar. Tags: unlock, open, unlocked, padlock, access.
+  static const lockOpenBar = _lockOpenBar;
+
+  /// Lock plus. Tags: lock, add, new, secure, plus.
+  static const lockPlus = _lockPlus;
+
+  /// Lock question mark. Tags: forgot password, lock, question, recovery, help.
+  static const lockQuestionMark = _lockQuestionMark;
+
+  /// Lock ring. Tags: security, password, secure, padlock, keyhole.
+  static const lockRing = _lockRing;
+
+  /// Lock ring open. Tags: security, unlock, open, padlock, keyhole.
+  static const lockRingOpen = _lockRingOpen;
+
+  /// Lock rotate cw. Tags: reset password, lock, refresh, restore, recover.
+  static const lockRotateCw = _lockRotateCw;
+
+  /// Lock round. Tags: padlock, secure, private, locked, protect.
+  static const lockRound = _lockRound;
+
+  /// Lock round badge check. Tags: padlock, verified, secure, approved, confirm.
+  static const lockRoundBadgeCheck = _lockRoundBadgeCheck;
+
+  /// Lock round badge minus. Tags: padlock, remove, secure, delete.
+  static const lockRoundBadgeMinus = _lockRoundBadgeMinus;
+
+  /// Lock round badge plus. Tags: padlock, add, new, secure, create.
+  static const lockRoundBadgePlus = _lockRoundBadgePlus;
+
+  /// Lock round badge x. Tags: padlock, remove, secure, delete, close, cancel.
+  static const lockRoundBadgeX = _lockRoundBadgeX;
+
+  /// Lock round bar. Tags: padlock, secure, private, locked, protect.
+  static const lockRoundBar = _lockRoundBar;
+
+  /// Lock round check. Tags: padlock, verified, secure, approved, confirm.
+  static const lockRoundCheck = _lockRoundCheck;
+
+  /// Lock round minus. Tags: padlock, remove, secure, delete.
+  static const lockRoundMinus = _lockRoundMinus;
+
+  /// Lock round open. Tags: padlock, unlocked, open, unlock, access.
+  static const lockRoundOpen = _lockRoundOpen;
+
+  /// Lock round open bar. Tags: padlock, unlocked, open, unlock, access.
+  static const lockRoundOpenBar = _lockRoundOpenBar;
+
+  /// Lock round plus. Tags: padlock, add, new, secure, create.
+  static const lockRoundPlus = _lockRoundPlus;
+
+  /// Lock round two dots. Tags: password, secret, padlock, login, hidden, pin.
+  static const lockRoundTwoDots = _lockRoundTwoDots;
+
+  /// Lock round x. Tags: padlock, remove, secure, delete, close, cancel.
+  static const lockRoundX = _lockRoundX;
+
+  /// Lock stand. Tags: secured network, padlock, lock, network, access.
+  static const lockStand = _lockStand;
+
+  /// Lock sync. Tags: security, refresh, rotate key, padlock, sync, keyhole.
+  static const lockSync = _lockSync;
+
+  /// Lock two dots. Tags: lock, password, dots, secure, pin, passcode.
+  static const lockTwoDots = _lockTwoDots;
+
+  /// Lock x. Tags: lock, remove, delete, denied, secure, cancel.
+  static const lockX = _lockX;
+
+  /// Log in. Tags: sign in, arrow, enter, auth, login. Mirrors in right-to-left text.
   static const logIn = _logIn;
 
-  /// Log out. Tags: sign out, arrow, exit, auth. Mirrors in right-to-left text.
+  /// Log in box. Tags: sign in, arrow, enter, auth, login. Mirrors in right-to-left text.
+  static const logInBox = _logInBox;
+
+  /// Log in door. Tags: sign in, arrow, enter, auth, door, login. Mirrors in right-to-left text.
+  static const logInDoor = _logInDoor;
+
+  /// Log in tapered. Tags: sign in, arrow, enter, auth, login. Mirrors in right-to-left text.
+  static const logInTapered = _logInTapered;
+
+  /// Log out. Tags: sign out, arrow, exit, auth, logout. Mirrors in right-to-left text.
   static const logOut = _logOut;
 
-  /// Logs. Tags: options, list, menu, order, queue, tasks.
+  /// Log out box. Tags: sign out, arrow, exit, auth, logout. Mirrors in right-to-left text.
+  static const logOutBox = _logOutBox;
+
+  /// Log out bracket. Tags: sign out, arrow, exit, auth, logout. Mirrors in right-to-left text.
+  static const logOutBracket = _logOutBracket;
+
+  /// Log out door. Tags: sign out, arrow, exit, auth, door, logout. Mirrors in right-to-left text.
+  static const logOutDoor = _logOutDoor;
+
+  /// Log out fat. Tags: sign out, arrow, exit, auth, logout, block arrow. Mirrors in right-to-left text.
+  static const logOutFat = _logOutFat;
+
+  /// Log out tapered. Tags: sign out, arrow, exit, auth, logout. Mirrors in right-to-left text.
+  static const logOutTapered = _logOutTapered;
+
+  /// Logs. Tags: list, records, journal, entries, history, log. Mirrors in right-to-left text.
   static const logs = _logs;
 
   /// Lollipop. Tags: lolly, candy, sugar, food, sweet, dessert, spiral.
   static const lollipop = _lollipop;
 
-  /// Luggage. Tags: baggage, travel, suitcase.
+  /// Luggage. Tags: baggage, travel, suitcase, trolley, wheels.
   static const luggage = _luggage;
 
-  /// Luggage cabin. Tags: baggage, suitcase, wheels, packing, sotrage.
-  static const luggageCabin = _luggageCabin;
-
-  /// Lunch box. Tags: trunk, toolbox, chest, storage, container, snack, meal, brunch.
-  static const lunchBox = _lunchBox;
+  /// Lungs. Tags: organ, anatomy, breathing, respiratory, health.
+  static const lungs = _lungs;
 
   /// Same icon as [wandSparkles].
   static const magicWand = _wandSparkles;
 
-  /// Magnet. Tags: horseshoe, lock, science, snap.
+  /// Magnet. Tags: horseshoe, lock, science, snap, attract.
   static const magnet = _magnet;
 
-  /// Mail. Tags: email, message, letter, unread.
+  /// Magnet plus minus. Tags: magnet, poles, polarity, science, attract.
+  static const magnetPlusMinus = _magnetPlusMinus;
+
+  /// Magnet zap. Tags: magnet, electromagnet, lightning, power, science.
+  static const magnetZap = _magnetZap;
+
+  /// Mail. Tags: email, message, letter, unread, envelope.
   static const mail = _mail;
 
-  /// Mail badge. Tags: email, message, letter, certified, registered, seal, stamp, verified.
+  /// Mail ai. Tags: ai, mail, email, envelope, message. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const mailAi = _mailAi;
+
+  /// Mail arrow down. Tags: email, message, download, receive, save, envelope.
+  static const mailArrowDown = _mailArrowDown;
+
+  /// Mail arrow down simple. Tags: email, message, download, receive, save, envelope.
+  static const mailArrowDownSimple = _mailArrowDownSimple;
+
+  /// Mail arrow left. Tags: email, message, receive, incoming, inbox, envelope. Mirrors in right-to-left text.
+  static const mailArrowLeft = _mailArrowLeft;
+
+  /// Mail arrow left simple. Tags: email, message, receive, incoming, inbox, envelope. Mirrors in right-to-left text.
+  static const mailArrowLeftSimple = _mailArrowLeftSimple;
+
+  /// Mail arrow right. Tags: email, message, send, outgoing, forward, envelope. Mirrors in right-to-left text.
+  static const mailArrowRight = _mailArrowRight;
+
+  /// Mail arrow right simple. Tags: email, message, send, outgoing, forward, envelope. Mirrors in right-to-left text.
+  static const mailArrowRightSimple = _mailArrowRightSimple;
+
+  /// Mail arrow up. Tags: email, message, upload, send, outbox, envelope.
+  static const mailArrowUp = _mailArrowUp;
+
+  /// Mail arrow up simple. Tags: email, message, upload, send, outbox, envelope.
+  static const mailArrowUpSimple = _mailArrowUpSimple;
+
+  /// Mail at sign. Tags: email, address, message, at, envelope.
+  static const mailAtSign = _mailAtSign;
+
+  /// Mail at sign simple. Tags: email, address, message, at, envelope.
+  static const mailAtSignSimple = _mailAtSignSimple;
+
+  /// Mail badge. Tags: mail, email, badge, award, certified, verified. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const mailBadge = _mailBadge;
 
-  /// Mailbox. Tags: emails, messages, letters, mailing list, newsletter.
+  /// Mail ban. Tags: email, message, block, spam, forbidden, envelope.
+  static const mailBan = _mailBan;
+
+  /// Mail ban simple. Tags: email, message, block, spam, forbidden, envelope.
+  static const mailBanSimple = _mailBanSimple;
+
+  /// Mail bitcoin. Tags: bitcoin, mail, email, crypto, btc.
+  static const mailBitcoin = _mailBitcoin;
+
+  /// Mailbox. Tags: emails, messages, letters, mailing list, newsletter, flag.
   static const mailbox = _mailbox;
 
-  /// Mailbox flag. Tags: post, inbox, emails, messages, letters, mailing list, newsletter.
-  static const mailboxFlag = _mailboxFlag;
+  /// Same icon as [mailbox].
+  static const mailboxFlag = _mailbox;
 
-  /// Mail check. Tags: email, message, letter, subscribe, delivered, success, read, done.
+  /// Mail check. Tags: email, message, letter, delivered, success, read, done.
   static const mailCheck = _mailCheck;
 
-  /// Mail clock. Tags: email, message, letter, unread, scheduled, delayed, sendlater, delivery.
-  static const mailClock = _mailClock;
+  /// Mail circle check. Tags: email, message, verified, validated, confirmed, envelope.
+  static const mailCircleCheck = _mailCircleCheck;
+
+  /// Same icon as [mailCircleCheck].
+  static const mailCircleCheckSimple = _mailCircleCheck;
+
+  /// Mail cog. Tags: email, message, settings, configure, preferences, envelope.
+  static const mailCog = _mailCog;
+
+  /// Mail cog simple. Tags: email, message, settings, configure, preferences, envelope.
+  static const mailCogSimple = _mailCogSimple;
+
+  /// Mail heart. Tags: email, message, love, favorite, valentine, envelope.
+  static const mailHeart = _mailHeart;
+
+  /// Mail heart simple. Tags: email, message, love, favorite, valentine, envelope.
+  static const mailHeartSimple = _mailHeartSimple;
+
+  /// Mail lock. Tags: email, message, secure, private, locked, envelope.
+  static const mailLock = _mailLock;
+
+  /// Mail lock open. Tags: email, message, unlocked, decrypt, open, envelope.
+  static const mailLockOpen = _mailLockOpen;
+
+  /// Mail lock open simple. Tags: email, message, unlocked, decrypt, open, envelope.
+  static const mailLockOpenSimple = _mailLockOpenSimple;
+
+  /// Mail lock simple. Tags: email, message, secure, private, locked, envelope.
+  static const mailLockSimple = _mailLockSimple;
+
+  /// Mail mic. Tags: email, message, voicemail, audio, record, envelope.
+  static const mailMic = _mailMic;
+
+  /// Mail mic simple. Tags: email, message, voicemail, audio, record, envelope.
+  static const mailMicSimple = _mailMicSimple;
 
   /// Mail minus. Tags: email, message, letter, remove, delete.
   static const mailMinus = _mailMinus;
 
-  /// Mail open. Tags: email, message, letter, read.
+  /// Mail minus simple. Tags: email, message, letter, remove, delete.
+  static const mailMinusSimple = _mailMinusSimple;
+
+  /// Mail open. Tags: email, message, letter, read, opened.
   static const mailOpen = _mailOpen;
 
-  /// Mail pen. Tags: email, message, letter, pen, edit, compose, draft, write.
+  /// Mail open heart. Tags: email, message, love, card, valentine, opened.
+  static const mailOpenHeart = _mailOpenHeart;
+
+  /// Mail open simple. Tags: email, message, letter, read, opened.
+  static const mailOpenSimple = _mailOpenSimple;
+
+  /// Mail open text. Tags: email, message, letter, read, document, envelope.
+  static const mailOpenText = _mailOpenText;
+
+  /// Mail pen. Tags: email, message, compose, write, edit, envelope.
   static const mailPen = _mailPen;
+
+  /// Mail pen simple. Tags: email, message, compose, write, edit, envelope.
+  static const mailPenSimple = _mailPenSimple;
 
   /// Mail plus. Tags: email, message, letter, add, create, new, compose.
   static const mailPlus = _mailPlus;
 
-  /// Mail question mark. Tags: email, message, letter, delivery, undelivered.
+  /// Mail plus simple. Tags: email, message, letter, add, create, new, compose.
+  static const mailPlusSimple = _mailPlusSimple;
+
+  /// Mail question mark. Tags: email, message, letter, help, unknown, support.
   static const mailQuestionMark = _mailQuestionMark;
 
-  /// Mails. Tags: emails, messages, letters, multiple, mailing list, newsletter, copy.
+  /// Mail reply. Tags: email, message, answer, respond, envelope. Mirrors in right-to-left text.
+  static const mailReply = _mailReply;
+
+  /// Mail reply all. Tags: email, message, answer, respond, everyone, envelope. Mirrors in right-to-left text.
+  static const mailReplyAll = _mailReplyAll;
+
+  /// Mail reply all simple. Tags: email, message, answer, respond, everyone, envelope. Mirrors in right-to-left text.
+  static const mailReplyAllSimple = _mailReplyAllSimple;
+
+  /// Mail reply simple. Tags: email, message, answer, respond, envelope. Mirrors in right-to-left text.
+  static const mailReplySimple = _mailReplySimple;
+
+  /// Mails. Tags: emails, messages, letters, multiple, stack.
   static const mails = _mails;
 
-  /// Mail search. Tags: email, message, letter, search, lens.
+  /// Mail search. Tags: email, message, letter, search, lens, find.
   static const mailSearch = _mailSearch;
+
+  /// Mail search simple. Tags: email, message, letter, search, lens, find.
+  static const mailSearchSimple = _mailSearchSimple;
+
+  /// Mail shield. Tags: email, message, secure, protection, encrypted, envelope.
+  static const mailShield = _mailShield;
+
+  /// Mail shield simple. Tags: email, message, secure, protection, encrypted, envelope.
+  static const mailShieldSimple = _mailShieldSimple;
+
+  /// Mail simple. Tags: email, message, letter, envelope.
+  static const mailSimple = _mailSimple;
+
+  /// Mail sparkle. Tags: ai, mail, email, envelope, sparkle.
+  static const mailSparkle = _mailSparkle;
+
+  /// Mail sparkle simple. Tags: ai, mail, email, envelope, open, sparkle.
+  static const mailSparkleSimple = _mailSparkleSimple;
+
+  /// Mail sync. Tags: recovery, mail, email, refresh, restore.
+  static const mailSync = _mailSync;
+
+  /// Mail user. Tags: email, message, account, contact, person, envelope. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const mailUser = _mailUser;
+
+  /// Mail user simple. Tags: email, message, account, contact, person, envelope. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const mailUserSimple = _mailUserSimple;
 
   /// Mail warning. Tags: email, message, letter, delivery error, exclamation mark.
   static const mailWarning = _mailWarning;
 
-  /// Mail x. Tags: email, message, letter, remove, delete.
+  /// Mail x. Tags: email, message, letter, remove, delete, failed.
   static const mailX = _mailX;
 
-  /// Map. Tags: location, navigation, travel.
+  /// Mail x simple. Tags: email, message, letter, remove, delete, failed.
+  static const mailXSimple = _mailXSimple;
+
+  /// Makeup brush. Tags: blush, brush, cosmetics, beauty.
+  static const makeupBrush = _makeupBrush;
+
+  /// Makeup brush sparkle. Tags: blush, brush, cosmetics, beauty, glam. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const makeupBrushSparkle = _makeupBrushSparkle;
+
+  /// Man. Tags: person, male, figure, standing, human.
+  static const man = _man;
+
+  /// Man woman. Tags: couple, restroom, toilet, gender, people, unisex.
+  static const manWoman = _manWoman;
+
+  /// Map. Tags: location, paper, fold, guide, atlas.
   static const map = _map;
 
-  /// Map minus. Tags: location, navigation, travel, drop, delete, remove, erase.
+  /// Map flat. Tags: map, folded, navigation, directions, atlas, location, paper, fold.
+  static const mapFlat = _mapFlat;
+
+  /// Maple leaf. Tags: leaf, autumn, fall, canada, nature.
+  static const mapleLeaf = _mapleLeaf;
+
+  /// Map marker. Tags: map, pin, location, place, marker.
+  static const mapMarker = _mapMarker;
+
+  /// Map minus. Tags: location, remove, delete, zoom out, paper.
   static const mapMinus = _mapMinus;
 
-  /// Map pin. Tags: location, waypoint, marker, drop.
+  /// Map off. Tags: map, off, disabled, unavailable, offline.
+  static const mapOff = _mapOff;
+
+  /// Map pen. Tags: map, edit, pen, change, route.
+  static const mapPen = _mapPen;
+
+  /// Map pin. Tags: location, waypoint, marker, drop, place.
   static const mapPin = _mapPin;
+
+  /// Map pin bitcoin. Tags: bitcoin, location, pin, map, atm, crypto, btc.
+  static const mapPinBitcoin = _mapPinBitcoin;
+
+  /// Map pin blank. Tags: location, waypoint, marker, drop, place, empty.
+  static const mapPinBlank = _mapPinBlank;
+
+  /// Map pin blank off. Tags: location, waypoint, marker, offline, disabled, empty.
+  static const mapPinBlankOff = _mapPinBlankOff;
 
   /// Map pin check. Tags: location, waypoint, marker, drop, done, tick, complete, task.
   static const mapPinCheck = _mapPinCheck;
 
-  /// Map pin check inside. Tags: location, waypoint, marker, drop, done, tick, complete, task.
+  /// Map pin check inside. Tags: location, pin, check, verified, confirmed, waypoint, marker, done.
   static const mapPinCheckInside = _mapPinCheckInside;
 
-  /// Map pin house. Tags: location, waypoint, marker, drop, home, living, building, residence.
+  /// Map pin dot. Tags: location, pin, pinpoint, dot, marker.
+  static const mapPinDot = _mapPinDot;
+
+  /// Map pin heart. Tags: location, waypoint, marker, favorite, like, saved place.
+  static const mapPinHeart = _mapPinHeart;
+
+  /// Map pin hospital. Tags: hospital, location, map, emergency, pin.
+  static const mapPinHospital = _mapPinHospital;
+
+  /// Map pin house. Tags: location, pin, home, address, house.
   static const mapPinHouse = _mapPinHouse;
 
-  /// Map pin minus. Tags: location, waypoint, marker, drop, delete, remove, erase.
+  /// Map pin line. Tags: location, waypoint, marker, drop, place, underline.
+  static const mapPinLine = _mapPinLine;
+
+  /// Map pin minus. Tags: location, pin, minus, remove, subtract.
   static const mapPinMinus = _mapPinMinus;
 
-  /// Map pin minus inside. Tags: location, waypoint, marker, drop, delete, remove, erase.
+  /// Map pin minus inside. Tags: location, pin, minus, remove, subtract, waypoint, marker, delete.
   static const mapPinMinusInside = _mapPinMinusInside;
 
-  /// Map pinned. Tags: location, waypoint, marker, drop.
+  /// Map pin mosque. Tags: mosque, location, prayer, islam, place, nearby.
+  static const mapPinMosque = _mapPinMosque;
+
+  /// Map pinned. Tags: location, pin, marker, place, base.
   static const mapPinned = _mapPinned;
 
-  /// Map pin off. Tags: location, waypoint, marker, remove.
+  /// Map pin off. Tags: location, pin, off, disabled, hidden, waypoint, marker, remove.
   static const mapPinOff = _mapPinOff;
 
-  /// Map pin pen. Tags: location, waypoint, marker, drop, edit.
+  /// Map pin pen. Tags: location, pin, edit, pen, change.
   static const mapPinPen = _mapPinPen;
 
-  /// Map pin plus. Tags: location, waypoint, marker, drop, add, create, new.
+  /// Map pin pin. Tags: location, pin, pinpoint, marker, second location.
+  static const mapPinPin = _mapPinPin;
+
+  /// Map pin plus. Tags: location, pin, add, plus, new.
   static const mapPinPlus = _mapPinPlus;
 
-  /// Map pin plus inside. Tags: location, waypoint, marker, drop, add, create, new.
+  /// Map pin plus inside. Tags: location, pin, add, plus, new, waypoint, marker, create.
   static const mapPinPlusInside = _mapPinPlusInside;
 
-  /// Map pin search. Tags: location, navigation, travel, waypoint, marker, drop.
+  /// Map pin radio. Tags: location, waypoint, marker, share, broadcast, live location.
+  static const mapPinRadio = _mapPinRadio;
+
+  /// Map pin ring. Tags: location, waypoint, marker, drop, place, base, ring, empty.
+  static const mapPinRing = _mapPinRing;
+
+  /// Map pin road. Tags: road location, map pin, street, place.
+  static const mapPinRoad = _mapPinRoad;
+
+  /// Map pin search. Tags: location, pin, search, find, locate.
   static const mapPinSearch = _mapPinSearch;
 
-  /// Map pin x. Tags: location, waypoint, marker, drop, delete, remove, erase.
+  /// Map pin star. Tags: location, waypoint, marker, favorite, starred, rating.
+  static const mapPinStar = _mapPinStar;
+
+  /// Map pin stem. Tags: location, pin, map, marker, stem.
+  static const mapPinStem = _mapPinStem;
+
+  /// Map pin stem arc. Tags: location, pin, map, marker, stem, dot.
+  static const mapPinStemArc = _mapPinStemArc;
+
+  /// Map pin stem ring. Tags: location, pin, map, marker, stem, ring.
+  static const mapPinStemRing = _mapPinStemRing;
+
+  /// Map pin sync. Tags: location, waypoint, marker, refresh, update, sync.
+  static const mapPinSync = _mapPinSync;
+
+  /// Map pin tray. Tags: location, waypoint, marker, drop, place, base.
+  static const mapPinTray = _mapPinTray;
+
+  /// Map pin wifi. Tags: wifi, hotspot, location, place, pin, public, wireless.
+  static const mapPinWifi = _mapPinWifi;
+
+  /// Map pin x. Tags: location, pin, remove, close, cancel.
   static const mapPinX = _mapPinX;
 
-  /// Map pin x inside. Tags: location, waypoint, marker, drop, delete, remove, erase.
+  /// Map pin x inside. Tags: location, pin, remove, close, cancel.
   static const mapPinXInside = _mapPinXInside;
 
-  /// Map plus. Tags: location, navigation, travel, new, add, create.
+  /// Map plus. Tags: map, plus, add, new, route.
   static const mapPlus = _mapPlus;
 
-  /// Mars. Tags: gender, sex, male, masculine, man, boy.
+  /// Map refresh. Tags: map, refresh, reload, sync, update.
+  static const mapRefresh = _mapRefresh;
+
+  /// Map search. Tags: map, search, find, explore.
+  static const mapSearch = _mapSearch;
+
+  /// Map treasure. Tags: location, waypoint, marker, pin, map, destination.
+  static const mapTreasure = _mapTreasure;
+
+  /// Mars. Tags: male, gender, symbol, man.
   static const mars = _mars;
 
-  /// Mars stroke. Tags: gender, androgyne, transgender.
+  /// Mars down left. Tags: male, gender, symbol, man, masculine.
+  static const marsDownLeft = _marsDownLeft;
+
+  /// Mars stroke. Tags: male, gender, symbol, man, mars.
   static const marsStroke = _marsStroke;
 
-  /// Martini. Tags: cocktail, alcohol, beverage, bar, drink, glass, spirit, party.
-  static const martini = _martini;
+  /// Matchbox. Tags: matches, fire, flame, lighter.
+  static const matchbox = _matchbox;
 
-  /// Mask snorkel. Tags: scuba, submerge, freediving, diver, location, spot, gear, equipment.
-  static const maskSnorkel = _maskSnorkel;
+  /// Matrix. Tags: brackets, grid, dots, algebra, array.
+  static const matrix = _matrix;
 
-  /// Maximize. Tags: fullscreen, expand, dashed.
-  static const maximize = _maximize;
+  /// Same icon as [scan].
+  static const maximize = _scan;
 
-  /// Maximize 2. Tags: fullscreen, arrows, expand.
+  /// Maximize 2. Tags: expand, maximize, diagonal, enlarge, fullscreen.
   static const maximize2 = _maximize2;
 
-  /// Meal box. Tags: brunch, lunch, dinner, tray, bento, sushi, noodles, culinary.
-  static const mealBox = _mealBox;
+  /// Maximize 2 flip. Tags: expand, maximize, diagonal, enlarge, fullscreen.
+  static const maximize2Flip = _maximize2Flip;
 
-  /// Medal. Tags: prize, sports, winner, trophy, award, achievement.
+  /// Maximize 2 split. Tags: expand, maximize, diagonal, split, enlarge, resize.
+  static const maximize2Split = _maximize2Split;
+
+  /// Maximize 2 split flip. Tags: expand, maximize, diagonal, split, enlarge, resize.
+  static const maximize2SplitFlip = _maximize2SplitFlip;
+
+  /// Maze. Tags: labyrinth, puzzle, game, path.
+  static const maze = _maze;
+
+  /// Measuring cup. Tags: jar, container, preserve, glass, storage, measuring.
+  static const measuringCup = _measuringCup;
+
+  /// Medal. Tags: award, prize, winner, ribbon.
   static const medal = _medal;
 
-  /// Megaphone. Tags: advertisement, announcement, attention, alert, loudspeaker, notification.
+  /// Medal 1. Tags: medal, first place, winner, gold, champion, 1.
+  static const medal1 = _medal1;
+
+  /// Medal 2. Tags: medal, second place, silver, runner-up, 2.
+  static const medal2 = _medal2;
+
+  /// Medal 3. Tags: medal, third place, bronze, podium, 3.
+  static const medal3 = _medal3;
+
+  /// Medal hex. Tags: medal, award, prize, hexagon, ribbon.
+  static const medalHex = _medalHex;
+
+  /// Medal hex plain. Tags: medal, award, prize, hexagon, ribbon.
+  static const medalHexPlain = _medalHexPlain;
+
+  /// Medal rays. Tags: medal, award, prize, winner, ribbon.
+  static const medalRays = _medalRays;
+
+  /// Medal star. Tags: medal, award, prize, star, ribbon.
+  static const medalStar = _medalStar;
+
+  /// Medal star dotted. Tags: medal, award, prize, star, ribbon.
+  static const medalStarDotted = _medalStarDotted;
+
+  /// Medal star striped. Tags: medal, award, prize, star, ribbon.
+  static const medalStarStriped = _medalStarStriped;
+
+  /// Megaphone. Tags: loudspeaker, announce, promotion, broadcast.
   static const megaphone = _megaphone;
 
-  /// Megaphone off. Tags: advertisement, announcement, attention, alert, loudspeaker, megaphone, notification, disable.
+  /// Megaphone handle. Tags: megaphone, marketing, announce, promotion, advertising.
+  static const megaphoneHandle = _megaphoneHandle;
+
+  /// Megaphone lines. Tags: megaphone, loudspeaker, announce, sound, broadcast.
+  static const megaphoneLines = _megaphoneLines;
+
+  /// Megaphone off. Tags: megaphone, off, mute, silent, announcement.
   static const megaphoneOff = _megaphoneOff;
 
-  /// Memory stick. Tags: ram, random access, technology, computer, chip, circuit, specs, capacity.
+  /// Megaphone small. Tags: megaphone, loudspeaker, announce, promotion, broadcast.
+  static const megaphoneSmall = _megaphoneSmall;
+
+  /// Megaphone tilted. Tags: promotion, megaphone, announcement, marketing, loudspeaker.
+  static const megaphoneTilted = _megaphoneTilted;
+
+  /// Memory stick. Tags: memory, ram, stick, hardware, module.
   static const memoryStick = _memoryStick;
+
+  /// Memory stick notch. Tags: ram, memory, chip, computer, hardware.
+  static const memoryStickNotch = _memoryStickNotch;
 
   /// Same icon as [atSign].
   static const mention = _atSign;
 
-  /// Menu. Tags: bars, navigation, hamburger, options.
+  /// Menu. Tags: hamburger, navigation, lines, drawer.
   static const menu = _menu;
 
-  /// Merge. Tags: combine, join, unite.
+  /// Menu 2. Tags: menu, hamburger, two lines, navigation.
+  static const menu2 = _menu2;
+
+  /// Menu 2 short. Tags: menu, hamburger, two lines, short, navigation.
+  static const menu2Short = _menu2Short;
+
+  /// Menu 4. Tags: menu, hamburger, four lines, lines, navigation.
+  static const menu4 = _menu4;
+
+  /// Menu arrow. Tags: menu, hamburger, lines, arrow, dropdown, navigation.
+  static const menuArrow = _menuArrow;
+
+  /// Menu card. Tags: menu, restaurant, card, food, dining, cloche.
+  static const menuCard = _menuCard;
+
+  /// Menu centered. Tags: menu, hamburger, lines, centered, navigation.
+  static const menuCentered = _menuCentered;
+
+  /// Menu chevron left. Tags: menu, collapse, sidebar, chevron, close, hide.
+  static const menuChevronLeft = _menuChevronLeft;
+
+  /// Menu dot. Tags: menu, hamburger, lines, dot, navigation.
+  static const menuDot = _menuDot;
+
+  /// Menu short middle. Tags: menu, hamburger, lines, short, navigation.
+  static const menuShortMiddle = _menuShortMiddle;
+
+  /// Menu short top. Tags: menu, hamburger, lines, short, navigation.
+  static const menuShortTop = _menuShortTop;
+
+  /// Menu staggered left. Tags: menu, hamburger, lines, staggered, navigation.
+  static const menuStaggeredLeft = _menuStaggeredLeft;
+
+  /// Menu staggered right. Tags: menu, hamburger, lines, staggered, navigation.
+  static const menuStaggeredRight = _menuStaggeredRight;
+
+  /// Menu tapered. Tags: menu, hamburger, lines, tapered, navigation.
+  static const menuTapered = _menuTapered;
+
+  /// Merge. Tags: combine, join, fork, git.
   static const merge = _merge;
 
-  /// Message circle. Tags: comment, chat, conversation, dialog, feedback, speech bubble.
+  /// Message circle. Tags: message, chat, bubble, comment, conversation.
   static const messageCircle = _messageCircle;
 
-  /// Message circle check. Tags: comment, chat, conversation, dialog, feedback, speech bubble, moderate, check.
+  /// Message circle ai. Tags: ai, chat, bubble, chatbot, message, assistant.
+  static const messageCircleAi = _messageCircleAi;
+
+  /// Message circle arrow down. Tags: chat, bubble, message, download, arrow, down.
+  static const messageCircleArrowDown = _messageCircleArrowDown;
+
+  /// Message circle arrow left. Tags: chat, bubble, message, income, incoming, received, arrow, left. Mirrors in right-to-left text.
+  static const messageCircleArrowLeft = _messageCircleArrowLeft;
+
+  /// Message circle arrow right. Tags: chat, bubble, message, outcome, outgoing, sent, arrow, right. Mirrors in right-to-left text.
+  static const messageCircleArrowRight = _messageCircleArrowRight;
+
+  /// Message circle arrow up. Tags: chat, bubble, message, upload, send, up.
+  static const messageCircleArrowUp = _messageCircleArrowUp;
+
+  /// Message circle asterisk. Tags: chat, message, asterisk, required, note, bubble.
+  static const messageCircleAsterisk = _messageCircleAsterisk;
+
+  /// Message circle captions. Tags: cc, subtitles, captions, speech bubble, dialogue, transcript.
+  static const messageCircleCaptions = _messageCircleCaptions;
+
+  /// Message circle check. Tags: message, chat, check, done, delivered, bubble, sent.
   static const messageCircleCheck = _messageCircleCheck;
 
-  /// Message circle code. Tags: comment, chat, conversation, dialog, feedback, speech bubble, code review, coding.
+  /// Message circle chip. Tags: ai, chat, bubble, chip, chatbot, message.
+  static const messageCircleChip = _messageCircleChip;
+
+  /// Message circle clock. Tags: chat, bubble, message, delay, clock, scheduled.
+  static const messageCircleClock = _messageCircleClock;
+
+  /// Message circle code. Tags: message, chat, code, developer, programming.
   static const messageCircleCode = _messageCircleCode;
 
-  /// Message circle dashed. Tags: comment, chat, conversation, dialog, feedback, speech bubble, draft.
+  /// Message circle dashed. Tags: chat, bubble, message, temporary, dashed, disappearing.
   static const messageCircleDashed = _messageCircleDashed;
 
-  /// Message circle dashed check. Tags: comment, chat, conversation, dialog, feedback, speech bubble, draft, pending.
-  static const messageCircleDashedCheck = _messageCircleDashedCheck;
+  /// Message circle dot. Tags: notification, message, chat, bubble, unread, badge.
+  static const messageCircleDot = _messageCircleDot;
 
-  /// Message circle heart. Tags: comment, chat, conversation, dialog, feedback, positive, like, love.
+  /// Message circle download. Tags: chat, bubble, message, download, save.
+  static const messageCircleDownload = _messageCircleDownload;
+
+  /// Message circle eye. Tags: chat, bubble, message, preview, eye, view.
+  static const messageCircleEye = _messageCircleEye;
+
+  /// Message circle heart. Tags: message, chat, heart, love, favorite, bubble, favourite, like.
   static const messageCircleHeart = _messageCircleHeart;
 
-  /// Message circle more. Tags: comment, chat, conversation, dialog, feedback, speech bubble, typing, writing.
+  /// Message circle languages. Tags: chat, bubble, message, translate, language, translation, international.
+  static const messageCircleLanguages = _messageCircleLanguages;
+
+  /// Message circle lock. Tags: chat, bubble, message, lock, private, secure.
+  static const messageCircleLock = _messageCircleLock;
+
+  /// Message circle lock open. Tags: chat, bubble, message, unlock, open.
+  static const messageCircleLockOpen = _messageCircleLockOpen;
+
+  /// Message circle more. Tags: message, chat, more, typing, dots, bubble, comment.
   static const messageCircleMore = _messageCircleMore;
 
-  /// Message circle off. Tags: comment, chat, conversation, dialog, feedback, speech bubble, clear, close.
+  /// Message circle more dot. Tags: chat, bubble, message, notification, dot, unread.
+  static const messageCircleMoreDot = _messageCircleMoreDot;
+
+  /// Message circle more sparkle. Tags: chat, bubble, message, ai, spark, sparkle, dots.
+  static const messageCircleMoreSparkle = _messageCircleMoreSparkle;
+
+  /// Message circle off. Tags: message, chat, off, muted, disabled, bubble, blocked, mute.
   static const messageCircleOff = _messageCircleOff;
 
-  /// Message circle plus. Tags: comment, chat, conversation, dialog, feedback, speech bubble, add.
+  /// Message circle open. Tags: message, chat, draft, pending, placeholder.
+  static const messageCircleOpen = _messageCircleOpen;
+
+  /// Message circle pen. Tags: chat, bubble, message, edit, pen.
+  static const messageCirclePen = _messageCirclePen;
+
+  /// Message circle plus. Tags: message, chat, add, plus, new, bubble.
   static const messageCirclePlus = _messageCirclePlus;
 
-  /// Message circle question mark. Tags: comment, chat, conversation, dialog, feedback, speech bubble, help.
+  /// Message circle question mark. Tags: message, chat, question, help, support, bubble, ask.
   static const messageCircleQuestionMark = _messageCircleQuestionMark;
 
-  /// Message circle reply. Tags: comment, chat, conversation, dialog, feedback, speech bubble, reply, response. Mirrors in right-to-left text.
+  /// Message circle quote. Tags: quote, quotation, speech bubble, testimonial, 99.
+  static const messageCircleQuote = _messageCircleQuote;
+
+  /// Message circle reply. Tags: message, chat, reply, respond, answer. Mirrors in right-to-left text.
   static const messageCircleReply = _messageCircleReply;
 
-  /// Message circle warning. Tags: comment, chat, conversation, dialog, feedback, speech bubble, report, abuse.
+  /// Message circle search. Tags: chat, bubble, message, search, find.
+  static const messageCircleSearch = _messageCircleSearch;
+
+  /// Message circle shield. Tags: chat, bubble, message, secure, shield, protected.
+  static const messageCircleShield = _messageCircleShield;
+
+  /// Message circle sparkle. Tags: chat, bubble, message, spark, ai, assistant.
+  static const messageCircleSparkle = _messageCircleSparkle;
+
+  /// Message circle user. Tags: chat, bubble, message, user, person, contact.
+  static const messageCircleUser = _messageCircleUser;
+
+  /// Message circle warning. Tags: message, chat, warning, alert, error.
   static const messageCircleWarning = _messageCircleWarning;
 
-  /// Message circle x. Tags: comment, chat, conversation, dialog, feedback, speech bubble, clear, close.
+  /// Message circle wide ban. Tags: comment, block, blocked, ban, mute, message, round.
+  static const messageCircleWideBan = _messageCircleWideBan;
+
+  /// Message circle wide plus. Tags: comment, add, new, message, chat, round.
+  static const messageCircleWidePlus = _messageCircleWidePlus;
+
+  /// Message circle wide text. Tags: comment, message, chat, text, round bubble.
+  static const messageCircleWideText = _messageCircleWideText;
+
+  /// Message circle wide x. Tags: comment, remove, delete, message, close, round.
+  static const messageCircleWideX = _messageCircleWideX;
+
+  /// Message circle x. Tags: message, chat, close, cancel, remove, bubble.
   static const messageCircleX = _messageCircleX;
 
-  /// Messages circle. Tags: comment, chat, conversation, dialog, feedback, speech bubbles, copy, multiple.
+  /// Message code. Tags: message, chat, code, programming, developer, comment.
+  static const messageCode = _messageCode;
+
+  /// Message dots. Tags: message, chat, typing, bubble, more, comment.
+  static const messageDots = _messageDots;
+
+  /// Message dots arrow left. Tags: message, chat, incoming, receive, inbox, arrow. Mirrors in right-to-left text.
+  static const messageDotsArrowLeft = _messageDotsArrowLeft;
+
+  /// Message dots arrow right. Tags: message, chat, outgoing, send, sent, arrow. Mirrors in right-to-left text.
+  static const messageDotsArrowRight = _messageDotsArrowRight;
+
+  /// Message dots check. Tags: message, chat, done, check, delivered, read, sent.
+  static const messageDotsCheck = _messageDotsCheck;
+
+  /// Message dots clock. Tags: message, chat, delay, clock, scheduled, pending, time.
+  static const messageDotsClock = _messageDotsClock;
+
+  /// Message dots dot. Tags: message, chat, notification, dot, unread, badge, new.
+  static const messageDotsDot = _messageDotsDot;
+
+  /// Message dots download. Tags: message, chat, download, save, receive, inbox.
+  static const messageDotsDownload = _messageDotsDownload;
+
+  /// Message dots eye. Tags: message, chat, preview, view, eye, read, show.
+  static const messageDotsEye = _messageDotsEye;
+
+  /// Message dots heart. Tags: message, chat, favorite, heart, like, love.
+  static const messageDotsHeart = _messageDotsHeart;
+
+  /// Message dots lock. Tags: message, chat, lock, private, secure, encrypted.
+  static const messageDotsLock = _messageDotsLock;
+
+  /// Message dots lock open. Tags: message, chat, unlock, open, lock open, secure.
+  static const messageDotsLockOpen = _messageDotsLockOpen;
+
+  /// Message dots pen. Tags: message, chat, edit, pen, write, compose, change.
+  static const messageDotsPen = _messageDotsPen;
+
+  /// Message dots plus. Tags: message, chat, add, plus, new, compose.
+  static const messageDotsPlus = _messageDotsPlus;
+
+  /// Message dots search. Tags: message, chat, search, find, lookup.
+  static const messageDotsSearch = _messageDotsSearch;
+
+  /// Message dots shield. Tags: message, chat, secure, shield, protection, privacy, safe.
+  static const messageDotsShield = _messageDotsShield;
+
+  /// Message dots upload. Tags: message, chat, upload, send, share, arrow.
+  static const messageDotsUpload = _messageDotsUpload;
+
+  /// Message dots user. Tags: message, chat, user, person, contact, profile.
+  static const messageDotsUser = _messageDotsUser;
+
+  /// Message dots x. Tags: message, chat, cancel, close, remove, delete.
+  static const messageDotsX = _messageDotsX;
+
+  /// Message question mark. Tags: message, chat, question, help, support, faq.
+  static const messageQuestionMark = _messageQuestionMark;
+
+  /// Messages. Tags: chat, conversation, discussion, comments.
+  static const messages = _messages;
+
+  /// Messages circle. Tags: chat, chatting, conversation, messages, discussion, bubbles.
   static const messagesCircle = _messagesCircle;
 
-  /// Message square. Tags: comment, chat, conversation, dialog, feedback, speech bubble.
+  /// Messages circle question mark. Tags: quiz, question, chat, bubbles, faq.
+  static const messagesCircleQuestionMark = _messagesCircleQuestionMark;
+
+  /// Message square. Tags: message, chat, bubble, comment, conversation, speech.
   static const messageSquare = _messageSquare;
 
-  /// Message square check. Tags: comment, chat, conversation, dialog, feedback, speech bubble, moderate, check.
+  /// Message square arrow left. Tags: chat, message, income, incoming, received, inbox. Mirrors in right-to-left text.
+  static const messageSquareArrowLeft = _messageSquareArrowLeft;
+
+  /// Message square arrow right. Tags: chat, message, outcome, outgoing, sent, send. Mirrors in right-to-left text.
+  static const messageSquareArrowRight = _messageSquareArrowRight;
+
+  /// Message square ban. Tags: comment, block, blocked, ban, mute, message.
+  static const messageSquareBan = _messageSquareBan;
+
+  /// Message square check. Tags: message, chat, check, done, delivered, sent, resolved.
   static const messageSquareCheck = _messageSquareCheck;
 
-  /// Message square code. Tags: comment, chat, conversation, dialog, feedback, speech bubble, code review, coding.
+  /// Message square clock. Tags: chat, message, delay, scheduled, pending, time.
+  static const messageSquareClock = _messageSquareClock;
+
+  /// Message square code. Tags: message, chat, code, developer, programming.
   static const messageSquareCode = _messageSquareCode;
 
-  /// Message square dashed. Tags: comment, chat, conversation, dialog, feedback, speech bubble, draft.
+  /// Message square corner plus. Tags: comment, add, new, message, chat, plus.
+  static const messageSquareCornerPlus = _messageSquareCornerPlus;
+
+  /// Message square corner x. Tags: comment, remove, delete, message, close.
+  static const messageSquareCornerX = _messageSquareCornerX;
+
+  /// Message square dashed. Tags: message, chat, draft, pending, placeholder.
   static const messageSquareDashed = _messageSquareDashed;
 
-  /// Message square diff. Tags: comment, chat, conversation, dialog, feedback, speech bubble, add, patch.
+  /// Message square diff. Tags: message, chat, diff, plus, minus, change.
   static const messageSquareDiff = _messageSquareDiff;
 
-  /// Message square dot. Tags: unread, unresolved, comment, chat, conversation, dialog, feedback, speech bubble.
+  /// Message square dot. Tags: message, chat, dot, unread, notification.
   static const messageSquareDot = _messageSquareDot;
 
-  /// Message square heart. Tags: comment, chat, conversation, dialog, feedback, positive, like, love.
+  /// Message square download. Tags: chat, message, save, export, receive, download.
+  static const messageSquareDownload = _messageSquareDownload;
+
+  /// Message square eye. Tags: chat, message, preview, view, read, watch.
+  static const messageSquareEye = _messageSquareEye;
+
+  /// Message square heart. Tags: message, chat, heart, love, favorite, favourite, like.
   static const messageSquareHeart = _messageSquareHeart;
 
-  /// Message square lock. Tags: comment, chat, conversation, dialog, feedback, speech bubble, secure, encrypted.
+  /// Message square languages. Tags: chat, message, translate, language, localization, multilingual.
+  static const messageSquareLanguages = _messageSquareLanguages;
+
+  /// Message square lock. Tags: message, chat, lock, private, secure, locked, encrypted.
   static const messageSquareLock = _messageSquareLock;
 
-  /// Message square more. Tags: comment, chat, conversation, dialog, feedback, speech bubble, typing, writing.
+  /// Message square lock open. Tags: chat, message, unlock, unlocked, public, open.
+  static const messageSquareLockOpen = _messageSquareLockOpen;
+
+  /// Message square more. Tags: message, chat, more, typing, dots, comment, speech, conversation.
   static const messageSquareMore = _messageSquareMore;
 
-  /// Message square off. Tags: comment, chat, conversation, dialog, feedback, speech bubble, clear, close.
+  /// Message square more arrow left. Tags: chat, message, income, incoming, received, inbox. Mirrors in right-to-left text.
+  static const messageSquareMoreArrowLeft = _messageSquareMoreArrowLeft;
+
+  /// Message square more arrow right. Tags: chat, message, outcome, outgoing, sent, send. Mirrors in right-to-left text.
+  static const messageSquareMoreArrowRight = _messageSquareMoreArrowRight;
+
+  /// Message square more check. Tags: chat, message, done, sent, delivered, resolved.
+  static const messageSquareMoreCheck = _messageSquareMoreCheck;
+
+  /// Message square more clock. Tags: chat, message, delay, scheduled, pending, time.
+  static const messageSquareMoreClock = _messageSquareMoreClock;
+
+  /// Message square more dot. Tags: chat, message, notification, unread, badge, alert.
+  static const messageSquareMoreDot = _messageSquareMoreDot;
+
+  /// Message square more download. Tags: chat, message, save, export, receive, download.
+  static const messageSquareMoreDownload = _messageSquareMoreDownload;
+
+  /// Message square more eye. Tags: chat, message, preview, view, read, watch.
+  static const messageSquareMoreEye = _messageSquareMoreEye;
+
+  /// Message square more flipped. Tags: chat, message, feedback, comment, speech, dots.
+  static const messageSquareMoreFlipped = _messageSquareMoreFlipped;
+
+  /// Message square more heart. Tags: chat, message, favourite, favorite, like, love.
+  static const messageSquareMoreHeart = _messageSquareMoreHeart;
+
+  /// Message square more languages. Tags: chat, message, translate, language, localization, multilingual.
+  static const messageSquareMoreLanguages = _messageSquareMoreLanguages;
+
+  /// Message square more lock. Tags: chat, message, private, secure, locked, encrypted.
+  static const messageSquareMoreLock = _messageSquareMoreLock;
+
+  /// Message square more lock open. Tags: chat, message, unlock, unlocked, public, open.
+  static const messageSquareMoreLockOpen = _messageSquareMoreLockOpen;
+
+  /// Message square more off. Tags: chat, message, blocked, disabled, muted, no chat.
+  static const messageSquareMoreOff = _messageSquareMoreOff;
+
+  /// Message square more pen. Tags: chat, message, edit, compose, write, modify.
+  static const messageSquareMorePen = _messageSquareMorePen;
+
+  /// Message square more plus. Tags: chat, message, new chat, add, compose, comment.
+  static const messageSquareMorePlus = _messageSquareMorePlus;
+
+  /// Message square more question mark. Tags: chat, message, help, question, support, faq.
+  static const messageSquareMoreQuestionMark = _messageSquareMoreQuestionMark;
+
+  /// Message square more search. Tags: chat, message, find, search, lookup, filter.
+  static const messageSquareMoreSearch = _messageSquareMoreSearch;
+
+  /// Message square more shield. Tags: chat, message, secure, security, protected, safe.
+  static const messageSquareMoreShield = _messageSquareMoreShield;
+
+  /// Message square more sparkle. Tags: chat, message, ai, spark, smart, assistant.
+  static const messageSquareMoreSparkle = _messageSquareMoreSparkle;
+
+  /// Message square more upload. Tags: chat, message, send, export, share, upload.
+  static const messageSquareMoreUpload = _messageSquareMoreUpload;
+
+  /// Message square more user. Tags: chat, message, contact, person, profile, user.
+  static const messageSquareMoreUser = _messageSquareMoreUser;
+
+  /// Message square more x. Tags: chat, message, cancel, close, dismiss, failed.
+  static const messageSquareMoreX = _messageSquareMoreX;
+
+  /// Message square off. Tags: message, chat, off, muted, disabled, blocked, no chat.
   static const messageSquareOff = _messageSquareOff;
 
-  /// Message square plus. Tags: comment, chat, conversation, dialog, feedback, speech bubble, add.
+  /// Message square pen. Tags: chat, message, edit, compose, write, modify.
+  static const messageSquarePen = _messageSquarePen;
+
+  /// Message square play. Tags: video replay, video message, play, clip, replay, video bubble.
+  static const messageSquarePlay = _messageSquarePlay;
+
+  /// Message square plus. Tags: message, chat, add, plus, new, new chat, compose, comment.
   static const messageSquarePlus = _messageSquarePlus;
 
-  /// Message square quote. Tags: comment, chat, conversation, dialog, feedback, speech bubble, blockquote, quotation.
+  /// Message square question mark. Tags: chat, message, help, question, support, faq.
+  static const messageSquareQuestionMark = _messageSquareQuestionMark;
+
+  /// Message square quote. Tags: message, chat, quote, citation, testimonial.
   static const messageSquareQuote = _messageSquareQuote;
 
-  /// Message square reply. Tags: comment, chat, conversation, dialog, feedback, speech bubble, reply, response. Mirrors in right-to-left text.
+  /// Message square reply. Tags: message, chat, reply, respond. Mirrors in right-to-left text.
   static const messageSquareReply = _messageSquareReply;
 
-  /// Message square share. Tags: comment, chat, conversation, dialog, feedback, speech bubble, network, forward.
+  /// Message square search. Tags: chat, message, find, search, lookup, filter.
+  static const messageSquareSearch = _messageSquareSearch;
+
+  /// Message square share. Tags: message, chat, share, forward, send.
   static const messageSquareShare = _messageSquareShare;
 
-  /// Message square text. Tags: comment, chat, conversation, dialog, feedback, speech bubble.
+  /// Message square shield. Tags: chat, message, secure, security, protected, safe.
+  static const messageSquareShield = _messageSquareShield;
+
+  /// Message square sparkle. Tags: chat, message, ai, spark, smart, assistant.
+  static const messageSquareSparkle = _messageSquareSparkle;
+
+  /// Message square text. Tags: message, chat, text, comment, lines, speech, conversation, bubble.
   static const messageSquareText = _messageSquareText;
 
-  /// Message square warning. Tags: comment, chat, conversation, dialog, feedback, speech bubble, report, abuse.
+  /// Message square text ban. Tags: comment, block, blocked, ban, mute, message.
+  static const messageSquareTextBan = _messageSquareTextBan;
+
+  /// Message square text corner plus. Tags: comment, add, new, message, chat, plus.
+  static const messageSquareTextCornerPlus = _messageSquareTextCornerPlus;
+
+  /// Message square text corner x. Tags: comment, remove, delete, message, close, x.
+  static const messageSquareTextCornerX = _messageSquareTextCornerX;
+
+  /// Message square text dot. Tags: chat, message, notification, unread, badge, alert.
+  static const messageSquareTextDot = _messageSquareTextDot;
+
+  /// Message square text flipped. Tags: chat, message, feedback, comment, speech, text.
+  static const messageSquareTextFlipped = _messageSquareTextFlipped;
+
+  /// Message square upload. Tags: chat, message, send, export, share, upload.
+  static const messageSquareUpload = _messageSquareUpload;
+
+  /// Message square user. Tags: chat, message, contact, person, profile, user.
+  static const messageSquareUser = _messageSquareUser;
+
+  /// Message square warning. Tags: message, chat, warning, alert, error.
   static const messageSquareWarning = _messageSquareWarning;
 
-  /// Message square x. Tags: comment, chat, conversation, dialog, feedback, speech bubble, clear, close.
+  /// Message square x. Tags: message, chat, close, cancel, remove, dismiss, failed.
   static const messageSquareX = _messageSquareX;
 
-  /// Messages square. Tags: comment, chat, conversation, dialog, feedback, speech bubbles, copy, multiple.
+  /// Messages square. Tags: messages, chat, conversation, discussion, comments.
   static const messagesSquare = _messagesSquare;
 
-  /// Metronome. Tags: tempo, rhythm, beat, bpm, music, audio, sound, practice.
+  /// Messages text. Tags: messages, chat, conversation, discussion, comments.
+  static const messagesText = _messagesText;
+
+  /// Message text. Tags: message, chat, text, bubble, comment, conversation.
+  static const messageText = _messageText;
+
+  /// Message text arrow left. Tags: message, chat, incoming, receive, inbox, arrow. Mirrors in right-to-left text.
+  static const messageTextArrowLeft = _messageTextArrowLeft;
+
+  /// Message text arrow right. Tags: message, chat, outgoing, send, sent, arrow. Mirrors in right-to-left text.
+  static const messageTextArrowRight = _messageTextArrowRight;
+
+  /// Message text check. Tags: message, chat, done, check, delivered, read, sent.
+  static const messageTextCheck = _messageTextCheck;
+
+  /// Message text clock. Tags: message, chat, delay, clock, scheduled, pending, time.
+  static const messageTextClock = _messageTextClock;
+
+  /// Message text dot. Tags: message, chat, notification, dot, unread, badge, new.
+  static const messageTextDot = _messageTextDot;
+
+  /// Message text download. Tags: message, chat, download, save, receive, inbox.
+  static const messageTextDownload = _messageTextDownload;
+
+  /// Message text eye. Tags: message, chat, preview, view, eye, read, show.
+  static const messageTextEye = _messageTextEye;
+
+  /// Message text heart. Tags: message, chat, favorite, heart, like, love.
+  static const messageTextHeart = _messageTextHeart;
+
+  /// Message text lock. Tags: message, chat, lock, private, secure, encrypted.
+  static const messageTextLock = _messageTextLock;
+
+  /// Message text lock open. Tags: message, chat, unlock, open, lock open, secure.
+  static const messageTextLockOpen = _messageTextLockOpen;
+
+  /// Message text pen. Tags: message, chat, edit, pen, write, compose, change.
+  static const messageTextPen = _messageTextPen;
+
+  /// Message text plus. Tags: message, chat, add, plus, new, compose.
+  static const messageTextPlus = _messageTextPlus;
+
+  /// Message text search. Tags: message, chat, search, find, lookup.
+  static const messageTextSearch = _messageTextSearch;
+
+  /// Message text shield. Tags: message, chat, secure, shield, protection, privacy, safe.
+  static const messageTextShield = _messageTextShield;
+
+  /// Message text upload. Tags: message, chat, upload, send, share, arrow.
+  static const messageTextUpload = _messageTextUpload;
+
+  /// Message text user. Tags: message, chat, user, person, contact, profile. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const messageTextUser = _messageTextUser;
+
+  /// Message text x. Tags: message, chat, cancel, close, remove, delete.
+  static const messageTextX = _messageTextX;
+
+  /// Meteor. Tags: comet, asteroid, space, falling star. Its details merge when filled: use it outlined.
+  static const meteor = _meteor;
+
+  /// Metronome. Tags: tempo, beat, music, rhythm.
   static const metronome = _metronome;
 
-  /// Mic. Tags: record, sound, listen, radio, podcast, microphone.
+  /// Mic. Tags: microphone, voice, record, audio, speak.
   static const mic = _mic;
 
-  /// Mic audio lines. Tags: podcast, audio, waveform, sound waves, microphone, talk, voice, speech.
-  static const micAudioLines = _micAudioLines;
+  /// Mic message. Tags: voice comment, voice note, audio comment, microphone, speech, recording, comment.
+  static const micMessage = _micMessage;
 
-  /// Mic off. Tags: record, sound, mute, microphone.
+  /// Mic no stand. Tags: microphone, mic, voice, record, audio.
+  static const micNoStand = _micNoStand;
+
+  /// Mic no stand off. Tags: microphone, mic, mute, off, disabled, audio.
+  static const micNoStandOff = _micNoStandOff;
+
+  /// Mic off. Tags: microphone, mic, mute, off, disabled, audio.
   static const micOff = _micOff;
 
-  /// Microchip. Tags: processor, cores, technology, computer, chip, integrated circuit, memory, ram.
+  /// Microchip. Tags: cpu, processor, hardware, circuit, electronics.
   static const microchip = _microchip;
+
+  /// Microchip ai. Tags: ai, chip, processor, artificial intelligence, hardware, npu.
+  static const microchipAi = _microchipAi;
+
+  /// Microchip network. Tags: algorithm, chip, tree, network, logic.
+  static const microchipNetwork = _microchipNetwork;
+
+  /// Microchip sparkle. Tags: ai, chip, processor, sparkle, cpu.
+  static const microchipSparkle = _microchipSparkle;
+
+  /// Microchip tall. Tags: chip, processor, cpu, hardware, circuit.
+  static const microchipTall = _microchipTall;
 
   /// Same icon as [mic].
   static const microphone = _mic;
 
-  /// Microscope. Tags: medical, education, science, imaging, research.
+  /// Microscope. Tags: lab, research, science, magnify.
   static const microscope = _microscope;
 
-  /// Microwave. Tags: oven, cooker, toaster oven, bake.
+  /// Microwave. Tags: oven, kitchen, heat, appliance.
   static const microwave = _microwave;
 
-  /// Mic signal. Tags: podcast, audio, broadcast, signal, wireless, radio, airwaves, microphone.
-  static const micSignal = _micSignal;
+  /// Mic sparkle. Tags: ai, microphone, mic, voice, sparkle.
+  static const micSparkle = _micSparkle;
 
-  /// Mic vocal. Tags: lyrics, voice, listen, sound, music, radio, podcast, karaoke.
+  /// Mic stand sparkle. Tags: ai, voice, microphone, sparkle, record.
+  static const micStandSparkle = _micStandSparkle;
+
+  /// Mic studio sparkle. Tags: ai, concert, microphone, stand, stage, sparkle.
+  static const micStudioSparkle = _micStudioSparkle;
+
+  /// Mic type. Tags: voice to text, dictation, speech to text, transcribe, microphone, typing.
+  static const micType = _micType;
+
+  /// Mic vocal. Tags: microphone, vocal, singing, karaoke, music.
   static const micVocal = _micVocal;
 
-  /// Midi port. Tags: musical instrument digital interface, port, connector, socket, jack, din, 5-pin, audio.
-  static const midiPort = _midiPort;
+  /// Same icon as [signpostRight].
+  static const milestone = _signpostRight;
 
-  /// Milestone. Tags: signpost, direction, right, east, forward, version control, waypoint.
-  static const milestone = _milestone;
-
-  /// Milk. Tags: lactose, bottle, beverage, drink, water, diet.
+  /// Milk. Tags: bottle, dairy, drink, beverage.
   static const milk = _milk;
 
-  /// Milk off. Tags: lactose free, bottle, beverage, drink, water, allergy, intolerance, diet.
+  /// Milk apple. Tags: vegetarian food, milk, bottle, apple, dairy, fruit, healthy.
+  static const milkApple = _milkApple;
+
+  /// Milk bottle. Tags: milk, bottle, dairy, cow, drink.
+  static const milkBottle = _milkBottle;
+
+  /// Milk off. Tags: milk, off, dairy-free, lactose, allergy.
   static const milkOff = _milkOff;
 
-  /// Minimize. Tags: exit fullscreen, close, shrink.
+  /// Minaret. Tags: adzan, adhan, prayer, call, mosque, islam.
+  static const minaret = _minaret;
+
+  /// Mine cart. Tags: mining, cart, mine, minecart, ore, wagon.
+  static const mineCart = _mineCart;
+
+  /// Minimize. Tags: collapse, shrink, exit fullscreen, smaller, corners in.
   static const minimize = _minimize;
 
-  /// Minimize 2. Tags: exit fullscreen, arrows, close, shrink.
+  /// Minimize 2. Tags: shrink, minimize, collapse, reduce, diagonal.
   static const minimize2 = _minimize2;
 
-  /// Minus. Tags: subtract, remove, decrease, decrement, reduce, negative, calculate, line.
+  /// Minimize 2 flip. Tags: shrink, minimize, collapse, reduce, diagonal.
+  static const minimize2Flip = _minimize2Flip;
+
+  /// Minus. Tags: subtract, remove, decrease, dash.
   static const minus = _minus;
 
-  /// Mirror rectangular. Tags: reflection, optics, glass, surface, image, physics, science, bathroom.
+  /// Minus plus. Tags: minus, plus, sign, plus-minus, tolerance, adjust.
+  static const minusPlus = _minusPlus;
+
+  /// Minus short. Tags: remove, minus, subtract, dash, decrease.
+  static const minusShort = _minusShort;
+
+  /// Minus slash plus. Tags: minus, plus, slash, adjust, increase decrease, balance.
+  static const minusSlashPlus = _minusSlashPlus;
+
+  /// Minus thick. Tags: remove, minus, subtract, bar.
+  static const minusThick = _minusThick;
+
+  /// Mirror rectangular. Tags: mirror, rectangle, reflection, glass.
   static const mirrorRectangular = _mirrorRectangular;
 
-  /// Mirror round. Tags: reflection, optics, glass, surface, image, physics, science, bathroom.
+  /// Mirror round. Tags: mirror, round, reflection, glass.
   static const mirrorRound = _mirrorRound;
 
-  /// Monitor. Tags: tv, computer, desktop, screen, display, external display, screen sharing, virtual machine.
+  /// Mirror stand. Tags: mirror, standing, dressing, floor, vanity, furniture.
+  static const mirrorStand = _mirrorStand;
+
+  /// Mitten. Tags: glove, mitt, hand, winter, oven.
+  static const mitten = _mitten;
+
+  /// Mochi. Tags: rice cake, dessert, japanese, sweet, food.
+  static const mochi = _mochi;
+
+  /// Molecule. Tags: chemistry, atom, bonds, science, network.
+  static const molecule = _molecule;
+
+  /// Money bag bitcoin. Tags: bitcoin, bag, crypto, btc, savings.
+  static const moneyBagBitcoin = _moneyBagBitcoin;
+
+  /// Monitor. Tags: screen, display, desktop, computer, pc.
   static const monitor = _monitor;
 
-  /// Monitor check. Tags: tv, computer, screen, display, desktop, external display, screen sharing, connected.
+  /// Monitor activity. Tags: computer, screen, activity, pulse, monitoring, health.
+  static const monitorActivity = _monitorActivity;
+
+  /// Monitor check. Tags: screen, display, check, ok, verified, done, computer.
   static const monitorCheck = _monitorCheck;
 
-  /// Monitor cloud. Tags: tv, computer, screen, display, desktop, external display, virtual machine, virtual desktop.
+  /// Monitor chip. Tags: ai, computer, monitor, chip, desktop.
+  static const monitorChip = _monitorChip;
+
+  /// Monitor cloud. Tags: screen, display, cloud, remote, online, computer, virtual.
   static const monitorCloud = _monitorCloud;
 
-  /// Monitor cog. Tags: tv, computer, screen, display, desktop, external display, virtual machine, vm.
+  /// Monitor code. Tags: computer, screen, code, programming, developer, dev.
+  static const monitorCode = _monitorCode;
+
+  /// Monitor cog. Tags: screen, display, settings, configure, gear, computer.
   static const monitorCog = _monitorCog;
 
-  /// Monitor dot. Tags: tv, computer, screen, display, desktop, external display, screen sharing, status.
+  /// Monitor dollar sign. Tags: computer, screen, money, dollar, online payment, ecommerce.
+  static const monitorDollarSign = _monitorDollarSign;
+
+  /// Monitor dot. Tags: screen, display, notification, badge, dot.
   static const monitorDot = _monitorDot;
 
-  /// Monitor down. Tags: tv, computer, screen, display, desktop, external display, screen sharing, download.
+  /// Monitor down. Tags: screen, display, download, arrow down, computer, arrow.
   static const monitorDown = _monitorDown;
 
-  /// Monitor off. Tags: tv, computer, screen, display, desktop, external display, screen sharing, offline.
+  /// Monitor ethernet. Tags: computer, screen, ethernet, network, wired, lan.
+  static const monitorEthernet = _monitorEthernet;
+
+  /// Monitor lock. Tags: computer, screen, lock, secure, locked screen, desktop.
+  static const monitorLock = _monitorLock;
+
+  /// Monitor off. Tags: screen, display, off, disabled, no signal.
   static const monitorOff = _monitorOff;
 
-  /// Monitor pause. Tags: tv, computer, screen, display, desktop, external display, screen sharing, video.
+  /// Monitor pause. Tags: screen, display, pause, hold.
   static const monitorPause = _monitorPause;
 
-  /// Monitor pc. Tags: personal computer, desktop, screen, display, workstation, tower, chassis, hardware.
+  /// Monitor pc. Tags: computer, desktop, pc, tower, workstation. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const monitorPc = _monitorPc;
 
-  /// Monitor play. Tags: tv, computer, screen, display, desktop, external display, screen sharing, video.
+  /// Monitor pen. Tags: computer, screen, edit, write, design, draw.
+  static const monitorPen = _monitorPen;
+
+  /// Monitor play. Tags: screen, display, play, video, start, computer, media, stream.
   static const monitorPlay = _monitorPlay;
 
-  /// Monitor smartphone. Tags: phone, cellphone, device, mobile, desktop, screen, display, external display.
+  /// Monitor plus. Tags: computer, screen, add, new, display.
+  static const monitorPlus = _monitorPlus;
+
+  /// Monitor shield. Tags: computer, screen, protection, security, antivirus, safe.
+  static const monitorShield = _monitorShield;
+
+  /// Monitor smartphone. Tags: screen, phone, devices, responsive, multi-device.
   static const monitorSmartphone = _monitorSmartphone;
 
-  /// Monitor speaker. Tags: tv, computer, screen, display, desktop, external display, connect, cast.
+  /// Monitor smartphone side. Tags: computer, phone, sync, devices, responsive, screen.
+  static const monitorSmartphoneSide = _monitorSmartphoneSide;
+
+  /// Monitor speaker. Tags: screen, speaker, audio, devices, sound.
   static const monitorSpeaker = _monitorSpeaker;
 
-  /// Monitor stop. Tags: tv, computer, screen, display, desktop, external display, screen sharing, video.
+  /// Monitor stop. Tags: screen, display, stop, halt.
   static const monitorStop = _monitorStop;
 
-  /// Monitor up. Tags: tv, computer, screen, display, desktop, external display, upload, connect.
+  /// Monitor trending down. Tags: computer, screen, chart, decline, analytics, loss.
+  static const monitorTrendingDown = _monitorTrendingDown;
+
+  /// Monitor trending up. Tags: computer, screen, chart, growth, analytics, gain.
+  static const monitorTrendingUp = _monitorTrendingUp;
+
+  /// Monitor up. Tags: screen, display, upload, share, arrow up, computer, arrow.
   static const monitorUp = _monitorUp;
 
-  /// Monitor x. Tags: tv, computer, screen, display, desktop, external display, screen sharing, virtual machine.
+  /// Monitor user. Tags: computer, screen, user, person, profile, account.
+  static const monitorUser = _monitorUser;
+
+  /// Monitor video call. Tags: computer, screen, video call, meeting, conference, webcam. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const monitorVideoCall = _monitorVideoCall;
+
+  /// Monitor x. Tags: screen, display, close, error, remove, computer, off.
   static const monitorX = _monitorX;
 
-  /// Moon. Tags: dark, night.
+  /// Monocle. Tags: eyeglass, lens, chain, vision, gentleman.
+  static const monocle = _monocle;
+
+  /// Monster. Tags: creature, alien, character, cute, mascot.
+  static const monster = _monster;
+
+  /// Monster truck. Tags: big wheels, vehicle, offroad.
+  static const monsterTruck = _monsterTruck;
+
+  /// Monument. Tags: tower, landmark, obelisk, jakarta, monas.
+  static const monument = _monument;
+
+  /// Moon. Tags: night, crescent, dark mode, sleep.
   static const moon = _moon;
 
-  /// Moon star. Tags: dark, night, star.
+  /// Moon arrow down. Tags: moonset, moon, night, sunset, down, evening.
+  static const moonArrowDown = _moonArrowDown;
+
+  /// Moon craters. Tags: moon, night, full moon, craters, lunar, space.
+  static const moonCraters = _moonCraters;
+
+  /// Moon crescent ring. Tags: moon, gibbous, phase, night, lunar.
+  static const moonCrescentRing = _moonCrescentRing;
+
+  /// Moon eclipse. Tags: moon, eclipse, lunar, space, night, shadow.
+  static const moonEclipse = _moonEclipse;
+
+  /// Moon gibbous. Tags: moon, night, phase, gibbous, lunar, dark.
+  static const moonGibbous = _moonGibbous;
+
+  /// Moon landing. Tags: moon, landing, flag, space, apollo, mission.
+  static const moonLanding = _moonLanding;
+
+  /// Moon mosque. Tags: eid mubarak, eid, ramadan, islam, crescent, celebration.
+  static const moonMosque = _moonMosque;
+
+  /// Moon rays. Tags: sun and moon, day night, crescent, theme, auto.
+  static const moonRays = _moonRays;
+
+  /// Moon star. Tags: moon, night, star, sleep, dark mode, evening.
   static const moonStar = _moonStar;
 
-  /// Mop. Tags: cleaning, sweeping, scrubbing, housekeeping, hygiene, sanitation, chores, swab.
-  static const mop = _mop;
+  /// Moon star 5. Tags: ramadan, crescent, moon, star, islam, night.
+  static const moonStar5 = _moonStar5;
 
-  /// Mop sparkles. Tags: cleaning, scrubbing, sweeping, ai, magic, sparkle, smart, automation.
-  static const mopSparkles = _mopSparkles;
+  /// Moon wind. Tags: night, windy, moon, wind, gale, breeze.
+  static const moonWind = _moonWind;
+
+  /// Moon wind light. Tags: night, breeze, moon, gentle wind, slow wind, calm.
+  static const moonWindLight = _moonWindLight;
 
   /// Same icon as [ellipsis].
   static const moreHoriz = _ellipsis;
@@ -4189,170 +10161,482 @@ abstract final class DsIcons {
   /// Same icon as [ellipsisVertical].
   static const moreVert = _ellipsisVertical;
 
-  /// Mortar pestle. Tags: bowl, crush, grind, ingredients, herbs, spices, cooking, cookery.
+  /// Mortar pestle. Tags: mortar, pestle, herbs, grind, pharmacy, cooking.
   static const mortarPestle = _mortarPestle;
 
-  /// Mosque. Tags: masjid, islam, muslim, ramadan, eid, prayer, worship, building.
+  /// Mosque. Tags: islam, prayer, religion, worship, dome.
   static const mosque = _mosque;
 
-  /// Motorbike. Tags: moto, motorcycle, transport, vehicle, drive, ride, trip, race.
+  /// Mosque arches. Tags: mosque, islam, arches, prayer, religion, worship.
+  static const mosqueArches = _mosqueArches;
+
+  /// Mosque clock. Tags: prayer time, salah, islam, clock, mosque.
+  static const mosqueClock = _mosqueClock;
+
+  /// Mosque crescent. Tags: ramadan, mosque, dome, crescent, islam.
+  static const mosqueCrescent = _mosqueCrescent;
+
+  /// Mosque dome. Tags: al, aqsa, mosque, dome, islam, jerusalem, prayer.
+  static const mosqueDome = _mosqueDome;
+
+  /// Mosque dome minaret. Tags: mosque, islam, minaret, prophet, religion, masjid. Its details merge when filled: use it outlined.
+  static const mosqueDomeMinaret = _mosqueDomeMinaret;
+
+  /// Mosque minaret. Tags: mosque, islam, minaret, crescent, prayer, religion.
+  static const mosqueMinaret = _mosqueMinaret;
+
+  /// Mosque tower. Tags: mosque, islam, minaret, tower, prayer, religion.
+  static const mosqueTower = _mosqueTower;
+
+  /// Mosque twin minarets. Tags: mosque, islam, minarets, prayer, religion, worship.
+  static const mosqueTwinMinarets = _mosqueTwinMinarets;
+
+  /// Motorbike. Tags: motorcycle, bike, ride, scooter, vehicle.
   static const motorbike = _motorbike;
 
-  /// Motor racing helmet. Tags: driving, driver, racer, formula one, formula 1, f1, car, motorcyle.
-  static const motorRacingHelmet = _motorRacingHelmet;
+  /// Motorbike sport. Tags: motorcycle, sport bike, motorbike, ride, vehicle, racing.
+  static const motorbikeSport = _motorbikeSport;
 
-  /// Mountain. Tags: climb, hike, rock.
+  /// Motorhome. Tags: camper, rv, van, caravan, travel, vehicle.
+  static const motorhome = _motorhome;
+
+  /// Mountain. Tags: peak, hill, landscape, hiking, outdoors.
   static const mountain = _mountain;
 
-  /// Mountain snow. Tags: alpine, climb, snow.
+  /// Mountain snow. Tags: mountain, snow, peak, winter, landscape, alps.
   static const mountainSnow = _mountainSnow;
 
-  /// Mouse. Tags: device, scroll, click.
+  /// Mouse. Tags: pointer, computer, peripheral, click, scroll, oval, square, plain.
   static const mouse = _mouse;
 
-  /// Mouse left. Tags: device, scroll, click.
+  /// Mouse buttons. Tags: mouse, buttons, left right, peripheral, computer, click.
+  static const mouseButtons = _mouseButtons;
+
+  /// Mouse buttons wheel. Tags: mouse, oval, buttons, cable, peripheral, computer.
+  static const mouseButtonsWheel = _mouseButtonsWheel;
+
+  /// Mouse cable. Tags: mouse, wired, cable, peripheral, computer, click, oval, wheel.
+  static const mouseCable = _mouseCable;
+
+  /// Mouse cord. Tags: mouse, wired, cord, peripheral, computer, click.
+  static const mouseCord = _mouseCord;
+
+  /// Mouse cord small. Tags: mouse, small, cord, peripheral, computer, wired.
+  static const mouseCordSmall = _mouseCordSmall;
+
+  /// Mouse cord small wheel. Tags: mouse, small, cord, wheel, peripheral, wired.
+  static const mouseCordSmallWheel = _mouseCordSmallWheel;
+
+  /// Mouse cord wheel. Tags: mouse, wired, cord, wheel, peripheral, computer.
+  static const mouseCordWheel = _mouseCordWheel;
+
+  /// Mouse gaming. Tags: mouse, gaming, gamer, peripheral, computer, rgb.
+  static const mouseGaming = _mouseGaming;
+
+  /// Mouse gaming angular. Tags: mouse, gaming, gamer, angular, peripheral, computer.
+  static const mouseGamingAngular = _mouseGamingAngular;
+
+  /// Mouse gaming curved. Tags: mouse, gaming, gamer, ergonomic, curved, peripheral.
+  static const mouseGamingCurved = _mouseGamingCurved;
+
+  /// Mouse gaming ergonomic. Tags: mouse, gaming, gamer, ergonomic, peripheral, computer.
+  static const mouseGamingErgonomic = _mouseGamingErgonomic;
+
+  /// Mouse gaming smile. Tags: mouse, gaming, gamer, smile, peripheral, computer.
+  static const mouseGamingSmile = _mouseGamingSmile;
+
+  /// Mouse left. Tags: mouse, left click, left button, primary, click, peripheral.
   static const mouseLeft = _mouseLeft;
 
-  /// Mouse off. Tags: device, scroll, click, disabled.
+  /// Mouse left buttons. Tags: mouse, left click, buttons, primary, peripheral, computer.
+  static const mouseLeftButtons = _mouseLeftButtons;
+
+  /// Mouse left buttons click. Tags: mouse, left click, click, wheel, primary, peripheral.
+  static const mouseLeftButtonsClick = _mouseLeftButtonsClick;
+
+  /// Mouse left buttons wheel. Tags: mouse, left click, wheel, primary, peripheral, computer.
+  static const mouseLeftButtonsWheel = _mouseLeftButtonsWheel;
+
+  /// Mouse left click. Tags: mouse, left click, click, press, primary, peripheral, oval.
+  static const mouseLeftClick = _mouseLeftClick;
+
+  /// Mouse left pressed. Tags: mouse, left click, pressed, button, primary, peripheral.
+  static const mouseLeftPressed = _mouseLeftPressed;
+
+  /// Mouse off. Tags: mouse, off, disabled, no mouse, peripheral, crossed.
   static const mouseOff = _mouseOff;
 
-  /// Mouse pointer. Tags: click, select.
+  /// Mouse pointer. Tags: cursor, pointer, arrow, select, click, mouse.
   static const mousePointer = _mousePointer;
 
-  /// Mouse pointer 2. Tags: click, select.
+  /// Mouse pointer 2. Tags: cursor, pointer, click, select, arrow, mouse.
   static const mousePointer2 = _mousePointer2;
 
-  /// Mouse pointer 2 off. Tags: pointer, mouse, cursor, off, disable, arrow, navigation, selection.
+  /// Mouse pointer 2 ban. Tags: cursor, pointer, ban, not allowed, forbidden, disabled.
+  static const mousePointer2Ban = _mousePointer2Ban;
+
+  /// Mouse pointer 2 circle dashed. Tags: cursor, circle selection, lasso, select, pointer.
+  static const mousePointer2CircleDashed = _mousePointer2CircleDashed;
+
+  /// Same icon as [mousePointerClick].
+  static const mousePointer2Click = _mousePointerClick;
+
+  /// Mouse pointer 2 clock. Tags: cursor, hold, long press, wait, pointer, time.
+  static const mousePointer2Clock = _mousePointer2Clock;
+
+  /// Mouse pointer 2 hourglass. Tags: cursor, loading, wait, busy, pointer, hourglass.
+  static const mousePointer2Hourglass = _mousePointer2Hourglass;
+
+  /// Mouse pointer 2 loader. Tags: cursor, progress, busy, loading, spinner, pointer.
+  static const mousePointer2Loader = _mousePointer2Loader;
+
+  /// Mouse pointer 2 minus. Tags: cursor, remove selection, deselect, pointer, minus.
+  static const mousePointer2Minus = _mousePointer2Minus;
+
+  /// Mouse pointer 2 move. Tags: cursor, move, drag, pointer, reposition.
+  static const mousePointer2Move = _mousePointer2Move;
+
+  /// Mouse pointer 2 nodes. Tags: cursor, edit, vector, anchor points, pointer, path.
+  static const mousePointer2Nodes = _mousePointer2Nodes;
+
+  /// Mouse pointer 2 off. Tags: cursor, pointer, off, disabled, hidden, crossed.
   static const mousePointer2Off = _mousePointer2Off;
 
-  /// Mouse pointer ban. Tags: wait, busy, loading, blocked, frozen, freeze.
+  /// Mouse pointer 2 plus. Tags: cursor, add selection, add, pointer, plus, select.
+  static const mousePointer2Plus = _mousePointer2Plus;
+
+  /// Mouse pointer 2 progress. Tags: cursor, progress, busy, loading, pointer, working.
+  static const mousePointer2Progress = _mousePointer2Progress;
+
+  /// Mouse pointer 2 question mark. Tags: cursor, info, help, question, pointer.
+  static const mousePointer2QuestionMark = _mousePointer2QuestionMark;
+
+  /// Mouse pointer 2 rays. Tags: cursor, magic selection, highlight, pointer, burst, shine, click, tap.
+  static const mousePointer2Rays = _mousePointer2Rays;
+
+  /// Mouse pointer 2 sparkles. Tags: cursor, magic selection, ai, smart select, pointer, sparkle.
+  static const mousePointer2Sparkles = _mousePointer2Sparkles;
+
+  /// Mouse pointer 2 square dashed. Tags: cursor, rectangle selection, marquee, select, pointer.
+  static const mousePointer2SquareDashed = _mousePointer2SquareDashed;
+
+  /// Mouse pointer ban. Tags: cursor, disabled, not allowed, blocked, pointer.
   static const mousePointerBan = _mousePointerBan;
 
-  /// Mouse pointer click. Tags: click, select.
+  /// Mouse pointer ban top. Tags: cursor, disabled, not allowed, blocked, pointer, ban.
+  static const mousePointerBanTop = _mousePointerBanTop;
+
+  /// Mouse pointer circle dashed. Tags: cursor, circle selection, lasso, select, pointer.
+  static const mousePointerCircleDashed = _mousePointerCircleDashed;
+
+  /// Mouse pointer click. Tags: cursor, magic selection, highlight, pointer, burst, shine.
   static const mousePointerClick = _mousePointerClick;
 
-  /// Mouse right. Tags: device, scroll, click.
+  /// Mouse pointer clock. Tags: cursor, hold, long press, wait, pointer, time.
+  static const mousePointerClock = _mousePointerClock;
+
+  /// Mouse pointer hourglass. Tags: cursor, loading, wait, busy, pointer, hourglass.
+  static const mousePointerHourglass = _mousePointerHourglass;
+
+  /// Mouse pointer loader. Tags: cursor, progress, busy, loading, spinner, pointer.
+  static const mousePointerLoader = _mousePointerLoader;
+
+  /// Mouse pointer minus. Tags: cursor, remove selection, deselect, pointer, minus.
+  static const mousePointerMinus = _mousePointerMinus;
+
+  /// Mouse pointer move. Tags: cursor, move, drag, pointer, reposition.
+  static const mousePointerMove = _mousePointerMove;
+
+  /// Mouse pointer nodes. Tags: cursor, edit, vector, anchor points, pointer, path.
+  static const mousePointerNodes = _mousePointerNodes;
+
+  /// Mouse pointer off. Tags: cursor, pointer, off, disabled, hidden, crossed.
+  static const mousePointerOff = _mousePointerOff;
+
+  /// Mouse pointer plus. Tags: cursor, add selection, add, pointer, plus, select.
+  static const mousePointerPlus = _mousePointerPlus;
+
+  /// Mouse pointer progress. Tags: cursor, progress, busy, loading, pointer, working.
+  static const mousePointerProgress = _mousePointerProgress;
+
+  /// Mouse pointer question mark. Tags: cursor, info, help, question, pointer.
+  static const mousePointerQuestionMark = _mousePointerQuestionMark;
+
+  /// Mouse pointer slim. Tags: cursor, pointer, click, select, arrow, mouse.
+  static const mousePointerSlim = _mousePointerSlim;
+
+  /// Mouse pointer sparkles. Tags: cursor, magic selection, ai, smart select, pointer, sparkle.
+  static const mousePointerSparkles = _mousePointerSparkles;
+
+  /// Mouse pointer square dashed. Tags: cursor, rectangle selection, marquee, select, pointer.
+  static const mousePointerSquareDashed = _mousePointerSquareDashed;
+
+  /// Mouse right. Tags: mouse, right click, right button, context menu, secondary, peripheral.
   static const mouseRight = _mouseRight;
 
-  /// Mouth. Tags: speech, voice, talk, speaking, taste, tasting, flavor, palate.
-  static const mouth = _mouth;
+  /// Mouse right buttons. Tags: mouse, right click, buttons, context menu, secondary, peripheral.
+  static const mouseRightButtons = _mouseRightButtons;
 
-  /// Mouth off. Tags: speech, voice, talk, mute, silence, speechless, taste loss, flavor loss.
-  static const mouthOff = _mouthOff;
+  /// Mouse right buttons click. Tags: mouse, right click, click, context menu, secondary, press.
+  static const mouseRightButtonsClick = _mouseRightButtonsClick;
 
-  /// Move. Tags: arrows.
+  /// Mouse right buttons wheel. Tags: mouse, right click, wheel, context menu, secondary, peripheral.
+  static const mouseRightButtonsWheel = _mouseRightButtonsWheel;
+
+  /// Mouse right click. Tags: mouse, right click, click, wheel, context menu, secondary, oval.
+  static const mouseRightClick = _mouseRightClick;
+
+  /// Mouse right pressed. Tags: mouse, right click, pressed, button, context menu, secondary.
+  static const mouseRightPressed = _mouseRightPressed;
+
+  /// Mouse scroll. Tags: mouse, scroll, wheel, up down, scroll wheel, peripheral.
+  static const mouseScroll = _mouseScroll;
+
+  /// Mouse tilted. Tags: mouse, tilted, wired, cable, peripheral, computer.
+  static const mouseTilted = _mouseTilted;
+
+  /// Mouse tilted oval. Tags: mouse, tilted, oval, cord, peripheral, computer.
+  static const mouseTiltedOval = _mouseTiltedOval;
+
+  /// Mouse tilted oval wheel. Tags: mouse, tilted, oval, wheel, cord, peripheral.
+  static const mouseTiltedOvalWheel = _mouseTiltedOvalWheel;
+
+  /// Mouse tilted wheel. Tags: mouse, tilted, wired, cable, wheel, peripheral.
+  static const mouseTiltedWheel = _mouseTiltedWheel;
+
+  /// Mouse wheel. Tags: mouse, wheel, scroll, peripheral, computer, click, wired, cable.
+  static const mouseWheel = _mouseWheel;
+
+  /// Move. Tags: drag, pan, four arrows, reposition, all directions, cross, four way.
   static const move = _move;
 
-  /// Move 3d. Tags: arrows, axis, gizmo, coordinates, transform, translate.
+  /// Move 3d. Tags: move, 3d, axes, translate, gizmo, transform.
   static const move3d = _move3d;
 
-  /// Move diagonal. Tags: double, arrow.
+  /// Move 3d triangles. Tags: 3d, move, axis, transform, translate.
+  static const move3dTriangles = _move3dTriangles;
+
+  /// Move diagonal. Tags: diagonal, resize, double arrow, expand, stretch.
   static const moveDiagonal = _moveDiagonal;
 
   /// Move diagonal 2. Tags: double, arrow.
   static const moveDiagonal2 = _moveDiagonal2;
 
-  /// Move down. Tags: arrow, direction, downwards, south.
-  static const moveDown = _moveDown;
+  /// Same icon as [arrowDown].
+  static const moveDown = _arrowDown;
 
-  /// Move down left. Tags: arrow, direction.
-  static const moveDownLeft = _moveDownLeft;
+  /// Same icon as [arrowDownLeft].
+  static const moveDownLeft = _arrowDownLeft;
 
-  /// Move down right. Tags: arrow, direction.
-  static const moveDownRight = _moveDownRight;
+  /// Same icon as [arrowDownRight].
+  static const moveDownRight = _arrowDownRight;
 
-  /// Move horizontal. Tags: double, arrow.
+  /// Move horizontal. Tags: move, horizontal, resize, double arrow, left right.
   static const moveHorizontal = _moveHorizontal;
 
-  /// Move left. Tags: arrow, direction, back, west.
-  static const moveLeft = _moveLeft;
+  /// Same icon as [arrowLeft].
+  static const moveLeft = _arrowLeft;
 
-  /// Move right. Tags: arrow, direction, trend flat, east.
-  static const moveRight = _moveRight;
+  /// Same icon as [arrowRight].
+  static const moveRight = _arrowRight;
 
-  /// Move up. Tags: arrow, direction, upwards, north.
-  static const moveUp = _moveUp;
+  /// Same icon as [arrowUp].
+  static const moveUp = _arrowUp;
 
-  /// Move up left. Tags: arrow, direction.
-  static const moveUpLeft = _moveUpLeft;
+  /// Same icon as [arrowUpLeft].
+  static const moveUpLeft = _arrowUpLeft;
 
-  /// Move up right. Tags: arrow, direction.
-  static const moveUpRight = _moveUpRight;
+  /// Same icon as [arrowUpRight].
+  static const moveUpRight = _arrowUpRight;
 
-  /// Move vertical. Tags: double, arrow.
+  /// Move vertical. Tags: move, vertical, resize, double arrow, up down.
   static const moveVertical = _moveVertical;
 
-  /// Mug. Tags: cup, hot, drink, cafe, tea, barista.
-  static const mug = _mug;
+  /// Same icon as [mugSteam].
+  static const mug = _mugSteam;
 
-  /// Mug teabag. Tags: cup, hot, drink, cafe.
-  static const mugTeabag = _mugTeabag;
+  /// Mug steam. Tags: coffee, mug, hot, steam, tea, drink.
+  static const mugSteam = _mugSteam;
 
-  /// Music. Tags: note, quaver, eighth note.
-  static const music = _music;
+  /// Mushroom. Tags: fungus, vegetable, food, forest, ingredient.
+  static const mushroom = _mushroom;
 
-  /// Music 2. Tags: quaver, eighth note, note.
-  static const music2 = _music2;
+  /// Mushroom spotted. Tags: mushroom, toadstool, fungus, forest, spotted, nature.
+  static const mushroomSpotted = _mushroomSpotted;
 
-  /// Music 3. Tags: crotchet, minim, quarter note, half note, note.
-  static const music3 = _music3;
+  /// Same icon as [musicNotesBeamed].
+  static const music = _musicNotesBeamed;
 
-  /// Music 4. Tags: semiquaver, sixteenth note, note.
-  static const music4 = _music4;
+  /// Same icon as [musicNoteFlag].
+  static const music2 = _musicNoteFlag;
 
-  /// Mustache. Tags: moustache, facial hair, hairdresser, barbers, grooming, cut, shave, shop.
-  static const mustache = _mustache;
+  /// Same icon as [musicNote].
+  static const music3 = _musicNote;
 
-  /// Navigation. Tags: location, travel.
+  /// Same icon as [musicNotesBeamed].
+  static const music4 = _musicNotesBeamed;
+
+  /// Music note. Tags: music, note, quarter note, audio, sound.
+  static const musicNote = _musicNote;
+
+  /// Music note flag. Tags: music, note, song, audio, sound, quaver.
+  static const musicNoteFlag = _musicNoteFlag;
+
+  /// Music notes. Tags: music, notes, beamed, song, audio, melody.
+  static const musicNotes = _musicNotes;
+
+  /// Music notes beamed. Tags: music, notes, beamed, song, audio, melody.
+  static const musicNotesBeamed = _musicNotesBeamed;
+
+  /// Music notes curved. Tags: music, notes, beamed, curved, song, audio.
+  static const musicNotesCurved = _musicNotesCurved;
+
+  /// Music note short flag. Tags: music, note, song, audio, sound, quaver.
+  static const musicNoteShortFlag = _musicNoteShortFlag;
+
+  /// Music notes three. Tags: music, notes, songs, playlist, audio, melody.
+  static const musicNotesThree = _musicNotesThree;
+
+  /// Music note wave flag. Tags: music, note, song, audio, sound, flag.
+  static const musicNoteWaveFlag = _musicNoteWaveFlag;
+
+  /// Music player. Tags: ipod, mp3 player, music, portable, click wheel.
+  static const musicPlayer = _musicPlayer;
+
+  /// Napkin folded. Tags: napkins, tissue, folded, paper, dining, table.
+  static const napkinFolded = _napkinFolded;
+
+  /// Napkin stack. Tags: napkins, tissue, stack, paper, dining, table.
+  static const napkinStack = _napkinStack;
+
+  /// Navigation. Tags: navigate, direction, gps, location, arrow, heading.
   static const navigation = _navigation;
 
-  /// Navigation 2. Tags: location, travel.
+  /// Navigation 2. Tags: navigate, direction, gps, arrow, cursor, heading.
   static const navigation2 = _navigation2;
 
-  /// Navigation 2 off. Tags: location, travel.
+  /// Navigation 2 off. Tags: navigate, direction, gps, off, disabled, crossed, arrow.
   static const navigation2Off = _navigation2Off;
 
-  /// Navigation off. Tags: location, travel.
+  /// Navigation off. Tags: navigate, direction, gps, off, disabled, crossed. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const navigationOff = _navigationOff;
 
-  /// Nepali rupee. Tags: currency, money, nepal, rupee, npr.
-  static const nepaliRupee = _nepaliRupee;
+  /// Navigation round. Tags: navigate, direction, gps, location, arrow, heading.
+  static const navigationRound = _navigationRound;
 
-  /// Network. Tags: tree.
+  /// Necklace. Tags: jewelry, pendant, accessory, heart, fashion.
+  static const necklace = _necklace;
+
+  /// Network. Tags: hierarchy, tree, org chart, structure, nodes.
   static const network = _network;
+
+  /// Network ai. Tags: ai, network, nodes, connection. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const networkAi = _networkAi;
+
+  /// Network branch. Tags: network, hierarchy, branches, diagonal tree, structure.
+  static const networkBranch = _networkBranch;
+
+  /// Network circles. Tags: network, hierarchy, tree, structure, nodes.
+  static const networkCircles = _networkCircles;
+
+  /// Network fork. Tags: network, org chart, hierarchy, tree, structure.
+  static const networkFork = _networkFork;
+
+  /// Network horizontal. Tags: network, hierarchy, horizontal tree, structure, branches.
+  static const networkHorizontal = _networkHorizontal;
+
+  /// Network horizontal check. Tags: network, verified, structure, hierarchy, check.
+  static const networkHorizontalCheck = _networkHorizontalCheck;
+
+  /// Network horizontal plus. Tags: network, add node, structure, hierarchy, plus.
+  static const networkHorizontalPlus = _networkHorizontalPlus;
+
+  /// Network horizontal x. Tags: network, failed, structure, hierarchy, error, remove.
+  static const networkHorizontalX = _networkHorizontalX;
+
+  /// Network squares. Tags: scheme, diagram, nodes, hierarchy, structure, flow.
+  static const networkSquares = _networkSquares;
+
+  /// Network tree. Tags: network, hierarchy, tree, structure, org chart.
+  static const networkTree = _networkTree;
+
+  /// Neural network. Tags: ai, nodes, machine learning, graph, connections.
+  static const neuralNetwork = _neuralNetwork;
 
   /// Same icon as [newspaper].
   static const news = _newspaper;
 
-  /// Newspaper. Tags: news, feed, home, magazine, article, headline.
+  /// Newspaper. Tags: news, article, press, media, headlines.
   static const newspaper = _newspaper;
 
-  /// Nfc. Tags: contactless, payment, near-field communication.
+  /// Newspaper columns. Tags: news, newspaper, columns, article, press, media.
+  static const newspaperColumns = _newspaperColumns;
+
+  /// Newspaper image. Tags: news, newspaper, picture, article, press, media.
+  static const newspaperImage = _newspaperImage;
+
+  /// Nfc. Tags: contactless, wireless, tap, near field, pay.
   static const nfc = _nfc;
 
-  /// Non binary. Tags: gender, nonbinary, enby.
+  /// Non binary. Tags: non-binary, gender, symbol, identity, lgbt, enby.
   static const nonBinary = _nonBinary;
 
-  /// Notebook. Tags: notepad, notes, stationery, sketchbook, moleskine, closure, strap, band.
+  /// Noodles. Tags: ramen, bowl, chopsticks, food, asian.
+  static const noodles = _noodles;
+
+  /// Nose. Tags: smell, face, body part, scent, sniff.
+  static const nose = _nose;
+
+  /// Notebook. Tags: journal, book, spine, divider.
   static const notebook = _notebook;
 
-  /// Notebook dot. Tags: document, file, journal, page, paper, record, entry, notebook.
-  static const notebookDot = _notebookDot;
+  /// Notebook check. Tags: assignments, notebook, tasks, homework, checklist, completed.
+  static const notebookCheck = _notebookCheck;
 
-  /// Notebook pen. Tags: pencil, notepad, notes, noted, stationery, sketchbook, organizer, organiser.
+  /// Notebook label. Tags: notebook, journal, cover, label.
+  static const notebookLabel = _notebookLabel;
+
+  /// Notebook pen. Tags: notebook, write, edit, journal, pen.
   static const notebookPen = _notebookPen;
 
-  /// Notebook tabs. Tags: notepad, notes, people, family, friends, acquaintances, contacts, details.
+  /// Notebook rings. Tags: note, notebook, binder, memo, text, lines.
+  static const notebookRings = _notebookRings;
+
+  /// Notebook tabs. Tags: notebook, tabs, address book, contacts, index.
   static const notebookTabs = _notebookTabs;
 
-  /// Notebook text. Tags: notepad, notes, pages, paper, stationery, sketchbook, organizer, organiser.
+  /// Notebook text. Tags: notebook, text, journal, notes, lines, diary.
   static const notebookText = _notebookText;
 
-  /// Notepad text. Tags: notebook, notes, pages, paper, stationery, sketchbook, organizer, organiser.
+  /// Notepad check. Tags: note, done, check, complete, task, notepad.
+  static const notepadCheck = _notepadCheck;
+
+  /// Notepad checklist. Tags: note, notepad, checklist, todo, tasks, list.
+  static const notepadChecklist = _notepadChecklist;
+
+  /// Notepad pen. Tags: note, edit, write, pen, notepad.
+  static const notepadPen = _notepadPen;
+
+  /// Notepad plus. Tags: note, add, new note, memo, notepad.
+  static const notepadPlus = _notepadPlus;
+
+  /// Notepad search. Tags: investigation, research, case file, inspect, notes, magnifier.
+  static const notepadSearch = _notepadSearch;
+
+  /// Notepad text. Tags: notepad, note, memo, text, pad, lines, jot.
   static const notepadText = _notepadText;
 
-  /// Notepad text dashed. Tags: notebook, notes, pages, paper, stationery, diary, journal, writing.
+  /// Notepad text dashed. Tags: notepad, note, draft, placeholder, dashed.
   static const notepadTextDashed = _notepadTextDashed;
+
+  /// Notepad text folded. Tags: note, notepad, memo, folded corner, page, lines.
+  static const notepadTextFolded = _notepadTextFolded;
+
+  /// Notepad text stack. Tags: note, notepad, stack, memo, pages, lines.
+  static const notepadTextStack = _notepadTextStack;
+
+  /// Notepad x. Tags: note, remove, delete, x, notepad.
+  static const notepadX = _notepadX;
 
   /// Same icon as [bell].
   static const notifications = _bell;
@@ -4360,697 +10644,1648 @@ abstract final class DsIcons {
   /// Same icon as [bellOff].
   static const notificationsOff = _bellOff;
 
+  /// Nth root. Tags: root, radical, nth, math, exponent.
+  static const nthRoot = _nthRoot;
+
   /// Same icon as [listOrdered].
   static const numberedList = _listOrdered;
 
-  /// Nut. Tags: hazelnut, acorn, food, diet. Its details merge when filled: use it outlined.
-  static const nut = _nut;
+  /// Numbers 1 9 arrow down. Tags: sort, numeric, 1-9, ascending, order, numbers, number.
+  static const numbers19ArrowDown = _numbers19ArrowDown;
 
-  /// Nut off. Tags: hazelnut, acorn, food, allergy, intolerance, diet.
-  static const nutOff = _nutOff;
+  /// Numbers 9 1 arrow down. Tags: sort, numeric, 9-1, descending, order, numbers, number.
+  static const numbers91ArrowDown = _numbers91ArrowDown;
 
-  /// Octagon. Tags: stop, shape.
+  /// Numero. Tags: number sign, no, text, symbol.
+  static const numero = _numero;
+
+  /// Nurse. Tags: cap, medical, health, hospital, person. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const nurse = _nurse;
+
+  /// Obelisk. Tags: monument, landmark, washington monument, tower, memorial, sightseeing, usa.
+  static const obelisk = _obelisk;
+
+  /// Octagon. Tags: stop, shape, polygon.
   static const octagon = _octagon;
 
-  /// Octagon alert. Tags: warning, alert, danger, exclamation mark.
+  /// Octagon alert. Tags: octagon, alert, warning, stop, error, spam, junk.
   static const octagonAlert = _octagonAlert;
 
-  /// Octagon minus. Tags: stop, forbidden, subtract, remove, decrease, reduce, -, traffic.
+  /// Octagon minus. Tags: octagon, minus, remove, stop.
   static const octagonMinus = _octagonMinus;
 
-  /// Octagon pause. Tags: music, audio, stop.
+  /// Octagon pause. Tags: octagon, pause, stop, hold.
   static const octagonPause = _octagonPause;
 
-  /// Octagon x. Tags: delete, stop, alert, warning, times, clear, math.
+  /// Octagon x. Tags: octagon, x, close, error, stop.
   static const octagonX = _octagonX;
 
-  /// Olive. Tags: grove, extra virgin, oil, ingredient, cooking, cookery, kitchen, cuisine.
-  static const olive = _olive;
+  /// Octagram circle. Tags: rub el hizb, islamic star, octagram, eight-pointed star, quran. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const octagramCircle = _octagramCircle;
 
-  /// Omega. Tags: greek, symbol, mathematics, education, physics, engineering, ohms, electrical resistance.
+  /// Octopus. Tags: sea, tentacles, squid, animal.
+  static const octopus = _octopus;
+
+  /// Office chair. Tags: office, chair, desk, seat, furniture.
+  static const officeChair = _officeChair;
+
+  /// Oil barrel. Tags: oil, barrel, drum, petroleum, fuel.
+  static const oilBarrel = _oilBarrel;
+
+  /// Omega. Tags: alphabet, greek, letter, symbol, ohm.
   static const omega = _omega;
 
-  /// Onion. Tags: flavor, flavour, vegetable, ingredient, cooking, cookery, kitchen, cuisine.
-  static const onion = _onion;
+  /// Onigiri. Tags: rice ball, japanese, food, sushi.
+  static const onigiri = _onigiri;
 
   /// Same icon as [externalLink].
   static const openInNew = _externalLink;
 
-  /// Option. Tags: keyboard, key, mac, alt, button.
+  /// Option. Tags: alt, key, keyboard, mac.
   static const option = _option;
 
-  /// Orbit. Tags: planet, space, physics, satellites, moons.
+  /// Orange. Tags: fruit, citrus, food.
+  static const orange = _orange;
+
+  /// Orbit. Tags: satellite, planet, space, rings.
   static const orbit = _orbit;
 
-  /// Origami. Tags: paper, bird.
+  /// Orbit moons. Tags: orbit, moons, planet, space, nodes.
+  static const orbitMoons = _orbitMoons;
+
+  /// Origami. Tags: paper, bird, crane, fold.
   static const origami = _origami;
+
+  /// Oscilloscope. Tags: activity, wave, signal, monitor, sine.
+  static const oscilloscope = _oscilloscope;
 
   /// Same icon as [listIndentDecrease].
   static const outdent = _listIndentDecrease;
 
-  /// Owl. Tags: wise, wisdom, wings, bird, avian, tawny, perch, wildlife. Its details merge when filled: use it outlined.
-  static const owl = _owl;
+  /// Oven. Tags: bake, kitchen, appliance, cooking.
+  static const oven = _oven;
 
-  /// Package. Tags: box, container, storage, sealed, delivery, undelivered, unopened, packed.
+  /// Package. Tags: box, parcel, delivery, shipping.
   static const package = _package;
 
-  /// Package 2. Tags: box, container, storage, sealed, packed, unopened, undelivered, archive.
-  static const package2 = _package2;
+  /// Same icon as [packageFlat].
+  static const package2 = _packageFlat;
 
-  /// Package check. Tags: confirm, verified, done, todo, tick, complete, task, delivered.
+  /// Package check. Tags: package, check, verified, box, done, delivered, received.
   static const packageCheck = _packageCheck;
 
-  /// Package minus. Tags: delete, remove.
+  /// Package clock. Tags: package, processing, pending, clock, box.
+  static const packageClock = _packageClock;
+
+  /// Package conveyor. Tags: loading, conveyor belt, shipping, parcel, sorting.
+  static const packageConveyor = _packageConveyor;
+
+  /// Package down. Tags: package, receive, incoming, download, box.
+  static const packageDown = _packageDown;
+
+  /// Package flat. Tags: package, box, parcel, delivery, flat.
+  static const packageFlat = _packageFlat;
+
+  /// Package flat check. Tags: package, delivered, check, received, box, flat.
+  static const packageFlatCheck = _packageFlatCheck;
+
+  /// Package flat clock. Tags: package, processing, pending, clock, box, flat. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const packageFlatClock = _packageFlatClock;
+
+  /// Package flat down. Tags: package, receive, incoming, download, box, flat.
+  static const packageFlatDown = _packageFlatDown;
+
+  /// Package flat label. Tags: package, box, parcel, label, delivery.
+  static const packageFlatLabel = _packageFlatLabel;
+
+  /// Package flat plus. Tags: package, add, plus, new, box, flat.
+  static const packageFlatPlus = _packageFlatPlus;
+
+  /// Package flat ruler. Tags: package, dimensions, size, measure, ruler, box.
+  static const packageFlatRuler = _packageFlatRuler;
+
+  /// Package flat search. Tags: package, search, find, track, box, flat.
+  static const packageFlatSearch = _packageFlatSearch;
+
+  /// Package flat speed. Tags: package, moving, fast, shipping, speed, delivery.
+  static const packageFlatSpeed = _packageFlatSpeed;
+
+  /// Package flat text. Tags: package, box, parcel, lines, delivery, shipment, carton.
+  static const packageFlatText = _packageFlatText;
+
+  /// Package flat up. Tags: package, sent, outgoing, ship, upload, box, flat.
+  static const packageFlatUp = _packageFlatUp;
+
+  /// Package flat x. Tags: package, remove, delete, x, box, flat.
+  static const packageFlatX = _packageFlatX;
+
+  /// Package label. Tags: package, box, parcel, label, delivery.
+  static const packageLabel = _packageLabel;
+
+  /// Package loading. Tags: product, loading, package, box, delivery, progress.
+  static const packageLoading = _packageLoading;
+
+  /// Package map pin. Tags: shipment tracking, parcel, location, delivery, pin.
+  static const packageMapPin = _packageMapPin;
+
+  /// Package minus. Tags: package, minus, remove, box.
   static const packageMinus = _packageMinus;
 
-  /// Package open. Tags: box, container, storage, unpack, unarchive, unzip, opened, delivered. Its details merge when filled: use it outlined.
+  /// Package open. Tags: package, open, unbox, box, unpack.
   static const packageOpen = _packageOpen;
 
-  /// Package plus. Tags: new, add, create.
+  /// Package open x. Tags: package, out of stock, empty, sold out, box.
+  static const packageOpenX = _packageOpenX;
+
+  /// Package parachute. Tags: airdrop, delivery, parcel, drop, safe delivery.
+  static const packageParachute = _packageParachute;
+
+  /// Package plus. Tags: package, add, plus, new, box.
   static const packagePlus = _packagePlus;
 
-  /// Package search. Tags: find, product process, lens.
+  /// Package ruler. Tags: package, dimensions, size, measure, ruler, box.
+  static const packageRuler = _packageRuler;
+
+  /// Package search. Tags: package, search, find, track, box.
   static const packageSearch = _packageSearch;
 
-  /// Package x. Tags: delete, remove.
+  /// Package speed. Tags: package, moving, fast, shipping, speed, delivery.
+  static const packageSpeed = _packageSpeed;
+
+  /// Package undo. Tags: return request, package, box, undo, refund. Mirrors in right-to-left text.
+  static const packageUndo = _packageUndo;
+
+  /// Package up. Tags: package, sent, outgoing, ship, upload, box.
+  static const packageUp = _packageUp;
+
+  /// Package x. Tags: package, remove, delete, x, box.
   static const packageX = _packageX;
 
-  /// Pac man. Tags: eat, munch, consume, arcade, classic, retro.
+  /// Pac man. Tags: pacman, game, arcade, retro.
   static const pacMan = _pacMan;
 
-  /// Pac man ghost. Tags: arcade, classic, retro, phantom, spooky, halloween, costume, sheet.
+  /// Pac man ghost. Tags: pacman, ghost, game, arcade, retro.
   static const pacManGhost = _pacManGhost;
 
-  /// Paintbrush. Tags: brush, design, color, colour, decoration, diy.
+  /// Paella. Tags: rice, food, spanish, dish. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const paella = _paella;
+
+  /// Pagoda. Tags: temple, china, asian, landmark, building, tower.
+  static const pagoda = _pagoda;
+
+  /// Paintbrush. Tags: paint, brush, art, draw.
   static const paintbrush = _paintbrush;
 
-  /// Paintbrush vertical. Tags: brush, paintbrush, design, color, colour, decoration, diy.
+  /// Paintbrush slim. Tags: paintbrush, paint, brush, thin, art.
+  static const paintbrushSlim = _paintbrushSlim;
+
+  /// Paintbrush sparkle. Tags: ai, paintbrush, paint, brush, sparkle, art.
+  static const paintbrushSparkle = _paintbrushSparkle;
+
+  /// Paintbrush vertical. Tags: paintbrush, paint, brush, vertical, art.
   static const paintbrushVertical = _paintbrushVertical;
 
-  /// Paint bucket. Tags: fill, paint, bucket, color, colour.
+  /// Paint bucket. Tags: paint, bucket, fill, color, drop.
   static const paintBucket = _paintBucket;
 
-  /// Paint roller. Tags: brush, color, colour, decoration, diy.
+  /// Paint roller. Tags: paint, roller, wall, decorate.
   static const paintRoller = _paintRoller;
 
-  /// Palette. Tags: colors, colours, theme, scheme, paint, watercolor, watercolour, artist.
+  /// Paint roller short. Tags: paint roller, roller, paint, wall, decorate.
+  static const paintRollerShort = _paintRollerShort;
+
+  /// Palette. Tags: paint, colors, art, theme.
   static const palette = _palette;
 
-  /// Palmtree island sun. Tags: desert island, summer holiday, vacation, retreat, relax, leisure, tropical, beach.
+  /// Palette rings. Tags: palette, paint, colors, art, board.
+  static const paletteRings = _paletteRings;
+
+  /// Palmtree island sun. Tags: beach, palm, island, tropical, vacation, sun.
   static const palmtreeIslandSun = _palmtreeIslandSun;
 
-  /// Pancakes. Tags: shrove tuesday, maple syrup, dripping, fast food, junk food, snack, sweet, dish.
-  static const pancakes = _pancakes;
-
-  /// Panda. Tags: animal, wildlife, bear, zoo, bamboo.
+  /// Panda. Tags: bear, animal, china.
   static const panda = _panda;
 
-  /// Panel bottom. Tags: drawer, dock.
+  /// Panel bottom. Tags: panel, bottom, layout, drawer, sheet, bottom panel, footer, sidebar.
   static const panelBottom = _panelBottom;
 
-  /// Panel bottom close. Tags: drawer, dock, hide, chevron, down.
+  /// Panel bottom arrow down. Tags: transition, slide, down, panel, bottom.
+  static const panelBottomArrowDown = _panelBottomArrowDown;
+
+  /// Panel bottom close. Tags: panel, bottom, close, collapse, drawer.
   static const panelBottomClose = _panelBottomClose;
 
-  /// Panel bottom dashed. Tags: drawer, dock, show, reveal, padding, margin, guide, layout.
+  /// Panel bottom dashed. Tags: panel, bottom, dashed, layout, drawer.
   static const panelBottomDashed = _panelBottomDashed;
 
-  /// Panel bottom open. Tags: drawer, dock, show, reveal, chevron, up.
+  /// Panel bottom dots. Tags: sidebar, bottom, drawer, dock.
+  static const panelBottomDots = _panelBottomDots;
+
+  /// Panel bottom open. Tags: panel, bottom, open, expand, drawer.
   static const panelBottomOpen = _panelBottomOpen;
 
-  /// Panel left. Tags: primary, drawer.
+  /// Panel left. Tags: panel, left, sidebar, layout, drawer, left panel, split.
   static const panelLeft = _panelLeft;
 
-  /// Panel left close. Tags: primary, drawer, hide, chevron.
+  /// Panel left arrow left. Tags: transition, slide, left, panel.
+  static const panelLeftArrowLeft = _panelLeftArrowLeft;
+
+  /// Panel left close. Tags: panel, left, sidebar, open, expand.
   static const panelLeftClose = _panelLeftClose;
 
-  /// Panel left dashed. Tags: sidebar, primary, drawer, show, reveal, padding, margin, guide.
+  /// Panel left dashed. Tags: panel, left, sidebar, dashed, layout.
   static const panelLeftDashed = _panelLeftDashed;
 
-  /// Panel left open. Tags: primary, drawer, show, reveal, chevron, right.
+  /// Panel left dots. Tags: sidebar, left, drawer, navigation.
+  static const panelLeftDots = _panelLeftDots;
+
+  /// Panel left dots close. Tags: sidebar, left, collapse, hide, drawer.
+  static const panelLeftDotsClose = _panelLeftDotsClose;
+
+  /// Panel left open. Tags: panel, left, sidebar, close, collapse.
   static const panelLeftOpen = _panelLeftOpen;
 
-  /// Panel left right dashed. Tags: sidebar, primary, drawer, show, reveal, padding, margin, guide.
+  /// Panel left right dashed. Tags: panel, columns, dashed, sidebar, layout.
   static const panelLeftRightDashed = _panelLeftRightDashed;
 
-  /// Panel right. Tags: sidebar, secondary, drawer.
+  /// Panel left rows. Tags: sidebar left, sidebar, view sidebar, drawer, menu, navigation, layout.
+  static const panelLeftRows = _panelLeftRows;
+
+  /// Panel right. Tags: panel, right, sidebar, layout, drawer, right panel, split.
   static const panelRight = _panelRight;
 
-  /// Panel right close. Tags: sidebar, secondary, drawer, hide, chevron.
+  /// Panel right arrow right. Tags: transition, slide, right, panel.
+  static const panelRightArrowRight = _panelRightArrowRight;
+
+  /// Panel right close. Tags: panel, right, sidebar, close, collapse.
   static const panelRightClose = _panelRightClose;
 
-  /// Panel right dashed. Tags: sidebar, secondary, drawer, show, reveal, padding, margin, guide.
+  /// Panel right dashed. Tags: panel, right, sidebar, dashed, layout.
   static const panelRightDashed = _panelRightDashed;
 
-  /// Panel right open. Tags: sidebar, secondary, drawer, show, reveal, chevron, left.
+  /// Panel right dots. Tags: sidebar, right, drawer.
+  static const panelRightDots = _panelRightDots;
+
+  /// Panel right dots close. Tags: sidebar, right, collapse, hide, drawer.
+  static const panelRightDotsClose = _panelRightDotsClose;
+
+  /// Panel right open. Tags: panel, right, sidebar, open, expand.
   static const panelRightOpen = _panelRightOpen;
 
-  /// Panels left bottom. Tags: drawers, sidebar, primary.
+  /// Panel right rows. Tags: sidebar right, sidebar, view sidebar, drawer, menu, layout, navigation.
+  static const panelRightRows = _panelRightRows;
+
+  /// Panels left bottom. Tags: panels, layout, left, bottom, split.
   static const panelsLeftBottom = _panelsLeftBottom;
 
-  /// Panels right bottom. Tags: drawers, sidebar, secondary.
+  /// Panels right bottom. Tags: panels, layout, right, bottom, split.
   static const panelsRightBottom = _panelsRightBottom;
 
-  /// Panels top left. Tags: menu bar, sidebar, primary, drawers, window, webpage, projects, overview.
+  /// Panels top left. Tags: panels, layout, top, left, split, header, sidebar, left column.
   static const panelsTopLeft = _panelsTopLeft;
 
-  /// Panel top. Tags: drawer, browser, webpage.
+  /// Panel top. Tags: panel, top, header, layout, window, top panel, drawer, split.
   static const panelTop = _panelTop;
 
-  /// Panel top bottom dashed. Tags: sidebar, primary, drawer, show, reveal, padding, margin, guide.
+  /// Panel top arrow up. Tags: transition, slide, up, panel, top.
+  static const panelTopArrowUp = _panelTopArrowUp;
+
+  /// Panel top bottom dashed. Tags: panel, rows, dashed, header, footer, layout.
   static const panelTopBottomDashed = _panelTopBottomDashed;
 
-  /// Panel top close. Tags: menu bar, drawer, hide, chevron, up.
+  /// Panel top close. Tags: panel, top, close, collapse, header.
   static const panelTopClose = _panelTopClose;
 
-  /// Panel top dashed. Tags: menu bar, drawer, show, reveal, padding, margin, guide, layout.
+  /// Panel top dashed. Tags: panel, top, dashed, header, layout.
   static const panelTopDashed = _panelTopDashed;
 
-  /// Panel top open. Tags: menu bar, drawer, show, reveal, chevron, down.
+  /// Panel top dots. Tags: sidebar, top, drawer, browser, webpage.
+  static const panelTopDots = _panelTopDots;
+
+  /// Panel top open. Tags: panel, top, open, expand, header.
   static const panelTopOpen = _panelTopOpen;
 
-  /// Paper bag. Tags: storage, package, lunch, takeout, eco-friendly, kraft, retail, doggybag.
-  static const paperBag = _paperBag;
+  /// Pants. Tags: jogger pants, trousers, sweatpants, clothes, clothing.
+  static const pants = _pants;
 
-  /// Paperclip. Tags: attachment, file.
+  /// Paperclip. Tags: attachment, attach, clip.
   static const paperclip = _paperclip;
+
+  /// Paperclip flip. Tags: attachment, paperclip, clip, attach, file, upload.
+  static const paperclipFlip = _paperclipFlip;
+
+  /// Paperclip narrow. Tags: attachment, paperclip, clip, attach, file, narrow.
+  static const paperclipNarrow = _paperclipNarrow;
+
+  /// Paperclip vertical. Tags: attachment, paperclip, clip, attach, file, upload.
+  static const paperclipVertical = _paperclipVertical;
+
+  /// Parabola. Tags: curve, quadratic, function, graph.
+  static const parabola = _parabola;
+
+  /// Parabola axes. Tags: parabola, curve, axes, function, graph.
+  static const parabolaAxes = _parabolaAxes;
+
+  /// Parabola axis up. Tags: parabola, curve, axis, symmetry, graph.
+  static const parabolaAxisUp = _parabolaAxisUp;
 
   /// Same icon as [pilcrow].
   static const paragraph = _pilcrow;
 
-  /// Parasol. Tags: umbrella, sunshade, beach, shade, sun, protection, cover, canopy.
+  /// Paragraph expand. Tags: expand paragraph, line spacing, spacing, vertical, text.
+  static const paragraphExpand = _paragraphExpand;
+
+  /// Parallelogram. Tags: shape, polygon, geometry.
+  static const parallelogram = _parallelogram;
+
+  /// Parasol. Tags: beach, umbrella, sun, shade, summer.
   static const parasol = _parasol;
 
-  /// Parentheses. Tags: code, token, parenthesis, parens, brackets, parameters, arguments, args.
+  /// Parentheses. Tags: brackets, round, code, round brackets, math.
   static const parentheses = _parentheses;
 
-  /// Park. Tags: nature, green, trees, landscape, rest, walk, leisure, environment.
-  static const park = _park;
+  /// Parentheses flat. Tags: brackets, round, curly, parens, code.
+  static const parenthesesFlat = _parenthesesFlat;
+
+  /// Parentheses radical x. Tags: root, radical, parentheses, x, math.
+  static const parenthesesRadicalX = _parenthesesRadicalX;
 
   /// Same icon as [circleParking].
   static const parking = _circleParking;
 
-  /// Parking meter. Tags: driving, car park, pay, sidewalk, pavement.
+  /// Parking meter. Tags: parking, meter, pay, street, car.
   static const parkingMeter = _parkingMeter;
 
-  /// Party popper. Tags: emoji, congratulations, celebration, party, tada, excitement, exciting, excites.
+  /// Party popper. Tags: party, popper, confetti, celebrate, celebration.
   static const partyPopper = _partyPopper;
 
-  /// Pause. Tags: music, stop.
+  /// Party popper lines. Tags: party, celebrate, confetti, popper, celebration.
+  static const partyPopperLines = _partyPopperLines;
+
+  /// Passport. Tags: travel, booklet, identity, globe.
+  static const passport = _passport;
+
+  /// Password check. Tags: password, validation, verified, dots, check.
+  static const passwordCheck = _passwordCheck;
+
+  /// Patient. Tags: person, hospital, medical, health.
+  static const patient = _patient;
+
+  /// Pause. Tags: hold, media, stop.
   static const pause = _pause;
 
-  /// Paw print. Tags: pets, vets, veterinarian, domesticated, cat, dog, bear.
+  /// Pavilion. Tags: pagoda, temple, asian, building.
+  static const pavilion = _pavilion;
+
+  /// Paw print. Tags: paw, print, pet, animal, footprint.
   static const pawPrint = _pawPrint;
 
-  /// Pc case. Tags: computer, chassis.
+  /// Pc case. Tags: pc, case, tower, computer, desktop.
   static const pcCase = _pcCase;
 
-  /// Peace. Tags: harmony, symbol, unity, quiet, calm, rest, tranquility, sprituality.
-  static const peace = _peace;
+  /// Peer to peer arrows. Tags: peer to peer, p2p, exchange, users, network.
+  static const peerToPeerArrows = _peerToPeerArrows;
 
-  /// Peach. Tags: fruit, nectarine, apricot, plum, damson, cherry, juice, smoothie.
-  static const peach = _peach;
+  /// Peer to peer lock. Tags: peer to peer, p2p, secure, lock, network.
+  static const peerToPeerLock = _peerToPeerLock;
 
-  /// Pear. Tags: fruit, snack, meal, lunch, eating, healthy, nutrition, diet.
-  static const pear = _pear;
+  /// Peer to peer screens. Tags: peer to peer, p2p, computers, share, network.
+  static const peerToPeerScreens = _peerToPeerScreens;
 
-  /// Pen. Tags: pencil, change, create, draw, writer, writing, biro, ink.
+  /// Pen. Tags: write, edit, draw.
   static const pen = _pen;
 
-  /// Pencil. Tags: rubber, edit, create, draw, sketch, draft, writer, writing.
+  /// Pen ballpoint. Tags: pen, nib, write, calligraphy, draw.
+  static const penBallpoint = _penBallpoint;
+
+  /// Pen bluetooth. Tags: pen, stylus, bluetooth, connect, wireless.
+  static const penBluetooth = _penBluetooth;
+
+  /// Pencil. Tags: edit, pen, write, draw.
   static const pencil = _pencil;
 
-  /// Pencil line. Tags: pencil, change, create, draw, sketch, draft, writer, writing.
+  /// Pencil line. Tags: pencil, edit, write, line.
   static const pencilLine = _pencilLine;
 
-  /// Pencil off. Tags: disabled, inactive, non-editable, locked, read-only, unmodifiable, frozen, restricted.
+  /// Pencil line big. Tags: edit, pencil, write, compose, underline.
+  static const pencilLineBig = _pencilLineBig;
+
+  /// Pencil off. Tags: pencil, off, disabled, edit, readonly, read only, no edit, crossed.
   static const pencilOff = _pencilOff;
 
-  /// Pencil ruler. Tags: edit, create, draw, sketch, draft, writer, writing, stationery.
+  /// Pencil ring sparkle. Tags: ai, drawing, pencil, sketch, sparkle, creative.
+  static const pencilRingSparkle = _pencilRingSparkle;
+
+  /// Pencil ruler. Tags: pencil, ruler, design, draft, measure.
   static const pencilRuler = _pencilRuler;
 
-  /// Pencil sparkles. Tags: edit, ai, tools, smart, create, draw, sketch, draft.
-  static const pencilSparkles = _pencilSparkles;
+  /// Pencil ruler upright. Tags: stationery, pencil, ruler, design, drawing, school.
+  static const pencilRulerUpright = _pencilRulerUpright;
 
-  /// Penguin. Tags: pingu, bird, arctic, aquatic, flightless, linux. Its details merge when filled: use it outlined.
-  static const penguin = _penguin;
+  /// Pencil sparkle. Tags: ai, editing, pencil, sparkle, write.
+  static const pencilSparkle = _pencilSparkle;
 
-  /// Pen line. Tags: pencil, change, create, draw, writer, writing, biro, ink.
+  /// Same icon as [pencilSparkle].
+  static const pencilSparkles = _pencilSparkle;
+
+  /// Pencil underline. Tags: pencil, edit, write, underline, line.
+  static const pencilUnderline = _pencilUnderline;
+
+  /// Pencil vertical. Tags: pencil, write, draw, vertical, sketch.
+  static const pencilVertical = _pencilVertical;
+
+  /// Pen curve. Tags: edit, pen, write, draw, signature.
+  static const penCurve = _penCurve;
+
+  /// Pendant lights. Tags: light, lamp, ceiling, hanging lights, lighting, decor.
+  static const pendantLights = _pendantLights;
+
+  /// Pendulum. Tags: newton, cradle, physics, swing.
+  static const pendulum = _pendulum;
+
+  /// Pen eraser line. Tags: edit, pencil, write, underline, sign.
+  static const penEraserLine = _penEraserLine;
+
+  /// Pen line. Tags: pen, edit, write, line, signature.
   static const penLine = _penLine;
 
-  /// Pen off. Tags: disabled, inactive, non-editable, locked, read-only, unmodifiable, frozen, restricted.
+  /// Pen off. Tags: pen, off, disabled, edit, readonly, read only, no edit, crossed.
   static const penOff = _penOff;
 
-  /// Pentagon. Tags: shape.
+  /// Pentagon. Tags: shape, polygon, geometry.
   static const pentagon = _pentagon;
 
-  /// Pen tool. Tags: vector, drawing, path.
+  /// Pentagon gavel. Tags: court law, law, gavel, justice, judge, legal.
+  static const pentagonGavel = _pentagonGavel;
+
+  /// Pen tool. Tags: vector, nib, bezier, draw.
   static const penTool = _penTool;
 
-  /// Pepper chilli. Tags: chili, chile, hot, spicy, spice, flavor, flavour, vegetable.
+  /// Pen tool minus. Tags: pen tool, remove, minus, anchor, point.
+  static const penToolMinus = _penToolMinus;
+
+  /// Pen tool plus. Tags: pen tool, add, plus, anchor, point.
+  static const penToolPlus = _penToolPlus;
+
+  /// Pen tool vertical. Tags: pen tool, vector, nib, bezier, vertical.
+  static const penToolVertical = _penToolVertical;
+
+  /// Pen wifi. Tags: pen, stylus, wifi, connect, wireless.
+  static const penWifi = _penWifi;
+
+  /// Pepper chilli. Tags: pepper, chilli, spicy, hot, food.
   static const pepperChilli = _pepperChilli;
 
-  /// Percent. Tags: percentage, modulo, modulus, remainder, sale, discount, offer, marketing.
+  /// Percent. Tags: percentage, discount, ratio.
   static const percent = _percent;
 
-  /// Person standing. Tags: people, human, accessibility, stick figure.
+  /// Person bowing. Tags: ruku, bowing, prayer, islam, person.
+  static const personBowing = _personBowing;
+
+  /// Person cane. Tags: elder, elderly, senior, old, walking stick.
+  static const personCane = _personCane;
+
+  /// Person flying. Tags: person, flying, superhero, fly, human. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const personFlying = _personFlying;
+
+  /// Person hiking. Tags: hiking, trekking, walk, backpack, outdoor.
+  static const personHiking = _personHiking;
+
+  /// Person marker. Tags: location, user position, person, you are here, tracking.
+  static const personMarker = _personMarker;
+
+  /// Person marker dashed. Tags: roadside assistance, help, breakdown, beacon, person, lamp, service.
+  static const personMarkerDashed = _personMarkerDashed;
+
+  /// Person marker line. Tags: location, user position, person, you are here, tracking.
+  static const personMarkerLine = _personMarkerLine;
+
+  /// Person marker ring. Tags: location, user position, person, you are here, tracking.
+  static const personMarkerRing = _personMarkerRing;
+
+  /// Person marker tray. Tags: location, user position, person, you are here, tracking.
+  static const personMarkerTray = _personMarkerTray;
+
+  /// Person praying. Tags: salah, prayer, muslim, islam, worship, kneeling.
+  static const personPraying = _personPraying;
+
+  /// Person standing. Tags: person, standing, human, accessibility, figure.
   static const personStanding = _personStanding;
 
-  /// Phi. Tags: math, golden-ratio, symbol, greek, letter, typography, constant, flux.
-  static const phi = _phi;
+  /// Person walking. Tags: walking, pedestrian, hiking, stroll, movement, exercise, walk. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const personWalking = _personWalking;
 
-  /// Philippine peso. Tags: currency, peso, money, php.
+  /// Person walking luggage. Tags: self transfer, travel, airport, connection, luggage, walking.
+  static const personWalkingLuggage = _personWalkingLuggage;
+
+  /// Perspective. Tags: grid, view, crosshair, 3d. Its details merge when filled: use it outlined.
+  static const perspective = _perspective;
+
+  /// Philippine peso. Tags: peso, philippines, currency, money. Its details merge when filled: use it outlined.
   static const philippinePeso = _philippinePeso;
 
-  /// Phone. Tags: call.
+  /// Phone. Tags: call, handset, telephone, contact.
   static const phone = _phone;
 
-  /// Phone call. Tags: ring.
+  /// Phone 24 hours. Tags: customer service, support, helpline, call, hotline. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const phone24Hours = _phone24Hours;
+
+  /// Phone arrow left. Tags: phone, call, incoming, received, arrow, left. Mirrors in right-to-left text.
+  static const phoneArrowLeft = _phoneArrowLeft;
+
+  /// Phone arrow left right. Tags: phone, call, internal, intercom, transfer, arrows.
+  static const phoneArrowLeftRight = _phoneArrowLeftRight;
+
+  /// Phone ban. Tags: phone, call, blocked, ban, reject.
+  static const phoneBan = _phoneBan;
+
+  /// Phone call. Tags: phone, call, ring, calling, waves, ringing, telephone.
   static const phoneCall = _phoneCall;
 
-  /// Phone forwarded. Tags: call.
+  /// Phone check. Tags: phone, call, done, check, completed.
+  static const phoneCheck = _phoneCheck;
+
+  /// Phone down missed. Tags: call, missed, telephone, hung up, handset, unanswered.
+  static const phoneDownMissed = _phoneDownMissed;
+
+  /// Phone down ringing. Tags: call, ringing, telephone, hung up, handset.
+  static const phoneDownRinging = _phoneDownRinging;
+
+  /// Phone forwarded. Tags: phone, call, forward, forwarded, redirect, outgoing, telephone, dial. Mirrors in right-to-left text.
   static const phoneForwarded = _phoneForwarded;
 
-  /// Phone incoming. Tags: call.
+  /// Phone hang up. Tags: phone, call, end, hang, up, hangup, finish.
+  static const phoneHangUp = _phoneHangUp;
+
+  /// Phone incoming. Tags: phone, call, incoming, received, arrow, receive, inbound.
   static const phoneIncoming = _phoneIncoming;
 
-  /// Phone missed. Tags: call.
+  /// Phone lock. Tags: phone, call, locked, private, secure.
+  static const phoneLock = _phoneLock;
+
+  /// Phone lock open. Tags: call, unlocked, telephone, handset, unlock, secure.
+  static const phoneLockOpen = _phoneLockOpen;
+
+  /// Phone minus. Tags: phone, call, minus, remove.
+  static const phoneMinus = _phoneMinus;
+
+  /// Phone missed. Tags: call, missed, telephone, handset, unanswered.
   static const phoneMissed = _phoneMissed;
 
-  /// Phone off. Tags: call, mute.
+  /// Phone off. Tags: phone, call, disabled, off, mute.
   static const phoneOff = _phoneOff;
 
-  /// Phone outgoing. Tags: call.
+  /// Phone outgoing. Tags: call, outgoing, telephone, dial, diagonal, handset, phone, arrow.
   static const phoneOutgoing = _phoneOutgoing;
 
-  /// Pi. Tags: constant, code, coding, programming, symbol, trigonometry, geometry, formula.
+  /// Phone pause. Tags: call, hold, pause, telephone, handset.
+  static const phonePause = _phonePause;
+
+  /// Phone plus. Tags: phone, call, add, plus, new, contact.
+  static const phonePlus = _phonePlus;
+
+  /// Phone return. Tags: call, incoming, received, telephone, handset. Mirrors in right-to-left text.
+  static const phoneReturn = _phoneReturn;
+
+  /// Phone ringing. Tags: call, ringing, telephone, incoming, handset.
+  static const phoneRinging = _phoneRinging;
+
+  /// Phone rotary. Tags: telephone, landline, retro, call, dial.
+  static const phoneRotary = _phoneRotary;
+
+  /// Phone sparkle. Tags: call, ai, sparkle, telephone, handset, spark.
+  static const phoneSparkle = _phoneSparkle;
+
+  /// Phone wide. Tags: phone, call, handset, telephone.
+  static const phoneWide = _phoneWide;
+
+  /// Phone wide arrow left. Tags: phone, call, incoming, received, arrow, left. Mirrors in right-to-left text.
+  static const phoneWideArrowLeft = _phoneWideArrowLeft;
+
+  /// Phone wide arrow left right. Tags: phone, call, internal, intercom, transfer, arrows.
+  static const phoneWideArrowLeftRight = _phoneWideArrowLeftRight;
+
+  /// Phone wide ban. Tags: phone, call, blocked, ban, reject.
+  static const phoneWideBan = _phoneWideBan;
+
+  /// Phone wide call. Tags: phone, call, ring, calling, waves.
+  static const phoneWideCall = _phoneWideCall;
+
+  /// Phone wide check. Tags: phone, call, done, check, completed.
+  static const phoneWideCheck = _phoneWideCheck;
+
+  /// Phone wide down missed. Tags: call, missed, telephone, hung up, handset, unanswered.
+  static const phoneWideDownMissed = _phoneWideDownMissed;
+
+  /// Phone wide down ringing. Tags: call, ringing, telephone, hung up, handset.
+  static const phoneWideDownRinging = _phoneWideDownRinging;
+
+  /// Phone wide forwarded. Tags: call, outgoing, telephone, dial, handset. Mirrors in right-to-left text.
+  static const phoneWideForwarded = _phoneWideForwarded;
+
+  /// Phone wide hang up. Tags: phone, call, end, hang, up, hangup, finish.
+  static const phoneWideHangUp = _phoneWideHangUp;
+
+  /// Phone wide incoming. Tags: phone, call, incoming, received, arrow.
+  static const phoneWideIncoming = _phoneWideIncoming;
+
+  /// Phone wide lock. Tags: phone, call, locked, private, secure.
+  static const phoneWideLock = _phoneWideLock;
+
+  /// Phone wide lock open. Tags: call, unlocked, telephone, handset, unlock, secure.
+  static const phoneWideLockOpen = _phoneWideLockOpen;
+
+  /// Phone wide minus. Tags: call, telephone, handset, minus, remove, hang.
+  static const phoneWideMinus = _phoneWideMinus;
+
+  /// Phone wide missed. Tags: call, missed, telephone, handset, unanswered.
+  static const phoneWideMissed = _phoneWideMissed;
+
+  /// Phone wide off. Tags: phone, call, disabled, off, mute.
+  static const phoneWideOff = _phoneWideOff;
+
+  /// Phone wide outgoing. Tags: call, outgoing, telephone, dial, diagonal, handset.
+  static const phoneWideOutgoing = _phoneWideOutgoing;
+
+  /// Phone wide pause. Tags: call, hold, pause, telephone, handset.
+  static const phoneWidePause = _phoneWidePause;
+
+  /// Phone wide plus. Tags: phone, call, add, plus, new, contact.
+  static const phoneWidePlus = _phoneWidePlus;
+
+  /// Phone wide return. Tags: call, incoming, received, telephone, handset. Mirrors in right-to-left text.
+  static const phoneWideReturn = _phoneWideReturn;
+
+  /// Phone wide ringing. Tags: call, ringing, telephone, incoming, handset.
+  static const phoneWideRinging = _phoneWideRinging;
+
+  /// Phone wide sparkle. Tags: call, ai, sparkle, telephone, handset, spark.
+  static const phoneWideSparkle = _phoneWideSparkle;
+
+  /// Phone wide x. Tags: phone, call, end, x, hang, up, cancel.
+  static const phoneWideX = _phoneWideX;
+
+  /// Phone x. Tags: phone, call, end, x, hang, up, cancel, missed.
+  static const phoneX = _phoneX;
+
+  /// Pi. Tags: math, constant, 3.14, greek.
   static const pi = _pi;
 
-  /// Piano. Tags: music, audio, sound, noise, notes, chord, keys, octave.
-  static const piano = _piano;
-
-  /// Pickaxe. Tags: mining, mine, land worker, extraction, labor, construction, progress, advancement.
+  /// Pickaxe. Tags: mine, mining, dig, tool.
   static const pickaxe = _pickaxe;
 
-  /// Picture in picture. Tags: display, play, video, pop out, always on top, window, inset, multitask.
+  /// Pickaxe bitcoin. Tags: bitcoin, mining, crypto, pickaxe, miner.
+  static const pickaxeBitcoin = _pickaxeBitcoin;
+
+  /// Pickaxe curved. Tags: pickaxe, mining, dig, tool, mine.
+  static const pickaxeCurved = _pickaxeCurved;
+
+  /// Pickup truck. Tags: pickup, truck, vehicle, car, cargo.
+  static const pickupTruck = _pickupTruck;
+
+  /// Pickup truck boxy. Tags: pickup, truck, vehicle, car, cargo.
+  static const pickupTruckBoxy = _pickupTruckBoxy;
+
+  /// Picture in picture. Tags: picture-in-picture, pip, floating, window, video, overlay.
   static const pictureInPicture = _pictureInPicture;
 
-  /// Picture in picture 2. Tags: display, play, video, pop out, always on top, window, inset, multitask.
+  /// Picture in picture 2. Tags: picture-in-picture, pip, floating, window, video, overlay.
   static const pictureInPicture2 = _pictureInPicture2;
 
-  /// Pie. Tags: tart, quiche, patty, flan, strudel, bakery, pastry, homemade.
+  /// Picture in picture enter. Tags: picture-in-picture, pip, on, enter, floating, window.
+  static const pictureInPictureEnter = _pictureInPictureEnter;
+
+  /// Picture in picture exit. Tags: picture-in-picture, pip, exit, leave, floating, window.
+  static const pictureInPictureExit = _pictureInPictureExit;
+
+  /// Pie. Tags: dessert, baked, food.
   static const pie = _pie;
 
   /// Same icon as [chartPie].
   static const pieChart = _chartPie;
 
-  /// Pig. Tags: piggy, piglet, hog, boar, swine, snout, trough, greedy.
-  static const pig = _pig;
+  /// Pie cherry. Tags: pie, dessert, baking, cherry, food, pastry.
+  static const pieCherry = _pieCherry;
 
-  /// Piggy bank. Tags: money, savings.
+  /// Piggy bank. Tags: piggy, bank, savings, money, coin.
   static const piggyBank = _piggyBank;
 
-  /// Pig head. Tags: piggy, piglet, hog, boar, swine, snout, trough, greedy.
-  static const pigHead = _pigHead;
+  /// Piggy bank bitcoin. Tags: bitcoin, savings, piggy, bank, crypto, btc.
+  static const piggyBankBitcoin = _piggyBankBitcoin;
 
-  /// Pilcrow. Tags: paragraph, mark, paraph, blind, typography, type, text, prose.
+  /// Piggy bank zap. Tags: renewable energy, savings, energy, piggy bank, bolt.
+  static const piggyBankZap = _piggyBankZap;
+
+  /// Pilcrow. Tags: paragraph, text, format, section.
   static const pilcrow = _pilcrow;
 
-  /// Pilcrow left. Tags: direction, paragraph, mark, paraph, blind, typography, type, text.
+  /// Pilcrow left. Tags: paragraph, direction, right to left, rtl, text direction.
   static const pilcrowLeft = _pilcrowLeft;
 
-  /// Pilcrow right. Tags: direction, paragraph, mark, paraph, blind, typography, type, text.
+  /// Pilcrow right. Tags: paragraph, direction, left to right, ltr, text direction.
   static const pilcrowRight = _pilcrowRight;
 
-  /// Pill. Tags: medicine, medication, drug, prescription, tablet, pharmacy.
+  /// Pilgrim. Tags: haji, hajj, islam, mecca.
+  static const pilgrim = _pilgrim;
+
+  /// Pill. Tags: capsule, medicine, drug.
   static const pill = _pill;
 
-  /// Pill bottle. Tags: medicine, medication, prescription, drug, supplement, vitamin, capsule, jar.
+  /// Pillar. Tags: court house, court, justice, law, government, columns.
+  static const pillar = _pillar;
+
+  /// Pill bottle. Tags: pill, bottle, medicine, drug, pharmacy. Its details merge when filled: use it outlined.
   static const pillBottle = _pillBottle;
 
-  /// Pillow. Tags: pillowcase, extra, bedding, cushion, headrest, sheets, soft, support.
+  /// Pill bottle plus. Tags: bottle, medicine, pharmacy, pills, cross.
+  static const pillBottlePlus = _pillBottlePlus;
+
+  /// Pill bottle tablet. Tags: bottle, medicine, pharmacy, tablet, pills.
+  static const pillBottleTablet = _pillBottleTablet;
+
+  /// Pill off. Tags: pill, capsule, medicine, off, disabled.
+  static const pillOff = _pillOff;
+
+  /// Pillow. Tags: cushion, bed, sleep.
   static const pillow = _pillow;
 
-  /// Pin. Tags: save, map, lock, fix.
+  /// Pill pack. Tags: pills, tablets, blister, pack, medicine.
+  static const pillPack = _pillPack;
+
+  /// Pills. Tags: capsule, tablet, medicine, drugs, medication.
+  static const pills = _pills;
+
+  /// Pi minus. Tags: remove, pi, minus, constant.
+  static const piMinus = _piMinus;
+
+  /// Pin. Tags: thumbtack, pushpin, attach, pinned.
   static const pin = _pin;
 
-  /// Pineapple ring. Tags: segments, chunks, canned fruit, tinned fruit, juice, smoothie, cocktail, tropical.
-  static const pineappleRing = _pineappleRing;
+  /// Pinch in. Tags: gesture, pinch, zoom out, minimize, touch, shrink.
+  static const pinchIn = _pinchIn;
 
-  /// Pin off. Tags: unpin, map, unlock, unfix, unsave, remove.
+  /// Pinch in fist. Tags: gesture, pinch, zoom out, minimize, touch, shrink.
+  static const pinchInFist = _pinchInFist;
+
+  /// Pinch in open. Tags: gesture, pinch, zoom out, minimize, touch, shrink.
+  static const pinchInOpen = _pinchInOpen;
+
+  /// Pinch in point. Tags: gesture, pinch, zoom out, minimize, touch, shrink.
+  static const pinchInPoint = _pinchInPoint;
+
+  /// Pinch out. Tags: gesture, pinch, spread, zoom in, maximize, touch, expand.
+  static const pinchOut = _pinchOut;
+
+  /// Pinch out fist. Tags: gesture, pinch, spread, zoom in, maximize, touch, expand.
+  static const pinchOutFist = _pinchOutFist;
+
+  /// Pinch out open. Tags: gesture, pinch, spread, zoom in, maximize, touch, expand.
+  static const pinchOutOpen = _pinchOutOpen;
+
+  /// Pinch out point. Tags: gesture, pinch, spread, zoom in, maximize, touch, expand.
+  static const pinchOutPoint = _pinchOutPoint;
+
+  /// Pin off. Tags: pin, thumbtack, unpin, off.
   static const pinOff = _pinOff;
 
-  /// Pin safety. Tags: pinned, secured, fastened, fixed, baby, newborn, childproof, children.
-  static const pinSafety = _pinSafety;
+  /// Same icon as [safetyPin].
+  static const pinSafety = _safetyPin;
 
-  /// Pin safety open. Tags: unsafe, unsecured, unpinned, unfastened, loose, off, baby, newborn.
-  static const pinSafetyOpen = _pinSafetyOpen;
+  /// Same icon as [safetyPinOpen].
+  static const pinSafetyOpen = _safetyPinOpen;
 
-  /// Pipette. Tags: eye dropper, color picker, lab, chemistry.
+  /// Pin upright. Tags: pin, thumbtack, pushpin, attach, pinned.
+  static const pinUpright = _pinUpright;
+
+  /// Pipette. Tags: eyedropper, color, picker.
   static const pipette = _pipette;
 
-  /// Pizza. Tags: pie, quiche, food.
+  /// Pipette stripe. Tags: color picker, eyedropper, dropper, sample, colour.
+  static const pipetteStripe = _pipetteStripe;
+
+  /// Pipette ticks. Tags: eyedropper, color picker, dropper, lab.
+  static const pipetteTicks = _pipetteTicks;
+
+  /// Pi plus. Tags: insert pi, add pi, constant, symbol, formula.
+  static const piPlus = _piPlus;
+
+  /// Pizza. Tags: slice, food, italian.
   static const pizza = _pizza;
 
-  /// Plane. Tags: trip, airplane.
+  /// Pizza crust. Tags: pizza, slice, food, italian, crust.
+  static const pizzaCrust = _pizzaCrust;
+
+  /// Pizza cutter. Tags: pizza, cutter, wheel, kitchen.
+  static const pizzaCutter = _pizzaCutter;
+
+  /// Pizza whole. Tags: pizza, whole, food, italian. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const pizzaWhole = _pizzaWhole;
+
+  /// Pizza whole crust. Tags: pizza, whole, food, italian, crust.
+  static const pizzaWholeCrust = _pizzaWholeCrust;
+
+  /// Plane. Tags: airplane, flight, travel, aircraft, airport.
   static const plane = _plane;
 
-  /// Plane landing. Tags: arrival, plane, trip, airplane, landing.
+  /// Plane landing. Tags: airplane, landing, arrive, flight, airport.
   static const planeLanding = _planeLanding;
 
-  /// Planet. Tags: ringed, orbit, saturn, interplanetary, space, galaxy, universe, astro.
+  /// Plane landing left. Tags: airplane, landing, arrive, flight, airport.
+  static const planeLandingLeft = _planeLandingLeft;
+
+  /// Plane seat. Tags: airplane, seat, flight, chair, cabin.
+  static const planeSeat = _planeSeat;
+
+  /// Plane seat front. Tags: airplane, seat, flight, chair, cabin, front. Its details merge when filled: use it outlined.
+  static const planeSeatFront = _planeSeatFront;
+
+  /// Plane slim. Tags: plane, airplane, flight, travel, airport.
+  static const planeSlim = _planeSlim;
+
+  /// Plane slim landing. Tags: plane, landing, arrival, flight, airport.
+  static const planeSlimLanding = _planeSlimLanding;
+
+  /// Plane slim takeoff. Tags: plane, takeoff, departure, flight, airport.
+  static const planeSlimTakeoff = _planeSlimTakeoff;
+
+  /// Planet. Tags: ringed, orbit, saturn, space, galaxy, astro.
   static const planet = _planet;
 
-  /// Plane takeoff. Tags: departure, plane, trip, airplane, takeoff.
+  /// Plane takeoff. Tags: airplane, takeoff, depart, flight, airport.
   static const planeTakeoff = _planeTakeoff;
 
-  /// Plant pot. Tags: plant, leaf, nature, pot, houseplant, gardening, planter, decor.
+  /// Plane takeoff left. Tags: airplane, takeoff, depart, flight, airport.
+  static const planeTakeoffLeft = _planeTakeoffLeft;
+
+  /// Planet moon. Tags: saturn, moon, space, galaxy, astro, orbit.
+  static const planetMoon = _planetMoon;
+
+  /// Planet round. Tags: saturn, ringed, space, galaxy, astro, orbit.
+  static const planetRound = _planetRound;
+
+  /// Planet sparkle. Tags: ai, art, planet, orbit, sparkle, creative, generate.
+  static const planetSparkle = _planetSparkle;
+
+  /// Plane up. Tags: airplane, mode, flight, offline, aircraft.
+  static const planeUp = _planeUp;
+
+  /// Plane up off. Tags: airplane, mode, off, flight, offline, online, aircraft.
+  static const planeUpOff = _planeUpOff;
+
+  /// Plane wide. Tags: airplane, flight, travel, aircraft, airport.
+  static const planeWide = _planeWide;
+
+  /// Plant. Tags: leaves, growth, garden.
+  static const plant = _plant;
+
+  /// Plant pot. Tags: plant, pot, houseplant, garden.
   static const plantPot = _plantPot;
 
-  /// Play. Tags: music, audio, video, start, run.
+  /// Plant soil. Tags: plant, soil, sprout, growth, garden.
+  static const plantSoil = _plantSoil;
+
+  /// Plates. Tags: plate, dishes, kitchen, dinnerware.
+  static const plates = _plates;
+
+  /// Plate utensils. Tags: spoon, knife, plate, restaurant, dining, meal.
+  static const plateUtensils = _plateUtensils;
+
+  /// Play. Tags: start, media, video, audio.
   static const play = _play;
 
   /// Same icon as [circlePlay].
   static const playCircle = _circlePlay;
 
-  /// Playing card. Tags: deck, draw, deal, shuffle, chance, random, selection, tabletop.
-  static const playingCard = _playingCard;
+  /// Playground slide. Tags: slide, playground, kids, park.
+  static const playgroundSlide = _playgroundSlide;
 
-  /// Playing cards. Tags: deck, stack, shuffle, deal, draw, hand, tabletop, planning poker.
-  static const playingCards = _playingCards;
+  /// Playing cards diamond. Tags: cards, deck, diamond, poker, game. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const playingCardsDiamond = _playingCardsDiamond;
 
-  /// Playing cards fan. Tags: deck, fan, spread, hand, deal, dealt, draw, shuffle.
-  static const playingCardsFan = _playingCardsFan;
+  /// Playing cards heart. Tags: cards, deck, heart, poker, game. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const playingCardsHeart = _playingCardsHeart;
 
-  /// Play off. Tags: audio, video, music, start, run, off, disabled, blocked.
+  /// Play off. Tags: audio, video, music, start, run, off, disabled, blocked. Its details merge when filled: use it outlined.
   static const playOff = _playOff;
 
-  /// Plug. Tags: electricity, energy, electronics, socket, outlet, power, voltage, current.
+  /// Plug. Tags: power, electric, cable.
   static const plug = _plug;
 
-  /// Plug 2. Tags: electricity, energy, socket, outlet.
+  /// Plug 2. Tags: plug, power, electric, cable.
   static const plug2 = _plug2;
 
-  /// Plug zap. Tags: electricity, energy, electronics, charge, charging, battery, connect.
+  /// Plug connect. Tags: connect, plug, socket, power, link, connection.
+  static const plugConnect = _plugConnect;
+
+  /// Plug socket. Tags: plug, socket, connected, power, cable.
+  static const plugSocket = _plugSocket;
+
+  /// Plug zap. Tags: plug, power, charge, lightning, electric.
   static const plugZap = _plugZap;
 
-  /// Plus. Tags: add, new, increase, increment, positive, calculate, toolbar, crosshair.
+  /// Plug zap inside. Tags: electric plugs, power, energy, charge, connect.
+  static const plugZapInside = _plugZapInside;
+
+  /// Plus. Tags: add, new, create, sign, increase, large.
   static const plus = _plus;
 
-  /// Pocket knife. Tags: swiss army knife, penknife, multi-tool, multitask, blade, cutter, gadget, corkscrew.
+  /// Plus minus. Tags: plus, minus, plusminus, tolerance, diff, compare, changes, version.
+  static const plusMinus = _plusMinus;
+
+  /// Plus slash minus. Tags: plus, minus, slash, math, calculator.
+  static const plusSlashMinus = _plusSlashMinus;
+
+  /// Pocket knife. Tags: pocket, knife, swiss, tool, camping.
   static const pocketKnife = _pocketKnife;
 
-  /// Podium. Tags: award, stage, winner, celebration, performance, medal, success, achievement.
-  static const podium = _podium;
+  /// Podcast. Tags: microphone, broadcast, audio, show.
+  static const podcast = _podcast;
 
-  /// Pointer. Tags: mouse.
+  /// Podium star. Tags: ranking, podium, winner, leaderboard, star.
+  static const podiumStar = _podiumStar;
+
+  /// Pointer. Tags: hand, click, finger, touch.
   static const pointer = _pointer;
 
-  /// Pointer off. Tags: mouse.
+  /// Pointer move horizontal. Tags: drag, swipe, pointer, finger, horizontal, gesture.
+  static const pointerMoveHorizontal = _pointerMoveHorizontal;
+
+  /// Pointer move horizontal thumb. Tags: drag, swipe, pointer, hand, horizontal, gesture.
+  static const pointerMoveHorizontalThumb = _pointerMoveHorizontalThumb;
+
+  /// Pointer off. Tags: pointer, hand, click, finger, disabled, off.
   static const pointerOff = _pointerOff;
 
-  /// Pond. Tags: marsh, bog, pool, lake, lily pads, water lillies, lotus flowers, leaves.
-  static const pond = _pond;
+  /// Pointer path. Tags: drag, swipe, pointer, finger, path, gesture.
+  static const pointerPath = _pointerPath;
 
-  /// Popcorn. Tags: cinema, movies, films, salted, sweet, sugar, candy, snack.
+  /// Pointer path thumb. Tags: drag, swipe, pointer, hand, path, gesture. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const pointerPathThumb = _pointerPathThumb;
+
+  /// Pointer swipe left. Tags: drag left, swipe, pointer, finger, gesture, touch.
+  static const pointerSwipeLeft = _pointerSwipeLeft;
+
+  /// Pointer swipe left fingers. Tags: drag left, swipe, pointer, finger, fingers, gesture.
+  static const pointerSwipeLeftFingers = _pointerSwipeLeftFingers;
+
+  /// Pointer swipe left thumb. Tags: drag left, swipe, pointer, hand, gesture, touch.
+  static const pointerSwipeLeftThumb = _pointerSwipeLeftThumb;
+
+  /// Pointer swipe left thumb fingers. Tags: drag left, swipe, pointer, hand, fingers, gesture.
+  static const pointerSwipeLeftThumbFingers = _pointerSwipeLeftThumbFingers;
+
+  /// Pointer swipe right. Tags: drag right, swipe, pointer, finger, gesture, touch.
+  static const pointerSwipeRight = _pointerSwipeRight;
+
+  /// Pointer swipe right fingers. Tags: drag right, swipe, pointer, finger, fingers, gesture.
+  static const pointerSwipeRightFingers = _pointerSwipeRightFingers;
+
+  /// Pointer swipe right thumb. Tags: drag right, swipe, pointer, hand, gesture, touch.
+  static const pointerSwipeRightThumb = _pointerSwipeRightThumb;
+
+  /// Pointer swipe right thumb fingers. Tags: drag right, swipe, pointer, hand, fingers, gesture.
+  static const pointerSwipeRightThumbFingers = _pointerSwipeRightThumbFingers;
+
+  /// Pointer thumb. Tags: hand, cursor, click, tap, select, touch, pointer, finger.
+  static const pointerThumb = _pointerThumb;
+
+  /// Police badge. Tags: police, badge, star, sheriff, law.
+  static const policeBadge = _policeBadge;
+
+  /// Police station. Tags: police, station, building, law.
+  static const policeStation = _policeStation;
+
+  /// Same icon as [wavesLadder].
+  static const pool = _wavesLadder;
+
+  /// Pool table. Tags: pool, table, billiards, game, snooker.
+  static const poolTable = _poolTable;
+
+  /// Poop. Tags: emoji, pile.
+  static const poop = _poop;
+
+  /// Popcorn. Tags: cinema, snack, movie.
   static const popcorn = _popcorn;
 
-  /// Popsicle. Tags: ice lolly, ice cream, sweet, food.
+  /// Popsicle. Tags: ice, lolly, dessert.
   static const popsicle = _popsicle;
 
-  /// Pound sterling. Tags: currency, money, payment.
+  /// Post box. Tags: mailbox, letterbox, pillar box, post, mail, street.
+  static const postBox = _postBox;
+
+  /// Pos terminal. Tags: cashier, checkout, point of sale, till, payment, terminal.
+  static const posTerminal = _posTerminal;
+
+  /// Potion. Tags: flask, magic, bottle.
+  static const potion = _potion;
+
+  /// Pouch. Tags: packaging, bag, pack, product.
+  static const pouch = _pouch;
+
+  /// Pound sterling. Tags: pound, sterling, currency, gbp, money.
   static const poundSterling = _poundSterling;
 
-  /// Pound sterling circle. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
-  static const poundSterlingCircle = _poundSterlingCircle;
+  /// Pound sterling arrow left. Tags: pound, receive, income, currency, gbp.
+  static const poundSterlingArrowLeft = _poundSterlingArrowLeft;
 
-  /// Pound sterling square. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
+  /// Pound sterling arrow right. Tags: pound, send, transfer, currency, gbp.
+  static const poundSterlingArrowRight = _poundSterlingArrowRight;
+
+  /// Same icon as [circlePoundSterling].
+  static const poundSterlingCircle = _circlePoundSterling;
+
+  /// Pound sterling square. Tags: pound, sterling, square, currency, gbp.
   static const poundSterlingSquare = _poundSterlingSquare;
 
-  /// Power. Tags: on, off, device, switch, toggle, binary, boolean, reboot.
+  /// Power. Tags: on, off, switch, shutdown, shut, down, turn, device.
   static const power = _power;
 
-  /// Power off. Tags: on, off, device, switch.
+  /// Power off. Tags: power, off, disabled, switch.
   static const powerOff = _powerOff;
 
-  /// Pram. Tags: baby, newborn, children, infant, kids, toddler, mother, mum.
-  static const pram = _pram;
+  /// Power plant. Tags: factory, cooling tower, nuclear, energy, industry, smoke.
+  static const powerPlant = _powerPlant;
 
-  /// Presentation. Tags: screen, whiteboard, marker pens, markers, blackboard, chalk, easel, school.
+  /// Prayer prostration. Tags: sujood, prayer, prostration, islam, worship.
+  static const prayerProstration = _prayerProstration;
+
+  /// Prayer rug. Tags: prayer, rug, mat, islam, salah.
+  static const prayerRug = _prayerRug;
+
+  /// Prayer rug rolled. Tags: prayer, rug, mat, islam, salah, rolled.
+  static const prayerRugRolled = _prayerRugRolled;
+
+  /// Prescription. Tags: rx, medicine, pharmacy.
+  static const prescription = _prescription;
+
+  /// Presentation. Tags: board, whiteboard, slides, meeting.
   static const presentation = _presentation;
 
-  /// Pretzel. Tags: bakery, cooking, food, pastry.
-  static const pretzel = _pretzel;
+  /// Presentation base. Tags: presentation, board, whiteboard, slides, meeting.
+  static const presentationBase = _presentationBase;
 
-  /// Printer. Tags: fax, office, device.
+  /// Presentation bitcoin. Tags: bitcoin, presentation, board, crypto, btc.
+  static const presentationBitcoin = _presentationBitcoin;
+
+  /// Presentation chart bar. Tags: presentation, bar, chart, board, report, analytics.
+  static const presentationChartBar = _presentationChartBar;
+
+  /// Presentation chart bar base. Tags: presentation, bar, chart, board, report, analytics.
+  static const presentationChartBarBase = _presentationChartBarBase;
+
+  /// Presentation chart line. Tags: presentation, line, chart, board, report, analytics.
+  static const presentationChartLine = _presentationChartLine;
+
+  /// Presentation chart line base. Tags: presentation, line, chart, board, report, analytics.
+  static const presentationChartLineBase = _presentationChartLineBase;
+
+  /// Presentation flat. Tags: presentation, board, whiteboard, slides, meeting.
+  static const presentationFlat = _presentationFlat;
+
+  /// Presentation knob. Tags: presentation, board, whiteboard, slides, meeting.
+  static const presentationKnob = _presentationKnob;
+
+  /// Presentation knob post. Tags: presentation, board, whiteboard, slides, meeting.
+  static const presentationKnobPost = _presentationKnobPost;
+
+  /// Presentation screen. Tags: presentation, board, whiteboard, slides, meeting.
+  static const presentationScreen = _presentationScreen;
+
+  /// Presentation tripod. Tags: presentation, board, whiteboard, slides, meeting.
+  static const presentationTripod = _presentationTripod;
+
+  /// Printer. Tags: print, paper, office.
   static const printer = _printer;
 
-  /// Printer 3d. Tags: model, hardware, technology, device, factory, manufacturing, art, extruder.
+  /// Printer 3d. Tags: printer, 3d, print, additive, manufacturing, 3d printing. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const printer3d = _printer3d;
 
-  /// Printer check. Tags: fax, office, device, success, printed.
+  /// Printer check. Tags: printer, print, done, check.
   static const printerCheck = _printerCheck;
 
-  /// Printer x. Tags: fax, office, device, cross, cancel, remove, error.
+  /// Printer off. Tags: printer, print, disabled, off.
+  static const printerOff = _printerOff;
+
+  /// Printer x. Tags: printer, print, error, x, cancel.
   static const printerX = _printerX;
 
-  /// Projector. Tags: cinema, film, movie, home video, presentation, slideshow, office, meeting.
+  /// Prism. Tags: triangular, optics, geometry.
+  static const prism = _prism;
+
+  /// Prism light. Tags: prism, light, dispersion, optics, rainbow.
+  static const prismLight = _prismLight;
+
+  /// Prison. Tags: jail, cell, bars, lock.
+  static const prison = _prison;
+
+  /// Prison guard. Tags: prison, guard, officer, person, security.
+  static const prisonGuard = _prisonGuard;
+
+  /// Projector. Tags: presentation, cinema, beam.
   static const projector = _projector;
 
-  /// Proportions. Tags: screens, sizes, rotate, rotation, adjust, aspect ratio, widescreen, resolution.
+  /// Projector lens. Tags: projector, presentation, cinema, lens, beam.
+  static const projectorLens = _projectorLens;
+
+  /// Proportions. Tags: aspect, ratio, size, screen.
   static const proportions = _proportions;
+
+  /// Pulley. Tags: lift, hoist, rope, tool. Its details merge when filled: use it outlined.
+  static const pulley = _pulley;
 
   /// Same icon as [gitPullRequest].
   static const pullRequest = _gitPullRequest;
 
-  /// Pumpkin. Tags: halloween, horror, creepy, spooky, frightening, fruit, spice.
+  /// Pumpkin. Tags: halloween, vegetable, autumn.
   static const pumpkin = _pumpkin;
 
-  /// Puzzle. Tags: component, module, part, piece.
+  /// Punching ball. Tags: punching, ball, boxing, training, hanging.
+  static const punchingBall = _punchingBall;
+
+  /// Punching ball stand. Tags: punching, ball, boxing, training, stand.
+  static const punchingBallStand = _punchingBallStand;
+
+  /// Push up bar. Tags: push, up, bars, fitness, gym, workout.
+  static const pushUpBar = _pushUpBar;
+
+  /// Puzzle. Tags: piece, plugin, extension, game.
   static const puzzle = _puzzle;
 
-  /// Pyramid. Tags: prism, triangle, triangular, hierarchy, structure, geometry, ancient, egyptian.
+  /// Pylon. Tags: electric tower, power line, transmission, electricity, utility. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const pylon = _pylon;
+
+  /// Pylon cap. Tags: electric tower, power line, transmission, electricity, utility.
+  static const pylonCap = _pylonCap;
+
+  /// Pyramid. Tags: shape, geometry.
   static const pyramid = _pyramid;
 
-  /// Qr code. Tags: barcode, scan, link, url, information, digital.
+  /// Pyramid bands. Tags: pyramid, structure, hierarchy, levels, bands.
+  static const pyramidBands = _pyramidBands;
+
+  /// Pyramid sections. Tags: pyramid, maslow, hierarchy, levels, needs.
+  static const pyramidSections = _pyramidSections;
+
+  /// Pyramid stacked. Tags: pyramid, structure, hierarchy, levels, stacked.
+  static const pyramidStacked = _pyramidStacked;
+
+  /// Pyramid stepped. Tags: pyramid, mayan, temple, landmark, ancient, monument.
+  static const pyramidStepped = _pyramidStepped;
+
+  /// Qr code. Tags: qr, code, scan, barcode.
   static const qrCode = _qrCode;
 
-  /// Quote. Tags: quotation.
+  /// Quatrefoil. Tags: shapes, cross, blob, four lobes, puzzle.
+  static const quatrefoil = _quatrefoil;
+
+  /// Quote. Tags: quotation, marks, citation.
   static const quote = _quote;
 
-  /// Rabbit. Tags: animal, rodent, pet, pest, bunny, hare, fast, speed.
+  /// Quote 66. Tags: quote, quotation, 66, opening quote, blockquote.
+  static const quote66 = _quote66;
+
+  /// Quote 99. Tags: quote, quotation, marks, citation, blockquote.
+  static const quote99 = _quote99;
+
+  /// Quote block. Tags: block quote, quote, citation, indent, left to right, text. Mirrors in right-to-left text.
+  static const quoteBlock = _quoteBlock;
+
+  /// Rabbit. Tags: bunny, hare, pet, animal.
   static const rabbit = _rabbit;
 
   /// Radar. Tags: scan, sonar, detect, find, locate.
   static const radar = _radar;
 
-  /// Radiation. Tags: radioactive, nuclear, fallout, waste, atomic, physics, particle, element.
+  /// Radar arcs. Tags: radial, arcs, rings, radar, sonar, concentric.
+  static const radarArcs = _radarArcs;
+
+  /// Radar circle. Tags: radar, scan, sonar, closed circle, detect.
+  static const radarCircle = _radarCircle;
+
+  /// Radar dot. Tags: radar, scan, target, concentric, sonar.
+  static const radarDot = _radarDot;
+
+  /// Radiation. Tags: radioactive, nuclear, atomic, hazard.
   static const radiation = _radiation;
 
-  /// Radical. Tags: calculate, formula, math, operator, root, square, symbol.
+  /// Radiation ring. Tags: nuclear, power, atomic, radioactive, energy.
+  static const radiationRing = _radiationRing;
+
+  /// Radical. Tags: square root, root, math, sqrt.
   static const radical = _radical;
 
-  /// Radio. Tags: signal, broadcast, connectivity, live, frequency.
+  /// Radical x. Tags: root, radical, square root, x, math.
+  static const radicalX = _radicalX;
+
+  /// Radio. Tags: broadcast, live, signal, streaming, waves.
   static const radio = _radio;
 
-  /// Radio off. Tags: signal, broadcast, connectivity, live, frequency.
+  /// Radio button. Tags: option, select, form, ring.
+  static const radioButton = _radioButton;
+
+  /// Radio dial. Tags: radio, dial, tuner, antenna, music.
+  static const radioDial = _radioDial;
+
+  /// Radio off. Tags: signal off, broadcast off, no signal, mute. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const radioOff = _radioOff;
 
-  /// Radio receiver. Tags: device, music, connect.
+  /// Radio receiver. Tags: radio, receiver, antenna, music, broadcast.
   static const radioReceiver = _radioReceiver;
 
-  /// Radio tower. Tags: signal, broadcast, connectivity, live, frequency.
+  /// Radio tower. Tags: antenna, broadcast, signal, mast.
   static const radioTower = _radioTower;
 
-  /// Radius. Tags: shape, circle, geometry, trigonometry, radii, calculate, measure, size.
+  /// Radio tower frame. Tags: internet antenna, signal, wireless, broadcast, lattice tower.
+  static const radioTowerFrame = _radioTowerFrame;
+
+  /// Radio tower simple. Tags: cellular network, antenna, broadcast, signal, cell tower, mast.
+  static const radioTowerSimple = _radioTowerSimple;
+
+  /// Radio tower simple off. Tags: cellular network, antenna, offline, no signal, cell tower, mast.
+  static const radioTowerSimpleOff = _radioTowerSimpleOff;
+
+  /// Radio wide. Tags: radio, boombox, stereo, antenna, music.
+  static const radioWide = _radioWide;
+
+  /// Radius. Tags: circle, geometry, measure, size.
   static const radius = _radius;
 
-  /// Rainbow. Tags: colors, colours, spectrum, light, prism, arc, clear, sunshine.
+  /// Rail symbol. Tags: rail, railway, train, tracks, exchange.
+  static const railSymbol = _railSymbol;
+
+  /// Rainbow. Tags: colors, spectrum, sky, weather.
   static const rainbow = _rainbow;
 
-  /// Rat. Tags: mouse, mice, gerbil, rodent, pet, pest, plague, disease.
+  /// Rat. Tags: mouse, rodent, animal.
   static const rat = _rat;
 
-  /// Ratio. Tags: screens, sizes, rotate, rotation, adjust, aspect ratio, proportions, widescreen. Its details merge when filled: use it outlined.
-  static const ratio = _ratio;
-
-  /// Razor. Tags: shaving, shaver, trimmer, styler, edger, beard, stubble, mens.
-  static const razor = _razor;
-
-  /// Razor blade. Tags: cut, slice, shaving, shave, trim, style, edge, beard.
-  static const razorBlade = _razorBlade;
-
-  /// Receipt. Tags: bill, voucher, slip, check, counterfoil, currency, dollar, usd.
+  /// Receipt. Tags: dollar, invoice, bill, payment.
   static const receipt = _receipt;
 
-  /// Receipt cent. Tags: bill, voucher, slip, check, counterfoil, currency, cents, dollar.
+  /// Receipt calculator clock. Tags: estimate, quote, pending, invoice, time.
+  static const receiptCalculatorClock = _receiptCalculatorClock;
+
+  /// Receipt calculator dollar. Tags: estimate, quote, invoice, price, bill.
+  static const receiptCalculatorDollar = _receiptCalculatorDollar;
+
+  /// Receipt cent. Tags: receipt, cent, invoice, bill.
   static const receiptCent = _receiptCent;
 
-  /// Receipt euro. Tags: bill, voucher, slip, check, counterfoil, currency.
+  /// Receipt clock. Tags: transaction history, receipt, clock, statement, log.
+  static const receiptClock = _receiptClock;
+
+  /// Receipt euro. Tags: receipt, euro, invoice, bill.
   static const receiptEuro = _receiptEuro;
 
-  /// Receipt indian rupee. Tags: bill, voucher, slip, check, counterfoil, currency, inr.
+  /// Receipt flat bitcoin. Tags: bitcoin, receipt, bill, crypto, btc.
+  static const receiptFlatBitcoin = _receiptFlatBitcoin;
+
+  /// Receipt flat dollar. Tags: receipt, dollar, invoice, bill, round top.
+  static const receiptFlatDollar = _receiptFlatDollar;
+
+  /// Receipt flat percent. Tags: coupon, discount, voucher, sale, percent, receipt.
+  static const receiptFlatPercent = _receiptFlatPercent;
+
+  /// Receipt flat text. Tags: invoice, bill, payment, receipt, purchase.
+  static const receiptFlatText = _receiptFlatText;
+
+  /// Receipt indian rupee. Tags: receipt, rupee, invoice, bill.
   static const receiptIndianRupee = _receiptIndianRupee;
 
-  /// Receipt japanese yen. Tags: bill, voucher, slip, check, counterfoil, currency, jpy.
+  /// Receipt japanese yen. Tags: receipt, yen, invoice, bill.
   static const receiptJapaneseYen = _receiptJapaneseYen;
 
-  /// Receipt pound sterling. Tags: bill, voucher, slip, check, counterfoil, british, currency, gbp.
+  /// Receipt percent. Tags: coupon, discount, voucher, sale, percent, zigzag.
+  static const receiptPercent = _receiptPercent;
+
+  /// Receipt plus. Tags: add, invoice, receipt, plus, bill, new.
+  static const receiptPlus = _receiptPlus;
+
+  /// Receipt pound sterling. Tags: receipt, pound, invoice, bill.
   static const receiptPoundSterling = _receiptPoundSterling;
 
-  /// Receipt russian ruble. Tags: bill, voucher, slip, check, counterfoil, currency, rub.
+  /// Receipt roll. Tags: invoice, bill, payment, receipt, torn edge, lines.
+  static const receiptRoll = _receiptRoll;
+
+  /// Receipt roll dollar. Tags: invoice, bill, dollar, payment, receipt, roll.
+  static const receiptRollDollar = _receiptRollDollar;
+
+  /// Receipt roll dollar text. Tags: invoice, bill, dollar, payment, receipt, roll, lines. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const receiptRollDollarText = _receiptRollDollarText;
+
+  /// Receipt russian ruble. Tags: receipt, ruble, invoice, bill.
   static const receiptRussianRuble = _receiptRussianRuble;
 
-  /// Receipt text. Tags: bill, voucher, slip, check, counterfoil, details, small print, terms.
+  /// Receipt swiss franc. Tags: receipt, franc, invoice, bill.
+  static const receiptSwissFranc = _receiptSwissFranc;
+
+  /// Receipt text. Tags: receipt, text, invoice, bill, lines.
   static const receiptText = _receiptText;
 
-  /// Receipt turkish lira. Tags: bill, voucher, slip, check, counterfoil, currency, try.
+  /// Receipt text dollar. Tags: invoice, bill, dollar, payment, receipt. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const receiptTextDollar = _receiptTextDollar;
+
+  /// Receipt turkish lira. Tags: receipt, lira, invoice, bill.
   static const receiptTurkishLira = _receiptTurkishLira;
 
-  /// Rectangle circle. Tags: compose, keyboard, key, button. Its details merge when filled: use it outlined.
+  /// Rectangle audio lines sparkle. Tags: ai, voice, generator, audio, waveform, sparkle, speech.
+  static const rectangleAudioLinesSparkle = _rectangleAudioLinesSparkle;
+
+  /// Rectangle circle. Tags: rectangle, circle, shape, split. Its details merge when filled: use it outlined.
   static const rectangleCircle = _rectangleCircle;
 
-  /// Rectangle ellipsis. Tags: login, password, authenticate, 2fa, field, fill, ellipsis, et cetera.
+  /// Rectangle ellipsis. Tags: rectangle, ellipsis, password, input, more.
   static const rectangleEllipsis = _rectangleEllipsis;
 
-  /// Rectangle goggles. Tags: vr, virtual, augmented, reality, headset, goggles.
+  /// Rectangle goggles. Tags: goggles, vr, headset, glasses.
   static const rectangleGoggles = _rectangleGoggles;
 
-  /// Rectangle horizontal. Tags: rectangle, aspect ratio, horizontal, shape.
+  /// Rectangle goggles strap. Tags: vr glasses, virtual reality, goggles, headset, augmented, immersive.
+  static const rectangleGogglesStrap = _rectangleGogglesStrap;
+
+  /// Rectangle horizontal. Tags: rectangle, horizontal, landscape, shape.
   static const rectangleHorizontal = _rectangleHorizontal;
 
-  /// Rectangle vertical. Tags: rectangle, aspect ratio, vertical, shape.
+  /// Rectangle horizontal stack. Tags: view agenda, agenda, list, rows, cards, stacked, layout.
+  static const rectangleHorizontalStack = _rectangleHorizontalStack;
+
+  /// Rectangle key. Tags: authorized, access, key, permission, license, credentials.
+  static const rectangleKey = _rectangleKey;
+
+  /// Rectangle play sparkle. Tags: ai video, generate video, play, movie, clip, sparkles, video ai.
+  static const rectanglePlaySparkle = _rectanglePlaySparkle;
+
+  /// Rectangle plus minus. Tags: plus, minus, zoom, stepper, rectangle.
+  static const rectanglePlusMinus = _rectanglePlusMinus;
+
+  /// Rectangle rotate to landscape. Tags: orientation, rotate, landscape, portrait, screen.
+  static const rectangleRotateToLandscape = _rectangleRotateToLandscape;
+
+  /// Rectangle rotate to portrait. Tags: orientation, rotate, landscape, portrait, screen.
+  static const rectangleRotateToPortrait = _rectangleRotateToPortrait;
+
+  /// Rectangles cross. Tags: ratio, aspect ratio, rectangles, crossed, proportion. Its details merge when filled: use it outlined.
+  static const rectanglesCross = _rectanglesCross;
+
+  /// Rectangles swap. Tags: adjust, position, swap, arrange, rectangles, shapes.
+  static const rectanglesSwap = _rectanglesSwap;
+
+  /// Rectangle terminal. Tags: terminal, command line, console, shell, prompt, cli.
+  static const rectangleTerminal = _rectangleTerminal;
+
+  /// Rectangle vertical. Tags: rectangle, vertical, portrait, shape.
   static const rectangleVertical = _rectangleVertical;
 
-  /// Recycle. Tags: sustainability, salvage, arrows.
+  /// Recycle. Tags: recycling, arrows, sustainability.
   static const recycle = _recycle;
 
-  /// Redo. Tags: undo, rerun, history. Mirrors in right-to-left text.
+  /// Recycle circle. Tags: recycle, circular arrows, cycle, reuse.
+  static const recycleCircle = _recycleCircle;
+
+  /// Recycle closed. Tags: recycle, recycling, arrows, eco, reuse. Its details merge when filled: use it outlined.
+  static const recycleClosed = _recycleClosed;
+
+  /// Recycle leaf. Tags: recycle, leaf, eco, green, sustainability.
+  static const recycleLeaf = _recycleLeaf;
+
+  /// Recycle open. Tags: recycle, recycling, arrows, eco, reuse.
+  static const recycleOpen = _recycleOpen;
+
+  /// Redo. Tags: rerun, history, rotate, clockwise, curved arrow. Mirrors in right-to-left text.
   static const redo = _redo;
 
-  /// Redo 2. Tags: undo, rerun, history. Mirrors in right-to-left text.
+  /// Redo 2. Tags: redo, forward, history, arrow. Mirrors in right-to-left text.
   static const redo2 = _redo2;
 
-  /// Redo dot. Tags: redo, history, step, over, forward. Mirrors in right-to-left text.
+  /// Redo dot. Tags: redo, step over, forward, history. Mirrors in right-to-left text.
   static const redoDot = _redoDot;
 
-  /// Reel thread. Tags: needle, sewing, stitch, embroidery, waeve, woven, fabric, material.
-  static const reelThread = _reelThread;
+  /// Same icon as [spool].
+  static const reelThread = _spool;
 
   /// Same icon as [refreshCw].
   static const refresh = _refreshCw;
 
-  /// Refresh ccw. Tags: arrows, rotate, reload, rerun, synchronise, synchronize, circular, cycle.
+  /// Refresh ccw. Tags: refresh, reload, sync, counter-clockwise, chevron arrows.
   static const refreshCcw = _refreshCcw;
 
-  /// Refresh ccw dot. Tags: arrows, rotate, reload, synchronise, synchronize, circular, cycle, issue.
+  /// Refresh ccw dot. Tags: refresh, sync, dot, counter-clockwise, clockwise.
   static const refreshCcwDot = _refreshCcwDot;
 
-  /// Refresh cw. Tags: rotate, reload, rerun, synchronise, synchronize, arrows, circular, cycle.
+  /// Refresh ccw sparkle. Tags: ai, auto, rotate, refresh, sparkle, cycle.
+  static const refreshCcwSparkle = _refreshCcwSparkle;
+
+  /// Refresh cw. Tags: refresh, reload, sync, clockwise, arrows.
   static const refreshCw = _refreshCw;
 
-  /// Refresh cw off. Tags: rotate, reload, rerun, synchronise, synchronize, arrows, circular, cycle.
+  /// Refresh cw off. Tags: refresh off, sync off, disabled, reload.
   static const refreshCwOff = _refreshCwOff;
 
-  /// Refrigerator. Tags: frigerator, fridge, freezer, cooler, icebox, chiller, cold storage.
+  /// Refresh cw round. Tags: exchange, swap, sync, reload, cycle, rotate.
+  static const refreshCwRound = _refreshCwRound;
+
+  /// Refresh cw zap. Tags: sustainable energy, renewable, green energy, power, recycle.
+  static const refreshCwZap = _refreshCwZap;
+
+  /// Refrigerator. Tags: fridge, freezer, kitchen, appliance, cold.
   static const refrigerator = _refrigerator;
 
-  /// Refrigerator freezer. Tags: fridge, freezer, cooler, icebox, chiller, cold storage, appliances.
-  static const refrigeratorFreezer = _refrigeratorFreezer;
+  /// Same icon as [refrigerator].
+  static const refrigeratorFreezer = _refrigerator;
 
-  /// Regex. Tags: search, text, code.
+  /// Regex. Tags: regular expression, pattern, search.
   static const regex = _regex;
+
+  /// Registered. Tags: trademark, r, circle.
+  static const registered = _registered;
+
+  /// Remote. Tags: remote control, tv, controller.
+  static const remote = _remote;
 
   /// Same icon as [circleMinus].
   static const removeCircle = _circleMinus;
 
-  /// Remove formatting. Tags: text, font, typography, format, x, remove, delete, times.
+  /// Remove formatting. Tags: clear format, text, italic, clear formatting, format, remove, reset.
   static const removeFormatting = _removeFormatting;
 
-  /// Remove formatting square. Tags: delete, clear, cancel, normalise, normalize, styling, plain text, font.
-  static const removeFormattingSquare = _removeFormattingSquare;
-
-  /// Repeat. Tags: loop, arrows.
+  /// Repeat. Tags: loop, reload, cycle, horizontal, refresh.
   static const repeat = _repeat;
 
-  /// Repeat 1. Tags: replay.
+  /// Repeat 1. Tags: repeat one, loop, replay, single.
   static const repeat1 = _repeat1;
 
-  /// Repeat 2. Tags: arrows, retweet, repost, share, repeat, loop.
+  /// Repeat 1 corner. Tags: repeat one, loop, replay, single.
+  static const repeat1Corner = _repeat1Corner;
+
+  /// Repeat 2. Tags: repost, retweet, share, repeat, loop.
   static const repeat2 = _repeat2;
 
   /// Repeat off. Tags: loop, arrows, recurring, again.
   static const repeatOff = _repeatOff;
 
-  /// Replace. Tags: search, substitute, swap, change.
+  /// Repeat round. Tags: repeat, loop, arrows, rerun.
+  static const repeatRound = _repeatRound;
+
+  /// Repeat round minus. Tags: repeat off, loop, disabled, minus.
+  static const repeatRoundMinus = _repeatRoundMinus;
+
+  /// Repeat vertical. Tags: repeat, loop, reload, cycle, vertical, refresh.
+  static const repeatVertical = _repeatVertical;
+
+  /// Replace. Tags: swap, find and replace.
   static const replace = _replace;
 
-  /// Replace all. Tags: search, substitute, swap, change.
+  /// Replace all. Tags: swap, find and replace.
   static const replaceAll = _replaceAll;
 
-  /// Reply. Tags: email. Mirrors in right-to-left text.
+  /// Replace sparkle. Tags: ai, replace, swap, sparkle, substitute.
+  static const replaceSparkle = _replaceSparkle;
+
+  /// Replay. Tags: play, restart, rewatch.
+  static const replay = _replay;
+
+  /// Reply. Tags: respond, answer, email. Mirrors in right-to-left text.
   static const reply = _reply;
 
-  /// Reply all. Tags: email. Mirrors in right-to-left text.
+  /// Reply all. Tags: respond, answer, email. Mirrors in right-to-left text.
   static const replyAll = _replyAll;
+
+  /// Reply shape. Tags: back, answer, respond, undo, arrow. Mirrors in right-to-left text.
+  static const replyShape = _replyShape;
+
+  /// Report card. Tags: grades, school, report, card, student, a.
+  static const reportCard = _reportCard;
+
+  /// Resize horizontal. Tags: resize, horizontal, width, drag, split.
+  static const resizeHorizontal = _resizeHorizontal;
 
   /// Same icon as [utensils].
   static const restaurant = _utensils;
 
-  /// Rewind. Tags: music.
+  /// Rewind. Tags: backward, media, fast, reverse.
   static const rewind = _rewind;
 
-  /// Ribbon. Tags: awareness, strip, band, tape, strap, cordon. Its details merge when filled: use it outlined.
+  /// Rewind round. Tags: rewind, back, media, previous.
+  static const rewindRound = _rewindRound;
+
+  /// Ribbon. Tags: aids, awareness, hiv, cause, support.
   static const ribbon = _ribbon;
 
-  /// Road. Tags: street, highway, route, path, transport, traffic, drive, map.
-  static const road = _road;
+  /// Ribbon bow. Tags: certificate, award, bow, prize, badge.
+  static const ribbonBow = _ribbonBow;
 
-  /// Same icon as [bot].
-  static const robot = _bot;
+  /// Ribbon long. Tags: ribbon, awareness, support, cause.
+  static const ribbonLong = _ribbonLong;
 
-  /// Robot arm. Tags: mechanical, automation, factory, manufacture, technology, cyborg, industrial, hardware.
-  static const robotArm = _robotArm;
+  /// Right angle. Tags: 90 degrees, angle, geometry, axes.
+  static const rightAngle = _rightAngle;
 
-  /// Robot vacuum. Tags: appliance, cleaning, household, housekeeping, tool, maintenance, smarthome, sweeping.
-  static const robotVacuum = _robotVacuum;
+  /// Rings heart. Tags: wedding, marriage, rings, engagement, couple, love, heart. Its details merge when filled: use it outlined.
+  static const ringsHeart = _ringsHeart;
 
-  /// Rocket. Tags: release, boost, launch, space, version.
+  /// Road horizontal. Tags: road, horizontal, street, lane, highway.
+  static const roadHorizontal = _roadHorizontal;
+
+  /// Road navigation. Tags: navigator, road, lane, route, driving, arrow.
+  static const roadNavigation = _roadNavigation;
+
+  /// Road pen. Tags: edit road, road, lanes, map editing, pen.
+  static const roadPen = _roadPen;
+
+  /// Road vertical. Tags: road, vertical, street, lane, highway.
+  static const roadVertical = _roadVertical;
+
+  /// Robot. Tags: bot, machine, automation, ai, android.
+  static const robot = _robot;
+
+  /// Rocket. Tags: launch, startup, boost, ship.
   static const rocket = _rocket;
 
-  /// Rocking chair. Tags: chair, furniture, seat, comfort, relax.
+  /// Rocket shuttle. Tags: rocket, launch, release, boost, space.
+  static const rocketShuttle = _rocketShuttle;
+
+  /// Rocket trails. Tags: rocket, launch, speed, trails, space.
+  static const rocketTrails = _rocketTrails;
+
+  /// Rocket upright. Tags: rocket, launch, upright, space, startup.
+  static const rocketUpright = _rocketUpright;
+
+  /// Rocket upright wide. Tags: rocket, launch, startup, upright, boost.
+  static const rocketUprightWide = _rocketUprightWide;
+
+  /// Rocking chair. Tags: chair, furniture, relax.
   static const rockingChair = _rockingChair;
 
-  /// Roller coaster. Tags: attraction, entertainment, amusement park, theme park, funfair.
+  /// Rocking horse. Tags: toy, child, horse.
+  static const rockingHorse = _rockingHorse;
+
+  /// Roller coaster. Tags: amusement park, ride, fun.
   static const rollerCoaster = _rollerCoaster;
 
-  /// Rose. Tags: roses, thorns, petals, plant, stem, leaves, spring, bloom.
+  /// Roller skate. Tags: skating, shoe, sport.
+  static const rollerSkate = _rollerSkate;
+
+  /// Rolling pin. Tags: baking, dough, kitchen.
+  static const rollingPin = _rollingPin;
+
+  /// Rose. Tags: flower, love, bloom.
   static const rose = _rose;
 
-  /// Rotate 3d. Tags: gizmo, transform, orientation, orbit, axis.
+  /// Rotate 360. Tags: full rotation, loop, spin, orbit.
+  static const rotate360 = _rotate360;
+
+  /// Rotate 3d. Tags: three d, orbit, spin.
   static const rotate3d = _rotate3d;
 
-  /// Rotate ccw. Tags: arrow, left, counter-clockwise, restart, reload, rerun, refresh, backup.
+  /// Rotate ccw. Tags: undo, rotate, counterclockwise, reset, revert.
   static const rotateCcw = _rotateCcw;
 
-  /// Rotate ccw clock. Tags: history, time, redo, undo, rewind, timeline, version, time machine.
-  static const rotateCcwClock = _rotateCcwClock;
+  /// Rotate ccw bitcoin. Tags: cashback, refund, reward, money back, crypto, bitcoin.
+  static const rotateCcwBitcoin = _rotateCcwBitcoin;
 
-  /// Rotate ccw key. Tags: password, key, refresh, change.
+  /// Same icon as [history].
+  static const rotateCcwClock = _history;
+
+  /// Rotate ccw dashed. Tags: rotate, counter-clockwise, dashed, undo, loading.
+  static const rotateCcwDashed = _rotateCcwDashed;
+
+  /// Rotate ccw dollar sign. Tags: cashback, refund, reward, money back, return, dollar.
+  static const rotateCcwDollarSign = _rotateCcwDollarSign;
+
+  /// Rotate ccw euro. Tags: cashback, refund, reward, money back, euro.
+  static const rotateCcwEuro = _rotateCcwEuro;
+
+  /// Rotate ccw japanese yen. Tags: cashback, refund, reward, money back, yen.
+  static const rotateCcwJapaneseYen = _rotateCcwJapaneseYen;
+
+  /// Rotate ccw key. Tags: rotate, key, restore, counter-clockwise, reset.
   static const rotateCcwKey = _rotateCcwKey;
 
-  /// Rotate ccw square. Tags: left, counter-clockwise, rotate, image, 90, 45, degrees.
+  /// Rotate ccw pound sterling. Tags: cashback, refund, reward, money back, pound.
+  static const rotateCcwPoundSterling = _rotateCcwPoundSterling;
+
+  /// Rotate ccw square. Tags: rotate, square, counter-clockwise, turn.
   static const rotateCcwSquare = _rotateCcwSquare;
 
-  /// Rotate cw. Tags: arrow, right, clockwise, refresh, reload, rerun, redo.
+  /// Rotate cw. Tags: redo, rotate, clockwise, refresh, reload.
   static const rotateCw = _rotateCw;
 
-  /// Rotate cw clock. Tags: modify, edit, refresh, sync, renew, revision, settings, adjust.
-  static const rotateCwClock = _rotateCwClock;
+  /// Same icon as [clockRotateCw].
+  static const rotateCwClock = _clockRotateCw;
 
-  /// Rotate cw fading clock. Tags: clock, waiting, schedule, hourglass, loading, pause, pending, time.
-  static const rotateCwFadingClock = _rotateCwFadingClock;
+  /// Rotate cw corner. Tags: refresh, reload, rotate, clockwise.
+  static const rotateCwCorner = _rotateCwCorner;
 
-  /// Rotate cw square. Tags: right, clockwise, rotate, image, 90, 45, degrees.
+  /// Rotate cw dashed. Tags: rotate, clockwise, dashed, loading, progress, redo.
+  static const rotateCwDashed = _rotateCwDashed;
+
+  /// Rotate cw elbow. Tags: refresh, reload, rotate, clockwise.
+  static const rotateCwElbow = _rotateCwElbow;
+
+  /// Same icon as [clockRotateCwDashed].
+  static const rotateCwFadingClock = _clockRotateCwDashed;
+
+  /// Rotate cw square. Tags: rotate, square, clockwise, turn.
   static const rotateCwSquare = _rotateCwSquare;
 
   /// Same icon as [rotateCcw].
@@ -5059,368 +12294,818 @@ abstract final class DsIcons {
   /// Same icon as [rotateCw].
   static const rotateRight = _rotateCw;
 
-  /// Route. Tags: path, journey, planner, points, stops, stations.
+  /// Route. Tags: path, journey, planner, stops.
   static const route = _route;
 
-  /// Route off. Tags: path, journey, planner, points, stops, stations, reset, clear.
+  /// Route arrow x. Tags: strategy, plan, route, play, tactic, path.
+  static const routeArrowX = _routeArrowX;
+
+  /// Route off. Tags: path, disabled, no route.
   static const routeOff = _routeOff;
 
-  /// Router. Tags: computer, server, cloud.
-  static const router = _router;
+  /// Route pin. Tags: route, path, pin, destination, journey, direct.
+  static const routePin = _routePin;
 
-  /// Rows 2. Tags: lines, list, queue, preview, panel, paragraphs, parallel, series.
+  /// Same icon as [routerWifi].
+  static const router = _routerWifi;
+
+  /// Router antenna. Tags: router, antenna, network, modem.
+  static const routerAntenna = _routerAntenna;
+
+  /// Router compact. Tags: wifi, wireless, modem, network, access, point, signal.
+  static const routerCompact = _routerCompact;
+
+  /// Router wifi. Tags: router, wifi, network, modem.
+  static const routerWifi = _routerWifi;
+
+  /// Route x. Tags: route, blocked, road closed, path, x.
+  static const routeX = _routeX;
+
+  /// Rows 2. Tags: rows, two, layout, split, two rows, horizontal divider, panels.
   static const rows2 = _rows2;
 
-  /// Rows 3. Tags: lines, list, queue, preview, paragraphs, parallel, series, split.
+  /// Rows 3. Tags: rows, three, layout, list, three rows, split, horizontal dividers, panels.
   static const rows3 = _rows3;
 
-  /// Rows 4. Tags: lines, list, queue, preview, paragraphs, parallel, series, split.
+  /// Rows 3 bars. Tags: list view, rows, layout, stacked, bars.
+  static const rows3Bars = _rows3Bars;
+
+  /// Rows 4. Tags: rows, four, layout, list.
   static const rows4 = _rows4;
 
-  /// Rss. Tags: feed, subscribe, news, updates, notifications, content, blog, articles.
+  /// Rows lines box. Tags: queue, rows, list, two. Its details merge when filled: use it outlined.
+  static const rowsLinesBox = _rowsLinesBox;
+
+  /// Rows lines tray. Tags: queue, list, stack, rows, items.
+  static const rowsLinesTray = _rowsLinesTray;
+
+  /// Rss. Tags: feed, subscribe, news, blog.
   static const rss = _rss;
 
-  /// Rugby. Tags: goal, score, posts, kicker, pitch, team, scrum, ruck.
-  static const rugby = _rugby;
+  /// Rss alert. Tags: rss, error, feed, alert, warning.
+  static const rssAlert = _rssAlert;
 
-  /// Rugby ball. Tags: rugby, football, ball, goal, sport.
-  static const rugbyBall = _rugbyBall;
+  /// Rss check. Tags: rss, connected, feed, check, subscribed.
+  static const rssCheck = _rssCheck;
 
-  /// Ruler. Tags: measurements, centimeters, cm, millimeters, mm, metre, foot, feet.
+  /// Rss lock. Tags: rss, locked, feed, private, secure.
+  static const rssLock = _rssLock;
+
+  /// Rss lock open. Tags: rss, unlocked, feed, public, open.
+  static const rssLockOpen = _rssLockOpen;
+
+  /// Rubber duck. Tags: duck, toy, debugging.
+  static const rubberDuck = _rubberDuck;
+
+  /// Ruler. Tags: measure, length, units.
   static const ruler = _ruler;
 
-  /// Ruler dimension line. Tags: measurements, centimeters, cm, millimeters, mm, metre, foot, feet.
+  /// Ruler dimension line. Tags: ruler, dimension, measure, length.
   static const rulerDimensionLine = _rulerDimensionLine;
 
-  /// Russian ruble. Tags: currency, money, payment.
+  /// Running. Tags: workout, exercise, jogging, cardio, fitness, sprint.
+  static const running = _running;
+
+  /// Russian ruble. Tags: ruble, currency, money.
   static const russianRuble = _russianRuble;
 
-  /// Russian ruble circle. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
-  static const russianRubleCircle = _russianRubleCircle;
+  /// Sack. Tags: money bag, savings, wealth, cash.
+  static const sack = _sack;
 
-  /// Russian ruble square. Tags: finance, financial, markets, exchange, trader, trading, transaction, payment.
-  static const russianRubleSquare = _russianRubleSquare;
+  /// Sack dollar. Tags: money bag, sack, dollar, savings, wealth, cash. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const sackDollar = _sackDollar;
 
-  /// Sailboat. Tags: ship, boat, harbor, harbour, dock.
+  /// Safe. Tags: money, strongbox, vault, secure, savings.
+  static const safe = _safe;
+
+  /// Safety pin. Tags: pin, fastener, sewing, clothing, closed.
+  static const safetyPin = _safetyPin;
+
+  /// Safety pin open. Tags: pin, fastener, sewing, clothing, open.
+  static const safetyPinOpen = _safetyPinOpen;
+
+  /// Sailboat. Tags: boat, ship, yacht, sailing, harbor.
   static const sailboat = _sailboat;
 
-  /// Salad. Tags: food, vegetarian, dish, restaurant, course, meal, side, vegetables.
+  /// Sailboat pier. Tags: boat, coastal, dock, harbor, sailing, yacht.
+  static const sailboatPier = _sailboatPier;
+
+  /// Sailboat waves. Tags: boat, offshore, sea, waves, sailing, yacht. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const sailboatWaves = _sailboatWaves;
+
+  /// Salad. Tags: bowl, healthy, vegetables, lettuce, diet. Its details merge when filled: use it outlined.
   static const salad = _salad;
 
-  /// Sandwich. Tags: food, snack, dish, restaurant, lunch, meal.
+  /// Sandals. Tags: flip flops, footwear, summer, beach, shoes.
+  static const sandals = _sandals;
+
+  /// Sandwich. Tags: food, lunch, snack, bread, meal.
   static const sandwich = _sandwich;
 
-  /// Satellite. Tags: space station, orbit, transmitter.
+  /// Satellite. Tags: space station, orbit, transmitter, gps, space.
   static const satellite = _satellite;
 
-  /// Satellite dish. Tags: antenna, receiver, dish aerial, saucer, communication, broadcast, signal.
+  /// Satellite dish. Tags: antenna, receiver, dish aerial, communication, broadcast, signal.
   static const satelliteDish = _satelliteDish;
 
-  /// Saudi riyal. Tags: currency, money, payment.
+  /// Satellite dish wide. Tags: gps, signal, satellite, dish, antenna, waves.
+  static const satelliteDishWide = _satelliteDishWide;
+
+  /// Satellite dish wide dots. Tags: gps, signal, satellite, dish, dots, searching.
+  static const satelliteDishWideDots = _satelliteDishWideDots;
+
+  /// Satellite dish wide x. Tags: gps, disconnected, satellite, dish, no, signal, x.
+  static const satelliteDishWideX = _satelliteDishWideX;
+
+  /// Satellite signal. Tags: satellite, orbit, transmit, space, signal. Its details merge when filled: use it outlined.
+  static const satelliteSignal = _satelliteSignal;
+
+  /// Saudi riyal. Tags: currency, money, sar, saudi, riyal.
   static const saudiRiyal = _saudiRiyal;
 
-  /// Sausage. Tags: banger, wiener, wurst, hot dog, jumbo, chorizo, meat, pork.
+  /// Saudi riyal circle. Tags: riyal, saudi, currency, money, arabic.
+  static const saudiRiyalCircle = _saudiRiyalCircle;
+
+  /// Saudi riyal square. Tags: riyal, saudi, currency, money, arabic.
+  static const saudiRiyalSquare = _saudiRiyalSquare;
+
+  /// Sausage. Tags: food, grill, bbq, meat, hot dog.
   static const sausage = _sausage;
 
-  /// Save. Tags: floppy disk.
-  static const save = _save;
+  /// Sausage skewer. Tags: street food, corn dog, sausage, skewer, snack.
+  static const sausageSkewer = _sausageSkewer;
 
-  /// Save all. Tags: floppy disks, copy.
-  static const saveAll = _saveAll;
+  /// Same icon as [floppyDisk].
+  static const save = _floppyDisk;
 
-  /// Save check. Tags: save, save-check, floppy-disk, saved, check, save-success.
+  /// Same icon as [floppyDisks].
+  static const saveAll = _floppyDisks;
+
+  /// Save check. Tags: save, save-check, floppy-disk, saved, check, save-success. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const saveCheck = _saveCheck;
 
-  /// Save off. Tags: floppy disk, unsalvageable.
-  static const saveOff = _saveOff;
+  /// Same icon as [floppyDiskOff].
+  static const saveOff = _floppyDiskOff;
 
-  /// Save pen. Tags: floppy disk, directory, rename.
+  /// Save pen. Tags: floppy disk, save, edit, pen, save as.
   static const savePen = _savePen;
 
-  /// Save plus. Tags: floppy disk, save, plus, add, update, create.
+  /// Save plus. Tags: floppy disk, save, plus, add, update, create. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const savePlus = _savePlus;
 
-  /// Scale. Tags: balance, legal, license, right, rule, law, justice, weight.
+  /// Scale. Tags: balance, justice, law, weigh, legal, compare.
   static const scale = _scale;
 
-  /// Scale 3d. Tags: gizmo, transform, size, axis.
+  /// Scale 3d. Tags: 3d, scale, resize, nodes, transform.
   static const scale3d = _scale3d;
 
-  /// Scaling. Tags: scale, resize, design.
+  /// Scale arched. Tags: justice scale, law, balance, legal, weigh, court.
+  static const scaleArched = _scaleArched;
+
+  /// Scale hanging. Tags: justice scale, law, balance, legal, weigh, court.
+  static const scaleHanging = _scaleHanging;
+
+  /// Scale round. Tags: balance, justice, law, weigh, legal.
+  static const scaleRound = _scaleRound;
+
+  /// Scaling. Tags: scale, resize, maximize, enlarge, expand.
   static const scaling = _scaling;
 
-  /// Scan. Tags: qr-code, barcode, checkout, augmented reality, ar, target, surveillance, camera.
+  /// Scaling down. Tags: scale, resize, minimize, shrink, reduce.
+  static const scalingDown = _scalingDown;
+
+  /// Scaling sparkle. Tags: ai, expand, scale, resize, sparkle.
+  static const scalingSparkle = _scalingSparkle;
+
+  /// Scan. Tags: fullscreen, expand, corners, maximize.
   static const scan = _scan;
 
-  /// Scan barcode. Tags: checkout, till, cart, transaction, purchase, buy, product, packaging.
+  /// Scan apple. Tags: scan, food, apple, nutrition, calories, meal.
+  static const scanApple = _scanApple;
+
+  /// Scan audio lines. Tags: voice id, voice recognition, biometric, sound wave, authentication, verify.
+  static const scanAudioLines = _scanAudioLines;
+
+  /// Scan barcode. Tags: scan, barcode, product, checkout, reader.
   static const scanBarcode = _scanBarcode;
 
-  /// Scan box. Tags: ar, augmented reality, 3d, object detection, object recognition, tracking, spatial computing, capture.
-  static const scanBox = _scanBox;
+  /// Same icon as [scanCube].
+  static const scanBox = _scanCube;
 
-  /// Scan eye. Tags: preview, zoom, expand, fullscreen, gallery, image, camera, watch.
+  /// Scan cube. Tags: 3d, cube, view, scan, object, ar.
+  static const scanCube = _scanCube;
+
+  /// Scan eye. Tags: eye scan, retina, biometric, vision, iris, detection, focus.
   static const scanEye = _scanEye;
 
-  /// Scan face. Tags: face, biometric, identification, authentication, 2fa, access, login, dashed.
+  /// Scan face. Tags: face id, face scan, biometric, recognition, smile.
   static const scanFace = _scanFace;
 
-  /// Scan heart. Tags: health, heart rate, pulse, monitoring, healthiness, screening, dashed.
+  /// Scan face sparkle. Tags: face mimic, expression, emotion, face, ai, smile.
+  static const scanFaceSparkle = _scanFaceSparkle;
+
+  /// Scan heart. Tags: heart scan, health, check, pulse, cardio.
   static const scanHeart = _scanHeart;
 
-  /// Scan line. Tags: checkout, till, cart, transaction, purchase, buy, product, packaging.
+  /// Scan image. Tags: image scan, photo, picture, scanner, frame.
+  static const scanImage = _scanImage;
+
+  /// Scan iris. Tags: iris scan, eye scan, biometric, retina, authentication.
+  static const scanIris = _scanIris;
+
+  /// Scan line. Tags: scan, frame, line, scanner, barcode.
   static const scanLine = _scanLine;
 
-  /// Scan qr code. Tags: barcode, scan, qrcode, url, information, digital, scanner.
+  /// Scan lock. Tags: lock, secure, face id, scan, biometric, frame.
+  static const scanLock = _scanLock;
+
+  /// Scan qr code. Tags: qr, code, scan, barcode.
   static const scanQrCode = _scanQrCode;
 
-  /// Scan search. Tags: preview, zoom, expand, fullscreen, gallery, image, focus, lens.
+  /// Scan robot. Tags: ai, scan, robot, recognition, frame.
+  static const scanRobot = _scanRobot;
+
+  /// Scan search. Tags: scan, search, magnifier, focus, zoom, visual search, image search.
   static const scanSearch = _scanSearch;
 
-  /// Scan square. Tags: scan, square, detect, recognition, select, frame, object, viewfinder.
+  /// Scan silhouette. Tags: face id, face, biometric, authentication, unlock.
+  static const scanSilhouette = _scanSilhouette;
+
+  /// Scan square. Tags: qr, code, scan, frame, viewfinder.
   static const scanSquare = _scanSquare;
 
-  /// Scan text. Tags: recognition, read, translate, copy, lines.
+  /// Scan text. Tags: ocr, scan, text, document, read.
   static const scanText = _scanText;
 
-  /// Scarf. Tags: wooly, woolly, winter, cold, neckwear, apparel, fashion, knitting.
-  static const scarf = _scarf;
+  /// Scan text sparkle. Tags: ai, scan, text, ocr, recognize, sparkle.
+  static const scanTextSparkle = _scanTextSparkle;
+
+  /// Scan user. Tags: scan, identify, person, face, biometric, face id, identity verification, verify.
+  static const scanUser = _scanUser;
+
+  /// Scan zoom in. Tags: magnifier, magnify, enlarge, region, area, select.
+  static const scanZoomIn = _scanZoomIn;
+
+  /// Scan zoom out. Tags: magnifier, shrink, reduce, region, area, select.
+  static const scanZoomOut = _scanZoomOut;
 
   /// Same icon as [chartScatter].
   static const scatterPlot = _chartScatter;
 
-  /// School. Tags: building, education, childhood, university, learning, campus, scholar, student.
+  /// School. Tags: education, building, campus, learning, student.
   static const school = _school;
+
+  /// School house. Tags: education, building, campus, learning, school, gate.
+  static const schoolHouse = _schoolHouse;
 
   /// Scissors. Tags: cut, snip, chop, stationery, crafts.
   static const scissors = _scissors;
 
-  /// Scissors hair comb. Tags: hairdresser, grooming, cut, chop, snip, shave, shop, salon.
-  static const scissorsHairComb = _scissorsHairComb;
+  /// Scissors left. Tags: cut, snip, scissor, craft, blades left.
+  static const scissorsLeft = _scissorsLeft;
 
-  /// Scissors line dashed. Tags: cut here, along, snip, chop, stationery, crafts, instructions, diagram.
+  /// Scissors line dashed. Tags: cut, coupon, dashed line, snip, tear.
   static const scissorsLineDashed = _scissorsLineDashed;
 
-  /// Scooter. Tags: vehicle, drive, trip, journey, transport, electric, ride, urban.
+  /// Scissors square dashed. Tags: voucher, coupon, cut, discount, clip, promo, offer.
+  static const scissorsSquareDashed = _scissorsSquareDashed;
+
+  /// Scooter. Tags: moped, vespa, vehicle, ride, urban.
   static const scooter = _scooter;
 
-  /// Screen share. Tags: host, desktop, monitor.
+  /// Scooter delivery. Tags: moped, delivery, courier, vehicle, box.
+  static const scooterDelivery = _scooterDelivery;
+
+  /// Scooter front. Tags: moped, vehicle, front view, ride, urban. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const scooterFront = _scooterFront;
+
+  /// Scratch card. Tags: lottery, ticket, card, scratch, prize.
+  static const scratchCard = _scratchCard;
+
+  /// Screen rotation. Tags: rotate, orientation, landscape, portrait, screen.
+  static const screenRotation = _screenRotation;
+
+  /// Screen rotation lock. Tags: rotation lock, orientation, portrait, lock, screen.
+  static const screenRotationLock = _screenRotationLock;
+
+  /// Screen share. Tags: share screen, present, monitor, arrow, cast.
   static const screenShare = _screenShare;
 
-  /// Screen share off. Tags: desktop, disconnect, monitor.
+  /// Screen share off. Tags: stop sharing, screen, monitor, off, disabled.
   static const screenShareOff = _screenShareOff;
 
-  /// Scroll. Tags: paper, log, scripture, document, notes, parchment, list, long.
-  static const scroll = _scroll;
+  /// Scroll bitcoin. Tags: bitcoin, invoice, bill, document, crypto, btc.
+  static const scrollBitcoin = _scrollBitcoin;
 
-  /// Scroll text. Tags: paper, log, scripture, document, notes, parchment, list, long.
+  /// Scroll horizontal. Tags: scroll, horizontal, pan, left right, swipe.
+  static const scrollHorizontal = _scrollHorizontal;
+
+  /// Scroll text. Tags: scroll, paper, parchment, document, script, notes, log.
   static const scrollText = _scrollText;
 
-  /// Search. Tags: find, scan, magnifier, magnifying glass, lens, locate, explore, discover.
+  /// Scroll text bottom. Tags: scroll, paper, parchment, document, script, notes.
+  static const scrollTextBottom = _scrollTextBottom;
+
+  /// Scroll user. Tags: wanted poster, wanted, notice, criminal, missing, poster, bounty. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const scrollUser = _scrollUser;
+
+  /// Scroll vertical. Tags: scroll, vertical, pan, up down, swipe.
+  static const scrollVertical = _scrollVertical;
+
+  /// Search. Tags: find, magnifier, magnifying glass, lens, zoom, explore.
   static const search = _search;
 
-  /// Search alert. Tags: find, scan, magnifier, magnifying glass, stop, warning, alert, error.
+  /// Same icon as [search].
+  static const search2 = _search;
+
+  /// Search ai. Tags: ai, search, magnifier, find.
+  static const searchAi = _searchAi;
+
+  /// Search alert. Tags: find, magnifier, warning, not found, error.
   static const searchAlert = _searchAlert;
 
-  /// Search check. Tags: find, scan, magnifier, magnifying glass, found, correct, complete, tick.
+  /// Search bar. Tags: seo, search engine, optimization, magnifier, ranking.
+  static const searchBar = _searchBar;
+
+  /// Search bitcoin. Tags: bitcoin, search, find, crypto, btc.
+  static const searchBitcoin = _searchBitcoin;
+
+  /// Search check. Tags: find, magnifier, found, verify, done.
   static const searchCheck = _searchCheck;
 
-  /// Search code. Tags: find, scan, magnifier, magnifying glass, grep, chevrons, lens, locate.
+  /// Search code. Tags: find, grep, code, magnifier, chevrons.
   static const searchCode = _searchCode;
 
-  /// Search slash. Tags: find, scan, magnifier, magnifying glass, stop, clear, cancel, abort.
+  /// Search code slash. Tags: inspect code, find code, search source, magnifier, dev tools.
+  static const searchCodeSlash = _searchCodeSlash;
+
+  /// Search dollar sign. Tags: find, price, money, magnifier, dollar. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const searchDollarSign = _searchDollarSign;
+
+  /// Search focus. Tags: find, magnifier, focus, target, zoom.
+  static const searchFocus = _searchFocus;
+
+  /// Search frame. Tags: searching, find, magnifier, loading, scan.
+  static const searchFrame = _searchFrame;
+
+  /// Same icon as [zoomOut].
+  static const searchMinus = _zoomOut;
+
+  /// Same icon as [zoomIn].
+  static const searchPlus = _zoomIn;
+
+  /// Search refresh. Tags: find replace, magnifier, refresh, swap, cycle.
+  static const searchRefresh = _searchRefresh;
+
+  /// Search slash. Tags: find, magnifier, disabled, off, cancel.
   static const searchSlash = _searchSlash;
 
-  /// Search x. Tags: find, scan, magnifier, magnifying glass, stop, clear, cancel, abort.
+  /// Search sparkle. Tags: ai, search, magnifier, find, sparkle.
+  static const searchSparkle = _searchSparkle;
+
+  /// Search sparkle center. Tags: ai, search, magnifier, find, sparkle.
+  static const searchSparkleCenter = _searchSparkleCenter;
+
+  /// Search x. Tags: find, magnifier, clear, cancel, close.
   static const searchX = _searchX;
 
-  /// Section. Tags: mark, typography, punctuation, legal, type, text, prose, symbol.
+  /// Seat. Tags: chair, cinema, booking, select.
+  static const seat = _seat;
+
+  /// Section. Tags: paragraph, legal, clause, symbol, sign.
   static const section = _section;
 
-  /// Send. Tags: email, message, mail, paper airplane, paper aeroplane, submit. Mirrors in right-to-left text.
+  /// Seesaw. Tags: playground, balance, teeter, children, park.
+  static const seesaw = _seesaw;
+
+  /// Select field. Tags: custom field, input, dropdown, select, form, field.
+  static const selectField = _selectField;
+
+  /// Selection box. Tags: align, selection, box, handles, resize, transform.
+  static const selectionBox = _selectionBox;
+
+  /// Selection box key. Tags: align, key, object, selection, anchor.
+  static const selectionBoxKey = _selectionBoxKey;
+
+  /// Send. Tags: paper plane, message, submit, share, sent, submitted, delivered. Mirrors in right-to-left text.
   static const send = _send;
 
-  /// Send horizontal. Tags: email, message, mail, paper airplane, paper aeroplane, submit. Mirrors in right-to-left text.
+  /// Send horizontal. Tags: send, arrow, message, submit, paper plane. Mirrors in right-to-left text.
   static const sendHorizontal = _sendHorizontal;
 
-  /// Send to back. Tags: bring, send, move, under, back, backwards, overlap, layer.
+  /// Send tail. Tags: sent, paper plane, message, delivered, submitted. Mirrors in right-to-left text.
+  static const sendTail = _sendTail;
+
+  /// Send to back. Tags: layers, order, back, arrange, send backward.
   static const sendToBack = _sendToBack;
 
-  /// Separator horizontal. Tags: move, split.
+  /// Separator horizontal. Tags: divider, split, line, chevrons, vertical gap.
   static const separatorHorizontal = _separatorHorizontal;
 
-  /// Separator vertical. Tags: move, split.
+  /// Separator vertical. Tags: divider, split, line, chevrons, horizontal gap.
   static const separatorVertical = _separatorVertical;
 
-  /// Server. Tags: cloud, storage.
+  /// Server. Tags: rack, hosting, storage, database.
   static const server = _server;
 
-  /// Server cog. Tags: cloud, storage, computing, cog, gear.
+  /// Server cog. Tags: server settings, config, hosting, gear, admin.
   static const serverCog = _serverCog;
 
-  /// Server crash. Tags: cloud, storage, problem, error.
+  /// Server crash. Tags: server error, down, failure, lightning, outage.
   static const serverCrash = _serverCrash;
 
-  /// Server off. Tags: cloud, storage. Its details merge when filled: use it outlined.
+  /// Server joined. Tags: database, hosting, storage, cloud, rack. Its details merge when filled: use it outlined.
+  static const serverJoined = _serverJoined;
+
+  /// Server off. Tags: server offline, down, disabled, no server, off.
   static const serverOff = _serverOff;
 
-  /// Server plus. Tags: add, create, new, cloud, storage, computing.
+  /// Server plus. Tags: add, create, new, cloud, storage, computing. Drawn with a 1.5 stroke: at 2 its details would close up.
   static const serverPlus = _serverPlus;
 
-  /// Settings. Tags: cog, edit, gear, preferences.
+  /// Server stack. Tags: servers, rack, three, hosting, database.
+  static const serverStack = _serverStack;
+
+  /// Server stand. Tags: server, rack, hosting, network, base.
+  static const serverStand = _serverStand;
+
+  /// Settings. Tags: gear, cog, preferences, configuration, options.
   static const settings = _settings;
 
-  /// Settings 2. Tags: cog, edit, gear, preferences, slider.
-  static const settings2 = _settings2;
+  /// Same icon as [slidersHorizontal].
+  static const settings2 = _slidersHorizontal;
 
-  /// Shapes. Tags: triangle, equilateral, square, circle, classification, different, collection, toy.
+  /// Settings alert. Tags: settings error, gear, warning, problem, alert. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const settingsAlert = _settingsAlert;
+
+  /// Settings check. Tags: settings done, gear, check, configured, applied.
+  static const settingsCheck = _settingsCheck;
+
+  /// Settings hexagon. Tags: hexagon, nut, preferences, configuration, options.
+  static const settingsHexagon = _settingsHexagon;
+
+  /// Settings hexagon alert. Tags: settings error, hexagon, warning, problem, alert. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const settingsHexagonAlert = _settingsHexagonAlert;
+
+  /// Settings hexagon check. Tags: settings done, hexagon, check, configured, applied.
+  static const settingsHexagonCheck = _settingsHexagonCheck;
+
+  /// Settings sharp. Tags: gear, cog, preferences, configuration, options.
+  static const settingsSharp = _settingsSharp;
+
+  /// Settings sharp alert. Tags: settings error, gear, warning, problem, alert. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const settingsSharpAlert = _settingsSharpAlert;
+
+  /// Settings sharp check. Tags: settings done, gear, check, configured, applied.
+  static const settingsSharpCheck = _settingsSharpCheck;
+
+  /// Settings sharp update. Tags: installing updates, update, gear, system update, settings.
+  static const settingsSharpUpdate = _settingsSharpUpdate;
+
+  /// Settings sparkle. Tags: ai, setting, settings, gear, sparkle, config.
+  static const settingsSparkle = _settingsSparkle;
+
+  /// Settings sync. Tags: setup, gear, refresh, update, configuration.
+  static const settingsSync = _settingsSync;
+
+  /// Settings update. Tags: installing updates, update, gear, system update, settings.
+  static const settingsUpdate = _settingsUpdate;
+
+  /// Shapes. Tags: triangle, square, circle, collection, toy.
   static const shapes = _shapes;
 
-  /// Share. Tags: network, connections.
+  /// Shapes arrow down right. Tags: shapes, collection, import, group, arrow.
+  static const shapesArrowDownRight = _shapesArrowDownRight;
+
+  /// Shapes minus. Tags: resources, remove, minus, shapes.
+  static const shapesMinus = _shapesMinus;
+
+  /// Shapes overlap. Tags: shapes, geometry, overlap, circle, square.
+  static const shapesOverlap = _shapesOverlap;
+
+  /// Shapes plus. Tags: resources, add, plus, shapes, new.
+  static const shapesPlus = _shapesPlus;
+
+  /// Shapes sparkle. Tags: ai, elements, shapes, sparkle, generate.
+  static const shapesSparkle = _shapesSparkle;
+
+  /// Shapes x. Tags: shapes, geometry, square, circle, triangle.
+  static const shapesX = _shapesX;
+
+  /// Share. Tags: upload, export, ios, arrow up, send.
   static const share = _share;
 
-  /// Share 2. Tags: network, connections.
+  /// Share 2. Tags: share, network, connections, nodes, social.
   static const share2 = _share2;
 
-  /// Shark. Tags: pectoral, fishing, infested, waters, warning, danger, alert, jaws.
-  static const shark = _shark;
+  /// Share forward. Tags: share, forward, arrow, send, social. Mirrors in right-to-left text.
+  static const shareForward = _shareForward;
 
-  /// Shave face. Tags: shavers only, electric, electronics, socket, plug, razor, beard, stubble.
-  static const shaveFace = _shaveFace;
+  /// Share nodes. Tags: workflow, steps, chain, diagram, nodes, process.
+  static const shareNodes = _shareNodes;
 
-  /// Sheet. Tags: spreadsheets, table, excel.
+  /// Share ring. Tags: share, network, connections, nodes, social.
+  static const shareRing = _shareRing;
+
+  /// Share triangle. Tags: share, network, connections, nodes, social.
+  static const shareTriangle = _shareTriangle;
+
+  /// Sheet. Tags: spreadsheet, table, grid, cells, excel.
   static const sheet = _sheet;
 
-  /// Shell. Tags: beach, sand, holiday, sealife, fossil, ammonite, biology, ocean.
+  /// Shell. Tags: spiral, snail, seashell, nautilus, beach.
   static const shell = _shell;
 
-  /// Shelving unit. Tags: ledge, rack, storage, inventory, furniture, sill, shelves, shelf.
+  /// Shell scallop. Tags: scallop, clam, seashell, seafood, allergen.
+  static const shellScallop = _shellScallop;
+
+  /// Shelving unit. Tags: shelf, storage, rack, bookcase, furniture.
   static const shelvingUnit = _shelvingUnit;
 
-  /// Shield. Tags: cybersecurity, secure, safety, protection, guardian, armored, armoured, defense.
+  /// Shield. Tags: security, protection, guard, safety, defense.
   static const shield = _shield;
 
-  /// Shield alert. Tags: unshielded, cybersecurity, insecure, unsecured, safety, unsafe, protection, unprotected.
+  /// Shield ai. Tags: ai, security, shield, protect.
+  static const shieldAi = _shieldAi;
+
+  /// Shield alert. Tags: warning, alert, danger, security, exclamation, protect.
   static const shieldAlert = _shieldAlert;
 
-  /// Shield ban. Tags: unshielded, cybersecurity, insecure, unsecured, safety, unsafe, protection, unprotected.
+  /// Shield ban. Tags: blocked, forbidden, protection, denied, security.
   static const shieldBan = _shieldBan;
 
-  /// Shield check. Tags: cybersecurity, secured, safety, protection, protected, guardian, guarded, armored.
+  /// Shield bitcoin. Tags: bitcoin, shield, secure, protect, crypto, btc.
+  static const shieldBitcoin = _shieldBitcoin;
+
+  /// Shield box. Tags: blockchain, cube, security, crypto, protect.
+  static const shieldBox = _shieldBox;
+
+  /// Shield check. Tags: verified, secure, protected, approved, tick.
   static const shieldCheck = _shieldCheck;
 
-  /// Shield cog. Tags: cybersecurity, secure, safety, protection, guardian, armored, armoured, defense.
+  /// Shield chip. Tags: ai, security, shield, chip, protect.
+  static const shieldChip = _shieldChip;
+
+  /// Shield circle. Tags: security, protection, guard, safety, dot.
+  static const shieldCircle = _shieldCircle;
+
+  /// Shield circle check. Tags: validated, verified, secure, approved, protect.
+  static const shieldCircleCheck = _shieldCircleCheck;
+
+  /// Shield cog. Tags: security settings, shield, gear, config, admin.
   static const shieldCog = _shieldCog;
 
-  /// Shield cog corner. Tags: cybersecurity, secure, safety, protection, guardian, armored, armoured, defense.
+  /// Shield cog corner. Tags: security settings, shield, gear, config, admin.
   static const shieldCogCorner = _shieldCogCorner;
 
-  /// Shield ellipsis. Tags: cybersecurity, securing, protecting, guarding, armoring, armouring, defending, blocking.
+  /// Shield diagonal. Tags: knight shield, heraldry, coat of arms, medieval, defense, crest.
+  static const shieldDiagonal = _shieldDiagonal;
+
+  /// Shield dollar sign. Tags: money, security, protection, insurance, dollar, safe.
+  static const shieldDollarSign = _shieldDollarSign;
+
+  /// Shield ellipsis. Tags: password, security, dots, protect, secret.
   static const shieldEllipsis = _shieldEllipsis;
 
-  /// Shield half. Tags: cybersecurity, secure, safety, protection, guardian, armored, armoured, defense.
+  /// Shield gavel. Tags: legal, law, protection, gavel, justice, hammer.
+  static const shieldGavel = _shieldGavel;
+
+  /// Shield half. Tags: security, half, protect, guard, contrast. Its details merge when filled: use it outlined.
   static const shieldHalf = _shieldHalf;
 
-  /// Shield keyhole. Tags: cybersecurity, secure, safety, protection, defense, defence, defender, block.
+  /// Shield indian rupee. Tags: rupee, indian rupee, shield, secure, currency.
+  static const shieldIndianRupee = _shieldIndianRupee;
+
+  /// Shield key. Tags: security key, access, protect, credential, secret.
+  static const shieldKey = _shieldKey;
+
+  /// Shield keyhole. Tags: security, protect, safety, guard, keyhole.
   static const shieldKeyhole = _shieldKeyhole;
 
-  /// Shield lock. Tags: antivirus, authentication, authorization, credentials, cybersecurity, data protection, defense, encryption.
+  /// Shield lock. Tags: security, lock, protect, secure, private.
   static const shieldLock = _shieldLock;
 
-  /// Shield minus. Tags: unshield, cybersecurity, unsecure, unguard, unblock, antivirus, clean, clear.
+  /// Shield minus. Tags: reduce security, remove, protect, minus, downgrade.
   static const shieldMinus = _shieldMinus;
 
-  /// Shield off. Tags: unshielded, cybersecurity, insecure, unsecured, safety, unsafe, protection, unprotected.
+  /// Shield off. Tags: unprotected, disabled, security off, crossed, insecure, block, shield.
   static const shieldOff = _shieldOff;
 
-  /// Shield plus. Tags: cybersecurity, secure, safety, protection, guardian, armored, armoured, defense.
+  /// Shield plus. Tags: add security, protect, plus, upgrade, extra.
   static const shieldPlus = _shieldPlus;
 
-  /// Shield question mark. Tags: unshielded, cybersecurity, insecure, unsecured, safety, unsafe, protection, unprotected.
+  /// Shield question mark. Tags: unknown, security, help, question, protect.
   static const shieldQuestionMark = _shieldQuestionMark;
 
-  /// Shield user. Tags: shield, user, admin, protection, protected, safety, guard.
+  /// Shield slash. Tags: blocked, security, forbidden, prohibited, diagonal.
+  static const shieldSlash = _shieldSlash;
+
+  /// Shield sparkle. Tags: ai, security, shield, sparkle, protect.
+  static const shieldSparkle = _shieldSparkle;
+
+  /// Shield sword. Tags: adventure, shield, sword, quest, rpg, game.
+  static const shieldSword = _shieldSword;
+
+  /// Shield user. Tags: user protection, admin, security, account, guard.
   static const shieldUser = _shieldUser;
 
-  /// Shield x. Tags: unshielded, cybersecurity, insecure, unsecured, safety, unsafe, protection, unprotected.
+  /// Shield wifi. Tags: secure wifi, vpn, network, protect, wireless.
+  static const shieldWifi = _shieldWifi;
+
+  /// Shield x. Tags: insecure, failed, security, cancel, error.
   static const shieldX = _shieldX;
 
-  /// Ship. Tags: boat, knots, nautical mile, maritime, sailing, yacht, cruise, ocean liner.
+  /// Shield zap. Tags: power, energy, security, lightning, protect.
+  static const shieldZap = _shieldZap;
+
+  /// Ship. Tags: boat, vessel, sailing, maritime.
   static const ship = _ship;
 
-  /// Ship cargo. Tags: boat, knots, nautical mile, maritime, sailing, cruise, ocean liner, tanker.
-  static const shipCargo = _shipCargo;
+  /// Ship front. Tags: boat, vessel, cargo, sea, ocean liner, cargo ship, freight, shipping.
+  static const shipFront = _shipFront;
 
-  /// Ship wheel. Tags: steering, rudder, boat, knots, nautical mile, maritime, sailing, yacht.
+  /// Ship wheel. Tags: helm, steering, nautical, boat, captain.
   static const shipWheel = _shipWheel;
 
-  /// Shirt. Tags: t-shirt, shopping, store, clothing, clothes.
+  /// Shirt. Tags: t-shirt, clothing, clothes, apparel, tee.
   static const shirt = _shirt;
 
-  /// Shirt folded buttons. Tags: ironed, pressed, top, henley, store, clothing, clothes, apparel.
-  static const shirtFoldedButtons = _shirtFoldedButtons;
-
-  /// Shirt long sleeve. Tags: jersey, top, store, clothing, clothes, apparel, attire, fashion.
+  /// Shirt long sleeve. Tags: clothing, top, apparel, sweater, garment.
   static const shirtLongSleeve = _shirtLongSleeve;
 
-  /// Shirt t. Tags: jersey, t-shirt, top, store, clothing, clothes, apparel, attire.
+  /// Shirt sparkle. Tags: ai, clothes, shirt, fashion, sparkle, outfit.
+  static const shirtSparkle = _shirtSparkle;
+
+  /// Shirt t. Tags: t-shirt, shirt, clothing, apparel.
   static const shirtT = _shirtT;
 
-  /// Shirt t ruler. Tags: fit, sizes, sizing, measurements, tailored, t-shirt, jersey, store.
-  static const shirtTRuler = _shirtTRuler;
+  /// Shirt v neck. Tags: dress, t-shirt, shirt, clothing, top, casual.
+  static const shirtVNeck = _shirtVNeck;
 
-  /// Shirt t v neck. Tags: jersey, t-shirt, top, store, clothing, clothes, apparel, attire.
-  static const shirtTVNeck = _shirtTVNeck;
+  /// Shirt v neck heart. Tags: dress, t-shirt, heart, clothing, top, love.
+  static const shirtVNeckHeart = _shirtVNeckHeart;
 
-  /// Shopping bag. Tags: ecommerce, cart, purchase, store.
+  /// Shooting star. Tags: falling star, meteor, comet, wish, astronomy.
+  static const shootingStar = _shootingStar;
+
+  /// Shopping bag. Tags: ecommerce, cart, purchase, store, bag.
   static const shoppingBag = _shoppingBag;
 
-  /// Shopping basket. Tags: cart, e-commerce, store, purchase, products, items, ingredients.
+  /// Shopping bag bitcoin. Tags: bitcoin, shopping, bag, buy, crypto, btc.
+  static const shoppingBagBitcoin = _shoppingBagBitcoin;
+
+  /// Shopping bag check. Tags: bag, verified, purchased, done, ecommerce.
+  static const shoppingBagCheck = _shoppingBagCheck;
+
+  /// Shopping bag handle check. Tags: bag, done, purchase, complete, order, shopping, check.
+  static const shoppingBagHandleCheck = _shoppingBagHandleCheck;
+
+  /// Shopping bag handle heart. Tags: bag, favorite, wishlist, like, shopping, heart.
+  static const shoppingBagHandleHeart = _shoppingBagHandleHeart;
+
+  /// Shopping bag handle shield. Tags: bag, secure, safe, protected, shopping, security.
+  static const shoppingBagHandleShield = _shoppingBagHandleShield;
+
+  /// Shopping bag handle x. Tags: bag, remove, delete, shopping, cancel.
+  static const shoppingBagHandleX = _shoppingBagHandleX;
+
+  /// Shopping bag heart. Tags: wishlist, favorite, bag, love, ecommerce.
+  static const shoppingBagHeart = _shoppingBagHeart;
+
+  /// Shopping bag plus. Tags: add to bag, add to cart, plus, purchase, ecommerce.
+  static const shoppingBagPlus = _shoppingBagPlus;
+
+  /// Shopping bags. Tags: bags, purchase, store, multiple, ecommerce.
+  static const shoppingBags = _shoppingBags;
+
+  /// Shopping bag wide check. Tags: bag, done, purchase, complete, order, shopping, check, wide.
+  static const shoppingBagWideCheck = _shoppingBagWideCheck;
+
+  /// Shopping bag wide heart. Tags: bag, favorite, wishlist, like, shopping, heart, wide.
+  static const shoppingBagWideHeart = _shoppingBagWideHeart;
+
+  /// Shopping bag wide shield. Tags: bag, secure, safe, protected, shopping, security, wide.
+  static const shoppingBagWideShield = _shoppingBagWideShield;
+
+  /// Shopping bag wide x. Tags: bag, remove, delete, shopping, cancel, wide.
+  static const shoppingBagWideX = _shoppingBagWideX;
+
+  /// Shopping bag x. Tags: remove from bag, delete, cancel, bag, ecommerce.
+  static const shoppingBagX = _shoppingBagX;
+
+  /// Shopping basket. Tags: cart, basket, purchase, store, groceries.
   static const shoppingBasket = _shoppingBasket;
 
-  /// Shopping cart. Tags: trolley, cart, basket, e-commerce, store, purchase, products, items.
+  /// Shopping basket arrow down. Tags: basket, checkout, cart, arrow, down, shopping, store.
+  static const shoppingBasketArrowDown = _shoppingBasketArrowDown;
+
+  /// Shopping basket arrow up. Tags: check in, basket, return, put, store.
+  static const shoppingBasketArrowUp = _shoppingBasketArrowUp;
+
+  /// Shopping basket check. Tags: basket, done, purchase, complete, order, shopping, check.
+  static const shoppingBasketCheck = _shoppingBasketCheck;
+
+  /// Shopping basket heart. Tags: basket, favorite, wishlist, like, shopping, heart.
+  static const shoppingBasketHeart = _shoppingBasketHeart;
+
+  /// Shopping basket plus. Tags: add, basket, plus, groceries, store.
+  static const shoppingBasketPlus = _shoppingBasketPlus;
+
+  /// Shopping basket shield. Tags: basket, secure, safe, protected, shopping, security.
+  static const shoppingBasketShield = _shoppingBasketShield;
+
+  /// Shopping basket x. Tags: basket, remove, delete, shopping, cancel.
+  static const shoppingBasketX = _shoppingBasketX;
+
+  /// Shopping cart. Tags: trolley, cart, basket, e-commerce, store, purchase.
   static const shoppingCart = _shoppingCart;
+
+  /// Shopping cart box. Tags: trolley, cart, box, shopping, package.
+  static const shoppingCartBox = _shoppingCartBox;
+
+  /// Shopping cart boxes. Tags: trolley, cart, boxes, shopping, cargo.
+  static const shoppingCartBoxes = _shoppingCartBoxes;
+
+  /// Shopping cart check. Tags: cart, done, added, trolley, store, purchase.
+  static const shoppingCartCheck = _shoppingCartCheck;
+
+  /// Shopping cart down. Tags: cart, check, in, arrow, down, trolley, store.
+  static const shoppingCartDown = _shoppingCartDown;
+
+  /// Shopping cart heart. Tags: cart, favorite, wishlist, like, trolley, store.
+  static const shoppingCartHeart = _shoppingCartHeart;
 
   /// Shopping cart minus. Tags: trolley, cart, basket, e-commerce, ecommerce, store, purchase, products.
   static const shoppingCartMinus = _shoppingCartMinus;
 
-  /// Shopping cart plus. Tags: trolley, cart, basket, e-commerce, ecommerce, store, purchase, products.
+  /// Shopping cart plus. Tags: cart, add, trolley, store, purchase.
   static const shoppingCartPlus = _shoppingCartPlus;
 
-  /// Shorts. Tags: chino, cargo, denim, beachwear, bottoms, store, clothing, clothes.
+  /// Shopping cart up. Tags: cart, check, out, arrow, up, trolley, store.
+  static const shoppingCartUp = _shoppingCartUp;
+
+  /// Shopping cart wheels. Tags: trolley, cart, basket, store, purchase, wheels.
+  static const shoppingCartWheels = _shoppingCartWheels;
+
+  /// Shopping cart wheels check. Tags: cart, done, added, trolley, store, purchase, wheels.
+  static const shoppingCartWheelsCheck = _shoppingCartWheelsCheck;
+
+  /// Shopping cart wheels down. Tags: cart, check, in, arrow, down, trolley, store, wheels.
+  static const shoppingCartWheelsDown = _shoppingCartWheelsDown;
+
+  /// Shopping cart wheels heart. Tags: cart, favorite, wishlist, like, trolley, store, wheels.
+  static const shoppingCartWheelsHeart = _shoppingCartWheelsHeart;
+
+  /// Shopping cart wheels plus. Tags: cart, add, trolley, store, purchase, wheels.
+  static const shoppingCartWheelsPlus = _shoppingCartWheelsPlus;
+
+  /// Shopping cart wheels up. Tags: cart, check, out, arrow, up, trolley, store, wheels.
+  static const shoppingCartWheelsUp = _shoppingCartWheelsUp;
+
+  /// Shopping cart wheels x. Tags: cart, remove, delete, trolley, store, cancel, wheels.
+  static const shoppingCartWheelsX = _shoppingCartWheelsX;
+
+  /// Shopping cart x. Tags: cart, remove, delete, trolley, store, cancel.
+  static const shoppingCartX = _shoppingCartX;
+
+  /// Shorts. Tags: pants, clothing, summer, apparel.
   static const shorts = _shorts;
 
-  /// Shorts boxer. Tags: boxers, briefs, underpants, trunks, underwear, mens, boys, bottoms.
+  /// Shorts boxer. Tags: underpants, boxers, underwear, clothing.
   static const shortsBoxer = _shortsBoxer;
 
-  /// Shovel. Tags: dig, spade, treasure.
+  /// Shorts drawstring. Tags: boxer, shorts, underwear, clothing.
+  static const shortsDrawstring = _shortsDrawstring;
+
+  /// Shoulder. Tags: body, joint, anatomy, pain, muscle.
+  static const shoulder = _shoulder;
+
+  /// Shovel. Tags: dig, garden, spade, tool.
   static const shovel = _shovel;
 
-  /// Shovel dig. Tags: spade, gardening, equipment, soil, dirt, dig, excavate, bury.
-  static const shovelDig = _shovelDig;
+  /// Shower handheld. Tags: shower, head, handheld, bathroom, water, wash.
+  static const showerHandheld = _showerHandheld;
 
-  /// Shower. Tags: bathroom, amenities, services, steam, clean, wash.
-  static const shower = _shower;
-
-  /// Shower head. Tags: shower, bath, bathroom, amenities, services.
-  static const showerHead = _showerHead;
-
-  /// Shredder. Tags: file, paper, tear, cut, delete, destroy, remove, erase.
+  /// Shredder. Tags: paper, shred, destroy, office, document, delete, secure.
   static const shredder = _shredder;
 
-  /// Shrimp. Tags: seafood, shellfish, crustacean, prawn, scallop, whelk, arthropod, littleneck.
+  /// Shrimp. Tags: prawn, seafood, food, shellfish.
   static const shrimp = _shrimp;
 
-  /// Shrimp off. Tags: marine, creature, fisherman, ocean, fresh, cuisine, marine-life, seafood.
-  static const shrimpOff = _shrimpOff;
-
-  /// Shrink. Tags: scale, fullscreen.
+  /// Shrink. Tags: minimize, compress, inward, reduce, contract, collapse, four corners.
   static const shrink = _shrink;
 
-  /// Shrub. Tags: forest, undergrowth, park, nature.
+  /// Shrub. Tags: bush, plant, tree, garden, greenery.
   static const shrub = _shrub;
 
-  /// Shuffle. Tags: music, random, reorder.
+  /// Shuffle. Tags: random, mix, reorder, music, playlist.
   static const shuffle = _shuffle;
+
+  /// Shuffle square. Tags: random, mix, reorder, music, playlist.
+  static const shuffleSquare = _shuffleSquare;
+
+  /// Shuttlecock. Tags: badminton, shuttle, birdie, sport.
+  static const shuttlecock = _shuttlecock;
 
   /// Same icon as [panelLeft].
   static const sidebar = _panelLeft;
@@ -5428,893 +13113,2306 @@ abstract final class DsIcons {
   /// Same icon as [panelRight].
   static const sidebarRight = _panelRight;
 
-  /// Sigma. Tags: sum, calculate, formula, math, enumeration, enumerate.
+  /// Sigma. Tags: sum, total, greek, summation, math.
   static const sigma = _sigma;
 
-  /// Signal. Tags: connection, wireless, gsm, phone, 2g, 3g, 4g, 5g.
+  /// Signal. Tags: strength, bars, cellular, reception, connection.
   static const signal = _signal;
 
-  /// Signal high. Tags: connection, wireless, gsm, phone, 2g, 3g, 4g, 5g.
-  static const signalHigh = _signalHigh;
+  /// Signal 3g. Tags: 3g, mobile, network, cellular, signal.
+  static const signal3g = _signal3g;
 
-  /// Signal low. Tags: connection, wireless, gsm, phone, 2g, 3g, 4g, 5g.
+  /// Signal 4g. Tags: 4g, network, mobile, signal, lte.
+  static const signal4g = _signal4g;
+
+  /// Signal 5g. Tags: 5g, network, mobile, signal, cellular.
+  static const signal5g = _signal5g;
+
+  /// Signal blocks full. Tags: signal, full, strength, bars, cellular, reception.
+  static const signalBlocksFull = _signalBlocksFull;
+
+  /// Signal blocks low. Tags: signal, low, strength, weak, bars.
+  static const signalBlocksLow = _signalBlocksLow;
+
+  /// Signal blocks medium. Tags: signal, medium, strength, bars.
+  static const signalBlocksMedium = _signalBlocksMedium;
+
+  /// Signal dashed. Tags: no signal, signal, dashes, offline, disconnected, none.
+  static const signalDashed = _signalDashed;
+
+  /// Signal dashed low. Tags: signal, zero, none, empty, no, reception.
+  static const signalDashedLow = _signalDashedLow;
+
+  /// Signal dashed x. Tags: signal, no, lost, offline.
+  static const signalDashedX = _signalDashedX;
+
+  /// Signal full. Tags: signal, full, bars, network, strength.
+  static const signalFull = _signalFull;
+
+  /// Same icon as [signal].
+  static const signalHigh = _signal;
+
+  /// Signal low. Tags: network, bars, reception, weak, cellular. Its details merge when filled: use it outlined.
   static const signalLow = _signalLow;
 
-  /// Signal medium. Tags: connection, wireless, gsm, phone, 2g, 3g, 4g, 5g.
+  /// Signal medium. Tags: network, bars, reception, cellular. Its details merge when filled: use it outlined.
   static const signalMedium = _signalMedium;
 
-  /// Signal zero. Tags: connection, wireless, gsm, phone, 2g, 3g, 4g, 5g.
-  static const signalZero = _signalZero;
-
-  /// Signature. Tags: text, format, input, contract, autograph, handwriting, sign, cursive.
+  /// Signature. Tags: sign, autograph, handwriting, write, signed.
   static const signature = _signature;
 
   /// Same icon as [logIn].
   static const signIn = _logIn;
 
+  /// Sign language c. Tags: sign, language, hand, letter, c, deaf, asl.
+  static const signLanguageC = _signLanguageC;
+
   /// Same icon as [logOut].
   static const signOut = _logOut;
 
-  /// Signpost. Tags: navigation, direction, arrow, wayfinding, guide, location, pointer, route.
+  /// Signpost. Tags: direction, guide, road, sign, way.
   static const signpost = _signpost;
 
-  /// Signpost big. Tags: bidirectional, left, right, east, west.
+  /// Signpost big. Tags: direction, guide, road, sign, way.
   static const signpostBig = _signpostBig;
 
-  /// Siren. Tags: police, ambulance, emergency, security, alert, alarm, light.
+  /// Signpost double. Tags: directions, signpost, signs, wayfinding, crossroads, junction.
+  static const signpostDouble = _signpostDouble;
+
+  /// Signpost left. Tags: direction, signpost, sign, left, wayfinding, pole.
+  static const signpostLeft = _signpostLeft;
+
+  /// Signpost right. Tags: direction, signpost, sign, right, wayfinding, pole.
+  static const signpostRight = _signpostRight;
+
+  /// Signpost triple. Tags: directions, signpost, signs, wayfinding, crossroads, three way.
+  static const signpostTriple = _signpostTriple;
+
+  /// Sin. Tags: sine, trigonometry, function.
+  static const sin = _sin;
+
+  /// Sine wave. Tags: sine, wave, trigonometry, function, graph, oscillation. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const sineWave = _sineWave;
+
+  /// Sine wave labeled. Tags: sine, cosine, wave, trigonometry, function, graph. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const sineWaveLabeled = _sineWaveLabeled;
+
+  /// Sink. Tags: washbasin, bathroom, basin, tap.
+  static const sink = _sink;
+
+  /// Sink pedestal. Tags: sink, washbasin, bathroom, basin, tap.
+  static const sinkPedestal = _sinkPedestal;
+
+  /// Siren. Tags: alarm, emergency, alert, police, light.
   static const siren = _siren;
 
-  /// Skip back. Tags: arrow, previous, music.
+  /// Skew. Tags: transform, distort, polygon, vector, shape.
+  static const skew = _skew;
+
+  /// Ski. Tags: skiing, winter, snow, skier. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const ski = _ski;
+
+  /// Skip back. Tags: previous, media, player, track, back, skip.
   static const skipBack = _skipBack;
 
-  /// Skip forward. Tags: arrow, skip, next, music.
+  /// Skip forward. Tags: next, media, player, track, skip, forward, play next.
   static const skipForward = _skipForward;
 
   /// Same icon as [skipForward].
   static const skipNext = _skipForward;
 
+  /// Skipping rope. Tags: jump, rope, fitness, exercise, cardio.
+  static const skippingRope = _skippingRope;
+
   /// Same icon as [skipBack].
   static const skipPrevious = _skipBack;
 
-  /// Skirt. Tags: dress, bottom, womens, girls, female, ladies, store, sexy.
-  static const skirt = _skirt;
-
-  /// Skis. Tags: skiing, poles, slope, slalom, winter holiday, vacation, trip, snow.
-  static const skis = _skis;
-
-  /// Skull. Tags: death, danger, bone.
+  /// Skull. Tags: danger, death, poison, pirate, warning, deadly.
   static const skull = _skull;
 
-  /// Slash. Tags: divide, division, or.
+  /// Skull simple. Tags: death, danger, bone, poison.
+  static const skullSimple = _skullSimple;
+
+  /// Skyscraper spire. Tags: new york, art deco, landmark, tower, building, city.
+  static const skyscraperSpire = _skyscraperSpire;
+
+  /// Slash. Tags: forward, divider, separator, diagonal, line, stroke, solidus.
   static const slash = _slash;
 
-  /// Slice. Tags: cutter, scalpel, knife.
+  /// Slice. Tags: cut, knife, blade, slicing.
   static const slice = _slice;
 
-  /// Sliders horizontal. Tags: settings, filters, controls.
+  /// Sliders horizontal. Tags: settings, filters, controls, adjust.
   static const slidersHorizontal = _slidersHorizontal;
 
-  /// Sliders vertical. Tags: settings, controls.
+  /// Sliders pill horizontal. Tags: preferences, settings, sliders, adjust.
+  static const slidersPillHorizontal = _slidersPillHorizontal;
+
+  /// Sliders pill vertical. Tags: preferences, settings, sliders, adjust, equalizer.
+  static const slidersPillVertical = _slidersPillVertical;
+
+  /// Sliders round horizontal. Tags: filter, settings, controls, adjust, options.
+  static const slidersRoundHorizontal = _slidersRoundHorizontal;
+
+  /// Sliders round vertical. Tags: filter, settings, controls, adjust, options.
+  static const slidersRoundVertical = _slidersRoundVertical;
+
+  /// Sliders vertical. Tags: settings, controls, adjust, equalizer.
   static const slidersVertical = _slidersVertical;
 
-  /// Slot card. Tags: sd, sim, data, format, floppy disk, save, storage, flash.
-  static const slotCard = _slotCard;
+  /// Small caps. Tags: typography, text, font, format.
+  static const smallCaps = _smallCaps;
 
-  /// Slot card credit. Tags: debit, visa, mastercard, bank, atm, cash machine, cash point, withdrawal.
-  static const slotCardCredit = _slotCardCredit;
-
-  /// Slot disc. Tags: data, backup, save, storage, capacity, megabytes, mb, gigabytes.
-  static const slotDisc = _slotDisc;
-
-  /// Smartphone. Tags: phone, cellphone, device, mobile, screen, display, touchscreen, portable.
+  /// Smartphone. Tags: phone, cellphone, device, mobile, home, button.
   static const smartphone = _smartphone;
 
-  /// Smartphone charging. Tags: phone, cellphone, device, power, screen.
+  /// Smartphone arrow down. Tags: phone, smartphone, download, arrow, receive.
+  static const smartphoneArrowDown = _smartphoneArrowDown;
+
+  /// Smartphone arrow right. Tags: send to phone, transfer, mobile, push, share. Mirrors in right-to-left text.
+  static const smartphoneArrowRight = _smartphoneArrowRight;
+
+  /// Smartphone arrow up. Tags: phone, smartphone, upload, arrow, send.
+  static const smartphoneArrowUp = _smartphoneArrowUp;
+
+  /// Smartphone arrow up right. Tags: add to home screen, install, pwa, shortcut, phone.
+  static const smartphoneArrowUpRight = _smartphoneArrowUpRight;
+
+  /// Smartphone bitcoin. Tags: bitcoin, phone, mobile, app, crypto, btc.
+  static const smartphoneBitcoin = _smartphoneBitcoin;
+
+  /// Smartphone bitcoin corner. Tags: bitcoin, phone, mobile, app, crypto, btc.
+  static const smartphoneBitcoinCorner = _smartphoneBitcoinCorner;
+
+  /// Smartphone book. Tags: online learning, mobile, phone, book, reading, education.
+  static const smartphoneBook = _smartphoneBook;
+
+  /// Smartphone brackets. Tags: phone, mobile, app, code, brackets, developer.
+  static const smartphoneBrackets = _smartphoneBrackets;
+
+  /// Smartphone charging. Tags: phone, battery, charge, power, mobile.
   static const smartphoneCharging = _smartphoneCharging;
 
-  /// Smartphone nfc. Tags: contactless, payment, near-field communication, screen.
+  /// Smartphone check. Tags: phone, smartphone, check, verified, done.
+  static const smartphoneCheck = _smartphoneCheck;
+
+  /// Smartphone code. Tags: phone, smartphone, developer, code, debug.
+  static const smartphoneCode = _smartphoneCode;
+
+  /// Smartphone code xml. Tags: phone, mobile, app, code, developer, programming.
+  static const smartphoneCodeXml = _smartphoneCodeXml;
+
+  /// Smartphone fingerprint. Tags: biometric, device, fingerprint, phone, unlock.
+  static const smartphoneFingerprint = _smartphoneFingerprint;
+
+  /// Smartphone hand. Tags: phone, hold, hand, mobile, grip.
+  static const smartphoneHand = _smartphoneHand;
+
+  /// Smartphone key. Tags: device access, phone, key, unlock, access, authentication.
+  static const smartphoneKey = _smartphoneKey;
+
+  /// Smartphone landscape. Tags: phone, horizontal, rotated, landscape, mobile.
+  static const smartphoneLandscape = _smartphoneLandscape;
+
+  /// Smartphone lock. Tags: phone, mobile, lock, security, privacy, passcode.
+  static const smartphoneLock = _smartphoneLock;
+
+  /// Smartphone map pin. Tags: phone, mobile, navigation, location, gps, map.
+  static const smartphoneMapPin = _smartphoneMapPin;
+
+  /// Smartphone message. Tags: online learning, mobile, phone, chat, tutor, message.
+  static const smartphoneMessage = _smartphoneMessage;
+
+  /// Smartphone message badge. Tags: reminder, message, notification, alert, bell.
+  static const smartphoneMessageBadge = _smartphoneMessageBadge;
+
+  /// Smartphone nfc. Tags: phone, nfc, contactless, payment, tap.
   static const smartphoneNfc = _smartphoneNfc;
 
-  /// Snail. Tags: animal, insect, slow, speed, delicacy, spiral.
+  /// Smartphone notch. Tags: phone, cellphone, device, mobile. Its details merge when filled: use it outlined.
+  static const smartphoneNotch = _smartphoneNotch;
+
+  /// Smartphone notch arrow right. Tags: send to phone, transfer, mobile, push, share. Mirrors in right-to-left text.
+  static const smartphoneNotchArrowRight = _smartphoneNotchArrowRight;
+
+  /// Smartphone notch arrow up right. Tags: add to home screen, install, pwa, shortcut, phone.
+  static const smartphoneNotchArrowUpRight = _smartphoneNotchArrowUpRight;
+
+  /// Smartphone notch landscape. Tags: phone, horizontal, rotated, landscape, mobile, camera. Its details merge when filled: use it outlined.
+  static const smartphoneNotchLandscape = _smartphoneNotchLandscape;
+
+  /// Smartphone notch lock. Tags: phone, smartphone, lock, secure, locked.
+  static const smartphoneNotchLock = _smartphoneNotchLock;
+
+  /// Smartphone notch off. Tags: phone, mobile, off, disabled, no-signal.
+  static const smartphoneNotchOff = _smartphoneNotchOff;
+
+  /// Smartphone off. Tags: phone, mobile, off, disabled, home-button.
+  static const smartphoneOff = _smartphoneOff;
+
+  /// Smartphone screen sparkle. Tags: ai, phone, mobile, screen, sparkle.
+  static const smartphoneScreenSparkle = _smartphoneScreenSparkle;
+
+  /// Smartphone shake. Tags: phone, mobile, shake, vibrate, motion, gesture.
+  static const smartphoneShake = _smartphoneShake;
+
+  /// Smartphone shield. Tags: phone, mobile, shield, protection, security, antivirus.
+  static const smartphoneShield = _smartphoneShield;
+
+  /// Smartphone sound. Tags: phone, ring, sound, waves, call, mobile.
+  static const smartphoneSound = _smartphoneSound;
+
+  /// Smartphone sparkle. Tags: ai, phone, mobile, sparkle.
+  static const smartphoneSparkle = _smartphoneSparkle;
+
+  /// Smartphone vibrate. Tags: phone, vibrate, shake, haptic, mobile.
+  static const smartphoneVibrate = _smartphoneVibrate;
+
+  /// Smartphone wifi. Tags: phone, wifi, wireless, connection, mobile.
+  static const smartphoneWifi = _smartphoneWifi;
+
+  /// Smartphone wifi off. Tags: phone, no, wifi, lost, connection, offline, mobile.
+  static const smartphoneWifiOff = _smartphoneWifiOff;
+
+  /// Smartphone x. Tags: phone, smartphone, erase, wipe, x, remove.
+  static const smartphoneX = _smartphoneX;
+
+  /// Same icon as [faceSmile].
+  static const smile = _faceSmile;
+
+  /// Smile heart. Tags: in love, heart eyes, emoji, face, love, smiley.
+  static const smileHeart = _smileHeart;
+
+  /// Sms code. Tags: sms, verification, otp, message, code, phone.
+  static const smsCode = _smsCode;
+
+  /// Snail. Tags: animal, slow, insect, spiral, shell.
   static const snail = _snail;
 
-  /// Sneaker. Tags: trainer, shoe, footwear, store, clothing, clothes, apparel, attire.
+  /// Sneaker. Tags: shoe, footwear, sport, trainer.
   static const sneaker = _sneaker;
 
-  /// Snowboard. Tags: slope, winter holiday, vacation, trip, equipment.
-  static const snowboard = _snowboard;
+  /// Sneaker running. Tags: running shoes, sneaker, shoe, sport, footwear.
+  static const sneakerRunning = _sneakerRunning;
 
-  /// Snowflake. Tags: cold, weather, freeze, snow, winter.
+  /// Sneaker simple. Tags: shoes, footwear, trainer, sport, running.
+  static const sneakerSimple = _sneakerSimple;
+
+  /// Snowflake. Tags: snow, cold, winter, freeze.
   static const snowflake = _snowflake;
 
-  /// Snowman. Tags: cold, freeze, frozen, winter.
-  static const snowman = _snowman;
+  /// Snowflake hexagon. Tags: snow, cold, winter, freeze, crystal, ice.
+  static const snowflakeHexagon = _snowflakeHexagon;
 
-  /// Soap bar. Tags: toiletries, amenities, bathroom, shower, clean, wash, lather, bubbles.
-  static const soapBar = _soapBar;
+  /// Soap dispenser. Tags: body, soap, pump, wash, hygiene.
+  static const soapDispenser = _soapDispenser;
 
-  /// Soap dispenser droplet. Tags: wash, bath, water, liquid, fluid, wet, moisture, damp.
+  /// Soap dispenser droplet. Tags: soap, dispenser, hygiene, wash, pump.
   static const soapDispenserDroplet = _soapDispenserDroplet;
 
-  /// Soccer ball. Tags: football, futbol, kick, pitch, goal, score, bounce.
+  /// Soccer ball. Tags: football, soccer, ball, sport, game. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const soccerBall = _soccerBall;
 
-  /// Soccer pitch. Tags: football, field, stadium, ground, surface, grass, futbol, kick.
+  /// Soccer pitch. Tags: football, soccer, pitch, field, stadium.
   static const soccerPitch = _soccerPitch;
 
-  /// Socket eu. Tags: electricity, electronics, outlet, plug, european, two pin, 2 pin.
-  static const socketEu = _socketEu;
+  /// Sock ankle. Tags: shoe, heel, fashion, pump, footwear.
+  static const sockAnkle = _sockAnkle;
 
-  /// Socket uk. Tags: electricity, electronics, outlet, plug, united kingdom, great britain, england, three pin.
-  static const socketUk = _socketUk;
+  /// Socket round. Tags: power, socket, outlet, electric.
+  static const socketRound = _socketRound;
 
-  /// Socket usa. Tags: electricity, electronics, outlet, plug, united states, american, two pin, 2 pin.
-  static const socketUsa = _socketUsa;
+  /// Socket slot. Tags: power, socket, outlet, electric, slot.
+  static const socketSlot = _socketSlot;
 
-  /// Socks. Tags: feet, foot, underwear, undergarment, store, clothing, clothes, apparel.
+  /// Socks. Tags: sock, clothing, footwear, apparel.
   static const socks = _socks;
 
-  /// Sofa. Tags: armchair, furniture, leisure, lounge, loveseat, couch.
+  /// Sofa. Tags: couch, furniture, lounge, loveseat.
   static const sofa = _sofa;
 
-  /// Solar panel. Tags: solar, panel, sun, energy, electricity, light.
+  /// Sofa cushions. Tags: couch, furniture, lounge, pillows.
+  static const sofaCushions = _sofaCushions;
+
+  /// Sofa low. Tags: couch, furniture, lounge, small.
+  static const sofaLow = _sofaLow;
+
+  /// Software. Tags: app, disc, program, install.
+  static const software = _software;
+
+  /// Software license. Tags: software, license, certificate, key, activation.
+  static const softwareLicense = _softwareLicense;
+
+  /// Software uninstall. Tags: software, uninstall, remove, delete, program. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const softwareUninstall = _softwareUninstall;
+
+  /// Soil moisture field. Tags: soil, moisture, humidity, plant, irrigation, sensor, field.
+  static const soilMoistureField = _soilMoistureField;
+
+  /// Soil moisture furrows. Tags: soil, moisture, humidity, map, satellite, global.
+  static const soilMoistureFurrows = _soilMoistureFurrows;
+
+  /// Soil temperature field. Tags: soil, temperature, heat, plant, sensor, field.
+  static const soilTemperatureField = _soilTemperatureField;
+
+  /// Soil temperature furrows. Tags: soil, temperature, heat, map, satellite, global.
+  static const soilTemperatureFurrows = _soilTemperatureFurrows;
+
+  /// Solar energy. Tags: solar, energy, sun, power, renewable, gear.
+  static const solarEnergy = _solarEnergy;
+
+  /// Solar panel. Tags: solar, panel, sun, energy, electricity.
   static const solarPanel = _solarPanel;
 
-  /// Soup. Tags: food, dish, restaurant, course, meal, bowl, starter.
+  /// Solar panel sun. Tags: solar, panel, sun, rays, energy.
+  static const solarPanelSun = _solarPanelSun;
+
+  /// Solar panel sunrise. Tags: solar, panel, sunrise, sun, energy.
+  static const solarPanelSunrise = _solarPanelSunrise;
+
+  /// Solar panel tilted. Tags: solar, panel, sun, energy, electricity, tilted.
+  static const solarPanelTilted = _solarPanelTilted;
+
+  /// Solar panel zap. Tags: solar, panel, electricity, lightning, power, energy.
+  static const solarPanelZap = _solarPanelZap;
+
+  /// Solar power. Tags: solar, power, sun, panel, energy, renewable. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const solarPower = _solarPower;
+
+  /// Solar system. Tags: solar, system, planets, orbit, space, sun.
+  static const solarSystem = _solarSystem;
+
+  /// Solar system spiral. Tags: solar, system, planets, orbit, space, galaxy.
+  static const solarSystemSpiral = _solarSystemSpiral;
+
+  /// Sort a z loop. Tags: sort, alphabetical, az, order, loop.
+  static const sortAZLoop = _sortAZLoop;
+
+  /// Sort descending corner. Tags: sort, descending, order, list, arrow.
+  static const sortDescendingCorner = _sortDescendingCorner;
+
+  /// Sort down lines. Tags: sort, order, descending, lines, list.
+  static const sortDownLines = _sortDownLines;
+
+  /// Sort down squares. Tags: sort, order, descending, squares, arrange.
+  static const sortDownSquares = _sortDownSquares;
+
+  /// Sort up lines. Tags: sort, order, ascending, lines, list.
+  static const sortUpLines = _sortUpLines;
+
+  /// Sort up squares. Tags: sort, order, ascending, squares, arrange.
+  static const sortUpSquares = _sortUpSquares;
+
+  /// Soup. Tags: bowl, food, meal, hot.
   static const soup = _soup;
 
-  /// Space. Tags: text, selection, letters, characters, font, typography.
+  /// Space. Tags: keyboard, whitespace, gap.
   static const space = _space;
 
-  /// Spade. Tags: shape, suit, playing, cards.
+  /// Spaceship. Tags: aircraft, game, fighter, shooter.
+  static const spaceship = _spaceship;
+
+  /// Spade. Tags: spades, card, suit, poker.
   static const spade = _spade;
 
-  /// Sparkle. Tags: star, effect, filter, night, magic, shiny, glitter, twinkle.
+  /// Spaghetti. Tags: pasta, noodles, plate, italian, meal.
+  static const spaghetti = _spaghetti;
+
+  /// Sparkle. Tags: star, shine, magic, effect, twinkle.
   static const sparkle = _sparkle;
 
-  /// Sparkles. Tags: stars, effect, filter, night, magic.
+  /// Sparkles. Tags: magic, ai, shine, new.
   static const sparkles = _sparkles;
 
-  /// Speaker. Tags: sound, audio, music, tweeter, subwoofer, bass, production, producer.
+  /// Sparkles pair. Tags: magic, ai, effect, shine, stars.
+  static const sparklesPair = _sparklesPair;
+
+  /// Sparkles pointed. Tags: ai, magic, sparkles, stars, shine, new.
+  static const sparklesPointed = _sparklesPointed;
+
+  /// Sparkles round. Tags: ai, sparkles, magic, generate, artificial intelligence, new.
+  static const sparklesRound = _sparklesRound;
+
+  /// Sparkles three. Tags: ai, sparkles, stars, shine, new, magic. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const sparklesThree = _sparklesThree;
+
+  /// Spartan helmet. Tags: spartan, helmet, warrior, greek, armor.
+  static const spartanHelmet = _spartanHelmet;
+
+  /// Spatula. Tags: cooking, kitchen, utensil, turner.
+  static const spatula = _spatula;
+
+  /// Speaker. Tags: audio, sound, music, woofer.
   static const speaker = _speaker;
 
-  /// Speech. Tags: disability, disabled, dda, human, accessibility, people, sound.
+  /// Speaker slot. Tags: speaker, audio, sound, music.
+  static const speakerSlot = _speakerSlot;
+
+  /// Speech. Tags: speak, talk, voice, sound, head.
   static const speech = _speech;
 
-  /// Spell check. Tags: spelling, error, mistake, oversight, typo, correction, code, linter.
+  /// Speech to text. Tags: dictation, voice, transcription, audio, text.
+  static const speechToText = _speechToText;
+
+  /// Spell check. Tags: spelling, proofread, grammar, check.
   static const spellCheck = _spellCheck;
 
-  /// Spell check 2. Tags: spelling, error, mistake, oversight, typo, correction, code, linter.
-  static const spellCheck2 = _spellCheck2;
+  /// Same icon as [spellCheck].
+  static const spellCheck2 = _spellCheck;
 
-  /// Spider. Tags: silk, web, weave, insect, bite, fangs, venom, poison.
-  static const spider = _spider;
+  /// Sperm. Tags: fertility, reproduction, biology.
+  static const sperm = _sperm;
 
-  /// Spider web. Tags: silk, weave, insects, arachnids, arachnophobia, fear, frightening, horror. Its details merge when filled: use it outlined.
-  static const spiderWeb = _spiderWeb;
+  /// Sphere. Tags: ball, globe, 3d, round. Its details merge when filled: use it outlined.
+  static const sphere = _sphere;
+
+  /// Sphere lines. Tags: 3d, rotate, orbit, sphere, transform.
+  static const sphereLines = _sphereLines;
 
   /// Same icon as [loaderCircle].
   static const spinner = _loaderCircle;
 
-  /// Spline. Tags: path, pen, tool, shape, curve, draw.
+  /// Spiral. Tags: swirl, vortex, twist.
+  static const spiral = _spiral;
+
+  /// Spline. Tags: curve, path, bezier, vector, bend, pen.
   static const spline = _spline;
 
-  /// Spline pointer. Tags: path, tool, curve, node, click, pointer, target, vector.
+  /// Spline pointer. Tags: curve, path, bezier, vector, cursor.
   static const splinePointer = _splinePointer;
 
-  /// Split. Tags: break, disband, divide, separate, branch, disunite.
+  /// Split. Tags: branch, fork, divide, separate.
   static const split = _split;
 
-  /// Spool. Tags: bobbin, spindle, yarn, thread, string, sewing, needlework.
+  /// Spool. Tags: thread, sewing, yarn, reel.
   static const spool = _spool;
 
-  /// Sport shoe. Tags: footwear, sports, running, athletic, shoe, sneaker, training, exercise.
+  /// Spool wound. Tags: thread, yarn, sewing, textile, bobbin. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const spoolWound = _spoolWound;
+
+  /// Spoon. Tags: cutlery, utensil, eat.
+  static const spoon = _spoon;
+
+  /// Spoon fork. Tags: restaurant, spoon, fork, cutlery, dining.
+  static const spoonFork = _spoonFork;
+
+  /// Sport shoe. Tags: sneaker, running, shoe, footwear.
   static const sportShoe = _sportShoe;
 
-  /// Spotlight. Tags: winner, soapbox, stage, entertainment, drama, podium, actor, actress.
+  /// Spotlight. Tags: stage, light, focus.
   static const spotlight = _spotlight;
 
-  /// Spray can. Tags: paint, color, graffiti, decoration, aerosol, deodorant, shaving foam, air freshener.
+  /// Spray can. Tags: spray, paint, graffiti, aerosol.
   static const sprayCan = _sprayCan;
 
-  /// Sprout. Tags: eco, green, growth, leaf, nature, plant, seed, spring.
+  /// Sprout. Tags: seedling, plant, grow, growth.
   static const sprout = _sprout;
 
-  /// Square. Tags: stop, playback, music, audio, video, rectangle, aspect ratio, shape.
+  /// Sprout cog. Tags: bio, energy, plant, gear, biofuel, renewable.
+  static const sproutCog = _sproutCog;
+
+  /// Sprout simple. Tags: plant, sprout, seedling, growth.
+  static const sproutSimple = _sproutSimple;
+
+  /// Sql. Tags: database, query, language.
+  static const sql = _sql;
+
+  /// Square. Tags: shape, box, rectangle, stop, border, all, outline, cell.
   static const square = _square;
 
-  /// Square activity. Tags: pulse, action, motion, movement, exercise, fitness, healthcare, heart rate monitor.
+  /// Square 0. Tags: number, zero, digit, badge.
+  static const square0 = _square0;
+
+  /// Square 1. Tags: one, number, 1, square, first.
+  static const square1 = _square1;
+
+  /// Square 2. Tags: two, 2, number, square, step.
+  static const square2 = _square2;
+
+  /// Square 3. Tags: three, 3, number, square, count.
+  static const square3 = _square3;
+
+  /// Square 4. Tags: four, 4, number, square, digit.
+  static const square4 = _square4;
+
+  /// Square 4k. Tags: 4k, resolution, ultra hd, video, display.
+  static const square4k = _square4k;
+
+  /// Square 5. Tags: five, 5, number, square, digit.
+  static const square5 = _square5;
+
+  /// Square 6. Tags: number, six, 6, digit, square.
+  static const square6 = _square6;
+
+  /// Square 7. Tags: seven, number, 7, square, digit.
+  static const square7 = _square7;
+
+  /// Square 8. Tags: eight, number, digit, 8.
+  static const square8 = _square8;
+
+  /// Square 9. Tags: nine, 9, number, digit, square, count.
+  static const square9 = _square9;
+
+  /// Square activity. Tags: activity, pulse, heartbeat, monitor, stats, health.
   static const squareActivity = _squareActivity;
 
-  /// Square arrow down. Tags: backwards, reverse, direction, south, sign, keyboard, button.
+  /// Square activity dot. Tags: activity, pulse, heartbeat, notification, dot, stats.
+  static const squareActivityDot = _squareActivityDot;
+
+  /// Square activity spike. Tags: pulse, heartbeat, monitor, activity, ecg.
+  static const squareActivitySpike = _squareActivitySpike;
+
+  /// Square activity zigzag. Tags: pulse, heartbeat, monitor, activity, ecg.
+  static const squareActivityZigzag = _squareActivityZigzag;
+
+  /// Square alert. Tags: alert, warning, square, exclamation.
+  static const squareAlert = _squareAlert;
+
+  /// Square align bottom. Tags: align, box, bottom, center, position.
+  static const squareAlignBottom = _squareAlignBottom;
+
+  /// Square align bottom left. Tags: align, box, bottom, left, position.
+  static const squareAlignBottomLeft = _squareAlignBottomLeft;
+
+  /// Square align bottom right. Tags: align, box, bottom, right, position.
+  static const squareAlignBottomRight = _squareAlignBottomRight;
+
+  /// Square align center. Tags: align, box, middle, center, position.
+  static const squareAlignCenter = _squareAlignCenter;
+
+  /// Square align left. Tags: align, box, middle, left, position, border, full, cell.
+  static const squareAlignLeft = _squareAlignLeft;
+
+  /// Square align right. Tags: align, box, middle, right, position.
+  static const squareAlignRight = _squareAlignRight;
+
+  /// Square align top. Tags: align, box, top, center, position.
+  static const squareAlignTop = _squareAlignTop;
+
+  /// Square align top left. Tags: align, box, top, left, position.
+  static const squareAlignTopLeft = _squareAlignTopLeft;
+
+  /// Square align top right. Tags: align, box, top, right, position.
+  static const squareAlignTopRight = _squareAlignTopRight;
+
+  /// Square alpha. Tags: alpha, greek, letter, beta, symbol.
+  static const squareAlpha = _squareAlpha;
+
+  /// Square api. Tags: api, interface, code, integration, endpoint. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const squareApi = _squareApi;
+
+  /// Square ar. Tags: ar, augmented reality, virtual, reality, tech, headset.
+  static const squareAr = _squareAr;
+
+  /// Square arrow down. Tags: download, down, direction, south, button, square, arrow down, save.
   static const squareArrowDown = _squareArrowDown;
 
-  /// Square arrow down left. Tags: direction, south-west, diagonal, sign, turn, keyboard, button.
+  /// Square arrow down left. Tags: direction, south-west, diagonal.
   static const squareArrowDownLeft = _squareArrowDownLeft;
 
-  /// Square arrow down right. Tags: direction, south-east, diagonal, sign, turn, keyboard, button.
+  /// Square arrow down right. Tags: direction, south-east, diagonal.
   static const squareArrowDownRight = _squareArrowDownRight;
 
-  /// Square arrow left. Tags: previous, back, direction, west, sign, keyboard, button. Mirrors in right-to-left text.
+  /// Square arrow down to line. Tags: download, save, down, line, square, arrow down, bottom.
+  static const squareArrowDownToLine = _squareArrowDownToLine;
+
+  /// Square arrow left. Tags: back, previous, left, direction. Mirrors in right-to-left text.
   static const squareArrowLeft = _squareArrowLeft;
 
-  /// Square arrow out down left. Tags: outwards, direction, south-west, diagonal.
-  static const squareArrowOutDownLeft = _squareArrowOutDownLeft;
+  /// Square arrow left right. Tags: exchange, swap, transfer, horizontal.
+  static const squareArrowLeftRight = _squareArrowLeftRight;
 
-  /// Square arrow out down right. Tags: outwards, direction, south-east, diagonal.
-  static const squareArrowOutDownRight = _squareArrowOutDownRight;
+  /// Square arrow left to line. Tags: start, first, left, line. Mirrors in right-to-left text.
+  static const squareArrowLeftToLine = _squareArrowLeftToLine;
 
-  /// Square arrow out up left. Tags: outwards, direction, north-west, diagonal.
-  static const squareArrowOutUpLeft = _squareArrowOutUpLeft;
-
-  /// Square arrow out up right. Tags: outwards, direction, north-east, diagonal, share, open, external, link.
+  /// Square arrow out up right. Tags: open, new window, link, external, arrow, share, export.
   static const squareArrowOutUpRight = _squareArrowOutUpRight;
 
-  /// Square arrow right. Tags: next, forward, direction, west, sign, keyboard, button. Mirrors in right-to-left text.
+  /// Square arrow right. Tags: next, forward, right, direction. Mirrors in right-to-left text.
   static const squareArrowRight = _squareArrowRight;
 
-  /// Square arrow right enter. Tags: left, in, inside, input, insert, source, import, place. Mirrors in right-to-left text.
+  /// Square arrow right enter. Tags: enter, login, sign in, import, right. Mirrors in right-to-left text.
   static const squareArrowRightEnter = _squareArrowRightEnter;
 
-  /// Square arrow right exit. Tags: out, outside, output, export. Mirrors in right-to-left text.
+  /// Square arrow right exit. Tags: exit, logout, sign out, export, right, arrow, auth, square. Mirrors in right-to-left text.
   static const squareArrowRightExit = _squareArrowRightExit;
 
-  /// Square arrow up. Tags: forward, direction, north, sign, keyboard, button.
+  /// Square arrow right to line. Tags: next, end, last, right, skip, direction. Mirrors in right-to-left text.
+  static const squareArrowRightToLine = _squareArrowRightToLine;
+
+  /// Square arrows left right line. Tags: more or less, swap, exchange, compare, toggle, square.
+  static const squareArrowsLeftRightLine = _squareArrowsLeftRightLine;
+
+  /// Square arrow up. Tags: up, upload, north, direction, arrow, square.
   static const squareArrowUp = _squareArrowUp;
 
-  /// Square arrow up left. Tags: direction, north-west, diagonal, sign, keyboard, button.
+  /// Square arrow up down. Tags: sort, swap, transfer, vertical, up down.
+  static const squareArrowUpDown = _squareArrowUpDown;
+
+  /// Square arrow up from line. Tags: upload, arrow, up, square, line.
+  static const squareArrowUpFromLine = _squareArrowUpFromLine;
+
+  /// Square arrow up left. Tags: north-west, diagonal, direction, up left.
   static const squareArrowUpLeft = _squareArrowUpLeft;
 
-  /// Square arrow up right. Tags: direction, north-east, diagonal, sign, keyboard, button, share.
+  /// Square arrow up right. Tags: north-east, diagonal, external, share, direction.
   static const squareArrowUpRight = _squareArrowUpRight;
 
-  /// Square asterisk. Tags: password, secret, access, key, multiply, multiplication, glob pattern, wildcard.
+  /// Square arrow up right long. Tags: north-east, diagonal, external, open, link.
+  static const squareArrowUpRightLong = _squareArrowUpRightLong;
+
+  /// Square arrow up to line. Tags: top, up, upload, to top, scroll top.
+  static const squareArrowUpToLine = _squareArrowUpToLine;
+
+  /// Square asterisk. Tags: asterisk, star, required, wildcard, footnote.
   static const squareAsterisk = _squareAsterisk;
 
-  /// Square bookmark. Tags: photo, book.
+  /// Square audio lines. Tags: voice, audio, sound wave, voice message, waveform, recording, speech.
+  static const squareAudioLines = _squareAudioLines;
+
+  /// Square audio lines sparkle. Tags: ai, audio, sound, waveform, sparkle, generate.
+  static const squareAudioLinesSparkle = _squareAudioLinesSparkle;
+
+  /// Square bitcoin. Tags: bitcoin, square, crypto, btc.
+  static const squareBitcoin = _squareBitcoin;
+
+  /// Square bitcoin ticks. Tags: bitcoin, square, coin, crypto, btc.
+  static const squareBitcoinTicks = _squareBitcoinTicks;
+
+  /// Square bluetooth. Tags: wireless, bluetooth, connect, pairing.
+  static const squareBluetooth = _squareBluetooth;
+
+  /// Square bookmark. Tags: bookmark, save, favorite.
   static const squareBookmark = _squareBookmark;
 
-  /// Square bottom dashed scissors. Tags: cut, snippet, chop, stationery, crafts.
+  /// Square bookmark small. Tags: album, bookmark, saved, collection.
+  static const squareBookmarkSmall = _squareBookmarkSmall;
+
+  /// Square bottom dashed scissors. Tags: cut, scissors, dashed, crop, clip.
   static const squareBottomDashedScissors = _squareBottomDashedScissors;
 
-  /// Same icon as [brackets].
-  static const squareBrackets = _brackets;
+  /// Square braces. Tags: curly braces, brackets, code, json, square.
+  static const squareBraces = _squareBraces;
 
-  /// Square centerline dashed horizontal. Tags: reflect, mirror, alignment, dashed.
+  /// Square brackets. Tags: brackets, round, parens, code, square.
+  static const squareBrackets = _squareBrackets;
+
+  /// Square c. Tags: c, letter, call, options, square.
+  static const squareC = _squareC;
+
+  /// Square centerline dashed horizontal. Tags: center, axis, horizontal, mirror, symmetry, flip.
   static const squareCenterlineDashedHorizontal =
       _squareCenterlineDashedHorizontal;
 
-  /// Square centerline dashed vertical. Tags: reflect, mirror, alignment, dashed.
+  /// Square centerline dashed vertical. Tags: center, axis, vertical, mirror, symmetry, flip.
   static const squareCenterlineDashedVertical = _squareCenterlineDashedVertical;
 
-  /// Square chart gantt. Tags: projects, manage, overview, roadmap, plan, intentions, timeline, deadline.
+  /// Square chart column. Tags: analytics, statistics, bar chart, graph, dashboard.
+  static const squareChartColumn = _squareChartColumn;
+
+  /// Square chart column dot. Tags: analytics, statistics, bar chart, notification, dashboard.
+  static const squareChartColumnDot = _squareChartColumnDot;
+
+  /// Square chart gantt. Tags: gantt, timeline, schedule, project, bars.
   static const squareChartGantt = _squareChartGantt;
 
-  /// Square check. Tags: done, todo, tick, complete, task.
+  /// Square chart pie. Tags: pie, chart, square, graph, statistics.
+  static const squareChartPie = _squareChartPie;
+
+  /// Square chart trending down. Tags: analytics, statistics, decrease, decline, loss, graph.
+  static const squareChartTrendingDown = _squareChartTrendingDown;
+
+  /// Square chart trending up. Tags: analytics, statistics, growth, increase, profit, graph.
+  static const squareChartTrendingUp = _squareChartTrendingUp;
+
+  /// Square check. Tags: check, done, tick, checkbox, select, approved, valid, confirm.
   static const squareCheck = _squareCheck;
 
-  /// Square check big. Tags: done, todo, tick, complete, task.
+  /// Square check big. Tags: check, done, tick, checkbox, approved, valid, confirm, overflow.
   static const squareCheckBig = _squareCheckBig;
 
-  /// Square chevron down. Tags: back, menu, panel.
+  /// Square check big curved. Tags: checkbox, done, approved, valid, tick, confirm, overflow.
+  static const squareCheckBigCurved = _squareCheckBigCurved;
+
+  /// Square chevron down. Tags: down, chevron, expand, dropdown, direction.
   static const squareChevronDown = _squareChevronDown;
 
-  /// Square chevron left. Tags: back, previous, less than, fewer, menu, panel, button, keyboard. Mirrors in right-to-left text.
+  /// Square chevron left. Tags: left, back, previous, chevron, direction. Mirrors in right-to-left text.
   static const squareChevronLeft = _squareChevronLeft;
 
-  /// Square chevron right. Tags: forward, next, more than, greater, menu, panel, code, coding. Mirrors in right-to-left text.
+  /// Square chevron right. Tags: right, next, forward, chevron, direction. Mirrors in right-to-left text.
   static const squareChevronRight = _squareChevronRight;
 
-  /// Square chevron up. Tags: caret, keyboard, button, mac, control, ctrl, superscript, exponential.
+  /// Square chevrons down. Tags: double, chevron, down, expand, scroll.
+  static const squareChevronsDown = _squareChevronsDown;
+
+  /// Square chevrons left. Tags: double, chevron, left, rewind, back. Mirrors in right-to-left text.
+  static const squareChevronsLeft = _squareChevronsLeft;
+
+  /// Square chevrons right. Tags: double, forward, fast, right, next. Mirrors in right-to-left text.
+  static const squareChevronsRight = _squareChevronsRight;
+
+  /// Square chevrons up. Tags: double, up, fast, collapse.
+  static const squareChevronsUp = _squareChevronsUp;
+
+  /// Square chevron up. Tags: up, chevron, collapse, direction, expand less.
   static const squareChevronUp = _squareChevronUp;
 
-  /// Square code. Tags: gist, source, programming, html, xml, coding.
+  /// Square circle tail. Tags: shape, rounded square, circle, balloon, tag, pin.
+  static const squareCircleTail = _squareCircleTail;
+
+  /// Square code. Tags: code, programming, source, square, developer.
   static const squareCode = _squareCode;
 
-  /// Square dashed. Tags: selection, square, rectangular, marquee, tool, dashed, box.
+  /// Square code slash. Tags: source, code, programming, brackets, square.
+  static const squareCodeSlash = _squareCodeSlash;
+
+  /// Square congruent. Tags: congruent, square, symbol, equal, math.
+  static const squareCongruent = _squareCongruent;
+
+  /// Square corner double left down. Tags: corner, turn, arrow, redirect, left, down. Mirrors in right-to-left text.
+  static const squareCornerDoubleLeftDown = _squareCornerDoubleLeftDown;
+
+  /// Square corner double right down. Tags: corner, turn, arrow, redirect, right, down. Mirrors in right-to-left text.
+  static const squareCornerDoubleRightDown = _squareCornerDoubleRightDown;
+
+  /// Square corner down left. Tags: corner, turn, arrow, redirect, down, left. Mirrors in right-to-left text.
+  static const squareCornerDownLeft = _squareCornerDownLeft;
+
+  /// Square corner down right. Tags: corner, turn, arrow, redirect, down, right. Mirrors in right-to-left text.
+  static const squareCornerDownRight = _squareCornerDownRight;
+
+  /// Square corner up left. Tags: corner, turn, arrow, redirect, left, up. Mirrors in right-to-left text.
+  static const squareCornerUpLeft = _squareCornerUpLeft;
+
+  /// Square corner up right. Tags: corner, turn, arrow, redirect, right, up. Mirrors in right-to-left text.
+  static const squareCornerUpRight = _squareCornerUpRight;
+
+  /// Square dashed. Tags: dashed, placeholder, empty, selection, marquee, square, outline, border.
   static const squareDashed = _squareDashed;
 
-  /// Square dashed bottom. Tags: rectangle, aspect ratio, shape, snippet, code, coding.
+  /// Square dashed bottom. Tags: dashed, partial, bottom, border, placeholder.
   static const squareDashedBottom = _squareDashedBottom;
 
-  /// Square dashed bottom code. Tags: rectangle, aspect ratio, shape, snippet, code, coding.
+  /// Square dashed bottom code. Tags: code, embed, snippet, dashed, html.
   static const squareDashedBottomCode = _squareDashedBottomCode;
 
-  /// Square dashed kanban. Tags: projects, manage, overview, board, tickets, issues, roadmap, plan.
+  /// Square dashed kanban. Tags: kanban, board, dashed, placeholder, columns.
   static const squareDashedKanban = _squareDashedKanban;
 
-  /// Square dashed mouse pointer. Tags: inspector, element, mouse, click, pointer, box, browser, selector.
+  /// Square dashed mouse pointer. Tags: select, pointer, cursor, dashed, marquee.
   static const squareDashedMousePointer = _squareDashedMousePointer;
 
-  /// Square dashed plus. Tags: selection, select, add, new, placeholder, marquee, box, dashed.
+  /// Square dashed plus. Tags: select, add, selection, dashed, new.
   static const squareDashedPlus = _squareDashedPlus;
 
-  /// Square dashed text. Tags: find, search, selection, dashed.
+  /// Square dashed search. Tags: search area, region, select, find, magnifier.
+  static const squareDashedSearch = _squareDashedSearch;
+
+  /// Square dashed text. Tags: select text, selection, dashed, text.
   static const squareDashedText = _squareDashedText;
 
-  /// Square dashed top solid. Tags: square, border, width, layout, style, design, rectangular, marquee.
+  /// Square dashed top solid. Tags: dashed, top, border, partial, placeholder.
   static const squareDashedTopSolid = _squareDashedTopSolid;
+
+  /// Square dashed user sparkle. Tags: ai, background, eraser, remove, person, cutout, sparkle.
+  static const squareDashedUserSparkle = _squareDashedUserSparkle;
 
   /// Square dashed x. Tags: deselect, unselect, delete, select, selection, border, width, layout.
   static const squareDashedX = _squareDashedX;
 
-  /// Square dashed x corner. Tags: deselect, unselect, delete, select, selection, border, width, layout.
-  static const squareDashedXCorner = _squareDashedXCorner;
+  /// Square diamond. Tags: token, diamond, badge, square.
+  static const squareDiamond = _squareDiamond;
 
-  /// Square dimensions. Tags: ratio, size, width, height, resize, scale, frame, proportions.
-  static const squareDimensions = _squareDimensions;
+  /// Square disc. Tags: vinyl, record, album, music, spinning, turntable, cover.
+  static const squareDisc = _squareDisc;
 
-  /// Square divide. Tags: calculate, math. Its details merge when filled: use it outlined.
+  /// Square divide. Tags: divide, division, calculator, operator, obelus, square, math.
   static const squareDivide = _squareDivide;
 
-  /// Square dot. Tags: git, diff, modified, ..
+  /// Square dollar arrow down left. Tags: money, receive, incoming, dollar, payment, income.
+  static const squareDollarArrowDownLeft = _squareDollarArrowDownLeft;
+
+  /// Square dollar arrow up right. Tags: money, send, outgoing, dollar, payment, transfer.
+  static const squareDollarArrowUpRight = _squareDollarArrowUpRight;
+
+  /// Square dollar sign. Tags: dollar, square, currency, money, usd, price.
+  static const squareDollarSign = _squareDollarSign;
+
+  /// Square dot. Tags: dot, point, radio, record, center.
   static const squareDot = _squareDot;
 
-  /// Square equal. Tags: calculate.
+  /// Square dots corner. Tags: inspection panel, access panel, hatch, screws, square.
+  static const squareDotsCorner = _squareDotsCorner;
+
+  /// Square edge bottom. Tags: align bottom, layout, position, anchor, square.
+  static const squareEdgeBottom = _squareEdgeBottom;
+
+  /// Square edge left. Tags: align left, layout, position, anchor, square.
+  static const squareEdgeLeft = _squareEdgeLeft;
+
+  /// Square edge right. Tags: align right, layout, position, anchor, square.
+  static const squareEdgeRight = _squareEdgeRight;
+
+  /// Square edge top. Tags: align top, layout, position, anchor, square.
+  static const squareEdgeTop = _squareEdgeTop;
+
+  /// Square equal. Tags: equal, equals, operator, calculator, equal sign, equality, square.
   static const squareEqual = _squareEqual;
 
-  /// Square exclamation point. Tags: warning, alert, danger, exclamation mark, rectangle, square, notification, attention.
-  static const squareExclamationPoint = _squareExclamationPoint;
+  /// Square equal approximately. Tags: approximately, about, similar, tilde, math.
+  static const squareEqualApproximately = _squareEqualApproximately;
 
-  /// Square function. Tags: programming, code, automation, math.
+  /// Square equal not. Tags: not equal, unequal, different, inequality.
+  static const squareEqualNot = _squareEqualNot;
+
+  /// Same icon as [squareAlert].
+  static const squareExclamationPoint = _squareAlert;
+
+  /// Square expand up left down right. Tags: expand, maximize, fullscreen, diagonal.
+  static const squareExpandUpLeftDownRight = _squareExpandUpLeftDownRight;
+
+  /// Square expand up right down left. Tags: expand, maximize, fullscreen, diagonal.
+  static const squareExpandUpRightDownLeft = _squareExpandUpRightDownLeft;
+
+  /// Square f. Tags: letter f, f key, function key, keyboard.
+  static const squareF = _squareF;
+
+  /// Square function. Tags: function, square, math, code, programming.
   static const squareFunction = _squareFunction;
 
-  /// Square kanban. Tags: projects, manage, overview, board, tickets, issues, roadmap, plan.
+  /// Square gauge. Tags: dashboard, speed, gauge, meter, performance, speedometer.
+  static const squareGauge = _squareGauge;
+
+  /// Square gavel. Tags: subpoena, court, legal, summons, law.
+  static const squareGavel = _squareGavel;
+
+  /// Square graduation cap. Tags: course, education, learning, graduation, class, study.
+  static const squareGraduationCap = _squareGraduationCap;
+
+  /// Square greater than. Tags: greater, than, square, inequality, compare.
+  static const squareGreaterThan = _squareGreaterThan;
+
+  /// Square greater than or equal. Tags: greater than or equal, inequality, comparison, operator, square.
+  static const squareGreaterThanOrEqual = _squareGreaterThanOrEqual;
+
+  /// Square grip diagonal. Tags: resize, handle, drag, textarea, field.
+  static const squareGripDiagonal = _squareGripDiagonal;
+
+  /// Square half bottom. Tags: flip, mirror, bottom, dashed, transform.
+  static const squareHalfBottom = _squareHalfBottom;
+
+  /// Square half left. Tags: flip, mirror, right, dashed, transform.
+  static const squareHalfLeft = _squareHalfLeft;
+
+  /// Square half right. Tags: flip, mirror, left, dashed, transform.
+  static const squareHalfRight = _squareHalfRight;
+
+  /// Square half top. Tags: flip, mirror, top, dashed, transform.
+  static const squareHalfTop = _squareHalfTop;
+
+  /// Square hatch. Tags: background, hatch, pattern, stripes, fill, texture.
+  static const squareHatch = _squareHatch;
+
+  /// Square heart. Tags: favourite, favorite, like, love, square.
+  static const squareHeart = _squareHeart;
+
+  /// Square infinity. Tags: infinite, endless, unlimited, square, loop.
+  static const squareInfinity = _squareInfinity;
+
+  /// Square info. Tags: information, help, about, details, square.
+  static const squareInfo = _squareInfo;
+
+  /// Square jsx. Tags: jsx, javascript, code, file type, markup. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const squareJsx = _squareJsx;
+
+  /// Square kanban. Tags: kanban, board, columns, project, tasks, workflow.
   static const squareKanban = _squareKanban;
 
-  /// Square library. Tags: books, reading, written, authors, stories, fiction, novels, information.
+  /// Square language. Tags: language, translate, translation, locale, square, international.
+  static const squareLanguage = _squareLanguage;
+
+  /// Square less than. Tags: comparison, smaller, operator, lt, square.
+  static const squareLessThan = _squareLessThan;
+
+  /// Square less than or equal. Tags: less than or equal, inequality, comparison, operator, square.
+  static const squareLessThanOrEqual = _squareLessThanOrEqual;
+
+  /// Square library. Tags: library, books, shelf, collection, catalog.
   static const squareLibrary = _squareLibrary;
 
-  /// Square m. Tags: metro, subway, underground, track, line.
+  /// Square link. Tags: attachment, paperclip, clip, attach, file. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const squareLink = _squareLink;
+
+  /// Square list. Tags: profile, list, details, card, rows.
+  static const squareList = _squareList;
+
+  /// Square list card. Tags: profile, list, details, card, tile.
+  static const squareListCard = _squareListCard;
+
+  /// Square list filter. Tags: filter, options, sort, square, lines.
+  static const squareListFilter = _squareListFilter;
+
+  /// Square log in. Tags: sign in, arrow, enter, auth, login, square. Mirrors in right-to-left text.
+  static const squareLogIn = _squareLogIn;
+
+  /// Square log in open. Tags: sign in, arrow, enter, auth, login, square. Mirrors in right-to-left text.
+  static const squareLogInOpen = _squareLogInOpen;
+
+  /// Square log out. Tags: sign out, arrow, exit, auth, logout, square. Mirrors in right-to-left text.
+  static const squareLogOut = _squareLogOut;
+
+  /// Square m. Tags: letter m, metro, subway, station, m key.
   static const squareM = _squareM;
 
-  /// Square menu. Tags: bars, navigation, hamburger, options, menu bar, panel.
+  /// Square map pin. Tags: map, square, pin, location, off, unavailable.
+  static const squareMapPin = _squareMapPin;
+
+  /// Square menu. Tags: menu, square, hamburger, lines, navigation.
   static const squareMenu = _squareMenu;
 
-  /// Square minus. Tags: subtract, remove, decrease, reduce, calculator, button, keyboard, line.
+  /// Square mic text. Tags: ai, transcribe, audio, speech, text, microphone.
+  static const squareMicText = _squareMicText;
+
+  /// Square minus. Tags: minus, remove, collapse, subtract, checkbox, square, decrease.
   static const squareMinus = _squareMinus;
 
-  /// Square mouse pointer. Tags: inspector, element, mouse, click, pointer, box, browser, selector.
+  /// Square minus plus. Tags: minus, plus, square, adjust, tolerance.
+  static const squareMinusPlus = _squareMinusPlus;
+
+  /// Square minus slash plus. Tags: minus, plus, square, slash, adjust.
+  static const squareMinusSlashPlus = _squareMinusSlashPlus;
+
+  /// Square more. Tags: more, horizontal, menu, options, square, dots.
+  static const squareMore = _squareMore;
+
+  /// Square more vertical. Tags: more, vertical, menu, options, square, dots.
+  static const squareMoreVertical = _squareMoreVertical;
+
+  /// Square mouse pointer. Tags: cursor, pointer, select, click, mouse.
   static const squareMousePointer = _squareMousePointer;
 
-  /// Square off. Tags: not, slash, off, disabled, inactive, cancel, none, block.
+  /// Square move diagonal. Tags: resize, expand, diagonal, arrows.
+  static const squareMoveDiagonal = _squareMoveDiagonal;
+
+  /// Square move diagonal 2. Tags: resize, expand, diagonal, arrows.
+  static const squareMoveDiagonal2 = _squareMoveDiagonal2;
+
+  /// Square move horizontal. Tags: resize, horizontal, double, arrow, width.
+  static const squareMoveHorizontal = _squareMoveHorizontal;
+
+  /// Square move vertical. Tags: vertical, resize, drag, up down, double arrow.
+  static const squareMoveVertical = _squareMoveVertical;
+
+  /// Square music. Tags: music, song, app, note, audio, square.
+  static const squareMusic = _squareMusic;
+
+  /// Square music layers. Tags: playlist, music, note, album, box.
+  static const squareMusicLayers = _squareMusicLayers;
+
+  /// Square music notes. Tags: music, song, notes, app, audio, square. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const squareMusicNotes = _squareMusicNotes;
+
+  /// Square music stack. Tags: playlist, music, note, stack, album.
+  static const squareMusicStack = _squareMusicStack;
+
+  /// Square nth root. Tags: root, radical, nth, math.
+  static const squareNthRoot = _squareNthRoot;
+
+  /// Square off. Tags: not, slash, off, disabled, inactive, cancel, none, block. Its details merge when filled: use it outlined.
   static const squareOff = _squareOff;
 
-  /// Square parking. Tags: parking lot, car park.
+  /// Square parentheses. Tags: parentheses, brackets, round brackets, code, square.
+  static const squareParentheses = _squareParentheses;
+
+  /// Square parking. Tags: parking, car park, p sign, garage, area, p, square.
   static const squareParking = _squareParking;
 
-  /// Square parking off. Tags: parking lot, car park, no parking.
+  /// Square parking off. Tags: no parking, parking off, prohibited, p sign. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const squareParkingOff = _squareParkingOff;
 
-  /// Square pause. Tags: music, audio, stop.
+  /// Square pause. Tags: pause, hold, media, stop temporarily.
   static const squarePause = _squarePause;
 
-  /// Square pen. Tags: pencil, edit, change, create, draw, sketch, draft, writer.
+  /// Square pen. Tags: edit, write, pen, compose, modify, pencil, square.
   static const squarePen = _squarePen;
 
-  /// Square percent. Tags: verified, unverified, sale, discount, offer, marketing, sticker, price tag.
+  /// Square percent. Tags: percent, percentage, discount, square.
   static const squarePercent = _squarePercent;
 
-  /// Square pi. Tags: constant, code, coding, programming, symbol, trigonometry, geometry, formula.
+  /// Square pi. Tags: pi, math, constant, square.
   static const squarePi = _squarePi;
 
-  /// Square pilcrow. Tags: paragraph, mark, paraph, blind, typography, type, text, prose.
+  /// Square pilcrow. Tags: paragraph, pilcrow, text, format, typography.
   static const squarePilcrow = _squarePilcrow;
 
-  /// Square play. Tags: music, audio, video, start, run.
+  /// Square play. Tags: play, square, video, media.
   static const squarePlay = _squarePlay;
 
-  /// Square plus. Tags: add, new, increase, increment, positive, calculate, calculator, button.
+  /// Square play heart. Tags: playlist, favourite, favorite, video, heart, play.
+  static const squarePlayHeart = _squarePlayHeart;
+
+  /// Square play sparkle. Tags: ai, video, play, sparkle, generate.
+  static const squarePlaySparkle = _squarePlaySparkle;
+
+  /// Square plus. Tags: plus, add, new, create, checkbox, square.
   static const squarePlus = _squarePlus;
 
-  /// Square power. Tags: on, off, device, switch, toggle, binary, boolean, reboot.
+  /// Square plus minus. Tags: plus, minus, square, plusminus.
+  static const squarePlusMinus = _squarePlusMinus;
+
+  /// Square plus slash minus. Tags: plus, minus, slash, square, math.
+  static const squarePlusSlashMinus = _squarePlusSlashMinus;
+
+  /// Square power. Tags: power, on, off, shutdown, switch.
   static const squarePower = _squarePower;
 
-  /// Square radical. Tags: calculate, formula, math, operator, root, square, symbol.
+  /// Square question mark. Tags: help, question, faq, support, info.
+  static const squareQuestionMark = _squareQuestionMark;
+
+  /// Square quote. Tags: quote, quotation, 66, square, blockquote.
+  static const squareQuote = _squareQuote;
+
+  /// Square quote close. Tags: quote, quotation, closing quote, 99, blockquote.
+  static const squareQuoteClose = _squareQuoteClose;
+
+  /// Square radical. Tags: radical, root, square root, sqrt, math.
   static const squareRadical = _squareRadical;
+
+  /// Square radical x. Tags: math, root, square root, formula, calculate, radical, sqrt, x.
+  static const squareRadicalX = _squareRadicalX;
+
+  /// Square radical x open. Tags: root, radical, square root, x, square.
+  static const squareRadicalXOpen = _squareRadicalXOpen;
+
+  /// Square re. Tags: re, reply, email subject, message. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const squareRe = _squareRe;
+
+  /// Square repeat. Tags: reload, refresh, repeat, loop, swap.
+  static const squareRepeat = _squareRepeat;
+
+  /// Square repeat flat. Tags: repeat, loop, reload, refresh, swap, exchange.
+  static const squareRepeatFlat = _squareRepeatFlat;
 
   /// Same icon as [radical].
   static const squareRoot = _radical;
 
-  /// Square round corner. Tags: border, radius, style, design, corner, layout, round, rounded.
+  /// Square rotate. Tags: rotate, square, diamond, turn, arrows.
+  static const squareRotate = _squareRotate;
+
+  /// Square rotate bottom left. Tags: rotate, square, turn, bottom left, arrow.
+  static const squareRotateBottomLeft = _squareRotateBottomLeft;
+
+  /// Square rotate bottom right. Tags: rotate, square, turn, bottom right, arrow.
+  static const squareRotateBottomRight = _squareRotateBottomRight;
+
+  /// Square rotate top left. Tags: rotate, square, turn, top left, arrow.
+  static const squareRotateTopLeft = _squareRotateTopLeft;
+
+  /// Square rotate top right. Tags: rotate, square, turn, top right, arrow.
+  static const squareRotateTopRight = _squareRotateTopRight;
+
+  /// Square round corner. Tags: rounded, corner, radius, border radius, design.
   static const squareRoundCorner = _squareRoundCorner;
 
-  /// Square scissors. Tags: cut, snippet, chop, stationery, crafts, toolbar, button.
+  /// Square rss. Tags: transmission, rss, feed, broadcast, signal, wireless.
+  static const squareRss = _squareRss;
+
+  /// Square scissors. Tags: cut, scissors, trim, clip.
   static const squareScissors = _squareScissors;
 
-  /// Squares exclude. Tags: square, pathfinder, path, exclude, invert, xor, shape, vector.
+  /// Square scissors crossed. Tags: cut, scissors, snip, crop, clip.
+  static const squareScissorsCrossed = _squareScissorsCrossed;
+
+  /// Squares crop. Tags: pathfinder, crop, shapes, boolean.
+  static const squaresCrop = _squaresCrop;
+
+  /// Squares divide. Tags: pathfinder, divide, shapes, boolean. Its details merge when filled: use it outlined.
+  static const squaresDivide = _squaresDivide;
+
+  /// Square search. Tags: find, magnifier, boxed, lens, explore.
+  static const squareSearch = _squareSearch;
+
+  /// Squares exclude. Tags: exclude, boolean, shapes, combine, xor.
   static const squaresExclude = _squaresExclude;
 
-  /// Square sigma. Tags: sum, calculate, formula, math, enumeration, enumerate.
+  /// Squares exclude dashed. Tags: pathfinder, exclude, shapes, boolean.
+  static const squaresExcludeDashed = _squaresExcludeDashed;
+
+  /// Square shrink up left down right. Tags: shrink, minimize, collapse, diagonal, reduce, inward.
+  static const squareShrinkUpLeftDownRight = _squareShrinkUpLeftDownRight;
+
+  /// Square shrink up right down left. Tags: shrink, collapse, inward, contract, reduce, compress.
+  static const squareShrinkUpRightDownLeft = _squareShrinkUpRightDownLeft;
+
+  /// Square sigma. Tags: sigma, sum, summation, total, math.
   static const squareSigma = _squareSigma;
 
-  /// Squares intersect. Tags: square, pathfinder, path, intersect, shape, include, vector.
+  /// Squares intersect. Tags: intersect, boolean, shapes, overlap, pathfinder.
   static const squaresIntersect = _squaresIntersect;
 
-  /// Square slash. Tags: git, diff, ignored, divide, division, shortcut, or.
+  /// Square slash. Tags: slash, divide, forward slash, disabled, shell, zsh, terminal.
   static const squareSlash = _squareSlash;
 
-  /// Square sparkles. Tags: picture, photo, sparkles.
-  static const squareSparkles = _squareSparkles;
+  /// Square sliders horizontal. Tags: settings, controls, toggle, sliders, adjust.
+  static const squareSlidersHorizontal = _squareSlidersHorizontal;
 
-  /// Square split horizontal. Tags: split, divide.
+  /// Square sliders vertical. Tags: settings, controls, equalizer, sliders, adjust.
+  static const squareSlidersVertical = _squareSlidersVertical;
+
+  /// Squares minus back. Tags: pathfinder, minus back, subtract, shapes, boolean.
+  static const squaresMinusBack = _squaresMinusBack;
+
+  /// Squares motion. Tags: motion, animation, copy, squares, transition, trail.
+  static const squaresMotion = _squaresMotion;
+
+  /// Squares network. Tags: blockchain, network, nodes, crypto.
+  static const squaresNetwork = _squaresNetwork;
+
+  /// Squares outline. Tags: pathfinder, outline, shapes, boolean.
+  static const squaresOutline = _squaresOutline;
+
+  /// Squares overlap. Tags: change screen mode, windows, switch, overlap, layers, duplicate.
+  static const squaresOverlap = _squaresOverlap;
+
+  /// Square sparkle. Tags: ai, generate, square, sparkle, create.
+  static const squareSparkle = _squareSparkle;
+
+  /// Square sparkle large. Tags: ai, generative, square, sparkle, create.
+  static const squareSparkleLarge = _squareSparkleLarge;
+
+  /// Square split horizontal. Tags: split, horizontal, columns, divide, panels.
   static const squareSplitHorizontal = _squareSplitHorizontal;
 
-  /// Square split vertical. Tags: split, divide.
+  /// Square split vertical. Tags: split, vertical, rows, divide, panels.
   static const squareSplitVertical = _squareSplitVertical;
 
-  /// Square square. Tags: float, center, rectangle.
+  /// Squares plus minus. Tags: plus, minus, add, remove, squares, compare.
+  static const squaresPlusMinus = _squaresPlusMinus;
+
+  /// Square square. Tags: float, center, rectangle, inner, square, stop, media, halt.
   static const squareSquare = _squareSquare;
 
-  /// Squares subtract. Tags: square, pathfinder, path, minus, subtract, subtraction, shape, front.
+  /// Squares subtract. Tags: subtract, boolean, shapes, cut out, minus front, pathfinder.
   static const squaresSubtract = _squaresSubtract;
 
-  /// Square stack. Tags: versions, clone, copy, duplicate, multiple, revisions, version control, backup.
+  /// Squares swap sparkle. Tags: ai, swap, exchange, squares, sparkle.
+  static const squaresSwapSparkle = _squaresSwapSparkle;
+
+  /// Square stack. Tags: stack, layers, copies, squares, overlap.
   static const squareStack = _squareStack;
 
-  /// Square star. Tags: badge, medal, honour, decoration, order, pin, laurel, trophy.
+  /// Square stack star. Tags: favorites, collection, starred, stack, layers.
+  static const squareStackStar = _squareStackStar;
+
+  /// Square stack zap. Tags: electricity stack, power, energy, battery, layers.
+  static const squareStackZap = _squareStackZap;
+
+  /// Square star. Tags: favorite, star, rating, badge.
   static const squareStar = _squareStar;
 
-  /// Square stop. Tags: media, music.
-  static const squareStop = _squareStop;
+  /// Same icon as [squareSquare].
+  static const squareStop = _squareSquare;
 
-  /// Squares unite. Tags: square, pathfinder, path, unite, union, shape, merge, vector.
+  /// Squares trim. Tags: pathfinder, trim, shapes, boolean.
+  static const squaresTrim = _squaresTrim;
+
+  /// Squares unite. Tags: unite, union, boolean, shapes, merge, pathfinder.
   static const squaresUnite = _squaresUnite;
 
-  /// Square terminal. Tags: code, command line, prompt, shell.
+  /// Square terminal. Tags: terminal, console, shell, command line, prompt, bash, command, cli.
   static const squareTerminal = _squareTerminal;
 
-  /// Square text. Tags: text, paragraph, content, note, document, body, copy, article.
+  /// Square text. Tags: text, paragraph, document, note, lines.
   static const squareText = _squareText;
 
-  /// Square user. Tags: person, account, contact.
+  /// Square text dot. Tags: notification, badge, unread, square, dot, text.
+  static const squareTextDot = _squareTextDot;
+
+  /// Square text sparkle. Tags: ai, search, lines, text, note, sparkle, summary.
+  static const squareTextSparkle = _squareTextSparkle;
+
+  /// Square thumbs down. Tags: dislike, bad, emotion, vote, square.
+  static const squareThumbsDown = _squareThumbsDown;
+
+  /// Square thumbs up. Tags: like, good, emotion, vote, square.
+  static const squareThumbsUp = _squareThumbsUp;
+
+  /// Square transfer diagonal. Tags: transfer, exchange, swap, diagonal, arrows.
+  static const squareTransferDiagonal = _squareTransferDiagonal;
+
+  /// Square transfer horizontal. Tags: transfer, exchange, swap, horizontal, arrows.
+  static const squareTransferHorizontal = _squareTransferHorizontal;
+
+  /// Square transfer vertical. Tags: transfer, exchange, swap, vertical, arrows.
+  static const squareTransferVertical = _squareTransferVertical;
+
+  /// Square trending up. Tags: activity, trend, line, chart, growth, stats, analytics.
+  static const squareTrendingUp = _squareTrendingUp;
+
+  /// Square trending up dot. Tags: activity, trend, line, chart, notification, dot, stats.
+  static const squareTrendingUpDot = _squareTrendingUpDot;
+
+  /// Square trending up sparkle. Tags: activity, spark, trend, ai, chart, growth, insights.
+  static const squareTrendingUpSparkle = _squareTrendingUpSparkle;
+
+  /// Square type. Tags: text, square, letter, font, typography.
+  static const squareType = _squareType;
+
+  /// Square user. Tags: person, account, profile, avatar, contact, user square.
   static const squareUser = _squareUser;
 
-  /// Square user round. Tags: person, account, contact.
+  /// Square user oval. Tags: co-present, presenter, user, person, frame, profile.
+  static const squareUserOval = _squareUserOval;
+
+  /// Square user round. Tags: user, profile, avatar, person, account.
   static const squareUserRound = _squareUserRound;
 
-  /// Square x. Tags: cancel, close, delete, remove, times, clear, math, multiply.
+  /// Square user sparkle. Tags: ai, user, profile, person, sparkle.
+  static const squareUserSparkle = _squareUserSparkle;
+
+  /// Square variable x. Tags: algebra, unknown, italic, x, function, symbol.
+  static const squareVariableX = _squareVariableX;
+
+  /// Square voice sparkle. Tags: ai, voice, audio, waveform, sparkle.
+  static const squareVoiceSparkle = _squareVoiceSparkle;
+
+  /// Square vr. Tags: virtual reality, vr, goggles, metaverse, immersive, label, text.
+  static const squareVr = _squareVr;
+
+  /// Square wifi. Tags: wifi, signal, wireless, connection, badge.
+  static const squareWifi = _squareWifi;
+
+  /// Square x. Tags: close, cancel, delete, remove, checkbox, dismiss, clear.
   static const squareX = _squareX;
 
-  /// Squircle. Tags: shape.
+  /// Square x big. Tags: close, cancel, dismiss, multiply, error, remove.
+  static const squareXBig = _squareXBig;
+
+  /// Square zap. Tags: energy, power, lightning, bolt, electricity, square.
+  static const squareZap = _squareZap;
+
+  /// Square zap sparkle. Tags: ai, template, bolt, layout, sparkle.
+  static const squareZapSparkle = _squareZapSparkle;
+
+  /// Squat rack. Tags: gym, equipment, workout, barbell, fitness.
+  static const squatRack = _squatRack;
+
+  /// Squats. Tags: workout, exercise, gym, fitness, legs, training.
+  static const squats = _squats;
+
+  /// Squiggle arrow left. Tags: curvy, wavy, path, direction, left, route.
+  static const squiggleArrowLeft = _squiggleArrowLeft;
+
+  /// Squiggle arrow left right. Tags: curvy, wavy, path, direction, two way, route.
+  static const squiggleArrowLeftRight = _squiggleArrowLeftRight;
+
+  /// Squiggle arrow right. Tags: curvy, wavy, path, direction, right, route.
+  static const squiggleArrowRight = _squiggleArrowRight;
+
+  /// Squiggle arrow up down. Tags: curvy, wavy, path, direction, vertical, route.
+  static const squiggleArrowUpDown = _squiggleArrowUpDown;
+
+  /// Squircle. Tags: rounded square, superellipse, shape, rounded, square, dashed, placeholder.
   static const squircle = _squircle;
 
-  /// Squircle dashed. Tags: shape, pending, progress, issue, draft, code, coding, version control.
-  static const squircleDashed = _squircleDashed;
+  /// Same icon as [squircle].
+  static const squircleDashed = _squircle;
 
-  /// Squirrel. Tags: animal, rodent, pet, pest, nuts, retrieve, updates, storage.
-  static const squirrel = _squirrel;
-
-  /// Stairs. Tags: steps, staircase, stairway.
+  /// Stairs. Tags: steps, staircase, climb, levels.
   static const stairs = _stairs;
 
-  /// Stairs arch. Tags: steps, staircase, stairway, basement, cellar, amenities.
-  static const stairsArch = _stairsArch;
+  /// Stairs isometric. Tags: stairs, steps, staircase, 3d, perspective.
+  static const stairsIsometric = _stairsIsometric;
 
-  /// Stairs arrow down left. Tags: steps, stairwell, staircase, basement access, ground floor, levels, hotel, accommodation.
-  static const stairsArrowDownLeft = _stairsArrowDownLeft;
+  /// Stairs pyramid. Tags: stairs, steps, pyramid, tiers, levels, podium.
+  static const stairsPyramid = _stairsPyramid;
 
-  /// Stairs arrow up right. Tags: steps, stairwell, staircase, rooftop access, top floor, penthouse suite, levels, hotel.
-  static const stairsArrowUpRight = _stairsArrowUpRight;
-
-  /// Stamp. Tags: mark, print, clone, loyalty, library.
+  /// Stamp. Tags: seal, mark, approve, rubber stamp.
   static const stamp = _stamp;
 
-  /// Star. Tags: bookmark, favorite, like, review, rating.
+  /// Stamp check. Tags: validation, approved, verified, stamp, seal, confirm, validate.
+  static const stampCheck = _stampCheck;
+
+  /// Stamp sparkle. Tags: ai, watermark, stamp, sparkle.
+  static const stampSparkle = _stampSparkle;
+
+  /// Stamp tall. Tags: stamp, seal, mark, approve, rubber stamp.
+  static const stampTall = _stampTall;
+
+  /// Stamp wide. Tags: stamp, seal, mark, approve, rubber stamp.
+  static const stampWide = _stampWide;
+
+  /// Stand mixer. Tags: mixer, kitchen, baking, appliance, blender, cooking.
+  static const standMixer = _standMixer;
+
+  /// Star. Tags: favorite, rating, like, bookmark.
   static const star = _star;
+
+  /// Starburst. Tags: uv, ultraviolet, radiation, sun protection, sunburn, index.
+  static const starburst = _starburst;
 
   /// Star check. Tags: bookmark, favorite, like, review, rating, check, star.
   static const starCheck = _starCheck;
 
-  /// Star half. Tags: bookmark, favorite, like, review, rating.
+  /// Star circle. Tags: sheriff, badge, star, police, law.
+  static const starCircle = _starCircle;
+
+  /// Star half. Tags: half star, rating, review, favorite.
   static const starHalf = _starHalf;
 
   /// Star minus. Tags: bookmark, favorite, like, review, rating, minus, remove, deselect.
   static const starMinus = _starMinus;
 
-  /// Star north. Tags: guide, directions, dark, night, sky, twinkle, sparkle, shine.
-  static const starNorth = _starNorth;
-
-  /// Star off. Tags: dislike, unlike, remove, unrate.
+  /// Star off. Tags: unstar, dislike, remove, unfavorite.
   static const starOff = _starOff;
 
   /// Star plus. Tags: bookmark, favorite, like, review, rating, plus, add, join.
   static const starPlus = _starPlus;
 
+  /// Star wand. Tags: magic, wizard, sparkle, star, wand.
+  static const starWand = _starWand;
+
+  /// Star wand small. Tags: magic, wizard, sparkle, star, wand.
+  static const starWandSmall = _starWandSmall;
+
   /// Star x. Tags: mark, symbol, shape, vector, design, graphic, bookmark, favorite.
   static const starX = _starX;
 
-  /// Steering wheel. Tags: driving, driver, racing, racer, motor sport, formula one, formula 1, f1.
+  /// Steak. Tags: meat, beef, grill, dinner.
+  static const steak = _steak;
+
+  /// Steering wheel. Tags: drive, car, wheel, driving.
   static const steeringWheel = _steeringWheel;
 
-  /// Step back. Tags: arrow, previous, music, left, reverse.
+  /// Step back. Tags: previous, media, backward, skip, back, track, rewind.
   static const stepBack = _stepBack;
 
-  /// Step forward. Tags: arrow, next, music, right, continue.
+  /// Step forward. Tags: next, media, forward, play, start, step.
   static const stepForward = _stepForward;
 
-  /// Stethoscope. Tags: phonendoscope, medical, heart, lungs, sound.
+  /// Step into. Tags: debug, debugger, enter function.
+  static const stepInto = _stepInto;
+
+  /// Step out. Tags: debug, debugger, exit function.
+  static const stepOut = _stepOut;
+
+  /// Step over. Tags: debug, debugger, skip function.
+  static const stepOver = _stepOver;
+
+  /// Stethoscope. Tags: doctor, medical, health, heart.
   static const stethoscope = _stethoscope;
 
-  /// Sticker. Tags: reaction, emotion, smile, happy, feedback.
+  /// Stethoscope simple. Tags: stethoscope, doctor, medical, health, checkup.
+  static const stethoscopeSimple = _stethoscopeSimple;
+
+  /// Sticker. Tags: emoji, peel, smiley.
   static const sticker = _sticker;
 
-  /// Sticky note. Tags: post-it, comment, annotation, reaction, memo, reminder, todo, task.
+  /// Sticker circle. Tags: clipart, peel, label, decal, badge.
+  static const stickerCircle = _stickerCircle;
+
+  /// Sticky note. Tags: post-it, memo, note, reminder.
   static const stickyNote = _stickyNote;
 
-  /// Sticky note check. Tags: post-it, comment, annotation, reaction, memo, reminder, todo, task.
+  /// Sticky note check. Tags: note, sticky, done, check, complete.
   static const stickyNoteCheck = _stickyNoteCheck;
 
-  /// Sticky note minus. Tags: post-it, comment, annotation, reaction, memo, reminder, todo, task.
+  /// Sticky note clip. Tags: note, clipboard, memo, clip, task, reminder.
+  static const stickyNoteClip = _stickyNoteClip;
+
+  /// Sticky note curled. Tags: note, memo, post-it, pinned, reminder.
+  static const stickyNoteCurled = _stickyNoteCurled;
+
+  /// Sticky note minus. Tags: note, sticky, remove, minus.
   static const stickyNoteMinus = _stickyNoteMinus;
 
-  /// Sticky note off. Tags: post-it, comment, annotation, reaction, memo, reminder, todo, task.
+  /// Sticky note off. Tags: note, sticky, off, disabled, hidden. Its details merge when filled: use it outlined.
   static const stickyNoteOff = _stickyNoteOff;
 
-  /// Sticky note plus. Tags: post-it, comment, annotation, reaction, memo, reminder, todo, task.
+  /// Sticky note plus. Tags: note, sticky, add, plus, new.
   static const stickyNotePlus = _stickyNotePlus;
 
-  /// Sticky notes. Tags: post-it, annotation, memo, reminder, todo, tasks, ideas, brainstorm.
+  /// Sticky notes. Tags: note, notes, cards, memo, stickies, two notes.
   static const stickyNotes = _stickyNotes;
 
-  /// Sticky note x. Tags: post-it, comment, annotation, reaction, memo, reminder, todo, task.
+  /// Sticky note x. Tags: note, sticky, delete, remove, x. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const stickyNoteX = _stickyNoteX;
 
-  /// Stone. Tags: mineral, geology, nature, solid, pebble, crystal, ore, hard. Its details merge when filled: use it outlined.
+  /// Stomach. Tags: digestion, gut, organ, digestive, health.
+  static const stomach = _stomach;
+
+  /// Stone. Tags: rock, mineral, boulder, gem.
   static const stone = _stone;
+
+  /// Stool. Tags: seat, bar stool, furniture, sit, counter.
+  static const stool = _stool;
+
+  /// Stop loss order. Tags: stop loss, order, trading, limit, price, risk.
+  static const stopLossOrder = _stopLossOrder;
 
   /// Same icon as [timer].
   static const stopwatch = _timer;
 
-  /// Store. Tags: shop, supermarket, stand, boutique, building.
+  /// Store. Tags: shop, market, retail, shopfront.
   static const store = _store;
 
-  /// Strawberry. Tags: fruit, berries, smoothie, sweet, snack, meal, lunch, jam.
-  static const strawberry = _strawberry;
+  /// Store bitcoin. Tags: bitcoin, store, shop, merchant, crypto, btc.
+  static const storeBitcoin = _storeBitcoin;
 
-  /// Stretch horizontal. Tags: items, flex, justify, distribute.
+  /// Store check. Tags: store, shop, verified, approved, trusted.
+  static const storeCheck = _storeCheck;
+
+  /// Same icon as [storeCheck].
+  static const storeCheck2 = _storeCheck;
+
+  /// Store cog. Tags: store, shop, management, settings, configure.
+  static const storeCog = _storeCog;
+
+  /// Store dash. Tags: store, shop, market, retail, shopfront.
+  static const storeDash = _storeDash;
+
+  /// Store map pin. Tags: store, shop, location, locate, find.
+  static const storeMapPin = _storeMapPin;
+
+  /// Store map pin dash. Tags: store, shop, location, locate, find.
+  static const storeMapPinDash = _storeMapPinDash;
+
+  /// Store plus. Tags: store, shop, add, new, open.
+  static const storePlus = _storePlus;
+
+  /// Store plus dash. Tags: store, shop, add, new, open.
+  static const storePlusDash = _storePlusDash;
+
+  /// Store wavy. Tags: store, shop, market, retail, shopfront.
+  static const storeWavy = _storeWavy;
+
+  /// Store wavy cog. Tags: store, shop, management, settings, configure.
+  static const storeWavyCog = _storeWavyCog;
+
+  /// Store wavy dash. Tags: store, shop, market, retail, shopfront.
+  static const storeWavyDash = _storeWavyDash;
+
+  /// Store x. Tags: store, shop, remove, close, delete.
+  static const storeX = _storeX;
+
+  /// Store x dash. Tags: store, shop, remove, close, delete.
+  static const storeXDash = _storeXDash;
+
+  /// Stove. Tags: gas, cooker, kitchen, burner.
+  static const stove = _stove;
+
+  /// Stretcher. Tags: gurney, hospital bed, patient.
+  static const stretcher = _stretcher;
+
+  /// Stretcher folding. Tags: stretcher, gurney, hospital bed, patient.
+  static const stretcherFolding = _stretcherFolding;
+
+  /// Stretch horizontal. Tags: stretch, horizontal, rows, fill, stack.
   static const stretchHorizontal = _stretchHorizontal;
 
-  /// Stretch vertical. Tags: items, flex, justify, distribute.
+  /// Stretching. Tags: workout, exercise, flexibility, fitness, warm, up.
+  static const stretching = _stretching;
+
+  /// Stretch vertical. Tags: stretch, vertical, columns, fill, side by side.
   static const stretchVertical = _stretchVertical;
 
-  /// Strikethrough. Tags: cross out, delete, remove, format.
+  /// Strikethrough. Tags: cross out, delete text, format, delete, remove.
   static const strikethrough = _strikethrough;
 
-  /// Strikethrough square. Tags: correction, cross out, redacted, delete, remove, toolbar, formatting, styling.
-  static const strikethroughSquare = _strikethroughSquare;
+  /// Stroke bottom. Tags: stroke, bottom, border, outline, alignment.
+  static const strokeBottom = _strokeBottom;
 
-  /// Stroller. Tags: baby, newborn, children, infant, kids, toddler, mother, mum.
-  static const stroller = _stroller;
+  /// Stroke center. Tags: stroke, center, outline, alignment, path.
+  static const strokeCenter = _strokeCenter;
 
-  /// Subscript. Tags: text.
+  /// Stroke inside. Tags: stroke, inside, outline, alignment, path.
+  static const strokeInside = _strokeInside;
+
+  /// Stroke left. Tags: stroke, left, border, outline, alignment.
+  static const strokeLeft = _strokeLeft;
+
+  /// Stroke outside. Tags: stroke, outside, outline, alignment, path.
+  static const strokeOutside = _strokeOutside;
+
+  /// Stroke right. Tags: stroke, right, border, outline, alignment.
+  static const strokeRight = _strokeRight;
+
+  /// Stroke top. Tags: stroke, top, border, outline, alignment.
+  static const strokeTop = _strokeTop;
+
+  /// Submarine. Tags: sub, underwater, ship, navy. Its details merge when filled: use it outlined.
+  static const submarine = _submarine;
+
+  /// Submerge. Tags: immersion, water, drown, flood, bath.
+  static const submerge = _submerge;
+
+  /// Subnode plus. Tags: subnode, child, add node, tree, nested.
+  static const subnodePlus = _subnodePlus;
+
+  /// Subnode x. Tags: subnode, child, remove node, tree, delete.
+  static const subnodeX = _subnodeX;
+
+  /// Subscript. Tags: format, chemistry, x2, lower.
   static const subscript = _subscript;
+
+  /// Subscript t. Tags: text, format, sub.
+  static const subscriptT = _subscriptT;
+
+  /// Suit. Tags: jacket, formal, tie, business, clothes.
+  static const suit = _suit;
+
+  /// Suit bow tie. Tags: suit, jacket, formal, bow tie, clothes.
+  static const suitBowTie = _suitBowTie;
+
+  /// Suitcase. Tags: baggage, luggage, travel, bag, trip.
+  static const suitcase = _suitcase;
 
   /// Same icon as [sigma].
   static const sum = _sigma;
 
-  /// Summary. Tags: brief, abstract, synopsis, report, digest, outline, recap, condensation.
-  static const summary = _summary;
-
-  /// Sun. Tags: brightness, weather, light, summer.
+  /// Sun. Tags: sunny, day, weather, brightness, light.
   static const sun = _sun;
 
-  /// Sun dim. Tags: brightness, dim, low, brightness low.
+  /// Sun dim. Tags: sun, dim, brightness, low, light, sunny, day, weather.
   static const sunDim = _sunDim;
 
-  /// Sunlounger parasol sun. Tags: shade, sunbathing, summer holiday, vacation, retreat, relax, leisure, tropical.
-  static const sunloungerParasolSun = _sunloungerParasolSun;
+  /// Sun eclipse. Tags: eclipse, sun, moon, solar, astronomy.
+  static const sunEclipse = _sunEclipse;
 
-  /// Sunlounger parasol sun palmtree. Tags: shade, sunbathing, summer holiday, vacation, retreat, relax, leisure, tropical.
-  static const sunloungerParasolSunPalmtree = _sunloungerParasolSunPalmtree;
-
-  /// Sunlounger parasol table. Tags: shade, sunbathing, summer holiday, vacation, retreat, relax, leisure, tropical.
-  static const sunloungerParasolTable = _sunloungerParasolTable;
-
-  /// Sun medium. Tags: brightness, medium.
+  /// Sun medium. Tags: sun, medium, brightness, light.
   static const sunMedium = _sunMedium;
 
-  /// Sun moon. Tags: dark, light, moon, sun, brightness, theme, auto theme, system theme.
-  static const sunMoon = _sunMoon;
-
-  /// Sunrise. Tags: weather, time, morning, day.
+  /// Sunrise. Tags: morning, dawn, day, horizon.
   static const sunrise = _sunrise;
 
-  /// Sunset. Tags: weather, time, evening, night.
+  /// Sunset. Tags: evening, dusk, night, horizon.
   static const sunset = _sunset;
 
-  /// Sun snow. Tags: weather, air conditioning, temperature, hot, cold, seasons.
+  /// Sun snow. Tags: sun, snow, winter, cold, weather.
   static const sunSnow = _sunSnow;
 
-  /// Superscript. Tags: text, exponent.
+  /// Sun uv. Tags: uv, ultraviolet, uv index, sun, radiation, sunburn, sun protection.
+  static const sunUv = _sunUv;
+
+  /// Sun uv low. Tags: uv, ultraviolet, uv index, sun, radiation, sunburn, sun protection.
+  static const sunUvLow = _sunUvLow;
+
+  /// Sun wavy. Tags: sun, sunny, day, weather, brightness.
+  static const sunWavy = _sunWavy;
+
+  /// Superscript. Tags: exponent, power, format, x2, chi, square, statistics, formula.
   static const superscript = _superscript;
 
-  /// Surfboard. Tags: bodyboard, surfer, summer holiday, seaside, beach, waves, wind, tidal.
+  /// Surfboard. Tags: surf, beach, waves, sport.
   static const surfboard = _surfboard;
 
-  /// Sushi. Tags: rice, raw fish, nori, seaweed, kale, snack, brunch, lunch.
+  /// Sushi. Tags: nigiri, japanese, fish, food.
   static const sushi = _sushi;
 
-  /// Sushi 2. Tags: rice, raw fish, nori, seaweed, kale, snack, brunch, lunch.
-  static const sushi2 = _sushi2;
-
-  /// Sushi 3. Tags: rice, raw fish, salmon, tuna, snack, brunch, lunch, dinner.
-  static const sushi3 = _sushi3;
-
-  /// Sushi chopsticks. Tags: rice, raw fish, nori, seaweed, kale, snack, brunch, lunch.
+  /// Sushi chopsticks. Tags: sushi, roll, chopsticks, japanese, food.
   static const sushiChopsticks = _sushiChopsticks;
 
-  /// Swatch book. Tags: colors, colours, swatches, pantone, shades, tint, hue, saturation.
+  /// Sushi roll. Tags: sushi, roll, maki, japanese, food.
+  static const sushiRoll = _sushiRoll;
+
+  /// Suv. Tags: vehicle, automobile, auto, side view, jeep.
+  static const suv = _suv;
+
+  /// Swatch. Tags: color, palette, sample, paint.
+  static const swatch = _swatch;
+
+  /// Swatch book. Tags: swatch, color, palette, samples, paint.
   static const swatchBook = _swatchBook;
 
-  /// Sweater. Tags: jumper, jersey, pullover, warmth, winter, christmas, xmas, thanksgiving.
-  static const sweater = _sweater;
+  /// Swim cap. Tags: goggles, swimming, pool, sport.
+  static const swimCap = _swimCap;
 
-  /// Swiss franc circle. Tags: monetization, marketing, finance, financial, markets, exchange, trader, trading.
-  static const swissFrancCircle = _swissFrancCircle;
+  /// Swimming. Tags: swimmer, pool, sport, water.
+  static const swimming = _swimming;
 
-  /// Swiss franc square. Tags: monetization, marketing, finance, financial, markets, exchange, trader, trading.
-  static const swissFrancSquare = _swissFrancSquare;
+  /// Swipe down. Tags: swipe, gesture, touch, down, hand, finger.
+  static const swipeDown = _swipeDown;
 
-  /// Switch camera. Tags: photo, selfie, front, back.
+  /// Swipe down fingers. Tags: swipe, gesture, touch, down, hand, finger.
+  static const swipeDownFingers = _swipeDownFingers;
+
+  /// Swipe down fingers wide. Tags: swipe, gesture, touch, down, hand, finger.
+  static const swipeDownFingersWide = _swipeDownFingersWide;
+
+  /// Swipe down point. Tags: swipe, gesture, touch, down, hand, finger.
+  static const swipeDownPoint = _swipeDownPoint;
+
+  /// Swipe down point wide. Tags: swipe, gesture, touch, down, hand, finger.
+  static const swipeDownPointWide = _swipeDownPointWide;
+
+  /// Swipe down thumb. Tags: swipe, gesture, touch, down, hand, finger.
+  static const swipeDownThumb = _swipeDownThumb;
+
+  /// Swipe down two fingers. Tags: swipe, gesture, touch, scroll, fingers.
+  static const swipeDownTwoFingers = _swipeDownTwoFingers;
+
+  /// Swipe down two fingers wide. Tags: swipe, gesture, touch, scroll, fingers.
+  static const swipeDownTwoFingersWide = _swipeDownTwoFingersWide;
+
+  /// Swipe left. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeft = _swipeLeft;
+
+  /// Swipe left fingers. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeftFingers = _swipeLeftFingers;
+
+  /// Swipe left fingers wide. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeftFingersWide = _swipeLeftFingersWide;
+
+  /// Swipe left fist. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeftFist = _swipeLeftFist;
+
+  /// Swipe left point. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeftPoint = _swipeLeftPoint;
+
+  /// Swipe left point wide. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeftPointWide = _swipeLeftPointWide;
+
+  /// Swipe left thumb. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeftThumb = _swipeLeftThumb;
+
+  /// Swipe left two fingers. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeftTwoFingers = _swipeLeftTwoFingers;
+
+  /// Swipe left two fingers wide. Tags: swipe, gesture, touch, left, hand, finger.
+  static const swipeLeftTwoFingersWide = _swipeLeftTwoFingersWide;
+
+  /// Swipe right. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRight = _swipeRight;
+
+  /// Swipe right fingers. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRightFingers = _swipeRightFingers;
+
+  /// Swipe right fingers wide. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRightFingersWide = _swipeRightFingersWide;
+
+  /// Swipe right fist. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRightFist = _swipeRightFist;
+
+  /// Swipe right point. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRightPoint = _swipeRightPoint;
+
+  /// Swipe right point wide. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRightPointWide = _swipeRightPointWide;
+
+  /// Swipe right thumb. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRightThumb = _swipeRightThumb;
+
+  /// Swipe right two fingers. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRightTwoFingers = _swipeRightTwoFingers;
+
+  /// Swipe right two fingers wide. Tags: swipe, gesture, touch, right, hand, finger.
+  static const swipeRightTwoFingersWide = _swipeRightTwoFingersWide;
+
+  /// Swipe up. Tags: swipe, gesture, touch, up, hand, finger.
+  static const swipeUp = _swipeUp;
+
+  /// Swipe up fingers. Tags: swipe, gesture, touch, up, hand, finger.
+  static const swipeUpFingers = _swipeUpFingers;
+
+  /// Swipe up fingers wide. Tags: swipe, gesture, touch, up, hand, finger.
+  static const swipeUpFingersWide = _swipeUpFingersWide;
+
+  /// Swipe up point. Tags: swipe, gesture, touch, up, hand, finger.
+  static const swipeUpPoint = _swipeUpPoint;
+
+  /// Swipe up point wide. Tags: swipe, gesture, touch, up, hand, finger.
+  static const swipeUpPointWide = _swipeUpPointWide;
+
+  /// Swipe up thumb. Tags: swipe, gesture, touch, up, hand, finger.
+  static const swipeUpThumb = _swipeUpThumb;
+
+  /// Swipe up two fingers. Tags: swipe, gesture, touch, up, hand, finger.
+  static const swipeUpTwoFingers = _swipeUpTwoFingers;
+
+  /// Swipe up two fingers wide. Tags: swipe, gesture, touch, up, hand, finger.
+  static const swipeUpTwoFingersWide = _swipeUpTwoFingersWide;
+
+  /// Swiss franc. Tags: currency, franc, chf, money, switzerland.
+  static const swissFranc = _swissFranc;
+
+  /// Swiss roll. Tags: bread, roll, bakery, rolled. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const swissRoll = _swissRoll;
+
+  /// Switch camera. Tags: camera, flip, rotate, selfie, front back.
   static const switchCamera = _switchCamera;
 
-  /// Sword. Tags: battle, challenge, combat, duel, fantasy, game, knight, melee.
+  /// Sword. Tags: weapon, blade, fight, rpg, knight, medieval.
   static const sword = _sword;
 
-  /// Swords. Tags: battle, challenge, combat, conflict, crossed, duel, faction, fantasy.
+  /// Sword pommel. Tags: weapon, blade, dagger, fight, rpg.
+  static const swordPommel = _swordPommel;
+
+  /// Swords. Tags: weapons, crossed, battle, fight, rpg, duel.
   static const swords = _swords;
 
-  /// Syringe. Tags: medicine, medical, needle, pump, plunger, nozzle, blood.
+  /// Swords fencing. Tags: fencing, duel, foil, epee, sword fight.
+  static const swordsFencing = _swordsFencing;
+
+  /// Swords thin. Tags: weapons, crossed, battle, fight, rpg, duel. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const swordsThin = _swordsThin;
+
+  /// Syringe. Tags: injection, vaccine, needle, medicine, shot.
   static const syringe = _syringe;
 
-  /// Tab. Tags: ballot, vote, poll, referendum, political, governance, government, democracy.
-  static const tab = _tab;
+  /// Syringe check. Tags: vaccine, vaccination, injection, immunized, shot, health, done. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const syringeCheck = _syringeCheck;
 
-  /// Tab arrow down. Tags: tab, save, session, download.
-  static const tabArrowDown = _tabArrowDown;
-
-  /// Tab arrow up right. Tags: tab, new, open, external, share.
-  static const tabArrowUpRight = _tabArrowUpRight;
-
-  /// Tab check. Tags: ballot, poll, referendum, political, governance, government, democracy, democratic.
-  static const tabCheck = _tabCheck;
-
-  /// Tab dot. Tags: tab, unsaved, unread.
-  static const tabDot = _tabDot;
-
-  /// Table. Tags: spreadsheet, grid.
+  /// Table. Tags: properties, settings, grid, spreadsheet.
   static const table = _table;
 
-  /// Table 2. Tags: spreadsheet, grid.
-  static const table2 = _table2;
+  /// Same icon as [tableStriped].
+  static const table2 = _tableStriped;
 
-  /// Table cells merge. Tags: spreadsheet, grid, row.
+  /// Table awning. Tags: restaurant, table, awning, cafe, dining.
+  static const tableAwning = _tableAwning;
+
+  /// Table cells merge. Tags: table, merge, cells, combine, spreadsheet.
   static const tableCellsMerge = _tableCellsMerge;
 
-  /// Table cells split. Tags: spreadsheet, grid, row.
+  /// Table cells split. Tags: table, split, cells, divide, spreadsheet.
   static const tableCellsSplit = _tableCellsSplit;
 
-  /// Table columns split. Tags: spreadsheet, grid, cut, break, divide, separate, segment.
+  /// Table column insert left. Tags: insert column left, add column, table, grid, spreadsheet. Mirrors in right-to-left text.
+  static const tableColumnInsertLeft = _tableColumnInsertLeft;
+
+  /// Table column insert right. Tags: insert column right, add column, table, grid, spreadsheet. Mirrors in right-to-left text.
+  static const tableColumnInsertRight = _tableColumnInsertRight;
+
+  /// Table column plus. Tags: insert column, add column, table, grid, spreadsheet.
+  static const tableColumnPlus = _tableColumnPlus;
+
+  /// Table columns. Tags: table, grid, spreadsheet, header, columns, data.
+  static const tableColumns = _tableColumns;
+
+  /// Table columns split. Tags: table, columns, split, divide, spreadsheet.
   static const tableColumnsSplit = _tableColumnsSplit;
 
-  /// Table of contents. Tags: toc, outline, navigation, document structure, index, overview, sections, chapters. Mirrors in right-to-left text.
+  /// Table column x. Tags: delete column, table, remove, column, grid, spreadsheet.
+  static const tableColumnX = _tableColumnX;
+
+  /// Table curved. Tags: table, furniture, side table, counter.
+  static const tableCurved = _tableCurved;
+
+  /// Table furniture. Tags: table, furniture, dining, four legs.
+  static const tableFurniture = _tableFurniture;
+
+  /// Table lamp. Tags: lamp, desk, light, furniture, bedside.
+  static const tableLamp = _tableLamp;
+
+  /// Table lamp cabinet. Tags: lamp, cabinet, light, furniture, sideboard.
+  static const tableLampCabinet = _tableLampCabinet;
+
+  /// Table list. Tags: property, listing, details, new.
+  static const tableList = _tableList;
+
+  /// Table list eye. Tags: property, listing, details, view, preview.
+  static const tableListEye = _tableListEye;
+
+  /// Table list pen. Tags: property, listing, details, edit.
+  static const tableListPen = _tableListPen;
+
+  /// Table list plus. Tags: property, listing, details, add, plus.
+  static const tableListPlus = _tableListPlus;
+
+  /// Table list search. Tags: property, listing, details, search, find.
+  static const tableListSearch = _tableListSearch;
+
+  /// Table list x. Tags: property, listing, details, delete, remove.
+  static const tableListX = _tableListX;
+
+  /// Table of contents. Tags: contents, toc, outline, index, list. Mirrors in right-to-left text.
   static const tableOfContents = _tableOfContents;
 
-  /// Table properties. Tags: property list, plist, spreadsheet, grid, dictionary, object, hash.
-  static const tableProperties = _tableProperties;
+  /// Table pen. Tags: edit table, spreadsheet, grid, pen.
+  static const tablePen = _tablePen;
 
-  /// Table rows split. Tags: spreadsheet, grid, cut, break, divide, separate, segment.
+  /// Table pivot. Tags: pivot, table, spreadsheet, data, rotate.
+  static const tablePivot = _tablePivot;
+
+  /// Table round. Tags: table, furniture, round, pedestal, cafe.
+  static const tableRound = _tableRound;
+
+  /// Table row insert down. Tags: insert row below, add row, table, grid, spreadsheet.
+  static const tableRowInsertDown = _tableRowInsertDown;
+
+  /// Table row insert up. Tags: insert row above, add row, table, grid, spreadsheet.
+  static const tableRowInsertUp = _tableRowInsertUp;
+
+  /// Table row plus. Tags: insert row, add row, table, grid, spreadsheet.
+  static const tableRowPlus = _tableRowPlus;
+
+  /// Table rows split. Tags: table, rows, split, divide, spreadsheet.
   static const tableRowsSplit = _tableRowsSplit;
 
-  /// Tablet. Tags: device, mobile, screen, display, touchscreen, portable, responsive.
+  /// Table row x. Tags: delete row, table, remove, row, grid, spreadsheet.
+  static const tableRowX = _tableRowX;
+
+  /// Table simple row insert. Tags: row, insert, add, table, plus.
+  static const tableSimpleRowInsert = _tableSimpleRowInsert;
+
+  /// Table simple row x. Tags: row, delete, remove, table, x.
+  static const tableSimpleRowX = _tableSimpleRowX;
+
+  /// Table sparkle. Tags: ai, sheets, spreadsheet, table, sparkle.
+  static const tableSparkle = _tableSparkle;
+
+  /// Table striped. Tags: spreadsheet, grid, data, rows, columns.
+  static const tableStriped = _tableStriped;
+
+  /// Tablet. Tags: device, ipad, screen, touchscreen, portable.
   static const tablet = _tablet;
 
-  /// Tablets. Tags: medicine, medication, drug, prescription, pills, pharmacy.
+  /// Tablet bluetooth. Tags: tablet, bluetooth, connected, wireless, pairing.
+  static const tabletBluetooth = _tabletBluetooth;
+
+  /// Table tennis paddle. Tags: ping pong, bat, racket, paddle, table tennis.
+  static const tableTennisPaddle = _tableTennisPaddle;
+
+  /// Tablet notch. Tags: device, ipad, screen, touchscreen, portable, bezel.
+  static const tabletNotch = _tabletNotch;
+
+  /// Tablet pen. Tags: tablet, pen, stylus, draw, note.
+  static const tabletPen = _tabletPen;
+
+  /// Tablets. Tags: pills, medicine, tablet, drug, capsule.
   static const tablets = _tablets;
 
-  /// Tablet smartphone. Tags: phone, cellphone, device, mobile, screen, display, touchscreen, portable.
+  /// Tablet smartphone. Tags: tablet, phone, devices, responsive, screens.
   static const tabletSmartphone = _tabletSmartphone;
 
-  /// Tab plus. Tags: tab, new, open, add, restore, +.
-  static const tabPlus = _tabPlus;
+  /// Tablet usb. Tags: tablet, usb, connected, cable, plug. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const tabletUsb = _tabletUsb;
 
-  /// Tab slash. Tags: ballot, vote, poll, referendum, political, governance, government, democracy.
-  static const tabSlash = _tabSlash;
+  /// Tablet wifi. Tags: tablet, wifi, connected, wireless, network.
+  static const tabletWifi = _tabletWifi;
 
-  /// Tab text. Tags: ballot, vote, poll, referendum, political, governance, government, democracy.
-  static const tabText = _tabText;
+  /// Taco. Tags: mexican, food, tortilla, fast food.
+  static const taco = _taco;
 
-  /// Tab x. Tags: ballot, vote, poll, referendum, political, governance, government, democracy.
-  static const tabX = _tabX;
+  /// Taco plain. Tags: mexican, food, tortilla, fast food.
+  static const tacoPlain = _tacoPlain;
 
-  /// Tag. Tags: label, badge, ticket, mark.
+  /// Tag. Tags: label, price, badge, mark, ticket.
   static const tag = _tag;
+
+  /// Tag asterisk. Tags: creative market, tag, label, price, asterisk, market.
+  static const tagAsterisk = _tagAsterisk;
+
+  /// Tag bitcoin. Tags: bitcoin, tag, price, label, crypto, btc.
+  static const tagBitcoin = _tagBitcoin;
+
+  /// Tag dollar sign. Tags: sale, price, label, discount, dollar.
+  static const tagDollarSign = _tagDollarSign;
+
+  /// Tag dollar sign string. Tags: sale, price, label, discount, dollar, hang tag. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const tagDollarSignString = _tagDollarSignString;
+
+  /// Tag ellipsis. Tags: pin, code, password, tag, dots, passcode.
+  static const tagEllipsis = _tagEllipsis;
+
+  /// Tag percent. Tags: discount tag, percent, sale, price tag, offer, deal.
+  static const tagPercent = _tagPercent;
+
+  /// Tag percent angled. Tags: discount tag, percent, sale, price tag, offer, deal.
+  static const tagPercentAngled = _tagPercentAngled;
 
   /// Tag plus. Tags: label, badge, ticket, mark, new, add, create, +.
   static const tagPlus = _tagPlus;
 
-  /// Tags. Tags: labels, badges, tickets, marks, copy, multiple.
+  /// Tags. Tags: labels, multiple, price, badges.
   static const tags = _tags;
+
+  /// Tag string. Tags: label, price, tag, hang tag, swing tag.
+  static const tagString = _tagString;
 
   /// Tag x. Tags: label, badge, ticket, mark, x, delete, remove.
   static const tagX = _tagX;
 
-  /// Tally 1. Tags: count, score, enumerate, days, one, 1, first, bar.
+  /// Taj mahal. Tags: landmark, india, monument, mausoleum, agra.
+  static const tajMahal = _tajMahal;
+
+  /// Tally 1. Tags: count, tally, marks, score.
   static const tally1 = _tally1;
 
-  /// Tally 2. Tags: count, score, enumerate, days, two, 2, second, double.
+  /// Tally 2. Tags: count, tally, marks, score.
   static const tally2 = _tally2;
 
-  /// Tally 3. Tags: count, score, enumerate, days, three, 3, third, triple.
+  /// Tally 3. Tags: count, tally, marks, score.
   static const tally3 = _tally3;
 
-  /// Tally 4. Tags: count, score, enumerate, days, 4, fourth, quadruple, bars.
+  /// Tally 4. Tags: count, tally, marks, score.
   static const tally4 = _tally4;
 
-  /// Tally 5. Tags: count, score, enumerate, days, five, 5, fifth, bars.
+  /// Tally 5. Tags: count, tally, marks, score.
   static const tally5 = _tally5;
 
-  /// Tangent. Tags: tangential, shape, circle, geometry, trigonometry, bezier curve.
+  /// Tan. Tags: tangent, trigonometry, function, math.
+  static const tan = _tan;
+
+  /// Tangent. Tags: curve, geometry, line, circle, math.
   static const tangent = _tangent;
 
-  /// Target. Tags: logo, bullseye, deadline, projects, overview, work, productivity.
+  /// Tank top. Tags: sleeveless, shirt, clothing, vest, apparel.
+  static const tankTop = _tankTop;
+
+  /// Tank top racerback. Tags: clothing, vest, singlet, sportswear, shirt.
+  static const tankTopRacerback = _tankTopRacerback;
+
+  /// Tape measure. Tags: measure, ruler, length, construction, tailor.
+  static const tapeMeasure = _tapeMeasure;
+
+  /// Tap fingers. Tags: tap, touch, gesture, press, click, fingers.
+  static const tapFingers = _tapFingers;
+
+  /// Tap fingers slim. Tags: tap, touch, gesture, press, click, fingers.
+  static const tapFingersSlim = _tapFingersSlim;
+
+  /// Tap fist. Tags: tap, touch, gesture, press, click, fist.
+  static const tapFist = _tapFist;
+
+  /// Tap hand. Tags: tap, touch, gesture, press, click, hand.
+  static const tapHand = _tapHand;
+
+  /// Tap hand slim. Tags: tap, touch, gesture, press, click, hand.
+  static const tapHandSlim = _tapHandSlim;
+
+  /// Tap slim. Tags: tap, touch, gesture, press, click, finger.
+  static const tapSlim = _tapSlim;
+
+  /// Tap two fingers. Tags: tap, touch, gesture, press, click, one finger.
+  static const tapTwoFingers = _tapTwoFingers;
+
+  /// Target. Tags: bullseye, aim, goal, objective, focus.
   static const target = _target;
 
-  /// Target arrow. Tags: archery, crossbow, bullseye, hit, range.
+  /// Target arrow. Tags: goal, aim, bullseye, dart, hit.
   static const targetArrow = _targetArrow;
 
-  /// Telescope. Tags: astronomy, space, discovery, exploration, explore, vision, perspective, focus.
+  /// Target arrow fletched. Tags: goal, aim, bullseye, dart, hit.
+  static const targetArrowFletched = _targetArrowFletched;
+
+  /// Target dollar. Tags: goal, money, aim, revenue, sales target.
+  static const targetDollar = _targetDollar;
+
+  /// Tasbih. Tags: prayer beads, rosary, islam, dhikr, religion.
+  static const tasbih = _tasbih;
+
+  /// Teacher. Tags: school, class, board, education, instructor.
+  static const teacher = _teacher;
+
+  /// Teapot. Tags: tea, kettle, pot, drink, hot.
+  static const teapot = _teapot;
+
+  /// Teapot tall. Tags: teapot, tea, kettle, pour, hot drink.
+  static const teapotTall = _teapotTall;
+
+  /// Technician. Tags: repair, worker, wrench, maintenance, service.
+  static const technician = _technician;
+
+  /// Telescope. Tags: astronomy, space, stargazing, observe, view.
   static const telescope = _telescope;
 
-  /// Tennis ball. Tags: court, racquet, racket, net, deuce, love, bounce.
+  /// Telescope long. Tags: astronomy, space, stargazing, observe, view.
+  static const telescopeLong = _telescopeLong;
+
+  /// Tennis ball. Tags: tennis, ball, sport, game.
   static const tennisBall = _tennisBall;
 
-  /// Tennis racket. Tags: court, racquet, net, deuce, love, bounce.
+  /// Tennis racket. Tags: tennis, racket, sport, game.
   static const tennisRacket = _tennisRacket;
 
-  /// Tent. Tags: tipi, teepee, wigwam, lodge, camping, campsite, holiday, retreat.
+  /// Tent. Tags: camping, outdoor, shelter, camp.
   static const tent = _tent;
 
-  /// Tent tree. Tags: camping, campsite, holiday, retreat, nomadic, wilderness, outdoors.
+  /// Tent tree. Tags: camping, outdoor, forest, camp.
   static const tentTree = _tentTree;
 
-  /// Terminal. Tags: code, command line, prompt, shell.
+  /// Terminal. Tags: console, shell, command line, cli, prompt.
   static const terminal = _terminal;
 
-  /// Test tube. Tags: tube, vial, phial, flask, ampoule, ampule, lab, chemistry.
+  /// Terrace. Tags: patio, pergola, outdoor, garden, furniture, table.
+  static const terrace = _terrace;
+
+  /// Test tube. Tags: lab, experiment, chemistry, vial, test.
   static const testTube = _testTube;
 
-  /// Test tube diagonal. Tags: tube, vial, phial, flask, ampoule, ampule, lab, chemistry.
+  /// Test tube diagonal. Tags: lab, experiment, chemistry, vial, test.
   static const testTubeDiagonal = _testTubeDiagonal;
 
-  /// Test tubes. Tags: tubes, vials, phials, flasks, ampoules, ampules, lab, chemistry.
+  /// Test tube droplet. Tags: labs, laboratory, experiment, chemistry, test tube, drop.
+  static const testTubeDroplet = _testTubeDroplet;
+
+  /// Test tubes. Tags: lab, experiment, chemistry, vials, tubes.
   static const testTubes = _testTubes;
 
-  /// Text align center. Tags: text, alignment, center.
+  /// Test tube sparkle. Tags: ai, chemistry, test, tube, lab, sparkle.
+  static const testTubeSparkle = _testTubeSparkle;
+
+  /// Test tube sprout. Tags: eco lab, chemistry, plant, research, green, tube.
+  static const testTubeSprout = _testTubeSprout;
+
+  /// Test tube stand. Tags: chemistry, lab, laboratory, tube, experiment, u-tube.
+  static const testTubeStand = _testTubeStand;
+
+  /// Tetromino. Tags: block, game, puzzle, tetris, falling.
+  static const tetromino = _tetromino;
+
+  /// Text align center. Tags: align, center, paragraph, format.
   static const textAlignCenter = _textAlignCenter;
 
-  /// Text align end. Tags: text, alignment, right.
+  /// Text align end. Tags: align, end, right, paragraph, format.
   static const textAlignEnd = _textAlignEnd;
 
-  /// Text align justify. Tags: text, alignment, justified, menu, list.
+  /// Text align justify. Tags: align, justify, paragraph, format, center.
   static const textAlignJustify = _textAlignJustify;
 
-  /// Text align justify center. Tags: paragraph, alignment, justified, center, middle, typography, editor, document.
-  static const textAlignJustifyCenter = _textAlignJustifyCenter;
+  /// Same icon as [textAlignJustify].
+  static const textAlignJustifyCenter = _textAlignJustify;
 
-  /// Text align justify end. Tags: paragraph, alignment, justified, right, end, typography, editor, document.
-  static const textAlignJustifyEnd = _textAlignJustifyEnd;
+  /// Same icon as [textAlignJustifyRight].
+  static const textAlignJustifyEnd = _textAlignJustifyRight;
 
-  /// Text align justify start. Tags: paragraph, alignment, justified, left, start, typography, editor, document.
-  static const textAlignJustifyStart = _textAlignJustifyStart;
+  /// Text align justify left. Tags: align, justify, left, paragraph, format.
+  static const textAlignJustifyLeft = _textAlignJustifyLeft;
 
-  /// Text align start. Tags: text, alignment, left, list.
+  /// Text align justify right. Tags: align, justify, right, paragraph, format.
+  static const textAlignJustifyRight = _textAlignJustifyRight;
+
+  /// Same icon as [textAlignJustifyLeft].
+  static const textAlignJustifyStart = _textAlignJustifyLeft;
+
+  /// Text align left border. Tags: align, left, paragraph, format, vertical line, quote.
+  static const textAlignLeftBorder = _textAlignLeftBorder;
+
+  /// Text align right border. Tags: align, right, paragraph, format, vertical line.
+  static const textAlignRightBorder = _textAlignRightBorder;
+
+  /// Text align start. Tags: align, start, left, paragraph, format.
   static const textAlignStart = _textAlignStart;
+
+  /// Text box center. Tags: text wrap, image, float, layout, center.
+  static const textBoxCenter = _textBoxCenter;
+
+  /// Text box center top. Tags: text wrap, image, float, layout, center.
+  static const textBoxCenterTop = _textBoxCenterTop;
+
+  /// Text box left. Tags: text wrap, image, float, layout, right.
+  static const textBoxLeft = _textBoxLeft;
+
+  /// Text box right. Tags: text wrap, image, float, layout, left.
+  static const textBoxRight = _textBoxRight;
+
+  /// Text box top left. Tags: text wrap, first line, image, float, layout.
+  static const textBoxTopLeft = _textBoxTopLeft;
+
+  /// Text box top right. Tags: text wrap, first line, image, float, layout.
+  static const textBoxTopRight = _textBoxTopRight;
+
+  /// Text check. Tags: text, check, proofread, spell, verify.
+  static const textCheck = _textCheck;
 
   /// Text cursor. Tags: select, caret, type, typing, write, writing, edit, insert.
   static const textCursor = _textCursor;
 
-  /// Text cursor input. Tags: select.
+  /// Text cursor a. Tags: text cursor, caret, type, insert, i-beam, input.
+  static const textCursorA = _textCursorA;
+
+  /// Text cursor input. Tags: input, text field, cursor, caret, form.
   static const textCursorInput = _textCursorInput;
 
-  /// Text initial. Tags: drop cap, text, format, typography, letter, font size.
+  /// Text cursor letter. Tags: text selection, select, cursor, type, edit.
+  static const textCursorLetter = _textCursorLetter;
+
+  /// Text indent decrease. Tags: indent less, outdent, decrease, text, format. Mirrors in right-to-left text.
+  static const textIndentDecrease = _textIndentDecrease;
+
+  /// Text indent increase. Tags: indent more, increase, text, format. Mirrors in right-to-left text.
+  static const textIndentIncrease = _textIndentIncrease;
+
+  /// Text initial. Tags: drop cap, initial, paragraph, first letter, text. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const textInitial = _textInitial;
 
-  /// Text quote. Tags: blockquote, quotation, indent, reply, response. Mirrors in right-to-left text.
+  /// Text kerning. Tags: kerning, letter spacing, type, text, tracking.
+  static const textKerning = _textKerning;
+
+  /// Text quote. Tags: quote, citation, blockquote, text. Mirrors in right-to-left text.
   static const textQuote = _textQuote;
 
-  /// Text search. Tags: find, data, copy, txt, pdf, document, scan, magnifier.
+  /// Text search. Tags: search, find, text, lines.
   static const textSearch = _textSearch;
 
-  /// Text square. Tags: note, log, document, page, paper, sheet, list, script.
-  static const textSquare = _textSquare;
+  /// Text search large. Tags: find, list, document, lines, magnifier.
+  static const textSearchLarge = _textSearchLarge;
 
-  /// Text wrap. Tags: words, lines, break, paragraph.
+  /// Text search top. Tags: find, list, document, lines, magnifier.
+  static const textSearchTop = _textSearchTop;
+
+  /// Text segment. Tags: segment, split, text, tokenize, words.
+  static const textSegment = _textSegment;
+
+  /// Same icon as [squareText].
+  static const textSquare = _squareText;
+
+  /// Text to image. Tags: generate, ai, image, type.
+  static const textToImage = _textToImage;
+
+  /// Text to speech. Tags: speech, voice, read aloud, audio, type.
+  static const textToSpeech = _textToSpeech;
+
+  /// Text tracking. Tags: letter spacing, tracking, text, typography, spacing.
+  static const textTracking = _textTracking;
+
+  /// Text vertical align. Tags: vertical align, text, paragraph, format, align. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const textVerticalAlign = _textVerticalAlign;
+
+  /// Text wrap. Tags: words, lines, break, paragraph, wrap. Mirrors in right-to-left text.
   static const textWrap = _textWrap;
 
-  /// Theater. Tags: theatre, entertainment, podium, stage, musical.
+  /// Theater. Tags: theatre, stage, curtain, drama, show.
   static const theater = _theater;
 
-  /// Thermometer. Tags: temperature, celsius, fahrenheit, weather.
+  /// Theater mask. Tags: mask, theater, drama, comedy, performance, acting.
+  static const theaterMask = _theaterMask;
+
+  /// Thermometer. Tags: temperature, celsius, fahrenheit, degrees, heat.
   static const thermometer = _thermometer;
 
-  /// Thermometer snowflake. Tags: temperature, celsius, fahrenheit, weather, cold, freeze, freezing.
+  /// Thermometer diagonal. Tags: thermometer, fever, temperature, clinical, health.
+  static const thermometerDiagonal = _thermometerDiagonal;
+
+  /// Thermometer snowflake. Tags: temperature, cold, freeze, winter.
   static const thermometerSnowflake = _thermometerSnowflake;
 
-  /// Thermometer sun. Tags: temperature, celsius, fahrenheit, weather, warm, hot.
+  /// Thermometer sun. Tags: temperature, warm, hot, summer.
   static const thermometerSun = _thermometerSun;
 
-  /// Thumbs down. Tags: dislike, bad, emotion.
+  /// Thought bubble. Tags: thinking, idea, cloud, speech, thought.
+  static const thoughtBubble = _thoughtBubble;
+
+  /// Three fingers. Tags: hand, fingers, three, gesture, touch.
+  static const threeFingers = _threeFingers;
+
+  /// Three fingers fist. Tags: hand, fingers, three, gesture, touch.
+  static const threeFingersFist = _threeFingersFist;
+
+  /// Three fingers open. Tags: hand, fingers, three, gesture, touch.
+  static const threeFingersOpen = _threeFingersOpen;
+
+  /// Three fingers slim. Tags: hand, fingers, three, gesture, touch.
+  static const threeFingersSlim = _threeFingersSlim;
+
+  /// Three fingers wave. Tags: hand, fingers, three, gesture, touch.
+  static const threeFingersWave = _threeFingersWave;
+
+  /// Thumbs down. Tags: dislike, bad, emotion, vote.
   static const thumbsDown = _thumbsDown;
 
-  /// Thumbs up. Tags: like, good, emotion.
+  /// Thumbs up. Tags: like, good, emotion, vote.
   static const thumbsUp = _thumbsUp;
+
+  /// Thumbs up down. Tags: like, dislike, rating, vote, feedback.
+  static const thumbsUpDown = _thumbsUpDown;
 
   /// Same icon as [cloudLightning].
   static const thunderstorm = _cloudLightning;
 
-  /// Ticket. Tags: entry, pass, voucher, event, concert, show, perforated, dashed.
+  /// Ticket. Tags: coupon, voucher, pass, admission.
   static const ticket = _ticket;
 
-  /// Ticket check. Tags: entry, pass, voucher, event, concert, show, booked, purchased.
+  /// Ticket check. Tags: ticket, check, valid, confirmed, booked.
   static const ticketCheck = _ticketCheck;
 
-  /// Ticket minus. Tags: entry, pass, voucher, event, concert, show, remove, cancel.
+  /// Ticket diagonal. Tags: entry, pass, voucher, event, admission, tilted.
+  static const ticketDiagonal = _ticketDiagonal;
+
+  /// Ticket lines. Tags: entry, pass, voucher, event, admission, details.
+  static const ticketLines = _ticketLines;
+
+  /// Ticket minus. Tags: ticket, minus, remove, cancel.
   static const ticketMinus = _ticketMinus;
 
-  /// Ticket percent. Tags: discount, reduced, offer, voucher, entry, pass, event, concert.
+  /// Ticket percent. Tags: coupon, discount, voucher, sale, percent, offer.
   static const ticketPercent = _ticketPercent;
 
-  /// Ticket plus. Tags: entry, pass, voucher, event, concert, show, book, purchase.
+  /// Ticket plus. Tags: ticket, add, new, booking.
   static const ticketPlus = _ticketPlus;
 
-  /// Tickets. Tags: trip, travel, pass, entry, voucher, event, concert, show.
+  /// Tickets. Tags: wallet, passes, coupons.
   static const tickets = _tickets;
 
-  /// Ticket slash. Tags: entry, pass, voucher, event, concert, show, redeemed, used.
+  /// Ticket side percent. Tags: ticket, discount, percent, coupon, sale.
+  static const ticketSidePercent = _ticketSidePercent;
+
+  /// Ticket slash. Tags: ticket, cancel, void, invalid.
   static const ticketSlash = _ticketSlash;
 
-  /// Tickets plane. Tags: plane, trip, airplane, flight, travel, fly, takeoff, vacation.
+  /// Tickets plane. Tags: flight, boarding pass, airline, plane, tickets.
   static const ticketsPlane = _ticketsPlane;
 
-  /// Ticket x. Tags: entry, pass, voucher, event, concert, show, cancelled, cancellation.
+  /// Ticket split. Tags: entry, pass, voucher, event, admission.
+  static const ticketSplit = _ticketSplit;
+
+  /// Ticket star. Tags: ticket, favorite, vip, event, star.
+  static const ticketStar = _ticketStar;
+
+  /// Ticket x. Tags: ticket, cancel, void, refund, remove.
   static const ticketX = _ticketX;
 
-  /// Tic tac toe. Tags: game, board, grid, strategy, noughts and crosses.
+  /// Tic tac toe. Tags: game, noughts, crosses, xo, board.
   static const ticTacToe = _ticTacToe;
 
-  /// Tie. Tags: neckwear, gentleman, mens, boys, store, clothing, clothes, accessories.
+  /// Tie. Tags: necktie, formal, suit, clothing, office.
   static const tie = _tie;
 
-  /// Tie bow. Tags: neckwear, gentleman, mens, boys, store, clothing, clothes, accessories.
+  /// Tie bow. Tags: bow, tie, formal, clothing, accessory.
   static const tieBow = _tieBow;
 
-  /// Tie bow ribbon. Tags: gift, present, party, birthday, box, decoration, neckwear, female.
-  static const tieBowRibbon = _tieBowRibbon;
+  /// Tie loose. Tags: school tie, necktie, uniform, formal, clothing.
+  static const tieLoose = _tieLoose;
 
-  /// Timeline. Tags: tags, history.
-  static const timeline = _timeline;
+  /// Same icon as [timelineList].
+  static const timeline = _timelineList;
 
-  /// Timer. Tags: time, stopwatch.
+  /// Timeline clock. Tags: timeline, clock, schedule, history, time.
+  static const timelineClock = _timelineClock;
+
+  /// Timeline event. Tags: timeline, event, message, milestone, history.
+  static const timelineEvent = _timelineEvent;
+
+  /// Timeline list. Tags: timeline, list, steps, sequence, history.
+  static const timelineList = _timelineList;
+
+  /// Timer. Tags: stopwatch, race, time, speed.
   static const timer = _timer;
 
-  /// Timer off. Tags: time, timer, stopwatch.
+  /// Timer dial. Tags: timer, stopwatch, time, countdown.
+  static const timerDial = _timerDial;
+
+  /// Timer fast. Tags: timer, stopwatch, speed, quick, fast.
+  static const timerFast = _timerFast;
+
+  /// Timer off. Tags: timer, stopwatch, disabled, time.
   static const timerOff = _timerOff;
 
-  /// Timer reset. Tags: time, timer, stopwatch.
+  /// Timer progress. Tags: coming soon, soon, timer, stopwatch, upcoming, countdown.
+  static const timerProgress = _timerProgress;
+
+  /// Timer reset. Tags: timer, stopwatch, reset, restart.
   static const timerReset = _timerReset;
 
-  /// Tire. Tags: tyre, wheel, hubcap, rubber, trim, automobile, vehicle, rim.
+  /// Tire. Tags: wheel, car, rubber.
   static const tire = _tire;
 
-  /// Toast. Tags: bread, butter, spread, jam, conserve, preserve, marmalade, continental breakfast.
+  /// Toast. Tags: bread, slice, bakery, breakfast.
   static const toast = _toast;
 
-  /// Toaster. Tags: heat, burnt, bread, breakfast, morning, kitchen, appliances, amenities.
-  static const toaster = _toaster;
-
-  /// Toggle left. Tags: on, off, switch, boolean.
+  /// Toggle left. Tags: toggle, switch, off, boolean.
   static const toggleLeft = _toggleLeft;
 
   /// Same icon as [toggleLeft].
@@ -6323,207 +15421,430 @@ abstract final class DsIcons {
   /// Same icon as [toggleRight].
   static const toggleOn = _toggleRight;
 
-  /// Toggle right. Tags: on, off, switch, boolean.
+  /// Toggle right. Tags: toggle, switch, on, boolean.
   static const toggleRight = _toggleRight;
 
-  /// Toilet. Tags: potty, bathroom, washroom.
+  /// Toggles. Tags: customize, settings, switches, preferences, options, toggle.
+  static const toggles = _toggles;
+
+  /// Toilet. Tags: wc, bathroom, restroom.
   static const toilet = _toilet;
 
-  /// Toilet roll. Tags: paper, sheets, lavatory, latrine, loo, bog, poo, privy.
+  /// Toilet front. Tags: toilet, wc, bathroom, restroom, front view.
+  static const toiletFront = _toiletFront;
+
+  /// Toilet roll. Tags: tissue, paper, toilet paper, roll, bathroom. Its details merge when filled: use it outlined.
   static const toiletRoll = _toiletRoll;
 
-  /// Toolbox. Tags: toolkit, tools, trunk, chest, box, storage, utility, utilities.
+  /// Tongue. Tags: mouth, taste, anatomy.
+  static const tongue = _tongue;
+
+  /// Toolbox. Tags: tools, repair, kit. Its details merge when filled: use it outlined.
   static const toolbox = _toolbox;
 
-  /// Toolbox 2. Tags: tools, trunk, chest, storage, utility, utilities, container, kit.
-  static const toolbox2 = _toolbox2;
+  /// Same icon as [toolbox].
+  static const toolbox2 = _toolbox;
 
-  /// Tool case. Tags: tools, maintenance, repair.
-  static const toolCase = _toolCase;
+  /// Same icon as [toolbox].
+  static const toolCase = _toolbox;
 
-  /// Toothbrush. Tags: dental care, oral hygiene, brushing, teeth, dentist, bathroom, toiletries, personal care.
-  static const toothbrush = _toothbrush;
+  /// Tooth. Tags: dental tooth, teeth, dentist, molar, oral, dental.
+  static const tooth = _tooth;
 
-  /// Toothbrush sparkles. Tags: dental care, oral hygiene, brushing, teeth, dentist, bathroom, toiletries, personal care.
-  static const toothbrushSparkles = _toothbrushSparkles;
+  /// Tooth braces. Tags: dental braces, orthodontics, teeth, dentist, tooth, brackets.
+  static const toothBraces = _toothBraces;
 
-  /// Top crop. Tags: brassiere, breasts, boobs, tops, womens, girls, female, ladies. Its details merge when filled: use it outlined.
-  static const topCrop = _topCrop;
+  /// Tooth broken. Tags: broken tooth, dental, cracked, dentist, teeth, damage.
+  static const toothBroken = _toothBroken;
 
-  /// Tornado. Tags: weather, wind, storm, hurricane.
+  /// Tooth shield. Tags: dental care, tooth, protection, dentist, teeth, healthy.
+  static const toothShield = _toothShield;
+
+  /// Torch. Tags: olympic, flame, games, relay.
+  static const torch = _torch;
+
+  /// Torii gate. Tags: torii, gate, japan, shrine, temple.
+  static const toriiGate = _toriiGate;
+
+  /// Tornado. Tags: storm, wind, twister, weather. Its details merge when filled: use it outlined.
   static const tornado = _tornado;
 
-  /// Torus. Tags: donut, doughnut, ring, hollow, 3d, fast food, junk food, snack.
+  /// Tornado funnel. Tags: tornado, storm, wind, twister, funnel.
+  static const tornadoFunnel = _tornadoFunnel;
+
+  /// Torus. Tags: donut, ring, 3d, shape.
   static const torus = _torus;
 
-  /// Touchpad. Tags: trackpad, cursor.
-  static const touchpad = _touchpad;
+  /// Touchpad fist. Tags: touchpad, trackpad, gesture, hand.
+  static const touchpadFist = _touchpadFist;
 
-  /// Touchpad off. Tags: trackpad, cursor.
+  /// Touchpad hand. Tags: touchpad, trackpad, gesture, hand, fingers.
+  static const touchpadHand = _touchpadHand;
+
+  /// Touchpad off. Tags: touchpad, trackpad, disabled, off, gesture.
   static const touchpadOff = _touchpadOff;
 
-  /// Towel folded. Tags: towels, flannel, bathroom, toiletries, sanitation, sheets, bedding, clean.
-  static const towelFolded = _towelFolded;
+  /// Touchpad press. Tags: touchpad, trackpad, gesture, finger, press.
+  static const touchpadPress = _touchpadPress;
 
-  /// Towel rack. Tags: flannel, bathroom, toiletries, sanitation, clean, fresh, dry, laundry.
+  /// Towel rack. Tags: towel, rack, bathroom, hanger.
   static const towelRack = _towelRack;
 
-  /// Tower control. Tags: airport, travel, tower, transportation, lighthouse.
+  /// Towels. Tags: bathroom, stack, bath.
+  static const towels = _towels;
+
+  /// Tower control. Tags: control tower, airport, aviation, atc, control, tower, air, traffic.
   static const towerControl = _towerControl;
 
-  /// Toy brick. Tags: lego, block, addon, plugin, integration.
+  /// Tower lattice. Tags: dome, tower, skyscraper, gherkin, landmark, architecture.
+  static const towerLattice = _towerLattice;
+
+  /// Tow truck. Tags: breakdown, roadside, recovery.
+  static const towTruck = _towTruck;
+
+  /// Toy box. Tags: tool case, toolbox, repair, kit.
+  static const toyBox = _toyBox;
+
+  /// Toy brick. Tags: toy, brick, block, lego, building.
   static const toyBrick = _toyBrick;
 
-  /// Tractor. Tags: farming, farmer, ranch, harvest, equipment, vehicle.
+  /// Toy train. Tags: toy, train, kids, locomotive.
+  static const toyTrain = _toyTrain;
+
+  /// Tractor. Tags: farm, agriculture, vehicle.
   static const tractor = _tractor;
 
-  /// Traffic cone. Tags: roadworks, tarmac, safety, block.
+  /// Trademark. Tags: tm, brand, legal, symbol. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const trademark = _trademark;
+
+  /// Traffic cone. Tags: road, construction, warning.
   static const trafficCone = _trafficCone;
 
-  /// Trailer. Tags: tow, shipping, delivery, haulage, vehicle, equipment, freight.
-  static const trailer = _trailer;
+  /// Traffic light. Tags: signal, stoplight, road.
+  static const trafficLight = _trafficLight;
 
-  /// Train front. Tags: railway, metro, subway, underground, high-speed, bullet, fast, track.
+  /// Train bullet. Tags: bullet, train, rail, fast, speed.
+  static const trainBullet = _trainBullet;
+
+  /// Train front. Tags: train, railway, rail, front, subway, locomotive.
   static const trainFront = _trainFront;
 
-  /// Train front tunnel. Tags: railway, metro, subway, underground, speed, bullet, fast, track.
+  /// Train front tunnel. Tags: train, tunnel, subway, metro, railway.
   static const trainFrontTunnel = _trainFrontTunnel;
 
-  /// Train track. Tags: railway, line.
+  /// Train high speed. Tags: bullet, train, rail, fast, speed.
+  static const trainHighSpeed = _trainHighSpeed;
+
+  /// Train metro. Tags: metro, subway, train, transit, underground, rail.
+  static const trainMetro = _trainMetro;
+
+  /// Train oval. Tags: train, railway, subway, metro, front.
+  static const trainOval = _trainOval;
+
+  /// Train track. Tags: railway, track, rails, train.
   static const trainTrack = _trainTrack;
 
-  /// Tram front. Tags: railway, metro, subway, underground, track, line, tourism.
-  static const tramFront = _tramFront;
+  /// Tram. Tags: streetcar, trolley, rail, city.
+  static const tram = _tram;
 
-  /// Transgender. Tags: gender, inclusive.
-  static const transgender = _transgender;
+  /// Same icon as [trainFront].
+  static const tramFront = _trainFront;
+
+  /// Trampoline. Tags: bounce, jump, play.
+  static const trampoline = _trampoline;
 
   /// Same icon as [languages].
   static const translate = _languages;
 
-  /// Trash. Tags: empty, deletion, cleanup, junk, clear, garbage, delete, remove.
+  /// Transparency. Tags: opacity, checkerboard, alpha, overlap. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const transparency = _transparency;
+
+  /// Trapezoid line horizontal. Tags: trapezoid, shape, line, split, horizontal.
+  static const trapezoidLineHorizontal = _trapezoidLineHorizontal;
+
+  /// Trapezoid line vertical. Tags: trapezoid, shape, line, split, vertical.
+  static const trapezoidLineVertical = _trapezoidLineVertical;
+
+  /// Trash. Tags: delete, bin, remove, garbage, trash can, waste.
   static const trash = _trash;
+
+  /// Trash 2. Tags: delete, bin, remove, garbage, trash can, waste.
+  static const trash2 = _trash2;
+
+  /// Trash arrow up. Tags: throw away, discard, bin, drop in, delete, trash.
+  static const trashArrowUp = _trashArrowUp;
+
+  /// Trash can dot. Tags: waste, garbage, bin, rubbish, delete, remove, dustbin.
+  static const trashCanDot = _trashCanDot;
+
+  /// Trash can restore. Tags: waste restore, recover, undelete, recycle, restore, bin, undo, trash.
+  static const trashCanRestore = _trashCanRestore;
+
+  /// Trash can x. Tags: delete, bin, remove, cancel, garbage, discard.
+  static const trashCanX = _trashCanX;
+
+  /// Trash lines. Tags: delete, bin, remove, garbage, trash can, lines.
+  static const trashLines = _trashLines;
 
   /// Trash off. Tags: empty, deletion, cleanup, junk, clear, garbage, delete, remove.
   static const trashOff = _trashOff;
 
+  /// Trash undo. Tags: restore, put back, undo, bin, recover, trash. Mirrors in right-to-left text.
+  static const trashUndo = _trashUndo;
+
+  /// Travel bag. Tags: travel, bag, luggage, suitcase, trip.
+  static const travelBag = _travelBag;
+
+  /// Treadmill. Tags: running, fitness, gym, cardio.
+  static const treadmill = _treadmill;
+
   /// Same icon as [treeDeciduous].
   static const tree = _treeDeciduous;
 
-  /// Tree deciduous. Tags: tree, forest, park, nature.
+  /// Tree cypress. Tags: tree, forest, park, nature, pointed.
+  static const treeCypress = _treeCypress;
+
+  /// Tree deciduous. Tags: tree, forest, park, nature, deciduous, canopy.
   static const treeDeciduous = _treeDeciduous;
 
-  /// Tree palm. Tags: vacation, leisure, island.
+  /// Tree fir. Tags: pine, tree, fir, conifer, forest.
+  static const treeFir = _treeFir;
+
+  /// Tree leaf. Tags: tree, forest, park, nature, leaf.
+  static const treeLeaf = _treeLeaf;
+
+  /// Tree lobed. Tags: tree, forest, park, nature, canopy.
+  static const treeLobed = _treeLobed;
+
+  /// Tree oval. Tags: tree, forest, park, nature, oval.
+  static const treeOval = _treeOval;
+
+  /// Tree palm. Tags: palm, tree, tropical, beach, island.
   static const treePalm = _treePalm;
 
-  /// Tree pine. Tags: tree, pine, forest, park, nature.
+  /// Tree pine. Tags: tree, pine, fir, conifer, forest, christmas.
   static const treePine = _treePine;
 
-  /// Trees. Tags: tree, forest, park, nature.
+  /// Tree round. Tags: tree, forest, park, nature, round.
+  static const treeRound = _treeRound;
+
+  /// Trees. Tags: forest, park, nature.
   static const trees = _trees;
 
-  /// Trees forest. Tags: evergreen, forest, woodland, park, preserve, lumber, logging, outdoors.
-  static const treesForest = _treesForest;
+  /// Same icon as [trees].
+  static const treesForest = _trees;
 
-  /// Trending down. Tags: statistics.
+  /// Trending down. Tags: trending, down, decline, decrease, chart.
   static const trendingDown = _trendingDown;
 
-  /// Trending up. Tags: statistics.
+  /// Trending small down. Tags: trade, down, decline, loss, decrease, trend.
+  static const trendingSmallDown = _trendingSmallDown;
+
+  /// Trending small up. Tags: trade, up, growth, profit, increase, trend.
+  static const trendingSmallUp = _trendingSmallUp;
+
+  /// Trending up. Tags: trending, up, growth, increase, chart.
   static const trendingUp = _trendingUp;
 
-  /// Trending up down. Tags: arrows, estimated, indeterminate, data fluctuation, uncertain, forecast, variable, prediction.
+  /// Trending up dash. Tags: auto, conversations, growth, trend, chart, increase.
+  static const trendingUpDash = _trendingUpDash;
+
+  /// Trending up down. Tags: trending, up, down, volatility, chart.
   static const trendingUpDown = _trendingUpDown;
 
-  /// Triangle. Tags: equilateral, delta, shape, pyramid, hierarchy.
+  /// Triangle. Tags: shape, delta, rounded.
   static const triangle = _triangle;
 
-  /// Triangle alert. Tags: warning, alert, danger, exclamation mark, linter.
+  /// Triangle alert. Tags: warning, alert, attention, caution, hazard, triangle, exclamation.
   static const triangleAlert = _triangleAlert;
 
-  /// Triangle dashed. Tags: equilateral, delta, shape, pyramid, hierarchy, dashed.
+  /// Triangle arcs. Tags: angle, lines, perspective, vanishing point, geometry.
+  static const triangleArcs = _triangleArcs;
+
+  /// Triangle dashed. Tags: triangle, dashed, outline, placeholder.
   static const triangleDashed = _triangleDashed;
 
-  /// Triangle right. Tags: volume, controls, controller, tv remote, geometry, delta, ramp, slope.
+  /// Triangle info. Tags: alert, info, information, triangle, notice.
+  static const triangleInfo = _triangleInfo;
+
+  /// Triangle right. Tags: triangle, right, slope, ramp, delta.
   static const triangleRight = _triangleRight;
 
-  /// Triangles centerline dashed horizontal. Tags: reflect, mirror, alignment, dashed.
-  static const trianglesCenterlineDashedHorizontal =
-      _trianglesCenterlineDashedHorizontal;
+  /// Triangle right expand. Tags: triangle, right, expand, resize, arrows, scale.
+  static const triangleRightExpand = _triangleRightExpand;
 
-  /// Triangles centerline dashed vertical. Tags: reflect, mirror, alignment, dashed.
-  static const trianglesCenterlineDashedVertical =
-      _trianglesCenterlineDashedVertical;
+  /// Triangle right mark. Tags: right triangle, triangle, geometry, shape.
+  static const triangleRightMark = _triangleRightMark;
 
-  /// Triangle stripes. Tags: equilateral, delta, shape, pyramid, levels, structure, hierarchy, maslow.
-  static const triangleStripes = _triangleStripes;
+  /// Triangle right mark flipped. Tags: left triangle, ramp, step, wedge, slope, triangle.
+  static const triangleRightMarkFlipped = _triangleRightMarkFlipped;
 
-  /// Trophy. Tags: prize, sports, winner, achievement, award, champion, celebration, victory.
+  /// Same icon as [flipVertical].
+  static const trianglesCenterlineDashedHorizontal = _flipVertical;
+
+  /// Same icon as [flipHorizontal].
+  static const trianglesCenterlineDashedVertical = _flipHorizontal;
+
+  /// Trophy. Tags: winner, award, cup, prize.
   static const trophy = _trophy;
 
-  /// Trousers. Tags: jeans, denim, corduroy, chinos, cargo, pants, bottoms, store.
-  static const trousers = _trousers;
+  /// Trophy plaque. Tags: trophy, award, plaque, prize, achievement, block.
+  static const trophyPlaque = _trophyPlaque;
 
-  /// Truck. Tags: delivery, van, shipping, haulage, lorry.
+  /// Trophy round. Tags: trophy, award, winner, cup, prize, champion, victory.
+  static const trophyRound = _trophyRound;
+
+  /// Trophy star. Tags: trophy, award, star, winner, prize, champion.
+  static const trophyStar = _trophyStar;
+
+  /// Same icon as [pants].
+  static const trousers = _pants;
+
+  /// Truck. Tags: delivery, shipping, lorry, van.
   static const truck = _truck;
 
-  /// Truck electric. Tags: delivery, van, shipping, haulage, lorry, electric.
+  /// Truck arrow right. Tags: delivery sent, truck, shipping, dispatch, outgoing, send.
+  static const truckArrowRight = _truckArrowRight;
+
+  /// Truck box. Tags: truck, box, delivery, cargo, freight, shipping.
+  static const truckBox = _truckBox;
+
+  /// Truck clock. Tags: delivery delay, truck, late, waiting, time, shipping.
+  static const truckClock = _truckClock;
+
+  /// Truck container. Tags: truck, container, delivery, freight, shipping, van.
+  static const truckContainer = _truckContainer;
+
+  /// Truck electric. Tags: truck, electric, ev, delivery, green.
   static const truckElectric = _truckElectric;
 
-  /// Tube lotion. Tags: sunscreen, sunblock, spf, uv, cream, skincare, toothpaste, ointment.
-  static const tubeLotion = _tubeLotion;
+  /// Truck fast. Tags: truck, delivery, fast, shipping, express.
+  static const truckFast = _truckFast;
 
-  /// Turkish lira. Tags: currency, money, payment.
+  /// Truck return. Tags: truck, return, delivery, reverse, shipping.
+  static const truckReturn = _truckReturn;
+
+  /// Truck round. Tags: delivery, shipping, lorry, cargo, freight.
+  static const truckRound = _truckRound;
+
+  /// Truck semi. Tags: semi, lorry, freight, cargo, tractor.
+  static const truckSemi = _truckSemi;
+
+  /// Truck sent. Tags: delivered, sent, truck, delivery, shipping, dispatched.
+  static const truckSent = _truckSent;
+
+  /// Truck speed. Tags: delivery truck, fast, express, shipping, speed lines, truck.
+  static const truckSpeed = _truckSpeed;
+
+  /// Truck tanker. Tags: tanker, fuel, oil, liquid, delivery, lorry. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const truckTanker = _truckTanker;
+
+  /// Trulli. Tags: house, italy, building, rustic.
+  static const trulli = _trulli;
+
+  /// Tsunami. Tags: wave, flood, disaster, sea.
+  static const tsunami = _tsunami;
+
+  /// Turkish lira. Tags: currency, money, try.
   static const turkishLira = _turkishLira;
 
-  /// Turntable. Tags: record player, gramophone, stereo, phonograph, vinyl, lp, disc, platter.
+  /// Turntable. Tags: record player, vinyl, dj, music.
   static const turntable = _turntable;
 
-  /// Turtle. Tags: animal, pet, tortoise, slow, speed. Its details merge when filled: use it outlined.
+  /// Turtle. Tags: tortoise, reptile, slow.
   static const turtle = _turtle;
 
-  /// Tuxedo. Tags: blazer, buttons, shirt, suit, gentleman, mens, boys, top.
-  static const tuxedo = _tuxedo;
+  /// Turtleneck. Tags: sweater, clothing, jumper.
+  static const turtleneck = _turtleneck;
 
-  /// Tv. Tags: television, stream, display, widescreen, high-definition, hd, 1080p, 4k.
+  /// Tv. Tags: television, screen, antenna.
   static const tv = _tv;
 
-  /// Tv minimal. Tags: flatscreen, television, stream, display, widescreen, high-definition, hd, 1080p.
+  /// Tv alert. Tags: tv, issue, alert, problem, error.
+  static const tvAlert = _tvAlert;
+
+  /// Tv curved. Tags: tv, television, screen, display.
+  static const tvCurved = _tvCurved;
+
+  /// Tv minimal. Tags: tv, television, screen, display, monitor.
   static const tvMinimal = _tvMinimal;
 
-  /// Tv minimal play. Tags: flatscreen, television, stream, display, widescreen, high-definition, hd, 1080p.
-  static const tvMinimalPlay = _tvMinimalPlay;
+  /// Tv minimal 4k. Tags: tv, 4k, uhd, resolution, television, screen.
+  static const tvMinimal4k = _tvMinimal4k;
 
-  /// Type. Tags: text, font, typography.
+  /// Tv minimal alert. Tags: tv, alert, warning, error, no signal, television.
+  static const tvMinimalAlert = _tvMinimalAlert;
+
+  /// Same icon as [monitorPlay].
+  static const tvMinimalPlay = _monitorPlay;
+
+  /// Tv play. Tags: tv, play, stream, video, television.
+  static const tvPlay = _tvPlay;
+
+  /// Tv stand. Tags: television, tv, table, cabinet, furniture.
+  static const tvStand = _tvStand;
+
+  /// Tv tower. Tags: berlin, germany, landmark, fernsehturm, tower, city.
+  static const tvTower = _tvTower;
+
+  /// Tv wifi. Tags: smart tv, wifi, stream, connected, television.
+  static const tvWifi = _tvWifi;
+
+  /// Tv wrench. Tags: tv, repair, fix, wrench, service.
+  static const tvWrench = _tvWrench;
+
+  /// Twin tower. Tags: skyscraper, petronas, building, city.
+  static const twinTower = _twinTower;
+
+  /// Two factor auth. Tags: 2fa, mfa, two factor, authentication, lock, verified, security.
+  static const twoFactorAuth = _twoFactorAuth;
+
+  /// Type. Tags: text, font, typography, letter, t.
   static const type = _type;
 
-  /// Type outline. Tags: text, font, typography, silhouette, profile, contour, stroke, line.
+  /// Type asterisk. Tags: footnote, text, asterisk, note, reference.
+  static const typeAsterisk = _typeAsterisk;
+
+  /// Type cursor. Tags: type, text cursor, caret, input, edit.
+  static const typeCursor = _typeCursor;
+
+  /// Type outline. Tags: type, outline, font, typography, text.
   static const typeOutline = _typeOutline;
 
-  /// Type square. Tags: toolbar, formatting, styling, plain text, rich text, rtf, typography, fonts.
-  static const typeSquare = _typeSquare;
+  /// Same icon as [squareType].
+  static const typeSquare = _squareType;
 
-  /// Ufo. Tags: unidentified flying object, flying saucer, spaceship, spacecraft, aliens, extraterrestrial, abduction, beam.
+  /// Ufo. Tags: alien, spaceship, saucer.
   static const ufo = _ufo;
 
-  /// Umbrella. Tags: rain, weather.
+  /// Ufo rays. Tags: spaceship, alien, flying, saucer, space.
+  static const ufoRays = _ufoRays;
+
+  /// Ufo saucer. Tags: ufo, alien, flying saucer, spaceship.
+  static const ufoSaucer = _ufoSaucer;
+
+  /// Umbrella. Tags: rain, weather, protection.
   static const umbrella = _umbrella;
 
-  /// Umbrella off. Tags: rain, weather, uncovered, uninsured, antivirus, unprotected, risky.
+  /// Umbrella dollar sign. Tags: umbrella, dollar, insurance, protection, coverage. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const umbrellaDollarSign = _umbrellaDollarSign;
+
+  /// Umbrella off. Tags: umbrella, off, uninsured, unprotected, no rain.
   static const umbrellaOff = _umbrellaOff;
 
-  /// Underline. Tags: text, format.
+  /// Umbrella zap. Tags: save energy, protect, power, electricity, lightning.
+  static const umbrellaZap = _umbrellaZap;
+
+  /// Underline. Tags: text, format, underscore, style.
   static const underline = _underline;
 
-  /// Underline square. Tags: highlight, emphasis, emphasize, toolbar, formatting, styling, plain text, rich text.
-  static const underlineSquare = _underlineSquare;
-
-  /// Undo. Tags: redo, rerun, history. Mirrors in right-to-left text.
+  /// Undo. Tags: revert, history, back, step. Mirrors in right-to-left text.
   static const undo = _undo;
 
-  /// Undo 2. Tags: redo, rerun, history, back, return, reverse, revert, direction. Mirrors in right-to-left text.
+  /// Undo 2. Tags: undo, revert, history, back, u-turn. Mirrors in right-to-left text.
   static const undo2 = _undo2;
 
-  /// Undo dot. Tags: redo, history, step, back. Mirrors in right-to-left text.
+  /// Undo dot. Tags: undo, revert, history, step, dot. Mirrors in right-to-left text.
   static const undoDot = _undoDot;
 
   /// Unfold horizontal. Tags: arrow, collapse, fold, vertical, dashed.
@@ -6532,196 +15853,487 @@ abstract final class DsIcons {
   /// Unfold vertical. Tags: arrow, expand, vertical, dashed.
   static const unfoldVertical = _unfoldVertical;
 
-  /// Ungroup. Tags: cubes, packages, parts, units, collection, cluster, separate.
+  /// Unfold vertical bars. Tags: resize vertical, expand, stretch, height, unfold, spread.
+  static const unfoldVerticalBars = _unfoldVerticalBars;
+
+  /// Ungroup. Tags: separate, split, objects.
   static const ungroup = _ungroup;
 
-  /// Unicorn head. Tags: rare, unique, horn, fairy tale, nursery, story, fictional, imaginary.
-  static const unicornHead = _unicornHead;
+  /// Ungroup items. Tags: ungroup, items, separate, split, scatter.
+  static const ungroupItems = _ungroupItems;
 
-  /// University. Tags: building, education, childhood, school, college, academy, institute.
+  /// Ungroup layers. Tags: ungroup, layers, separate, split, stack. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const ungroupLayers = _ungroupLayers;
+
+  /// University. Tags: college, school, education, campus.
   static const university = _university;
 
-  /// Unlink. Tags: url, unchain.
+  /// Unlink. Tags: broken link, url, detach.
   static const unlink = _unlink;
 
-  /// Unlink 2. Tags: url, unchain.
+  /// Unlink 2. Tags: unlink, broken link, url, detach.
   static const unlink2 = _unlink2;
+
+  /// Unlink apart. Tags: unlink, broken link, url, detach.
+  static const unlinkApart = _unlinkApart;
+
+  /// Unlink loops. Tags: unlink, broken link, url, detach.
+  static const unlinkLoops = _unlinkLoops;
+
+  /// Unlink overlap. Tags: unlink, broken link, url, detach.
+  static const unlinkOverlap = _unlinkOverlap;
+
+  /// Unlink sparks. Tags: unlink, broken link, url, detach.
+  static const unlinkSparks = _unlinkSparks;
 
   /// Same icon as [lockOpen].
   static const unlock = _lockOpen;
 
-  /// Unplug. Tags: electricity, energy, electronics, socket, outlet, disconnect.
+  /// Unplug. Tags: disconnect, plug, power, offline.
   static const unplug = _unplug;
 
-  /// Upload. Tags: file.
+  /// Upload. Tags: arrow, send, tray, cloud.
   static const upload = _upload;
 
-  /// Usb. Tags: universal, serial, bus, controller, connector, interface.
-  static const usb = _usb;
+  /// Upload tray. Tags: upload, tray, arrow, send, import.
+  static const uploadTray = _uploadTray;
 
-  /// Usb c port. Tags: universal, serial, bus, controller, connector, interface, socket, plug.
-  static const usbCPort = _usbCPort;
+  /// Same icon as [usbPlug].
+  static const usb = _usbPlug;
 
-  /// User. Tags: person, account, contact.
+  /// Usb bitcoin. Tags: bitcoin, flash, drive, usb, cold, storage, crypto, btc.
+  static const usbBitcoin = _usbBitcoin;
+
+  /// Usb cable x. Tags: usb, cable, disconnected, not connected, unplugged, connector.
+  static const usbCableX = _usbCableX;
+
+  /// Usb drive. Tags: usb, flash drive, memory stick, pen drive, storage, thumb drive.
+  static const usbDrive = _usbDrive;
+
+  /// Usb drive bug. Tags: usb, flash drive, bug, malware, virus.
+  static const usbDriveBug = _usbDriveBug;
+
+  /// Usb drive check. Tags: usb, flash drive, connected, check.
+  static const usbDriveCheck = _usbDriveCheck;
+
+  /// Usb drive circle check. Tags: usb, flash drive, connected, verified.
+  static const usbDriveCircleCheck = _usbDriveCircleCheck;
+
+  /// Usb drive tilted. Tags: usb, flash drive, memory stick, pen drive, storage, thumb drive.
+  static const usbDriveTilted = _usbDriveTilted;
+
+  /// Usb drive x. Tags: usb, flash drive, disconnected, not connected, unplugged, eject.
+  static const usbDriveX = _usbDriveX;
+
+  /// Usb lock. Tags: security key, usb, token, hardware key, 2fa.
+  static const usbLock = _usbLock;
+
+  /// Usb plug. Tags: usb, plug, connector, cable, cord.
+  static const usbPlug = _usbPlug;
+
+  /// Usb plug check. Tags: usb, plug, connected, check, cable.
+  static const usbPlugCheck = _usbPlugCheck;
+
+  /// User. Tags: person, account, profile, avatar, contact, member.
   static const user = _user;
 
-  /// User check. Tags: followed, subscribed, done, todo, tick, complete, task.
+  /// User alert. Tags: warning, problem, attention, exclamation, person, account, user warning.
+  static const userAlert = _userAlert;
+
+  /// User alert curved. Tags: warning, problem, attention, exclamation, person, account, user warning.
+  static const userAlertCurved = _userAlertCurved;
+
+  /// User alert wide. Tags: warning, problem, attention, exclamation, person, account, user warning.
+  static const userAlertWide = _userAlertWide;
+
+  /// User ban. Tags: block, blocked, forbidden, prohibit, restrict, user block.
+  static const userBan = _userBan;
+
+  /// User ban wide. Tags: block, blocked, forbidden, prohibit, restrict, user block.
+  static const userBanWide = _userBanWide;
+
+  /// User board. Tags: mentor, user, list, checklist, coaching, guide.
+  static const userBoard = _userBoard;
+
+  /// User cap. Tags: prisoner, inmate, person, jail.
+  static const userCap = _userCap;
+
+  /// User check. Tags: verified, approved, done, followed, subscribed, confirm, complete.
   static const userCheck = _userCheck;
 
-  /// User cog. Tags: settings, edit, cog, gear.
+  /// User check wide. Tags: verified, approved, done, followed, subscribed, confirm, complete.
+  static const userCheckWide = _userCheckWide;
+
+  /// User chevrons left right. Tags: switch user, transfer, exchange, swap, person, account.
+  static const userChevronsLeftRight = _userChevronsLeftRight;
+
+  /// User clock. Tags: time, history, pending, schedule, waiting, person, account, user time.
+  static const userClock = _userClock;
+
+  /// User clock wide. Tags: time, history, pending, schedule, waiting, person, account, user time.
+  static const userClockWide = _userClockWide;
+
+  /// User cog. Tags: settings, preferences, gear, edit profile, configure, person, account.
   static const userCog = _userCog;
 
-  /// User group. Tags: group, people, team, members, community, membership, collaboration, organization.
+  /// User cog curved. Tags: settings, preferences, gear, edit profile, configure, person, account, user settings.
+  static const userCogCurved = _userCogCurved;
+
+  /// User cog wide. Tags: settings, preferences, gear, edit profile, configure, person, account, user settings.
+  static const userCogWide = _userCogWide;
+
+  /// User curved. Tags: person, account, profile, avatar, contact, member.
+  static const userCurved = _userCurved;
+
+  /// User dollar sign. Tags: customer, payment, salary, money, finance, person, account, user dollar.
+  static const userDollarSign = _userDollarSign;
+
+  /// User female. Tags: woman, female, person, profile, avatar, girl.
+  static const userFemale = _userFemale;
+
+  /// User female plus. Tags: add, female, user, woman, person, plus, invite.
+  static const userFemalePlus = _userFemalePlus;
+
+  /// User female x. Tags: remove female, user, woman, delete, x.
+  static const userFemaleX = _userFemaleX;
+
+  /// User full body. Tags: person, human, body, figure, full view, standing, silhouette.
+  static const userFullBody = _userFullBody;
+
+  /// User graduation cap. Tags: student, graduate, education, school, person.
+  static const userGraduationCap = _userGraduationCap;
+
+  /// User group. Tags: group, team, people, community, crowd, members, users.
   static const userGroup = _userGroup;
 
-  /// User key. Tags: passkey, password, login, authentication, authorization, roles, permissions, private.
+  /// User group trio. Tags: group, team, people, community, crowd, three people, users.
+  static const userGroupTrio = _userGroupTrio;
+
+  /// User group wide. Tags: group, team, people, community, crowd, members, users.
+  static const userGroupWide = _userGroupWide;
+
+  /// User heart. Tags: favorite, love, like, follow, person, account, user love.
+  static const userHeart = _userHeart;
+
+  /// User heart wide. Tags: favorite, love, like, follow, person, account, user love.
+  static const userHeartWide = _userHeartWide;
+
+  /// User key. Tags: access, permission, credentials, login, person, account, password.
   static const userKey = _userKey;
 
-  /// User lock. Tags: person, lock, locked, account, secure.
+  /// User laptop. Tags: presentation, online, webinar, laptop, person, remote, work. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const userLaptop = _userLaptop;
+
+  /// User laptop side. Tags: mentoring, laptop, training, coaching, teacher, learning.
+  static const userLaptopSide = _userLaptopSide;
+
+  /// User list. Tags: members, directory, contacts, roster, person, list.
+  static const userList = _userList;
+
+  /// User lock. Tags: secure, locked, private, access, person, account, protected.
   static const userLock = _userLock;
 
-  /// User minus. Tags: delete, remove, unfollow, unsubscribe.
+  /// User lock wide. Tags: secure, locked, private, access, person, account, protected.
+  static const userLockWide = _userLockWide;
+
+  /// User male. Tags: person, man, avatar, profile, portrait, head.
+  static const userMale = _userMale;
+
+  /// User male plus. Tags: add, male, user, man, person, plus, invite.
+  static const userMalePlus = _userMalePlus;
+
+  /// User male x. Tags: remove male, user, man, delete, x.
+  static const userMaleX = _userMaleX;
+
+  /// User medical. Tags: doctor, medical, health, person, cross, patient.
+  static const userMedical = _userMedical;
+
+  /// User message circle alert. Tags: complaint, report, user, exclamation, feedback, issue.
+  static const userMessageCircleAlert = _userMessageCircleAlert;
+
+  /// User message circle more. Tags: question, person, help, ask, support.
+  static const userMessageCircleMore = _userMessageCircleMore;
+
+  /// User message text. Tags: teaching, lesson, speech, presentation, education, instructor.
+  static const userMessageText = _userMessageText;
+
+  /// User minus. Tags: remove user, delete, unfollow, unsubscribe, person, account.
   static const userMinus = _userMinus;
 
-  /// User pen. Tags: person, account, contact, profile, edit, change.
+  /// User minus wide. Tags: remove user, delete, unfollow, unsubscribe, person, account.
+  static const userMinusWide = _userMinusWide;
+
+  /// User network. Tags: crowdfunding, org chart, hierarchy, network, team, funding.
+  static const userNetwork = _userNetwork;
+
+  /// User niqab. Tags: niqab, veil, woman, person, islam, user.
+  static const userNiqab = _userNiqab;
+
+  /// User pen. Tags: edit, edit user, modify, update, profile, rename.
   static const userPen = _userPen;
 
-  /// User plus. Tags: new, add, create, follow, subscribe.
+  /// User pen curved. Tags: edit, edit user, modify, update, profile, rename, user edit.
+  static const userPenCurved = _userPenCurved;
+
+  /// User pen wide. Tags: edit user, person, profile, rename.
+  static const userPenWide = _userPenWide;
+
+  /// User plus. Tags: add user, new user, follow, subscribe, create, invite.
   static const userPlus = _userPlus;
 
-  /// User round. Tags: person, account, contact.
+  /// User plus curved. Tags: add user, new user, follow, subscribe, create, invite, user add.
+  static const userPlusCurved = _userPlusCurved;
+
+  /// User plus wide. Tags: add user, new user, follow, subscribe, create, invite, user add.
+  static const userPlusWide = _userPlusWide;
+
+  /// User question. Tags: unknown user, help, anonymous, guest, who, person, account.
+  static const userQuestion = _userQuestion;
+
+  /// User question wide. Tags: unknown user, help, anonymous, guest, who, person, account.
+  static const userQuestionWide = _userQuestionWide;
+
+  /// User restore. Tags: account, recovery, restore, user, reset, profile, history.
+  static const userRestore = _userRestore;
+
+  /// User round. Tags: person, account, profile, avatar, contact, member.
   static const userRound = _userRound;
 
-  /// User round arrow left. Tags: person, assign, move, give, setup, self, me, myself.
+  /// User round arrow left. Tags: user, person, arrow, back, return, leave. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const userRoundArrowLeft = _userRoundArrowLeft;
 
-  /// User round check. Tags: followed, subscribed, done, todo, tick, complete, task.
+  /// User round check. Tags: verified, approved, done, followed, subscribed, person, account.
   static const userRoundCheck = _userRoundCheck;
 
-  /// User round cog. Tags: settings, edit, cog, gear.
+  /// User round cog. Tags: settings, preferences, gear, edit profile, person, account.
   static const userRoundCog = _userRoundCog;
 
-  /// User round group. Tags: group, people, team, members, community, membership, collaboration, organization.
-  static const userRoundGroup = _userRoundGroup;
+  /// Same icon as [userGroup].
+  static const userRoundGroup = _userGroup;
 
-  /// User round key. Tags: passkey, password, login, authentication, authorization, roles, permissions, private.
+  /// User round key. Tags: access, permission, credentials, login, person, account.
   static const userRoundKey = _userRoundKey;
 
-  /// User round minus. Tags: delete, remove, unfollow, unsubscribe.
+  /// User round minus. Tags: remove user, delete, unfollow, person, account.
   static const userRoundMinus = _userRoundMinus;
 
-  /// User round pen. Tags: person, account, contact, profile, edit, change.
+  /// User round pen. Tags: edit, edit user, modify, update, profile, person.
   static const userRoundPen = _userRoundPen;
 
-  /// User round plus. Tags: new, add, create, follow, subscribe.
+  /// User round plus. Tags: add user, new user, follow, subscribe, create, invite.
   static const userRoundPlus = _userRoundPlus;
 
-  /// User round search. Tags: person, account, contact, find, scan, magnifier, magnifying glass, lens.
+  /// User round search. Tags: find user, search, lookup, magnifier, person, account.
   static const userRoundSearch = _userRoundSearch;
 
-  /// User round x. Tags: delete, remove, unfollow, unsubscribe, unavailable.
+  /// User round x. Tags: remove user, delete, unfollow, unavailable, person, account.
   static const userRoundX = _userRoundX;
 
-  /// Users. Tags: group, people.
+  /// Users. Tags: group, people, team, community, members.
   static const users = _users;
 
-  /// User search. Tags: person, account, contact, find, scan, magnifier, magnifying glass, lens.
+  /// User search. Tags: find user, search, lookup, magnifier, person, account.
   static const userSearch = _userSearch;
 
-  /// User shield. Tags: user, shield, admin, protected, guard, profile, security, privacy.
+  /// User search wide. Tags: find user, search, lookup, magnifier, person, account.
+  static const userSearchWide = _userSearchWide;
+
+  /// Users graduation cap. Tags: students, graduates, education, school, class.
+  static const usersGraduationCap = _usersGraduationCap;
+
+  /// User shield. Tags: protection, security, secure user, guard, person, account.
   static const userShield = _userShield;
 
-  /// Users round. Tags: group, people.
+  /// User shield wide. Tags: protection, security, secure user, guard, person, account.
+  static const userShieldWide = _userShieldWide;
+
+  /// Users message. Tags: conversation, chat, discussion, people, talk, dialog.
+  static const usersMessage = _usersMessage;
+
+  /// Users overlap. Tags: group, people, team, pair, two people, community, users, multiple users.
+  static const usersOverlap = _usersOverlap;
+
+  /// Users overlap reverse. Tags: group, people, team, pair, two people, community, users, multiple users.
+  static const usersOverlapReverse = _usersOverlapReverse;
+
+  /// User speaking. Tags: conference, speaker, presenter, talk, meeting, audience.
+  static const userSpeaking = _userSpeaking;
+
+  /// Users plus. Tags: add, team, users, group, plus, invite, members.
+  static const usersPlus = _usersPlus;
+
+  /// Users round. Tags: group, people, team, community, members, users.
   static const usersRound = _usersRound;
 
-  /// User star. Tags: person, account, favorite, contact, like, review, rating, admin.
+  /// Users round plus. Tags: add, team, users, group, plus, invite, members, round.
+  static const usersRoundPlus = _usersRoundPlus;
+
+  /// Users sparkle. Tags: ai, co-editing, collaboration, users, team, sparkle.
+  static const usersSparkle = _usersSparkle;
+
+  /// User star. Tags: favorite, vip, rating, review, admin, featured, person.
   static const userStar = _userStar;
 
-  /// User x. Tags: delete, remove, unfollow, unsubscribe, unavailable.
+  /// User star wide. Tags: favorite, vip, rating, review, admin, featured, person.
+  static const userStarWide = _userStarWide;
+
+  /// Users wide. Tags: group, people, team, pair, two people, community, users, multiple users.
+  static const usersWide = _usersWide;
+
+  /// User switch. Tags: share knowledge, teach, mentor, exchange, learning.
+  static const userSwitch = _userSwitch;
+
+  /// User sync. Tags: switch user, switch account, change user, refresh, swap, person, account.
+  static const userSync = _userSync;
+
+  /// User tie. Tags: manager, business, suit, boss, employee, person.
+  static const userTie = _userTie;
+
+  /// User unlock. Tags: unlocked, open access, unlock user, access, person, account.
+  static const userUnlock = _userUnlock;
+
+  /// User unlock wide. Tags: unlocked, open access, unlock user, access, person, account.
+  static const userUnlockWide = _userUnlockWide;
+
+  /// User wide. Tags: person, account, profile, avatar, contact, member.
+  static const userWide = _userWide;
+
+  /// User x. Tags: remove user, delete, unfollow, unsubscribe, unavailable, person, account.
   static const userX = _userX;
 
-  /// Utensils. Tags: fork, knife, cutlery, flatware, tableware, silverware, food, restaurant.
+  /// User x curved. Tags: remove user, delete, unfollow, unsubscribe, unavailable, person, account.
+  static const userXCurved = _userXCurved;
+
+  /// User x wide. Tags: remove user, delete, unfollow, unsubscribe, unavailable, person, account.
+  static const userXWide = _userXWide;
+
+  /// Utensils. Tags: fork, knife, cutlery, restaurant, dining, eat, meal.
   static const utensils = _utensils;
 
-  /// Utensils crossed. Tags: fork, knife, cutlery, flatware, tableware, silverware, food, restaurant.
+  /// Utensils crossed. Tags: fork, knife, cutlery, restaurant, dining, eat, meal.
   static const utensilsCrossed = _utensilsCrossed;
 
-  /// Utility pole. Tags: electricity, energy, transmission line, telegraph pole, power lines, phone.
+  /// Utensils plate. Tags: spoon, fork, cutlery, restaurant, dining.
+  static const utensilsPlate = _utensilsPlate;
+
+  /// Utility pole. Tags: power line, electricity, telephone pole, wire, infrastructure, energy.
   static const utilityPole = _utilityPole;
 
-  /// Van. Tags: minivan, cart, wagon, truck, lorry, trailer, camper, vehicle.
+  /// U turn down. Tags: u-turn, down, turn, return.
+  static const uTurnDown = _uTurnDown;
+
+  /// U turn left. Tags: u-turn, back, undo, return, turn, left. Mirrors in right-to-left text.
+  static const uTurnLeft = _uTurnLeft;
+
+  /// U turn right. Tags: u-turn, forward, redo, turn, right. Mirrors in right-to-left text.
+  static const uTurnRight = _uTurnRight;
+
+  /// U turn up. Tags: u-turn, up, turn, return.
+  static const uTurnUp = _uTurnUp;
+
+  /// Vacuum cleaner. Tags: vacuum, cleaning, hoover, housework, chores, clean.
+  static const vacuumCleaner = _vacuumCleaner;
+
+  /// Van. Tags: minivan, vehicle, delivery, truck, transport, cargo.
   static const van = _van;
 
-  /// Variable. Tags: code, coding, programming, symbol, calculate, algebra, x, parentheses.
+  /// Variable. Tags: absolute, value, brackets, math, x.
   static const variable = _variable;
 
-  /// Vault. Tags: safe, lockbox, deposit, locker, coffer, strongbox, safety, secure.
+  /// Variable font. Tags: font, variable, typography, text, axis.
+  static const variableFont = _variableFont;
+
+  /// Variable window. Tags: code, programming, x, parentheses, algebra, symbol, math.
+  static const variableWindow = _variableWindow;
+
+  /// Variable x. Tags: algebra, unknown, italic, x, function, symbol.
+  static const variableX = _variableX;
+
+  /// Vault. Tags: safe, strongbox, bank, secure, storage, locker, deposit, valuables.
   static const vault = _vault;
 
-  /// Vector polygon. Tags: map, vector, geometry, coordinates, shape, location, boundary, area.
+  /// Vault bitcoin. Tags: bitcoin, safe, vault, crypto, btc.
+  static const vaultBitcoin = _vaultBitcoin;
+
+  /// Vector polygon. Tags: vector, polygon, path, nodes, shape, design.
   static const vectorPolygon = _vectorPolygon;
 
-  /// Vector square. Tags: shape, geometry, art, width, height, size, calculate, measure.
+  /// Vector square. Tags: vector, anchor points, bounding box, selection, design, path.
   static const vectorSquare = _vectorSquare;
 
-  /// Vegan. Tags: vegetarian, fruitarian, herbivorous, animal rights, diet.
+  /// Vector square plus. Tags: select, add, handles, resize box, new.
+  static const vectorSquarePlus = _vectorSquarePlus;
+
+  /// Vegan. Tags: plant based, vegetarian, leaf, sprout, diet, organic.
   static const vegan = _vegan;
 
-  /// Venetian mask. Tags: mask, masquerade, impersonate, secret, incognito.
+  /// Venetian mask. Tags: mask, carnival, masquerade, theater, disguise, anonymous.
   static const venetianMask = _venetianMask;
 
-  /// Venn. Tags: venn diagram, overlap, compare, common, blend mode, opacity, transparency.
-  static const venn = _venn;
+  /// Same icon as [circlesOverlap].
+  static const venn = _circlesOverlap;
 
-  /// Venus. Tags: gender, sex, female, feminine, woman, girl.
+  /// Venus. Tags: female, woman, gender, symbol, feminine, girl.
   static const venus = _venus;
 
-  /// Venus and mars. Tags: gender, sex, intersex, androgynous, hermaphrodite.
+  /// Venus and mars. Tags: gender, male, female, couple, symbol, heterosexual.
   static const venusAndMars = _venusAndMars;
 
   /// Same icon as [badgeCheck].
   static const verified = _badgeCheck;
 
-  /// Vest. Tags: underwear, undergarment, mens, boys, top, waistcoat, sleeveless, sportswear. Its details merge when filled: use it outlined.
+  /// Versus. Tags: vs, compare, battle, match, against, duel.
+  static const versus = _versus;
+
+  /// Vest. Tags: waistcoat, clothing, fashion, garment, apparel.
   static const vest = _vest;
 
-  /// Vibrate. Tags: smartphone, notification, rumble, haptic feedback, screen.
+  /// Vibrate. Tags: vibration, phone, haptic, silent mode, alert, smartphone.
   static const vibrate = _vibrate;
 
-  /// Vibrate off. Tags: smartphone, notification, rumble, haptic feedback, notifications, screen.
+  /// Vibrate off. Tags: vibration off, phone, haptic, silent, smartphone, disabled.
   static const vibrateOff = _vibrateOff;
 
-  /// Video. Tags: camera, movie, film, recording, motion picture, camcorder, reel.
+  /// Video. Tags: camera, movie, film, recording, camcorder, record.
   static const video = _video;
 
-  /// Video off. Tags: camera, movie, film.
+  /// Video card. Tags: graphic, card, gpu, video, computer, hardware.
+  static const videoCard = _videoCard;
+
+  /// Video dot. Tags: record, live, camera, streaming, broadcast.
+  static const videoDot = _videoDot;
+
+  /// Video off. Tags: camera, movie, film, recording off, disabled, no video.
   static const videoOff = _videoOff;
 
-  /// Videotape. Tags: vhs, movie, film, recording, motion picture, showreel, cassette.
+  /// Video plain. Tags: camera, movie, film, recording, camcorder, record.
+  static const videoPlain = _videoPlain;
+
+  /// Video sparkle. Tags: ai, video, camera, sparkle, generate.
+  static const videoSparkle = _videoSparkle;
+
+  /// Same icon as [videoSparkle].
+  static const videoSparkles = _videoSparkle;
+
+  /// Videotape. Tags: vhs, cassette, tape, retro, video, recording, film.
   static const videotape = _videotape;
 
-  /// View. Tags: eye, look.
-  static const view = _view;
+  /// Same icon as [scanEye].
+  static const view = _scanEye;
 
-  /// Virus. Tags: pathogen, infection, disease, illness, contagion, outbreak, pandemic, epidemic.
-  static const virus = _virus;
-
-  /// Virus off. Tags: pathogen, infection, disease, illness, contagion, outbreak, pandemic, epidemic.
-  static const virusOff = _virusOff;
-
-  /// Voicemail. Tags: phone, cassette, tape, reel, recording, audio.
+  /// Voicemail. Tags: voice mail, message, answering machine, phone, recording, tape.
   static const voicemail = _voicemail;
 
-  /// Volleyball. Tags: beach, sand, net, holiday, vacation, summer, soccer, football.
+  /// Volleyball. Tags: ball, beach, net, sport, game, summer.
   static const volleyball = _volleyball;
 
-  /// Volume. Tags: music, sound, mute, speaker.
+  /// Volume. Tags: speaker, sound, audio, music, loudspeaker, mute, silent, no sound.
   static const volume = _volume;
 
-  /// Volume 1. Tags: music, sound, speaker.
+  /// Volume 1. Tags: speaker, sound, audio, music, low volume, quiet.
   static const volume1 = _volume1;
 
-  /// Volume 2. Tags: music, sound, speaker.
+  /// Volume 2. Tags: speaker, sound, audio, music, high volume, loud.
   static const volume2 = _volume2;
 
   /// Same icon as [volume2].
@@ -6730,282 +16342,522 @@ abstract final class DsIcons {
   /// Same icon as [volume1].
   static const volumeLow = _volume1;
 
-  /// Volume off. Tags: music, sound, mute, speaker.
+  /// Volume minus. Tags: volume down, decrease, quieter, speaker, sound, audio.
+  static const volumeMinus = _volumeMinus;
+
+  /// Volume off. Tags: mute, silent, no sound, speaker, disabled, audio.
   static const volumeOff = _volumeOff;
+
+  /// Volume plus. Tags: volume up, increase, louder, speaker, sound, audio.
+  static const volumePlus = _volumePlus;
 
   /// Same icon as [volume2].
   static const volumeUp = _volume2;
 
-  /// Volume x. Tags: music, sound, mute, speaker.
+  /// Volume x. Tags: mute, silent, no sound, speaker, off, audio.
   static const volumeX = _volumeX;
 
-  /// Vote. Tags: poll, ballot, political, social, check, tick.
+  /// Vote. Tags: ballot, election, poll, voting, ballot box, democracy, choice.
   static const vote = _vote;
 
-  /// Waffle. Tags: syrup, fast food, junk food, snack, sweet, dish, restaurant, breakfast.
-  static const waffle = _waffle;
+  /// Vr headset. Tags: virtual reality, vr, goggles, headset, metaverse, immersive, augmented.
+  static const vrHeadset = _vrHeadset;
 
-  /// Wallet. Tags: money, finance, pocket.
+  /// Vr headset rotate. Tags: vr, virtual reality, 360, rotate, headset, goggles, view around.
+  static const vrHeadsetRotate = _vrHeadsetRotate;
+
+  /// Waist measure. Tags: body, weight, waist, tape, measure.
+  static const waistMeasure = _waistMeasure;
+
+  /// Waiter. Tags: server, restaurant, service, butler, bow tie, staff.
+  static const waiter = _waiter;
+
+  /// Waiters. Tags: servers, restaurant, service, staff, team, hospitality. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const waiters = _waiters;
+
+  /// Wallet. Tags: money, finance, pocket, payment, purse, cash.
   static const wallet = _wallet;
 
-  /// Wallet cards. Tags: wallet, cards, banking, cash, debit, transport, money, finance.
+  /// Wallet bitcoin. Tags: bitcoin, wallet, crypto, btc.
+  static const walletBitcoin = _walletBitcoin;
+
+  /// Wallet cards. Tags: wallet, cards, banking, cash, debit, money, finance.
   static const walletCards = _walletCards;
 
-  /// Wallet minimal. Tags: finance, pocket.
+  /// Wallet check. Tags: funds verified, paid, done, money, finance, pocket, payment.
+  static const walletCheck = _walletCheck;
+
+  /// Wallet clasp. Tags: money, finance, pocket, payment, purse, clasp, cash.
+  static const walletClasp = _walletClasp;
+
+  /// Wallet clasp check. Tags: funds verified, paid, done, money, finance, pocket, payment.
+  static const walletClaspCheck = _walletClaspCheck;
+
+  /// Wallet clasp off. Tags: wallet not found, missing, lost, no wallet, money, finance, disabled. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const walletClaspOff = _walletClaspOff;
+
+  /// Wallet clasp plus. Tags: add funds, top up, deposit, money, finance, pocket, payment.
+  static const walletClaspPlus = _walletClaspPlus;
+
+  /// Wallet clasp x. Tags: remove funds, failed, declined, wallet remove, money, finance, payment.
+  static const walletClaspX = _walletClaspX;
+
+  /// Wallet coin. Tags: money, finance, pocket, payment, coin, purse, cash.
+  static const walletCoin = _walletCoin;
+
+  /// Wallet coins. Tags: purse, wallet, coins, money.
+  static const walletCoins = _walletCoins;
+
+  /// Wallet minimal. Tags: money, finance, pocket, payment, purse, simple.
   static const walletMinimal = _walletMinimal;
 
-  /// Wallpaper. Tags: background, texture, image, art, design, visual, decor, pattern.
+  /// Wallet off. Tags: wallet not found, missing, lost, no wallet, money, finance, disabled. Drawn with a 1.5 stroke: at 2 its details would close up.
+  static const walletOff = _walletOff;
+
+  /// Wallet plus. Tags: add funds, top up, deposit, money, finance, pocket, payment.
+  static const walletPlus = _walletPlus;
+
+  /// Wallet pocket. Tags: money, finance, pocket, payment, purse, tray, envelope.
+  static const walletPocket = _walletPocket;
+
+  /// Wallet x. Tags: remove funds, failed, declined, wallet remove, money, finance, payment.
+  static const walletX = _walletX;
+
+  /// Wallpaper. Tags: background, desktop, screen, image, monitor, theme, picture.
   static const wallpaper = _wallpaper;
 
-  /// Wand. Tags: magic, selection.
+  /// Wallpaper sparkle. Tags: ai, background, wallpaper, sparkle, generate, image.
+  static const wallpaperSparkle = _wallpaperSparkle;
+
+  /// Wand. Tags: magic, magic wand, wizard, spell, tool, stick, auto.
   static const wand = _wand;
 
-  /// Wand sparkles. Tags: magic, wizard, magician.
+  /// Wand sparkles. Tags: magic, magic wand, wizard, spell, sparkles, ai, auto, magician. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const wandSparkles = _wandSparkles;
 
-  /// Wardrobe. Tags: closet, cupboard, shelves, drawer, storage, clothes, clothing, apparel.
+  /// Wand sparkles right. Tags: magic, wizard, sparkle, wand, effects.
+  static const wandSparklesRight = _wandSparklesRight;
+
+  /// Wand sparkles small. Tags: ai, beautify, magic, wand, enhance, sparkle.
+  static const wandSparklesSmall = _wandSparklesSmall;
+
+  /// Same icon as [wandSparklesSmall].
+  static const wandStars = _wandSparklesSmall;
+
+  /// Wardrobe. Tags: closet, cupboard, furniture, clothes, storage, drawer, bedroom.
   static const wardrobe = _wardrobe;
 
-  /// Warehouse. Tags: storage, storehouse, depot, depository, repository, stockroom, logistics, building.
+  /// Wardrobe doors. Tags: closet, cupboard, furniture, clothes, storage, doors, bedroom.
+  static const wardrobeDoors = _wardrobeDoors;
+
+  /// Wardrobe offset. Tags: closet, cupboard, furniture, clothes, storage, doors, bedroom.
+  static const wardrobeOffset = _wardrobeOffset;
+
+  /// Wardrobe shelf. Tags: closet, cupboard, furniture, clothes, storage, shelf, bedroom.
+  static const wardrobeShelf = _wardrobeShelf;
+
+  /// Warehouse. Tags: storage, depot, logistics, stockroom, distribution, building, inventory.
   static const warehouse = _warehouse;
+
+  /// Warehouse boxes. Tags: shipping center, logistics, storage, depot, boxes.
+  static const warehouseBoxes = _warehouseBoxes;
+
+  /// Warm up. Tags: workout, exercise, lunge, fitness, training, stretch. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const warmUp = _warmUp;
 
   /// Same icon as [triangleAlert].
   static const warning = _triangleAlert;
 
-  /// Washing machine. Tags: tumble dryer, amenities, electronics, cycle, clothes, rinse, spin, drum.
+  /// Washing machine. Tags: laundry, washer, clothes, cleaning, appliance, rinse, spin.
   static const washingMachine = _washingMachine;
 
-  /// Watch. Tags: clock, time.
+  /// Watch. Tags: wristwatch, smartwatch, clock, time, wearable, round.
   static const watch = _watch;
 
-  /// Watch activity. Tags: clock, wearable, wrist, strap, face, digital, touchscreen, smart.
-  static const watchActivity = _watchActivity;
+  /// Watch clock. Tags: smartwatch, clock, time, wearable.
+  static const watchClock = _watchClock;
 
-  /// Watch alarm. Tags: beep, ring, clock, timer, stopwatch, alarm, alert, wear.
-  static const watchAlarm = _watchAlarm;
+  /// Watch heart. Tags: smartwatch, heart, health, wearable, fitness.
+  static const watchHeart = _watchHeart;
 
-  /// Watch bars. Tags: clock, wearable, wrist, strap, face, digital, touchscreen, smart.
-  static const watchBars = _watchBars;
+  /// Watch network. Tags: ai, smartwatch, watch, wearable, nodes.
+  static const watchNetwork = _watchNetwork;
 
-  /// Watch charging. Tags: clock, wearable, wrist, strap, face, digital, touchscreen, smart.
-  static const watchCharging = _watchCharging;
+  /// Watch plain. Tags: smartwatch, clock, time, wearable.
+  static const watchPlain = _watchPlain;
 
-  /// Watch check. Tags: clock, wearable, wrist, strap, face, digital, touchscreen, smart.
-  static const watchCheck = _watchCheck;
-
-  /// Watch loader. Tags: polar, clock, wearable, wrist, strap, face, digital, touchscreen.
-  static const watchLoader = _watchLoader;
-
-  /// Watch music. Tags: clock, wearable, wrist, strap, face, digital, touchscreen, smart.
-  static const watchMusic = _watchMusic;
-
-  /// Watch square. Tags: clock, wearable, wrist, strap, face, digital, touchscreen, smart.
+  /// Watch square. Tags: wristwatch, smartwatch, clock, time, wearable, square.
   static const watchSquare = _watchSquare;
 
-  /// Watch square alarm. Tags: beep, ring, clock, timer, stopwatch, alarm, alert, wearable.
-  static const watchSquareAlarm = _watchSquareAlarm;
+  /// Watch square plain. Tags: smartwatch, wearable, square, strap.
+  static const watchSquarePlain = _watchSquarePlain;
 
-  /// Watch text. Tags: clock, wearable, wrist, strap, face, digital, touchscreen, smart.
-  static const watchText = _watchText;
-
-  /// Watermelon. Tags: snack, meal, lunch, juice, smoothie, eating, healthy, nutrition.
+  /// Watermelon. Tags: fruit, melon, slice, summer, food, healthy.
   static const watermelon = _watermelon;
 
-  /// Wave circle. Tags: surfing, tidal, tide, water, aqua, seaside, beach, ocean. Its details merge when filled: use it outlined.
-  static const waveCircle = _waveCircle;
+  /// Water polo. Tags: ball, pool, swimming, sport, game, waves, team.
+  static const waterPolo = _waterPolo;
 
-  /// Waves arrow down. Tags: water, sea, level, sound, hertz, wavelength, vibrate, low.
-  static const wavesArrowDown = _wavesArrowDown;
+  /// Water tank. Tags: tank, water, plastic, container, barrel.
+  static const waterTank = _waterTank;
 
-  /// Waves arrow up. Tags: water, sea, level, sound, hertz, wavelength, vibrate, high.
-  static const wavesArrowUp = _wavesArrowUp;
+  /// Waves. Tags: water, sea, ocean, surf, tide, swimming.
+  static const waves = _waves;
 
-  /// Waves birds. Tags: water, aqua, seaside, view, picturesque, tourism, summer holiday, beach.
-  static const wavesBirds = _wavesBirds;
+  /// Same icon as [waves].
+  static const wavesHorizontal = _waves;
 
-  /// Waves horizontal. Tags: water, sea, sound, hertz, wavelength, vibrate, ocean, swimming.
-  static const wavesHorizontal = _wavesHorizontal;
+  /// Wave sine. Tags: wave, signal, oscillation, audio, frequency, waveform, sound.
+  static const waveSine = _waveSine;
 
-  /// Waves ladder. Tags: swimming, water, pool, lifeguard, ocean.
+  /// Waves ladder. Tags: pool, swimming, swim, ladder, water, lap.
   static const wavesLadder = _wavesLadder;
 
-  /// Waves shark fin. Tags: pectoral, fishing, infested, waters, warning, danger, alert, jaws.
-  static const wavesSharkFin = _wavesSharkFin;
+  /// Wave square. Tags: square wave, signal, pulse, digital, oscillator, frequency, waveform.
+  static const waveSquare = _waveSquare;
 
-  /// Waves vertical. Tags: steam, warmth, temperature, burn, hot, boiling, heat, smoke.
-  static const wavesVertical = _wavesVertical;
+  /// Wave triangle. Tags: triangle wave, signal, pulse, oscillator, frequency, waveform, sound.
+  static const waveTriangle = _waveTriangle;
 
-  /// Waypoints. Tags: indirection, vpn, virtual private network, proxy, connections, bounce, reroute, path.
+  /// Waypoints. Tags: route, path, stops, journey, nodes, map, directions.
   static const waypoints = _waypoints;
 
-  /// Webcam. Tags: camera, security.
+  /// Webcam. Tags: camera, video call, streaming, web camera, conference, meeting.
   static const webcam = _webcam;
 
-  /// Webcam off. Tags: camera, security.
+  /// Webcam off. Tags: camera, security. Its details merge when filled: use it outlined.
   static const webcamOff = _webcamOff;
 
-  /// Webhook. Tags: push api, interface, callback.
+  /// Webhook. Tags: push api, callback, integration, hook, interface, api.
   static const webhook = _webhook;
 
-  /// Webhook off. Tags: push api, interface, callback.
+  /// Webhook off. Tags: push api, callback, integration, disabled, hook, api.
   static const webhookOff = _webhookOff;
 
-  /// Weight. Tags: mass, heavy, lead, metal, measure, geometry, scales, balance.
+  /// Weight. Tags: mass, heavy, kettlebell, measure, scales, balance, lead.
   static const weight = _weight;
 
-  /// Weight tilde. Tags: measure, scale, estimate, load, balance, size, measurement, quantity.
+  /// Weight machine. Tags: weightlifting, gym, equipment, workout, fitness.
+  static const weightMachine = _weightMachine;
+
+  /// Weight tilde. Tags: approximate weight, about, estimate, mass, heavy, measure, tilde.
   static const weightTilde = _weightTilde;
 
-  /// Whale. Tags: porpoise, fishing, fins, blowhole, blubber, barnacles, plankton, krill.
-  static const whale = _whale;
-
-  /// Whale narwhal. Tags: narwhale, horn, tusk, fishing, fins, blowhole, blubber, barnacles.
-  static const whaleNarwhal = _whaleNarwhal;
-
-  /// Wheat. Tags: corn, cereal, grain, gluten.
+  /// Wheat. Tags: grain, cereal, bread, flour, crop, farming, harvest.
   static const wheat = _wheat;
 
-  /// Wheat off. Tags: corn, cereal, grain, gluten free, allergy, intolerance, diet.
+  /// Wheat off. Tags: wheat, grain, gluten, free, allergy, no, crossed, out.
   static const wheatOff = _wheatOff;
 
-  /// Wheel. Tags: tire, rim, hub, spoke, cog, pulley, gear, turning.
-  static const wheel = _wheel;
+  /// Wheelchair. Tags: disability, accessible, handicap, mobility, access. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const wheelchair = _wheelchair;
 
-  /// Whisk. Tags: utensils, kitchenware, cutlery, culinary, cooking, cookery, restaurant, chef.
+  /// Wheelchair empty. Tags: disabled, handicap, mobility, accessible, wheel, chair.
+  static const wheelchairEmpty = _wheelchairEmpty;
+
+  /// Wheelchair leaning. Tags: accessibility, wheelchair, disabled, mobility, handicap, access.
+  static const wheelchairLeaning = _wheelchairLeaning;
+
+  /// Wheelchair moving. Tags: disability, wheelchair, accessible, handicap, mobility, active.
+  static const wheelchairMoving = _wheelchairMoving;
+
+  /// Wheelchair push. Tags: caring, caregiver, assist, disability, carer, accessibility.
+  static const wheelchairPush = _wheelchairPush;
+
+  /// Whisk. Tags: kitchen, beat, mix, cooking, egg, utensil. Its details merge when filled: use it outlined.
   static const whisk = _whisk;
 
-  /// Whisk fork knife. Tags: utensils, kitchenware, cutlery, culinary, cooking, cookery, restaurant, chef.
-  static const whiskForkKnife = _whiskForkKnife;
-
-  /// Whisks. Tags: kitchen, utensils, cutlery, culinary, cooking, cookery, restaurant, chef.
-  static const whisks = _whisks;
-
-  /// Whistle. Tags: alert, signal, sound, blow, noise, coach, trainer, referee.
+  /// Whistle. Tags: referee, coach, alert, blow, sound.
   static const whistle = _whistle;
 
-  /// Whole word. Tags: text, selection, letters, characters, font, typography.
+  /// Whiteboard. Tags: board, draw, sketch, pen, presentation, teaching.
+  static const whiteboard = _whiteboard;
+
+  /// Whole word. Tags: match, whole, word, search, find, ab. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const wholeWord = _wholeWord;
 
-  /// Wifi. Tags: connection, signal, wireless.
+  /// Wifi. Tags: connection, signal, wireless, internet, network.
   static const wifi = _wifi;
 
-  /// Wifi cog. Tags: connection, signal, wireless, directory, settings, control, preferences, cog.
+  /// Wifi alert. Tags: wifi, error, warning, problem, triangle, wireless. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const wifiAlert = _wifiAlert;
+
+  /// Wifi check. Tags: wifi, connected, online, ok, verified, wireless.
+  static const wifiCheck = _wifiCheck;
+
+  /// Wifi check corner. Tags: wifi, connected, online, ok, verified, dashed.
+  static const wifiCheckCorner = _wifiCheckCorner;
+
+  /// Wifi cog. Tags: wifi, settings, configure, network, wireless, gear.
   static const wifiCog = _wifiCog;
 
-  /// Wifi high. Tags: connection, signal, wireless.
+  /// Wifi exclamation. Tags: wifi, error, warning, problem, line, wireless.
+  static const wifiExclamation = _wifiExclamation;
+
+  /// Wifi high. Tags: wifi, signal, strength, good, reception, wireless.
   static const wifiHigh = _wifiHigh;
 
-  /// Wifi low. Tags: connection, signal, wireless.
+  /// Wifi low. Tags: wifi, signal, strength, weak, reception, wireless.
   static const wifiLow = _wifiLow;
 
-  /// Wifi off. Tags: disabled.
+  /// Wifi nodes. Tags: shared wifi, hotspot, network, share, wireless.
+  static const wifiNodes = _wifiNodes;
+
+  /// Wifi off. Tags: wifi, disabled, offline, no, connection, crossed, out.
   static const wifiOff = _wifiOff;
 
-  /// Wifi pen. Tags: edit, wifi, pen, change, network.
+  /// Wifi pen. Tags: wifi, edit, configure, network, wireless, rename.
   static const wifiPen = _wifiPen;
 
-  /// Wifi sync. Tags: connection, signal, wireless, synchronize, reconnect, reset, restart.
+  /// Wifi signal check. Tags: wifi, connected, online, ok, fan, signal, verified.
+  static const wifiSignalCheck = _wifiSignalCheck;
+
+  /// Wifi signal full. Tags: wifi, signal, strength, full, fan, bars, reception. Its details merge when filled: use it outlined.
+  static const wifiSignalFull = _wifiSignalFull;
+
+  /// Wifi signal low. Tags: wifi, signal, strength, weak, fan, reception. Its details merge when filled: use it outlined.
+  static const wifiSignalLow = _wifiSignalLow;
+
+  /// Wifi signal medium. Tags: wifi, signal, strength, medium, fan, reception. Its details merge when filled: use it outlined.
+  static const wifiSignalMedium = _wifiSignalMedium;
+
+  /// Wifi signal none. Tags: wifi, no, signal, empty, fan, reception, zero. Its details merge when filled: use it outlined.
+  static const wifiSignalNone = _wifiSignalNone;
+
+  /// Wifi signal x. Tags: wifi, disconnected, offline, error, fan, signal, no, connection.
+  static const wifiSignalX = _wifiSignalX;
+
+  /// Wifi sync. Tags: wifi, refresh, reconnect, update, wireless.
   static const wifiSync = _wifiSync;
 
-  /// Wifi zero. Tags: connection, signal, wireless.
+  /// Wifi unlock. Tags: wifi, open, public, unsecured, network, unlocked.
+  static const wifiUnlock = _wifiUnlock;
+
+  /// Wifi wide. Tags: connection, signal, wireless, internet, network, wide.
+  static const wifiWide = _wifiWide;
+
+  /// Wifi wide off. Tags: wifi, disabled, offline, no, connection, crossed, out, wide.
+  static const wifiWideOff = _wifiWideOff;
+
+  /// Wifi x. Tags: wifi, disconnected, offline, error, no, connection, wireless.
+  static const wifiX = _wifiX;
+
+  /// Wifi x center. Tags: wifi, disconnected, offline, error, no, connection, x, dot.
+  static const wifiXCenter = _wifiXCenter;
+
+  /// Wifi x corner. Tags: wifi, disconnected, offline, error, no, connection, dashed.
+  static const wifiXCorner = _wifiXCorner;
+
+  /// Wifi zero. Tags: wifi, no, signal, dot, zero, reception.
   static const wifiZero = _wifiZero;
 
-  /// Wind. Tags: weather, air, blow.
+  /// Wind. Tags: air, breeze, gust, windy, weather.
   static const wind = _wind;
 
-  /// Wind arrow down. Tags: weather, air, pressure, blow.
-  static const windArrowDown = _windArrowDown;
+  /// Wind fast. Tags: fast wind, air, blow, gust, breeze.
+  static const windFast = _windFast;
 
-  /// Wind arrow up. Tags: weather, air, pressure, blow, gust, windy, sort, increase.
-  static const windArrowUp = _windArrowUp;
+  /// Wind power. Tags: wind, turbine, energy, renewable, electricity, green, power.
+  static const windPower = _windPower;
 
-  /// Windmill. Tags: sails, turbine, electricity, power, energy, renewables.
-  static const windmill = _windmill;
+  /// Wind power blades. Tags: wind, turbine, energy, renewable, leaf, green. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const windPowerBlades = _windPowerBlades;
 
-  /// Wine. Tags: alcohol, beverage, bar, drink, glass, sommelier, vineyard, winery.
-  static const wine = _wine;
+  /// Wind power cross. Tags: wind, turbine, energy, renewable, windmill, blades.
+  static const windPowerCross = _windPowerCross;
 
-  /// Wine glass bottle. Tags: alcohol, drink, glass, goblet, chalice, vineyard, winery, red.
-  static const wineGlassBottle = _wineGlassBottle;
+  /// Wind power propeller. Tags: wind, turbine, energy, renewable, propeller, rotor.
+  static const windPowerPropeller = _windPowerPropeller;
 
-  /// Wine off. Tags: alcohol, beverage, drink, glass, alcohol free, abstinence, abstaining, teetotalism.
-  static const wineOff = _wineOff;
+  /// Windsurf. Tags: windsurfing, sail, board, water, sea, sailing.
+  static const windsurf = _windsurf;
+
+  /// Woman. Tags: female, lady, person, girl, gender, dress.
+  static const woman = _woman;
 
   /// Same icon as [textWrap].
   static const wordWrap = _textWrap;
 
-  /// Workflow. Tags: action, continuous integration, ci, automation, devops, network, node, connection.
+  /// Worker. Tags: labor, construction, hard hat, laborer, builder.
+  static const worker = _worker;
+
+  /// Workflow. Tags: process, automation, steps, diagram, flow, ci.
   static const workflow = _workflow;
 
-  /// Worm. Tags: invertebrate, grub, larva, snake, crawl, wiggle, slither, pest control.
+  /// Workflow arrow. Tags: arrange, flow, workflow, nodes, connect, diagram.
+  static const workflowArrow = _workflowArrow;
+
+  /// Workflow arrow down. Tags: node, move down, tree, workflow, hierarchy, demote.
+  static const workflowArrowDown = _workflowArrowDown;
+
+  /// Workflow arrow up. Tags: node, move up, tree, workflow, hierarchy, promote.
+  static const workflowArrowUp = _workflowArrowUp;
+
+  /// Workflow circle branch. Tags: workflow, branch, git, version, diagram, nodes.
+  static const workflowCircleBranch = _workflowCircleBranch;
+
+  /// Workflow circle branch up. Tags: workflow, branch, git, diagram, nodes.
+  static const workflowCircleBranchUp = _workflowCircleBranchUp;
+
+  /// Workflow circle fork. Tags: workflow, fork, branch, git, diagram, nodes.
+  static const workflowCircleFork = _workflowCircleFork;
+
+  /// Workflow circle merge. Tags: workflow, merge, git, diagram, nodes.
+  static const workflowCircleMerge = _workflowCircleMerge;
+
+  /// Workflow circle split. Tags: workflow, split, tree, hierarchy, diagram, nodes.
+  static const workflowCircleSplit = _workflowCircleSplit;
+
+  /// Workflow pen. Tags: node, edit, tree, workflow, hierarchy, pen.
+  static const workflowPen = _workflowPen;
+
+  /// Workflow plus. Tags: node, add, tree, workflow, hierarchy, plus.
+  static const workflowPlus = _workflowPlus;
+
+  /// Workflow square branch. Tags: workflow, branch, diagram, boxes, nodes.
+  static const workflowSquareBranch = _workflowSquareBranch;
+
+  /// Workflow square branch up. Tags: workflow, branch, diagram, boxes, nodes.
+  static const workflowSquareBranchUp = _workflowSquareBranchUp;
+
+  /// Workflow square diagram. Tags: workflow, flowchart, process, diagram, boxes, decision.
+  static const workflowSquareDiagram = _workflowSquareDiagram;
+
+  /// Workflow square fork. Tags: workflow, fork, branch, diagram, boxes, nodes.
+  static const workflowSquareFork = _workflowSquareFork;
+
+  /// Workflow square merge. Tags: workflow, merge, diagram, boxes, nodes.
+  static const workflowSquareMerge = _workflowSquareMerge;
+
+  /// Workflow square split. Tags: workflow, split, tree, hierarchy, diagram, boxes.
+  static const workflowSquareSplit = _workflowSquareSplit;
+
+  /// Workflow square steps. Tags: workflow, steps, process, diagram, boxes, chain.
+  static const workflowSquareSteps = _workflowSquareSteps;
+
+  /// Workflow square steps left. Tags: workflow, steps, process, diagram, boxes, chain.
+  static const workflowSquareStepsLeft = _workflowSquareStepsLeft;
+
+  /// Workflow square tree. Tags: workflow, tree, hierarchy, diagram, boxes, org, chart.
+  static const workflowSquareTree = _workflowSquareTree;
+
+  /// Workflow square zigzag. Tags: workflow, steps, chain, diagram, boxes, process.
+  static const workflowSquareZigzag = _workflowSquareZigzag;
+
+  /// Workflow x. Tags: node, remove, tree, workflow, hierarchy, delete.
+  static const workflowX = _workflowX;
+
+  /// Worm. Tags: bug, insect, earthworm, caterpillar, crawl.
   static const worm = _worm;
 
-  /// Wrench. Tags: account, settings, spanner, diy, toolbox, build, construction.
+  /// Wrench. Tags: spanner, repair, fix, settings, tool, maintenance.
   static const wrench = _wrench;
 
-  /// Wrench off. Tags: account, settings, spanner, diy, toolbox, build, construction, off.
+  /// Wrench off. Tags: account, settings, spanner, diy, toolbox, build, construction, off. Drawn with a 1.5 stroke: at 2 its details would close up. Its details merge when filled: use it outlined.
   static const wrenchOff = _wrenchOff;
 
-  /// X. Tags: cancel, close, cross, delete, ex, remove, times, clear.
+  /// Wrench screwdriver. Tags: repair, wrench, screwdriver, tools, fix, maintenance, settings. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const wrenchScrewdriver = _wrenchScrewdriver;
+
+  /// Wrench vertical. Tags: spanner, repair, fix, tool, open, end, maintenance.
+  static const wrenchVertical = _wrenchVertical;
+
+  /// X. Tags: close, cancel, dismiss, delete, remove, clear, multiply, times.
   static const x = _x;
 
-  /// X line top. Tags: line, top, arrow, navigation, up, pointer, direction, vector.
-  static const xLineTop = _xLineTop;
+  /// X bar. Tags: mean, average, statistics, overline, variable.
+  static const xBar = _xBar;
 
-  /// Yarn ball. Tags: wool, thread, needle, sewing, stitch, embroidery, waeve, woven.
-  static const yarnBall = _yarnBall;
+  /// Same icon as [xBar].
+  static const xLineTop = _xBar;
 
-  /// Yin yang. Tags: yinyang, contrast, opposites, interconnected, balance, unity, chinese, culture.
-  static const yinYang = _yinYang;
+  /// X ray. Tags: radiology, scan, bones, skeleton, imaging, chest.
+  static const xRay = _xRay;
 
-  /// Zap. Tags: flash, camera, lightning, electricity, energy, power, quick.
+  /// X thick. Tags: close, cancel, dismiss, delete, remove, cross.
+  static const xThick = _xThick;
+
+  /// Yoga. Tags: meditation, lotus, pose, mindfulness, exercise, relax. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const yoga = _yoga;
+
+  /// Yoga ball. Tags: exercise, pilates, fitness, swiss, ball, gym.
+  static const yogaBall = _yogaBall;
+
+  /// Yoga mat. Tags: exercise, pilates, fitness, rolled, mat, gym.
+  static const yogaMat = _yogaMat;
+
+  /// Yoga seated. Tags: meditation, lotus, pose, mindfulness, exercise, relax. Drawn with a 1.75 stroke: at 2 its details would close up.
+  static const yogaSeated = _yogaSeated;
+
+  /// Yogurt. Tags: dessert, dairy, cup, swirl, snack, frozen.
+  static const yogurt = _yogurt;
+
+  /// Yurt. Tags: tent, camping, nomad, dwelling, shelter.
+  static const yurt = _yurt;
+
+  /// Zap. Tags: lightning, bolt, power, electricity, energy, flash.
   static const zap = _zap;
 
-  /// Zap off. Tags: flash, camera, lightning, electricity, energy, power.
+  /// Zap off. Tags: lightning, power, off, disabled, energy, no. Drawn with a 1.75 stroke: at 2 its details would close up.
   static const zapOff = _zapOff;
 
-  /// Zodiac aquarius. Tags: water bearer, waves, innovation, air, future, astrology, star sign, horoscope.
+  /// Zap recycle. Tags: renewable energy, bolt, recycle, green energy, power.
+  static const zapRecycle = _zapRecycle;
+
+  /// Zap slim. Tags: energy, power, lightning, bolt, electricity, flash.
+  static const zapSlim = _zapSlim;
+
+  /// Zap slim off. Tags: flash, lightning, off, power, disabled.
+  static const zapSlimOff = _zapSlimOff;
+
+  /// Zeppelin. Tags: airship, blimp, dirigible, flight, balloon.
+  static const zeppelin = _zeppelin;
+
+  /// Zodiac aquarius. Tags: astrology, horoscope, star, sign, water, bearer.
   static const zodiacAquarius = _zodiacAquarius;
 
-  /// Zodiac aries. Tags: ram, horns, fire, energy, initiative, astrology, star sign, horoscope.
+  /// Zodiac aries. Tags: astrology, horoscope, star, sign, ram.
   static const zodiacAries = _zodiacAries;
 
-  /// Zodiac cancer. Tags: crab, shell, protection, water, intuition, astrology, star sign, horoscope.
+  /// Zodiac cancer. Tags: astrology, horoscope, star, sign, crab.
   static const zodiacCancer = _zodiacCancer;
 
-  /// Zodiac capricorn. Tags: goat, mountain, ambition, earth, discipline, astrology, star sign, horoscope.
+  /// Zodiac capricorn. Tags: astrology, horoscope, star, sign, goat.
   static const zodiacCapricorn = _zodiacCapricorn;
 
-  /// Zodiac gemini. Tags: twins, duality, communication, air, adaptability, astrology, star sign, horoscope.
+  /// Zodiac gemini. Tags: astrology, horoscope, star, sign, twins.
   static const zodiacGemini = _zodiacGemini;
 
-  /// Zodiac leo. Tags: lion, crown, leadership, fire, confidence, astrology, star sign, horoscope.
-  static const zodiacLeo = _zodiacLeo;
-
-  /// Zodiac libra. Tags: scales, balance, justice, air, harmony, astrology, star sign, horoscope.
+  /// Zodiac libra. Tags: astrology, horoscope, star, sign, scales.
   static const zodiacLibra = _zodiacLibra;
 
-  /// Zodiac ophiuchus. Tags: serpent, snake holder, healing, knowledge, astronomy, astrology, star sign, horoscope.
+  /// Zodiac ophiuchus. Tags: astrology, horoscope, star, sign, serpent, bearer.
   static const zodiacOphiuchus = _zodiacOphiuchus;
 
-  /// Zodiac pisces. Tags: fish, duality, water, dreams, empathy, astrology, star sign, horoscope.
+  /// Zodiac pisces. Tags: astrology, horoscope, star, sign, fish.
   static const zodiacPisces = _zodiacPisces;
 
-  /// Zodiac sagittarius. Tags: archer, arrow, exploration, fire, philosophy, astrology, star sign, horoscope.
+  /// Zodiac sagittarius. Tags: astrology, horoscope, star, sign, archer.
   static const zodiacSagittarius = _zodiacSagittarius;
 
-  /// Zodiac scorpio. Tags: scorpion, stinger, intensity, water, transformation, astrology, star sign, horoscope.
+  /// Zodiac scorpio. Tags: astrology, horoscope, star, sign, scorpion.
   static const zodiacScorpio = _zodiacScorpio;
 
-  /// Zodiac taurus. Tags: bull, strength, stability, earth, endurance, astrology, star sign, horoscope.
+  /// Zodiac taurus. Tags: astrology, horoscope, star, sign, bull.
   static const zodiacTaurus = _zodiacTaurus;
 
-  /// Zodiac virgo. Tags: virgin, maiden, harvest, precision, earth, analysis, astrology, star sign.
+  /// Zodiac virgo. Tags: astrology, horoscope, star, sign, maiden.
   static const zodiacVirgo = _zodiacVirgo;
 
-  /// Zoom in. Tags: magnifying glass, plus.
+  /// Zoom 1 1. Tags: actual size, zoom, original.
+  static const zoom11 = _zoom11;
+
+  /// Zoom in. Tags: magnifier, magnify, enlarge, plus, search, find, add.
   static const zoomIn = _zoomIn;
 
-  /// Zoom out. Tags: magnifying glass, plus.
+  /// Zoom out. Tags: magnifier, shrink, reduce, minus, search, find.
   static const zoomOut = _zoomOut;
+
+  /// Zzz. Tags: sleep, snooze, rest, nap, idle, dormant.
+  static const zzz = _zzz;
 }

@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/zap",
+  "upstream": "hugeicons/Zap",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "flash",
-    "camera",
     "lightning",
+    "bolt",
+    "power",
     "electricity",
     "energy",
-    "power",
-    "quick"
+    "flash"
   ],
   "aliases": [
     "flash"

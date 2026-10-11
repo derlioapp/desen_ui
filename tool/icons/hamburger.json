@@ -1,39 +1,16 @@
 {
-  "upstream": "lucide/hamburger",
+  "upstream": "hugeicons/Hamburger02",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "burger",
-    "cheeseburger",
-    "meat",
-    "beef",
-    "patty",
-    "bun",
-    "fast food",
-    "junk food",
-    "takeaway",
-    "takeout",
-    "snack",
-    "dish",
-    "restaurant",
-    "lunch",
-    "meal",
-    "savory",
-    "savoury",
-    "cookery",
-    "cooking",
-    "grilled",
-    "barbecue",
-    "barbeque",
-    "bbq",
-    "lettuce",
-    "tomato",
-    "relish",
-    "pickles",
-    "onions",
-    "ketchup",
-    "mustard",
-    "mayonnaise"
+    "hamburger",
+    "fast",
+    "food",
+    "lettuce"
   ],
-  "aliases": [],
+  "aliases": [
+    "burger"
+  ],
   "mirror": false
 }

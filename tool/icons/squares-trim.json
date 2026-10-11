@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/PathfinderTrim",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "pathfinder",
+    "trim",
+    "shapes",
+    "boolean"
+  ],
+  "aliases": [],
+  "mirror": false
+}

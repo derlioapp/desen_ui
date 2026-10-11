@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Wifi02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "connection",
+    "signal",
+    "wireless",
+    "internet",
+    "network",
+    "wide"
+  ],
+  "aliases": [],
+  "mirror": false
+}

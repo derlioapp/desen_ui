@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide-lab/coffee-bean",
+  "upstream": "hugeicons/CoffeeBeans",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "coffee",
+    "bean",
+    "seed",
+    "cafe",
     "roast",
-    "ground",
-    "blend",
-    "arabica",
-    "filter",
-    "instant",
-    "cafetiere",
-    "hot",
-    "drink",
-    "barista",
-    "fair trade"
+    "coffee beans"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SunCloudMidRain01",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "cloud",
+    "sun",
+    "moderate rain",
+    "drops",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

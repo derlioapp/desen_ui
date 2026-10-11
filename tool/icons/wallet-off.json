@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/WalletNotFound01",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "wallet not found",
+    "missing",
+    "lost",
+    "no wallet",
+    "money",
+    "finance",
+    "disabled"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

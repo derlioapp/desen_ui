@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CursorText",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "text cursor",
+    "caret",
+    "type",
+    "insert",
+    "i-beam",
+    "input"
+  ],
+  "aliases": [],
+  "mirror": false
+}

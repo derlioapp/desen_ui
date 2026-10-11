@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/file-chart-column",
+  "upstream": "hugeicons/FileChartColumn",
+  "also": [],
   "category": "files",
   "tags": [
+    "report",
+    "chart",
+    "bar",
     "statistics",
-    "analytics",
-    "diagram",
-    "graph",
-    "presentation"
+    "document"
   ],
   "aliases": [],
   "mirror": false

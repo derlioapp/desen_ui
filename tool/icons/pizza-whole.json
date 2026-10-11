@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Pizza03",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "pizza",
+    "whole",
+    "food",
+    "italian"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

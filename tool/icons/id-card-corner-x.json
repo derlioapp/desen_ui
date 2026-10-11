@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PassportExpired",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "passport",
+    "expired",
+    "invalid",
+    "identity",
+    "x"
+  ],
+  "aliases": [],
+  "mirror": false
+}

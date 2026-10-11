@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Hdr01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "hdr",
+    "high dynamic range",
+    "image",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/can-soda",
+  "upstream": "hugeicons/SodaCan",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "beverage",
-    "drink",
-    "food",
     "soda",
-    "tin",
-    "beer",
-    "alcohol",
-    "waste"
+    "can",
+    "drink",
+    "beverage"
   ],
   "aliases": [],
   "mirror": false

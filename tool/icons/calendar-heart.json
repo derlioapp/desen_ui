@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/calendar-heart",
+  "upstream": "hugeicons/CalendarHeart",
+  "also": [
+    "CalendarLove01"
+  ],
   "category": "time",
   "tags": [
-    "date",
-    "month",
-    "year",
-    "event",
+    "calendar",
     "heart",
-    "favourite",
-    "subscribe",
-    "valentines day"
+    "favorite",
+    "love",
+    "event"
   ],
   "aliases": [],
   "mirror": false

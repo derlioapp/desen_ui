@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/package-minus",
+  "upstream": "hugeicons/PackageMinus",
+  "also": [],
   "category": "development",
   "tags": [
-    "delete",
-    "remove"
+    "package",
+    "minus",
+    "remove",
+    "box"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/PinLocation03",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "pin",
+    "map",
+    "marker",
+    "stem",
+    "ring"
+  ],
+  "aliases": [],
+  "mirror": false
+}

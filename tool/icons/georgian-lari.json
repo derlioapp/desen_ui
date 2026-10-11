@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/georgian-lari",
+  "upstream": "hugeicons/GeorgianLari",
+  "also": [],
   "category": "finance",
   "tags": [
+    "georgian lari",
+    "lari",
     "currency",
     "money",
-    "payment"
+    "georgia"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/air-vent",
+  "upstream": "hugeicons/AirVent",
+  "also": [],
   "category": "home",
   "tags": [
-    "air conditioner",
-    "ac",
-    "central air",
-    "cooling",
-    "climate-control"
+    "air",
+    "vent",
+    "conditioning",
+    "hvac",
+    "ventilation"
   ],
   "aliases": [],
   "mirror": false

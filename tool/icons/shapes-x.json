@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/GeometricShapes01",
+  "also": [],
+  "category": "shapes",
+  "tags": [
+    "shapes",
+    "geometry",
+    "square",
+    "circle",
+    "triangle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

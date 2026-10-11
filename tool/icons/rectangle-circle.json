@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/rectangle-circle",
+  "upstream": "hugeicons/RectangleCircle",
+  "also": [],
   "category": "development",
   "tags": [
-    "compose",
-    "keyboard",
-    "key",
-    "button"
+    "rectangle",
+    "circle",
+    "shape",
+    "split"
   ],
   "aliases": [],
   "mirror": false,

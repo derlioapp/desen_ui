@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/NoSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "no signal",
+    "signal",
+    "dashes",
+    "offline",
+    "disconnected",
+    "none"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/rotate-ccw",
+  "upstream": "hugeicons/Undo",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "arrow",
-    "left",
-    "counter-clockwise",
-    "restart",
-    "reload",
-    "rerun",
-    "refresh",
-    "backup",
     "undo",
-    "replay",
-    "redo",
-    "retry",
-    "rewind",
-    "reverse"
+    "rotate",
+    "counterclockwise",
+    "reset",
+    "revert"
   ],
   "aliases": [
     "rotateLeft"

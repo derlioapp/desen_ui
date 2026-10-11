@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Jpg02",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "jpg",
+    "jpeg",
+    "image file",
+    "picture",
+    "photo",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

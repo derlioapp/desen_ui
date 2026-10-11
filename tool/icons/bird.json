@@ -1,12 +1,11 @@
 {
-  "upstream": "lucide/bird",
+  "upstream": "hugeicons/Bird",
+  "also": [],
   "category": "animals",
   "tags": [
-    "peace",
-    "freedom",
-    "wing",
-    "avian",
-    "tweet"
+    "animal",
+    "tweet",
+    "fly"
   ],
   "aliases": [],
   "mirror": false

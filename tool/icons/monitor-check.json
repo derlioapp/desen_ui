@@ -1,21 +1,17 @@
 {
-  "upstream": "lucide/monitor-check",
+  "upstream": "hugeicons/MonitorCheck",
+  "also": [
+    "ComputerCheck"
+  ],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "screen sharing",
-    "connected",
-    "success",
+    "check",
+    "ok",
     "verified",
-    "running",
-    "active",
-    "virtual machine",
-    "vm"
+    "done",
+    "computer"
   ],
   "aliases": [],
   "mirror": false

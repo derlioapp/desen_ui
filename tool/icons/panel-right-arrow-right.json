@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/TransitionRight",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "transition",
+    "slide",
+    "right",
+    "panel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

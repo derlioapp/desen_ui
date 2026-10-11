@@ -1,29 +1,18 @@
 {
-  "upstream": "lucide/square-minus",
+  "upstream": "hugeicons/SquareMinus",
+  "also": [
+    "MinusSignSquare",
+    "RemoveSquare"
+  ],
   "category": "math",
   "tags": [
-    "subtract",
+    "minus",
     "remove",
-    "decrease",
-    "reduce",
-    "calculator",
-    "button",
-    "keyboard",
-    "line",
-    "divider",
-    "separator",
-    "horizontal rule",
-    "hr",
-    "html",
-    "markup",
-    "markdown",
-    "---",
-    "toolbar",
-    "operator",
-    "code",
-    "coding",
-    "minimum",
-    "downgrade"
+    "collapse",
+    "subtract",
+    "checkbox",
+    "square",
+    "decrease"
   ],
   "aliases": [],
   "mirror": false

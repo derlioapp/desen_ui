@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide-lab/layout-grid-plus",
+  "upstream": "hugeicons/DashboardSquareAdd",
+  "also": [],
   "category": "design",
   "tags": [
-    "apps",
-    "applications",
+    "dashboard",
+    "squares",
     "add",
-    "collection",
-    "+"
+    "plus",
+    "new",
+    "widget"
   ],
   "aliases": [],
   "mirror": false

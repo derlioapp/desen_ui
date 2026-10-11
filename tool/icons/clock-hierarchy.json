@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/TimeManagement",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "time management",
+    "clock",
+    "hierarchy",
+    "org chart",
+    "schedule",
+    "workflow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

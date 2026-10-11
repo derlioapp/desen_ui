@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Satellite",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "satellite",
+    "dish",
+    "antenna",
+    "receiver",
+    "signal",
+    "tripod"
+  ],
+  "aliases": [],
+  "mirror": false
+}

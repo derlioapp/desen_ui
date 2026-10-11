@@ -1,19 +1,19 @@
 {
-  "upstream": "lucide/power",
+  "upstream": "hugeicons/Power",
+  "also": [
+    "ShutDown"
+  ],
   "category": "connectivity",
   "tags": [
+    "power",
     "on",
     "off",
-    "device",
     "switch",
-    "toggle",
-    "binary",
-    "boolean",
-    "reboot",
-    "restart",
-    "button",
-    "keyboard",
-    "troubleshoot"
+    "shutdown",
+    "shut",
+    "down",
+    "turn",
+    "device"
   ],
   "aliases": [],
   "mirror": false

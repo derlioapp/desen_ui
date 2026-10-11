@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileVideo",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "video",
+    "movie",
+    "media",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/brain",
+  "upstream": "hugeicons/AiBrain01",
+  "also": [],
   "category": "medical",
   "tags": [
-    "medical",
-    "mind",
-    "mental",
-    "intellect",
-    "cerebral",
-    "consciousness",
-    "genius",
-    "artificial intelligence",
     "ai",
-    "think",
-    "thought",
-    "insight",
-    "intelligent",
-    "smart"
+    "brain",
+    "mind",
+    "intelligence",
+    "thinking"
   ],
   "aliases": [],
   "mirror": false

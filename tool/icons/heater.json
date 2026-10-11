@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/heater",
+  "upstream": "hugeicons/Heater",
+  "also": [],
   "category": "home",
   "tags": [
+    "heater",
     "heating",
-    "warmth",
-    "comfort",
-    "fire",
-    "stove",
-    "electric",
-    "electronics",
-    "amenities"
+    "warm",
+    "radiator",
+    "temperature"
   ],
   "aliases": [],
   "mirror": false

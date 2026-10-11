@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ShoppingBagAdd",
+  "also": [],
+  "category": "shopping",
+  "tags": [
+    "add to bag",
+    "add to cart",
+    "plus",
+    "purchase",
+    "ecommerce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

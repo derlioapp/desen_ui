@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinSearch",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "search",
+    "find",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

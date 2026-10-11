@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MoonCloudMidRain",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "night",
+    "rain",
+    "moderate rain",
+    "moon",
+    "cloud",
+    "drops"
+  ],
+  "aliases": [],
+  "mirror": false
+}

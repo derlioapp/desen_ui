@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/link-2-off",
+  "upstream": "hugeicons/LinkOff",
+  "also": [],
   "category": "text",
   "tags": [
-    "unchain",
-    "chain"
+    "chain",
+    "url",
+    "unlink",
+    "broken",
+    "disconnect",
+    "remove link"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Clock05",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "forward",
+    "future",
+    "dashed",
+    "clockwise",
+    "time"
+  ],
+  "aliases": [
+    "rotateCwFadingClock"
+  ],
+  "mirror": false
+}

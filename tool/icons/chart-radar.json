@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChartRadar",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "spider chart",
+    "web chart",
+    "polar",
+    "pentagon",
+    "statistics",
+    "analytics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

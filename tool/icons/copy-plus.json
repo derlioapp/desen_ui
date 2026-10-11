@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/copy-plus",
+  "upstream": "hugeicons/CopyPlus",
+  "also": [],
   "category": "text",
   "tags": [
     "clone",
     "duplicate",
     "add",
-    "multiple",
-    "expand",
-    "+"
+    "new",
+    "multiple"
   ],
   "aliases": [],
   "mirror": false

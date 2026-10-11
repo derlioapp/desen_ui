@@ -1,18 +1,19 @@
 {
-  "upstream": "lucide/waves-ladder",
+  "upstream": "hugeicons/WavesLadder",
+  "also": [
+    "Pool"
+  ],
   "category": "sports",
   "tags": [
-    "swimming",
-    "water",
     "pool",
-    "lifeguard",
-    "ocean",
-    "🌊",
-    "🏊‍♂️",
-    "🏊‍♀️",
-    "🏊",
-    "🥽"
+    "swimming",
+    "swim",
+    "ladder",
+    "water",
+    "lap"
   ],
-  "aliases": [],
+  "aliases": [
+    "pool"
+  ],
   "mirror": false
 }

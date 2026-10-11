@@ -1,8 +1,14 @@
 {
-  "upstream": "lucide/pentagon",
+  "upstream": "hugeicons/Pentagon",
+  "also": [
+    "Pentagon01"
+  ],
   "category": "shapes",
   "tags": [
-    "shape"
+    "pentagon",
+    "shape",
+    "polygon",
+    "geometry"
   ],
   "aliases": [],
   "mirror": false

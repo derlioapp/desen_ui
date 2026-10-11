@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/layout-list",
+  "upstream": "hugeicons/LayoutList",
+  "also": [],
   "category": "design",
   "tags": [
-    "todo",
-    "tasks",
+    "list layout",
+    "list",
     "items",
-    "pending",
-    "image",
-    "photo"
+    "rows",
+    "cards",
+    "layout"
   ],
   "aliases": [],
   "mirror": false

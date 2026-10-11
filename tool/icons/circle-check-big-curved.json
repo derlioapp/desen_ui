@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CheckmarkCircle03",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "success",
+    "done",
+    "approved",
+    "valid",
+    "tick",
+    "confirm",
+    "overflow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

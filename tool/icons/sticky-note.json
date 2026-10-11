@@ -1,23 +1,13 @@
 {
-  "upstream": "lucide/sticky-note",
+  "upstream": "hugeicons/StickyNote03",
+  "also": [],
   "category": "text",
   "tags": [
+    "sticky note",
     "post-it",
-    "comment",
-    "annotation",
-    "reaction",
     "memo",
-    "reminder",
-    "todo",
-    "task",
-    "idea",
-    "brainstorm",
-    "document",
-    "page",
-    "paper",
-    "sheet",
-    "stationary",
-    "office"
+    "note",
+    "reminder"
   ],
   "aliases": [],
   "mirror": false

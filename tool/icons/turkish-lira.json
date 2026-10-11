@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/turkish-lira",
+  "upstream": "hugeicons/TurkishLira",
+  "also": [],
   "category": "finance",
   "tags": [
+    "turkish lira",
     "currency",
     "money",
-    "payment"
+    "try"
   ],
   "aliases": [],
   "mirror": false

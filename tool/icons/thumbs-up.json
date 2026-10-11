@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/thumbs-up",
+  "upstream": "hugeicons/ThumbsUp",
+  "also": [],
   "category": "account",
   "tags": [
     "like",
     "good",
-    "emotion"
+    "emotion",
+    "vote"
   ],
   "aliases": [],
   "mirror": false

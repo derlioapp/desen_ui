@@ -1,18 +1,6 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M21 11.693V5" />
-  <path d="m22 22-1.875-1.875" />
-  <path d="M3 12a9 3 0 0 0 8.697 2.998" />
-  <path d="M3 5v14a9 3 0 0 0 9.28 2.999" />
-  <circle cx="18" cy="18" r="3" />
-  <ellipse cx="12" cy="5" rx="9" ry="3" />
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M22 21L20.125 19.125M21 17C21 18.6569 19.6569 20 18 20C16.3431 20 15 18.6569 15 17C15 15.3431 16.3431 14 18 14C19.6569 14 21 15.3431 21 17Z" />
+  <ellipse cx="12" cy="5" rx="8" ry="3" />
+  <path d="M4 12C4 13.5299 7.05369 14.7923 11 14.9768" />
+  <path d="M12 22C7.58172 22 4 20.6569 4 19V5M20 5V10" />
 </svg>

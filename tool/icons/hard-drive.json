@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/hard-drive",
+  "upstream": "hugeicons/HardDrive",
+  "also": [],
   "category": "development",
   "tags": [
-    "computer",
-    "server",
-    "memory",
-    "data",
-    "ssd",
-    "disk",
-    "hard disk",
     "storage",
-    "hardware",
-    "backup",
-    "media"
+    "disk",
+    "drive",
+    "hdd",
+    "server"
   ],
   "aliases": [],
   "mirror": false

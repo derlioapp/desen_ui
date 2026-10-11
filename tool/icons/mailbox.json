@@ -1,13 +1,17 @@
 {
-  "upstream": "lucide/mailbox",
+  "upstream": "hugeicons/Mailbox01",
+  "also": [],
   "category": "mail",
   "tags": [
     "emails",
     "messages",
     "letters",
     "mailing list",
-    "newsletter"
+    "newsletter",
+    "flag"
   ],
-  "aliases": [],
+  "aliases": [
+    "mailboxFlag"
+  ],
   "mirror": false
 }

@@ -1,15 +1,16 @@
 {
-  "upstream": "lucide-lab/floppy-disk",
+  "upstream": "hugeicons/Save",
+  "also": [],
   "category": "files",
   "tags": [
-    "format",
-    "data",
+    "save",
+    "disk",
     "storage",
-    "capacity",
-    "megabytes",
-    "mb",
-    "label"
+    "diskette",
+    "store"
   ],
-  "aliases": [],
+  "aliases": [
+    "save"
+  ],
   "mirror": false
 }

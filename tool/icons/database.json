@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/database",
+  "upstream": "hugeicons/Database",
+  "also": [],
   "category": "devices",
   "tags": [
     "storage",
+    "data",
     "memory",
-    "container",
-    "tin",
-    "pot",
-    "bytes",
-    "servers"
+    "servers",
+    "sql",
+    "cylinder"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LayoutAlignTop",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "align top",
+    "layout",
+    "position",
+    "anchor",
+    "square"
+  ],
+  "aliases": [],
+  "mirror": false
+}

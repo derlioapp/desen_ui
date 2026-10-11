@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AiVisionRecognition",
+  "also": [],
+  "category": "accessibility",
+  "tags": [
+    "ai",
+    "vision",
+    "recognition",
+    "eye",
+    "diamond",
+    "detect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,23 +1,13 @@
 {
-  "upstream": "lucide/banknote-arrow-up",
+  "upstream": "hugeicons/BanknoteArrowUp",
+  "also": [],
   "category": "finance",
   "tags": [
-    "bill",
-    "currency",
     "money",
-    "payment",
-    "funds",
-    "transaction",
     "cash",
-    "finance",
     "deposit",
-    "earnings",
-    "income",
-    "in",
-    "credit",
-    "prepaid",
-    "growth",
-    "increase"
+    "increase",
+    "bill"
   ],
   "aliases": [],
   "mirror": false

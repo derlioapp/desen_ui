@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Menu02",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "menu",
+    "hamburger",
+    "lines",
+    "staggered",
+    "navigation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

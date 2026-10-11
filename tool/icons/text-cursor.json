@@ -1,5 +1,24 @@
 {
-  "upstream": "lucide/text-cursor",
+  "upstream": "desen/text-cursor",
+  "derived": {
+    "parts": [
+      {
+        "from": "CursorText",
+        "keep": [
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          -6.5,
+          0
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "select",

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SeatSelector",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "seat",
+    "chair",
+    "cinema",
+    "booking",
+    "select"
+  ],
+  "aliases": [],
+  "mirror": false
+}

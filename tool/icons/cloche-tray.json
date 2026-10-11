@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ServingFood",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "serving",
+    "waiter",
+    "food",
+    "restaurant",
+    "cloche"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Navigator02",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "navigator",
+    "lane",
+    "route",
+    "driving",
+    "arrow",
+    "turn"
+  ],
+  "aliases": [],
+  "mirror": true
+}

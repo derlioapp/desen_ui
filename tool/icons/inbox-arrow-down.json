@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ArchiveArrowDown",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "inbox",
+    "tray",
+    "receive",
+    "download",
+    "save",
+    "incoming"
+  ],
+  "aliases": [],
+  "mirror": false
+}

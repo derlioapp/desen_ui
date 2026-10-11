@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/spade",
-  "category": "shapes",
+  "upstream": "hugeicons/Spades",
+  "also": [],
+  "category": "gaming",
   "tags": [
-    "shape",
+    "spades",
+    "card",
     "suit",
-    "playing",
-    "cards"
+    "poker"
   ],
   "aliases": [],
   "mirror": false

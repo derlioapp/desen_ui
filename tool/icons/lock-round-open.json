@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CircleUnlock01",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "padlock",
+    "unlocked",
+    "open",
+    "unlock",
+    "access"
+  ],
+  "aliases": [],
+  "mirror": false
+}

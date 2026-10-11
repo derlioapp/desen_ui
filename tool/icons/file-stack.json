@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/file-stack",
+  "upstream": "hugeicons/FileStack",
+  "also": [],
   "category": "files",
   "tags": [
-    "versions",
     "multiple",
+    "stack",
     "copy",
-    "documents",
-    "revisions",
-    "version control",
-    "history"
+    "documents"
   ],
   "aliases": [],
   "mirror": false

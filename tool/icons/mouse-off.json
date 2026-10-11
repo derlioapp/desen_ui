@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/mouse-off",
+  "upstream": "hugeicons/MouseOff",
+  "also": [],
   "category": "devices",
   "tags": [
-    "device",
-    "scroll",
-    "click",
-    "disabled"
+    "mouse",
+    "off",
+    "disabled",
+    "no mouse",
+    "peripheral",
+    "crossed"
   ],
   "aliases": [],
   "mirror": false

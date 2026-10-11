@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SunCloudLittleRain01",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "cloud",
+    "sun",
+    "light rain",
+    "drizzle",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

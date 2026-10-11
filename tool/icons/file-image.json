@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/file-image",
+  "upstream": "hugeicons/FileImage",
+  "also": [],
   "category": "files",
   "tags": [
-    "image",
-    "graphics",
+    "picture",
     "photo",
-    "picture"
+    "image",
+    "document"
   ],
   "aliases": [],
   "mirror": false

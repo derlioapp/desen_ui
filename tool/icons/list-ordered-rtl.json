@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/RightToLeftListNumber",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "right to left",
+    "list",
+    "numbered",
+    "ordered",
+    "rtl"
+  ],
+  "aliases": [],
+  "mirror": false
+}

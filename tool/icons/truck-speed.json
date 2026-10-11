@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/DeliveryTruck01",
+  "also": [
+    "DeliveryTruck02"
+  ],
+  "category": "transportation",
+  "tags": [
+    "delivery truck",
+    "fast",
+    "express",
+    "shipping",
+    "speed lines",
+    "truck"
+  ],
+  "aliases": [],
+  "mirror": false
+}

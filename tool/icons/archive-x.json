@@ -1,5 +1,34 @@
 {
-  "upstream": "lucide/archive-x",
+  "upstream": "desen/archive-x",
+  "derived": {
+    "parts": [
+      {
+        "from": "ArchiveRestore",
+        "keep": [
+          1,
+          2
+        ]
+      },
+      {
+        "from": "UserRemove01",
+        "keep": [
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          -6,
+          -3.5
+        ]
+      }
+    ],
+    "paths": [
+      "M8 21H16"
+    ]
+  },
+  "also": [],
   "category": "files",
   "tags": [
     "index",

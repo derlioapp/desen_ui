@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AiConcert",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "ai",
+    "concert",
+    "microphone",
+    "stand",
+    "stage",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Radar02",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "radar",
+    "scan",
+    "sonar",
+    "closed circle",
+    "detect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

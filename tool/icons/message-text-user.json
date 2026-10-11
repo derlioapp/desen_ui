@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/MessageUser01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "user",
+    "person",
+    "contact",
+    "profile"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

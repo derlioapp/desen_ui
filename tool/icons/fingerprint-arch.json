@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Touch10",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "fingerprint",
+    "touch",
+    "biometric",
+    "scan",
+    "identity"
+  ],
+  "aliases": [],
+  "mirror": false
+}

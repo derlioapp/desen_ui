@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/WifiFullSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "signal",
+    "strength",
+    "full",
+    "fan",
+    "bars",
+    "reception"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

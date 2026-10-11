@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/medal",
+  "upstream": "hugeicons/Medal07",
+  "also": [],
   "category": "sports",
   "tags": [
-    "prize",
-    "sports",
-    "winner",
-    "trophy",
+    "medal",
     "award",
-    "achievement"
+    "prize",
+    "winner",
+    "ribbon"
   ],
   "aliases": [],
   "mirror": false

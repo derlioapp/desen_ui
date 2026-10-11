@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/armchair",
+  "upstream": "hugeicons/Armchair",
+  "also": [],
   "category": "home",
   "tags": [
-    "sofa",
+    "armchair",
+    "chair",
     "furniture",
-    "leisure",
+    "seat",
     "lounge",
-    "loveseat",
-    "couch"
+    "sofa"
   ],
   "aliases": [],
   "mirror": false

@@ -1,10 +1,11 @@
 {
-  "upstream": "lucide/file-plus-corner",
+  "upstream": "hugeicons/FilePlusCorner",
+  "also": [],
   "category": "files",
   "tags": [
+    "new file",
     "add",
     "create",
-    "new",
     "document"
   ],
   "aliases": [],

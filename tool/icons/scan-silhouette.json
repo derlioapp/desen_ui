@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FaceId",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "face id",
+    "face",
+    "biometric",
+    "authentication",
+    "unlock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

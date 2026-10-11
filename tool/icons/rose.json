@@ -1,29 +1,16 @@
 {
-  "upstream": "lucide/rose",
+  "upstream": "hugeicons/Rose",
+  "also": [],
   "category": "nature",
   "tags": [
-    "roses",
-    "thorns",
-    "petals",
-    "plant",
-    "stem",
-    "leaves",
-    "spring",
-    "bloom",
-    "blossom",
-    "gardening",
-    "botanical",
-    "flora",
-    "florist",
-    "bouquet",
-    "bunch",
-    "gift",
-    "date",
-    "romance",
-    "romantic",
-    "valentines day",
-    "special occasion"
+    "rose",
+    "flower",
+    "love",
+    "bloom"
   ],
-  "aliases": [],
+  "aliases": [
+    "flowerRose",
+    "flowerRoseSingle"
+  ],
   "mirror": false
 }

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Api",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "api",
+    "interface",
+    "code",
+    "integration",
+    "endpoint"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

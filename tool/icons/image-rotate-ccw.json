@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ImageCounterClockwise",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "image",
+    "rotate",
+    "counterclockwise",
+    "turn",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

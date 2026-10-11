@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/hand-grab",
+  "upstream": "hugeicons/HandGrab",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "hand"
+    "grab",
+    "drag",
+    "hold",
+    "grip",
+    "pan"
   ],
   "aliases": [],
   "mirror": false

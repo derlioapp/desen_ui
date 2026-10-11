@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/image",
+  "upstream": "hugeicons/Image02",
+  "also": [],
   "category": "photography",
   "tags": [
+    "image",
+    "photo",
     "picture",
-    "photo"
+    "landscape",
+    "gallery"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MoonCloudMidSnow",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "night",
+    "snow",
+    "moderate snow",
+    "snowflake",
+    "moon",
+    "cloud"
+  ],
+  "aliases": [],
+  "mirror": false
+}

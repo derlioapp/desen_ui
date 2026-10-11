@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SettingsError02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "settings error",
+    "gear",
+    "warning",
+    "problem",
+    "alert"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

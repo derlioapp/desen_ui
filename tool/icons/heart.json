@@ -1,13 +1,16 @@
 {
-  "upstream": "lucide/heart",
-  "category": "medical",
+  "upstream": "hugeicons/Heart",
+  "also": [
+    "Favourite"
+  ],
+  "category": "social",
   "tags": [
-    "like",
+    "heart",
     "love",
-    "emotion",
-    "suit",
-    "playing",
-    "cards"
+    "like",
+    "favorite",
+    "health",
+    "favourite"
   ],
   "aliases": [],
   "mirror": false

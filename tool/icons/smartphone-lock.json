@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MobileSecurity",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "phone",
+    "mobile",
+    "lock",
+    "security",
+    "privacy",
+    "passcode"
+  ],
+  "aliases": [],
+  "mirror": false
+}

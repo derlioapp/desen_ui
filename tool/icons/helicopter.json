@@ -1,18 +1,12 @@
 {
-  "upstream": "lucide/helicopter",
+  "upstream": "hugeicons/Helicopter",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "transport",
-    "flying",
-    "rotor",
-    "aviation",
-    "helipad",
-    "gear",
-    "flyer",
-    "technology",
     "helicopter",
+    "chopper",
     "aircraft",
-    "vehicle"
+    "air"
   ],
   "aliases": [],
   "mirror": false

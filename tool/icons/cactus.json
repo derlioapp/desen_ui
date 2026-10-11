@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide-lab/cactus",
+  "upstream": "hugeicons/Cactus",
+  "also": [],
   "category": "nature",
   "tags": [
-    "spikes",
-    "spines",
-    "needles",
-    "glochid",
-    "plant",
+    "cactus",
     "desert",
-    "botanical",
-    "flora"
+    "plant",
+    "succulent"
   ],
   "aliases": [],
   "mirror": false

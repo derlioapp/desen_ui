@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/LockSync01",
+  "also": [
+    "LockSync02"
+  ],
+  "category": "security",
+  "tags": [
+    "security",
+    "refresh",
+    "rotate key",
+    "padlock",
+    "sync",
+    "keyhole"
+  ],
+  "aliases": [],
+  "mirror": false
+}

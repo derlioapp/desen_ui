@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/sparkles",
-  "category": "arrows",
+  "upstream": "hugeicons/Stars",
+  "also": [],
+  "category": "science",
   "tags": [
-    "stars",
-    "effect",
-    "filter",
-    "night",
-    "magic"
+    "sparkles",
+    "magic",
+    "ai",
+    "shine",
+    "new"
   ],
   "aliases": [],
   "mirror": false

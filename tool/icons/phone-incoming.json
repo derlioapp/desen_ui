@@ -1,8 +1,17 @@
 {
-  "upstream": "lucide/phone-incoming",
-  "category": "arrows",
+  "upstream": "hugeicons/CallIncoming02",
+  "also": [
+    "PhoneIncoming"
+  ],
+  "category": "connectivity",
   "tags": [
-    "call"
+    "phone",
+    "call",
+    "incoming",
+    "received",
+    "arrow",
+    "receive",
+    "inbound"
   ],
   "aliases": [],
   "mirror": false

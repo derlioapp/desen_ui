@@ -1,7 +1,11 @@
 {
-  "upstream": "lucide/reply-all",
+  "upstream": "hugeicons/ReplyAll",
+  "also": [],
   "category": "mail",
   "tags": [
+    "reply all",
+    "respond",
+    "answer",
     "email"
   ],
   "aliases": [],

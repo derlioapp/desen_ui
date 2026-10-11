@@ -1,9 +1,17 @@
 {
-  "upstream": "lucide/square-parking",
+  "upstream": "hugeicons/SquareParking",
+  "also": [
+    "ParkingAreaSquare"
+  ],
   "category": "transportation",
   "tags": [
-    "parking lot",
-    "car park"
+    "parking",
+    "car park",
+    "p sign",
+    "garage",
+    "area",
+    "p",
+    "square"
   ],
   "aliases": [],
   "mirror": false

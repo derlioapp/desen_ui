@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MessageUpload02",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "upload",
+    "send",
+    "share",
+    "arrow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

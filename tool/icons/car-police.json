@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PoliceCar",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "police",
+    "car",
+    "patrol",
+    "vehicle",
+    "law"
+  ],
+  "aliases": [],
+  "mirror": false
+}

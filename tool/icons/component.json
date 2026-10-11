@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/component",
+  "upstream": "hugeicons/Component",
+  "also": [],
   "category": "design",
   "tags": [
-    "design",
-    "element",
-    "group",
-    "module",
-    "part",
-    "symbol"
+    "component",
+    "diamond",
+    "design system",
+    "symbol",
+    "instance"
   ],
   "aliases": [],
   "mirror": false

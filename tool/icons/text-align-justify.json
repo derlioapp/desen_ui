@@ -1,13 +1,18 @@
 {
-  "upstream": "lucide/text-align-justify",
+  "upstream": "hugeicons/TextAlignJustify",
+  "also": [
+    "TextAlignJustifyCenter"
+  ],
   "category": "text",
   "tags": [
-    "text",
-    "alignment",
-    "justified",
-    "menu",
-    "list"
+    "align",
+    "justify",
+    "paragraph",
+    "format",
+    "center"
   ],
-  "aliases": [],
+  "aliases": [
+    "textAlignJustifyCenter"
+  ],
   "mirror": false
 }

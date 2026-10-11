@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PathfinderDivide",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "pathfinder",
+    "divide",
+    "shapes",
+    "boolean"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

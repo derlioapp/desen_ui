@@ -1,22 +1,14 @@
 {
-  "upstream": "lucide-lab/cocktail",
+  "upstream": "hugeicons/Drink",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "martini",
-    "alcohol",
-    "spirits",
     "drink",
-    "glass",
-    "straw",
-    "citrus",
-    "orange",
-    "lemon",
-    "lime",
+    "cocktail",
+    "martini",
     "bar",
-    "lounge",
-    "party",
-    "nightclub",
-    "nightlife"
+    "beverage",
+    "garnish"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/database-arrow-down",
+  "upstream": "hugeicons/DatabaseImport",
+  "also": [],
   "category": "devices",
   "tags": [
-    "storage",
-    "memory",
-    "bytes",
-    "server",
-    "export",
+    "database",
+    "import",
     "download",
-    "backup",
-    "pull",
-    "downsize"
+    "load",
+    "storage",
+    "data"
   ],
   "aliases": [],
   "mirror": false

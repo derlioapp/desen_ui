@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Vaccine",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "vaccine",
+    "vaccination",
+    "injection",
+    "immunized",
+    "shot",
+    "health",
+    "done"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

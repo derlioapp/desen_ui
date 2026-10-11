@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/dumbbell",
-  "category": "navigation",
+  "upstream": "hugeicons/Dumbbell01",
+  "also": [],
+  "category": "sports",
   "tags": [
-    "barbell",
     "weight",
-    "workout",
-    "gym"
+    "barbell",
+    "gym",
+    "fitness",
+    "workout"
   ],
   "aliases": [
     "gym"

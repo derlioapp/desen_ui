@@ -1,27 +1,18 @@
 {
-  "upstream": "lucide/circle-slash-2",
+  "upstream": "hugeicons/CircleSlash",
+  "also": [],
   "category": "shapes",
   "tags": [
+    "empty set",
     "diameter",
-    "zero",
-    "ø",
-    "nothing",
     "null",
-    "void",
-    "ban",
-    "math",
-    "divide",
-    "division",
-    "half",
-    "split",
-    "/",
-    "average",
-    "avg",
-    "mean",
-    "median",
-    "normal"
+    "none",
+    "slash",
+    "forbidden"
   ],
-  "aliases": [],
+  "aliases": [
+    "circleSlash"
+  ],
   "mirror": false,
   "fill": false
 }

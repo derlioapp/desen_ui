@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailUpload02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "upload",
+    "send",
+    "outbox",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

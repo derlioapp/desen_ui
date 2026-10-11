@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TextSelection",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "text selection",
+    "select",
+    "cursor",
+    "type",
+    "edit"
+  ],
+  "aliases": [],
+  "mirror": false
+}

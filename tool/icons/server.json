@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/server",
+  "upstream": "hugeicons/ServerStack01",
+  "also": [],
   "category": "development",
   "tags": [
-    "cloud",
-    "storage"
+    "server",
+    "rack",
+    "hosting",
+    "storage",
+    "database"
   ],
   "aliases": [],
   "mirror": false

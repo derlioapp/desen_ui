@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Bus01",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "bus",
+    "vehicle",
+    "transport",
+    "public"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

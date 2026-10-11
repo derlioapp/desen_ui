@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/house-wifi",
+  "upstream": "hugeicons/HomeWifi",
+  "also": [],
   "category": "home",
   "tags": [
-    "home",
-    "living",
-    "building",
+    "smart home",
     "wifi",
-    "connectivity"
+    "home",
+    "network",
+    "internet"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/handshake",
+  "upstream": "hugeicons/Agreement02",
+  "also": [],
   "category": "account",
   "tags": [
     "agreement",
-    "partnership",
+    "handshake",
     "deal",
-    "business",
-    "assistance",
-    "cooperation",
-    "friendship",
-    "union",
-    "terms"
+    "partnership",
+    "contract"
   ],
   "aliases": [],
   "mirror": false

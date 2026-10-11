@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/zodiac-aquarius",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacAquarius",
+  "also": [],
+  "category": "science",
   "tags": [
-    "water bearer",
-    "waves",
-    "innovation",
-    "air",
-    "future",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "water",
+    "bearer"
   ],
   "aliases": [],
   "mirror": false

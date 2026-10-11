@@ -1,17 +1,24 @@
 {
-  "upstream": "lucide/square",
+  "upstream": "hugeicons/Square",
+  "also": [
+    "Stop",
+    "BorderAll02"
+  ],
   "category": "shapes",
   "tags": [
-    "stop",
-    "playback",
-    "music",
-    "audio",
-    "video",
+    "square",
+    "shape",
+    "box",
     "rectangle",
-    "aspect ratio",
-    "1:1",
-    "shape"
+    "stop",
+    "border",
+    "all",
+    "outline",
+    "cell",
+    "table"
   ],
-  "aliases": [],
+  "aliases": [
+    "borderAll"
+  ],
   "mirror": false
 }

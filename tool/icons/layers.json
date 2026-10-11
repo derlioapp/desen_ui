@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/layers",
+  "upstream": "hugeicons/Layers01",
+  "also": [],
   "category": "design",
   "tags": [
+    "layers",
     "stack",
-    "pile",
-    "pages",
-    "sheets",
-    "paperwork",
-    "copies",
-    "copy"
+    "levels",
+    "design",
+    "pile"
   ],
   "aliases": [],
   "mirror": false

@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/file-diff",
+  "upstream": "hugeicons/FileDiff",
+  "also": [],
   "category": "files",
   "tags": [
     "diff",
-    "patch"
+    "compare",
+    "changes",
+    "patch",
+    "document"
   ],
   "aliases": [],
   "mirror": false

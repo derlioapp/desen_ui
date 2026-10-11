@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/drone",
+  "upstream": "hugeicons/Drone",
+  "also": [],
   "category": "transportation",
   "tags": [
+    "drone",
     "quadcopter",
     "uav",
-    "aerial",
-    "flight",
     "flying",
-    "technology",
-    "airborne",
-    "robotics"
+    "aerial",
+    "camera"
   ],
   "aliases": [],
   "mirror": false

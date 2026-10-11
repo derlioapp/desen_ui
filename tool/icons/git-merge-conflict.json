@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/git-merge-conflict",
+  "upstream": "hugeicons/GitMergeConflict",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "commits",
-    "diff",
-    "error",
-    "conflict"
+    "git",
+    "merge",
+    "conflict",
+    "version",
+    "control",
+    "error"
   ],
   "aliases": [],
   "mirror": false

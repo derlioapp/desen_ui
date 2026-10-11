@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/text-cursor-input",
+  "upstream": "hugeicons/InputCursorText",
+  "also": [],
   "category": "text",
   "tags": [
-    "select"
+    "input",
+    "text field",
+    "cursor",
+    "caret",
+    "form"
   ],
   "aliases": [],
   "mirror": false

@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/lens-convex",
+  "upstream": "hugeicons/LensConvex",
+  "also": [],
   "category": "science",
   "tags": [
-    "convex",
-    "lens",
     "optics",
-    "magnification",
-    "focus",
-    "light",
-    "refraction",
+    "converging",
+    "glass",
     "physics",
-    "eyeglass",
-    "telescope",
-    "microscope",
-    "curved",
-    "science"
+    "lens"
   ],
   "aliases": [],
   "mirror": false

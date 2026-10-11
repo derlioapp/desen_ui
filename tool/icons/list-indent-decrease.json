@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/list-indent-decrease",
+  "upstream": "hugeicons/ListIndentDecrease",
+  "also": [],
   "category": "text",
   "tags": [
+    "outdent",
+    "indentation",
     "text",
-    "tab"
+    "paragraph",
+    "format"
   ],
   "aliases": [
     "outdent"

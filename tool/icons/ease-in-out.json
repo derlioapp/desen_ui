@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/EaseInOut",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "easing",
+    "curve",
+    "animation",
+    "s-curve",
+    "smooth"
+  ],
+  "aliases": [],
+  "mirror": false
+}

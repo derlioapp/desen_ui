@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/croissant",
+  "upstream": "hugeicons/Croissant",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "bakery",
     "cooking",
     "food",
-    "pastry"
+    "pastry",
+    "breakfast"
   ],
   "aliases": [],
   "mirror": false

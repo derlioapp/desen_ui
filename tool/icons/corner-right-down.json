@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/corner-right-down",
+  "upstream": "hugeicons/CornerRightDown",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "arrow"
+    "arrow",
+    "turn",
+    "down",
+    "curve"
   ],
   "aliases": [],
   "mirror": true

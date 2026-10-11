@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ThumbsUpDown",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "like",
+    "dislike",
+    "rating",
+    "vote",
+    "feedback"
+  ],
+  "aliases": [],
+  "mirror": false
+}

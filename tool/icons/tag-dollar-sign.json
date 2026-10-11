@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SaleTag02",
+  "also": [],
+  "category": "shopping",
+  "tags": [
+    "sale",
+    "price",
+    "label",
+    "discount",
+    "dollar"
+  ],
+  "aliases": [],
+  "mirror": false
+}

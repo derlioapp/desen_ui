@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/library-big",
+  "upstream": "hugeicons/Library",
+  "also": [],
   "category": "text",
   "tags": [
     "books",
@@ -7,24 +8,7 @@
     "written",
     "authors",
     "stories",
-    "fiction",
-    "novels",
-    "information",
-    "knowledge",
-    "education",
-    "high school",
-    "university",
-    "college",
-    "academy",
-    "learning",
-    "study",
-    "research",
-    "collection",
-    "vinyl",
-    "records",
-    "albums",
-    "music",
-    "package"
+    "library"
   ],
   "aliases": [],
   "mirror": false

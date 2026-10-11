@@ -1,8 +1,14 @@
 {
-  "upstream": "lucide/inbox",
+  "upstream": "hugeicons/Archive04",
+  "also": [],
   "category": "account",
   "tags": [
-    "email"
+    "inbox",
+    "tray",
+    "mail",
+    "empty",
+    "messages",
+    "box"
   ],
   "aliases": [],
   "mirror": false

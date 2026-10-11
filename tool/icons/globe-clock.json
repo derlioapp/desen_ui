@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TimeZone",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "time zone",
+    "globe",
+    "world",
+    "clock",
+    "timezone"
+  ],
+  "aliases": [],
+  "mirror": false
+}

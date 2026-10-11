@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/user-star",
+  "upstream": "hugeicons/UserStar01",
+  "also": [],
   "category": "account",
   "tags": [
-    "person",
-    "account",
     "favorite",
-    "contact",
-    "like",
-    "review",
+    "vip",
     "rating",
-    "admin"
+    "review",
+    "admin",
+    "featured",
+    "person"
   ],
   "aliases": [],
   "mirror": false

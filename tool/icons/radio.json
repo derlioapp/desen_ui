@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/radio",
-  "category": "devices",
+  "upstream": "hugeicons/LiveStreaming02",
+  "also": [],
+  "category": "multimedia",
   "tags": [
-    "signal",
     "broadcast",
-    "connectivity",
     "live",
-    "frequency"
+    "signal",
+    "streaming",
+    "waves"
   ],
   "aliases": [],
   "mirror": false

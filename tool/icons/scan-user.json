@@ -1,0 +1,21 @@
+{
+  "upstream": "hugeicons/Identification",
+  "also": [
+    "UserIdVerification"
+  ],
+  "category": "account",
+  "tags": [
+    "scan",
+    "identify",
+    "person",
+    "face",
+    "biometric",
+    "face id",
+    "identity verification",
+    "verify",
+    "recognition",
+    "user id verification"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,17 +1,19 @@
 {
-  "upstream": "lucide/ellipsis-vertical",
-  "category": "layout",
+  "upstream": "hugeicons/EllipsisVertical",
+  "also": [
+    "MoreVertical",
+    "MoreVerticalSquare01"
+  ],
+  "category": "navigation",
   "tags": [
-    "menu",
-    "options",
-    "spread",
     "more",
-    "further",
-    "extra",
-    "overflow",
+    "menu",
     "dots",
-    "…",
-    "..."
+    "overflow",
+    "options",
+    "kebab",
+    "vertical",
+    "square dots"
   ],
   "aliases": [
     "moreVert"

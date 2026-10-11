@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/battery-warning",
+  "upstream": "hugeicons/BatteryWarning",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "power",
-    "electricity",
-    "energy",
-    "accumulator",
-    "charge",
-    "exclamation mark"
+    "alert",
+    "low",
+    "warning"
   ],
   "aliases": [],
   "mirror": false

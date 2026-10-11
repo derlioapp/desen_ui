@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Xsl02",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "stylesheet",
+    "transform",
+    "document",
+    "xsl",
+    "xslt"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

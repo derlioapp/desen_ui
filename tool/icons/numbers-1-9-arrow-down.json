@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/ArrangeByNumbersOneNine",
+  "also": [
+    "SortingOneNine"
+  ],
+  "category": "text",
+  "tags": [
+    "sort",
+    "numeric",
+    "1-9",
+    "ascending",
+    "order",
+    "numbers",
+    "number"
+  ],
+  "aliases": [],
+  "mirror": false
+}

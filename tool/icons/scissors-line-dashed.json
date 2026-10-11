@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/scissors-line-dashed",
+  "upstream": "hugeicons/ScissorsLineDashed",
+  "also": [],
   "category": "design",
   "tags": [
-    "cut here",
-    "along",
+    "cut",
+    "coupon",
+    "dashed line",
     "snip",
-    "chop",
-    "stationery",
-    "crafts",
-    "instructions",
-    "diagram"
+    "tear"
   ],
   "aliases": [],
   "mirror": false

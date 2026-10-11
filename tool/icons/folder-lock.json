@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/folder-lock",
+  "upstream": "hugeicons/FolderLocked",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
+    "folder",
     "lock",
     "private",
     "security",
-    "protected"
+    "protected",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

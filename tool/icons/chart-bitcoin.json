@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BitcoinGraph",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "chart",
+    "graph",
+    "price",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

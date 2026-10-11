@@ -1,11 +1,15 @@
 {
-  "upstream": "lucide/map-pin",
+  "upstream": "hugeicons/Location01",
+  "also": [
+    "Location06"
+  ],
   "category": "navigation",
   "tags": [
     "location",
     "waypoint",
     "marker",
-    "drop"
+    "drop",
+    "place"
   ],
   "aliases": [
     "location"

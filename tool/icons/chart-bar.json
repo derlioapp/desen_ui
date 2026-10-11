@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/chart-bar",
+  "upstream": "hugeicons/BarChartHorizontal",
+  "also": [],
   "category": "charts",
   "tags": [
+    "bar",
+    "chart",
+    "horizontal",
     "statistics",
     "analytics",
-    "diagram",
     "graph"
   ],
   "aliases": [

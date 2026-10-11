@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Cardiogram01",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "cardiogram",
+    "ecg",
+    "heart monitor",
+    "pulse",
+    "vital signs",
+    "health"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SharedWifi",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "shared wifi",
+    "hotspot",
+    "network",
+    "share",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

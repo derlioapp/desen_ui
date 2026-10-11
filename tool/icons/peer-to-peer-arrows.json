@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PeerToPeer02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "peer to peer",
+    "p2p",
+    "exchange",
+    "users",
+    "network"
+  ],
+  "aliases": [],
+  "mirror": false
+}

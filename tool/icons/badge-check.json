@@ -1,9 +1,18 @@
 {
-  "upstream": "lucide/badge-check",
+  "upstream": "hugeicons/BadgeCheck",
+  "also": [
+    "CheckmarkBadge01",
+    "CheckmarkBadge02"
+  ],
   "category": "social",
   "tags": [
     "verified",
-    "check"
+    "approved",
+    "seal",
+    "success",
+    "certified",
+    "check",
+    "badge"
   ],
   "aliases": [
     "verified"

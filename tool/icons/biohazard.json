@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/biohazard",
+  "upstream": "hugeicons/Biohazard",
+  "also": [],
   "category": "science",
   "tags": [
-    "fallout",
-    "waste",
-    "biology",
-    "chemistry",
-    "chemical",
-    "element"
+    "danger",
+    "toxic",
+    "hazard",
+    "warning"
   ],
   "aliases": [],
   "mirror": false

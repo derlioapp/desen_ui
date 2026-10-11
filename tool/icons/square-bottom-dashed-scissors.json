@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/square-bottom-dashed-scissors",
+  "upstream": "hugeicons/SquareBottomDashedScissors",
+  "also": [],
   "category": "text",
   "tags": [
     "cut",
-    "snippet",
-    "chop",
-    "stationery",
-    "crafts"
+    "scissors",
+    "dashed",
+    "crop",
+    "clip"
   ],
   "aliases": [],
   "mirror": false

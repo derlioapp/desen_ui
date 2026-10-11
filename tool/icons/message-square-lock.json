@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/message-square-lock",
+  "upstream": "hugeicons/MessageSquareLock",
+  "also": [
+    "ChatLock"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
+    "lock",
+    "private",
     "secure",
+    "locked",
     "encrypted"
   ],
   "aliases": [],

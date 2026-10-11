@@ -1,19 +1,11 @@
 {
-  "upstream": "lucide/book-image",
+  "upstream": "hugeicons/BookImage",
+  "also": [],
   "category": "photography",
   "tags": [
-    "images",
-    "pictures",
-    "photos",
     "album",
-    "collection",
-    "event",
-    "magazine",
-    "catalog",
-    "catalogue",
-    "brochure",
-    "browse",
-    "gallery"
+    "gallery",
+    "pictures"
   ],
   "aliases": [],
   "mirror": false

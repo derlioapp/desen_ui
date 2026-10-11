@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/DashboardSquareSetting",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "dashboard",
+    "squares",
+    "settings",
+    "cog",
+    "configure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

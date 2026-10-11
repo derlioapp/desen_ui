@@ -1,10 +1,16 @@
 {
-  "upstream": "lucide/skip-back",
+  "upstream": "hugeicons/SkipBack",
+  "also": [
+    "Previous"
+  ],
   "category": "multimedia",
   "tags": [
-    "arrow",
     "previous",
-    "music"
+    "media",
+    "player",
+    "track",
+    "back",
+    "skip"
   ],
   "aliases": [
     "skipPrevious"

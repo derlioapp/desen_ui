@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/WifiSquare",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "signal",
+    "wireless",
+    "connection",
+    "badge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

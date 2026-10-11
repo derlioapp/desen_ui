@@ -1,5 +1,32 @@
 {
-  "upstream": "lucide/save-check",
+  "upstream": "desen/save-check",
+  "derived": {
+    "parts": [
+      {
+        "from": "Save",
+        "keep": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "from": "UserCheck01",
+        "keep": [
+          2
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        17.6,
+        18.6,
+        4.8
+      ]
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "save",
@@ -10,5 +37,6 @@
     "save-success"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.5
 }

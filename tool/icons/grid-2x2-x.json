@@ -1,23 +1,13 @@
 {
-  "upstream": "lucide/grid-2x2-x",
+  "upstream": "hugeicons/Grid2x2X",
+  "also": [],
   "category": "text",
   "tags": [
-    "table",
-    "rows",
-    "columns",
-    "data",
-    "blocks",
-    "plot",
-    "land",
-    "geometry",
-    "measure",
-    "size",
-    "width",
-    "height",
-    "distance",
-    "surface area",
-    "square meter",
-    "acre"
+    "grid",
+    "2x2",
+    "x",
+    "close",
+    "remove"
   ],
   "aliases": [],
   "mirror": false

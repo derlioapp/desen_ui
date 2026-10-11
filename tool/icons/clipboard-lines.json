@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Task01",
+  "also": [
+    "Task02"
+  ],
+  "category": "text",
+  "tags": [
+    "task",
+    "clipboard",
+    "list",
+    "notes",
+    "todo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

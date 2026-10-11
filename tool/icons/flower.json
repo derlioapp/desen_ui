@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/flower",
+  "upstream": "hugeicons/Flower",
+  "also": [],
   "category": "nature",
   "tags": [
-    "sustainability",
-    "nature",
+    "flower",
     "plant",
-    "spring"
+    "spring",
+    "nature",
+    "bloom"
   ],
   "aliases": [],
   "mirror": false

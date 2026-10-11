@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/square-dot",
+  "upstream": "hugeicons/SquareDot",
+  "also": [],
   "category": "development",
   "tags": [
-    "git",
-    "diff",
-    "modified",
-    "."
+    "dot",
+    "point",
+    "radio",
+    "record",
+    "center"
   ],
   "aliases": [],
   "mirror": false

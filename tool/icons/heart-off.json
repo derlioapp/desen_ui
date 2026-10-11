@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/heart-off",
+  "upstream": "hugeicons/HeartOff",
+  "also": [],
   "category": "social",
   "tags": [
+    "heart",
+    "off",
     "unlike",
-    "dislike",
-    "hate",
-    "emotion"
+    "disabled"
   ],
   "aliases": [],
   "mirror": false

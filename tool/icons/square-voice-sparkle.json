@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiVoice",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "ai",
+    "voice",
+    "audio",
+    "waveform",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

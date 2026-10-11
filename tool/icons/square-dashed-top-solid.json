@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/square-dashed-top-solid",
+  "upstream": "hugeicons/SquareDashedTopSolid",
+  "also": [],
   "category": "design",
   "tags": [
-    "square",
-    "border",
-    "width",
-    "layout",
-    "style",
-    "design",
-    "rectangular",
-    "marquee",
     "dashed",
-    "box",
-    "rectangle",
-    "aspect ratio",
-    "1:1"
+    "top",
+    "border",
+    "partial",
+    "placeholder"
   ],
   "aliases": [],
   "mirror": false

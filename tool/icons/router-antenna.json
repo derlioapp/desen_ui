@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Router02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "router",
+    "antenna",
+    "network",
+    "modem"
+  ],
+  "aliases": [],
+  "mirror": false
+}

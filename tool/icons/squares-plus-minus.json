@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/PlusMinus",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "plus",
+    "minus",
+    "add",
+    "remove",
+    "squares",
+    "compare"
+  ],
+  "aliases": [],
+  "mirror": false
+}

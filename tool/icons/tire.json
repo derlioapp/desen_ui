@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide-lab/tire",
+  "upstream": "hugeicons/Tire",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "tyre",
+    "tire",
     "wheel",
-    "hubcap",
-    "rubber",
-    "trim",
-    "automobile",
-    "vehicle",
-    "rim",
-    "axle"
+    "car",
+    "rubber"
   ],
   "aliases": [],
   "mirror": false

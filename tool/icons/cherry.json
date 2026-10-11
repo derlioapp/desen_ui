@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/cherry",
+  "upstream": "hugeicons/Cherry",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "fruit",
-    "food"
+    "food",
+    "cherries",
+    "sweet"
   ],
   "aliases": [],
   "mirror": false

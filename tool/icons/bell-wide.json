@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Notification03",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "notification",
+    "alert",
+    "alarm",
+    "bell",
+    "dome"
+  ],
+  "aliases": [],
+  "mirror": false
+}

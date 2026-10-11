@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Calendar01",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "date",
+    "day",
+    "schedule"
+  ],
+  "aliases": [],
+  "mirror": false
+}

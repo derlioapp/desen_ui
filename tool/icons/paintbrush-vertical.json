@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/paintbrush-vertical",
-  "category": "text",
+  "upstream": "hugeicons/PaintbrushVertical",
+  "also": [],
+  "category": "design",
   "tags": [
-    "brush",
     "paintbrush",
-    "design",
-    "color",
-    "colour",
-    "decoration",
-    "diy"
+    "paint",
+    "brush",
+    "vertical",
+    "art"
   ],
   "aliases": [],
   "mirror": false

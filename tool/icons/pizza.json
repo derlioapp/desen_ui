@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/pizza",
+  "upstream": "hugeicons/Pizza01",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "pie",
-    "quiche",
-    "food"
+    "pizza",
+    "slice",
+    "food",
+    "italian"
   ],
   "aliases": [],
   "mirror": false

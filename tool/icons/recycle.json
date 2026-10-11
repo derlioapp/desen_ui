@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/recycle",
+  "upstream": "hugeicons/Recycle02",
+  "also": [],
   "category": "nature",
   "tags": [
-    "sustainability",
-    "salvage",
-    "arrows"
+    "recycle",
+    "recycling",
+    "arrows",
+    "sustainability"
   ],
   "aliases": [],
   "mirror": false

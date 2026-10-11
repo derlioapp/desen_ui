@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/image-minus",
+  "upstream": "hugeicons/ImageRemove02",
+  "also": [],
   "category": "photography",
   "tags": [
+    "image",
     "remove",
-    "delete"
+    "minus",
+    "photo"
   ],
   "aliases": [],
   "mirror": false

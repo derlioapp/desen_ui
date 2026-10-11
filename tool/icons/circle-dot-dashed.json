@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/circle-dot-dashed",
+  "upstream": "hugeicons/CircleDotDashed",
+  "also": [],
   "category": "development",
   "tags": [
+    "dashed",
+    "radio",
+    "target",
     "pending",
-    "dot",
-    "progress",
-    "issue",
-    "draft",
-    "code",
-    "coding",
-    "version control"
+    "in progress"
   ],
   "aliases": [],
   "mirror": false

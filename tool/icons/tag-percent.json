@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DiscountTag01",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "discount tag",
+    "percent",
+    "sale",
+    "price tag",
+    "offer",
+    "deal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

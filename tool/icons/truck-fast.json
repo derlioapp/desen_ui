@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TruckDelivery",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "truck",
+    "delivery",
+    "fast",
+    "shipping",
+    "express"
+  ],
+  "aliases": [],
+  "mirror": false
+}

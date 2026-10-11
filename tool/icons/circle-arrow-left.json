@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/circle-arrow-left",
+  "upstream": "hugeicons/CircleArrowLeft02",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "previous",
+    "left",
     "back",
-    "direction",
+    "previous",
     "west",
-    "sign",
-    "turn",
-    "button",
-    "<-"
+    "direction"
   ],
   "aliases": [],
   "mirror": true

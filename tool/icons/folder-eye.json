@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderView",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "view",
+    "preview",
+    "eye",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

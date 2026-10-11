@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/MusicNote04",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "music",
+    "note",
+    "song",
+    "audio",
+    "sound",
+    "quaver"
+  ],
+  "aliases": [
+    "music2"
+  ],
+  "mirror": false
+}

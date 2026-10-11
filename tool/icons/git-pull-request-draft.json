@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/git-pull-request-draft",
+  "upstream": "hugeicons/GitPullRequestDraft",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "open",
+    "git",
+    "pull",
+    "request",
     "draft",
-    "dashed"
+    "dashed",
+    "version",
+    "control"
   ],
   "aliases": [],
   "mirror": false

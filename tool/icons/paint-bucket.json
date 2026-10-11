@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/paint-bucket",
+  "upstream": "hugeicons/PaintBucket",
+  "also": [],
   "category": "design",
   "tags": [
-    "fill",
     "paint",
     "bucket",
+    "fill",
     "color",
-    "colour"
+    "drop"
   ],
   "aliases": [],
   "mirror": false

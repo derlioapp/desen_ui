@@ -1,23 +1,11 @@
 {
-  "upstream": "lucide/bone-fracture",
+  "upstream": "hugeicons/Bone02",
+  "also": [],
   "category": "medical",
   "tags": [
-    "bone",
-    "fracture",
-    "injury",
-    "orthopedic",
-    "medical",
-    "anatomy",
-    "skeletal",
     "broken",
-    "xray",
-    "trauma",
-    "health",
-    "vet",
-    "veterinary",
-    "crack",
-    "break",
-    "damage"
+    "bone",
+    "injury"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ElectricityStack",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "electricity stack",
+    "power",
+    "energy",
+    "battery",
+    "layers"
+  ],
+  "aliases": [],
+  "mirror": false
+}

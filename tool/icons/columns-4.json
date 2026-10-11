@@ -1,5 +1,20 @@
 {
-  "upstream": "lucide/columns-4",
+  "upstream": "desen/columns-4",
+  "derived": {
+    "parts": [
+      {
+        "from": "Rows4",
+        "keep": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "transform": "rotate-90"
+  },
+  "also": [],
   "category": "layout",
   "tags": [
     "lines",

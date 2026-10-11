@@ -1,21 +1,50 @@
 {
-  "upstream": "lucide/mail-badge",
+  "upstream": "desen/mail-badge",
+  "derived": {
+    "parts": [
+      {
+        "from": "Mail01",
+        "keep": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": "Award05",
+        "keep": [
+          0,
+          2
+        ],
+        "matrix": [
+          0.42,
+          0,
+          0,
+          0.42,
+          13.46,
+          11.51
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        18.5,
+        17.5,
+        5.2
+      ]
+    ]
+  },
+  "also": [],
   "category": "mail",
   "tags": [
+    "mail",
     "email",
-    "message",
-    "letter",
+    "badge",
+    "award",
     "certified",
-    "registered",
-    "seal",
-    "stamp",
-    "verified",
-    "envelope",
-    "rosette",
-    "signed",
-    "official",
-    "delivery"
+    "verified"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.5
 }

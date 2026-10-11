@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SlowWinds",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "wind",
+    "slow",
+    "light",
+    "air",
+    "waves"
+  ],
+  "aliases": [],
+  "mirror": false
+}

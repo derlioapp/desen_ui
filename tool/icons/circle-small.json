@@ -1,11 +1,19 @@
 {
-  "upstream": "lucide/circle-small",
+  "upstream": "hugeicons/CircleSmall",
+  "also": [
+    "Record"
+  ],
   "category": "shapes",
   "tags": [
-    "shape",
+    "dot",
     "bullet",
-    "gender",
-    "genderless"
+    "small",
+    "round",
+    "point",
+    "record",
+    "circle",
+    "ring",
+    "shape"
   ],
   "aliases": [],
   "mirror": false

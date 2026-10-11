@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BorderInner",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "border",
+    "inner",
+    "cross",
+    "table",
+    "cell",
+    "grid"
+  ],
+  "aliases": [],
+  "mirror": false
+}

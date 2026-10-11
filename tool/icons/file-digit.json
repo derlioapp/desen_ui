@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/file-digit",
+  "upstream": "hugeicons/FileDigit",
+  "also": [],
   "category": "files",
   "tags": [
-    "number",
+    "binary",
+    "digits",
+    "numbers",
+    "data",
     "document"
   ],
   "aliases": [],

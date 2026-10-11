@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/sandwich",
+  "upstream": "hugeicons/Sandwich",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "food",
-    "snack",
-    "dish",
-    "restaurant",
     "lunch",
+    "snack",
+    "bread",
     "meal"
   ],
   "aliases": [],

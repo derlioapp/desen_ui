@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide/vector-square",
+  "upstream": "hugeicons/VectorSquare",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "shape",
-    "geometry",
-    "art",
-    "width",
-    "height",
-    "size",
-    "calculate",
-    "measure",
-    "select",
-    "graphics",
-    "box"
+    "vector",
+    "anchor points",
+    "bounding box",
+    "selection",
+    "design",
+    "path"
   ],
   "aliases": [],
   "mirror": false

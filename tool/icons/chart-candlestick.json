@@ -1,26 +1,13 @@
 {
-  "upstream": "lucide/chart-candlestick",
+  "upstream": "hugeicons/ChartCandlestick",
+  "also": [],
   "category": "charts",
   "tags": [
+    "candles",
+    "stock",
     "trading",
-    "trader",
-    "financial",
-    "markets",
-    "portfolio",
-    "assets",
-    "prices",
-    "value",
-    "valuation",
-    "commodities",
-    "currencies",
-    "currency",
-    "stocks",
-    "exchange",
-    "hedge fund",
-    "statistics",
-    "analytics",
-    "diagram",
-    "graph"
+    "finance",
+    "analytics"
   ],
   "aliases": [
     "candlestickChart"

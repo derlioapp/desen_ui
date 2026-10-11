@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/TaskRemove01",
+  "also": [
+    "TaskRemove02"
+  ],
+  "category": "text",
+  "tags": [
+    "task",
+    "remove",
+    "delete",
+    "clipboard",
+    "cancel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

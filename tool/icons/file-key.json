@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/file-key",
+  "upstream": "hugeicons/FileKey",
+  "also": [],
   "category": "files",
   "tags": [
     "key",
-    "private",
-    "public",
-    "security"
+    "password",
+    "access",
+    "document"
   ],
   "aliases": [],
   "mirror": false

@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/triangle-dashed",
+  "upstream": "hugeicons/TriangleDash",
+  "also": [
+    "TriangleDashed"
+  ],
   "category": "shapes",
   "tags": [
-    "equilateral",
-    "delta",
-    "shape",
-    "pyramid",
-    "hierarchy",
-    "dashed"
+    "triangle",
+    "dashed",
+    "outline",
+    "placeholder"
   ],
   "aliases": [],
   "mirror": false

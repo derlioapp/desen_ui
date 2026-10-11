@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/TaskEdit01",
+  "also": [
+    "TaskEdit02"
+  ],
+  "category": "text",
+  "tags": [
+    "task",
+    "edit",
+    "write",
+    "clipboard",
+    "notes"
+  ],
+  "aliases": [
+    "clipboardPenLine"
+  ],
+  "mirror": false
+}

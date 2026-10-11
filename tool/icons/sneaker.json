@@ -1,21 +1,12 @@
 {
-  "upstream": "lucide-lab/sneaker",
+  "upstream": "hugeicons/Sneaker",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "trainer",
     "shoe",
     "footwear",
-    "store",
-    "clothing",
-    "clothes",
-    "apparel",
-    "attire",
-    "outfit",
-    "fashion",
-    "casual",
-    "exercise",
-    "running",
-    "jogging"
+    "sport",
+    "trainer"
   ],
   "aliases": [],
   "mirror": false

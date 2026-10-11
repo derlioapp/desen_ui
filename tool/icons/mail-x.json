@@ -1,12 +1,16 @@
 {
-  "upstream": "lucide/mail-x",
+  "upstream": "hugeicons/MailRemove01",
+  "also": [
+    "MailX"
+  ],
   "category": "mail",
   "tags": [
     "email",
     "message",
     "letter",
     "remove",
-    "delete"
+    "delete",
+    "failed"
   ],
   "aliases": [],
   "mirror": false

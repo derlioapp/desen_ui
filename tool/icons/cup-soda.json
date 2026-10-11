@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/cup-soda",
+  "upstream": "hugeicons/CupSoda",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "beverage",
-    "cup",
-    "drink",
     "soda",
+    "drink",
     "straw",
-    "water"
+    "takeaway",
+    "cup",
+    "beverage"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

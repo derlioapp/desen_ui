@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/galaxy",
+  "upstream": "hugeicons/Galaxy",
+  "also": [],
   "category": "science",
   "tags": [
-    "astronomy",
+    "galaxy",
+    "spiral",
     "space",
     "stars",
-    "cosmos",
-    "universe",
-    "spiral",
-    "milky way",
-    "nebula",
-    "cosmology",
-    "interstellar",
-    "celestial",
-    "constellation",
-    "stargazing",
-    "spaceflight"
+    "universe"
   ],
   "aliases": [],
   "mirror": false

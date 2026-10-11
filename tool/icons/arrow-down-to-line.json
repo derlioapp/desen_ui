@@ -1,18 +1,16 @@
 {
-  "upstream": "lucide/arrow-down-to-line",
+  "upstream": "hugeicons/ArrowDownToLine",
+  "also": [
+    "ArrowDown03"
+  ],
   "category": "arrows",
   "tags": [
-    "behind",
-    "direction",
-    "south",
+    "arrow",
+    "down",
     "download",
+    "bottom",
     "save",
-    "git",
-    "version control",
-    "pull",
-    "collapse",
-    "fold",
-    "vertical"
+    "end"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PlayListMinus",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "playlist",
+    "remove",
+    "video",
+    "clapperboard",
+    "minus"
+  ],
+  "aliases": [],
+  "mirror": false
+}

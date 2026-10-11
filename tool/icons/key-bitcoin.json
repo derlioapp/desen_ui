@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BitcoinKey",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "key",
+    "private",
+    "wallet",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BubbleChatDelay",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "bubble",
+    "message",
+    "delay",
+    "clock",
+    "scheduled"
+  ],
+  "aliases": [],
+  "mirror": false
+}

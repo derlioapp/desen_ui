@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/warehouse",
+  "upstream": "hugeicons/Warehouse",
+  "also": [],
   "category": "buildings",
   "tags": [
     "storage",
-    "storehouse",
     "depot",
-    "depository",
-    "repository",
-    "stockroom",
     "logistics",
-    "building"
+    "stockroom",
+    "distribution",
+    "building",
+    "inventory"
   ],
   "aliases": [],
   "mirror": false

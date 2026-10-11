@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide-lab/coat-hanger",
+  "upstream": "hugeicons/Hanger",
+  "also": [],
   "category": "home",
   "tags": [
+    "hanger",
     "clothes",
-    "clothing",
-    "apparel",
-    "attire",
     "wardrobe",
-    "dry cleaning",
-    "amenities"
+    "closet"
   ],
   "aliases": [],
   "mirror": false

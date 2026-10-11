@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/GpsOff02",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "gps",
+    "off",
+    "location",
+    "x",
+    "close",
+    "cancel",
+    "crosshair"
+  ],
+  "aliases": [],
+  "mirror": false
+}

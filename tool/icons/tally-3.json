@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/tally-3",
+  "upstream": "hugeicons/Tally3",
+  "also": [],
   "category": "math",
   "tags": [
     "count",
+    "tally",
+    "marks",
     "score",
-    "enumerate",
-    "days",
-    "three",
-    "3",
-    "third",
-    "triple",
-    "bars",
-    "prison",
-    "cell",
-    "sentence"
+    "tally 3"
   ],
   "aliases": [],
   "mirror": false

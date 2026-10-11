@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/pipette",
+  "upstream": "hugeicons/Pipette",
+  "also": [],
   "category": "text",
   "tags": [
-    "eye dropper",
-    "color picker",
-    "lab",
-    "chemistry"
+    "pipette",
+    "eyedropper",
+    "color",
+    "picker"
   ],
   "aliases": [],
   "mirror": false

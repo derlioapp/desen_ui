@@ -1,13 +1,17 @@
 {
-  "upstream": "lucide/git-pull-request-create-arrow",
+  "upstream": "hugeicons/GitPullRequestCreateArrow",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "open",
+    "git",
+    "pull",
+    "request",
+    "create",
+    "arrow",
     "plus",
     "add",
-    "+"
+    "version",
+    "control"
   ],
   "aliases": [],
   "mirror": false

@@ -1,10 +1,15 @@
 {
-  "upstream": "lucide/screen-share",
+  "upstream": "hugeicons/ScreenShare",
+  "also": [
+    "ComputerScreenShare"
+  ],
   "category": "connectivity",
   "tags": [
-    "host",
-    "desktop",
-    "monitor"
+    "share screen",
+    "present",
+    "monitor",
+    "arrow",
+    "cast"
   ],
   "aliases": [],
   "mirror": false

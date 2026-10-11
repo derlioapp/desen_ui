@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CalendarUser",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "user",
+    "person",
+    "attendee",
+    "booking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

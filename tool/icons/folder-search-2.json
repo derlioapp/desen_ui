@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/folder-search-2",
+  "upstream": "hugeicons/FolderSearch2",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
+    "folder",
     "search",
     "find",
-    "lost",
-    "browser",
-    "lens"
+    "lens",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

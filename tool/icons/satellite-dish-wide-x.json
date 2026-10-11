@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/GpsDisconnected",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "gps",
+    "disconnected",
+    "satellite",
+    "dish",
+    "no",
+    "signal",
+    "x"
+  ],
+  "aliases": [],
+  "mirror": false
+}

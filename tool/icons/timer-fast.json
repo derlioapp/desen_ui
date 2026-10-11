@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Timer02",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "timer",
+    "stopwatch",
+    "speed",
+    "quick",
+    "fast"
+  ],
+  "aliases": [],
+  "mirror": false
+}

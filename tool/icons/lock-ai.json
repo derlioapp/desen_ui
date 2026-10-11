@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiLock",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "ai",
+    "lock",
+    "security",
+    "protect"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

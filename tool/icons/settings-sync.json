@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Setup01",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "setup",
+    "gear",
+    "refresh",
+    "update",
+    "configuration"
+  ],
+  "aliases": [],
+  "mirror": false
+}

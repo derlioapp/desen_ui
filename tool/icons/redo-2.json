@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/redo-2",
+  "upstream": "hugeicons/Redo01",
+  "also": [
+    "Redo03"
+  ],
   "category": "text",
   "tags": [
-    "undo",
-    "rerun",
-    "history"
+    "redo",
+    "forward",
+    "history",
+    "arrow"
   ],
   "aliases": [],
   "mirror": true

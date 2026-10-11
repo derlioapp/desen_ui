@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/biceps-flexed",
+  "upstream": "hugeicons/BicepsFlexed",
+  "also": [],
   "category": "social",
   "tags": [
-    "arm",
     "muscle",
     "strong",
-    "working out",
-    "athletic",
-    "toned",
-    "muscular",
-    "forelimb",
-    "curled"
+    "strength",
+    "arm",
+    "gym",
+    "flex"
   ],
   "aliases": [],
   "mirror": false

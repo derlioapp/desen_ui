@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/TrafficIncident",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "accident",
+    "incident",
+    "crash",
+    "traffic",
+    "road"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

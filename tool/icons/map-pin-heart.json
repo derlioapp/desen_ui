@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/LocationFavourite01",
+  "also": [
+    "LocationFavourite02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "favorite",
+    "like",
+    "saved place"
+  ],
+  "aliases": [],
+  "mirror": false
+}

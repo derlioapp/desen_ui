@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/shovel",
-  "category": "nature",
+  "upstream": "hugeicons/Shovel",
+  "also": [],
+  "category": "tools",
   "tags": [
     "dig",
+    "garden",
     "spade",
-    "treasure"
+    "tool"
   ],
   "aliases": [],
   "mirror": false

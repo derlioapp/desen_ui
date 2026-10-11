@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/earth-lock",
+  "upstream": "hugeicons/EarthLock",
+  "also": [],
   "category": "security",
   "tags": [
-    "vpn",
-    "private",
-    "privacy",
-    "network",
+    "globe",
     "world",
-    "browser",
-    "security",
-    "encryption",
-    "protection",
-    "connection"
+    "lock",
+    "secure",
+    "privacy",
+    "vpn"
   ],
   "aliases": [],
   "mirror": false

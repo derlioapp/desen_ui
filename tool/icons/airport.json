@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Airport",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "airport",
+    "tower",
+    "plane",
+    "terminal",
+    "flight"
+  ],
+  "aliases": [],
+  "mirror": false
+}

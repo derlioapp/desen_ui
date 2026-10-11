@@ -1,11 +1,22 @@
 {
-  "upstream": "lucide/circle",
+  "upstream": "hugeicons/Circle",
+  "also": [
+    "Progress01",
+    "Status"
+  ],
   "category": "shapes",
   "tags": [
-    "off",
+    "round",
+    "shape",
+    "ring",
+    "radio",
+    "dot",
+    "progress",
+    "empty",
+    "circle",
     "zero",
-    "record",
-    "shape"
+    "percent",
+    "status"
   ],
   "aliases": [],
   "mirror": false

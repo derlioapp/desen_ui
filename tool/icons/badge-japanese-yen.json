@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/badge-japanese-yen",
+  "upstream": "hugeicons/BadgeJapaneseYen",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "discount",
-    "offer",
-    "sale",
-    "voucher",
-    "tag",
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "exchange",
-    "transaction",
-    "payment",
+    "yen",
     "jpy",
-    "¥"
+    "price",
+    "money",
+    "badge"
   ],
   "aliases": [],
   "mirror": false

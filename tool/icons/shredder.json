@@ -1,27 +1,17 @@
 {
-  "upstream": "lucide/shredder",
+  "upstream": "hugeicons/Shredder",
+  "also": [
+    "FileShredder"
+  ],
   "category": "mail",
   "tags": [
-    "file",
     "paper",
-    "tear",
-    "cut",
-    "delete",
+    "shred",
     "destroy",
-    "remove",
-    "erase",
+    "office",
     "document",
-    "destruction",
-    "secure",
-    "security",
-    "confidential",
-    "data",
-    "trash",
-    "dispose",
-    "disposal",
-    "information",
-    "waste",
-    "permanent"
+    "delete",
+    "secure"
   ],
   "aliases": [],
   "mirror": false

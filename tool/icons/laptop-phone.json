@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LaptopPhoneSync",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "laptop phone sync",
+    "devices",
+    "sync",
+    "responsive",
+    "multi device",
+    "computer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

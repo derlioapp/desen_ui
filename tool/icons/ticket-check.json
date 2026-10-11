@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/ticket-check",
+  "upstream": "hugeicons/TicketCheck",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "entry",
-    "pass",
-    "voucher",
-    "event",
-    "concert",
-    "show",
-    "booked",
-    "purchased",
-    "receipt",
-    "redeemed",
-    "validated",
-    "verified",
-    "certified",
-    "checked",
-    "used"
+    "ticket",
+    "check",
+    "valid",
+    "confirmed",
+    "booked"
   ],
   "aliases": [],
   "mirror": false

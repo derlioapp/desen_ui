@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/lock-keyhole",
+  "upstream": "hugeicons/SquareLock02",
+  "also": [],
   "category": "security",
   "tags": [
-    "security",
-    "password",
+    "lock",
+    "keyhole",
     "secure",
-    "admin"
+    "private",
+    "padlock"
   ],
   "aliases": [],
   "mirror": false

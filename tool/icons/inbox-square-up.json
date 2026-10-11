@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/InboxUpload",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "inbox",
+    "upload",
+    "outgoing",
+    "send"
+  ],
+  "aliases": [],
+  "mirror": false
+}

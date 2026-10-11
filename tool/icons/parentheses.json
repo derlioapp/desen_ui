@@ -1,22 +1,16 @@
 {
-  "upstream": "lucide/parentheses",
+  "upstream": "hugeicons/Parentheses",
+  "also": [
+    "FirstBracket"
+  ],
   "category": "development",
   "tags": [
-    "code",
-    "token",
-    "parenthesis",
-    "parens",
+    "parentheses",
     "brackets",
-    "parameters",
-    "arguments",
-    "args",
-    "input",
-    "call",
-    "math",
-    "formula",
-    "function",
-    "(",
-    ")"
+    "round",
+    "code",
+    "round brackets",
+    "math"
   ],
   "aliases": [],
   "mirror": false

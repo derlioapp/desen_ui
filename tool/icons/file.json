@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/file",
+  "upstream": "hugeicons/FileEmpty02",
+  "also": [],
   "category": "files",
   "tags": [
-    "document"
+    "empty",
+    "blank",
+    "document",
+    "page",
+    "paper"
   ],
   "aliases": [],
   "mirror": false

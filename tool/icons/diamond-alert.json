@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/AlertDiamond",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "alert",
+    "warning",
+    "diamond",
+    "exclamation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

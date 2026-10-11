@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Radar03",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "radar",
+    "scan",
+    "target",
+    "concentric",
+    "sonar"
+  ],
+  "aliases": [],
+  "mirror": false
+}

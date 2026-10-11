@@ -1,9 +1,22 @@
 {
-  "upstream": "lucide/squircle",
+  "upstream": "hugeicons/Squircle",
+  "also": [
+    "SolidLine02",
+    "SquircleDashed"
+  ],
   "category": "shapes",
   "tags": [
-    "shape"
+    "squircle",
+    "rounded square",
+    "superellipse",
+    "shape",
+    "rounded",
+    "square",
+    "dashed",
+    "placeholder"
   ],
-  "aliases": [],
+  "aliases": [
+    "squircleDashed"
+  ],
   "mirror": false
 }

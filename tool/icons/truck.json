@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/truck",
+  "upstream": "hugeicons/Truck",
+  "also": [],
   "category": "transportation",
   "tags": [
+    "truck",
     "delivery",
-    "van",
     "shipping",
-    "haulage",
-    "lorry"
+    "lorry",
+    "van"
   ],
   "aliases": [
     "delivery"

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinCloud",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "cloud",
+    "mining",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

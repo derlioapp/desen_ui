@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/star-half",
+  "upstream": "hugeicons/StarHalf",
+  "also": [],
   "category": "social",
   "tags": [
-    "bookmark",
-    "favorite",
-    "like",
+    "half star",
+    "rating",
     "review",
-    "rating"
+    "favorite"
   ],
   "aliases": [],
   "mirror": false

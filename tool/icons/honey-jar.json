@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Honey01",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "honey",
+    "jar",
+    "bee",
+    "sweet",
+    "honeycomb"
+  ],
+  "aliases": [
+    "jar"
+  ],
+  "mirror": false
+}

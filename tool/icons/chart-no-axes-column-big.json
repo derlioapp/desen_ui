@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Chart01",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "bars",
+    "graph",
+    "statistics",
+    "analytics",
+    "columns"
+  ],
+  "aliases": [],
+  "mirror": false
+}

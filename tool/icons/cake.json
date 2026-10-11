@@ -1,18 +1,12 @@
 {
-  "upstream": "lucide/cake",
+  "upstream": "hugeicons/Cake",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "cake",
     "birthday",
-    "birthdate",
-    "celebration",
-    "party",
-    "surprise",
-    "gateaux",
     "dessert",
-    "fondant",
-    "icing sugar",
-    "sweet",
-    "baking"
+    "celebration"
   ],
   "aliases": [],
   "mirror": false

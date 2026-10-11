@@ -1,19 +1,11 @@
 {
-  "upstream": "lucide/egg",
+  "upstream": "hugeicons/Egg",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "bird",
-    "chicken",
-    "nest",
-    "hatch",
-    "shell",
-    "incubate",
-    "soft boiled",
-    "hard",
     "breakfast",
-    "brunch",
-    "morning",
-    "easter"
+    "chicken",
+    "food"
   ],
   "aliases": [],
   "mirror": false

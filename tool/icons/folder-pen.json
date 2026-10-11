@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/folder-pen",
+  "upstream": "hugeicons/FolderEdit",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "rename"
+    "folder",
+    "edit",
+    "rename",
+    "pen",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

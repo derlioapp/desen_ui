@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Rar02",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "rar",
+    "archive",
+    "compressed",
+    "file",
+    "zip"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

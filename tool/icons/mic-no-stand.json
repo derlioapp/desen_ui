@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Mic01",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "microphone",
+    "mic",
+    "voice",
+    "record",
+    "audio"
+  ],
+  "aliases": [],
+  "mirror": false
+}

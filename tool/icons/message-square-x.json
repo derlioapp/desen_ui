@@ -1,21 +1,17 @@
 {
-  "upstream": "lucide/message-square-x",
+  "upstream": "hugeicons/MessageSquareX",
+  "also": [
+    "ChatCancel"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "clear",
     "close",
-    "delete",
-    "remove",
     "cancel",
-    "silence",
-    "mute",
-    "moderate"
+    "remove",
+    "dismiss",
+    "failed"
   ],
   "aliases": [],
   "mirror": false

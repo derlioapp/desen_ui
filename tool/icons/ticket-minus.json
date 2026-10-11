@@ -1,19 +1,12 @@
 {
-  "upstream": "lucide/ticket-minus",
+  "upstream": "hugeicons/TicketMinus",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "entry",
-    "pass",
-    "voucher",
-    "event",
-    "concert",
-    "show",
+    "ticket",
+    "minus",
     "remove",
-    "cancel",
-    "unbook",
-    "subtract",
-    "decrease",
-    "-"
+    "cancel"
   ],
   "aliases": [],
   "mirror": false

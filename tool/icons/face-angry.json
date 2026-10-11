@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/face-angry",
+  "upstream": "hugeicons/Angry",
+  "also": [],
   "category": "social",
   "tags": [
-    "anger",
-    "rage",
-    "fury",
-    "resentment",
-    "irritation",
-    "disgust",
+    "angry",
+    "mad",
     "emoji",
-    "emotion"
+    "upset",
+    "furious"
   ],
   "aliases": [],
   "mirror": false

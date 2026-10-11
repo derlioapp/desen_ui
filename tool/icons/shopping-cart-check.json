@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ShoppingCartCheck01",
+  "also": [],
+  "category": "shopping",
+  "tags": [
+    "cart",
+    "done",
+    "added",
+    "trolley",
+    "store",
+    "purchase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/flag-off",
+  "upstream": "hugeicons/FlagOff",
+  "also": [],
   "category": "account",
   "tags": [
+    "flag",
     "unflag",
     "unmark",
-    "report",
     "marker",
-    "notification",
-    "warning",
-    "milestone",
-    "goal",
-    "notice",
-    "signal",
-    "attention",
-    "banner"
+    "disabled"
   ],
   "aliases": [],
   "mirror": false

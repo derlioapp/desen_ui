@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SecurityValidation",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "validated",
+    "verified",
+    "secure",
+    "approved",
+    "protect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

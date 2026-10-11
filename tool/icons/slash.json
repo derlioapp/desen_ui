@@ -1,11 +1,18 @@
 {
-  "upstream": "lucide/slash",
+  "upstream": "hugeicons/Slash",
+  "also": [
+    "Liner"
+  ],
   "category": "development",
   "tags": [
-    "divide",
-    "division",
-    "or",
-    "/"
+    "forward",
+    "slash",
+    "divider",
+    "separator",
+    "diagonal",
+    "line",
+    "stroke",
+    "solidus"
   ],
   "aliases": [],
   "mirror": false

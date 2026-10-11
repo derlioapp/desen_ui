@@ -1,14 +1,15 @@
 {
-  "upstream": "lucide/text-initial",
+  "upstream": "hugeicons/TextInitial",
+  "also": [],
   "category": "text",
   "tags": [
     "drop cap",
-    "text",
-    "format",
-    "typography",
-    "letter",
-    "font size"
+    "initial",
+    "paragraph",
+    "first letter",
+    "text"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

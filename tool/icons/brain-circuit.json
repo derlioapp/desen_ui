@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/brain-circuit",
+  "upstream": "hugeicons/BrainCircuit",
+  "also": [],
   "category": "science",
   "tags": [
-    "mind",
-    "intellect",
-    "artificial intelligence",
+    "brain",
+    "circuit",
     "ai",
-    "deep learning",
-    "machine learning",
-    "computing"
+    "neural",
+    "network"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

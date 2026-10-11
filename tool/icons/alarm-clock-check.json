@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/alarm-clock-check",
+  "upstream": "hugeicons/AlarmClockCheck",
+  "also": [],
   "category": "devices",
   "tags": [
-    "done",
-    "todo",
-    "tick",
-    "complete",
-    "task"
+    "alarm",
+    "clock",
+    "time",
+    "wake",
+    "check",
+    "set"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileInput",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "input",
+    "enter",
+    "import",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/trees",
+  "upstream": "hugeicons/Trees",
+  "also": [],
   "category": "nature",
   "tags": [
-    "tree",
+    "trees",
     "forest",
     "park",
     "nature"
   ],
-  "aliases": [],
+  "aliases": [
+    "treesForest"
+  ],
   "mirror": false
 }

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/SafetyPin02",
+  "also": [],
+  "category": "tools",
+  "tags": [
+    "pin",
+    "fastener",
+    "sewing",
+    "clothing",
+    "open"
+  ],
+  "aliases": [
+    "pinSafetyOpen"
+  ],
+  "mirror": false
+}

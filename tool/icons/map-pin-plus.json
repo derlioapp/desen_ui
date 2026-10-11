@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/map-pin-plus",
+  "upstream": "hugeicons/MapPinPlus",
+  "also": [],
   "category": "navigation",
   "tags": [
     "location",
-    "waypoint",
-    "marker",
-    "drop",
+    "pin",
     "add",
-    "create",
+    "plus",
     "new"
   ],
   "aliases": [],

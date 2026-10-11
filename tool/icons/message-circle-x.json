@@ -1,21 +1,16 @@
 {
-  "upstream": "lucide/message-circle-x",
-  "category": "account",
+  "upstream": "hugeicons/MessageCircleX",
+  "also": [
+    "BubbleChatCancel"
+  ],
+  "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "clear",
     "close",
-    "delete",
-    "remove",
     "cancel",
-    "silence",
-    "mute",
-    "moderate"
+    "remove",
+    "bubble"
   ],
   "aliases": [],
   "mirror": false

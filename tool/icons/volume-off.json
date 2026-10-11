@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/volume-off",
+  "upstream": "hugeicons/VolumeOff",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "music",
-    "sound",
     "mute",
-    "speaker"
+    "silent",
+    "no sound",
+    "speaker",
+    "disabled",
+    "audio"
   ],
   "aliases": [],
   "mirror": false

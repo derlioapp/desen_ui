@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ThreeDRotate",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "3d",
+    "rotate",
+    "orbit",
+    "sphere",
+    "transform"
+  ],
+  "aliases": [],
+  "mirror": false
+}

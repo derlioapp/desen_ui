@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/ChartRose",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "polar",
+    "nightingale",
+    "coxcomb",
+    "radial",
+    "statistics",
+    "analytics"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

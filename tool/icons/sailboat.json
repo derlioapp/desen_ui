@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/sailboat",
+  "upstream": "hugeicons/Sailboat",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "ship",
     "boat",
-    "harbor",
-    "harbour",
-    "dock"
+    "ship",
+    "yacht",
+    "sailing",
+    "harbor"
   ],
   "aliases": [],
   "mirror": false

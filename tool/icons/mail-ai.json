@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AiMail",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "ai",
+    "mail",
+    "email",
+    "envelope",
+    "message"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

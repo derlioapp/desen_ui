@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FitToScreen",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "fit",
+    "width",
+    "resize",
+    "stretch",
+    "fill"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,15 +1,16 @@
 {
-  "upstream": "lucide/cloud-check",
+  "upstream": "hugeicons/CloudCheck",
+  "also": [],
   "category": "development",
   "tags": [
-    "sync",
-    "network",
-    "success",
-    "done",
-    "completed",
+    "synced",
     "saved",
-    "persisted"
+    "done",
+    "storage",
+    "success"
   ],
-  "aliases": [],
+  "aliases": [
+    "cloudCheckBadge"
+  ],
   "mirror": false
 }

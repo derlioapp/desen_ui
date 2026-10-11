@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinReceive",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "receive",
+    "incoming",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": true
+}

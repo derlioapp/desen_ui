@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ComputerUser",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "computer",
+    "screen",
+    "user",
+    "person",
+    "profile",
+    "account"
+  ],
+  "aliases": [],
+  "mirror": false
+}

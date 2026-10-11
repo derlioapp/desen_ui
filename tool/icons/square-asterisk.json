@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/square-asterisk",
+  "upstream": "hugeicons/SquareAsterisk",
+  "also": [],
   "category": "text",
   "tags": [
-    "password",
-    "secret",
-    "access",
-    "key",
-    "multiply",
-    "multiplication",
-    "glob pattern",
+    "asterisk",
+    "star",
+    "required",
     "wildcard",
-    "*"
+    "footnote"
   ],
   "aliases": [],
   "mirror": false

@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/fast-forward",
+  "upstream": "hugeicons/FastForward",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "music"
+    "skip",
+    "forward",
+    "media",
+    "next",
+    "speed"
   ],
   "aliases": [],
   "mirror": false

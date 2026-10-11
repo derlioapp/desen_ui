@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/user-round-pen",
+  "upstream": "hugeicons/UserRoundPen",
+  "also": [],
   "category": "account",
   "tags": [
-    "person",
-    "account",
-    "contact",
-    "profile",
     "edit",
-    "change"
+    "edit user",
+    "modify",
+    "update",
+    "profile",
+    "person"
   ],
   "aliases": [],
   "mirror": false

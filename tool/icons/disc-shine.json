@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Vynil01",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "vinyl",
+    "record",
+    "album",
+    "music",
+    "cd",
+    "dvd",
+    "disc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

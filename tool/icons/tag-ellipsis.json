@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/PinCode",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "pin",
+    "code",
+    "password",
+    "tag",
+    "dots",
+    "passcode"
+  ],
+  "aliases": [],
+  "mirror": false
+}

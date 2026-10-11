@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TextFootnote",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "footnote",
+    "text",
+    "asterisk",
+    "note",
+    "reference"
+  ],
+  "aliases": [],
+  "mirror": false
+}

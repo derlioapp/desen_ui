@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/cupcake",
+  "upstream": "hugeicons/Cupcake01",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "cake",
+    "cupcake",
+    "muffin",
     "dessert",
-    "food",
-    "celebration",
-    "sweet",
-    "baking",
-    "cooking"
+    "bakery",
+    "sweet"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,11 @@
 {
-  "upstream": "lucide-lab/pac-man",
+  "upstream": "hugeicons/Pacman01",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "eat",
-    "munch",
-    "consume",
+    "pacman",
+    "game",
     "arcade",
-    "classic",
     "retro"
   ],
   "aliases": [],

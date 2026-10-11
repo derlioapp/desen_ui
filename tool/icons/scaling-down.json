@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MinimizeScreen",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "scale",
+    "resize",
+    "minimize",
+    "shrink",
+    "reduce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

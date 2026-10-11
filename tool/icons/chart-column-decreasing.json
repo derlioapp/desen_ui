@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/chart-column-decreasing",
+  "upstream": "hugeicons/ChartColumnDecreasing",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
+    "descending",
+    "vertical bars",
     "graph",
-    "trending down"
+    "statistics",
+    "decline"
   ],
   "aliases": [],
   "mirror": false

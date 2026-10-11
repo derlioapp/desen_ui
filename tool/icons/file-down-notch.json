@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileDownload",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "download",
+    "save",
+    "arrow down",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

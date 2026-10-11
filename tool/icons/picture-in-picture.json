@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/picture-in-picture",
+  "upstream": "hugeicons/PictureInPicture",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "display",
-    "play",
-    "video",
-    "pop out",
-    "always on top",
+    "picture-in-picture",
+    "pip",
+    "floating",
     "window",
-    "inset",
-    "multitask"
+    "video",
+    "overlay"
   ],
   "aliases": [],
   "mirror": false

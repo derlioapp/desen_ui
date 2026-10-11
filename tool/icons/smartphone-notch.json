@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Smartphone",
+  "also": [
+    "SmartPhone02"
+  ],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "cellphone",
+    "device",
+    "mobile"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

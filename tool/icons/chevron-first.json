@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/chevron-first",
+  "upstream": "hugeicons/ChevronFirst",
+  "also": [],
   "category": "arrows",
   "tags": [
+    "first",
+    "start",
+    "beginning",
+    "skip",
     "previous",
-    "music"
+    "page"
   ],
   "aliases": [],
   "mirror": true

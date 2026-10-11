@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/soap-dispenser-droplet",
+  "upstream": "hugeicons/SoapDispenserDroplet",
+  "also": [],
   "category": "home",
   "tags": [
+    "soap",
+    "dispenser",
+    "hygiene",
     "wash",
-    "bath",
-    "water",
-    "liquid",
-    "fluid",
-    "wet",
-    "moisture",
-    "damp",
-    "bead",
-    "globule"
+    "pump"
   ],
   "aliases": [],
   "mirror": false

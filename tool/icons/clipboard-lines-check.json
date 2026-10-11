@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/TaskDone01",
+  "also": [
+    "TaskDone02"
+  ],
+  "category": "text",
+  "tags": [
+    "task",
+    "done",
+    "complete",
+    "checklist",
+    "todo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

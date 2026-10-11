@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/house-heart",
+  "upstream": "hugeicons/HouseHeart",
+  "also": [],
   "category": "home",
   "tags": [
-    "home sweet home",
-    "abode",
-    "building",
-    "residence",
-    "healthy living",
-    "lifestyle"
+    "home",
+    "heart",
+    "love",
+    "favorite"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,20 @@
+{
+  "upstream": "hugeicons/CircleArrowDown03",
+  "also": [
+    "DownloadCircle02"
+  ],
+  "category": "arrows",
+  "tags": [
+    "down",
+    "download",
+    "bottom",
+    "end",
+    "direction",
+    "circle",
+    "arrow down",
+    "save",
+    "line"
+  ],
+  "aliases": [],
+  "mirror": false
+}

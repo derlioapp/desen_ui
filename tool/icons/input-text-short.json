@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/InputShortText",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "input",
+    "short text",
+    "field",
+    "form",
+    "label"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/folder-cog",
+  "upstream": "hugeicons/FolderCog",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
+    "folder",
     "settings",
-    "control",
-    "preferences",
+    "configuration",
     "cog",
-    "edit",
-    "gear"
+    "directory"
   ],
   "aliases": [],
   "mirror": false

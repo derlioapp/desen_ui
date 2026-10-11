@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/calendar-x",
+  "upstream": "hugeicons/CalendarRemove01",
+  "also": [
+    "CalendarX01"
+  ],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "event",
+    "calendar",
     "remove",
-    "busy"
+    "x",
+    "cancel",
+    "delete",
+    "event"
   ],
   "aliases": [],
   "mirror": false

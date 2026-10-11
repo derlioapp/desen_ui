@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiUser",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "ai",
+    "user",
+    "profile",
+    "person",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

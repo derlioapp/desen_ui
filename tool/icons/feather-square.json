@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide-lab/feather-square",
+  "upstream": "hugeicons/QuillWrite02",
+  "also": [],
   "category": "text",
   "tags": [
     "quill",
-    "pen",
     "write",
-    "writing",
-    "prose",
-    "inkwell",
-    "scribe",
-    "scroll",
-    "draft",
-    "edit"
+    "feather",
+    "square",
+    "compose"
   ],
   "aliases": [],
   "mirror": false

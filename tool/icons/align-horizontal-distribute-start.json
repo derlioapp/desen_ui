@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/align-horizontal-distribute-start",
+  "upstream": "hugeicons/AlignHorizontalDistributeStart",
+  "also": [],
   "category": "layout",
   "tags": [
-    "left",
-    "items",
-    "flex",
-    "justify"
+    "align",
+    "horizontal",
+    "distribute",
+    "start",
+    "space"
   ],
   "aliases": [],
   "mirror": false

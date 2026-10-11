@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CalendarAnalysis",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "analysis",
+    "chart",
+    "statistics",
+    "schedule"
+  ],
+  "aliases": [],
+  "mirror": false
+}

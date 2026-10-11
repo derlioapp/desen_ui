@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/egg-fried",
+  "upstream": "hugeicons/EggFried",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "food",
-    "breakfast"
+    "breakfast",
+    "sunny side up",
+    "fried",
+    "food"
   ],
   "aliases": [],
   "mirror": false

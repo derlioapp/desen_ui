@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/bot-message-square",
+  "upstream": "hugeicons/BotMessageSquare",
+  "also": [],
   "category": "development",
   "tags": [
+    "bot",
+    "message",
     "robot",
-    "ai",
     "chat",
-    "assistant"
+    "assistant",
+    "ai"
   ],
   "aliases": [],
   "mirror": false

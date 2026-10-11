@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/CalendarMinus",
+  "also": [
+    "CalendarMinus02"
+  ],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "minus",
+    "remove",
+    "inside"
+  ],
+  "aliases": [
+    "calendarMinus2"
+  ],
+  "mirror": false
+}

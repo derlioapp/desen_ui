@@ -1,10 +1,20 @@
 {
-  "upstream": "lucide/list-ordered",
+  "upstream": "hugeicons/ListOrdered",
+  "also": [
+    "LeftToRightListNumber"
+  ],
   "category": "text",
   "tags": [
-    "number",
-    "order",
-    "queue"
+    "numbered",
+    "steps",
+    "sequence",
+    "1 2",
+    "rows",
+    "numbered list",
+    "ordered list",
+    "list",
+    "items",
+    "left to right"
   ],
   "aliases": [
     "numberedList"

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AspectRatio",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "aspect ratio",
+    "screen",
+    "proportion",
+    "resize",
+    "crop",
+    "format"
+  ],
+  "aliases": [],
+  "mirror": false
+}

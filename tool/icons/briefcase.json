@@ -1,11 +1,16 @@
 {
-  "upstream": "lucide/briefcase",
+  "upstream": "hugeicons/Briefcase01",
+  "also": [
+    "Briefcase03"
+  ],
   "category": "transportation",
   "tags": [
+    "briefcase",
     "work",
+    "business",
     "bag",
-    "baggage",
-    "folder"
+    "job",
+    "latch"
   ],
   "aliases": [],
   "mirror": false

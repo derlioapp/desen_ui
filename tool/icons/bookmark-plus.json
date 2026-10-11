@@ -1,8 +1,15 @@
 {
-  "upstream": "lucide/bookmark-plus",
+  "upstream": "hugeicons/BookmarkPlus",
+  "also": [
+    "BookmarkAdd02"
+  ],
   "category": "account",
   "tags": [
-    "add"
+    "bookmark",
+    "plus",
+    "add",
+    "save",
+    "new"
   ],
   "aliases": [],
   "mirror": false

@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/sheet",
+  "upstream": "hugeicons/Sheet",
+  "also": [],
   "category": "text",
   "tags": [
-    "spreadsheets",
+    "spreadsheet",
     "table",
+    "grid",
+    "cells",
     "excel"
   ],
   "aliases": [],

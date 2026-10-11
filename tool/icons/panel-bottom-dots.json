@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/SidebarBottom",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "sidebar",
+    "bottom",
+    "drawer",
+    "dock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

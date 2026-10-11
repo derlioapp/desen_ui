@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AiTranscribeAudio",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "ai",
+    "transcribe",
+    "audio",
+    "speech",
+    "text",
+    "microphone"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiNetwork",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "ai",
+    "network",
+    "nodes",
+    "connection"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

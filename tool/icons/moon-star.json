@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/moon-star",
-  "category": "accessibility",
+  "upstream": "hugeicons/MoonStar",
+  "also": [],
+  "category": "weather",
   "tags": [
-    "dark",
+    "moon",
     "night",
-    "star"
+    "star",
+    "sleep",
+    "dark mode",
+    "evening"
   ],
   "aliases": [],
   "mirror": false

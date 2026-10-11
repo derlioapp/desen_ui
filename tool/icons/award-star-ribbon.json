@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/StarAward02",
+  "also": [],
+  "category": "sports",
+  "tags": [
+    "award",
+    "badge",
+    "ribbon",
+    "star",
+    "prize",
+    "achievement"
+  ],
+  "aliases": [
+    "award"
+  ],
+  "mirror": false
+}

@@ -1,17 +1,12 @@
 {
-  "upstream": "lucide/text-search",
+  "upstream": "hugeicons/TextSearch",
+  "also": [],
   "category": "text",
   "tags": [
+    "search",
     "find",
-    "data",
-    "copy",
-    "txt",
-    "pdf",
-    "document",
-    "scan",
-    "magnifier",
-    "magnifying glass",
-    "lens"
+    "text",
+    "lines"
   ],
   "aliases": [],
   "mirror": false

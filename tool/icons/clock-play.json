@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TimeSchedule",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "clock",
+    "play",
+    "schedule",
+    "start",
+    "time"
+  ],
+  "aliases": [],
+  "mirror": false
+}

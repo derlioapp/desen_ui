@@ -1,19 +1,17 @@
 {
-  "upstream": "lucide/scroll-text",
+  "upstream": "hugeicons/Scroll01",
+  "also": [
+    "ScrollText"
+  ],
   "category": "gaming",
   "tags": [
+    "scroll",
     "paper",
-    "log",
-    "scripture",
-    "document",
-    "notes",
     "parchment",
-    "list",
-    "long",
+    "document",
     "script",
-    "story",
-    "code",
-    "coding"
+    "notes",
+    "log"
   ],
   "aliases": [],
   "mirror": false

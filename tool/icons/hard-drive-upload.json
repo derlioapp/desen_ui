@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/hard-drive-upload",
+  "upstream": "hugeicons/HardDriveUpload",
+  "also": [],
   "category": "development",
   "tags": [
-    "computer",
-    "server",
-    "memory",
-    "data",
-    "ssd",
+    "storage",
     "disk",
-    "hard disk",
-    "save"
+    "upload",
+    "backup"
   ],
   "aliases": [],
   "mirror": false

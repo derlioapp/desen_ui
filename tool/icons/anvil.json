@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/anvil",
+  "upstream": "hugeicons/Anvil",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "metal",
-    "iron",
-    "alloy",
-    "materials",
-    "heavy",
-    "weight",
     "blacksmith",
     "forge",
-    "acme"
+    "metal",
+    "craft",
+    "tool"
   ],
   "aliases": [],
   "mirror": false

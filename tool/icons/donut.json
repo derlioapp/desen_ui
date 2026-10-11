@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide/donut",
+  "upstream": "hugeicons/Doughnut",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "doughnut",
-    "sprinkles",
-    "topping",
-    "fast food",
-    "junk food",
-    "snack",
-    "treat",
-    "sweet",
-    "sugar",
+    "donut",
+    "ring",
     "dessert",
-    "hollow",
-    "ring"
+    "sweet",
+    "snack"
   ],
   "aliases": [],
   "mirror": false

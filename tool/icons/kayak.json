@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/kayak",
+  "upstream": "hugeicons/Kayak",
+  "also": [],
   "category": "transportation",
   "tags": [
     "kayak",
-    "boat",
+    "canoe",
     "paddle",
-    "water",
-    "sport",
-    "recreation",
-    "adventure",
-    "outdoors",
-    "equipment",
-    "lake",
-    "ocean"
+    "boat",
+    "water sport"
   ],
   "aliases": [],
   "mirror": false

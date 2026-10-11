@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/square-menu",
+  "upstream": "hugeicons/Menu",
+  "also": [],
   "category": "layout",
   "tags": [
-    "bars",
-    "navigation",
+    "menu",
+    "square",
     "hamburger",
-    "options",
-    "menu bar",
-    "panel"
+    "lines",
+    "navigation"
   ],
   "aliases": [],
   "mirror": false

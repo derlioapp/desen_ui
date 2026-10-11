@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/messages-square",
+  "upstream": "hugeicons/MessagesSquare",
+  "also": [],
   "category": "social",
   "tags": [
-    "comment",
+    "messages",
     "chat",
     "conversation",
-    "dialog",
-    "feedback",
-    "speech bubbles",
-    "copy",
-    "multiple",
     "discussion",
-    "interview",
-    "debate"
+    "comments"
   ],
   "aliases": [],
   "mirror": false

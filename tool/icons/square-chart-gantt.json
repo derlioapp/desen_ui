@@ -1,26 +1,13 @@
 {
-  "upstream": "lucide/square-chart-gantt",
+  "upstream": "hugeicons/SquareChartGantt",
+  "also": [],
   "category": "charts",
   "tags": [
-    "projects",
-    "manage",
-    "overview",
-    "roadmap",
-    "plan",
-    "intentions",
+    "gantt",
     "timeline",
-    "deadline",
-    "date",
-    "event",
-    "range",
-    "period",
-    "productivity",
-    "work",
-    "agile",
-    "code",
-    "coding",
-    "toolbar",
-    "button"
+    "schedule",
+    "project",
+    "bars"
   ],
   "aliases": [],
   "mirror": false

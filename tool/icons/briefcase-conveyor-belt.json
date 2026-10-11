@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/briefcase-conveyor-belt",
+  "upstream": "hugeicons/BriefcaseConveyorBelt",
+  "also": [],
   "category": "travel",
   "tags": [
-    "baggage",
+    "briefcase",
     "luggage",
-    "travel",
-    "suitcase",
-    "conveyor",
-    "carousel"
+    "baggage",
+    "claim",
+    "airport"
   ],
   "aliases": [],
   "mirror": false

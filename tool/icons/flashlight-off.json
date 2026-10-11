@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/flashlight-off",
+  "upstream": "hugeicons/FlashlightOff",
+  "also": [],
   "category": "photography",
   "tags": [
+    "flashlight",
     "torch",
     "light",
-    "beam",
-    "emergency",
-    "safety",
-    "tool",
-    "bright"
+    "off",
+    "disabled"
   ],
   "aliases": [],
   "mirror": false

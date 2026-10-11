@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/hammer",
+  "upstream": "hugeicons/Hammer",
+  "also": [],
   "category": "tools",
   "tags": [
-    "mallet",
-    "nails",
-    "diy",
-    "toolbox",
+    "hammer",
+    "tool",
     "build",
-    "construction"
+    "repair"
   ],
   "aliases": [],
   "mirror": false

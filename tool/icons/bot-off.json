@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/bot-off",
+  "upstream": "hugeicons/BotOff",
+  "also": [],
   "category": "development",
   "tags": [
+    "bot",
+    "off",
     "robot",
-    "ai",
-    "chat",
-    "assistant"
+    "disabled",
+    "ai"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.5
 }

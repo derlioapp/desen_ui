@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MenuTwoLine",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "menu",
+    "hamburger",
+    "two lines",
+    "short",
+    "navigation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MobileProtection",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "phone",
+    "mobile",
+    "shield",
+    "protection",
+    "security",
+    "antivirus"
+  ],
+  "aliases": [],
+  "mirror": false
+}

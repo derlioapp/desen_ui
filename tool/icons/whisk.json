@@ -1,17 +1,16 @@
 {
-  "upstream": "lucide-lab/whisk",
+  "upstream": "hugeicons/Whisk",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "utensils",
-    "kitchenware",
-    "cutlery",
-    "culinary",
+    "kitchen",
+    "beat",
+    "mix",
     "cooking",
-    "cookery",
-    "restaurant",
-    "chef",
-    "mix"
+    "egg",
+    "utensil"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

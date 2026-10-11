@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CallEnd02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "call",
+    "end",
+    "hang",
+    "up",
+    "hangup",
+    "finish"
+  ],
+  "aliases": [],
+  "mirror": false
+}

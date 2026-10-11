@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CallLocked",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "call",
+    "locked",
+    "private",
+    "secure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

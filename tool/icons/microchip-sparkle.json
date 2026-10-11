@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiChip",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "ai",
+    "chip",
+    "processor",
+    "sparkle",
+    "cpu"
+  ],
+  "aliases": [],
+  "mirror": false
+}

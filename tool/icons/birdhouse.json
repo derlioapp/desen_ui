@@ -1,13 +1,11 @@
 {
-  "upstream": "lucide/birdhouse",
+  "upstream": "hugeicons/Birdhouse",
+  "also": [],
   "category": "nature",
   "tags": [
-    "birdhouse",
     "bird",
-    "garden",
-    "home",
     "house",
-    "woodwork"
+    "nest"
   ],
   "aliases": [],
   "mirror": false

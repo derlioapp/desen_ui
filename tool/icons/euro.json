@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/euro",
+  "upstream": "hugeicons/Euro",
+  "also": [],
   "category": "finance",
   "tags": [
     "currency",

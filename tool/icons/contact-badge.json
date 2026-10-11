@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ContactRound",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "contact",
+    "badge",
+    "id",
+    "person",
+    "profile",
+    "lanyard"
+  ],
+  "aliases": [],
+  "mirror": false
+}

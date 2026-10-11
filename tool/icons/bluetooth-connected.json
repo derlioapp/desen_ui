@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/bluetooth-connected",
+  "upstream": "hugeicons/BluetoothConnected",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "paired"
+    "paired",
+    "wireless",
+    "connected",
+    "device"
   ],
   "aliases": [],
   "mirror": false

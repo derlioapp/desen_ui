@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/chart-scatter",
+  "upstream": "hugeicons/ChartScatter",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
-    "graph"
+    "scatter plot",
+    "dots",
+    "points",
+    "graph",
+    "statistics"
   ],
   "aliases": [
     "scatterPlot"

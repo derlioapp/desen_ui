@@ -1,18 +1,15 @@
 {
-  "upstream": "lucide-lab/steering-wheel",
+  "upstream": "hugeicons/Steering",
+  "also": [
+    "StreeringWheel"
+  ],
   "category": "sports",
   "tags": [
-    "driving",
-    "driver",
-    "racing",
-    "racer",
-    "motor sport",
-    "formula one",
-    "formula 1",
-    "f1",
+    "steering wheel",
+    "drive",
     "car",
-    "vehicle",
-    "direction"
+    "wheel",
+    "driving"
   ],
   "aliases": [],
   "mirror": false

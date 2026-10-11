@@ -1,21 +1,12 @@
 {
-  "upstream": "lucide/refresh-cw-off",
+  "upstream": "hugeicons/RefreshCwOff",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "rotate",
-    "reload",
-    "rerun",
-    "synchronise",
-    "synchronize",
-    "arrows",
-    "circular",
-    "cycle",
-    "cancel",
-    "no",
-    "stop",
-    "error",
-    "disconnect",
-    "ignore"
+    "refresh off",
+    "sync off",
+    "disabled",
+    "reload"
   ],
   "aliases": [],
   "mirror": false

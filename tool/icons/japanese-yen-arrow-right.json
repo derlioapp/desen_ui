@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/YenSend",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "currency",
+    "money",
+    "send",
+    "outgoing",
+    "transfer",
+    "yuan"
+  ],
+  "aliases": [],
+  "mirror": false
+}

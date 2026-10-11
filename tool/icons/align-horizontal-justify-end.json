@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/align-horizontal-justify-end",
+  "upstream": "hugeicons/AlignHorizontalJustifyEnd",
+  "also": [],
   "category": "layout",
   "tags": [
-    "right",
-    "items",
-    "flex",
-    "justify"
+    "align",
+    "horizontal",
+    "justify",
+    "end"
   ],
   "aliases": [],
   "mirror": false

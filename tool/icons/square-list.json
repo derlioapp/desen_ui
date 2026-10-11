@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Profile",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "profile",
+    "list",
+    "details",
+    "card",
+    "rows"
+  ],
+  "aliases": [],
+  "mirror": false
+}

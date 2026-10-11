@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FlipBottom",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "flip",
+    "mirror",
+    "bottom",
+    "dashed",
+    "transform"
+  ],
+  "aliases": [],
+  "mirror": false
+}

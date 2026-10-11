@@ -1,16 +1,15 @@
 {
-  "upstream": "lucide/boxes",
+  "upstream": "hugeicons/Boxes",
+  "also": [],
   "category": "shapes",
   "tags": [
+    "boxes",
     "cubes",
+    "stack",
     "packages",
-    "parts",
-    "group",
-    "units",
-    "collection",
-    "cluster",
-    "geometry"
+    "blocks"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

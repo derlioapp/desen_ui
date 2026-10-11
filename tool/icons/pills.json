@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Medicine02",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "pills",
+    "capsule",
+    "tablet",
+    "medicine",
+    "drugs",
+    "medication"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,20 +1,15 @@
 {
-  "upstream": "lucide/pill-bottle",
+  "upstream": "hugeicons/PillBottle",
+  "also": [],
   "category": "medical",
   "tags": [
+    "pill",
+    "bottle",
     "medicine",
-    "medication",
-    "prescription",
     "drug",
-    "supplement",
-    "vitamin",
-    "capsule",
-    "jar",
-    "container",
-    "healthcare",
-    "pharmaceutical",
-    "tablet"
+    "pharmacy"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

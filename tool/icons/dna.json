@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/dna",
+  "upstream": "hugeicons/Dna",
+  "also": [],
   "category": "medical",
   "tags": [
+    "dna",
     "gene",
-    "gmo",
     "helix",
-    "heredity",
-    "chromosome",
-    "nucleic acid"
+    "genetics",
+    "biology",
+    "chromosome"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

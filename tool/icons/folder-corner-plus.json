@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderAdd",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "add",
+    "create",
+    "new",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

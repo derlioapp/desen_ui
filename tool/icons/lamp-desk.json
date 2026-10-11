@@ -1,14 +1,17 @@
 {
-  "upstream": "lucide/lamp-desk",
+  "upstream": "hugeicons/LampDesk",
+  "also": [],
   "category": "home",
   "tags": [
+    "desk lamp",
+    "light",
+    "study",
+    "work",
     "lighting",
-    "household",
-    "office",
-    "desk",
-    "home",
-    "furniture"
+    "lamp"
   ],
-  "aliases": [],
+  "aliases": [
+    "deskLamp"
+  ],
   "mirror": false
 }

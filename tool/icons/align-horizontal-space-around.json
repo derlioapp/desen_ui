@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/align-horizontal-space-around",
+  "upstream": "hugeicons/AlignHorizontalSpaceAround",
+  "also": [],
   "category": "layout",
   "tags": [
-    "center",
-    "items",
-    "flex",
-    "justify",
-    "distribute",
-    "between"
+    "align",
+    "horizontal",
+    "space",
+    "around",
+    "distribute"
   ],
   "aliases": [],
   "mirror": false

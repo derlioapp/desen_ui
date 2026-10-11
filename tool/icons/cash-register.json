@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Cashier02",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "cashier",
+    "checkout",
+    "point of sale",
+    "till",
+    "store",
+    "register"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

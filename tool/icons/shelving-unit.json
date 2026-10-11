@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide/shelving-unit",
+  "upstream": "hugeicons/ShelvingUnit",
+  "also": [],
   "category": "home",
   "tags": [
-    "ledge",
-    "rack",
-    "storage",
-    "inventory",
-    "furniture",
-    "sill",
-    "shelves",
     "shelf",
-    "organize",
-    "display",
-    "store",
-    "arrange",
-    "unit",
-    "cabinet",
-    "fixture",
-    "retail",
-    "warehouse"
+    "storage",
+    "rack",
+    "bookcase",
+    "furniture"
   ],
   "aliases": [],
   "mirror": false

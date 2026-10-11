@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/truck-electric",
+  "upstream": "hugeicons/TruckElectric",
+  "also": [],
   "category": "transportation",
   "tags": [
+    "truck",
+    "electric",
+    "ev",
     "delivery",
-    "van",
-    "shipping",
-    "haulage",
-    "lorry",
-    "electric"
+    "green"
   ],
   "aliases": [],
   "mirror": false

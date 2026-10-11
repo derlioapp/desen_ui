@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatNotification",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "notification",
+    "unread",
+    "badge",
+    "alert"
+  ],
+  "aliases": [],
+  "mirror": false
+}

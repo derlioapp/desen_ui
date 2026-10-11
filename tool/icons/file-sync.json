@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileSync",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "sync",
+    "refresh",
+    "update",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

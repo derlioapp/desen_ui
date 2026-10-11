@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/copy-check",
+  "upstream": "hugeicons/CopyCheck",
+  "also": [],
   "category": "text",
   "tags": [
     "clone",
     "duplicate",
     "done",
+    "copied",
     "multiple"
   ],
   "aliases": [],

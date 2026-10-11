@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/globe-x",
-  "category": "connectivity",
+  "upstream": "hugeicons/GlobeX",
+  "also": [],
+  "category": "navigation",
   "tags": [
     "globe",
-    "internet",
-    "offline",
-    "disconnected",
-    "network",
-    "connection",
+    "x",
     "world",
-    "no connection",
-    "network failure",
-    "signal off"
+    "close",
+    "remove",
+    "internet"
   ],
   "aliases": [],
   "mirror": false

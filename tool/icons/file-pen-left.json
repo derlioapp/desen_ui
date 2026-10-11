@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FilePen",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "edit",
+    "write",
+    "modify",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

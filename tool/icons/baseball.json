@@ -1,13 +1,11 @@
 {
-  "upstream": "lucide-lab/baseball",
+  "upstream": "hugeicons/Baseball",
+  "also": [],
   "category": "sports",
   "tags": [
-    "home run",
-    "pitcher",
-    "bat",
-    "innings",
-    "rounders",
-    "bounce"
+    "ball",
+    "sport",
+    "game"
   ],
   "aliases": [],
   "mirror": false

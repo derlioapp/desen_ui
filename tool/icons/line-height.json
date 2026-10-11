@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ParagraphSpacing",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "paragraph",
+    "spacing",
+    "line height",
+    "leading",
+    "text"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,15 +1,16 @@
 {
-  "upstream": "lucide/calendar-cog",
+  "upstream": "hugeicons/CalendarCog",
+  "also": [
+    "CalendarSetting01"
+  ],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "events",
+    "calendar",
+    "cog",
     "settings",
     "gear",
-    "cog"
+    "schedule",
+    "setting"
   ],
   "aliases": [],
   "mirror": false

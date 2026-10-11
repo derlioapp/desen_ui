@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/radio-tower",
+  "upstream": "hugeicons/RadioTower",
+  "also": [],
   "category": "devices",
   "tags": [
-    "signal",
+    "radio tower",
+    "antenna",
     "broadcast",
-    "connectivity",
-    "live",
-    "frequency"
+    "signal",
+    "mast"
   ],
   "aliases": [],
   "mirror": false

@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/russian-ruble",
+  "upstream": "hugeicons/RussianRuble",
+  "also": [],
   "category": "finance",
   "tags": [
+    "ruble",
+    "russian ruble",
     "currency",
-    "money",
-    "payment"
+    "money"
   ],
   "aliases": [],
   "mirror": false

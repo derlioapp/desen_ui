@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/app-window",
+  "upstream": "hugeicons/AppWindow",
+  "also": [],
   "category": "layout",
   "tags": [
+    "window",
+    "browser",
     "application",
-    "menu bar",
-    "pane",
-    "executable"
+    "program",
+    "screen"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

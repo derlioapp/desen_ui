@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/vibrate-off",
-  "category": "devices",
+  "upstream": "hugeicons/VibrateOff",
+  "also": [],
+  "category": "connectivity",
   "tags": [
+    "vibration off",
+    "phone",
+    "haptic",
+    "silent",
     "smartphone",
-    "notification",
-    "rumble",
-    "haptic feedback",
-    "notifications",
-    "screen"
+    "disabled"
   ],
   "aliases": [],
   "mirror": false

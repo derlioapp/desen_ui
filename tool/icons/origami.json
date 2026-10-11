@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/origami",
+  "upstream": "hugeicons/Origami",
+  "also": [],
   "category": "animals",
   "tags": [
+    "origami",
     "paper",
-    "bird"
+    "bird",
+    "crane",
+    "fold"
   ],
   "aliases": [],
   "mirror": false

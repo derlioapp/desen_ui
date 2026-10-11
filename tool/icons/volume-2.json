@@ -1,10 +1,16 @@
 {
-  "upstream": "lucide/volume-2",
+  "upstream": "hugeicons/VolumeHigh",
+  "also": [
+    "Volume02"
+  ],
   "category": "connectivity",
   "tags": [
-    "music",
+    "speaker",
     "sound",
-    "speaker"
+    "audio",
+    "music",
+    "high volume",
+    "loud"
   ],
   "aliases": [
     "volumeUp",

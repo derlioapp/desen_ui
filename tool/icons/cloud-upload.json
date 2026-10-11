@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/cloud-upload",
+  "upstream": "hugeicons/CloudUpload",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "file"
+    "upload",
+    "save",
+    "storage",
+    "send",
+    "backup"
   ],
   "aliases": [],
   "mirror": false

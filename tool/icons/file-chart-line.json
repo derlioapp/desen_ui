@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/file-chart-line",
+  "upstream": "hugeicons/FileChartLine",
+  "also": [],
   "category": "files",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
-    "graph",
-    "presentation"
+    "report",
+    "chart",
+    "line",
+    "trend",
+    "document"
   ],
   "aliases": [],
   "mirror": false

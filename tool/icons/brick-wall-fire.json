@@ -1,28 +1,13 @@
 {
-  "upstream": "lucide/brick-wall-fire",
+  "upstream": "hugeicons/Firewall",
+  "also": [],
   "category": "security",
   "tags": [
     "firewall",
+    "network",
     "security",
-    "bricks",
-    "mortar",
-    "cement",
-    "materials",
-    "construction",
-    "builder",
-    "labourer",
-    "quantity surveyor",
-    "blocks",
-    "stone",
-    "campfire",
-    "camping",
-    "wilderness",
-    "outdoors",
-    "lit",
-    "warmth",
-    "wood",
-    "twigs",
-    "sticks"
+    "protection",
+    "fire"
   ],
   "aliases": [],
   "mirror": false

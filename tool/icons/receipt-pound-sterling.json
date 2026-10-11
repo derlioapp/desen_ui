@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide/receipt-pound-sterling",
+  "upstream": "hugeicons/ReceiptPoundSterling",
+  "also": [],
   "category": "finance",
   "tags": [
-    "bill",
-    "voucher",
-    "slip",
-    "check",
-    "counterfoil",
-    "british",
-    "currency",
-    "gbp",
-    "£"
+    "receipt",
+    "pound",
+    "invoice",
+    "bill"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TabletPen",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tablet",
+    "pen",
+    "stylus",
+    "draw",
+    "note"
+  ],
+  "aliases": [],
+  "mirror": false
+}

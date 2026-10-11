@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MenuSquare",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "menu",
+    "grid",
+    "squares",
+    "apps",
+    "dashboard",
+    "launcher"
+  ],
+  "aliases": [],
+  "mirror": false
+}

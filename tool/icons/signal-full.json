@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FullSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "signal",
+    "full",
+    "bars",
+    "network",
+    "strength"
+  ],
+  "aliases": [],
+  "mirror": false
+}

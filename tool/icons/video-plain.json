@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Video02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "camera",
+    "movie",
+    "film",
+    "recording",
+    "camcorder",
+    "record"
+  ],
+  "aliases": [],
+  "mirror": false
+}

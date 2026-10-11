@@ -1,13 +1,18 @@
 {
-  "upstream": "lucide/circle-divide",
+  "upstream": "hugeicons/CircleDivide",
+  "also": [
+    "DivideSignCircle"
+  ],
   "category": "math",
   "tags": [
-    "calculate",
+    "division",
+    "divide",
+    "calculator",
     "math",
-    "÷",
-    "/"
+    "obelus",
+    "circle",
+    "operator"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

@@ -1,28 +1,18 @@
 {
-  "upstream": "lucide/ellipsis",
-  "category": "layout",
+  "upstream": "hugeicons/Ellipsis",
+  "also": [
+    "MoreHorizontal",
+    "MoreHorizontalSquare01"
+  ],
+  "category": "navigation",
   "tags": [
-    "et cetera",
-    "etc",
-    "loader",
-    "loading",
-    "progress",
-    "pending",
-    "throbber",
-    "menu",
-    "options",
-    "operator",
-    "code",
-    "coding",
-    "spread",
-    "rest",
     "more",
-    "further",
-    "extra",
-    "overflow",
+    "menu",
     "dots",
-    "…",
-    "..."
+    "overflow",
+    "options",
+    "horizontal",
+    "square dots"
   ],
   "aliases": [
     "moreHoriz"

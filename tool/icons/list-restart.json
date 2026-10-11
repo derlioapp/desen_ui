@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/list-restart",
+  "upstream": "hugeicons/ListRestart",
+  "also": [],
   "category": "multimedia",
   "tags": [
     "reset",
-    "refresh",
+    "replay",
     "reload",
-    "playlist",
-    "replay"
+    "list",
+    "queue"
   ],
   "aliases": [],
   "mirror": true

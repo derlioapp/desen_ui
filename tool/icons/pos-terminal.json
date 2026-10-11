@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Cashier",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "cashier",
+    "checkout",
+    "point of sale",
+    "till",
+    "payment",
+    "terminal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

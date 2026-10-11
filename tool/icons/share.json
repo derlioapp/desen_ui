@@ -1,9 +1,16 @@
 {
-  "upstream": "lucide/share",
+  "upstream": "hugeicons/Share03",
+  "also": [
+    "Upload06"
+  ],
   "category": "account",
   "tags": [
-    "network",
-    "connections"
+    "share",
+    "upload",
+    "export",
+    "ios",
+    "arrow up",
+    "send"
   ],
   "aliases": [],
   "mirror": false

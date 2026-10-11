@@ -1,0 +1,21 @@
+{
+  "upstream": "hugeicons/ArrangeByLettersAZ",
+  "also": [
+    "SortingAZ02"
+  ],
+  "category": "text",
+  "tags": [
+    "sort",
+    "alphabetical",
+    "a-z",
+    "ascending",
+    "order",
+    "letters",
+    "az"
+  ],
+  "aliases": [
+    "arrowUpAZ",
+    "arrowDownZA"
+  ],
+  "mirror": false
+}

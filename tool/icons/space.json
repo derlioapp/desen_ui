@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/space",
+  "upstream": "hugeicons/Space",
+  "also": [],
   "category": "text",
   "tags": [
-    "text",
-    "selection",
-    "letters",
-    "characters",
-    "font",
-    "typography"
+    "space",
+    "keyboard",
+    "whitespace",
+    "gap"
   ],
   "aliases": [],
   "mirror": false

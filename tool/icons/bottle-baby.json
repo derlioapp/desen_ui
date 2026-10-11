@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide-lab/bottle-baby",
+  "upstream": "hugeicons/BabyBottle",
+  "also": [],
   "category": "account",
   "tags": [
-    "newborn",
-    "children",
+    "baby",
+    "bottle",
+    "milk",
+    "feeding",
     "infant",
-    "kids",
-    "toddler",
-    "mother",
-    "mum",
-    "family",
-    "milk"
+    "formula"
   ],
   "aliases": [],
   "mirror": false

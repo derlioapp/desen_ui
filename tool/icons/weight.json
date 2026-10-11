@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/weight",
+  "upstream": "hugeicons/Weight",
+  "also": [],
   "category": "math",
   "tags": [
     "mass",
     "heavy",
-    "lead",
-    "metal",
+    "kettlebell",
     "measure",
-    "geometry",
     "scales",
-    "balance"
+    "balance",
+    "lead"
   ],
   "aliases": [],
   "mirror": false

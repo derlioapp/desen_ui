@@ -1,13 +1,11 @@
 {
-  "upstream": "lucide/equal-not",
+  "upstream": "hugeicons/EqualNot",
+  "also": [],
   "category": "math",
   "tags": [
-    "calculate",
-    "off",
-    "math",
-    "operator",
-    "code",
-    "≠"
+    "not equal",
+    "inequality",
+    "different"
   ],
   "aliases": [],
   "mirror": false

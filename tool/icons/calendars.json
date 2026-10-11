@@ -1,14 +1,11 @@
 {
-  "upstream": "lucide/calendars",
+  "upstream": "hugeicons/Calendars",
+  "also": [],
   "category": "time",
   "tags": [
-    "date",
-    "month",
-    "year",
-    "event",
+    "calendars",
+    "multiple",
     "dates",
-    "months",
-    "years",
     "events"
   ],
   "aliases": [],

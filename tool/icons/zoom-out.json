@@ -1,10 +1,20 @@
 {
-  "upstream": "lucide/zoom-out",
+  "upstream": "hugeicons/ZoomOut",
+  "also": [
+    "SearchMinus"
+  ],
   "category": "accessibility",
   "tags": [
-    "magnifying glass",
-    "plus"
+    "magnifier",
+    "shrink",
+    "reduce",
+    "minus",
+    "search",
+    "zoom out",
+    "find"
   ],
-  "aliases": [],
+  "aliases": [
+    "searchMinus"
+  ],
   "mirror": false
 }

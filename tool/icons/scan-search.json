@@ -1,15 +1,17 @@
 {
-  "upstream": "lucide/scan-search",
+  "upstream": "hugeicons/ScanSearch",
+  "also": [
+    "SearchVisual"
+  ],
   "category": "photography",
   "tags": [
-    "preview",
-    "zoom",
-    "expand",
-    "fullscreen",
-    "gallery",
-    "image",
+    "scan",
+    "search",
+    "magnifier",
     "focus",
-    "lens"
+    "zoom",
+    "visual search",
+    "image search"
   ],
   "aliases": [],
   "mirror": false

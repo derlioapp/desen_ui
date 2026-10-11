@@ -1,22 +1,12 @@
 {
-  "upstream": "lucide-lab/shirt-t",
+  "upstream": "hugeicons/TShirt",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "jersey",
     "t-shirt",
-    "top",
-    "store",
+    "shirt",
     "clothing",
-    "clothes",
-    "apparel",
-    "attire",
-    "fashion",
-    "thread",
-    "cotton",
-    "casual",
-    "slim fit",
-    "regular",
-    "basics"
+    "apparel"
   ],
   "aliases": [],
   "mirror": false

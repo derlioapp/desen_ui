@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/stamp",
+  "upstream": "hugeicons/Stamp",
+  "also": [],
   "category": "design",
   "tags": [
+    "stamp",
+    "seal",
     "mark",
-    "print",
-    "clone",
-    "loyalty",
-    "library"
+    "approve",
+    "rubber stamp"
   ],
   "aliases": [],
   "mirror": false

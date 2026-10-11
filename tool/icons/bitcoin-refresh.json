@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ExchangeBitcoin",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "exchange",
+    "convert",
+    "crypto",
+    "swap",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

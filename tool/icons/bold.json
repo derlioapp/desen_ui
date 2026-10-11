@@ -1,11 +1,17 @@
 {
-  "upstream": "lucide/bold",
+  "upstream": "hugeicons/Bold",
+  "also": [
+    "TextBold"
+  ],
   "category": "text",
   "tags": [
-    "text",
     "strong",
-    "format"
+    "format",
+    "text",
+    "weight",
+    "bold"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

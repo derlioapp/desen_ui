@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/plug-2",
+  "upstream": "hugeicons/Plug01",
+  "also": [],
   "category": "devices",
   "tags": [
-    "electricity",
-    "energy",
-    "socket",
-    "outlet"
+    "plug",
+    "power",
+    "electric",
+    "cable"
   ],
   "aliases": [],
   "mirror": false

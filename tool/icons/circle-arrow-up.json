@@ -1,12 +1,16 @@
 {
-  "upstream": "lucide/circle-arrow-up",
+  "upstream": "hugeicons/CircleArrowUp02",
+  "also": [
+    "UploadCircle01"
+  ],
   "category": "arrows",
   "tags": [
-    "forward",
-    "direction",
+    "up",
+    "upload",
     "north",
-    "sign",
-    "button"
+    "direction",
+    "arrow",
+    "circle"
   ],
   "aliases": [],
   "mirror": false

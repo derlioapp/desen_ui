@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BitcoinInvoice",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "invoice",
+    "bill",
+    "document",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

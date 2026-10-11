@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/washing-machine",
+  "upstream": "hugeicons/WashingMachine",
+  "also": [],
   "category": "home",
   "tags": [
-    "tumble dryer",
-    "amenities",
-    "electronics",
-    "cycle",
+    "laundry",
+    "washer",
     "clothes",
+    "cleaning",
+    "appliance",
     "rinse",
-    "spin",
-    "drum"
+    "spin"
   ],
   "aliases": [],
   "mirror": false

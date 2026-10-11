@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/hard-drive-download",
+  "upstream": "hugeicons/HardDriveDownload",
+  "also": [],
   "category": "development",
   "tags": [
-    "computer",
-    "server",
-    "memory",
-    "data",
-    "ssd",
+    "storage",
     "disk",
-    "hard disk",
-    "save"
+    "download",
+    "backup",
+    "restore"
   ],
   "aliases": [],
   "mirror": false

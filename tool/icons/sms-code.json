@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SmsCode",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "sms",
+    "verification",
+    "otp",
+    "message",
+    "code",
+    "phone"
+  ],
+  "aliases": [],
+  "mirror": false
+}

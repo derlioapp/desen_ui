@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BurningCd",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "burning",
+    "cd",
+    "disc",
+    "drive",
+    "writer",
+    "burn"
+  ],
+  "aliases": [],
+  "mirror": false
+}

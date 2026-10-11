@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Timeline",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "timeline",
+    "clock",
+    "schedule",
+    "history",
+    "time"
+  ],
+  "aliases": [],
+  "mirror": false
+}

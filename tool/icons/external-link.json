@@ -1,10 +1,20 @@
 {
-  "upstream": "lucide/external-link",
+  "upstream": "hugeicons/ExternalLink",
+  "also": [
+    "LinkSquare01",
+    "Share05"
+  ],
   "category": "arrows",
   "tags": [
-    "outbound",
     "open",
-    "share"
+    "link",
+    "new tab",
+    "outbound",
+    "new window",
+    "outside",
+    "arrow",
+    "share",
+    "external"
   ],
   "aliases": [
     "openInNew"

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SignalLowMedium",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "signal",
+    "antenna",
+    "low",
+    "medium",
+    "strength",
+    "cellular"
+  ],
+  "aliases": [],
+  "mirror": false
+}

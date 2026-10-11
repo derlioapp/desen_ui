@@ -1,8 +1,14 @@
 {
-  "upstream": "lucide/network",
+  "upstream": "hugeicons/Network",
+  "also": [],
   "category": "development",
   "tags": [
-    "tree"
+    "network",
+    "hierarchy",
+    "tree",
+    "org chart",
+    "structure",
+    "nodes"
   ],
   "aliases": [],
   "mirror": false

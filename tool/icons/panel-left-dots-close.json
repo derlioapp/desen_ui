@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SidebarLeft01",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "sidebar",
+    "left",
+    "collapse",
+    "hide",
+    "drawer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

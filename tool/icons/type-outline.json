@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/type-outline",
+  "upstream": "hugeicons/TypeOutline",
+  "also": [],
   "category": "text",
   "tags": [
-    "text",
+    "type",
+    "outline",
     "font",
     "typography",
-    "silhouette",
-    "profile",
-    "contour",
-    "stroke",
-    "line"
+    "text"
   ],
   "aliases": [],
   "mirror": false

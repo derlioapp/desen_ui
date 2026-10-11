@@ -1,20 +1,12 @@
 {
-  "upstream": "lucide/book-key",
+  "upstream": "hugeicons/BookKey",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "coding",
-    "version control",
-    "git",
-    "repository",
-    "private",
-    "public",
     "secret",
-    "unlocked",
-    "hidden",
-    "revealed",
-    "knowledge",
-    "learning"
+    "private",
+    "password",
+    "journal"
   ],
   "aliases": [],
   "mirror": false

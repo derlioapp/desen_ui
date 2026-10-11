@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide/engine",
+  "upstream": "hugeicons/Engine",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "vehicle",
-    "power",
-    "energy",
-    "drive",
-    "repair",
-    "car",
     "motor",
-    "mechanical",
-    "diagnostics",
-    "maintenance",
-    "warning",
-    "dashboard",
-    "parts"
+    "car",
+    "check engine",
+    "vehicle"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FocusPoint",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "focus",
+    "autofocus",
+    "camera",
+    "dashed",
+    "viewfinder"
+  ],
+  "aliases": [],
+  "mirror": false
+}

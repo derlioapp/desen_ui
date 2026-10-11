@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Humidity",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "humidity",
+    "water",
+    "moisture",
+    "droplet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

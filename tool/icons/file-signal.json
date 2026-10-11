@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/file-signal",
+  "upstream": "hugeicons/FileSignal",
+  "also": [],
   "category": "files",
   "tags": [
-    "audio",
-    "music",
-    "volume"
+    "wifi",
+    "wireless",
+    "share",
+    "document"
   ],
   "aliases": [],
   "mirror": false

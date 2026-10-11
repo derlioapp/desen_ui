@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/house",
+  "upstream": "hugeicons/Home01",
+  "also": [],
   "category": "buildings",
   "tags": [
     "home",
-    "living",
+    "house",
     "building",
     "residence",
-    "architecture"
+    "main"
   ],
   "aliases": [
     "home"

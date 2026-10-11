@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Purse",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "purse",
+    "wallet",
+    "coins",
+    "money"
+  ],
+  "aliases": [],
+  "mirror": false
+}

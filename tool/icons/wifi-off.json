@@ -1,8 +1,15 @@
 {
-  "upstream": "lucide/wifi-off",
+  "upstream": "hugeicons/WifiOff01",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "disabled"
+    "wifi",
+    "disabled",
+    "offline",
+    "no",
+    "connection",
+    "crossed",
+    "out"
   ],
   "aliases": [],
   "mirror": false

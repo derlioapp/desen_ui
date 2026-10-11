@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/square-parking-off",
+  "upstream": "hugeicons/SquareParkingOff",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "parking lot",
-    "car park",
-    "no parking"
+    "no parking",
+    "parking off",
+    "prohibited",
+    "p sign"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

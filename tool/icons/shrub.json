@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/shrub",
+  "upstream": "hugeicons/Shrub",
+  "also": [],
   "category": "nature",
   "tags": [
-    "forest",
-    "undergrowth",
-    "park",
-    "nature"
+    "bush",
+    "plant",
+    "tree",
+    "garden",
+    "greenery"
   ],
   "aliases": [],
   "mirror": false

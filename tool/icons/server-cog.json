@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/server-cog",
+  "upstream": "hugeicons/ServerCog",
+  "also": [],
   "category": "development",
   "tags": [
-    "cloud",
-    "storage",
-    "computing",
-    "cog",
-    "gear"
+    "server settings",
+    "config",
+    "hosting",
+    "gear",
+    "admin"
   ],
   "aliases": [],
   "mirror": false

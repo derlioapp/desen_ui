@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/hdmi-port",
+  "upstream": "hugeicons/HdmiPort",
+  "also": [],
   "category": "devices",
   "tags": [
-    "socket",
-    "plug",
-    "slot",
-    "controller",
+    "hdmi",
+    "port",
     "connector",
-    "interface",
-    "console",
-    "signal",
-    "audio",
     "video",
-    "visual",
-    "av",
-    "data",
-    "input",
-    "output"
+    "display"
   ],
   "aliases": [],
   "mirror": false

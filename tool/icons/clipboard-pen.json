@@ -1,5 +1,44 @@
 {
-  "upstream": "lucide/clipboard-pen",
+  "upstream": "desen/clipboard-pen",
+  "derived": {
+    "parts": [
+      {
+        "from": "ClipboardMinus",
+        "keep": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": "ClipboardPen",
+        "keep": [
+          2
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        18.5,
+        19.5,
+        8.2
+      ],
+      [
+        13,
+        22,
+        3.6
+      ]
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "paste",

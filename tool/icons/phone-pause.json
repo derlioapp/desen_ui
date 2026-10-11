@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CallPaused",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "call",
+    "hold",
+    "pause",
+    "telephone",
+    "handset"
+  ],
+  "aliases": [],
+  "mirror": false
+}

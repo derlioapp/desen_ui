@@ -1,0 +1,19 @@
+{
+  "upstream": "hugeicons/CalendarRemove02",
+  "also": [
+    "CalendarX"
+  ],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "remove",
+    "x",
+    "cancel",
+    "delete",
+    "inside"
+  ],
+  "aliases": [
+    "calendarX2"
+  ],
+  "mirror": false
+}

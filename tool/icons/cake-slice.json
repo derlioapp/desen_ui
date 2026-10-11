@@ -1,20 +1,12 @@
 {
-  "upstream": "lucide/cake-slice",
+  "upstream": "hugeicons/CakeSlice",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "birthday",
-    "birthdate",
-    "celebration",
-    "party",
-    "surprise",
-    "gateaux",
+    "cake",
+    "slice",
     "dessert",
-    "candles",
-    "wish",
-    "fondant",
-    "icing sugar",
-    "sweet",
-    "baking"
+    "piece"
   ],
   "aliases": [],
   "mirror": false

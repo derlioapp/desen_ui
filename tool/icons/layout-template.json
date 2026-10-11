@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/layout-template",
+  "upstream": "hugeicons/LayoutTemplate",
+  "also": [],
   "category": "layout",
   "tags": [
-    "window",
-    "webpage",
-    "block",
-    "section"
+    "template",
+    "layout",
+    "wireframe",
+    "page",
+    "header",
+    "blocks"
   ],
   "aliases": [],
   "mirror": false

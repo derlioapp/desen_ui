@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileStar",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "favorite",
+    "star",
+    "important",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

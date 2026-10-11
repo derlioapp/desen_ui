@@ -1,11 +1,11 @@
 {
-  "upstream": "lucide/satellite-dish",
+  "upstream": "hugeicons/SatelliteDish",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "antenna",
     "receiver",
     "dish aerial",
-    "saucer",
     "communication",
     "broadcast",
     "signal"

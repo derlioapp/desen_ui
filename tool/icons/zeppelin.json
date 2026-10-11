@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Zeppelin",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "airship",
+    "blimp",
+    "dirigible",
+    "flight",
+    "balloon"
+  ],
+  "aliases": [],
+  "mirror": false
+}

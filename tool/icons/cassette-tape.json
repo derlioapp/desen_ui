@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/cassette-tape",
-  "category": "connectivity",
+  "upstream": "hugeicons/CassetteTape",
+  "also": [],
+  "category": "devices",
   "tags": [
     "audio",
+    "tape",
+    "retro",
     "music",
-    "recording",
-    "play"
+    "mixtape",
+    "cassette"
   ],
   "aliases": [],
   "mirror": false

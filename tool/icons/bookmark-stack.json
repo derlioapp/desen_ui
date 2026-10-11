@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CollectionsBookmark",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "collections",
+    "bookmark",
+    "saved",
+    "stack",
+    "favorites"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CustomField",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "custom field",
+    "input",
+    "dropdown",
+    "select",
+    "form",
+    "field"
+  ],
+  "aliases": [],
+  "mirror": false
+}

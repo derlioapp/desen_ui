@@ -1,10 +1,16 @@
 {
-  "upstream": "lucide/volume-1",
+  "upstream": "hugeicons/VolumeLow",
+  "also": [
+    "Volume01"
+  ],
   "category": "connectivity",
   "tags": [
-    "music",
+    "speaker",
     "sound",
-    "speaker"
+    "audio",
+    "music",
+    "low volume",
+    "quiet"
   ],
   "aliases": [
     "volumeLow"

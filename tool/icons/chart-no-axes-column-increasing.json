@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/chart-no-axes-column-increasing",
+  "upstream": "hugeicons/ChartNoAxesColumnIncreasing",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
+    "ascending",
+    "bars",
     "graph",
-    "trending up"
+    "statistics",
+    "growth"
   ],
   "aliases": [],
   "mirror": false

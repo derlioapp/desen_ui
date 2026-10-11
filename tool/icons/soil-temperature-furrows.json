@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SoilTemperatureGlobal",
+  "also": [],
+  "category": "nature",
+  "tags": [
+    "soil",
+    "temperature",
+    "heat",
+    "map",
+    "satellite",
+    "global"
+  ],
+  "aliases": [],
+  "mirror": false
+}

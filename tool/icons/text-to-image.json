@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TextToImage",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "text to image",
+    "generate",
+    "ai",
+    "image",
+    "type"
+  ],
+  "aliases": [],
+  "mirror": false
+}

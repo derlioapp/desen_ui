@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CameraRotated01",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "photo",
+    "flip camera",
+    "switch camera",
+    "selfie",
+    "rotate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

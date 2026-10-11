@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PowerSocket02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "power",
+    "socket",
+    "outlet",
+    "electric",
+    "slot"
+  ],
+  "aliases": [],
+  "mirror": false
+}

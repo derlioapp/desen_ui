@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Pulley",
+  "also": [],
+  "category": "tools",
+  "tags": [
+    "pulley",
+    "lift",
+    "hoist",
+    "rope",
+    "tool"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

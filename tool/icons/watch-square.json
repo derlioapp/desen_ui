@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide-lab/watch-square",
+  "upstream": "hugeicons/Watch02",
+  "also": [],
   "category": "time",
   "tags": [
+    "wristwatch",
+    "smartwatch",
     "clock",
+    "time",
     "wearable",
-    "wrist",
-    "strap",
-    "face",
-    "digital",
-    "touchscreen",
-    "smart",
-    "gadget",
-    "technology",
-    "mobile"
+    "square"
   ],
   "aliases": [],
   "mirror": false

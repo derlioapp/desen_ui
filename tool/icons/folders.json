@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/folders",
+  "upstream": "hugeicons/Folders",
+  "also": [],
   "category": "files",
   "tags": [
+    "folders",
     "multiple",
-    "copy",
-    "directories"
+    "directories",
+    "copy"
   ],
   "aliases": [],
   "mirror": false

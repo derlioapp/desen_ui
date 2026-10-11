@@ -1,11 +1,16 @@
 {
-  "upstream": "lucide/tree-deciduous",
+  "upstream": "hugeicons/TreeDeciduous",
+  "also": [
+    "Tree06"
+  ],
   "category": "nature",
   "tags": [
     "tree",
     "forest",
     "park",
-    "nature"
+    "nature",
+    "deciduous",
+    "canopy"
   ],
   "aliases": [
     "tree"

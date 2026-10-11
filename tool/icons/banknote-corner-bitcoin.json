@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinMoney01",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "banknote",
+    "cash",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

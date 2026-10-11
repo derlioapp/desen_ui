@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiScheduling",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "ai",
+    "scheduling",
+    "calendar",
+    "planner",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

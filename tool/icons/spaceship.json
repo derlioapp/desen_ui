@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AircraftGame",
+  "also": [],
+  "category": "gaming",
+  "tags": [
+    "aircraft",
+    "game",
+    "spaceship",
+    "fighter",
+    "shooter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

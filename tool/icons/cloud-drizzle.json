@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/cloud-drizzle",
+  "upstream": "hugeicons/CloudLittleRain",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "shower"
+    "light rain",
+    "drizzle",
+    "shower",
+    "rain",
+    "dashes"
   ],
   "aliases": [],
   "mirror": false

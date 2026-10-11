@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/cloud-moon",
+  "upstream": "hugeicons/MoonCloud",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "night"
+    "night",
+    "cloudy",
+    "moon",
+    "cloud",
+    "evening"
   ],
   "aliases": [],
   "mirror": false

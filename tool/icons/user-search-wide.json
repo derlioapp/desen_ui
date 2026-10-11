@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/UserSearch02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "find user",
+    "search",
+    "lookup",
+    "magnifier",
+    "person",
+    "account"
+  ],
+  "aliases": [],
+  "mirror": false
+}

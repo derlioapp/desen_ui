@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/scan-face",
+  "upstream": "hugeicons/ScanFace",
+  "also": [],
   "category": "account",
   "tags": [
-    "face",
+    "face id",
+    "face scan",
     "biometric",
-    "identification",
-    "authentication",
-    "2fa",
-    "access",
-    "login",
-    "dashed"
+    "recognition",
+    "smile"
   ],
   "aliases": [
     "faceId"

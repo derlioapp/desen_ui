@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/TextSquare",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "text",
+    "square",
+    "letter",
+    "font",
+    "typography"
+  ],
+  "aliases": [
+    "typeSquare"
+  ],
+  "mirror": false
+}

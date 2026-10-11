@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/pi",
+  "upstream": "hugeicons/Pi",
+  "also": [],
   "category": "development",
   "tags": [
+    "pi",
+    "math",
     "constant",
-    "code",
-    "coding",
-    "programming",
-    "symbol",
-    "trigonometry",
-    "geometry",
-    "formula"
+    "3.14",
+    "greek"
   ],
   "aliases": [],
   "mirror": false

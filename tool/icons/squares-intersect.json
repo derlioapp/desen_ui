@@ -1,14 +1,15 @@
 {
-  "upstream": "lucide/squares-intersect",
+  "upstream": "hugeicons/SquaresIntersect",
+  "also": [
+    "PathfinderIntersect"
+  ],
   "category": "design",
   "tags": [
-    "square",
-    "pathfinder",
-    "path",
     "intersect",
-    "shape",
-    "include",
-    "vector"
+    "boolean",
+    "shapes",
+    "overlap",
+    "pathfinder"
   ],
   "aliases": [],
   "mirror": false

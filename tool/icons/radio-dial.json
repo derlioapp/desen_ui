@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Radio01",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "radio",
+    "dial",
+    "tuner",
+    "antenna",
+    "music"
+  ],
+  "aliases": [],
+  "mirror": false
+}

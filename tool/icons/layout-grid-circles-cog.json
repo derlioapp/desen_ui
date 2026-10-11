@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/DashboardCircleSettings",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "dashboard",
+    "grid",
+    "circles",
+    "settings",
+    "cog",
+    "gear",
+    "configure",
+    "widget"
+  ],
+  "aliases": [],
+  "mirror": false
+}

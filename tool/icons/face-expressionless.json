@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/face-expressionless",
+  "upstream": "hugeicons/Meh",
+  "also": [],
   "category": "social",
   "tags": [
-    "nuisance",
-    "annoyed",
-    "annoyance",
-    "frustration",
+    "face",
+    "meh",
+    "neutral",
     "emoji",
-    "emotion"
+    "indifferent",
+    "reaction"
   ],
   "aliases": [],
   "mirror": false

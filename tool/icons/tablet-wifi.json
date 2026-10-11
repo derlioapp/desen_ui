@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TabletConnectedWifi",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tablet",
+    "wifi",
+    "connected",
+    "wireless",
+    "network"
+  ],
+  "aliases": [],
+  "mirror": false
+}

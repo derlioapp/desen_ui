@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/wallet",
+  "upstream": "hugeicons/Wallet01",
+  "also": [],
   "category": "account",
   "tags": [
     "money",
     "finance",
-    "pocket"
+    "pocket",
+    "payment",
+    "purse",
+    "cash"
   ],
   "aliases": [],
   "mirror": false

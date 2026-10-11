@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FileCloud",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "cloud",
+    "sync",
+    "online",
+    "storage",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

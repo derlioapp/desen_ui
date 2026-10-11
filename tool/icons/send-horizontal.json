@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/send-horizontal",
+  "upstream": "hugeicons/SendHorizontal",
+  "also": [],
   "category": "mail",
   "tags": [
-    "email",
+    "send",
+    "arrow",
     "message",
-    "mail",
-    "paper airplane",
-    "paper aeroplane",
-    "submit"
+    "submit",
+    "paper plane"
   ],
   "aliases": [],
   "mirror": true

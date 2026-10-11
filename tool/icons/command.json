@@ -1,13 +1,16 @@
 {
-  "upstream": "lucide/command",
+  "upstream": "hugeicons/Command",
+  "also": [],
   "category": "development",
   "tags": [
     "keyboard",
     "key",
     "mac",
     "cmd",
-    "button"
+    "button",
+    "shortcut"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

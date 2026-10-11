@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DraftingCompass",
+  "also": [],
+  "category": "tools",
+  "tags": [
+    "drafting",
+    "compass",
+    "drawing",
+    "geometry",
+    "design",
+    "architect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

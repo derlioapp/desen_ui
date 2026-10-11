@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ArchiveX",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "inbox",
+    "tray",
+    "remove",
+    "discard",
+    "close",
+    "clear"
+  ],
+  "aliases": [],
+  "mirror": false
+}

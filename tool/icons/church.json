@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/church",
+  "upstream": "hugeicons/Church",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "temple",
+    "chapel",
+    "religion",
+    "christian",
+    "cross",
+    "worship",
     "building"
   ],
   "aliases": [],

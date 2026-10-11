@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/hand-helping",
+  "upstream": "hugeicons/HandHelping",
+  "also": [],
   "category": "social",
   "tags": [
-    "agreement",
     "help",
-    "proposal",
-    "charity",
-    "begging",
-    "terms"
+    "support",
+    "offer",
+    "assist",
+    "give"
   ],
   "aliases": [],
   "mirror": false

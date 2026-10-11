@@ -1,29 +1,12 @@
 {
-  "upstream": "lucide/spotlight",
+  "upstream": "hugeicons/Spotlight",
+  "also": [],
   "category": "devices",
   "tags": [
-    "winner",
-    "soapbox",
+    "spotlight",
     "stage",
-    "entertainment",
-    "drama",
-    "podium",
-    "actor",
-    "actress",
-    "singer",
     "light",
-    "beam",
-    "play",
-    "theatre",
-    "show",
-    "focus",
-    "concert",
-    "performance",
-    "lens",
-    "leaderboard",
-    "followspot",
-    "best",
-    "highlight"
+    "focus"
   ],
   "aliases": [],
   "mirror": false

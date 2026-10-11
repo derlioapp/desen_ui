@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DatabaseExpand",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "database",
+    "expand",
+    "fullscreen",
+    "focus",
+    "storage",
+    "scan"
+  ],
+  "aliases": [],
+  "mirror": false
+}

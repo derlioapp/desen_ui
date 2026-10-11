@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CursorProgress02",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "cursor",
+    "progress",
+    "busy",
+    "loading",
+    "spinner",
+    "pointer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

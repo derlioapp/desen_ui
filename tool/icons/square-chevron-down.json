@@ -1,10 +1,15 @@
 {
-  "upstream": "lucide/square-chevron-down",
+  "upstream": "hugeicons/SquareChevronDown",
+  "also": [
+    "SquareArrowDown01"
+  ],
   "category": "arrows",
   "tags": [
-    "back",
-    "menu",
-    "panel"
+    "down",
+    "chevron",
+    "expand",
+    "dropdown",
+    "direction"
   ],
   "aliases": [],
   "mirror": false

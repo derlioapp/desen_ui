@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Tick03",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "done",
+    "tick",
+    "complete",
+    "bold check",
+    "confirm"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Queue02",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "queue",
+    "rows",
+    "list",
+    "two"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

@@ -1,5 +1,24 @@
 {
-  "upstream": "lucide/case-upper",
+  "upstream": "desen/case-upper",
+  "derived": {
+    "parts": [
+      {
+        "from": "ALargeSmall",
+        "keep": [
+          0,
+          3
+        ]
+      },
+      {
+        "from": "CaseUpper",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "text",
@@ -9,5 +28,6 @@
     "typography"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

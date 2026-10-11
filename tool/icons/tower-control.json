@@ -1,12 +1,18 @@
 {
-  "upstream": "lucide/tower-control",
+  "upstream": "hugeicons/TowerControl",
+  "also": [
+    "AirportTower"
+  ],
   "category": "travel",
   "tags": [
+    "control tower",
     "airport",
-    "travel",
+    "aviation",
+    "atc",
+    "control",
     "tower",
-    "transportation",
-    "lighthouse"
+    "air",
+    "traffic"
   ],
   "aliases": [],
   "mirror": false

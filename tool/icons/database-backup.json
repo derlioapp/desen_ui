@@ -1,16 +1,29 @@
 {
-  "upstream": "lucide/database-backup",
+  "upstream": "desen/database-backup",
+  "derived": {
+    "parts": [
+      {
+        "from": "DatabaseBackup",
+        "keep": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "paths": [
+      "M14.1936 13V16.3064H17"
+    ]
+  },
+  "also": [],
   "category": "devices",
   "tags": [
-    "storage",
-    "memory",
-    "bytes",
-    "servers",
+    "database",
     "backup",
-    "timemachine",
-    "rotate",
-    "arrow",
-    "left"
+    "restore",
+    "history",
+    "storage"
   ],
   "aliases": [],
   "mirror": false

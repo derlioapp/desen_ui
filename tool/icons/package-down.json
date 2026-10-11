@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PackageReceive",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "package",
+    "receive",
+    "incoming",
+    "download",
+    "box"
+  ],
+  "aliases": [],
+  "mirror": false
+}

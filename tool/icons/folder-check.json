@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/folder-check",
+  "upstream": "hugeicons/FolderCheck",
+  "also": [],
   "category": "files",
   "tags": [
+    "folder",
+    "check",
     "done",
-    "directory",
-    "todo",
-    "tick",
     "complete",
-    "task"
+    "directory"
   ],
   "aliases": [],
   "mirror": false

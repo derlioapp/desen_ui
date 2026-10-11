@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/contact-round",
+  "upstream": "hugeicons/Contact01",
+  "also": [],
   "category": "account",
   "tags": [
-    "user",
+    "contact",
+    "address book",
     "person",
-    "family",
-    "friend",
-    "acquaintance",
-    "listing",
-    "networking"
+    "directory",
+    "user"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

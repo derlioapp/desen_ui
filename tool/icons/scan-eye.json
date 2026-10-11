@@ -1,25 +1,20 @@
 {
-  "upstream": "lucide/scan-eye",
+  "upstream": "hugeicons/ScanEye",
+  "also": [
+    "Vision"
+  ],
   "category": "photography",
   "tags": [
-    "preview",
-    "zoom",
-    "expand",
-    "fullscreen",
-    "gallery",
-    "image",
-    "camera",
-    "watch",
-    "surveillance",
+    "eye scan",
     "retina",
-    "focus",
-    "lens",
     "biometric",
-    "identification",
-    "authentication",
-    "access",
-    "login"
+    "vision",
+    "iris",
+    "detection",
+    "focus"
   ],
-  "aliases": [],
+  "aliases": [
+    "view"
+  ],
   "mirror": false
 }

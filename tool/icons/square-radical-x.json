@@ -1,0 +1,20 @@
+{
+  "upstream": "hugeicons/Math",
+  "also": [
+    "SquareRootSquare"
+  ],
+  "category": "math",
+  "tags": [
+    "math",
+    "root",
+    "square root",
+    "formula",
+    "calculate",
+    "radical",
+    "sqrt",
+    "x",
+    "algebra"
+  ],
+  "aliases": [],
+  "mirror": false
+}

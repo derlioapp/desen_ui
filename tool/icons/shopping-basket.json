@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/shopping-basket",
+  "upstream": "hugeicons/ShoppingBasket03",
+  "also": [],
   "category": "shopping",
   "tags": [
     "cart",
-    "e-commerce",
-    "store",
+    "basket",
     "purchase",
-    "products",
-    "items",
-    "ingredients"
+    "store",
+    "groceries"
   ],
   "aliases": [],
   "mirror": false

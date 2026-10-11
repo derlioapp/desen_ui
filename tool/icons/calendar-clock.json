@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/calendar-clock",
+  "upstream": "hugeicons/CalendarClock",
+  "also": [],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "event",
+    "calendar",
     "clock",
-    "hour"
+    "time",
+    "schedule",
+    "appointment"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MarketOrder",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "market",
+    "order",
+    "price",
+    "line",
+    "trade",
+    "entry"
+  ],
+  "aliases": [],
+  "mirror": false
+}

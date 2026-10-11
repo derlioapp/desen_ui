@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/receipt",
+  "upstream": "hugeicons/Receipt",
+  "also": [],
   "category": "finance",
   "tags": [
-    "bill",
-    "voucher",
-    "slip",
-    "check",
-    "counterfoil",
-    "currency",
+    "receipt",
     "dollar",
-    "usd",
-    "$"
+    "invoice",
+    "bill",
+    "payment"
   ],
   "aliases": [],
   "mirror": false

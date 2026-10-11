@@ -1,17 +1,11 @@
 {
-  "upstream": "lucide/pyramid",
+  "upstream": "hugeicons/Pyramid",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "prism",
-    "triangle",
-    "triangular",
-    "hierarchy",
-    "structure",
-    "geometry",
-    "ancient",
-    "egyptian",
-    "landmark",
-    "tourism"
+    "pyramid",
+    "shape",
+    "geometry"
   ],
   "aliases": [],
   "mirror": false

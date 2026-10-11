@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ArchiveOff04",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "inbox",
+    "tray",
+    "disabled",
+    "no mail",
+    "crossed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ChartHistogram",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "distribution",
+    "bars",
+    "bell curve",
+    "frequency",
+    "statistics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CircleLockCheck02",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "padlock",
+    "verified",
+    "secure",
+    "approved",
+    "confirm"
+  ],
+  "aliases": [],
+  "mirror": false
+}

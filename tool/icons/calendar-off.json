@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/calendar-off",
+  "upstream": "hugeicons/CalendarOff",
+  "also": [],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "event",
-    "delete",
-    "remove"
+    "calendar",
+    "off",
+    "disabled",
+    "cancelled",
+    "slash"
   ],
   "aliases": [],
   "mirror": false

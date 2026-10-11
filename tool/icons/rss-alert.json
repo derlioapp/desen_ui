@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/RssError",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "rss",
+    "error",
+    "feed",
+    "alert",
+    "warning"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/droplet",
+  "upstream": "hugeicons/RainDrop",
+  "also": [],
   "category": "weather",
   "tags": [
+    "rain drop",
     "water",
-    "weather",
     "liquid",
-    "fluid",
-    "wet",
-    "moisture",
-    "damp",
-    "bead",
-    "globule"
+    "drop",
+    "moisture"
   ],
   "aliases": [],
   "mirror": false

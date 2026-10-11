@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/moon",
-  "category": "accessibility",
+  "upstream": "hugeicons/Moon02",
+  "also": [],
+  "category": "weather",
   "tags": [
-    "dark",
-    "night"
+    "moon",
+    "night",
+    "crescent",
+    "dark mode",
+    "sleep"
   ],
   "aliases": [
     "darkMode"

@@ -1,13 +1,18 @@
 {
-  "upstream": "lucide/bike",
+  "upstream": "hugeicons/Bicycle",
+  "also": [
+    "Bicycle01"
+  ],
   "category": "transportation",
   "tags": [
     "bicycle",
+    "cycling",
     "transport",
     "trip"
   ],
   "aliases": [
     "bicycle"
   ],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

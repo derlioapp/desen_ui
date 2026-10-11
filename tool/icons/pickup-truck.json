@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Pickup01",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "pickup",
+    "truck",
+    "vehicle",
+    "car",
+    "cargo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

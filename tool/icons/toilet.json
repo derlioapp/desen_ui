@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/toilet",
+  "upstream": "hugeicons/Toilet01",
+  "also": [],
   "category": "devices",
   "tags": [
     "toilet",
-    "potty",
+    "wc",
     "bathroom",
-    "washroom"
+    "restroom"
   ],
   "aliases": [],
   "mirror": false

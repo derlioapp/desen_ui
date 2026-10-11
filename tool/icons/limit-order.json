@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LimitOrder",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "trade",
+    "stock",
+    "price",
+    "order",
+    "market",
+    "exchange"
+  ],
+  "aliases": [],
+  "mirror": false
+}

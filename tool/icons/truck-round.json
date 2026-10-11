@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/ShippingTruck01",
+  "also": [
+    "ShippingTruck02"
+  ],
+  "category": "transportation",
+  "tags": [
+    "delivery",
+    "shipping",
+    "lorry",
+    "cargo",
+    "freight"
+  ],
+  "aliases": [],
+  "mirror": false
+}

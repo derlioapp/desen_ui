@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/drill",
+  "upstream": "hugeicons/Drill",
+  "also": [],
   "category": "tools",
   "tags": [
-    "power",
-    "bit",
-    "head",
-    "hole",
+    "drill",
+    "power tool",
+    "cordless",
+    "construction",
     "diy",
-    "toolbox",
-    "build",
-    "construction"
+    "screwdriver"
   ],
   "aliases": [],
   "mirror": false

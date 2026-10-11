@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LoginMethod",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "login",
+    "password",
+    "mask",
+    "padlock",
+    "authentication",
+    "sign in options"
+  ],
+  "aliases": [],
+  "mirror": false
+}

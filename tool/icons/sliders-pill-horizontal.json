@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/PreferenceHorizontal",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "preferences",
+    "settings",
+    "sliders",
+    "adjust"
+  ],
+  "aliases": [],
+  "mirror": false
+}

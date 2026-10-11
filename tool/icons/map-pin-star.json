@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/LocationStar01",
+  "also": [
+    "LocationStar02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "favorite",
+    "starred",
+    "rating"
+  ],
+  "aliases": [],
+  "mirror": false
+}

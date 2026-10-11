@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/badge-euro",
+  "upstream": "hugeicons/BadgeEuro",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "discount",
-    "offer",
-    "sale",
-    "voucher",
-    "tag",
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "exchange",
-    "transaction",
-    "payment",
-    "€"
+    "euro",
+    "price",
+    "eur",
+    "money",
+    "badge"
   ],
   "aliases": [],
   "mirror": false

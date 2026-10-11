@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderManagement",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "management",
+    "settings",
+    "cog",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

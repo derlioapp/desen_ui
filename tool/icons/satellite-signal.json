@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Satellite03",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "satellite",
+    "orbit",
+    "transmit",
+    "space",
+    "signal"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

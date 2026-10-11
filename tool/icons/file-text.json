@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/file-text",
+  "upstream": "hugeicons/FileText",
+  "also": [],
   "category": "files",
   "tags": [
-    "data",
-    "txt",
-    "pdf",
-    "document"
+    "document",
+    "text",
+    "paragraph",
+    "page"
   ],
   "aliases": [],
   "mirror": false

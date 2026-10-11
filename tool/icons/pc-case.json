@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/pc-case",
+  "upstream": "hugeicons/PcCase",
+  "also": [],
   "category": "devices",
   "tags": [
+    "pc",
+    "case",
+    "tower",
     "computer",
-    "chassis"
+    "desktop"
   ],
   "aliases": [],
   "mirror": false

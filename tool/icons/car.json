@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/car",
+  "upstream": "hugeicons/Car04",
+  "also": [],
   "category": "transportation",
   "tags": [
     "vehicle",
-    "drive",
-    "trip",
-    "journey"
+    "automobile",
+    "auto",
+    "side view",
+    "sedan"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

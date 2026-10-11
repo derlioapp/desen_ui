@@ -1,9 +1,11 @@
 {
-  "upstream": "lucide/square-bookmark",
+  "upstream": "hugeicons/Bookmark03",
+  "also": [],
   "category": "photography",
   "tags": [
-    "photo",
-    "book"
+    "bookmark",
+    "save",
+    "favorite"
   ],
   "aliases": [],
   "mirror": false

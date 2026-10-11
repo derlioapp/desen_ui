@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/lock-keyhole-open",
+  "upstream": "hugeicons/SquareUnlock02",
+  "also": [],
   "category": "security",
   "tags": [
-    "security"
+    "unlock",
+    "open",
+    "keyhole",
+    "unlocked",
+    "padlock"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ShieldKey",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "security key",
+    "access",
+    "protect",
+    "credential",
+    "secret"
+  ],
+  "aliases": [],
+  "mirror": false
+}

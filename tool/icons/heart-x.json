@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/heart-x",
+  "upstream": "hugeicons/HeartRemove",
+  "also": [],
   "category": "social",
   "tags": [
-    "unlike",
-    "unfavorite",
+    "heart",
     "remove",
-    "reject",
-    "dismiss",
-    "delete",
-    "clear"
+    "x",
+    "unfavorite",
+    "dislike"
   ],
   "aliases": [],
   "mirror": false

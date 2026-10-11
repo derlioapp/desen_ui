@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/smartphone",
+  "upstream": "hugeicons/SmartPhone01",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "phone",
     "cellphone",
     "device",
     "mobile",
-    "screen",
-    "display",
-    "touchscreen",
-    "portable",
-    "responsive"
+    "home",
+    "button"
   ],
   "aliases": [],
   "mirror": false

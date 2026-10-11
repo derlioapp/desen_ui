@@ -1,0 +1,23 @@
+{
+  "upstream": "hugeicons/AlignBoxMiddleLeft",
+  "also": [
+    "BorderFull"
+  ],
+  "category": "layout",
+  "tags": [
+    "align",
+    "box",
+    "middle",
+    "left",
+    "position",
+    "border",
+    "full",
+    "cell",
+    "text",
+    "table",
+    "square",
+    "lines"
+  ],
+  "aliases": [],
+  "mirror": false
+}

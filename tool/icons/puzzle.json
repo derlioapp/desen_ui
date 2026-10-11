@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/puzzle",
+  "upstream": "hugeicons/Puzzle",
+  "also": [],
   "category": "development",
   "tags": [
-    "component",
-    "module",
-    "part",
-    "piece"
+    "puzzle",
+    "piece",
+    "plugin",
+    "extension",
+    "game"
   ],
   "aliases": [],
   "mirror": false

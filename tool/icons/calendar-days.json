@@ -1,11 +1,15 @@
 {
-  "upstream": "lucide/calendar-days",
+  "upstream": "hugeicons/CalendarDays",
+  "also": [
+    "Calendar03"
+  ],
   "category": "time",
   "tags": [
+    "calendar",
     "date",
+    "days",
     "month",
-    "year",
-    "event"
+    "dots"
   ],
   "aliases": [],
   "mirror": false

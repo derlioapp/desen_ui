@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/mic-off",
+  "upstream": "hugeicons/MicOff02",
+  "also": [],
   "category": "devices",
   "tags": [
-    "record",
-    "sound",
+    "microphone",
+    "mic",
     "mute",
-    "microphone"
+    "off",
+    "disabled",
+    "audio"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,11 @@
 {
-  "upstream": "lucide/battery",
+  "upstream": "hugeicons/Battery",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "power",
-    "electricity",
-    "energy",
-    "accumulator",
-    "charge"
+    "charge",
+    "energy"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Mail02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

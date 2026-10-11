@@ -48,6 +48,7 @@ class IconEntry {
     this.aliases = const [],
     this.tags = const [],
     this.fills = true,
+    this.sources = const [],
   });
 
   final String name;
@@ -58,6 +59,9 @@ class IconEntry {
 
   /// False when the filled form loses its details.
   final bool fills;
+
+  /// The upstream names of the drawing, also searched.
+  final List<String> sources;
 }
 
 /// Every built-in icon, by category, then by name.

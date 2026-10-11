@@ -1,21 +1,15 @@
 {
-  "upstream": "lucide/square-chevron-right",
+  "upstream": "hugeicons/SquareChevronRight",
+  "also": [
+    "SquareArrowRight01"
+  ],
   "category": "arrows",
   "tags": [
-    "forward",
+    "right",
     "next",
-    "more than",
-    "greater",
-    "menu",
-    "panel",
-    "code",
-    "coding",
-    "command line",
-    "terminal",
-    "prompt",
-    "shell",
-    "console",
-    ">"
+    "forward",
+    "chevron",
+    "direction"
   ],
   "aliases": [],
   "mirror": true

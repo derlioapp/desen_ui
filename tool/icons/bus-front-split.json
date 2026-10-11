@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SchoolBus",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "school bus",
+    "vehicle",
+    "transport",
+    "student",
+    "front"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

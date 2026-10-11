@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderTransfer",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "transfer",
+    "move",
+    "swap",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/NotificationSquare",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "notification",
+    "badge",
+    "unread",
+    "square",
+    "dot",
+    "text"
+  ],
+  "aliases": [],
+  "mirror": false
+}

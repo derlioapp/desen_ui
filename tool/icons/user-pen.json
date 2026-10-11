@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/user-pen",
+  "upstream": "hugeicons/UserPen",
+  "also": [],
   "category": "account",
   "tags": [
-    "person",
-    "account",
-    "contact",
-    "profile",
     "edit",
-    "change"
+    "edit user",
+    "modify",
+    "update",
+    "profile",
+    "rename"
   ],
   "aliases": [],
   "mirror": false

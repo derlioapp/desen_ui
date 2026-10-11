@@ -1,5 +1,19 @@
 {
-  "upstream": "lucide/square-off",
+  "upstream": "desen/square-off",
+  "derived": {
+    "parts": [
+      {
+        "from": "Square",
+        "keep": [
+          0
+        ]
+      }
+    ],
+    "paths": [
+      "M2 2L22 22"
+    ]
+  },
+  "also": [],
   "category": "shapes",
   "tags": [
     "/",
@@ -22,5 +36,6 @@
     "ui"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

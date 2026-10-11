@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MailAtSign01",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "address",
+    "message",
+    "at",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/list-start",
+  "upstream": "hugeicons/ListStart",
+  "also": [],
   "category": "multimedia",
   "tags": [
     "queue",
-    "top",
-    "start",
-    "next",
-    "playlist"
+    "prepend",
+    "add to start",
+    "list",
+    "top"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": true
 }

@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Prescription",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "prescription",
+    "rx",
+    "medicine",
+    "pharmacy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

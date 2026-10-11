@@ -1,20 +1,11 @@
 {
-  "upstream": "lucide-lab/euro-square",
+  "upstream": "hugeicons/EuroSquare",
+  "also": [],
   "category": "finance",
   "tags": [
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "markets",
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
-    "payment",
-    "€",
-    "toolbar",
-    "button"
+    "currency",
+    "money",
+    "payment"
   ],
   "aliases": [],
   "mirror": false

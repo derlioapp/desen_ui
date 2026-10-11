@@ -1,19 +1,12 @@
 {
-  "upstream": "lucide-lab/indian-rupee-square",
+  "upstream": "hugeicons/RupeeSquare",
+  "also": [],
   "category": "finance",
   "tags": [
-    "finance",
-    "financial",
-    "markets",
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
-    "payment",
-    "inr",
-    "₹",
-    "toolbar",
-    "button"
+    "rupee",
+    "indian rupee",
+    "currency",
+    "square"
   ],
   "aliases": [],
   "mirror": false

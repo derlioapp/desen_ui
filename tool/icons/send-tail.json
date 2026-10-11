@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Sent02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "sent",
+    "paper plane",
+    "message",
+    "delivered",
+    "submitted"
+  ],
+  "aliases": [],
+  "mirror": true
+}

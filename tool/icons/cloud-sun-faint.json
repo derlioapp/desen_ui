@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/SunCloud01",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "cloud",
+    "sun",
+    "partly cloudy",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

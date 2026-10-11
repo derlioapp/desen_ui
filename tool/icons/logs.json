@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/logs",
+  "upstream": "hugeicons/Logs",
+  "also": [],
   "category": "text",
   "tags": [
-    "options",
     "list",
-    "menu",
-    "order",
-    "queue",
-    "tasks",
-    "logs"
+    "records",
+    "journal",
+    "entries",
+    "history",
+    "log"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": true
 }

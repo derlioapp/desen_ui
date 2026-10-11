@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/list-chevrons-up-down",
+  "upstream": "hugeicons/TextIndent01",
+  "also": [],
   "category": "text",
   "tags": [
-    "options",
-    "items",
-    "collapse",
+    "indent",
     "expand",
-    "details",
-    "disclosure",
-    "show",
-    "hide",
-    "toggle",
-    "accordion",
-    "more",
-    "less",
-    "fold",
-    "unfold",
-    "vertical"
+    "collapse",
+    "text",
+    "list"
   ],
   "aliases": [],
   "mirror": false

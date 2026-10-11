@@ -1,10 +1,16 @@
 {
-  "upstream": "lucide/dollar-sign",
+  "upstream": "hugeicons/DollarSign",
+  "also": [
+    "Dollar02"
+  ],
   "category": "finance",
   "tags": [
+    "dollar",
     "currency",
     "money",
-    "payment"
+    "usd",
+    "price",
+    "cash"
   ],
   "aliases": [
     "dollar"

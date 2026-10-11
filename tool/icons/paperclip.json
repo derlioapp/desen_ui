@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/paperclip",
+  "upstream": "hugeicons/Paperclip",
+  "also": [],
   "category": "text",
   "tags": [
+    "paperclip",
     "attachment",
-    "file"
+    "attach",
+    "clip"
   ],
   "aliases": [
     "attach"

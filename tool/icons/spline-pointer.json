@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/spline-pointer",
-  "category": "arrows",
+  "upstream": "hugeicons/SplinePointer",
+  "also": [],
+  "category": "design",
   "tags": [
-    "path",
-    "tool",
     "curve",
-    "node",
-    "click",
-    "pointer",
-    "target",
-    "vector"
+    "path",
+    "bezier",
+    "vector",
+    "cursor"
   ],
   "aliases": [],
   "mirror": false

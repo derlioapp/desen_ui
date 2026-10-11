@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Hotspot",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "hotspot",
+    "wifi",
+    "broadcast",
+    "signal",
+    "radar"
+  ],
+  "aliases": [],
+  "mirror": false
+}

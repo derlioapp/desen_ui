@@ -1,9 +1,15 @@
 {
-  "upstream": "lucide/circle-chevron-down",
+  "upstream": "hugeicons/CircleChevronDown",
+  "also": [
+    "CircleArrowDown01"
+  ],
   "category": "arrows",
   "tags": [
-    "back",
-    "menu"
+    "down",
+    "dropdown",
+    "expand",
+    "caret",
+    "chevron"
   ],
   "aliases": [],
   "mirror": false

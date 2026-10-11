@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/panel-bottom-dashed",
+  "upstream": "hugeicons/PanelBottomDashed",
+  "also": [],
   "category": "layout",
   "tags": [
-    "drawer",
-    "dock",
-    "show",
-    "reveal",
-    "padding",
-    "margin",
-    "guide",
+    "panel",
+    "bottom",
+    "dashed",
     "layout",
-    "bleed"
+    "drawer"
   ],
   "aliases": [],
   "mirror": false

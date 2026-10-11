@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/group",
+  "upstream": "hugeicons/GroupItems",
+  "also": [],
   "category": "files",
   "tags": [
-    "cubes",
-    "packages",
-    "parts",
-    "units",
-    "collection",
+    "group",
+    "items",
+    "select",
     "cluster",
-    "gather",
-    "dashed"
+    "objects"
   ],
   "aliases": [],
   "mirror": false

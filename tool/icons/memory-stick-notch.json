@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/RamMemory",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "ram",
+    "memory",
+    "chip",
+    "computer",
+    "hardware"
+  ],
+  "aliases": [],
+  "mirror": false
+}

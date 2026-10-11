@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Exchange02",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "crypto",
+    "swap",
+    "convert",
+    "exchange",
+    "trade"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

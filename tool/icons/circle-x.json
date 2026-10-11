@@ -1,21 +1,19 @@
 {
-  "upstream": "lucide/circle-x",
+  "upstream": "hugeicons/CircleX",
+  "also": [
+    "CancelCircle",
+    "MultiplicationSignCircle"
+  ],
   "category": "math",
   "tags": [
-    "cancel",
     "close",
-    "delete",
-    "remove",
-    "times",
-    "clear",
+    "cancel",
     "error",
-    "incorrect",
-    "wrong",
-    "mistake",
-    "failure",
-    "linter",
-    "multiply",
-    "multiplication"
+    "remove",
+    "delete",
+    "dismiss",
+    "clear",
+    "multiply"
   ],
   "aliases": [],
   "mirror": false

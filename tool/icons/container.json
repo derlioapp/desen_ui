@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/container",
+  "upstream": "hugeicons/Container",
+  "also": [],
   "category": "development",
   "tags": [
-    "storage",
+    "container",
     "shipping",
-    "freight",
-    "supply chain",
-    "environment",
-    "devops",
-    "code",
-    "coding"
+    "cargo",
+    "docker",
+    "freight"
   ],
   "aliases": [],
   "mirror": false

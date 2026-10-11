@@ -1,5 +1,8 @@
 {
-  "upstream": "lucide/mail-plus",
+  "upstream": "hugeicons/MailAdd01",
+  "also": [
+    "MailPlus"
+  ],
   "category": "mail",
   "tags": [
     "email",

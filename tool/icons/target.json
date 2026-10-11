@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/target",
+  "upstream": "hugeicons/Target03",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "logo",
     "bullseye",
-    "deadline",
-    "projects",
-    "overview",
-    "work",
-    "productivity"
+    "aim",
+    "goal",
+    "objective",
+    "focus"
   ],
   "aliases": [],
   "mirror": false

@@ -1,34 +1,15 @@
 {
-  "upstream": "lucide/shield-ellipsis",
-  "category": "account",
+  "upstream": "hugeicons/SecurityPassword",
+  "also": [
+    "ShieldEllipsis"
+  ],
+  "category": "security",
   "tags": [
-    "cybersecurity",
-    "securing",
-    "protecting",
-    "guarding",
-    "armoring",
-    "armouring",
-    "defending",
-    "blocking",
-    "preventing",
-    "antivirus",
-    "detecting",
-    "scanning",
-    "finding",
-    "auditing",
-    "admin",
-    "verifying",
-    "crest",
-    "upgrading",
-    "loader",
-    "loading",
-    "throbber",
-    "progress",
+    "password",
+    "security",
     "dots",
-    "more",
-    "etc",
-    "...",
-    "…"
+    "protect",
+    "secret"
   ],
   "aliases": [],
   "mirror": false

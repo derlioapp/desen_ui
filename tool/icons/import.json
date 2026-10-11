@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/import",
+  "upstream": "hugeicons/Import",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "save"
+    "import",
+    "download",
+    "receive",
+    "inbox",
+    "arrow"
   ],
   "aliases": [],
   "mirror": false

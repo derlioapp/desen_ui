@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/chart-pie",
+  "upstream": "hugeicons/PieChart",
+  "also": [],
   "category": "charts",
   "tags": [
+    "pie",
+    "chart",
+    "graph",
     "statistics",
-    "analytics",
-    "diagram",
-    "presentation"
+    "analytics"
   ],
   "aliases": [
     "pieChart"

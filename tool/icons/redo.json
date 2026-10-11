@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/redo",
+  "upstream": "hugeicons/Redo02",
+  "also": [],
   "category": "text",
   "tags": [
-    "undo",
     "rerun",
-    "history"
+    "history",
+    "redo",
+    "rotate",
+    "clockwise",
+    "curved arrow"
   ],
   "aliases": [],
   "mirror": true

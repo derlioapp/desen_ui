@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/UserCheck02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "verified",
+    "approved",
+    "done",
+    "followed",
+    "subscribed",
+    "confirm",
+    "complete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

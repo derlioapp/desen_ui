@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/hd",
-  "category": "devices",
+  "upstream": "hugeicons/Hd",
+  "also": [],
+  "category": "multimedia",
   "tags": [
-    "tv",
-    "resolution",
-    "video",
     "high definition",
-    "720p",
-    "1080p"
+    "video",
+    "quality",
+    "resolution"
   ],
   "aliases": [],
   "mirror": false

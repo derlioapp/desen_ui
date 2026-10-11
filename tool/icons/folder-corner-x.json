@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderRemove",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "remove",
+    "delete",
+    "close",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

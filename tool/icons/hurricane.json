@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TropicalStorm",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "hurricane",
+    "tropical storm",
+    "cyclone",
+    "typhoon",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/HelpSquare",
+  "also": [],
+  "category": "accessibility",
+  "tags": [
+    "help",
+    "question",
+    "faq",
+    "support",
+    "info"
+  ],
+  "aliases": [],
+  "mirror": false
+}

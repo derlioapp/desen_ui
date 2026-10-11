@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/party-popper",
+  "upstream": "hugeicons/PartyPopper",
+  "also": [],
   "category": "social",
   "tags": [
-    "emoji",
-    "congratulations",
-    "celebration",
     "party",
-    "tada",
-    "🎉",
-    "🎊",
-    "excitement",
-    "exciting",
-    "excites",
-    "confetti"
+    "popper",
+    "confetti",
+    "celebrate",
+    "celebration"
   ],
   "aliases": [],
   "mirror": false

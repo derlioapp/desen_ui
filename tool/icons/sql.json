@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Sql",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "sql",
+    "database",
+    "query",
+    "language"
+  ],
+  "aliases": [],
+  "mirror": false
+}

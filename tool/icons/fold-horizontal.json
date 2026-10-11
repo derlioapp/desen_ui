@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/fold-horizontal",
+  "upstream": "hugeicons/FoldHorizontal",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "arrow",
-    "collapse",
     "fold",
-    "vertical",
-    "dashed"
+    "collapse",
+    "horizontal",
+    "compress",
+    "inward"
   ],
   "aliases": [],
   "mirror": false

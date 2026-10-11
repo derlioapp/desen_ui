@@ -1,12 +1,16 @@
 {
-  "upstream": "lucide/credit-card",
+  "upstream": "hugeicons/CreditCard",
+  "also": [],
   "category": "account",
   "tags": [
     "bank",
     "purchase",
     "payment",
-    "cc"
+    "cc",
+    "card"
   ],
-  "aliases": [],
+  "aliases": [
+    "cardCredit"
+  ],
   "mirror": false
 }

@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/StepOver",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "step over",
+    "debug",
+    "debugger",
+    "skip function"
+  ],
+  "aliases": [],
+  "mirror": false
+}

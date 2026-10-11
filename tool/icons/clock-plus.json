@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/clock-plus",
+  "upstream": "hugeicons/ClockPlus",
+  "also": [],
   "category": "time",
   "tags": [
-    "time",
-    "watch",
-    "alarm",
     "add",
-    "create",
-    "new"
+    "new",
+    "alarm",
+    "schedule",
+    "time"
   ],
   "aliases": [],
   "mirror": false

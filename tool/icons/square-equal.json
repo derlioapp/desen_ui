@@ -1,9 +1,17 @@
 {
-  "upstream": "lucide/square-equal",
+  "upstream": "hugeicons/SquareEqual",
+  "also": [
+    "EqualSignSquare"
+  ],
   "category": "math",
   "tags": [
-    "calculate",
-    "="
+    "equal",
+    "equals",
+    "operator",
+    "calculator",
+    "equal sign",
+    "equality",
+    "square"
   ],
   "aliases": [],
   "mirror": false

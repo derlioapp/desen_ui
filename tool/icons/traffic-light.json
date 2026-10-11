@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/TrafficLight",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "traffic light",
+    "signal",
+    "stoplight",
+    "road"
+  ],
+  "aliases": [],
+  "mirror": false
+}

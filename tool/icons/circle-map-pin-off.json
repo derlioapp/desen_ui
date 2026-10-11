@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/MapsCircle01",
+  "also": [
+    "MapsCircle02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "map",
+    "circle",
+    "pin",
+    "location",
+    "off",
+    "unavailable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

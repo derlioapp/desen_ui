@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailUnlock01",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "unlocked",
+    "decrypt",
+    "open",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

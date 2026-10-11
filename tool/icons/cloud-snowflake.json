@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CloudMidSnow",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "snow",
+    "snowflake",
+    "winter",
+    "cold",
+    "flurry"
+  ],
+  "aliases": [],
+  "mirror": false
+}

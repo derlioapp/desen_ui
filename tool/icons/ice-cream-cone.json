@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/ice-cream-cone",
+  "upstream": "hugeicons/IceCreamCone",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "gelato",
-    "food"
+    "ice cream",
+    "cone",
+    "dessert",
+    "sweet"
   ],
   "aliases": [],
   "mirror": false

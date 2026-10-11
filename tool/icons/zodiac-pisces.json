@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-pisces",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacPisces",
+  "also": [],
+  "category": "science",
   "tags": [
-    "fish",
-    "duality",
-    "water",
-    "dreams",
-    "empathy",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "fish"
   ],
   "aliases": [],
   "mirror": false

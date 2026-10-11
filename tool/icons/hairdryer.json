@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide-lab/hairdryer",
+  "upstream": "hugeicons/HairDryer",
+  "also": [],
   "category": "home",
   "tags": [
-    "hairdrier",
-    "hairstyle",
-    "hairdresser",
-    "salon",
-    "styling",
-    "heat",
-    "amenities",
-    "electronics"
+    "hair",
+    "dryer",
+    "blow",
+    "beauty"
   ],
   "aliases": [],
   "mirror": false

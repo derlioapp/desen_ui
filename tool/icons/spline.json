@@ -1,13 +1,16 @@
 {
-  "upstream": "lucide/spline",
+  "upstream": "hugeicons/Spline",
+  "also": [
+    "BendTool"
+  ],
   "category": "design",
   "tags": [
-    "path",
-    "pen",
-    "tool",
-    "shape",
     "curve",
-    "draw"
+    "path",
+    "bezier",
+    "vector",
+    "bend",
+    "pen"
   ],
   "aliases": [],
   "mirror": false

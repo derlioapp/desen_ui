@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/square-pause",
+  "upstream": "hugeicons/SquarePause",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "music",
-    "audio",
-    "stop"
+    "pause",
+    "hold",
+    "media",
+    "stop temporarily"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SquareArrowRightDouble",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "double",
+    "forward",
+    "fast",
+    "right",
+    "next"
+  ],
+  "aliases": [],
+  "mirror": true
+}

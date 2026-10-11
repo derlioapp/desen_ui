@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BiometricAccess",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "biometric",
+    "access",
+    "fingerprint",
+    "padlock",
+    "secure"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

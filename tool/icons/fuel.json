@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/fuel",
+  "upstream": "hugeicons/PetrolPump",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "filling-station",
-    "gas",
     "petrol",
-    "tank"
+    "pump",
+    "gas",
+    "fuel",
+    "station"
   ],
   "aliases": [
     "gasStation"

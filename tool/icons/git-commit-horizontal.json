@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/git-commit-horizontal",
+  "upstream": "hugeicons/GitCommitHorizontal",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
+    "git",
+    "commit",
+    "horizontal",
     "version control",
-    "waypoint",
-    "stop",
-    "station"
+    "vcs"
   ],
   "aliases": [],
   "mirror": false

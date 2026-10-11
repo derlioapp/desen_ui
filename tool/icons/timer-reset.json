@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/timer-reset",
+  "upstream": "hugeicons/TimerReset",
+  "also": [],
   "category": "time",
   "tags": [
-    "time",
     "timer",
-    "stopwatch"
+    "stopwatch",
+    "reset",
+    "restart"
   ],
   "aliases": [],
   "mirror": false

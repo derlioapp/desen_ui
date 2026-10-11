@@ -1,16 +1,20 @@
 {
-  "upstream": "lucide/map-pin-check-inside",
+  "upstream": "hugeicons/MapPinCheckInside",
+  "also": [
+    "LocationCheck01",
+    "LocationCheck02"
+  ],
   "category": "navigation",
   "tags": [
     "location",
+    "pin",
+    "check",
+    "verified",
+    "confirmed",
     "waypoint",
     "marker",
-    "drop",
     "done",
-    "tick",
-    "complete",
-    "task",
-    "added"
+    "complete"
   ],
   "aliases": [],
   "mirror": false

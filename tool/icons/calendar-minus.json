@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/calendar-minus",
+  "upstream": "hugeicons/CalendarMinus01",
+  "also": [],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "event",
+    "calendar",
+    "minus",
+    "remove",
     "delete",
-    "remove"
+    "event"
   ],
   "aliases": [],
   "mirror": false

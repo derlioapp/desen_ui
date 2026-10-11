@@ -1,5 +1,24 @@
 {
-  "upstream": "lucide/wrench-off",
+  "upstream": "desen/wrench-off",
+  "derived": {
+    "parts": [
+      {
+        "from": "Wrench01",
+        "keep": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "from": "ZapOff",
+        "keep": [
+          0
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "account",
   "tags": [
     "account",
@@ -15,5 +34,7 @@
     "disabled"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false,
+  "stroke": 1.5
 }

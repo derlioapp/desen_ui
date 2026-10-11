@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BitcoinSend",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "send",
+    "transfer",
+    "outgoing",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": true
+}

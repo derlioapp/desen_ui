@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/candy-off",
+  "upstream": "hugeicons/CandyOff",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "sugar free",
-    "food",
     "sweet",
-    "allergy",
-    "intolerance",
-    "diet"
+    "no sugar",
+    "disabled",
+    "no candy",
+    "treat"
   ],
   "aliases": [],
   "mirror": false

@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/laptop-minimal",
+  "upstream": "hugeicons/LaptopMinimal",
+  "also": [],
   "category": "devices",
   "tags": [
+    "laptop",
+    "minimal",
+    "notebook",
     "computer",
-    "screen",
-    "remote"
+    "device"
   ],
   "aliases": [],
   "mirror": false

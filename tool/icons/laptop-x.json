@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LaptopRemove",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "remove laptop",
+    "laptop",
+    "computer",
+    "delete device",
+    "close"
+  ],
+  "aliases": [],
+  "mirror": false
+}

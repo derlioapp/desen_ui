@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide/gpu",
+  "upstream": "hugeicons/Gpu",
+  "also": [],
   "category": "devices",
   "tags": [
+    "gpu",
+    "graphics",
     "processor",
-    "cores",
-    "technology",
-    "computer",
-    "chip",
-    "circuit",
-    "specs",
-    "graphics processing unit",
-    "video card",
-    "display adapter",
-    "gddr",
-    "rendering",
-    "digital image processing",
-    "crypto mining"
+    "video",
+    "card",
+    "technology"
   ],
   "aliases": [],
   "mirror": false

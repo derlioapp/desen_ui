@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CallInternal02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "call",
+    "internal",
+    "intercom",
+    "transfer",
+    "arrows"
+  ],
+  "aliases": [],
+  "mirror": false
+}

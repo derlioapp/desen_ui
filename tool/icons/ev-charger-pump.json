@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FuelStation",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "fuel",
+    "station",
+    "pump",
+    "electric",
+    "charging"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SendToMobile",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "send to phone",
+    "transfer",
+    "mobile",
+    "push",
+    "share"
+  ],
+  "aliases": [],
+  "mirror": true
+}

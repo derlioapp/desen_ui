@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/paw-print",
+  "upstream": "hugeicons/PawPrint",
+  "also": [],
   "category": "animals",
   "tags": [
-    "pets",
-    "vets",
-    "veterinarian",
-    "domesticated",
-    "cat",
-    "dog",
-    "bear"
+    "paw",
+    "print",
+    "pet",
+    "animal",
+    "footprint"
   ],
   "aliases": [],
   "mirror": false

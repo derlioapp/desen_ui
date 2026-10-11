@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/sparkle",
+  "upstream": "hugeicons/Sparkle",
+  "also": [],
   "category": "shapes",
   "tags": [
     "star",
-    "effect",
-    "filter",
-    "night",
+    "shine",
     "magic",
-    "shiny",
-    "glitter",
-    "twinkle",
-    "celebration"
+    "effect",
+    "twinkle"
   ],
   "aliases": [],
   "mirror": false

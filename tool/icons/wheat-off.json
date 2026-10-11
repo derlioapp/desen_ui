@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/wheat-off",
+  "upstream": "hugeicons/WheatOff",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "corn",
-    "cereal",
+    "wheat",
     "grain",
-    "gluten free",
+    "gluten",
+    "free",
     "allergy",
-    "intolerance",
-    "diet"
+    "no",
+    "crossed",
+    "out"
   ],
   "aliases": [],
   "mirror": false

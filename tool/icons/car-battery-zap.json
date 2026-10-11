@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AutomotiveBattery02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "car",
+    "battery",
+    "automotive",
+    "charging",
+    "bolt",
+    "vehicle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

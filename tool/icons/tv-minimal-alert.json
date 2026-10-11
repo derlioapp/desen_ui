@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ModernTvIssue",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tv",
+    "alert",
+    "warning",
+    "error",
+    "no signal",
+    "television"
+  ],
+  "aliases": [],
+  "mirror": false
+}

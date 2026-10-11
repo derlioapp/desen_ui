@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/mic-vocal",
+  "upstream": "hugeicons/MicVocal",
+  "also": [],
   "category": "devices",
   "tags": [
-    "lyrics",
-    "voice",
-    "listen",
-    "sound",
-    "music",
-    "radio",
-    "podcast",
-    "karaoke",
+    "microphone",
+    "vocal",
     "singing",
-    "microphone"
+    "karaoke",
+    "music"
   ],
   "aliases": [],
   "mirror": false

@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/fish-symbol",
+  "upstream": "hugeicons/FishSymbol",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "dish",
-    "restaurant",
-    "course",
-    "meal",
+    "fish",
+    "symbol",
     "seafood",
-    "pet",
-    "sea",
-    "marine"
+    "christian",
+    "sea"
   ],
   "aliases": [],
   "mirror": false

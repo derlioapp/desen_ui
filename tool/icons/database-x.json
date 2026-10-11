@@ -1,5 +1,23 @@
 {
-  "upstream": "lucide/database-x",
+  "upstream": "desen/database-x",
+  "derived": {
+    "parts": [
+      {
+        "from": "DatabaseAdd",
+        "keep": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "paths": [
+      "M15 16L20 21M20 16L15 21"
+    ]
+  },
+  "also": [],
   "category": "devices",
   "tags": [
     "storage",

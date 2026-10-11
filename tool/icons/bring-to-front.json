@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/bring-to-front",
+  "upstream": "hugeicons/BringToFront",
+  "also": [],
   "category": "design",
   "tags": [
     "bring",
-    "send",
-    "move",
-    "over",
-    "forward",
     "front",
-    "overlap",
-    "layer",
-    "order"
+    "forward",
+    "arrange",
+    "layer"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Settings03",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "hexagon",
+    "nut",
+    "preferences",
+    "configuration",
+    "options"
+  ],
+  "aliases": [],
+  "mirror": false
+}

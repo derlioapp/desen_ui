@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/tic-tac-toe",
+  "upstream": "hugeicons/TicTacToe",
+  "also": [],
   "category": "gaming",
   "tags": [
     "game",
-    "board",
-    "grid",
-    "strategy",
-    "noughts and crosses"
+    "noughts",
+    "crosses",
+    "xo",
+    "board"
   ],
   "aliases": [],
   "mirror": false

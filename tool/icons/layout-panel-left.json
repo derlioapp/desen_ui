@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/layout-panel-left",
+  "upstream": "hugeicons/LayoutPanelLeft",
+  "also": [],
   "category": "design",
   "tags": [
-    "app",
-    "home",
-    "start",
-    "grid"
+    "panel left",
+    "layout",
+    "sidebar",
+    "split",
+    "panes"
   ],
   "aliases": [],
   "mirror": false

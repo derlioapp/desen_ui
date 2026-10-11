@@ -1,28 +1,16 @@
 {
-  "upstream": "lucide/credit-card-check",
+  "upstream": "hugeicons/CreditCardAccept",
+  "also": [],
   "category": "account",
   "tags": [
-    "debit",
     "payment",
-    "banking",
-    "finance",
-    "transaction",
-    "wallet",
-    "purchase",
-    "checkout",
-    "billing",
-    "account",
-    "cardholder",
-    "verified",
+    "accepted",
     "approved",
-    "authorized",
-    "valid",
-    "success",
-    "complete",
-    "check",
-    "bank",
-    "cc"
+    "card",
+    "verified"
   ],
-  "aliases": [],
+  "aliases": [
+    "creditCardBadgeCheck"
+  ],
   "mirror": false
 }

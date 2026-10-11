@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/panel-right-open",
+  "upstream": "hugeicons/PanelRightOpen",
+  "also": [],
   "category": "layout",
   "tags": [
+    "panel",
+    "right",
     "sidebar",
-    "secondary",
-    "drawer",
-    "show",
-    "reveal",
-    "chevron",
-    "left",
-    "<"
+    "open",
+    "expand"
   ],
   "aliases": [],
   "mirror": false

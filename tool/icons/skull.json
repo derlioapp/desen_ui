@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/skull",
+  "upstream": "hugeicons/Danger",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "death",
     "danger",
-    "bone"
+    "death",
+    "poison",
+    "pirate",
+    "warning",
+    "deadly"
   ],
   "aliases": [],
   "mirror": false

@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/luggage",
+  "upstream": "hugeicons/Luggage02",
+  "also": [],
   "category": "travel",
   "tags": [
     "baggage",
     "luggage",
     "travel",
-    "suitcase"
+    "suitcase",
+    "trolley",
+    "wheels"
   ],
   "aliases": [],
   "mirror": false

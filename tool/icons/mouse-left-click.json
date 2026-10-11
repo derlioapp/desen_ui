@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/MouseLeftClick01",
+  "also": [
+    "MouseLeftClick04"
+  ],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "left click",
+    "click",
+    "press",
+    "primary",
+    "peripheral",
+    "oval"
+  ],
+  "aliases": [],
+  "mirror": false
+}

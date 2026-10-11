@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatSearch",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "find",
+    "search",
+    "lookup",
+    "filter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

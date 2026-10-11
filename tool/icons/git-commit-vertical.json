@@ -1,12 +1,19 @@
 {
-  "upstream": "lucide/git-commit-vertical",
+  "upstream": "hugeicons/GitCommitVertical",
+  "also": [
+    "GitCommit"
+  ],
   "category": "development",
   "tags": [
-    "code",
+    "git",
+    "commit",
+    "version",
+    "control",
+    "node",
+    "history",
+    "vertical",
     "version control",
-    "waypoint",
-    "stop",
-    "station"
+    "vcs"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Drag04",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "drag",
+    "swipe",
+    "pointer",
+    "hand",
+    "path",
+    "gesture"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

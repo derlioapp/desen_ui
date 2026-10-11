@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/file-scan",
+  "upstream": "hugeicons/FileScan",
+  "also": [],
   "category": "files",
   "tags": [
     "scan",
-    "code",
-    "qr-code"
+    "ocr",
+    "capture",
+    "document"
   ],
   "aliases": [],
   "mirror": false

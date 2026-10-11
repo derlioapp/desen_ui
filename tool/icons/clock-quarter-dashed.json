@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TimeQuarterPass",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "clock",
+    "time",
+    "quarter",
+    "progress",
+    "elapsed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

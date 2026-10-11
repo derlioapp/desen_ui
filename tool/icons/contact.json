@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/contact",
+  "upstream": "hugeicons/Contact",
+  "also": [],
   "category": "account",
   "tags": [
-    "user",
+    "contact",
+    "address",
+    "card",
     "person",
-    "family",
-    "friend",
-    "acquaintance",
-    "listing",
-    "networking"
+    "directory"
   ],
   "aliases": [],
   "mirror": false

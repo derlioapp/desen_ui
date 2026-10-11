@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/InboxDownload",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "inbox",
+    "download",
+    "receive",
+    "incoming"
+  ],
+  "aliases": [],
+  "mirror": false
+}

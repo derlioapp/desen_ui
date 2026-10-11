@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/file-code-corner",
+  "upstream": "hugeicons/FileCodeCorner",
+  "also": [],
   "category": "files",
   "tags": [
+    "code",
+    "source",
     "script",
-    "document",
     "html",
-    "xml",
-    "property list",
-    "plist"
+    "document"
   ],
   "aliases": [],
   "mirror": false

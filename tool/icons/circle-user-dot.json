@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/UserStatus",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "status",
+    "online",
+    "presence",
+    "availability",
+    "notification",
+    "person",
+    "account",
+    "user status"
+  ],
+  "aliases": [],
+  "mirror": false
+}

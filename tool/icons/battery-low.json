@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/battery-low",
+  "upstream": "hugeicons/BatteryLow",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "power",
-    "electricity",
-    "energy",
-    "accumulator",
-    "charge"
+    "low",
+    "charge",
+    "energy"
   ],
   "aliases": [],
   "mirror": false

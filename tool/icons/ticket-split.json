@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Ticket01",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "entry",
+    "pass",
+    "voucher",
+    "event",
+    "admission"
+  ],
+  "aliases": [],
+  "mirror": false
+}

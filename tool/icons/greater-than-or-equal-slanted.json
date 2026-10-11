@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/GreaterThanOrEqual",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "greater",
+    "than",
+    "or",
+    "equal",
+    "inequality",
+    "compare"
+  ],
+  "aliases": [],
+  "mirror": false
+}

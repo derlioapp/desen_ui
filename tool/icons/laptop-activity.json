@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LaptopPerformance",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "laptop performance",
+    "activity",
+    "monitor",
+    "pulse",
+    "computer",
+    "health"
+  ],
+  "aliases": [],
+  "mirror": false
+}

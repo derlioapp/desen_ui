@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide/barcode",
+  "upstream": "hugeicons/Barcode",
+  "also": [
+    "BarCode01"
+  ],
   "category": "shopping",
   "tags": [
     "scan",
-    "checkout",
-    "till",
-    "cart",
-    "transaction",
-    "purchase",
-    "buy",
     "product",
-    "packaging",
-    "retail",
-    "consumer"
+    "code",
+    "checkout"
   ],
   "aliases": [],
   "mirror": false

@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/ticket",
-  "category": "account",
+  "upstream": "hugeicons/Coupon03",
+  "also": [],
+  "category": "transportation",
   "tags": [
-    "entry",
-    "pass",
+    "coupon",
     "voucher",
-    "event",
-    "concert",
-    "show",
-    "perforated",
-    "dashed"
+    "ticket",
+    "pass",
+    "admission"
   ],
   "aliases": [],
   "mirror": false

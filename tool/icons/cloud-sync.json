@@ -1,5 +1,21 @@
 {
-  "upstream": "lucide/cloud-sync",
+  "upstream": "desen/cloud-sync",
+  "derived": {
+    "parts": [
+      {
+        "from": "CloudSync",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ],
+    "paths": [
+      "M8.166 12V14.834H11",
+      "M15.834 21V18.166H13"
+    ]
+  },
+  "also": [],
   "category": "arrows",
   "tags": [
     "synchronize",

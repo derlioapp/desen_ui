@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/UserMinus02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "remove user",
+    "delete",
+    "unfollow",
+    "unsubscribe",
+    "person",
+    "account"
+  ],
+  "aliases": [],
+  "mirror": false
+}

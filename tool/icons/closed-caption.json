@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/closed-caption",
+  "upstream": "hugeicons/ClosedCaption",
+  "also": [],
   "category": "accessibility",
   "tags": [
-    "tv",
-    "movie",
-    "video",
-    "closed captions",
+    "cc",
     "subtitles",
-    "subhead",
-    "transcription",
-    "transcribe",
-    "dialogue",
-    "accessibility"
+    "captions",
+    "deaf",
+    "hearing"
   ],
   "aliases": [],
   "mirror": false

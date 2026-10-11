@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InboxCheck",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "inbox",
+    "check",
+    "done",
+    "processed"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

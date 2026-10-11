@@ -1,9 +1,15 @@
 {
-  "upstream": "lucide/link-2",
+  "upstream": "hugeicons/Link",
+  "also": [
+    "Link02"
+  ],
   "category": "text",
   "tags": [
     "chain",
-    "url"
+    "url",
+    "hyperlink",
+    "connect",
+    "horizontal"
   ],
   "aliases": [],
   "mirror": false

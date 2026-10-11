@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/cigarette-off",
+  "upstream": "hugeicons/CigaretteOff",
+  "also": [],
   "category": "travel",
   "tags": [
+    "no smoking",
     "smoking",
-    "no-smoking"
+    "tobacco",
+    "banned",
+    "forbidden"
   ],
   "aliases": [],
   "mirror": false

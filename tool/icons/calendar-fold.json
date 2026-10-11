@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/calendar-fold",
+  "upstream": "hugeicons/CalendarFold",
+  "also": [],
   "category": "time",
   "tags": [
+    "calendar",
+    "fold",
+    "corner",
     "date",
-    "month",
-    "year",
-    "event",
-    "birthday",
-    "birthdate",
-    "ics"
+    "page"
   ],
   "aliases": [],
   "mirror": false

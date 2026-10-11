@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide-lab/pepper-chilli",
+  "upstream": "hugeicons/Pepper",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "chili",
-    "chile",
-    "hot",
+    "pepper",
+    "chilli",
     "spicy",
-    "spice",
-    "flavor",
-    "flavour",
-    "vegetable",
-    "ingredient",
-    "cooking",
-    "cookery",
-    "kitchen",
-    "cuisine",
-    "culinary",
-    "eating",
-    "nutrition",
-    "diet"
+    "hot",
+    "food"
   ],
   "aliases": [],
   "mirror": false

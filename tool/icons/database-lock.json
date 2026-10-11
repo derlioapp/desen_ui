@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DatabaseLocked",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "database",
+    "locked",
+    "secure",
+    "private",
+    "protected",
+    "storage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

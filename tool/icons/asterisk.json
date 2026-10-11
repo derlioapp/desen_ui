@@ -1,26 +1,14 @@
 {
-  "upstream": "lucide/asterisk",
+  "upstream": "hugeicons/Asterisk02",
+  "also": [],
   "category": "text",
   "tags": [
-    "symbol",
-    "sterisk",
-    "mark",
-    "pointer",
-    "pencil",
-    "sign",
-    "alert",
-    "notification",
-    "indicator",
-    "symbolic",
-    "reference",
-    "times",
-    "multiply",
-    "multiplication",
-    "operator",
-    "code",
-    "glob pattern",
+    "asterisk",
+    "star",
+    "required",
+    "footnote",
     "wildcard",
-    "*"
+    "multiply"
   ],
   "aliases": [],
   "mirror": false

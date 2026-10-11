@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/CalendarLock01",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "lock",
+    "private",
+    "secure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

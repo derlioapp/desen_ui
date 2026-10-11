@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CalendarSetting02",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "setting",
+    "cog",
+    "gear",
+    "settings"
+  ],
+  "aliases": [],
+  "mirror": false
+}

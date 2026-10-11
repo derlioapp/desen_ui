@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide/sprout",
+  "upstream": "hugeicons/Sprout",
+  "also": [],
   "category": "nature",
   "tags": [
-    "eco",
-    "green",
-    "growth",
-    "leaf",
-    "nature",
+    "seedling",
     "plant",
-    "seed",
-    "spring",
-    "sustainability"
+    "grow",
+    "growth"
   ],
   "aliases": [],
   "mirror": false

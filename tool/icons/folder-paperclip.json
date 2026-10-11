@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderAttachment",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "attachment",
+    "paperclip",
+    "attach",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/NodeEdit",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "node",
+    "edit",
+    "tree",
+    "workflow",
+    "hierarchy",
+    "pen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

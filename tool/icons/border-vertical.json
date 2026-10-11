@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BorderVertical",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "border",
+    "vertical",
+    "line",
+    "divider",
+    "table",
+    "cell"
+  ],
+  "aliases": [],
+  "mirror": false
+}

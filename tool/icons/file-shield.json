@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileSecurity",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "security",
+    "protected",
+    "safe",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

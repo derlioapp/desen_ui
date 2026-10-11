@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FlipTop",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "flip",
+    "mirror",
+    "top",
+    "dashed",
+    "transform"
+  ],
+  "aliases": [],
+  "mirror": false
+}

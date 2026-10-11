@@ -1,25 +1,13 @@
 {
-  "upstream": "lucide/diamond-plus",
+  "upstream": "hugeicons/DiamondPlus",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "keyframe",
+    "diamond",
+    "plus",
     "add",
-    "new",
-    "increase",
-    "increment",
-    "positive",
-    "calculate",
-    "toolbar",
-    "crosshair",
-    "aim",
-    "target",
-    "scope",
-    "sight",
-    "reticule",
-    "maximum",
-    "upgrade",
-    "extra",
-    "+"
+    "shape",
+    "new"
   ],
   "aliases": [],
   "mirror": false

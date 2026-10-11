@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ChartHighLow",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "range",
+    "high low",
+    "min max",
+    "stock",
+    "volatility"
+  ],
+  "aliases": [],
+  "mirror": false
+}

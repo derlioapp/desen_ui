@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/watch",
+  "upstream": "hugeicons/Watch01",
+  "also": [],
   "category": "time",
   "tags": [
+    "wristwatch",
+    "smartwatch",
     "clock",
-    "time"
+    "time",
+    "wearable",
+    "round"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CursorCircleSelection01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "cursor",
+    "circle selection",
+    "lasso",
+    "select",
+    "pointer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

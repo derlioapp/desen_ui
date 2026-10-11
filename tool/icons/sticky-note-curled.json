@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/StickyNote02",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "note",
+    "memo",
+    "post-it",
+    "pinned",
+    "reminder"
+  ],
+  "aliases": [],
+  "mirror": false
+}

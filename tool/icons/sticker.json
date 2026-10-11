@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/sticker",
+  "upstream": "hugeicons/Sticker",
+  "also": [],
   "category": "social",
   "tags": [
-    "reaction",
-    "emotion",
-    "smile",
-    "happy",
-    "feedback"
+    "sticker",
+    "emoji",
+    "peel",
+    "smiley"
   ],
   "aliases": [],
   "mirror": false

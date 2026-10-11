@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/building-complex",
-  "category": "account",
+  "upstream": "hugeicons/Apartment",
+  "also": [],
+  "category": "buildings",
   "tags": [
-    "business",
-    "company",
-    "enterprise",
-    "skyscraper",
-    "organisation",
-    "organization",
-    "city"
+    "apartment",
+    "flats",
+    "towers",
+    "city",
+    "office",
+    "residential"
   ],
   "aliases": [],
   "mirror": false

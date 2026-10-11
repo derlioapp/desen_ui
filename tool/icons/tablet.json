@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/tablet",
+  "upstream": "hugeicons/Tablet01",
+  "also": [],
   "category": "devices",
   "tags": [
     "device",
-    "mobile",
+    "ipad",
     "screen",
-    "display",
     "touchscreen",
-    "portable",
-    "responsive"
+    "portable"
   ],
   "aliases": [],
   "mirror": false

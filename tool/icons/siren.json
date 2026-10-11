@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/siren",
+  "upstream": "hugeicons/Siren",
+  "also": [],
   "category": "medical",
   "tags": [
-    "police",
-    "ambulance",
-    "emergency",
-    "security",
-    "alert",
     "alarm",
+    "emergency",
+    "alert",
+    "police",
     "light"
   ],
   "aliases": [],

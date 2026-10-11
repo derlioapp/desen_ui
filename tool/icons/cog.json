@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide/cog",
+  "upstream": "hugeicons/Cog",
+  "also": [],
   "category": "account",
   "tags": [
-    "computing",
     "settings",
-    "cog",
-    "edit",
     "gear",
     "preferences",
-    "controls",
-    "configuration",
-    "fixed",
-    "build",
-    "construction",
-    "parts"
+    "config",
+    "options",
+    "cogwheel"
   ],
   "aliases": [
     "gear"

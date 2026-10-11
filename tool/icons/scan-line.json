@@ -1,19 +1,15 @@
 {
-  "upstream": "lucide/scan-line",
+  "upstream": "hugeicons/ScanLine",
+  "also": [
+    "Scan"
+  ],
   "category": "devices",
   "tags": [
-    "checkout",
-    "till",
-    "cart",
-    "transaction",
-    "purchase",
-    "buy",
-    "product",
-    "packaging",
-    "retail",
-    "consumer",
-    "qr-code",
-    "dashed"
+    "scan",
+    "frame",
+    "line",
+    "scanner",
+    "barcode"
   ],
   "aliases": [],
   "mirror": false

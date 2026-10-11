@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ThreeGSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "3g",
+    "mobile",
+    "network",
+    "cellular",
+    "signal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

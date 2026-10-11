@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Thermometer",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "thermometer",
+    "fever",
+    "temperature",
+    "clinical",
+    "health"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/snowflake",
+  "upstream": "hugeicons/Snow",
+  "also": [],
   "category": "weather",
   "tags": [
-    "cold",
-    "weather",
-    "freeze",
     "snow",
-    "winter"
+    "cold",
+    "winter",
+    "freeze"
   ],
   "aliases": [],
   "mirror": false

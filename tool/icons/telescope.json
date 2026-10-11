@@ -1,15 +1,10 @@
 {
-  "upstream": "lucide/telescope",
+  "upstream": "hugeicons/Telescope01",
+  "also": [],
   "category": "science",
   "tags": [
     "astronomy",
     "space",
-    "discovery",
-    "exploration",
-    "explore",
-    "vision",
-    "perspective",
-    "focus",
     "stargazing",
     "observe",
     "view"

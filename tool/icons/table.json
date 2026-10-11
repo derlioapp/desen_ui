@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/table",
+  "upstream": "hugeicons/TableProperties",
+  "also": [],
   "category": "text",
   "tags": [
-    "spreadsheet",
-    "grid"
+    "table",
+    "properties",
+    "settings",
+    "grid",
+    "spreadsheet"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AlphabetChinese",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "alphabet",
+    "chinese",
+    "hanzi",
+    "characters",
+    "script",
+    "language"
+  ],
+  "aliases": [],
+  "mirror": false
+}

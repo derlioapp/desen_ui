@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SmartPhoneLandscape",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "horizontal",
+    "rotated",
+    "landscape",
+    "mobile"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Disc2",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "disc",
+    "cd",
+    "dvd",
+    "record",
+    "media",
+    "storage"
+  ],
+  "aliases": [
+    "disc2"
+  ],
+  "mirror": false
+}

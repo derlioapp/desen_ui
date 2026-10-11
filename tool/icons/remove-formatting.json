@@ -1,16 +1,18 @@
 {
-  "upstream": "lucide/remove-formatting",
+  "upstream": "hugeicons/RemoveFormatting",
+  "also": [
+    "TextClear"
+  ],
   "category": "text",
   "tags": [
+    "remove formatting",
+    "clear format",
     "text",
-    "font",
-    "typography",
+    "italic",
+    "clear formatting",
     "format",
-    "x",
     "remove",
-    "delete",
-    "times",
-    "clear"
+    "reset"
   ],
   "aliases": [],
   "mirror": false

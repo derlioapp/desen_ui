@@ -1,15 +1,16 @@
 {
-  "upstream": "lucide/arrow-left-to-line",
+  "upstream": "hugeicons/ArrowLeftToLine",
+  "also": [
+    "ArrowLeft03"
+  ],
   "category": "arrows",
   "tags": [
-    "previous",
-    "back",
-    "direction",
-    "west",
-    "collapse",
-    "fold",
-    "horizontal",
-    "|<-"
+    "arrow",
+    "left",
+    "start",
+    "first",
+    "beginning",
+    "home"
   ],
   "aliases": [],
   "mirror": true

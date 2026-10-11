@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/tags",
+  "upstream": "hugeicons/Tags",
+  "also": [],
   "category": "account",
   "tags": [
     "labels",
-    "badges",
-    "tickets",
-    "marks",
-    "copy",
-    "multiple"
+    "multiple",
+    "price",
+    "badges"
   ],
   "aliases": [],
   "mirror": false

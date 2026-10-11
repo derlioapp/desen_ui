@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/monitor-dot",
+  "upstream": "hugeicons/MonitorDot",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "screen sharing",
-    "status",
     "notification",
-    "indicator",
-    "running",
-    "active",
-    "virtual machine",
-    "vm"
+    "badge",
+    "dot"
   ],
   "aliases": [],
   "mirror": false

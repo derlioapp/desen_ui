@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AnchorPoint",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "vector",
+    "bezier",
+    "path",
+    "nodes",
+    "pen tool",
+    "spline"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TimeHalfPass",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "clock",
+    "time",
+    "half",
+    "progress",
+    "elapsed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

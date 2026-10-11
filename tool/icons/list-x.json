@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/list-x",
+  "upstream": "hugeicons/ListX",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "playlist",
-    "subtract",
     "remove",
     "delete",
-    "unqueue"
+    "list",
+    "clear",
+    "playlist"
   ],
   "aliases": [],
   "mirror": true

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/RotateCcw",
+  "also": [
+    "RotateClockwise"
+  ],
+  "category": "arrows",
+  "tags": [
+    "rotate",
+    "counter-clockwise",
+    "dashed",
+    "undo",
+    "loading"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/search-alert",
+  "upstream": "hugeicons/SearchAlert",
+  "also": [],
   "category": "text",
   "tags": [
     "find",
-    "scan",
     "magnifier",
-    "magnifying glass",
-    "stop",
     "warning",
-    "alert",
-    "error",
-    "anomaly",
-    "lens",
-    "locate",
-    "explore",
-    "discover",
-    "enlarge",
-    "zoom"
+    "not found",
+    "error"
   ],
   "aliases": [],
   "mirror": false

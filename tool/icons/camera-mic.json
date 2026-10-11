@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CameraMicrophone01",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "photo",
+    "microphone",
+    "audio",
+    "voice",
+    "record"
+  ],
+  "aliases": [],
+  "mirror": false
+}

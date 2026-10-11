@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide-lab/soccer-pitch",
+  "upstream": "hugeicons/FootballPitch",
+  "also": [],
   "category": "sports",
   "tags": [
     "football",
+    "soccer",
+    "pitch",
     "field",
-    "stadium",
-    "ground",
-    "surface",
-    "grass",
-    "futbol",
-    "kick",
-    "goal",
-    "score",
-    "bounce"
+    "stadium"
   ],
   "aliases": [],
   "mirror": false

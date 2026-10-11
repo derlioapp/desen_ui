@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/ribbon",
+  "upstream": "hugeicons/Aids",
+  "also": [],
   "category": "social",
   "tags": [
+    "aids",
     "awareness",
-    "strip",
-    "band",
-    "tape",
-    "strap",
-    "cordon"
+    "ribbon",
+    "hiv",
+    "cause",
+    "support"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Bitcoin01",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "coin",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,5 +1,23 @@
 {
-  "upstream": "lucide/clipboard-check",
+  "upstream": "desen/clipboard-check",
+  "derived": {
+    "parts": [
+      {
+        "from": "ClipboardMinus",
+        "keep": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": "ClipboardCheck",
+        "keep": [
+          0
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "copied",

@@ -1,12 +1,17 @@
 {
-  "upstream": "lucide/step-forward",
+  "upstream": "hugeicons/StepForward",
+  "also": [
+    "Forward01"
+  ],
   "category": "multimedia",
   "tags": [
-    "arrow",
+    "step forward",
     "next",
-    "music",
-    "right",
-    "continue"
+    "media",
+    "forward",
+    "play",
+    "start",
+    "step"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/PieChart02",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "pie",
+    "chart",
+    "graph",
+    "statistics",
+    "split",
+    "slice"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/clock-check",
+  "upstream": "hugeicons/ClockCheck",
+  "also": [],
   "category": "time",
   "tags": [
+    "done",
+    "on time",
+    "confirmed",
     "time",
-    "watch",
-    "alarm"
+    "approved"
   ],
   "aliases": [],
   "mirror": false

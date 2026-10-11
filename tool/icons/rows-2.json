@@ -1,23 +1,17 @@
 {
-  "upstream": "lucide/rows-2",
+  "upstream": "hugeicons/Rows2",
+  "also": [
+    "Layout2Row"
+  ],
   "category": "layout",
   "tags": [
-    "lines",
-    "list",
-    "queue",
-    "preview",
-    "panel",
-    "paragraphs",
-    "parallel",
-    "series",
+    "rows",
+    "two",
+    "layout",
     "split",
-    "vertical",
-    "horizontal",
-    "half",
-    "center",
-    "middle",
-    "even",
-    "drawer"
+    "two rows",
+    "horizontal divider",
+    "panels"
   ],
   "aliases": [],
   "mirror": false

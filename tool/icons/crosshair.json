@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/crosshair",
+  "upstream": "hugeicons/Crosshair",
+  "also": [],
   "category": "photography",
   "tags": [
+    "target",
     "aim",
-    "target"
+    "focus",
+    "scope",
+    "sight"
   ],
   "aliases": [],
   "mirror": false

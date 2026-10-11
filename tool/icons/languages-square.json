@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Translate",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "translate",
+    "language",
+    "translation",
+    "i18n",
+    "locale"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

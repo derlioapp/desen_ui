@@ -1,9 +1,20 @@
 {
-  "upstream": "lucide/phone-forwarded",
-  "category": "arrows",
+  "upstream": "hugeicons/PhoneForwarded",
+  "also": [
+    "CallOutgoing01"
+  ],
+  "category": "connectivity",
   "tags": [
-    "call"
+    "phone",
+    "call",
+    "forward",
+    "forwarded",
+    "redirect",
+    "outgoing",
+    "telephone",
+    "dial",
+    "handset"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": true
 }

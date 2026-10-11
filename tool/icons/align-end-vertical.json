@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/align-end-vertical",
+  "upstream": "hugeicons/AlignEndVertical",
+  "also": [],
   "category": "layout",
   "tags": [
-    "items",
+    "align",
     "right",
-    "flex",
-    "justify"
+    "end",
+    "vertical"
   ],
   "aliases": [],
   "mirror": false

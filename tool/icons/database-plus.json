@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/database-plus",
+  "upstream": "hugeicons/DatabaseAdd",
+  "also": [],
   "category": "devices",
   "tags": [
-    "storage",
-    "memory",
-    "bytes",
-    "server",
-    "plus",
+    "database",
     "add",
-    "create",
-    "insert",
+    "plus",
     "new",
-    "expand"
+    "storage",
+    "data"
   ],
   "aliases": [],
   "mirror": false

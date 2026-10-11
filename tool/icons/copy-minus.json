@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/copy-minus",
+  "upstream": "hugeicons/CopyMinus",
+  "also": [],
   "category": "text",
   "tags": [
     "clone",
     "duplicate",
     "remove",
-    "delete",
-    "collapse",
-    "subtract",
     "multiple",
-    "-"
+    "minus"
   ],
   "aliases": [],
   "mirror": false

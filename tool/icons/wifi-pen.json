@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/wifi-pen",
+  "upstream": "hugeicons/WifiPen",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "edit",
     "wifi",
-    "pen",
-    "change",
-    "network"
+    "edit",
+    "configure",
+    "network",
+    "wireless",
+    "rename"
   ],
   "aliases": [],
   "mirror": false

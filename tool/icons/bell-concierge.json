@@ -1,23 +1,17 @@
 {
-  "upstream": "lucide-lab/bell-concierge",
+  "upstream": "hugeicons/ConciergeBell",
+  "also": [],
   "category": "travel",
   "tags": [
-    "reception",
-    "bellboy",
-    "bellhop",
-    "porter",
+    "concierge",
     "service",
-    "summon",
-    "hospitality",
     "hotel",
-    "accommodation",
-    "attention",
-    "alert",
-    "sound",
-    "ding",
-    "ring",
-    "🛎️"
+    "reception",
+    "bell",
+    "desk"
   ],
-  "aliases": [],
+  "aliases": [
+    "conciergeBell"
+  ],
   "mirror": false
 }

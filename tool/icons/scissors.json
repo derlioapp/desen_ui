@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/scissors",
+  "upstream": "hugeicons/Scissors",
+  "also": [],
   "category": "text",
   "tags": [
     "cut",

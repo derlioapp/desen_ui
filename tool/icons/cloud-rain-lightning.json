@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CloudAngledRainZap",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "thunderstorm",
+    "rain",
+    "lightning",
+    "storm",
+    "bolt"
+  ],
+  "aliases": [],
+  "mirror": false
+}

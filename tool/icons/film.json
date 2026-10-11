@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/film",
+  "upstream": "hugeicons/Film02",
+  "also": [],
   "category": "photography",
   "tags": [
     "movie",

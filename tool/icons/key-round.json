@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/key-round",
+  "upstream": "hugeicons/KeyRound",
+  "also": [],
   "category": "security",
   "tags": [
+    "key",
     "password",
-    "login",
-    "authentication",
-    "secure",
-    "unlock"
+    "access",
+    "unlock",
+    "login"
   ],
   "aliases": [],
   "mirror": false

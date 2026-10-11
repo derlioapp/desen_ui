@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileMinus",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "remove",
+    "delete",
+    "subtract",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

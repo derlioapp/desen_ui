@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/printer-x",
+  "upstream": "hugeicons/PrinterX",
+  "also": [],
   "category": "devices",
   "tags": [
-    "fax",
-    "office",
-    "device",
-    "cross",
-    "cancel",
-    "remove",
-    "error"
+    "printer",
+    "print",
+    "error",
+    "x",
+    "cancel"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Mouse05",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "tilted",
+    "wired",
+    "cable",
+    "wheel",
+    "peripheral"
+  ],
+  "aliases": [],
+  "mirror": false
+}

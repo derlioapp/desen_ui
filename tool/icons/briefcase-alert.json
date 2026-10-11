@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/WorkAlert",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "job",
+    "work",
+    "warning",
+    "problem",
+    "business",
+    "case"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

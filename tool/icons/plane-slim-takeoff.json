@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PlaneTakeoff",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "plane",
+    "takeoff",
+    "departure",
+    "flight",
+    "airport"
+  ],
+  "aliases": [],
+  "mirror": false
+}

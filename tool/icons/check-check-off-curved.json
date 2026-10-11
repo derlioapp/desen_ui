@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CheckUnread02",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "unread",
+    "unseen",
+    "message",
+    "not read",
+    "double check",
+    "crossed out"
+  ],
+  "aliases": [],
+  "mirror": false
+}

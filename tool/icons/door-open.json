@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/door-open",
+  "upstream": "hugeicons/DoorOpen",
+  "also": [],
   "category": "home",
   "tags": [
+    "door",
+    "open",
     "entrance",
+    "hinge",
     "entry",
-    "exit",
-    "ingress",
-    "egress",
-    "gate",
-    "gateway",
-    "emergency exit"
+    "exit"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/chess-bishop",
+  "upstream": "hugeicons/ChessBishop",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "mitre",
-    "miter",
+    "chess",
     "piece",
     "board game",
-    "religion"
+    "strategy"
   ],
   "aliases": [],
   "mirror": false

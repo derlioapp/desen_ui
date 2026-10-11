@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/square-scissors",
+  "upstream": "hugeicons/SquareScissors",
+  "also": [],
   "category": "text",
   "tags": [
     "cut",
-    "snippet",
-    "chop",
-    "stationery",
-    "crafts",
-    "toolbar",
-    "button"
+    "scissors",
+    "trim",
+    "clip"
   ],
   "aliases": [],
   "mirror": false

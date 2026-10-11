@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/GridOff",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "grid",
+    "off",
+    "hash",
+    "lines",
+    "hide",
+    "disabled"
+  ],
+  "aliases": [],
+  "mirror": false
+}

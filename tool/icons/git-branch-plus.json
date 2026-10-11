@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/git-branch-plus",
+  "upstream": "hugeicons/GitBranchPlus",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "vcs",
-    "repository",
+    "git",
+    "branch",
     "add",
     "create",
-    "+"
+    "vcs"
   ],
   "aliases": [],
   "mirror": false

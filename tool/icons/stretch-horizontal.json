@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/stretch-horizontal",
+  "upstream": "hugeicons/StretchHorizontal",
+  "also": [],
   "category": "layout",
   "tags": [
-    "items",
-    "flex",
-    "justify",
-    "distribute"
+    "stretch",
+    "horizontal",
+    "rows",
+    "fill",
+    "stack"
   ],
   "aliases": [],
   "mirror": false

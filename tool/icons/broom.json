@@ -1,25 +1,24 @@
 {
-  "upstream": "lucide/broom",
+  "upstream": "desen/broom",
+  "derived": {
+    "parts": [
+      {
+        "from": "Clean",
+        "keep": [
+          0,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "tools",
   "tags": [
-    "broomstick",
-    "brush",
+    "clean",
     "sweep",
-    "sweeping",
-    "floor",
-    "cleaning",
     "housekeeping",
-    "chores",
-    "tidy",
-    "spotless",
-    "dust",
-    "debris",
-    "bristles",
-    "handle",
-    "janitor",
-    "maintenance",
-    "witch",
-    "halloween"
+    "tidy"
   ],
   "aliases": [],
   "mirror": false

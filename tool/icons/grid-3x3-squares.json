@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DialpadSquare01",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "dialpad",
+    "squares",
+    "grid",
+    "keypad",
+    "menu",
+    "apps"
+  ],
+  "aliases": [],
+  "mirror": false
+}

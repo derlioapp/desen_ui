@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/building",
-  "category": "account",
+  "upstream": "hugeicons/Building02",
+  "also": [],
+  "category": "buildings",
   "tags": [
-    "organisation",
-    "organization"
+    "building",
+    "office",
+    "tower",
+    "windows"
   ],
   "aliases": [],
   "mirror": false

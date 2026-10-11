@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/TrafficJam01",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "traffic jam",
+    "cars",
+    "congestion",
+    "road"
+  ],
+  "aliases": [],
+  "mirror": false
+}

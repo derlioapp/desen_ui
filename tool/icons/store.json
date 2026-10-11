@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/store",
+  "upstream": "hugeicons/Store01",
+  "also": [],
   "category": "buildings",
   "tags": [
+    "store",
     "shop",
-    "supermarket",
-    "stand",
-    "boutique",
-    "building"
+    "market",
+    "retail",
+    "shopfront"
   ],
   "aliases": [],
   "mirror": false

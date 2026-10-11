@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AudioWave01",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "audio",
+    "sound",
+    "waveform",
+    "voice",
+    "equalizer",
+    "bars"
+  ],
+  "aliases": [],
+  "mirror": false
+}

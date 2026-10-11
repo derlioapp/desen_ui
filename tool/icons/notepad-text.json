@@ -1,32 +1,17 @@
 {
-  "upstream": "lucide/notepad-text",
+  "upstream": "hugeicons/NotepadText",
+  "also": [
+    "Note01"
+  ],
   "category": "text",
   "tags": [
-    "notebook",
-    "notes",
-    "pages",
-    "paper",
-    "stationery",
-    "sketchbook",
-    "organizer",
-    "organiser",
-    "planner",
-    "diary",
-    "journal",
-    "writing",
-    "write",
-    "written",
-    "reading",
-    "high school",
-    "university",
-    "college",
-    "academy",
-    "student",
-    "study",
-    "homework",
-    "research",
+    "notepad",
+    "note",
+    "memo",
+    "text",
+    "pad",
     "lines",
-    "opened"
+    "jot"
   ],
   "aliases": [],
   "mirror": false

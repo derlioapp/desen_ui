@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BarCode02",
+  "also": [],
+  "category": "shopping",
+  "tags": [
+    "scan",
+    "product",
+    "code",
+    "thick",
+    "bars",
+    "checkout"
+  ],
+  "aliases": [],
+  "mirror": false
+}

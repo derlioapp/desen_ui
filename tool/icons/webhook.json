@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/webhook",
+  "upstream": "hugeicons/Webhook",
+  "also": [],
   "category": "development",
   "tags": [
     "push api",
+    "callback",
+    "integration",
+    "hook",
     "interface",
-    "callback"
+    "api"
   ],
   "aliases": [],
   "mirror": false

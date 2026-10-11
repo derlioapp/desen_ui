@@ -1,0 +1,19 @@
+{
+  "upstream": "hugeicons/WasteRestore",
+  "also": [
+    "RestoreBin"
+  ],
+  "category": "home",
+  "tags": [
+    "waste restore",
+    "recover",
+    "undelete",
+    "recycle",
+    "restore",
+    "bin",
+    "undo",
+    "trash"
+  ],
+  "aliases": [],
+  "mirror": false
+}

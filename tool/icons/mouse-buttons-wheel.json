@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Mouse11",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "oval",
+    "buttons",
+    "cable",
+    "peripheral",
+    "computer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

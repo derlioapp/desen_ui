@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/alarm-smoke",
+  "upstream": "hugeicons/AlarmSmoke",
+  "also": [],
   "category": "home",
   "tags": [
-    "fire",
-    "alert",
-    "warning",
+    "alarm",
+    "smoke",
     "detector",
-    "carbon monoxide",
-    "safety",
-    "equipment",
-    "amenities"
+    "fire",
+    "safety"
   ],
   "aliases": [],
   "mirror": false

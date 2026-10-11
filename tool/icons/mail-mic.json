@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailVoice01",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "voicemail",
+    "audio",
+    "record",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

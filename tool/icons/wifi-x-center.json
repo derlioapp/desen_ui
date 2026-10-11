@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/WifiDisconnected02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "disconnected",
+    "offline",
+    "error",
+    "no",
+    "connection",
+    "x",
+    "dot"
+  ],
+  "aliases": [],
+  "mirror": false
+}

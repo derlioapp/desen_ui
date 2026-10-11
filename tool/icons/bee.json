@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide-lab/bee",
+  "upstream": "hugeicons/Swarm",
+  "also": [],
   "category": "animals",
   "tags": [
-    "bumble",
-    "buzz",
-    "busy",
-    "productivity",
-    "pollen",
-    "pollinate",
-    "honey",
-    "hive",
-    "keeper",
-    "garden",
-    "insect",
-    "antennae",
-    "flying",
-    "wings",
-    "sting",
     "swarm",
-    "wasp"
+    "bee",
+    "insect",
+    "honey",
+    "bees"
   ],
   "aliases": [],
   "mirror": false

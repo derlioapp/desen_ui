@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/swatch-book",
+  "upstream": "hugeicons/SwatchBook",
+  "also": [],
   "category": "design",
   "tags": [
-    "colors",
-    "colours",
-    "swatches",
-    "pantone",
-    "shades",
-    "tint",
-    "hue",
-    "saturation",
-    "brightness",
-    "theme",
-    "scheme",
+    "swatch",
+    "color",
     "palette",
     "samples",
-    "textile",
-    "carpet"
+    "paint"
   ],
   "aliases": [],
   "mirror": false

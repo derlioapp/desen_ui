@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/octagon",
+  "upstream": "hugeicons/Octagon",
+  "also": [
+    "Polygon"
+  ],
   "category": "shapes",
   "tags": [
+    "octagon",
     "stop",
-    "shape"
+    "shape",
+    "polygon"
   ],
   "aliases": [],
   "mirror": false

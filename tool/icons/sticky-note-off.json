@@ -1,28 +1,29 @@
 {
-  "upstream": "lucide/sticky-note-off",
+  "upstream": "desen/sticky-note-off",
+  "derived": {
+    "parts": [
+      {
+        "from": "StickyNote03",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ],
+    "paths": [
+      "M2 2L22 22"
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
-    "post-it",
-    "comment",
-    "annotation",
-    "reaction",
-    "memo",
-    "reminder",
-    "todo",
-    "task",
-    "idea",
-    "brainstorm",
-    "document",
-    "page",
-    "paper",
-    "sheet",
-    "stationary",
-    "office",
+    "note",
+    "sticky",
+    "off",
     "disabled",
-    "hidden",
-    "mute",
-    "inactive"
+    "hidden"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

@@ -1,23 +1,14 @@
 {
-  "upstream": "lucide/dot",
+  "upstream": "hugeicons/Dot",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "interpunct",
-    "interpoint",
-    "middot",
-    "step",
-    "punctuation",
+    "dot",
+    "point",
+    "bullet",
+    "small",
     "period",
-    "full stop",
-    "end",
-    "finish",
-    "final",
-    "characters",
-    "font",
-    "typography",
-    "type",
-    "center",
-    "."
+    "marker"
   ],
   "aliases": [],
   "mirror": false

@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide-lab/avocado",
+  "upstream": "hugeicons/Avocado",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "avocado",
     "fruit",
-    "snack",
-    "meal",
-    "lunch",
-    "ingredient",
-    "cooking",
-    "cookery",
-    "kitchen",
-    "cuisine",
-    "eating",
-    "healthy",
-    "nutrition",
-    "diet",
+    "food",
     "guacamole",
-    "mexican"
+    "vegan"
   ],
   "aliases": [],
   "mirror": false

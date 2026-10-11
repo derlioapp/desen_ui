@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/venus",
+  "upstream": "hugeicons/Venus",
+  "also": [
+    "FemaleSymbol"
+  ],
   "category": "medical",
   "tags": [
-    "gender",
-    "sex",
     "female",
-    "feminine",
     "woman",
+    "gender",
+    "symbol",
+    "feminine",
     "girl"
   ],
   "aliases": [],

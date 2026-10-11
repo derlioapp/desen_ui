@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/circle-power",
+  "upstream": "hugeicons/CirclePower",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "on",
-    "off",
-    "device",
-    "switch",
+    "power",
+    "on off",
+    "shutdown",
     "toggle",
-    "binary",
-    "boolean",
-    "reboot",
-    "restart",
-    "button",
-    "keyboard",
-    "troubleshoot"
+    "start"
   ],
   "aliases": [],
   "mirror": false

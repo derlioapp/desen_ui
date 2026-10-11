@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ComputerEthernet",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "computer",
+    "screen",
+    "ethernet",
+    "network",
+    "wired",
+    "lan"
+  ],
+  "aliases": [],
+  "mirror": false
+}

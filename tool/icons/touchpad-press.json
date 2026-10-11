@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Touchpad02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "touchpad",
+    "trackpad",
+    "gesture",
+    "finger",
+    "press"
+  ],
+  "aliases": [],
+  "mirror": false
+}

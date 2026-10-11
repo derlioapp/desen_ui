@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/bluetooth-searching",
+  "upstream": "hugeicons/BluetoothSearching",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "pairing"
+    "pairing",
+    "wireless",
+    "searching",
+    "scan"
   ],
   "aliases": [],
   "mirror": false

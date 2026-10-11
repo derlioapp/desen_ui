@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/contrast",
+  "upstream": "hugeicons/Contrast",
+  "also": [],
   "category": "photography",
   "tags": [
-    "display",
-    "accessibility"
+    "contrast",
+    "brightness",
+    "half",
+    "light",
+    "dark",
+    "adjust"
   ],
   "aliases": [],
   "mirror": false

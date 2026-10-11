@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/LocationUpdate01",
+  "also": [
+    "LocationUpdate02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "refresh",
+    "update",
+    "sync"
+  ],
+  "aliases": [],
+  "mirror": false
+}

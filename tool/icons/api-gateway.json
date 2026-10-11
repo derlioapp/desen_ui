@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ApiGateway",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "api",
+    "gateway",
+    "code",
+    "integration",
+    "network",
+    "microservices"
+  ],
+  "aliases": [],
+  "mirror": false
+}

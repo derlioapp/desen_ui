@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/FlipHorizontal",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "flip",
+    "mirror",
+    "horizontal",
+    "reflect",
+    "transform"
+  ],
+  "aliases": [
+    "trianglesCenterlineDashedVertical"
+  ],
+  "mirror": false
+}

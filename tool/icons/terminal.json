@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/terminal",
+  "upstream": "hugeicons/Terminal",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
+    "console",
+    "shell",
     "command line",
-    "prompt",
-    "shell"
+    "cli",
+    "prompt"
   ],
   "aliases": [],
   "mirror": false

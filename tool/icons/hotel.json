@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/hotel",
+  "upstream": "hugeicons/Hotel01",
+  "also": [],
   "category": "buildings",
   "tags": [
+    "hotel",
     "building",
-    "hostel",
-    "motel",
-    "inn"
+    "accommodation",
+    "stay"
   ],
   "aliases": [],
   "mirror": false

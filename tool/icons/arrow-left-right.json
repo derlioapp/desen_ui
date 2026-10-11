@@ -1,18 +1,18 @@
 {
-  "upstream": "lucide/arrow-left-right",
+  "upstream": "hugeicons/ArrowLeftRight",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "bidirectional",
-    "two-way",
-    "2-way",
+    "arrow",
+    "left",
+    "right",
     "swap",
-    "switch",
-    "transaction",
-    "reorder",
-    "move",
-    "<-",
-    "->"
+    "exchange",
+    "transfer",
+    "two-way"
   ],
-  "aliases": [],
+  "aliases": [
+    "arrowRightLeft"
+  ],
   "mirror": false
 }

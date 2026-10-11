@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MaterialAndTexture",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "layers",
+    "material",
+    "texture",
+    "stack",
+    "fabric"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/HouseSolarPanel",
+  "also": [],
+  "category": "home",
+  "tags": [
+    "solar",
+    "home",
+    "energy",
+    "panel",
+    "eco"
+  ],
+  "aliases": [],
+  "mirror": false
+}

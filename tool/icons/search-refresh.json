@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SearchReplace",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "find replace",
+    "magnifier",
+    "refresh",
+    "swap",
+    "cycle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

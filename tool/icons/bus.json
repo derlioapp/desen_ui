@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/bus",
+  "upstream": "hugeicons/Bus03",
+  "also": [],
   "category": "transportation",
   "tags": [
     "bus",
     "vehicle",
     "transport",
-    "trip"
+    "side",
+    "view"
   ],
   "aliases": [],
   "mirror": false

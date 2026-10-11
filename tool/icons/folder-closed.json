@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/folder-closed",
+  "upstream": "hugeicons/FolderClosed",
+  "also": [],
   "category": "files",
   "tags": [
+    "folder",
+    "closed",
     "directory",
-    "closed"
+    "files"
   ],
   "aliases": [],
   "mirror": false

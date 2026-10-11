@@ -1,8 +1,14 @@
 {
-  "upstream": "lucide/pointer-off",
+  "upstream": "hugeicons/PointerOff",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "mouse"
+    "pointer",
+    "hand",
+    "click",
+    "finger",
+    "disabled",
+    "off"
   ],
   "aliases": [],
   "mirror": false

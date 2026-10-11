@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FastWind",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "fast wind",
+    "air",
+    "blow",
+    "gust",
+    "breeze"
+  ],
+  "aliases": [],
+  "mirror": false
+}

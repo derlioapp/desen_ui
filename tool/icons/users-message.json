@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Conversation",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "conversation",
+    "chat",
+    "discussion",
+    "people",
+    "talk",
+    "dialog"
+  ],
+  "aliases": [],
+  "mirror": false
+}

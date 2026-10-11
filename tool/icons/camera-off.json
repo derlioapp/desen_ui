@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/camera-off",
+  "upstream": "hugeicons/CameraOff01",
+  "also": [],
   "category": "photography",
   "tags": [
     "photo",
-    "webcam",
-    "video"
+    "disabled",
+    "no camera",
+    "blocked",
+    "picture"
   ],
   "aliases": [],
   "mirror": false

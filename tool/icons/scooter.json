@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/scooter",
+  "upstream": "hugeicons/Scooter01",
+  "also": [],
   "category": "transportation",
   "tags": [
+    "moped",
+    "vespa",
     "vehicle",
-    "drive",
-    "trip",
-    "journey",
-    "transport",
-    "electric",
     "ride",
-    "urban",
-    "commute",
-    "speed"
+    "urban"
   ],
   "aliases": [],
   "mirror": false

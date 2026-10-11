@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SunCloudAngledRainZap02",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "cloud",
+    "sun",
+    "thunderstorm",
+    "rain",
+    "lightning"
+  ],
+  "aliases": [],
+  "mirror": false
+}

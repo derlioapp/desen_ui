@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderLock",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "lock",
+    "secure",
+    "private",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

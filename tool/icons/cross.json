@@ -1,9 +1,16 @@
 {
-  "upstream": "lucide/cross",
+  "upstream": "hugeicons/Cross",
+  "also": [
+    "Add02"
+  ],
   "category": "shapes",
   "tags": [
-    "healthcare",
-    "first aid"
+    "cross",
+    "plus",
+    "medical",
+    "health",
+    "swiss",
+    "add"
   ],
   "aliases": [],
   "mirror": false

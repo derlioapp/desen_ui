@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/popcorn",
+  "upstream": "hugeicons/Popcorn",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "popcorn",
     "cinema",
-    "movies",
-    "films",
-    "salted",
-    "sweet",
-    "sugar",
-    "candy",
-    "snack"
+    "snack",
+    "movie"
   ],
   "aliases": [],
   "mirror": false

@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/newspaper",
+  "upstream": "hugeicons/News",
+  "also": [],
   "category": "multimedia",
   "tags": [
     "news",
-    "feed",
-    "home",
-    "magazine",
+    "newspaper",
     "article",
-    "headline"
+    "press",
+    "media",
+    "headlines"
   ],
   "aliases": [
     "news"

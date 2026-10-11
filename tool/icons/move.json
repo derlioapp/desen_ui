@@ -1,8 +1,18 @@
 {
-  "upstream": "lucide/move",
+  "upstream": "hugeicons/Move",
+  "also": [
+    "ArrowAllDirection"
+  ],
   "category": "arrows",
   "tags": [
-    "arrows"
+    "move",
+    "drag",
+    "pan",
+    "four arrows",
+    "reposition",
+    "all directions",
+    "cross",
+    "four way"
   ],
   "aliases": [],
   "mirror": false

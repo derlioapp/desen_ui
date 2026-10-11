@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SystemUpdate02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "system update",
+    "gear",
+    "settings",
+    "sync",
+    "software update"
+  ],
+  "aliases": [],
+  "mirror": false
+}

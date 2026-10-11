@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/CreditCardNotFound",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "payment",
+    "card not found",
+    "disabled",
+    "no card"
+  ],
+  "aliases": [],
+  "mirror": false
+}

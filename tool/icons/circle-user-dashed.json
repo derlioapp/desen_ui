@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/UserStory",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "story",
+    "status",
+    "social",
+    "profile",
+    "person",
+    "avatar",
+    "user story"
+  ],
+  "aliases": [],
+  "mirror": false
+}

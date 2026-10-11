@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/StepOut",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "step out",
+    "debug",
+    "debugger",
+    "exit function"
+  ],
+  "aliases": [],
+  "mirror": false
+}

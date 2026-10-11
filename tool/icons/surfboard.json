@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide-lab/surfboard",
+  "upstream": "hugeicons/Surfboard",
+  "also": [],
   "category": "travel",
   "tags": [
-    "bodyboard",
-    "surfer",
-    "summer holiday",
-    "seaside",
+    "surfboard",
+    "surf",
     "beach",
     "waves",
-    "wind",
-    "tidal",
-    "tide",
-    "ocean",
-    "baywatch",
-    "lifesaver",
-    "lifeguard",
-    "coastguard",
-    "equipment",
-    "emergency",
-    "rescue"
+    "sport"
   ],
   "aliases": [],
   "mirror": false

@@ -1,5 +1,20 @@
 {
-  "upstream": "lucide/credit-card-minus",
+  "upstream": "desen/credit-card-minus",
+  "derived": {
+    "parts": [
+      {
+        "from": "CreditCardAdd",
+        "keep": [
+          0,
+          2
+        ]
+      }
+    ],
+    "paths": [
+      "M15 16.5H22"
+    ]
+  },
+  "also": [],
   "category": "account",
   "tags": [
     "debit",

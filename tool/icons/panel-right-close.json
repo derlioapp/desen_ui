@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/panel-right-close",
+  "upstream": "hugeicons/PanelRightClose",
+  "also": [],
   "category": "layout",
   "tags": [
+    "panel",
+    "right",
     "sidebar",
-    "secondary",
-    "drawer",
-    "hide",
-    "chevron",
-    ">"
+    "close",
+    "collapse"
   ],
   "aliases": [],
   "mirror": false

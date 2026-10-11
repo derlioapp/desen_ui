@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide-lab/hat-baseball",
+  "upstream": "hugeicons/Cap",
+  "also": [],
   "category": "shopping",
   "tags": [
     "cap",
-    "hats",
-    "headwear",
-    "headgear",
-    "mens",
-    "boys",
-    "store",
+    "hat",
+    "baseball cap",
     "clothing",
-    "clothes",
-    "accessories",
-    "apparel",
-    "attire",
-    "fashion"
+    "headwear"
   ],
   "aliases": [],
   "mirror": false

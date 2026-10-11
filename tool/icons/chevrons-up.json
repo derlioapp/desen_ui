@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/chevrons-up",
+  "upstream": "hugeicons/ChevronsUp",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "forward",
-    "ahead",
-    "faster",
-    "speed",
-    "boost"
+    "scroll",
+    "collapse",
+    "less",
+    "double",
+    "up"
   ],
   "aliases": [],
   "mirror": false

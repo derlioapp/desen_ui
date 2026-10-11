@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/forklift",
+  "upstream": "hugeicons/Forklift",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "machinery",
-    "industrial",
+    "forklift",
     "warehouse",
-    "lifting",
-    "storage",
-    "equipment",
-    "heavy-duty",
-    "moving",
-    "vehicle",
-    "transport",
-    "logistics"
+    "lift",
+    "logistics",
+    "truck"
   ],
   "aliases": [],
   "mirror": false

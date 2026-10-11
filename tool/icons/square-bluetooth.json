@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/BluetoothSquare",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wireless",
+    "bluetooth",
+    "connect",
+    "pairing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

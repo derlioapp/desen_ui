@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/GameController02",
+  "also": [],
+  "category": "gaming",
+  "tags": [
+    "gamepad",
+    "controller",
+    "joysticks",
+    "game",
+    "console"
+  ],
+  "aliases": [],
+  "mirror": false
+}

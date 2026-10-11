@@ -1,18 +1,18 @@
 {
-  "upstream": "lucide/vault",
+  "upstream": "hugeicons/Vault",
+  "also": [
+    "SafeBox"
+  ],
   "category": "security",
   "tags": [
     "safe",
-    "lockbox",
-    "deposit",
-    "locker",
-    "coffer",
     "strongbox",
-    "safety",
+    "bank",
     "secure",
     "storage",
-    "valuables",
-    "bank"
+    "locker",
+    "deposit",
+    "valuables"
   ],
   "aliases": [],
   "mirror": false

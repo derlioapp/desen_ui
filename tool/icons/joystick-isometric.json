@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Joystick04",
+  "also": [],
+  "category": "gaming",
+  "tags": [
+    "joystick",
+    "controller",
+    "arcade",
+    "gamepad",
+    "3d base"
+  ],
+  "aliases": [],
+  "mirror": false
+}

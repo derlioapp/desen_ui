@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/glasses",
+  "upstream": "hugeicons/Glasses",
+  "also": [],
   "category": "accessibility",
   "tags": [
     "glasses",
-    "spectacles"
+    "spectacles",
+    "eyewear",
+    "vision",
+    "reading"
   ],
   "aliases": [],
   "mirror": false

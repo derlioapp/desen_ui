@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/user-round-search",
+  "upstream": "hugeicons/UserRoundSearch",
+  "also": [],
   "category": "account",
   "tags": [
-    "person",
-    "account",
-    "contact",
-    "find",
-    "scan",
+    "find user",
+    "search",
+    "lookup",
     "magnifier",
-    "magnifying glass",
-    "lens"
+    "person",
+    "account"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/Podium",
+  "also": [
+    "PresentationPodium"
+  ],
+  "category": "social",
+  "tags": [
+    "podium",
+    "lectern",
+    "speech",
+    "microphones",
+    "speaker",
+    "conference",
+    "presentation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

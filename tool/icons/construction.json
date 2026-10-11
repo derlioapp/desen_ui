@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/construction",
+  "upstream": "hugeicons/Construction",
+  "also": [],
   "category": "development",
   "tags": [
+    "construction",
+    "barrier",
     "roadwork",
-    "maintenance",
-    "blockade",
-    "barricade"
+    "barricade",
+    "warning",
+    "under construction"
   ],
   "aliases": [],
   "mirror": false

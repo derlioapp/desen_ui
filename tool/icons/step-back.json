@@ -1,12 +1,18 @@
 {
-  "upstream": "lucide/step-back",
+  "upstream": "hugeicons/StepBack",
+  "also": [
+    "Backward01"
+  ],
   "category": "multimedia",
   "tags": [
-    "arrow",
+    "step back",
     "previous",
-    "music",
-    "left",
-    "reverse"
+    "media",
+    "backward",
+    "skip",
+    "back",
+    "track",
+    "rewind"
   ],
   "aliases": [],
   "mirror": false

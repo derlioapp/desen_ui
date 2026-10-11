@@ -1,11 +1,16 @@
 {
-  "upstream": "lucide/arrow-up",
+  "upstream": "hugeicons/ArrowUp02",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "forward",
+    "arrow",
+    "up",
+    "north",
     "direction",
-    "north"
+    "upload"
   ],
-  "aliases": [],
+  "aliases": [
+    "moveUp"
+  ],
   "mirror": false
 }

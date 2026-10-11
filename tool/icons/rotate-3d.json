@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/rotate-3d",
+  "upstream": "hugeicons/RotateThreeD",
+  "also": [],
   "category": "design",
   "tags": [
-    "gizmo",
-    "transform",
-    "orientation",
+    "rotate 3d",
+    "three d",
     "orbit",
-    "axis"
+    "spin"
   ],
   "aliases": [],
   "mirror": false

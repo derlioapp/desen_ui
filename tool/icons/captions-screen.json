@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/OpenCaption",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "captions",
+    "subtitles",
+    "open caption",
+    "cc",
+    "burned-in"
+  ],
+  "aliases": [],
+  "mirror": false
+}

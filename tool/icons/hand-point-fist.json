@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Touch04",
+  "also": [],
+  "category": "accessibility",
+  "tags": [
+    "touch",
+    "tap",
+    "pointer",
+    "finger",
+    "gesture",
+    "fist"
+  ],
+  "aliases": [],
+  "mirror": false
+}

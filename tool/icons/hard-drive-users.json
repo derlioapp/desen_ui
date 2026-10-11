@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SharedDrive",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "shared drive",
+    "storage",
+    "team",
+    "nas",
+    "collaborate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

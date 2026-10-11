@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Celsius",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "temperature",
+    "degrees",
+    "unit",
+    "thermometer",
+    "metric"
+  ],
+  "aliases": [],
+  "mirror": false
+}

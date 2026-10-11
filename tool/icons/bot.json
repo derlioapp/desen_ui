@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/bot",
+  "upstream": "hugeicons/Bot",
+  "also": [],
   "category": "development",
   "tags": [
+    "bot",
     "robot",
     "ai",
-    "chat",
-    "assistant"
+    "assistant",
+    "face"
   ],
-  "aliases": [
-    "robot"
-  ],
+  "aliases": [],
   "mirror": false
 }

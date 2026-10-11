@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SignalLow02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "signal",
+    "low",
+    "strength",
+    "weak",
+    "bars"
+  ],
+  "aliases": [],
+  "mirror": false
+}

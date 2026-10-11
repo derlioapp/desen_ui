@@ -1,25 +1,13 @@
 {
-  "upstream": "lucide/antenna",
+  "upstream": "hugeicons/Antenna",
+  "also": [],
   "category": "devices",
   "tags": [
-    "signal",
-    "connection",
-    "connectivity",
-    "tv",
-    "television",
-    "broadcast",
-    "live",
-    "frequency",
-    "tune",
-    "scan",
-    "channels",
     "aerial",
-    "receiver",
-    "transmission",
-    "transducer",
-    "terrestrial",
-    "satellite",
-    "cable"
+    "signal",
+    "tv",
+    "broadcast",
+    "reception"
   ],
   "aliases": [],
   "mirror": false

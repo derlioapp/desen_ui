@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Flowchart01",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "flowchart",
+    "diagram",
+    "decision",
+    "process",
+    "workflow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/mars",
+  "upstream": "hugeicons/Mars",
+  "also": [],
   "category": "medical",
   "tags": [
-    "gender",
-    "sex",
     "male",
-    "masculine",
+    "gender",
+    "symbol",
     "man",
-    "boy"
+    "mars"
   ],
   "aliases": [],
   "mirror": false

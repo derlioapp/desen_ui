@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/folder-open-dot",
+  "upstream": "hugeicons/FolderOpenDot",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "root",
-    "project",
-    "active",
-    "current",
-    "pinned"
+    "folder",
+    "open",
+    "dot",
+    "badge",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

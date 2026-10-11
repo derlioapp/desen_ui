@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/FolderLinks",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "link",
+    "url",
+    "shortcut",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

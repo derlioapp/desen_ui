@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/AiVideo01",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "ai",
+    "video",
+    "camera",
+    "sparkle",
+    "generate"
+  ],
+  "aliases": [
+    "videoSparkles"
+  ],
+  "mirror": false
+}

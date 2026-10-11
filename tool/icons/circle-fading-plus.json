@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/circle-fading-plus",
+  "upstream": "hugeicons/CircleFadingPlus",
+  "also": [],
   "category": "social",
   "tags": [
-    "stories",
-    "social media",
-    "sharing",
-    "content"
+    "add",
+    "new",
+    "create",
+    "fading",
+    "plus"
   ],
   "aliases": [],
   "mirror": false

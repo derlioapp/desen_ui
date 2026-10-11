@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ShoppingBagCheck",
+  "also": [],
+  "category": "shopping",
+  "tags": [
+    "bag",
+    "verified",
+    "purchased",
+    "done",
+    "ecommerce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

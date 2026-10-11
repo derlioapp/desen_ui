@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileAudio",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "audio",
+    "sound",
+    "speaker",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

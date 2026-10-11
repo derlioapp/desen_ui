@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/map-pin-check",
+  "upstream": "hugeicons/MapPinCheck",
+  "also": [],
   "category": "navigation",
   "tags": [
     "location",

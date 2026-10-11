@@ -1,11 +1,16 @@
 {
-  "upstream": "lucide/hard-hat",
+  "upstream": "hugeicons/HardHat",
+  "also": [],
   "category": "tools",
   "tags": [
     "helmet",
     "construction",
-    "safety"
+    "safety",
+    "worker",
+    "site"
   ],
-  "aliases": [],
+  "aliases": [
+    "hatHard"
+  ],
   "mirror": false
 }

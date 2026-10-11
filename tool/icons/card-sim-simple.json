@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Simcard02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "sim",
+    "card",
+    "chip",
+    "mobile"
+  ],
+  "aliases": [],
+  "mirror": false
+}

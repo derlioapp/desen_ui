@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SearchDollar",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "find",
+    "price",
+    "money",
+    "magnifier",
+    "dollar"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

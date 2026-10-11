@@ -1,10 +1,15 @@
 {
-  "upstream": "lucide/radio-receiver",
+  "upstream": "hugeicons/Radio",
+  "also": [
+    "RadioReceiver"
+  ],
   "category": "devices",
   "tags": [
-    "device",
+    "radio",
+    "receiver",
+    "antenna",
     "music",
-    "connect"
+    "broadcast"
   ],
   "aliases": [],
   "mirror": false

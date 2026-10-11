@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Airpod02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "airpod",
+    "earbuds",
+    "case",
+    "charging",
+    "open"
+  ],
+  "aliases": [],
+  "mirror": false
+}

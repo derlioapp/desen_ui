@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/pen-line",
+  "upstream": "hugeicons/PenLine",
+  "also": [],
   "category": "text",
   "tags": [
-    "pencil",
-    "change",
-    "create",
-    "draw",
-    "writer",
-    "writing",
-    "biro",
-    "ink",
-    "marker",
-    "felt tip",
-    "stationery",
-    "artist"
+    "pen",
+    "edit",
+    "write",
+    "line",
+    "signature"
   ],
   "aliases": [],
   "mirror": false

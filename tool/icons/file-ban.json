@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileBlock",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "block",
+    "forbidden",
+    "prohibited",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

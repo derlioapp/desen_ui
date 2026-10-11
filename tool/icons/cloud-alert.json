@@ -1,14 +1,11 @@
 {
-  "upstream": "lucide/cloud-alert",
+  "upstream": "hugeicons/CloudAlert",
+  "also": [],
   "category": "development",
   "tags": [
-    "weather",
-    "danger",
     "warning",
-    "alert",
     "error",
-    "sync",
-    "network",
+    "storage",
     "exclamation"
   ],
   "aliases": [],

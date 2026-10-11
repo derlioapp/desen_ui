@@ -1,18 +1,17 @@
 {
-  "upstream": "lucide/search",
+  "upstream": "hugeicons/Search01",
+  "also": [],
   "category": "text",
   "tags": [
     "find",
-    "scan",
     "magnifier",
     "magnifying glass",
     "lens",
-    "locate",
-    "explore",
-    "discover",
-    "enlarge",
-    "zoom"
+    "zoom",
+    "explore"
   ],
-  "aliases": [],
+  "aliases": [
+    "search2"
+  ],
   "mirror": false
 }

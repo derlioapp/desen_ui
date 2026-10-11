@@ -1,17 +1,16 @@
 {
-  "upstream": "lucide/coffee",
+  "upstream": "hugeicons/Coffee02",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "drink",
+    "coffee01",
     "cup",
-    "mug",
     "tea",
     "cafe",
     "hot",
-    "beverage"
+    "beverage",
+    "steam"
   ],
-  "aliases": [
-    "cafe"
-  ],
+  "aliases": [],
   "mirror": false
 }

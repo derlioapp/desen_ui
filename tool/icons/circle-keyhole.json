@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Lock",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "lock",
+    "secure",
+    "keyhole",
+    "privacy",
+    "round"
+  ],
+  "aliases": [],
+  "mirror": false
+}

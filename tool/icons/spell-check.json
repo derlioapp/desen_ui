@@ -1,17 +1,15 @@
 {
-  "upstream": "lucide/spell-check",
+  "upstream": "hugeicons/SpellCheck",
+  "also": [],
   "category": "text",
   "tags": [
     "spelling",
-    "error",
-    "mistake",
-    "oversight",
-    "typo",
-    "correction",
-    "code",
-    "linter",
-    "a"
+    "proofread",
+    "grammar",
+    "check"
   ],
-  "aliases": [],
+  "aliases": [
+    "spellCheck2"
+  ],
   "mirror": false
 }

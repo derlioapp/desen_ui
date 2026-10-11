@@ -1,10 +1,11 @@
 {
-  "upstream": "lucide/power-off",
+  "upstream": "hugeicons/PowerOff",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "on",
+    "power",
     "off",
-    "device",
+    "disabled",
     "switch"
   ],
   "aliases": [],

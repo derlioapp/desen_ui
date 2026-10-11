@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/globe-lock",
-  "category": "security",
+  "upstream": "hugeicons/GlobeLock",
+  "also": [],
+  "category": "navigation",
   "tags": [
-    "vpn",
-    "private",
-    "privacy",
-    "network",
+    "globe",
+    "lock",
+    "secure",
     "world",
-    "browser",
-    "security",
-    "encryption",
-    "protection",
-    "connection"
+    "internet",
+    "private"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MultiplicationSignSquare",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "close",
+    "cancel",
+    "dismiss",
+    "multiply",
+    "error",
+    "remove"
+  ],
+  "aliases": [],
+  "mirror": false
+}

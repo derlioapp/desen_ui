@@ -1,9 +1,15 @@
 {
-  "upstream": "lucide/underline",
+  "upstream": "hugeicons/TextUnderline",
+  "also": [
+    "Underline"
+  ],
   "category": "text",
   "tags": [
     "text",
-    "format"
+    "format",
+    "underscore",
+    "underline",
+    "style"
   ],
   "aliases": [],
   "mirror": false

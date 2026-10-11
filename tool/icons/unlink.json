@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/unlink",
+  "upstream": "hugeicons/Unlink02",
+  "also": [],
   "category": "text",
   "tags": [
+    "unlink",
+    "broken link",
     "url",
-    "unchain"
+    "detach"
   ],
   "aliases": [
     "linkOff"

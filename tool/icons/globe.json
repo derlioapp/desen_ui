@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/globe",
+  "upstream": "hugeicons/Internet",
+  "also": [],
   "category": "navigation",
   "tags": [
+    "internet",
+    "web",
     "world",
-    "browser",
-    "language",
-    "translate"
+    "earth",
+    "international",
+    "network"
   ],
   "aliases": [],
   "mirror": false

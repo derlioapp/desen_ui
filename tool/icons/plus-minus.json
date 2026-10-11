@@ -1,0 +1,23 @@
+{
+  "upstream": "hugeicons/PlusMinus01",
+  "also": [
+    "Diff"
+  ],
+  "category": "math",
+  "tags": [
+    "plus",
+    "minus",
+    "plusminus",
+    "tolerance",
+    "diff",
+    "compare",
+    "plus minus",
+    "changes",
+    "version",
+    "difference"
+  ],
+  "aliases": [
+    "diff"
+  ],
+  "mirror": false
+}

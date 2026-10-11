@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/glass-water",
+  "upstream": "hugeicons/GlassWater",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "beverage",
-    "drink",
     "glass",
-    "water"
+    "water",
+    "drink",
+    "beverage",
+    "hydration"
   ],
   "aliases": [],
   "mirror": false

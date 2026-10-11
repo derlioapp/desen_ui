@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Database01",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "database",
+    "table",
+    "rows",
+    "records",
+    "server",
+    "storage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

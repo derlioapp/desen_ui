@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/folder-symlink",
+  "upstream": "hugeicons/FolderSymlink",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
+    "folder",
     "symlink",
-    "symbolic",
-    "link"
+    "shortcut",
+    "alias",
+    "link",
+    "directory"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": true
 }

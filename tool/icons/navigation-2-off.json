@@ -1,9 +1,17 @@
 {
-  "upstream": "lucide/navigation-2-off",
+  "upstream": "hugeicons/Navigation2Off",
+  "also": [
+    "NavigationOff01"
+  ],
   "category": "navigation",
   "tags": [
-    "location",
-    "travel"
+    "navigate",
+    "direction",
+    "gps",
+    "off",
+    "disabled",
+    "crossed",
+    "arrow"
   ],
   "aliases": [],
   "mirror": false

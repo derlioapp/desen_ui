@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/square-mouse-pointer",
+  "upstream": "hugeicons/SquareMousePointer",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "inspector",
-    "element",
-    "mouse",
-    "click",
+    "cursor",
     "pointer",
-    "box",
-    "browser",
-    "selector",
-    "target",
-    "dom",
-    "node"
+    "select",
+    "click",
+    "mouse"
   ],
   "aliases": [],
   "mirror": false

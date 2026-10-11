@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FingerPrintAdd",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "fingerprint",
+    "add",
+    "enroll",
+    "biometric",
+    "register"
+  ],
+  "aliases": [],
+  "mirror": false
+}

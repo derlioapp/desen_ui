@@ -1,7 +1,13 @@
 {
-  "upstream": "lucide/alarm-clock-minus",
+  "upstream": "hugeicons/AlarmClockMinus",
+  "also": [],
   "category": "devices",
   "tags": [
+    "alarm",
+    "clock",
+    "time",
+    "wake",
+    "minus",
     "remove"
   ],
   "aliases": [],

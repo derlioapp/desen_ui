@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/bitcoin",
+  "upstream": "hugeicons/Bitcoin",
+  "also": [],
   "category": "development",
   "tags": [
     "cryptocurrency",
-    "digital",
-    "blockchain",
-    "finance",
-    "coin",
-    "market",
-    "decentralized",
-    "investment",
     "crypto",
+    "btc",
     "currency",
-    "money",
-    "payment"
+    "money"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatQuestion",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "help",
+    "question",
+    "support",
+    "faq"
+  ],
+  "aliases": [],
+  "mirror": false
+}

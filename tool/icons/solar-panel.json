@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/solar-panel",
+  "upstream": "hugeicons/SolarPanel01",
+  "also": [],
   "category": "home",
   "tags": [
-    "solar panel",
     "solar",
     "panel",
     "sun",
     "energy",
-    "electricity",
-    "light"
+    "electricity"
   ],
   "aliases": [],
   "mirror": false

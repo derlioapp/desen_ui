@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Browser",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "browser",
+    "window",
+    "app",
+    "web"
+  ],
+  "aliases": [],
+  "mirror": false
+}

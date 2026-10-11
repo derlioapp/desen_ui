@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide/folder-dot",
+  "upstream": "hugeicons/FolderDot",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "root",
-    "project",
-    "pinned",
-    "active",
-    "current",
-    "cogged",
-    "gear",
-    "mechanical",
-    "machinery",
-    "configuration",
-    "controls",
-    "preferences",
-    "settings",
-    "system",
-    "admin",
-    "edit"
+    "folder",
+    "dot",
+    "badge",
+    "marked",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

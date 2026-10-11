@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/locate-fixed",
+  "upstream": "hugeicons/LocateFixed",
+  "also": [],
   "category": "navigation",
   "tags": [
-    "map",
     "gps",
     "location",
-    "cross"
+    "target",
+    "position",
+    "fixed"
   ],
   "aliases": [],
   "mirror": false

@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/folder-open",
+  "upstream": "hugeicons/Folder02",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory"
+    "folder",
+    "open",
+    "directory",
+    "files"
   ],
   "aliases": [],
   "mirror": false

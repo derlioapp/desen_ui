@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/bomb",
+  "upstream": "hugeicons/Bomb",
+  "also": [],
   "category": "security",
   "tags": [
-    "fatal",
-    "error",
-    "crash",
-    "blockbuster",
-    "mine",
     "explosion",
-    "explode",
-    "explosive"
+    "explosive",
+    "error",
+    "crash"
   ],
   "aliases": [],
   "mirror": false

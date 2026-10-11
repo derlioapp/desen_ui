@@ -1,5 +1,35 @@
 {
-  "upstream": "lucide/server-plus",
+  "upstream": "desen/server-plus",
+  "derived": {
+    "parts": [
+      {
+        "from": "ServerStack01",
+        "keep": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "from": "UserAdd01",
+        "keep": [
+          1
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        18,
+        18.5,
+        4.6
+      ]
+    ]
+  },
+  "also": [],
   "category": "development",
   "tags": [
     "add",
@@ -10,5 +40,6 @@
     "computing"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.5
 }

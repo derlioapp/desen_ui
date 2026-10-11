@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/file-search",
+  "upstream": "hugeicons/FileSearch",
+  "also": [],
   "category": "files",
   "tags": [
-    "lost",
-    "document",
     "find",
-    "browser",
-    "lens"
+    "lens",
+    "browse",
+    "document"
   ],
   "aliases": [],
   "mirror": false

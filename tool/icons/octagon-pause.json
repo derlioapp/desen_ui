@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/octagon-pause",
+  "upstream": "hugeicons/OctagonPause",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "music",
-    "audio",
-    "stop"
+    "octagon",
+    "pause",
+    "stop",
+    "hold"
   ],
   "aliases": [],
   "mirror": false

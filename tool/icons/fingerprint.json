@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FingerPrint",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "fingerprint",
+    "biometric",
+    "identity",
+    "touch id",
+    "finger print"
+  ],
+  "aliases": [],
+  "mirror": false
+}

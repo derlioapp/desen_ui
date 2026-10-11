@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Car01",
+  "also": [
+    "Car02"
+  ],
+  "category": "transportation",
+  "tags": [
+    "vehicle",
+    "automobile",
+    "auto",
+    "front view",
+    "suv",
+    "sports car"
+  ],
+  "aliases": [],
+  "mirror": false
+}

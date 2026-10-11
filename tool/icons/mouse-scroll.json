@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/MouseScroll01",
+  "also": [
+    "MouseScroll02"
+  ],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "scroll",
+    "wheel",
+    "up down",
+    "scroll wheel",
+    "peripheral"
+  ],
+  "aliases": [],
+  "mirror": false
+}

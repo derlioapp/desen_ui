@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/cone",
+  "upstream": "hugeicons/Cone01",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "conical",
-    "triangle",
-    "triangular",
+    "cone",
     "geometry",
-    "filter",
-    "funnel",
-    "hopper",
-    "spotlight",
-    "searchlight"
+    "3d",
+    "shape",
+    "conical"
   ],
   "aliases": [],
   "mirror": false

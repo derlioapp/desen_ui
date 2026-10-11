@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/list-video",
+  "upstream": "hugeicons/ListVideo",
+  "also": [],
   "category": "multimedia",
   "tags": [
     "playlist",
-    "video",
-    "playback"
+    "movies",
+    "queue",
+    "list",
+    "watch"
   ],
   "aliases": [],
   "mirror": true

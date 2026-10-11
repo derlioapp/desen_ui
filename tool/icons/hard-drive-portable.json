@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Hdd",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "external drive",
+    "hdd",
+    "storage",
+    "disk",
+    "usb drive"
+  ],
+  "aliases": [],
+  "mirror": false
+}

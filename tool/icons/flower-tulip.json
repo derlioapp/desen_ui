@@ -1,23 +1,12 @@
 {
-  "upstream": "lucide-lab/flower-tulip",
+  "upstream": "hugeicons/Tulip",
+  "also": [],
   "category": "nature",
   "tags": [
-    "petals",
-    "plant",
-    "stem",
-    "leaves",
+    "tulip",
+    "flower",
     "spring",
-    "bloom",
-    "blossom",
-    "gardening",
-    "botanical",
-    "flora",
-    "florist",
-    "bouquet",
-    "bunch",
-    "gift",
-    "romantic",
-    "special occasion"
+    "plant"
   ],
   "aliases": [],
   "mirror": false

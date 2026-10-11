@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/bed-single",
+  "upstream": "hugeicons/BedSingle01",
+  "also": [],
   "category": "home",
   "tags": [
     "sleep",
     "hotel",
-    "furniture"
+    "furniture",
+    "bedroom"
   ],
   "aliases": [],
   "mirror": false

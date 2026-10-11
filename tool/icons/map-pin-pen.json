@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/map-pin-pen",
+  "upstream": "hugeicons/MapPinPen",
+  "also": [],
   "category": "navigation",
   "tags": [
     "location",
-    "waypoint",
-    "marker",
-    "drop",
-    "edit"
+    "pin",
+    "edit",
+    "pen",
+    "change"
   ],
   "aliases": [],
   "mirror": false

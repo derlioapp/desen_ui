@@ -1,10 +1,17 @@
 {
-  "upstream": "lucide/circle-equal",
+  "upstream": "hugeicons/CircleEqual",
+  "also": [
+    "EqualSignCircle"
+  ],
   "category": "math",
   "tags": [
-    "calculate",
-    "shape",
-    "="
+    "equals",
+    "equal",
+    "math",
+    "same",
+    "equal sign",
+    "equality",
+    "circle"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/train-front-tunnel",
+  "upstream": "hugeicons/TrainFrontTunnel",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "railway",
-    "metro",
+    "train",
+    "tunnel",
     "subway",
-    "underground",
-    "speed",
-    "bullet",
-    "fast",
-    "track",
-    "line"
+    "metro",
+    "railway"
   ],
   "aliases": [],
   "mirror": false

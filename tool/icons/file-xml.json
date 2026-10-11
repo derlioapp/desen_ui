@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Xml01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "markup",
+    "document",
+    "code",
+    "xml",
+    "data"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Cancel02",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "close",
+    "cancel",
+    "dismiss",
+    "delete",
+    "remove",
+    "cross"
+  ],
+  "aliases": [],
+  "mirror": false
+}

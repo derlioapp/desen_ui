@@ -1,10 +1,17 @@
 {
-  "upstream": "lucide/mouse-pointer-click",
+  "upstream": "hugeicons/CursorMagicSelection03",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "click",
-    "select"
+    "cursor",
+    "magic selection",
+    "highlight",
+    "pointer",
+    "burst",
+    "shine"
   ],
-  "aliases": [],
+  "aliases": [
+    "mousePointer2Click"
+  ],
   "mirror": false
 }

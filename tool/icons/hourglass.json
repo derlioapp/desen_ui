@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/hourglass",
+  "upstream": "hugeicons/Hourglass",
+  "also": [],
   "category": "time",
   "tags": [
+    "hourglass",
+    "wait",
+    "loading",
     "timer",
-    "time",
-    "sandglass"
+    "sand"
   ],
   "aliases": [],
   "mirror": false

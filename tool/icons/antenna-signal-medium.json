@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SignalMedium01",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "signal",
+    "antenna",
+    "medium",
+    "strength",
+    "cellular"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide-lab/mortar-pestle",
+  "upstream": "hugeicons/Mortar",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "bowl",
-    "crush",
-    "grind",
-    "ingredients",
+    "mortar",
+    "pestle",
     "herbs",
-    "spices",
-    "cooking",
-    "cookery",
-    "culinary",
-    "kitchen",
-    "equipment",
-    "utensil"
+    "grind",
+    "pharmacy",
+    "cooking"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/GolfBat",
+  "also": [],
+  "category": "sports",
+  "tags": [
+    "golf",
+    "club",
+    "bat",
+    "sport",
+    "driver"
+  ],
+  "aliases": [
+    "golfDriver"
+  ],
+  "mirror": false
+}

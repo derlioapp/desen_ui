@@ -1,17 +1,12 @@
 {
-  "upstream": "lucide/pencil",
-  "category": "design",
+  "upstream": "hugeicons/Edit03",
+  "also": [],
+  "category": "text",
   "tags": [
-    "rubber",
     "edit",
-    "create",
-    "draw",
-    "sketch",
-    "draft",
-    "writer",
-    "writing",
-    "stationery",
-    "artist"
+    "pen",
+    "write",
+    "draw"
   ],
   "aliases": [
     "edit"

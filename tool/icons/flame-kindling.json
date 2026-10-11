@@ -1,17 +1,15 @@
 {
-  "upstream": "lucide/flame-kindling",
+  "upstream": "hugeicons/FlameKindling",
+  "also": [],
   "category": "nature",
   "tags": [
-    "campfire",
-    "camping",
-    "wilderness",
-    "outdoors",
-    "lit",
-    "warmth",
-    "wood",
-    "twigs",
-    "sticks"
+    "fire",
+    "flame",
+    "kindling",
+    "logs",
+    "camping"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

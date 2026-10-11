@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/arrow-left-from-line",
+  "upstream": "hugeicons/ArrowLeftFromLine",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "previous",
-    "back",
-    "direction",
-    "west",
-    "expand",
-    "fold",
-    "horizontal",
-    "<-|"
+    "arrow",
+    "left",
+    "from",
+    "line",
+    "leave",
+    "start"
   ],
   "aliases": [],
   "mirror": true

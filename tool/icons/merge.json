@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/merge",
+  "upstream": "hugeicons/Merge",
+  "also": [],
   "category": "development",
   "tags": [
+    "merge",
     "combine",
     "join",
-    "unite"
+    "fork",
+    "git"
   ],
   "aliases": [],
   "mirror": false

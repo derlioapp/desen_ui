@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/chart-area",
+  "upstream": "hugeicons/ChartArea",
+  "also": [],
   "category": "charts",
   "tags": [
+    "area chart",
+    "graph",
     "statistics",
     "analytics",
-    "diagram",
-    "graph",
-    "area"
+    "trend"
   ],
   "aliases": [
     "areaChart"

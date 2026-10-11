@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/gamepad",
+  "upstream": "hugeicons/Gamepad",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "console"
+    "gamepad",
+    "controller",
+    "game",
+    "console",
+    "play"
   ],
   "aliases": [],
   "mirror": false

@@ -1,5 +1,30 @@
 {
-  "upstream": "lucide/star-x",
+  "upstream": "desen/star-x",
+  "derived": {
+    "parts": [
+      {
+        "from": "Star",
+        "keep": [
+          0
+        ]
+      },
+      {
+        "from": "UserRemove01",
+        "keep": [
+          1
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        18,
+        18.5,
+        5.6
+      ]
+    ]
+  },
+  "also": [],
   "category": "account",
   "tags": [
     "mark",

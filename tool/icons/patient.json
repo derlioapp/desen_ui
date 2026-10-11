@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Patient",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "patient",
+    "person",
+    "hospital",
+    "medical",
+    "health"
+  ],
+  "aliases": [],
+  "mirror": false
+}

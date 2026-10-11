@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/UserTime02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "time",
+    "history",
+    "pending",
+    "schedule",
+    "waiting",
+    "person",
+    "account",
+    "user time"
+  ],
+  "aliases": [],
+  "mirror": false
+}

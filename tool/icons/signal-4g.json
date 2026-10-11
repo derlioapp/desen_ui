@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FourGSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "4g",
+    "network",
+    "mobile",
+    "signal",
+    "lte"
+  ],
+  "aliases": [],
+  "mirror": false
+}

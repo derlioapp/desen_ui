@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/keyboard-off",
+  "upstream": "hugeicons/KeyboardOff",
+  "also": [],
   "category": "devices",
   "tags": [
-    "unkeys",
-    "layout",
-    "spell",
-    "settings",
-    "mouse"
+    "keyboard off",
+    "no keyboard",
+    "disabled",
+    "typing",
+    "hide keyboard"
   ],
   "aliases": [],
   "mirror": false

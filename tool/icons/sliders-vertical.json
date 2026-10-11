@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/sliders-vertical",
+  "upstream": "hugeicons/SlidersVertical",
+  "also": [],
   "category": "account",
   "tags": [
     "settings",
-    "controls"
+    "controls",
+    "adjust",
+    "equalizer"
   ],
   "aliases": [],
   "mirror": false

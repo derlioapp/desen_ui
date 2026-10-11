@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/User",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "person",
+    "account",
+    "profile",
+    "avatar",
+    "contact",
+    "member"
+  ],
+  "aliases": [],
+  "mirror": false
+}

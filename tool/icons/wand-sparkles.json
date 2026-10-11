@@ -1,13 +1,24 @@
 {
-  "upstream": "lucide/wand-sparkles",
+  "upstream": "hugeicons/WandSparkles",
+  "also": [
+    "MagicWand01"
+  ],
   "category": "design",
   "tags": [
     "magic",
+    "magic wand",
     "wizard",
-    "magician"
+    "spell",
+    "sparkles",
+    "ai",
+    "auto",
+    "magician",
+    "sparkle",
+    "wand"
   ],
   "aliases": [
     "magicWand"
   ],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

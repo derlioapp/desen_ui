@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LaptopIssue",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "laptop issue",
+    "problem",
+    "warning",
+    "laptop",
+    "computer",
+    "error"
+  ],
+  "aliases": [],
+  "mirror": false
+}

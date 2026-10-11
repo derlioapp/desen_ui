@@ -1,13 +1,18 @@
 {
-  "upstream": "lucide/send",
+  "upstream": "hugeicons/Send",
+  "also": [
+    "Sent"
+  ],
   "category": "mail",
   "tags": [
-    "email",
+    "send",
+    "paper plane",
     "message",
-    "mail",
-    "paper airplane",
-    "paper aeroplane",
-    "submit"
+    "submit",
+    "share",
+    "sent",
+    "submitted",
+    "delivered"
   ],
   "aliases": [],
   "mirror": true

@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/DollarSquare",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "dollar",
+    "square",
+    "currency",
+    "money",
+    "usd",
+    "price"
+  ],
+  "aliases": [
+    "dollarSignSquare"
+  ],
+  "mirror": false
+}

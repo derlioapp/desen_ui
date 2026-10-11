@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/square-dashed-bottom-code",
+  "upstream": "hugeicons/SquareDashedBottomCode",
+  "also": [],
   "category": "development",
   "tags": [
-    "rectangle",
-    "aspect ratio",
-    "1:1",
-    "shape",
-    "snippet",
     "code",
-    "coding"
+    "embed",
+    "snippet",
+    "dashed",
+    "html"
   ],
   "aliases": [],
   "mirror": false

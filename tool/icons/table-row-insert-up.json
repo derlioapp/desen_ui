@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InsertRowUp",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "insert row above",
+    "add row",
+    "table",
+    "grid",
+    "spreadsheet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

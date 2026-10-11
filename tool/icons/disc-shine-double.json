@@ -1,0 +1,21 @@
+{
+  "upstream": "hugeicons/Cd",
+  "also": [
+    "Disc3"
+  ],
+  "category": "devices",
+  "tags": [
+    "cd",
+    "dvd",
+    "disk",
+    "compact disc",
+    "music",
+    "media",
+    "disc",
+    "record"
+  ],
+  "aliases": [
+    "disc3"
+  ],
+  "mirror": false
+}

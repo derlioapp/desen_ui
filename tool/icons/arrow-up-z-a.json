@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/arrow-up-z-a",
+  "upstream": "hugeicons/ArrowUpZA",
+  "also": [],
   "category": "text",
   "tags": [
-    "filter",
     "sort",
-    "ascending",
-    "descending",
-    "increasing",
-    "decreasing",
-    "rising",
-    "falling",
     "alphabetical",
-    "reverse"
+    "z-a",
+    "descending",
+    "order"
   ],
   "aliases": [],
   "mirror": false

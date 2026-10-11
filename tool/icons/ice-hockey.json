@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide-lab/ice-hockey",
+  "upstream": "hugeicons/IceHockey",
+  "also": [],
   "category": "sports",
   "tags": [
+    "hockey",
+    "ice",
     "stick",
     "puck",
-    "ice rink",
-    "skates",
-    "team",
-    "winter sports"
+    "sport"
   ],
   "aliases": [],
   "mirror": false

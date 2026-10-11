@@ -1,25 +1,14 @@
 {
-  "upstream": "lucide/disc",
+  "upstream": "hugeicons/Disc",
+  "also": [],
   "category": "devices",
   "tags": [
-    "album",
-    "music",
-    "songs",
-    "format",
+    "disc",
     "cd",
     "dvd",
-    "vinyl",
-    "sleeve",
-    "cover",
-    "platinum",
-    "compilation",
-    "ep",
-    "recording",
-    "playback",
-    "spin",
-    "rotate",
-    "rpm",
-    "dj"
+    "record",
+    "media",
+    "storage"
   ],
   "aliases": [],
   "mirror": false

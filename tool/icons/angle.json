@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/angle",
+  "upstream": "hugeicons/Angle01",
+  "also": [],
   "category": "math",
   "tags": [
     "angle",
-    "degree",
-    "corner",
     "geometry",
-    "measure",
-    "math",
-    "rotate",
-    "vertex",
-    "slope",
+    "degrees",
     "protractor",
-    "measurement",
-    "dimension",
-    "arc",
-    "drafting",
-    "cad"
+    "measure"
   ],
   "aliases": [],
   "mirror": false

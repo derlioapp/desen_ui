@@ -9,7 +9,8 @@ import 'package:flutter_test/flutter_test.dart';
 /// Scope: every Dart file under `lib/src`, except
 /// - `lib/src/theme/` and `lib/src/foundation/`, where the tokens and the
 ///   primitives they are built from are defined;
-/// - generated files: `*_style.dart`, `l10n/strings/**`, `icons/icons.dart`.
+/// - generated files: `*_style.dart`, `l10n/strings/**`, `icons/icons.dart`,
+///   `icons/set/**`.
 ///
 /// Dimensions are checked outside a component's `defaultStyle`: the body
 /// of a `static ... defaultStyle(...)` method is the one place a component
@@ -183,6 +184,7 @@ void main() {
     expect(_inScope('lib/src/theme/sizes.dart'), isFalse);
     expect(_inScope('lib/src/l10n/strings/tr.dart'), isFalse);
     expect(_inScope('lib/src/icons/icons.dart'), isFalse);
+    expect(_inScope('lib/src/icons/set/files.dart'), isFalse);
   });
 
   test('defaultStyle bodies are found and closed', () {
@@ -306,4 +308,5 @@ bool _inScope(String path) =>
     !path.startsWith('lib/src/foundation/') &&
     !path.startsWith('lib/src/l10n/strings/') &&
     path != 'lib/src/icons/icons.dart' &&
+    !path.startsWith('lib/src/icons/set/') &&
     !path.endsWith('_style.dart');

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Reminder",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "reminder",
+    "message",
+    "notification",
+    "alert",
+    "bell"
+  ],
+  "aliases": [],
+  "mirror": false
+}

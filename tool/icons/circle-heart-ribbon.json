@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CovidInfo",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "covid",
+    "health",
+    "info",
+    "virus",
+    "heart",
+    "pandemic"
+  ],
+  "aliases": [],
+  "mirror": false
+}

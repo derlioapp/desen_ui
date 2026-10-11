@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ScanImage",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "image scan",
+    "photo",
+    "picture",
+    "scanner",
+    "frame"
+  ],
+  "aliases": [],
+  "mirror": false
+}

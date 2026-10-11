@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide/scale",
+  "upstream": "hugeicons/BalanceScale",
+  "also": [],
   "category": "navigation",
   "tags": [
     "balance",
-    "legal",
-    "license",
-    "right",
-    "rule",
-    "law",
     "justice",
-    "weight",
-    "measure",
-    "compare",
-    "judge",
-    "fair",
-    "ethics",
-    "decision"
+    "law",
+    "weigh",
+    "legal",
+    "compare"
   ],
   "aliases": [],
   "mirror": false

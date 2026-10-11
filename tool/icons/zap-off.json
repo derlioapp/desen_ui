@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/zap-off",
+  "upstream": "hugeicons/ZapOff",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "flash",
-    "camera",
     "lightning",
-    "electricity",
+    "power",
+    "off",
+    "disabled",
     "energy",
-    "power"
+    "no"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

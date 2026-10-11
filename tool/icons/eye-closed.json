@@ -1,16 +1,19 @@
 {
-  "upstream": "lucide/eye-closed",
+  "upstream": "hugeicons/EyeClosed",
+  "also": [
+    "ViewOff"
+  ],
   "category": "accessibility",
   "tags": [
-    "view",
-    "watch",
-    "see",
     "hide",
-    "conceal",
-    "mask",
+    "closed",
+    "sleep",
+    "blink",
+    "invisible",
+    "view off",
     "hidden",
-    "visibility",
-    "vision"
+    "closed eyes",
+    "conceal"
   ],
   "aliases": [],
   "mirror": false

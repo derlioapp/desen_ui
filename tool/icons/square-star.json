@@ -1,20 +1,12 @@
 {
-  "upstream": "lucide/square-star",
+  "upstream": "hugeicons/StarSquare",
+  "also": [],
   "category": "sports",
   "tags": [
-    "badge",
-    "medal",
-    "honour",
-    "decoration",
-    "order",
-    "pin",
-    "laurel",
-    "trophy",
-    "medallion",
-    "insignia",
-    "bronze",
-    "silver",
-    "gold"
+    "favorite",
+    "star",
+    "rating",
+    "badge"
   ],
   "aliases": [],
   "mirror": false

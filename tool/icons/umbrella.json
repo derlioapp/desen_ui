@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/umbrella",
+  "upstream": "hugeicons/Umbrella",
+  "also": [],
   "category": "weather",
   "tags": [
+    "umbrella",
     "rain",
-    "weather"
+    "weather",
+    "protection"
   ],
   "aliases": [],
   "mirror": false

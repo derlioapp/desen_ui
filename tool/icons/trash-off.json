@@ -1,5 +1,23 @@
 {
-  "upstream": "lucide/trash-off",
+  "upstream": "desen/trash-off",
+  "derived": {
+    "parts": [
+      {
+        "from": "Trash",
+        "keep": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": "ZapOff",
+        "keep": [
+          0
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "files",
   "tags": [
     "empty",

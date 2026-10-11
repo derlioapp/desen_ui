@@ -1,9 +1,17 @@
 {
-  "upstream": "lucide/panel-left",
+  "upstream": "hugeicons/PanelLeft",
+  "also": [
+    "LayoutLeft"
+  ],
   "category": "layout",
   "tags": [
-    "primary",
-    "drawer"
+    "panel",
+    "left",
+    "sidebar",
+    "layout",
+    "drawer",
+    "left panel",
+    "split"
   ],
   "aliases": [
     "sidebar"

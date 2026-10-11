@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/lightbulb",
+  "upstream": "hugeicons/Lightbulb",
+  "also": [],
   "category": "photography",
   "tags": [
     "idea",
-    "bright",
-    "lights"
+    "light",
+    "bulb",
+    "tip",
+    "hint",
+    "lamp"
   ],
   "aliases": [],
   "mirror": false

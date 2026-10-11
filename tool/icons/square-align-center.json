@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AlignBoxMiddleCenter",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "align",
+    "box",
+    "middle",
+    "center",
+    "position"
+  ],
+  "aliases": [],
+  "mirror": false
+}

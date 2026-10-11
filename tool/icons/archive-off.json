@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ArchiveOff03",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "archive",
+    "box",
+    "disabled",
+    "no archive",
+    "crossed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

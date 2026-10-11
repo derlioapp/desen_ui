@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/list-plus",
+  "upstream": "hugeicons/ListPlus",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "playlist",
     "add",
-    "song",
-    "track",
-    "new"
+    "new item",
+    "playlist",
+    "list",
+    "queue"
   ],
   "aliases": [],
   "mirror": true

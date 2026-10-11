@@ -1,20 +1,12 @@
 {
-  "upstream": "lucide/tent",
+  "upstream": "hugeicons/Tent",
+  "also": [],
   "category": "travel",
   "tags": [
-    "tipi",
-    "teepee",
-    "wigwam",
-    "lodge",
     "camping",
-    "campsite",
-    "holiday",
-    "retreat",
-    "nomadic",
-    "native american",
-    "indian",
-    "wilderness",
-    "outdoors"
+    "outdoor",
+    "shelter",
+    "camp"
   ],
   "aliases": [],
   "mirror": false

@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide-lab/dishwasher",
+  "upstream": "hugeicons/DishWasher",
+  "also": [],
   "category": "home",
   "tags": [
+    "dish washer",
+    "dishwasher",
     "kitchen",
-    "appliances",
-    "amenities",
-    "electric",
+    "appliance",
     "cleaning",
-    "cycle",
-    "plates",
-    "glasses",
-    "cutlery",
-    "utensils"
+    "machine"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/PointingLeft07",
+  "also": [
+    "PointingLeft08"
+  ],
+  "category": "arrows",
+  "tags": [
+    "hand",
+    "finger",
+    "point",
+    "pointing",
+    "left",
+    "direction",
+    "swipe"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/BluetoothSearch",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "find",
+    "pairing",
+    "wireless",
+    "magnifier"
+  ],
+  "aliases": [],
+  "mirror": false
+}

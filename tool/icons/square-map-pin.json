@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/MapsSquare01",
+  "also": [
+    "MapsSquare02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "map",
+    "square",
+    "pin",
+    "location",
+    "off",
+    "unavailable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

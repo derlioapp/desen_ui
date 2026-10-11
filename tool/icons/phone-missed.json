@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/phone-missed",
+  "upstream": "hugeicons/CallMissed01",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "call"
+    "call",
+    "missed",
+    "telephone",
+    "handset",
+    "unanswered"
   ],
   "aliases": [],
   "mirror": false

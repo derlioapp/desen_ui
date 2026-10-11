@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/tickets-plane",
-  "category": "transportation",
+  "upstream": "hugeicons/TicketsPlane",
+  "also": [],
+  "category": "travel",
   "tags": [
-    "plane",
-    "trip",
-    "airplane",
     "flight",
-    "travel",
-    "fly",
-    "takeoff",
-    "vacation",
-    "passenger",
-    "pass",
-    "check-in",
-    "airport"
+    "boarding pass",
+    "airline",
+    "plane",
+    "tickets"
   ],
   "aliases": [],
   "mirror": false

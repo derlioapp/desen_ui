@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/braces",
+  "upstream": "hugeicons/Braces",
+  "also": [],
   "category": "development",
   "tags": [
-    "json",
+    "braces",
+    "curly",
+    "brackets",
     "code",
-    "token",
-    "curly brackets",
-    "data",
-    "{",
-    "}"
+    "json"
   ],
   "aliases": [
     "curlyBraces"

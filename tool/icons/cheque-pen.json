@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/PayByCheck",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "check",
+    "cheque",
+    "pay",
+    "sign",
+    "pen",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

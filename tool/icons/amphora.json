@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/amphora",
+  "upstream": "hugeicons/Amphora",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "pottery",
-    "artifact",
-    "artefact",
     "vase",
-    "ceramics",
-    "clay",
-    "archaeology",
-    "museum",
+    "jar",
+    "greek",
+    "pottery",
     "wine",
-    "oil"
+    "antique"
   ],
   "aliases": [],
   "mirror": false

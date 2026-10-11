@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/map-pinned",
+  "upstream": "hugeicons/MapPinned",
+  "also": [],
   "category": "navigation",
   "tags": [
     "location",
-    "waypoint",
+    "pin",
     "marker",
-    "drop"
+    "place",
+    "base"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/WifiMediumSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "signal",
+    "strength",
+    "medium",
+    "fan",
+    "reception"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

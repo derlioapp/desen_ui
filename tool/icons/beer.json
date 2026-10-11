@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/beer",
+  "upstream": "hugeicons/Beer",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "alcohol",
-    "bar",
-    "beverage",
-    "brewery",
-    "drink"
+    "drink",
+    "pub",
+    "mug",
+    "alcohol"
   ],
   "aliases": [],
   "mirror": false

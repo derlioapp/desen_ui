@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Message01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "text",
+    "bubble",
+    "comment",
+    "conversation"
+  ],
+  "aliases": [],
+  "mirror": false
+}

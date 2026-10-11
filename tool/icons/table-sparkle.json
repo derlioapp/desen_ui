@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiSheets",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "ai",
+    "sheets",
+    "spreadsheet",
+    "table",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

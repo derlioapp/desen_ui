@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SignalFull02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "signal",
+    "full",
+    "strength",
+    "bars",
+    "cellular",
+    "reception"
+  ],
+  "aliases": [],
+  "mirror": false
+}

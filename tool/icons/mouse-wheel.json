@@ -1,0 +1,21 @@
+{
+  "upstream": "hugeicons/Mouse22",
+  "also": [
+    "Mouse02",
+    "Mouse10"
+  ],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "wheel",
+    "scroll",
+    "peripheral",
+    "computer",
+    "click",
+    "wired",
+    "cable",
+    "oval"
+  ],
+  "aliases": [],
+  "mirror": false
+}

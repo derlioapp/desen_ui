@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/KeyGeneratorFob",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "key generator",
+    "key fob",
+    "token",
+    "car key",
+    "remote",
+    "authenticator"
+  ],
+  "aliases": [],
+  "mirror": false
+}

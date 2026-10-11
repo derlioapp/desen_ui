@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/files",
+  "upstream": "hugeicons/Files01",
+  "also": [],
   "category": "files",
   "tags": [
     "multiple",
     "copy",
-    "documents"
+    "documents",
+    "duplicate"
   ],
   "aliases": [],
   "mirror": false

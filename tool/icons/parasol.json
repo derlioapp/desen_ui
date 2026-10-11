@@ -1,27 +1,13 @@
 {
-  "upstream": "lucide/parasol",
+  "upstream": "hugeicons/Beach",
+  "also": [],
   "category": "travel",
   "tags": [
-    "umbrella",
-    "sunshade",
     "beach",
-    "shade",
+    "umbrella",
     "sun",
-    "protection",
-    "cover",
-    "canopy",
-    "garden",
-    "outdoors",
-    "resort",
-    "travel",
-    "vacation",
-    "holiday",
-    "summer",
-    "apparel",
-    "accessory",
-    "sunbathing",
-    "relax",
-    "tropical"
+    "shade",
+    "summer"
   ],
   "aliases": [],
   "mirror": false

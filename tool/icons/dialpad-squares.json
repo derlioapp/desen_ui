@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DialpadSquare02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "dialpad",
+    "keypad",
+    "phone",
+    "squares",
+    "numbers",
+    "call"
+  ],
+  "aliases": [],
+  "mirror": false
+}

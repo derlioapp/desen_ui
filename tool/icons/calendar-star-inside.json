@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/CalendarFavorite02",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "favorite",
+    "star",
+    "important"
+  ],
+  "aliases": [],
+  "mirror": false
+}

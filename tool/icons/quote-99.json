@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/QuoteDown",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "quote",
+    "quotation",
+    "marks",
+    "citation",
+    "blockquote"
+  ],
+  "aliases": [],
+  "mirror": false
+}

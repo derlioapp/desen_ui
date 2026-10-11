@@ -1,20 +1,12 @@
 {
-  "upstream": "lucide/mirror-rectangular",
+  "upstream": "hugeicons/MirrorRectangular",
+  "also": [],
   "category": "science",
   "tags": [
+    "mirror",
+    "rectangle",
     "reflection",
-    "optics",
-    "glass",
-    "surface",
-    "image",
-    "physics",
-    "science",
-    "bathroom",
-    "decor",
-    "cosmetic",
-    "shiny",
-    "periscope",
-    "vanity"
+    "glass"
   ],
   "aliases": [],
   "mirror": false

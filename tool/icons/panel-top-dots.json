@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SidebarTop",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "sidebar",
+    "top",
+    "drawer",
+    "browser",
+    "webpage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

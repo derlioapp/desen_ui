@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/cloud-hail",
+  "upstream": "hugeicons/CloudHailstone",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "rainfall"
+    "hail",
+    "hailstones",
+    "ice",
+    "storm",
+    "dots"
   ],
   "aliases": [],
   "mirror": false

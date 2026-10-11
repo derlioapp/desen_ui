@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ColumnInsert",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "column",
+    "insert",
+    "add",
+    "table",
+    "columns"
+  ],
+  "aliases": [],
+  "mirror": false
+}

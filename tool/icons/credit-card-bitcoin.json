@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinCreditCard",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "card",
+    "payment",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

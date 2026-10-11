@@ -1,24 +1,18 @@
 {
-  "upstream": "lucide/plus",
+  "upstream": "hugeicons/PlusSign",
+  "also": [
+    "Add01",
+    "Plus"
+  ],
   "category": "math",
   "tags": [
+    "plus",
     "add",
     "new",
+    "create",
+    "sign",
     "increase",
-    "increment",
-    "positive",
-    "calculate",
-    "toolbar",
-    "crosshair",
-    "aim",
-    "target",
-    "scope",
-    "sight",
-    "reticule",
-    "maximum",
-    "upgrade",
-    "extra",
-    "+"
+    "large"
   ],
   "aliases": [],
   "mirror": false

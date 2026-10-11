@@ -1,31 +1,14 @@
 {
-  "upstream": "lucide/blend",
+  "upstream": "hugeicons/Blend",
+  "also": [],
   "category": "design",
   "tags": [
     "mode",
     "overlay",
-    "multiply",
-    "screen",
     "opacity",
-    "transparency",
-    "alpha",
-    "filters",
-    "lenses",
-    "mixed",
-    "shades",
-    "tints",
-    "hues",
-    "saturation",
-    "brightness",
-    "overlap",
-    "colors",
-    "colours",
-    "marriage",
-    "rings",
-    "couple",
-    "connection"
+    "mix",
+    "color"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

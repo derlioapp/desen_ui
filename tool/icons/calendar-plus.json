@@ -1,16 +1,15 @@
 {
-  "upstream": "lucide/calendar-plus",
+  "upstream": "hugeicons/CalendarAdd01",
+  "also": [
+    "CalendarPlus"
+  ],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "event",
+    "calendar",
+    "plus",
     "add",
-    "subscribe",
-    "create",
-    "new"
+    "new",
+    "event"
   ],
   "aliases": [],
   "mirror": false

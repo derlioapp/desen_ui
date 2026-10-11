@@ -1,13 +1,11 @@
 {
-  "upstream": "lucide/bone",
+  "upstream": "hugeicons/Bone01",
+  "also": [],
   "category": "animals",
   "tags": [
-    "health",
     "skeleton",
-    "skull",
-    "death",
-    "pets",
-    "dog"
+    "dog",
+    "pet"
   ],
   "aliases": [],
   "mirror": false

@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/calendar-search",
+  "upstream": "hugeicons/CalendarSearch",
+  "also": [],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "events",
+    "calendar",
     "search",
-    "lens"
+    "find",
+    "events"
   ],
   "aliases": [],
   "mirror": false

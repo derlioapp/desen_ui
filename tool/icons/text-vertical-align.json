@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/TextVerticalAlignment",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "vertical align",
+    "text",
+    "paragraph",
+    "format",
+    "align"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

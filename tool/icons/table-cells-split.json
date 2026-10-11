@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/table-cells-split",
+  "upstream": "hugeicons/TableCellsSplit",
+  "also": [],
   "category": "text",
   "tags": [
-    "spreadsheet",
-    "grid",
-    "row"
+    "table",
+    "split",
+    "cells",
+    "divide",
+    "spreadsheet"
   ],
   "aliases": [],
   "mirror": false

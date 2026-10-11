@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide/headset",
+  "upstream": "hugeicons/CustomerService01",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "music",
-    "audio",
-    "sound",
-    "gaming",
+    "customer service",
+    "support",
+    "call center",
     "headphones",
-    "headset",
-    "call",
-    "center",
-    "phone",
-    "telephone",
-    "voip",
-    "video"
+    "microphone",
+    "help"
   ],
   "aliases": [],
   "mirror": false

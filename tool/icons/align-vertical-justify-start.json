@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/align-vertical-justify-start",
+  "upstream": "hugeicons/AlignVerticalJustifyStart",
+  "also": [],
   "category": "layout",
   "tags": [
-    "top",
-    "items",
-    "flex",
+    "align",
+    "vertical",
     "justify",
-    "distribute",
-    "between"
+    "start"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Eclipse",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "eclipse",
+    "sun",
+    "moon",
+    "solar",
+    "astronomy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

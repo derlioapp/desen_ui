@@ -1,24 +1,12 @@
 {
-  "upstream": "lucide-lab/belt",
+  "upstream": "hugeicons/Belt",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "buckle",
-    "strap",
-    "fasten",
-    "fasting",
-    "waistline",
-    "weight loss",
-    "diet",
-    "calories",
-    "store",
     "clothing",
-    "clothes",
-    "accessories",
-    "apparel",
-    "attire",
-    "outfit",
+    "buckle",
     "fashion",
-    "leather"
+    "accessory"
   ],
   "aliases": [],
   "mirror": false

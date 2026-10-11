@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/share-2",
+  "upstream": "hugeicons/Share08",
+  "also": [],
   "category": "account",
   "tags": [
+    "share",
     "network",
-    "connections"
+    "connections",
+    "nodes",
+    "social"
   ],
   "aliases": [],
   "mirror": false

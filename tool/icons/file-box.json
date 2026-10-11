@@ -1,26 +1,12 @@
 {
-  "upstream": "lucide/file-box",
+  "upstream": "hugeicons/FileBox",
+  "also": [],
   "category": "files",
   "tags": [
-    "document",
-    "page",
-    "sheet",
-    "cube",
-    "box",
     "3d",
-    "model",
-    "asset",
-    "object",
-    "geometry",
-    "mesh",
-    "ar",
-    "augmented reality",
-    "cad",
-    "design",
-    "blueprint",
-    "draft",
+    "box",
     "package",
-    "scene"
+    "document"
   ],
   "aliases": [],
   "mirror": false

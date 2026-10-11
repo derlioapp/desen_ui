@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Wireless",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "wireless",
+    "modem",
+    "network",
+    "access",
+    "point",
+    "signal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

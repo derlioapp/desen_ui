@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MirroringScreen",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "cast",
+    "mirror",
+    "screen",
+    "share",
+    "stream",
+    "display"
+  ],
+  "aliases": [],
+  "mirror": false
+}

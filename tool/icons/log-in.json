@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/log-in",
+  "upstream": "hugeicons/LogIn",
+  "also": [],
   "category": "arrows",
   "tags": [
     "sign in",
     "arrow",
     "enter",
-    "auth"
+    "auth",
+    "login"
   ],
   "aliases": [
     "signIn"

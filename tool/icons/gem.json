@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/gem",
+  "upstream": "hugeicons/Gem",
+  "also": [],
   "category": "gaming",
   "tags": [
+    "gem",
     "diamond",
+    "jewel",
     "crystal",
-    "ruby",
-    "jewellery",
-    "price",
-    "special",
-    "present",
-    "gift",
-    "ring",
-    "wedding",
-    "proposal",
-    "marriage",
-    "rubygems"
+    "premium"
   ],
   "aliases": [],
   "mirror": false

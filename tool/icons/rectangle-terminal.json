@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CommandLine",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "terminal",
+    "command line",
+    "console",
+    "shell",
+    "prompt",
+    "cli"
+  ],
+  "aliases": [],
+  "mirror": false
+}

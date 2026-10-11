@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ShipmentTracking",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "shipment tracking",
+    "parcel",
+    "location",
+    "delivery",
+    "pin"
+  ],
+  "aliases": [],
+  "mirror": false
+}

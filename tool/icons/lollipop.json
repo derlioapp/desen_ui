@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/lollipop",
+  "upstream": "hugeicons/Lollipop",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "lolly",

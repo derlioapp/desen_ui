@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/radiation",
+  "upstream": "hugeicons/Radiation",
+  "also": [],
   "category": "science",
   "tags": [
+    "radiation",
     "radioactive",
     "nuclear",
-    "fallout",
-    "waste",
     "atomic",
-    "physics",
-    "particle",
-    "element",
-    "molecule"
+    "hazard"
   ],
   "aliases": [],
   "mirror": false

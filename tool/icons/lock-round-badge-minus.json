@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/CircleLockMinus02",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "padlock",
+    "remove",
+    "secure",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ElectricPlugs",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "electric plugs",
+    "power",
+    "energy",
+    "charge",
+    "connect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

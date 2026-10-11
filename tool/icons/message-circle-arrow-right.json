@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/BubbleChatOutcome",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "bubble",
+    "message",
+    "outcome",
+    "outgoing",
+    "sent",
+    "arrow",
+    "right"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/MessageDone02",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "done",
+    "check",
+    "delivered",
+    "read",
+    "sent"
+  ],
+  "aliases": [],
+  "mirror": false
+}

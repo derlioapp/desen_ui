@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChartBarLine",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "bars",
+    "line",
+    "combo chart",
+    "graph",
+    "statistics",
+    "analytics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/non-binary",
+  "upstream": "hugeicons/NonBinary",
+  "also": [],
   "category": "medical",
   "tags": [
+    "non-binary",
     "gender",
-    "nonbinary",
+    "symbol",
+    "identity",
+    "lgbt",
     "enby"
   ],
   "aliases": [],

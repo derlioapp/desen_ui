@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/file-up",
+  "upstream": "hugeicons/FileUp",
+  "also": [],
   "category": "files",
   "tags": [
     "upload",
-    "import",
-    "export"
+    "arrow up",
+    "document"
   ],
-  "aliases": [],
+  "aliases": [
+    "fileArrowUp"
+  ],
   "mirror": false
 }

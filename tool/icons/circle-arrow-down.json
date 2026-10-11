@@ -1,13 +1,19 @@
 {
-  "upstream": "lucide/circle-arrow-down",
+  "upstream": "hugeicons/CircleArrowDown02",
+  "also": [
+    "DownloadCircle01"
+  ],
   "category": "arrows",
   "tags": [
-    "backwards",
-    "reverse",
-    "direction",
+    "down",
+    "download",
     "south",
-    "sign",
-    "button"
+    "direction",
+    "circle",
+    "arrow down",
+    "save",
+    "import",
+    "get"
   ],
   "aliases": [],
   "mirror": false

@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/heading-6",
+  "upstream": "hugeicons/Heading06",
+  "also": [],
   "category": "text",
   "tags": [
+    "heading",
+    "title",
     "h6",
-    "html",
-    "markup",
-    "markdown"
+    "header",
+    "typography"
   ],
   "aliases": [],
   "mirror": false

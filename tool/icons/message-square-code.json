@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/message-square-code",
-  "category": "development",
+  "upstream": "hugeicons/MessageSquareCode",
+  "also": [],
+  "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "code review",
-    "coding"
+    "code",
+    "developer",
+    "programming"
   ],
   "aliases": [],
   "mirror": false

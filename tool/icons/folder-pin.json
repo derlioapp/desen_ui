@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderPin",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "pin",
+    "pinned",
+    "favorite",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

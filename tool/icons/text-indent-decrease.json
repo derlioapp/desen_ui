@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TextIndentLess",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "indent less",
+    "outdent",
+    "decrease",
+    "text",
+    "format"
+  ],
+  "aliases": [],
+  "mirror": true
+}

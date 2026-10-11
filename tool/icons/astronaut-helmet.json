@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide-lab/astronaut-helmet",
+  "upstream": "hugeicons/Astronaut01",
+  "also": [],
   "category": "science",
   "tags": [
-    "spacesuit",
-    "spaceman",
-    "explore",
-    "interplanetary",
-    "stars",
-    "safety",
-    "protection",
-    "headgear",
-    "🧑‍🚀",
-    "👨‍🚀",
-    "👩‍🚀"
+    "astronaut",
+    "helmet",
+    "space",
+    "visor",
+    "explorer"
   ],
   "aliases": [],
   "mirror": false

@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/table-of-contents",
+  "upstream": "hugeicons/TableOfContents",
+  "also": [],
   "category": "text",
   "tags": [
+    "contents",
     "toc",
     "outline",
-    "navigation",
-    "document structure",
     "index",
-    "overview",
-    "sections",
-    "chapters",
-    "content",
-    "documentation",
-    "manual",
-    "knowledge base",
-    "faq"
+    "list"
   ],
   "aliases": [],
   "mirror": true

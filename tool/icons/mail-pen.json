@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide/mail-pen",
+  "upstream": "hugeicons/MailEdit01",
+  "also": [],
   "category": "mail",
   "tags": [
     "email",
     "message",
-    "letter",
-    "pen",
-    "edit",
     "compose",
-    "draft",
     "write",
-    "writing",
-    "create",
-    "reply"
+    "edit",
+    "envelope"
   ],
   "aliases": [],
   "mirror": false

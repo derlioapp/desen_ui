@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/battery-medium",
+  "upstream": "hugeicons/BatteryMedium01",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "power",
-    "electricity",
-    "energy",
-    "accumulator",
-    "charge"
+    "half",
+    "charge",
+    "energy"
   ],
   "aliases": [],
   "mirror": false

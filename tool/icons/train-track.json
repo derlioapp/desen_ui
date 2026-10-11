@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/train-track",
+  "upstream": "hugeicons/TrainTrack",
+  "also": [],
   "category": "transportation",
   "tags": [
     "railway",
-    "line"
+    "track",
+    "rails",
+    "train"
   ],
   "aliases": [],
   "mirror": false

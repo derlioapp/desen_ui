@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Doctor02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "nurse",
+    "cap",
+    "medical",
+    "health",
+    "hospital",
+    "person"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

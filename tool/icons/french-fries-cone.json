@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/FrenchFries01",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "french fries",
+    "fries",
+    "fast food",
+    "chips",
+    "cone"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

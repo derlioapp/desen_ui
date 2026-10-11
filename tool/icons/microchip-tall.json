@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Microchip",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "chip",
+    "processor",
+    "cpu",
+    "hardware",
+    "circuit"
+  ],
+  "aliases": [],
+  "mirror": false
+}

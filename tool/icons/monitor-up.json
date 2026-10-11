@@ -1,18 +1,17 @@
 {
-  "upstream": "lucide/monitor-up",
+  "upstream": "hugeicons/MonitorUp",
+  "also": [
+    "ComputerArrowUp"
+  ],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
     "upload",
-    "connect",
-    "remote",
-    "screen sharing",
-    "cast"
+    "share",
+    "arrow up",
+    "computer",
+    "arrow"
   ],
   "aliases": [],
   "mirror": false

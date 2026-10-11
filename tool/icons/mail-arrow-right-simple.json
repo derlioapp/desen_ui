@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailSend02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "send",
+    "outgoing",
+    "forward",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": true
+}

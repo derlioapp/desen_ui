@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Ppt01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "ppt",
+    "powerpoint",
+    "presentation",
+    "file",
+    "extension"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

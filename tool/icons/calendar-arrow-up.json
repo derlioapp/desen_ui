@@ -1,19 +1,15 @@
 {
-  "upstream": "lucide/calendar-arrow-up",
+  "upstream": "hugeicons/CalendarArrowUp",
+  "also": [
+    "CalendarUpload01"
+  ],
   "category": "time",
   "tags": [
-    "date",
-    "month",
-    "year",
-    "event",
-    "sort",
-    "order",
-    "ascending",
-    "descending",
-    "increasing",
-    "decreasing",
-    "rising",
-    "falling"
+    "calendar",
+    "arrow",
+    "up",
+    "upload",
+    "export"
   ],
   "aliases": [],
   "mirror": false

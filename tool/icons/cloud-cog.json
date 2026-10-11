@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/cloud-cog",
+  "upstream": "hugeicons/CloudCog",
+  "also": [],
   "category": "development",
   "tags": [
-    "computing",
-    "ai",
-    "cluster",
-    "network"
+    "settings",
+    "configure",
+    "gear",
+    "storage",
+    "cloud settings"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TicketPercent",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "ticket",
+    "discount",
+    "percent",
+    "coupon",
+    "sale"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/ham",
+  "upstream": "hugeicons/Ham",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "food",
-    "pork",
-    "pig",
+    "ham",
     "meat",
-    "bone",
-    "hock",
-    "knuckle",
-    "gammon",
-    "cured"
+    "leg",
+    "pork",
+    "food"
   ],
   "aliases": [],
   "mirror": false

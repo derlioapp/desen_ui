@@ -29,7 +29,7 @@ void main() {
     };
     expect(byName.keys, [
       'desen_ui',
-      'lucide',
+      'Hugeicons',
       'Schibsted Grotesk',
       'Geist Mono',
     ]);
@@ -37,7 +37,7 @@ void main() {
       byName['desen_ui']!.trimRight(),
       File('LICENSE').readAsStringSync().trimRight(),
     );
-    expect(byName['lucide'], contains('ISC License'));
+    expect(byName['Hugeicons'], contains('Copyright (c) 2025 Hugeicons'));
     for (final font in ['Schibsted Grotesk', 'Geist Mono']) {
       expect(
         byName[font],

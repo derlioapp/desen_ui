@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ImageFlipHorizontal",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "flip",
+    "mirror",
+    "horizontal",
+    "image",
+    "reflect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

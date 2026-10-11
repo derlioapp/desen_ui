@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Scissor01",
+  "also": [
+    "ScissorRectangle"
+  ],
+  "category": "text",
+  "tags": [
+    "cut",
+    "scissors",
+    "snip",
+    "crop",
+    "clip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

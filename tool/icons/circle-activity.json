@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ActivityCircle",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "activity",
+    "pulse",
+    "heartbeat",
+    "circle",
+    "health",
+    "monitor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

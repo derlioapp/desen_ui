@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/HotspotOffline",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "hotspot",
+    "offline",
+    "off",
+    "signal",
+    "disconnected"
+  ],
+  "aliases": [],
+  "mirror": false
+}

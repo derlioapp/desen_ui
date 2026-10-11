@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/badge-minus",
+  "upstream": "hugeicons/BadgeMinus",
+  "also": [],
   "category": "social",
   "tags": [
-    "verified",
-    "unverified",
-    "delete",
     "remove",
-    "erase"
+    "subtract",
+    "badge",
+    "decrease"
   ],
   "aliases": [],
   "mirror": false

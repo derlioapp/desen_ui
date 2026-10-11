@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/shirt",
+  "upstream": "hugeicons/Shirt01",
+  "also": [],
   "category": "shopping",
   "tags": [
     "t-shirt",
-    "shopping",
-    "store",
     "clothing",
-    "clothes"
+    "clothes",
+    "apparel",
+    "tee"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/StoreVerified01",
+  "also": [],
+  "category": "buildings",
+  "tags": [
+    "store",
+    "shop",
+    "verified",
+    "approved",
+    "trusted"
+  ],
+  "aliases": [
+    "storeCheck2"
+  ],
+  "mirror": false
+}

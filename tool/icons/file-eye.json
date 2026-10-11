@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileView",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "view",
+    "preview",
+    "visible",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

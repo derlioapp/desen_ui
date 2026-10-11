@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/MessageDelay01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "delay",
+    "clock",
+    "scheduled",
+    "pending",
+    "time"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Usb",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "usb",
+    "plug",
+    "connector",
+    "cable",
+    "cord"
+  ],
+  "aliases": [
+    "usb"
+  ],
+  "mirror": false
+}

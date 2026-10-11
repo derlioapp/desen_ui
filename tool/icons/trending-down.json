@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/trending-down",
+  "upstream": "hugeicons/TrendingDown",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics"
+    "trending",
+    "down",
+    "decline",
+    "decrease",
+    "chart"
   ],
   "aliases": [],
   "mirror": false

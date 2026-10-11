@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/plug-zap",
+  "upstream": "hugeicons/PlugZap",
+  "also": [],
   "category": "devices",
   "tags": [
-    "electricity",
-    "energy",
-    "electronics",
+    "plug",
+    "power",
     "charge",
-    "charging",
-    "battery",
-    "connect"
+    "lightning",
+    "electric"
   ],
   "aliases": [],
   "mirror": false

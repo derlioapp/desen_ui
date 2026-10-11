@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/car-front",
+  "upstream": "hugeicons/CarFront",
+  "also": [],
   "category": "transportation",
   "tags": [
     "vehicle",
-    "drive",
-    "trip",
-    "journey"
+    "automobile",
+    "auto",
+    "front view"
   ],
   "aliases": [],
   "mirror": false

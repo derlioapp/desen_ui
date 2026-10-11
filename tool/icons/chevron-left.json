@@ -1,13 +1,17 @@
 {
-  "upstream": "lucide/chevron-left",
+  "upstream": "hugeicons/ChevronLeft",
+  "also": [
+    "ArrowLeft01"
+  ],
   "category": "arrows",
   "tags": [
     "back",
     "previous",
-    "less than",
-    "fewer",
-    "menu",
-    "<"
+    "caret",
+    "collapse",
+    "navigate",
+    "chevron",
+    "left"
   ],
   "aliases": [],
   "mirror": true

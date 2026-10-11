@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiScan",
+  "also": [],
+  "category": "science",
+  "tags": [
+    "ai",
+    "scan",
+    "robot",
+    "recognition",
+    "frame"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/map-pin-search",
-  "category": "text",
+  "upstream": "hugeicons/MapPinSearch",
+  "also": [],
+  "category": "navigation",
   "tags": [
     "location",
-    "navigation",
-    "travel",
-    "waypoint",
-    "marker",
-    "drop"
+    "pin",
+    "search",
+    "find",
+    "locate"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/NotificationBubble",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "notification",
+    "message",
+    "chat",
+    "bubble",
+    "unread",
+    "badge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

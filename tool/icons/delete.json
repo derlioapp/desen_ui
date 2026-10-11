@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/delete",
+  "upstream": "hugeicons/Eraser01",
+  "also": [],
   "category": "text",
   "tags": [
     "backspace",
-    "remove"
+    "erase",
+    "remove",
+    "clear",
+    "key"
   ],
   "aliases": [
     "backspace"

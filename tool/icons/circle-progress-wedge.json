@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Progress",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "progress",
+    "circle",
+    "pie",
+    "percent",
+    "loading"
+  ],
+  "aliases": [],
+  "mirror": false
+}

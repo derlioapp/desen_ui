@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FileDatabase",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "database",
+    "data",
+    "sql",
+    "storage",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

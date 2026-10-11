@@ -1,12 +1,17 @@
 {
-  "upstream": "lucide/earth",
+  "upstream": "hugeicons/Earth",
+  "also": [
+    "Global"
+  ],
   "category": "navigation",
   "tags": [
     "world",
-    "browser",
+    "globe",
+    "planet",
     "language",
-    "translate",
-    "globe"
+    "global",
+    "earth",
+    "continents"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/folder-git",
+  "upstream": "hugeicons/FolderGit",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "root",
-    "project",
+    "folder",
     "git",
-    "repo"
+    "repository",
+    "version control",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

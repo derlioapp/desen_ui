@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/panel-left-dashed",
+  "upstream": "hugeicons/PanelLeftDashed",
+  "also": [],
   "category": "layout",
   "tags": [
+    "panel",
+    "left",
     "sidebar",
-    "primary",
-    "drawer",
-    "show",
-    "reveal",
-    "padding",
-    "margin",
-    "guide",
-    "layout",
-    "bleed"
+    "dashed",
+    "layout"
   ],
   "aliases": [],
   "mirror": false

@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/message-circle-dashed",
+  "upstream": "hugeicons/BubbleChatTemporary",
+  "also": [],
   "category": "social",
   "tags": [
-    "comment",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "draft"
+    "bubble",
+    "message",
+    "temporary",
+    "dashed",
+    "disappearing"
   ],
   "aliases": [],
   "mirror": false

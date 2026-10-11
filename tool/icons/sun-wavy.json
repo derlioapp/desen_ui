@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Sun02",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "sun",
+    "sunny",
+    "day",
+    "weather",
+    "brightness"
+  ],
+  "aliases": [],
+  "mirror": false
+}

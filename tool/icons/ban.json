@@ -1,21 +1,19 @@
 {
-  "upstream": "lucide/ban",
+  "upstream": "hugeicons/Ban",
+  "also": [
+    "Unavailable"
+  ],
   "category": "account",
   "tags": [
-    "cancel",
-    "no",
-    "stop",
     "forbidden",
     "prohibited",
-    "error",
-    "incorrect",
-    "mistake",
-    "wrong",
-    "failure",
-    "circle",
-    "slash",
-    "null",
-    "void"
+    "block",
+    "no",
+    "not",
+    "allowed",
+    "unavailable",
+    "ban",
+    "not allowed"
   ],
   "aliases": [
     "block"

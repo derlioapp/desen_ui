@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/square-arrow-up-left",
+  "upstream": "hugeicons/SquareArrowUpLeft",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "direction",
     "north-west",
     "diagonal",
-    "sign",
-    "keyboard",
-    "button"
+    "direction",
+    "up left"
   ],
   "aliases": [],
   "mirror": false

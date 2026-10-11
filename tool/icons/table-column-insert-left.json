@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InsertColumnLeft",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "insert column left",
+    "add column",
+    "table",
+    "grid",
+    "spreadsheet"
+  ],
+  "aliases": [],
+  "mirror": true
+}

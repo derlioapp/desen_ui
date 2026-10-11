@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LocationUser04",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "user position",
+    "person",
+    "you are here",
+    "tracking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

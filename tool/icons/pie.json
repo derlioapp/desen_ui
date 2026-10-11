@@ -1,19 +1,12 @@
 {
-  "upstream": "lucide-lab/pie",
+  "upstream": "hugeicons/Pie",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "tart",
-    "quiche",
-    "patty",
-    "flan",
-    "strudel",
-    "bakery",
-    "pastry",
-    "homemade",
-    "hot",
-    "steaming",
-    "cookery",
-    "oven"
+    "pie",
+    "dessert",
+    "baked",
+    "food"
   ],
   "aliases": [],
   "mirror": false

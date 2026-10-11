@@ -1,3 +1,25 @@
+## Unreleased
+
+Breaking: the icon set changes.
+
+### Changed
+
+- `DsIcons` is a fork of the free [Hugeicons](https://hugeicons.com) set
+  (Hugeicons 4.3.5, MIT) instead of Lucide: 5388 stroke icons in place of
+  2225, drawn with the same 2-unit stroke and round ends. Hugeicons draws
+  them at 1.5, so the 205 icons whose details would close up at 2
+  (lettering such as the file types, rows of dots, dense patterns) keep a
+  1.75 or 1.5 stroke; `DsIconData.strokeWidth` says which. Desen names them
+  itself, after what they show and with Lucide's naming rules; where
+  Lucide calls the same shape something else, that name is an alias.
+  Where the free set has a gap that matters (a plain clipboard,
+  `cloud-backup`, `trash-off`, `eject`), Desen puts the icon together from
+  Hugeicons parts. Brand logos are not included.
+
+| Before | After | Migration |
+| --- | --- | --- |
+| `DsIcons` held the 2225 Lucide icons and 94 aliases | `DsIcons` holds 5388 icons; 1963 of the 2319 old names still exist, as a name or an alias | Look up the others on the [icon page](https://derlioapp.github.io/desen_ui/#/foundations/icons), which also searches Hugeicons names and tags. Every icon has a new drawing, so check screens that rely on a particular shape |
+
 ## 0.2.4
 
 Additions and a fix, nothing breaking: `^0.2.0` picks this release up.

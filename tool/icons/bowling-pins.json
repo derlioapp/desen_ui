@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Bowling",
+  "also": [],
+  "category": "sports",
+  "tags": [
+    "bowling",
+    "pins",
+    "strike",
+    "game"
+  ],
+  "aliases": [],
+  "mirror": false
+}

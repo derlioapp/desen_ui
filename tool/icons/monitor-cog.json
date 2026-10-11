@@ -1,25 +1,16 @@
 {
-  "upstream": "lucide/monitor-cog",
+  "upstream": "hugeicons/MonitorCog",
+  "also": [
+    "ComputerSettings"
+  ],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "virtual machine",
-    "vm",
-    "executable",
     "settings",
-    "edit",
+    "configure",
     "gear",
-    "configuration",
-    "preferences",
-    "system",
-    "control panel",
-    "network",
-    "computing"
+    "computer"
   ],
   "aliases": [],
   "mirror": false

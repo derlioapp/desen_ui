@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide-lab/japanese-yen-square",
+  "upstream": "hugeicons/YenSquare",
+  "also": [],
   "category": "finance",
   "tags": [
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "markets",
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
+    "currency",
+    "money",
     "payment",
-    "jpy",
-    "¥",
-    "toolbar",
-    "button"
+    "yuan",
+    "badge"
   ],
   "aliases": [],
   "mirror": false

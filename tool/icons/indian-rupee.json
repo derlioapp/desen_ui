@@ -1,10 +1,16 @@
 {
-  "upstream": "lucide/indian-rupee",
+  "upstream": "hugeicons/IndianRupee",
+  "also": [
+    "Rupee"
+  ],
   "category": "finance",
   "tags": [
+    "rupee",
     "currency",
+    "india",
     "money",
-    "payment"
+    "inr",
+    "indian rupee"
   ],
   "aliases": [],
   "mirror": false

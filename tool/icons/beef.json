@@ -1,15 +1,11 @@
 {
-  "upstream": "lucide/beef",
+  "upstream": "hugeicons/Beef",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "food",
-    "dish",
-    "restaurant",
-    "course",
-    "meal",
     "meat",
-    "bbq",
-    "steak"
+    "steak",
+    "food"
   ],
   "aliases": [],
   "mirror": false

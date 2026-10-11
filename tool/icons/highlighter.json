@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/highlighter",
+  "upstream": "hugeicons/Highlighter",
+  "also": [],
   "category": "text",
   "tags": [
-    "mark",
-    "text"
+    "highlighter",
+    "marker",
+    "highlight",
+    "text",
+    "pen"
   ],
   "aliases": [],
   "mirror": false

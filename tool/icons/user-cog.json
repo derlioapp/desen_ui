@@ -1,11 +1,15 @@
 {
-  "upstream": "lucide/user-cog",
+  "upstream": "hugeicons/UserCog",
+  "also": [],
   "category": "account",
   "tags": [
     "settings",
-    "edit",
-    "cog",
-    "gear"
+    "preferences",
+    "gear",
+    "edit profile",
+    "configure",
+    "person",
+    "account"
   ],
   "aliases": [],
   "mirror": false

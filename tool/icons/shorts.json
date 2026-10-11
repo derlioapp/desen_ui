@@ -1,23 +1,12 @@
 {
-  "upstream": "lucide-lab/shorts",
+  "upstream": "hugeicons/ShortsPants",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "chino",
-    "cargo",
-    "denim",
-    "beachwear",
-    "bottoms",
-    "store",
+    "pants",
     "clothing",
-    "clothes",
-    "apparel",
-    "attire",
-    "fashion",
-    "thread",
-    "cotton",
-    "casual",
-    "slim fit",
-    "regular"
+    "summer",
+    "apparel"
   ],
   "aliases": [],
   "mirror": false

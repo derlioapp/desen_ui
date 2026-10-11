@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/club",
+  "upstream": "hugeicons/Club",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "shape",
-    "suit",
-    "playing",
-    "cards"
+    "card suit",
+    "clubs",
+    "playing card",
+    "trefoil"
   ],
   "aliases": [],
   "mirror": false

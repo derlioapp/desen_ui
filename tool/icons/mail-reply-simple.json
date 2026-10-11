@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MailReply02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "answer",
+    "respond",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": true
+}

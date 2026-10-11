@@ -1,5 +1,22 @@
 {
-  "upstream": "lucide/play-off",
+  "upstream": "desen/play-off",
+  "derived": {
+    "parts": [
+      {
+        "from": "Play",
+        "keep": [
+          0
+        ]
+      },
+      {
+        "from": "MicOff02",
+        "keep": [
+          2
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "multimedia",
   "tags": [
     "audio",
@@ -13,5 +30,6 @@
     "forbidden"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

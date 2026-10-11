@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Motion01",
+  "also": [
+    "Motion02"
+  ],
+  "category": "design",
+  "tags": [
+    "motion",
+    "animation",
+    "copy",
+    "squares",
+    "transition",
+    "trail"
+  ],
+  "aliases": [],
+  "mirror": false
+}

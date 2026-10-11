@@ -1,11 +1,20 @@
 {
-  "upstream": "lucide/map-pin-off",
+  "upstream": "hugeicons/MapPinOff",
+  "also": [
+    "LocationOffline01",
+    "LocationOffline03"
+  ],
   "category": "navigation",
   "tags": [
     "location",
+    "pin",
+    "off",
+    "disabled",
+    "hidden",
     "waypoint",
     "marker",
-    "remove"
+    "remove",
+    "offline"
   ],
   "aliases": [],
   "mirror": false

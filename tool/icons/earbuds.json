@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Airpod03",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "airpod",
+    "earbuds",
+    "headphones",
+    "wireless",
+    "audio"
+  ],
+  "aliases": [],
+  "mirror": false
+}

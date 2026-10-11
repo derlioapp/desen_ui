@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/line-squiggle",
+  "upstream": "hugeicons/LineSquiggle",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "line",
-    "snakes",
-    "annotate",
-    "curve",
+    "scribble",
     "doodle",
-    "stroke",
-    "pen",
-    "tool",
-    "gesture",
+    "freehand",
     "draw",
-    "wave",
-    "art",
-    "road"
+    "curve"
   ],
   "aliases": [],
   "mirror": false

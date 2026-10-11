@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LaptopCloud",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "laptop cloud",
+    "sync",
+    "backup",
+    "laptop",
+    "computer",
+    "online"
+  ],
+  "aliases": [],
+  "mirror": false
+}

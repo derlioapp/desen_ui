@@ -1,24 +1,20 @@
 {
-  "upstream": "lucide/grid-2x2",
+  "upstream": "hugeicons/Grid2x2",
+  "also": [
+    "LayoutGrid"
+  ],
   "category": "text",
   "tags": [
-    "table",
-    "rows",
-    "columns",
-    "blocks",
-    "plot",
-    "land",
-    "geometry",
-    "measure",
-    "size",
-    "width",
-    "height",
-    "distance",
-    "surface area",
-    "square meter",
-    "acre",
+    "grid",
+    "2x2",
+    "four",
+    "cells",
     "window",
-    "skylight"
+    "table",
+    "layout",
+    "four cells",
+    "cross",
+    "tiles"
   ],
   "aliases": [],
   "mirror": false

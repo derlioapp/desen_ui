@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Restaurant01",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "restaurant",
+    "spoon",
+    "fork",
+    "cutlery",
+    "dining"
+  ],
+  "aliases": [],
+  "mirror": false
+}

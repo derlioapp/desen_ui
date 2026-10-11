@@ -1,0 +1,19 @@
+{
+  "upstream": "hugeicons/Upload03",
+  "also": [
+    "Unarchive03",
+    "Upload05"
+  ],
+  "category": "files",
+  "tags": [
+    "upload",
+    "box",
+    "archive",
+    "arrow up",
+    "package",
+    "unarchive",
+    "restore"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/nfc",
+  "upstream": "hugeicons/Nfc",
+  "also": [],
   "category": "social",
   "tags": [
+    "nfc",
     "contactless",
-    "payment",
-    "near-field communication"
+    "wireless",
+    "tap",
+    "near field",
+    "pay"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/play",
-  "category": "arrows",
+  "upstream": "hugeicons/Play",
+  "also": [],
+  "category": "multimedia",
   "tags": [
-    "music",
-    "audio",
-    "video",
+    "play",
     "start",
-    "run"
+    "media",
+    "video",
+    "audio"
   ],
   "aliases": [],
   "mirror": false

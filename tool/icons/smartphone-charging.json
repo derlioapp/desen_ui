@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/smartphone-charging",
+  "upstream": "hugeicons/SmartphoneCharging",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "phone",
-    "cellphone",
-    "device",
+    "battery",
+    "charge",
     "power",
-    "screen"
+    "mobile"
   ],
   "aliases": [],
   "mirror": false

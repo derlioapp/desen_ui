@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/GasStove",
+  "also": [],
+  "category": "home",
+  "tags": [
+    "stove",
+    "gas",
+    "cooker",
+    "kitchen",
+    "burner"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide-lab/diaper",
+  "upstream": "hugeicons/Diaper",
+  "also": [],
   "category": "account",
   "tags": [
-    "nappy",
-    "absorbent",
-    "potty",
-    "newborn",
-    "childproof",
-    "children",
+    "diaper",
+    "baby",
     "infant",
-    "kids",
-    "toddler",
-    "mother",
-    "mum",
-    "family"
+    "nappy",
+    "child",
+    "care"
   ],
   "aliases": [],
   "mirror": false

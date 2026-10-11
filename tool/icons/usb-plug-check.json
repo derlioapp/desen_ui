@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/UsbConnected01",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "usb",
+    "plug",
+    "connected",
+    "check",
+    "cable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

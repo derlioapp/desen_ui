@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/axe",
+  "upstream": "hugeicons/Axe",
+  "also": [],
   "category": "tools",
   "tags": [
-    "hatchet",
-    "weapon",
+    "axe",
     "chop",
-    "sharp",
-    "equipment",
-    "fireman",
-    "firefighter",
-    "brigade",
-    "lumberjack",
-    "woodcutter",
-    "logger",
-    "forestry"
+    "tool",
+    "wood",
+    "lumberjack"
   ],
   "aliases": [],
   "mirror": false

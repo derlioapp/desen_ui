@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/copyleft",
+  "upstream": "hugeicons/Copyleft",
+  "also": [],
   "category": "text",
   "tags": [
-    "licence"
+    "copyleft",
+    "license",
+    "open source",
+    "free",
+    "legal"
   ],
   "aliases": [],
   "mirror": false

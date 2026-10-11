@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/ligature",
+  "upstream": "hugeicons/Ligature",
+  "also": [],
   "category": "text",
   "tags": [
-    "text",
-    "font",
     "typography",
-    "alternates",
-    "alternatives"
+    "font",
+    "glyph",
+    "letters",
+    "fi"
   ],
   "aliases": [],
   "mirror": false

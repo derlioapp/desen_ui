@@ -1,8 +1,15 @@
 {
-  "upstream": "lucide/phone",
-  "category": "text",
+  "upstream": "hugeicons/Call",
+  "also": [
+    "Phone"
+  ],
+  "category": "connectivity",
   "tags": [
-    "call"
+    "phone",
+    "call",
+    "handset",
+    "telephone",
+    "contact"
   ],
   "aliases": [],
   "mirror": false

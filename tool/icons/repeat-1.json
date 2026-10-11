@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/repeat-1",
+  "upstream": "hugeicons/RepeatOne01",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "replay"
+    "repeat one",
+    "loop",
+    "replay",
+    "single"
   ],
   "aliases": [],
   "mirror": false

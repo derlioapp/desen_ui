@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PhoneOff02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "mobile",
+    "off",
+    "disabled",
+    "home-button"
+  ],
+  "aliases": [],
+  "mirror": false
+}

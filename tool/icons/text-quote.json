@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/text-quote",
+  "upstream": "hugeicons/TextQuote",
+  "also": [],
   "category": "text",
   "tags": [
+    "quote",
+    "citation",
     "blockquote",
-    "quotation",
-    "indent",
-    "reply",
-    "response"
+    "text"
   ],
   "aliases": [],
   "mirror": true

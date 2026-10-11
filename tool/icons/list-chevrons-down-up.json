@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/list-chevrons-down-up",
+  "upstream": "hugeicons/ListChevronsDownUp",
+  "also": [],
   "category": "text",
   "tags": [
-    "options",
-    "items",
     "collapse",
-    "expand",
-    "details",
-    "disclosure",
-    "show",
-    "hide",
-    "toggle",
-    "accordion",
-    "more",
-    "less",
     "fold",
-    "unfold",
-    "vertical"
+    "compress",
+    "list",
+    "rows"
   ],
   "aliases": [],
   "mirror": false

@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/map-pin-x-inside",
+  "upstream": "hugeicons/MapPinXInside",
+  "also": [],
   "category": "navigation",
   "tags": [
     "location",
-    "waypoint",
-    "marker",
-    "drop",
-    "delete",
+    "pin",
     "remove",
-    "erase"
+    "close",
+    "cancel"
   ],
   "aliases": [],
   "mirror": false

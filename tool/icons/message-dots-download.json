@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MessageDownload02",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "download",
+    "save",
+    "receive",
+    "inbox"
+  ],
+  "aliases": [],
+  "mirror": false
+}

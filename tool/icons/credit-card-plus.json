@@ -1,26 +1,12 @@
 {
-  "upstream": "lucide/credit-card-plus",
+  "upstream": "hugeicons/CreditCardAdd",
+  "also": [],
   "category": "account",
   "tags": [
-    "debit",
     "payment",
-    "banking",
-    "finance",
-    "transaction",
-    "wallet",
-    "purchase",
-    "checkout",
-    "billing",
-    "account",
-    "cardholder",
     "add",
     "new",
-    "link",
-    "save",
-    "method",
-    "plastic",
-    "bank",
-    "cc"
+    "card"
   ],
   "aliases": [],
   "mirror": false

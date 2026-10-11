@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/scan-qr-code",
+  "upstream": "hugeicons/QrCode01",
+  "also": [],
   "category": "account",
   "tags": [
-    "barcode",
+    "qr",
+    "code",
     "scan",
-    "qrcode",
-    "url",
-    "information",
-    "digital",
-    "scanner"
+    "barcode"
   ],
   "aliases": [],
   "mirror": false

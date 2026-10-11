@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ComputerActivity",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "computer",
+    "screen",
+    "activity",
+    "pulse",
+    "monitoring",
+    "health"
+  ],
+  "aliases": [],
+  "mirror": false
+}

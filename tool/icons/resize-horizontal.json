@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/HorizontalResize",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "resize",
+    "horizontal",
+    "width",
+    "drag",
+    "split"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,12 @@
+{
+  "upstream": "hugeicons/FileUpload",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "upload",
+    "arrow up",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Scooter02",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "moped",
+    "delivery",
+    "courier",
+    "vehicle",
+    "box"
+  ],
+  "aliases": [],
+  "mirror": false
+}

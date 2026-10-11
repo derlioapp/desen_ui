@@ -1,8 +1,14 @@
 {
-  "upstream": "lucide/languages",
+  "upstream": "hugeicons/Languages",
+  "also": [],
   "category": "text",
   "tags": [
-    "translate"
+    "languages",
+    "translate",
+    "translation",
+    "locale",
+    "international",
+    "i18n"
   ],
   "aliases": [
     "translate"

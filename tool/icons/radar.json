@@ -1,7 +1,9 @@
 {
-  "upstream": "lucide/radar",
+  "upstream": "hugeicons/Radar01",
+  "also": [],
   "category": "navigation",
   "tags": [
+    "radar",
     "scan",
     "sonar",
     "detect",

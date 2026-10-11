@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CreditCardFreeze",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "freeze",
+    "frozen",
+    "card",
+    "block",
+    "payment",
+    "lock"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

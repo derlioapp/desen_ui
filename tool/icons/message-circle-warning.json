@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/message-circle-warning",
+  "upstream": "hugeicons/MessageCircleWarning",
+  "also": [],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "report",
-    "abuse",
-    "offense",
+    "warning",
     "alert",
-    "danger",
-    "caution",
-    "protected",
-    "exclamation mark"
+    "error"
   ],
   "aliases": [],
   "mirror": false

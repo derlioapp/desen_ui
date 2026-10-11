@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/lamp",
+  "upstream": "hugeicons/Lamp",
+  "also": [],
   "category": "home",
   "tags": [
+    "lamp",
+    "light",
+    "table lamp",
     "lighting",
-    "household",
-    "home",
-    "furniture"
+    "bedside"
   ],
   "aliases": [],
   "mirror": false

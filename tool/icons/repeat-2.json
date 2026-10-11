@@ -1,10 +1,10 @@
 {
-  "upstream": "lucide/repeat-2",
+  "upstream": "hugeicons/Repost",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "arrows",
-    "retweet",
     "repost",
+    "retweet",
     "share",
     "repeat",
     "loop"

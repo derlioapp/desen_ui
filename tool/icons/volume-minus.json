@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/VolumeMinus",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "volume down",
+    "decrease",
+    "quieter",
+    "speaker",
+    "sound",
+    "audio"
+  ],
+  "aliases": [],
+  "mirror": false
+}

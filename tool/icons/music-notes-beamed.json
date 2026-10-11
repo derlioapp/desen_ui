@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/MusicNote03",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "music",
+    "notes",
+    "beamed",
+    "song",
+    "audio",
+    "melody"
+  ],
+  "aliases": [
+    "music",
+    "music4"
+  ],
+  "mirror": false
+}

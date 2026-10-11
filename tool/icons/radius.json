@@ -1,13 +1,11 @@
 {
-  "upstream": "lucide/radius",
+  "upstream": "hugeicons/Radius",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "shape",
+    "radius",
     "circle",
     "geometry",
-    "trigonometry",
-    "radii",
-    "calculate",
     "measure",
     "size"
   ],

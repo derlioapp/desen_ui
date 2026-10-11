@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/cylinder",
+  "upstream": "hugeicons/Cylinder01",
+  "also": [],
   "category": "shapes",
   "tags": [
     "shape",
-    "elliptical",
     "geometry",
-    "container",
-    "storage",
-    "tin",
-    "pot"
+    "3d",
+    "tube",
+    "can"
   ],
   "aliases": [],
   "mirror": false

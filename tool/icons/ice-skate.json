@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide-lab/ice-skate",
+  "upstream": "hugeicons/IceSkating",
+  "also": [],
   "category": "sports",
   "tags": [
-    "skates",
-    "ice rink",
-    "figure skating",
-    "speed skating",
-    "boots",
-    "shoes",
-    "footwear",
-    "winter"
+    "ice skate",
+    "skating",
+    "winter",
+    "sport",
+    "shoe"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MedicalFile",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "file",
+    "medical",
+    "health",
+    "record",
+    "pulse",
+    "heartbeat"
+  ],
+  "aliases": [],
+  "mirror": false
+}

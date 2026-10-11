@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/thermometer",
+  "upstream": "hugeicons/Temperature",
+  "also": [],
   "category": "weather",
   "tags": [
     "temperature",
     "celsius",
     "fahrenheit",
-    "weather"
+    "degrees",
+    "heat"
   ],
   "aliases": [],
   "mirror": false

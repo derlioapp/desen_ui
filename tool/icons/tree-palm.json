@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/tree-palm",
+  "upstream": "hugeicons/TreePalm",
+  "also": [],
   "category": "nature",
   "tags": [
-    "vacation",
-    "leisure",
+    "palm",
+    "tree",
+    "tropical",
+    "beach",
     "island"
   ],
   "aliases": [],

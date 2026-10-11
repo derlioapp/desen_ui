@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/clock-12",
+  "upstream": "hugeicons/ClockHour12",
+  "also": [],
   "category": "time",
   "tags": [
     "time",
-    "watch",
-    "alarm",
+    "twelve",
+    "12 o'clock",
+    "hour",
     "noon",
     "midnight"
   ],

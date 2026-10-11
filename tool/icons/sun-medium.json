@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/sun-medium",
+  "upstream": "hugeicons/SunMedium",
+  "also": [],
   "category": "accessibility",
   "tags": [
+    "sun",
+    "medium",
     "brightness",
-    "medium"
+    "light"
   ],
   "aliases": [],
   "mirror": false

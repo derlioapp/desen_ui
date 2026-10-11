@@ -1,24 +1,80 @@
 {
-  "upstream": "lucide/vector-polygon",
-  "category": "design",
+  "upstream": "desen/vector-polygon",
+  "derived": {
+    "parts": [
+      {
+        "from": "VectorSquare",
+        "keep": [
+          1
+        ],
+        "matrix": [
+          0.8,
+          0,
+          0,
+          0.8,
+          6.6,
+          0.1
+        ]
+      },
+      {
+        "from": "VectorSquare",
+        "keep": [
+          1
+        ],
+        "matrix": [
+          0.8,
+          0,
+          0,
+          0.8,
+          15.1,
+          4.1
+        ]
+      },
+      {
+        "from": "VectorSquare",
+        "keep": [
+          1
+        ],
+        "matrix": [
+          0.8,
+          0,
+          0,
+          0.8,
+          10.6,
+          15.1
+        ]
+      },
+      {
+        "from": "VectorSquare",
+        "keep": [
+          1
+        ],
+        "matrix": [
+          0.8,
+          0,
+          0,
+          0.8,
+          0.1,
+          8.6
+        ]
+      }
+    ],
+    "paths": [
+      "M13.714 5.777L16.786 7.223",
+      "M18.364 11.277L16.136 16.723",
+      "M12.449 17.921L7.051 14.579",
+      "M6.322 10.617L9.178 6.883"
+    ]
+  },
+  "also": [],
+  "category": "shapes",
   "tags": [
-    "map",
     "vector",
-    "geometry",
-    "coordinates",
+    "polygon",
+    "path",
+    "nodes",
     "shape",
-    "location",
-    "boundary",
-    "area",
-    "region",
-    "gis",
-    "geospatial",
-    "vertices",
-    "points",
-    "outline",
-    "drawing",
-    "design",
-    "math"
+    "design"
   ],
   "aliases": [],
   "mirror": false

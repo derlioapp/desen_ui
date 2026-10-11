@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide/drama",
+  "upstream": "hugeicons/Drama",
+  "also": [],
   "category": "multimedia",
   "tags": [
     "drama",
-    "masks",
     "theater",
-    "theatre",
-    "entertainment",
-    "show"
+    "masks",
+    "comedy",
+    "tragedy",
+    "acting"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

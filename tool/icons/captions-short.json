@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Subtitle",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "subtitle",
+    "captions",
+    "closed captions",
+    "text",
+    "video"
+  ],
+  "aliases": [],
+  "mirror": false
+}

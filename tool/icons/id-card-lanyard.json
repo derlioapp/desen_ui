@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/id-card-lanyard",
+  "upstream": "hugeicons/IdCardLanyard",
+  "also": [],
   "category": "security",
   "tags": [
-    "id-card",
-    "id-card-lanyard",
-    "identity",
+    "id",
+    "badge",
+    "lanyard",
     "employee",
-    "gate-pass",
-    "badge"
+    "identity"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/WifiCircle",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "signal",
+    "wireless",
+    "connection",
+    "round",
+    "badge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

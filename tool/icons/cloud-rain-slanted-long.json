@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CloudRainWind",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "rain",
+    "windy",
+    "storm",
+    "slanted",
+    "shower"
+  ],
+  "aliases": [
+    "cloudRainWind"
+  ],
+  "mirror": false
+}

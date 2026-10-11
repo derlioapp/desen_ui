@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SchoolBell01",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "school bell",
+    "ring",
+    "alarm",
+    "class",
+    "break"
+  ],
+  "aliases": [],
+  "mirror": false
+}

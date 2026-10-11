@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/cpu",
+  "upstream": "hugeicons/Cpu",
+  "also": [],
   "category": "devices",
   "tags": [
     "processor",
-    "cores",
-    "technology",
-    "computer",
     "chip",
-    "circuit",
-    "memory",
-    "ram",
-    "specs",
-    "gigahertz",
-    "ghz"
+    "hardware",
+    "computer",
+    "microchip"
   ],
   "aliases": [],
   "mirror": false

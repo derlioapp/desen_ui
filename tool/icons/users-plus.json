@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/AddTeam",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "add",
+    "team",
+    "users",
+    "group",
+    "plus",
+    "invite",
+    "members"
+  ],
+  "aliases": [],
+  "mirror": false
+}

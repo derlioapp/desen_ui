@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatIncome",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "income",
+    "incoming",
+    "received",
+    "inbox"
+  ],
+  "aliases": [],
+  "mirror": true
+}

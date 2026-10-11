@@ -1,5 +1,38 @@
 {
-  "upstream": "lucide/star-check",
+  "upstream": "desen/star-check",
+  "derived": {
+    "parts": [
+      {
+        "from": "Star",
+        "keep": [
+          0
+        ]
+      },
+      {
+        "from": "UserCheck01",
+        "keep": [
+          2
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          0.5,
+          0.5
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        18,
+        19,
+        6
+      ]
+    ]
+  },
+  "also": [],
   "category": "account",
   "tags": [
     "bookmark",

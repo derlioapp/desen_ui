@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CalendarCheckIn02",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "check",
+    "in",
+    "arrow",
+    "left",
+    "enter"
+  ],
+  "aliases": [],
+  "mirror": true
+}

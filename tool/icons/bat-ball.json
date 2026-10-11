@@ -1,17 +1,15 @@
 {
-  "upstream": "lucide-lab/bat-ball",
+  "upstream": "hugeicons/BaseballBat",
+  "also": [],
   "category": "sports",
   "tags": [
-    "table tennis",
-    "ping-pong",
-    "whiff-whaff",
-    "paddle",
-    "racquet",
-    "racket",
-    "net",
-    "bounce",
-    "score"
+    "baseball",
+    "bat",
+    "ball",
+    "sport",
+    "hit"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.5
 }

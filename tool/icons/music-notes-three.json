@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MusicNote01",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "music",
+    "notes",
+    "songs",
+    "playlist",
+    "audio",
+    "melody"
+  ],
+  "aliases": [],
+  "mirror": false
+}

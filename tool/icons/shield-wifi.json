@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SecurityWifi",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "secure wifi",
+    "vpn",
+    "network",
+    "protect",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Scooter03",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "moped",
+    "vehicle",
+    "front view",
+    "ride",
+    "urban"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

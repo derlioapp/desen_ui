@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-sagittarius",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacSagittarius",
+  "also": [],
+  "category": "science",
   "tags": [
-    "archer",
-    "arrow",
-    "exploration",
-    "fire",
-    "philosophy",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "archer"
   ],
   "aliases": [],
   "mirror": false

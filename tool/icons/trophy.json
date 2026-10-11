@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide/trophy",
+  "upstream": "hugeicons/Trophy",
+  "also": [],
   "category": "sports",
   "tags": [
-    "prize",
-    "sports",
+    "trophy",
     "winner",
-    "achievement",
     "award",
-    "champion",
-    "celebration",
-    "victory",
-    "competition",
-    "tournament",
-    "leaderboard",
-    "ranking",
-    "success",
-    "reward",
     "cup",
-    "first",
-    "gold"
+    "prize"
   ],
   "aliases": [],
   "mirror": false

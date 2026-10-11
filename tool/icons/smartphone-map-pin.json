@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/MobileNavigator01",
+  "also": [
+    "MobileNavigator02"
+  ],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "mobile",
+    "navigation",
+    "location",
+    "gps",
+    "map"
+  ],
+  "aliases": [],
+  "mirror": false
+}

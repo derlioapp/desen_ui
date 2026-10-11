@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SunCloudFastWind01",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "cloud",
+    "sun",
+    "strong wind",
+    "gale",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

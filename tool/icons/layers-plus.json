@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/layers-plus",
+  "upstream": "hugeicons/LayersPlus",
+  "also": [],
   "category": "design",
   "tags": [
-    "stack",
+    "add layer",
     "layers",
-    "add",
-    "new",
-    "increase",
-    "create",
-    "positive",
-    "copy",
-    "upgrade"
+    "stack",
+    "new layer",
+    "plus"
   ],
   "aliases": [],
   "mirror": false

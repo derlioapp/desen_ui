@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/flag-triangle-left",
+  "upstream": "hugeicons/FlagTriangleLeft",
+  "also": [],
   "category": "development",
   "tags": [
-    "report",
-    "timeline",
+    "flag",
+    "pennant",
     "marker",
-    "pin"
+    "left",
+    "report"
   ],
   "aliases": [],
   "mirror": false

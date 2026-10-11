@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileRemove",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "remove",
+    "delete",
+    "close",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MenuCollapse",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "menu",
+    "collapse",
+    "sidebar",
+    "chevron",
+    "close",
+    "hide"
+  ],
+  "aliases": [],
+  "mirror": false
+}

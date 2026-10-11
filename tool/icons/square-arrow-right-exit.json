@@ -1,12 +1,18 @@
 {
-  "upstream": "lucide/square-arrow-right-exit",
+  "upstream": "hugeicons/SquareArrowRightExit",
+  "also": [
+    "LogoutSquare02"
+  ],
   "category": "arrows",
   "tags": [
-    "out",
-    "outside",
-    "output",
+    "exit",
+    "logout",
+    "sign out",
     "export",
-    "->"
+    "right",
+    "arrow",
+    "auth",
+    "square"
   ],
   "aliases": [],
   "mirror": true

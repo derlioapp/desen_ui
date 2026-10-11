@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/DirectionRight02",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "direction",
+    "signpost",
+    "sign",
+    "right",
+    "wayfinding",
+    "pole"
+  ],
+  "aliases": [
+    "milestone"
+  ],
+  "mirror": false
+}

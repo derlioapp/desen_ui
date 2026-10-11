@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FilePaste",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "paste",
+    "clipboard",
+    "insert",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

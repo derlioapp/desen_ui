@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/WifiUnlock",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "open",
+    "public",
+    "unsecured",
+    "network",
+    "unlocked"
+  ],
+  "aliases": [],
+  "mirror": false
+}

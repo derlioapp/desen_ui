@@ -1,19 +1,18 @@
 {
-  "upstream": "lucide/arrow-up-down",
+  "upstream": "hugeicons/ArrowUpDown",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "bidirectional",
-    "two-way",
-    "2-way",
+    "arrow",
+    "up",
+    "down",
     "swap",
-    "switch",
-    "network",
-    "mobile data",
-    "internet",
     "sort",
-    "reorder",
-    "move"
+    "two-way",
+    "reorder"
   ],
-  "aliases": [],
+  "aliases": [
+    "arrowDownUp"
+  ],
   "mirror": false
 }

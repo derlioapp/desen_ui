@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/dna-off",
+  "upstream": "hugeicons/DnaOff",
+  "also": [],
   "category": "medical",
   "tags": [
+    "dna",
     "gene",
-    "gmo free",
     "helix",
-    "heredity",
-    "chromosome",
-    "nucleic acid"
+    "genetics",
+    "gmo free",
+    "disabled"
   ],
   "aliases": [],
   "mirror": false

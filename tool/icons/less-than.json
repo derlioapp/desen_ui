@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LessThan",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "comparison",
+    "smaller",
+    "angle bracket",
+    "operator",
+    "lt"
+  ],
+  "aliases": [],
+  "mirror": false
+}

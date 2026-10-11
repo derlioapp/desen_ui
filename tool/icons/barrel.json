@@ -1,25 +1,13 @@
 {
-  "upstream": "lucide/barrel",
+  "upstream": "hugeicons/Barrel",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "cask",
     "keg",
-    "drum",
-    "tank",
     "wine",
     "beer",
-    "oak",
-    "wood",
-    "firkin",
-    "hogshead",
-    "kilderkin",
-    "barrique",
-    "solera",
-    "aging",
-    "whiskey",
-    "brewery",
-    "distillery",
-    "winery",
-    "vineyard"
+    "storage"
   ],
   "aliases": [],
   "mirror": false

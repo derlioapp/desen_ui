@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/vegan",
+  "upstream": "hugeicons/Vegan",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "vegan",
+    "plant based",
     "vegetarian",
-    "fruitarian",
-    "herbivorous",
-    "animal rights",
-    "diet"
+    "leaf",
+    "sprout",
+    "diet",
+    "organic"
   ],
   "aliases": [],
   "mirror": false

@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide-lab/hockey",
+  "upstream": "hugeicons/Hockey",
+  "also": [],
   "category": "sports",
   "tags": [
+    "hockey",
+    "field hockey",
     "stick",
     "ball",
-    "goalkeeper",
-    "goalie",
-    "team",
-    "protective equipment",
-    "protection",
-    "face",
-    "winter sports",
-    "horror",
-    "scary",
-    "scared",
-    "halloween",
-    "costume"
+    "sport"
   ],
   "aliases": [],
   "mirror": false

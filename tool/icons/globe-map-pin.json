@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/MapsGlobal01",
+  "also": [
+    "MapsGlobal02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "globe",
+    "map",
+    "pin",
+    "world",
+    "location",
+    "region"
+  ],
+  "aliases": [],
+  "mirror": false
+}

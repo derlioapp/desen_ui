@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SelfTransfer",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "self transfer",
+    "travel",
+    "airport",
+    "connection",
+    "luggage",
+    "walking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/circle-chevron-right",
+  "upstream": "hugeicons/CircleChevronRight",
+  "also": [
+    "CircleArrowRight01"
+  ],
   "category": "arrows",
   "tags": [
-    "back",
-    "more than",
-    "greater",
-    "menu",
-    ">"
+    "right",
+    "forward",
+    "next",
+    "caret",
+    "chevron"
   ],
   "aliases": [],
   "mirror": true

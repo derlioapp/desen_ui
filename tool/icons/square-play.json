@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/square-play",
+  "upstream": "hugeicons/PlaySquare",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "music",
-    "audio",
+    "play",
+    "square",
     "video",
-    "start",
-    "run"
+    "media"
   ],
   "aliases": [],
   "mirror": false

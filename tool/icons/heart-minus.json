@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/heart-minus",
+  "upstream": "hugeicons/HeartMinus",
+  "also": [],
   "category": "medical",
   "tags": [
-    "unlike",
-    "unfavorite",
+    "heart",
+    "minus",
     "remove",
-    "delete",
-    "damage"
+    "unfavorite"
   ],
   "aliases": [],
   "mirror": false

@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-libra",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacLibra",
+  "also": [],
+  "category": "science",
   "tags": [
-    "scales",
-    "balance",
-    "justice",
-    "air",
-    "harmony",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "scales"
   ],
   "aliases": [],
   "mirror": false

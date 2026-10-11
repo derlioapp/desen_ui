@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderMusic",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "music",
+    "audio",
+    "songs",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

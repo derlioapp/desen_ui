@@ -1,17 +1,29 @@
 {
-  "upstream": "lucide/pilcrow-right",
+  "upstream": "desen/pilcrow-right",
+  "derived": {
+    "parts": [
+      {
+        "from": "PilcrowRight",
+        "keep": [
+          0,
+          1,
+          2
+        ]
+      }
+    ],
+    "paths": [
+      "M4 17.5H20",
+      "M16.5 14C16.5 14 20 16.578 20 17.5C20 18.422 16.5 21 16.5 21"
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
-    "direction",
     "paragraph",
-    "mark",
-    "paraph",
-    "blind",
-    "typography",
-    "type",
-    "text",
-    "prose",
-    "symbol"
+    "direction",
+    "left to right",
+    "ltr",
+    "text direction"
   ],
   "aliases": [],
   "mirror": false

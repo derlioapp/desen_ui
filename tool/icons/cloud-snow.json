@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/cloud-snow",
+  "upstream": "hugeicons/CloudSnow",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "blizzard"
+    "snow",
+    "snowing",
+    "winter",
+    "cold",
+    "flakes"
   ],
   "aliases": [],
   "mirror": false

@@ -1,33 +1,17 @@
 {
-  "upstream": "lucide/toolbox",
+  "upstream": "hugeicons/Toolbox",
+  "also": [],
   "category": "tools",
   "tags": [
-    "toolkit",
+    "toolbox",
     "tools",
-    "trunk",
-    "chest",
-    "box",
-    "storage",
-    "utility",
-    "utilities",
-    "container",
-    "kit",
-    "set",
     "repair",
-    "fix",
-    "service",
-    "maintenance",
-    "mechanic",
-    "workshop",
-    "construction",
-    "hardware",
-    "equipment",
-    "gear",
-    "handyman",
-    "engineering",
-    "craft",
-    "diy"
+    "kit"
   ],
-  "aliases": [],
-  "mirror": false
+  "aliases": [
+    "toolbox2",
+    "toolCase"
+  ],
+  "mirror": false,
+  "fill": false
 }

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ChartLine",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "line chart",
+    "graph",
+    "trend",
+    "statistics",
+    "analytics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

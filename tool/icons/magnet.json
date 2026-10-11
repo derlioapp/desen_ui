@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/magnet",
+  "upstream": "hugeicons/Magnet",
+  "also": [],
   "category": "design",
   "tags": [
     "horseshoe",
     "lock",
     "science",
-    "snap"
+    "snap",
+    "attract"
   ],
   "aliases": [],
   "mirror": false

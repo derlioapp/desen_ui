@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CloudSlowWind",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "breeze",
+    "light wind",
+    "mist",
+    "waves",
+    "air"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/History",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "history",
+    "recent",
+    "undo",
+    "clock",
+    "past"
+  ],
+  "aliases": [
+    "rotateCcwClock"
+  ],
+  "mirror": false
+}

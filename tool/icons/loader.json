@@ -1,5 +1,8 @@
 {
-  "upstream": "lucide/loader",
+  "upstream": "hugeicons/Loader",
+  "also": [
+    "Loading03"
+  ],
   "category": "arrows",
   "tags": [
     "loading",

@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/archive-restore",
+  "upstream": "hugeicons/ArchiveRestore",
+  "also": [],
   "category": "files",
   "tags": [
+    "archive",
+    "restore",
     "unarchive",
-    "index",
-    "backup",
     "box",
-    "storage",
-    "records"
+    "recover",
+    "upload"
   ],
   "aliases": [],
   "mirror": false

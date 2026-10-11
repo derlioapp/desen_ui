@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Segment",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "segment",
+    "split",
+    "text",
+    "tokenize",
+    "words"
+  ],
+  "aliases": [],
+  "mirror": false
+}

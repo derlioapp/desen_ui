@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/MailAccount02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "account",
+    "contact",
+    "person",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

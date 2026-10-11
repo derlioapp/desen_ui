@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/squares-exclude",
+  "upstream": "hugeicons/SquaresExclude",
+  "also": [],
   "category": "design",
   "tags": [
-    "square",
-    "pathfinder",
-    "path",
     "exclude",
-    "invert",
-    "xor",
-    "shape",
-    "vector"
+    "boolean",
+    "shapes",
+    "combine",
+    "xor"
   ],
   "aliases": [],
   "mirror": false

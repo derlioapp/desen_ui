@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/rotate-cw-square",
+  "upstream": "hugeicons/RotateCwSquare",
+  "also": [],
   "category": "layout",
   "tags": [
-    "right",
-    "clockwise",
     "rotate",
-    "image",
-    "90",
-    "45",
-    "degrees",
-    "°"
+    "square",
+    "clockwise",
+    "turn"
   ],
   "aliases": [],
   "mirror": false

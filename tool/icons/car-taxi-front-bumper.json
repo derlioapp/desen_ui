@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Taxi",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "taxi",
+    "cab",
+    "vehicle",
+    "ride",
+    "trip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

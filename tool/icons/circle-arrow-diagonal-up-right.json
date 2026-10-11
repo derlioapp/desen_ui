@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/CircleArrowDiagonal01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "resize",
+    "diagonal",
+    "stretch",
+    "double arrow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

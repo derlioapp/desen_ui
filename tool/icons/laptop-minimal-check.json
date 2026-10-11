@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/laptop-minimal-check",
+  "upstream": "hugeicons/LaptopMinimalCheck",
+  "also": [],
   "category": "devices",
   "tags": [
+    "laptop check",
+    "verified",
+    "minimal",
     "computer",
-    "screen",
-    "remote",
-    "success",
-    "done",
-    "todo",
-    "tick",
-    "complete",
-    "task"
+    "done"
   ],
   "aliases": [],
   "mirror": false

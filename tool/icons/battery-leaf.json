@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BatteryEcoCharging",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "eco",
+    "green",
+    "energy",
+    "charging",
+    "power"
+  ],
+  "aliases": [],
+  "mirror": false
+}

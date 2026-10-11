@@ -1,5 +1,38 @@
 {
-  "upstream": "lucide/star-minus",
+  "upstream": "desen/star-minus",
+  "derived": {
+    "parts": [
+      {
+        "from": "Star",
+        "keep": [
+          0
+        ]
+      },
+      {
+        "from": "UserMinus01",
+        "keep": [
+          0
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          -0.5
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        18,
+        18.5,
+        5.6
+      ]
+    ]
+  },
+  "also": [],
   "category": "account",
   "tags": [
     "bookmark",

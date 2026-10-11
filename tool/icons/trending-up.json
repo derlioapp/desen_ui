@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/trending-up",
+  "upstream": "hugeicons/TrendingUp",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics"
+    "trending",
+    "up",
+    "growth",
+    "increase",
+    "chart"
   ],
   "aliases": [],
   "mirror": false

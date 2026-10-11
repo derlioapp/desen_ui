@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/mail-question-mark",
+  "upstream": "hugeicons/MailQuestionMark",
+  "also": [],
   "category": "mail",
   "tags": [
     "email",
     "message",
     "letter",
-    "delivery",
-    "undelivered"
+    "help",
+    "unknown",
+    "support"
   ],
   "aliases": [],
   "mirror": false

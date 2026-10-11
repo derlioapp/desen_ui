@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Navigation01",
+  "also": [
+    "Navigation02"
+  ],
+  "category": "gaming",
+  "tags": [
+    "navigation",
+    "directions",
+    "four way",
+    "pad",
+    "controls",
+    "arrows"
+  ],
+  "aliases": [],
+  "mirror": false
+}

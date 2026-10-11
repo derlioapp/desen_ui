@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CarTime",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "vehicle",
+    "time",
+    "eta",
+    "schedule",
+    "parking time",
+    "duration"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

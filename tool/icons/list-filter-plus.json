@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/list-filter-plus",
+  "upstream": "hugeicons/ListFilterPlus",
+  "also": [],
   "category": "text",
   "tags": [
     "filter",
-    "plus",
-    "options",
-    "add"
+    "add",
+    "refine",
+    "list",
+    "new filter"
   ],
   "aliases": [],
   "mirror": true

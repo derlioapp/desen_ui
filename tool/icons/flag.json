@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/flag",
+  "upstream": "hugeicons/Flag01",
+  "also": [],
   "category": "account",
   "tags": [
+    "flag",
     "report",
     "marker",
-    "notification",
-    "warning",
     "milestone",
-    "goal",
-    "notice",
-    "signal",
-    "attention",
-    "banner"
+    "goal"
   ],
   "aliases": [],
   "mirror": false

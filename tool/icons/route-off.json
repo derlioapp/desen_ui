@@ -1,18 +1,12 @@
 {
-  "upstream": "lucide/route-off",
+  "upstream": "hugeicons/RouteOff",
+  "also": [],
   "category": "navigation",
   "tags": [
+    "route off",
     "path",
-    "journey",
-    "planner",
-    "points",
-    "stops",
-    "stations",
-    "reset",
-    "clear",
-    "cancelled",
-    "closed",
-    "blocked"
+    "disabled",
+    "no route"
   ],
   "aliases": [],
   "mirror": false

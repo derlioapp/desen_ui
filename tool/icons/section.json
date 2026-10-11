@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/section",
+  "upstream": "hugeicons/Section",
+  "also": [],
   "category": "text",
   "tags": [
-    "mark",
-    "typography",
-    "punctuation",
+    "paragraph",
     "legal",
-    "type",
-    "text",
-    "prose",
-    "symbol"
+    "clause",
+    "symbol",
+    "sign"
   ],
   "aliases": [],
   "mirror": false

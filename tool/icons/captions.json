@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/captions",
+  "upstream": "hugeicons/Captions",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "closed captions",
     "subtitles",
-    "subhead",
-    "transcription",
-    "transcribe",
-    "dialogue",
-    "accessibility"
+    "closed captions",
+    "cc",
+    "text",
+    "video"
   ],
   "aliases": [],
   "mirror": false

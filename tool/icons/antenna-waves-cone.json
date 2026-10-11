@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InternetAntenna01",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "internet antenna",
+    "signal",
+    "wireless",
+    "broadcast",
+    "tower"
+  ],
+  "aliases": [],
+  "mirror": false
+}

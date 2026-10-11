@@ -1,15 +1,17 @@
 {
-  "upstream": "lucide/square-slash",
+  "upstream": "hugeicons/SquareSlash",
+  "also": [
+    "Zsh"
+  ],
   "category": "development",
   "tags": [
-    "git",
-    "diff",
-    "ignored",
+    "slash",
     "divide",
-    "division",
-    "shortcut",
-    "or",
-    "/"
+    "forward slash",
+    "disabled",
+    "shell",
+    "zsh",
+    "terminal"
   ],
   "aliases": [],
   "mirror": false

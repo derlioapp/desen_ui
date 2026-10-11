@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/leafy-green",
+  "upstream": "hugeicons/LeafyGreen",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "salad",
+    "leafy green",
     "lettuce",
+    "salad",
     "vegetable",
-    "chard",
-    "cabbage",
-    "bok choy"
+    "herb",
+    "greens"
   ],
   "aliases": [],
   "mirror": false

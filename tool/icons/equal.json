@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/equal",
+  "upstream": "hugeicons/Equal",
+  "also": [],
   "category": "math",
   "tags": [
-    "calculate",
-    "math",
-    "operator",
-    "assignment",
-    "code",
-    "="
+    "equals",
+    "equality",
+    "same",
+    "math"
   ],
   "aliases": [],
   "mirror": false

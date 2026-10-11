@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/chess-pawn",
+  "upstream": "hugeicons/ChessPawn",
+  "also": [],
   "category": "gaming",
   "tags": [
+    "chess",
     "piece",
-    "board game"
+    "board game",
+    "strategy"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

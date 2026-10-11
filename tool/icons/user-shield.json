@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/user-shield",
+  "upstream": "hugeicons/UserShield01",
+  "also": [],
   "category": "account",
   "tags": [
-    "user",
-    "shield",
-    "admin",
-    "protected",
-    "guard",
-    "profile",
+    "protection",
     "security",
-    "privacy",
-    "permissions",
-    "role"
+    "secure user",
+    "guard",
+    "person",
+    "account"
   ],
   "aliases": [],
   "mirror": false

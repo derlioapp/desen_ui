@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ResizeFieldRectangle",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "resize",
+    "handle",
+    "drag",
+    "textarea",
+    "field"
+  ],
+  "aliases": [],
+  "mirror": false
+}

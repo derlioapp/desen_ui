@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DragDropHorizontal",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "drag",
+    "drop",
+    "handle",
+    "dots",
+    "grab",
+    "horizontal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

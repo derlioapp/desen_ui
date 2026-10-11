@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/TextIndent",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "indent",
+    "text",
+    "tab",
+    "format"
+  ],
+  "aliases": [],
+  "mirror": true
+}

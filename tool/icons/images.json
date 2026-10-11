@@ -1,16 +1,16 @@
 {
-  "upstream": "lucide/images",
+  "upstream": "hugeicons/Images",
+  "also": [
+    "Album01"
+  ],
   "category": "photography",
   "tags": [
-    "picture",
-    "photo",
-    "multiple",
-    "copy",
+    "images",
     "gallery",
+    "photos",
+    "pictures",
     "album",
-    "collection",
-    "slideshow",
-    "showcase"
+    "stack"
   ],
   "aliases": [],
   "mirror": false

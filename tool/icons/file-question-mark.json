@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/file-question-mark",
+  "upstream": "hugeicons/FileQuestionMark",
+  "also": [],
   "category": "files",
   "tags": [
-    "readme",
     "help",
-    "question"
+    "unknown",
+    "question",
+    "document"
   ],
   "aliases": [],
   "mirror": false

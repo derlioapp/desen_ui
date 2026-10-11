@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/mouse-pointer-ban",
+  "upstream": "hugeicons/CursorDisabled02",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "wait",
-    "busy",
-    "loading",
+    "cursor",
+    "disabled",
+    "not allowed",
     "blocked",
-    "frozen",
-    "freeze"
+    "pointer"
   ],
   "aliases": [],
   "mirror": false

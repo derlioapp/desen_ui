@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MapsOff",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "map",
+    "off",
+    "disabled",
+    "unavailable",
+    "offline"
+  ],
+  "aliases": [],
+  "mirror": false
+}

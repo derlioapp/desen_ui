@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/WifiConnected02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "connected",
+    "online",
+    "ok",
+    "verified",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

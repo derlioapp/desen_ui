@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/clock-alert",
+  "upstream": "hugeicons/ClockAlert",
+  "also": [],
   "category": "time",
   "tags": [
-    "time",
-    "watch",
-    "alarm",
     "warning",
-    "wrong"
+    "overdue",
+    "late",
+    "time",
+    "alert"
   ],
   "aliases": [],
   "mirror": false

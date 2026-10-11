@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/brain-cog",
+  "upstream": "hugeicons/BrainCog",
+  "also": [],
   "category": "science",
   "tags": [
-    "mind",
-    "intellect",
-    "artificial intelligence",
+    "brain",
+    "cog",
+    "gear",
     "ai",
-    "deep learning",
-    "machine learning",
-    "computing"
+    "settings"
   ],
   "aliases": [],
   "mirror": false

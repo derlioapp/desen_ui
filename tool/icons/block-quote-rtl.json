@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/RightToLeftBlockQuote",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "right to left",
+    "block quote",
+    "rtl",
+    "indent",
+    "quote"
+  ],
+  "aliases": [],
+  "mirror": false
+}

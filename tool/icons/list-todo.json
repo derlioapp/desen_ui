@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/list-todo",
+  "upstream": "hugeicons/ListTodo",
+  "also": [],
   "category": "text",
   "tags": [
-    "todo",
-    "done",
-    "check",
-    "tick",
-    "complete",
     "tasks",
-    "items",
-    "pending"
+    "checklist",
+    "todo",
+    "checkbox",
+    "rows"
   ],
   "aliases": [],
   "mirror": true

@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide/mouse-pointer-2-off",
+  "upstream": "hugeicons/MousePointerOff01",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "pointer",
-    "mouse",
     "cursor",
+    "pointer",
     "off",
-    "disable",
-    "arrow",
-    "navigation",
-    "selection",
-    "select",
-    "click",
-    "no-click",
-    "interaction"
+    "disabled",
+    "hidden",
+    "crossed"
   ],
   "aliases": [],
   "mirror": false

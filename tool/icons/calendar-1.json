@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/calendar-1",
+  "upstream": "hugeicons/CalendarDate1",
+  "also": [],
   "category": "time",
   "tags": [
+    "calendar",
     "date",
-    "month",
-    "year",
-    "event",
-    "single",
-    "singular",
-    "once",
-    "1",
-    "first"
+    "first",
+    "day",
+    "one"
   ],
   "aliases": [],
   "mirror": false

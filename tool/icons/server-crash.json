@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/server-crash",
+  "upstream": "hugeicons/ServerCrash",
+  "also": [],
   "category": "development",
   "tags": [
-    "cloud",
-    "storage",
-    "problem",
-    "error"
+    "server error",
+    "down",
+    "failure",
+    "lightning",
+    "outage"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/File01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "document",
+    "note",
+    "page",
+    "text",
+    "paper"
+  ],
+  "aliases": [],
+  "mirror": false
+}

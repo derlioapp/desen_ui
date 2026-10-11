@@ -1,15 +1,17 @@
 {
-  "upstream": "lucide/squares-unite",
+  "upstream": "hugeicons/SquaresUnite",
+  "also": [
+    "PathfinderMerge",
+    "PathfinderUnite"
+  ],
   "category": "design",
   "tags": [
-    "square",
-    "pathfinder",
-    "path",
     "unite",
     "union",
-    "shape",
+    "boolean",
+    "shapes",
     "merge",
-    "vector"
+    "pathfinder"
   ],
   "aliases": [],
   "mirror": false

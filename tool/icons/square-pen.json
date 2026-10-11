@@ -1,22 +1,17 @@
 {
-  "upstream": "lucide/square-pen",
+  "upstream": "hugeicons/SquarePen",
+  "also": [
+    "PencilEdit02"
+  ],
   "category": "text",
   "tags": [
-    "pencil",
     "edit",
-    "change",
-    "create",
-    "draw",
-    "sketch",
-    "draft",
-    "writer",
-    "writing",
-    "biro",
-    "ink",
-    "marker",
-    "felt tip",
-    "stationery",
-    "artist"
+    "write",
+    "pen",
+    "compose",
+    "modify",
+    "pencil",
+    "square"
   ],
   "aliases": [],
   "mirror": false

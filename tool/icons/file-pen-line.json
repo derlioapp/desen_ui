@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/file-pen-line",
+  "upstream": "hugeicons/FilePenLine",
+  "also": [],
   "category": "files",
   "tags": [
-    "edit"
+    "edit",
+    "write",
+    "modify",
+    "underline",
+    "document"
   ],
   "aliases": [],
   "mirror": false

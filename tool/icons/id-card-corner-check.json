@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PassportValid",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "passport",
+    "valid",
+    "verified",
+    "identity",
+    "check"
+  ],
+  "aliases": [],
+  "mirror": false
+}

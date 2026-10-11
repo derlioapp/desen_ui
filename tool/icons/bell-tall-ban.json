@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/NotificationBlock02",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "notification",
+    "block",
+    "mute",
+    "forbidden",
+    "bell"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

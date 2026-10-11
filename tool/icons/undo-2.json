@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/undo-2",
+  "upstream": "hugeicons/Undo03",
+  "also": [],
   "category": "text",
   "tags": [
-    "redo",
-    "rerun",
+    "undo",
+    "revert",
     "history",
     "back",
-    "return",
-    "reverse",
-    "revert",
-    "direction",
     "u-turn"
   ],
   "aliases": [],

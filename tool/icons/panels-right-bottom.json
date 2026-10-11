@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/panels-right-bottom",
+  "upstream": "hugeicons/PanelsRightBottom",
+  "also": [],
   "category": "layout",
   "tags": [
-    "drawers",
-    "sidebar",
-    "secondary"
+    "panels",
+    "layout",
+    "right",
+    "bottom",
+    "split"
   ],
   "aliases": [],
   "mirror": false

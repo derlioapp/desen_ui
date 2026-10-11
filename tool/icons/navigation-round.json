@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Navigation03",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "navigate",
+    "direction",
+    "gps",
+    "location",
+    "arrow",
+    "heading"
+  ],
+  "aliases": [],
+  "mirror": false
+}

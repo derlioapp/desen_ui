@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiGame",
+  "also": [],
+  "category": "gaming",
+  "tags": [
+    "ai",
+    "game",
+    "controller",
+    "sparkle",
+    "generate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

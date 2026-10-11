@@ -1,13 +1,24 @@
 {
-  "upstream": "lucide/id-card",
+  "upstream": "hugeicons/IdCard",
+  "also": [
+    "Passport",
+    "StudentCard",
+    "UserAccount"
+  ],
   "category": "security",
   "tags": [
+    "id",
     "card",
-    "badge",
     "identity",
-    "authentication",
-    "secure"
+    "license",
+    "profile",
+    "passport",
+    "person",
+    "student card",
+    "badge",
+    "user account"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

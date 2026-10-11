@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/currency",
+  "upstream": "hugeicons/Currency",
+  "also": [],
   "category": "finance",
   "tags": [
-    "finance",
-    "money"
+    "currency",
+    "money",
+    "exchange",
+    "coin",
+    "forex"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide/test-tube",
+  "upstream": "hugeicons/TestTube02",
+  "also": [],
   "category": "science",
   "tags": [
-    "tube",
-    "vial",
-    "phial",
-    "flask",
-    "ampoule",
-    "ampule",
     "lab",
-    "chemistry",
     "experiment",
+    "chemistry",
+    "vial",
     "test"
   ],
   "aliases": [],

@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/corner-down-right",
+  "upstream": "hugeicons/CornerDownRight",
+  "also": [],
   "category": "arrows",
   "tags": [
     "arrow",
+    "turn",
     "indent",
-    "tab"
+    "line break"
   ],
   "aliases": [],
   "mirror": true

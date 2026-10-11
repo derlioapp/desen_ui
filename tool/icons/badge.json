@@ -1,10 +1,19 @@
 {
-  "upstream": "lucide/badge",
+  "upstream": "hugeicons/Badge",
+  "also": [
+    "Seal"
+  ],
   "category": "account",
   "tags": [
-    "check",
-    "verified",
-    "unverified"
+    "badge",
+    "seal",
+    "label",
+    "shape",
+    "scalloped",
+    "stamp",
+    "certificate",
+    "award",
+    "rosette"
   ],
   "aliases": [],
   "mirror": false

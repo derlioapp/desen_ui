@@ -1,11 +1,17 @@
 {
-  "upstream": "lucide/circle-arrow-out-up-right",
+  "upstream": "hugeicons/Share06",
+  "also": [
+    "LinkCircle02"
+  ],
   "category": "arrows",
   "tags": [
-    "outwards",
-    "direction",
-    "north-east",
-    "diagonal"
+    "share",
+    "open",
+    "external",
+    "export",
+    "link",
+    "circle",
+    "arrow"
   ],
   "aliases": [],
   "mirror": false

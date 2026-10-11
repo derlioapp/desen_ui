@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DeviceAccess",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "device access",
+    "phone",
+    "key",
+    "unlock",
+    "access",
+    "authentication"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/file-heart",
+  "upstream": "hugeicons/FileHeart",
+  "also": [],
   "category": "files",
   "tags": [
-    "heart",
+    "favorite",
     "favourite",
-    "bookmark",
-    "quick link"
+    "like",
+    "love",
+    "document"
   ],
   "aliases": [],
   "mirror": false

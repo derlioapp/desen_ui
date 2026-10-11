@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/EvCharging",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "electric vehicle",
+    "charging",
+    "station",
+    "cable",
+    "pump"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

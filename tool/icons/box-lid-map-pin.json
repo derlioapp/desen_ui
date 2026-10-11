@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DeliveryTracking01",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "delivery tracking",
+    "box",
+    "package",
+    "location",
+    "track",
+    "pin"
+  ],
+  "aliases": [],
+  "mirror": false
+}

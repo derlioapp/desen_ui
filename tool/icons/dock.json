@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/dock",
+  "upstream": "hugeicons/Dock",
+  "also": [],
   "category": "layout",
   "tags": [
-    "desktop",
-    "applications",
-    "launch",
-    "home",
-    "menu bar",
-    "bottom",
-    "line",
-    "macos",
-    "osx"
+    "dock",
+    "taskbar",
+    "bar",
+    "launcher",
+    "window",
+    "shelf"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SquareLockRemove02",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "lock",
+    "remove",
+    "delete",
+    "denied",
+    "secure",
+    "cancel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

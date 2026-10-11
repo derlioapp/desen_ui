@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MessageCircleDashed",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "draft",
+    "pending",
+    "placeholder"
+  ],
+  "aliases": [],
+  "mirror": false
+}

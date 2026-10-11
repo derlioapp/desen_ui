@@ -1,24 +1,12 @@
 {
-  "upstream": "lucide/bridge",
+  "upstream": "hugeicons/Bridge",
+  "also": [],
   "category": "travel",
   "tags": [
-    "overpass",
-    "cross over",
-    "traverse",
-    "viaduct",
-    "suspension",
-    "infrastructure",
-    "transportation",
+    "bridge",
     "crossing",
-    "road",
     "river",
-    "gate",
-    "golden",
-    "travel",
-    "landmark",
-    "route",
-    "maritime",
-    "clearance"
+    "road"
   ],
   "aliases": [],
   "mirror": false

@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/regex",
+  "upstream": "hugeicons/Regex",
+  "also": [],
   "category": "text",
   "tags": [
-    "search",
-    "text",
-    "code"
+    "regex",
+    "regular expression",
+    "pattern",
+    "search"
   ],
   "aliases": [],
   "mirror": false

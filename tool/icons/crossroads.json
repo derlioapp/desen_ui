@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/RoadWayside",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "roadside",
+    "crossroads",
+    "intersection",
+    "junction",
+    "road"
+  ],
+  "aliases": [],
+  "mirror": false
+}

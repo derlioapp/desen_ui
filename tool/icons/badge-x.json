@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/badge-x",
+  "upstream": "hugeicons/BadgeX",
+  "also": [],
   "category": "social",
   "tags": [
-    "verified",
-    "unverified",
-    "lost",
-    "delete",
-    "remove"
+    "close",
+    "cancel",
+    "remove",
+    "error",
+    "badge"
   ],
   "aliases": [],
   "mirror": false

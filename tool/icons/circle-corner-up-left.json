@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CircleArrowMoveUpLeft",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "turn",
+    "curve",
+    "up left",
+    "back",
+    "undo"
+  ],
+  "aliases": [],
+  "mirror": true
+}

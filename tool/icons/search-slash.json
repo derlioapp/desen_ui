@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/search-slash",
+  "upstream": "hugeicons/SearchSlash",
+  "also": [],
   "category": "text",
   "tags": [
     "find",
-    "scan",
     "magnifier",
-    "magnifying glass",
-    "stop",
-    "clear",
-    "cancel",
-    "abort",
-    "/",
-    "lens",
-    "locate",
-    "explore",
-    "discover",
-    "enlarge",
-    "zoom"
+    "disabled",
+    "off",
+    "cancel"
   ],
   "aliases": [],
   "mirror": false

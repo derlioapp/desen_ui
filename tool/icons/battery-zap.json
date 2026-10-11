@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BatteryCharging02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "power",
+    "charging",
+    "energy",
+    "bolt",
+    "fast"
+  ],
+  "aliases": [],
+  "mirror": false
+}

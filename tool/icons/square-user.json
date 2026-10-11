@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/square-user",
+  "upstream": "hugeicons/UserSquare",
+  "also": [],
   "category": "account",
   "tags": [
     "person",
     "account",
-    "contact"
+    "profile",
+    "avatar",
+    "contact",
+    "user square"
   ],
   "aliases": [],
   "mirror": false

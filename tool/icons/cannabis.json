@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/cannabis",
+  "upstream": "hugeicons/Cannabis",
+  "also": [],
   "category": "nature",
   "tags": [
-    "cannabis",
     "weed",
-    "leaf"
+    "marijuana",
+    "leaf",
+    "plant",
+    "hemp"
   ],
   "aliases": [],
   "mirror": false

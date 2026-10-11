@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/panda",
+  "upstream": "hugeicons/Panda",
+  "also": [],
   "category": "animals",
   "tags": [
-    "animal",
-    "wildlife",
+    "panda",
     "bear",
-    "zoo",
-    "bamboo"
+    "animal",
+    "china"
   ],
   "aliases": [],
   "mirror": false

@@ -1,20 +1,14 @@
 {
-  "upstream": "lucide/user-round-key",
+  "upstream": "hugeicons/UserRoundKey",
+  "also": [],
   "category": "account",
   "tags": [
-    "passkey",
-    "password",
+    "access",
+    "permission",
+    "credentials",
     "login",
-    "authentication",
-    "authorization",
-    "roles",
-    "permissions",
-    "private",
-    "public",
-    "security",
     "person",
-    "account",
-    "contact"
+    "account"
   ],
   "aliases": [],
   "mirror": false

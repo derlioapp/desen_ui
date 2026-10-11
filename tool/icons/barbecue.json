@@ -1,21 +1,15 @@
 {
-  "upstream": "lucide-lab/barbecue",
+  "upstream": "hugeicons/BbqGrill",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "barbeque",
     "bbq",
-    "grilled",
-    "smoke",
-    "dinner",
-    "meal",
-    "meat",
-    "cookery",
+    "grill",
+    "barbecue",
     "cooking",
-    "charcoal",
-    "heat",
-    "hot",
-    "fire"
+    "outdoor"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

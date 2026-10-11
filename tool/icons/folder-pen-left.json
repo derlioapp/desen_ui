@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderPen",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "edit",
+    "pen",
+    "rename",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

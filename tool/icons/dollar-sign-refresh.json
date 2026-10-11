@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ExchangeDollar",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "exchange",
+    "convert",
+    "currency",
+    "swap",
+    "money"
+  ],
+  "aliases": [],
+  "mirror": false
+}

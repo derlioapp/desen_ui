@@ -1,5 +1,23 @@
 {
-  "upstream": "lucide/unfold-horizontal",
+  "upstream": "desen/unfold-horizontal",
+  "derived": {
+    "parts": [
+      {
+        "from": "UnfoldHorizontal",
+        "keep": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "paths": [
+      "M9 12H3M6 9l-3 3 3 3",
+      "M15 12H21M18 9l3 3-3 3"
+    ]
+  },
+  "also": [],
   "category": "arrows",
   "tags": [
     "arrow",

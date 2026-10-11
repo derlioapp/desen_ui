@@ -1,8 +1,16 @@
 {
-  "upstream": "lucide/circle-question-mark",
+  "upstream": "hugeicons/CircleQuestionMark",
+  "also": [
+    "HelpCircle"
+  ],
   "category": "accessibility",
   "tags": [
-    "question mark"
+    "help",
+    "question",
+    "faq",
+    "unknown",
+    "support",
+    "info"
   ],
   "aliases": [
     "help"

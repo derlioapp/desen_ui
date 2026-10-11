@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/FlyingHuman",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "person",
+    "flying",
+    "superhero",
+    "fly",
+    "human"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/folder-heart",
+  "upstream": "hugeicons/FolderFavourite",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "heart",
+    "folder",
     "favourite",
-    "bookmark",
-    "quick link"
+    "favorite",
+    "heart",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

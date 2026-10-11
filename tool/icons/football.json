@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide-lab/football",
+  "upstream": "hugeicons/AmericanFootball",
+  "also": [],
   "category": "sports",
   "tags": [
+    "american football",
+    "ball",
     "rugby",
-    "american",
-    "touchdown",
-    "kick",
-    "pitch",
-    "team",
-    "goal",
-    "score",
-    "bounce",
-    "super bowl",
-    "nfl"
+    "nfl",
+    "game"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Assignments",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "assignments",
+    "notebook",
+    "tasks",
+    "homework",
+    "checklist",
+    "completed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

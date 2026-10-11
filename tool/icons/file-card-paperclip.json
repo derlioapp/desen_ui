@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DocumentAttachment",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "document",
+    "attachment",
+    "paperclip",
+    "attach",
+    "file",
+    "clip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

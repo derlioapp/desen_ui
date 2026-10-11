@@ -1,25 +1,17 @@
 {
-  "upstream": "lucide/layout-grid-circles",
+  "upstream": "hugeicons/DashboardCircle",
+  "also": [
+    "MenuCircle"
+  ],
   "category": "design",
   "tags": [
-    "app",
-    "home",
-    "start",
-    "dot matrix",
-    "dots",
-    "menu",
-    "dashboard",
-    "collection",
-    "overview",
-    "tiles",
     "grid",
-    "matrix",
-    "launcher",
+    "view",
+    "tiles",
+    "dashboard",
     "apps",
-    "widgets",
-    "ui",
     "circles",
-    "shortcuts"
+    "dots"
   ],
   "aliases": [],
   "mirror": false

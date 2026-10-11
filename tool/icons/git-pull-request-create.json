@@ -1,13 +1,16 @@
 {
-  "upstream": "lucide/git-pull-request-create",
+  "upstream": "hugeicons/GitPullRequestCreate",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "open",
+    "git",
+    "pull",
+    "request",
+    "create",
     "plus",
     "add",
-    "+"
+    "version",
+    "control"
   ],
   "aliases": [],
   "mirror": false

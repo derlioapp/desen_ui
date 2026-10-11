@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/timer-off",
+  "upstream": "hugeicons/TimerOff",
+  "also": [],
   "category": "time",
   "tags": [
-    "time",
     "timer",
-    "stopwatch"
+    "stopwatch",
+    "disabled",
+    "time"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/RecoveryMail",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "recovery",
+    "mail",
+    "email",
+    "refresh",
+    "restore"
+  ],
+  "aliases": [],
+  "mirror": false
+}

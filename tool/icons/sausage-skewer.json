@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/StreetFood",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "street food",
+    "corn dog",
+    "sausage",
+    "skewer",
+    "snack"
+  ],
+  "aliases": [],
+  "mirror": false
+}

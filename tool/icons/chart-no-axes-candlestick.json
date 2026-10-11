@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ChartCandle",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "candles",
+    "stock",
+    "trading",
+    "finance",
+    "analytics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

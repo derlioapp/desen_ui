@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CellularNetwork",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "cellular network",
+    "antenna",
+    "broadcast",
+    "signal",
+    "cell tower",
+    "mast"
+  ],
+  "aliases": [],
+  "mirror": false
+}

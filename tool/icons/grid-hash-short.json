@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Grid02",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "grid",
+    "hash",
+    "lines",
+    "guides",
+    "tic",
+    "tac",
+    "toe"
+  ],
+  "aliases": [],
+  "mirror": false
+}

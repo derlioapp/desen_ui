@@ -1,23 +1,12 @@
 {
-  "upstream": "lucide/book-minus",
+  "upstream": "hugeicons/BookMinus",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "coding",
-    "version control",
-    "git",
-    "repository",
+    "book",
+    "minus",
     "remove",
-    "delete",
-    "censor",
-    "cancel",
-    "forbid",
-    "prohibit",
-    "ban",
-    "uneducated",
-    "re-educate",
-    "unlearn",
-    "downgrade"
+    "library"
   ],
   "aliases": [],
   "mirror": false

@@ -1,10 +1,17 @@
 {
-  "upstream": "lucide/japanese-yen",
+  "upstream": "hugeicons/JapaneseYen",
+  "also": [
+    "Yen"
+  ],
   "category": "finance",
   "tags": [
+    "yen",
+    "japanese yen",
     "currency",
     "money",
-    "payment"
+    "jpy",
+    "payment",
+    "yuan"
   ],
   "aliases": [],
   "mirror": false

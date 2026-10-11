@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DoorLock",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "door",
+    "lock",
+    "locked",
+    "secure",
+    "padlock",
+    "entry"
+  ],
+  "aliases": [],
+  "mirror": false
+}

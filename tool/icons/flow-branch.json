@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FlowConnection",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "flow",
+    "diagram",
+    "decision",
+    "workflow",
+    "connection"
+  ],
+  "aliases": [],
+  "mirror": false
+}

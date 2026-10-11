@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatPreview",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "preview",
+    "view",
+    "read",
+    "watch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

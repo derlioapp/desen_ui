@@ -1,11 +1,17 @@
 {
-  "upstream": "lucide/octagon-alert",
+  "upstream": "hugeicons/OctagonAlert",
+  "also": [
+    "Spam"
+  ],
   "category": "notifications",
   "tags": [
-    "warning",
+    "octagon",
     "alert",
-    "danger",
-    "exclamation mark"
+    "warning",
+    "stop",
+    "error",
+    "spam",
+    "junk"
   ],
   "aliases": [],
   "mirror": false

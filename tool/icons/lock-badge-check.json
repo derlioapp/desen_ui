@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SquareLockCheck02",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "lock",
+    "verified",
+    "secure",
+    "check",
+    "approved"
+  ],
+  "aliases": [],
+  "mirror": false
+}

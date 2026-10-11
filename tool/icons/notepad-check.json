@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/NoteDone",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "note",
+    "done",
+    "check",
+    "complete",
+    "task",
+    "notepad"
+  ],
+  "aliases": [],
+  "mirror": false
+}

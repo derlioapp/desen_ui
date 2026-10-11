@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide-lab/kettle",
+  "upstream": "hugeicons/Kettle",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "heat",
-    "boiling",
-    "water",
-    "steam",
-    "whistle",
-    "drink",
+    "kettle",
     "tea",
-    "coffee",
-    "kitchen",
-    "appliances"
+    "boil",
+    "stovetop",
+    "water",
+    "hot"
   ],
   "aliases": [],
   "mirror": false

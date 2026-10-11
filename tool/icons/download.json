@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/download",
+  "upstream": "hugeicons/Download01",
+  "also": [],
   "category": "arrows",
   "tags": [
+    "download",
+    "save",
     "import",
-    "export",
-    "save"
+    "get",
+    "arrow down",
+    "tray"
   ],
   "aliases": [],
   "mirror": false

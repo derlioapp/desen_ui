@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/tangent",
+  "upstream": "hugeicons/Tangent",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "tangential",
-    "shape",
-    "circle",
+    "curve",
     "geometry",
-    "trigonometry",
-    "bezier curve"
+    "line",
+    "circle",
+    "math"
   ],
   "aliases": [],
   "mirror": false

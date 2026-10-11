@@ -1,15 +1,11 @@
 {
-  "upstream": "lucide/bookmark-check",
+  "upstream": "hugeicons/BookmarkCheck02",
+  "also": [],
   "category": "account",
   "tags": [
-    "read",
-    "finished",
-    "complete",
-    "clip",
-    "marker",
-    "tag",
-    "task",
-    "todo"
+    "bookmark",
+    "saved",
+    "done"
   ],
   "aliases": [],
   "mirror": false

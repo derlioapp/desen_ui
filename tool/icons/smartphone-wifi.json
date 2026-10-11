@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SmartphoneWifi",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "wifi",
+    "wireless",
+    "connection",
+    "mobile"
+  ],
+  "aliases": [],
+  "mirror": false
+}

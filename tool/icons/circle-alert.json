@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/circle-alert",
+  "upstream": "hugeicons/AlertCircle",
+  "also": [],
   "category": "notifications",
   "tags": [
-    "warning",
     "alert",
-    "danger",
-    "exclamation mark"
+    "warning",
+    "circle",
+    "exclamation"
   ],
   "aliases": [
     "error"

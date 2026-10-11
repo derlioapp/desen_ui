@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/GpsSignal01",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "gps",
+    "signal",
+    "satellite",
+    "dish",
+    "antenna",
+    "waves"
+  ],
+  "aliases": [],
+  "mirror": false
+}

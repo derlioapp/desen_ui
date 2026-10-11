@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SecondBracket",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "brackets",
+    "round",
+    "curly",
+    "parens",
+    "code"
+  ],
+  "aliases": [],
+  "mirror": false
+}

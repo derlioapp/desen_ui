@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/folder-key",
+  "upstream": "hugeicons/FolderKey",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
+    "folder",
     "key",
-    "private",
-    "security",
-    "protected"
+    "access",
+    "password",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

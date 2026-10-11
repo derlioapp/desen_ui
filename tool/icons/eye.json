@@ -1,19 +1,15 @@
 {
-  "upstream": "lucide/eye",
+  "upstream": "hugeicons/View",
+  "also": [],
   "category": "accessibility",
   "tags": [
     "view",
     "watch",
     "see",
     "show",
-    "expose",
     "reveal",
-    "display",
     "visible",
-    "visibility",
-    "vision",
-    "preview",
-    "read"
+    "visibility"
   ],
   "aliases": [],
   "mirror": false

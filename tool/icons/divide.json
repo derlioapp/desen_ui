@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/divide",
+  "upstream": "hugeicons/DivideSign",
+  "also": [],
   "category": "math",
   "tags": [
-    "calculate",
-    "math",
+    "divide",
     "division",
+    "obelus",
+    "math",
     "operator",
-    "code",
-    "÷",
-    "/"
+    "calculate"
   ],
   "aliases": [],
   "mirror": false

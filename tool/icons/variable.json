@@ -1,20 +1,14 @@
 {
-  "upstream": "lucide/variable",
+  "upstream": "hugeicons/Absolute",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "coding",
-    "programming",
-    "symbol",
-    "calculate",
-    "algebra",
-    "x",
-    "parentheses",
-    "parenthesis",
+    "absolute",
+    "value",
     "brackets",
-    "parameter",
-    "(",
-    ")"
+    "variable",
+    "math",
+    "x"
   ],
   "aliases": [],
   "mirror": false

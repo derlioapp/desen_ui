@@ -1,17 +1,12 @@
 {
-  "upstream": "lucide/tickets",
+  "upstream": "hugeicons/Tickets",
+  "also": [],
   "category": "travel",
   "tags": [
-    "trip",
-    "travel",
-    "pass",
-    "entry",
-    "voucher",
-    "event",
-    "concert",
-    "show",
-    "perforated",
-    "dashed"
+    "tickets",
+    "wallet",
+    "passes",
+    "coupons"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ShoppingBasketCheckIn02",
+  "also": [],
+  "category": "shopping",
+  "tags": [
+    "check in",
+    "basket",
+    "return",
+    "put",
+    "store"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/citrus",
+  "upstream": "hugeicons/Citrus",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "lemon",
     "orange",
-    "grapefruit",
-    "fruit"
+    "lime",
+    "fruit",
+    "slice",
+    "food"
   ],
   "aliases": [],
   "mirror": false

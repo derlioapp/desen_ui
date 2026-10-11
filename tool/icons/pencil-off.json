@@ -1,25 +1,20 @@
 {
-  "upstream": "lucide/pencil-off",
+  "upstream": "hugeicons/PencilOff",
+  "also": [
+    "EditOff",
+    "EditOff03"
+  ],
   "category": "design",
   "tags": [
+    "pencil",
+    "off",
     "disabled",
-    "inactive",
-    "non-editable",
-    "locked",
-    "read-only",
-    "unmodifiable",
-    "frozen",
-    "restricted",
-    "rubber",
     "edit",
-    "create",
-    "draw",
-    "sketch",
-    "draft",
-    "writer",
-    "writing",
-    "stationery",
-    "artist"
+    "readonly",
+    "read only",
+    "no edit",
+    "crossed",
+    "underline"
   ],
   "aliases": [],
   "mirror": false

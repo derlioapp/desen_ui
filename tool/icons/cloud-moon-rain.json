@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/cloud-moon-rain",
+  "upstream": "hugeicons/CloudMoonRain",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "partly",
     "night",
-    "rainfall"
+    "rain",
+    "shower",
+    "moon",
+    "evening"
   ],
   "aliases": [],
   "mirror": false

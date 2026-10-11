@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/plane-landing",
+  "upstream": "hugeicons/AirplaneLanding01",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "arrival",
-    "plane",
-    "trip",
     "airplane",
-    "landing"
+    "landing",
+    "arrive",
+    "flight",
+    "airport"
   ],
   "aliases": [],
   "mirror": false

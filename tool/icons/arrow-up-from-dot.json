@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/arrow-up-from-dot",
+  "upstream": "hugeicons/ArrowUpFromDot",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "direction",
-    "north",
-    "step",
-    "out"
+    "arrow",
+    "up",
+    "origin",
+    "rise",
+    "start",
+    "point"
   ],
   "aliases": [],
   "mirror": false

@@ -1,9 +1,16 @@
 {
-  "upstream": "lucide/lightbulb-off",
+  "upstream": "hugeicons/LightbulbOff",
+  "also": [],
   "category": "photography",
   "tags": [
-    "lights"
+    "idea",
+    "light",
+    "bulb",
+    "off",
+    "disabled",
+    "lamp"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

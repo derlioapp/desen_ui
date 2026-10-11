@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/rectangle-horizontal",
+  "upstream": "hugeicons/RectangleHorizontal",
+  "also": [
+    "Rectangular"
+  ],
   "category": "shapes",
   "tags": [
     "rectangle",
-    "aspect ratio",
-    "16:9",
     "horizontal",
+    "landscape",
     "shape"
   ],
   "aliases": [],

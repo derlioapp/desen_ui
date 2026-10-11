@@ -1,25 +1,12 @@
 {
-  "upstream": "lucide-lab/ufo",
+  "upstream": "hugeicons/Ufo",
+  "also": [],
   "category": "science",
   "tags": [
-    "unidentified flying object",
-    "flying saucer",
+    "ufo",
+    "alien",
     "spaceship",
-    "spacecraft",
-    "aliens",
-    "extraterrestrial",
-    "abduction",
-    "beam",
-    "crop circles",
-    "area 51",
-    "outer space",
-    "lightyears",
-    "interstellar travel",
-    "interplanetary",
-    "galactic",
-    "universe",
-    "explore",
-    "stars"
+    "saucer"
   ],
   "aliases": [],
   "mirror": false

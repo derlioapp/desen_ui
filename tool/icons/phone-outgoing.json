@@ -1,8 +1,18 @@
 {
-  "upstream": "lucide/phone-outgoing",
+  "upstream": "hugeicons/CallOutgoing02",
+  "also": [
+    "PhoneOutgoing"
+  ],
   "category": "arrows",
   "tags": [
-    "call"
+    "call",
+    "outgoing",
+    "telephone",
+    "dial",
+    "diagonal",
+    "handset",
+    "phone",
+    "arrow"
   ],
   "aliases": [],
   "mirror": false

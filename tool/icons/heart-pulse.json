@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/heart-pulse",
+  "upstream": "hugeicons/Cardiogram02",
+  "also": [],
   "category": "medical",
   "tags": [
+    "cardiogram",
     "heartbeat",
-    "pulse",
+    "ecg",
     "health",
-    "medical",
-    "blood pressure",
-    "cardiac",
-    "systole",
-    "diastole"
+    "cardio",
+    "pulse"
   ],
   "aliases": [],
   "mirror": false

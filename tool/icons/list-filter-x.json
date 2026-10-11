@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FilterMailRemove",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "filter",
+    "remove",
+    "clear",
+    "lines",
+    "reset"
+  ],
+  "aliases": [],
+  "mirror": false
+}

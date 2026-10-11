@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatOutcome01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "outcome",
+    "outgoing",
+    "sent",
+    "send"
+  ],
+  "aliases": [],
+  "mirror": true
+}

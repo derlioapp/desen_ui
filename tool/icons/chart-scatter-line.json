@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Covariate",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "covariate",
+    "regression",
+    "scatter",
+    "trend",
+    "statistics",
+    "analytics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,15 +1,17 @@
 {
-  "upstream": "lucide/square-arrow-out-up-right",
+  "upstream": "hugeicons/LinkSquare02",
+  "also": [
+    "Share04"
+  ],
   "category": "arrows",
   "tags": [
-    "outwards",
-    "direction",
-    "north-east",
-    "diagonal",
-    "share",
     "open",
+    "new window",
+    "link",
     "external",
-    "link"
+    "arrow",
+    "share",
+    "export"
   ],
   "aliases": [],
   "mirror": false

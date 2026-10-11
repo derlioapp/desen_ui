@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BubbleChatSearch",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "bubble",
+    "message",
+    "search",
+    "find"
+  ],
+  "aliases": [],
+  "mirror": false
+}

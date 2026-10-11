@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/case-lower",
+  "upstream": "hugeicons/CaseLower",
+  "also": [],
   "category": "text",
   "tags": [
-    "text",
+    "lowercase",
     "letters",
-    "characters",
-    "font",
-    "typography"
+    "ab",
+    "text transform",
+    "small letters"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

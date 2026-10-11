@@ -1,19 +1,12 @@
 {
-  "upstream": "lucide/file-sliders",
+  "upstream": "hugeicons/FileSliders",
+  "also": [],
   "category": "files",
   "tags": [
-    "cogged",
-    "gear",
-    "mechanical",
-    "machinery",
-    "configuration",
-    "controls",
-    "preferences",
     "settings",
-    "system",
-    "admin",
-    "edit",
-    "executable"
+    "adjust",
+    "preferences",
+    "document"
   ],
   "aliases": [],
   "mirror": false

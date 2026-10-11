@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PhoneDeveloperMode",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "smartphone",
+    "developer",
+    "code",
+    "debug"
+  ],
+  "aliases": [],
+  "mirror": false
+}

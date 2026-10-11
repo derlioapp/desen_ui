@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/monitor-off",
+  "upstream": "hugeicons/MonitorOff",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "screen sharing",
-    "offline",
+    "off",
     "disabled",
-    "disconnected",
-    "power"
+    "no signal"
   ],
   "aliases": [],
   "mirror": false

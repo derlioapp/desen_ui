@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/badge-plus",
+  "upstream": "hugeicons/BadgePlus",
+  "also": [],
   "category": "social",
   "tags": [
-    "verified",
-    "unverified",
     "add",
-    "create",
-    "new"
+    "new",
+    "badge",
+    "increase"
   ],
   "aliases": [],
   "mirror": false

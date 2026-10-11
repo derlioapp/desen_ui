@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ResizeField",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "resize",
+    "handle",
+    "drag",
+    "field",
+    "grip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,27 +1,13 @@
 {
-  "upstream": "lucide/credit-card-x",
+  "upstream": "hugeicons/CreditCardNotAccept",
+  "also": [],
   "category": "account",
   "tags": [
-    "debit",
     "payment",
-    "banking",
-    "finance",
-    "transaction",
-    "wallet",
-    "purchase",
-    "checkout",
-    "billing",
-    "account",
-    "cardholder",
     "declined",
     "rejected",
-    "failed",
-    "invalid",
-    "canceled",
-    "error",
-    "cancel",
-    "bank",
-    "cc"
+    "not accepted",
+    "card"
   ],
   "aliases": [],
   "mirror": false

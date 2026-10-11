@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Location02",
+  "also": [
+    "Location07"
+  ],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "drop",
+    "place",
+    "empty"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,21 +1,17 @@
 {
-  "upstream": "lucide/message-square-off",
+  "upstream": "hugeicons/MessageSquareOff",
+  "also": [
+    "ChatBlocked"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "clear",
-    "close",
-    "delete",
-    "remove",
-    "cancel",
-    "silence",
-    "mute",
-    "moderate"
+    "off",
+    "muted",
+    "disabled",
+    "blocked",
+    "no chat"
   ],
   "aliases": [],
   "mirror": false

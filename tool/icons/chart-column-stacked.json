@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/chart-column-stacked",
+  "upstream": "hugeicons/ChartColumnStacked",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
+    "stacked bars",
+    "vertical bars",
     "graph",
-    "multivariate",
-    "categorical",
-    "comparison"
+    "statistics",
+    "analytics"
   ],
   "aliases": [],
   "mirror": false

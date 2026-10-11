@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/badge-indian-rupee",
+  "upstream": "hugeicons/BadgeIndianRupee",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "discount",
-    "offer",
-    "sale",
-    "voucher",
-    "tag",
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "exchange",
-    "transaction",
-    "payment",
+    "rupee",
     "inr",
-    "₹"
+    "price",
+    "money",
+    "badge"
   ],
   "aliases": [],
   "mirror": false

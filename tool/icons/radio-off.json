@@ -1,13 +1,15 @@
 {
-  "upstream": "lucide/radio-off",
+  "upstream": "hugeicons/RadioOff",
+  "also": [],
   "category": "devices",
   "tags": [
-    "signal",
-    "broadcast",
-    "connectivity",
-    "live",
-    "frequency"
+    "radio off",
+    "signal off",
+    "broadcast off",
+    "no signal",
+    "mute"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.5
 }

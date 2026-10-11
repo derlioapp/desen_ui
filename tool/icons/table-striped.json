@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Table",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "spreadsheet",
+    "grid",
+    "data",
+    "rows",
+    "columns"
+  ],
+  "aliases": [
+    "table2"
+  ],
+  "mirror": false
+}

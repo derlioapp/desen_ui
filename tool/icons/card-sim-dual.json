@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SimcardDual",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "sim",
+    "card",
+    "dual",
+    "two",
+    "phone"
+  ],
+  "aliases": [],
+  "mirror": false
+}

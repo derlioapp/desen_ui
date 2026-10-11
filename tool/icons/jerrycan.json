@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Fuel02",
+  "also": [
+    "Fuel01"
+  ],
+  "category": "transportation",
+  "tags": [
+    "fuel",
+    "jerrycan",
+    "gas can",
+    "petrol",
+    "canister",
+    "oil"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/package-search",
-  "category": "files",
+  "upstream": "hugeicons/PackageSearch",
+  "also": [],
+  "category": "transportation",
   "tags": [
+    "package",
+    "search",
     "find",
-    "product process",
-    "lens"
+    "track",
+    "box"
   ],
   "aliases": [],
   "mirror": false

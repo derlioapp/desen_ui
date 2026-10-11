@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/NotificationOff03",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "notification",
+    "mute",
+    "silent",
+    "disabled",
+    "off"
+  ],
+  "aliases": [],
+  "mirror": false
+}

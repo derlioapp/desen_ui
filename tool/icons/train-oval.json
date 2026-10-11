@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Train02",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "train",
+    "railway",
+    "subway",
+    "metro",
+    "front"
+  ],
+  "aliases": [],
+  "mirror": false
+}

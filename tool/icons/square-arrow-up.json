@@ -1,13 +1,16 @@
 {
-  "upstream": "lucide/square-arrow-up",
+  "upstream": "hugeicons/SquareArrowUp02",
+  "also": [
+    "UploadSquare01"
+  ],
   "category": "arrows",
   "tags": [
-    "forward",
-    "direction",
+    "up",
+    "upload",
     "north",
-    "sign",
-    "keyboard",
-    "button"
+    "direction",
+    "arrow",
+    "square"
   ],
   "aliases": [],
   "mirror": false

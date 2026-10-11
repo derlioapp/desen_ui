@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/BetweenHorizontalEnd",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "insert",
+    "rows",
+    "between",
+    "horizontal",
+    "squeeze"
+  ],
+  "aliases": [
+    "betweenHorizontalEnd"
+  ],
+  "mirror": false
+}

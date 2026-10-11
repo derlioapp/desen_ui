@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/folder-root",
+  "upstream": "hugeicons/FolderRoot",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
+    "folder",
     "root",
-    "project",
-    "git",
-    "repo"
+    "home",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/SoftwareUninstall",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "software",
+    "uninstall",
+    "remove",
+    "delete",
+    "program"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

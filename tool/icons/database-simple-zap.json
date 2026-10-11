@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DatabaseZap",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "database",
+    "lightning",
+    "power",
+    "fast",
+    "cache",
+    "storage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

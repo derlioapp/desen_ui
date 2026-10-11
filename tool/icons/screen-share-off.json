@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/screen-share-off",
+  "upstream": "hugeicons/ScreenShareOff",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "desktop",
-    "disconnect",
-    "monitor"
+    "stop sharing",
+    "screen",
+    "monitor",
+    "off",
+    "disabled"
   ],
   "aliases": [],
   "mirror": false

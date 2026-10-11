@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/heart-handshake",
+  "upstream": "hugeicons/HeartHandshake",
+  "also": [],
   "category": "social",
   "tags": [
-    "agreement",
     "charity",
-    "help",
-    "deal",
-    "terms",
-    "emotion",
-    "together",
-    "handshake"
+    "partnership",
+    "support",
+    "care",
+    "deal"
   ],
   "aliases": [],
   "mirror": false

@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/package",
-  "category": "files",
+  "upstream": "hugeicons/Package",
+  "also": [],
+  "category": "transportation",
   "tags": [
+    "package",
     "box",
-    "container",
-    "storage",
-    "sealed",
+    "parcel",
     "delivery",
-    "undelivered",
-    "unopened",
-    "packed",
-    "archive",
-    "zip",
-    "module"
+    "shipping"
   ],
   "aliases": [],
   "mirror": false

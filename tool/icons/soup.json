@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/soup",
+  "upstream": "hugeicons/Soup",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "food",
-    "dish",
-    "restaurant",
-    "course",
-    "meal",
+    "soup",
     "bowl",
-    "starter"
+    "food",
+    "meal",
+    "hot"
   ],
   "aliases": [],
   "mirror": false

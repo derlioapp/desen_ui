@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/sun-snow",
+  "upstream": "hugeicons/SunSnow",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "air conditioning",
-    "temperature",
-    "hot",
+    "sun",
+    "snow",
+    "winter",
     "cold",
-    "seasons"
+    "weather"
   ],
   "aliases": [],
   "mirror": false

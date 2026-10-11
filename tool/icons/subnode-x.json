@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SubnodeDelete",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "subnode",
+    "child",
+    "remove node",
+    "tree",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

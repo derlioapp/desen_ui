@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/signpost",
+  "upstream": "hugeicons/Signpost",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "navigation",
     "direction",
-    "arrow",
-    "wayfinding",
     "guide",
-    "location",
-    "pointer",
-    "route",
-    "indicator",
-    "marker",
-    "bidirectional",
-    "left",
-    "right",
-    "east",
-    "west"
+    "road",
+    "sign",
+    "way"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/Timer01",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "timer",
+    "stopwatch",
+    "time",
+    "countdown"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,25 +1,13 @@
 {
-  "upstream": "lucide/iv-bag",
+  "upstream": "hugeicons/BloodBottle",
+  "also": [],
   "category": "medical",
   "tags": [
-    "intravenous",
-    "therapy",
-    "infusion",
-    "medicine",
-    "medication",
-    "treatment",
-    "healthcare",
-    "hydration",
-    "vitamin",
-    "supplement",
     "blood",
-    "donation",
-    "chemotherapy",
-    "clinic",
-    "feeding tube",
-    "administration",
-    "health",
-    "regeneration"
+    "drip",
+    "infusion",
+    "transfusion",
+    "hospital"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SmartPhone03",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "vibrate",
+    "shake",
+    "haptic",
+    "mobile"
+  ],
+  "aliases": [],
+  "mirror": false
+}

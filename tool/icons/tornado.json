@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/tornado",
+  "upstream": "hugeicons/Tornado01",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "wind",
+    "tornado",
     "storm",
-    "hurricane"
+    "wind",
+    "twister",
+    "weather"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

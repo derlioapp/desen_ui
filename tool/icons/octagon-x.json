@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/octagon-x",
+  "upstream": "hugeicons/OctagonX",
+  "also": [],
   "category": "math",
   "tags": [
-    "delete",
-    "stop",
-    "alert",
-    "warning",
-    "times",
-    "clear",
-    "math"
+    "octagon",
+    "x",
+    "close",
+    "error",
+    "stop"
   ],
   "aliases": [],
   "mirror": false

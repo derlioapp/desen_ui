@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CloudLoading",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "loading",
+    "uploading",
+    "progress",
+    "syncing",
+    "dashed line"
+  ],
+  "aliases": [],
+  "mirror": false
+}

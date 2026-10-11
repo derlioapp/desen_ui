@@ -1,11 +1,22 @@
 {
-  "upstream": "lucide/square-square",
+  "upstream": "hugeicons/SquareSquare",
+  "also": [
+    "SquareStop"
+  ],
   "category": "layout",
   "tags": [
     "float",
     "center",
-    "rectangle"
+    "rectangle",
+    "inner",
+    "square",
+    "stop",
+    "media",
+    "halt",
+    "end"
   ],
-  "aliases": [],
+  "aliases": [
+    "squareStop"
+  ],
   "mirror": false
 }

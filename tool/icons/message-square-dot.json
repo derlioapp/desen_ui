@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/message-square-dot",
+  "upstream": "hugeicons/MessageSquareDot",
+  "also": [],
   "category": "social",
   "tags": [
-    "unread",
-    "unresolved",
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble"
+    "dot",
+    "unread",
+    "notification"
   ],
   "aliases": [],
   "mirror": false

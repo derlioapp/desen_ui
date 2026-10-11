@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/footprints",
+  "upstream": "hugeicons/Footprints",
+  "also": [],
   "category": "navigation",
   "tags": [
+    "footprints",
     "steps",
     "walking",
-    "foot",
-    "feet",
-    "trail",
-    "shoe"
+    "tracks",
+    "feet"
   ],
   "aliases": [],
   "mirror": false

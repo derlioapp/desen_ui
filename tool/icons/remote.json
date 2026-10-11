@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/RemoteControl",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "remote control",
+    "remote",
+    "tv",
+    "controller"
+  ],
+  "aliases": [],
+  "mirror": false
+}

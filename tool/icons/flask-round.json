@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/flask-round",
+  "upstream": "hugeicons/FlaskRound",
+  "also": [],
   "category": "science",
   "tags": [
-    "beaker",
+    "flask",
     "lab",
     "chemistry",
     "experiment",
-    "test"
+    "round"
   ],
   "aliases": [],
   "mirror": false

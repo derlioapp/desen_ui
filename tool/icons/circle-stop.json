@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/circle-stop",
+  "upstream": "hugeicons/StopCircle",
+  "also": [],
   "category": "multimedia",
   "tags": [
+    "stop",
     "media",
-    "music"
+    "record",
+    "end",
+    "halt"
   ],
   "aliases": [],
   "mirror": false

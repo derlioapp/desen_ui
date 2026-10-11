@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/gavel",
+  "upstream": "hugeicons/Gavel",
+  "also": [],
   "category": "navigation",
   "tags": [
-    "justice",
+    "gavel",
+    "judge",
     "law",
     "court",
-    "judgment",
-    "legal",
-    "hands",
-    "penalty",
-    "decision",
-    "authority",
-    "hammer",
-    "mallet"
+    "auction"
   ],
   "aliases": [],
   "mirror": false

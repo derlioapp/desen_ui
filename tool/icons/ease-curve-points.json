@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/EaseCurveControlPoints",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "easing",
+    "curve",
+    "bezier",
+    "animation",
+    "handles",
+    "control points"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,15 +1,27 @@
 {
-  "upstream": "lucide/square-dashed",
+  "upstream": "hugeicons/SquareDashed",
+  "also": [
+    "DashedLine02",
+    "BorderNone02"
+  ],
   "category": "text",
   "tags": [
-    "selection",
-    "square",
-    "rectangular",
-    "marquee",
-    "tool",
     "dashed",
-    "box"
+    "placeholder",
+    "empty",
+    "selection",
+    "marquee",
+    "square",
+    "outline",
+    "border",
+    "none",
+    "no",
+    "borders",
+    "table",
+    "cell"
   ],
-  "aliases": [],
+  "aliases": [
+    "borderNone"
+  ],
   "mirror": false
 }

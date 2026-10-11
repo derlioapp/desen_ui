@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/circle-percent",
+  "upstream": "hugeicons/PercentCircle",
+  "also": [],
   "category": "social",
   "tags": [
-    "verified",
-    "unverified",
-    "sale",
+    "percent",
+    "percentage",
     "discount",
-    "offer",
-    "marketing",
-    "sticker",
-    "price tag"
+    "circle"
   ],
   "aliases": [],
   "mirror": false

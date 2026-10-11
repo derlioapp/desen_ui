@@ -1,22 +1,12 @@
 {
-  "upstream": "lucide/book-dashed",
+  "upstream": "hugeicons/BookDashed",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "coding",
-    "version control",
-    "git",
-    "repository",
-    "template",
     "draft",
-    "script",
-    "screenplay",
-    "writing",
-    "writer",
-    "author",
+    "template",
     "unwritten",
-    "unpublished",
-    "untold"
+    "outline"
   ],
   "aliases": [],
   "mirror": false

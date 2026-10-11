@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/image-up",
+  "upstream": "hugeicons/ImageUpload",
+  "also": [],
   "category": "photography",
   "tags": [
-    "picture",
-    "photo",
+    "image",
     "upload",
-    "import"
+    "share",
+    "photo"
   ],
   "aliases": [],
   "mirror": false

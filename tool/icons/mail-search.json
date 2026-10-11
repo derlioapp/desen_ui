@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/mail-search",
+  "upstream": "hugeicons/MailSearch01",
+  "also": [],
   "category": "mail",
   "tags": [
     "email",
     "message",
     "letter",
     "search",
-    "lens"
+    "lens",
+    "find"
   ],
   "aliases": [],
   "mirror": false

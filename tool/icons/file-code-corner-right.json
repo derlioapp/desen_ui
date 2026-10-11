@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/FileScript",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "script",
+    "code",
+    "source",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

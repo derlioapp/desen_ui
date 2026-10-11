@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PiCircle",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "pi",
+    "math",
+    "constant",
+    "circle",
+    "greek"
+  ],
+  "aliases": [],
+  "mirror": false
+}

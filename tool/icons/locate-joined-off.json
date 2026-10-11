@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/GpsOff01",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "gps",
+    "off",
+    "location",
+    "disabled",
+    "crossed",
+    "map"
+  ],
+  "aliases": [],
+  "mirror": false
+}

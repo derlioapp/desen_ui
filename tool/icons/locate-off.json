@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/locate-off",
+  "upstream": "hugeicons/LocateOff",
+  "also": [],
   "category": "navigation",
   "tags": [
-    "map",
     "gps",
     "location",
-    "cross"
+    "disabled",
+    "off",
+    "position"
   ],
   "aliases": [],
   "mirror": false

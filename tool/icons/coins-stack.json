@@ -1,24 +1,14 @@
 {
-  "upstream": "lucide-lab/coins-stack",
+  "upstream": "hugeicons/Coins01",
+  "also": [],
   "category": "finance",
   "tags": [
+    "coins",
+    "money",
+    "stack",
     "cash",
-    "finance",
-    "financial",
-    "markets",
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
-    "payment",
-    "payroll",
-    "wages",
-    "income",
-    "pocket money",
-    "allowance",
     "savings",
-    "banking",
-    "gamble"
+    "finance"
   ],
   "aliases": [],
   "mirror": false

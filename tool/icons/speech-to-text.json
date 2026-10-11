@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SpeechToText",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "dictation",
+    "voice",
+    "transcription",
+    "audio",
+    "text"
+  ],
+  "aliases": [],
+  "mirror": false
+}

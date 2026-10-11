@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CameraSmile02",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "photo",
+    "selfie",
+    "smile",
+    "face detection",
+    "flash"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/UserAdd01",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "add user",
+    "new user",
+    "follow",
+    "subscribe",
+    "create",
+    "invite",
+    "user add"
+  ],
+  "aliases": [],
+  "mirror": false
+}

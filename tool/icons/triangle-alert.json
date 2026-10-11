@@ -1,12 +1,17 @@
 {
-  "upstream": "lucide/triangle-alert",
+  "upstream": "hugeicons/TriangleAlert",
+  "also": [
+    "Alert02"
+  ],
   "category": "notifications",
   "tags": [
     "warning",
     "alert",
-    "danger",
-    "exclamation mark",
-    "linter"
+    "attention",
+    "caution",
+    "hazard",
+    "triangle",
+    "exclamation"
   ],
   "aliases": [
     "warning"

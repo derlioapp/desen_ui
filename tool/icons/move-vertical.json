@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/move-vertical",
+  "upstream": "hugeicons/ArrowVertical",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "double",
-    "arrow"
+    "move",
+    "vertical",
+    "resize",
+    "double arrow",
+    "up down"
   ],
   "aliases": [],
   "mirror": false

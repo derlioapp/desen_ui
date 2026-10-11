@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/hop-off",
+  "upstream": "hugeicons/HopOff",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "beer",
-    "brewery",
-    "drink",
-    "hop free",
-    "allergy",
-    "intolerance",
-    "diet"
+    "hop",
+    "off",
+    "beer-free",
+    "gluten"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

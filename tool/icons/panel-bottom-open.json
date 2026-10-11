@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/panel-bottom-open",
+  "upstream": "hugeicons/PanelBottomOpen",
+  "also": [],
   "category": "layout",
   "tags": [
-    "drawer",
-    "dock",
-    "show",
-    "reveal",
-    "chevron",
-    "up"
+    "panel",
+    "bottom",
+    "open",
+    "expand",
+    "drawer"
   ],
   "aliases": [],
   "mirror": false

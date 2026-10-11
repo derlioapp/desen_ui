@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide-lab/barn",
+  "upstream": "hugeicons/Barns",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "stable",
-    "cattle",
-    "horses",
     "farm",
-    "ranch",
-    "hay",
-    "alfalfa",
-    "door"
+    "agriculture",
+    "building",
+    "shed"
   ],
   "aliases": [],
   "mirror": false

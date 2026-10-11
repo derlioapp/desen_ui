@@ -1,0 +1,22 @@
+{
+  "upstream": "hugeicons/Treatment",
+  "also": [
+    "GiveBlood"
+  ],
+  "category": "medical",
+  "tags": [
+    "treatment",
+    "care",
+    "drop",
+    "hand",
+    "therapy",
+    "medicine",
+    "give",
+    "blood",
+    "donate",
+    "donation",
+    "droplet"
+  ],
+  "aliases": [],
+  "mirror": false
+}

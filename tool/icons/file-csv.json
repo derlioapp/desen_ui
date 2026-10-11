@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Csv01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "csv",
+    "spreadsheet",
+    "data",
+    "table",
+    "export"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

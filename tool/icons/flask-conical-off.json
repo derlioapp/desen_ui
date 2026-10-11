@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/flask-conical-off",
+  "upstream": "hugeicons/FlaskConicalOff",
+  "also": [],
   "category": "science",
   "tags": [
-    "beaker",
-    "erlenmeyer",
-    "non toxic",
+    "flask",
     "lab",
     "chemistry",
-    "experiment",
-    "test"
+    "off",
+    "disabled"
   ],
   "aliases": [],
   "mirror": false

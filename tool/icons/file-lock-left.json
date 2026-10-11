@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FileLock",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "lock",
+    "secure",
+    "private",
+    "protected",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false
+}

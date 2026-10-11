@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/file-headphone",
+  "upstream": "hugeicons/FileHeadphone",
+  "also": [],
   "category": "files",
   "tags": [
-    "music",
     "audio",
-    "sound",
-    "headphones"
+    "podcast",
+    "music",
+    "headphones",
+    "document"
   ],
   "aliases": [],
   "mirror": false

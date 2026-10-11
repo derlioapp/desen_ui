@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderExport",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "export",
+    "send",
+    "arrow",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": true
+}

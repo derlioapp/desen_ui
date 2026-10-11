@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FlowCircle",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "flow",
+    "diagram",
+    "nodes",
+    "workflow",
+    "branch"
+  ],
+  "aliases": [],
+  "mirror": false
+}

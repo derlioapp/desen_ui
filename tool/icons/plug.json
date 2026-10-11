@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/plug",
+  "upstream": "hugeicons/Plug",
+  "also": [
+    "Plug03"
+  ],
   "category": "devices",
   "tags": [
-    "electricity",
-    "energy",
-    "electronics",
-    "socket",
-    "outlet",
+    "plug",
     "power",
-    "voltage",
-    "current",
-    "charger"
+    "electric",
+    "cable"
   ],
   "aliases": [],
   "mirror": false

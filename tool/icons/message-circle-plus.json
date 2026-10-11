@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/message-circle-plus",
+  "upstream": "hugeicons/MessageCirclePlus",
+  "also": [
+    "BubbleChatAdd"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "add"
+    "add",
+    "plus",
+    "new",
+    "bubble"
   ],
   "aliases": [],
   "mirror": false

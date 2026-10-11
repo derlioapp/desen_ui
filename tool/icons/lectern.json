@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/lectern",
+  "upstream": "hugeicons/Lectern",
+  "also": [],
   "category": "social",
   "tags": [
-    "pulpit",
+    "lectern",
     "podium",
-    "stand"
+    "speech",
+    "speaker",
+    "presentation",
+    "pulpit"
   ],
   "aliases": [],
   "mirror": false

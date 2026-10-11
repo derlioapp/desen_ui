@@ -1,10 +1,17 @@
 {
-  "upstream": "lucide/check",
+  "upstream": "hugeicons/Check",
+  "also": [
+    "Tick02"
+  ],
   "category": "notifications",
   "tags": [
-    "done",
-    "todo",
     "tick",
+    "done",
+    "confirm",
+    "ok",
+    "success",
+    "yes",
+    "todo",
     "complete",
     "task"
   ],

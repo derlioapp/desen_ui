@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/tree-pine",
+  "upstream": "hugeicons/Tree07",
+  "also": [],
   "category": "nature",
   "tags": [
     "tree",
     "pine",
+    "fir",
+    "conifer",
     "forest",
-    "park",
-    "nature"
+    "christmas"
   ],
   "aliases": [],
   "mirror": false

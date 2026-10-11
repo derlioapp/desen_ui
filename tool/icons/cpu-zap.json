@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CpuCharge",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "processor",
+    "chip",
+    "charge",
+    "power",
+    "battery",
+    "energy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/bean-off",
+  "upstream": "hugeicons/BeanOff",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "soy free",
-    "legume",
-    "soy",
-    "food",
-    "seed",
     "allergy",
-    "intolerance",
-    "diet"
+    "free",
+    "no",
+    "legume"
   ],
   "aliases": [],
   "mirror": false

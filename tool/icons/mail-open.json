@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/mail-open",
+  "upstream": "hugeicons/MailOpen01",
+  "also": [],
   "category": "mail",
   "tags": [
     "email",
     "message",
     "letter",
-    "read"
+    "read",
+    "opened"
   ],
   "aliases": [],
   "mirror": false

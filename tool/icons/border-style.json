@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/EdgeStyle",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "edge",
+    "border",
+    "style",
+    "dashed",
+    "lines",
+    "stroke"
+  ],
+  "aliases": [],
+  "mirror": false
+}

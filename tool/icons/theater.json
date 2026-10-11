@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/theater",
+  "upstream": "hugeicons/Theater",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "theater",
     "theatre",
-    "entertainment",
-    "podium",
     "stage",
-    "musical"
+    "curtain",
+    "drama",
+    "show"
   ],
   "aliases": [],
   "mirror": false

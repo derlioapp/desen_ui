@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/rectangle-goggles",
+  "upstream": "hugeicons/RectangleGoggles",
+  "also": [],
   "category": "devices",
   "tags": [
+    "goggles",
     "vr",
-    "virtual",
-    "augmented",
-    "reality",
     "headset",
-    "goggles"
+    "glasses"
   ],
   "aliases": [],
   "mirror": false

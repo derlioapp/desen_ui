@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Gps02",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "gps",
+    "location",
+    "crosshair",
+    "map",
+    "position"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AiScanText",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "ai",
+    "scan",
+    "text",
+    "ocr",
+    "recognize",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

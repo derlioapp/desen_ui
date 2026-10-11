@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/equal-approximately",
+  "upstream": "hugeicons/ApproximatelyEqual",
+  "also": [],
   "category": "math",
   "tags": [
+    "approximately",
     "about",
-    "calculate",
-    "math",
-    "operator"
+    "similar",
+    "tilde",
+    "math"
   ],
   "aliases": [],
   "mirror": false

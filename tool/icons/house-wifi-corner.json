@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/HouseWifi",
+  "also": [],
+  "category": "home",
+  "tags": [
+    "smart home",
+    "wifi",
+    "home",
+    "network"
+  ],
+  "aliases": [],
+  "mirror": false
+}

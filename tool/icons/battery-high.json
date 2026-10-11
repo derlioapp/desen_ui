@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/BatteryMedium02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "power",
+    "high",
+    "charge",
+    "energy"
+  ],
+  "aliases": [],
+  "mirror": false
+}

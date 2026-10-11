@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/ShareLocation01",
+  "also": [
+    "ShareLocation02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "share location",
+    "pin",
+    "live location",
+    "position",
+    "dashed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

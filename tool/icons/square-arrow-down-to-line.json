@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/SquareArrowDown03",
+  "also": [
+    "DownloadSquare02"
+  ],
+  "category": "arrows",
+  "tags": [
+    "download",
+    "save",
+    "down",
+    "line",
+    "square",
+    "arrow down",
+    "bottom"
+  ],
+  "aliases": [],
+  "mirror": false
+}

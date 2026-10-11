@@ -1,9 +1,18 @@
 {
-  "upstream": "lucide/layout-dashboard",
+  "upstream": "hugeicons/LayoutDashboard",
+  "also": [
+    "DashboardSquare02"
+  ],
   "category": "design",
   "tags": [
+    "dashboard",
+    "layout",
+    "widgets",
+    "overview",
+    "tiles",
+    "admin",
     "masonry",
-    "brick"
+    "panels"
   ],
   "aliases": [
     "dashboard"

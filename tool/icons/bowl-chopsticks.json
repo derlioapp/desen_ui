@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide-lab/bowl-chopsticks",
+  "upstream": "hugeicons/RiceBowl01",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "noodles",
-    "poke",
-    "soup",
-    "culinary",
-    "cuisine",
+    "rice bowl",
+    "chopsticks",
     "asian",
-    "japanese",
-    "chinese",
-    "oriental",
-    "eastern",
-    "brunch",
-    "lunch",
-    "dinner"
+    "meal",
+    "food"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ScreenLockRotation",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "rotation lock",
+    "orientation",
+    "portrait",
+    "lock",
+    "screen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

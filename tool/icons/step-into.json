@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/StepInto",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "step into",
+    "debug",
+    "debugger",
+    "enter function"
+  ],
+  "aliases": [],
+  "mirror": false
+}

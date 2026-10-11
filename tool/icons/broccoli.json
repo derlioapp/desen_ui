@@ -1,22 +1,12 @@
 {
-  "upstream": "lucide/broccoli",
+  "upstream": "hugeicons/Broccoli",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "leafy",
-    "crisp",
-    "fresh",
-    "culinary",
-    "vegetation",
+    "broccoli",
     "vegetable",
     "food",
-    "healthy",
-    "vegan",
-    "vegetarian",
-    "nutrition",
-    "diet",
-    "plant",
-    "green",
-    "produce"
+    "green"
   ],
   "aliases": [],
   "mirror": false

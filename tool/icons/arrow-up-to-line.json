@@ -1,14 +1,15 @@
 {
-  "upstream": "lucide/arrow-up-to-line",
+  "upstream": "hugeicons/ArrowUpToLine",
+  "also": [
+    "ArrowUp03"
+  ],
   "category": "arrows",
   "tags": [
-    "forward",
-    "direction",
-    "north",
+    "arrow",
+    "up",
+    "top",
     "upload",
-    "collapse",
-    "fold",
-    "vertical"
+    "end"
   ],
   "aliases": [],
   "mirror": false

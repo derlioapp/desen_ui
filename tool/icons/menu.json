@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/menu",
+  "upstream": "hugeicons/Menu01",
+  "also": [],
   "category": "layout",
   "tags": [
-    "bars",
-    "navigation",
+    "menu",
     "hamburger",
-    "options"
+    "navigation",
+    "lines",
+    "drawer"
   ],
   "aliases": [],
   "mirror": false

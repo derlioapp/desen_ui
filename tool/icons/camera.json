@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/camera",
+  "upstream": "hugeicons/Camera01",
+  "also": [],
   "category": "photography",
   "tags": [
-    "photography",
-    "lens",
-    "focus",
-    "capture",
-    "shot",
-    "visual",
-    "image",
-    "device",
-    "equipment",
     "photo",
-    "webcam",
-    "video"
+    "picture",
+    "snapshot",
+    "photography",
+    "capture"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,17 @@
 {
-  "upstream": "lucide/signal",
+  "upstream": "hugeicons/SignalHigh",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "connection",
-    "wireless",
-    "gsm",
-    "phone",
-    "2g",
-    "3g",
-    "4g",
-    "5g"
+    "signal",
+    "strength",
+    "bars",
+    "cellular",
+    "reception",
+    "connection"
   ],
-  "aliases": [],
+  "aliases": [
+    "signalHigh"
+  ],
   "mirror": false
 }

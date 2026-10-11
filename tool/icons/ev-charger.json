@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/ev-charger",
+  "upstream": "hugeicons/EvCharger",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "electric",
-    "charger",
+    "electric vehicle",
+    "charging",
     "station",
-    "vehicle",
-    "fast",
-    "plug",
-    "ev",
-    "power",
-    "electricity",
-    "energy",
-    "accumulator",
-    "charge"
+    "battery",
+    "plug"
   ],
   "aliases": [],
   "mirror": false

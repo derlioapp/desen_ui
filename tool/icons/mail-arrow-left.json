@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailReceive01",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "receive",
+    "incoming",
+    "inbox",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": true
+}

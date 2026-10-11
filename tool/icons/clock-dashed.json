@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TimeQuarter",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "clock",
+    "time",
+    "dashed",
+    "pending",
+    "quarter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

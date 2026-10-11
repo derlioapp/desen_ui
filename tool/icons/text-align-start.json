@@ -1,11 +1,15 @@
 {
-  "upstream": "lucide/text-align-start",
+  "upstream": "hugeicons/TextAlignStart",
+  "also": [
+    "TextAlignLeft"
+  ],
   "category": "text",
   "tags": [
-    "text",
-    "alignment",
+    "align",
+    "start",
     "left",
-    "list"
+    "paragraph",
+    "format"
   ],
   "aliases": [],
   "mirror": false

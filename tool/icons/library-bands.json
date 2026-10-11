@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LibraryBig",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "books",
+    "shelf",
+    "reading",
+    "collection",
+    "bookcase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderCloud",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "cloud",
+    "storage",
+    "sync",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

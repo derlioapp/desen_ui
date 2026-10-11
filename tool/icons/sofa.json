@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/sofa",
+  "upstream": "hugeicons/Sofa01",
+  "also": [],
   "category": "home",
   "tags": [
-    "armchair",
+    "couch",
     "furniture",
-    "leisure",
     "lounge",
-    "loveseat",
-    "couch"
+    "loveseat"
   ],
   "aliases": [],
   "mirror": false

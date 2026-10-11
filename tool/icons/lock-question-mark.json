@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ForgotPassword",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "forgot password",
+    "lock",
+    "question",
+    "recovery",
+    "help"
+  ],
+  "aliases": [],
+  "mirror": false
+}

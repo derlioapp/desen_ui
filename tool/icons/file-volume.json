@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/file-volume",
+  "upstream": "hugeicons/FileVolume",
+  "also": [],
   "category": "files",
   "tags": [
     "audio",
-    "music",
-    "volume"
+    "sound",
+    "volume",
+    "speaker",
+    "document"
   ],
   "aliases": [],
   "mirror": false

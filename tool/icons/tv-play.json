@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TvMinimalPlay",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tv",
+    "play",
+    "stream",
+    "video",
+    "television"
+  ],
+  "aliases": [],
+  "mirror": false
+}

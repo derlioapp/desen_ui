@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/WifiNoSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "no",
+    "signal",
+    "empty",
+    "fan",
+    "reception",
+    "zero"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

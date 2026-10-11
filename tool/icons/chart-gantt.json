@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/chart-gantt",
+  "upstream": "hugeicons/ChartGantt",
+  "also": [],
   "category": "charts",
   "tags": [
-    "diagram",
-    "graph",
     "timeline",
-    "planning"
+    "schedule",
+    "project",
+    "planning",
+    "tasks"
   ],
   "aliases": [],
   "mirror": false

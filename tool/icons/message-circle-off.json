@@ -1,21 +1,19 @@
 {
-  "upstream": "lucide/message-circle-off",
+  "upstream": "hugeicons/MessageCircleOff",
+  "also": [
+    "BubbleChatBlocked",
+    "MessageBlocked"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "clear",
-    "close",
-    "delete",
-    "remove",
-    "cancel",
-    "silence",
-    "mute",
-    "moderate"
+    "off",
+    "muted",
+    "disabled",
+    "bubble",
+    "blocked",
+    "mute"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/DeliveryDelay01",
+  "also": [
+    "DeliveryDelay02"
+  ],
+  "category": "transportation",
+  "tags": [
+    "delivery delay",
+    "truck",
+    "late",
+    "waiting",
+    "time",
+    "shipping"
+  ],
+  "aliases": [],
+  "mirror": false
+}

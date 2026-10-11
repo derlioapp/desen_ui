@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/thermometer-sun",
+  "upstream": "hugeicons/ThermometerSun",
+  "also": [
+    "ThermometerWarm"
+  ],
   "category": "weather",
   "tags": [
     "temperature",
-    "celsius",
-    "fahrenheit",
-    "weather",
     "warm",
-    "hot"
+    "hot",
+    "summer"
   ],
   "aliases": [],
   "mirror": false

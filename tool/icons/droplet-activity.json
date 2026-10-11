@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/BloodPressure",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "blood",
+    "pressure",
+    "pulse",
+    "health"
+  ],
+  "aliases": [],
+  "mirror": false
+}

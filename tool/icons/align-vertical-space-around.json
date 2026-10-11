@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/align-vertical-space-around",
+  "upstream": "hugeicons/AlignVerticalSpaceAround",
+  "also": [],
   "category": "layout",
   "tags": [
-    "center",
-    "items",
-    "flex",
-    "justify",
-    "distribute",
-    "between"
+    "align",
+    "vertical",
+    "space",
+    "around",
+    "distribute"
   ],
   "aliases": [],
   "mirror": false

@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/hand-metal",
+  "upstream": "hugeicons/HandMetal",
+  "also": [],
   "category": "social",
   "tags": [
-    "rock"
+    "rock",
+    "horns",
+    "metal",
+    "gesture",
+    "music"
   ],
   "aliases": [],
   "mirror": false

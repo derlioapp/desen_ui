@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/popsicle",
+  "upstream": "hugeicons/Popsicle",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "ice lolly",
-    "ice cream",
-    "sweet",
-    "food"
+    "popsicle",
+    "ice",
+    "lolly",
+    "dessert"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CookBook",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "cookbook",
+    "recipe",
+    "book",
+    "chef",
+    "cooking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

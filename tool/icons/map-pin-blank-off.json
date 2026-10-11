@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/LocationOffline02",
+  "also": [
+    "LocationOffline04"
+  ],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "offline",
+    "disabled",
+    "empty"
+  ],
+  "aliases": [],
+  "mirror": false
+}

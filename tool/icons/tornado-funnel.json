@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Tornado02",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "tornado",
+    "storm",
+    "wind",
+    "twister",
+    "funnel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

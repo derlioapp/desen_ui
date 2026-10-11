@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/chart-column",
+  "upstream": "hugeicons/ChartColumn",
+  "also": [],
   "category": "charts",
   "tags": [
+    "bar chart",
+    "vertical bars",
+    "graph",
     "statistics",
-    "analytics",
-    "diagram",
-    "graph"
+    "analytics"
   ],
   "aliases": [
     "columnChart"

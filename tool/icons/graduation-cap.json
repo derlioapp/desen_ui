@@ -1,20 +1,14 @@
 {
-  "upstream": "lucide/graduation-cap",
+  "upstream": "hugeicons/GraduationCap",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "school",
-    "university",
-    "learn",
-    "study",
+    "graduation",
+    "cap",
     "mortarboard",
     "education",
-    "ceremony",
-    "academic",
-    "hat",
-    "diploma",
-    "bachelor's",
-    "master's",
-    "doctorate"
+    "school",
+    "degree"
   ],
   "aliases": [],
   "mirror": false

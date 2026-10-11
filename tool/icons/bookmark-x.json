@@ -1,16 +1,16 @@
 {
-  "upstream": "lucide/bookmark-x",
+  "upstream": "hugeicons/BookmarkRemove02",
+  "also": [
+    "BookmarkX"
+  ],
   "category": "account",
   "tags": [
-    "read",
-    "clip",
-    "marker",
-    "tag",
-    "cancel",
-    "close",
-    "delete",
+    "bookmark",
+    "x",
     "remove",
-    "clear"
+    "close",
+    "cancel",
+    "delete"
   ],
   "aliases": [],
   "mirror": false

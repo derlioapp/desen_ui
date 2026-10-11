@@ -1,20 +1,15 @@
 {
-  "upstream": "lucide/user-key",
+  "upstream": "hugeicons/UserKey",
+  "also": [],
   "category": "account",
   "tags": [
-    "passkey",
-    "password",
+    "access",
+    "permission",
+    "credentials",
     "login",
-    "authentication",
-    "authorization",
-    "roles",
-    "permissions",
-    "private",
-    "public",
-    "security",
     "person",
     "account",
-    "contact"
+    "password"
   ],
   "aliases": [],
   "mirror": false

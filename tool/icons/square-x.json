@@ -1,16 +1,17 @@
 {
-  "upstream": "lucide/square-x",
+  "upstream": "hugeicons/SquareX",
+  "also": [
+    "CancelSquare"
+  ],
   "category": "math",
   "tags": [
-    "cancel",
     "close",
+    "cancel",
     "delete",
     "remove",
-    "times",
-    "clear",
-    "math",
-    "multiply",
-    "multiplication"
+    "checkbox",
+    "dismiss",
+    "clear"
   ],
   "aliases": [],
   "mirror": false

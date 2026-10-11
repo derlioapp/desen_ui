@@ -1,11 +1,16 @@
 {
-  "upstream": "lucide/volume-x",
+  "upstream": "hugeicons/VolumeMute02",
+  "also": [
+    "VolumeX"
+  ],
   "category": "connectivity",
   "tags": [
-    "music",
-    "sound",
     "mute",
-    "speaker"
+    "silent",
+    "no sound",
+    "speaker",
+    "off",
+    "audio"
   ],
   "aliases": [],
   "mirror": false

@@ -1,28 +1,13 @@
 {
-  "upstream": "lucide/between-horizontal-start",
+  "upstream": "hugeicons/BetweenHorizontalStart",
+  "also": [],
   "category": "layout",
   "tags": [
     "insert",
-    "add",
-    "right",
-    "slot",
-    "squeeze",
-    "space",
-    "vertical",
-    "grid",
-    "table",
     "rows",
-    "cells",
-    "excel",
-    "spreadsheet",
-    "accountancy",
-    "data",
-    "enter",
-    "entry",
-    "entries",
-    "blocks",
-    "rectangles",
-    "chevron"
+    "between",
+    "horizontal",
+    "start"
   ],
   "aliases": [],
   "mirror": false

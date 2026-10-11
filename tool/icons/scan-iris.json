@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/IrisScan",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "iris scan",
+    "eye scan",
+    "biometric",
+    "retina",
+    "authentication"
+  ],
+  "aliases": [],
+  "mirror": false
+}

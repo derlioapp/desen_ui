@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CallMissed03",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "call",
+    "missed",
+    "telephone",
+    "handset",
+    "unanswered"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/wifi-zero",
+  "upstream": "hugeicons/WifiZero",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "connection",
+    "wifi",
+    "no",
     "signal",
-    "wireless"
+    "dot",
+    "zero",
+    "reception"
   ],
   "aliases": [],
   "mirror": false

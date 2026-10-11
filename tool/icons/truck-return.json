@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TruckReturn",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "truck",
+    "return",
+    "delivery",
+    "reverse",
+    "shipping"
+  ],
+  "aliases": [],
+  "mirror": false
+}

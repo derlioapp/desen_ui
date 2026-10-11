@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LessThanOrEqual",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "comparison",
+    "smaller",
+    "operator",
+    "lte",
+    "at most"
+  ],
+  "aliases": [],
+  "mirror": false
+}

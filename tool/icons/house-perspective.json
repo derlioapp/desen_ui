@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Home10",
+  "also": [],
+  "category": "buildings",
+  "tags": [
+    "home",
+    "house",
+    "garage",
+    "car",
+    "building"
+  ],
+  "aliases": [],
+  "mirror": false
+}

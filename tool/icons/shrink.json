@@ -1,9 +1,18 @@
 {
-  "upstream": "lucide/shrink",
-  "category": "layout",
+  "upstream": "hugeicons/Shrink",
+  "also": [
+    "ArrowShrink"
+  ],
+  "category": "arrows",
   "tags": [
-    "scale",
-    "fullscreen"
+    "minimize",
+    "compress",
+    "inward",
+    "reduce",
+    "contract",
+    "shrink",
+    "collapse",
+    "four corners"
   ],
   "aliases": [],
   "mirror": false

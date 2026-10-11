@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide-lab/wardrobe",
+  "upstream": "hugeicons/Wardrobe03",
+  "also": [],
   "category": "home",
   "tags": [
     "closet",
     "cupboard",
-    "shelves",
-    "drawer",
-    "storage",
+    "furniture",
     "clothes",
-    "clothing",
-    "apparel"
+    "storage",
+    "drawer",
+    "bedroom"
   ],
   "aliases": [],
   "mirror": false

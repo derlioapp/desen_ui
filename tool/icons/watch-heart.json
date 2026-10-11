@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SmartWatch03",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "smartwatch",
+    "heart",
+    "health",
+    "wearable",
+    "fitness"
+  ],
+  "aliases": [],
+  "mirror": false
+}

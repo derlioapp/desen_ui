@@ -1,19 +1,16 @@
 {
-  "upstream": "lucide/clapperboard",
+  "upstream": "hugeicons/FlimSlate",
+  "also": [],
   "category": "multimedia",
   "tags": [
+    "clapperboard",
+    "film slate",
     "movie",
-    "film",
-    "video",
-    "camera",
     "cinema",
-    "cut",
     "action",
-    "television",
-    "tv",
-    "show",
-    "entertainment"
+    "director"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

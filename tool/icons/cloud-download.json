@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/cloud-download",
+  "upstream": "hugeicons/CloudDownload",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "import"
+    "download",
+    "save",
+    "storage",
+    "get"
   ],
   "aliases": [],
   "mirror": false

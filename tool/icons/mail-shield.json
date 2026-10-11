@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailSecure01",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "secure",
+    "protection",
+    "encrypted",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

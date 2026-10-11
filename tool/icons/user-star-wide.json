@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/UserStar02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "favorite",
+    "vip",
+    "rating",
+    "review",
+    "admin",
+    "featured",
+    "person"
+  ],
+  "aliases": [],
+  "mirror": false
+}

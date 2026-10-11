@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InsertPi",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "insert pi",
+    "add pi",
+    "constant",
+    "symbol",
+    "formula"
+  ],
+  "aliases": [],
+  "mirror": false
+}

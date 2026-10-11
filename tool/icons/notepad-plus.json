@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/NoteAdd",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "note",
+    "add",
+    "new note",
+    "memo",
+    "notepad"
+  ],
+  "aliases": [],
+  "mirror": false
+}

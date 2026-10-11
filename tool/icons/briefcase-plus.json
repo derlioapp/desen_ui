@@ -1,5 +1,33 @@
 {
-  "upstream": "lucide/briefcase-plus",
+  "upstream": "desen/briefcase-plus",
+  "derived": {
+    "parts": [
+      {
+        "from": "Briefcase01",
+        "keep": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "from": "UserAdd01",
+        "keep": [
+          1
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        18,
+        18.5,
+        4.6
+      ]
+    ]
+  },
+  "also": [],
   "category": "transportation",
   "tags": [
     "work",

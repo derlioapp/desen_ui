@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/a-large-small",
+  "upstream": "hugeicons/ALargeSmall",
+  "also": [],
   "category": "text",
   "tags": [
-    "letter",
-    "font size",
+    "large",
+    "small",
     "text",
-    "formatting"
+    "size",
+    "font",
+    "letters"
   ],
   "aliases": [
     "fontSize"

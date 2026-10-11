@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MessageIncoming01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "incoming",
+    "receive",
+    "inbox",
+    "arrow"
+  ],
+  "aliases": [],
+  "mirror": true
+}

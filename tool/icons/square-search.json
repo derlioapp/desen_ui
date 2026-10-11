@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SearchSquare",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "find",
+    "magnifier",
+    "boxed",
+    "lens",
+    "explore"
+  ],
+  "aliases": [],
+  "mirror": false
+}

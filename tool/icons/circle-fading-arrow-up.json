@@ -1,13 +1,19 @@
 {
-  "upstream": "lucide/circle-fading-arrow-up",
+  "upstream": "hugeicons/CircleFadingArrowUp",
+  "also": [
+    "CircleArrowOutUpRight"
+  ],
   "category": "arrows",
   "tags": [
-    "north",
-    "up",
     "upgrade",
-    "improve",
-    "circle",
-    "button"
+    "update",
+    "up",
+    "fading",
+    "upload",
+    "loading",
+    "progress",
+    "dashed",
+    "pending"
   ],
   "aliases": [],
   "mirror": false

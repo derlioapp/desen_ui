@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/pocket-knife",
+  "upstream": "hugeicons/PocketKnife",
+  "also": [],
   "category": "tools",
   "tags": [
-    "swiss army knife",
-    "penknife",
-    "multi-tool",
-    "multitask",
-    "blade",
-    "cutter",
-    "gadget",
-    "corkscrew"
+    "pocket",
+    "knife",
+    "swiss",
+    "tool",
+    "camping"
   ],
   "aliases": [],
   "mirror": false

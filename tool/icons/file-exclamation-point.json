@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/file-exclamation-point",
+  "upstream": "hugeicons/FileExclamationPoint",
+  "also": [],
   "category": "files",
   "tags": [
-    "hidden",
     "warning",
     "alert",
-    "danger",
-    "protected",
-    "exclamation mark"
+    "error",
+    "document"
   ],
   "aliases": [],
   "mirror": false

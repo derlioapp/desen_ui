@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Arrange",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "arrange",
+    "flow",
+    "workflow",
+    "nodes",
+    "connect",
+    "diagram"
+  ],
+  "aliases": [],
+  "mirror": false
+}

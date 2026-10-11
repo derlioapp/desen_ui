@@ -1,17 +1,15 @@
 {
-  "upstream": "lucide/fence",
+  "upstream": "hugeicons/Fence",
+  "also": [],
   "category": "home",
   "tags": [
-    "picket",
-    "panels",
-    "woodwork",
-    "diy",
-    "materials",
-    "suburban",
     "garden",
-    "property",
-    "territory"
+    "boundary",
+    "barrier",
+    "gate",
+    "yard"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

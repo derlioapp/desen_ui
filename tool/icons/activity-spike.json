@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Pulse02",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "pulse",
+    "heartbeat",
+    "activity",
+    "rate",
+    "ecg"
+  ],
+  "aliases": [],
+  "mirror": false
+}

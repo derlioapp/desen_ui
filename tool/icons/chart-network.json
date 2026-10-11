@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/chart-network",
+  "upstream": "hugeicons/ChartNetwork",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
-    "graph",
-    "topology",
-    "cluster",
-    "web",
     "nodes",
+    "relationships",
+    "graph",
     "connections",
-    "edges"
+    "analytics"
   ],
   "aliases": [],
   "mirror": false

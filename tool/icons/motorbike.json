@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide/motorbike",
+  "upstream": "hugeicons/Motorbike01",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "moto",
     "motorcycle",
-    "transport",
-    "vehicle",
-    "drive",
+    "bike",
+    "motorbike",
     "ride",
-    "trip",
-    "race",
-    "racing",
-    "journey",
-    "delivery"
+    "scooter",
+    "vehicle"
   ],
   "aliases": [],
   "mirror": false

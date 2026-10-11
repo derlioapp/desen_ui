@@ -1,14 +1,15 @@
 {
-  "upstream": "lucide/videotape",
+  "upstream": "hugeicons/Videotape",
+  "also": [],
   "category": "devices",
   "tags": [
     "vhs",
-    "movie",
-    "film",
+    "cassette",
+    "tape",
+    "retro",
+    "video",
     "recording",
-    "motion picture",
-    "showreel",
-    "cassette"
+    "film"
   ],
   "aliases": [],
   "mirror": false

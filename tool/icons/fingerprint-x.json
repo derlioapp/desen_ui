@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FingerPrintRemove",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "fingerprint",
+    "remove",
+    "biometric",
+    "failed",
+    "delete"
+  ],
+  "aliases": [],
+  "mirror": false
+}

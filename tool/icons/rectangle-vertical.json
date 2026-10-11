@@ -1,11 +1,11 @@
 {
-  "upstream": "lucide/rectangle-vertical",
+  "upstream": "hugeicons/RectangleVertical",
+  "also": [],
   "category": "shapes",
   "tags": [
     "rectangle",
-    "aspect ratio",
-    "9:16",
     "vertical",
+    "portrait",
     "shape"
   ],
   "aliases": [],

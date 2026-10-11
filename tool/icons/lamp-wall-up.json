@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/lamp-wall-up",
+  "upstream": "hugeicons/LampWallUp",
+  "also": [],
   "category": "home",
   "tags": [
+    "wall lamp",
+    "sconce",
+    "light",
+    "uplight",
     "lighting",
-    "household",
-    "wall",
-    "home",
-    "furniture"
+    "lamp"
   ],
   "aliases": [],
   "mirror": false

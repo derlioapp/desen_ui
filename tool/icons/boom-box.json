@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/boom-box",
+  "upstream": "hugeicons/BoomBox",
+  "also": [],
   "category": "devices",
   "tags": [
+    "boom",
+    "box",
     "radio",
-    "speakers",
-    "audio",
-    "music",
-    "sound",
-    "broadcast",
-    "live",
-    "frequency"
+    "stereo",
+    "speaker",
+    "music"
   ],
   "aliases": [],
   "mirror": false

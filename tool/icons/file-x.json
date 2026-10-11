@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/file-x",
+  "upstream": "hugeicons/FileX",
+  "also": [],
   "category": "files",
   "tags": [
-    "lost",
-    "delete",
+    "file",
+    "document",
     "remove",
-    "document"
+    "delete",
+    "close"
   ],
   "aliases": [],
   "mirror": false

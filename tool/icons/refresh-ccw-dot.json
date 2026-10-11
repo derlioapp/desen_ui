@@ -1,18 +1,15 @@
 {
-  "upstream": "lucide/refresh-ccw-dot",
+  "upstream": "hugeicons/RefreshCcwDot",
+  "also": [
+    "RefreshDot"
+  ],
   "category": "arrows",
   "tags": [
-    "arrows",
-    "rotate",
-    "reload",
-    "synchronise",
-    "synchronize",
-    "circular",
-    "cycle",
-    "issue",
-    "code",
-    "coding",
-    "version control"
+    "refresh",
+    "sync",
+    "dot",
+    "counter-clockwise",
+    "clockwise"
   ],
   "aliases": [],
   "mirror": false

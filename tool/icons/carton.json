@@ -1,27 +1,13 @@
 {
-  "upstream": "lucide/carton",
+  "upstream": "hugeicons/MilkCarton",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "milk",
+    "carton",
     "dairy",
-    "beverage",
     "drink",
-    "diet",
-    "lactose",
-    "liquid",
-    "liter",
-    "litre",
-    "pint",
-    "pints",
-    "pasteurized",
-    "skim",
-    "skimmed",
-    "container",
-    "packaging",
-    "grocery",
-    "juice",
-    "cream",
-    "cow"
+    "juice"
   ],
   "aliases": [],
   "mirror": false

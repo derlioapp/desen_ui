@@ -16,7 +16,7 @@ class IconsPage extends StatelessWidget {
     eyebrow: 'Foundations',
     title: 'Icons',
     lead:
-        '${iconCatalog.length} stroke icons from Desen\'s fork of Lucide, '
+        '${iconCatalog.length} stroke icons from Desen\'s fork of Hugeicons, '
         'drawn from SVG paths. Icons an app does not use add nothing to its '
         'size. '
         'Components take icons as widgets, so any other icon set works too.',
@@ -25,17 +25,19 @@ class IconsPage extends StatelessWidget {
         title: 'All icons',
         children: [
           DocText(
-            'Desen\'s icons are a fork of [Lucide](https://lucide.dev): the '
-            'shapes come from Lucide 1.52.0 and Lucide Lab, under the ISC '
-            'license, and Desen keeps its own copy. Changes made upstream '
-            'after that are taken in only once they are reviewed, so an icon '
-            'never changes or disappears with a Lucide release.',
+            'Desen\'s icons are a fork of the free '
+            '[Hugeicons](https://hugeicons.com) set: the shapes come from '
+            'Hugeicons 4.3.5, under the MIT license, and Desen keeps its own '
+            'copy. Changes made upstream after that are taken in only once '
+            'they are reviewed, so an icon never changes or disappears with '
+            'a Hugeicons release.',
           ),
           DocText(
-            'Search by name, alias or meaning, and click an icon to copy its '
-            'name. Names follow Lucide\'s in camel case (`triangle-alert` is '
-            '`DsIcons.triangleAlert`); some icons also have a more common '
-            'alias (`volume2` is also `volumeUp`).',
+            'Search by name, alias, meaning or Hugeicons name, and click an '
+            'icon to copy its name. Desen names the icons after what they '
+            'show, with Lucide\'s naming rules, in camel case (`circle-check` '
+            'is `DsIcons.circleCheck`). Where Lucide calls the same shape '
+            'something else, that name is an alias (`home` is also `house`).',
           ),
           Board(child: _IconBrowser()),
         ],
@@ -259,7 +261,8 @@ class _IconBrowserState extends State<_IconBrowser> {
         if (hit(icon.name) ||
             hit(icon.category) ||
             icon.aliases.any(hit) ||
-            icon.tags.any(hit))
+            icon.tags.any(hit) ||
+            icon.sources.any(hit))
           icon,
     ];
   }

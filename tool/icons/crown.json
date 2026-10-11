@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/crown",
+  "upstream": "hugeicons/Crown",
+  "also": [],
   "category": "gaming",
   "tags": [
     "diadem",
     "tiara",
-    "circlet",
-    "corona",
     "king",
-    "ruler",
     "winner",
-    "favourite"
+    "premium",
+    "vip"
   ],
   "aliases": [],
   "mirror": false

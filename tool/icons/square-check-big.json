@@ -1,12 +1,18 @@
 {
-  "upstream": "lucide/square-check-big",
+  "upstream": "hugeicons/SquareCheckBig",
+  "also": [
+    "CheckmarkSquare04"
+  ],
   "category": "notifications",
   "tags": [
+    "check",
     "done",
-    "todo",
     "tick",
-    "complete",
-    "task"
+    "checkbox",
+    "approved",
+    "valid",
+    "confirm",
+    "overflow"
   ],
   "aliases": [],
   "mirror": false

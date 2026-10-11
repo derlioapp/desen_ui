@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide-lab/hexagons-3",
+  "upstream": "hugeicons/Cells",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "honeycomb",
-    "beeswax",
     "cells",
-    "cluster",
-    "tessellation",
-    "pollen",
-    "pollinate"
+    "honeycomb",
+    "biology",
+    "hexagon",
+    "molecule",
+    "pattern"
   ],
   "aliases": [],
   "mirror": false

@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/iteration-cw",
+  "upstream": "hugeicons/IterationCw",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "arrow",
-    "left"
+    "iteration",
+    "loop",
+    "repeat",
+    "clockwise",
+    "cycle"
   ],
   "aliases": [],
   "mirror": false

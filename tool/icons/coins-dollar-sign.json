@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CoinsDollar",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "coins",
+    "dollar",
+    "money",
+    "cash",
+    "usd"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

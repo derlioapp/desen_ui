@@ -1,20 +1,17 @@
 {
-  "upstream": "lucide/message-square-heart",
+  "upstream": "hugeicons/MessageSquareHeart",
+  "also": [
+    "ChatFavourite"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "positive",
-    "like",
+    "heart",
     "love",
-    "interest",
-    "valentine",
-    "dating",
-    "date",
-    "speech bubble"
+    "favorite",
+    "favourite",
+    "like"
   ],
   "aliases": [],
   "mirror": false

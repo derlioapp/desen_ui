@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/quote",
+  "upstream": "hugeicons/Quote",
+  "also": [],
   "category": "text",
   "tags": [
-    "quotation"
+    "quote",
+    "quotation",
+    "marks",
+    "citation"
   ],
   "aliases": [
     "blockquote"

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LockKeyhole",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "security",
+    "password",
+    "secure",
+    "padlock",
+    "keyhole"
+  ],
+  "aliases": [],
+  "mirror": false
+}

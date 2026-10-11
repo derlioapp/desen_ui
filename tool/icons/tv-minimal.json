@@ -1,25 +1,13 @@
 {
-  "upstream": "lucide/tv-minimal",
+  "upstream": "hugeicons/ModernTv",
+  "also": [],
   "category": "devices",
   "tags": [
-    "flatscreen",
+    "tv",
     "television",
-    "stream",
+    "screen",
     "display",
-    "widescreen",
-    "high-definition",
-    "hd",
-    "1080p",
-    "4k",
-    "8k",
-    "smart",
-    "digital",
-    "video",
-    "home cinema",
-    "entertainment",
-    "showtime",
-    "channels",
-    "catchup"
+    "monitor"
   ],
   "aliases": [],
   "mirror": false

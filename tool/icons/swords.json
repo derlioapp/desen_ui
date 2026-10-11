@@ -1,25 +1,14 @@
 {
-  "upstream": "lucide/swords",
+  "upstream": "hugeicons/Swords",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "battle",
-    "challenge",
-    "combat",
-    "conflict",
+    "weapons",
     "crossed",
-    "duel",
-    "faction",
-    "fantasy",
-    "game",
-    "melee",
-    "medieval",
-    "opponent",
-    "rivalry",
+    "battle",
+    "fight",
     "rpg",
-    "versus",
-    "weapon",
-    "war",
-    "warrior"
+    "duel"
   ],
   "aliases": [],
   "mirror": false

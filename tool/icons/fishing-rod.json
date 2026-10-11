@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/fishing-rod",
+  "upstream": "hugeicons/FishingRod",
+  "also": [],
   "category": "sports",
   "tags": [
     "fishing",
     "rod",
-    "hobby",
-    "equipment",
-    "reel"
+    "angler",
+    "outdoors",
+    "hobby"
   ],
   "aliases": [],
   "mirror": false

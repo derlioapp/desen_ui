@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Gears",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "gears",
+    "cogs",
+    "settings",
+    "mechanism",
+    "machine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

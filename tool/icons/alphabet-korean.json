@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AlphabetKorean",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "alphabet",
+    "korean",
+    "hangul",
+    "characters",
+    "script",
+    "language"
+  ],
+  "aliases": [],
+  "mirror": false
+}

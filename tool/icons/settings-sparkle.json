@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AiSetting",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "ai",
+    "setting",
+    "settings",
+    "gear",
+    "sparkle",
+    "config"
+  ],
+  "aliases": [],
+  "mirror": false
+}

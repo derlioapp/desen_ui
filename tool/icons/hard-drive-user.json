@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Drive",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "drive",
+    "user",
+    "storage",
+    "device",
+    "profile",
+    "account"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/copy-slash",
+  "upstream": "hugeicons/CopySlash",
+  "also": [],
   "category": "text",
   "tags": [
     "clone",
     "duplicate",
-    "cancel",
-    "ban",
-    "no",
-    "stop",
-    "forbidden",
-    "prohibited",
-    "error",
-    "multiple",
-    "divide",
-    "division",
-    "split",
-    "or",
-    "/"
+    "disabled",
+    "not allowed",
+    "multiple"
   ],
   "aliases": [],
   "mirror": false

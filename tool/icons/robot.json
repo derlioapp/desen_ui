@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MachineRobot",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "bot",
+    "machine",
+    "automation",
+    "ai",
+    "android"
+  ],
+  "aliases": [],
+  "mirror": false
+}

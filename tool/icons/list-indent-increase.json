@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/list-indent-increase",
+  "upstream": "hugeicons/ListIndentIncrease",
+  "also": [],
   "category": "text",
   "tags": [
+    "indent",
+    "indentation",
     "text",
-    "tab"
+    "paragraph",
+    "format"
   ],
   "aliases": [
     "indent"

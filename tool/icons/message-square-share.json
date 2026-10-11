@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/message-square-share",
+  "upstream": "hugeicons/MessageSquareShare",
+  "also": [],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "network",
-    "forward"
+    "share",
+    "forward",
+    "send"
   ],
   "aliases": [],
   "mirror": false

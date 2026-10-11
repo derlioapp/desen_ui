@@ -1,27 +1,13 @@
 {
-  "upstream": "lucide/ghost",
+  "upstream": "hugeicons/Ghost",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "spirit",
-    "haunt",
-    "specter",
-    "apparition",
-    "wraith",
-    "shade",
-    "phantom",
-    "entity",
-    "shadow",
-    "silhouette",
-    "pac-man",
+    "ghost",
     "spooky",
     "halloween",
-    "haunted",
-    "invisible",
-    "hidden",
-    "empty",
-    "dead",
-    "obsolete",
-    "outdated"
+    "boo",
+    "spirit"
   ],
   "aliases": [],
   "mirror": false

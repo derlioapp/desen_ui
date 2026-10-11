@@ -1,11 +1,18 @@
 {
-  "upstream": "lucide/arrow-up-right",
+  "upstream": "hugeicons/ArrowUpRight01",
+  "also": [
+    "ArrowUpRight03"
+  ],
   "category": "arrows",
   "tags": [
-    "direction",
+    "arrow",
+    "up-right",
     "north-east",
-    "diagonal"
+    "diagonal",
+    "external"
   ],
-  "aliases": [],
+  "aliases": [
+    "moveUpRight"
+  ],
   "mirror": false
 }

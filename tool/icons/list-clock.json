@@ -1,18 +1,38 @@
 {
-  "upstream": "lucide/list-clock",
+  "upstream": "desen/list-clock",
+  "derived": {
+    "parts": [
+      {
+        "from": "Clock01",
+        "keep": [
+          0,
+          1
+        ],
+        "matrix": [
+          0.55,
+          0,
+          0,
+          0.55,
+          9.4,
+          9.4
+        ]
+      }
+    ],
+    "paths": [
+      "M3 5H20",
+      "M3 12H7.5",
+      "M3 19H7.5"
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
-    "history",
-    "log",
+    "list",
     "clock",
-    "time",
+    "history",
     "recent",
-    "updated",
-    "revision",
-    "activity",
-    "timestamp",
-    "audit",
-    "list"
+    "schedule",
+    "time"
   ],
   "aliases": [],
   "mirror": true

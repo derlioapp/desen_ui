@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/HotelBell",
+  "also": [],
+  "category": "travel",
+  "tags": [
+    "reception",
+    "hotel",
+    "service",
+    "concierge",
+    "bell"
+  ],
+  "aliases": [],
+  "mirror": false
+}

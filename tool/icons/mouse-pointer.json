@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/mouse-pointer",
+  "upstream": "hugeicons/MousePointer",
+  "also": [],
   "category": "arrows",
   "tags": [
+    "cursor",
+    "pointer",
+    "arrow",
+    "select",
     "click",
-    "select"
+    "mouse"
   ],
   "aliases": [],
   "mirror": false

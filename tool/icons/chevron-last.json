@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/chevron-last",
+  "upstream": "hugeicons/ChevronLast",
+  "also": [],
   "category": "arrows",
   "tags": [
+    "last",
+    "end",
     "skip",
     "next",
-    "music"
+    "page",
+    "final"
   ],
   "aliases": [],
   "mirror": true

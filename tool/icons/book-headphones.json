@@ -1,21 +1,12 @@
 {
-  "upstream": "lucide/book-headphones",
+  "upstream": "hugeicons/BookHeadphones",
+  "also": [],
   "category": "multimedia",
   "tags": [
     "audiobook",
-    "reading",
-    "listening",
-    "sound",
-    "story",
-    "fiction",
-    "novel",
-    "information",
-    "knowledge",
-    "education",
-    "student",
-    "study",
-    "learning",
-    "research"
+    "listen",
+    "audio",
+    "podcast"
   ],
   "aliases": [],
   "mirror": false

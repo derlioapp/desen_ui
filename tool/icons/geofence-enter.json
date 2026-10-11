@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/EnteringGeoFence",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "geofence",
+    "entering",
+    "location",
+    "zone",
+    "boundary",
+    "arrow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Inbox",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "inbox",
+    "mail",
+    "tray",
+    "messages",
+    "receive"
+  ],
+  "aliases": [],
+  "mirror": false
+}

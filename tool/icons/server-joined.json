@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Server",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "database",
+    "hosting",
+    "storage",
+    "cloud",
+    "rack"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

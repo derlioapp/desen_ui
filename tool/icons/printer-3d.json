@@ -1,27 +1,18 @@
 {
-  "upstream": "lucide/printer-3d",
+  "upstream": "hugeicons/PrinterThreeD",
+  "also": [
+    "ThreeDPrinter"
+  ],
   "category": "devices",
   "tags": [
-    "model",
-    "hardware",
-    "technology",
-    "device",
-    "factory",
-    "manufacturing",
-    "art",
-    "extruder",
-    "stl",
-    "obj",
-    "step",
+    "printer",
+    "3d",
+    "print",
     "additive",
-    "fabrication",
-    "rapid prototype",
-    "layer",
-    "filament",
-    "nozzle",
-    "maker",
-    "machine"
+    "manufacturing",
+    "3d printing"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

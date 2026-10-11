@@ -1,16 +1,15 @@
 {
-  "upstream": "lucide/eye-off",
+  "upstream": "hugeicons/ViewOffSlash",
+  "also": [],
   "category": "accessibility",
   "tags": [
-    "view",
-    "watch",
-    "see",
+    "view off",
     "hide",
+    "hidden",
     "conceal",
     "mask",
-    "hidden",
     "visibility",
-    "vision"
+    "invisible"
   ],
   "aliases": [],
   "mirror": false

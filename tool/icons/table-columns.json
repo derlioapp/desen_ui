@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LayoutTable01",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "table",
+    "grid",
+    "spreadsheet",
+    "header",
+    "columns",
+    "data"
+  ],
+  "aliases": [],
+  "mirror": false
+}

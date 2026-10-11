@@ -1,18 +1,19 @@
 {
-  "upstream": "lucide/x",
+  "upstream": "hugeicons/X",
+  "also": [
+    "Cancel01",
+    "MultiplicationSign"
+  ],
   "category": "notifications",
   "tags": [
-    "cancel",
     "close",
-    "cross",
+    "cancel",
+    "dismiss",
     "delete",
-    "ex",
     "remove",
-    "times",
     "clear",
-    "math",
     "multiply",
-    "multiplication"
+    "times"
   ],
   "aliases": [
     "close"

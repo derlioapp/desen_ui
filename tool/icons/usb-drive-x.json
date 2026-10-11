@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/UsbNotConnected02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "usb",
+    "flash drive",
+    "disconnected",
+    "not connected",
+    "unplugged",
+    "eject"
+  ],
+  "aliases": [],
+  "mirror": false
+}

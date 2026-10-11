@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/megaphone-off",
+  "upstream": "hugeicons/MegaphoneOff",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "advertisement",
-    "announcement",
-    "attention",
-    "alert",
-    "loudspeaker",
     "megaphone",
-    "notification",
-    "disable",
-    "silent"
+    "off",
+    "mute",
+    "silent",
+    "announcement"
   ],
   "aliases": [],
   "mirror": false

@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide/badge-dollar-sign",
+  "upstream": "hugeicons/BadgeDollarSign",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "discount",
-    "offer",
-    "sale",
-    "voucher",
-    "tag",
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "exchange",
-    "transaction",
-    "payment",
+    "dollar",
+    "price",
     "usd",
-    "$"
+    "money",
+    "badge",
+    "discount"
   ],
   "aliases": [],
   "mirror": false

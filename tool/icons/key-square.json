@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/key-square",
+  "upstream": "hugeicons/KeySquare",
+  "also": [],
   "category": "security",
   "tags": [
+    "key",
     "password",
-    "login",
-    "authentication",
-    "secure",
+    "access",
     "unlock",
-    "car key"
+    "login"
   ],
   "aliases": [],
   "mirror": false

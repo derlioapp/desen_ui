@@ -1,23 +1,13 @@
 {
-  "upstream": "lucide/turntable",
+  "upstream": "hugeicons/Turntable",
+  "also": [],
   "category": "multimedia",
   "tags": [
+    "turntable",
     "record player",
-    "gramophone",
-    "stereo",
-    "phonograph",
     "vinyl",
-    "lp",
-    "disc",
-    "platter",
-    "cut",
-    "music",
-    "analog",
-    "retro",
-    "dj deck",
-    "disc jockey",
-    "scratch",
-    "spinning"
+    "dj",
+    "music"
   ],
   "aliases": [],
   "mirror": false

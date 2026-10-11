@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/arrow-big-down-dash",
+  "upstream": "hugeicons/ArrowBigDownDash",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "backwards",
-    "reverse",
-    "slow",
-    "direction",
-    "south",
-    "download"
+    "arrow",
+    "down",
+    "block",
+    "big",
+    "dash",
+    "direction"
   ],
   "aliases": [],
   "mirror": false

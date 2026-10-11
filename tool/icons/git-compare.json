@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/git-compare",
+  "upstream": "hugeicons/GitCompare",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "diff"
+    "git",
+    "compare",
+    "diff",
+    "version",
+    "control",
+    "branches"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,19 @@
+{
+  "upstream": "hugeicons/Ship",
+  "also": [
+    "CargoShip"
+  ],
+  "category": "transportation",
+  "tags": [
+    "boat",
+    "vessel",
+    "cargo",
+    "sea",
+    "ocean liner",
+    "cargo ship",
+    "freight",
+    "shipping"
+  ],
+  "aliases": [],
+  "mirror": false
+}

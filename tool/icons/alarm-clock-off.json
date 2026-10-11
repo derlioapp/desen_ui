@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/alarm-clock-off",
+  "upstream": "hugeicons/AlarmClockOff",
+  "also": [],
   "category": "devices",
   "tags": [
-    "morning",
-    "turn-off"
+    "alarm",
+    "clock",
+    "time",
+    "wake",
+    "off",
+    "disabled"
   ],
   "aliases": [],
   "mirror": false

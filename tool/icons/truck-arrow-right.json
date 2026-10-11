@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/DeliverySent01",
+  "also": [
+    "DeliverySent02"
+  ],
+  "category": "transportation",
+  "tags": [
+    "delivery sent",
+    "truck",
+    "shipping",
+    "dispatch",
+    "outgoing",
+    "send"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CustomerService",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "customer service",
+    "support",
+    "helpline",
+    "24/7",
+    "call",
+    "hotline"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

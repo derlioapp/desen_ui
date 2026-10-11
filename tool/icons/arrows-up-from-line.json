@@ -1,16 +1,16 @@
 {
-  "upstream": "lucide/arrows-up-from-line",
+  "upstream": "hugeicons/ArrowsUpFromLine",
+  "also": [
+    "ArrowUpFromLine"
+  ],
   "category": "arrows",
   "tags": [
-    "direction",
-    "orientation",
-    "this way up",
-    "vertical",
-    "package",
-    "box",
-    "fragile",
-    "postage",
-    "shipping"
+    "arrows",
+    "up",
+    "from",
+    "line",
+    "rise",
+    "increase"
   ],
   "aliases": [],
   "mirror": false

@@ -1,27 +1,15 @@
 {
-  "upstream": "lucide-lab/toilet-roll",
+  "upstream": "hugeicons/TissuePaper",
+  "also": [],
   "category": "home",
   "tags": [
+    "tissue",
     "paper",
-    "sheets",
-    "lavatory",
-    "latrine",
-    "loo",
-    "bog",
-    "poo",
-    "privy",
-    "bathroom",
-    "toiletries",
-    "sanitation",
-    "clean",
-    "hospitality",
-    "housekeeping",
-    "room service",
-    "amenities",
-    "unravel",
-    "perforated",
-    "dashed"
+    "toilet paper",
+    "roll",
+    "bathroom"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

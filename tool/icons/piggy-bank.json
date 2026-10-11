@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/piggy-bank",
+  "upstream": "hugeicons/PiggyBank",
+  "also": [],
   "category": "finance",
   "tags": [
+    "piggy",
+    "bank",
+    "savings",
     "money",
-    "savings"
+    "coin"
   ],
   "aliases": [],
   "mirror": false

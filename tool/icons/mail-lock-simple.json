@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailLock02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "secure",
+    "private",
+    "locked",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Algorithm",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "algorithm",
+    "chip",
+    "tree",
+    "network",
+    "logic"
+  ],
+  "aliases": [],
+  "mirror": false
+}

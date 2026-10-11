@@ -1,24 +1,18 @@
 {
-  "upstream": "lucide/user-group",
+  "upstream": "hugeicons/UserGroup",
+  "also": [],
   "category": "account",
   "tags": [
     "group",
-    "people",
     "team",
-    "members",
+    "people",
     "community",
-    "membership",
-    "collaboration",
-    "organization",
-    "contacts",
-    "directory",
-    "staff",
-    "family",
-    "ancestry",
-    "ancestors",
-    "lineage",
-    "parents"
+    "crowd",
+    "members",
+    "users"
   ],
-  "aliases": [],
+  "aliases": [
+    "userRoundGroup"
+  ],
   "mirror": false
 }

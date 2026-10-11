@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SecuredNetwork",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "secured network",
+    "padlock",
+    "lock",
+    "network",
+    "access"
+  ],
+  "aliases": [],
+  "mirror": false
+}

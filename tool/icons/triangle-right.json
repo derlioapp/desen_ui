@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/triangle-right",
+  "upstream": "hugeicons/TriangleRight",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "volume",
-    "controls",
-    "controller",
-    "tv remote",
-    "geometry",
-    "delta",
-    "ramp",
+    "triangle",
+    "right",
     "slope",
-    "incline",
-    "increase"
+    "ramp",
+    "delta"
   ],
   "aliases": [],
   "mirror": false

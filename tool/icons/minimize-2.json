@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/minimize-2",
+  "upstream": "hugeicons/ArrowShrink02",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "exit fullscreen",
-    "arrows",
-    "close",
-    "shrink"
+    "shrink",
+    "minimize",
+    "collapse",
+    "reduce",
+    "diagonal"
   ],
   "aliases": [],
   "mirror": false

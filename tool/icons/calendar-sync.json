@@ -1,22 +1,13 @@
 {
-  "upstream": "lucide/calendar-sync",
+  "upstream": "hugeicons/CalendarSync",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "repeat",
+    "calendar",
+    "sync",
     "refresh",
-    "reconnect",
-    "transfer",
-    "backup",
-    "date",
-    "month",
-    "year",
-    "event",
-    "subscribe",
-    "recurring",
-    "schedule",
-    "reminder",
-    "automatic",
-    "auto"
+    "repeat",
+    "recurring"
   ],
   "aliases": [],
   "mirror": false

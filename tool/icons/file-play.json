@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/file-play",
+  "upstream": "hugeicons/FilePlay",
+  "also": [],
   "category": "files",
   "tags": [
-    "movie",
     "video",
-    "film"
+    "play",
+    "media",
+    "document"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/ambulance",
+  "upstream": "hugeicons/Ambulance",
+  "also": [],
   "category": "medical",
   "tags": [
-    "ambulance",
     "emergency",
     "medical",
     "vehicle",
     "siren",
-    "healthcare",
-    "transportation",
     "rescue",
-    "urgent",
     "first aid"
   ],
   "aliases": [],

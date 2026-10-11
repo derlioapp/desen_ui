@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/PhoneShake",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "mobile",
+    "shake",
+    "vibrate",
+    "motion",
+    "gesture"
+  ],
+  "aliases": [],
+  "mirror": false
+}

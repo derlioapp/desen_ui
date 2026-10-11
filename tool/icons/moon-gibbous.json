@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Moon",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "moon",
+    "night",
+    "phase",
+    "gibbous",
+    "lunar",
+    "dark"
+  ],
+  "aliases": [],
+  "mirror": false
+}

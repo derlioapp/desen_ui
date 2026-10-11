@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/cable-car",
+  "upstream": "hugeicons/CableCar",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "ski lift",
-    "winter holiday",
-    "alpine",
-    "resort",
-    "mountains"
+    "cable",
+    "car",
+    "gondola",
+    "ski",
+    "lift"
   ],
   "aliases": [],
   "mirror": false

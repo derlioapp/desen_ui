@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/hand-platter",
+  "upstream": "hugeicons/HandPlatter",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "cloche",
+    "serve",
     "waiter",
-    "waitress",
     "restaurant",
-    "table service",
-    "served",
-    "dinner",
-    "dining",
-    "meal",
-    "course",
-    "luxury"
+    "service"
   ],
   "aliases": [],
   "mirror": false

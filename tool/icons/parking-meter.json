@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/parking-meter",
+  "upstream": "hugeicons/ParkingMeter",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "driving",
-    "car park",
+    "parking",
+    "meter",
     "pay",
-    "sidewalk",
-    "pavement"
+    "street",
+    "car"
   ],
   "aliases": [],
   "mirror": false

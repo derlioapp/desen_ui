@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/wifi-sync",
+  "upstream": "hugeicons/WifiSync",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "connection",
-    "signal",
-    "wireless",
-    "synchronize",
+    "wifi",
+    "refresh",
     "reconnect",
-    "reset",
-    "restart"
+    "update",
+    "wireless"
   ],
   "aliases": [],
   "mirror": false

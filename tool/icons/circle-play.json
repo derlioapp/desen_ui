@@ -1,13 +1,17 @@
 {
-  "upstream": "lucide/circle-play",
+  "upstream": "hugeicons/PlayCircle",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "music",
+    "play",
+    "circle",
     "start",
-    "run"
+    "media",
+    "video"
   ],
   "aliases": [
-    "playCircle"
+    "playCircle",
+    "circlePlayFilled"
   ],
   "mirror": false
 }

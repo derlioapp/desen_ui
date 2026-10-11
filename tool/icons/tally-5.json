@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/tally-5",
+  "upstream": "hugeicons/Tally5",
+  "also": [],
   "category": "math",
   "tags": [
     "count",
+    "tally",
+    "marks",
     "score",
-    "enumerate",
-    "days",
-    "five",
-    "5",
-    "fifth",
-    "bars",
-    "prison",
-    "cell",
-    "sentence",
-    "slash",
-    "/"
+    "tally 5"
   ],
   "aliases": [],
   "mirror": false

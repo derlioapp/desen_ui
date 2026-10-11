@@ -1,27 +1,18 @@
 {
-  "upstream": "lucide/pen-off",
+  "upstream": "hugeicons/PenOff",
+  "also": [
+    "EditOff04"
+  ],
   "category": "text",
   "tags": [
+    "pen",
+    "off",
     "disabled",
-    "inactive",
-    "non-editable",
-    "locked",
-    "read-only",
-    "unmodifiable",
-    "frozen",
-    "restricted",
-    "pencil",
-    "change",
-    "create",
-    "draw",
-    "writer",
-    "writing",
-    "biro",
-    "ink",
-    "marker",
-    "felt tip",
-    "stationery",
-    "artist"
+    "edit",
+    "readonly",
+    "read only",
+    "no edit",
+    "crossed"
   ],
   "aliases": [],
   "mirror": false

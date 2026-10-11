@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DataRecovery",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "data recovery",
+    "database",
+    "restore",
+    "rescue",
+    "storage",
+    "refresh"
+  ],
+  "aliases": [],
+  "mirror": false
+}

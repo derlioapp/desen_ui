@@ -1,5 +1,23 @@
 {
-  "upstream": "lucide/repeat-off",
+  "upstream": "desen/repeat-off",
+  "derived": {
+    "parts": [
+      {
+        "from": "Repeat",
+        "keep": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": "MicOff02",
+        "keep": [
+          2
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "arrows",
   "tags": [
     "loop",

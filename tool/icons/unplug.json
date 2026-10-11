@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/unplug",
+  "upstream": "hugeicons/Unplug",
+  "also": [],
   "category": "devices",
   "tags": [
-    "electricity",
-    "energy",
-    "electronics",
-    "socket",
-    "outlet",
-    "disconnect"
+    "unplug",
+    "disconnect",
+    "plug",
+    "power",
+    "offline"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,15 @@
 {
-  "upstream": "lucide/weight-tilde",
+  "upstream": "hugeicons/WeightTilde",
+  "also": [],
   "category": "math",
   "tags": [
-    "measure",
-    "scale",
+    "approximate weight",
+    "about",
     "estimate",
-    "load",
-    "balance",
-    "size",
-    "measurement",
-    "quantity",
-    "mass"
+    "mass",
+    "heavy",
+    "measure",
+    "tilde"
   ],
   "aliases": [],
   "mirror": false

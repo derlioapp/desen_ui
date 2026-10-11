@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AddInvoice",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "add",
+    "invoice",
+    "receipt",
+    "plus",
+    "bill",
+    "new"
+  ],
+  "aliases": [],
+  "mirror": false
+}

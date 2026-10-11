@@ -1,28 +1,30 @@
 {
-  "upstream": "lucide/sticky-note-x",
+  "upstream": "desen/sticky-note-x",
+  "derived": {
+    "parts": [
+      {
+        "from": "StickyNote03",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ],
+    "paths": [
+      "M8.5 8.5L13.5 13.5",
+      "M13.5 8.5L8.5 13.5"
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
-    "post-it",
-    "comment",
-    "annotation",
-    "reaction",
-    "memo",
-    "reminder",
-    "todo",
-    "task",
-    "idea",
-    "brainstorm",
-    "document",
-    "page",
-    "paper",
-    "sheet",
-    "stationary",
-    "office",
-    "close",
-    "cancel",
+    "note",
+    "sticky",
     "delete",
-    "remove"
+    "remove",
+    "x"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

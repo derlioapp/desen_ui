@@ -1,15 +1,19 @@
 {
-  "upstream": "lucide/refrigerator",
+  "upstream": "hugeicons/Refrigerator",
+  "also": [
+    "Fridge"
+  ],
   "category": "food-beverage",
   "tags": [
-    "frigerator",
+    "refrigerator",
     "fridge",
     "freezer",
-    "cooler",
-    "icebox",
-    "chiller",
-    "cold storage"
+    "kitchen",
+    "appliance",
+    "cold"
   ],
-  "aliases": [],
+  "aliases": [
+    "refrigeratorFreezer"
+  ],
   "mirror": false
 }

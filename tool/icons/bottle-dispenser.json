@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide-lab/bottle-dispenser",
+  "upstream": "hugeicons/Shampoo",
+  "also": [],
   "category": "home",
   "tags": [
-    "toiletries",
-    "bathroom",
-    "amenities",
-    "shower gel",
-    "bubble bath",
     "shampoo",
-    "conditioner",
-    "hand soap",
-    "sanitizer",
-    "sanitiser",
-    "clean",
-    "wash"
+    "pump",
+    "soap",
+    "lotion",
+    "hygiene"
   ],
   "aliases": [],
   "mirror": false

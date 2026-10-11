@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MoneySafe",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "money",
+    "safe",
+    "strongbox",
+    "vault",
+    "secure",
+    "savings"
+  ],
+  "aliases": [],
+  "mirror": false
+}

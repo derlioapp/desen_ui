@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ClockAdd",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "add",
+    "new",
+    "alarm",
+    "schedule",
+    "time"
+  ],
+  "aliases": [],
+  "mirror": false
+}

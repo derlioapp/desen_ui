@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/RightToLeftListDash",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "right to left",
+    "list",
+    "dash",
+    "rtl"
+  ],
+  "aliases": [],
+  "mirror": false
+}

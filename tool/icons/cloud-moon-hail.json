@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MoonCloudHailstone",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "night",
+    "hail",
+    "hailstone",
+    "moon",
+    "cloud",
+    "ice"
+  ],
+  "aliases": [],
+  "mirror": false
+}

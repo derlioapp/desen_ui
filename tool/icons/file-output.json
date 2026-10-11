@@ -1,7 +1,11 @@
 {
-  "upstream": "lucide/file-output",
+  "upstream": "hugeicons/FileExport",
+  "also": [],
   "category": "files",
   "tags": [
+    "export",
+    "send out",
+    "arrow right",
     "document"
   ],
   "aliases": [],

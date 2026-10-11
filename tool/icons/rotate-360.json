@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Rotate360",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "rotate 360",
+    "full rotation",
+    "loop",
+    "spin",
+    "orbit"
+  ],
+  "aliases": [],
+  "mirror": false
+}

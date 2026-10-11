@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/UsbMemory02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "usb",
+    "flash drive",
+    "memory stick",
+    "pen drive",
+    "storage",
+    "thumb drive"
+  ],
+  "aliases": [],
+  "mirror": false
+}

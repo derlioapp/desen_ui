@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/speech",
+  "upstream": "hugeicons/Speech",
+  "also": [],
   "category": "accessibility",
   "tags": [
-    "disability",
-    "disabled",
-    "dda",
-    "human",
-    "accessibility",
-    "people",
-    "sound"
+    "speak",
+    "talk",
+    "voice",
+    "sound",
+    "head"
   ],
   "aliases": [],
   "mirror": false

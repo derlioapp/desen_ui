@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailSearch02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "search",
+    "lens",
+    "find"
+  ],
+  "aliases": [],
+  "mirror": false
+}

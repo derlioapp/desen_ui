@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/shopping-cart",
+  "upstream": "hugeicons/ShoppingCart01",
+  "also": [],
   "category": "shopping",
   "tags": [
     "trolley",
@@ -7,10 +8,7 @@
     "basket",
     "e-commerce",
     "store",
-    "purchase",
-    "products",
-    "items",
-    "ingredients"
+    "purchase"
   ],
   "aliases": [
     "cart"

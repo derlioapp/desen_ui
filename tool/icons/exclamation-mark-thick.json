@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ExclamationMarkBig",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "alert",
+    "warning",
+    "important",
+    "attention",
+    "big"
+  ],
+  "aliases": [],
+  "mirror": false
+}

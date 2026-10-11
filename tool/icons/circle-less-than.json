@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LessThanCircle",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "comparison",
+    "smaller",
+    "operator",
+    "lt",
+    "circle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

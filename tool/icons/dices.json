@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/dices",
+  "upstream": "hugeicons/Dices",
+  "also": [],
   "category": "gaming",
   "tags": [
     "dice",
     "random",
     "tabletop",
+    "gambling",
     "board",
     "game"
   ],

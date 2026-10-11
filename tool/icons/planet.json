@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide-lab/planet",
+  "upstream": "hugeicons/Saturn",
+  "also": [],
   "category": "account",
   "tags": [
     "ringed",
     "orbit",
     "saturn",
-    "interplanetary",
     "space",
     "galaxy",
-    "universe",
-    "astro",
-    "🪐"
+    "astro"
   ],
   "aliases": [],
   "mirror": false

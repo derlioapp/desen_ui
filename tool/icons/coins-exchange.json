@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide-lab/coins-exchange",
+  "upstream": "hugeicons/CoinsSwap",
+  "also": [],
   "category": "finance",
   "tags": [
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
+    "coins",
     "swap",
-    "finance",
-    "financial",
-    "markets"
+    "exchange",
+    "convert",
+    "trade",
+    "currency"
   ],
   "aliases": [],
   "mirror": false

@@ -1,12 +1,16 @@
 {
-  "upstream": "lucide/a-arrow-down",
+  "upstream": "hugeicons/AArrowDown",
+  "also": [],
   "category": "text",
   "tags": [
-    "letter",
-    "font size",
-    "text",
-    "formatting",
-    "smaller"
+    "a",
+    "arrow",
+    "down",
+    "font",
+    "size",
+    "decrease",
+    "smaller",
+    "text"
   ],
   "aliases": [],
   "mirror": false

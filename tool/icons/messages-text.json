@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MessageMultiple01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "messages",
+    "chat",
+    "conversation",
+    "discussion",
+    "comments"
+  ],
+  "aliases": [],
+  "mirror": false
+}

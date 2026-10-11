@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/chess-rook",
+  "upstream": "hugeicons/ChessRook",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "castle",
+    "chess",
     "piece",
-    "board game"
+    "tower",
+    "castle",
+    "board game",
+    "strategy"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Share02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "share",
+    "network",
+    "connections",
+    "nodes",
+    "social"
+  ],
+  "aliases": [],
+  "mirror": false
+}

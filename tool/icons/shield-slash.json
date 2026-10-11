@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ShieldBan",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "blocked",
+    "security",
+    "forbidden",
+    "prohibited",
+    "diagonal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

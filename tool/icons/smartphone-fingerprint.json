@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BiometricDevice",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "biometric",
+    "device",
+    "fingerprint",
+    "phone",
+    "unlock"
+  ],
+  "aliases": [],
+  "mirror": false
+}

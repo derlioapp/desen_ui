@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/arrow-down-from-line",
+  "upstream": "hugeicons/ArrowDownFromLine",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "backwards",
-    "reverse",
-    "direction",
-    "south",
-    "download",
-    "expand",
-    "fold",
-    "vertical"
+    "arrow",
+    "down",
+    "from",
+    "top",
+    "line",
+    "start"
   ],
   "aliases": [],
   "mirror": false

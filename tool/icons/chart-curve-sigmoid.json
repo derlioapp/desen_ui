@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChartLineData03",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "s-curve",
+    "logistic",
+    "growth",
+    "saturation",
+    "curve",
+    "graph"
+  ],
+  "aliases": [],
+  "mirror": false
+}

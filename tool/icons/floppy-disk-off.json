@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/SaveOff",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "save off",
+    "disabled",
+    "disk",
+    "no save"
+  ],
+  "aliases": [
+    "saveOff"
+  ],
+  "mirror": false,
+  "stroke": 1.5
+}

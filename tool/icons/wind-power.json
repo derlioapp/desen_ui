@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/WindPower",
+  "also": [
+    "WindTurbine"
+  ],
+  "category": "nature",
+  "tags": [
+    "wind",
+    "turbine",
+    "energy",
+    "renewable",
+    "electricity",
+    "green",
+    "power"
+  ],
+  "aliases": [],
+  "mirror": false
+}

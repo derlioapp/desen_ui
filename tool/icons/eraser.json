@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/eraser",
+  "upstream": "hugeicons/Eraser",
+  "also": [],
   "category": "text",
   "tags": [
-    "pencil",
-    "drawing",
-    "undo",
-    "delete",
+    "rub out",
     "clear",
-    "trash",
-    "remove"
+    "remove",
+    "rubber"
   ],
   "aliases": [],
   "mirror": false

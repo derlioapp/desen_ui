@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/cloud-fog",
+  "upstream": "hugeicons/CloudFog",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "mist"
+    "fog",
+    "mist",
+    "haze",
+    "foggy",
+    "low visibility"
   ],
   "aliases": [],
   "mirror": false

@@ -1,13 +1,16 @@
 {
-  "upstream": "lucide/git-pull-request-closed",
+  "upstream": "hugeicons/GitPullRequestClosed",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "rejected",
+    "git",
+    "pull",
+    "request",
     "closed",
+    "rejected",
     "cancelled",
-    "x"
+    "version",
+    "control"
   ],
   "aliases": [],
   "mirror": false

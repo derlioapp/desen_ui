@@ -1,18 +1,12 @@
 {
-  "upstream": "lucide/hospital",
+  "upstream": "hugeicons/Hospital01",
+  "also": [],
   "category": "medical",
   "tags": [
-    "infirmary",
-    "sanatorium",
-    "healthcare",
-    "doctor",
-    "hospice",
+    "hospital",
     "clinic",
-    "emergency room",
-    "ward",
     "building",
-    "medical",
-    "vet"
+    "health"
   ],
   "aliases": [],
   "mirror": false

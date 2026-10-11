@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/beaker",
+  "upstream": "hugeicons/Beaker",
+  "also": [],
   "category": "science",
   "tags": [
-    "cup",
-    "lab",
+    "laboratory",
     "chemistry",
-    "experiment",
-    "test"
+    "measuring",
+    "experiment"
   ],
   "aliases": [],
   "mirror": false

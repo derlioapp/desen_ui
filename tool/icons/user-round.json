@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/user-round",
+  "upstream": "hugeicons/UserRound",
+  "also": [],
   "category": "account",
   "tags": [
     "person",
     "account",
-    "contact"
+    "profile",
+    "avatar",
+    "contact",
+    "member"
   ],
   "aliases": [],
   "mirror": false

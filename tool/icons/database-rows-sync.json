@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DatabaseSync",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "database",
+    "table",
+    "sync",
+    "refresh",
+    "rows",
+    "storage"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PreferenceVertical",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "preferences",
+    "settings",
+    "sliders",
+    "adjust",
+    "equalizer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

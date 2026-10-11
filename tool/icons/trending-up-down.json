@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/trending-up-down",
+  "upstream": "hugeicons/TrendingUpDown",
+  "also": [],
   "category": "charts",
   "tags": [
-    "arrows",
-    "estimated",
-    "indeterminate",
-    "data fluctuation",
-    "uncertain",
-    "forecast",
-    "variable",
-    "prediction",
-    "dynamic",
-    "volatile"
+    "trending",
+    "up",
+    "down",
+    "volatility",
+    "chart"
   ],
   "aliases": [],
   "mirror": false

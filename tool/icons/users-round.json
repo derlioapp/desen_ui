@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/users-round",
+  "upstream": "hugeicons/UsersRound",
+  "also": [],
   "category": "account",
   "tags": [
     "group",
-    "people"
+    "people",
+    "team",
+    "community",
+    "members",
+    "users"
   ],
   "aliases": [],
   "mirror": false

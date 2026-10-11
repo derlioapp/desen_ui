@@ -1,18 +1,17 @@
 {
-  "upstream": "lucide/wallpaper",
-  "category": "account",
+  "upstream": "hugeicons/Wallpaper",
+  "also": [
+    "Walpaper"
+  ],
+  "category": "design",
   "tags": [
     "background",
-    "texture",
-    "image",
-    "art",
-    "design",
-    "visual",
-    "decor",
-    "pattern",
+    "desktop",
     "screen",
-    "cover",
-    "lock screen"
+    "image",
+    "monitor",
+    "theme",
+    "picture"
   ],
   "aliases": [],
   "mirror": false

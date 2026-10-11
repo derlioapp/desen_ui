@@ -1,27 +1,13 @@
 {
-  "upstream": "lucide/notebook-tabs",
+  "upstream": "hugeicons/NotebookTabs",
+  "also": [],
   "category": "account",
   "tags": [
-    "notepad",
-    "notes",
-    "people",
-    "family",
-    "friends",
-    "acquaintances",
+    "notebook",
+    "tabs",
+    "address book",
     "contacts",
-    "details",
-    "addresses",
-    "phone numbers",
-    "directory",
-    "listing",
-    "networking",
-    "alphabetical",
-    "a-z",
-    "organizer",
-    "organiser",
-    "planner",
-    "diary",
-    "stationery"
+    "index"
   ],
   "aliases": [],
   "mirror": false

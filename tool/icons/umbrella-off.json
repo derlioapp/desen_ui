@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/umbrella-off",
+  "upstream": "hugeicons/UmbrellaOff",
+  "also": [],
   "category": "weather",
   "tags": [
-    "rain",
-    "weather",
-    "uncovered",
+    "umbrella",
+    "off",
     "uninsured",
-    "antivirus",
     "unprotected",
-    "risky"
+    "no rain"
   ],
   "aliases": [],
   "mirror": false

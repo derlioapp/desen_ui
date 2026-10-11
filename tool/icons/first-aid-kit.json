@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FirstAidKit",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "first aid",
+    "medical",
+    "kit",
+    "emergency",
+    "health"
+  ],
+  "aliases": [],
+  "mirror": false
+}

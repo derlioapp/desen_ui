@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CreditCardDefrost",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "defrost",
+    "unfreeze",
+    "card",
+    "heat",
+    "unlock",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

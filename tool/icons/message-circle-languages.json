@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/BubbleChatTranslate",
+  "also": [
+    "MessageTranslate"
+  ],
+  "category": "social",
+  "tags": [
+    "chat",
+    "bubble",
+    "message",
+    "translate",
+    "language",
+    "translation",
+    "international"
+  ],
+  "aliases": [],
+  "mirror": false
+}

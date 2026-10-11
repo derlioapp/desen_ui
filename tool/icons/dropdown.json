@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DropdownFieldType",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "dropdown",
+    "select",
+    "field",
+    "input",
+    "form",
+    "combobox"
+  ],
+  "aliases": [],
+  "mirror": false
+}

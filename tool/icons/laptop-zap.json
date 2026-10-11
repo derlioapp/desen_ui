@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LaptopCharging",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "laptop charging",
+    "battery",
+    "power",
+    "laptop",
+    "computer",
+    "lightning"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,12 +1,11 @@
 {
-  "upstream": "lucide/tractor",
+  "upstream": "hugeicons/Tractor",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "farming",
-    "farmer",
-    "ranch",
-    "harvest",
-    "equipment",
+    "tractor",
+    "farm",
+    "agriculture",
     "vehicle"
   ],
   "aliases": [],

@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/file-type-corner",
+  "upstream": "hugeicons/FileTypeCorner",
+  "also": [],
   "category": "files",
   "tags": [
     "font",
+    "type",
     "text",
-    "typography",
-    "type"
+    "letter",
+    "document"
   ],
   "aliases": [],
   "mirror": false

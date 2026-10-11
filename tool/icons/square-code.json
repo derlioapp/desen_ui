@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/square-code",
-  "category": "text",
+  "upstream": "hugeicons/CodeSquare",
+  "also": [],
+  "category": "development",
   "tags": [
-    "gist",
-    "source",
+    "code",
     "programming",
-    "html",
-    "xml",
-    "coding"
+    "source",
+    "square",
+    "developer"
   ],
   "aliases": [],
   "mirror": false

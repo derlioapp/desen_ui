@@ -1,12 +1,16 @@
 {
-  "upstream": "lucide/grape",
+  "upstream": "hugeicons/Grapes",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "grapes",
     "fruit",
     "wine",
+    "vineyard",
     "food"
   ],
-  "aliases": [],
-  "mirror": false,
-  "fill": false
+  "aliases": [
+    "grapes"
+  ],
+  "mirror": false
 }

@@ -1,17 +1,11 @@
 {
-  "upstream": "lucide-lab/basketball",
+  "upstream": "hugeicons/Basketball02",
+  "also": [],
   "category": "sports",
   "tags": [
-    "bounce",
-    "hoop",
-    "netball",
-    "court",
-    "dribble",
-    "slam dunk",
-    "alley-oop",
-    "team",
-    "score",
-    "nba"
+    "basketball",
+    "ball",
+    "sport"
   ],
   "aliases": [],
   "mirror": false

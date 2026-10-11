@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ArrowTurnForward",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "u-turn",
+    "forward",
+    "redo",
+    "turn",
+    "right"
+  ],
+  "aliases": [],
+  "mirror": true
+}

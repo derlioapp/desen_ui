@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/mic",
+  "upstream": "hugeicons/Mic02",
+  "also": [],
   "category": "devices",
   "tags": [
+    "microphone",
+    "mic",
+    "voice",
     "record",
-    "sound",
-    "listen",
-    "radio",
-    "podcast",
-    "microphone"
+    "audio",
+    "speak"
   ],
   "aliases": [
     "microphone"

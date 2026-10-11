@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CircleArrowReload02",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "repeat",
+    "loop",
+    "reload",
+    "refresh",
+    "sync",
+    "swap",
+    "vertical"
+  ],
+  "aliases": [],
+  "mirror": false
+}

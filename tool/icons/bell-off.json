@@ -1,11 +1,15 @@
 {
-  "upstream": "lucide/bell-off",
+  "upstream": "hugeicons/BellOff",
+  "also": [
+    "NotificationOff01"
+  ],
   "category": "notifications",
   "tags": [
-    "alarm",
-    "notification",
+    "mute",
     "silent",
-    "reminder"
+    "notification",
+    "disabled",
+    "off"
   ],
   "aliases": [
     "notificationsOff"

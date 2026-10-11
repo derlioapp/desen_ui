@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/microscope",
+  "upstream": "hugeicons/Microscope",
+  "also": [],
   "category": "science",
   "tags": [
-    "medical",
-    "education",
+    "microscope",
+    "lab",
+    "research",
     "science",
-    "imaging",
-    "research"
+    "magnify"
   ],
   "aliases": [],
   "mirror": false

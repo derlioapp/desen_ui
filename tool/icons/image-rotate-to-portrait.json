@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/OrientationImageLandscapeToPotrait",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "image",
+    "orientation",
+    "rotate",
+    "landscape",
+    "portrait"
+  ],
+  "aliases": [],
+  "mirror": false
+}

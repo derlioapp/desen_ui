@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MouseRightClick02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "right click",
+    "buttons",
+    "context menu",
+    "secondary",
+    "peripheral"
+  ],
+  "aliases": [],
+  "mirror": false
+}

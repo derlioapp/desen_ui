@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide/cast",
+  "upstream": "hugeicons/Cast",
+  "also": [],
   "category": "devices",
   "tags": [
+    "screen share",
     "stream",
-    "streaming",
-    "screen",
-    "display",
-    "wireless",
-    "broadcast",
-    "transmit",
-    "media",
-    "receiver",
-    "remote display",
-    "screen sharing",
-    "media streaming"
+    "chromecast",
+    "airplay",
+    "mirror",
+    "tv"
   ],
   "aliases": [],
   "mirror": false

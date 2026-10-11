@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/folder",
+  "upstream": "hugeicons/Folder01",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory"
+    "folder",
+    "directory",
+    "files",
+    "storage"
   ],
   "aliases": [],
   "mirror": false

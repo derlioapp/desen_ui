@@ -1,26 +1,13 @@
 {
-  "upstream": "lucide/fire-extinguisher",
+  "upstream": "hugeicons/FireExtinguisher",
+  "also": [],
   "category": "home",
   "tags": [
-    "flames",
-    "smoke",
-    "foam",
-    "water",
-    "spray",
-    "hose",
-    "firefighter",
-    "fireman",
-    "department",
-    "brigade",
-    "station",
-    "emergency",
-    "suppress",
-    "compressed",
-    "tank",
-    "cylinder",
+    "fire",
     "safety",
-    "equipment",
-    "amenities"
+    "emergency",
+    "extinguisher",
+    "equipment"
   ],
   "aliases": [],
   "mirror": false

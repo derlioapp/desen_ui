@@ -1,15 +1,16 @@
 {
-  "upstream": "lucide/refresh-cw",
+  "upstream": "hugeicons/RefreshCw",
+  "also": [
+    "Refresh04",
+    "Reload"
+  ],
   "category": "arrows",
   "tags": [
-    "rotate",
+    "refresh",
     "reload",
-    "rerun",
-    "synchronise",
-    "synchronize",
-    "arrows",
-    "circular",
-    "cycle"
+    "sync",
+    "clockwise",
+    "arrows"
   ],
   "aliases": [
     "refresh"

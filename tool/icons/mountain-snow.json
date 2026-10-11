@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/mountain-snow",
+  "upstream": "hugeicons/MountainSnow",
+  "also": [],
   "category": "nature",
   "tags": [
-    "alpine",
-    "climb",
-    "snow"
+    "mountain",
+    "snow",
+    "peak",
+    "winter",
+    "landscape",
+    "alps"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/ContainerTruck01",
+  "also": [
+    "ContainerTruck02"
+  ],
+  "category": "transportation",
+  "tags": [
+    "truck",
+    "box",
+    "delivery",
+    "cargo",
+    "freight",
+    "shipping"
+  ],
+  "aliases": [],
+  "mirror": false
+}

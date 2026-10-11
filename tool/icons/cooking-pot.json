@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide/cooking-pot",
+  "upstream": "hugeicons/CookingPot",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "pod",
+    "pot",
     "cooking",
-    "recipe",
-    "food",
     "kitchen",
-    "chef",
-    "restaurant",
-    "dinner",
-    "lunch",
-    "breakfast",
-    "meal",
-    "eat"
+    "stew",
+    "saucepan",
+    "cookware"
   ],
   "aliases": [],
   "mirror": false

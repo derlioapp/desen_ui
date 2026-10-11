@@ -1,8 +1,15 @@
 {
-  "upstream": "lucide/grid-3x3",
+  "upstream": "hugeicons/Grid3x3",
+  "also": [
+    "GridTable"
+  ],
   "category": "text",
   "tags": [
+    "grid",
+    "3x3",
     "table",
+    "cells",
+    "spreadsheet",
     "rows",
     "columns"
   ],

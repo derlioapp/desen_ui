@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/copy-x",
-  "category": "notifications",
+  "upstream": "hugeicons/CopyX",
+  "also": [],
+  "category": "text",
   "tags": [
-    "cancel",
-    "close",
-    "delete",
+    "clone",
+    "duplicate",
     "remove",
-    "clear",
-    "multiple",
-    "multiply",
-    "multiplication",
-    "times"
+    "delete",
+    "multiple"
   ],
   "aliases": [],
   "mirror": false

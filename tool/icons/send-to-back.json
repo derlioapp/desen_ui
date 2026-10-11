@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/send-to-back",
+  "upstream": "hugeicons/SendToBack",
+  "also": [],
   "category": "design",
   "tags": [
-    "bring",
-    "send",
-    "move",
-    "under",
+    "layers",
+    "order",
     "back",
-    "backwards",
-    "overlap",
-    "layer",
-    "order"
+    "arrange",
+    "send backward"
   ],
   "aliases": [],
   "mirror": false

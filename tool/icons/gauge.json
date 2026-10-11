@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/gauge",
+  "upstream": "hugeicons/Gauge",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "dashboard",
+    "gauge",
+    "speedometer",
     "dial",
     "meter",
-    "speed",
-    "pressure",
-    "measure",
-    "level"
+    "performance"
   ],
   "aliases": [],
   "mirror": false

@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/factory",
+  "upstream": "hugeicons/Factory",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "building",
-    "business",
-    "energy",
     "industry",
     "manufacture",
-    "sector"
+    "plant",
+    "production"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,16 @@
 {
-  "upstream": "lucide/squares-subtract",
+  "upstream": "hugeicons/SquaresSubtract",
+  "also": [
+    "PathfinderMinusFront"
+  ],
   "category": "design",
   "tags": [
-    "square",
-    "pathfinder",
-    "path",
-    "minus",
     "subtract",
-    "subtraction",
-    "shape",
-    "front",
-    "vector"
+    "boolean",
+    "shapes",
+    "cut out",
+    "minus front",
+    "pathfinder"
   ],
   "aliases": [],
   "mirror": false

@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide/circle-off",
+  "upstream": "hugeicons/CircleOff",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "diameter",
-    "zero",
-    "Ø",
-    "nothing",
-    "null",
-    "void",
-    "cancel",
-    "ban",
-    "no",
-    "stop",
+    "disabled",
+    "crossed out",
+    "none",
     "forbidden",
-    "prohibited",
-    "error",
-    "incorrect",
-    "mistake",
-    "wrong",
-    "failure"
+    "empty"
   ],
   "aliases": [],
   "mirror": false

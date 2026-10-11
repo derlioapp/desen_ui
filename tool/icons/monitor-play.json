@@ -1,24 +1,21 @@
 {
-  "upstream": "lucide/monitor-play",
+  "upstream": "hugeicons/MonitorPlay",
+  "also": [
+    "ComputerVideo"
+  ],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "screen sharing",
-    "video",
-    "movie",
-    "film",
     "play",
-    "running",
+    "video",
     "start",
-    "boot",
-    "virtual machine",
-    "vm"
+    "computer",
+    "media",
+    "stream"
   ],
-  "aliases": [],
+  "aliases": [
+    "tvMinimalPlay"
+  ],
   "mirror": false
 }

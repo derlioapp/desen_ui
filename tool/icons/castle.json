@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/castle",
+  "upstream": "hugeicons/Fortress",
+  "also": [],
   "category": "buildings",
   "tags": [
     "fortress",
-    "stronghold",
-    "palace",
-    "chateau",
-    "building"
+    "castle",
+    "tower",
+    "medieval",
+    "defense"
   ],
   "aliases": [],
   "mirror": false

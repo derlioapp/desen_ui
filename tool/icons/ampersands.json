@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/ampersands",
+  "upstream": "hugeicons/Ampersands",
+  "also": [],
   "category": "text",
   "tags": [
     "and",
-    "operator",
-    "then",
-    "code",
-    "&&"
+    "symbols",
+    "double",
+    "characters",
+    "typography"
   ],
   "aliases": [],
   "mirror": false

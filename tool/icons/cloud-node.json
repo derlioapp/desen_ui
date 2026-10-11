@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CloudServer",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "hosting",
+    "server",
+    "cloud computing",
+    "network",
+    "data center"
+  ],
+  "aliases": [],
+  "mirror": false
+}

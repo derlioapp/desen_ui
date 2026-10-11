@@ -1,19 +1,12 @@
 {
-  "upstream": "lucide/bolt",
+  "upstream": "hugeicons/Bolt",
+  "also": [],
   "category": "tools",
   "tags": [
     "nut",
-    "screw",
-    "settings",
-    "preferences",
-    "configuration",
-    "controls",
-    "edit",
-    "diy",
-    "fixed",
-    "build",
-    "construction",
-    "parts"
+    "hex",
+    "fastener",
+    "hardware"
   ],
   "aliases": [],
   "mirror": false

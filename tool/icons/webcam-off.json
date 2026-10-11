@@ -1,10 +1,31 @@
 {
-  "upstream": "lucide/webcam-off",
+  "upstream": "desen/webcam-off",
+  "derived": {
+    "parts": [
+      {
+        "from": "Webcam",
+        "keep": [
+          0,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "from": "ZapOff",
+        "keep": [
+          0
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "connectivity",
   "tags": [
     "camera",
     "security"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

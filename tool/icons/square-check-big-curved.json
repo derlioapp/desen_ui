@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CheckmarkSquare03",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "checkbox",
+    "done",
+    "approved",
+    "valid",
+    "tick",
+    "confirm",
+    "overflow"
+  ],
+  "aliases": [],
+  "mirror": false
+}

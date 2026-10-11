@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Conference",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "conference",
+    "speaker",
+    "presenter",
+    "talk",
+    "meeting",
+    "audience"
+  ],
+  "aliases": [],
+  "mirror": false
+}

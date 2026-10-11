@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/bath",
+  "upstream": "hugeicons/Bathtub01",
+  "also": [],
   "category": "travel",
   "tags": [
-    "amenities",
-    "services",
+    "bathtub",
     "bathroom",
-    "shower"
+    "hotel",
+    "amenities"
   ],
   "aliases": [],
   "mirror": false

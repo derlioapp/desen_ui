@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PhoneLock",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "smartphone",
+    "lock",
+    "secure",
+    "locked"
+  ],
+  "aliases": [],
+  "mirror": false
+}

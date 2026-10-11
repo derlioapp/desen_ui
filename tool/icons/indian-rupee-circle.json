@@ -1,18 +1,12 @@
 {
-  "upstream": "lucide-lab/indian-rupee-circle",
+  "upstream": "hugeicons/RupeeCircle",
+  "also": [],
   "category": "finance",
   "tags": [
-    "finance",
-    "financial",
-    "markets",
-    "exchange",
-    "trader",
-    "trading",
-    "transaction",
-    "payment",
-    "coin",
-    "inr",
-    "₹"
+    "rupee",
+    "indian rupee",
+    "currency",
+    "circle"
   ],
   "aliases": [],
   "mirror": false

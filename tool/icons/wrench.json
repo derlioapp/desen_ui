@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/wrench",
-  "category": "account",
+  "upstream": "hugeicons/Wrench01",
+  "also": [],
+  "category": "tools",
   "tags": [
-    "account",
-    "settings",
     "spanner",
-    "diy",
-    "toolbox",
-    "build",
-    "construction"
+    "repair",
+    "fix",
+    "settings",
+    "tool",
+    "maintenance"
   ],
   "aliases": [],
   "mirror": false

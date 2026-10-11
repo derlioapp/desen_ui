@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Remove01",
+  "also": [
+    "MinusSign"
+  ],
+  "category": "math",
+  "tags": [
+    "remove",
+    "minus",
+    "subtract",
+    "dash",
+    "decrease"
+  ],
+  "aliases": [],
+  "mirror": false
+}

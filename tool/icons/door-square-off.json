@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/NoMeetingRoom",
+  "also": [],
+  "category": "home",
+  "tags": [
+    "no meeting room",
+    "room",
+    "door",
+    "unavailable",
+    "occupied",
+    "crossed"
+  ],
+  "aliases": [],
+  "mirror": false
+}

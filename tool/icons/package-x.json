@@ -1,9 +1,15 @@
 {
-  "upstream": "lucide/package-x",
+  "upstream": "hugeicons/PackageRemove",
+  "also": [
+    "PackageX"
+  ],
   "category": "development",
   "tags": [
+    "package",
+    "remove",
     "delete",
-    "remove"
+    "x",
+    "box"
   ],
   "aliases": [],
   "mirror": false

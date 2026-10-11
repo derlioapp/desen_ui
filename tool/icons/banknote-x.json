@@ -1,23 +1,13 @@
 {
-  "upstream": "lucide/banknote-x",
+  "upstream": "hugeicons/BanknoteX",
+  "also": [],
   "category": "finance",
   "tags": [
-    "bill",
-    "currency",
     "money",
-    "payment",
-    "funds",
-    "transaction",
     "cash",
-    "finance",
-    "error",
+    "cancel",
     "failed",
-    "rejected",
-    "canceled",
-    "declined",
-    "lost",
-    "delete",
-    "remove"
+    "bill"
   ],
   "aliases": [],
   "mirror": false

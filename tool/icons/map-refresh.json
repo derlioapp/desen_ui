@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MapsRefresh",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "map",
+    "refresh",
+    "reload",
+    "sync",
+    "update"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ThreeDMove",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "3d",
+    "move",
+    "axis",
+    "transform",
+    "translate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

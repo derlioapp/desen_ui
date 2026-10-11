@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/palette",
-  "category": "text",
+  "upstream": "hugeicons/Palette",
+  "also": [],
+  "category": "design",
   "tags": [
-    "colors",
-    "colours",
-    "theme",
-    "scheme",
+    "palette",
     "paint",
-    "watercolor",
-    "watercolour",
-    "artist"
+    "colors",
+    "art",
+    "theme"
   ],
   "aliases": [],
   "mirror": false

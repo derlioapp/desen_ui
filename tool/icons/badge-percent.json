@@ -1,15 +1,18 @@
 {
-  "upstream": "lucide/badge-percent",
+  "upstream": "hugeicons/BadgePercent",
+  "also": [
+    "Discount",
+    "Discount01"
+  ],
   "category": "social",
   "tags": [
-    "verified",
-    "unverified",
-    "sale",
     "discount",
+    "sale",
     "offer",
-    "marketing",
-    "sticker",
-    "price tag"
+    "percentage",
+    "badge",
+    "deal",
+    "percent"
   ],
   "aliases": [],
   "mirror": false

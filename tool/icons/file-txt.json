@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Txt01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "txt",
+    "text",
+    "document",
+    "plain text",
+    "file"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/ungroup",
+  "upstream": "hugeicons/Ungroup",
+  "also": [],
   "category": "shapes",
   "tags": [
-    "cubes",
-    "packages",
-    "parts",
-    "units",
-    "collection",
-    "cluster",
-    "separate"
+    "ungroup",
+    "separate",
+    "split",
+    "objects"
   ],
   "aliases": [],
   "mirror": false

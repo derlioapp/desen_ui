@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CreditCardPos",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "pos",
+    "card reader",
+    "swipe",
+    "payment",
+    "terminal",
+    "checkout"
+  ],
+  "aliases": [],
+  "mirror": false
+}

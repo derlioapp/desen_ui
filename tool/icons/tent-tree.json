@@ -1,14 +1,12 @@
 {
-  "upstream": "lucide/tent-tree",
+  "upstream": "hugeicons/TentTree",
+  "also": [],
   "category": "travel",
   "tags": [
     "camping",
-    "campsite",
-    "holiday",
-    "retreat",
-    "nomadic",
-    "wilderness",
-    "outdoors"
+    "outdoor",
+    "forest",
+    "camp"
   ],
   "aliases": [],
   "mirror": false

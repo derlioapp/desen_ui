@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ElectricTower02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "electric tower",
+    "power line",
+    "transmission",
+    "electricity",
+    "utility"
+  ],
+  "aliases": [],
+  "mirror": false
+}

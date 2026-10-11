@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Clock04",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "history",
+    "past",
+    "dashed",
+    "recent",
+    "counter clockwise"
+  ],
+  "aliases": [],
+  "mirror": false
+}

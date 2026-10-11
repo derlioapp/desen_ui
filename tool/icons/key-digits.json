@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Encrypt",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "encrypt",
+    "encryption",
+    "key",
+    "binary",
+    "password",
+    "secret"
+  ],
+  "aliases": [],
+  "mirror": false
+}

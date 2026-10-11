@@ -1,18 +1,12 @@
 {
-  "upstream": "lucide/bug",
+  "upstream": "hugeicons/Bug01",
+  "also": [],
   "category": "development",
   "tags": [
-    "issue",
-    "error",
-    "defect",
-    "testing",
-    "troubleshoot",
-    "problem",
-    "report",
-    "debug",
-    "code",
+    "bug",
     "insect",
-    "beetle"
+    "issue",
+    "debug"
   ],
   "aliases": [],
   "mirror": false

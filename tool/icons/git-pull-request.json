@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/git-pull-request",
+  "upstream": "hugeicons/GitPullRequest",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
+    "git",
+    "pull",
+    "request",
+    "version",
+    "control",
     "open"
   ],
   "aliases": [

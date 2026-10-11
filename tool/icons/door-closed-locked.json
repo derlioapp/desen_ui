@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/door-closed-locked",
+  "upstream": "hugeicons/DoorClosedLocked",
+  "also": [],
   "category": "home",
   "tags": [
-    "entrance",
-    "entry",
-    "exit",
-    "ingress",
-    "egress",
-    "gate",
-    "gateway",
-    "emergency exit",
-    "lock"
+    "door",
+    "closed",
+    "locked",
+    "lock",
+    "secure",
+    "entry"
   ],
   "aliases": [],
   "mirror": false

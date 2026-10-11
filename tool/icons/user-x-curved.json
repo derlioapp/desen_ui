@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/UserRemove01",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "remove user",
+    "delete",
+    "unfollow",
+    "unsubscribe",
+    "unavailable",
+    "person",
+    "account"
+  ],
+  "aliases": [],
+  "mirror": false
+}

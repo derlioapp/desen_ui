@@ -1,21 +1,12 @@
 {
-  "upstream": "lucide/houses",
+  "upstream": "hugeicons/House02",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "homes",
-    "housing",
-    "estate",
-    "living",
-    "buildings",
-    "development",
-    "residences",
-    "residential",
-    "village",
-    "neighbourhood",
-    "accommodation",
-    "community",
-    "dwellings",
-    "architecture"
+    "houses",
+    "neighborhood",
+    "real estate",
+    "homes"
   ],
   "aliases": [],
   "mirror": false

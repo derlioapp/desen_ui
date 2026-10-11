@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/ice-cream-bowl",
+  "upstream": "hugeicons/IceCreamBowl",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "gelato",
-    "food",
+    "ice cream",
+    "bowl",
+    "scoops",
     "dessert",
-    "dish",
-    "restaurant",
-    "course",
-    "meal"
+    "sweet"
   ],
   "aliases": [],
   "mirror": false

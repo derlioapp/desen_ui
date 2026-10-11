@@ -1,18 +1,12 @@
 {
-  "upstream": "lucide/balloon",
+  "upstream": "hugeicons/Balloon",
+  "also": [],
   "category": "social",
   "tags": [
     "party",
-    "festival",
-    "congratulations",
-    "celebration",
-    "decoration",
-    "colorful",
-    "floating",
-    "fun",
     "birthday",
-    "event",
-    "entertainment"
+    "celebration",
+    "decoration"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/face-neutral",
+  "upstream": "hugeicons/Neutral",
+  "also": [],
   "category": "social",
   "tags": [
-    "emoji",
     "neutral",
-    "emotion",
+    "emoji",
+    "face",
+    "indifferent",
     "meh",
-    "blank stare",
-    "social masking",
-    "irritation",
-    "concern",
-    "deadpan"
+    "expressionless"
   ],
   "aliases": [],
   "mirror": false

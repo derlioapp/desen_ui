@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Settings02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "gear",
+    "cog",
+    "preferences",
+    "configuration",
+    "options"
+  ],
+  "aliases": [],
+  "mirror": false
+}

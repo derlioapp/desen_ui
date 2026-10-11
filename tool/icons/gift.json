@@ -1,7 +1,9 @@
 {
-  "upstream": "lucide/gift",
+  "upstream": "hugeicons/Gift",
+  "also": [],
   "category": "gaming",
   "tags": [
+    "gift",
     "present",
     "box",
     "birthday",

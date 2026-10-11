@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InboxUnread",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "inbox",
+    "unread",
+    "new",
+    "notification",
+    "dot"
+  ],
+  "aliases": [],
+  "mirror": false
+}

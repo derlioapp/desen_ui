@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide/scan-square",
+  "upstream": "hugeicons/QrCodeScan",
+  "also": [],
   "category": "photography",
   "tags": [
+    "qr",
+    "code",
     "scan",
-    "square",
-    "detect",
-    "recognition",
-    "select",
     "frame",
-    "object",
-    "viewfinder",
-    "capture",
-    "shape",
-    "boundary",
-    "camera",
-    "scanner",
-    "overlay",
-    "focus",
-    "crop",
-    "marker"
+    "viewfinder"
   ],
   "aliases": [],
   "mirror": false

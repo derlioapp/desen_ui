@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/ImageDownload",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "image",
+    "download",
+    "save",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

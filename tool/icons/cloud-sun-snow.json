@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SunCloudSnow02",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "cloud",
+    "sun",
+    "snow",
+    "snowfall",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

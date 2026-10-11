@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LeavingGeoFence",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "leaving geofence",
+    "exit",
+    "boundary",
+    "location",
+    "leave area",
+    "perimeter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/Package04",
+  "also": [
+    "DeliveryBox01"
+  ],
+  "category": "transportation",
+  "tags": [
+    "package",
+    "box",
+    "parcel",
+    "lines",
+    "delivery",
+    "shipment",
+    "carton"
+  ],
+  "aliases": [],
+  "mirror": false
+}

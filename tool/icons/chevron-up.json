@@ -1,19 +1,17 @@
 {
-  "upstream": "lucide/chevron-up",
+  "upstream": "hugeicons/ChevronUp",
+  "also": [
+    "ArrowUp01"
+  ],
   "category": "arrows",
   "tags": [
+    "collapse",
+    "less",
     "caret",
-    "keyboard",
-    "mac",
-    "control",
-    "ctrl",
-    "superscript",
-    "exponential",
-    "power",
-    "ahead",
-    "fast",
-    "^",
-    "dropdown"
+    "close",
+    "disclosure",
+    "chevron",
+    "up"
   ],
   "aliases": [],
   "mirror": false

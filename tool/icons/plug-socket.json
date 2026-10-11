@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PlugSocket",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "plug",
+    "socket",
+    "connected",
+    "power",
+    "cable"
+  ],
+  "aliases": [],
+  "mirror": false
+}

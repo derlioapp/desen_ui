@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/philippine-peso",
+  "upstream": "hugeicons/PhilippinePeso",
+  "also": [],
   "category": "finance",
   "tags": [
-    "currency",
     "peso",
-    "money",
-    "php"
+    "philippines",
+    "currency",
+    "money"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

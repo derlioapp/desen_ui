@@ -1,13 +1,11 @@
 {
-  "upstream": "lucide/bell-plus",
+  "upstream": "hugeicons/BellPlus",
+  "also": [],
   "category": "notifications",
   "tags": [
     "notification",
-    "silent",
-    "reminder",
     "add",
-    "create",
-    "new"
+    "alert"
   ],
   "aliases": [],
   "mirror": false

@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/search-code",
+  "upstream": "hugeicons/SearchCode",
+  "also": [],
   "category": "text",
   "tags": [
     "find",
-    "scan",
-    "magnifier",
-    "magnifying glass",
     "grep",
-    "chevrons",
-    "<>",
-    "lens",
-    "locate",
-    "explore",
-    "discover",
-    "enlarge",
-    "zoom"
+    "code",
+    "magnifier",
+    "chevrons"
   ],
   "aliases": [],
   "mirror": false

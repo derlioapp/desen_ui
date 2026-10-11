@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/HospitalBed01",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "stretcher",
+    "gurney",
+    "hospital bed",
+    "patient"
+  ],
+  "aliases": [],
+  "mirror": false
+}

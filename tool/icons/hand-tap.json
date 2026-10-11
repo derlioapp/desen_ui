@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/TouchInteraction01",
+  "also": [],
+  "category": "accessibility",
+  "tags": [
+    "tap",
+    "touch",
+    "interaction",
+    "gesture",
+    "finger",
+    "press"
+  ],
+  "aliases": [],
+  "mirror": false
+}

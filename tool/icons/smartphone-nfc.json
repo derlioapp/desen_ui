@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/smartphone-nfc",
-  "category": "social",
+  "upstream": "hugeicons/SmartphoneNfc",
+  "also": [],
+  "category": "connectivity",
   "tags": [
+    "phone",
+    "nfc",
     "contactless",
     "payment",
-    "near-field communication",
-    "screen"
+    "tap"
   ],
   "aliases": [],
   "mirror": false

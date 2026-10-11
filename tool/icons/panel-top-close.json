@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/panel-top-close",
+  "upstream": "hugeicons/PanelTopClose",
+  "also": [],
   "category": "layout",
   "tags": [
-    "menu bar",
-    "drawer",
-    "hide",
-    "chevron",
-    "up"
+    "panel",
+    "top",
+    "close",
+    "collapse",
+    "header"
   ],
   "aliases": [],
   "mirror": false

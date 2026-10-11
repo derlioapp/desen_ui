@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MealScan",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "scan",
+    "food",
+    "apple",
+    "nutrition",
+    "calories",
+    "meal"
+  ],
+  "aliases": [],
+  "mirror": false
+}

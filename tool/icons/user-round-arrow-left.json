@@ -1,22 +1,31 @@
 {
-  "upstream": "lucide/user-round-arrow-left",
+  "upstream": "desen/user-round-arrow-left",
+  "derived": {
+    "parts": [
+      {
+        "from": "UserRoundPlus",
+        "keep": [
+          0,
+          2
+        ]
+      }
+    ],
+    "paths": [
+      "M21 17.5H14",
+      "M17 14.5C17 14.5 14 16.7094 14 17.5C14 18.2906 17 20.5 17 20.5"
+    ]
+  },
+  "also": [],
   "category": "account",
   "tags": [
+    "user",
     "person",
-    "assign",
-    "move",
-    "give",
-    "setup",
-    "self",
-    "me",
-    "myself",
-    "profile",
-    "avatar",
-    "incoming",
-    "recipient",
-    "assignee",
-    "inbound"
+    "arrow",
+    "back",
+    "return",
+    "leave"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

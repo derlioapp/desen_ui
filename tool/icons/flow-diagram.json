@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Flow",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "flow",
+    "diagram",
+    "nodes",
+    "workflow",
+    "process"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/TickDouble03",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "done",
+    "received",
+    "double",
+    "bold",
+    "tick",
+    "read"
+  ],
+  "aliases": [],
+  "mirror": false
+}

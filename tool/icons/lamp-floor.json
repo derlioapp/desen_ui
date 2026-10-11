@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/lamp-floor",
+  "upstream": "hugeicons/LampFloor",
+  "also": [],
   "category": "home",
   "tags": [
+    "floor lamp",
+    "light",
+    "standing lamp",
     "lighting",
-    "household",
-    "floor",
-    "home",
-    "furniture"
+    "lamp"
   ],
   "aliases": [],
   "mirror": false

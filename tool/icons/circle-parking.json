@@ -1,9 +1,18 @@
 {
-  "upstream": "lucide/circle-parking",
+  "upstream": "hugeicons/CircleParking",
+  "also": [
+    "ParkingAreaCircle"
+  ],
   "category": "transportation",
   "tags": [
-    "parking lot",
-    "car park"
+    "park",
+    "car park",
+    "p",
+    "lot",
+    "garage",
+    "parking",
+    "area",
+    "circle"
   ],
   "aliases": [
     "parking"

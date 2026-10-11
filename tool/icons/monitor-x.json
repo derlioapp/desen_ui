@@ -1,24 +1,17 @@
 {
-  "upstream": "lucide/monitor-x",
+  "upstream": "hugeicons/MonitorX",
+  "also": [
+    "ComputerRemove"
+  ],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "screen sharing",
-    "virtual machine",
-    "vm",
     "close",
     "error",
-    "failed",
-    "disconnected",
-    "stop",
-    "suspend",
     "remove",
-    "delete"
+    "computer",
+    "off"
   ],
   "aliases": [],
   "mirror": false

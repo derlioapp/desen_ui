@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/egg-off",
+  "upstream": "hugeicons/EggOff",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "egg free",
+    "no egg",
+    "allergy",
     "vegan",
-    "hatched",
-    "bad egg"
+    "crossed"
   ],
   "aliases": [],
   "mirror": false

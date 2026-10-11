@@ -1,5 +1,31 @@
 {
-  "upstream": "lucide/arrow-up-from-line",
+  "upstream": "desen/arrow-up-from-line",
+  "derived": {
+    "parts": [
+      {
+        "from": "ArrowsUpFromLine",
+        "keep": [
+          0,
+          1
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          5,
+          0
+        ]
+      },
+      {
+        "from": "ArrowsUpFromLine",
+        "keep": [
+          4
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "arrows",
   "tags": [
     "forward",

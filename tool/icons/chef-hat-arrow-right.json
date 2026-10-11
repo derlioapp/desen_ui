@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SendingOrder",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "order",
+    "kitchen",
+    "send order",
+    "restaurant",
+    "chef"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/utility-pole",
+  "upstream": "hugeicons/UtilityPole",
+  "also": [],
   "category": "buildings",
   "tags": [
+    "power line",
     "electricity",
-    "energy",
-    "transmission line",
-    "telegraph pole",
-    "power lines",
-    "phone"
+    "telephone pole",
+    "wire",
+    "infrastructure",
+    "energy"
   ],
   "aliases": [],
   "mirror": false

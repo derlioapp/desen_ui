@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/rainbow",
+  "upstream": "hugeicons/Rainbow",
+  "also": [],
   "category": "weather",
   "tags": [
+    "rainbow",
     "colors",
-    "colours",
     "spectrum",
-    "light",
-    "prism",
-    "arc",
-    "clear",
-    "sunshine"
+    "sky",
+    "weather"
   ],
   "aliases": [],
   "mirror": false

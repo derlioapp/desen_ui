@@ -1,20 +1,15 @@
 {
-  "upstream": "lucide/square-chevron-up",
+  "upstream": "hugeicons/SquareChevronUp",
+  "also": [
+    "SquareArrowUp01"
+  ],
   "category": "arrows",
   "tags": [
-    "caret",
-    "keyboard",
-    "button",
-    "mac",
-    "control",
-    "ctrl",
-    "superscript",
-    "exponential",
-    "power",
-    "ahead",
-    "menu",
-    "panel",
-    "^"
+    "up",
+    "chevron",
+    "collapse",
+    "direction",
+    "expand less"
   ],
   "aliases": [],
   "mirror": false

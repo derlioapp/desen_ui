@@ -1,5 +1,20 @@
 {
-  "upstream": "lucide/bell-check",
+  "upstream": "desen/bell-check",
+  "derived": {
+    "parts": [
+      {
+        "from": "Bell",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ],
+    "paths": [
+      "M9 11L11 13L15 9"
+    ]
+  },
+  "also": [],
   "category": "account",
   "tags": [
     "alarm",

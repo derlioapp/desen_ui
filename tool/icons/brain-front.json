@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Brain03",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "brain",
+    "mind",
+    "hemispheres",
+    "front",
+    "symmetric"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

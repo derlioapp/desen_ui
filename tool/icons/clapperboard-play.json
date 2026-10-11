@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PlayList",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "playlist",
+    "video",
+    "clapperboard",
+    "play",
+    "movie"
+  ],
+  "aliases": [],
+  "mirror": false
+}

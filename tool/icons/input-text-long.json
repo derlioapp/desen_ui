@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/InputLongText",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "input",
+    "long text",
+    "textarea",
+    "field",
+    "form"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

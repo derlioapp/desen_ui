@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide/sport-shoe",
+  "upstream": "hugeicons/SportShoe",
+  "also": [],
   "category": "sports",
   "tags": [
-    "footwear",
-    "sports",
-    "running",
-    "athletic",
-    "shoe",
     "sneaker",
-    "training",
-    "exercise",
-    "fitness"
+    "running",
+    "shoe",
+    "footwear"
   ],
   "aliases": [],
   "mirror": false

@@ -1,8 +1,11 @@
 {
-  "upstream": "lucide/cigarette",
+  "upstream": "hugeicons/Cigarette",
+  "also": [],
   "category": "travel",
   "tags": [
-    "smoking"
+    "smoking",
+    "tobacco",
+    "smoke"
   ],
   "aliases": [],
   "mirror": false

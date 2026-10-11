@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/aperture",
+  "upstream": "hugeicons/Aperture",
+  "also": [],
   "category": "photography",
   "tags": [
     "camera",
-    "photo",
-    "pictures",
+    "lens",
     "shutter",
-    "exposure"
+    "photo",
+    "iris"
   ],
   "aliases": [],
   "mirror": false

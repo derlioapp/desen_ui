@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/QqPlot",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "qq",
+    "plot",
+    "quantile",
+    "statistics",
+    "scatter"
+  ],
+  "aliases": [],
+  "mirror": false
+}

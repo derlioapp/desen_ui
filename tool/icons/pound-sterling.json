@@ -1,10 +1,15 @@
 {
-  "upstream": "lucide/pound-sterling",
+  "upstream": "hugeicons/Pound",
+  "also": [
+    "PoundSterling"
+  ],
   "category": "finance",
   "tags": [
+    "pound",
+    "sterling",
     "currency",
-    "money",
-    "payment"
+    "gbp",
+    "money"
   ],
   "aliases": [],
   "mirror": false

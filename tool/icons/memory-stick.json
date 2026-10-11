@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/memory-stick",
+  "upstream": "hugeicons/MemoryStick",
+  "also": [],
   "category": "devices",
   "tags": [
+    "memory",
     "ram",
-    "random access",
-    "technology",
-    "computer",
-    "chip",
-    "circuit",
-    "specs",
-    "capacity",
-    "gigabytes",
-    "gb"
+    "stick",
+    "hardware",
+    "module"
   ],
   "aliases": [],
   "mirror": false

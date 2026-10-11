@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/server-off",
+  "upstream": "hugeicons/ServerOff",
+  "also": [],
   "category": "development",
   "tags": [
-    "cloud",
-    "storage"
+    "server offline",
+    "down",
+    "disabled",
+    "no server",
+    "off"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/switch-camera",
+  "upstream": "hugeicons/SwitchCamera",
+  "also": [],
   "category": "social",
   "tags": [
-    "photo",
+    "camera",
+    "flip",
+    "rotate",
     "selfie",
-    "front",
-    "back"
+    "front back"
   ],
   "aliases": [],
   "mirror": false

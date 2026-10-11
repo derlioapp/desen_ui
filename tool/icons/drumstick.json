@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/drumstick",
+  "upstream": "hugeicons/Drumstick",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "food",
     "chicken",
-    "meat"
+    "leg",
+    "meat",
+    "food",
+    "poultry"
   ],
   "aliases": [],
   "mirror": false

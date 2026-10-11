@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiCloud",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "ai",
+    "cloud",
+    "sparkle",
+    "storage",
+    "generate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

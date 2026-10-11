@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/square-percent",
+  "upstream": "hugeicons/PercentSquare",
+  "also": [],
   "category": "social",
   "tags": [
-    "verified",
-    "unverified",
-    "sale",
+    "percent",
+    "percentage",
     "discount",
-    "offer",
-    "marketing",
-    "sticker",
-    "price tag"
+    "square"
   ],
   "aliases": [],
   "mirror": false

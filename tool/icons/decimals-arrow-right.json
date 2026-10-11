@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/decimals-arrow-right",
+  "upstream": "hugeicons/DecimalsArrowRight",
+  "also": [],
   "category": "design",
   "tags": [
-    "numerical",
-    "decimal",
+    "decimals",
     "increase",
-    "more",
     "precision",
-    "rounding",
-    "digits",
-    "fraction",
-    "float",
-    "number"
+    "number",
+    "format",
+    "right"
   ],
   "aliases": [],
   "mirror": false

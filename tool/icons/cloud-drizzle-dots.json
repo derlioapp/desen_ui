@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CloudDrizzle",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "drizzle",
+    "light rain",
+    "mist",
+    "dots",
+    "shower"
+  ],
+  "aliases": [],
+  "mirror": false
+}

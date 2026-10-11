@@ -1,27 +1,15 @@
 {
-  "upstream": "lucide/flame",
+  "upstream": "hugeicons/Flame",
+  "also": [],
   "category": "weather",
   "tags": [
+    "flame",
+    "fire",
     "heat",
     "burn",
-    "light",
-    "glow",
-    "ignite",
-    "passion",
-    "ember",
-    "fire",
-    "lit",
-    "burning",
-    "spark",
-    "embers",
-    "smoke",
-    "firefighter",
-    "fireman",
-    "department",
-    "brigade",
-    "station",
-    "emergency"
+    "hot"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

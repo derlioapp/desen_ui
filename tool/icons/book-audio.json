@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide/book-audio",
+  "upstream": "hugeicons/AudioBook03",
+  "also": [],
   "category": "multimedia",
   "tags": [
     "audiobook",
-    "reading",
-    "listening",
+    "book",
+    "volume",
     "sound",
-    "story",
-    "fiction",
-    "novel",
-    "information",
-    "knowledge",
-    "education",
-    "student",
-    "study",
-    "learning",
-    "research"
+    "speaker",
+    "listen"
   ],
   "aliases": [],
   "mirror": false

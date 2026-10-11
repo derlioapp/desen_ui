@@ -1,10 +1,16 @@
 {
-  "upstream": "lucide/badge-question-mark",
+  "upstream": "hugeicons/BadgeQuestionMark",
+  "also": [
+    "Quiz01"
+  ],
   "category": "accessibility",
   "tags": [
-    "verified",
-    "unverified",
-    "help"
+    "help",
+    "unknown",
+    "question",
+    "support",
+    "badge",
+    "quiz"
   ],
   "aliases": [],
   "mirror": false

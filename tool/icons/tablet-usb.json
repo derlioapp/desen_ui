@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/TabletConnectedUsb",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tablet",
+    "usb",
+    "connected",
+    "cable",
+    "plug"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

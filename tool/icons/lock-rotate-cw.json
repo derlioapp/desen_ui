@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ResetPassword",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "reset password",
+    "lock",
+    "refresh",
+    "restore",
+    "recover"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,18 +1,54 @@
 {
-  "upstream": "lucide/monitor-pc",
+  "upstream": "desen/monitor-pc",
+  "derived": {
+    "parts": [
+      {
+        "from": "Monitor",
+        "keep": [
+          0,
+          1
+        ],
+        "matrix": [
+          0.55,
+          0,
+          0,
+          0.55,
+          0.9,
+          3
+        ]
+      },
+      {
+        "from": "PcCase",
+        "keep": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "matrix": [
+          0.6,
+          0,
+          0,
+          0.9,
+          11.2,
+          1.2
+        ]
+      }
+    ],
+    "paths": [
+      "M7.5 12.35V14.55"
+    ]
+  },
+  "also": [],
   "category": "devices",
   "tags": [
-    "personal computer",
+    "computer",
     "desktop",
-    "screen",
-    "display",
-    "workstation",
+    "pc",
     "tower",
-    "chassis",
-    "hardware",
-    "setup",
-    "gaming"
+    "workstation"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.5
 }

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/RoadLocation01",
+  "also": [
+    "RoadLocation02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "road location",
+    "map pin",
+    "street",
+    "place"
+  ],
+  "aliases": [],
+  "mirror": false
+}

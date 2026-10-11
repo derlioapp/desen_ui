@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Maximize01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "gesture",
+    "pinch",
+    "spread",
+    "zoom in",
+    "maximize",
+    "touch",
+    "expand"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/panel-left-close",
+  "upstream": "hugeicons/PanelLeftOpen",
+  "also": [],
   "category": "layout",
   "tags": [
-    "primary",
-    "drawer",
-    "hide",
-    "chevron",
-    "<"
+    "panel",
+    "left",
+    "sidebar",
+    "open",
+    "expand"
   ],
   "aliases": [],
   "mirror": false

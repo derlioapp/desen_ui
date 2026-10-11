@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/badge-alert",
+  "upstream": "hugeicons/BadgeAlert",
+  "also": [],
   "category": "account",
   "tags": [
-    "check",
-    "verified",
-    "unverified",
-    "security",
-    "safety",
-    "issue"
+    "badge",
+    "alert",
+    "warning",
+    "exclamation",
+    "attention"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide/plant-pot",
+  "upstream": "hugeicons/Plant02",
+  "also": [],
   "category": "home",
   "tags": [
     "plant",
-    "leaf",
-    "nature",
     "pot",
     "houseplant",
-    "gardening",
-    "planter",
-    "decor",
-    "indoor"
+    "garden"
   ],
   "aliases": [],
   "mirror": false

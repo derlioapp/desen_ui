@@ -1,24 +1,13 @@
 {
-  "upstream": "lucide/chart-no-axes-gantt",
+  "upstream": "hugeicons/ChartNoAxesGantt",
+  "also": [],
   "category": "charts",
   "tags": [
-    "projects",
-    "manage",
-    "overview",
-    "roadmap",
-    "plan",
-    "intentions",
     "timeline",
-    "deadline",
-    "date",
-    "event",
-    "range",
-    "period",
-    "productivity",
-    "work",
-    "agile",
-    "code",
-    "coding"
+    "schedule",
+    "project",
+    "planning",
+    "tasks"
   ],
   "aliases": [],
   "mirror": false

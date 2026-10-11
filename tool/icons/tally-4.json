@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/tally-4",
+  "upstream": "hugeicons/Tally4",
+  "also": [],
   "category": "math",
   "tags": [
     "count",
+    "tally",
+    "marks",
     "score",
-    "enumerate",
-    "days",
-    "4",
-    "fourth",
-    "quadruple",
-    "bars",
-    "prison",
-    "cell",
-    "sentence"
+    "tally 4"
   ],
   "aliases": [],
   "mirror": false

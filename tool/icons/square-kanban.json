@@ -1,24 +1,19 @@
 {
-  "upstream": "lucide/square-kanban",
+  "upstream": "hugeicons/SquareKanban",
+  "also": [
+    "Kanban"
+  ],
   "category": "charts",
   "tags": [
-    "projects",
-    "manage",
-    "overview",
+    "kanban",
     "board",
-    "tickets",
-    "issues",
-    "roadmap",
-    "plan",
-    "intentions",
-    "productivity",
-    "work",
-    "agile",
-    "code",
-    "coding",
-    "toolbar",
-    "button"
+    "columns",
+    "project",
+    "tasks",
+    "workflow"
   ],
-  "aliases": [],
+  "aliases": [
+    "kanban"
+  ],
   "mirror": false
 }

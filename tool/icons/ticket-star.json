@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TicketStar",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "ticket",
+    "favorite",
+    "vip",
+    "event",
+    "star"
+  ],
+  "aliases": [],
+  "mirror": false
+}

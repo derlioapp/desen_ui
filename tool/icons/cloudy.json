@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/cloudy",
+  "upstream": "hugeicons/Cloudy",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
-    "clouds"
+    "overcast",
+    "clouds",
+    "sky",
+    "gloomy",
+    "forecast"
   ],
   "aliases": [],
   "mirror": false

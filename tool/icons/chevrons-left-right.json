@@ -1,10 +1,19 @@
 {
-  "upstream": "lucide/chevrons-left-right",
+  "upstream": "hugeicons/ChevronsLeftRight",
+  "also": [
+    "ChevronDoubleClose"
+  ],
   "category": "arrows",
   "tags": [
     "expand",
     "horizontal",
-    "unfold"
+    "resize",
+    "outward",
+    "code",
+    "tags",
+    "angle brackets",
+    "diverge",
+    "html"
   ],
   "aliases": [],
   "mirror": false

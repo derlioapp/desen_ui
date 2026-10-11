@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/spray-can",
+  "upstream": "hugeicons/SprayCan",
+  "also": [],
   "category": "design",
   "tags": [
+    "spray",
     "paint",
-    "color",
     "graffiti",
-    "decoration",
-    "aerosol",
-    "deodorant",
-    "shaving foam",
-    "air freshener"
+    "aerosol"
   ],
   "aliases": [],
   "mirror": false

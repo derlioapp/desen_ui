@@ -1,5 +1,18 @@
 {
-  "upstream": "lucide/flag-triangle-right",
+  "upstream": "desen/flag-triangle-right",
+  "derived": {
+    "parts": [
+      {
+        "from": "FlagTriangleLeft",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ],
+    "transform": "mirror-x"
+  },
+  "also": [],
   "category": "development",
   "tags": [
     "report",

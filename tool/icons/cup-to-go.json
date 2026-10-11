@@ -1,25 +1,14 @@
 {
-  "upstream": "lucide-lab/cup-to-go",
+  "upstream": "hugeicons/Coffee01",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "coffee",
-    "roast",
-    "ground",
-    "blend",
-    "arabica",
-    "filter",
-    "instant",
-    "cafe",
-    "hot",
+    "takeaway",
+    "cup",
     "drink",
-    "barista",
-    "fair trade",
-    "packaging",
-    "disposable",
-    "recycling",
-    "cardboard",
-    "plastic",
-    "take away"
+    "cafe",
+    "paper cup"
   ],
   "aliases": [],
   "mirror": false

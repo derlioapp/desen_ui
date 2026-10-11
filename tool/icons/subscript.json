@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/subscript",
+  "upstream": "hugeicons/Subscript",
+  "also": [],
   "category": "text",
   "tags": [
-    "text"
+    "subscript",
+    "format",
+    "chemistry",
+    "x2",
+    "lower"
   ],
   "aliases": [],
   "mirror": false

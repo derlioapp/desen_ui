@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/CctvOff",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "surveillance",
+    "camera",
+    "security camera",
+    "disabled",
+    "dome"
+  ],
+  "aliases": [
+    "cctvOff"
+  ],
+  "mirror": false
+}

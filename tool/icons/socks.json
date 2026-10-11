@@ -1,19 +1,12 @@
 {
-  "upstream": "lucide-lab/socks",
+  "upstream": "hugeicons/Socks",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "feet",
-    "foot",
-    "underwear",
-    "undergarment",
-    "store",
+    "sock",
     "clothing",
-    "clothes",
-    "apparel",
-    "attire",
-    "fashion",
-    "thread",
-    "cotton"
+    "footwear",
+    "apparel"
   ],
   "aliases": [],
   "mirror": false

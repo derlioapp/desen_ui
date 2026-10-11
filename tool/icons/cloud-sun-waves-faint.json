@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SunCloudSlowWind01",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "cloud",
+    "sun",
+    "breeze",
+    "light wind",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}

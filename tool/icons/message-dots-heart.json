@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MessageFavourite02",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "message",
+    "chat",
+    "favorite",
+    "heart",
+    "like",
+    "love"
+  ],
+  "aliases": [],
+  "mirror": false
+}

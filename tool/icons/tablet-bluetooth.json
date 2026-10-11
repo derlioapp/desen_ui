@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TabletConnectedBluetooth",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tablet",
+    "bluetooth",
+    "connected",
+    "wireless",
+    "pairing"
+  ],
+  "aliases": [],
+  "mirror": false
+}

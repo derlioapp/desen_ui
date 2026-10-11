@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/stethoscope",
+  "upstream": "hugeicons/Stethoscope",
+  "also": [],
   "category": "science",
   "tags": [
-    "phonendoscope",
+    "stethoscope",
+    "doctor",
     "medical",
-    "heart",
-    "lungs",
-    "sound"
+    "health",
+    "heart"
   ],
   "aliases": [],
   "mirror": false

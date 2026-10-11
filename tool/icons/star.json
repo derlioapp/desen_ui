@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/star",
+  "upstream": "hugeicons/Star",
+  "also": [],
   "category": "account",
   "tags": [
-    "bookmark",
+    "star",
     "favorite",
+    "rating",
     "like",
-    "review",
-    "rating"
+    "bookmark"
   ],
   "aliases": [],
   "mirror": false

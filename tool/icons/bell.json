@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/bell",
+  "upstream": "hugeicons/Bell",
+  "also": [
+    "Notification01"
+  ],
   "category": "account",
   "tags": [
-    "alarm",
     "notification",
-    "sound",
+    "alert",
+    "ring",
+    "alarm",
     "reminder"
   ],
   "aliases": [

@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/ear-off",
+  "upstream": "hugeicons/EarOff",
+  "also": [],
   "category": "medical",
   "tags": [
-    "hearing",
-    "hard of hearing",
     "hearing loss",
-    "deafness",
-    "noise",
-    "silence",
-    "audio",
-    "accessibility"
+    "deaf",
+    "mute",
+    "no sound",
+    "crossed"
   ],
   "aliases": [],
   "mirror": false

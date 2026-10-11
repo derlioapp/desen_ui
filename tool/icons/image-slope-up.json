@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/ImageUpload01",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "image",
+    "upload",
+    "share",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

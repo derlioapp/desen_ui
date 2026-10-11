@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/git-merge",
+  "upstream": "hugeicons/GitMerge",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control"
+    "git",
+    "merge",
+    "version",
+    "control",
+    "combine",
+    "join"
   ],
   "aliases": [],
   "mirror": false

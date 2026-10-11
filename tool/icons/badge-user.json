@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/AccountSetting03",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "account",
+    "setting",
+    "user",
+    "badge",
+    "seal",
+    "profile",
+    "preferences"
+  ],
+  "aliases": [],
+  "mirror": false
+}

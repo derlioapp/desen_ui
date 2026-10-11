@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/cloud",
+  "upstream": "hugeicons/Cloud",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather"
+    "sky",
+    "storage",
+    "overcast",
+    "cloud computing"
   ],
   "aliases": [],
   "mirror": false

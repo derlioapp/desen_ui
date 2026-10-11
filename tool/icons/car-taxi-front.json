@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/car-taxi-front",
+  "upstream": "hugeicons/CarTaxiFront",
+  "also": [],
   "category": "transportation",
   "tags": [
     "cab",
+    "taxi",
     "vehicle",
-    "drive",
-    "trip",
-    "journey"
+    "front view",
+    "ride"
   ],
   "aliases": [],
   "mirror": false

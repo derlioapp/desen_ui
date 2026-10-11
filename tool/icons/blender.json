@@ -1,31 +1,14 @@
 {
-  "upstream": "lucide/blender",
+  "upstream": "hugeicons/Blender",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "mixer",
-    "appliances",
-    "food",
-    "liquid",
-    "juicer",
-    "vitamizer",
-    "mix",
-    "emulsify",
     "smoothie",
-    "drink",
-    "blade",
-    "container",
     "kitchen",
-    "milkshake",
-    "cocktail",
-    "beverage",
-    "culinary",
-    "shredder",
-    "processor",
-    "cooking",
-    "recipe",
-    "chef",
-    "restaurant"
+    "mixer",
+    "appliance"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

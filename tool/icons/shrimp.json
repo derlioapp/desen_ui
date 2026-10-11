@@ -1,23 +1,15 @@
 {
-  "upstream": "lucide/shrimp",
+  "upstream": "hugeicons/Shrimp",
+  "also": [
+    "Prawn"
+  ],
   "category": "animals",
   "tags": [
-    "seafood",
-    "shellfish",
-    "crustacean",
     "prawn",
-    "scallop",
-    "whelk",
-    "arthropod",
-    "littleneck",
-    "quahog",
-    "marine",
-    "creature",
-    "fisherman",
-    "ocean",
-    "fresh",
-    "cuisine",
-    "marine-life"
+    "seafood",
+    "food",
+    "shellfish",
+    "shrimp"
   ],
   "aliases": [],
   "mirror": false

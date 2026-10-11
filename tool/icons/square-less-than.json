@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LessThanSquare",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "comparison",
+    "smaller",
+    "operator",
+    "lt",
+    "square"
+  ],
+  "aliases": [],
+  "mirror": false
+}

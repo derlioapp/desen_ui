@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/UserList",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "user list",
+    "members",
+    "directory",
+    "contacts",
+    "roster",
+    "person",
+    "list"
+  ],
+  "aliases": [],
+  "mirror": false
+}

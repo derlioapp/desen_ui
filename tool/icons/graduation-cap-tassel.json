@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Mortarboard01",
+  "also": [
+    "Mortarboard02"
+  ],
+  "category": "buildings",
+  "tags": [
+    "mortarboard",
+    "graduation",
+    "education",
+    "school",
+    "university",
+    "degree"
+  ],
+  "aliases": [],
+  "mirror": false
+}

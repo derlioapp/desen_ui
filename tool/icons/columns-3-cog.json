@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/columns-3-cog",
+  "upstream": "hugeicons/Columns3Cog",
+  "also": [],
   "category": "layout",
   "tags": [
     "columns",
     "settings",
-    "customize",
     "table",
-    "grid",
-    "adjust",
-    "configuration",
-    "panel",
+    "configure",
     "layout"
   ],
   "aliases": [],

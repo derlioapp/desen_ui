@@ -5,7 +5,8 @@
 
 tool/icons/ holds one SVG and one JSON file per icon (see import_icons.py).
 Icons marked `"fill": false` there were reviewed in their filled form and
-lose their details; their docs say to use them outlined.
+lose their details; their docs say to use them outlined. An icon with a
+`stroke` there is drawn with that stroke width instead of 2.
 The output:
 
   lib/src/icons/icons.dart          the DsIcons class: one constant per icon
@@ -19,8 +20,8 @@ Dart has no partial classes, so the shapes live in per-category part files as
 private constants and DsIcons refers to them. Unused icons cost nothing in an
 app: the compiler drops constants that nothing references.
 
-A few Lucide shapes fill a small dot (`fill="currentColor"`, radius 1 or
-less). The 2-unit stroke already covers such a dot, so the fill is dropped.
+The shapes carry no presentation attributes: the <svg> sets the stroke
+width with round caps and joins once, as tool/import_icons.py writes it.
 """
 
 import json
@@ -86,13 +87,13 @@ def points(p, close):
     return d + ('z' if close else '')
 
 
-def paths_of(svg, name):
+def paths_of(svg, name, stroke):
     out = []
     for kind, body in re.findall(r'<(\w+)\b([^>]*?)/?>', svg):
         a = attrs(body)
         if kind == 'svg':
             if (a.get('viewBox') != '0 0 24 24' or a.get('fill') != 'none'
-                    or a.get('stroke-width') != '2'):
+                    or a.get('stroke-width') != '%g' % stroke):
                 raise SystemExit(f'{name}: unexpected <svg> attributes')
             continue
         if kind == 'path':
@@ -155,8 +156,10 @@ def load():
             'tags': meta['tags'],
             'aliases': meta['aliases'],
             'mirror': meta['mirror'],
+            'sources': [meta['upstream'].split('/', 1)[1], *meta.get('also', [])],
             'fill': meta.get('fill', True),
-            'paths': paths_of(svg, kebab),
+            'stroke': meta.get('stroke', 2),
+            'paths': paths_of(svg, kebab, meta.get('stroke', 2)),
         })
     seen = {}
     for icon in icons:
@@ -180,6 +183,9 @@ def doc(icon):
         text += ' Tags: ' + ', '.join(tags[:8]) + '.'
     if icon['mirror']:
         text += ' Mirrors in right-to-left text.'
+    if icon['stroke'] != 2:
+        text += (f' Drawn with a {icon["stroke"]:g} stroke: at 2 its details'
+                 ' would close up.')
     if not icon['fill']:
         text += ' Its details merge when filled: use it outlined.'
     return text
@@ -198,6 +204,8 @@ def generate(icons):
         for icon in by_category[category]:
             paths = ', '.join(dart_str(p) for p in icon['paths'])
             extra = ', matchTextDirection: true' if icon['mirror'] else ''
+            if icon['stroke'] != 2:
+                extra += f', strokeWidth: {icon["stroke"]:g}'
             lines.append(f'const _{icon["name"]} = DsIconData([{paths}]{extra});')
             lines.append('')
         files[f'{LIB_SET}/{file_name(category)}.dart'] = '\n'.join(lines)
@@ -208,13 +216,14 @@ def generate(icons):
     lines += [
         '',
         f'/// The built-in icons: {len(icons)} stroke icons on a 24-unit grid, a',
-        '/// fork of Lucide (https://lucide.dev, ISC license) that Desen keeps',
-        '/// and updates only after review.',
+        '/// fork of the free Hugeicons set (https://hugeicons.com, MIT license)',
+        '/// that Desen keeps and updates only after review.',
         '///',
-        '/// Names follow Lucide\'s, in lowerCamelCase: `triangle-alert` on',
-        '/// lucide.dev is `DsIcons.triangleAlert`. Some icons also have an',
-        '/// alias, a more common name for the same shape (`volume2` is also',
-        '/// `volumeUp`). Icons an app does not use add nothing to its size.',
+        '/// Desen names the icons itself, after what they show, with Lucide\'s',
+        '/// naming rules: `circle-check` is `DsIcons.circleCheck`. Where Lucide',
+        '/// uses another name for the same shape, that name is an alias',
+        '/// (`home` is also `house`). Icons an app does not use add nothing to',
+        '/// its size.',
         'abstract final class DsIcons {',
     ]
     entries = []
@@ -242,6 +251,7 @@ def generate(icons):
         '    this.aliases = const [],',
         '    this.tags = const [],',
         '    this.fills = true,',
+        '    this.sources = const [],',
         '  });',
         '',
         '  final String name;',
@@ -252,6 +262,9 @@ def generate(icons):
         '',
         '  /// False when the filled form loses its details.',
         '  final bool fills;',
+        '',
+        '  /// The upstream names of the drawing, also searched.',
+        '  final List<String> sources;',
         '}',
         '',
         '/// Every built-in icon, by category, then by name.',
@@ -272,6 +285,7 @@ def generate(icons):
                 args.append('tags: [' + ', '.join(dart_str(t) for t in icon['tags']) + ']')
             if not icon['fill']:
                 args.append('fills: false')
+            args.append('sources: [' + ', '.join(dart_str(n) for n in icon['sources']) + ']')
             lines.append(f'  IconEntry({", ".join(args)}),')
         lines += ['];', '']
         files[f'{SITE_SET}/{file_name(category)}.dart'] = '\n'.join(lines)

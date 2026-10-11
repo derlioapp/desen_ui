@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/star-off",
+  "upstream": "hugeicons/StarOff",
+  "also": [],
   "category": "multimedia",
   "tags": [
+    "unstar",
     "dislike",
-    "unlike",
     "remove",
-    "unrate"
+    "unfavorite"
   ],
   "aliases": [],
   "mirror": false

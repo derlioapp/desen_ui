@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatFeedback",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "feedback",
+    "comment",
+    "speech",
+    "dots"
+  ],
+  "aliases": [],
+  "mirror": false
+}

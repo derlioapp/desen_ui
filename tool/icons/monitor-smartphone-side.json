@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ComputerPhoneSync",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "computer",
+    "phone",
+    "sync",
+    "devices",
+    "responsive",
+    "screen"
+  ],
+  "aliases": [],
+  "mirror": false
+}

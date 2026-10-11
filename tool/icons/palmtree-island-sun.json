@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide-lab/palmtree-island-sun",
-  "category": "nature",
+  "upstream": "hugeicons/Beach02",
+  "also": [],
+  "category": "travel",
   "tags": [
-    "desert island",
-    "summer holiday",
-    "vacation",
-    "retreat",
-    "relax",
-    "leisure",
-    "tropical",
     "beach",
-    "resort",
-    "exotic",
-    "stranded",
-    "castaway",
-    "isolated",
-    "isolation"
+    "palm",
+    "island",
+    "tropical",
+    "vacation",
+    "sun"
   ],
   "aliases": [],
   "mirror": false

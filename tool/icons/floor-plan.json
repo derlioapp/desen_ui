@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide-lab/floor-plan",
+  "upstream": "hugeicons/FloorPlan",
+  "also": [],
   "category": "buildings",
   "tags": [
+    "floor plan",
     "blueprint",
-    "property",
-    "real estate",
-    "house",
-    "home",
-    "dwelling",
-    "living space",
+    "layout",
     "rooms",
-    "doorway",
-    "area",
-    "measure",
-    "square meter"
+    "architecture"
   ],
   "aliases": [],
   "mirror": false

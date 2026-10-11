@@ -1,19 +1,15 @@
 {
-  "upstream": "lucide/calendar-arrow-down",
+  "upstream": "hugeicons/CalendarArrowDown",
+  "also": [
+    "CalendarDownload01"
+  ],
   "category": "time",
   "tags": [
-    "date",
-    "month",
-    "year",
-    "event",
-    "sort",
-    "order",
-    "ascending",
-    "descending",
-    "increasing",
-    "decreasing",
-    "rising",
-    "falling"
+    "calendar",
+    "arrow",
+    "down",
+    "download",
+    "import"
   ],
   "aliases": [],
   "mirror": false

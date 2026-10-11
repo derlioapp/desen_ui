@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/RightToLeftListBullet",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "right to left",
+    "list",
+    "bullet",
+    "rtl"
+  ],
+  "aliases": [],
+  "mirror": false
+}

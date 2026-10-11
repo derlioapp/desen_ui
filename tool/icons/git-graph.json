@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/git-graph",
+  "upstream": "hugeicons/GitGraph",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "commit graph",
+    "git",
+    "graph",
+    "history",
+    "branches",
     "commits",
-    "gitlens"
+    "version",
+    "control"
   ],
   "aliases": [],
   "mirror": false

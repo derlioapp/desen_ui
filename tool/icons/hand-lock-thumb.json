@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/TouchLocked03",
+  "also": [],
+  "category": "accessibility",
+  "tags": [
+    "touch",
+    "lock",
+    "locked",
+    "gesture",
+    "finger",
+    "disabled"
+  ],
+  "aliases": [],
+  "mirror": false
+}

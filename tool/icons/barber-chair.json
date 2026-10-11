@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ChairBarber",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "salon",
+    "hairdresser",
+    "barber",
+    "haircut",
+    "seat"
+  ],
+  "aliases": [],
+  "mirror": false
+}

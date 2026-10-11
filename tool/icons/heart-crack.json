@@ -1,10 +1,16 @@
 {
-  "upstream": "lucide/heart-crack",
+  "upstream": "hugeicons/Heartbreak",
+  "also": [
+    "HeartCrack"
+  ],
   "category": "social",
   "tags": [
     "heartbreak",
-    "sadness",
-    "emotion"
+    "broken",
+    "sad",
+    "breakup",
+    "love",
+    "crack"
   ],
   "aliases": [],
   "mirror": false

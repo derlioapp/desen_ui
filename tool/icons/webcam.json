@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/webcam",
+  "upstream": "hugeicons/Webcam",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "camera",
-    "security"
+    "video call",
+    "streaming",
+    "web camera",
+    "conference",
+    "meeting"
   ],
   "aliases": [],
   "mirror": false

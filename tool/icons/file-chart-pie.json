@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/file-chart-pie",
+  "upstream": "hugeicons/FileChartPie",
+  "also": [],
   "category": "files",
   "tags": [
+    "report",
+    "chart",
+    "pie",
     "statistics",
-    "analytics",
-    "diagram",
-    "graph",
-    "presentation"
+    "document"
   ],
   "aliases": [],
   "mirror": false

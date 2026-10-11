@@ -1,19 +1,17 @@
 {
-  "upstream": "lucide/chevron-right",
+  "upstream": "hugeicons/ChevronRight",
+  "also": [
+    "ArrowRight01"
+  ],
   "category": "arrows",
   "tags": [
     "forward",
     "next",
-    "more than",
-    "greater",
-    "menu",
-    "code",
-    "coding",
-    "command line",
-    "terminal",
-    "prompt",
-    "shell",
-    ">"
+    "caret",
+    "expand",
+    "navigate",
+    "chevron",
+    "right"
   ],
   "aliases": [],
   "mirror": true

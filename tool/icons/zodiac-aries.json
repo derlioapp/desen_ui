@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/zodiac-aries",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacAries",
+  "also": [],
+  "category": "science",
   "tags": [
-    "ram",
-    "horns",
-    "fire",
-    "energy",
-    "initiative",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "ram"
   ],
   "aliases": [],
   "mirror": false

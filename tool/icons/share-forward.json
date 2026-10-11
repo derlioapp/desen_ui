@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Share01",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "share",
+    "forward",
+    "arrow",
+    "send",
+    "social"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,32 +1,16 @@
 {
-  "upstream": "lucide/broom-sparkles",
+  "upstream": "hugeicons/Clean",
+  "also": [],
   "category": "tools",
   "tags": [
-    "broomstick",
-    "brush",
+    "clean",
     "sweep",
-    "sweeping",
-    "floor",
-    "cleaning",
-    "ai",
-    "magic",
-    "sparkle",
-    "smart",
-    "automation",
-    "housekeeping",
-    "chores",
-    "tidy",
-    "spotless",
-    "pristine",
+    "brush",
     "dust",
-    "debris",
-    "bristles",
-    "handle",
-    "janitor",
-    "maintenance",
-    "witch",
-    "halloween"
+    "tidy",
+    "clear"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.5
 }

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CommentBlock01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "comment",
+    "block",
+    "blocked",
+    "ban",
+    "mute",
+    "message"
+  ],
+  "aliases": [],
+  "mirror": false
+}

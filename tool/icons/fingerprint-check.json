@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FingerPrintCheck",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "fingerprint",
+    "verified",
+    "biometric",
+    "success",
+    "check"
+  ],
+  "aliases": [],
+  "mirror": false
+}

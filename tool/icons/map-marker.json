@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/MapsLocation01",
+  "also": [
+    "MapsLocation02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "map",
+    "pin",
+    "location",
+    "place",
+    "marker"
+  ],
+  "aliases": [],
+  "mirror": false
+}

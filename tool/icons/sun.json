@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/sun",
+  "upstream": "hugeicons/Sun03",
+  "also": [],
   "category": "accessibility",
   "tags": [
-    "brightness",
+    "sun",
+    "sunny",
+    "day",
     "weather",
-    "light",
-    "summer"
+    "brightness",
+    "light"
   ],
   "aliases": [
     "lightMode"

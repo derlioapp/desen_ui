@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PillsTablet",
+  "also": [],
+  "category": "medical",
+  "tags": [
+    "pills",
+    "tablets",
+    "blister",
+    "pack",
+    "medicine"
+  ],
+  "aliases": [],
+  "mirror": false
+}

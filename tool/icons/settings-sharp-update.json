@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InstallingUpdates02",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "installing updates",
+    "update",
+    "gear",
+    "system update",
+    "settings"
+  ],
+  "aliases": [],
+  "mirror": false
+}

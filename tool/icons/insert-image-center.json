@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/InsertCenterImage",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "insert image",
+    "image position",
+    "center",
+    "layout",
+    "figure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

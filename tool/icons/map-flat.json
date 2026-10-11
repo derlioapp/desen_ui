@@ -1,0 +1,20 @@
+{
+  "upstream": "hugeicons/Maps",
+  "also": [
+    "Maping"
+  ],
+  "category": "navigation",
+  "tags": [
+    "map",
+    "folded",
+    "navigation",
+    "directions",
+    "atlas",
+    "location",
+    "paper",
+    "fold",
+    "guide"
+  ],
+  "aliases": [],
+  "mirror": false
+}

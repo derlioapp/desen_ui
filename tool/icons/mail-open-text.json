@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailOpen",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "read",
+    "document",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

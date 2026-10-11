@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Activity04",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "activity",
+    "pulse",
+    "heartbeat",
+    "notification",
+    "dot",
+    "stats"
+  ],
+  "aliases": [],
+  "mirror": false
+}

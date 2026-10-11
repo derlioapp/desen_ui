@@ -1,15 +1,15 @@
 {
-  "upstream": "lucide-lab/soccer-ball",
+  "upstream": "hugeicons/Football",
+  "also": [],
   "category": "sports",
   "tags": [
     "football",
-    "futbol",
-    "kick",
-    "pitch",
-    "goal",
-    "score",
-    "bounce"
+    "soccer",
+    "ball",
+    "sport",
+    "game"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

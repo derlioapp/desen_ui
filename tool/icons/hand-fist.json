@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/hand-fist",
+  "upstream": "hugeicons/HandFist",
+  "also": [],
   "category": "social",
   "tags": [
-    "clench",
-    "strength",
+    "fist",
     "power",
-    "unity",
-    "solidarity",
-    "rebellion",
-    "victory",
-    "triumph",
-    "support",
-    "fight",
-    "combat",
-    "brawl"
+    "protest",
+    "punch",
+    "strength"
   ],
   "aliases": [],
   "mirror": false

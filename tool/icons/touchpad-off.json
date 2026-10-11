@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/touchpad-off",
+  "upstream": "hugeicons/TouchpadOff",
+  "also": [],
   "category": "devices",
   "tags": [
+    "touchpad",
     "trackpad",
-    "cursor"
+    "disabled",
+    "off",
+    "gesture"
   ],
   "aliases": [],
   "mirror": false

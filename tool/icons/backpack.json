@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/backpack",
+  "upstream": "hugeicons/Backpack01",
+  "also": [],
   "category": "gaming",
   "tags": [
+    "backpack",
     "bag",
-    "hiking",
-    "travel",
-    "camping",
     "school",
-    "childhood"
+    "hiking",
+    "travel"
   ],
   "aliases": [],
   "mirror": false

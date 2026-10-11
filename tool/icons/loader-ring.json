@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Loading02",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "loading",
+    "wait",
+    "busy",
+    "progress",
+    "spinner",
+    "ring",
+    "throbber"
+  ],
+  "aliases": [],
+  "mirror": false
+}

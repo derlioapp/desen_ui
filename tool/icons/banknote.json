@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/banknote",
+  "upstream": "hugeicons/Banknote",
+  "also": [],
   "category": "finance",
   "tags": [
-    "currency",
     "money",
-    "payment"
+    "cash",
+    "bill",
+    "currency"
   ],
   "aliases": [
     "cash"

@@ -1,17 +1,12 @@
 {
-  "upstream": "lucide/octagon-minus",
-  "category": "transportation",
+  "upstream": "hugeicons/OctagonMinus",
+  "also": [],
+  "category": "math",
   "tags": [
-    "stop",
-    "forbidden",
-    "subtract",
+    "octagon",
+    "minus",
     "remove",
-    "decrease",
-    "reduce",
-    "-",
-    "traffic",
-    "halt",
-    "restricted"
+    "stop"
   ],
   "aliases": [],
   "mirror": false

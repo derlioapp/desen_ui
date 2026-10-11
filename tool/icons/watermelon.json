@@ -1,20 +1,14 @@
 {
-  "upstream": "lucide-lab/watermelon",
+  "upstream": "hugeicons/Watermelon",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "snack",
-    "meal",
-    "lunch",
-    "juice",
-    "smoothie",
-    "eating",
-    "healthy",
-    "nutrition",
-    "diet",
-    "fruit machine",
-    "slots",
-    "gambling",
-    "jackpot"
+    "fruit",
+    "melon",
+    "slice",
+    "summer",
+    "food",
+    "healthy"
   ],
   "aliases": [],
   "mirror": false

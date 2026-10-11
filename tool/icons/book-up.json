@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/book-up",
+  "upstream": "hugeicons/BookUpload",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "coding",
-    "version control",
-    "git",
-    "repository",
-    "push"
+    "book",
+    "upload",
+    "up",
+    "arrow",
+    "publish"
   ],
-  "aliases": [],
+  "aliases": [
+    "bookUp2"
+  ],
   "mirror": false
 }

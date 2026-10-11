@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MouseLeftClick03",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "left click",
+    "pressed",
+    "button",
+    "primary",
+    "peripheral"
+  ],
+  "aliases": [],
+  "mirror": false
+}

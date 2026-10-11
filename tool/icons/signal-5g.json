@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FiveGSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "5g",
+    "network",
+    "mobile",
+    "signal",
+    "cellular"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MailSetting02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "settings",
+    "configure",
+    "preferences",
+    "envelope"
+  ],
+  "aliases": [],
+  "mirror": false
+}

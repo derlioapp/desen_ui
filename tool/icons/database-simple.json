@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Database02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "database",
+    "storage",
+    "data",
+    "cylinder",
+    "sql",
+    "single layer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

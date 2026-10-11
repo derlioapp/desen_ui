@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/file-cog",
+  "upstream": "hugeicons/FileCog",
+  "also": [],
   "category": "files",
   "tags": [
-    "executable",
     "settings",
-    "cog",
-    "edit",
-    "gear"
+    "config",
+    "gear",
+    "document"
   ],
   "aliases": [],
   "mirror": false

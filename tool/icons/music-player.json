@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Ipod",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "ipod",
+    "mp3 player",
+    "music",
+    "portable",
+    "click wheel"
+  ],
+  "aliases": [],
+  "mirror": false
+}

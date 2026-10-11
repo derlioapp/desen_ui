@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiMic",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "ai",
+    "microphone",
+    "mic",
+    "voice",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

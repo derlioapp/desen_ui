@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/zodiac-virgo",
-  "category": "social",
+  "upstream": "hugeicons/ZodiacVirgo",
+  "also": [],
+  "category": "science",
   "tags": [
-    "virgin",
-    "maiden",
-    "harvest",
-    "precision",
-    "earth",
-    "analysis",
     "astrology",
-    "star sign",
     "horoscope",
-    "constellation",
-    "celestial"
+    "star",
+    "sign",
+    "maiden"
   ],
   "aliases": [],
   "mirror": false

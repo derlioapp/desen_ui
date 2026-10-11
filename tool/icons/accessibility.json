@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/accessibility",
+  "upstream": "hugeicons/UniversalAccess",
+  "also": [],
   "category": "accessibility",
   "tags": [
+    "universal access",
+    "accessibility",
+    "a11y",
     "disability",
-    "disabled",
-    "dda",
-    "wheelchair"
+    "inclusive"
   ],
   "aliases": [],
   "mirror": false

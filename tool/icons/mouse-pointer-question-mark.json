@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CursorInfo01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "cursor",
+    "info",
+    "help",
+    "question",
+    "pointer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/file-down",
+  "upstream": "hugeicons/FileDown",
+  "also": [],
   "category": "files",
   "tags": [
     "download",
-    "import",
-    "export"
+    "save",
+    "arrow down",
+    "document"
   ],
   "aliases": [],
   "mirror": false

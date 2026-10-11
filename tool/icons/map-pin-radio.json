@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/LocationShare01",
+  "also": [
+    "LocationShare02"
+  ],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "waypoint",
+    "marker",
+    "share",
+    "broadcast",
+    "live location"
+  ],
+  "aliases": [],
+  "mirror": false
+}

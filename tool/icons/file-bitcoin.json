@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FileBitcoin",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "bitcoin",
+    "crypto",
+    "btc",
+    "document",
+    "invoice"
+  ],
+  "aliases": [],
+  "mirror": false
+}

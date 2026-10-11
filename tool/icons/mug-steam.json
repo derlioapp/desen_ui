@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Coffee03",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "coffee",
+    "mug",
+    "hot",
+    "steam",
+    "tea",
+    "drink"
+  ],
+  "aliases": [
+    "mug"
+  ],
+  "mirror": false
+}

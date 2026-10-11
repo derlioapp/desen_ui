@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/SortByUp02",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "sort",
+    "order",
+    "ascending",
+    "lines",
+    "list"
+  ],
+  "aliases": [
+    "listSortAscending"
+  ],
+  "mirror": false
+}

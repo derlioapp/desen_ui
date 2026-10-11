@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/paintbrush",
-  "category": "text",
+  "upstream": "hugeicons/Paintbrush",
+  "also": [],
+  "category": "design",
   "tags": [
-    "brush",
     "paintbrush",
-    "design",
-    "color",
-    "colour",
-    "decoration",
-    "diy"
+    "paint",
+    "brush",
+    "art",
+    "draw"
   ],
   "aliases": [],
   "mirror": false

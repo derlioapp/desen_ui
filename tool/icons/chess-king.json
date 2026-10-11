@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/chess-king",
+  "upstream": "hugeicons/ChessKing",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "ruler",
-    "crown",
+    "chess",
     "piece",
     "board game",
-    "stalemate"
+    "strategy"
   ],
   "aliases": [],
   "mirror": false

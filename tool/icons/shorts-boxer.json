@@ -1,26 +1,12 @@
 {
-  "upstream": "lucide-lab/shorts-boxer",
+  "upstream": "hugeicons/Underpants01",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "boxers",
-    "briefs",
     "underpants",
-    "trunks",
+    "boxers",
     "underwear",
-    "mens",
-    "boys",
-    "bottoms",
-    "store",
-    "clothing",
-    "clothes",
-    "apparel",
-    "attire",
-    "fashion",
-    "thread",
-    "cotton",
-    "casual",
-    "slim fit",
-    "regular"
+    "clothing"
   ],
   "aliases": [],
   "mirror": false

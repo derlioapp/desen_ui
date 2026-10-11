@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide-lab/house-roof",
-  "category": "account",
+  "upstream": "hugeicons/Home11",
+  "also": [],
+  "category": "buildings",
   "tags": [
-    "property",
-    "real estate",
-    "dwellings",
-    "living",
-    "rooms",
-    "door",
-    "thatch",
-    "snow"
+    "home",
+    "house",
+    "roof",
+    "wide",
+    "building"
   ],
   "aliases": [],
   "mirror": false

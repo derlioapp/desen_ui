@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/FolderLibrary",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "library",
+    "stack",
+    "collection",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

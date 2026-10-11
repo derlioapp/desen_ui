@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/radical",
-  "category": "development",
+  "upstream": "hugeicons/Radical",
+  "also": [],
+  "category": "math",
   "tags": [
-    "calculate",
-    "formula",
-    "math",
-    "operator",
+    "radical",
+    "square root",
     "root",
-    "square",
-    "symbol"
+    "math",
+    "sqrt"
   ],
   "aliases": [
     "squareRoot"

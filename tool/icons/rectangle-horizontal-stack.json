@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/ViewAgenda",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "view agenda",
+    "agenda",
+    "list",
+    "rows",
+    "cards",
+    "stacked",
+    "layout"
+  ],
+  "aliases": [],
+  "mirror": false
+}

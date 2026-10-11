@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/pin-off",
+  "upstream": "hugeicons/PinOff",
+  "also": [],
   "category": "navigation",
   "tags": [
+    "pin",
+    "thumbtack",
     "unpin",
-    "map",
-    "unlock",
-    "unfix",
-    "unsave",
-    "remove"
+    "off"
   ],
   "aliases": [],
   "mirror": false

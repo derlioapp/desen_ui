@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide/list-collapse",
+  "upstream": "hugeicons/ListCollapse",
+  "also": [],
   "category": "text",
   "tags": [
-    "items",
-    "collapse",
-    "expand",
-    "details",
-    "disclosure",
-    "show",
-    "hide",
-    "toggle",
-    "accordion",
-    "more",
-    "less",
     "fold",
-    "unfold"
+    "hide",
+    "list",
+    "rows",
+    "chevron"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": true
 }

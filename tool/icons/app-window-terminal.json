@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ComputerTerminal02",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "terminal",
+    "window",
+    "console",
+    "command line",
+    "shell",
+    "cli"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,11 +1,18 @@
 {
-  "upstream": "lucide/sun-dim",
+  "upstream": "hugeicons/SunDim",
+  "also": [
+    "Sun01"
+  ],
   "category": "accessibility",
   "tags": [
-    "brightness",
+    "sun",
     "dim",
+    "brightness",
     "low",
-    "brightness low"
+    "light",
+    "sunny",
+    "day",
+    "weather"
   ],
   "aliases": [],
   "mirror": false

@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/search-check",
+  "upstream": "hugeicons/SearchCheck",
+  "also": [],
   "category": "text",
   "tags": [
     "find",
-    "scan",
     "magnifier",
-    "magnifying glass",
     "found",
-    "correct",
-    "complete",
-    "tick",
-    "lens",
-    "locate",
-    "explore",
-    "discover",
-    "enlarge",
-    "zoom"
+    "verify",
+    "done"
   ],
   "aliases": [],
   "mirror": false

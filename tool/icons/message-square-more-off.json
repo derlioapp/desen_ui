@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatBlocked01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "blocked",
+    "disabled",
+    "muted",
+    "no chat"
+  ],
+  "aliases": [],
+  "mirror": false
+}

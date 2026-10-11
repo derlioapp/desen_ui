@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/candy-cane",
+  "upstream": "hugeicons/CandyCane",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "sugar",
-    "food",
     "sweet",
     "christmas",
-    "xmas"
+    "dessert",
+    "treat",
+    "holiday"
   ],
   "aliases": [],
   "mirror": false

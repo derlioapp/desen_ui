@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/lock-open",
+  "upstream": "hugeicons/LockOpen",
+  "also": [],
   "category": "security",
   "tags": [
-    "security"
+    "security",
+    "unlock",
+    "open",
+    "padlock",
+    "unlocked"
   ],
   "aliases": [
     "unlock"

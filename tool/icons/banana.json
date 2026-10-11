@@ -1,9 +1,12 @@
 {
-  "upstream": "lucide/banana",
+  "upstream": "hugeicons/Banana",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "fruit",
-    "food"
+    "food",
+    "yellow",
+    "snack"
   ],
   "aliases": [],
   "mirror": false

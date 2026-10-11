@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/undo-dot",
+  "upstream": "hugeicons/UndoDot",
+  "also": [],
   "category": "text",
   "tags": [
-    "redo",
+    "undo",
+    "revert",
     "history",
     "step",
-    "back"
+    "dot"
   ],
   "aliases": [],
   "mirror": true

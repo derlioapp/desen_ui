@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SquareArrowUpDown",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "sort",
+    "swap",
+    "transfer",
+    "vertical",
+    "up down"
+  ],
+  "aliases": [],
+  "mirror": false
+}

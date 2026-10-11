@@ -1,14 +1,15 @@
 {
-  "upstream": "lucide/user-round-check",
+  "upstream": "hugeicons/UserRoundCheck",
+  "also": [],
   "category": "account",
   "tags": [
+    "verified",
+    "approved",
+    "done",
     "followed",
     "subscribed",
-    "done",
-    "todo",
-    "tick",
-    "complete",
-    "task"
+    "person",
+    "account"
   ],
   "aliases": [],
   "mirror": false

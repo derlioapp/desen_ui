@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DateTime",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "date time",
+    "calendar",
+    "schedule",
+    "appointment",
+    "clock",
+    "datetime"
+  ],
+  "aliases": [],
+  "mirror": false
+}

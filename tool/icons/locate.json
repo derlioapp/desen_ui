@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/locate",
+  "upstream": "hugeicons/Locate",
+  "also": [],
   "category": "navigation",
   "tags": [
-    "map",
     "gps",
     "location",
-    "cross"
+    "target",
+    "position",
+    "find me"
   ],
   "aliases": [],
   "mirror": false

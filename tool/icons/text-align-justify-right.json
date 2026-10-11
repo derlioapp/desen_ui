@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/TextAlignJustifyRight",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "align",
+    "justify",
+    "right",
+    "paragraph",
+    "format"
+  ],
+  "aliases": [
+    "textAlignJustifyEnd"
+  ],
+  "mirror": false
+}

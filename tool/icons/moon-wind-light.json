@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MoonSlowWind",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "night",
+    "breeze",
+    "moon",
+    "gentle wind",
+    "slow wind",
+    "calm"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TextCheck",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "text",
+    "check",
+    "proofread",
+    "spell",
+    "verify"
+  ],
+  "aliases": [],
+  "mirror": false
+}

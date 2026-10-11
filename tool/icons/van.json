@@ -1,23 +1,14 @@
 {
-  "upstream": "lucide/van",
+  "upstream": "hugeicons/Van",
+  "also": [],
   "category": "transportation",
   "tags": [
     "minivan",
-    "cart",
-    "wagon",
-    "truck",
-    "lorry",
-    "trailer",
-    "camper",
     "vehicle",
-    "drive",
-    "trip",
-    "journey",
-    "van",
-    "transport",
-    "carriage",
     "delivery",
-    "travel"
+    "truck",
+    "transport",
+    "cargo"
   ],
   "aliases": [],
   "mirror": false

@@ -1,16 +1,11 @@
 {
-  "upstream": "lucide/blinds",
+  "upstream": "hugeicons/Blinds",
+  "also": [],
   "category": "home",
   "tags": [
-    "shades",
-    "screen",
-    "curtain",
-    "shutter",
-    "roller blind",
     "window",
-    "lighting",
-    "household",
-    "home"
+    "shade",
+    "curtain"
   ],
   "aliases": [],
   "mirror": false

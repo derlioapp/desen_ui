@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/funnel",
+  "upstream": "hugeicons/Funnel",
+  "also": [],
   "category": "layout",
   "tags": [
+    "funnel",
     "filter",
-    "hopper"
+    "sort",
+    "options",
+    "refine"
   ],
-  "aliases": [
-    "filter"
-  ],
+  "aliases": [],
   "mirror": false
 }

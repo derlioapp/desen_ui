@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/SmartphoneLostWifi",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "phone",
+    "no",
+    "wifi",
+    "lost",
+    "connection",
+    "offline",
+    "mobile"
+  ],
+  "aliases": [],
+  "mirror": false
+}

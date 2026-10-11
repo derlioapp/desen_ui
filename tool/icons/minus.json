@@ -1,29 +1,13 @@
 {
-  "upstream": "lucide/minus",
+  "upstream": "hugeicons/Minus",
+  "also": [],
   "category": "math",
   "tags": [
+    "minus",
     "subtract",
     "remove",
     "decrease",
-    "decrement",
-    "reduce",
-    "negative",
-    "calculate",
-    "line",
-    "divider",
-    "separator",
-    "horizontal rule",
-    "hr",
-    "html",
-    "markup",
-    "markdown",
-    "---",
-    "toolbar",
-    "operator",
-    "code",
-    "coding",
-    "minimum",
-    "downgrade"
+    "dash"
   ],
   "aliases": [],
   "mirror": false

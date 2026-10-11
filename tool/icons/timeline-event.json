@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TimelineEvent",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "timeline",
+    "event",
+    "message",
+    "milestone",
+    "history"
+  ],
+  "aliases": [],
+  "mirror": false
+}

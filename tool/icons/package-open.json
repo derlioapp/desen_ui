@@ -1,17 +1,14 @@
 {
-  "upstream": "lucide/package-open",
-  "category": "files",
+  "upstream": "hugeicons/PackageOpen",
+  "also": [],
+  "category": "transportation",
   "tags": [
+    "package",
+    "open",
+    "unbox",
     "box",
-    "container",
-    "storage",
-    "unpack",
-    "unarchive",
-    "unzip",
-    "opened",
-    "delivered"
+    "unpack"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

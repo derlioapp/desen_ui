@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MoonFastWind",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "night",
+    "windy",
+    "moon",
+    "wind",
+    "gale",
+    "breeze"
+  ],
+  "aliases": [],
+  "mirror": false
+}

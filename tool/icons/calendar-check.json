@@ -1,20 +1,19 @@
 {
-  "upstream": "lucide/calendar-check",
+  "upstream": "hugeicons/CalendarCheck01",
+  "also": [
+    "Appointment01"
+  ],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "event",
-    "confirm",
-    "subscribe",
-    "schedule",
+    "calendar",
+    "check",
     "done",
-    "todo",
-    "tick",
-    "complete",
-    "task"
+    "confirmed",
+    "appointment",
+    "schedule",
+    "event",
+    "booking",
+    "date"
   ],
   "aliases": [],
   "mirror": false

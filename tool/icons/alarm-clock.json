@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/alarm-clock",
+  "upstream": "hugeicons/AlarmClock",
+  "also": [],
   "category": "devices",
   "tags": [
-    "morning"
+    "alarm",
+    "clock",
+    "time",
+    "wake"
   ],
   "aliases": [
     "alarm"

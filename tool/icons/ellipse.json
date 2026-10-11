@@ -1,18 +1,11 @@
 {
-  "upstream": "lucide/ellipse",
+  "upstream": "hugeicons/Ellipse",
+  "also": [],
   "category": "shapes",
   "tags": [
+    "oval",
     "shape",
-    "geometry",
-    "rounded",
-    "smooth",
-    "outline",
-    "form",
-    "boundary",
-    "curve",
-    "shapes",
-    "ellipse",
-    "oval"
+    "circle"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ShoppingBagRemove",
+  "also": [],
+  "category": "shopping",
+  "tags": [
+    "remove from bag",
+    "delete",
+    "cancel",
+    "bag",
+    "ecommerce"
+  ],
+  "aliases": [],
+  "mirror": false
+}

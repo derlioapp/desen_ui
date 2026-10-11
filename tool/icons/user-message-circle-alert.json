@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Complaint",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "complaint",
+    "report",
+    "user",
+    "exclamation",
+    "feedback",
+    "issue"
+  ],
+  "aliases": [],
+  "mirror": false
+}

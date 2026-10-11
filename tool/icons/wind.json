@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/wind",
+  "upstream": "hugeicons/Wind",
+  "also": [],
   "category": "weather",
   "tags": [
-    "weather",
     "air",
-    "blow"
+    "breeze",
+    "gust",
+    "windy",
+    "weather"
   ],
   "aliases": [],
   "mirror": false

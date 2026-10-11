@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/square-m",
+  "upstream": "hugeicons/SquareM",
+  "also": [],
   "category": "transportation",
   "tags": [
+    "letter m",
     "metro",
     "subway",
-    "underground",
-    "track",
-    "line"
+    "station",
+    "m key"
   ],
   "aliases": [],
   "mirror": false

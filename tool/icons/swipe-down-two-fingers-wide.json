@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SwipeDown02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "swipe",
+    "gesture",
+    "touch",
+    "scroll",
+    "fingers"
+  ],
+  "aliases": [],
+  "mirror": false
+}

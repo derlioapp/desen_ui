@@ -1,22 +1,18 @@
 {
-  "upstream": "lucide/rows-3",
+  "upstream": "hugeicons/Rows3",
+  "also": [
+    "Layout3Row"
+  ],
   "category": "layout",
   "tags": [
-    "lines",
+    "rows",
+    "three",
+    "layout",
     "list",
-    "queue",
-    "preview",
-    "paragraphs",
-    "parallel",
-    "series",
+    "three rows",
     "split",
-    "vertical",
-    "horizontal",
-    "half",
-    "center",
-    "middle",
-    "even",
-    "drawers"
+    "horizontal dividers",
+    "panels"
   ],
   "aliases": [],
   "mirror": false

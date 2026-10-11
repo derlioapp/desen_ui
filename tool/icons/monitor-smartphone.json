@@ -1,20 +1,13 @@
 {
-  "upstream": "lucide/monitor-smartphone",
+  "upstream": "hugeicons/MonitorSmartphone",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "phone",
-    "cellphone",
-    "device",
-    "mobile",
-    "desktop",
     "screen",
-    "display",
-    "external display",
-    "screen sharing",
+    "phone",
+    "devices",
     "responsive",
-    "screens",
-    "sync",
-    "cast"
+    "multi-device"
   ],
   "aliases": [],
   "mirror": false

@@ -1,8 +1,12 @@
 {
-  "upstream": "lucide/file-pen",
+  "upstream": "hugeicons/FileEdit",
+  "also": [],
   "category": "files",
   "tags": [
-    "signature"
+    "edit",
+    "write",
+    "modify",
+    "document"
   ],
   "aliases": [],
   "mirror": false

@@ -1,19 +1,12 @@
 {
-  "upstream": "lucide/bookmark",
+  "upstream": "hugeicons/Bookmark02",
+  "also": [],
   "category": "account",
   "tags": [
     "save",
     "favorite",
     "mark",
-    "label",
-    "attachment",
-    "file",
-    "stick",
-    "pin",
-    "read",
-    "clip",
-    "marker",
-    "tag"
+    "read"
   ],
   "aliases": [],
   "mirror": false

@@ -1,8 +1,15 @@
 {
-  "upstream": "lucide/bluetooth-off",
+  "upstream": "hugeicons/BluetoothNotConnected",
+  "also": [
+    "BluetoothOff"
+  ],
   "category": "connectivity",
   "tags": [
-    "lost"
+    "lost",
+    "disconnected",
+    "wireless",
+    "disabled",
+    "off"
   ],
   "aliases": [],
   "mirror": false

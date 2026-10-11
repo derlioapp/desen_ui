@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/file-terminal",
+  "upstream": "hugeicons/FileTerminal",
+  "also": [],
   "category": "files",
   "tags": [
-    "terminal",
-    "bash",
+    "command",
+    "shell",
+    "cli",
     "script",
-    "executable"
+    "document"
   ],
   "aliases": [],
   "mirror": false

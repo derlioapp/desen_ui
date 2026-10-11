@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/plane",
+  "upstream": "hugeicons/Airplane01",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "plane",
-    "trip",
-    "airplane"
+    "airplane",
+    "flight",
+    "travel",
+    "aircraft",
+    "airport"
   ],
   "aliases": [],
   "mirror": false

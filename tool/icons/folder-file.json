@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/FolderFileStorage",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "file",
+    "storage",
+    "document",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

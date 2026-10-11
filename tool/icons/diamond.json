@@ -1,15 +1,18 @@
 {
-  "upstream": "lucide/diamond",
+  "upstream": "hugeicons/Diamond",
+  "also": [
+    "Rhombus01"
+  ],
   "category": "shapes",
   "tags": [
     "square",
-    "rectangle",
-    "oblique",
     "rhombus",
     "shape",
     "suit",
-    "playing",
-    "cards"
+    "cards",
+    "oblique",
+    "diamond",
+    "rounded"
   ],
   "aliases": [],
   "mirror": false

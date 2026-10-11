@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/archive",
+  "upstream": "hugeicons/Archive",
+  "also": [],
   "category": "files",
   "tags": [
-    "index",
-    "backup",
-    "box",
+    "archive",
     "storage",
-    "records"
+    "box",
+    "records",
+    "backup"
   ],
   "aliases": [],
   "mirror": false

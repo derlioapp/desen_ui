@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/lasso",
+  "upstream": "hugeicons/Lasso",
+  "also": [],
   "category": "design",
   "tags": [
+    "lasso",
     "select",
-    "cursor"
+    "loop",
+    "rope",
+    "freeform selection"
   ],
   "aliases": [],
   "mirror": false

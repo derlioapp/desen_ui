@@ -1,8 +1,11 @@
 {
-  "upstream": "lucide/pause",
+  "upstream": "hugeicons/Pause",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "music",
+    "pause",
+    "hold",
+    "media",
     "stop"
   ],
   "aliases": [],

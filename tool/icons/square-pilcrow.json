@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/square-pilcrow",
+  "upstream": "hugeicons/SquarePilcrow",
+  "also": [],
   "category": "text",
   "tags": [
     "paragraph",
-    "mark",
-    "paraph",
-    "blind",
-    "typography",
-    "type",
+    "pilcrow",
     "text",
-    "prose",
-    "symbol"
+    "format",
+    "typography"
   ],
   "aliases": [],
   "mirror": false

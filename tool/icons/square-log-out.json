@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/LogoutSquare01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "sign out",
+    "arrow",
+    "exit",
+    "auth",
+    "logout",
+    "square"
+  ],
+  "aliases": [],
+  "mirror": true
+}

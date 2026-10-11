@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/code-xml",
+  "upstream": "hugeicons/CodeXml",
+  "also": [],
   "category": "text",
   "tags": [
     "source",
     "programming",
     "html",
-    "xml"
+    "xml",
+    "markup",
+    "developer"
   ],
   "aliases": [],
   "mirror": false

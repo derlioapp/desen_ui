@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/chart-line",
+  "upstream": "hugeicons/Chart03",
+  "also": [],
   "category": "charts",
   "tags": [
+    "graph",
     "statistics",
-    "analytics",
-    "diagram",
-    "graph"
+    "trend",
+    "line chart",
+    "analytics"
   ],
   "aliases": [
     "lineChart"

@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/wifi-high",
+  "upstream": "hugeicons/WifiHigh",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "connection",
+    "wifi",
     "signal",
+    "strength",
+    "good",
+    "reception",
     "wireless"
   ],
   "aliases": [],

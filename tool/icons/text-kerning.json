@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TextKerning",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "kerning",
+    "letter spacing",
+    "type",
+    "text",
+    "tracking"
+  ],
+  "aliases": [],
+  "mirror": false
+}

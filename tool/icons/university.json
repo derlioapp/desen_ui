@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/university",
+  "upstream": "hugeicons/University",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "building",
-    "education",
-    "childhood",
-    "school",
+    "university",
     "college",
-    "academy",
-    "institute"
+    "school",
+    "education",
+    "campus"
   ],
   "aliases": [],
   "mirror": false

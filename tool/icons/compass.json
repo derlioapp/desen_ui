@@ -1,13 +1,18 @@
 {
-  "upstream": "lucide/compass",
+  "upstream": "hugeicons/DiscoverCircle",
+  "also": [
+    "Navigation05"
+  ],
   "category": "navigation",
   "tags": [
+    "discover",
+    "compass",
+    "explore",
+    "navigate",
     "direction",
+    "circle",
     "north",
-    "east",
-    "south",
-    "west",
-    "browser"
+    "orientation"
   ],
   "aliases": [],
   "mirror": false

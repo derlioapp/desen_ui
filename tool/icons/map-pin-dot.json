@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/MapPinpoint01",
+  "also": [],
+  "category": "navigation",
+  "tags": [
+    "location",
+    "pin",
+    "pinpoint",
+    "dot",
+    "marker"
+  ],
+  "aliases": [],
+  "mirror": false
+}

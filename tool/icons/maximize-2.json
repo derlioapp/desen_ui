@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/maximize-2",
+  "upstream": "hugeicons/ArrowExpand01",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "fullscreen",
-    "arrows",
-    "expand"
+    "expand",
+    "maximize",
+    "diagonal",
+    "enlarge",
+    "fullscreen"
   ],
   "aliases": [],
   "mirror": false

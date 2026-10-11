@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/redo-dot",
+  "upstream": "hugeicons/RedoDot",
+  "also": [],
   "category": "text",
   "tags": [
     "redo",
-    "history",
-    "step",
-    "over",
-    "forward"
+    "step over",
+    "forward",
+    "history"
   ],
   "aliases": [],
   "mirror": true

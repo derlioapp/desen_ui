@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Whiteboard",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "board",
+    "draw",
+    "sketch",
+    "pen",
+    "presentation",
+    "teaching"
+  ],
+  "aliases": [],
+  "mirror": false
+}

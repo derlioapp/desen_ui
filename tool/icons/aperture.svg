@@ -1,19 +1,8 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="m14.31 8 5.74 9.94" />
-  <path d="M9.69 8h11.48" />
-  <path d="m7.38 12 5.74-9.94" />
-  <path d="M9.69 16 3.95 6.06" />
-  <path d="M14.31 16H2.83" />
-  <path d="m16.62 12-5.74 9.94" />
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+  <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" />
+  <path d="M16 12C16 16.6326 12.5 20.4476 8 20.9451" />
+  <path d="M11.9998 16C7.3672 16 3.55213 12.5 3.05469 8" />
+  <path d="M12 8C16.6326 8 20.4476 11.5 20.9451 16" />
+  <path d="M8 11.9998C8 7.3672 11.5 3.55213 16 3.05469" />
 </svg>

@@ -1,26 +1,12 @@
 {
-  "upstream": "lucide/ruler",
+  "upstream": "hugeicons/Ruler",
+  "also": [],
   "category": "tools",
   "tags": [
-    "measurements",
-    "centimeters",
-    "cm",
-    "millimeters",
-    "mm",
-    "metre",
-    "foot",
-    "feet",
-    "inches",
-    "units",
-    "size",
+    "ruler",
+    "measure",
     "length",
-    "width",
-    "height",
-    "dimensions",
-    "depth",
-    "breadth",
-    "extent",
-    "stationery"
+    "units"
   ],
   "aliases": [],
   "mirror": false

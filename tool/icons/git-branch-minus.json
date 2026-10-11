@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/git-branch-minus",
+  "upstream": "hugeicons/GitBranchMinus",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control",
-    "vcs",
-    "repository",
-    "delete",
+    "git",
+    "branch",
     "remove",
-    "-"
+    "delete",
+    "vcs"
   ],
   "aliases": [],
   "mirror": false

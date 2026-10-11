@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinDatabase",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "database",
+    "storage",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

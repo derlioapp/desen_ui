@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/mountain",
+  "upstream": "hugeicons/Mountain",
+  "also": [],
   "category": "nature",
   "tags": [
-    "climb",
-    "hike",
-    "rock"
+    "mountain",
+    "peak",
+    "hill",
+    "landscape",
+    "hiking",
+    "outdoors"
   ],
   "aliases": [],
   "mirror": false

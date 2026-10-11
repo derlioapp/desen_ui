@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/slice",
+  "upstream": "hugeicons/Slice",
+  "also": [],
   "category": "design",
   "tags": [
-    "cutter",
-    "scalpel",
-    "knife"
+    "cut",
+    "knife",
+    "blade",
+    "slicing"
   ],
   "aliases": [],
   "mirror": false

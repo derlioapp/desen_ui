@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/AccountRecovery",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "account",
+    "recovery",
+    "restore",
+    "user",
+    "reset",
+    "profile",
+    "history"
+  ],
+  "aliases": [],
+  "mirror": false
+}

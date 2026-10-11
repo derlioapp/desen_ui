@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/printer",
+  "upstream": "hugeicons/Printer",
+  "also": [],
   "category": "devices",
   "tags": [
-    "fax",
-    "office",
-    "device"
+    "printer",
+    "print",
+    "paper",
+    "office"
   ],
   "aliases": [],
   "mirror": false

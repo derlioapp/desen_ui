@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Colors",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "colors",
+    "palette",
+    "overlap",
+    "rgb",
+    "venn",
+    "mix"
+  ],
+  "aliases": [
+    "venn"
+  ],
+  "mirror": false
+}

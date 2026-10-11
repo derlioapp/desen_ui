@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/repeat",
+  "upstream": "hugeicons/ArrowReloadHorizontal",
+  "also": [],
   "category": "arrows",
   "tags": [
+    "repeat",
     "loop",
-    "arrows"
+    "reload",
+    "cycle",
+    "horizontal",
+    "refresh"
   ],
   "aliases": [],
   "mirror": false

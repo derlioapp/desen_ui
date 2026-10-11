@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/milk",
+  "upstream": "hugeicons/Milk",
+  "also": [],
   "category": "food-beverage",
   "tags": [
-    "lactose",
+    "milk",
     "bottle",
-    "beverage",
+    "dairy",
     "drink",
-    "water",
-    "diet"
+    "beverage"
   ],
   "aliases": [],
   "mirror": false

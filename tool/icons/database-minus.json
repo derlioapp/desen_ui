@@ -1,5 +1,23 @@
 {
-  "upstream": "lucide/database-minus",
+  "upstream": "desen/database-minus",
+  "derived": {
+    "parts": [
+      {
+        "from": "DatabaseAdd",
+        "keep": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "paths": [
+      "M14.5 18H21"
+    ]
+  },
+  "also": [],
   "category": "devices",
   "tags": [
     "storage",

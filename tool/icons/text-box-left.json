@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TextCenterlineRight",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "text wrap",
+    "image",
+    "float",
+    "layout",
+    "right"
+  ],
+  "aliases": [],
+  "mirror": false
+}

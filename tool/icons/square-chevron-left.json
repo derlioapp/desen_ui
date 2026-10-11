@@ -1,16 +1,15 @@
 {
-  "upstream": "lucide/square-chevron-left",
+  "upstream": "hugeicons/SquareChevronLeft",
+  "also": [
+    "SquareArrowLeft01"
+  ],
   "category": "arrows",
   "tags": [
+    "left",
     "back",
     "previous",
-    "less than",
-    "fewer",
-    "menu",
-    "panel",
-    "button",
-    "keyboard",
-    "<"
+    "chevron",
+    "direction"
   ],
   "aliases": [],
   "mirror": true

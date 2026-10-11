@@ -1,12 +1,12 @@
 {
-  "upstream": "lucide/battery-charging",
+  "upstream": "hugeicons/BatteryCharging01",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "power",
-    "electricity",
+    "charge",
     "energy",
-    "accumulator",
-    "charge"
+    "bolt"
   ],
   "aliases": [],
   "mirror": false

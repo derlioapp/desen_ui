@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/ear",
+  "upstream": "hugeicons/Ear",
+  "also": [],
   "category": "medical",
   "tags": [
     "hearing",
-    "noise",
+    "listen",
     "audio",
-    "accessibility"
+    "sound"
   ],
   "aliases": [],
   "mirror": false

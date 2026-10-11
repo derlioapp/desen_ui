@@ -62,7 +62,7 @@ final foundationPages = <SitePage>[
     path: '/foundations/icons',
     title: 'Icons',
     builder: (_) => const IconsPage(),
-    keywords: ['DsIcons', 'DsIcon', 'icon set', 'svg', 'Lucide'],
+    keywords: ['DsIcons', 'DsIcon', 'icon set', 'svg', 'Hugeicons'],
     summary: 'Every built-in icon, and how to use your own.',
   ),
 ];

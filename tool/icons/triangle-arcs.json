@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Angle",
+  "also": [],
+  "category": "shapes",
+  "tags": [
+    "angle",
+    "lines",
+    "perspective",
+    "vanishing point",
+    "geometry"
+  ],
+  "aliases": [],
+  "mirror": false
+}

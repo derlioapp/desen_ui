@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TransitionTop",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "transition",
+    "slide",
+    "up",
+    "panel",
+    "top"
+  ],
+  "aliases": [],
+  "mirror": false
+}

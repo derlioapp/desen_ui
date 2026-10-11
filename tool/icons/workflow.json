@@ -1,15 +1,14 @@
 {
-  "upstream": "lucide/workflow",
+  "upstream": "hugeicons/Workflow",
+  "also": [],
   "category": "development",
   "tags": [
-    "action",
-    "continuous integration",
-    "ci",
+    "process",
     "automation",
-    "devops",
-    "network",
-    "node",
-    "connection"
+    "steps",
+    "diagram",
+    "flow",
+    "ci"
   ],
   "aliases": [],
   "mirror": false

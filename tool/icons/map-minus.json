@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/map-minus",
+  "upstream": "hugeicons/MapMinus",
+  "also": [],
   "category": "navigation",
   "tags": [
     "location",
-    "navigation",
-    "travel",
-    "drop",
-    "delete",
     "remove",
-    "erase"
+    "delete",
+    "zoom out",
+    "paper"
   ],
   "aliases": [],
   "mirror": false

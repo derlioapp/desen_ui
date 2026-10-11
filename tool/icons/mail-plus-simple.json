@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/MailAdd02",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "letter",
+    "add",
+    "create",
+    "new",
+    "compose"
+  ],
+  "aliases": [],
+  "mirror": false
+}

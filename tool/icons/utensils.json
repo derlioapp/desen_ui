@@ -1,22 +1,19 @@
 {
-  "upstream": "lucide/utensils",
+  "upstream": "hugeicons/Utensils",
+  "also": [],
   "category": "food-beverage",
   "tags": [
     "fork",
     "knife",
     "cutlery",
-    "flatware",
-    "tableware",
-    "silverware",
-    "food",
     "restaurant",
-    "meal",
-    "breakfast",
-    "dinner",
-    "supper"
+    "dining",
+    "eat",
+    "meal"
   ],
   "aliases": [
-    "restaurant"
+    "restaurant",
+    "forkKnife"
   ],
   "mirror": false
 }

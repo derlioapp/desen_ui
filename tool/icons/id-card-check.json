@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/IdentityCardCheck",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "id",
+    "card",
+    "verified",
+    "identity",
+    "check"
+  ],
+  "aliases": [],
+  "mirror": false
+}

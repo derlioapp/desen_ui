@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/file-music",
+  "upstream": "hugeicons/FileMusic",
+  "also": [],
   "category": "files",
   "tags": [
     "audio",
     "sound",
-    "noise",
     "track",
-    "digital",
-    "recording",
-    "playback",
-    "piano",
-    "keyboard",
-    "keys",
-    "notes",
-    "chord",
-    "midi",
-    "octave"
+    "music",
+    "document"
   ],
   "aliases": [],
   "mirror": false

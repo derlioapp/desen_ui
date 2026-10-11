@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/folder-code",
+  "upstream": "hugeicons/FolderCode",
+  "also": [],
   "category": "files",
   "tags": [
-    "directory",
-    "coding",
-    "develop",
-    "software"
+    "folder",
+    "code",
+    "project",
+    "source",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

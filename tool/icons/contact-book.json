@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ContactBook",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "contact",
+    "address book",
+    "directory",
+    "person",
+    "user"
+  ],
+  "aliases": [],
+  "mirror": false
+}

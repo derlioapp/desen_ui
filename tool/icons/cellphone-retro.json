@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FlipPhone",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "flip phone",
+    "clamshell",
+    "mobile",
+    "phone",
+    "retro"
+  ],
+  "aliases": [],
+  "mirror": false
+}

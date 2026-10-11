@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PlusMinus03",
+  "also": [],
+  "category": "math",
+  "tags": [
+    "plus",
+    "minus",
+    "zoom",
+    "stepper",
+    "rectangle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

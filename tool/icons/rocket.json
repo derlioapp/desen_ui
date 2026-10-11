@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/rocket",
+  "upstream": "hugeicons/StartUp02",
+  "also": [],
   "category": "gaming",
   "tags": [
-    "release",
-    "boost",
+    "rocket",
     "launch",
-    "space",
-    "version"
+    "startup",
+    "boost",
+    "ship"
   ],
   "aliases": [],
   "mirror": false

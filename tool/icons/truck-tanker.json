@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/TankerTruck",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "tanker",
+    "fuel",
+    "oil",
+    "liquid",
+    "delivery",
+    "lorry"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

@@ -1,15 +1,20 @@
 {
-  "upstream": "lucide/panels-top-left",
+  "upstream": "hugeicons/PanelsTopLeft",
+  "also": [
+    "Layout01"
+  ],
   "category": "layout",
   "tags": [
-    "menu bar",
+    "panels",
+    "layout",
+    "top",
+    "left",
+    "split",
+    "header",
     "sidebar",
-    "primary",
-    "drawers",
-    "window",
-    "webpage",
-    "projects",
-    "overview"
+    "left column",
+    "wireframe",
+    "page"
   ],
   "aliases": [],
   "mirror": false

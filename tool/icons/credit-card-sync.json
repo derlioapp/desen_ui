@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/CreditCardChange",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "payment",
+    "change",
+    "swap",
+    "replace",
+    "card",
+    "refresh"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,9 +1,19 @@
 {
-  "upstream": "lucide/panel-bottom",
+  "upstream": "hugeicons/PanelBottom",
+  "also": [
+    "LayoutBottom"
+  ],
   "category": "layout",
   "tags": [
+    "panel",
+    "bottom",
+    "layout",
     "drawer",
-    "dock"
+    "sheet",
+    "bottom panel",
+    "footer",
+    "sidebar",
+    "split"
   ],
   "aliases": [],
   "mirror": false

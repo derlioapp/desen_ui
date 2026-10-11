@@ -1,27 +1,28 @@
 {
-  "upstream": "lucide/sticky-note-plus",
+  "upstream": "desen/sticky-note-plus",
+  "derived": {
+    "parts": [
+      {
+        "from": "StickyNote03",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ],
+    "paths": [
+      "M11 8V14",
+      "M8 11H14"
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
-    "post-it",
-    "comment",
-    "annotation",
-    "reaction",
-    "memo",
-    "reminder",
-    "todo",
-    "task",
-    "idea",
-    "brainstorm",
-    "document",
-    "page",
-    "paper",
-    "sheet",
-    "stationary",
-    "office",
+    "note",
+    "sticky",
     "add",
-    "create",
-    "new",
-    "plus"
+    "plus",
+    "new"
   ],
   "aliases": [],
   "mirror": false

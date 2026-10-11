@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/layout-panel-top",
-  "category": "layout",
+  "upstream": "hugeicons/LayoutPanelTop",
+  "also": [],
+  "category": "design",
   "tags": [
-    "window",
-    "webpage",
-    "block",
-    "section",
-    "grid",
-    "template",
-    "structure"
+    "panel top",
+    "layout",
+    "header",
+    "split",
+    "panes"
   ],
   "aliases": [],
   "mirror": false

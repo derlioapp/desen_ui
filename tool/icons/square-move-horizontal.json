@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SquareArrowHorizontal",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "resize",
+    "horizontal",
+    "double",
+    "arrow",
+    "width"
+  ],
+  "aliases": [],
+  "mirror": false
+}

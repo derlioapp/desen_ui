@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/RssLocked",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "rss",
+    "locked",
+    "feed",
+    "private",
+    "secure"
+  ],
+  "aliases": [],
+  "mirror": false
+}

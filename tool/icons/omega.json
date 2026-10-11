@@ -1,20 +1,14 @@
 {
-  "upstream": "lucide/omega",
+  "upstream": "hugeicons/AlphabetGreek",
+  "also": [],
   "category": "math",
   "tags": [
+    "alphabet",
     "greek",
+    "omega",
+    "letter",
     "symbol",
-    "mathematics",
-    "education",
-    "physics",
-    "engineering",
-    "ohms",
-    "electrical resistance",
-    "angular frequency",
-    "dynamical systems",
-    "astronomy",
-    "constellations",
-    "philosophy"
+    "ohm"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Payment01",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "payment",
+    "card",
+    "hand",
+    "pay",
+    "checkout"
+  ],
+  "aliases": [],
+  "mirror": false
+}

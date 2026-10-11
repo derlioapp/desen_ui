@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/grip-horizontal",
+  "upstream": "hugeicons/GripHorizontal",
+  "also": [],
   "category": "layout",
   "tags": [
-    "grab",
-    "dots",
+    "grip",
+    "drag",
     "handle",
-    "move",
-    "drag"
+    "dots",
+    "horizontal"
   ],
   "aliases": [
     "dragIndicator"

@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BatteryEmpty",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "power",
+    "empty",
+    "dead",
+    "low",
+    "charge"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

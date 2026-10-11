@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Transmission",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "transmission",
+    "rss",
+    "feed",
+    "broadcast",
+    "signal",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

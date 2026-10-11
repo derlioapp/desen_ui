@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ElectricWire",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "wire",
+    "cable",
+    "power",
+    "electricity",
+    "conductor"
+  ],
+  "aliases": [],
+  "mirror": false
+}

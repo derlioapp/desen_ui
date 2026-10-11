@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/square-centerline-dashed-horizontal",
+  "upstream": "hugeicons/SquareCenterlineDashedVertical",
+  "also": [],
   "category": "design",
   "tags": [
-    "reflect",
+    "center",
+    "axis",
+    "horizontal",
     "mirror",
-    "alignment",
-    "dashed"
+    "symmetry",
+    "flip"
   ],
   "aliases": [],
   "mirror": false

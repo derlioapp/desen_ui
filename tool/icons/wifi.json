@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/wifi",
+  "upstream": "hugeicons/Wifi01",
+  "also": [],
   "category": "connectivity",
   "tags": [
     "connection",
     "signal",
-    "wireless"
+    "wireless",
+    "internet",
+    "network"
   ],
   "aliases": [],
   "mirror": false

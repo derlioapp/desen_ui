@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/tablet-smartphone",
+  "upstream": "hugeicons/TabletSmartphone",
+  "also": [],
   "category": "devices",
   "tags": [
+    "tablet",
     "phone",
-    "cellphone",
-    "device",
-    "mobile",
-    "screen",
-    "display",
-    "touchscreen",
-    "portable",
+    "devices",
     "responsive",
-    "screens",
-    "browser",
-    "testing"
+    "screens"
   ],
   "aliases": [],
   "mirror": false

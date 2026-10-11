@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Radio02",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "radio",
+    "boombox",
+    "stereo",
+    "antenna",
+    "music"
+  ],
+  "aliases": [],
+  "mirror": false
+}

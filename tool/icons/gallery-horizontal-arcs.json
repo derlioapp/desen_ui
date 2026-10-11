@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CarouselHorizontal",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "carousel",
+    "slider",
+    "slideshow",
+    "swipe",
+    "gallery"
+  ],
+  "aliases": [],
+  "mirror": false
+}

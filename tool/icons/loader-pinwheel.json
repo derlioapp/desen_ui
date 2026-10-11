@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/loader-pinwheel",
+  "upstream": "hugeicons/LoaderPinwheel",
+  "also": [],
   "category": "arrows",
   "tags": [
     "loading",
@@ -8,12 +9,8 @@
     "progress",
     "throbber",
     "spinner",
-    "spinning",
-    "beach ball",
-    "frozen",
-    "freeze"
+    "beach ball"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SquareArrowReload01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "reload",
+    "refresh",
+    "repeat",
+    "loop",
+    "swap"
+  ],
+  "aliases": [],
+  "mirror": false
+}

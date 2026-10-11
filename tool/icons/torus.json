@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/torus",
+  "upstream": "hugeicons/Torus",
+  "also": [],
   "category": "shapes",
   "tags": [
+    "torus",
     "donut",
-    "doughnut",
     "ring",
-    "hollow",
     "3d",
-    "fast food",
-    "junk food",
-    "snack",
-    "treat",
-    "sweet",
-    "sugar",
-    "dessert"
+    "shape"
   ],
   "aliases": [],
   "mirror": false

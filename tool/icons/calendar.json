@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/calendar",
+  "upstream": "hugeicons/Calendar04",
+  "also": [],
   "category": "time",
   "tags": [
+    "calendar",
     "date",
     "month",
-    "year",
-    "event",
-    "birthday",
-    "birthdate"
+    "schedule"
   ],
   "aliases": [],
   "mirror": false

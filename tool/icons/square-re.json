@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Re",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "re",
+    "reply",
+    "email subject",
+    "message"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

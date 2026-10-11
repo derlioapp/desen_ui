@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ServerStack03",
+  "also": [],
+  "category": "development",
+  "tags": [
+    "servers",
+    "rack",
+    "three",
+    "hosting",
+    "database"
+  ],
+  "aliases": [],
+  "mirror": false
+}

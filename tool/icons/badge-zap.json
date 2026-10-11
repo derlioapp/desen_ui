@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/PowerService",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "power",
+    "service",
+    "electricity",
+    "utility",
+    "badge",
+    "lightning"
+  ],
+  "aliases": [],
+  "mirror": false
+}

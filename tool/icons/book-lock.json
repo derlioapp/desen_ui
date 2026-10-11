@@ -1,16 +1,11 @@
 {
-  "upstream": "lucide/book-lock",
+  "upstream": "hugeicons/BookLock",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "coding",
-    "version control",
-    "git",
-    "repository",
     "private",
-    "secret",
-    "hidden",
-    "knowledge"
+    "locked",
+    "secret"
   ],
   "aliases": [],
   "mirror": false

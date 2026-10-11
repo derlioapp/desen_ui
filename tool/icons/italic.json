@@ -1,10 +1,17 @@
 {
-  "upstream": "lucide/italic",
+  "upstream": "hugeicons/Italic",
+  "also": [
+    "TextItalic"
+  ],
   "category": "text",
   "tags": [
+    "italic",
+    "slant",
+    "font style",
+    "emphasis",
+    "format",
     "oblique",
-    "text",
-    "format"
+    "text"
   ],
   "aliases": [],
   "mirror": false

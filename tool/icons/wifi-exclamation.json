@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/WifiError02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "error",
+    "warning",
+    "problem",
+    "line",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

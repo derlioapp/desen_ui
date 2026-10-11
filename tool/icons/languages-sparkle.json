@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/AiTranslate",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "ai",
+    "translate",
+    "language",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

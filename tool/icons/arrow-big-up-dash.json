@@ -1,18 +1,14 @@
 {
-  "upstream": "lucide/arrow-big-up-dash",
+  "upstream": "hugeicons/ArrowBigUpDash",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "caps lock",
-    "capitals",
-    "keyboard",
-    "button",
-    "mac",
-    "forward",
-    "direction",
-    "north",
-    "faster",
-    "speed",
-    "boost"
+    "arrow",
+    "up",
+    "block",
+    "big",
+    "dash",
+    "direction"
   ],
   "aliases": [],
   "mirror": false

@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/house-plug",
+  "upstream": "hugeicons/HousePlug",
+  "also": [],
   "category": "buildings",
   "tags": [
     "home",
-    "living",
-    "building",
-    "residence",
-    "architecture",
-    "autarky",
-    "energy"
+    "plug",
+    "power",
+    "energy",
+    "electric"
   ],
   "aliases": [],
   "mirror": false

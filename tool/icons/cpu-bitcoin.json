@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BitcoinCpu",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "cpu",
+    "chip",
+    "mining",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

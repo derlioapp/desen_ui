@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/BitcoinLock",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "lock",
+    "secure",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

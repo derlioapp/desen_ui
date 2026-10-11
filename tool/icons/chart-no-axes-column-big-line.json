@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Chart02",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "bars",
+    "graph",
+    "statistics",
+    "trend",
+    "line",
+    "analytics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

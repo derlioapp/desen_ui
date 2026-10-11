@@ -1,23 +1,12 @@
 {
-  "upstream": "lucide/guitar",
+  "upstream": "hugeicons/Guitar",
+  "also": [],
   "category": "multimedia",
   "tags": [
-    "acoustic",
-    "instrument",
-    "strings",
-    "riff",
-    "rock",
-    "band",
-    "country",
-    "concert",
-    "performance",
-    "play",
-    "lead",
-    "loud",
+    "guitar",
     "music",
-    "audio",
-    "sound",
-    "noise"
+    "instrument",
+    "string"
   ],
   "aliases": [],
   "mirror": false

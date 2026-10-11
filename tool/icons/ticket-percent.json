@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide/ticket-percent",
+  "upstream": "hugeicons/CouponPercent",
+  "also": [],
   "category": "transportation",
   "tags": [
+    "coupon",
     "discount",
-    "reduced",
-    "offer",
     "voucher",
-    "entry",
-    "pass",
-    "event",
-    "concert",
-    "show",
-    "book",
-    "purchase",
-    "%"
+    "sale",
+    "percent",
+    "offer"
   ],
   "aliases": [],
   "mirror": false

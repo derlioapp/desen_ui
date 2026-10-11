@@ -1,11 +1,12 @@
 {
-  "upstream": "lucide/bus-front",
+  "upstream": "hugeicons/BusFront",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "coach",
+    "bus",
+    "front",
     "vehicle",
-    "trip",
-    "road"
+    "transport"
   ],
   "aliases": [],
   "mirror": false

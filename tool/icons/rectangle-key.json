@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Authorized",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "authorized",
+    "access",
+    "key",
+    "permission",
+    "license",
+    "credentials"
+  ],
+  "aliases": [],
+  "mirror": false
+}

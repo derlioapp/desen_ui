@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/cloud-off",
+  "upstream": "hugeicons/CloudOff",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "disconnect"
+    "offline",
+    "disconnected",
+    "no storage",
+    "disabled",
+    "crossed out"
   ],
   "aliases": [],
   "mirror": false

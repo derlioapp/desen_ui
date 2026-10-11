@@ -1,14 +1,16 @@
 {
-  "upstream": "lucide/whole-word",
+  "upstream": "hugeicons/WholeWord",
+  "also": [],
   "category": "text",
   "tags": [
-    "text",
-    "selection",
-    "letters",
-    "characters",
-    "font",
-    "typography"
+    "match",
+    "whole",
+    "word",
+    "search",
+    "find",
+    "ab"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "stroke": 1.75
 }

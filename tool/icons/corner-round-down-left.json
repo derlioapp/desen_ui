@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ArrowMoveDownLeft",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "arrow",
+    "corner",
+    "down",
+    "left",
+    "return",
+    "enter"
+  ],
+  "aliases": [],
+  "mirror": true
+}

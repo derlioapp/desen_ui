@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/Doctor01",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "doctor",
+    "physician",
+    "stethoscope",
+    "medical",
+    "health",
+    "person"
+  ],
+  "aliases": [],
+  "mirror": false
+}

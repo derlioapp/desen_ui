@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/copyright",
+  "upstream": "hugeicons/Copyright",
+  "also": [],
   "category": "text",
   "tags": [
+    "copyright",
     "licence",
-    "license"
+    "license",
+    "legal",
+    "c"
   ],
   "aliases": [],
   "mirror": false

@@ -1,18 +1,25 @@
 {
-  "upstream": "lucide/folder-bookmark",
+  "upstream": "desen/folder-bookmark",
+  "derived": {
+    "parts": [
+      {
+        "from": "Folder01",
+        "keep": [
+          0
+        ]
+      }
+    ],
+    "paths": [
+      "M13 7V13.4532C13 14.3731 13 14.8331 13.2879 14.9674C13.5758 15.1017 13.9306 14.8073 14.6402 14.2183L15.3598 13.6211C15.6659 13.367 15.819 13.24 16 13.24C16.181 13.24 16.3341 13.367 16.6402 13.6211L17.3598 14.2183C18.0694 14.8073 18.4242 15.1017 18.7121 14.9674C19 14.8331 19 14.3731 19 13.4532V7"
+    ]
+  },
+  "also": [],
   "category": "files",
   "tags": [
     "folder",
     "bookmark",
-    "file",
-    "mark",
-    "storage",
-    "archive",
-    "directory",
-    "project",
-    "favorite",
-    "save",
-    "read later"
+    "saved",
+    "favorite"
   ],
   "aliases": [],
   "mirror": false

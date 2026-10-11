@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/ThreeDView",
+  "also": [],
+  "category": "design",
+  "tags": [
+    "3d",
+    "cube",
+    "view",
+    "scan",
+    "object",
+    "ar"
+  ],
+  "aliases": [
+    "scanBox"
+  ],
+  "mirror": false
+}

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ScreenAddToHome",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "add to home screen",
+    "install",
+    "pwa",
+    "shortcut",
+    "phone"
+  ],
+  "aliases": [],
+  "mirror": false
+}

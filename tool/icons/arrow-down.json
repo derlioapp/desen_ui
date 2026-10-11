@@ -1,12 +1,16 @@
 {
-  "upstream": "lucide/arrow-down",
+  "upstream": "hugeicons/ArrowDown02",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "backwards",
-    "reverse",
+    "arrow",
+    "down",
+    "south",
     "direction",
-    "south"
+    "download"
   ],
-  "aliases": [],
+  "aliases": [
+    "moveDown"
+  ],
   "mirror": false
 }

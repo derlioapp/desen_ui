@@ -1,20 +1,16 @@
 {
-  "upstream": "lucide/info",
+  "upstream": "hugeicons/Info",
+  "also": [
+    "InformationCircle"
+  ],
   "category": "accessibility",
   "tags": [
-    "about",
-    "advice",
-    "clue",
-    "details",
-    "help",
-    "hint",
-    "indicator",
     "information",
-    "knowledge",
-    "notice",
-    "status",
-    "support",
-    "tooltip"
+    "help",
+    "about",
+    "details",
+    "i",
+    "circle info"
   ],
   "aliases": [],
   "mirror": false

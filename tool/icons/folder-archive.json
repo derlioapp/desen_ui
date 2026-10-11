@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/folder-archive",
+  "upstream": "hugeicons/FolderArchive",
+  "also": [],
   "category": "files",
   "tags": [
+    "folder",
     "archive",
-    "zip",
-    "package"
+    "store",
+    "backup",
+    "directory"
   ],
   "aliases": [],
   "mirror": false

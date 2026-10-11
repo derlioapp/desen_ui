@@ -1,5 +1,26 @@
 {
-  "upstream": "lucide/clipboard-list",
+  "upstream": "desen/clipboard-list",
+  "derived": {
+    "parts": [
+      {
+        "from": "ClipboardMinus",
+        "keep": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": "ClipboardList",
+        "keep": [
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "copy",

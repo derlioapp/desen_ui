@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/chevrons-down-up",
+  "upstream": "hugeicons/ChevronsDownUp",
+  "also": [],
   "category": "arrows",
   "tags": [
     "collapse",
     "fold",
-    "vertical"
+    "compress",
+    "shrink",
+    "inward"
   ],
   "aliases": [],
   "mirror": false

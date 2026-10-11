@@ -1,16 +1,14 @@
 {
-  "upstream": "lucide/arrow-big-up",
+  "upstream": "hugeicons/ArrowUpBig",
+  "also": [],
   "category": "arrows",
   "tags": [
+    "arrow",
+    "up",
+    "block",
+    "big",
     "shift",
-    "keyboard",
-    "button",
-    "mac",
-    "capitalize",
-    "capitalise",
-    "forward",
-    "direction",
-    "north"
+    "direction"
   ],
   "aliases": [],
   "mirror": false

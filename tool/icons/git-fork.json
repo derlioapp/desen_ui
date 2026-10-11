@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/git-fork",
+  "upstream": "hugeicons/GitFork",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "version control"
+    "git",
+    "fork",
+    "version",
+    "control",
+    "branch",
+    "copy"
   ],
   "aliases": [],
   "mirror": false

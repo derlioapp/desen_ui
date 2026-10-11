@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ExclamationMarkSlash",
+  "also": [],
+  "category": "notifications",
+  "tags": [
+    "no alert",
+    "muted",
+    "dismissed",
+    "crossed",
+    "big"
+  ],
+  "aliases": [],
+  "mirror": false
+}

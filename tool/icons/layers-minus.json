@@ -1,5 +1,38 @@
 {
-  "upstream": "lucide/layers-minus",
+  "upstream": "desen/layers-minus",
+  "derived": {
+    "parts": [
+      {
+        "from": "Layers01",
+        "keep": [
+          0,
+          1,
+          2
+        ]
+      }
+    ],
+    "cut": [
+      [
+        14,
+        18,
+        3.4
+      ],
+      [
+        17.5,
+        18,
+        3.4
+      ],
+      [
+        21,
+        18,
+        3.4
+      ]
+    ],
+    "paths": [
+      "M14 18H21"
+    ]
+  },
+  "also": [],
   "category": "design",
   "tags": [
     "stack",

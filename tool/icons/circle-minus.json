@@ -1,19 +1,18 @@
 {
-  "upstream": "lucide/circle-minus",
+  "upstream": "hugeicons/CircleMinus",
+  "also": [
+    "MinusSignCircle",
+    "RemoveCircle"
+  ],
   "category": "math",
   "tags": [
-    "subtract",
     "remove",
-    "decrease",
-    "reduce",
-    "calculate",
-    "line",
-    "operator",
-    "code",
-    "coding",
-    "minimum",
-    "downgrade",
-    "-"
+    "subtract",
+    "less",
+    "delete",
+    "minus",
+    "circle",
+    "decrease"
   ],
   "aliases": [
     "removeCircle"

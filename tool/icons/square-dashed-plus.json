@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/square-dashed-plus",
+  "upstream": "hugeicons/Select01",
+  "also": [],
   "category": "design",
   "tags": [
-    "selection",
     "select",
     "add",
-    "new",
-    "placeholder",
-    "marquee",
-    "box",
+    "selection",
     "dashed",
-    "plus",
-    "insert",
-    "frame",
-    "empty"
+    "new"
   ],
   "aliases": [],
   "mirror": false

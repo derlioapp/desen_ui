@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/BorderTop01",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "border",
+    "top",
+    "grid",
+    "table",
+    "cell",
+    "edge"
+  ],
+  "aliases": [],
+  "mirror": false
+}

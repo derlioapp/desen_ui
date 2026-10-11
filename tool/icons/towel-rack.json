@@ -1,23 +1,12 @@
 {
-  "upstream": "lucide/towel-rack",
+  "upstream": "hugeicons/TowelRack",
+  "also": [],
   "category": "home",
   "tags": [
-    "flannel",
+    "towel",
+    "rack",
     "bathroom",
-    "toiletries",
-    "sanitation",
-    "clean",
-    "fresh",
-    "dry",
-    "laundry",
-    "laundrette",
-    "hospitality",
-    "housekeeping",
-    "room service",
-    "spa break",
-    "health club",
-    "amenities",
-    "hanging"
+    "hanger"
   ],
   "aliases": [],
   "mirror": false

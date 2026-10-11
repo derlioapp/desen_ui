@@ -1,8 +1,17 @@
 {
-  "upstream": "lucide/phone-call",
+  "upstream": "hugeicons/Calling",
+  "also": [
+    "PhoneCall"
+  ],
   "category": "connectivity",
   "tags": [
-    "ring"
+    "phone",
+    "call",
+    "ring",
+    "calling",
+    "waves",
+    "ringing",
+    "telephone"
   ],
   "aliases": [
     "call"

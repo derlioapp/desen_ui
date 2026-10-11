@@ -1,0 +1,21 @@
+{
+  "upstream": "hugeicons/CursorMagicSelection04",
+  "also": [
+    "MousePointerClick"
+  ],
+  "category": "arrows",
+  "tags": [
+    "cursor",
+    "magic selection",
+    "highlight",
+    "pointer",
+    "burst",
+    "shine",
+    "click",
+    "tap",
+    "select",
+    "press"
+  ],
+  "aliases": [],
+  "mirror": false
+}

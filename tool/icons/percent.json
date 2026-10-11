@@ -1,16 +1,12 @@
 {
-  "upstream": "lucide/percent",
+  "upstream": "hugeicons/Percent",
+  "also": [],
   "category": "math",
   "tags": [
+    "percent",
     "percentage",
-    "modulo",
-    "modulus",
-    "remainder",
-    "%",
-    "sale",
     "discount",
-    "offer",
-    "marketing"
+    "ratio"
   ],
   "aliases": [],
   "mirror": false

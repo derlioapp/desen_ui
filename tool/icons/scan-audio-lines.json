@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/VoiceId",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "voice id",
+    "voice recognition",
+    "biometric",
+    "sound wave",
+    "authentication",
+    "verify"
+  ],
+  "aliases": [],
+  "mirror": false
+}

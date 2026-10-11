@@ -1,14 +1,18 @@
 {
-  "upstream": "lucide/calendar-range",
+  "upstream": "hugeicons/CalendarRange",
+  "also": [
+    "Calendar02"
+  ],
   "category": "time",
   "tags": [
-    "date",
-    "day",
-    "month",
-    "year",
-    "event",
+    "calendar",
     "range",
-    "period"
+    "period",
+    "dates",
+    "lines",
+    "date",
+    "agenda",
+    "schedule"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Restaurant",
+  "also": [],
+  "category": "food-beverage",
+  "tags": [
+    "restaurant",
+    "table",
+    "awning",
+    "cafe",
+    "dining"
+  ],
+  "aliases": [],
+  "mirror": false
+}

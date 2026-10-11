@@ -1,14 +1,15 @@
 {
-  "upstream": "lucide/vote",
+  "upstream": "hugeicons/Vote",
+  "also": [],
   "category": "social",
   "tags": [
-    "vote",
-    "poll",
     "ballot",
-    "political",
-    "social",
-    "check",
-    "tick"
+    "election",
+    "poll",
+    "voting",
+    "ballot box",
+    "democracy",
+    "choice"
   ],
   "aliases": [],
   "mirror": false

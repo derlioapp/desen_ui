@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ScrollVertical",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "scroll",
+    "vertical",
+    "pan",
+    "up down",
+    "swipe"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,22 +1,15 @@
 {
-  "upstream": "lucide/waypoints",
-  "category": "security",
+  "upstream": "hugeicons/Waypoints",
+  "also": [],
+  "category": "navigation",
   "tags": [
-    "indirection",
-    "vpn",
-    "virtual private network",
-    "proxy",
-    "connections",
-    "bounce",
-    "reroute",
+    "route",
     "path",
-    "journey",
-    "planner",
     "stops",
-    "stations",
-    "shared",
-    "spread",
-    "viral"
+    "journey",
+    "nodes",
+    "map",
+    "directions"
   ],
   "aliases": [],
   "mirror": false

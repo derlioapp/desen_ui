@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/focus",
+  "upstream": "hugeicons/CenterFocus",
+  "also": [],
   "category": "photography",
   "tags": [
-    "camera",
-    "lens",
-    "photo",
-    "dashed"
+    "center focus",
+    "autofocus",
+    "viewfinder",
+    "target",
+    "scan"
   ],
   "aliases": [],
   "mirror": false

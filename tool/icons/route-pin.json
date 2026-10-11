@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Route02",
+  "also": [
+    "Route03"
+  ],
+  "category": "navigation",
+  "tags": [
+    "route",
+    "path",
+    "pin",
+    "destination",
+    "journey",
+    "direct"
+  ],
+  "aliases": [],
+  "mirror": false
+}

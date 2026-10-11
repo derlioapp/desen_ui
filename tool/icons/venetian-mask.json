@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/venetian-mask",
-  "category": "account",
+  "upstream": "hugeicons/VenetianMask",
+  "also": [],
+  "category": "social",
   "tags": [
     "mask",
+    "carnival",
     "masquerade",
-    "impersonate",
-    "secret",
-    "incognito"
+    "theater",
+    "disguise",
+    "anonymous"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/BitcoinLocation",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "bitcoin",
+    "location",
+    "pin",
+    "map",
+    "atm",
+    "crypto",
+    "btc"
+  ],
+  "aliases": [],
+  "mirror": false
+}

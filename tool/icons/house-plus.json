@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/house-plus",
+  "upstream": "hugeicons/HousePlus",
+  "also": [],
   "category": "buildings",
   "tags": [
     "home",
-    "living",
-    "medical",
-    "new",
-    "addition",
-    "building",
-    "residence",
-    "architecture"
+    "plus",
+    "add",
+    "new property"
   ],
   "aliases": [],
   "mirror": false

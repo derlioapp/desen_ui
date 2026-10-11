@@ -1,9 +1,15 @@
 {
-  "upstream": "lucide/file-minus-corner",
+  "upstream": "hugeicons/FileMinusCorner",
+  "also": [],
   "category": "files",
   "tags": [
+    "remove",
+    "delete",
+    "subtract",
     "document"
   ],
-  "aliases": [],
+  "aliases": [
+    "fileMinus"
+  ],
   "mirror": false
 }

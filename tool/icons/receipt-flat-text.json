@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Invoice01",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "invoice",
+    "bill",
+    "payment",
+    "receipt",
+    "purchase"
+  ],
+  "aliases": [],
+  "mirror": false
+}

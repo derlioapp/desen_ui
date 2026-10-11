@@ -1,10 +1,12 @@
 {
-  "upstream": "lucide/hop",
+  "upstream": "hugeicons/Hop",
+  "also": [],
   "category": "food-beverage",
   "tags": [
+    "hop",
     "beer",
-    "brewery",
-    "drink"
+    "brewing",
+    "plant"
   ],
   "aliases": [],
   "mirror": false

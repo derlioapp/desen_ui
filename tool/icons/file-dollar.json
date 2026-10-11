@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/FileDollar",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "invoice",
+    "money",
+    "finance",
+    "payment",
+    "document"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

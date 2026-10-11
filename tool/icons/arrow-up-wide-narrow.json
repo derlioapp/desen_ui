@@ -1,15 +1,13 @@
 {
-  "upstream": "lucide/arrow-up-wide-narrow",
+  "upstream": "hugeicons/ArrowUpWideNarrow",
+  "also": [],
   "category": "text",
   "tags": [
-    "filter",
     "sort",
-    "ascending",
     "descending",
-    "increasing",
-    "decreasing",
-    "rising",
-    "falling"
+    "order",
+    "filter",
+    "lines"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/IdentityCard",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "id",
+    "card",
+    "identity",
+    "details",
+    "profile"
+  ],
+  "aliases": [],
+  "mirror": false
+}

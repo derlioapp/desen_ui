@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/route",
+  "upstream": "hugeicons/Route01",
+  "also": [],
   "category": "navigation",
   "tags": [
+    "route",
     "path",
     "journey",
     "planner",
-    "points",
-    "stops",
-    "stations"
+    "stops"
   ],
   "aliases": [],
   "mirror": false

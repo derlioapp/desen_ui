@@ -1,28 +1,27 @@
 {
-  "upstream": "lucide/sticky-note-check",
+  "upstream": "desen/sticky-note-check",
+  "derived": {
+    "parts": [
+      {
+        "from": "StickyNote03",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ],
+    "paths": [
+      "M8 11.5L10 13.5L14 8.5"
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
-    "post-it",
-    "comment",
-    "annotation",
-    "reaction",
-    "memo",
-    "reminder",
-    "todo",
-    "task",
-    "idea",
-    "brainstorm",
-    "document",
-    "page",
-    "paper",
-    "sheet",
-    "stationary",
-    "office",
+    "note",
+    "sticky",
     "done",
-    "complete",
-    "success",
     "check",
-    "verified"
+    "complete"
   ],
   "aliases": [],
   "mirror": false

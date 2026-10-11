@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/scan-text",
+  "upstream": "hugeicons/ScanText",
+  "also": [],
   "category": "text",
   "tags": [
-    "recognition",
-    "read",
-    "translate",
-    "copy",
-    "lines"
+    "ocr",
+    "scan",
+    "text",
+    "document",
+    "read"
   ],
   "aliases": [],
   "mirror": false

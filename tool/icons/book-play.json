@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/AudioBook01",
+  "also": [],
+  "category": "multimedia",
+  "tags": [
+    "audiobook",
+    "book",
+    "play",
+    "listen",
+    "narration",
+    "media"
+  ],
+  "aliases": [],
+  "mirror": false
+}

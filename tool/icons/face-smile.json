@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Smile",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "smile",
+    "happy",
+    "emoji",
+    "face",
+    "joy"
+  ],
+  "aliases": [
+    "smile",
+    "faceSlightlySmiling"
+  ],
+  "mirror": false
+}

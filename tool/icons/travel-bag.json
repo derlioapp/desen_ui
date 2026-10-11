@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TravelBag",
+  "also": [],
+  "category": "travel",
+  "tags": [
+    "travel",
+    "bag",
+    "luggage",
+    "suitcase",
+    "trip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

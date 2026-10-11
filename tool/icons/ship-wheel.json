@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/ship-wheel",
+  "upstream": "hugeicons/ShipWheel",
+  "also": [],
   "category": "transportation",
   "tags": [
+    "helm",
     "steering",
-    "rudder",
+    "nautical",
     "boat",
-    "knots",
-    "nautical mile",
-    "maritime",
-    "sailing",
-    "yacht",
-    "cruise",
-    "ocean liner",
-    "tanker",
-    "vessel",
-    "navy",
-    "trip"
+    "captain"
   ],
   "aliases": [],
   "mirror": false

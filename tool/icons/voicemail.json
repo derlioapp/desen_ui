@@ -1,13 +1,14 @@
 {
-  "upstream": "lucide/voicemail",
+  "upstream": "hugeicons/Voicemail",
+  "also": [],
   "category": "connectivity",
   "tags": [
+    "voice mail",
+    "message",
+    "answering machine",
     "phone",
-    "cassette",
-    "tape",
-    "reel",
     "recording",
-    "audio"
+    "tape"
   ],
   "aliases": [],
   "mirror": false

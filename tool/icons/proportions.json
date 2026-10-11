@@ -1,25 +1,13 @@
 {
-  "upstream": "lucide/proportions",
+  "upstream": "hugeicons/Proportions",
+  "also": [],
   "category": "layout",
   "tags": [
-    "screens",
-    "sizes",
-    "rotate",
-    "rotation",
-    "adjust",
-    "aspect ratio",
-    "16:9",
-    "widescreen",
-    "4:3",
-    "resolution",
-    "responsive",
-    "mobile",
-    "desktop",
-    "dimensions",
-    "monitor",
-    "orientation",
-    "portrait",
-    "landscape"
+    "proportions",
+    "aspect",
+    "ratio",
+    "size",
+    "screen"
   ],
   "aliases": [],
   "mirror": false

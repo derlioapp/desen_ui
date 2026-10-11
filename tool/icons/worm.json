@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/worm",
+  "upstream": "hugeicons/Worm",
+  "also": [],
   "category": "animals",
   "tags": [
-    "invertebrate",
-    "grub",
-    "larva",
-    "snake",
-    "crawl",
-    "wiggle",
-    "slither",
-    "pest control",
-    "computer virus",
-    "malware"
+    "bug",
+    "insect",
+    "earthworm",
+    "caterpillar",
+    "crawl"
   ],
   "aliases": [],
   "mirror": false

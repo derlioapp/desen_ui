@@ -1,10 +1,14 @@
 {
-  "upstream": "lucide/dam",
+  "upstream": "hugeicons/Dam",
+  "also": [],
   "category": "buildings",
   "tags": [
-    "electricity",
-    "energy",
-    "water"
+    "dam",
+    "reservoir",
+    "water",
+    "barrier",
+    "hydro",
+    "infrastructure"
   ],
   "aliases": [],
   "mirror": false

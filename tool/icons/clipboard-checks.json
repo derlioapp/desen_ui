@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Quiz03",
+  "also": [
+    "Quiz04"
+  ],
+  "category": "text",
+  "tags": [
+    "quiz",
+    "test",
+    "checklist",
+    "exam",
+    "clipboard",
+    "done"
+  ],
+  "aliases": [],
+  "mirror": false
+}

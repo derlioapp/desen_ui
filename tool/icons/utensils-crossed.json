@@ -1,19 +1,17 @@
 {
-  "upstream": "lucide/utensils-crossed",
+  "upstream": "hugeicons/UtensilsCrossed",
+  "also": [
+    "Restaurant02"
+  ],
   "category": "food-beverage",
   "tags": [
     "fork",
     "knife",
     "cutlery",
-    "flatware",
-    "tableware",
-    "silverware",
-    "food",
     "restaurant",
-    "meal",
-    "breakfast",
-    "dinner",
-    "supper"
+    "dining",
+    "eat",
+    "meal"
   ],
   "aliases": [],
   "mirror": false

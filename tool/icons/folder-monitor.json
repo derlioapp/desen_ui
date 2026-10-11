@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderShared03",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "shared",
+    "monitor",
+    "network drive",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

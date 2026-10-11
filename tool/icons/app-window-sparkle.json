@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/AiBrowser",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "ai",
+    "browser",
+    "window",
+    "web",
+    "sparkle"
+  ],
+  "aliases": [],
+  "mirror": false
+}

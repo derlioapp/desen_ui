@@ -1,21 +1,13 @@
 {
-  "upstream": "lucide/badge-turkish-lira",
+  "upstream": "hugeicons/BadgeTurkishLira",
+  "also": [],
   "category": "shopping",
   "tags": [
-    "discount",
-    "offer",
-    "sale",
-    "voucher",
-    "tag",
-    "monetization",
-    "marketing",
-    "finance",
-    "financial",
-    "exchange",
-    "transaction",
-    "payment",
+    "lira",
     "try",
-    "₺"
+    "price",
+    "money",
+    "badge"
   ],
   "aliases": [],
   "mirror": false

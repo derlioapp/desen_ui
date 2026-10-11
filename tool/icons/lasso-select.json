@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/lasso-select",
+  "upstream": "hugeicons/LassoSelect",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "select",
-    "cursor"
+    "lasso select",
+    "selection",
+    "cursor",
+    "freeform",
+    "pick"
   ],
   "aliases": [],
   "mirror": false

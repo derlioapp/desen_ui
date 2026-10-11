@@ -1,28 +1,17 @@
 {
-  "upstream": "lucide/circle-plus",
+  "upstream": "hugeicons/CirclePlus",
+  "also": [
+    "AddCircle",
+    "PlusSignCircle"
+  ],
   "category": "math",
   "tags": [
     "add",
     "new",
-    "increase",
-    "increment",
-    "positive",
-    "calculate",
-    "crosshair",
-    "aim",
-    "target",
-    "scope",
-    "sight",
-    "reticule",
-    "maximum",
-    "upgrade",
-    "extra",
-    "operator",
-    "join",
-    "concatenate",
-    "code",
-    "coding",
-    "+"
+    "create",
+    "more",
+    "plus",
+    "circle"
   ],
   "aliases": [
     "addCircle"

@@ -1,12 +1,13 @@
 {
-  "upstream": "lucide/align-horizontal-space-between",
+  "upstream": "hugeicons/AlignHorizontalSpaceBetween",
+  "also": [],
   "category": "layout",
   "tags": [
-    "around",
-    "items",
-    "bottom",
-    "flex",
-    "justify"
+    "align",
+    "horizontal",
+    "space",
+    "between",
+    "distribute"
   ],
   "aliases": [],
   "mirror": false

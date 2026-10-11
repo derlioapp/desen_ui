@@ -1,29 +1,31 @@
 {
-  "upstream": "lucide/square-text",
+  "upstream": "desen/square-text",
+  "derived": {
+    "parts": [
+      {
+        "from": "Square",
+        "keep": [
+          0
+        ]
+      }
+    ],
+    "paths": [
+      "M7.5 8H15.5",
+      "M7.5 12H16.5",
+      "M7.5 16H12.5"
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "text",
     "paragraph",
-    "content",
-    "note",
     "document",
-    "body",
-    "copy",
-    "article",
-    "square",
-    "container",
-    "block",
-    "card",
-    "placeholder",
-    "log",
-    "page",
-    "paper",
-    "sheet",
-    "list",
-    "script",
-    "code",
-    "editor"
+    "note",
+    "lines"
   ],
-  "aliases": [],
+  "aliases": [
+    "textSquare"
+  ],
   "mirror": false
 }

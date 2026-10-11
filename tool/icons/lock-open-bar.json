@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SquareUnlock01",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "unlock",
+    "open",
+    "unlocked",
+    "padlock",
+    "access"
+  ],
+  "aliases": [],
+  "mirror": false
+}

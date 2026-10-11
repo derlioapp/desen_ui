@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/square-stack",
+  "upstream": "hugeicons/SquareStack",
+  "also": [],
   "category": "text",
   "tags": [
-    "versions",
-    "clone",
-    "copy",
-    "duplicate",
-    "multiple",
-    "revisions",
-    "version control",
-    "backup",
-    "history"
+    "stack",
+    "layers",
+    "copies",
+    "squares",
+    "overlap"
   ],
   "aliases": [],
   "mirror": false

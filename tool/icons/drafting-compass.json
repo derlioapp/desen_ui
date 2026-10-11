@@ -1,18 +1,20 @@
 {
-  "upstream": "lucide/drafting-compass",
+  "upstream": "hugeicons/Compass01",
+  "also": [
+    "DrawingCompass"
+  ],
   "category": "math",
   "tags": [
+    "compass",
+    "drafting",
     "geometry",
-    "trigonometry",
-    "radius",
-    "diameter",
-    "circumference",
-    "calculate",
-    "measure",
-    "arc",
-    "curve",
     "draw",
-    "sketch"
+    "circle",
+    "drawing compass",
+    "drawing",
+    "design",
+    "draw circle",
+    "architect"
   ],
   "aliases": [],
   "mirror": false

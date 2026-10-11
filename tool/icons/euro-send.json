@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/EuroSend",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "euro",
+    "send",
+    "outgoing",
+    "money",
+    "transfer",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": true
+}

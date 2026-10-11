@@ -1,8 +1,18 @@
 {
-  "upstream": "lucide/list",
+  "upstream": "hugeicons/List",
+  "also": [
+    "LeftToRightListBullet"
+  ],
   "category": "text",
   "tags": [
-    "options"
+    "bullets",
+    "items",
+    "unordered",
+    "menu",
+    "rows",
+    "bullet list",
+    "list",
+    "left to right"
   ],
   "aliases": [
     "bulletList"

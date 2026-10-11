@@ -1,25 +1,17 @@
 {
-  "upstream": "lucide/monitor-cloud",
+  "upstream": "hugeicons/MonitorCloud",
+  "also": [
+    "ComputerCloud"
+  ],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
     "display",
-    "desktop",
-    "external display",
-    "virtual machine",
-    "virtual desktop",
-    "vm",
-    "vdi",
-    "computing",
-    "remote work",
-    "monitoring",
-    "infrastructure",
-    "software as a service",
-    "saas",
-    "workstation",
-    "environment"
+    "cloud",
+    "remote",
+    "online",
+    "computer",
+    "virtual"
   ],
   "aliases": [],
   "mirror": false

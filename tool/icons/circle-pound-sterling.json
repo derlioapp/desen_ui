@@ -1,18 +1,21 @@
 {
-  "upstream": "lucide/circle-pound-sterling",
+  "upstream": "hugeicons/CirclePoundSterling",
+  "also": [
+    "PoundCircle"
+  ],
   "category": "finance",
   "tags": [
-    "monetization",
-    "coin",
-    "penny",
-    "marketing",
-    "currency",
     "money",
-    "payment",
-    "british",
+    "currency",
     "gbp",
-    "£"
+    "british",
+    "price",
+    "pound",
+    "sterling",
+    "circle"
   ],
-  "aliases": [],
+  "aliases": [
+    "poundSterlingCircle"
+  ],
   "mirror": false
 }

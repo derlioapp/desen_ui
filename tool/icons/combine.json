@@ -1,16 +1,13 @@
 {
-  "upstream": "lucide/combine",
+  "upstream": "hugeicons/Combine",
+  "also": [],
   "category": "development",
   "tags": [
-    "cubes",
-    "packages",
-    "parts",
-    "units",
-    "collection",
-    "cluster",
+    "merge",
+    "join",
     "combine",
-    "gather",
-    "merge"
+    "group",
+    "blocks"
   ],
   "aliases": [],
   "mirror": false

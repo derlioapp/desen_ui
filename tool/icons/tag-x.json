@@ -1,5 +1,32 @@
 {
-  "upstream": "lucide/tag-x",
+  "upstream": "desen/tag-x",
+  "derived": {
+    "parts": [
+      {
+        "from": "Tag01",
+        "keep": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "from": "UserRemove01",
+        "keep": [
+          1
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        18,
+        18.5,
+        5.2
+      ]
+    ]
+  },
+  "also": [],
   "category": "account",
   "tags": [
     "label",

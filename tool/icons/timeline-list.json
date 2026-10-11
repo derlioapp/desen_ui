@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/TimelineList",
+  "also": [],
+  "category": "time",
+  "tags": [
+    "timeline",
+    "list",
+    "steps",
+    "sequence",
+    "history"
+  ],
+  "aliases": [
+    "timeline"
+  ],
+  "mirror": false
+}

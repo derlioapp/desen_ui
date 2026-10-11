@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/Invoice03",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "invoice",
+    "bill",
+    "dollar",
+    "payment",
+    "receipt",
+    "roll",
+    "lines"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

@@ -1,11 +1,10 @@
 {
-  "upstream": "lucide/bell-dot",
+  "upstream": "hugeicons/BellDot",
+  "also": [],
   "category": "account",
   "tags": [
-    "alarm",
     "notification",
-    "sound",
-    "reminder",
+    "alert",
     "unread"
   ],
   "aliases": [],

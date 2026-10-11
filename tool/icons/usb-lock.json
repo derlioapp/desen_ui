@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SecurityKeyUsb",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "security key",
+    "usb",
+    "token",
+    "hardware key",
+    "2fa"
+  ],
+  "aliases": [],
+  "mirror": false
+}

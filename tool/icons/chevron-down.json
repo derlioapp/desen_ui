@@ -1,11 +1,18 @@
 {
-  "upstream": "lucide/chevron-down",
+  "upstream": "hugeicons/ChevronDown",
+  "also": [
+    "ArrowDown01"
+  ],
   "category": "arrows",
   "tags": [
-    "backwards",
-    "reverse",
-    "slow",
-    "dropdown"
+    "expand",
+    "dropdown",
+    "more",
+    "caret",
+    "open",
+    "disclosure",
+    "chevron",
+    "down"
   ],
   "aliases": [],
   "mirror": false

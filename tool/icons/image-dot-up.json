@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/ImageUp",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "image",
+    "upload",
+    "arrow",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,11 +1,14 @@
 {
-  "upstream": "lucide/user-round-cog",
+  "upstream": "hugeicons/UserRoundCog",
+  "also": [],
   "category": "account",
   "tags": [
     "settings",
-    "edit",
-    "cog",
-    "gear"
+    "preferences",
+    "gear",
+    "edit profile",
+    "person",
+    "account"
   ],
   "aliases": [],
   "mirror": false

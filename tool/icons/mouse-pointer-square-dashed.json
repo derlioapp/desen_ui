@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CursorRectangleSelection01",
+  "also": [],
+  "category": "arrows",
+  "tags": [
+    "cursor",
+    "rectangle selection",
+    "marquee",
+    "select",
+    "pointer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,0 +1,18 @@
+{
+  "upstream": "hugeicons/FourFinger02",
+  "also": [
+    "Hold01"
+  ],
+  "category": "arrows",
+  "tags": [
+    "hand",
+    "four fingers",
+    "gesture",
+    "touch",
+    "swipe",
+    "hold",
+    "press"
+  ],
+  "aliases": [],
+  "mirror": false
+}

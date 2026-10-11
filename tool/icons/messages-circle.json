@@ -1,24 +1,14 @@
 {
-  "upstream": "lucide/messages-circle",
+  "upstream": "hugeicons/Chatting01",
+  "also": [],
   "category": "social",
   "tags": [
-    "comment",
     "chat",
+    "chatting",
     "conversation",
-    "dialog",
-    "feedback",
-    "speech bubbles",
-    "copy",
-    "multiple",
+    "messages",
     "discussion",
-    "interview",
-    "debate",
-    "group",
-    "groupchat",
-    "threads",
-    "unread",
-    "bubble",
-    "messaging"
+    "bubbles"
   ],
   "aliases": [],
   "mirror": false

@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/HandCoins",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "money",
+    "payment",
+    "coin",
+    "donate",
+    "tip"
+  ],
+  "aliases": [],
+  "mirror": false
+}

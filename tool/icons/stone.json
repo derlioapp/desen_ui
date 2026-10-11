@@ -1,21 +1,14 @@
 {
-  "upstream": "lucide/stone",
+  "upstream": "hugeicons/Stone",
+  "also": [],
   "category": "nature",
   "tags": [
-    "mineral",
-    "geology",
-    "nature",
-    "solid",
-    "pebble",
-    "crystal",
-    "ore",
-    "hard",
-    "coal",
     "stone",
     "rock",
-    "boulder"
+    "mineral",
+    "boulder",
+    "gem"
   ],
   "aliases": [],
-  "mirror": false,
-  "fill": false
+  "mirror": false
 }

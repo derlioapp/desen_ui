@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/file-spreadsheet",
+  "upstream": "hugeicons/FileSpreadsheet",
+  "also": [],
   "category": "files",
   "tags": [
-    "spreadsheet",
+    "excel",
+    "table",
+    "grid",
     "sheet",
-    "table"
+    "document"
   ],
   "aliases": [],
   "mirror": false

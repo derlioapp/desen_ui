@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/git-branch",
+  "upstream": "hugeicons/GitBranch",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
+    "git",
+    "branch",
     "version control",
-    "vcs",
-    "repository"
+    "code",
+    "vcs"
   ],
   "aliases": [],
   "mirror": false

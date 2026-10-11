@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/ComputerVideoCall",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "computer",
+    "screen",
+    "video call",
+    "meeting",
+    "conference",
+    "webcam"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.75
+}

@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Doc01",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "doc",
+    "document",
+    "word",
+    "file",
+    "text",
+    "extension"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "stroke": 1.5
+}

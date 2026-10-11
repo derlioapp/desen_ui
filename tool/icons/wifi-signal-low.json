@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/WifiLowSignal",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "signal",
+    "strength",
+    "weak",
+    "fan",
+    "reception"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

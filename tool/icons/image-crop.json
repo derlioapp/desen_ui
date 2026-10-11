@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ImageCrop",
+  "also": [],
+  "category": "photography",
+  "tags": [
+    "image",
+    "crop",
+    "trim",
+    "resize",
+    "photo"
+  ],
+  "aliases": [],
+  "mirror": false
+}

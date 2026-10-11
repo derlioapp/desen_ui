@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/WifiLocation",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "wifi",
+    "hotspot",
+    "location",
+    "place",
+    "pin",
+    "public",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

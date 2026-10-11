@@ -1,9 +1,16 @@
 {
-  "upstream": "lucide/wallet-minimal",
+  "upstream": "hugeicons/Wallet04",
+  "also": [
+    "WalletMinimal"
+  ],
   "category": "account",
   "tags": [
+    "money",
     "finance",
-    "pocket"
+    "pocket",
+    "payment",
+    "purse",
+    "simple"
   ],
   "aliases": [],
   "mirror": false

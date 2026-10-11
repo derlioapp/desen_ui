@@ -1,26 +1,16 @@
 {
-  "upstream": "lucide-lab/flower-lotus",
+  "upstream": "hugeicons/Yoga03",
+  "also": [],
   "category": "nature",
   "tags": [
-    "water lily",
-    "petals",
-    "plant",
-    "spring",
-    "bloom",
-    "blossom",
-    "flora",
-    "pond",
-    "aquatic",
-    "sacred",
-    "purity",
-    "longevity",
-    "culture",
-    "philosopy",
-    "sprituality",
+    "yoga",
+    "lotus",
+    "flower",
     "meditation",
-    "wellbeing",
-    "lifestyle"
+    "spa",
+    "wellness"
   ],
   "aliases": [],
-  "mirror": false
+  "mirror": false,
+  "fill": false
 }

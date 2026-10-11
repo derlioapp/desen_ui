@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/FolderDetails",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "details",
+    "list",
+    "contents",
+    "directory"
+  ],
+  "aliases": [],
+  "mirror": false
+}

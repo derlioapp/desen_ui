@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/ChatLock01",
+  "also": [],
+  "category": "social",
+  "tags": [
+    "chat",
+    "message",
+    "private",
+    "secure",
+    "locked",
+    "encrypted"
+  ],
+  "aliases": [],
+  "mirror": false
+}

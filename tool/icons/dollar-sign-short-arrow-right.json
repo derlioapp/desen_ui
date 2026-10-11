@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DollarSend01",
+  "also": [],
+  "category": "finance",
+  "tags": [
+    "dollar",
+    "send",
+    "outgoing",
+    "money",
+    "transfer",
+    "payment"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,28 +1,11 @@
 {
-  "upstream": "lucide-lab/bucket",
+  "upstream": "hugeicons/Bucket",
+  "also": [],
   "category": "nature",
   "tags": [
-    "handle",
-    "container",
-    "fill",
-    "liquid",
-    "water",
-    "seaside",
-    "summer holiday",
-    "beach",
-    "sandcastle",
-    "sandbox",
-    "toys",
-    "kids",
-    "children",
-    "play",
-    "gardening",
-    "equipment",
-    "spade",
-    "shovel",
-    "catch",
-    "fishing",
-    "crabs"
+    "bucket",
+    "pail",
+    "water"
   ],
   "aliases": [],
   "mirror": false

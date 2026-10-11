@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/receipt-text",
+  "upstream": "hugeicons/ReceiptText",
+  "also": [],
   "category": "finance",
   "tags": [
+    "receipt",
+    "text",
+    "invoice",
     "bill",
-    "voucher",
-    "slip",
-    "check",
-    "counterfoil",
-    "details",
-    "small print",
-    "terms",
-    "conditions",
-    "contract"
+    "lines"
   ],
   "aliases": [],
   "mirror": false

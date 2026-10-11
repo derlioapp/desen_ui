@@ -1,14 +1,17 @@
 {
-  "upstream": "lucide/message-circle-question-mark",
+  "upstream": "hugeicons/MessageCircleQuestionMark",
+  "also": [
+    "BubbleChatQuestion"
+  ],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "help"
+    "question",
+    "help",
+    "support",
+    "bubble",
+    "ask"
   ],
   "aliases": [],
   "mirror": false

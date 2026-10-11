@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/CircleLock01",
+  "also": [],
+  "category": "security",
+  "tags": [
+    "padlock",
+    "secure",
+    "private",
+    "locked",
+    "protect"
+  ],
+  "aliases": [],
+  "mirror": false
+}

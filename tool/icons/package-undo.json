@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ReturnRequest",
+  "also": [],
+  "category": "transportation",
+  "tags": [
+    "return request",
+    "package",
+    "box",
+    "undo",
+    "refund"
+  ],
+  "aliases": [],
+  "mirror": true
+}

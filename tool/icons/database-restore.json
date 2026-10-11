@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DatabaseRestore",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "database",
+    "restore",
+    "recover",
+    "reload",
+    "storage",
+    "rotate"
+  ],
+  "aliases": [],
+  "mirror": false
+}

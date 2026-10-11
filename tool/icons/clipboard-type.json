@@ -1,5 +1,22 @@
 {
-  "upstream": "lucide/clipboard-type",
+  "upstream": "desen/clipboard-type",
+  "derived": {
+    "parts": [
+      {
+        "from": "ClipboardMinus",
+        "keep": [
+          0,
+          1
+        ]
+      }
+    ],
+    "paths": [
+      "M9 12.5V12H15V12.5",
+      "M12 12V17.5",
+      "M10.75 17.5H13.25"
+    ]
+  },
+  "also": [],
   "category": "text",
   "tags": [
     "paste",

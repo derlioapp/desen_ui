@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DialpadCircle01",
+  "also": [],
+  "category": "layout",
+  "tags": [
+    "dialpad",
+    "circles",
+    "grid",
+    "keypad",
+    "dots",
+    "menu"
+  ],
+  "aliases": [],
+  "mirror": false
+}

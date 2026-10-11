@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/receipt-indian-rupee",
+  "upstream": "hugeicons/ReceiptIndianRupee",
+  "also": [],
   "category": "finance",
   "tags": [
-    "bill",
-    "voucher",
-    "slip",
-    "check",
-    "counterfoil",
-    "currency",
-    "inr",
-    "₹"
+    "receipt",
+    "rupee",
+    "invoice",
+    "bill"
   ],
   "aliases": [],
   "mirror": false

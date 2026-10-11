@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/MouseLeftClick05",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "mouse",
+    "left click",
+    "wheel",
+    "primary",
+    "peripheral",
+    "computer"
+  ],
+  "aliases": [],
+  "mirror": false
+}

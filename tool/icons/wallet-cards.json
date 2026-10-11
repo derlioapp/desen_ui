@@ -1,5 +1,6 @@
 {
-  "upstream": "lucide/wallet-cards",
+  "upstream": "hugeicons/WalletCards",
+  "also": [],
   "category": "account",
   "tags": [
     "wallet",
@@ -7,17 +8,8 @@
     "banking",
     "cash",
     "debit",
-    "transport",
     "money",
-    "finance",
-    "pocket",
-    "credit",
-    "purchase",
-    "payment",
-    "shopping",
-    "retail",
-    "consumer",
-    "cc"
+    "finance"
   ],
   "aliases": [],
   "mirror": false

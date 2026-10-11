@@ -1,10 +1,13 @@
 {
-  "upstream": "lucide/map",
-  "category": "text",
+  "upstream": "hugeicons/Map",
+  "also": [],
+  "category": "navigation",
   "tags": [
     "location",
-    "navigation",
-    "travel"
+    "paper",
+    "fold",
+    "guide",
+    "atlas"
   ],
   "aliases": [],
   "mirror": false

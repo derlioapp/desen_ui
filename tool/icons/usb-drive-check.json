@@ -1,0 +1,13 @@
+{
+  "upstream": "hugeicons/UsbConnected02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "usb",
+    "flash drive",
+    "connected",
+    "check"
+  ],
+  "aliases": [],
+  "mirror": false
+}

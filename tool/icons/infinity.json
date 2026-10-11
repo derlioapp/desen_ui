@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/infinity",
-  "category": "multimedia",
+  "upstream": "hugeicons/Infinity01",
+  "also": [],
+  "category": "math",
   "tags": [
-    "unlimited",
-    "forever",
+    "infinite",
     "loop",
-    "math"
+    "endless",
+    "unlimited",
+    "forever"
   ],
   "aliases": [],
   "mirror": false,

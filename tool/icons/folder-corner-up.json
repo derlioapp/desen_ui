@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/FolderUpload",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "folder",
+    "upload",
+    "send",
+    "arrow",
+    "directory"
+  ],
+  "aliases": [
+    "folderUp"
+  ],
+  "mirror": false
+}

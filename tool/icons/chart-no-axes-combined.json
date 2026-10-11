@@ -1,12 +1,14 @@
 {
-  "upstream": "lucide/chart-no-axes-combined",
+  "upstream": "hugeicons/ChartNoAxesCombined",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
-    "graph",
-    "trending up"
+    "analysis",
+    "bars",
+    "trend",
+    "line",
+    "growth",
+    "analytics"
   ],
   "aliases": [],
   "mirror": false

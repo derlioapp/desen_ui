@@ -1,19 +1,13 @@
 {
-  "upstream": "lucide/monitor-speaker",
+  "upstream": "hugeicons/MonitorSpeaker",
+  "also": [],
   "category": "connectivity",
   "tags": [
-    "tv",
-    "computer",
     "screen",
-    "display",
-    "desktop",
-    "external display",
-    "connect",
-    "cast",
+    "speaker",
     "audio",
-    "sound",
-    "volume",
-    "presentation"
+    "devices",
+    "sound"
   ],
   "aliases": [],
   "mirror": false

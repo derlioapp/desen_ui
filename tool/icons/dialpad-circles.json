@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DialpadCircle02",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "dialpad",
+    "keypad",
+    "phone",
+    "circles",
+    "numbers",
+    "call"
+  ],
+  "aliases": [],
+  "mirror": false
+}

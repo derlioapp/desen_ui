@@ -1,18 +1,13 @@
 {
-  "upstream": "lucide/chart-spline",
+  "upstream": "hugeicons/ChartSpline",
+  "also": [],
   "category": "charts",
   "tags": [
-    "statistics",
-    "analytics",
-    "diagram",
-    "graph",
     "curve",
-    "continuous",
     "smooth",
-    "polynomial",
-    "quadratic",
-    "function",
-    "interpolation"
+    "line chart",
+    "graph",
+    "statistics"
   ],
   "aliases": [],
   "mirror": false

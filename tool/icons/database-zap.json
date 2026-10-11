@@ -1,14 +1,14 @@
 {
-  "upstream": "lucide/database-zap",
+  "upstream": "hugeicons/DatabaseLightning",
+  "also": [],
   "category": "devices",
   "tags": [
-    "cache busting",
-    "storage",
-    "memory",
-    "bytes",
-    "servers",
+    "database",
+    "lightning",
     "power",
-    "crash"
+    "fast",
+    "cache",
+    "storage"
   ],
   "aliases": [],
   "mirror": false

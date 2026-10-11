@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/TvIssue",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "tv",
+    "issue",
+    "alert",
+    "problem",
+    "error"
+  ],
+  "aliases": [],
+  "mirror": false
+}

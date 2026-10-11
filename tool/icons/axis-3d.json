@@ -1,9 +1,14 @@
 {
-  "upstream": "lucide/axis-3d",
+  "upstream": "hugeicons/AxisThreeD",
+  "also": [],
   "category": "design",
   "tags": [
-    "gizmo",
-    "coordinates"
+    "axis",
+    "3d",
+    "coordinates",
+    "graph",
+    "xyz",
+    "three dimensional"
   ],
   "aliases": [],
   "mirror": false

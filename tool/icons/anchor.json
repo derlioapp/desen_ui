@@ -1,8 +1,13 @@
 {
-  "upstream": "lucide/anchor",
+  "upstream": "hugeicons/Anchor",
+  "also": [],
   "category": "transportation",
   "tags": [
-    "ship"
+    "ship",
+    "boat",
+    "harbor",
+    "marine",
+    "nautical"
   ],
   "aliases": [],
   "mirror": false

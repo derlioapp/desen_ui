@@ -1,13 +1,13 @@
 {
-  "upstream": "lucide/snail",
+  "upstream": "hugeicons/Snail",
+  "also": [],
   "category": "animals",
   "tags": [
     "animal",
-    "insect",
     "slow",
-    "speed",
-    "delicacy",
-    "spiral"
+    "insect",
+    "spiral",
+    "shell"
   ],
   "aliases": [],
   "mirror": false

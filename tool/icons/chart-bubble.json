@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/ChartBubble01",
+  "also": [],
+  "category": "charts",
+  "tags": [
+    "bubble chart",
+    "scatter",
+    "graph",
+    "statistics",
+    "analytics"
+  ],
+  "aliases": [],
+  "mirror": false
+}

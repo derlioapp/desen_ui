@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/Question",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "question",
+    "person",
+    "help",
+    "ask",
+    "support"
+  ],
+  "aliases": [],
+  "mirror": false
+}

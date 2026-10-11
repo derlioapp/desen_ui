@@ -1,0 +1,17 @@
+{
+  "upstream": "hugeicons/MailValidation01",
+  "also": [],
+  "category": "mail",
+  "tags": [
+    "email",
+    "message",
+    "verified",
+    "validated",
+    "confirmed",
+    "envelope"
+  ],
+  "aliases": [
+    "mailCircleCheckSimple"
+  ],
+  "mirror": false
+}

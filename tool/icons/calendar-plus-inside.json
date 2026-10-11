@@ -1,0 +1,19 @@
+{
+  "upstream": "hugeicons/CalendarAdd02",
+  "also": [
+    "CalendarPlus01"
+  ],
+  "category": "time",
+  "tags": [
+    "calendar",
+    "plus",
+    "add",
+    "new",
+    "event",
+    "inside"
+  ],
+  "aliases": [
+    "calendarPlus2"
+  ],
+  "mirror": false
+}

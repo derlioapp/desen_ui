@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/TwoFinger01",
+  "also": [
+    "TwoFinger02"
+  ],
+  "category": "accessibility",
+  "tags": [
+    "two fingers",
+    "gesture",
+    "touch",
+    "swipe",
+    "scroll"
+  ],
+  "aliases": [],
+  "mirror": false
+}

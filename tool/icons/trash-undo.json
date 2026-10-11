@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DeletePutBack",
+  "also": [],
+  "category": "files",
+  "tags": [
+    "restore",
+    "put back",
+    "undo",
+    "bin",
+    "recover",
+    "trash"
+  ],
+  "aliases": [],
+  "mirror": true
+}

@@ -1,15 +1,12 @@
 {
-  "upstream": "lucide/brush",
+  "upstream": "hugeicons/Brush",
+  "also": [],
   "category": "text",
   "tags": [
-    "clean",
-    "sweep",
-    "refactor",
-    "remove",
-    "draw",
+    "brush",
     "paint",
-    "color",
-    "artist"
+    "draw",
+    "art"
   ],
   "aliases": [],
   "mirror": false

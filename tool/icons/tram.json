@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/Tram",
+  "also": [
+    "TramFront"
+  ],
+  "category": "transportation",
+  "tags": [
+    "tram",
+    "streetcar",
+    "trolley",
+    "rail",
+    "city"
+  ],
+  "aliases": [],
+  "mirror": false
+}

@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/bookmark-minus",
+  "upstream": "hugeicons/BookmarkMinus02",
+  "also": [],
   "category": "account",
   "tags": [
+    "bookmark",
+    "minus",
+    "remove",
     "delete",
-    "remove"
+    "save"
   ],
   "aliases": [],
   "mirror": false

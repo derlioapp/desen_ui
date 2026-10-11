@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/LetterSpacing",
+  "also": [],
+  "category": "text",
+  "tags": [
+    "typography",
+    "tracking",
+    "kerning",
+    "characters",
+    "font"
+  ],
+  "aliases": [],
+  "mirror": false
+}

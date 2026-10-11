@@ -1,19 +1,14 @@
 {
-  "upstream": "lucide/car-battery",
+  "upstream": "hugeicons/AutomotiveBattery01",
+  "also": [],
   "category": "connectivity",
   "tags": [
+    "car",
     "battery",
-    "automobile",
-    "powercell",
-    "electric",
+    "automotive",
     "power",
-    "electricity",
-    "energy",
-    "accumulator",
     "charge",
-    "transport",
-    "vehicle",
-    "car"
+    "vehicle"
   ],
   "aliases": [],
   "mirror": false

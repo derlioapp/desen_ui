@@ -1,11 +1,13 @@
 {
-  "upstream": "lucide/sunset",
+  "upstream": "hugeicons/Sunset",
+  "also": [],
   "category": "arrows",
   "tags": [
-    "weather",
-    "time",
+    "sunset",
     "evening",
-    "night"
+    "dusk",
+    "night",
+    "horizon"
   ],
   "aliases": [],
   "mirror": false

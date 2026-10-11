@@ -1,17 +1,19 @@
 {
-  "upstream": "lucide/train-front",
+  "upstream": "hugeicons/TrainFront",
+  "also": [
+    "Train01"
+  ],
   "category": "transportation",
   "tags": [
+    "train",
     "railway",
-    "metro",
+    "rail",
+    "front",
     "subway",
-    "underground",
-    "high-speed",
-    "bullet",
-    "fast",
-    "track",
-    "line"
+    "locomotive"
   ],
-  "aliases": [],
+  "aliases": [
+    "tramFront"
+  ],
   "mirror": false
 }

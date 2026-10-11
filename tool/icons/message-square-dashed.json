@@ -1,14 +1,13 @@
 {
-  "upstream": "lucide/message-square-dashed",
+  "upstream": "hugeicons/MessageSquareDashed",
+  "also": [],
   "category": "social",
   "tags": [
-    "comment",
+    "message",
     "chat",
-    "conversation",
-    "dialog",
-    "feedback",
-    "speech bubble",
-    "draft"
+    "draft",
+    "pending",
+    "placeholder"
   ],
   "aliases": [],
   "mirror": false

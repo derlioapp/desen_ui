@@ -1,0 +1,15 @@
+{
+  "upstream": "hugeicons/DatabaseSetting",
+  "also": [],
+  "category": "devices",
+  "tags": [
+    "database",
+    "settings",
+    "cog",
+    "configure",
+    "storage",
+    "admin"
+  ],
+  "aliases": [],
+  "mirror": false
+}

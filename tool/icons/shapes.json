@@ -1,17 +1,13 @@
 {
-  "upstream": "lucide/shapes",
+  "upstream": "hugeicons/Shapes01",
+  "also": [],
   "category": "shapes",
   "tags": [
     "triangle",
-    "equilateral",
     "square",
     "circle",
-    "classification",
-    "different",
     "collection",
-    "toy",
-    "blocks",
-    "learning"
+    "toy"
   ],
   "aliases": [],
   "mirror": false

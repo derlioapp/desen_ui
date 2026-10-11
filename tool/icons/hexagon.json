@@ -1,10 +1,15 @@
 {
-  "upstream": "lucide/hexagon",
+  "upstream": "hugeicons/Hexagon",
+  "also": [
+    "Hexagon01"
+  ],
   "category": "shapes",
   "tags": [
+    "hexagon",
     "shape",
-    "node.js",
-    "logo"
+    "polygon",
+    "six sides",
+    "rounded"
   ],
   "aliases": [],
   "mirror": false

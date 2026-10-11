@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/AirplaneSeat02",
+  "also": [],
+  "category": "travel",
+  "tags": [
+    "airplane",
+    "seat",
+    "flight",
+    "chair",
+    "cabin",
+    "front"
+  ],
+  "aliases": [],
+  "mirror": false,
+  "fill": false
+}

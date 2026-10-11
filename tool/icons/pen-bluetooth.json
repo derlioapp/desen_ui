@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/PenConnectBluetooth",
+  "also": [],
+  "category": "connectivity",
+  "tags": [
+    "pen",
+    "stylus",
+    "bluetooth",
+    "connect",
+    "wireless"
+  ],
+  "aliases": [],
+  "mirror": false
+}

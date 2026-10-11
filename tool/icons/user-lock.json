@@ -1,12 +1,15 @@
 {
-  "upstream": "lucide/user-lock",
+  "upstream": "hugeicons/UserLock01",
+  "also": [],
   "category": "account",
   "tags": [
-    "person",
-    "lock",
+    "secure",
     "locked",
+    "private",
+    "access",
+    "person",
     "account",
-    "secure"
+    "protected"
   ],
   "aliases": [],
   "mirror": false

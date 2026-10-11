@@ -1,9 +1,13 @@
 {
-  "upstream": "lucide/haze",
+  "upstream": "hugeicons/Haze",
+  "also": [],
   "category": "weather",
   "tags": [
-    "mist",
-    "fog"
+    "haze",
+    "sun",
+    "fog",
+    "horizon",
+    "mist"
   ],
   "aliases": [],
   "mirror": false

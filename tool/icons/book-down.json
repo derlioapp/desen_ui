@@ -1,13 +1,12 @@
 {
-  "upstream": "lucide/book-down",
+  "upstream": "hugeicons/BookDownload",
+  "also": [],
   "category": "development",
   "tags": [
-    "code",
-    "coding",
-    "version control",
-    "git",
-    "repository",
-    "pull"
+    "download",
+    "pull",
+    "save",
+    "documentation"
   ],
   "aliases": [],
   "mirror": false

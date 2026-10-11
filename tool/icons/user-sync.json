@@ -1,0 +1,16 @@
+{
+  "upstream": "hugeicons/UserSwitch",
+  "also": [],
+  "category": "account",
+  "tags": [
+    "switch user",
+    "switch account",
+    "change user",
+    "refresh",
+    "swap",
+    "person",
+    "account"
+  ],
+  "aliases": [],
+  "mirror": false
+}

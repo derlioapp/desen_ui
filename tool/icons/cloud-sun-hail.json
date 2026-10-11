@@ -1,0 +1,14 @@
+{
+  "upstream": "hugeicons/SunCloudHailstone02",
+  "also": [],
+  "category": "weather",
+  "tags": [
+    "cloud",
+    "sun",
+    "hail",
+    "hailstone",
+    "weather"
+  ],
+  "aliases": [],
+  "mirror": false
+}
