@@ -485,6 +485,33 @@ void main() {
       expect(tester.getSize(close).width, 20);
     });
 
+    testWidgets('a themed closeStyle and the toast\'s own merge', (
+      tester,
+    ) async {
+      const fill = Color(0xFF123456);
+      await tester.pumpWidget(
+        DsToastTheme(
+          data: const DsToastThemeData(
+            style: DsToastStyle(closeStyle: DsButtonStyle(iconSize: 20)),
+          ),
+          child: toast(
+            style: const DsToastStyle(
+              closeStyle: DsButtonStyle(background: fill),
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      final close = find.byType(DsIcon);
+      expect(
+        (tester.widget<AnimatedContainer>(box(close)).decoration!
+                as DsBoxDecoration)
+            .color,
+        fill,
+      );
+      expect(tester.getSize(close).width, 20);
+    });
+
     testWidgets('without them the app\'s button theme does not reach in; '
         'the close icon is 14', (tester) async {
       await tester.pumpWidget(toast());
@@ -492,26 +519,6 @@ void main() {
       final undo = tester.renderObject<RenderParagraph>(find.text('Undo'));
       expect(undo.text.style?.color, isNot(const Color(0xFFFF0000)));
       expect(tester.getSize(find.byType(DsIcon)).width, 14);
-    });
-
-    testWidgets('the deprecated closeIconSize still sizes the close icon; '
-        'a closeStyle iconSize wins over it', (tester) async {
-      await tester.pumpWidget(
-        toast(style: const DsToastStyle(closeIconSize: 18)),
-      );
-      await tester.pumpAndSettle();
-      expect(tester.getSize(find.byType(DsIcon)).width, 18);
-
-      await tester.pumpWidget(
-        DsToastTheme(
-          data: const DsToastThemeData(
-            style: DsToastStyle(closeStyle: DsButtonStyle(iconSize: 20)),
-          ),
-          child: toast(style: const DsToastStyle(closeIconSize: 18)),
-        ),
-      );
-      await tester.pumpAndSettle();
-      expect(tester.getSize(find.byType(DsIcon)).width, 20);
     });
   });
 }

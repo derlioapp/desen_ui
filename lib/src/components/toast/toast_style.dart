@@ -25,10 +25,6 @@ class DsToastStyle with Diagnosticable {
     this.maxWidth,
     this.gap,
     this.iconSize,
-    @Deprecated(
-      'Use closeStyle: DsButtonStyle(iconSize: …) instead. Deprecated in 0.2.2.',
-    )
-    this.closeIconSize,
     this.titleStyle,
     this.descriptionStyle,
     this.textGap,
@@ -60,12 +56,6 @@ class DsToastStyle with Diagnosticable {
   /// Status icon size.
   final double? iconSize;
 
-  /// Dismiss button icon size. A `closeStyle` that sets its own `iconSize` wins.
-  @Deprecated(
-    'Use closeStyle: DsButtonStyle(iconSize: …) instead. Deprecated in 0.2.2.',
-  )
-  final double? closeIconSize;
-
   /// Title style, merged.
   final TextStyle? titleStyle;
 
@@ -93,7 +83,6 @@ class DsToastStyle with Diagnosticable {
       maxWidth: other.maxWidth ?? maxWidth,
       gap: other.gap ?? gap,
       iconSize: other.iconSize ?? iconSize,
-      closeIconSize: other.closeIconSize ?? closeIconSize,
       titleStyle: titleStyle?.merge(other.titleStyle) ?? other.titleStyle,
       descriptionStyle:
           descriptionStyle?.merge(other.descriptionStyle) ??
@@ -129,7 +118,6 @@ class DsToastStyle with Diagnosticable {
     maxWidth,
     gap,
     iconSize,
-    closeIconSize,
     titleStyle,
     descriptionStyle,
     textGap,
@@ -168,9 +156,6 @@ class DsToastStyle with Diagnosticable {
     properties.add(DoubleProperty('maxWidth', maxWidth, defaultValue: null));
     properties.add(DoubleProperty('gap', gap, defaultValue: null));
     properties.add(DoubleProperty('iconSize', iconSize, defaultValue: null));
-    properties.add(
-      DoubleProperty('closeIconSize', closeIconSize, defaultValue: null),
-    );
     properties.add(
       DiagnosticsProperty('titleStyle', titleStyle, defaultValue: null),
     );

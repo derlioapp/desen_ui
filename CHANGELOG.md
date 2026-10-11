@@ -1,8 +1,10 @@
 ## Unreleased
 
-Breaking: the icon set changes.
+Breaking: the icon set changes, and the deprecated
+`DsToastStyle.closeIconSize` is gone. `^0.2.0` stays on 0.2.4; move to
+`^0.3.0` with the table below.
 
-### Changed
+### Breaking
 
 - `DsIcons` is a fork of the free [Hugeicons](https://hugeicons.com) set
   (Hugeicons 4.3.5, MIT) instead of Lucide: 5388 stroke icons in place of
@@ -15,10 +17,12 @@ Breaking: the icon set changes.
   Where the free set has a gap that matters (a plain clipboard,
   `cloud-backup`, `trash-off`, `eject`), Desen puts the icon together from
   Hugeicons parts. Brand logos are not included.
+- `DsToastStyle.closeIconSize`, deprecated in 0.2.2, is removed.
 
 | Before | After | Migration |
 | --- | --- | --- |
 | `DsIcons` held the 2225 Lucide icons and 94 aliases | `DsIcons` holds 5388 icons; 1963 of the 2319 old names still exist, as a name or an alias | Look up the others on the [icon page](https://derlioapp.github.io/desen_ui/#/foundations/icons), which also searches Hugeicons names and tags. Every icon has a new drawing, so check screens that rely on a particular shape |
+| `DsToastStyle(closeIconSize: 18)` | Removed | `DsToastStyle(closeStyle: DsButtonStyle(iconSize: 18))` |
 
 ## 0.2.4
 

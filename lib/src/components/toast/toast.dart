@@ -159,12 +159,6 @@ class DsToast extends StatelessWidget {
     final l10n = DsLocalizations.of(context);
     final defaults = defaultStyle(t), themed = DsToastTheme.of(context).style;
     final s = DsToastStyle.resolveLayers([defaults, themed, style], const {});
-    // The deprecated closeIconSize lays over the default close button, and
-    // the app's own closeStyle over it. Goes with closeIconSize.
-    final closeStyle = defaults.closeStyle!
-        .merge(DsButtonStyle(iconSize: s.closeIconSize))
-        .merge(themed?.closeStyle)
-        .merge(style?.closeStyle);
     final bg = s.background ?? k.overlay;
     Color? iconColor;
     if (status case final st?) {
@@ -249,7 +243,7 @@ class DsToast extends StatelessWidget {
                   child: DsButton.icon(
                     variant: DsButtonVariant.ghost,
                     size: DsSize.sm,
-                    style: closeStyle,
+                    style: s.closeStyle,
                     icon: const DsIcon(DsIcons.x),
                     semanticLabel: l10n.dismissNotification,
                     onPressed: onDismiss,
