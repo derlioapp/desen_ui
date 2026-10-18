@@ -885,6 +885,14 @@ List<String> componentFailures(DsThemeData t) {
             backdrop: bg,
             min: 7,
           ),
+      // A bottom sheet's grabber, a drag handle: it read 1.02:1 in dark
+      // mode when it was the slider's empty track.
+      Rule(
+        'panel grabber on overlay',
+        DsPanel.defaultStyle(t).grabberColor!,
+        k.overlay,
+        min: 2,
+      ),
       // The ink fill stands off the layers it sits on like a control edge.
       for (final (name, bg) in [
         ('canvas', k.canvas),

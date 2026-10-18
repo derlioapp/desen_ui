@@ -103,7 +103,9 @@ class DsPanel extends StatelessWidget {
       width: 400,
       gap: DsSpace.s16,
       titleStyle: theme.typography.heading.copyWith(color: k.text),
-      grabberColor: k.channelStrong,
+      // Translucent subtle ink, like the scrollbar thumb: it reads in both
+      // modes and on a panel's own background.
+      grabberColor: k.textSubtle.withValues(alpha: .65),
       grabberSize: const Size(36, 4),
       sheetMaxWidth: 560,
     );

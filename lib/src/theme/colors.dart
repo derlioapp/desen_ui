@@ -306,7 +306,7 @@ class DsColors {
   /// Recessed channel of segmented controls and steppers. May be translucent; layer it on a surface.
   final Color channel;
 
-  /// A step stronger than [channel]: the unfilled part of slider and progress tracks, and small neutral fills such as the sheet grabber.
+  /// A step stronger than [channel]: the unfilled part of slider and progress tracks, and small neutral fills.
   final Color channelStrong;
 
   /// The switch's track while off. Meets 3:1 against surfaces (WCAG 1.4.11) at standard contrast, unlike the decorative channels; a light, iOS-like fill at soft contrast.

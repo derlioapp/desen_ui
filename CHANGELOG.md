@@ -25,6 +25,11 @@
 - `DsIcons.keyboard` and `keyboardOff` are redrawn: two rows of keys over
   a space bar, without the cable. At small sizes the old drawing read as a
   face.
+- A bottom sheet's grabber is drawn in `textSubtle` at 65% opacity, as
+  the scrollbar thumb is, instead of `channelStrong`: in dark mode it
+  stood barely 1:1 off the sheet and could not be seen. It now stands
+  about 2.6:1 off the sheet in light mode and 3:1 in dark mode, at both
+  contrast levels.
 
 ### Fixed
 
