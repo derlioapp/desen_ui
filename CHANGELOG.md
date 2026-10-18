@@ -1,3 +1,25 @@
+## Unreleased
+
+### Changed
+
+- A bottom sheet's detents count from the window's bottom edge, the home
+  indicator's space included: at `.5` its top is at half the window. On a
+  phone with a home indicator a sheet at a detent used to start that much
+  higher.
+
+### Fixed
+
+- A `DsPanel` bottom sheet whose `DsPanelStyle.margin` has no bottom
+  reaches the screen's bottom edge and pads the home indicator's space
+  inside its surface, below its content and footer: with top corners only
+  it is a sheet attached to the bottom edge. The page used to show through
+  a band under it. A sheet with a bottom margin, as by default, still
+  floats above the indicator, and every sheet still sits on the on-screen
+  keyboard.
+- Content in a `DsPanel` sees no system insets left in
+  `MediaQuery.padding`, since the panel keeps clear of them: a `ListView`
+  in it no longer pads them a second time.
+
 ## 0.3.1
 
 Additions, look changes and a fix, nothing breaking: `^0.3.0` picks this

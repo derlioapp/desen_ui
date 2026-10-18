@@ -95,6 +95,15 @@ class PanelPage extends StatelessWidget {
             'button (the app\'s button theme does not reach it). For a '
             'frosted panel, see [Layers and glass](/guides/glass).',
           ),
+          DocText(
+            'A bottom sheet keeps clear of the home indicator. With a bottom '
+            '`margin`, as by default, it floats above it; with no bottom '
+            'margin it reaches the screen\'s bottom edge and pads the '
+            'indicator\'s space inside, below its content and footer. Give '
+            'that sheet top corners only, '
+            '`BorderRadius.vertical(top: Radius.circular(12))`, for a sheet '
+            'attached to the bottom edge.',
+          ),
           Example(snippet: 'panel-custom', child: _ThemedDemo()),
         ],
       ),

@@ -532,6 +532,136 @@ void main() {
     });
   });
 
+  group('the bottom system inset', () {
+    const attached = DsPanelStyle(
+      margin: EdgeInsets.zero,
+      borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+    );
+
+    /// A bottom sheet in a 390 x 800 window whose home indicator takes the
+    /// bottom 34px, or under a 300px keyboard.
+    Future<void> openSheet(
+      WidgetTester tester, {
+      DsPanelStyle? style,
+      List<double>? detents,
+      bool keyboard = false,
+      Widget Function(Widget panel)? wrap,
+    }) async {
+      window(tester, const Size(390, 800));
+      if (keyboard) {
+        tester.view.viewInsets = const FakeViewPadding(bottom: 300);
+      } else {
+        tester.view.padding = const FakeViewPadding(bottom: 34);
+      }
+      final panel = DsPanel(
+        title: const Text('Title'),
+        style: style,
+        footer: DsButton(onPressed: () {}, child: const Text('Apply')),
+        child: const Text('Body'),
+      );
+      await tester.pumpWidget(
+        DsApp(
+          home: Builder(
+            builder: (context) => Center(
+              child: DsButton(
+                onPressed: () => showDsPanel<void>(
+                  context: context,
+                  presentation: DsPanelPresentation.bottom,
+                  detents: detents,
+                  builder: (_) => wrap?.call(panel) ?? panel,
+                ),
+                child: const Text('Open'),
+              ),
+            ),
+          ),
+        ),
+      );
+      await open(tester);
+    }
+
+    /// The footer's button.
+    Finder apply() => find
+        .ancestor(of: find.text('Apply'), matching: find.byType(DsButton))
+        .first;
+
+    testWidgets('a sheet with a margin floats above it', (tester) async {
+      await openSheet(tester);
+      expect(tester.getRect(surface()).bottom, moreOrLessEquals(800 - 34 - 8));
+    });
+
+    testWidgets('a sheet without a bottom margin reaches the screen\'s bottom '
+        'edge, the inset padded inside it', (tester) async {
+      await openSheet(tester, style: attached);
+      expect(tester.getRect(surface()).bottom, moreOrLessEquals(800));
+      expect(tester.getRect(apply()).bottom, moreOrLessEquals(800 - 34 - 20));
+    });
+
+    testWidgets('inside a LayoutBuilder too', (tester) async {
+      await openSheet(
+        tester,
+        style: attached,
+        wrap: (panel) => LayoutBuilder(builder: (_, _) => panel),
+      );
+      expect(tester.getRect(surface()).bottom, moreOrLessEquals(800));
+    });
+
+    testWidgets('detents count from the screen\'s bottom edge', (tester) async {
+      await openSheet(tester, style: attached, detents: const [.5, 1]);
+      expect(tester.getRect(surface()).top, moreOrLessEquals(400));
+      expect(tester.getRect(surface()).bottom, moreOrLessEquals(800));
+    });
+
+    testWidgets('a floating sheet at a detent keeps its top there', (
+      tester,
+    ) async {
+      await openSheet(tester, detents: const [.5, 1]);
+      expect(tester.getRect(surface()).top, moreOrLessEquals(408));
+      expect(tester.getRect(surface()).bottom, moreOrLessEquals(800 - 34 - 8));
+    });
+
+    testWidgets('the panel\'s content sees no system inset left, so that a '
+        'ListView does not pad it again', (tester) async {
+      EdgeInsets? seen;
+      await openSheet(
+        tester,
+        style: attached,
+        wrap: (panel) => DsPanel(
+          title: const Text('Title'),
+          style: attached,
+          child: Builder(
+            builder: (context) {
+              seen = MediaQuery.paddingOf(context);
+              return const Text('Body');
+            },
+          ),
+        ),
+      );
+      expect(seen, EdgeInsets.zero);
+    });
+
+    testWidgets('other content is kept clear of it', (tester) async {
+      window(tester, const Size(390, 800));
+      tester.view.padding = const FakeViewPadding(bottom: 34);
+      await tester.pumpWidget(
+        app(
+          tester,
+          (_) => const SizedBox(key: Key('content'), height: 100),
+          presentation: DsPanelPresentation.bottom,
+        ),
+      );
+      await open(tester);
+      expect(tester.getRect(find.byKey(const Key('content'))).bottom, 766);
+    });
+
+    testWidgets('a sheet without a bottom margin sits on the keyboard', (
+      tester,
+    ) async {
+      await openSheet(tester, style: attached, keyboard: true);
+      expect(tester.getRect(surface()).bottom, moreOrLessEquals(500));
+      expect(tester.getRect(apply()).bottom, moreOrLessEquals(500 - 20));
+    });
+  });
+
   group('auto presentation follows the window', () {
     Future<void> openResizable(WidgetTester tester) async {
       window(tester, const Size(1000, 700));
