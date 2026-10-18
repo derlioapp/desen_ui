@@ -1,4 +1,5 @@
-# Checks every push and pull request against the pinned Flutter stable.
+# Checks every push to main and to unreleased (where work waits for the
+# next release) against the pinned Flutter stable, and pull requests.
 #
 # Goldens are not checked here: they are generated and compared on the
 # maintainer's Mac before every commit (another macOS version rasterizes
@@ -8,14 +9,14 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, unreleased]
   pull_request:
   workflow_dispatch:
 
 # A newer push to a pull request replaces its running check; every commit
-# on main is checked to the end. Pull requests are grouped by number: a
-# pull request that is already merged runs with main's ref and would
-# otherwise cancel main's run.
+# on main and unreleased is checked to the end. Pull requests are grouped
+# by number: a pull request that is already merged runs with main's ref
+# and would otherwise cancel main's run.
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
