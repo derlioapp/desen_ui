@@ -1,4 +1,7 @@
-## Unreleased
+## 0.3.2
+
+A fix and a look change for bottom sheets, nothing breaking: `^0.3.0`
+picks this release up.
 
 ### Changed
 
