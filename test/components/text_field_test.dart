@@ -722,6 +722,112 @@ void main() {
       expect(at(2).flagsCollection.isObscured, isTrue);
       handle.dispose();
     });
+
+    /// [node]'s rect in logical pixels on the screen.
+    Rect screenRect(WidgetTester tester, SemanticsNode node) {
+      var rect = node.rect;
+      for (SemanticsNode? n = node; n != null; n = n.parent) {
+        if (n.transform case final transform?) {
+          rect = MatrixUtils.transformRect(transform, rect);
+        }
+      }
+      final ratio = tester.view.devicePixelRatio;
+      return Rect.fromLTRB(
+        rect.left / ratio,
+        rect.top / ratio,
+        rect.right / ratio,
+        rect.bottom / ratio,
+      );
+    }
+
+    Rect well(WidgetTester tester) => tester.getRect(
+      find
+          .descendant(of: field(), matching: find.byType(AnimatedContainer))
+          .first,
+    );
+
+    testWidgets('the node covers the well a tap focuses, not the text line', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(
+        app(
+          const DsTextField(
+            semanticLabel: 'Name',
+            style: DsTextFieldStyle(height: 52),
+          ),
+        ),
+      );
+      final node = tester.getSemantics(find.byType(EditableText));
+      final rect = screenRect(tester, node);
+      expect(rect.left, moreOrLessEquals(well(tester).left));
+      expect(rect.top, moreOrLessEquals(well(tester).top));
+      expect(rect.right, moreOrLessEquals(well(tester).right));
+      expect(rect.bottom, moreOrLessEquals(well(tester).bottom));
+      await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
+      await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+      handle.dispose();
+    });
+
+    testWidgets('the node stops where the field\'s buttons start', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      for (final direction in TextDirection.values) {
+        await tester.pumpWidget(
+          app(
+            Directionality(
+              textDirection: direction,
+              child: DsTextField(
+                semanticLabel: 'Name',
+                controller: TextEditingController(text: 'Ada'),
+                clearable: true,
+                style: const DsTextFieldStyle(height: 52),
+              ),
+            ),
+          ),
+        );
+        final rect = screenRect(
+          tester,
+          tester.getSemantics(find.byType(EditableText)),
+        );
+        final clear = screenRect(
+          tester,
+          tester.getSemantics(find.bySemanticsLabel('Clear')),
+        );
+        expect(rect.top, moreOrLessEquals(well(tester).top));
+        expect(rect.bottom, moreOrLessEquals(well(tester).bottom));
+        if (direction == TextDirection.ltr) {
+          expect(rect.left, moreOrLessEquals(well(tester).left));
+          expect(rect.right, lessThanOrEqualTo(clear.left));
+        } else {
+          expect(rect.right, moreOrLessEquals(well(tester).right));
+          expect(rect.left, greaterThanOrEqualTo(clear.right));
+        }
+      }
+      handle.dispose();
+    });
+
+    testWidgets('the node follows the well when it grows', (tester) async {
+      final handle = tester.ensureSemantics();
+      Widget at(double height) => app(
+        DsTextField(
+          semanticLabel: 'Name',
+          style: DsTextFieldStyle(height: height),
+        ),
+      );
+      await tester.pumpWidget(at(44));
+      await tester.pumpWidget(at(64));
+      await tester.pumpAndSettle();
+      final rect = screenRect(
+        tester,
+        tester.getSemantics(find.byType(EditableText)),
+      );
+      expect(well(tester).height, 64);
+      expect(rect.top, moreOrLessEquals(well(tester).top));
+      expect(rect.bottom, moreOrLessEquals(well(tester).bottom));
+      handle.dispose();
+    });
   });
 
   group('edge cases', () {

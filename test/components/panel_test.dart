@@ -371,6 +371,167 @@ void main() {
     expect(tester.getRect(surface()), rest);
   });
 
+  group('detents', () {
+    /// A bottom sheet of long content and a footer, in a 390 x 800 window.
+    Future<void> openSheet(
+      WidgetTester tester, {
+      List<double>? detents = const [.5, 1],
+      double? initialDetent,
+      bool dismissible = true,
+      DsPanelPresentation presentation = DsPanelPresentation.bottom,
+    }) async {
+      if (presentation == DsPanelPresentation.bottom) {
+        window(tester, const Size(390, 800));
+      } else {
+        window(tester, const Size(1000, 700));
+      }
+      await tester.pumpWidget(
+        DsApp(
+          home: Builder(
+            builder: (context) => Center(
+              child: DsButton(
+                onPressed: () => showDsPanel<void>(
+                  context: context,
+                  presentation: presentation,
+                  detents: detents,
+                  initialDetent: initialDetent,
+                  dismissible: dismissible,
+                  builder: (_) => DsPanel(
+                    title: const Text('Title'),
+                    footer: DsButton(
+                      onPressed: () {},
+                      child: const Text('Apply'),
+                    ),
+                    child: Column(
+                      children: [for (var i = 0; i < 40; i++) Text('Row $i')],
+                    ),
+                  ),
+                ),
+                child: const Text('Open'),
+              ),
+            ),
+          ),
+        ),
+      );
+      await open(tester);
+    }
+
+    // The sheet's surface sits inside its 8px margin: at half of an 800
+    // high window it starts at 400 + 8, at full (capped at 90%) at 80 + 8.
+    const half = 408.0, full = 88.0;
+    double top(WidgetTester tester) => tester.getRect(surface()).top;
+
+    testWidgets('opens at the lowest one, its footer at its bottom and its '
+        'content scrolling inside', (tester) async {
+      await openSheet(tester);
+      expect(top(tester), moreOrLessEquals(half));
+      expect(tester.getRect(surface()).bottom, moreOrLessEquals(792));
+      expect(
+        tester.getRect(find.text('Apply')).bottom,
+        greaterThan(792 - 20 - 40),
+      );
+      expect(find.text('Row 39').hitTestable(), findsNothing);
+    });
+
+    testWidgets('initialDetent picks where it opens', (tester) async {
+      await openSheet(tester, initialDetent: 1);
+      expect(top(tester), moreOrLessEquals(full));
+    });
+
+    testWidgets('a drag moves it to the nearest one; a flick to the next', (
+      tester,
+    ) async {
+      await openSheet(tester);
+      await tester.drag(find.text('Title'), const Offset(0, -200));
+      await tester.pumpAndSettle();
+      expect(top(tester), moreOrLessEquals(full));
+      await tester.drag(find.text('Title'), const Offset(0, 100));
+      await tester.pumpAndSettle();
+      expect(top(tester), moreOrLessEquals(full));
+      await tester.drag(find.text('Title'), const Offset(0, 250));
+      await tester.pumpAndSettle();
+      expect(top(tester), moreOrLessEquals(half));
+      // Nearest to half, but flicked: to full.
+      await tester.fling(find.text('Title'), const Offset(0, -100), 1500);
+      await tester.pumpAndSettle();
+      expect(top(tester), moreOrLessEquals(full));
+    });
+
+    testWidgets('below the lowest it closes', (tester) async {
+      await openSheet(tester);
+      await tester.drag(find.text('Title'), const Offset(0, 300));
+      await tester.pumpAndSettle();
+      expect(find.text('Title'), findsNothing);
+    });
+
+    testWidgets('one that is not dismissible stays, and still resizes', (
+      tester,
+    ) async {
+      await openSheet(tester, dismissible: false);
+      await tester.drag(find.text('Title'), const Offset(0, 300));
+      await tester.pumpAndSettle();
+      expect(top(tester), moreOrLessEquals(half));
+      await tester.drag(find.text('Title'), const Offset(0, -250));
+      await tester.pumpAndSettle();
+      expect(top(tester), moreOrLessEquals(full));
+    });
+
+    testWidgets('with reduced motion it settles without moving on its own', (
+      tester,
+    ) async {
+      tester.platformDispatcher.accessibilityFeaturesTestValue =
+          const FakeAccessibilityFeatures(disableAnimations: true);
+      addTearDown(
+        tester.platformDispatcher.clearAccessibilityFeaturesTestValue,
+      );
+      await openSheet(tester);
+      await tester.drag(find.text('Title'), const Offset(0, -200));
+      await tester.pump();
+      expect(top(tester), moreOrLessEquals(full));
+    });
+
+    testWidgets('screen readers adjust the grabber between them', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await openSheet(tester);
+      final grabber = find.semantics.byLabel('Resize');
+      expect(grabber, findsOne);
+      expect(
+        tester.getSemantics(find.text('Title')).getSemanticsData().label,
+        isNot(contains('Resize')),
+      );
+      SemanticsNode node() => grabber.evaluate().single;
+      expect(node().getSemanticsData().value, '50%');
+      expect(
+        node().getSemanticsData().hasAction(SemanticsAction.increase),
+        isTrue,
+      );
+      expect(
+        node().getSemanticsData().hasAction(SemanticsAction.decrease),
+        isFalse,
+      );
+      tester.semantics.increase(grabber);
+      await tester.pumpAndSettle();
+      expect(top(tester), moreOrLessEquals(full));
+      expect(node().getSemanticsData().value, '100%');
+      semantics.dispose();
+    });
+
+    testWidgets('one detent or none: the grabber says nothing', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await openSheet(tester, detents: const [.5]);
+      expect(top(tester), moreOrLessEquals(half));
+      expect(find.semantics.byLabel('Resize'), findsNothing);
+      semantics.dispose();
+    });
+
+    testWidgets('a side panel ignores them', (tester) async {
+      await openSheet(tester, presentation: DsPanelPresentation.side);
+      expect(tester.getRect(surface()).height, greaterThan(600));
+    });
+  });
+
   group('auto presentation follows the window', () {
     Future<void> openResizable(WidgetTester tester) async {
       window(tester, const Size(1000, 700));

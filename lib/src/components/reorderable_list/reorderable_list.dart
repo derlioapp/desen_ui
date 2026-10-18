@@ -24,7 +24,9 @@ import 'reorderable_list_style.dart';
 ///
 /// Each item gets a grip handle at its end. Drag the handle to move the
 /// item; on iOS and Android a long press anywhere on the item lifts it
-/// too. The lifted item floats above the others, which make room, and the
+/// too. An item that needs the handle elsewhere, e.g. before a remove
+/// button that should stay its last control, turns [defaultHandles] off
+/// and places a [DsReorderableHandle] itself. The lifted item floats above the others, which make room, and the
 /// list scrolls when it is dragged near an edge. A lift and a drop each
 /// tick as the platform's selection haptic. Under reduced motion the
 /// lifted item does not grow; the others still slide to make room, as
@@ -69,6 +71,7 @@ class DsReorderableList extends StatefulWidget {
     this.physics,
     this.shrinkWrap = false,
     this.padding,
+    this.defaultHandles = true,
     this.style,
   });
 
@@ -94,6 +97,10 @@ class DsReorderableList extends StatefulWidget {
 
   /// Space around the items, inside the scrolling area.
   final EdgeInsetsGeometry? padding;
+
+  /// Whether each item gets a handle at its end. Turn it off when the
+  /// items place a [DsReorderableHandle] themselves.
+  final bool defaultHandles;
 
   /// Style laid over the theme and defaults.
   final DsReorderableListStyle? style;
@@ -178,7 +185,9 @@ class _DsReorderableListState extends State<DsReorderableList> {
         shrinkWrap: widget.shrinkWrap,
         padding: widget.padding,
         itemCount: widget.itemCount,
-        itemBuilder: widget.itemBuilder,
+        // Out of reordering, the items' own handles hide.
+        itemBuilder: (context, index) =>
+            _ItemScope(item: null, child: widget.itemBuilder(context, index)),
       );
     }
     final touch = isTouchPlatform(dsThemeOf(context).platform);
@@ -209,6 +218,7 @@ class _DsReorderableListState extends State<DsReorderableList> {
           count: widget.itemCount,
           layers: _layers(context),
           liftOnLongPress: touch,
+          defaultHandle: widget.defaultHandles,
           focusHandle: refocus,
           onMove: (to) => _move(index, to, keepFocus: true),
           child: child,
@@ -242,6 +252,7 @@ class _Item extends StatelessWidget {
     required this.count,
     required this.layers,
     required this.liftOnLongPress,
+    required this.defaultHandle,
     required this.focusHandle,
     required this.onMove,
     required this.child,
@@ -249,7 +260,7 @@ class _Item extends StatelessWidget {
 
   final int index, count;
   final List<DsReorderableListStyle?> layers;
-  final bool liftOnLongPress, focusHandle;
+  final bool liftOnLongPress, defaultHandle, focusHandle;
 
   /// Moves this item to the given index.
   final ValueChanged<int> onMove;
@@ -274,20 +285,18 @@ class _Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = DsReorderableListStyle.resolveLayers(layers, const {});
-    Widget item = Row(
-      children: [
-        Expanded(child: child),
-        SizedBox(width: s.handleGap),
-        _Handle(
-          index: index,
-          count: count,
-          layers: layers,
-          autofocus: focusHandle,
-          onMove: onMove,
-        ),
-        SizedBox(width: s.handleGap),
-      ],
-    );
+    Widget item = child;
+    if (defaultHandle) {
+      item = Row(
+        children: [
+          Expanded(child: item),
+          SizedBox(width: s.handleGap),
+          const DsReorderableHandle(),
+          SizedBox(width: s.handleGap),
+        ],
+      );
+    }
+    item = _ItemScope(item: this, child: item);
     if (liftOnLongPress) {
       item = ReorderableDelayedDragStartListener(index: index, child: item);
     }
@@ -297,6 +306,67 @@ class _Item extends StatelessWidget {
       includeSemantics: false,
       onKeyEvent: _onKey,
       child: item,
+    );
+  }
+}
+
+/// The item a [DsReorderableHandle] below belongs to; null in a list out
+/// of reordering.
+class _ItemScope extends InheritedWidget {
+  const _ItemScope({required this.item, required super.child});
+
+  final _Item? item;
+
+  @override
+  bool updateShouldNotify(_ItemScope oldWidget) => item != oldWidget.item;
+}
+
+/// The grip that drags its item in a [DsReorderableList], for an item
+/// that places it itself (the list's [DsReorderableList.defaultHandles]
+/// off), e.g. between its name and a remove button:
+///
+/// ```dart
+/// DsListRow(
+///   key: ValueKey(item.id),
+///   title: Text(item.name),
+///   trailing: Row(
+///     mainAxisSize: MainAxisSize.min,
+///     children: [
+///       const DsReorderableHandle(),
+///       DsButton.icon(
+///         semanticLabel: 'Remove',
+///         onPressed: () => remove(item),
+///         icon: const DsIcon(DsIcons.x),
+///       ),
+///     ],
+///   ),
+/// )
+/// ```
+///
+/// It works as the list's own handle: drag it to move the item; it is a
+/// Tab stop where Up, Down, Home and End move the item; it takes the
+/// list's [DsReorderableListStyle]. Screen readers move items with the
+/// item's actions and skip the handle. While the list is out of
+/// reordering (no [DsReorderableList.onReorder]) it takes no space.
+class DsReorderableHandle extends StatelessWidget {
+  /// Creates the handle of the item it is built in.
+  const DsReorderableHandle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final scope = context.dependOnInheritedWidgetOfExactType<_ItemScope>();
+    assert(
+      scope != null,
+      'DsReorderableHandle goes inside an item of a DsReorderableList.',
+    );
+    final item = scope?.item;
+    if (item == null) return const SizedBox.shrink();
+    return _Handle(
+      index: item.index,
+      count: item.count,
+      layers: item.layers,
+      autofocus: item.focusHandle,
+      onMove: item.onMove,
     );
   }
 }

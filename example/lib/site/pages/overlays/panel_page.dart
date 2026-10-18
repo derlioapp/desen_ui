@@ -39,13 +39,30 @@ class PanelPage extends StatelessWidget {
         ],
       ),
       DocSection(
+        title: 'Detents',
+        children: [
+          DocText(
+            '`detents` are heights a bottom sheet rests at, as shares of the '
+            'window\'s height: `[.5, 1]` opens it at half the window and '
+            'pulls it up to full (a sheet is at most 90% of the window). At '
+            'a detent the sheet keeps its height whatever the content, which '
+            'scrolls inside, and the footer stays at the bottom. Drag the '
+            'grabber or the title to move it to the nearest detent, flick '
+            'it to go to the next one, and drag it below the lowest to '
+            'close it. `initialDetent` picks where it opens; the lowest by '
+            'default. A side panel ignores detents.',
+          ),
+          Example(snippet: 'panel-detents', child: _DetentsDemo()),
+        ],
+      ),
+      DocSection(
         title: 'Closing',
         children: [
           DocText(
             'A panel closes from its close button, Escape, a tap on the '
             'dimmed page and the system back button. A bottom sheet also '
             'closes when dragged down past a third of its height or flicked '
-            'down. With `dismissible: false`, the close button is hidden and '
+            'down, from its lowest detent when it has detents. With `dismissible: false`, the close button is hidden and '
             'Escape, the dimmed page, dragging and system back (the Android '
             'back button, the browser\'s back) do nothing, so the panel\'s '
             'own actions must close it. `showDsPanel` completes with the '
@@ -110,8 +127,12 @@ class PanelPage extends StatelessWidget {
             'Announced as a dialog named by its title.',
             'The close button is named "Close", localized. Dragging is never '
                 'the only way to close: the button and Escape do the same.',
-            'The drag handle is decoration and is hidden from screen '
-                'readers.',
+            'With more than one detent the drag handle is an adjustable '
+                'control named "Resize", localized: screen readers move the '
+                'sheet between its detents with it. Otherwise it is '
+                'decoration and hidden from screen readers.',
+            'With reduced motion a sheet released between detents goes to '
+                'the nearest one at once instead of sliding there.',
             'The panel keeps clear of the system bars and the on-screen '
                 'keyboard.',
           ]),
@@ -138,6 +159,17 @@ class PanelPage extends StatelessWidget {
               'bool',
               'Close button, Escape, scrim, drag and system back close it. '
                   'Default `true`.',
+            ),
+            (
+              'detents',
+              'List<double>?',
+              'Heights a bottom sheet rests at, as shares of the window\'s '
+                  'height, e.g. `[.5, 1]`. Null: it fits its content.',
+            ),
+            (
+              'initialDetent',
+              'double?',
+              'One of `detents`, where it opens. Defaults to the lowest.',
             ),
             (
               'scrim',
@@ -283,6 +315,34 @@ class _FiltersDemo extends StatelessWidget {
         ),
       ),
       child: const Text('Filters'),
+    );
+    // #endregion
+  }
+}
+
+class _DetentsDemo extends StatelessWidget {
+  const _DetentsDemo();
+
+  @override
+  Widget build(BuildContext context) {
+    // #region panel-detents
+    return DsButton(
+      variant: .secondary,
+      onPressed: () => showDsPanel<void>(
+        context: context,
+        presentation: .bottom,
+        // Opens at half the window; pull it up to full.
+        detents: const [.5, 1],
+        builder: (context) => DsPanel(
+          title: const Text('Filters'),
+          footer: DsButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('Show 12 tasks'),
+          ),
+          child: const TaskFilters(),
+        ),
+      ),
+      child: const Text('Half-height sheet'),
     );
     // #endregion
   }

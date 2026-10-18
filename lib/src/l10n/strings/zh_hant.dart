@@ -305,4 +305,7 @@ class DsLocalizationsZhHant extends DsLocalizationsZh {
 
   @override
   String get reorderItemToEnd => '移至結尾';
+
+  @override
+  String get resizeSheet => '調整大小';
 }

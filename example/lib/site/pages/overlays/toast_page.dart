@@ -29,7 +29,10 @@ class ToastPage extends StatelessWidget {
             '`status` adds an icon whose shape tells the status, so it never '
             'depends on color alone. Leave it out for plain news. A '
             '`danger` toast interrupts screen readers; use it for failures '
-            'only.',
+            'only. `icon` puts the app\'s own mark in that place, such as '
+            'a bookmark for a reading saved: in the status color with a '
+            '`status`, muted without one. The status is still read aloud '
+            'by name.',
           ),
           Example(snippet: 'toast-statuses', child: _StatusDemo()),
         ],
@@ -170,6 +173,11 @@ class ToastPage extends StatelessWidget {
               '`success`, `info`, `warning`, `danger` or `neutral`.',
             ),
             (
+              'icon',
+              'Widget?',
+              'The app\'s own icon, in place of the status icon.',
+            ),
+            (
               'actionLabel',
               'String?',
               'A short action, e.g. "Undo". Comes with `onAction`.',
@@ -193,6 +201,7 @@ class ToastPage extends StatelessWidget {
           ApiTable([
             ('title / description', 'String / String?', 'The text.'),
             ('status', 'DsStatus?', 'Adds the status icon.'),
+            ('icon', 'Widget?', 'Leads in place of the status icon.'),
             (
               'actionLabel / onAction',
               'String? / VoidCallback?',

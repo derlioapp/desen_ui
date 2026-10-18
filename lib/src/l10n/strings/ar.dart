@@ -480,4 +480,7 @@ class DsLocalizationsAr extends DsLocalizationsEn {
 
   @override
   String get reorderItemToEnd => 'نقل إلى النهاية';
+
+  @override
+  String get resizeSheet => 'تغيير الحجم';
 }

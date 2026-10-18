@@ -493,4 +493,7 @@ class DsLocalizationsRu extends DsLocalizationsEn {
 
   @override
   String get reorderItemToEnd => 'Переместить в конец';
+
+  @override
+  String get resizeSheet => 'Изменить размер';
 }

@@ -1781,6 +1781,29 @@ VARIANTS['zh_Hant']['values'].update(
     reorderItemRight='右移', reorderItemToStart='移至開頭', reorderItemToEnd='移至結尾')
 VARIANTS['pt_PT']['values'].update(reorderItemToEnd='Mover para o fim')
 
+# The grabber of a bottom sheet that rests at several heights: screen
+# readers adjust it, as iOS's sheet grabber, to move between them.
+KEYS.update({
+    'resizeSheet': ('Bottom sheet: the grabber that moves it between its heights.', 'Resize'),
+})
+RESIZE = {
+    'ar': 'تغيير الحجم',
+    'de': 'Größe ändern',
+    'es': 'Cambiar tamaño',
+    'fr': 'Redimensionner',
+    'hi': 'आकार बदलें',
+    'it': 'Ridimensiona',
+    'ja': 'サイズを変更',
+    'ko': '크기 조정',
+    'pt': 'Redimensionar',
+    'ru': 'Изменить размер',
+    'tr': 'Yeniden boyutlandır',
+    'zh': '调整大小',
+}
+for _lang, _value in RESIZE.items():
+    LANGS[_lang].update(resizeSheet=_value)
+VARIANTS['zh_Hant']['values'].update(resizeSheet='調整大小')
+
 NAMES = dict(ar='Arabic', de='German', en='English', es='Spanish', fr='French',
              hi='Hindi', it='Italian', ja='Japanese', ko='Korean',
              pt='Portuguese (Brazilian)', ru='Russian', tr='Turkish',

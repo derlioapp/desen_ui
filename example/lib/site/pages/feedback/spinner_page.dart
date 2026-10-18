@@ -87,6 +87,49 @@ class SpinnerPage extends StatelessWidget {
         ],
       ),
       DocSection(
+        title: 'Shape',
+        children: [
+          const DocText(
+            'The spinner is a ring with its top quarter open. `arc` sets how '
+            'much of the circle turns (0.75 by default), `strokeCap` rounds '
+            'its ends and `trackColor` draws the whole circle under it.',
+          ),
+          Example(
+            snippet: 'spinner-shape',
+            child: Builder(
+              builder: (context) {
+                // #region spinner-shape
+                final k = DsTheme.colorsOf(context);
+                return Wrap(
+                  spacing: 24,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    // A short arc with round ends.
+                    const DsSpinner(
+                      style: DsSpinnerStyle(
+                        size: 24,
+                        arc: .3,
+                        strokeCap: StrokeCap.round,
+                      ),
+                    ),
+                    // A quarter arc over its track.
+                    DsSpinner(
+                      style: DsSpinnerStyle(
+                        size: 24,
+                        arc: .25,
+                        strokeCap: StrokeCap.round,
+                        trackColor: k.channelStrong,
+                      ),
+                    ),
+                  ],
+                );
+                // #endregion
+              },
+            ),
+          ),
+        ],
+      ),
+      DocSection(
         title: 'In buttons',
         children: [
           const DocText(
@@ -203,7 +246,8 @@ class SpinnerPage extends StatelessWidget {
             (
               'style',
               'DsSpinnerStyle?',
-              '`size`, `color` and `strokeWidth` (default 2).',
+              '`size`, `color`, `strokeWidth` (default 2), `arc` (default '
+                  '0.75), `strokeCap` and `trackColor`.',
             ),
           ]),
         ],

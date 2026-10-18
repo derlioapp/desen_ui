@@ -21,6 +21,7 @@ void main() {
     DsThemeData? theme,
     DsReorderableListStyle? style,
     bool pressableRows = false,
+    bool ownHandles = false,
     TextDirection direction = TextDirection.ltr,
   }) => host(
     Overlay(
@@ -30,10 +31,26 @@ void main() {
             builder: (context, set) => DsReorderableList(
               itemCount: items.length,
               style: style,
+              defaultHandles: !ownHandles,
               itemBuilder: (context, i) => DsListRow(
                 key: ValueKey(items[i]),
                 title: Text(items[i]),
                 onPressed: pressableRows ? () {} : null,
+                // The handle, then a remove button as the row's last
+                // control.
+                trailing: ownHandles
+                    ? Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const DsReorderableHandle(),
+                          DsButton.icon(
+                            semanticLabel: 'Remove ${items[i]}',
+                            onPressed: () {},
+                            icon: const DsIcon(DsIcons.x),
+                          ),
+                        ],
+                      )
+                    : null,
               ),
               onReorder: enabled
                   ? (from, to) => set(() {
@@ -291,6 +308,58 @@ void main() {
       ),
     );
     expect(tester.widget<DsIcon>(handles().first).color, red);
+  });
+
+  group('a handle the item places', () {
+    Finder remove(String label) => find.bySemanticsLabel('Remove $label');
+
+    testWidgets('sits where the item puts it, and the list adds none', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(list(items: [...initial], ownHandles: true));
+      expect(handles(), findsNWidgets(initial.length));
+      expect(
+        tester.getCenter(handleOf(tester, 'A')).dx,
+        lessThan(tester.getCenter(remove('A')).dx),
+      );
+      handle.dispose();
+    });
+
+    testWidgets('drags its item, and moves it from the keyboard', (
+      tester,
+    ) async {
+      final items = [...initial], moves = <(int, int)>[];
+      await tester.pumpWidget(
+        list(items: items, moves: moves, ownHandles: true),
+      );
+      await drag(tester, handleOf(tester, 'B'), rowHeight(tester) * 2.2);
+      expect(items, ['A', 'C', 'D', 'B', 'E']);
+
+      Focus.of(tester.element(handleOf(tester, 'B'))).requestFocus();
+      await tester.pump();
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
+      await tester.pumpAndSettle();
+      expect(items, ['A', 'C', 'B', 'D', 'E']);
+      expect(
+        Focus.of(tester.element(handleOf(tester, 'B'))).hasPrimaryFocus,
+        isTrue,
+      );
+      expect(moves, [(1, 3), (3, 2)]);
+    });
+
+    testWidgets('hides without onReorder', (tester) async {
+      await tester.pumpWidget(
+        list(items: [...initial], enabled: false, ownHandles: true),
+      );
+      expect(find.text('C'), findsOneWidget);
+      expect(handles(), findsNothing);
+    });
+
+    testWidgets('outside a reorderable list is a mistake', (tester) async {
+      await tester.pumpWidget(host(const DsReorderableHandle()));
+      expect(tester.takeException(), isAssertionError);
+    });
   });
 
   testWidgets('every item needs a key', (tester) async {

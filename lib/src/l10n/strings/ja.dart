@@ -469,4 +469,7 @@ class DsLocalizationsJa extends DsLocalizationsEn {
 
   @override
   String get reorderItemToEnd => '末尾に移動';
+
+  @override
+  String get resizeSheet => 'サイズを変更';
 }

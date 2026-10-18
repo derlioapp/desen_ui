@@ -393,8 +393,11 @@ SPECS = [
         states=[],
         fields=[
             ('size', 'double', 'Diameter. When no layer sets it, 7/8 of the ambient icon size (14 without one).'),
-            ('color', 'Color', 'Ring color. When no layer sets it, the ambient icon color.'),
-            ('strokeWidth', 'double', 'Ring thickness.'),
+            ('color', 'Color', 'Arc color. When no layer sets it, the ambient icon color.'),
+            ('strokeWidth', 'double', 'Arc thickness.'),
+            ('arc', 'double', 'How much of the circle the turning arc covers, from 0 to 1, centered on the bottom: 0.75 (the default) leaves the top quarter open, 0.3 is a short arc.'),
+            ('trackColor', 'Color', 'The whole circle under the arc, at the same thickness; transparent for none (the default).'),
+            ('strokeCap', 'StrokeCap', 'Ends of the arc: flat (the default) or round.'),
         ],
     ),
     dict(

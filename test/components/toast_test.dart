@@ -521,6 +521,66 @@ void main() {
       expect(tester.getSize(find.byType(DsIcon)).width, 14);
     });
   });
+
+  group('icon', () {
+    Widget toast({DsStatus? status, Widget? icon}) => DsApp(
+      themeMode: DsThemeMode.light,
+      home: Center(
+        child: DsToast(title: 'Reading saved', status: status, icon: icon),
+      ),
+    );
+
+    Finder bookmark() => find.byWidgetPredicate(
+      (w) => w is DsIcon && w.icon == DsIcons.bookmark,
+    );
+
+    testWidgets('leads the toast in the icon size and the muted text color', (
+      tester,
+    ) async {
+      await tester.pumpWidget(toast(icon: const DsIcon(DsIcons.bookmark)));
+      await tester.pumpAndSettle();
+      final colors = DsTheme.of(tester.element(bookmark())).colors;
+      expect(tester.getSize(bookmark()), const Size.square(20));
+      expect(
+        tester.getTopLeft(bookmark()).dx,
+        lessThan(tester.getTopLeft(find.text('Reading saved')).dx),
+      );
+      expect(IconTheme.of(tester.element(bookmark())).color, colors.textMuted);
+    });
+
+    testWidgets('replaces the status icon; the status is still read', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      await tester.pumpWidget(
+        toast(status: DsStatus.success, icon: const DsIcon(DsIcons.bookmark)),
+      );
+      await tester.pumpAndSettle();
+      expect(find.byType(DsIcon), findsOneWidget);
+      final colors = DsTheme.of(tester.element(bookmark())).colors;
+      expect(
+        IconTheme.of(tester.element(bookmark())).color,
+        colors.status(DsStatus.success).signal,
+      );
+      expect(find.bySemanticsLabel('Success'), findsOneWidget);
+      handle.dispose();
+    });
+
+    testWidgets('showDsToast draws it', (tester) async {
+      await tester.pumpWidget(
+        app(
+          (context) => showDsToast(
+            context: context,
+            title: 'Reading saved',
+            icon: const DsIcon(DsIcons.bookmark),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Go'));
+      await tester.pumpAndSettle();
+      expect(bookmark(), findsOneWidget);
+    });
+  });
 }
 
 class _Tr extends DsLocalizationsEn {

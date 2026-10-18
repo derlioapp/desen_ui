@@ -12,16 +12,32 @@ import '../../foundation/component_theme.dart';
 @immutable
 class DsSpinnerStyle with Diagnosticable {
   /// Creates a style.
-  const DsSpinnerStyle({this.size, this.color, this.strokeWidth});
+  const DsSpinnerStyle({
+    this.size,
+    this.color,
+    this.strokeWidth,
+    this.arc,
+    this.trackColor,
+    this.strokeCap,
+  });
 
   /// Diameter. When no layer sets it, 7/8 of the ambient icon size (14 without one).
   final double? size;
 
-  /// Ring color. When no layer sets it, the ambient icon color.
+  /// Arc color. When no layer sets it, the ambient icon color.
   final Color? color;
 
-  /// Ring thickness.
+  /// Arc thickness.
   final double? strokeWidth;
+
+  /// How much of the circle the turning arc covers, from 0 to 1, centered on the bottom: 0.75 (the default) leaves the top quarter open, 0.3 is a short arc.
+  final double? arc;
+
+  /// The whole circle under the arc, at the same thickness; transparent for none (the default).
+  final Color? trackColor;
+
+  /// Ends of the arc: flat (the default) or round.
+  final StrokeCap? strokeCap;
 
   /// Lays [other] over this: its set fields win; state styles merge.
   DsSpinnerStyle merge(DsSpinnerStyle? other) {
@@ -30,6 +46,9 @@ class DsSpinnerStyle with Diagnosticable {
       size: other.size ?? size,
       color: other.color ?? color,
       strokeWidth: other.strokeWidth ?? strokeWidth,
+      arc: other.arc ?? arc,
+      trackColor: other.trackColor ?? trackColor,
+      strokeCap: other.strokeCap ?? strokeCap,
     );
   }
 
@@ -49,7 +68,14 @@ class DsSpinnerStyle with Diagnosticable {
     return result;
   }
 
-  List<Object?> get _fields => [size, color, strokeWidth];
+  List<Object?> get _fields => [
+    size,
+    color,
+    strokeWidth,
+    arc,
+    trackColor,
+    strokeCap,
+  ];
 
   @override
   bool operator ==(Object other) {
@@ -74,6 +100,11 @@ class DsSpinnerStyle with Diagnosticable {
     properties.add(ColorProperty('color', color, defaultValue: null));
     properties.add(
       DoubleProperty('strokeWidth', strokeWidth, defaultValue: null),
+    );
+    properties.add(DoubleProperty('arc', arc, defaultValue: null));
+    properties.add(ColorProperty('trackColor', trackColor, defaultValue: null));
+    properties.add(
+      DiagnosticsProperty('strokeCap', strokeCap, defaultValue: null),
     );
   }
 }

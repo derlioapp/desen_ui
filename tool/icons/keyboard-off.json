@@ -1,6 +1,48 @@
 {
-  "upstream": "hugeicons/KeyboardOff",
-  "also": [],
+  "upstream": "desen/keyboard-off",
+  "derived": {
+    "parts": [
+      {
+        "from": "Keyboard",
+        "keep": [
+          0
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          -2.5
+        ]
+      },
+      {
+        "from": "ZapOff",
+        "keep": [
+          0
+        ],
+        "whole": true
+      }
+    ],
+    "cut": [
+      [
+        5.4,
+        5.4,
+        3.4
+      ],
+      [
+        18.6,
+        18.6,
+        3.4
+      ]
+    ],
+    "paths": [
+      "M14 8.5L14.01 8.5M18 8.5L18.01 8.5M8 12L8.01 12M16 12L16.01 12M7 15.5L11.25 15.5"
+    ]
+  },
+  "also": [
+    "KeyboardOff"
+  ],
   "category": "devices",
   "tags": [
     "keyboard off",

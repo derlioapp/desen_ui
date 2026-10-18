@@ -14,9 +14,9 @@ For each icon the folder holds its SVG and a JSON file with Desen's metadata:
   upstream   "hugeicons/<Name>", the upstream icon this one is drawn from;
              Desen names its icons itself, so a later import finds the file
              by this field, not by the file name
-  also       other upstream icons with the same drawing; they are not
-             imported again, and the site's search finds this icon by their
-             names
+  also       other upstream icons with the same drawing, or for a derived
+             icon the upstream ones it redraws; they are not imported
+             again, and the site's search finds this icon by their names
   category   one of Desen's categories, which follow Lucide's
   tags       search words
   aliases    extra Dart names for the icon
@@ -362,8 +362,8 @@ def load_local():
         source, upstream = meta['upstream'].split('/', 1)
         if source == 'desen':
             derived[f[:-5]] = meta
-            continue
-        local[upstream] = (f[:-5], meta)
+        else:
+            local[upstream] = (f[:-5], meta)
         for other in meta.get('also', []):
             also[other] = f[:-5]
     return local, also, derived

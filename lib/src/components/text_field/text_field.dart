@@ -1415,7 +1415,13 @@ class _DsTextFieldState extends State<DsTextField>
         ],
       ),
     );
-    node = MergeSemantics(child: node);
+    // The node reaches the well's edges, except on the side of a shown
+    // button, which keeps its own node.
+    final buttonShown =
+        (clearable && !empty && _yielded < FieldYield.clear) ||
+        (revealable && _yielded < FieldYield.reveal) ||
+        (endAction != null && _yielded < FieldYield.action);
+    node = _FieldNode(well: _box, reachEnd: !buttonShown, child: node);
 
     final border = s.borderColor ?? const Color(0x00000000);
     Widget box = FieldWell(
@@ -1746,6 +1752,84 @@ class _ShortcutHint extends StatelessWidget {
       child: DsShortcut(keys, textStyle: style.shortcutStyle),
     ),
   );
+}
+
+/// The field's own semantics node, merged from its parts as
+/// [MergeSemantics] merges them, with a rect that reaches the [well]'s
+/// edges: its top and bottom, its start, and its end when [reachEnd]
+/// (no button of the field sits there). A tap anywhere on the well focuses
+/// the field, so that is the target a screen reader outlines and a tap
+/// target check measures, not the line of text inside the padding.
+class _FieldNode extends SingleChildRenderObjectWidget {
+  const _FieldNode({required this.well, required this.reachEnd, super.child});
+
+  /// Reaches the well's render box.
+  final GlobalKey well;
+
+  /// Whether the node reaches the well's end edge too.
+  final bool reachEnd;
+
+  @override
+  _RenderFieldNode createRenderObject(BuildContext context) =>
+      _RenderFieldNode(well, reachEnd, Directionality.of(context));
+
+  @override
+  void updateRenderObject(BuildContext context, _RenderFieldNode renderObject) {
+    renderObject
+      ..well = well
+      ..reachEnd = reachEnd
+      ..textDirection = Directionality.of(context);
+  }
+}
+
+class _RenderFieldNode extends RenderProxyBox {
+  _RenderFieldNode(this._well, this._reachEnd, this._textDirection);
+
+  GlobalKey _well;
+  set well(GlobalKey value) {
+    if (value == _well) return;
+    _well = value;
+    markNeedsSemanticsUpdate();
+  }
+
+  bool _reachEnd;
+  set reachEnd(bool value) {
+    if (value == _reachEnd) return;
+    _reachEnd = value;
+    markNeedsSemanticsUpdate();
+  }
+
+  TextDirection _textDirection;
+  set textDirection(TextDirection value) {
+    if (value == _textDirection) return;
+    _textDirection = value;
+    markNeedsSemanticsUpdate();
+  }
+
+  @override
+  void describeSemanticsConfiguration(SemanticsConfiguration config) {
+    super.describeSemanticsConfiguration(config);
+    config
+      ..isSemanticBoundary = true
+      ..isMergingSemanticsOfDescendants = true;
+  }
+
+  @override
+  Rect get semanticBounds {
+    final own = Offset.zero & size;
+    final well = _well.currentContext?.findRenderObject();
+    if (well is! RenderBox || !well.hasSize || !well.attached) return own;
+    final toWell = getTransformTo(well);
+    if (toWell.invert() == 0) return own;
+    final edges = MatrixUtils.transformRect(toWell, Offset.zero & well.size);
+    final ltr = _textDirection == TextDirection.ltr;
+    return Rect.fromLTRB(
+      ltr || _reachEnd ? edges.left : own.left,
+      edges.top,
+      !ltr || _reachEnd ? edges.right : own.right,
+      edges.bottom,
+    );
+  }
 }
 
 /// An inline button (clear, show password) that keeps its full tap target

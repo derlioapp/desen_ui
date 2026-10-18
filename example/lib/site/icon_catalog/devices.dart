@@ -515,7 +515,7 @@ const _devices = <IconEntry>[
       'typing',
       'hide keyboard',
     ],
-    sources: ['KeyboardOff'],
+    sources: ['keyboard-off', 'KeyboardOff'],
   ),
   IconEntry(
     'laptopActivity',

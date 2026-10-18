@@ -35,10 +35,45 @@ class ReorderableListPage extends StatelessWidget {
         ],
       ),
       DocSection(
+        title: 'Where the handle goes',
+        children: [
+          DocText(
+            'To put the handle somewhere else in the item, for example '
+            'before a remove button that should stay the row\'s last '
+            'control, set `defaultHandles: false` and place a '
+            '`DsReorderableHandle` in the item. It drags, takes keyboard '
+            'focus and follows the list\'s style like the default one.',
+          ),
+          CodeBlock(
+            'DsReorderableList(\n'
+            '  itemCount: items.length,\n'
+            '  defaultHandles: false,\n'
+            '  itemBuilder: (context, i) => DsListRow(\n'
+            '    key: ValueKey(items[i].id),\n'
+            '    title: Text(items[i].name),\n'
+            '    trailing: Row(\n'
+            '      mainAxisSize: MainAxisSize.min,\n'
+            '      children: [\n'
+            '        const DsReorderableHandle(),\n'
+            '        DsButton.icon(\n'
+            '          semanticLabel: \'Remove\',\n'
+            '          onPressed: () => remove(i),\n'
+            '          icon: const DsIcon(DsIcons.x),\n'
+            '        ),\n'
+            '      ],\n'
+            '    ),\n'
+            '  ),\n'
+            '  onReorder: move,\n'
+            ')',
+          ),
+        ],
+      ),
+      DocSection(
         title: 'Edit mode',
         children: [
           DocText(
-            'A null `onReorder` turns reordering off: no handles, no '
+            'A null `onReorder` turns reordering off: no handles (an '
+            'item\'s own `DsReorderableHandle` takes no space), no '
             'actions, a plain list. Pass it only while an "Edit" toggle is '
             'on to keep the handles out of the way the rest of the time.',
           ),
@@ -127,11 +162,22 @@ class ReorderableListPage extends StatelessWidget {
             ),
             ('padding', 'EdgeInsetsGeometry?', 'Space around the items.'),
             (
+              'defaultHandles',
+              'bool',
+              'Gives each item a handle at its end (default). Off when the '
+                  'items place a `DsReorderableHandle` themselves.',
+            ),
+            (
               'style',
               'DsReorderableListStyle?',
               'Handle and lifted item, per state.',
             ),
           ]),
+          DocHeading('DsReorderableHandle'),
+          DocText(
+            'The handle of the item it is built in, for an item that '
+            'places it itself. No parameters.',
+          ),
         ],
       ),
     ],

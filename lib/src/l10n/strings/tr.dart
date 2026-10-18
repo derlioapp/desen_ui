@@ -481,4 +481,7 @@ class DsLocalizationsTr extends DsLocalizationsEn {
 
   @override
   String get reorderItemToEnd => 'Sona taşı';
+
+  @override
+  String get resizeSheet => 'Yeniden boyutlandır';
 }

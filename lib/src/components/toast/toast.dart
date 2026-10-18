@@ -85,6 +85,7 @@ class DsToast extends StatelessWidget {
     required this.title,
     this.description,
     this.status,
+    this.icon,
     this.actionLabel,
     this.onAction,
     this.onDismiss,
@@ -100,6 +101,14 @@ class DsToast extends StatelessWidget {
   /// Adds a status icon; the shape tells the status, not only the color.
   /// Screen readers hear the status by name ("Error").
   final DsStatus? status;
+
+  /// Leads the toast in place of the status icon: the app's own mark for
+  /// what happened, e.g. `DsIcon(DsIcons.bookmark)` for a reading saved.
+  /// Drawn in [DsToastStyle.iconSize], in the status color with a [status]
+  /// and in the muted text color without one (a color on the icon itself
+  /// wins). It is decoration: screen readers hear the title, and the
+  /// status by name.
+  final Widget? icon;
 
   /// A short action, e.g. undo ("Undo").
   final String? actionLabel;
@@ -160,7 +169,7 @@ class DsToast extends StatelessWidget {
     final defaults = defaultStyle(t), themed = DsToastTheme.of(context).style;
     final s = DsToastStyle.resolveLayers([defaults, themed, style], const {});
     final bg = s.background ?? k.overlay;
-    Color? iconColor;
+    var iconColor = k.textMuted;
     if (status case final st?) {
       final c = k.status(st);
       // The vivid signal when it reads at 3:1 on the toast (it does on the
@@ -187,7 +196,19 @@ class DsToast extends StatelessWidget {
           builder: (context, constraints) => Row(
             spacing: s.gap ?? DsSpace.s12,
             children: [
-              if (status case final st?)
+              if (icon case final icon?)
+                Semantics(
+                  container: true,
+                  image: status != null,
+                  label: status == null ? null : _statusLabel(l10n, status!),
+                  child: ExcludeSemantics(
+                    child: IconTheme.merge(
+                      data: IconThemeData(color: iconColor, size: s.iconSize),
+                      child: icon,
+                    ),
+                  ),
+                )
+              else if (status case final st?)
                 DsIcon(
                   _icon(st),
                   size: s.iconSize!,
@@ -258,7 +279,8 @@ class DsToast extends StatelessWidget {
 }
 
 /// Shows a toast at the bottom of the screen: a status
-/// icon, a title, an optional action such as undo, and a close button.
+/// icon or the app's own [icon], a title, an optional action such as undo,
+/// and a close button.
 ///
 /// - **Timing (WCAG 2.2.1):** it goes away after [DsMotion.toastDuration]
 ///   (twice that with an action), paused while the pointer, a finger or
@@ -296,6 +318,7 @@ DsToastController showDsToast({
   required String title,
   String? description,
   DsStatus? status,
+  Widget? icon,
   String? actionLabel,
   VoidCallback? onAction,
   Duration? duration,
@@ -323,6 +346,7 @@ DsToastController showDsToast({
         title: title,
         description: description,
         status: status,
+        icon: icon,
         actionLabel: actionLabel,
         // Closed first, so the reason is the action even when the action
         // shows a new toast; a toast already leaving runs no action.

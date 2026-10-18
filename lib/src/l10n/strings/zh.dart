@@ -469,4 +469,7 @@ class DsLocalizationsZh extends DsLocalizationsEn {
 
   @override
   String get reorderItemToEnd => '移至末尾';
+
+  @override
+  String get resizeSheet => '调整大小';
 }

@@ -1,5 +1,7 @@
+import 'dart:math' as math;
 import 'dart:ui' show SemanticsRole;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../icons/icon.dart';
@@ -17,6 +19,7 @@ import '../../theme/theme_data.dart';
 import '../button/button.dart';
 import '../button/button_theme.dart';
 import '../../foundation/component_theme.dart';
+import '../../foundation/spring.dart';
 import 'panel_style.dart';
 
 /// How [showDsPanel] presents a panel.
@@ -33,6 +36,9 @@ enum DsPanelPresentation {
 
 /// Below this width [DsPanelPresentation.auto] shows a bottom sheet.
 const double kDsPanelBreakpoint = 640;
+
+/// The tallest a bottom sheet gets, as a share of the window's height.
+const double _sheetMaxShare = .9;
 
 /// A side panel or bottom sheet: a title with a close button, content that
 /// scrolls when long, and an optional footer. Show it with [showDsPanel],
@@ -113,6 +119,10 @@ class DsPanel extends StatelessWidget {
     ], const {});
     final kind = _PanelKind.maybeOf(context);
     final bottom = kind?.bottom ?? false;
+    // A side panel, and a bottom sheet held at a detent, have a set height:
+    // the body fills it and the footer sits at the bottom. A bottom sheet
+    // without detents hugs its content.
+    final hug = bottom && kind?.detents == null;
     final l10n = DsLocalizations.of(context);
     final body = Semantics(
       container: true,
@@ -123,16 +133,15 @@ class DsPanel extends StatelessWidget {
       explicitChildNodes: true,
       child: Padding(
         padding: s.padding ?? EdgeInsets.zero,
-        // A side panel is full height: the body fills it and the footer
-        // sits at the bottom. A bottom sheet hugs its content.
         child: LayerScrollKeys(
           builder: (context, controller) => Column(
-            mainAxisSize: bottom ? MainAxisSize.min : MainAxisSize.max,
+            mainAxisSize: hug ? MainAxisSize.min : MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             spacing: s.gap ?? DsSpace.s16,
             children: [
               if (bottom)
-                ExcludeSemantics(
+                _Grabber(
+                  detents: kind?.detents,
                   child: Center(
                     child: Container(
                       width: s.grabberSize!.width,
@@ -174,7 +183,7 @@ class DsPanel extends StatelessWidget {
                 ],
               ),
               Flexible(
-                fit: bottom ? FlexFit.loose : FlexFit.tight,
+                fit: hug ? FlexFit.loose : FlexFit.tight,
                 child: scrollable
                     ? SingleChildScrollView(
                         controller: controller,
@@ -207,7 +216,7 @@ class DsPanel extends StatelessWidget {
         constraints: bottom
             ? BoxConstraints(
                 maxWidth: s.sheetMaxWidth!,
-                maxHeight: MediaQuery.sizeOf(context).height * .9,
+                maxHeight: MediaQuery.sizeOf(context).height * _sheetMaxShare,
               )
             : BoxConstraints.tightFor(width: s.width),
         child: surface,
@@ -216,18 +225,77 @@ class DsPanel extends StatelessWidget {
   }
 }
 
+/// The grabber of a bottom sheet. With more than one detent, screen
+/// readers adjust it to move the sheet between them, as iOS's sheet
+/// grabber; otherwise it says nothing.
+class _Grabber extends StatelessWidget {
+  const _Grabber({required this.detents, required this.child});
+
+  final _Detents? detents;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final d = detents;
+    if (d == null || d.shares.length < 2) {
+      return ExcludeSemantics(child: child);
+    }
+    final l10n = DsLocalizations.of(context);
+    String value(int i) => l10n.percent((d.shares[i] * 100).round());
+    final up = d.index + 1 < d.shares.length, down = d.index > 0;
+    return Semantics(
+      label: l10n.resizeSheet,
+      value: value(d.index),
+      increasedValue: up ? value(d.index + 1) : null,
+      decreasedValue: down ? value(d.index - 1) : null,
+      onIncrease: up ? () => d.goTo(d.index + 1) : null,
+      onDecrease: down ? () => d.goTo(d.index - 1) : null,
+      child: ExcludeSemantics(child: child),
+    );
+  }
+}
+
+/// A bottom sheet's detents as its grabber sees them: the [shares] of the
+/// window's height, the [index] it rests at, and [goTo] to move.
+@immutable
+class _Detents {
+  const _Detents(this.shares, this.index, this.goTo);
+
+  final List<double> shares;
+  final int index;
+  final ValueChanged<int> goTo;
+
+  @override
+  bool operator ==(Object other) =>
+      other is _Detents &&
+      other.index == index &&
+      listEquals(other.shares, shares);
+
+  @override
+  int get hashCode => Object.hash(index, Object.hashAll(shares));
+}
+
 /// Positions the panel for its presentation, clear of the system bars and
-/// the on-screen keyboard, and handles the bottom sheet's drag to dismiss.
-/// The panel draws its own surface, so its style sizes it.
+/// the on-screen keyboard, and handles the bottom sheet's drag: between
+/// its detents, and down to dismiss. The panel draws its own surface, so
+/// its style sizes it.
 class _PanelFrame extends StatefulWidget {
   const _PanelFrame({
     required this.bottom,
     required this.dismissible,
+    required this.detents,
+    required this.initialDetent,
     required this.child,
   });
 
   final bool bottom;
   final bool dismissible;
+
+  /// Shares of the window's height, ascending; null to hug the content.
+  final List<double>? detents;
+
+  /// Index into [detents].
+  final int initialDetent;
   final Widget child;
 
   @override
@@ -238,29 +306,177 @@ class _PanelKind extends InheritedWidget {
   const _PanelKind({
     required this.bottom,
     required this.dismissible,
+    required this.detents,
     required super.child,
   });
 
   final bool bottom;
   final bool dismissible;
 
+  /// A bottom sheet's detents; null for a side panel or a sheet that hugs
+  /// its content.
+  final _Detents? detents;
+
   static _PanelKind? maybeOf(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<_PanelKind>();
 
   @override
   bool updateShouldNotify(_PanelKind oldWidget) =>
-      oldWidget.bottom != bottom || oldWidget.dismissible != dismissible;
+      oldWidget.bottom != bottom ||
+      oldWidget.dismissible != dismissible ||
+      oldWidget.detents != detents;
 }
 
-class _PanelFrameState extends State<_PanelFrame> {
+class _PanelFrameState extends State<_PanelFrame>
+    with SingleTickerProviderStateMixin {
   final _sheet = GlobalKey();
   double _drag = 0;
+
+  /// The detent the sheet rests at, or heads for.
+  late int _detent = widget.initialDetent;
+
+  /// The sheet's height while a drag or a settle moves it; at rest the
+  /// height comes from [_detent] and the window, so it follows a resize.
+  late final _height = AnimationController.unbounded(vsync: this);
+  bool _moving = false;
+
+  /// Counts the moves, so that a settle cut short by a new drag does not
+  /// end it.
+  int _move = 0;
 
   @override
   void didUpdateWidget(_PanelFrame oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.bottom != widget.bottom) _drag = 0;
   }
+
+  @override
+  void dispose() {
+    _height.dispose();
+    super.dispose();
+  }
+
+  /// The detents' heights in this window, each held below the tallest a
+  /// sheet gets and the room between the system bars and the keyboard;
+  /// null without detents.
+  List<double>? _heights() {
+    final detents = widget.detents;
+    if (detents == null || !widget.bottom) return null;
+    final media = MediaQuery.of(context);
+    final window = media.size.height;
+    final room = window - media.padding.vertical - media.viewInsets.bottom;
+    final most = math.max(0.0, math.min(window * _sheetMaxShare, room));
+    return [for (final d in detents) math.min(d * window, most)];
+  }
+
+  /// Takes over the height from where it shows, for a drag or a settle.
+  void _startMove(List<double> heights) {
+    _move++;
+    if (!_moving) {
+      _height.value = heights[_detent];
+      _moving = true;
+    } else {
+      _height.stop();
+    }
+  }
+
+  /// Moves to detent [index], keeping the drag's [velocity] (pixels per
+  /// second, upward positive) and without bounce: an overshooting sheet
+  /// would lift off the bottom edge. Under reduced motion it jumps.
+  void _settle(int index, List<double> heights, {double velocity = 0}) {
+    final motion = DsTheme.motionOf(context);
+    final move = _move;
+    void rest() {
+      if (mounted && move == _move) setState(() => _moving = false);
+    }
+
+    setState(() => _detent = index);
+    if (motion.reduced) {
+      _height.value = heights[index];
+      rest();
+      return;
+    }
+    _height
+        .animateWith(
+          DsSpring(duration: motion.moveSpring.duration).simulate(
+            from: _height.value,
+            to: heights[index],
+            velocity: velocity,
+          ),
+        )
+        .whenCompleteOrCancel(rest);
+  }
+
+  void _goTo(int index) {
+    final heights = _heights();
+    if (heights == null || index < 0 || index >= heights.length) return;
+    _startMove(heights);
+    _settle(index, heights);
+  }
+
+  void _onDragUpdate(DragUpdateDetails d) {
+    final heights = _heights();
+    if (heights == null) {
+      setState(() => _drag = (_drag + d.delta.dy).clamp(0, 9999));
+      return;
+    }
+    _startMove(heights);
+    var dy = d.delta.dy;
+    setState(() {
+      // Up: first take back a drag toward dismissal.
+      if (dy < 0 && _drag > 0) {
+        final back = math.min(_drag, -dy);
+        _drag -= back;
+        dy += back;
+      }
+      var height = _height.value - dy;
+      if (height < heights.first) {
+        // Below the lowest detent the sheet slides down to dismiss.
+        if (widget.dismissible) _drag += heights.first - height;
+        height = heights.first;
+      }
+      _height.value = math.min(height, heights.last);
+    });
+  }
+
+  void _onDragEnd(DragEndDetails d) {
+    final velocity = d.primaryVelocity ?? 0;
+    // ds-raw: a divisor guard, not a size
+    final sheet = _sheet.currentContext?.size?.height ?? 1;
+    if (_drag > 0 || _heights() == null) {
+      // Past a third of the sheet's height, or flicked, it closes.
+      if (_drag > sheet / 3 || velocity > _flick) {
+        _dismiss();
+      } else {
+        setState(() => _drag = 0);
+      }
+      if (_heights() case final heights?) _settle(0, heights);
+      return;
+    }
+    final heights = _heights()!;
+    final height = _height.value;
+    var index = 0;
+    if (velocity.abs() > _flick) {
+      // A flick goes to the next detent its way.
+      if (velocity < 0) {
+        index = heights.indexWhere((h) => h > height + 1);
+        if (index < 0) index = heights.length - 1;
+      } else {
+        index = heights.lastIndexWhere((h) => h < height - 1);
+        if (index < 0) index = 0;
+      }
+    } else {
+      for (var i = 1; i < heights.length; i++) {
+        if ((heights[i] - height).abs() < (heights[index] - height).abs()) {
+          index = i;
+        }
+      }
+    }
+    _settle(index, heights, velocity: -velocity);
+  }
+
+  /// A drag faster than this, in pixels per second, is a flick.
+  static const double _flick = 700;
 
   /// A drag past the threshold: asks the route to close. When it refuses
   /// (a [PopScope] that cannot pop, e.g. to ask about unsaved changes),
@@ -282,13 +498,18 @@ class _PanelFrameState extends State<_PanelFrame> {
     // Clear of the system bars and the on-screen keyboard.
     final margin =
         media.padding + EdgeInsets.only(bottom: media.viewInsets.bottom);
+    final heights = _heights();
+    final detents = widget.detents;
     // Keyed, so that the panel keeps its state (and focus) when the
     // window's size turns one presentation into the other.
-    final panel = KeyedSubtree(
+    Widget panel = KeyedSubtree(
       key: _sheet,
       child: _PanelKind(
         bottom: widget.bottom,
         dismissible: widget.dismissible,
+        detents: heights == null || detents == null
+            ? null
+            : _Detents(detents, _detent, _goTo),
         child: widget.child,
       ),
     );
@@ -301,31 +522,32 @@ class _PanelFrameState extends State<_PanelFrame> {
         ),
       );
     }
+    if (heights != null) {
+      final sheet = panel;
+      panel = AnimatedBuilder(
+        animation: _height,
+        builder: (context, _) => SizedBox(
+          height: _moving
+              ? _height.value.clamp(heights.first, heights.last)
+              : heights[_detent],
+          child: sheet,
+        ),
+      );
+    }
+    // A sheet that cannot be dismissed drags only between its detents.
+    final drags = widget.dismissible || heights != null;
     return Padding(
       padding: margin,
       child: Align(
         alignment: Alignment.bottomCenter,
-        // Drag down to dismiss: past a third of the sheet's height, or
-        // flicked. A sheet that cannot be dismissed does not drag. Screen
+        // Drag to resize between the detents and down to dismiss. Screen
         // readers get no scroll action from the drag, which would close the
-        // sheet: the close button, the scrim and Escape do that.
+        // sheet: the close button, the scrim and Escape do that, and the
+        // grabber's adjust actions move between the detents.
         child: GestureDetector(
           excludeFromSemantics: true,
-          onVerticalDragUpdate: widget.dismissible
-              ? (d) =>
-                    setState(() => _drag = (_drag + d.delta.dy).clamp(0, 9999))
-              : null,
-          onVerticalDragEnd: widget.dismissible
-              ? (d) {
-                  // ds-raw: a divisor guard, not a size
-                  final height = _sheet.currentContext?.size?.height ?? 1;
-                  if (_drag > height / 3 || (d.primaryVelocity ?? 0) > 700) {
-                    _dismiss();
-                  } else {
-                    setState(() => _drag = 0);
-                  }
-                }
-              : null,
+          onVerticalDragUpdate: drags ? _onDragUpdate : null,
+          onVerticalDragEnd: drags ? _onDragEnd : null,
           child: Transform.translate(offset: Offset(0, _drag), child: panel),
         ),
       ),
@@ -352,6 +574,19 @@ class _PanelFrameState extends State<_PanelFrame> {
 /// live preview: a short bottom sheet of settings whose effect shows on
 /// the page above it. A tap on the page still closes the panel.
 ///
+/// [detents] are heights a bottom sheet rests at, as shares of the
+/// window's height: `[.5, 1]` opens it at half the window and pulls up to
+/// full (a sheet is at most 90% of the window). Held at a detent, the
+/// sheet keeps that height whatever its content, which scrolls inside,
+/// and a [DsPanel]'s footer stays at its bottom. Dragging the sheet (by
+/// its grabber, title or anything that does not scroll) moves it to the
+/// nearest detent, a flick to the next one; below the lowest it closes
+/// when [dismissible]. It settles without bounce, and under reduced motion
+/// without moving on its own. Screen readers adjust the grabber to move
+/// between detents. [initialDetent], one of [detents], is where it opens;
+/// the lowest by default. Without [detents] a sheet takes its content's
+/// height; a side panel ignores them.
+///
 /// [routeSettings] names the panel's route for navigator observers and
 /// analytics, and can carry arguments.
 Future<T?> showDsPanel<T>({
@@ -359,10 +594,22 @@ Future<T?> showDsPanel<T>({
   required WidgetBuilder builder,
   DsPanelPresentation presentation = DsPanelPresentation.auto,
   bool dismissible = true,
+  List<double>? detents,
+  double? initialDetent,
   DsScrim scrim = DsScrim.dim,
   bool useRootNavigator = true,
   RouteSettings? routeSettings,
 }) {
+  assert(
+    detents == null ||
+        (detents.isNotEmpty && detents.every((d) => d > 0 && d <= 1)),
+    'detents are shares of the window\'s height, above 0 and at most 1.',
+  );
+  assert(
+    initialDetent == null || (detents?.contains(initialDetent) ?? false),
+    'initialDetent is one of the detents.',
+  );
+  final sorted = detents == null ? null : ({...detents}.toList()..sort());
   // Decided from the modal's own context each time it builds, so that it
   // follows the window's current size.
   bool bottomIn(BuildContext context) => switch (presentation) {
@@ -382,6 +629,10 @@ Future<T?> showDsPanel<T>({
     builder: (context) => _PanelFrame(
       bottom: bottomIn(context),
       dismissible: dismissible,
+      detents: sorted,
+      initialDetent: sorted == null || initialDetent == null
+          ? 0
+          : math.max(0, sorted.indexOf(initialDetent)),
       child: Builder(builder: builder),
     ),
   );

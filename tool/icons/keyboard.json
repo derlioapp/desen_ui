@@ -1,6 +1,29 @@
 {
-  "upstream": "hugeicons/Keyboard",
-  "also": [],
+  "upstream": "desen/keyboard",
+  "derived": {
+    "parts": [
+      {
+        "from": "Keyboard",
+        "keep": [
+          0
+        ],
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          -2.5
+        ]
+      }
+    ],
+    "paths": [
+      "M6 8.5L6.01 8.5M10 8.5L10.01 8.5M14 8.5L14.01 8.5M18 8.5L18.01 8.5M8 12L8.01 12M12 12L12.01 12M16 12L16.01 12M7 15.5L17 15.5"
+    ]
+  },
+  "also": [
+    "Keyboard"
+  ],
   "category": "text",
   "tags": [
     "keyboard",

@@ -475,4 +475,7 @@ class DsLocalizationsPt extends DsLocalizationsEn {
 
   @override
   String get reorderItemToEnd => 'Mover para o final';
+
+  @override
+  String get resizeSheet => 'Redimensionar';
 }

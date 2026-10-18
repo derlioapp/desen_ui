@@ -1096,7 +1096,7 @@ const _text = <IconEntry>[
     DsIcons.keyboard,
     category: 'text',
     tags: ['keyboard', 'typing', 'input', 'keys', 'computer'],
-    sources: ['Keyboard'],
+    sources: ['keyboard', 'Keyboard'],
   ),
   IconEntry(
     'labelPlus',

@@ -1,3 +1,39 @@
+## Unreleased
+
+### Added
+
+- `showDsPanel(detents:, initialDetent:)`: heights a bottom sheet rests
+  at, as shares of the window's height. `[.5, 1]` opens it at half the
+  window and pulls it up to full; at a detent the sheet keeps its height,
+  its content scrolls inside and the footer stays at the bottom. A drag
+  goes to the nearest detent, a flick to the next one, and below the
+  lowest it closes; it settles without bounce, and at once under reduced
+  motion. Screen readers move between detents with the grabber, an
+  adjustable control named "Resize" in every supported language.
+- `DsReorderableHandle` and `DsReorderableList.defaultHandles`: an item
+  can place its drag handle itself, for example before a remove button
+  that stays the row's last control. It drags, takes keyboard focus and
+  follows the list's style like the default handle.
+- `DsToast.icon` and `showDsToast(icon:)`: the app's own icon in place of
+  the status icon, in the status color with a `status` and muted without
+  one; the status is still read aloud by name.
+- `DsSpinnerStyle.arc`, `strokeCap` and `trackColor`: a shorter arc,
+  round ends and a ring under the arc. The default look is unchanged.
+
+### Changed
+
+- `DsIcons.keyboard` and `keyboardOff` are redrawn: two rows of keys over
+  a space bar, without the cable. At small sizes the old drawing read as a
+  face.
+
+### Fixed
+
+- `DsTextField`'s screen reader node covers the whole field, where a tap
+  focuses it, instead of only the line of text: screen readers outline the
+  field, and tap target checks such as `iOSTapTargetGuideline` measure it.
+  Its clear, show-password and picker buttons keep their own nodes beside
+  it.
+
 ## 0.3.0
 
 Breaking: the icon set changes, and the deprecated

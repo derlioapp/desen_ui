@@ -476,4 +476,7 @@ class DsLocalizationsHi extends DsLocalizationsEn {
 
   @override
   String get reorderItemToEnd => 'आखिर में ले जाएं';
+
+  @override
+  String get resizeSheet => 'आकार बदलें';
 }

@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -78,6 +80,68 @@ void main() {
       ),
     );
     expect(sizeOf(tester, find.byType(DsSpinner)), const Size(28, 28));
+  });
+
+  group('spinner shape', () {
+    Finder painter() => find
+        .descendant(
+          of: find.byType(DsSpinner),
+          matching: find.byType(CustomPaint),
+        )
+        .first;
+
+    // Regression: the default look stays a ring with its top quarter open.
+    testWidgets('by default a ring with its top quarter open, flat ends', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        host(
+          theme: theme,
+          const DsSpinner(style: DsSpinnerStyle(size: 20, color: red)),
+        ),
+      );
+      expect(
+        painter(),
+        paints..arc(
+          startAngle: -math.pi / 4,
+          sweepAngle: math.pi * 3 / 2,
+          color: red,
+          strokeCap: StrokeCap.butt,
+        ),
+      );
+      expect(painter(), isNot(paints..circle()));
+    });
+
+    testWidgets('the style sets the arc, its ends and a track', (tester) async {
+      const blue = Color(0xFF0000FF);
+      await tester.pumpWidget(
+        host(
+          theme: theme,
+          const DsSpinner(
+            style: DsSpinnerStyle(
+              size: 20,
+              color: red,
+              arc: .3,
+              trackColor: blue,
+              strokeCap: StrokeCap.round,
+            ),
+          ),
+        ),
+      );
+      expect(
+        painter(),
+        paints
+          ..circle(x: 10, y: 10, radius: 9, color: blue, strokeWidth: 2)
+          ..arc(
+            // Centered on the bottom, as the default ring's opening is
+            // centered on the top.
+            startAngle: math.pi / 2 - .3 * math.pi,
+            sweepAngle: .6 * math.pi,
+            color: red,
+            strokeCap: StrokeCap.round,
+          ),
+      );
+    });
   });
 
   testWidgets('skeleton: theme height and color, own width', (tester) async {

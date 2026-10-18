@@ -441,4 +441,7 @@ mixin _DsStrings {
 
   /// Reorderable list: moves an item to the end.
   String get reorderItemToEnd;
+
+  /// Bottom sheet: the grabber that moves it between its heights.
+  String get resizeSheet;
 }
