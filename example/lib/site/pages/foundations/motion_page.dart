@@ -212,6 +212,14 @@ class MotionPage extends StatelessWidget {
             'DsHapticFeedback.play(context, DsHapticEvent.selection);\n'
             'onChanged(next);',
           ),
+          const DocText(
+            'A control of your own that counts toward something, such as a '
+            'counter reaching its goal, plays `DsHapticEvent.milestone` '
+            'there: the platform\'s success pattern, heavier than a tick, '
+            'under `subtle` and `full`. Desen\'s own controls never play '
+            'it; keep it for the moment the goal is reached, not each step '
+            'toward it.',
+          ),
         ],
       ),
       const DocSection(
@@ -277,7 +285,8 @@ class MotionPage extends StatelessWidget {
             (
               'DsPressable.haptic',
               'DsHapticEvent?',
-              '`command` (default), `selection`, or null for silence.',
+              '`command` (default), `selection`, `milestone`, or null for '
+                  'silence.',
             ),
             (
               'DsHapticFeedback.play',

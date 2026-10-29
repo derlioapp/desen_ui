@@ -7,6 +7,7 @@ import '../components/helpers.dart';
 
 const _tick = 'HapticFeedbackType.selectionClick';
 const _impact = 'HapticFeedbackType.lightImpact';
+const _success = 'HapticFeedbackType.successNotification';
 
 /// Records every `HapticFeedback.vibrate` call by its feedback type.
 List<String?> _recordHaptics(WidgetTester tester) {
@@ -48,13 +49,16 @@ Widget _stateful<T>(
 
 void main() {
   group('the setting', () {
-    test('plays: none is silent, subtle only selections, full both', () {
+    test('plays: none is silent, subtle all but commands, full all', () {
       expect(DsHaptics.none.plays(DsHapticEvent.selection), isFalse);
       expect(DsHaptics.none.plays(DsHapticEvent.command), isFalse);
+      expect(DsHaptics.none.plays(DsHapticEvent.milestone), isFalse);
       expect(DsHaptics.subtle.plays(DsHapticEvent.selection), isTrue);
       expect(DsHaptics.subtle.plays(DsHapticEvent.command), isFalse);
+      expect(DsHaptics.subtle.plays(DsHapticEvent.milestone), isTrue);
       expect(DsHaptics.full.plays(DsHapticEvent.selection), isTrue);
       expect(DsHaptics.full.plays(DsHapticEvent.command), isTrue);
+      expect(DsHaptics.full.plays(DsHapticEvent.milestone), isTrue);
     });
 
     test('defaults to subtle on iOS and Android, none on desktop', () {
@@ -188,6 +192,36 @@ void main() {
         );
         await tester.tap(find.byType(DsPressable));
         expect(calls, expected, reason: '$setting');
+      }
+    });
+
+    testWidgets('an app control plays a milestone under subtle and full', (
+      tester,
+    ) async {
+      final calls = _recordHaptics(tester);
+      for (final (platform, setting, expected) in [
+        (TargetPlatform.iOS, DsHaptics.none, <String?>[]),
+        (TargetPlatform.iOS, DsHaptics.subtle, [_success]),
+        (TargetPlatform.android, DsHaptics.full, [_success]),
+        (TargetPlatform.macOS, DsHaptics.full, <String?>[]),
+      ]) {
+        calls.clear();
+        // A counter of the app's own, reaching its goal.
+        await tester.pumpWidget(
+          host(
+            Builder(
+              builder: (context) => GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: () =>
+                    DsHapticFeedback.play(context, DsHapticEvent.milestone),
+                child: const SizedBox(width: 40, height: 40),
+              ),
+            ),
+            theme: _theme(platform, setting),
+          ),
+        );
+        await tester.tap(find.byType(GestureDetector));
+        expect(calls, expected, reason: '$platform $setting');
       }
     });
 

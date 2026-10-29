@@ -21,9 +21,11 @@ import '../theme/theme_data.dart';
 /// }
 /// ```
 ///
-/// Components name the event, never the platform call: the weights are the
-/// lightest the platforms offer (the selection tick and a light impact),
-/// because a control's feedback is punctuation, not a sentence.
+/// Components name the event, never the platform call: a control's weights
+/// are the lightest the platforms offer (the selection tick and a light
+/// impact), because its feedback is punctuation, not a sentence. Only
+/// [DsHapticEvent.milestone], which an app plays when its control reaches a
+/// goal, is heavier.
 abstract final class DsHapticFeedback {
   /// Plays [event] if the theme's [DsThemeData.effectiveHaptics] admits it
   /// and its [DsThemeData.platform] is iOS or Android. Safe to call
@@ -44,6 +46,9 @@ abstract final class DsHapticFeedback {
       // wheel on iOS, the clock tick on Android.
       DsHapticEvent.selection => HapticFeedback.selectionClick(),
       DsHapticEvent.command => HapticFeedback.lightImpact(),
+      // A two-beat pattern on iOS, the confirm texture on Android 11 and
+      // later (silent before it): unlike an impact, it reads as an outcome.
+      DsHapticEvent.milestone => HapticFeedback.successNotification(),
     };
     // Best effort: a device or browser without a haptic engine answers with
     // an error, which is silence, not an app failure.

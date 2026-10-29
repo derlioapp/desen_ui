@@ -17,8 +17,9 @@ enum DsHaptics {
   /// State changes only: a checkbox or switch flipping, a radio, tab,
   /// segment, chip or navigation item becoming the selected one, a stepped
   /// slider crossing a step, a stepper changing its value, an option or a
-  /// day being picked. A control that only issues a command (a button, a
-  /// menu item) stays silent. The default in iOS and Android apps.
+  /// day being picked, and an app's control reaching a milestone. A control
+  /// that only issues a command (a button, a menu item) stays silent. The
+  /// default in iOS and Android apps.
   subtle,
 
   /// State changes and command presses: every enabled press of a
@@ -31,7 +32,7 @@ enum DsHaptics {
   /// Whether [event] plays under this setting.
   bool plays(DsHapticEvent event) => switch (this) {
     DsHaptics.none => false,
-    DsHaptics.subtle => event == DsHapticEvent.selection,
+    DsHaptics.subtle => event != DsHapticEvent.command,
     DsHaptics.full => true,
   };
 }
@@ -48,4 +49,15 @@ enum DsHapticEvent {
   /// The control issued a command and holds no state of its own, e.g. a
   /// button. Plays as a light impact under [DsHaptics.full] only.
   command,
+
+  /// The control reached a point the user is counting toward: a counter
+  /// its step or its goal, a long hold its end. Plays as the platform's
+  /// success notification, heavier than [selection], under
+  /// [DsHaptics.subtle] and [DsHaptics.full].
+  ///
+  /// Desen's own controls never play it: an app's control plays it with
+  /// `DsHapticFeedback.play` when the milestone is reached, not on every
+  /// step toward it (those are [selection]). Played often, it stops meaning
+  /// anything.
+  milestone,
 }
