@@ -1,4 +1,5 @@
 import 'package:desen_ui/desen_ui.dart';
+import 'package:desen_ui/src/components/field/field_well.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -89,3 +90,8 @@ class PlainPage extends Page<void> {
   Route<void> createRoute(BuildContext context) =>
       PageRouteBuilder<void>(settings: this, pageBuilder: (_, _, _) => child);
 }
+
+/// The well drawn for the field [field] finds. On touch the field's own box
+/// is the larger tap target around it.
+Finder wellOf(Finder field) =>
+    find.descendant(of: field, matching: find.byType(FieldWell)).first;

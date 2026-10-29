@@ -339,7 +339,7 @@ void main() {
       expect(second.widget.focusNode.hasFocus, isTrue);
     });
 
-    testWidgets('a full tap target without a taller field (touch)', (
+    testWidgets('a full tap target without a taller well (touch)', (
       tester,
     ) async {
       final theme = DsThemeData(platform: TargetPlatform.iOS);
@@ -349,8 +349,8 @@ void main() {
           theme: theme,
         ),
       );
-      // Same height as a field without the button.
-      expect(tester.getSize(find.byType(DsTextField)).height, 40);
+      // Same height as a well without the button.
+      expect(tester.getSize(wellOf(find.byType(DsTextField))).height, 40);
       final target = tester.getRect(
         find.descendant(
           of: button('Clear'),

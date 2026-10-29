@@ -14,6 +14,20 @@
 - `showDsToast(persistent: true)`: a toast with no timer, which stays
   until it is dismissed, replaced or its action runs.
 
+### Changed
+
+- On iOS and Android a text field (and the number, search, date and time
+  fields built on it), a select, a multi-select or autocomplete, and a
+  segmented control drawn shorter than the theme's `minTapTarget` (44)
+  take that much room, as buttons already do, and look the same: a
+  default 40 field takes 44, so a field's label and message sit 2px
+  further from its box. A tap in the margin lands where the finger is
+  (the caret goes there, the segment under it is chosen), wherever the
+  control sits, a list's edge included, and the control's node is the
+  target's height, so it passes a 44 tap target check. Their tap area
+  used to stop at the parent's bounds, and a field's node was 40 high.
+  Popups (menus, calendars, suggestions) still open from the drawn edge.
+
 ## 0.3.2
 
 A fix and a look change for bottom sheets, nothing breaking: `^0.3.0`

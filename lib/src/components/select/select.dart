@@ -90,11 +90,12 @@ class DsSelectOption<T> {
 /// In a bounded width the trigger fills it, like a field; in an unbounded
 /// one (a toolbar [Row]) it is as wide as its longest option.
 ///
-/// On touch the trigger keeps a text field's height (40), so a select and
-/// a text field line up in a row; taps up to the theme's smallest tap
-/// target ([DsSizes.minTapTarget], 44) around it still open it, without
-/// growing the layout. The band reaches as far as the parent's bounds: in
-/// a form column, into the space around the select.
+/// On touch the trigger keeps a text field's height (40) and, like a text
+/// field, takes the room of the theme's smallest tap target
+/// ([DsSizes.minTapTarget], 44) around it, so the two line up in a row:
+/// taps in that margin open it, and its node is the target's height for
+/// screen readers and tap target checks. The menu still opens from the
+/// trigger's drawn edge.
 ///
 /// ```dart
 /// DsSelect<String>(
@@ -230,6 +231,10 @@ class DsSelect<T> extends StatefulWidget {
 
 class _DsSelectState<T> extends State<DsSelect<T>> {
   final _menu = DsOverlayController();
+
+  /// The tap target around the trigger; the trigger's node reaches its
+  /// height.
+  final _target = GlobalKey();
   Set<WidgetState>? _lastStates;
 
   /// The clear button is not a Tab stop and never takes focus.
@@ -427,11 +432,11 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
     final detailStyle = t.typography.caption.copyWith(
       color: t.colors.textMuted,
     );
-    // On touch the tap area reaches the 44px target around the box without
-    // growing the layout, as a text field keeps its own height: a select
-    // and a text field in one row line up. The band sits outermost, so its
-    // parent (a DsField's column) asks it directly.
-    return TapBand(
+    // On touch the trigger takes the room of a touch target around it, as
+    // a text field does, so the two line up in a row. The target sits
+    // outside the overlay's anchor, so the menu opens from the drawn edge.
+    return MinTapTarget(
+      key: _target,
       size: DsTheme.sizesOf(context).minTapTarget,
       child: DsAnchoredOverlay(
         controller: _menu,
@@ -469,153 +474,159 @@ class _DsSelectState<T> extends State<DsSelect<T>> {
             ],
           ),
         ),
-        child: Focus(
-          canRequestFocus: false,
-          skipTraversal: true,
-          onKeyEvent: _onKey,
-          child: DsPressable(
-            focusNode: _node,
-            autofocus: widget.autofocus,
-            minTapTarget: 0,
-            // Read-only stays enabled, so it keeps its look and its Tab stop;
-            // a press does nothing.
-            onPressed: _canEdit
-                ? _menu.toggle
-                : _enabled
-                ? _ignorePress
-                : null,
-            expanded: widget.readOnly ? null : _menu.isOpen,
-            mouseCursor: widget.readOnly
-                ? SystemMouseCursors.basic
-                : WidgetStateMouseCursor.resolveWith(
-                    (states) =>
-                        DsSelectStyle.resolveLayers(layers, states).cursor ??
-                        DsPressable.defaultCursor.resolve(states),
+        child: TargetHeightNode(
+          target: _target,
+          child: Focus(
+            canRequestFocus: false,
+            skipTraversal: true,
+            onKeyEvent: _onKey,
+            child: DsPressable(
+              focusNode: _node,
+              autofocus: widget.autofocus,
+              minTapTarget: 0,
+              // Read-only stays enabled, so it keeps its look and its Tab stop;
+              // a press does nothing.
+              onPressed: _canEdit
+                  ? _menu.toggle
+                  : _enabled
+                  ? _ignorePress
+                  : null,
+              expanded: widget.readOnly ? null : _menu.isOpen,
+              mouseCursor: widget.readOnly
+                  ? SystemMouseCursors.basic
+                  : WidgetStateMouseCursor.resolveWith(
+                      (states) =>
+                          DsSelectStyle.resolveLayers(layers, states).cursor ??
+                          DsPressable.defaultCursor.resolve(states),
+                    ),
+              builder: (context, interaction, _) {
+                final states = {
+                  // Read-only: no hover or press look, only focus.
+                  for (final s in interaction)
+                    if (!widget.readOnly || s == WidgetState.focused) s,
+                  if (error) WidgetState.error,
+                };
+                final s = DsSelectStyle.resolveLayers(
+                  layers,
+                  states,
+                  readOnly: widget.readOnly && _enabled,
+                );
+                final animate =
+                    _lastStates != null && !setEquals(_lastStates, states);
+                _lastStates = states;
+                final border = s.borderColor ?? const Color(0x00000000);
+                final textStyle = (s.textStyle ?? const TextStyle()).copyWith(
+                  color: selected == null ? s.placeholderColor : s.foreground,
+                );
+                final label = Text(
+                  selected?.label ?? placeholder,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: textStyle,
+                );
+                // The name, the chosen value and the validation state of a form
+                // field; the visuals below are not read.
+                final visual = FieldWell(
+                  duration: animate ? t.motion.toneDuration : Duration.zero,
+                  curve: t.motion.toneCurve,
+                  minHeight: s.height!,
+                  // Grows with large text, as a text field does.
+                  padding: dsWithTextRoom(s.padding, s.height!, s.textStyle),
+                  background: s.background,
+                  borderColor: border,
+                  borderWidth: s.borderWidth!,
+                  borderRadius: t.radii.controlCorners(
+                    s.borderRadius,
+                    s.height!,
                   ),
-            builder: (context, interaction, _) {
-              final states = {
-                // Read-only: no hover or press look, only focus.
-                for (final s in interaction)
-                  if (!widget.readOnly || s == WidgetState.focused) s,
-                if (error) WidgetState.error,
-              };
-              final s = DsSelectStyle.resolveLayers(
-                layers,
-                states,
-                readOnly: widget.readOnly && _enabled,
-              );
-              final animate =
-                  _lastStates != null && !setEquals(_lastStates, states);
-              _lastStates = states;
-              final border = s.borderColor ?? const Color(0x00000000);
-              final textStyle = (s.textStyle ?? const TextStyle()).copyWith(
-                color: selected == null ? s.placeholderColor : s.foreground,
-              );
-              final label = Text(
-                selected?.label ?? placeholder,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: textStyle,
-              );
-              // The name, the chosen value and the validation state of a form
-              // field; the visuals below are not read.
-              final visual = FieldWell(
-                duration: animate ? t.motion.toneDuration : Duration.zero,
-                curve: t.motion.toneCurve,
-                minHeight: s.height!,
-                // Grows with large text, as a text field does.
-                padding: dsWithTextRoom(s.padding, s.height!, s.textStyle),
-                background: s.background,
-                borderColor: border,
-                borderWidth: s.borderWidth!,
-                borderRadius: t.radii.controlCorners(s.borderRadius, s.height!),
-                focusShadows: s.focusShadows,
-                focused: states.contains(WidgetState.focused),
-                child: IconTheme.merge(
-                  data: IconThemeData(color: s.iconColor, size: s.iconSize),
-                  child: LayoutBuilder(
-                    builder: (context, constraints) => Row(
-                      mainAxisSize: constraints.hasBoundedWidth
-                          ? MainAxisSize.max
-                          : MainAxisSize.min,
-                      spacing: s.gap ?? DsSpace.s12,
-                      children: [
-                        ?(selected?.leading ?? widget.leading),
-                        if (constraints.hasBoundedWidth)
-                          Expanded(child: label)
-                        else
-                          SizedBox(
-                            width: _widestLabel(
-                              context,
-                              DefaultTextStyle.of(context).style
-                                  .merge(textStyle),
-                              placeholder,
+                  focusShadows: s.focusShadows,
+                  focused: states.contains(WidgetState.focused),
+                  child: IconTheme.merge(
+                    data: IconThemeData(color: s.iconColor, size: s.iconSize),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) => Row(
+                        mainAxisSize: constraints.hasBoundedWidth
+                            ? MainAxisSize.max
+                            : MainAxisSize.min,
+                        spacing: s.gap ?? DsSpace.s12,
+                        children: [
+                          ?(selected?.leading ?? widget.leading),
+                          if (constraints.hasBoundedWidth)
+                            Expanded(child: label)
+                          else
+                            SizedBox(
+                              width: _widestLabel(
+                                context,
+                                DefaultTextStyle.of(context).style
+                                    .merge(textStyle),
+                                placeholder,
+                              ),
+                              child: label,
                             ),
-                            child: label,
-                          ),
-                        // The clear button's place is kept while there is no
-                        // value, so choosing one does not move the chevron.
-                        if (widget.clearable && _canEdit)
-                          ActionTapArea(
-                            visual: s.clearStyle!.height!,
-                            child: selected == null
-                                ? null
-                                : DsComponentThemeReset<DsButtonThemeData>(
-                                    child: DsButton.icon(
-                                      size: DsSize.xs,
-                                      focusNode: _clearFocus,
-                                      style: s.clearStyle,
-                                      semanticLabel: l10n.clear,
-                                      onPressed: _clear,
-                                      icon: const DsIcon(DsIcons.x),
+                          // The clear button's place is kept while there is no
+                          // value, so choosing one does not move the chevron.
+                          if (widget.clearable && _canEdit)
+                            ActionTapArea(
+                              visual: s.clearStyle!.height!,
+                              child: selected == null
+                                  ? null
+                                  : DsComponentThemeReset<DsButtonThemeData>(
+                                      child: DsButton.icon(
+                                        size: DsSize.xs,
+                                        focusNode: _clearFocus,
+                                        style: s.clearStyle,
+                                        semanticLabel: l10n.clear,
+                                        onPressed: _clear,
+                                        icon: const DsIcon(DsIcons.x),
+                                      ),
                                     ),
-                                  ),
-                          ),
-                        if (error)
-                          DsIcon(
-                            DsIcons.circleAlert,
-                            size: s.iconSize!,
-                            // Error border color; the cue is not color alone.
-                            color:
-                                s.errorIconColor ??
-                                (border.a > 0 ? border : s.iconColor),
-                          ),
-                        // The chevron turns over while the menu is open. A
-                        // read-only select does not open, so it has none.
-                        if (!(widget.readOnly && _enabled))
-                          DsSpringValue(
-                            value: _menu.isOpen ? 1 : 0,
-                            spring: t.motion.moveSpringOrNull,
-                            builder: (context, v, child) => Transform.rotate(
-                              angle: v * math.pi,
-                              child: child,
                             ),
-                            child: DsIcon(
-                              DsIcons.chevronDown,
+                          if (error)
+                            DsIcon(
+                              DsIcons.circleAlert,
                               size: s.iconSize!,
-                              color: s.iconColor,
+                              // Error border color; the cue is not color alone.
+                              color:
+                                  s.errorIconColor ??
+                                  (border.a > 0 ? border : s.iconColor),
                             ),
-                          ),
-                      ],
+                          // The chevron turns over while the menu is open. A
+                          // read-only select does not open, so it has none.
+                          if (!(widget.readOnly && _enabled))
+                            DsSpringValue(
+                              value: _menu.isOpen ? 1 : 0,
+                              spring: t.motion.moveSpringOrNull,
+                              builder: (context, v, child) => Transform.rotate(
+                                angle: v * math.pi,
+                                child: child,
+                              ),
+                              child: DsIcon(
+                                DsIcons.chevronDown,
+                                size: s.iconSize!,
+                                color: s.iconColor,
+                              ),
+                            ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              );
-              return Semantics(
-                label:
-                    widget.semanticLabel ??
-                    (selected == null && !labelled ? placeholder : null),
-                value: selected?.label,
-                readOnly: widget.readOnly,
-                customSemanticsActions: _canClear
-                    ? {CustomSemanticsAction(label: l10n.clear): _clear}
-                    : null,
-                validationResult: error
-                    ? SemanticsValidationResult.invalid
-                    : SemanticsValidationResult.none,
-                child: ExcludeSemantics(child: visual),
-              );
-            },
+                );
+                return Semantics(
+                  label:
+                      widget.semanticLabel ??
+                      (selected == null && !labelled ? placeholder : null),
+                  value: selected?.label,
+                  readOnly: widget.readOnly,
+                  customSemanticsActions: _canClear
+                      ? {CustomSemanticsAction(label: l10n.clear): _clear}
+                      : null,
+                  validationResult: error
+                      ? SemanticsValidationResult.invalid
+                      : SemanticsValidationResult.none,
+                  child: ExcludeSemantics(child: visual),
+                );
+              },
+            ),
           ),
         ),
       ),

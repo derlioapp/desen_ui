@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/tap_band.dart';
 import '../../behavior/focus_visibility.dart';
 import '../../behavior/haptic_feedback.dart';
 import '../../icons/icon.dart';
@@ -332,6 +333,10 @@ class _DsTimePickerState extends State<DsTimePicker>
     with DsTypedFieldState<DsTimePicker, DsTime> {
   final _popup = DsOverlayController();
 
+  /// The tap target around the field; its node reaches the target's
+  /// height.
+  final _target = GlobalKey();
+
   /// The time when the columns opened, for Escape.
   DsTime? _opened;
 
@@ -593,12 +598,21 @@ class _DsTimePickerState extends State<DsTimePicker>
       buttonVisual: visual,
     );
 
-    return DsPopover(
+    // On touch the field takes a touch target's room around it, outside
+    // the popup's anchor, so the popup opens from the drawn edge; the
+    // text field below takes none of its own.
+    final popover = DsPopover(
       controller: _popup,
       semanticLabel: l10n.chooseTime,
       style: ps.panelStyle,
       contentBuilder: (context) => _columnsPanel(context, locale, layers, ps),
-      child: frame,
+      child: TapTargetHost(target: _target, child: frame),
+    );
+    return MinTapTarget(
+      key: _target,
+      size: DsTheme.sizesOf(context).minTapTarget,
+      followTap: true,
+      child: popover,
     );
   }
 

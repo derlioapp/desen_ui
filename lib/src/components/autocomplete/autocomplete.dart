@@ -9,6 +9,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../behavior/haptic_feedback.dart';
 import '../../behavior/spring_value.dart';
+import '../../behavior/tap_band.dart';
 import '../../foundation/case.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
@@ -560,6 +561,9 @@ class _Combobox<T> extends StatefulWidget {
 }
 
 class _ComboboxState<T> extends State<_Combobox<T>> {
+  /// The tap target around the well; the text's node reaches its height.
+  final _target = GlobalKey();
+
   final _popup = DsOverlayController();
   final _text = TextEditingController();
   final _scroll = ScrollController();
@@ -1383,23 +1387,28 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       labelText: scope?.labelText,
       // With the buttons apart the text carries the field's message.
       messageText: separate ? scope?.messageText : null,
-      child: DsTextField(
-        controller: _text,
-        focusNode: _focus,
-        autofocus: widget.autofocus,
-        enabled: enabled,
-        readOnly: widget.readOnly,
-        placeholder: placeholder,
-        semanticLabel: name.isEmpty ? null : name.join('\n'),
-        onChanged: _onTextChanged,
-        onSubmitted: (_) => _commitEnter(),
-        textInputAction: TextInputAction.done,
-        // Typing filters the options; a spelling toolbar would cover them.
-        spellCheck: false,
-        style: (a.fieldStyle ?? const DsTextFieldStyle()).merge(_bare),
+      // The well around it gives the tap target.
+      child: TapTargetHost(
+        child: DsTextField(
+          controller: _text,
+          focusNode: _focus,
+          autofocus: widget.autofocus,
+          enabled: enabled,
+          readOnly: widget.readOnly,
+          placeholder: placeholder,
+          semanticLabel: name.isEmpty ? null : name.join('\n'),
+          onChanged: _onTextChanged,
+          onSubmitted: (_) => _commitEnter(),
+          textInputAction: TextInputAction.done,
+          // Typing filters the options; a spelling toolbar would cover them.
+          spellCheck: false,
+          style: (a.fieldStyle ?? const DsTextFieldStyle()).merge(_bare),
+        ),
       ),
     );
-    input = MergeSemantics(
+    // One node for the text, as tall as the field's tap target.
+    input = TargetHeightNode(
+      target: _target,
       child: Semantics(
         expanded: canEdit ? _popup.isOpen : null,
         controlsNodes: _popup.isOpen ? {_popupId} : null,
@@ -1588,6 +1597,17 @@ class _ComboboxState<T> extends State<_Combobox<T>> {
       focusOnOpen: false,
       tab: DsOverlayTab.close,
       overlayBuilder: (context) => _buildPopup(context, a, l10n),
+      child: field,
+    );
+
+    // On touch a well shorter than a touch target takes the target's room,
+    // as a text field does; a tap in the margin lands on the well where it
+    // is (a tag, the text). Outside the overlay's anchor, so the popup
+    // opens from the drawn edge.
+    field = MinTapTarget(
+      key: _target,
+      size: t.sizes.minTapTarget,
+      followTap: true,
       child: field,
     );
 

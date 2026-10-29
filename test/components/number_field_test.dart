@@ -563,11 +563,11 @@ void main() {
       expect(values, [1, 2, 3]);
     });
 
-    testWidgets('tap targets meet the minimum and the field does not grow', (
+    testWidgets('tap targets meet the minimum and the well does not grow', (
       tester,
     ) async {
       await tester.pumpWidget(numberApp(initial: 1));
-      final field = tester.getSize(find.byType(DsTextField));
+      final field = tester.getSize(wellOf(find.byType(DsTextField)));
       expect(field.height, 40);
       for (final f in [minus(), plus()]) {
         final box = find.ancestor(of: f, matching: find.byType(DsPressable));
@@ -583,7 +583,7 @@ void main() {
         find.ancestor(of: plus(), matching: find.byType(DsPressable)),
       );
       expect(touch.width, greaterThanOrEqualTo(44));
-      expect(tester.getSize(find.byType(DsTextField)).height, 40);
+      expect(tester.getSize(wellOf(find.byType(DsTextField))).height, 40);
     });
 
     testWidgets('RTL mirrors the buttons: plus at the far start edge', (

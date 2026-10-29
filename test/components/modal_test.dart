@@ -8,6 +8,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'helpers.dart';
+
 /// Confirm dialog, panel, toast and select.
 void main() {
   /// An app with one button that runs [onPressed] with its context.
@@ -885,7 +887,7 @@ void main() {
   group('DsSelect', () {
     for (final platform in [TargetPlatform.android, TargetPlatform.macOS]) {
       testWidgets('${platform.name}: lines up with a text field beside it; '
-          'the tap area grows without the layout', (tester) async {
+          'the tap target takes room around the drawn box', (tester) async {
         var opened = 0;
         await tester.pumpWidget(
           DsApp(
@@ -926,9 +928,14 @@ void main() {
         final select = tester.getRect(find.byType(DsSelect<String>));
         expect(select.top, field.top);
         expect(select.height, field.height);
+        final fieldWell = tester.getRect(wellOf(find.byType(DsTextField)));
+        final well = tester.getRect(wellOf(find.byType(DsSelect<String>)));
+        expect(well.top, fieldWell.top);
+        expect(well.height, fieldWell.height);
         if (platform == TargetPlatform.android) {
-          // Just above the drawn box, inside the 44px tap area.
-          await tester.tapAt(Offset(select.center.dx, select.top - 1.5));
+          // Just above the drawn box, inside the 44px tap target.
+          expect(well.top - select.top, 2);
+          await tester.tapAt(Offset(well.center.dx, well.top - 1.5));
           await tester.pumpAndSettle();
           expect(find.text('Admin'), findsOneWidget, reason: 'opened');
         }

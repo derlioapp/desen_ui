@@ -1102,7 +1102,7 @@ void main() {
             .ancestor(of: find.text('Ankara'), matching: find.byType(Container))
             .first,
       );
-      final field = tester.getRect(find.byType(DsMultiSelect<String>));
+      final field = tester.getRect(wellOf(find.byType(DsMultiSelect<String>)));
       expect(tag.height, 22, reason: 'a little over half the 40 field');
       expect(field.height, 40, reason: 'one line of tags keeps the height');
       // Even air above and below.
@@ -1216,7 +1216,9 @@ void main() {
       );
       await tester.pumpAndSettle();
       final tag = tester.getRect(find.text('Ankara'));
-      final height = tester.getSize(find.byType(DsMultiSelect<String>)).height;
+      final height = tester
+          .getSize(wellOf(find.byType(DsMultiSelect<String>)))
+          .height;
       Rect input() => tester.getRect(editable());
       // No empty line below the tags.
       expect(input().center.dy, closeTo(tag.center.dy, 2));
@@ -1228,7 +1230,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(input().top, greaterThan(tag.bottom), reason: 'a line below');
       expect(
-        tester.getSize(find.byType(DsMultiSelect<String>)).height,
+        tester.getSize(wellOf(find.byType(DsMultiSelect<String>))).height,
         greaterThan(height),
       );
 
@@ -1238,12 +1240,16 @@ void main() {
     });
     testWidgets('wrapping tags grow the field', (tester) async {
       await tester.pumpWidget(app(multi(), width: 240));
-      final one = tester.getSize(find.byType(DsMultiSelect<String>)).height;
+      final one = tester
+          .getSize(wellOf(find.byType(DsMultiSelect<String>)))
+          .height;
       await tester.pumpWidget(
         app(multi(initial: ['ist', 'izm', 'isp', 'ank', 'sir']), width: 240),
       );
       await tester.pumpAndSettle();
-      final more = tester.getSize(find.byType(DsMultiSelect<String>)).height;
+      final more = tester
+          .getSize(wellOf(find.byType(DsMultiSelect<String>)))
+          .height;
       expect(more, greaterThan(one + 20));
       expect(tester.takeException(), isNull);
     });
@@ -1272,7 +1278,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
-      final field = tester.getRect(find.byType(DsMultiSelect<String>));
+      final field = tester.getRect(wellOf(find.byType(DsMultiSelect<String>)));
       final first = tester.getRect(find.text('İstanbul'));
       expect(
         first.right,
@@ -1361,7 +1367,7 @@ void main() {
         }
         // One line, as tall as the field without tags.
         expect(
-          tester.getSize(find.byType(DsMultiSelect<String>)).height,
+          tester.getSize(wellOf(find.byType(DsMultiSelect<String>))).height,
           40,
           reason: 'at $width',
         );
@@ -1397,7 +1403,9 @@ void main() {
       final k = DsThemeData().colors;
       await tester.pumpWidget(app(collapsed(), width: 260));
       await tester.pumpAndSettle();
-      final height = tester.getSize(find.byType(DsMultiSelect<String>)).height;
+      final height = tester
+          .getSize(wellOf(find.byType(DsMultiSelect<String>)))
+          .height;
       expect(shownMore(tester), isNotNull);
       expect(shows(tester, 'Eskişehir'), isFalse);
 
@@ -1407,7 +1415,7 @@ void main() {
       expect(shownMore(tester), isNull);
       expect(find.textContaining('+'), findsNothing, reason: 'not built');
       expect(
-        tester.getSize(find.byType(DsMultiSelect<String>)).height,
+        tester.getSize(wellOf(find.byType(DsMultiSelect<String>))).height,
         greaterThan(height),
         reason: 'the tags wrap',
       );
@@ -1433,7 +1441,10 @@ void main() {
       FocusManager.instance.primaryFocus?.unfocus();
       await tester.pumpAndSettle();
       expect(shownMore(tester), isNotNull);
-      expect(tester.getSize(find.byType(DsMultiSelect<String>)).height, height);
+      expect(
+        tester.getSize(wellOf(find.byType(DsMultiSelect<String>))).height,
+        height,
+      );
     });
 
     testWidgets('a tap on the "+N" focuses the field and opens it', (
@@ -1544,7 +1555,10 @@ void main() {
       expect(tester.takeException(), isNull);
       expect(shows(tester, 'Kahramanmaraş Büyükşehir'), isTrue);
       expect(find.textContaining('+').hitTestable(), findsNothing);
-      expect(tester.getSize(find.byType(DsMultiSelect<String>)).height, 40);
+      expect(
+        tester.getSize(wellOf(find.byType(DsMultiSelect<String>))).height,
+        40,
+      );
 
       await tester.pumpWidget(
         app(field(const ['a', 'b', 'c']), width: 200, theme: compact),

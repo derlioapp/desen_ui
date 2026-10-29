@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../behavior/edge_fade_scroll.dart';
+import '../../behavior/tap_band.dart';
 import '../../foundation/platform.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
@@ -116,6 +117,12 @@ part 'search_field.dart';
 /// error icon comes last. The clear button is not a Tab stop (Escape or
 /// select-all and delete do the same from the keyboard); the
 /// show-password button is.
+///
+/// **Tap target.** On touch a well shorter than the smallest tap target
+/// ([DsSizes.minTapTarget], 44; the default well is 40) takes that much
+/// room, as a button does, and looks the same: a tap in the margin above
+/// or below it lands on the well where the finger is, and the field's
+/// node is the target's height for screen readers and tap target checks.
 ///
 /// **Counter.** With [maxLength] a tabular counter ("12 / 100") shows under
 /// the field, at the end of a [DsField]'s message row, so the description
@@ -686,6 +693,9 @@ class _DsTextFieldState extends State<DsTextField>
 
   late final _gestures = _GestureBuilder(this);
   final _box = GlobalKey();
+
+  /// The tap target around the well; the field's node reaches its height.
+  final _target = GlobalKey();
   final _menu = DsOverlayController();
   Offset _menuAt = Offset.zero;
 
@@ -1421,7 +1431,13 @@ class _DsTextFieldState extends State<DsTextField>
         (clearable && !empty && _yielded < FieldYield.clear) ||
         (revealable && _yielded < FieldYield.reveal) ||
         (endAction != null && _yielded < FieldYield.action);
-    node = _FieldNode(well: _box, reachEnd: !buttonShown, child: node);
+    final host = TapTargetHost.of(context);
+    node = _FieldNode(
+      well: _box,
+      target: host?.target ?? _target,
+      reachEnd: !buttonShown,
+      child: node,
+    );
 
     final border = s.borderColor ?? const Color(0x00000000);
     Widget box = FieldWell(
@@ -1533,6 +1549,16 @@ class _DsTextFieldState extends State<DsTextField>
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
       child: ExcludeFocus(excluding: !enabled, child: box),
+    );
+    // A well shorter than a touch target takes the target's room, as a
+    // button does; a tap in the margin lands on the well where it is, so
+    // the caret goes where the finger was.
+    box = MinTapTarget(
+      key: _target,
+      // Inside a field that gives the target (a multi-select), none.
+      size: host != null ? 0 : t.sizes.minTapTarget,
+      followTap: true,
+      child: box,
     );
 
     // The counter: at the end of a field's message row, or under the
@@ -1756,39 +1782,60 @@ class _ShortcutHint extends StatelessWidget {
 
 /// The field's own semantics node, merged from its parts as
 /// [MergeSemantics] merges them, with a rect that reaches the [well]'s
-/// edges: its top and bottom, its start, and its end when [reachEnd]
-/// (no button of the field sits there). A tap anywhere on the well focuses
+/// start, its end when [reachEnd] (no button of the field sits there), and
+/// the top and bottom of its tap [target]. A tap anywhere there focuses
 /// the field, so that is the target a screen reader outlines and a tap
 /// target check measures, not the line of text inside the padding.
 class _FieldNode extends SingleChildRenderObjectWidget {
-  const _FieldNode({required this.well, required this.reachEnd, super.child});
+  const _FieldNode({
+    required this.well,
+    required this.target,
+    required this.reachEnd,
+    super.child,
+  });
 
   /// Reaches the well's render box.
   final GlobalKey well;
+
+  /// Reaches the tap target's render box.
+  final GlobalKey target;
 
   /// Whether the node reaches the well's end edge too.
   final bool reachEnd;
 
   @override
   _RenderFieldNode createRenderObject(BuildContext context) =>
-      _RenderFieldNode(well, reachEnd, Directionality.of(context));
+      _RenderFieldNode(well, target, reachEnd, Directionality.of(context));
 
   @override
   void updateRenderObject(BuildContext context, _RenderFieldNode renderObject) {
     renderObject
       ..well = well
+      ..target = target
       ..reachEnd = reachEnd
       ..textDirection = Directionality.of(context);
   }
 }
 
 class _RenderFieldNode extends RenderProxyBox {
-  _RenderFieldNode(this._well, this._reachEnd, this._textDirection);
+  _RenderFieldNode(
+    this._well,
+    this._target,
+    this._reachEnd,
+    this._textDirection,
+  );
 
   GlobalKey _well;
   set well(GlobalKey value) {
     if (value == _well) return;
     _well = value;
+    markNeedsSemanticsUpdate();
+  }
+
+  GlobalKey _target;
+  set target(GlobalKey value) {
+    if (value == _target) return;
+    _target = value;
     markNeedsSemanticsUpdate();
   }
 
@@ -1817,17 +1864,15 @@ class _RenderFieldNode extends RenderProxyBox {
   @override
   Rect get semanticBounds {
     final own = Offset.zero & size;
-    final well = _well.currentContext?.findRenderObject();
-    if (well is! RenderBox || !well.hasSize || !well.attached) return own;
-    final toWell = getTransformTo(well);
-    if (toWell.invert() == 0) return own;
-    final edges = MatrixUtils.transformRect(toWell, Offset.zero & well.size);
+    final edges = targetEdges(this, _well);
+    if (edges == null) return own;
+    final target = targetEdges(this, _target) ?? edges;
     final ltr = _textDirection == TextDirection.ltr;
     return Rect.fromLTRB(
       ltr || _reachEnd ? edges.left : own.left,
-      edges.top,
+      target.top,
       !ltr || _reachEnd ? edges.right : own.right,
-      edges.bottom,
+      target.bottom,
     );
   }
 }

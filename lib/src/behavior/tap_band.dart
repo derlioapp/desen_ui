@@ -88,3 +88,207 @@ class _RenderTapBand extends RenderProxyBox {
     );
   }
 }
+
+/// Grows its child's layout box to at least [size] on each axis, as
+/// [DsMinTapTarget] does, for controls whose tap position matters: with
+/// [followTap] a tap in the added margin lands at the nearest point of the
+/// child (the segment under it, the caret's place in a field), not its
+/// center.
+class MinTapTarget extends SingleChildRenderObjectWidget {
+  /// Creates a minimum tap target.
+  const MinTapTarget({
+    super.key,
+    required this.size,
+    this.followTap = false,
+    super.child,
+  });
+
+  /// The smallest width and height of the target, in logical pixels.
+  final double size;
+
+  /// Whether a tap in the margin lands at the nearest point of the child
+  /// instead of its center.
+  final bool followTap;
+
+  @override
+  RenderObject createRenderObject(BuildContext context) =>
+      RenderMinTapTarget(size, followTap: followTap);
+
+  @override
+  void updateRenderObject(BuildContext context, RenderObject renderObject) =>
+      (renderObject as RenderMinTapTarget)
+        ..minSize = size
+        ..followTap = followTap;
+}
+
+/// The render object of [DsMinTapTarget] and [MinTapTarget].
+class RenderMinTapTarget extends RenderShiftedBox {
+  /// Creates the render object.
+  RenderMinTapTarget(this._min, {this._followTap = false}) : super(null);
+
+  double _min;
+  set minSize(double value) {
+    if (_min == value) return;
+    _min = value;
+    markNeedsLayout();
+  }
+
+  bool _followTap;
+  set followTap(bool value) => _followTap = value;
+
+  Size _grow(Size child, BoxConstraints c) => c.constrain(
+    Size(
+      math.max(child.width, math.min(_min, c.maxWidth)),
+      math.max(child.height, math.min(_min, c.maxHeight)),
+    ),
+  );
+
+  @override
+  double computeMinIntrinsicWidth(double height) =>
+      math.max(super.computeMinIntrinsicWidth(height), _min);
+
+  @override
+  double computeMaxIntrinsicWidth(double height) =>
+      math.max(super.computeMaxIntrinsicWidth(height), _min);
+
+  @override
+  double computeMinIntrinsicHeight(double width) =>
+      math.max(super.computeMinIntrinsicHeight(width), _min);
+
+  @override
+  double computeMaxIntrinsicHeight(double width) =>
+      math.max(super.computeMaxIntrinsicHeight(width), _min);
+
+  @override
+  Size computeDryLayout(covariant BoxConstraints constraints) {
+    final child = this.child;
+    if (child == null) return constraints.smallest;
+    return _grow(child.getDryLayout(constraints), constraints);
+  }
+
+  @override
+  void performLayout() {
+    final child = this.child;
+    if (child == null) {
+      size = constraints.smallest;
+      return;
+    }
+    // Tight constraints pass through (a full-width button stays full width).
+    child.layout(constraints, parentUsesSize: true);
+    size = _grow(child.size, constraints);
+    (child.parentData! as BoxParentData).offset = Alignment.center.alongOffset(
+      size - child.size as Offset,
+    );
+  }
+
+  @override
+  bool hitTest(BoxHitTestResult result, {required Offset position}) {
+    final child = this.child;
+    if (child == null || !size.contains(position)) return false;
+    final offset = (child.parentData! as BoxParentData).offset;
+    if ((offset & child.size).contains(position)) {
+      return result.addWithPaintOffset(
+        offset: offset,
+        position: position,
+        hitTest: (result, transformed) =>
+            child.hitTest(result, position: transformed),
+      );
+    }
+    // The margin was never painted: answer as the child's own center, or
+    // its nearest point (just inside the edge).
+    final target = _followTap
+        ? Offset(
+            (position.dx - offset.dx).clamp(
+              _inside,
+              math.max(_inside, child.size.width - _inside),
+            ),
+            (position.dy - offset.dy).clamp(
+              _inside,
+              math.max(_inside, child.size.height - _inside),
+            ),
+          )
+        : child.size.center(Offset.zero);
+    return result.addWithRawTransform(
+      transform: MatrixUtils.forceToPoint(target),
+      position: target,
+      hitTest: (result, _) => child.hitTest(result, position: target),
+    );
+  }
+}
+
+/// A semantics node of its own, merging its subtree as [MergeSemantics]
+/// does, whose rect reaches the top and bottom of [target]'s box: a control
+/// drawn shorter than its tap target is outlined by screen readers and
+/// measured by tap target checks at the target's height.
+class TargetHeightNode extends SingleChildRenderObjectWidget {
+  /// Creates the node.
+  const TargetHeightNode({super.key, required this.target, super.child});
+
+  /// The tap target's box, usually a [MinTapTarget]'s.
+  final GlobalKey target;
+
+  @override
+  RenderObject createRenderObject(BuildContext context) =>
+      _RenderTargetHeightNode(target);
+
+  @override
+  void updateRenderObject(BuildContext context, RenderObject renderObject) =>
+      (renderObject as _RenderTargetHeightNode).target = target;
+}
+
+class _RenderTargetHeightNode extends RenderProxyBox {
+  _RenderTargetHeightNode(this._target);
+
+  GlobalKey _target;
+  set target(GlobalKey value) {
+    if (value == _target) return;
+    _target = value;
+    markNeedsSemanticsUpdate();
+  }
+
+  @override
+  void describeSemanticsConfiguration(SemanticsConfiguration config) {
+    super.describeSemanticsConfiguration(config);
+    config
+      ..isSemanticBoundary = true
+      ..isMergingSemanticsOfDescendants = true;
+  }
+
+  @override
+  Rect get semanticBounds {
+    final own = Offset.zero & size;
+    final edges = targetEdges(this, _target);
+    if (edges == null) return own;
+    return Rect.fromLTRB(own.left, edges.top, own.right, edges.bottom);
+  }
+}
+
+/// [target]'s box in [from]'s coordinates, or null when it is not laid out.
+Rect? targetEdges(RenderObject from, GlobalKey target) {
+  final box = target.currentContext?.findRenderObject();
+  if (box is! RenderBox || !box.hasSize || !box.attached) return null;
+  final to = from.getTransformTo(box);
+  if (to.invert() == 0) return null;
+  return MatrixUtils.transformRect(to, Offset.zero & box.size);
+}
+
+/// Marks a subtree whose tap target an ancestor already gives, such as a
+/// multi-select's well around its bare text field, or a date field's frame
+/// that a popup anchors to: a control below takes no target room of its
+/// own, and its node reaches the height of [target], the ancestor's
+/// [MinTapTarget], when given.
+class TapTargetHost extends InheritedWidget {
+  /// Marks [child].
+  const TapTargetHost({super.key, this.target, required super.child});
+
+  /// The ancestor's tap target.
+  final GlobalKey? target;
+
+  /// The nearest [TapTargetHost] above [context]. It never changes for an
+  /// element, so there is no dependency.
+  static TapTargetHost? of(BuildContext context) =>
+      context.getInheritedWidgetOfExactType<TapTargetHost>();
+
+  @override
+  bool updateShouldNotify(TapTargetHost oldWidget) => false;
+}

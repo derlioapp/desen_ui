@@ -70,12 +70,12 @@ class DsSegment<T> {
 /// [DsSelectionStyle.soft], the strong selection fill for
 /// [DsSelectionStyle.strong].
 ///
-/// On touch the segments are shorter than the smallest tap target
-/// ([DsSizes.minTapTarget], 44): taps within it above and below the
-/// control, and on the channel's rim, reach the segment beside them,
-/// without growing the layout. Like any band it reaches only as far as
-/// the parent's bounds, so in a box exactly as tall as the control it
-/// stops at the control's edge.
+/// On touch the control is shorter than the smallest tap target
+/// ([DsSizes.minTapTarget], 44), so it takes that much room, as a button
+/// does, and looks the same: taps in the margin above and below it, and
+/// on the channel's rim, reach the segment beside them, and each
+/// segment's node is the target's height for screen readers and tap
+/// target checks.
 class DsSegmentedControl<T> extends StatefulWidget {
   /// Creates a segmented control.
   const DsSegmentedControl({
@@ -163,6 +163,9 @@ class DsSegmentedControl<T> extends StatefulWidget {
 }
 
 class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
+  /// The tap target around the control; each segment's node reaches its
+  /// height.
+  final _target = GlobalKey();
   FocusNode? _ownNode;
   FocusNode get _node => widget.focusNode ?? (_ownNode ??= FocusNode());
   int? _hovered, _pressed;
@@ -288,65 +291,73 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
         ...itemStates(i),
         WidgetState.selected,
       }).textStyle;
-      return Semantics(
-        // A radio: checked in a mutually exclusive group, no button
-        // flag.
-        inMutuallyExclusiveGroup: true,
-        checked: i == selected,
-        enabled: interactive,
-        label: seg.semanticLabel,
-        onTap: interactive ? () => _select(i) : null,
-        // The group holds one focus node (one Tab stop); its focus
-        // is reported on the selected segment, so a screen reader
-        // announces it, not an unnamed node.
-        focusable: _enabled && i == focusTarget ? true : null,
-        focused: _enabled && i == focusTarget ? _node.hasPrimaryFocus : null,
-        onFocus:
-            _enabled &&
-                i == focusTarget &&
-                defaultTargetPlatform != TargetPlatform.iOS
-            ? _node.requestFocus
-            : null,
-        child: MouseRegion(
-          cursor: interactive
-              ? s.cursor ?? SystemMouseCursors.click
-              : SystemMouseCursors.forbidden,
-          onEnter: (_) => setState(() => _hovered = i),
-          onExit: (_) => setState(() => _hovered = null),
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            excludeFromSemantics: true,
-            onTapDown: interactive ? (_) => setState(() => _pressed = i) : null,
-            onTapCancel: () => setState(() => _pressed = null),
-            onTapUp: (_) => setState(() => _pressed = null),
-            onTap: interactive ? () => _select(i, touch: true) : null,
-            // A minimum height grows with large text; in a narrow control
-            // the label wraps between words.
-            child: Container(
-              constraints: BoxConstraints(minHeight: height),
-              padding: dsWithTextRoom(s.itemPadding, height, s.textStyle),
-              alignment: Alignment.center,
-              child: TweenAnimationBuilder<Color?>(
-                tween: DsColorTween(end: fg),
-                duration: t.motion.toneDuration,
-                curve: t.motion.toneCurve,
-                builder: (context, color, _) => IconTheme.merge(
-                  data: IconThemeData(color: color, size: s.iconSize),
-                  child: DefaultTextStyle(
-                    style: (s.textStyle ?? const TextStyle()).copyWith(
-                      color: color,
-                    ),
-                    textAlign: TextAlign.center,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      spacing: DsSpace.s6,
-                      children: [
-                        ?seg.icon,
-                        if (seg.label case final label?)
-                          Flexible(
-                            child: _ReservedWidth(style: widest, child: label),
-                          ),
-                      ],
+      return TargetHeightNode(
+        target: _target,
+        child: Semantics(
+          // A radio: checked in a mutually exclusive group, no button
+          // flag.
+          inMutuallyExclusiveGroup: true,
+          checked: i == selected,
+          enabled: interactive,
+          label: seg.semanticLabel,
+          onTap: interactive ? () => _select(i) : null,
+          // The group holds one focus node (one Tab stop); its focus
+          // is reported on the selected segment, so a screen reader
+          // announces it, not an unnamed node.
+          focusable: _enabled && i == focusTarget ? true : null,
+          focused: _enabled && i == focusTarget ? _node.hasPrimaryFocus : null,
+          onFocus:
+              _enabled &&
+                  i == focusTarget &&
+                  defaultTargetPlatform != TargetPlatform.iOS
+              ? _node.requestFocus
+              : null,
+          child: MouseRegion(
+            cursor: interactive
+                ? s.cursor ?? SystemMouseCursors.click
+                : SystemMouseCursors.forbidden,
+            onEnter: (_) => setState(() => _hovered = i),
+            onExit: (_) => setState(() => _hovered = null),
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              excludeFromSemantics: true,
+              onTapDown: interactive
+                  ? (_) => setState(() => _pressed = i)
+                  : null,
+              onTapCancel: () => setState(() => _pressed = null),
+              onTapUp: (_) => setState(() => _pressed = null),
+              onTap: interactive ? () => _select(i, touch: true) : null,
+              // A minimum height grows with large text; in a narrow control
+              // the label wraps between words.
+              child: Container(
+                constraints: BoxConstraints(minHeight: height),
+                padding: dsWithTextRoom(s.itemPadding, height, s.textStyle),
+                alignment: Alignment.center,
+                child: TweenAnimationBuilder<Color?>(
+                  tween: DsColorTween(end: fg),
+                  duration: t.motion.toneDuration,
+                  curve: t.motion.toneCurve,
+                  builder: (context, color, _) => IconTheme.merge(
+                    data: IconThemeData(color: color, size: s.iconSize),
+                    child: DefaultTextStyle(
+                      style: (s.textStyle ?? const TextStyle()).copyWith(
+                        color: color,
+                      ),
+                      textAlign: TextAlign.center,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        spacing: DsSpace.s6,
+                        children: [
+                          ?seg.icon,
+                          if (seg.label case final label?)
+                            Flexible(
+                              child: _ReservedWidth(
+                                style: widest,
+                                child: label,
+                              ),
+                            ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -366,11 +377,11 @@ class _DsSegmentedControlState<T> extends State<DsSegmentedControl<T>> {
       ],
     );
 
-    // The segments are shorter than a touch target: taps up to the theme's
-    // smallest target around the control, and on the channel's rim, reach
-    // the segment beside them, without growing the layout. The outer band
-    // sits outermost, so its parent asks it directly.
-    return TapBand(
+    // The control is shorter than a touch target: on touch it takes the
+    // room of the theme's smallest target, as a button does, and taps in
+    // that margin and on the channel's rim reach the segment beside them.
+    return MinTapTarget(
+      key: _target,
       size: DsTheme.sizesOf(context).minTapTarget,
       followTap: true,
       child: Semantics(

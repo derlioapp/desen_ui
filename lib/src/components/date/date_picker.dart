@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../behavior/tap_band.dart';
 import '../../icons/icon.dart';
 import '../../icons/icons.dart';
 import '../../overlay/anchored_overlay.dart';
@@ -325,6 +326,10 @@ const _rangeDash = ' – ';
 class _DatePickerState extends State<StatefulWidget>
     with DsTypedFieldState<StatefulWidget, Object> {
   final _popup = DsOverlayController();
+
+  /// The tap target around the field; its node reaches the target's
+  /// height.
+  final _target = GlobalKey();
 
   /// The range being chosen in the popup.
   DsDateRange? _draft;
@@ -679,7 +684,10 @@ class _DatePickerState extends State<StatefulWidget>
     final window = MediaQuery.maybeSizeOf(context);
     final wide = window != null && window.width >= ps.wideBreakpoint!;
 
-    return DsPopover(
+    // On touch the field takes a touch target's room around it, outside
+    // the popup's anchor, so the popup opens from the drawn edge; the
+    // text field below takes none of its own.
+    final popover = DsPopover(
       controller: _popup,
       semanticLabel: l10n.chooseDate,
       style: ps.panelStyle,
@@ -739,7 +747,13 @@ class _DatePickerState extends State<StatefulWidget>
           );
         },
       ),
-      child: child,
+      child: TapTargetHost(target: _target, child: child),
+    );
+    return MinTapTarget(
+      key: _target,
+      size: DsTheme.sizesOf(context).minTapTarget,
+      followTap: true,
+      child: popover,
     );
   }
 }

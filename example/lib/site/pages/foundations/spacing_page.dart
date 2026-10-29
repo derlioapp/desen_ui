@@ -72,7 +72,10 @@ class SpacingPage extends StatelessWidget {
             '(WCAG 2.5.8). On iOS and Android each small control gets an '
             'invisible 44px tap area around it and keeps its drawn size. The '
             'area takes real layout space, so side-by-side small controls sit '
-            'a little further apart. The dashed lines show it.',
+            'a little further apart. Text fields, selects and segmented '
+            'controls take it too: a 40px field takes 44, and a tap just '
+            'past its edge lands where the finger is. The dashed lines show '
+            'it.',
           ),
           Example(snippet: 'spacing-platform', child: const _TapAreas()),
           const DocText(

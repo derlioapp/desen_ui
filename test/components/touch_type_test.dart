@@ -133,9 +133,10 @@ void main() {
       ),
     );
     expect(tester.takeException(), isNull);
-    expect(tester.getSize(find.byType(DsSelect<int>)).height, touch.sizes.md);
-    expectCentered(tester, 'E-posta adresi', find.byType(DsTextField));
-    expectCentered(tester, 'Tasarım ekibi', find.byType(DsSelect<int>));
+    final select = wellOf(find.byType(DsSelect<int>));
+    expect(tester.getSize(select).height, touch.sizes.md);
+    expectCentered(tester, 'E-posta adresi', wellOf(find.byType(DsTextField)));
+    expectCentered(tester, 'Tasarım ekibi', select);
     expect(
       paragraph(tester, 'Tasarım ekibi').text.style?.fontSize,
       touch.typography.body.fontSize,
