@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:desen_ui/desen_ui.dart';
 import 'package:flutter/widgets.dart';
 
@@ -67,6 +69,20 @@ class ToastPage extends StatelessWidget {
                 'undo flow commits the change there unless the reason is '
                 '`action`.',
           ]),
+        ],
+      ),
+      DocSection(
+        title: 'Progress',
+        children: [
+          DocText(
+            'Work that takes a while reports in one toast: `persistent: '
+            'true` keeps it up with no timer until you dismiss it, and the '
+            'controller\'s `update` changes its text in place, without '
+            'motion. Screen readers hear a change at most once per toast '
+            'duration, the latest text last, so a count that moves every '
+            'moment is not read out at every step.',
+          ),
+          Example(snippet: 'toast-progress', child: _ProgressDemo()),
         ],
       ),
       DocSection(
@@ -152,6 +168,8 @@ class ToastPage extends StatelessWidget {
                 'status by name ("Success"), then the title and description.',
             'A `danger` toast is announced assertively where the platform '
                 'supports announcements, and heard once.',
+            'Text changed with `update` is heard at most once per toast '
+                'duration (6 seconds by default), the latest text last.',
             'The toast keeps clear of the on-screen keyboard and the status '
                 'bar. Long text at a large text size scrolls inside it.',
             'Swiping is never the only way to dismiss: the close button is '
@@ -184,10 +202,16 @@ class ToastPage extends StatelessWidget {
             ),
             ('onAction', 'VoidCallback?', 'Runs the action.'),
             ('duration', 'Duration?', 'Overrides how long it shows.'),
+            (
+              'persistent',
+              'bool',
+              'No timer: it stays until dismissed or replaced.',
+            ),
           ]),
           DocText(
-            'Returns a `DsToastController` with `dismiss()`, `isShowing` '
-            'and `closed`, a `Future<DsToastClosedReason>`.',
+            'Returns a `DsToastController` with `dismiss()`, '
+            '`update(title:, description:)`, `isShowing` and `closed`, a '
+            '`Future<DsToastClosedReason>`.',
           ),
           DocHeading('DsToastInset'),
           ApiTable([
@@ -308,6 +332,58 @@ class _UndoDemoState extends State<_UndoDemo> {
         ),
       ],
     ),
+  );
+}
+
+class _ProgressDemo extends StatefulWidget {
+  const _ProgressDemo();
+
+  @override
+  State<_ProgressDemo> createState() => _ProgressDemoState();
+}
+
+class _ProgressDemoState extends State<_ProgressDemo> {
+  static const _files = 24;
+  Timer? _timer;
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  // #region toast-progress
+  void _download() {
+    var done = 0;
+    final toast = showDsToast(
+      context: context,
+      title: 'Downloading photos',
+      description: '0/$_files',
+      persistent: true,
+    );
+    _timer = Timer.periodic(const Duration(milliseconds: 250), (timer) {
+      if (!toast.isShowing) return timer.cancel();
+      done++;
+      toast.update(title: 'Downloading photos', description: '$done/$_files');
+      if (done == _files) {
+        timer.cancel();
+        showDsToast(
+          context: context,
+          title: 'Photos downloaded',
+          status: DsStatus.success,
+        );
+      }
+    });
+  }
+  // #endregion
+
+  @override
+  Widget build(BuildContext context) => DsButton(
+    onPressed: () {
+      _timer?.cancel();
+      _download();
+    },
+    child: const Text('Download photos'),
   );
 }
 

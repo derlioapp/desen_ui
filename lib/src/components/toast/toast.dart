@@ -74,6 +74,32 @@ class DsToastController {
   /// Hides the toast; [closed] completes with
   /// [DsToastClosedReason.dismissed].
   void dismiss() => _host._dismiss(_request, DsToastClosedReason.dismissed);
+
+  /// Changes the shown toast's text in place, without motion: progress such
+  /// as "12/83 files". [description] replaces the old one; null removes it.
+  /// Does nothing once the toast is closing.
+  ///
+  /// A timed toast starts its time again, so the new text gets its own.
+  /// Screen readers hear the change politely (a danger toast assertively),
+  /// at most once per [DsMotion.toastDuration]: a count that moves every
+  /// moment is heard every few seconds, the latest text last.
+  ///
+  /// ```dart
+  /// final toast = showDsToast(
+  ///   context: context,
+  ///   title: 'Downloading Yasin',
+  ///   description: '0/83 verses',
+  ///   persistent: true,
+  /// );
+  /// await for (final done in downloads) {
+  ///   toast.update(title: 'Downloading Yasin', description: '$done/83 verses');
+  /// }
+  /// toast.dismiss();
+  /// ```
+  void update({required String title, String? description}) {
+    if (_request.dismissed) return;
+    _request.content.value = (title, description);
+  }
 }
 
 /// The look of a toast's content, for previews and custom hosts. Usually
@@ -90,7 +116,22 @@ class DsToast extends StatelessWidget {
     this.onAction,
     this.onDismiss,
     this.style,
-  });
+  }) : _spoken = null;
+
+  /// A shown toast whose text screen readers hear as [spoken], which lags
+  /// the text drawn while it changes quickly.
+  const DsToast._shown({
+    required this.title,
+    this.description,
+    this.status,
+    this.icon,
+    this.actionLabel,
+    this.onAction,
+    this.onDismiss,
+    required this._spoken,
+  }) : style = null;
+
+  final String? _spoken;
 
   /// What happened ("Changes saved").
   final String title;
@@ -144,6 +185,11 @@ class DsToast extends StatelessWidget {
       closeStyle: const DsButtonStyle(iconSize: 14),
     );
   }
+
+  /// What screen readers hear for the text: the title, then the
+  /// description.
+  static String _text(String title, String? description) =>
+      [title, ?description].join('\n');
 
   static DsIconData _icon(DsStatus status) => switch (status) {
     DsStatus.success => DsIcons.circleCheck,
@@ -220,7 +266,7 @@ class DsToast extends StatelessWidget {
                 // The text is read as part of the toast, not as a scroll area
                 // of its own, so the live region still says it.
                 child: Semantics(
-                  label: [title, ?description].join('\n'),
+                  label: _spoken ?? _text(title, description),
                   child: ExcludeSemantics(
                     child: SingleChildScrollView(
                       controller: controller,
@@ -283,11 +329,15 @@ class DsToast extends StatelessWidget {
 /// and a close button.
 ///
 /// - **Timing (WCAG 2.2.1):** it goes away after [DsMotion.toastDuration]
-///   (twice that with an action), paused while the pointer, a finger or
-///   keyboard focus is on it. While a screen reader navigates
-///   ([MediaQueryData.accessibleNavigation]) a toast with an action stays
-///   until it is dismissed, as Material's snack bar does, so the action
-///   can be reached.
+///   (twice that with an action), or after [duration], paused while the
+///   pointer, a finger or keyboard focus is on it. While a screen reader
+///   navigates ([MediaQueryData.accessibleNavigation]) a toast with an
+///   action stays until it is dismissed, as Material's snack bar does, so
+///   the action can be reached. A [persistent] toast has no timer: it
+///   stays until it is dismissed, replaced or its action runs, e.g. for
+///   work in progress.
+/// - **Changing text:** [DsToastController.update] changes the title and
+///   description in place, e.g. to count progress.
 /// - **Keyboard:** F8 moves focus into the toast (as in Radix) and Escape
 ///   inside it dismisses it; focus then returns to where it was. With focus
 ///   inside, Page Up, Page Down, Arrow Up, Arrow Down, Home and End scroll
@@ -322,10 +372,15 @@ DsToastController showDsToast({
   String? actionLabel,
   VoidCallback? onAction,
   Duration? duration,
+  bool persistent = false,
 }) {
   assert(
     (actionLabel == null) == (onAction == null),
     'actionLabel and onAction come together.',
+  );
+  assert(
+    !persistent || duration == null,
+    'A persistent toast has no duration.',
   );
   final overlay = Overlay.of(context, rootOverlay: true);
   final host = _ToastHostState._hosts[overlay] ??= _ToastHostState._(overlay);
@@ -333,18 +388,17 @@ DsToastController showDsToast({
   return host._show(
     _ToastRequest(
       captured: DsCapturedThemes.capture(from: context, to: overlay.context),
+      content: ValueNotifier((title, description)),
       hasAction: actionLabel != null,
-      // What an assertive announcement says: the status, title and
-      // description, as the live region would read them.
+      // An assertive announcement says the status before the text, as the
+      // live region would read them.
       urgent: status == DsStatus.danger
-          ? (
-              [l10n.error, title, ?description].join('\n'),
-              Directionality.maybeOf(context) ?? TextDirection.ltr,
-            )
+          ? (l10n.error, Directionality.maybeOf(context) ?? TextDirection.ltr)
           : null,
-      toast: (close) => DsToast(
-        title: title,
-        description: description,
+      toast: (close, text, spoken) => DsToast._shown(
+        title: text.$1,
+        description: text.$2,
+        spoken: spoken,
         status: status,
         icon: icon,
         actionLabel: actionLabel,
@@ -358,31 +412,50 @@ DsToastController showDsToast({
         onDismiss: () => close(DsToastClosedReason.dismissed),
       ),
       duration: duration,
+      persistent: persistent,
     ),
   );
 }
 
+/// A toast's title and description.
+typedef _ToastText = (String title, String? description);
+
 class _ToastRequest {
   _ToastRequest({
     required this.captured,
+    required this.content,
     required this.hasAction,
     required this.toast,
     required this.duration,
+    required this.persistent,
     this.urgent,
   });
 
   final DsCapturedThemes captured;
+
+  /// The text shown now; [DsToastController.update] changes it.
+  final ValueNotifier<_ToastText> content;
   final bool hasAction;
 
-  /// For a danger toast: the assertive announcement and its direction.
+  /// For a danger toast: the status said before the text in the assertive
+  /// announcement, and its direction.
   final (String, TextDirection)? urgent;
 
-  /// Builds the content; `close` returns whether it closed the toast (false
-  /// when it was already closing).
-  final Widget Function(bool Function(DsToastClosedReason reason) close) toast;
+  /// Builds the content with the text drawn and the text screen readers
+  /// hear; `close` returns whether it closed the toast (false when it was
+  /// already closing).
+  final Widget Function(
+    bool Function(DsToastClosedReason reason) close,
+    _ToastText text,
+    String spoken,
+  )
+  toast;
 
   /// Null: the theme's notice duration (twice that with an action).
   final Duration? duration;
+
+  /// No timer: it stays until dismissed or replaced.
+  final bool persistent;
 
   /// Dismissed or replaced: it leaves as soon as it can.
   bool dismissed = false;
@@ -471,6 +544,14 @@ class _ToastViewState extends State<_ToastView>
     skipTraversal: true,
   );
   Timer? _timer;
+
+  /// What screen readers hear: the text when it was last said. A change
+  /// is said at once, then not again until [_hush] runs out.
+  late String _spoken = _text;
+  Timer? _hush;
+
+  /// The text changed while [_hush] ran: say it when it runs out.
+  bool _unsaid = false;
   bool _hovered = false, _focused = false, _held = false, _leaving = false;
   bool _accessible = false, _started = false;
 
@@ -486,6 +567,7 @@ class _ToastViewState extends State<_ToastView>
   void initState() {
     super.initState();
     widget.request.view = this;
+    widget.request.content.addListener(_onText);
     FocusManager.instance.addEarlyKeyEventHandler(_onHotkey);
     if (widget.request.dismissed) {
       // Replaced before its first frame: it never shows, it just goes.
@@ -504,20 +586,16 @@ class _ToastViewState extends State<_ToastView>
     _accessible = accessible;
     if (!_started && !_leaving) {
       _started = true;
-      if (widget.request.urgent case (final message, final direction)
-          when MediaQuery.supportsAnnounceOf(context)) {
-        // Danger interrupts. Once, when it shows; a toast replaced
-        // before its first frame never shows and is not announced.
+      if (widget.request.urgent != null &&
+          MediaQuery.supportsAnnounceOf(context)) {
+        // Danger interrupts. When it shows and when its text changes; a
+        // toast replaced before its first frame never shows and is not
+        // announced.
         _assertive = true;
-        unawaited(
-          SemanticsService.sendAnnouncement(
-            View.of(context),
-            message,
-            direction,
-            assertiveness: Assertiveness.assertive,
-          ),
-        );
+        _announce();
       }
+      // Showing says the text; a change waits its turn.
+      _hush = Timer(_motion.toastDuration, _unhush);
       _reveal.animateWith(
         (_motion.reduced ? _motion.toneSpring : _motion.moveSpring).simulate(
           to: 1,
@@ -531,14 +609,61 @@ class _ToastViewState extends State<_ToastView>
 
   void _onInset() => setState(() {});
 
+  String get _text {
+    final (title, description) = widget.request.content.value;
+    return DsToast._text(title, description);
+  }
+
+  void _onText() {
+    if (_leaving) return;
+    setState(() {});
+    _restart();
+    if (_hush != null) {
+      _unsaid = true;
+    } else {
+      _say();
+    }
+  }
+
+  /// Hands screen readers the current text and holds the next change for a
+  /// toast's duration, so a count that moves every moment is not said
+  /// every moment.
+  void _say() {
+    _unsaid = false;
+    if (_spoken == _text) return;
+    setState(() => _spoken = _text);
+    if (_assertive) _announce();
+    _hush = Timer(_motion.toastDuration, _unhush);
+  }
+
+  void _unhush() {
+    _hush = null;
+    if (_unsaid && !_leaving) _say();
+  }
+
+  void _announce() {
+    final (status, direction) = widget.request.urgent!;
+    unawaited(
+      SemanticsService.sendAnnouncement(
+        View.of(context),
+        '$status\n$_spoken',
+        direction,
+        assertiveness: Assertiveness.assertive,
+      ),
+    );
+  }
+
   @override
   void dispose() {
     _inset?.removeListener(_onInset);
     if (widget.request.view == this) widget.request.view = null;
     // Its overlay left the tree with the toast still up.
     widget.onClose(DsToastClosedReason.dismissed);
+    // Closed now, so the controller no longer updates it.
+    widget.request.content.dispose();
     FocusManager.instance.removeEarlyKeyEventHandler(_onHotkey);
     _timer?.cancel();
+    _hush?.cancel();
     _reveal.dispose();
     _region.dispose();
     super.dispose();
@@ -550,6 +675,7 @@ class _ToastViewState extends State<_ToastView>
 
   void _restart() {
     _timer?.cancel();
+    if (widget.request.persistent) return;
     if (_hovered || _focused || _held || _leaving) return;
     // A screen reader user must be able to reach the action (WCAG 2.2.1).
     if (_accessible && widget.request.hasAction) return;
@@ -702,7 +828,11 @@ class _ToastViewState extends State<_ToastView>
                             ),
                           );
                         },
-                        child: widget.request.toast(widget.onClose),
+                        child: widget.request.toast(
+                          widget.onClose,
+                          widget.request.content.value,
+                          _spoken,
+                        ),
                       ),
                     ),
                   ),

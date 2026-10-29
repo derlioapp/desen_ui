@@ -1,3 +1,19 @@
+## Unreleased
+
+### Added
+
+- `DsHapticEvent.milestone`, for an app's control reaching a point the
+  user counts toward, such as a counter at its goal: the platform's
+  success pattern (iOS, and Android 11 and later), heavier than a
+  selection tick, played under `DsHaptics.subtle` and `full`. An app
+  plays it with `DsHapticFeedback.play`; Desen's own controls never do.
+- `DsToastController.update(title:, description:)` changes a shown
+  toast's text in place, without motion, for progress such as "12/83
+  files". A timed toast starts its time again. Screen readers hear the
+  change at most once per `DsMotion.toastDuration`, the latest text last.
+- `showDsToast(persistent: true)`: a toast with no timer, which stays
+  until it is dismissed, replaced or its action runs.
+
 ## 0.3.2
 
 A fix and a look change for bottom sheets, nothing breaking: `^0.3.0`
