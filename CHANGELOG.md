@@ -1,4 +1,7 @@
-## Unreleased
+## 0.3.3
+
+Additions and a layout change on phones, nothing breaking: `^0.3.0`
+picks this release up.
 
 ### Added
 
